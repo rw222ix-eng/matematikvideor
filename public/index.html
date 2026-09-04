@@ -186,13 +186,12 @@
   /* Återkoppling: hovring fyller ringen, klick ger en puls */
   .duk.paus .lock { cursor: pointer; }
   .duk.paus .lock:hover ~ .stor span { background: var(--accent); color: var(--bg); transform: scale(1.08); box-shadow: 0 0 0 10px rgba(242, 197, 114, .18), 0 10px 40px -10px rgba(0, 0, 0, .8); }
-  .duk.paus .lock:active ~ .stor span { transform: scale(.96); }
   .duk .puls { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; pointer-events: none; }
   /* Pulsen är täckande och större än YouTubes egen play/paus-blixt i mitten, så bara sidans syns. */
-  .duk .puls span { width: 100px; height: 100px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; opacity: 0; transform: scale(.9); box-shadow: 0 0 0 14px rgba(23, 20, 20, .55); }
+  .duk .puls span { width: 100px; height: 100px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; opacity: 0; box-shadow: 0 0 0 14px rgba(23, 20, 20, .55); }
   .duk .puls svg { width: 30px; height: 30px; fill: currentColor; }
   .duk .puls.igang span { animation: puls .75s linear forwards; }
-  @keyframes puls { 0% { opacity: 1; transform: scale(.9) } 70% { opacity: 1; transform: scale(1) } 100% { opacity: 0; transform: scale(1.12) } }
+  @keyframes puls { 0% { opacity: 1 } 65% { opacity: 1 } 100% { opacity: 0 } }
   .styr .knapp { transition: opacity .3s, color .25s, transform .2s var(--lugn); }
   .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
   .styr .knapp:active { transform: scale(.9); }
