@@ -180,14 +180,14 @@
   .duk .lock { position: absolute; inset: 0; z-index: 3; }
   .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; }
   /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
-  .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk .lock:hover ~ .stor { opacity: 1; }
+  .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk.visa .lock:hover ~ .stor { opacity: 1; }
   .duk .lock { cursor: pointer; }
   .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .28); backdrop-filter: blur(3px); transition: transform .08s ease-out; }
   .duk .stor svg { width: 15px; height: 15px; fill: currentColor; }
   .duk .stor svg.spela-ikon { margin-left: 3px; }
   /* Mittknappen visar alltid aktuellt läge (play när det är pausat, paus när det spelar) och växlar
      direkt utan toning. Hovring fyller den, tryck trycker ihop den. */
-  .duk .lock:hover ~ .stor span { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .duk.visa .lock:hover ~ .stor span, .duk.paus .lock:hover ~ .stor span { background: var(--accent); border-color: var(--accent); color: var(--bg); }
   .duk .lock:active ~ .stor span { transform: scale(.88); }
   .styr .knapp { transition: opacity .3s, color .25s, transform .2s var(--lugn); }
   .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
