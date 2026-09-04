@@ -169,7 +169,7 @@
   .duk .halla { position: absolute; inset: 0; overflow: hidden; }
   .duk .halla { --band: clamp(64px, 13%, 110px); }
   .duk .halla iframe { position: absolute; left: 0; width: 100%; top: calc(-1 * var(--band)); height: calc(100% + 2 * var(--band)); border: 0; }
-  .duk:fullscreen .halla { inset: auto; width: min(100vw, 177.78vh); height: min(100vh, 56.25vw); left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .duk:fullscreen .halla, .duk.helskarm .halla { inset: auto; width: min(100vw, 177.78vh); height: min(100vh, 56.25vw); left: 50%; top: 50%; transform: translate(-50%, -50%); }
   .duk .snart { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
   .duk .snart img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.35); }
   .duk .snart div { position: relative; }
@@ -203,9 +203,10 @@
   .styr .tidvis { font: 400 11px/1 var(--sans); letter-spacing: .18em; color: var(--ben2); font-variant-numeric: tabular-nums; margin-left: 8px; white-space: nowrap; }
   .styr .mellan { flex: 1; }
   .styr .dolj { display: none; }
-  .duk:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; box-shadow: none; background: #000; }
-  .duk:fullscreen .undertext { font-size: clamp(22px, 2.6vw, 40px); bottom: 96px; }
-  .duk:fullscreen .styr { padding: 34px 40px 22px; }
+  .duk:fullscreen, .duk.helskarm { aspect-ratio: auto; width: 100vw; height: 100vh; height: 100dvh; box-shadow: none; background: #000; }
+  .duk.helskarm { position: fixed; inset: 0; z-index: 80; }
+  .duk:fullscreen .undertext, .duk.helskarm .undertext { font-size: clamp(22px, 2.6vw, 40px); bottom: 96px; }
+  .duk:fullscreen .styr, .duk.helskarm .styr { padding: 34px 40px 22px; }
   .film .om { max-width: 640px; margin: 64px auto 0; text-align: center; }
   .film .om .brod { margin: 0; }
   .film .begrepp { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin: 28px 0 0; padding: 0; list-style: none; }
@@ -578,16 +579,32 @@
     try { localStorage.setItem("textning", textPa ? "pa" : "av"); } catch (e) {}
     uppdatera();
   }
-  const kanHelskarm = !!(dukEl.requestFullscreen || dukEl.webkitRequestFullscreen);
-  function iHelskarm() { return !!(document.fullscreenElement || document.webkitFullscreenElement); }
-  function vaxlaHelskarm() {
-    if (!kanHelskarm) return;
-    if (iHelskarm()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-    else { const p = (dukEl.requestFullscreen || dukEl.webkitRequestFullscreen).call(dukEl); if (p && p.catch) p.catch(() => {}); }
+  // Helskärm: webbläsarens äkta helskärm om den svarar, annars (inbäddade
+  // webbläsare, iPhone) fyller spelarrutan fönstret med CSS.
+  function iHelskarm() { return !!(document.fullscreenElement || document.webkitFullscreenElement) || dukEl.classList.contains("helskarm"); }
+  function ritaHelKnapp() {
+    const b = $("duk-hel"); if (!b) return;
+    b.innerHTML = iHelskarm() ? IK.helUt : IK.helIn; b.setAttribute("aria-label", iHelskarm() ? "Stäng helskärm" : "Helskärm");
   }
-  ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, () => {
-    const b = $("duk-hel"); if (b) { b.innerHTML = iHelskarm() ? IK.helUt : IK.helIn; b.setAttribute("aria-label", iHelskarm() ? "Stäng helskärm" : "Helskärm"); }
-  }));
+  function cssHelskarm(pa) {
+    dukEl.classList.toggle("helskarm", pa); document.body.classList.toggle("last", pa);
+    ritaHelKnapp(); visaStyr();
+  }
+  function vaxlaHelskarm() {
+    if (dukEl.classList.contains("helskarm")) { cssHelskarm(false); return; }
+    if (document.fullscreenElement || document.webkitFullscreenElement) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+    const beg = dukEl.requestFullscreen || dukEl.webkitRequestFullscreen;
+    let svar = false;
+    if (beg) {
+      try {
+        const p = beg.call(dukEl);
+        if (p && p.then) p.then(() => { svar = true; }, () => { svar = true; if (!document.fullscreenElement) cssHelskarm(true); });
+      } catch (e) { svar = true; cssHelskarm(true); return; }
+    } else { cssHelskarm(true); return; }
+    // Inget svar (t.ex. inbäddad webbläsare): ta reserven.
+    setTimeout(() => { if (!svar && !document.fullscreenElement && !document.webkitFullscreenElement) cssHelskarm(true); }, 500);
+  }
+  ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, ritaHelKnapp));
   // Klick och drag i spelarrutan
   dukEl.addEventListener("click", (e) => {
     const b = e.target.closest("button");
@@ -678,7 +695,7 @@
   function stangSpelare() {
     if (klocka) clearInterval(klocka); klocka = null;
     if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
-    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar"); yt = null; video = null; aktuell = null;
+    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm"); yt = null; video = null; aktuell = null;
   }
   function oppna(id, t) {
     stangSok();
@@ -695,6 +712,7 @@
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
     if (document.fullscreenElement || document.webkitFullscreenElement) return; // webbläsaren stänger helskärmen själv
+    if (dukEl.classList.contains("helskarm")) { cssHelskarm(false); return; }
     if (sokRuta.classList.contains("oppen")) stangSok();
     else if (aktivVy === "film") location.hash = "filmer";
   });
