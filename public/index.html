@@ -49,8 +49,8 @@
   .topp { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 28px 32px; }
   .logo { display: inline-flex; align-items: center; opacity: .95; transition: opacity .5s; }
   .logo:hover { opacity: 1; }
-  .logo img { height: 56px; width: auto; display: block; -webkit-mask-image: radial-gradient(ellipse 85% 95% at 50% 55%, #000 45%, transparent 98%); mask-image: radial-gradient(ellipse 85% 95% at 50% 55%, #000 45%, transparent 98%); }
-  .intro .logo img { height: 84px; }
+  .logo img { height: 64px; width: 64px; display: block; border-radius: 50%; box-shadow: 0 0 0 1px var(--linje2), 0 12px 30px -10px rgba(0, 0, 0, .9); }
+  .intro .logo img { height: 92px; width: 92px; }
   .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
   .ikon:hover { color: var(--ben); }
   .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
@@ -183,8 +183,8 @@
   @media (max-width: 700px) {
     body { font-size: 16px; }
     .topp { padding: 22px 20px; }
-    .logo img { height: 44px; }
-    .intro .logo img { height: 60px; }
+    .logo img { height: 48px; width: 48px; }
+    .intro .logo img { height: 68px; width: 68px; }
     .intro .ingress br { display: none; }
     .valj { height: auto; min-height: 100vh; overflow: visible; }
     .valj .fond { position: fixed; height: 100vh; }
@@ -229,7 +229,7 @@
   <div class="vinjett"></div>
   <header class="topp fram">
     <a class="logo" href="#" aria-label="Matematikvideor med Rickard">
-      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="900" height="210">
+      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="320" height="320">
     </a>
   </header>
   <div class="mitt">
@@ -245,7 +245,7 @@
   <div class="vinjett"></div>
   <header class="topp">
     <a class="logo" href="#" aria-label="Till början">
-      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="900" height="210">
+      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="320" height="320">
     </a>
     <div class="hoger">
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
