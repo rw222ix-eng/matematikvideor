@@ -37,7 +37,6 @@
 
   /* Typografi */
   .etikett { font: 500 11px/1.6 var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--ben2); margin: 0; }
-  .etikett .liten { font-size: 8px; letter-spacing: .3em; vertical-align: .25em; }
   .skrift { font: 400 clamp(54px, 9.5vw, 118px)/1.02 var(--skrift); letter-spacing: .005em; color: var(--ben); margin: 0; text-shadow: 0 2px 30px rgba(0, 0, 0, .5); }
   .brod { font-weight: 300; color: var(--ben2); font-size: 17px; line-height: 1.85; }
 
@@ -48,11 +47,10 @@
 
   /* Toppraden med logotypen */
   .topp { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 28px 32px; }
-  .logo { display: inline-flex; align-items: center; gap: 14px; opacity: .92; }
-  .logo svg { width: 42px; height: 42px; flex: none; }
-  .logo .streck { width: 1px; height: 38px; background: var(--linje); }
-  .logo .ord { font: 400 11px/1.5 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben); }
-  .logo .ord small { display: block; font-size: 9px; letter-spacing: .3em; color: var(--ben2); }
+  .logo { display: inline-flex; align-items: center; opacity: .95; transition: opacity .5s; }
+  .logo:hover { opacity: 1; }
+  .logo img { height: 56px; width: auto; display: block; }
+  .intro .logo img { height: 84px; }
   .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
   .ikon:hover { color: var(--ben); }
   .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
@@ -103,9 +101,7 @@
   .post .lina::after { content: ""; position: absolute; left: -2.5px; bottom: -2.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--dis); }
   .post .namn { height: 134px; padding-top: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
   .post .kurs { font: 400 21px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; }
-  .post .kurs .liten { font-size: 13px; vertical-align: .3em; letter-spacing: .08em; }
   .post .moment { font: 400 10px/1.6 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--ben2); max-width: 320px; }
-  .post .moment .liten { font-size: 7px; vertical-align: .3em; }
   .post .titel { font: italic 300 14px/1.4 var(--sans); color: var(--dis); letter-spacing: .04em; margin-top: -2px; transition: color .5s; }
   .post:hover .titel { color: var(--ben2); }
   .post > button { all: unset; display: contents; }
@@ -187,8 +183,8 @@
   @media (max-width: 700px) {
     body { font-size: 16px; }
     .topp { padding: 22px 20px; }
-    .logo svg { width: 34px; height: 34px; }
-    .logo .ord { font-size: 10px; }
+    .logo img { height: 44px; }
+    .intro .logo img { height: 60px; }
     .intro .ingress br { display: none; }
     .valj { height: auto; min-height: 100vh; overflow: visible; }
     .valj .fond { position: fixed; height: 100vh; }
@@ -233,9 +229,7 @@
   <div class="vinjett"></div>
   <header class="topp fram">
     <a class="logo" href="#" aria-label="Matematikvideor med Rickard">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="50" cy="50" r="6" fill="currentColor"/><circle cx="82" cy="34" r="5" fill="#F2C572"/></svg>
-      <span class="streck"></span>
-      <span class="ord">Matematik&shy;videor<small>med Rickard</small></span>
+      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="900" height="210">
     </a>
   </header>
   <div class="mitt">
@@ -251,9 +245,7 @@
   <div class="vinjett"></div>
   <header class="topp">
     <a class="logo" href="#" aria-label="Till början">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="50" cy="50" r="6" fill="currentColor"/><circle cx="82" cy="34" r="5" fill="#F2C572"/></svg>
-      <span class="streck"></span>
-      <span class="ord">Matematik&shy;videor<small>med Rickard</small></span>
+      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="900" height="210">
     </a>
     <div class="hoger">
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
@@ -321,10 +313,10 @@
     for (const o of ord) if (o.length > 1) ut = ut.replace(new RegExp(`(${o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"), "<mark>$1</mark>");
     return ut;
   };
-  // "Matematik 1c" → "MA 1" + litet "c", som referensens "1930s"
+  // "Matematik 1c" → "Ma 1c"
   const kursKort = (kurs) => {
     const m = kurs.match(/(\d)\s*([a-c]*)$/i);
-    return m ? `Ma&nbsp;${m[1]}${m[2] ? `<span class="liten">${m[2].toLowerCase()}</span>` : ""}` : esc(kurs);
+    return m ? `Ma&nbsp;${m[1]}${m[2].toLowerCase()}` : esc(kurs);
   };
 
   // ── Vyer och adress ───────────────────────────────────
