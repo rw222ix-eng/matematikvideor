@@ -15,7 +15,13 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
   förstoringsglaset (eller tangenten `/`). Adresser: `#filmer`, `#<id>`, `#<id>&t=<sekund>`.
   Typsnitt från Google Fonts (Jost + Pinyon Script); en accentfärg (`--accent`).
-- Spelaren är sidans egen: YouTube-inbäddningen körs med `controls=0` och styrs via IFrame API
+- Filmen spelas från egen fil (`fil` i registret): en 1080p-mp4 som ligger som GitHub-release i
+  det här repot (`gh release create <tag>` + `gh release upload <tag> <mp4>`, adress
+  `https://github.com/rw222ix-eng/matematikvideor/releases/download/<tag>/<fil>`; stöder
+  delvisa hämtningar så hopp i filmen fungerar). Kodning ur 4K-exporten:
+  `ffmpeg -i <2160p.mp4> -vf scale=1920:1080 -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -movflags +faststart <1080p.mp4>`
+  (Kepler: 137 MB). Utan `fil` används YouTube (`youtube`-id) i stället.
+- Spelaren är sidans egen: `<video>` med egna kontroller; med YouTube körs inbäddningen med `controls=0` och styrs via IFrame API
   (spela/pausa, tidslinje, ljud, helskärm, tangenterna mellanslag/k, ←/→ 5 s, j/l 10 s, f, c, m).
   Undertexterna ritas av sidan ur projektets `assets/tal.srt` (fältet `undertext` i videor.json,
   Charter som i filmen); YouTubes egna textremsor stängs av. Valet textning på/av sparas i webbläsaren.
