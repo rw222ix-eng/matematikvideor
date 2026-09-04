@@ -770,11 +770,16 @@
     uppKnapp.hidden = false; uppKnapp.classList.toggle("syns", visa);
   }
   new IntersectionObserver((poster) => { dukSyns = poster[0].isIntersecting; ritaUpp(); }, { threshold: 0.25 }).observe(dukEl);
-  uppKnapp.addEventListener("click", () => {
-    const topp = dukEl.getBoundingClientRect().top + window.scrollY - 24;
-    window.scrollTo({ top: Math.max(0, topp), behavior: lugnt ? "auto" : "smooth" });
-    visaStyr();
-  });
+  function tillFilmen() {
+    const mal = Math.max(0, dukEl.getBoundingClientRect().top + window.scrollY - 24);
+    const fran = window.scrollY;
+    if (lugnt || !("scrollBehavior" in document.documentElement.style)) { window.scrollTo(0, mal); return; }
+    window.scrollTo({ top: mal, behavior: "smooth" });
+    // Reserv: kommer den mjuka scrollen inte i gång (vissa inbäddade webbläsare) — hoppa direkt.
+    setTimeout(() => { if (Math.abs(window.scrollY - fran) < 2 && Math.abs(fran - mal) > 2) window.scrollTo(0, mal); }, 250);
+    setTimeout(() => { if (Math.abs(window.scrollY - mal) > 40) window.scrollTo(0, mal); }, 1200);
+  }
+  uppKnapp.addEventListener("click", (e) => { e.preventDefault(); tillFilmen(); visaStyr(); });
   setInterval(ritaUpp, 1000);
 
   function oppna(id, t) {
