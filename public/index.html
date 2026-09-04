@@ -117,9 +117,10 @@
   .post.kommer .lina::after { background: var(--bg2); border: 1px solid var(--linje2); }
   .valj .nere { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; z-index: 4; pointer-events: none; }
   .valj .nere > * { pointer-events: auto; }
-  .valj .hint { font: 300 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--dis); display: flex; gap: 12px; align-items: center; transition: opacity 1s; }
-  .valj .hint::before { content: ""; width: 34px; height: 1px; background: var(--linje); }
+  .valj .hint { position: absolute; top: 146px; left: 0; right: 0; display: flex; justify-content: center; z-index: 4; pointer-events: none; color: var(--dis); transition: opacity 1s; animation: vagga 3s ease-in-out infinite; }
+  .valj .hint svg { width: 64px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
   .valj .hint.borta { opacity: 0; }
+  @keyframes vagga { 0%, 100% { transform: translateX(-4px) } 50% { transform: translateX(4px) } }
   .valj .aterstall { opacity: 0; transition: opacity .6s; }
   .valj .aterstall.syns { opacity: 1; }
 
@@ -206,7 +207,7 @@
     .post .namn { height: auto; padding-top: 18px; text-align: left; align-items: flex-start; position: relative; }
     .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
     .post.kommer { display: none; }
-    .valj .nere { display: none; }
+    .valj .nere, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .traff-film li button { grid-template-columns: 58px 1fr; gap: 12px; }
     .film .topp { padding: 18px 20px; }
@@ -260,8 +261,8 @@
   </header>
   <h2 class="etikett rubrik">Välj en film</h2>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
+  <div class="hint" id="hint" aria-hidden="true"><svg viewBox="0 0 64 12"><path d="M1 6 H63 M6 1 L1 6 L6 11 M58 1 L63 6 L58 11"/></svg></div>
   <div class="nere">
-    <div class="hint" id="hint">Rulla i sidled</div>
     <button class="ikon aterstall" id="aterstall" aria-label="Till början av tidslinjen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 a8 8 0 1 0 2.4-5.7"/><path d="M4 4 v5 h5"/></svg></button>
   </div>
 </section>
