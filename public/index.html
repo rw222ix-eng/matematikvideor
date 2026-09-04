@@ -599,7 +599,7 @@
   }
   function visaStyr() {
     dukEl.classList.add("visa"); clearTimeout(gomTimer);
-    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), iHelskarm() ? 1500 : 3000);
+    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), iHelskarm() ? 1000 : 3000);
   }
   function uppdatera() {
     if (!aktuell) return;
