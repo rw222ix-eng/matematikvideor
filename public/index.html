@@ -188,10 +188,11 @@
   .duk.paus .lock:hover ~ .stor span { background: var(--accent); color: var(--bg); transform: scale(1.08); box-shadow: 0 0 0 10px rgba(242, 197, 114, .18), 0 10px 40px -10px rgba(0, 0, 0, .8); }
   .duk.paus .lock:active ~ .stor span { transform: scale(.96); }
   .duk .puls { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; pointer-events: none; }
-  .duk .puls span { width: 84px; height: 84px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; opacity: 0; transform: scale(.7); }
-  .duk .puls svg { width: 26px; height: 26px; fill: currentColor; }
-  .duk .puls.igang span { animation: puls .55s var(--lugn) forwards; }
-  @keyframes puls { 0% { opacity: .9; transform: scale(.8) } 100% { opacity: 0; transform: scale(1.7) } }
+  /* Pulsen är täckande och större än YouTubes egen play/paus-blixt i mitten, så bara sidans syns. */
+  .duk .puls span { width: 100px; height: 100px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; opacity: 0; transform: scale(.9); box-shadow: 0 0 0 14px rgba(23, 20, 20, .55); }
+  .duk .puls svg { width: 30px; height: 30px; fill: currentColor; }
+  .duk .puls.igang span { animation: puls .75s linear forwards; }
+  @keyframes puls { 0% { opacity: 1; transform: scale(.9) } 70% { opacity: 1; transform: scale(1) } 100% { opacity: 0; transform: scale(1.12) } }
   .styr .knapp { transition: opacity .3s, color .25s, transform .2s var(--lugn); }
   .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
   .styr .knapp:active { transform: scale(.9); }
@@ -216,6 +217,15 @@
   .styr .knapp[aria-pressed="true"] .cc { background: var(--ben); color: #171414; }
   .styr .tidvis { font: 400 11px/1 var(--sans); letter-spacing: .18em; color: var(--ben2); font-variant-numeric: tabular-nums; margin-left: 8px; white-space: nowrap; }
   .styr .mellan { flex: 1; }
+  .styr .ljud { display: inline-flex; align-items: center; }
+  .styr .volym { -webkit-appearance: none; appearance: none; width: 0; height: 24px; margin: 0; padding: 0; background: none; opacity: 0; transition: width .35s var(--lugn), opacity .35s, margin .35s; cursor: pointer; }
+  .styr .ljud:hover .volym, .styr .ljud:focus-within .volym, .styr .volym.oppen { width: 84px; opacity: 1; margin-right: 10px; }
+  .styr .volym::-webkit-slider-runnable-track { height: 1px; background: rgba(236, 230, 216, .45); }
+  .styr .volym::-moz-range-track { height: 1px; background: rgba(236, 230, 216, .45); }
+  .styr .volym::-webkit-slider-thumb { -webkit-appearance: none; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); margin-top: -5px; border: 0; }
+  .styr .volym::-moz-range-thumb { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 0; }
+  .styr .volym:focus-visible { outline: none; }
+  @media (max-width: 700px) { .styr .ljud:hover .volym, .styr .ljud:focus-within .volym { width: 0; opacity: 0; margin: 0; } .styr .volym.oppen { width: 70px; opacity: 1; margin-right: 6px; } }
   .styr .dolj { display: none; }
   .duk:fullscreen, .duk.helskarm { aspect-ratio: auto; width: 100vw; height: 100vh; height: 100dvh; box-shadow: none; background: #000; }
   .duk.helskarm { position: fixed; inset: 0; z-index: 80; }
@@ -510,6 +520,7 @@
   let yt = null, video = null, aktuell = null, klocka = null, gomTimer = null;
   const dukEl = $("duk");
   let textPa = true; try { textPa = localStorage.getItem("textning") !== "av"; } catch (e) {}
+  let volym = 100; try { const v = Number(localStorage.getItem("volym")); if (Number.isFinite(v) && v >= 0 && v <= 100 && localStorage.getItem("volym") !== null) volym = v; } catch (e) {}
   function ytApi() {
     return new Promise((res) => {
       if (window.YT && window.YT.Player) return res();
@@ -533,6 +544,8 @@
     sok: (t) => { if (video) video.currentTime = t; else if (yt && yt.seekTo) yt.seekTo(t, true); },
     tyst: () => video ? video.muted : (yt && yt.isMuted ? yt.isMuted() : false),
     satTyst: (b) => { if (video) video.muted = b; else if (yt) (b ? yt.mute() : yt.unMute()); },
+    volym: () => video ? Math.round(video.volume * 100) : (yt && yt.getVolume ? yt.getVolume() : volym),
+    satVolym: (v) => { if (video) video.volume = v / 100; else if (yt && yt.setVolume) yt.setVolume(v); },
   };
   const IK = {
     spela: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M7 4.5 L19 12 L7 19.5 Z"/></svg>',
@@ -560,7 +573,7 @@
           <span class="tidvis"><span id="duk-nu">0:00</span> / <span id="duk-langd">${v.langd ? tid(v.langd) : "–"}</span></span>
           <span class="mellan"></span>
           <button class="knapp" id="duk-cc" type="button" aria-label="Textning" aria-pressed="${textPa}"><span class="cc">CC</span></button>
-          <button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button>
+          <span class="ljud"><button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button><input class="volym" id="duk-volym" type="range" min="0" max="100" step="1" value="${volym}" aria-label="Volym"></span>
           <button class="knapp" id="duk-hel" type="button" aria-label="Helskärm">${IK.helIn}</button>
         </div>
       </div>`;
@@ -581,7 +594,9 @@
     $("duk-spela").innerHTML = spelar ? IK.pausa : IK.spela; $("duk-spela").setAttribute("aria-label", spelar ? "Pausa" : "Spela");
     $("duk-nu").textContent = tid(Math.floor(nu));
     if (langd) { $("duk-langd").textContent = tid(Math.round(langd)); const p = Math.min(100, nu / langd * 100); $("duk-fylld").style.width = p + "%"; $("duk-knopp").style.left = p + "%"; $("duk-linje").setAttribute("aria-valuenow", Math.round(p)); }
-    $("duk-ljud").innerHTML = sp.tyst() ? IK.ljudAv : IK.ljudPa;
+    const tyst = sp.tyst() || sp.volym() === 0;
+    $("duk-ljud").innerHTML = tyst ? IK.ljudAv : IK.ljudPa; $("duk-ljud").setAttribute("aria-label", tyst ? "Ljud på" : "Ljud av");
+    const vr = $("duk-volym"); if (vr && document.activeElement !== vr && !vr.matches(":active")) vr.value = sp.tyst() ? 0 : sp.volym();
     // Undertext ur tal.srt (sekundexakt), annars replikerna
     let text = "";
     if (textPa) {
@@ -636,7 +651,13 @@
     const b = e.target.closest("button");
     if (b) {
       if (b.id === "duk-spela") vaxlaSpel(); else if (b.id === "duk-cc") vaxlaText();
-      else if (b.id === "duk-ljud") { sp.satTyst(!sp.tyst()); setTimeout(uppdatera, 50); }
+      else if (b.id === "duk-ljud") {
+        const vr = $("duk-volym");
+        if (smal() && vr && !vr.classList.contains("oppen")) { vr.classList.add("oppen"); setTimeout(() => vr.classList.remove("oppen"), 4000); }
+        else if (sp.tyst() || sp.volym() === 0) { if (sp.volym() === 0) { volym = 50; sp.satVolym(50); } sp.satTyst(false); }
+        else sp.satTyst(true);
+        setTimeout(uppdatera, 50);
+      }
       else if (b.id === "duk-hel") vaxlaHelskarm();
       visaStyr(); return;
     }
@@ -644,6 +665,12 @@
     if (e.target.closest("#duk-lock")) { vaxlaSpel(); visaStyr(); }
   });
   dukEl.addEventListener("dblclick", (e) => { if (e.target.closest("#duk-lock")) { vaxlaHelskarm(); } });
+  dukEl.addEventListener("input", (e) => {
+    if (e.target.id !== "duk-volym") return;
+    volym = Number(e.target.value); sp.satVolym(volym); sp.satTyst(volym === 0);
+    try { localStorage.setItem("volym", String(volym)); } catch (x) {}
+    visaStyr(); setTimeout(uppdatera, 50);
+  });
   dukEl.addEventListener("pointermove", visaStyr);
   dukEl.addEventListener("pointerleave", () => { clearTimeout(gomTimer); dukEl.classList.remove("visa"); });
   let sokDrag = false;
@@ -671,7 +698,9 @@
     else if (k === "l") sp.sok(sp.nu() + 10);
     else if (k === "f") { e.preventDefault(); vaxlaHelskarm(); }
     else if (k === "c") vaxlaText();
-    else if (k === "m") { sp.satTyst(!sp.tyst()); }
+    else if (k === "m") { if (sp.tyst()) { if (sp.volym() === 0) { volym = 50; sp.satVolym(50); } sp.satTyst(false); } else sp.satTyst(true); }
+    else if (k === "ArrowUp") { e.preventDefault(); volym = Math.min(100, sp.volym() + 10); sp.satVolym(volym); sp.satTyst(false); }
+    else if (k === "ArrowDown") { e.preventDefault(); volym = Math.max(0, sp.volym() - 10); sp.satVolym(volym); }
     else return;
     visaStyr(); setTimeout(uppdatera, 50);
   });
@@ -691,14 +720,14 @@
     if (v.fil) {
       byggDuk(v);
       video = document.createElement("video"); video.playsInline = true; video.preload = "metadata"; video.src = v.fil;
-      dukEl.querySelector(".halla").appendChild(video); video.currentTime = start; if (start) video.play().catch(() => {});
+      dukEl.querySelector(".halla").appendChild(video); video.volume = volym / 100; video.currentTime = start; if (start) video.play().catch(() => {});
     } else if (v.youtube) {
       byggDuk(v);
       await ytApi();
       if (aktuell !== v) return;
       const holder = document.createElement("div"); dukEl.querySelector(".halla").appendChild(holder);
       yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start, autoplay: start ? 1 : 0, controls: 0, disablekb: 1, rel: 0, fs: 0, iv_load_policy: 3, playsinline: 1, cc_load_policy: 0, modestbranding: 1, hl: "sv" },
-        events: { onReady: (e) => { stangYtText(); uppdatera(); }, onStateChange: (e) => { stangYtText(); uppdatera(); } } });
+        events: { onReady: (e) => { stangYtText(); sp.satVolym(volym); uppdatera(); }, onStateChange: (e) => { stangYtText(); uppdatera(); } } });
     } else {
       dukEl.classList.remove("igang", "paus");
       dukEl.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
