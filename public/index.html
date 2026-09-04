@@ -555,6 +555,7 @@
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
+    if (document.fullscreenElement || document.webkitFullscreenElement) return; // webbläsaren stänger helskärmen själv
     if (sokRuta.classList.contains("oppen")) stangSok();
     else if (aktivVy === "film") location.hash = "filmer";
   });
