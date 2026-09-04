@@ -89,7 +89,7 @@
   .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
   .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
   .tidslinje.drar { cursor: grabbing; }
-  .tidslinje::before { content: ""; position: absolute; left: 0; right: 0; bottom: 118px; height: 1px; background: var(--linje2); }
+  .tidslinje::before { content: ""; position: absolute; left: 0; right: 0; bottom: 134px; height: 1px; background: var(--linje2); }
   .spar { display: flex; align-items: stretch; height: 100%; padding: 0 max(12vw, 80px); will-change: transform; width: max-content; }
   .post { --lyft: 6vh; width: 320px; margin-right: 90px; display: flex; flex-direction: column; align-items: center; height: 100%; flex: none; }
   .post:nth-child(4n+2) { --lyft: 24vh; }
@@ -101,10 +101,10 @@
   .post:hover .ram img, .post:focus-within .ram img { opacity: 1; filter: grayscale(0) brightness(1); transform: scale(1.03); }
   .post .lina { flex: 1; width: 1px; background: linear-gradient(var(--linje), var(--linje2)); position: relative; min-height: 40px; }
   .post .lina::after { content: ""; position: absolute; left: -2.5px; bottom: -2.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--dis); }
-  .post .namn { height: 118px; padding-top: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .post .namn { height: 134px; padding-top: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
   .post .kurs { font: 400 21px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; }
   .post .kurs .liten { font-size: 13px; vertical-align: .3em; letter-spacing: .08em; }
-  .post .moment { font: 400 10px/1.5 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben2); max-width: 300px; }
+  .post .moment { font: 400 10px/1.6 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--ben2); max-width: 320px; }
   .post .moment .liten { font-size: 7px; vertical-align: .3em; }
   .post .titel { font: italic 300 14px/1.4 var(--sans); color: var(--dis); letter-spacing: .04em; margin-top: -2px; transition: color .5s; }
   .post:hover .titel { color: var(--ben2); }
