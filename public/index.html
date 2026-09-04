@@ -178,20 +178,17 @@
   .duk .bild { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 2; transition: opacity .8s var(--lugn); filter: brightness(.85); }
   .duk.igang .bild { opacity: 0; pointer-events: none; }
   .duk .lock { position: absolute; inset: 0; z-index: 3; }
-  .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .5s; }
+  .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; }
   /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
-  .duk.paus:not(.igang) .stor, .duk.paus.nyss .stor, .duk.paus .lock:hover ~ .stor { opacity: 1; }
-  .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .28); backdrop-filter: blur(3px); transition: background .3s, color .3s, transform .3s var(--lugn), box-shadow .3s, border-color .3s; }
-  .duk .stor svg { width: 15px; height: 15px; fill: currentColor; margin-left: 3px; }
-  /* Återkoppling: hovring fyller ringen, klick ger en puls */
-  .duk.paus .lock { cursor: pointer; }
-  .duk.paus .lock:hover ~ .stor span { background: var(--accent); border-color: var(--accent); color: var(--bg); transform: scale(1.06); box-shadow: 0 0 0 8px rgba(242, 197, 114, .16); }
-  .duk .puls { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; pointer-events: none; }
-  /* Pulsen är täckande och större än YouTubes egen play/paus-blixt i mitten, så bara sidans syns. */
-  .duk .puls span { width: 58px; height: 58px; border-radius: 50%; background: rgba(242, 197, 114, .85); color: var(--bg); display: grid; place-items: center; opacity: 0; }
-  .duk .puls svg { width: 15px; height: 15px; fill: currentColor; }
-  .duk .puls.igang span { animation: puls .6s linear forwards; }
-  @keyframes puls { 0% { opacity: 1 } 50% { opacity: 1 } 100% { opacity: 0 } }
+  .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk .lock:hover ~ .stor { opacity: 1; }
+  .duk .lock { cursor: pointer; }
+  .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .28); backdrop-filter: blur(3px); transition: transform .08s ease-out; }
+  .duk .stor svg { width: 15px; height: 15px; fill: currentColor; }
+  .duk .stor svg.spela-ikon { margin-left: 3px; }
+  /* Mittknappen visar alltid aktuellt läge (play när det är pausat, paus när det spelar) och växlar
+     direkt utan toning. Hovring fyller den, tryck trycker ihop den. */
+  .duk .lock:hover ~ .stor span { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .duk .lock:active ~ .stor span { transform: scale(.88); }
   .styr .knapp { transition: opacity .3s, color .25s, transform .2s var(--lugn); }
   .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
   .styr .knapp:active { transform: scale(.9); }
@@ -294,7 +291,7 @@
     .duk .undertext { font-size: 15px; bottom: 58px; left: 4%; right: 4%; }
     .duk .styr { padding: 20px 6px 4px; }
     .styr .knapp { width: 36px; }
-    .duk .stor span, .duk .puls span { width: 48px; height: 48px; }
+    .duk .stor span { width: 48px; height: 48px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -573,8 +570,7 @@
       <div class="halla"></div>
       <div class="bild" style="${bild ? `background-image:url('${bild}')` : ""}"></div>
       <div class="lock" id="duk-lock" aria-hidden="true"></div>
-      <div class="stor" aria-hidden="true"><span>${IK.spela.replace('class="fyll" ', "")}</span></div>
-      <div class="puls" id="duk-puls" aria-hidden="true"><span></span></div>
+      <div class="stor" aria-hidden="true"><span id="duk-stor">${IK.spela.replace('class="fyll" ', 'class="spela-ikon" ')}</span></div>
       <div class="undertext" id="duk-text" aria-live="off"></div>
       <div class="styr" id="duk-styr">
         <div class="linje" id="duk-linje" role="slider" aria-label="Position i filmen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><div class="fylld" id="duk-fylld"></div><div class="knopp" id="duk-knopp"></div></div>
@@ -593,13 +589,12 @@
     dukEl.classList.add("visa"); clearTimeout(gomTimer);
     gomTimer = setTimeout(() => dukEl.classList.remove("visa"), 2600);
   }
-  let nyssTimer = null, spelarForut = false;
   function uppdatera() {
     if (!aktuell) return;
     const nu = sp.nu(), langd = sp.langd() || aktuell.langd || 0, spelar = sp.spelar();
-    if (spelarForut && !spelar) { dukEl.classList.add("nyss"); clearTimeout(nyssTimer); nyssTimer = setTimeout(() => dukEl.classList.remove("nyss"), 1200); }
+    if (spelarForut !== spelar) visaNyss();
     spelarForut = spelar;
-    dukEl.classList.toggle("paus", !spelar);
+    dukEl.classList.toggle("paus", !spelar); ritaMitt(spelar);
     if (sp.startad()) dukEl.classList.add("igang");
     $("duk-spela").innerHTML = spelar ? IK.pausa : IK.spela; $("duk-spela").setAttribute("aria-label", spelar ? "Pausa" : "Spela");
     $("duk-nu").textContent = tid(Math.floor(nu));
@@ -616,13 +611,18 @@
     if ($("duk-text").textContent !== text) $("duk-text").textContent = text;
     markeraNu(nu);
   }
-  function pulsa(ikon) {
-    const p = $("duk-puls"); if (!p) return;
-    p.querySelector("span").innerHTML = ikon.replace('class="fyll" ', "");
-    p.classList.remove("igang"); void p.offsetWidth; p.classList.add("igang");
+  let nyssTimer = null, spelarForut = false;
+  function ritaMitt(spelar) {
+    const m = $("duk-stor"); if (!m) return;
+    if (m.dataset.lage === String(spelar)) return;
+    m.innerHTML = spelar ? IK.pausa.replace('class="fyll" ', "") : IK.spela.replace('class="fyll" ', 'class="spela-ikon" ');
+    m.dataset.lage = String(spelar);
   }
+  function visaNyss() { dukEl.classList.add("nyss"); clearTimeout(nyssTimer); nyssTimer = setTimeout(() => dukEl.classList.remove("nyss"), 700); }
   function vaxlaSpel() {
-    if (sp.spelar()) { sp.pausa(); pulsa(IK.pausa); } else { sp.spela(); pulsa(IK.spela); }
+    const ska = !sp.spelar();
+    if (ska) sp.spela(); else sp.pausa();
+    ritaMitt(ska); dukEl.classList.toggle("paus", !ska); spelarForut = ska; visaNyss();
     setTimeout(uppdatera, 50);
   }
   function vaxlaText() {
