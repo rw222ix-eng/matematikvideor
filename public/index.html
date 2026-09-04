@@ -509,7 +509,8 @@
   // Ett gränssnitt oavsett källa
   const sp = {
     spelar: () => video ? !video.paused && !video.ended : (yt && yt.getPlayerState ? yt.getPlayerState() === 1 : false),
-    startad: () => video ? video.currentTime > 0 || !video.paused : (yt && yt.getPlayerState ? [1, 2, 3].includes(yt.getPlayerState()) : false),
+    // Omslaget ligger kvar tills filmen verkligen rullar, så YouTubes röda startknapp aldrig syns.
+    startad: () => video ? video.currentTime > 0 || !video.paused : (yt && yt.getPlayerState ? (yt.getPlayerState() === 1 || (yt.getPlayerState() === 2 && yt.getCurrentTime() > 0.5)) : false),
     nu: () => video ? video.currentTime : (yt && yt.getCurrentTime ? yt.getCurrentTime() : 0),
     langd: () => video ? (video.duration || 0) : (yt && yt.getDuration ? yt.getDuration() : 0),
     spela: () => { if (video) video.play().catch(() => {}); else if (yt && yt.playVideo) yt.playVideo(); },
