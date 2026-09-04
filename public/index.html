@@ -29,11 +29,11 @@
 
   /* Filmkorn över allt */
   body::after {
-    content: ""; position: fixed; inset: -40%; z-index: 60; pointer-events: none; opacity: .07;
+    content: ""; position: fixed; inset: -8%; z-index: 60; pointer-events: none; opacity: .07; will-change: transform; contain: strict;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     animation: korn 1.2s steps(5) infinite;
   }
-  @keyframes korn { 0% { transform: translate(0, 0) } 20% { transform: translate(-3%, 2%) } 40% { transform: translate(2%, -4%) } 60% { transform: translate(-4%, -1%) } 80% { transform: translate(3%, 3%) } 100% { transform: translate(0, 0) } }
+  @keyframes korn { 0% { transform: translate(0, 0) } 20% { transform: translate(-2%, 1.5%) } 40% { transform: translate(1.5%, -2.5%) } 60% { transform: translate(-2.5%, -1%) } 80% { transform: translate(2%, 2%) } 100% { transform: translate(0, 0) } }
 
   /* Typografi */
   .etikett { font: 500 11px/1.6 var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--ben2); margin: 0; }
@@ -62,7 +62,7 @@
   /* ── 1. Intro ─────────────────────────────────────────── */
   /* min-height i stället för height: på låga/smala skärmar får introt växa så rubriken inte krockar med logotypen. */
   .intro { position: relative; min-height: 100vh; min-height: 100dvh; overflow: hidden; display: grid; grid-template-rows: minmax(130px, 1fr) auto minmax(150px, 1fr); place-items: center; text-align: center; padding: 0 20px; }
-  .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.62) contrast(1.08); animation: zoom 26s var(--lugn) both; z-index: 0; }
+  .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.62) contrast(1.08); animation: zoom 26s var(--lugn) both; z-index: 0; will-change: transform; }
   @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
   .intro .vinjett { position: absolute; inset: 0; z-index: 1; background:
       radial-gradient(ellipse 70% 60% at 50% 45%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .55) 60%, rgba(23, 20, 20, .95) 100%),
@@ -83,7 +83,7 @@
 
   /* ── 2. Välj en film ──────────────────────────────────── */
   .valj { display: block; position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: var(--bg); }
-  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .38; filter: saturate(.55) brightness(.8); z-index: 0; animation: zoom 40s var(--lugn) both; }
+  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .38; filter: saturate(.55) brightness(.8); z-index: 0; animation: zoom 40s var(--lugn) both; will-change: transform; }
   .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
       radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .5) 60%, rgba(23, 20, 20, .9) 100%),
       linear-gradient(rgba(23, 20, 20, .7), rgba(23, 20, 20, .1) 25%, rgba(23, 20, 20, .35) 60%, rgba(23, 20, 20, .97) 88%); }
@@ -182,7 +182,7 @@
   /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
   .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk.visa .lock:hover ~ .stor { opacity: 1; }
   .duk .lock { cursor: pointer; }
-  .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .28); backdrop-filter: blur(3px); transition: transform .08s ease-out; }
+  .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .45); transition: transform .08s ease-out; }
   .duk .stor svg { width: 15px; height: 15px; fill: currentColor; }
   .duk .stor svg.spela-ikon { margin-left: 3px; }
   /* Mittknappen visar alltid aktuellt läge (play när det är pausat, paus när det spelar) och växlar
@@ -193,7 +193,7 @@
   .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
   .styr .knapp:active { transform: scale(.9); }
   .styr #duk-spela:hover { color: var(--accent); }
-  .duk .undertext { position: absolute; left: 8%; right: 8%; bottom: 66px; z-index: 5; text-align: center; pointer-events: none; font: 400 clamp(16px, 2.3vw, 26px)/1.35 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; color: #F6F1E7; text-shadow: 0 1px 2px #000, 0 0 14px rgba(0, 0, 0, .9); transition: bottom .4s var(--lugn); }
+  .duk .undertext { position: absolute; left: 8%; right: 8%; bottom: 66px; z-index: 5; text-align: center; pointer-events: none; font: 400 clamp(16px, 2.3vw, 26px)/1.35 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; color: #F6F1E7; text-shadow: 0 1px 2px #000, 0 0 10px rgba(0, 0, 0, .85); transition: bottom .4s var(--lugn); }
   .duk .undertext:empty { display: none; }
   .duk.igang:not(.visa):not(.paus) .undertext { bottom: 30px; }
   .duk .styr { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; padding: 28px 18px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); opacity: 0; transition: opacity .5s; }
@@ -203,7 +203,7 @@
   .duk.visa .styr, .duk.paus .styr { pointer-events: auto; }
   .duk .styr { pointer-events: none; }
   .duk.visa .styr, .duk.paus .styr, .duk:has(:focus-visible) .styr { pointer-events: auto; }
-  .duk.igang:not(.visa):not(.paus) { cursor: none; }
+  .duk.igang:not(.visa):not(.paus), .duk.igang:not(.visa):not(.paus) * { cursor: none; }
   .linje { position: relative; height: 16px; cursor: pointer; margin-bottom: 6px; touch-action: none; }
   .linje::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: rgba(236, 230, 216, .35); }
   .linje .fylld { position: absolute; left: 0; top: 7px; height: 1px; background: var(--accent); width: 0; }
@@ -254,7 +254,7 @@
   .upp { position: fixed; right: 28px; bottom: 28px; z-index: 30; display: inline-flex; align-items: center; gap: 12px; color: var(--accent); opacity: 0; transform: translateY(12px); transition: opacity .5s var(--lugn), transform .5s var(--lugn); pointer-events: none; }
   .upp.syns { opacity: 1; transform: none; pointer-events: auto; }
   .upp[hidden] { display: none; }
-  .upp .ring { width: 48px; height: 48px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; background: rgba(23, 20, 20, .7); backdrop-filter: blur(6px); transition: background .3s, color .3s, transform .3s var(--lugn); }
+  .upp .ring { width: 48px; height: 48px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; background: rgba(23, 20, 20, .85); transition: background .3s, color .3s, transform .3s var(--lugn); }
   .upp .ring svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
   .upp .ord { font: 400 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; }
   .upp:hover .ring { background: var(--accent); color: var(--bg); transform: translateY(-3px); }
@@ -612,11 +612,16 @@
     spelarForut = spelar;
     dukEl.classList.toggle("paus", !spelar); ritaMitt(spelar);
     if (sp.startad()) dukEl.classList.add("igang");
-    $("duk-spela").innerHTML = spelar ? IK.pausa : IK.spela; $("duk-spela").setAttribute("aria-label", spelar ? "Pausa" : "Spela");
-    $("duk-nu").textContent = tid(Math.floor(nu));
-    if (langd) { $("duk-langd").textContent = tid(Math.round(langd)); const p = Math.min(100, nu / langd * 100); $("duk-fylld").style.width = p + "%"; $("duk-knopp").style.left = p + "%"; $("duk-linje").setAttribute("aria-valuenow", Math.round(p)); }
-    const tyst = sp.tyst() || sp.volym() === 0;
-    $("duk-ljud").innerHTML = tyst ? IK.ljudAv : IK.ljudPa; $("duk-ljud").setAttribute("aria-label", tyst ? "Ljud på" : "Ljud av");
+    const spelaK = $("duk-spela");
+    if (spelaK.dataset.lage !== String(spelar)) { spelaK.innerHTML = spelar ? IK.pausa : IK.spela; spelaK.setAttribute("aria-label", spelar ? "Pausa" : "Spela"); spelaK.dataset.lage = String(spelar); }
+    const nuText = tid(Math.floor(nu)); const nuEl = $("duk-nu"); if (nuEl.textContent !== nuText) nuEl.textContent = nuText;
+    if (langd) {
+      const lt = tid(Math.round(langd)); const le = $("duk-langd"); if (le.textContent !== lt) le.textContent = lt;
+      const p = (Math.min(100, nu / langd * 100)).toFixed(2) + "%"; const f = $("duk-fylld");
+      if (f.style.width !== p) { f.style.width = p; $("duk-knopp").style.left = p; $("duk-linje").setAttribute("aria-valuenow", Math.round(parseFloat(p))); }
+    }
+    const tyst = sp.tyst() || sp.volym() === 0; const ljudK = $("duk-ljud");
+    if (ljudK.dataset.lage !== String(tyst)) { ljudK.innerHTML = tyst ? IK.ljudAv : IK.ljudPa; ljudK.setAttribute("aria-label", tyst ? "Ljud på" : "Ljud av"); ljudK.dataset.lage = String(tyst); }
     const vr = $("duk-volym"); if (vr && document.activeElement !== vr && !vr.matches(":active")) vr.value = sp.tyst() ? 0 : sp.volym();
     // Undertext ur tal.srt (sekundexakt), annars replikerna
     let text = "";
@@ -766,11 +771,16 @@
     markeraNu(start);
     klocka = setInterval(uppdatera, 200);
   }
+  let nuIndex = -1;
   function markeraNu(s) {
     if (!aktuell) return;
     let i = -1;
     aktuell.repliker.forEach((r, k) => { if (r.t != null && r.t <= s + 0.2) i = k; });
-    $("kapitel").querySelectorAll("li").forEach((li, k) => li.classList.toggle("nu", k === i));
+    if (i === nuIndex) return;
+    const lis = $("kapitel").children;
+    if (lis[nuIndex]) lis[nuIndex].classList.remove("nu");
+    if (lis[i]) lis[i].classList.add("nu");
+    nuIndex = i;
   }
   function hoppa(t, skrivAdress = true) {
     if (!Number.isFinite(t)) return;
@@ -781,7 +791,7 @@
   function stangSpelare() {
     if (klocka) clearInterval(klocka); klocka = null;
     if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
-    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; kapitelKlickat = false; if (uppKnapp) uppKnapp.classList.remove("syns"); yt = null; video = null; aktuell = null;
+    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; nuIndex = -1; kapitelKlickat = false; if (uppKnapp) uppKnapp.classList.remove("syns"); yt = null; video = null; aktuell = null;
   }
   // "Till filmen": syns när spelaren är ur bild efter ett kapitelklick (eller medan filmen spelar).
   const uppKnapp = $("upp");
