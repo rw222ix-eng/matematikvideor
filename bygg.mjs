@@ -66,7 +66,7 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
     omslagRen = `omslag/${v.id}-ren.jpg`;
     execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "58", "--resampleWidth", "720", renKalla, "--out", join(HÄR, "public", omslagRen)], { stdio: "ignore" });
   }
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, undertext };
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond (avmättas och

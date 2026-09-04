@@ -181,17 +181,17 @@
   .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .5s; }
   /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
   .duk.paus:not(.igang) .stor, .duk.paus.nyss .stor, .duk.paus .lock:hover ~ .stor { opacity: 1; }
-  .duk .stor span { width: 84px; height: 84px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .35); backdrop-filter: blur(4px); transition: background .3s, color .3s, transform .3s var(--lugn), box-shadow .3s; }
-  .duk .stor svg { width: 22px; height: 22px; fill: currentColor; margin-left: 4px; }
+  .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .28); backdrop-filter: blur(3px); transition: background .3s, color .3s, transform .3s var(--lugn), box-shadow .3s, border-color .3s; }
+  .duk .stor svg { width: 15px; height: 15px; fill: currentColor; margin-left: 3px; }
   /* Återkoppling: hovring fyller ringen, klick ger en puls */
   .duk.paus .lock { cursor: pointer; }
-  .duk.paus .lock:hover ~ .stor span { background: var(--accent); color: var(--bg); transform: scale(1.08); box-shadow: 0 0 0 10px rgba(242, 197, 114, .18), 0 10px 40px -10px rgba(0, 0, 0, .8); }
+  .duk.paus .lock:hover ~ .stor span { background: var(--accent); border-color: var(--accent); color: var(--bg); transform: scale(1.06); box-shadow: 0 0 0 8px rgba(242, 197, 114, .16); }
   .duk .puls { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; pointer-events: none; }
   /* Pulsen är täckande och större än YouTubes egen play/paus-blixt i mitten, så bara sidans syns. */
-  .duk .puls span { width: 100px; height: 100px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; opacity: 0; box-shadow: 0 0 0 14px rgba(23, 20, 20, .55); }
-  .duk .puls svg { width: 30px; height: 30px; fill: currentColor; }
-  .duk .puls.igang span { animation: puls .75s linear forwards; }
-  @keyframes puls { 0% { opacity: 1 } 65% { opacity: 1 } 100% { opacity: 0 } }
+  .duk .puls span { width: 58px; height: 58px; border-radius: 50%; background: rgba(242, 197, 114, .85); color: var(--bg); display: grid; place-items: center; opacity: 0; }
+  .duk .puls svg { width: 15px; height: 15px; fill: currentColor; }
+  .duk .puls.igang span { animation: puls .6s linear forwards; }
+  @keyframes puls { 0% { opacity: 1 } 50% { opacity: 1 } 100% { opacity: 0 } }
   .styr .knapp { transition: opacity .3s, color .25s, transform .2s var(--lugn); }
   .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
   .styr .knapp:active { transform: scale(.9); }
@@ -294,7 +294,7 @@
     .duk .undertext { font-size: 15px; bottom: 58px; left: 4%; right: 4%; }
     .duk .styr { padding: 20px 6px 4px; }
     .styr .knapp { width: 36px; }
-    .duk .stor span { width: 64px; height: 64px; }
+    .duk .stor span, .duk .puls span { width: 48px; height: 48px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -771,7 +771,9 @@
   }
   new IntersectionObserver((poster) => { dukSyns = poster[0].isIntersecting; ritaUpp(); }, { threshold: 0.25 }).observe(dukEl);
   function tillFilmen() {
-    const mal = Math.max(0, dukEl.getBoundingClientRect().top + window.scrollY - 24);
+    // Centrera spelaren i fönstret (får den inte plats: lägg överkanten strax under toppraden).
+    const r = dukEl.getBoundingClientRect();
+    const mal = Math.max(0, r.top + window.scrollY - (r.height < window.innerHeight - 120 ? (window.innerHeight - r.height) / 2 : 90));
     const fran = window.scrollY;
     if (lugnt || !("scrollBehavior" in document.documentElement.style)) { window.scrollTo(0, mal); return; }
     window.scrollTo({ top: mal, behavior: "smooth" });
