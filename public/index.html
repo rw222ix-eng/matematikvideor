@@ -213,15 +213,16 @@
   .styr .knapp[aria-pressed="true"] .cc { background: var(--ben); color: #171414; }
   .styr .tidvis { font: 400 11px/1 var(--sans); letter-spacing: .18em; color: var(--ben2); font-variant-numeric: tabular-nums; margin-left: 8px; white-space: nowrap; }
   .styr .mellan { flex: 1; }
-  .styr .ljud { display: inline-flex; align-items: center; }
-  .styr .volym { -webkit-appearance: none; appearance: none; width: 0; height: 24px; margin: 0; padding: 0; background: none; opacity: 0; transition: width .35s var(--lugn), opacity .35s, margin .35s; cursor: pointer; }
-  .styr .ljud:hover .volym, .styr .ljud:focus-within .volym, .styr .volym.oppen { width: 84px; opacity: 1; margin-right: 10px; }
-  .styr .volym::-webkit-slider-runnable-track { height: 1px; background: rgba(236, 230, 216, .45); }
+  /* Volymreglaget svävar ovanför högtalaren, så inget i raden flyttar sig när det fälls in eller ut. */
+  .styr .ljud { display: inline-flex; align-items: center; position: relative; }
+  .styr .volym { -webkit-appearance: none; appearance: none; position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%); width: 110px; height: 30px; margin: 0; padding: 0 12px; box-sizing: border-box; background: rgba(23, 20, 20, .88); border: 1px solid var(--linje2); border-radius: 15px; opacity: 0; pointer-events: none; transition: opacity .15s; cursor: pointer; }
+  .styr .ljud:hover .volym, .styr .ljud:focus-within .volym, .styr .volym.oppen { opacity: 1; pointer-events: auto; }
+  .styr .volym::-webkit-slider-runnable-track { height: 1px; background: rgba(236, 230, 216, .45); margin-top: 0; }
   .styr .volym::-moz-range-track { height: 1px; background: rgba(236, 230, 216, .45); }
   .styr .volym::-webkit-slider-thumb { -webkit-appearance: none; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); margin-top: -5px; border: 0; }
   .styr .volym::-moz-range-thumb { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 0; }
   .styr .volym:focus-visible { outline: none; }
-  @media (max-width: 700px) { .styr .ljud:hover .volym, .styr .ljud:focus-within .volym { width: 0; opacity: 0; margin: 0; } .styr .volym.oppen { width: 70px; opacity: 1; margin-right: 6px; } }
+  @media (max-width: 700px) { .styr .ljud:hover .volym, .styr .ljud:focus-within .volym { opacity: 0; pointer-events: none; } .styr .volym.oppen { opacity: 1; pointer-events: auto; } }
   .styr .dolj { display: none; }
   .duk:fullscreen, .duk.helskarm { aspect-ratio: auto; width: 100vw; height: 100vh; height: 100dvh; box-shadow: none; background: #000; }
   .duk.helskarm { position: fixed; inset: 0; z-index: 80; }
