@@ -37,7 +37,8 @@
 
   /* Typografi */
   .etikett { font: 500 11px/1.6 var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--ben2); margin: 0; }
-  .skrift { font: 400 clamp(54px, 9.5vw, 118px)/1.02 var(--skrift); letter-spacing: .005em; color: var(--ben); margin: 0; text-shadow: 0 2px 30px rgba(0, 0, 0, .5); }
+  /* Skrivstilens svansar (t.ex. &-tecknet) sticker ut utanför radrutan — ge dem plats så inget klipps. */
+  .skrift { font: 400 clamp(54px, 9.5vw, 118px)/1.15 var(--skrift); letter-spacing: .005em; color: var(--ben); margin: 0; padding: 0 .25em; overflow: visible; text-shadow: 0 2px 30px rgba(0, 0, 0, .5); }
   .brod { font-weight: 300; color: var(--ben2); font-size: 17px; line-height: 1.85; }
 
   /* Vyer */
