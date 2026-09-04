@@ -461,8 +461,14 @@
     $("hint").classList.toggle("borta", x > 40);
     $("aterstall").classList.toggle("syns", x > 40);
   }
+  let malX = null; // sätts när tidslinjen ska glida till en bestämd punkt (t.ex. hela vägen till början)
   function loop() {
     if (lugnt) { x = Math.min(maxX(), Math.max(0, mal)); rita(); rullar = false; return; }
+    if (malX != null) {
+      x += (malX - x) * 0.14;
+      if (Math.abs(malX - x) < 0.5) { x = malX; malX = null; vx = 0; rita(); rullar = false; return; }
+      rita(); requestAnimationFrame(loop); return;
+    }
     x += vx; vx *= 0.9;
     if (x < 0) { x = 0; vx = 0; } if (x > maxX()) { x = maxX(); vx = 0; }
     rita();
@@ -470,6 +476,7 @@
   }
   function knuffa(d) {
     if (smal()) return;
+    malX = null;
     if (lugnt) { mal = x + d; } else { vx += d * 0.12; }
     if (!rullar) { rullar = true; requestAnimationFrame(loop); }
   }
@@ -481,7 +488,7 @@
   let pekX = null, pekStartX = 0;
   // Pekaren tas i beslag först när man verkligen drar — annars hamnar klicket
   // på tidslinjen i stället för på omslaget.
-  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || e.button !== 0) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; });
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || e.button !== 0) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; malX = null; });
   tidslinje.addEventListener("pointermove", (e) => {
     if (pekX == null) return;
     if (!drog) { if (Math.abs(e.clientX - pekStartX) <= 6) return; drog = true; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); }
@@ -491,7 +498,10 @@
   const slapp = () => { if (pekX == null) return; pekX = null; tidslinje.classList.remove("drar"); if (!lugnt && Math.abs(vx) > 0.5 && !rullar) { rullar = true; requestAnimationFrame(loop); } };
   tidslinje.addEventListener("pointerup", slapp); tidslinje.addEventListener("pointercancel", slapp);
   tidslinje.addEventListener("click", (e) => { if (drog) { e.stopPropagation(); e.preventDefault(); } drog = false; }, true);
-  $("aterstall").addEventListener("click", () => { if (lugnt) { mal = 0; knuffa(0); } else { vx = -Math.max(6, x / 18); if (!rullar) { rullar = true; requestAnimationFrame(loop); } } });
+  $("aterstall").addEventListener("click", () => {
+    if (lugnt) { mal = 0; x = 0; rita(); return; }
+    malX = 0; vx = 0; if (!rullar) { rullar = true; requestAnimationFrame(loop); }
+  });
   window.addEventListener("resize", () => { x = Math.min(x, maxX()); rita(); });
   document.addEventListener("keydown", (e) => {
     if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
@@ -651,15 +661,16 @@
     if (dukEl.classList.contains("helskarm")) { cssHelskarm(false); return; }
     if (document.fullscreenElement || document.webkitFullscreenElement) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
     const beg = dukEl.requestFullscreen || dukEl.webkitRequestFullscreen;
-    let svar = false;
+    let avgjort = false; // bara ett beslut per försök — ett sent nej från webbläsaren får inte öppna reserven i efterhand
+    const reserv = () => { if (avgjort) return; avgjort = true; if (!document.fullscreenElement && !document.webkitFullscreenElement) cssHelskarm(true); };
     if (beg) {
       try {
         const p = beg.call(dukEl);
-        if (p && p.then) p.then(() => { svar = true; }, () => { svar = true; if (!document.fullscreenElement) cssHelskarm(true); });
-      } catch (e) { svar = true; cssHelskarm(true); return; }
-    } else { cssHelskarm(true); return; }
-    // Inget svar (t.ex. inbäddad webbläsare): ta reserven.
-    setTimeout(() => { if (!svar && !document.fullscreenElement && !document.webkitFullscreenElement) cssHelskarm(true); }, 500);
+        if (p && p.then) p.then(() => { avgjort = true; }, reserv);
+      } catch (e) { reserv(); return; }
+    } else { reserv(); return; }
+    // Inget svar inom en halv sekund (t.ex. inbäddad webbläsare): ta reserven.
+    setTimeout(reserv, 500);
   }
   ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, ritaHelKnapp));
   // Klick och drag i spelarrutan
