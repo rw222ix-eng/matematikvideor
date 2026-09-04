@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matematikvideor med Rickard</title>
+<meta name="description" content="Korta filmer om matematik på gymnasiet, berättade genom historien. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23F6F1E7' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23F6F1E7'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F6F1E7'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --natt: #0B1420; --natt2: #111D2E; --natt3: #18273B; --linje: #2A3A50;
+    --kram: #F6F1E7; --kram2: #C9C3B6; --dis: #8E98A8; --kobolt: #7FA6FF; --lag: #F2C572;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body { margin: 0; background: var(--natt); color: var(--kram); font: 18px/1.5 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; }
+  a { color: var(--kobolt); }
+  header { padding: 40px 20px 8px; max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 2rem; font-weight: 700; margin: 0 0 4px; letter-spacing: 0.01em; }
+  header p { margin: 0; color: var(--kram2); }
+  .sok { position: sticky; top: 0; z-index: 5; background: linear-gradient(var(--natt) 85%, transparent); padding: 16px 20px 24px; }
+  .sok > div { max-width: 1080px; margin: 0 auto; position: relative; }
+  .sok input { width: 100%; font: inherit; font-size: 1.1rem; padding: 14px 48px 14px 18px; border-radius: 12px; border: 1px solid var(--linje); background: var(--natt2); color: var(--kram); outline: none; }
+  .sok input:focus { border-color: var(--kobolt); }
+  .sok input::placeholder { color: var(--dis); }
+  .sok .x { position: absolute; right: 8px; top: 6px; background: none; border: 0; color: var(--dis); font-size: 1.6rem; cursor: pointer; padding: 6px 10px; display: none; }
+  .sok .x.syns { display: block; }
+  main { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+  .status { color: var(--dis); margin: 0 0 16px; }
+  .rutnat { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+  .kort { background: var(--natt2); border: 1px solid var(--linje); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .kort .bild { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--natt3); cursor: pointer; border: 0; padding: 0; }
+  .kort .bild.tom { display: grid; place-items: center; color: var(--dis); font-style: italic; }
+  .kort .text { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .kort h2 { margin: 0; font-size: 1.25rem; }
+  .kort h2 button { all: unset; cursor: pointer; }
+  .kort h2 button:hover { color: var(--kobolt); }
+  .kurs { color: var(--lag); font-size: 0.95rem; }
+  .moment { color: var(--kram2); }
+  .begrepp { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .begrepp span { font-size: 0.85rem; color: var(--kram2); border: 1px solid var(--linje); border-radius: 999px; padding: 2px 10px; }
+  .traffar { margin: 6px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--linje); }
+  .traffar li { padding: 8px 0; border-bottom: 1px dashed var(--linje); font-size: 0.95rem; }
+  .traffar button { all: unset; cursor: pointer; display: flex; gap: 10px; align-items: baseline; }
+  .traffar button:hover .snutt { color: var(--kram); }
+  .tid { color: var(--kobolt); font-variant-numeric: tabular-nums; flex: none; min-width: 3.2em; }
+  .snutt { color: var(--kram2); }
+  mark { background: none; color: var(--lag); font-weight: 700; }
+  .snart { color: var(--dis); font-style: italic; font-size: 0.95rem; }
+  /* Spelaren */
+  .spelare { position: fixed; inset: 0; background: var(--natt); z-index: 10; display: none; overflow: auto; }
+  .spelare.oppen { display: block; }
+  .spelare .inre { max-width: 1080px; margin: 0 auto; padding: 20px; }
+  .spelare .topp { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; }
+  .spelare h2 { margin: 0; font-size: 1.5rem; }
+  .spelare .stang { all: unset; cursor: pointer; color: var(--kram2); font-size: 1.1rem; padding: 6px 10px; }
+  .spelare .stang:hover { color: var(--kram); }
+  .duk { position: relative; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; }
+  .duk iframe, .duk video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .duk .tom { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: var(--kram2); padding: 24px; }
+  .kapitel { margin: 18px 0 0; padding: 0; list-style: none; columns: 2; column-gap: 32px; }
+  .kapitel li { break-inside: avoid; padding: 5px 0; font-size: 0.95rem; }
+  .kapitel button { all: unset; cursor: pointer; display: flex; gap: 10px; align-items: baseline; }
+  .kapitel button:hover .snutt { color: var(--kram); }
+  .kapitel .nu .snutt { color: var(--lag); }
+  @media (max-width: 700px) { .kapitel { columns: 1; } h1 { font-size: 1.6rem; } body { font-size: 17px; } }
+  footer { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; color: var(--dis); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Matematikvideor med Rickard</h1>
+  <p>Korta filmer där matten kommer ur en verklig historia. Sök på det du tycker är svårt, så hittar du stället i filmen där det förklaras.</p>
+</header>
+<div class="sok"><div>
+  <input id="sok" type="search" placeholder="Sök: exponent, tredje roten, Mars, bråk i exponenten …" autocomplete="off" aria-label="Sök i videorna">
+  <button class="x" id="rensa" aria-label="Rensa">×</button>
+</div></div>
+<main>
+  <p class="status" id="status"></p>
+  <div class="rutnat" id="lista"></div>
+</main>
+<footer>Textning finns i spelaren (cc). Alla filmer är gjorda av Rickard Winterhall.</footer>
+
+<div class="spelare" id="spelare" role="dialog" aria-modal="true">
+  <div class="inre">
+    <div class="topp"><h2 id="sp-titel"></h2><button class="stang" id="stang">Stäng ✕</button></div>
+    <div class="duk" id="duk"></div>
+    <p id="sp-besk" class="moment"></p>
+    <ol class="kapitel" id="kapitel"></ol>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const $ = (id) => document.getElementById(id);
+  const data = await (await fetch("videor.json", { cache: "no-cache" })).json();
+  const videor = data.videor;
+
+  const norm = (s) => s.toLowerCase().replace(/[.,!?:;"“”()]/g, " ").replace(/\s+/g, " ").trim();
+  const tid = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  const markera = (text, ord) => {
+    let ut = esc(text);
+    for (const o of ord) if (o.length > 1) ut = ut.replace(new RegExp(`(${o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"), "<mark>$1</mark>");
+    return ut;
+  };
+
+  // ── Sökning: videor på titel/kurs/moment/begrepp, repliker på orden ──
+  function sok(fraga) {
+    const ord = norm(fraga).split(" ").filter(Boolean);
+    return videor.map((v) => {
+      const huvud = norm([v.titel, v.kurs, v.moment, v.beskrivning, ...v.begrepp].join(" "));
+      const huvudTraff = ord.length > 0 && ord.every((o) => huvud.includes(o));
+      const traffar = ord.length ? v.repliker.filter((r) => { const t = norm(r.text); return ord.every((o) => t.includes(o)); }) : [];
+      return { v, huvudTraff, traffar, visa: !ord.length || huvudTraff || traffar.length > 0 };
+    }).filter((x) => x.visa);
+  }
+
+  function rita(fraga) {
+    const res = sok(fraga);
+    const ord = norm(fraga).split(" ").filter(Boolean);
+    $("lista").innerHTML = res.map(({ v, traffar }) => `
+      <article class="kort" data-id="${v.id}">
+        ${v.omslag ? `<button class="bild" style="background-image:url('${v.omslag}');background-size:cover" data-spela="${v.id}" aria-label="Spela ${esc(v.titel)}"></button>`
+                   : `<div class="bild tom">omslag kommer</div>`}
+        <div class="text">
+          <h2><button data-spela="${v.id}">${esc(v.titel)}</button></h2>
+          <div class="kurs">${esc(v.kurs)}${v.langd ? ` · ${tid(v.langd)} min` : ""}</div>
+          <div class="moment">${esc(v.moment)}</div>
+          <div class="begrepp">${v.begrepp.map((b) => `<span>${esc(b)}</span>`).join("")}</div>
+          ${!v.youtube ? `<div class="snart">Filmen publiceras snart — sökningen i det som sägs fungerar redan.</div>` : ""}
+          ${traffar.length ? `<ul class="traffar">${traffar.slice(0, 6).map((r) => `<li><button data-spela="${v.id}" data-t="${r.t ?? ""}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${markera(r.text, ord)}</span></button></li>`).join("")}${traffar.length > 6 ? `<li class="snart">… och ${traffar.length - 6} ställen till</li>` : ""}</ul>` : ""}
+        </div>
+      </article>`).join("");
+    $("status").textContent = ord.length
+      ? (res.length ? `${res.length} film${res.length > 1 ? "er" : ""} · ${res.reduce((a, x) => a + x.traffar.length, 0)} ställen där det sägs` : "Inget hittat. Prova ett annat ord.")
+      : `${videor.length} film${videor.length > 1 ? "er" : ""}`;
+    $("rensa").classList.toggle("syns", fraga.length > 0);
+  }
+
+  // ── Spelaren: YouTube (IFrame API) eller direktfil i full kvalitet ──
+  let yt = null, video = null, aktuell = null;
+  function ytApi() {
+    return new Promise((res) => {
+      if (window.YT && window.YT.Player) return res();
+      window.onYouTubeIframeAPIReady = () => res();
+      const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+    });
+  }
+  async function oppna(id, t) {
+    const v = videor.find((x) => x.id === id); if (!v) return;
+    aktuell = v;
+    $("sp-titel").textContent = v.titel;
+    $("sp-besk").textContent = v.beskrivning;
+    $("kapitel").innerHTML = v.repliker.map((r, i) => `<li><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join("");
+    $("spelare").classList.add("oppen");
+    document.body.style.overflow = "hidden";
+    const duk = $("duk"); duk.innerHTML = ""; yt = null; video = null;
+    const start = Number.isFinite(t) ? t : 0;
+    if (v.fil) {
+      video = document.createElement("video"); video.controls = true; video.playsInline = true; video.preload = "metadata"; video.src = v.fil;
+      if (v.textning) { const tr = document.createElement("track"); tr.kind = "subtitles"; tr.srclang = "sv"; tr.label = "Svenska"; tr.src = v.textning; video.appendChild(tr); }
+      duk.appendChild(video); video.currentTime = start; video.play().catch(() => {});
+    } else if (v.youtube) {
+      await ytApi();
+      const holder = document.createElement("div"); duk.appendChild(holder);
+      yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start, autoplay: 1, rel: 0, modestbranding: 1, cc_load_policy: 0, hl: "sv" } });
+    } else {
+      duk.innerHTML = `<div class="tom">Filmen publiceras snart.<br>Kapitlen nedan visar vad som sägs, minut för minut.</div>`;
+    }
+    location.hash = `${id}${start ? `&t=${start}` : ""}`;
+  }
+  function hoppa(t) {
+    if (!Number.isFinite(t)) return;
+    if (video) { video.currentTime = t; video.play().catch(() => {}); }
+    else if (yt && yt.seekTo) { yt.seekTo(t, true); yt.playVideo(); }
+    if (aktuell) history.replaceState(null, "", `#${aktuell.id}&t=${t}`);
+  }
+  function stang() {
+    $("spelare").classList.remove("oppen"); document.body.style.overflow = "";
+    $("duk").innerHTML = ""; yt = null; video = null; aktuell = null;
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-spela]");
+    if (b) { const t = b.dataset.t !== "" && b.dataset.t != null ? Number(b.dataset.t) : undefined; oppna(b.dataset.spela, t); return; }
+    const k = e.target.closest("#kapitel [data-t]");
+    if (k) { hoppa(Number(k.dataset.t)); return; }
+  });
+  $("stang").addEventListener("click", stang);
+  $("spelare").addEventListener("click", (e) => { if (e.target === $("spelare")) stang(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("spelare").classList.contains("oppen")) stang(); });
+  $("sok").addEventListener("input", (e) => rita(e.target.value));
+  $("rensa").addEventListener("click", () => { $("sok").value = ""; rita(""); $("sok").focus(); });
+
+  rita("");
+  // Djuplänk: #kepler-och-planeterna&t=123
+  const m = location.hash.match(/^#([\w-]+)(?:&t=(\d+))?/);
+  if (m) oppna(m[1], m[2] ? Number(m[2]) : undefined);
+})();
+</script>
+</body>
+</html>

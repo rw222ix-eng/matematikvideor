@@ -1,0 +1,6 @@
+{
+  "headers": [
+    { "source": "/videor.json", "headers": [{ "key": "Cache-Control", "value": "public, max-age=300" }] },
+    { "source": "/omslag/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }] }
+  ]
+}
