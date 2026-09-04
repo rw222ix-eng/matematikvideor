@@ -10,8 +10,14 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   med uppmätta tider) och kopierar omslagen till `public/omslag/`.
 - `public/` — det som publiceras: `index.html` + data.
 
-Publicera: bygg, och deploya `public/` till Vercel-projektet `matematikvideor` (Fable gör det via
-Vercel-kopplingen; alternativt `vercel --prod` i den här mappen).
+Publicera: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
+`rw222ix-eng/matematikvideor`. Arbetsflödet `.github/workflows/pages.yml` publicerar `public/` vid
+varje push till `main`, klart på ~1 min. Alltså: ändra register.json → `node bygg.mjs` → commit →
+`git push`. (Vercel-kopplingen saknade rättighet att skapa projekt 2026-09-04; vill man ha Vercel:
+importera repot i Vercels instrumentpanel.)
+
+Ny video: lägg en post i `register.json` (youtube-id från den olistade uppladdningen), kör
+`node bygg.mjs`, commit, push.
 
 Kvalitet: exportera i högsta bitrate ur Diffusion Studio; ladda upp till YouTube som 2160p
 (uppskalad 1080-master) så hamnar filmen i YouTubes högsta kvalitetsskikt. Vill man ha originalfilen
