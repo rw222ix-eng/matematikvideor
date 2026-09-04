@@ -15,6 +15,10 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
   förstoringsglaset (eller tangenten `/`). Adresser: `#filmer`, `#<id>`, `#<id>&t=<sekund>`.
   Typsnitt från Google Fonts (Jost + Pinyon Script); en accentfärg (`--accent`).
+- Spelaren är sidans egen: YouTube-inbäddningen körs med `controls=0` och styrs via IFrame API
+  (spela/pausa, tidslinje, ljud, helskärm, tangenterna mellanslag/k, ←/→ 5 s, j/l 10 s, f, c, m).
+  Undertexterna ritas av sidan ur projektets `assets/tal.srt` (fältet `undertext` i videor.json,
+  Charter som i filmen); YouTubes egna textremsor stängs av. Valet textning på/av sparas i webbläsaren.
 
 Publicera: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
 `rw222ix-eng/matematikvideor`. Arbetsflödet `.github/workflows/pages.yml` publicerar `public/` vid
