@@ -24,7 +24,8 @@ mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
 
-const videor = register.map((v) => {
+// Tidslinjen är kronologisk: `ar` i registret är året berättelsen utspelar sig.
+const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map((v) => {
   const projekt = resolve(HÄR, v.projekt);
   const tiderFil = join(projekt, "assets", "tal-tider.json");
   const manusFil = join(projekt, "assets", "manus.txt");
@@ -37,15 +38,30 @@ const videor = register.map((v) => {
   } else if (existsSync(manusFil)) {
     repliker = readFileSync(manusFil, "utf8").split("\n").filter((r) => r.trim()).map((r) => ({ t: null, text: taggfri(r) }));
   }
-  // Omslaget: 1280 px bred jpeg (~200 kB) i stället för 3 MB png — sidan ska
+  // Omslaget: 720 px bred jpeg (~30 kB) i stället för 3 MB png — sidan ska
   // öppnas snabbt på mobil. sips finns på macOS.
   let omslag = null;
   if (v.omslag && existsSync(resolve(HÄR, v.omslag))) {
     omslag = `omslag/${v.id}.jpg`;
-    execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "58", "--resampleWidth", "400", resolve(HÄR, v.omslag), "--out", join(HÄR, "public", omslag)], { stdio: "ignore" });
+    execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "58", "--resampleWidth", "720", resolve(HÄR, v.omslag), "--out", join(HÄR, "public", omslag)], { stdio: "ignore" });
   }
-  return { id: v.id, titel: v.titel, kurs: v.kurs, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, repliker };
+  // Finns omslaget även utan titel (omslag-utan-titel.png bredvid) används det
+  // på sidan — titeln står ändå i text under bilden.
+  let omslagRen = null;
+  const renKalla = v.omslag ? resolve(HÄR, dirname(v.omslag), "omslag-utan-titel.png") : null;
+  if (renKalla && existsSync(renKalla)) {
+    omslagRen = `omslag/${v.id}-ren.jpg`;
+    execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "58", "--resampleWidth", "720", renKalla, "--out", join(HÄR, "public", omslagRen)], { stdio: "ignore" });
+  }
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker };
 });
+
+// Introbilden: Kepler-omslaget utan titel som helskärmsfond (avmättas och
+// mörkas i CSS). 1600 px bred, ~55 kB.
+const INTRO = resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png");
+if (existsSync(INTRO)) {
+  execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "42", "--resampleWidth", "1600", INTRO, "--out", join(HÄR, "public", "omslag", "intro.jpg")], { stdio: "ignore" });
+}
 
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);

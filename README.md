@@ -3,12 +3,18 @@
 Statisk webbsida där eleverna hittar alla matematikvideor och kan söka i det som sägs, med hopp
 direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Vercel.
 
-- `register.json` — en post per video: titel, kurs, moment, begrepp, beskrivning, sökväg till
-  projektet, `youtube` (video-id, tomt tills filmen är uppladdad), `omslag`. Valfritt `fil`
+- `register.json` — en post per video: titel, `ar` (året berättelsen utspelar sig; tidslinjen
+  sorteras kronologiskt efter det), kurs, moment, begrepp, beskrivning, sökväg till projektet, `youtube` (video-id, tomt tills filmen är uppladdad), `omslag`. Valfritt `fil`
   (direktlänk till mp4 i full kvalitet — spelas då i stället för YouTube) och `textning` (vtt).
 - `node bygg.mjs` — bygger `public/videor.json` ur projektens `assets/tal-tider.json` (replikerna
-  med uppmätta tider) och kopierar omslagen till `public/omslag/`.
-- `public/` — det som publiceras: `index.html` + data.
+  med uppmätta tider) och kopierar omslagen till `public/omslag/` (720 px jpeg; finns
+  `omslag-utan-titel.png` bredvid omslaget blir den `<id>-ren.jpg` och används på sidan, eftersom
+  titeln står i text). Introbilden `public/omslag/intro.jpg` görs av Kepler-omslaget utan titel.
+- `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
+  stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
+  rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
+  förstoringsglaset (eller tangenten `/`). Adresser: `#filmer`, `#<id>`, `#<id>&t=<sekund>`.
+  Typsnitt från Google Fonts (Jost + Pinyon Script); en accentfärg (`--accent`).
 
 Publicera: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
 `rw222ix-eng/matematikvideor`. Arbetsflödet `.github/workflows/pages.yml` publicerar `public/` vid

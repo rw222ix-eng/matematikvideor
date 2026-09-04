@@ -2,92 +2,305 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor med Rickard</title>
 <meta name="description" content="Korta filmer om matematik på gymnasiet, berättade genom historien. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23F6F1E7' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23F6F1E7'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F6F1E7'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#171414">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
   :root {
-    --natt: #0B1420; --natt2: #111D2E; --natt3: #18273B; --linje: #2A3A50;
-    --kram: #F6F1E7; --kram2: #C9C3B6; --dis: #8E98A8; --kobolt: #7FA6FF; --lag: #F2C572;
+    --bg: #171414; --bg2: #201c1c; --ben: #ECE6D8; --ben2: #B5AE9F; --dis: #7A7369;
+    --linje: rgba(236, 230, 216, 0.22); --linje2: rgba(236, 230, 216, 0.1); --accent: #F2C572;
+    --sans: "Jost", "Josefin Sans", "Futura", "Avenir Next", "Helvetica Neue", sans-serif;
+    --skrift: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
+    --ton: 1s; --lugn: cubic-bezier(.22, .61, .36, 1);
   }
   * { box-sizing: border-box; }
-  html { color-scheme: dark; }
-  body { margin: 0; background: var(--natt); color: var(--kram); font: 18px/1.5 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; }
-  a { color: var(--kobolt); }
-  header { padding: 40px 20px 8px; max-width: 1080px; margin: 0 auto; }
-  h1 { font-size: 2rem; font-weight: 700; margin: 0 0 4px; letter-spacing: 0.01em; }
-  header p { margin: 0; color: var(--kram2); }
-  .sok { position: sticky; top: 0; z-index: 5; background: linear-gradient(var(--natt) 85%, transparent); padding: 16px 20px 24px; }
-  .sok > div { max-width: 1080px; margin: 0 auto; position: relative; }
-  .sok input { width: 100%; font: inherit; font-size: 1.1rem; padding: 14px 48px 14px 18px; border-radius: 12px; border: 1px solid var(--linje); background: var(--natt2); color: var(--kram); outline: none; }
-  .sok input:focus { border-color: var(--kobolt); }
+  html { color-scheme: dark; background: var(--bg); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; min-height: 100dvh; background: var(--bg); color: var(--ben); font: 300 17px/1.7 var(--sans); overflow-x: hidden; }
+  body.last { overflow: hidden; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  :focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+  img { display: block; }
+
+  /* Filmkorn över allt */
+  body::after {
+    content: ""; position: fixed; inset: -40%; z-index: 60; pointer-events: none; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: korn 1.2s steps(5) infinite;
+  }
+  @keyframes korn { 0% { transform: translate(0, 0) } 20% { transform: translate(-3%, 2%) } 40% { transform: translate(2%, -4%) } 60% { transform: translate(-4%, -1%) } 80% { transform: translate(3%, 3%) } 100% { transform: translate(0, 0) } }
+
+  /* Typografi */
+  .etikett { font: 500 11px/1.6 var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--ben2); margin: 0; }
+  .etikett .liten { font-size: 8px; letter-spacing: .3em; vertical-align: .25em; }
+  .skrift { font: 400 clamp(54px, 9.5vw, 118px)/1.02 var(--skrift); letter-spacing: .005em; color: var(--ben); margin: 0; text-shadow: 0 2px 30px rgba(0, 0, 0, .5); }
+  .brod { font-weight: 300; color: var(--ben2); font-size: 17px; line-height: 1.85; }
+
+  /* Vyer */
+  .vy:not(.aktiv) { display: none; }
+  .vy.aktiv.in { animation: ton var(--ton) var(--lugn) both; }
+  @keyframes ton { from { opacity: 0 } to { opacity: 1 } }
+
+  /* Toppraden med logotypen */
+  .topp { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 28px 32px; }
+  .logo { display: inline-flex; align-items: center; gap: 14px; opacity: .92; }
+  .logo svg { width: 42px; height: 42px; flex: none; }
+  .logo .streck { width: 1px; height: 38px; background: var(--linje); }
+  .logo .ord { font: 400 11px/1.5 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben); }
+  .logo .ord small { display: block; font-size: 9px; letter-spacing: .3em; color: var(--ben2); }
+  .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
+  .ikon:hover { color: var(--ben); }
+  .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
+  .topp .hoger { display: flex; align-items: center; gap: 4px; }
+
+  /* ── 1. Intro ─────────────────────────────────────────── */
+  .intro { position: relative; height: 100vh; height: 100dvh; overflow: hidden; display: grid; grid-template-rows: 1fr auto 1fr; place-items: center; text-align: center; padding: 0 20px; }
+  .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.62) contrast(1.08); animation: zoom 26s var(--lugn) both; z-index: 0; }
+  @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
+  .intro .vinjett { position: absolute; inset: 0; z-index: 1; background:
+      radial-gradient(ellipse 70% 60% at 50% 45%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .55) 60%, rgba(23, 20, 20, .95) 100%),
+      linear-gradient(rgba(23, 20, 20, .55), rgba(23, 20, 20, 0) 30%, rgba(23, 20, 20, 0) 65%, rgba(23, 20, 20, .8)); }
+  .intro .topp { justify-content: center; }
+  .intro .mitt { position: relative; z-index: 2; grid-row: 2; max-width: 760px; }
+  .intro .ingress { font: 300 clamp(16px, 1.6vw, 19px)/1.8 var(--sans); color: var(--ben2); margin: 30px auto 0; max-width: 560px; }
+  .intro .knapp { position: relative; z-index: 2; grid-row: 3; align-self: end; margin-bottom: clamp(36px, 8vh, 80px); display: inline-flex; align-items: center; gap: 16px; font: 400 15px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .intro .knapp .ring { width: 46px; height: 46px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; transition: background .5s, color .5s; }
+  .intro .knapp .ring svg { width: 12px; height: 12px; fill: currentColor; margin-left: 2px; }
+  .intro .knapp:hover .ring { background: var(--accent); color: var(--bg); }
+  .intro .fram { opacity: 0; animation: fram 1.4s var(--lugn) forwards; }
+  .intro .topp.fram { animation-delay: .4s; }
+  .intro h1.fram { animation-delay: .9s; }
+  .intro .ingress.fram { animation-delay: 1.6s; }
+  .intro .knapp.fram { animation-delay: 2.3s; }
+  @keyframes fram { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+
+  /* ── 2. Välj en film ──────────────────────────────────── */
+  .valj { display: block; position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: var(--bg); }
+  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .38; filter: saturate(.55) brightness(.8); z-index: 0; animation: zoom 40s var(--lugn) both; }
+  .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
+      radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .5) 60%, rgba(23, 20, 20, .9) 100%),
+      linear-gradient(rgba(23, 20, 20, .7), rgba(23, 20, 20, .1) 25%, rgba(23, 20, 20, .35) 60%, rgba(23, 20, 20, .97) 88%); }
+  .valj .tidslinje, .valj .nere { z-index: 2; }
+  .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
+  .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
+  .tidslinje.drar { cursor: grabbing; }
+  .tidslinje::before { content: ""; position: absolute; left: 0; right: 0; bottom: 118px; height: 1px; background: var(--linje2); }
+  .spar { display: flex; align-items: stretch; height: 100%; padding: 0 max(12vw, 80px); will-change: transform; width: max-content; }
+  .post { --lyft: 6vh; width: 320px; margin-right: 90px; display: flex; flex-direction: column; align-items: center; height: 100%; flex: none; }
+  .post:nth-child(4n+2) { --lyft: 24vh; }
+  .post:nth-child(4n+3) { --lyft: 13vh; }
+  .post:nth-child(4n+4) { --lyft: 31vh; }
+  .post .lyft { height: var(--lyft); flex: none; }
+  .post .ram { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg2); transition: transform .8s var(--lugn), box-shadow .8s var(--lugn); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); }
+  .post .ram img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.85) brightness(.75) contrast(1.05); opacity: .55; transition: opacity .8s var(--lugn), filter .8s var(--lugn), transform 1.2s var(--lugn); }
+  .post:hover .ram img, .post:focus-within .ram img { opacity: 1; filter: grayscale(0) brightness(1); transform: scale(1.03); }
+  .post .lina { flex: 1; width: 1px; background: linear-gradient(var(--linje), var(--linje2)); position: relative; min-height: 40px; }
+  .post .lina::after { content: ""; position: absolute; left: -2.5px; bottom: -2.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--dis); }
+  .post .namn { height: 118px; padding-top: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .post .kurs { font: 400 21px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; }
+  .post .kurs .liten { font-size: 13px; vertical-align: .3em; letter-spacing: .08em; }
+  .post .moment { font: 400 10px/1.5 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben2); max-width: 300px; }
+  .post .moment .liten { font-size: 7px; vertical-align: .3em; }
+  .post .titel { font: italic 300 14px/1.4 var(--sans); color: var(--dis); letter-spacing: .04em; margin-top: -2px; transition: color .5s; }
+  .post:hover .titel { color: var(--ben2); }
+  .post > button { all: unset; display: contents; }
+  .post.kommer { pointer-events: none; }
+  .post.kommer .ram { background: none; border: 1px dashed var(--linje2); box-shadow: none; }
+  .post.kommer .kurs { color: var(--dis); }
+  .post.kommer .moment { color: var(--dis); opacity: .6; }
+  .post.kommer .lina { opacity: .5; }
+  .post.kommer .lina::after { background: var(--bg2); border: 1px solid var(--linje2); }
+  .valj .nere { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 32px; z-index: 4; pointer-events: none; }
+  .valj .nere > * { pointer-events: auto; }
+  .valj .hint { font: 300 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--dis); display: flex; gap: 12px; align-items: center; transition: opacity 1s; }
+  .valj .hint::before { content: ""; width: 34px; height: 1px; background: var(--linje); }
+  .valj .hint.borta { opacity: 0; }
+  .valj .aterstall { opacity: 0; transition: opacity .6s; }
+  .valj .aterstall.syns { opacity: 1; }
+
+  /* ── Sök ──────────────────────────────────────────────── */
+  .sok { position: fixed; inset: 0; z-index: 40; background: rgba(23, 20, 20, .97); display: none; overflow-y: auto; }
+  .sok.oppen { display: block; animation: ton .7s var(--lugn) both; }
+  .sok .inre { max-width: 760px; margin: 0 auto; padding: 150px 24px 120px; }
+  .sok label { display: block; margin-bottom: 26px; }
+  .sok input { width: 100%; font: 300 clamp(26px, 4vw, 40px)/1.3 var(--sans); color: var(--ben); background: none; border: 0; border-bottom: 1px solid var(--linje); padding: 6px 0 14px; outline: none; letter-spacing: .01em; }
   .sok input::placeholder { color: var(--dis); }
-  .sok .x { position: absolute; right: 8px; top: 6px; background: none; border: 0; color: var(--dis); font-size: 1.6rem; cursor: pointer; padding: 6px 10px; display: none; }
-  .sok .x.syns { display: block; }
-  main { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
-  .status { color: var(--dis); margin: 0 0 16px; }
-  .rutnat { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-  .kort { background: var(--natt2); border: 1px solid var(--linje); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
-  .kort .bild { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--natt3); cursor: pointer; border: 0; padding: 0; }
-  .kort .bild.tom { display: grid; place-items: center; color: var(--dis); font-style: italic; }
-  .kort .text { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; }
-  .kort h2 { margin: 0; font-size: 1.25rem; }
-  .kort h2 button { all: unset; cursor: pointer; }
-  .kort h2 button:hover { color: var(--kobolt); }
-  .kurs { color: var(--lag); font-size: 0.95rem; }
-  .moment { color: var(--kram2); }
-  .begrepp { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-  .begrepp span { font-size: 0.85rem; color: var(--kram2); border: 1px solid var(--linje); border-radius: 999px; padding: 2px 10px; }
-  .traffar { margin: 6px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--linje); }
-  .traffar li { padding: 8px 0; border-bottom: 1px dashed var(--linje); font-size: 0.95rem; }
-  .traffar button { all: unset; cursor: pointer; display: flex; gap: 10px; align-items: baseline; }
-  .traffar button:hover .snutt { color: var(--kram); }
-  .tid { color: var(--kobolt); font-variant-numeric: tabular-nums; flex: none; min-width: 3.2em; }
-  .snutt { color: var(--kram2); }
-  mark { background: none; color: var(--lag); font-weight: 700; }
-  .snart { color: var(--dis); font-style: italic; font-size: 0.95rem; }
-  /* Spelaren */
-  .spelare { position: fixed; inset: 0; background: var(--natt); z-index: 10; display: none; overflow: auto; }
-  .spelare.oppen { display: block; }
-  .spelare .inre { max-width: 1080px; margin: 0 auto; padding: 20px; }
-  .spelare .topp { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 12px; }
-  .spelare h2 { margin: 0; font-size: 1.5rem; }
-  .spelare .stang { all: unset; cursor: pointer; color: var(--kram2); font-size: 1.1rem; padding: 6px 10px; }
-  .spelare .stang:hover { color: var(--kram); }
-  .duk { position: relative; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; }
+  .sok input::-webkit-search-cancel-button { display: none; }
+  .sok input:focus { border-color: var(--ben2); }
+  .sok .status { margin: 22px 0 0; font: 300 10px/1.6 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--dis); }
+  .traff-film { margin-top: 56px; animation: fram 1s var(--lugn) both; }
+  .traff-film h3 { margin: 0 0 6px; }
+  .traff-film h3 button { all: unset; cursor: pointer; }
+  .traff-film h3 button:hover { color: var(--ben); }
+  .traff-film .titel { font: 400 24px/1.3 var(--skrift); font-size: 34px; color: var(--ben); margin: 0 0 18px; }
+  .traff-film .titel button { all: unset; cursor: pointer; }
+  .traff-film .titel button:hover { color: var(--accent); }
+  .traff-film ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linje2); }
+  .traff-film li { border-bottom: 1px solid var(--linje2); }
+  .traff-film li button { all: unset; cursor: pointer; display: grid; grid-template-columns: 74px 1fr; gap: 16px; padding: 16px 0; width: 100%; align-items: baseline; }
+  .traff-film li button:hover .snutt { color: var(--ben); }
+  .tid { font: 500 11px/1.8 var(--sans); letter-spacing: .3em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .snutt { color: var(--ben2); font-weight: 300; transition: color .4s; }
+  mark { background: none; color: var(--ben); font-weight: 400; border-bottom: 1px solid var(--accent); }
+  .traff-film .fler { padding: 14px 0 0; font: italic 300 14px/1.5 var(--sans); color: var(--dis); }
+
+  /* ── 3. Filmens sida ──────────────────────────────────── */
+  .film { display: block; position: relative; min-height: 100vh; background: var(--bg); padding-bottom: 120px; }
+  .film .topp { position: sticky; background: linear-gradient(var(--bg) 60%, rgba(23, 20, 20, 0)); }
+  .film .tillbaka { font: 400 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben2); display: inline-flex; align-items: center; gap: 12px; transition: color .4s; }
+  .film .tillbaka:hover { color: var(--ben); }
+  .film .tillbaka::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+  .film .inre { max-width: 960px; margin: 0 auto; padding: 40px 24px 0; }
+  .film .huvud { text-align: center; margin: 0 auto 44px; }
+  .film .huvud .skrift { font-size: clamp(46px, 7vw, 86px); margin-top: 14px; }
+  .film .huvud .langd { margin-top: 10px; color: var(--dis); }
+  .duk { position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
   .duk iframe, .duk video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .duk .tom { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: var(--kram2); padding: 24px; }
-  .kapitel { margin: 18px 0 0; padding: 0; list-style: none; columns: 2; column-gap: 32px; }
-  .kapitel li { break-inside: avoid; padding: 5px 0; font-size: 0.95rem; }
-  .kapitel button { all: unset; cursor: pointer; display: flex; gap: 10px; align-items: baseline; }
-  .kapitel button:hover .snutt { color: var(--kram); }
-  .kapitel .nu .snutt { color: var(--lag); }
-  @media (max-width: 700px) { .kapitel { columns: 1; } h1 { font-size: 1.6rem; } body { font-size: 17px; } }
-  footer { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; color: var(--dis); font-size: 0.9rem; }
+  .duk .snart { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
+  .duk .snart img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.35); }
+  .duk .snart div { position: relative; }
+  .duk .snart .brod { max-width: 420px; margin: 14px auto 0; font-size: 15px; }
+  .film .om { max-width: 640px; margin: 64px auto 0; text-align: center; }
+  .film .om .brod { margin: 0; }
+  .film .begrepp { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin: 28px 0 0; padding: 0; list-style: none; }
+  .film .begrepp li { font: 400 10px/1.6 var(--sans); letter-spacing: .28em; text-transform: uppercase; color: var(--dis); }
+  .film .kap-rubrik { text-align: center; margin: 110px 0 40px; display: flex; align-items: center; gap: 24px; justify-content: center; }
+  .film .kap-rubrik::before, .film .kap-rubrik::after { content: ""; width: 60px; height: 1px; background: var(--linje2); }
+  .kapitel { list-style: none; margin: 0 auto; padding: 0; max-width: 640px; }
+  .kapitel li { margin: 0 0 40px; opacity: 0; transform: translateY(18px); transition: opacity 1.1s var(--lugn), transform 1.1s var(--lugn); }
+  .kapitel li.syns { opacity: 1; transform: none; }
+  .kapitel button { all: unset; cursor: pointer; display: block; width: 100%; }
+  .kapitel .tid { display: block; margin-bottom: 8px; color: var(--ben2); transition: color .5s; }
+  .kapitel button:hover .tid, .kapitel li.nu .tid { color: var(--accent); }
+  .kapitel .snutt { display: block; font-size: 18px; line-height: 1.8; }
+  .kapitel li.nu .snutt { color: var(--ben); }
+  .kapitel .tid::after { content: ""; display: inline-block; width: 0; height: 1px; background: var(--accent); margin-left: 12px; vertical-align: middle; transition: width .6s var(--lugn); }
+  .kapitel li.nu .tid::after { width: 28px; }
+
+  /* ── Mobil: tidslinjen blir lodrät ────────────────────── */
+  @media (max-width: 700px) {
+    body { font-size: 16px; }
+    .topp { padding: 22px 20px; }
+    .logo svg { width: 34px; height: 34px; }
+    .logo .ord { font-size: 10px; }
+    .intro .ingress br { display: none; }
+    .valj { height: auto; min-height: 100vh; overflow: visible; }
+    .valj .fond { position: fixed; height: 100vh; }
+    .valj .vinjett { position: fixed; height: 100vh; }
+    .valj .rubrik, .valj .tidslinje { position: relative; z-index: 2; }
+    .valj .rubrik { position: static; padding: 108px 0 8px; }
+    .tidslinje { position: static; overflow: visible; cursor: default; }
+    .tidslinje::before { display: none; }
+    .spar { flex-direction: column; width: auto; padding: 24px 24px 60px 44px; transform: none !important; position: relative; }
+    .spar::before { content: ""; position: absolute; left: 24px; top: 0; bottom: 0; width: 1px; background: var(--linje2); }
+    .post { width: 100%; margin: 0 0 56px; height: auto; align-items: flex-start; --lyft: 0 !important; }
+    .post .lyft { display: none; }
+    .post .lina { display: none; }
+    .post .ram { position: relative; }
+    .post .ram img { opacity: .85; filter: grayscale(.5) brightness(.9); }
+    .post .namn { height: auto; padding-top: 18px; text-align: left; align-items: flex-start; position: relative; }
+    .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
+    .post.kommer { display: none; }
+    .valj .nere { display: none; }
+    .sok .inre { padding-top: 110px; }
+    .traff-film li button { grid-template-columns: 58px 1fr; gap: 12px; }
+    .film .topp { padding: 18px 20px; }
+    .film .inre { padding-top: 24px; }
+    .film .kap-rubrik { margin-top: 70px; }
+    .kapitel li { margin-bottom: 32px; }
+    .kapitel .snutt { font-size: 17px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+    body::after { animation: none; }
+    .intro .fram { opacity: 1; }
+    .kapitel li { opacity: 1; transform: none; }
+  }
 </style>
 </head>
-<body>
-<header>
-  <h1>Matematikvideor med Rickard</h1>
-  <p>Korta filmer där matten kommer ur en verklig historia. Sök på det du tycker är svårt, så hittar du stället i filmen där det förklaras.</p>
-</header>
-<div class="sok"><div>
-  <input id="sok" type="search" placeholder="Sök: exponent, tredje roten, Mars, bråk i exponenten …" autocomplete="off" aria-label="Sök i videorna">
-  <button class="x" id="rensa" aria-label="Rensa">×</button>
-</div></div>
-<main>
-  <p class="status" id="status"></p>
-  <div class="rutnat" id="lista"></div>
-</main>
-<footer>Textning finns i spelaren (cc). Alla filmer är gjorda av Rickard Winterhall.</footer>
+<body class="last">
 
-<div class="spelare" id="spelare" role="dialog" aria-modal="true">
+<!-- ── 1. Intro ─────────────────────────────────────────── -->
+<section class="vy intro" id="vy-intro">
+  <img class="fond" src="omslag/intro.jpg" alt="" fetchpriority="high">
+  <div class="vinjett"></div>
+  <header class="topp fram">
+    <a class="logo" href="#" aria-label="Matematikvideor med Rickard">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="50" cy="50" r="6" fill="currentColor"/><circle cx="82" cy="34" r="5" fill="#F2C572"/></svg>
+      <span class="streck"></span>
+      <span class="ord">Matematik&shy;videor<small>med Rickard</small></span>
+    </a>
+  </header>
+  <div class="mitt">
+    <h1 class="skrift fram" id="intro-rubrik">“Historien<br>&amp;&nbsp;matten…”</h1>
+    <p class="ingress fram">Korta filmer där matten kommer ur en verklig historia.<br>Sök på det du tycker är svårt och hoppa till stället<br>i filmen där det förklaras.</p>
+  </div>
+  <a class="knapp fram" href="#filmer"><span>Utforska</span><span class="ring"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></span></a>
+</section>
+
+<!-- ── 2. Välj en film ──────────────────────────────────── -->
+<section class="vy valj" id="vy-valj">
+  <img class="fond" src="omslag/valj-fond.jpg" alt="" loading="lazy">
+  <div class="vinjett"></div>
+  <header class="topp">
+    <a class="logo" href="#" aria-label="Till början">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="50" cy="50" r="6" fill="currentColor"/><circle cx="82" cy="34" r="5" fill="#F2C572"/></svg>
+      <span class="streck"></span>
+      <span class="ord">Matematik&shy;videor<small>med Rickard</small></span>
+    </a>
+    <div class="hoger">
+      <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
+    </div>
+  </header>
+  <h2 class="etikett rubrik">Välj en film</h2>
+  <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
+  <div class="nere">
+    <div class="hint" id="hint">Rulla i sidled</div>
+    <button class="ikon aterstall" id="aterstall" aria-label="Till början av tidslinjen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 a8 8 0 1 0 2.4-5.7"/><path d="M4 4 v5 h5"/></svg></button>
+  </div>
+</section>
+
+<!-- ── 3. Filmens sida ──────────────────────────────────── -->
+<section class="vy film" id="vy-film">
+  <header class="topp">
+    <a class="tillbaka" href="#filmer">Alla filmer</a>
+    <div class="hoger">
+      <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
+    </div>
+  </header>
   <div class="inre">
-    <div class="topp"><h2 id="sp-titel"></h2><button class="stang" id="stang">Stäng ✕</button></div>
+    <div class="huvud">
+      <p class="etikett" id="f-kurs"></p>
+      <h2 class="skrift" id="f-titel"></h2>
+      <p class="etikett langd" id="f-langd"></p>
+    </div>
     <div class="duk" id="duk"></div>
-    <p id="sp-besk" class="moment"></p>
+    <div class="om">
+      <p class="brod" id="f-besk"></p>
+      <ul class="begrepp" id="f-begrepp"></ul>
+    </div>
+    <h3 class="etikett kap-rubrik">Kapitel</h3>
     <ol class="kapitel" id="kapitel"></ol>
+  </div>
+</section>
+
+<!-- ── Sök ──────────────────────────────────────────────── -->
+<div class="sok" id="sok" role="dialog" aria-modal="true" aria-label="Sök">
+  <header class="topp">
+    <span class="etikett">Sök</span>
+    <button class="ikon" id="sok-stang" aria-label="Stäng sökningen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
+  </header>
+  <div class="inre">
+    <label class="etikett" for="sok-falt">Sök i det som sägs</label>
+    <input id="sok-falt" type="search" placeholder="exponent, tredje roten, Mars …" autocomplete="off" spellcheck="false">
+    <p class="status" id="sok-status"></p>
+    <div id="sok-lista"></div>
   </div>
 </div>
 
@@ -96,6 +309,8 @@
   const $ = (id) => document.getElementById(id);
   const data = await (await fetch("videor.json", { cache: "no-cache" })).json();
   const videor = data.videor;
+  const lugnt = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const smal = () => matchMedia("(max-width: 700px)").matches;
 
   const norm = (s) => s.toLowerCase().replace(/[.,!?:;"“”()]/g, " ").replace(/\s+/g, " ").trim();
   const tid = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
@@ -105,42 +320,134 @@
     for (const o of ord) if (o.length > 1) ut = ut.replace(new RegExp(`(${o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"), "<mark>$1</mark>");
     return ut;
   };
+  // "Matematik 1c" → "MA 1" + litet "c", som referensens "1930s"
+  const kursKort = (kurs) => {
+    const m = kurs.match(/(\d)\s*([a-c]*)$/i);
+    return m ? `Ma&nbsp;${m[1]}${m[2] ? `<span class="liten">${m[2].toLowerCase()}</span>` : ""}` : esc(kurs);
+  };
 
-  // ── Sökning: videor på titel/kurs/moment/begrepp, repliker på orden ──
+  // ── Vyer och adress ───────────────────────────────────
+  let aktivVy = null;
+  function visa(namn) {
+    if (aktivVy === namn) return;
+    aktivVy = namn;
+    document.querySelectorAll(".vy").forEach((el) => {
+      const ar = el.id === `vy-${namn}`;
+      el.classList.remove("in");
+      el.classList.toggle("aktiv", ar);
+      if (ar) requestAnimationFrame(() => el.classList.add("in"));
+    });
+    document.body.classList.toggle("last", namn === "intro" || (namn === "valj" && !smal()));
+    window.scrollTo(0, 0);
+    if (namn !== "film") stangSpelare();
+  }
+  function ruta() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (!h) return visa("intro");
+    if (h === "filmer") return visa("valj");
+    const m = h.match(/^([\w-]+)(?:&t=(\d+))?/);
+    const v = m && videor.find((x) => x.id === m[1]);
+    if (!v) return visa("valj");
+    visa("film");
+    laddaFilm(v, m[2] ? Number(m[2]) : undefined);
+  }
+  window.addEventListener("hashchange", ruta);
+
+  // ── Tidslinjen ────────────────────────────────────────
+  const spar = $("spar"), tidslinje = $("tidslinje");
+  spar.innerHTML = videor.map((v) => `
+    <div class="post">
+      <button data-film="${v.id}" aria-label="${esc(v.titel)} — ${esc(v.kurs)}, ${esc(v.moment)}">
+        <span class="lyft"></span>
+        <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}</span>
+        <span class="lina"></span>
+        <span class="namn">
+          <span class="kurs">${v.ar ? v.ar : kursKort(v.kurs)}</span>
+          <span class="moment">${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}</span>
+          <span class="titel">${esc(v.titel)}</span>
+        </span>
+      </button>
+    </div>`).join("") + [1, 2, 3].map(() => `
+    <div class="post kommer" aria-hidden="true">
+      <span class="lyft"></span><span class="ram"></span><span class="lina"></span>
+      <span class="namn"><span class="kurs">· · ·</span><span class="moment">fler filmer kommer</span></span>
+    </div>`).join("");
+
+  let x = 0, vx = 0, mal = 0, rullar = false, drog = false;
+  const maxX = () => Math.max(0, spar.scrollWidth - tidslinje.clientWidth);
+  function rita() {
+    spar.style.transform = `translate3d(${-x}px,0,0)`;
+    $("hint").classList.toggle("borta", x > 40);
+    $("aterstall").classList.toggle("syns", x > 40);
+  }
+  function loop() {
+    if (lugnt) { x = Math.min(maxX(), Math.max(0, mal)); rita(); rullar = false; return; }
+    x += vx; vx *= 0.9;
+    if (x < 0) { x = 0; vx = 0; } if (x > maxX()) { x = maxX(); vx = 0; }
+    rita();
+    if (Math.abs(vx) > 0.15) requestAnimationFrame(loop); else { rullar = false; }
+  }
+  function knuffa(d) {
+    if (smal()) return;
+    if (lugnt) { mal = x + d; } else { vx += d * 0.12; }
+    if (!rullar) { rullar = true; requestAnimationFrame(loop); }
+  }
+  $("vy-valj").addEventListener("wheel", (e) => {
+    if (smal()) return;
+    e.preventDefault();
+    knuffa(Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY);
+  }, { passive: false });
+  let pekX = null, pekStartX = 0;
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal()) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); });
+  tidslinje.addEventListener("pointermove", (e) => {
+    if (pekX == null) return;
+    const dx = pekX - e.clientX; pekX = e.clientX;
+    if (Math.abs(e.clientX - pekStartX) > 6) drog = true;
+    x = Math.min(maxX(), Math.max(0, x + dx)); vx = dx * 0.6; rita();
+  });
+  const slapp = () => { if (pekX == null) return; pekX = null; tidslinje.classList.remove("drar"); if (!lugnt && Math.abs(vx) > 0.5 && !rullar) { rullar = true; requestAnimationFrame(loop); } };
+  tidslinje.addEventListener("pointerup", slapp); tidslinje.addEventListener("pointercancel", slapp);
+  tidslinje.addEventListener("click", (e) => { if (drog) { e.stopPropagation(); e.preventDefault(); drog = false; } }, true);
+  $("aterstall").addEventListener("click", () => { if (lugnt) { mal = 0; knuffa(0); } else { vx = -Math.max(6, x / 18); if (!rullar) { rullar = true; requestAnimationFrame(loop); } } });
+  window.addEventListener("resize", () => { x = Math.min(x, maxX()); rita(); });
+  document.addEventListener("keydown", (e) => {
+    if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
+    if (e.key === "ArrowRight") knuffa(240); if (e.key === "ArrowLeft") knuffa(-240);
+  });
+
+  // ── Sök ───────────────────────────────────────────────
+  const sokRuta = $("sok"), falt = $("sok-falt");
   function sok(fraga) {
     const ord = norm(fraga).split(" ").filter(Boolean);
+    if (!ord.length) return [];
     return videor.map((v) => {
       const huvud = norm([v.titel, v.kurs, v.moment, v.beskrivning, ...v.begrepp].join(" "));
-      const huvudTraff = ord.length > 0 && ord.every((o) => huvud.includes(o));
-      const traffar = ord.length ? v.repliker.filter((r) => { const t = norm(r.text); return ord.every((o) => t.includes(o)); }) : [];
-      return { v, huvudTraff, traffar, visa: !ord.length || huvudTraff || traffar.length > 0 };
-    }).filter((x) => x.visa);
+      const huvudTraff = ord.every((o) => huvud.includes(o));
+      const traffar = v.repliker.filter((r) => { const t = norm(r.text); return ord.every((o) => t.includes(o)); });
+      return { v, huvudTraff, traffar };
+    }).filter((x) => x.huvudTraff || x.traffar.length);
   }
-
-  function rita(fraga) {
-    const res = sok(fraga);
-    const ord = norm(fraga).split(" ").filter(Boolean);
-    $("lista").innerHTML = res.map(({ v, traffar }) => `
-      <article class="kort" data-id="${v.id}">
-        ${v.omslag ? `<button class="bild" style="background-image:url('${v.omslag}');background-size:cover" data-spela="${v.id}" aria-label="Spela ${esc(v.titel)}"></button>`
-                   : `<div class="bild tom">omslag kommer</div>`}
-        <div class="text">
-          <h2><button data-spela="${v.id}">${esc(v.titel)}</button></h2>
-          <div class="kurs">${esc(v.kurs)}${v.langd ? ` · ${tid(v.langd)} min` : ""}</div>
-          <div class="moment">${esc(v.moment)}</div>
-          <div class="begrepp">${v.begrepp.map((b) => `<span>${esc(b)}</span>`).join("")}</div>
-          ${!v.youtube ? `<div class="snart">Filmen publiceras snart — sökningen i det som sägs fungerar redan.</div>` : ""}
-          ${traffar.length ? `<ul class="traffar">${traffar.slice(0, 6).map((r) => `<li><button data-spela="${v.id}" data-t="${r.t ?? ""}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${markera(r.text, ord)}</span></button></li>`).join("")}${traffar.length > 6 ? `<li class="snart">… och ${traffar.length - 6} ställen till</li>` : ""}</ul>` : ""}
-        </div>
+  function ritaSok() {
+    const fraga = falt.value, ord = norm(fraga).split(" ").filter(Boolean), res = sok(fraga);
+    $("sok-lista").innerHTML = res.map(({ v, traffar }) => `
+      <article class="traff-film">
+        <h3 class="etikett"><button data-film="${v.id}">${v.ar ? `${v.ar} · ` : ""}${esc(v.kurs)} · ${esc(v.moment)}</button></h3>
+        <p class="titel"><button data-film="${v.id}">${esc(v.titel)}</button></p>
+        ${traffar.length ? `<ul>${traffar.slice(0, 8).map((r) => `<li><button data-film="${v.id}" data-t="${r.t ?? ""}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${markera(r.text, ord)}</span></button></li>`).join("")}</ul>${traffar.length > 8 ? `<p class="fler">… och ${traffar.length - 8} ställen till i filmen</p>` : ""}` : ""}
+        ${!v.youtube && !v.fil ? `<p class="fler">Filmen publiceras snart — kapitlen visar vad som sägs, minut för minut.</p>` : ""}
       </article>`).join("");
-    $("status").textContent = ord.length
-      ? (res.length ? `${res.length} film${res.length > 1 ? "er" : ""} · ${res.reduce((a, x) => a + x.traffar.length, 0)} ställen där det sägs` : "Inget hittat. Prova ett annat ord.")
-      : `${videor.length} film${videor.length > 1 ? "er" : ""}`;
-    $("rensa").classList.toggle("syns", fraga.length > 0);
+    $("sok-status").textContent = !ord.length ? `${videor.length} film${videor.length === 1 ? "" : "er"} · sök på ett ord eller två`
+      : res.length ? `${res.length} film${res.length === 1 ? "" : "er"} · ${res.reduce((a, r) => a + r.traffar.length, 0)} ställen där det sägs`
+      : "Inget hittat. Prova ett annat ord.";
   }
+  function oppnaSok() { sokRuta.classList.add("oppen"); document.body.classList.add("last"); ritaSok(); setTimeout(() => falt.focus(), 50); }
+  function stangSok() { sokRuta.classList.remove("oppen"); document.body.classList.toggle("last", aktivVy === "intro" || (aktivVy === "valj" && !smal())); }
+  document.querySelectorAll(".sok-oppna").forEach((b) => b.addEventListener("click", oppnaSok));
+  $("sok-stang").addEventListener("click", stangSok);
+  falt.addEventListener("input", ritaSok);
 
-  // ── Spelaren: YouTube (IFrame API) eller direktfil i full kvalitet ──
-  let yt = null, video = null, aktuell = null;
+  // ── Spelaren ──────────────────────────────────────────
+  let yt = null, video = null, aktuell = null, klocka = null;
   function ytApi() {
     return new Promise((res) => {
       if (window.YT && window.YT.Player) return res();
@@ -148,57 +455,80 @@
       const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
     });
   }
-  async function oppna(id, t) {
-    const v = videor.find((x) => x.id === id); if (!v) return;
+  const iakttagare = lugnt ? null : new IntersectionObserver((poster) => {
+    poster.forEach((p) => { if (p.isIntersecting) { p.target.classList.add("syns"); iakttagare.unobserve(p.target); } });
+  }, { rootMargin: "0px 0px -8% 0px" });
+
+  async function laddaFilm(v, t) {
+    if (aktuell && aktuell.id === v.id) { if (Number.isFinite(t)) hoppa(t, false); return; }
+    stangSpelare();
     aktuell = v;
-    $("sp-titel").textContent = v.titel;
-    $("sp-besk").textContent = v.beskrivning;
-    $("kapitel").innerHTML = v.repliker.map((r, i) => `<li><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join("");
-    $("spelare").classList.add("oppen");
-    document.body.style.overflow = "hidden";
-    const duk = $("duk"); duk.innerHTML = ""; yt = null; video = null;
+    $("f-kurs").textContent = `${v.ar ? `${v.ar} · ` : ""}${v.kurs} · ${v.moment}`;
+    $("f-titel").textContent = v.titel;
+    $("f-langd").textContent = v.langd ? `${tid(v.langd)} min` : "";
+    $("f-besk").textContent = v.beskrivning;
+    $("f-begrepp").innerHTML = v.begrepp.map((b) => `<li>${esc(b)}</li>`).join("");
+    $("kapitel").innerHTML = v.repliker.map((r, i) => `<li${lugnt ? ' class="syns"' : ""}><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join("");
+    if (iakttagare) $("kapitel").querySelectorAll("li").forEach((li) => iakttagare.observe(li));
+    const duk = $("duk"); duk.innerHTML = "";
     const start = Number.isFinite(t) ? t : 0;
     if (v.fil) {
       video = document.createElement("video"); video.controls = true; video.playsInline = true; video.preload = "metadata"; video.src = v.fil;
       if (v.textning) { const tr = document.createElement("track"); tr.kind = "subtitles"; tr.srclang = "sv"; tr.label = "Svenska"; tr.src = v.textning; video.appendChild(tr); }
-      duk.appendChild(video); video.currentTime = start; video.play().catch(() => {});
+      duk.appendChild(video); video.currentTime = start; if (start) video.play().catch(() => {});
     } else if (v.youtube) {
       await ytApi();
       const holder = document.createElement("div"); duk.appendChild(holder);
-      yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start, autoplay: 1, rel: 0, modestbranding: 1, cc_load_policy: 0, hl: "sv" } });
+      yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start, autoplay: start ? 1 : 0, rel: 0, modestbranding: 1, cc_load_policy: 0, hl: "sv" } });
     } else {
-      duk.innerHTML = `<div class="tom">Filmen publiceras snart.<br>Kapitlen nedan visar vad som sägs, minut för minut.</div>`;
+      duk.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
     }
-    location.hash = `${id}${start ? `&t=${start}` : ""}`;
+    markeraNu(start);
+    klocka = setInterval(() => {
+      const nu = video ? video.currentTime : (yt && yt.getCurrentTime ? yt.getCurrentTime() : null);
+      if (nu != null) markeraNu(nu);
+    }, 500);
   }
-  function hoppa(t) {
+  function markeraNu(s) {
+    if (!aktuell) return;
+    let i = -1;
+    aktuell.repliker.forEach((r, k) => { if (r.t != null && r.t <= s + 0.2) i = k; });
+    $("kapitel").querySelectorAll("li").forEach((li, k) => li.classList.toggle("nu", k === i));
+  }
+  function hoppa(t, skrivAdress = true) {
     if (!Number.isFinite(t)) return;
     if (video) { video.currentTime = t; video.play().catch(() => {}); }
     else if (yt && yt.seekTo) { yt.seekTo(t, true); yt.playVideo(); }
-    if (aktuell) history.replaceState(null, "", `#${aktuell.id}&t=${t}`);
+    markeraNu(t);
+    if (aktuell && skrivAdress) history.replaceState(null, "", `#${aktuell.id}&t=${t}`);
   }
-  function stang() {
-    $("spelare").classList.remove("oppen"); document.body.style.overflow = "";
+  function stangSpelare() {
+    if (klocka) clearInterval(klocka); klocka = null;
+    if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
     $("duk").innerHTML = ""; yt = null; video = null; aktuell = null;
-    history.replaceState(null, "", location.pathname + location.search);
+  }
+  function oppna(id, t) {
+    stangSok();
+    const adress = `#${id}${Number.isFinite(t) ? `&t=${t}` : ""}`;
+    if (location.hash === adress) ruta(); else location.hash = adress;
   }
 
   document.addEventListener("click", (e) => {
-    const b = e.target.closest("[data-spela]");
-    if (b) { const t = b.dataset.t !== "" && b.dataset.t != null ? Number(b.dataset.t) : undefined; oppna(b.dataset.spela, t); return; }
+    const b = e.target.closest("[data-film]");
+    if (b) { const t = b.dataset.t !== "" && b.dataset.t != null ? Number(b.dataset.t) : undefined; oppna(b.dataset.film, t); return; }
     const k = e.target.closest("#kapitel [data-t]");
     if (k) { hoppa(Number(k.dataset.t)); return; }
   });
-  $("stang").addEventListener("click", stang);
-  $("spelare").addEventListener("click", (e) => { if (e.target === $("spelare")) stang(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("spelare").classList.contains("oppen")) stang(); });
-  $("sok").addEventListener("input", (e) => rita(e.target.value));
-  $("rensa").addEventListener("click", () => { $("sok").value = ""; rita(""); $("sok").focus(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (sokRuta.classList.contains("oppen")) stangSok();
+    else if (aktivVy === "film") location.hash = "filmer";
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "/" && !sokRuta.classList.contains("oppen") && aktivVy !== "intro") { e.preventDefault(); oppnaSok(); }
+  });
 
-  rita("");
-  // Djuplänk: #kepler-och-planeterna&t=123
-  const m = location.hash.match(/^#([\w-]+)(?:&t=(\d+))?/);
-  if (m) oppna(m[1], m[2] ? Number(m[2]) : undefined);
+  ruta();
 })();
 </script>
 </body>
