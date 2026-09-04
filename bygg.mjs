@@ -71,10 +71,17 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond (avmättas och
 // mörkas i CSS). 1600 px bred, ~55 kB.
-const INTRO = resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png");
-if (existsSync(INTRO)) {
-  execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "42", "--resampleWidth", "1600", INTRO, "--out", join(HÄR, "public", "omslag", "intro.jpg")], { stdio: "ignore" });
+// Filtren (avmättning, mörkning) bakas in i filerna med ffmpeg — CSS-filter på stora bilder som
+// zoomar gjorde hela sidan trög. Saknas ffmpeg används sips utan filter.
+const harFfmpeg = (() => { try { execFileSync("ffmpeg", ["-version"], { stdio: "ignore" }); return true; } catch (e) { return false; } })();
+function bakaBild(kalla, mal, bredd, filter, kvalitet) {
+  if (harFfmpeg) execFileSync("ffmpeg", ["-v", "error", "-y", "-i", kalla, "-vf", `scale=${bredd}:-2${filter ? "," + filter : ""}`, "-q:v", String(kvalitet), mal], { stdio: "ignore" });
+  else execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "45", "--resampleWidth", String(bredd), kalla, "--out", mal], { stdio: "ignore" });
 }
+const INTRO = resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png");
+if (existsSync(INTRO)) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1600, "hue=s=0.1,eq=brightness=-0.13:contrast=1.08", 5);
+const VALJ = resolve(HÄR, "assets", "valj-fond.png");
+if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "hue=s=0.55,eq=brightness=-0.07", 5);
 
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);
