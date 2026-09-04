@@ -248,6 +248,16 @@
   .kapitel .tid::after { content: ""; display: inline-block; width: 0; height: 1px; background: var(--accent); margin-left: 12px; vertical-align: middle; transition: width .6s var(--lugn); }
   .kapitel li.nu .tid::after { width: 28px; }
 
+  /* Flytande knapp tillbaka upp till spelaren när den scrollats ur bild */
+  .upp { position: fixed; right: 28px; bottom: 28px; z-index: 30; display: inline-flex; align-items: center; gap: 12px; color: var(--accent); opacity: 0; transform: translateY(12px); transition: opacity .5s var(--lugn), transform .5s var(--lugn); pointer-events: none; }
+  .upp.syns { opacity: 1; transform: none; pointer-events: auto; }
+  .upp[hidden] { display: none; }
+  .upp .ring { width: 48px; height: 48px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; background: rgba(23, 20, 20, .7); backdrop-filter: blur(6px); transition: background .3s, color .3s, transform .3s var(--lugn); }
+  .upp .ring svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+  .upp .ord { font: 400 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; }
+  .upp:hover .ring { background: var(--accent); color: var(--bg); transform: translateY(-3px); }
+  @media (max-width: 700px) { .upp { right: 16px; bottom: 16px; } .upp .ord { display: none; } }
+
   /* ── Mobil: tidslinjen blir lodrät ────────────────────── */
   @media (max-width: 700px) {
     body { font-size: 16px; }
@@ -356,6 +366,7 @@
     <h3 class="etikett kap-rubrik">Kapitel</h3>
     <ol class="kapitel" id="kapitel"></ol>
   </div>
+  <button class="upp" id="upp" type="button" aria-label="Upp till filmen" hidden><span class="ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19 V5 M6 11 L12 5 L18 11"/></svg></span><span class="ord">Till filmen</span></button>
 </section>
 
 <!-- ── Sök ──────────────────────────────────────────────── -->
@@ -750,8 +761,23 @@
   function stangSpelare() {
     if (klocka) clearInterval(klocka); klocka = null;
     if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
-    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; yt = null; video = null; aktuell = null;
+    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; kapitelKlickat = false; if (uppKnapp) uppKnapp.classList.remove("syns"); yt = null; video = null; aktuell = null;
   }
+  // "Till filmen": syns när spelaren är ur bild efter ett kapitelklick (eller medan filmen spelar).
+  const uppKnapp = $("upp");
+  let dukSyns = true, kapitelKlickat = false;
+  function ritaUpp() {
+    const visa = aktivVy === "film" && !!aktuell && !dukSyns && (kapitelKlickat || sp.spelar()) && !dukEl.classList.contains("helskarm");
+    uppKnapp.hidden = false; uppKnapp.classList.toggle("syns", visa);
+  }
+  new IntersectionObserver((poster) => { dukSyns = poster[0].isIntersecting; ritaUpp(); }, { threshold: 0.25 }).observe(dukEl);
+  uppKnapp.addEventListener("click", () => {
+    const topp = dukEl.getBoundingClientRect().top + window.scrollY - 24;
+    window.scrollTo({ top: Math.max(0, topp), behavior: lugnt ? "auto" : "smooth" });
+    visaStyr();
+  });
+  setInterval(ritaUpp, 1000);
+
   function oppna(id, t) {
     stangSok();
     const adress = `#${id}${Number.isFinite(t) ? `&t=${t}` : ""}`;
@@ -762,7 +788,7 @@
     const b = e.target.closest("[data-film]");
     if (b) { const t = b.dataset.t !== "" && b.dataset.t != null ? Number(b.dataset.t) : undefined; oppna(b.dataset.film, t); return; }
     const k = e.target.closest("#kapitel [data-t]");
-    if (k) { hoppa(Number(k.dataset.t)); return; }
+    if (k) { hoppa(Number(k.dataset.t)); kapitelKlickat = true; ritaUpp(); return; }
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
