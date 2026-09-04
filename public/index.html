@@ -180,8 +180,21 @@
   .duk .lock { position: absolute; inset: 0; z-index: 3; }
   .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .5s; }
   .duk.paus .stor { opacity: 1; }
-  .duk .stor span { width: 84px; height: 84px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .35); backdrop-filter: blur(4px); }
+  .duk .stor span { width: 84px; height: 84px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .35); backdrop-filter: blur(4px); transition: background .3s, color .3s, transform .3s var(--lugn), box-shadow .3s; }
   .duk .stor svg { width: 22px; height: 22px; fill: currentColor; margin-left: 4px; }
+  /* Återkoppling: hovring fyller ringen, klick ger en puls */
+  .duk.paus .lock { cursor: pointer; }
+  .duk.paus .lock:hover ~ .stor span { background: var(--accent); color: var(--bg); transform: scale(1.08); box-shadow: 0 0 0 10px rgba(242, 197, 114, .18), 0 10px 40px -10px rgba(0, 0, 0, .8); }
+  .duk.paus .lock:active ~ .stor span { transform: scale(.96); }
+  .duk .puls { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; pointer-events: none; }
+  .duk .puls span { width: 84px; height: 84px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; opacity: 0; transform: scale(.7); }
+  .duk .puls svg { width: 26px; height: 26px; fill: currentColor; }
+  .duk .puls.igang span { animation: puls .55s var(--lugn) forwards; }
+  @keyframes puls { 0% { opacity: .9; transform: scale(.8) } 100% { opacity: 0; transform: scale(1.7) } }
+  .styr .knapp { transition: opacity .3s, color .25s, transform .2s var(--lugn); }
+  .styr .knapp:hover { color: var(--accent); transform: scale(1.15); }
+  .styr .knapp:active { transform: scale(.9); }
+  .styr #duk-spela:hover { color: var(--accent); }
   .duk .undertext { position: absolute; left: 8%; right: 8%; bottom: 66px; z-index: 5; text-align: center; pointer-events: none; font: 400 clamp(16px, 2.3vw, 26px)/1.35 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; color: #F6F1E7; text-shadow: 0 1px 2px #000, 0 0 14px rgba(0, 0, 0, .9); transition: bottom .4s var(--lugn); }
   .duk .undertext:empty { display: none; }
   .duk.igang:not(.visa):not(.paus) .undertext { bottom: 30px; }
@@ -537,6 +550,7 @@
       <div class="bild" style="${bild ? `background-image:url('${bild}')` : ""}"></div>
       <div class="lock" id="duk-lock" aria-hidden="true"></div>
       <div class="stor" aria-hidden="true"><span>${IK.spela.replace('class="fyll" ', "")}</span></div>
+      <div class="puls" id="duk-puls" aria-hidden="true"><span></span></div>
       <div class="undertext" id="duk-text" aria-live="off"></div>
       <div class="styr" id="duk-styr">
         <div class="linje" id="duk-linje" role="slider" aria-label="Position i filmen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><div class="fylld" id="duk-fylld"></div><div class="knopp" id="duk-knopp"></div></div>
@@ -573,7 +587,15 @@
     if ($("duk-text").textContent !== text) $("duk-text").textContent = text;
     markeraNu(nu);
   }
-  function vaxlaSpel() { if (sp.spelar()) sp.pausa(); else sp.spela(); setTimeout(uppdatera, 50); }
+  function pulsa(ikon) {
+    const p = $("duk-puls"); if (!p) return;
+    p.querySelector("span").innerHTML = ikon.replace('class="fyll" ', "");
+    p.classList.remove("igang"); void p.offsetWidth; p.classList.add("igang");
+  }
+  function vaxlaSpel() {
+    if (sp.spelar()) { sp.pausa(); pulsa(IK.pausa); } else { sp.spela(); pulsa(IK.spela); }
+    setTimeout(uppdatera, 50);
+  }
   function vaxlaText() {
     textPa = !textPa; $("duk-cc").setAttribute("aria-pressed", String(textPa));
     try { localStorage.setItem("textning", textPa ? "pa" : "av"); } catch (e) {}
