@@ -33,6 +33,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     animation: korn 1.2s steps(5) infinite;
   }
+  body.vy-film::after { display: none; } /* på filmsidan: inget lager ovanpå videon, så webbläsaren kan rita den direkt */
   @keyframes korn { 0% { transform: translate(0, 0) } 20% { transform: translate(-2%, 1.5%) } 40% { transform: translate(1.5%, -2.5%) } 60% { transform: translate(-2.5%, -1%) } 80% { transform: translate(2%, 2%) } 100% { transform: translate(0, 0) } }
 
   /* Typografi */
@@ -175,10 +176,11 @@
   .duk .snart div { position: relative; }
   .duk .snart .brod { max-width: 420px; margin: 14px auto 0; font-size: 15px; }
   /* Egen spelarstyrning ovanpå YouTube (controls=0) eller <video> */
-  .duk .bild { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 2; transition: opacity .8s var(--lugn); filter: brightness(.85); }
-  .duk.igang .bild { opacity: 0; pointer-events: none; }
+  .duk .bild { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 2; transition: opacity .8s var(--lugn), visibility 0s .8s; filter: brightness(.85); }
+  .duk.igang .bild { opacity: 0; visibility: hidden; pointer-events: none; }
   .duk .lock { position: absolute; inset: 0; z-index: 3; }
-  .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; }
+  .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; visibility: hidden; }
+  .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk.visa .lock:hover ~ .stor { visibility: visible; }
   /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
   .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk.visa .lock:hover ~ .stor { opacity: 1; }
   .duk .lock { cursor: pointer; }
@@ -196,7 +198,8 @@
   .duk .undertext { position: absolute; left: 8%; right: 8%; bottom: 66px; z-index: 5; text-align: center; pointer-events: none; font: 400 clamp(16px, 2.3vw, 26px)/1.35 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; color: #F6F1E7; text-shadow: 0 1px 2px #000, 0 0 10px rgba(0, 0, 0, .85); transition: bottom .4s var(--lugn); }
   .duk .undertext:empty { display: none; }
   .duk.igang:not(.visa):not(.paus) .undertext { bottom: 30px; }
-  .duk .styr { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; padding: 28px 18px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); opacity: 0; transition: opacity .5s; }
+  .duk .styr { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; padding: 28px 18px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); opacity: 0; visibility: hidden; transition: opacity .35s, visibility 0s .35s; }
+  .duk.visa .styr, .duk.paus .styr, .duk:has(:focus-visible) .styr { visibility: visible; transition: opacity .2s, visibility 0s; }
   /* Reglagen syns när pekaren rört sig de senaste 3 s, när det är pausat, eller vid tangentbordsfokus
      (inte efter ett musklick — då skulle de aldrig försvinna). */
   .duk.visa .styr, .duk.paus .styr, .duk:has(:focus-visible) .styr { opacity: 1; }
@@ -419,6 +422,7 @@
       if (ar) requestAnimationFrame(() => el.classList.add("in"));
     });
     document.body.classList.toggle("last", namn === "intro" || (namn === "valj" && !smal()));
+    document.body.classList.toggle("vy-film", namn === "film");
     window.scrollTo(0, 0);
     if (namn !== "film") stangSpelare();
   }
@@ -603,7 +607,7 @@
   }
   function visaStyr() {
     dukEl.classList.add("visa"); clearTimeout(gomTimer);
-    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), 3000);
+    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), iHelskarm() ? 1500 : 3000);
   }
   function uppdatera() {
     if (!aktuell) return;
