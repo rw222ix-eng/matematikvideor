@@ -391,16 +391,18 @@
     knuffa(Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY);
   }, { passive: false });
   let pekX = null, pekStartX = 0;
-  tidslinje.addEventListener("pointerdown", (e) => { if (smal()) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); });
+  // Pekaren tas i beslag först när man verkligen drar — annars hamnar klicket
+  // på tidslinjen i stället för på omslaget.
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || e.button !== 0) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; });
   tidslinje.addEventListener("pointermove", (e) => {
     if (pekX == null) return;
+    if (!drog) { if (Math.abs(e.clientX - pekStartX) <= 6) return; drog = true; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); }
     const dx = pekX - e.clientX; pekX = e.clientX;
-    if (Math.abs(e.clientX - pekStartX) > 6) drog = true;
     x = Math.min(maxX(), Math.max(0, x + dx)); vx = dx * 0.6; rita();
   });
   const slapp = () => { if (pekX == null) return; pekX = null; tidslinje.classList.remove("drar"); if (!lugnt && Math.abs(vx) > 0.5 && !rullar) { rullar = true; requestAnimationFrame(loop); } };
   tidslinje.addEventListener("pointerup", slapp); tidslinje.addEventListener("pointercancel", slapp);
-  tidslinje.addEventListener("click", (e) => { if (drog) { e.stopPropagation(); e.preventDefault(); drog = false; } }, true);
+  tidslinje.addEventListener("click", (e) => { if (drog) { e.stopPropagation(); e.preventDefault(); } drog = false; }, true);
   $("aterstall").addEventListener("click", () => { if (lugnt) { mal = 0; knuffa(0); } else { vx = -Math.max(6, x / 18); if (!rullar) { rullar = true; requestAnimationFrame(loop); } } });
   window.addEventListener("resize", () => { x = Math.min(x, maxX()); rita(); });
   document.addEventListener("keydown", (e) => {
