@@ -9,7 +9,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Pinyon+Script&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #171414; --bg2: #201c1c; --ben: #ECE6D8; --ben2: #B5AE9F; --dis: #7A7369;
@@ -39,6 +39,8 @@
   .etikett { font: 500 11px/1.6 var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--ben2); margin: 0; }
   /* Skrivstilens svansar (t.ex. &-tecknet) sticker ut utanför radrutan — ge dem plats så inget klipps. */
   .skrift { font: 400 clamp(54px, 9.5vw, 118px)/1.15 var(--skrift); letter-spacing: .005em; color: var(--ben); margin: 0; padding: 0 .25em; overflow: visible; text-shadow: 0 2px 30px rgba(0, 0, 0, .5); }
+  /* Pinyon Scripts &-tecken ser avklippt ut; Great Vibes har ett riktigt et-tecken. */
+  .skrift .amp { font-family: "Great Vibes", var(--skrift); font-size: 1.08em; }
   .brod { font-weight: 300; color: var(--ben2); font-size: 17px; line-height: 1.85; }
 
   /* Vyer */
@@ -58,7 +60,8 @@
   .topp .hoger { display: flex; align-items: center; gap: 4px; }
 
   /* ── 1. Intro ─────────────────────────────────────────── */
-  .intro { position: relative; height: 100vh; height: 100dvh; overflow: hidden; display: grid; grid-template-rows: 1fr auto 1fr; place-items: center; text-align: center; padding: 0 20px; }
+  /* min-height i stället för height: på låga/smala skärmar får introt växa så rubriken inte krockar med logotypen. */
+  .intro { position: relative; min-height: 100vh; min-height: 100dvh; overflow: hidden; display: grid; grid-template-rows: minmax(130px, 1fr) auto minmax(150px, 1fr); place-items: center; text-align: center; padding: 0 20px; }
   .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.62) contrast(1.08); animation: zoom 26s var(--lugn) both; z-index: 0; }
   @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
   .intro .vinjett { position: absolute; inset: 0; z-index: 1; background:
@@ -187,6 +190,8 @@
     .logo img { height: 48px; width: 48px; }
     .intro .logo img { height: 68px; width: 68px; }
     .intro .ingress br { display: none; }
+    .intro .skrift { font-size: clamp(44px, 13vw, 72px); }
+    .intro .knapp { margin-bottom: 40px; }
     .valj { height: auto; min-height: 100vh; overflow: visible; }
     .valj .fond { position: fixed; height: 100vh; }
     .valj .vinjett { position: fixed; height: 100vh; }
@@ -234,8 +239,8 @@
     </a>
   </header>
   <div class="mitt">
-    <h1 class="skrift fram" id="intro-rubrik">“Historien<br>&amp;&nbsp;matten…”</h1>
-    <p class="ingress fram">Korta filmer där matten kommer ur en verklig historia.<br>Sök på det du tycker är svårt och hoppa till stället<br>i filmen där det förklaras.</p>
+    <h1 class="skrift fram" id="intro-rubrik">“Historien<br><span class="amp">&amp;</span>&nbsp;matten…”</h1>
+    <p class="ingress fram">Korta filmer där matten kommer ur en verklig historia. <br>Sök på det du tycker är svårt och hoppa till stället <br>i filmen där det förklaras.</p>
   </div>
   <a class="knapp fram" href="#filmer"><span>Utforska</span><span class="ring"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></span></a>
 </section>
