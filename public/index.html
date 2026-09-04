@@ -197,7 +197,12 @@
   .duk .undertext:empty { display: none; }
   .duk.igang:not(.visa):not(.paus) .undertext { bottom: 30px; }
   .duk .styr { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; padding: 28px 18px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); opacity: 0; transition: opacity .5s; }
-  .duk.visa .styr, .duk.paus .styr, .duk:focus-within .styr { opacity: 1; }
+  /* Reglagen syns när pekaren rört sig de senaste 3 s, när det är pausat, eller vid tangentbordsfokus
+     (inte efter ett musklick — då skulle de aldrig försvinna). */
+  .duk.visa .styr, .duk.paus .styr, .duk:has(:focus-visible) .styr { opacity: 1; }
+  .duk.visa .styr, .duk.paus .styr { pointer-events: auto; }
+  .duk .styr { pointer-events: none; }
+  .duk.visa .styr, .duk.paus .styr, .duk:has(:focus-visible) .styr { pointer-events: auto; }
   .duk.igang:not(.visa):not(.paus) { cursor: none; }
   .linje { position: relative; height: 16px; cursor: pointer; margin-bottom: 6px; touch-action: none; }
   .linje::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: rgba(236, 230, 216, .35); }
@@ -588,7 +593,7 @@
   }
   function visaStyr() {
     dukEl.classList.add("visa"); clearTimeout(gomTimer);
-    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), 2600);
+    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), 3000);
   }
   function uppdatera() {
     if (!aktuell) return;
@@ -661,6 +666,7 @@
   dukEl.addEventListener("click", (e) => {
     const b = e.target.closest("button");
     if (b) {
+      if (e.detail > 0) b.blur();
       if (b.id === "duk-spela") vaxlaSpel(); else if (b.id === "duk-cc") vaxlaText();
       else if (b.id === "duk-ljud") {
         const vr = $("duk-volym");
