@@ -24,11 +24,24 @@ mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
 
+// tal.srt → [{ s, e, text }] för sidans egna undertexter (sekundexakta, i Charter som i filmen).
+function lasSrt(fil) {
+  const tid = (h, m, s, ms) => Math.round((+h * 3600 + +m * 60 + +s + +ms / 1000) * 100) / 100;
+  return readFileSync(fil, "utf8").replace(/\r/g, "").trim().split(/\n\n+/).map((block) => {
+    const rader = block.split("\n");
+    const m = (rader[1] || "").match(/(\d+):(\d+):(\d+),(\d+) --> (\d+):(\d+):(\d+),(\d+)/);
+    if (!m) return null;
+    return { s: tid(m[1], m[2], m[3], m[4]), e: tid(m[5], m[6], m[7], m[8]), text: rader.slice(2).join(" ").trim() };
+  }).filter(Boolean);
+}
+
 // Tidslinjen är kronologisk: `ar` i registret är året berättelsen utspelar sig.
 const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map((v) => {
   const projekt = resolve(HÄR, v.projekt);
   const tiderFil = join(projekt, "assets", "tal-tider.json");
   const manusFil = join(projekt, "assets", "manus.txt");
+  const srtFil = join(projekt, "assets", "tal.srt");
+  const undertext = existsSync(srtFil) ? lasSrt(srtFil) : null;
   let repliker = [];
   let langd = null;
   if (existsSync(tiderFil)) {
@@ -53,7 +66,7 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
     omslagRen = `omslag/${v.id}-ren.jpg`;
     execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "58", "--resampleWidth", "720", renKalla, "--out", join(HÄR, "public", omslagRen)], { stdio: "ignore" });
   }
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker };
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond (avmättas och

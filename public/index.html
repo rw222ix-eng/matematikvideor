@@ -167,14 +167,38 @@
   .duk .snart img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.9) brightness(.35); }
   .duk .snart div { position: relative; }
   .duk .snart .brod { max-width: 420px; margin: 14px auto 0; font-size: 15px; }
-  .dukrad { display: flex; justify-content: flex-end; margin-top: 14px; }
-  .helskarm { display: inline-flex; align-items: center; gap: 10px; font: 400 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben2); padding: 8px 2px; transition: color .4s; }
-  .helskarm:hover { color: var(--ben); }
-  .helskarm svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
-  .helskarm .ut { display: none; }
-  .helskarm[hidden] { display: none; }
-  .duk:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; background: #000; box-shadow: none; }
-  .duk:fullscreen iframe, .duk:fullscreen video { inset: 0; }
+  /* Egen spelarstyrning ovanpå YouTube (controls=0) eller <video> */
+  .duk .bild { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 2; transition: opacity .8s var(--lugn); filter: brightness(.85); }
+  .duk.igang .bild { opacity: 0; pointer-events: none; }
+  .duk .lock { position: absolute; inset: 0; z-index: 3; }
+  .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .5s; }
+  .duk.paus .stor { opacity: 1; }
+  .duk .stor span { width: 84px; height: 84px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .35); backdrop-filter: blur(4px); }
+  .duk .stor svg { width: 22px; height: 22px; fill: currentColor; margin-left: 4px; }
+  .duk .undertext { position: absolute; left: 8%; right: 8%; bottom: 66px; z-index: 5; text-align: center; pointer-events: none; font: 400 clamp(16px, 2.3vw, 26px)/1.35 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif; color: #F6F1E7; text-shadow: 0 1px 2px #000, 0 0 14px rgba(0, 0, 0, .9); transition: bottom .4s var(--lugn); }
+  .duk .undertext:empty { display: none; }
+  .duk.igang:not(.visa):not(.paus) .undertext { bottom: 30px; }
+  .duk .styr { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; padding: 28px 18px 10px; background: linear-gradient(transparent, rgba(0, 0, 0, .78)); opacity: 0; transition: opacity .5s; }
+  .duk.visa .styr, .duk.paus .styr, .duk:focus-within .styr { opacity: 1; }
+  .duk.igang:not(.visa):not(.paus) { cursor: none; }
+  .linje { position: relative; height: 16px; cursor: pointer; margin-bottom: 6px; touch-action: none; }
+  .linje::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: rgba(236, 230, 216, .35); }
+  .linje .fylld { position: absolute; left: 0; top: 7px; height: 1px; background: var(--accent); width: 0; }
+  .linje .knopp { position: absolute; top: 3px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-left: -4.5px; transform: scale(0); transition: transform .3s; }
+  .linje:hover .knopp, .duk.drar .knopp { transform: scale(1); }
+  .styr .rad { display: flex; align-items: center; gap: 4px; }
+  .styr .knapp { width: 40px; height: 36px; display: grid; place-items: center; color: var(--ben); opacity: .85; transition: opacity .3s; }
+  .styr .knapp:hover, .styr .knapp[aria-pressed="true"] { opacity: 1; }
+  .styr .knapp svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+  .styr .knapp .fyll { fill: currentColor; stroke: none; }
+  .styr .cc { font: 500 10px/1 var(--sans); letter-spacing: .18em; border: 1px solid currentColor; border-radius: 3px; padding: 4px 5px 3px 6px; }
+  .styr .knapp[aria-pressed="true"] .cc { background: var(--ben); color: #171414; }
+  .styr .tidvis { font: 400 11px/1 var(--sans); letter-spacing: .18em; color: var(--ben2); font-variant-numeric: tabular-nums; margin-left: 8px; white-space: nowrap; }
+  .styr .mellan { flex: 1; }
+  .styr .dolj { display: none; }
+  .duk:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; box-shadow: none; background: #000; }
+  .duk:fullscreen .undertext { font-size: clamp(22px, 2.6vw, 40px); bottom: 96px; }
+  .duk:fullscreen .styr { padding: 34px 40px 22px; }
   .film .om { max-width: 640px; margin: 64px auto 0; text-align: center; }
   .film .om .brod { margin: 0; }
   .film .begrepp { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; margin: 28px 0 0; padding: 0; list-style: none; }
@@ -226,6 +250,10 @@
     .film .kap-rubrik { margin-top: 70px; }
     .kapitel li { margin-bottom: 32px; }
     .kapitel .snutt { font-size: 17px; }
+    .duk .undertext { font-size: 15px; bottom: 58px; left: 4%; right: 4%; }
+    .duk .styr { padding: 20px 6px 4px; }
+    .styr .knapp { width: 36px; }
+    .duk .stor span { width: 64px; height: 64px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -289,9 +317,6 @@
       <p class="etikett langd" id="f-langd"></p>
     </div>
     <div class="duk" id="duk"></div>
-    <div class="dukrad">
-      <button class="helskarm" id="helskarm" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="in" d="M3 9 V3 H9 M15 3 H21 V9 M21 15 V21 H15 M9 21 H3 V15"/><path class="ut" d="M9 3 V9 H3 M21 9 H15 V3 M15 21 V15 H21 M3 15 H9 V21"/></svg><span>Helskärm</span></button>
-    </div>
     <div class="om">
       <p class="brod" id="f-besk"></p>
       <ul class="begrepp" id="f-begrepp"></ul>
@@ -459,8 +484,10 @@
   $("sok-stang").addEventListener("click", stangSok);
   falt.addEventListener("input", ritaSok);
 
-  // ── Spelaren ──────────────────────────────────────────
-  let yt = null, video = null, aktuell = null, klocka = null;
+  // ── Spelaren: egen styrning ovanpå YouTube (controls=0) eller <video> ──
+  let yt = null, video = null, aktuell = null, klocka = null, gomTimer = null;
+  const dukEl = $("duk");
+  let textPa = true; try { textPa = localStorage.getItem("textning") !== "av"; } catch (e) {}
   function ytApi() {
     return new Promise((res) => {
       if (window.YT && window.YT.Player) return res();
@@ -471,6 +498,132 @@
   const iakttagare = lugnt ? null : new IntersectionObserver((poster) => {
     poster.forEach((p) => { if (p.isIntersecting) { p.target.classList.add("syns"); iakttagare.unobserve(p.target); } });
   }, { rootMargin: "0px 0px -8% 0px" });
+
+  // Ett gränssnitt oavsett källa
+  const sp = {
+    spelar: () => video ? !video.paused && !video.ended : (yt && yt.getPlayerState ? yt.getPlayerState() === 1 : false),
+    startad: () => video ? video.currentTime > 0 || !video.paused : (yt && yt.getPlayerState ? [1, 2, 3].includes(yt.getPlayerState()) : false),
+    nu: () => video ? video.currentTime : (yt && yt.getCurrentTime ? yt.getCurrentTime() : 0),
+    langd: () => video ? (video.duration || 0) : (yt && yt.getDuration ? yt.getDuration() : 0),
+    spela: () => { if (video) video.play().catch(() => {}); else if (yt && yt.playVideo) yt.playVideo(); },
+    pausa: () => { if (video) video.pause(); else if (yt && yt.pauseVideo) yt.pauseVideo(); },
+    sok: (t) => { if (video) video.currentTime = t; else if (yt && yt.seekTo) yt.seekTo(t, true); },
+    tyst: () => video ? video.muted : (yt && yt.isMuted ? yt.isMuted() : false),
+    satTyst: (b) => { if (video) video.muted = b; else if (yt) (b ? yt.mute() : yt.unMute()); },
+  };
+  const IK = {
+    spela: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M7 4.5 L19 12 L7 19.5 Z"/></svg>',
+    pausa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M6 4.5 H9.5 V19.5 H6 Z M14.5 4.5 H18 V19.5 H14.5 Z"/></svg>',
+    ljudPa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M4 9.5 H8 L13 5.5 V18.5 L8 14.5 H4 Z"/><path d="M16 9 A4 4 0 0 1 16 15 M18.5 6.5 A7.5 7.5 0 0 1 18.5 17.5"/></svg>',
+    ljudAv: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M4 9.5 H8 L13 5.5 V18.5 L8 14.5 H4 Z"/><path d="M16.5 9.5 L21 14.5 M21 9.5 L16.5 14.5"/></svg>',
+    helIn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9 V3 H9 M15 3 H21 V9 M21 15 V21 H15 M9 21 H3 V15"/></svg>',
+    helUt: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 V9 H3 M21 9 H15 V3 M15 21 V15 H21 M3 15 H9 V21"/></svg>',
+  };
+  // YouTubes egna undertexter av — sidan ritar sina egna ur tal.srt.
+  function stangYtText() { if (yt && yt.unloadModule) { try { yt.unloadModule("captions"); yt.unloadModule("cc"); } catch (e) {} } }
+  function byggDuk(v) {
+    const bild = v.omslagRen || v.omslag;
+    dukEl.innerHTML = `
+      <div class="halla"></div>
+      <div class="bild" style="${bild ? `background-image:url('${bild}')` : ""}"></div>
+      <div class="lock" id="duk-lock" aria-hidden="true"></div>
+      <div class="stor" aria-hidden="true"><span>${IK.spela.replace('class="fyll" ', "")}</span></div>
+      <div class="undertext" id="duk-text" aria-live="off"></div>
+      <div class="styr" id="duk-styr">
+        <div class="linje" id="duk-linje" role="slider" aria-label="Position i filmen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><div class="fylld" id="duk-fylld"></div><div class="knopp" id="duk-knopp"></div></div>
+        <div class="rad">
+          <button class="knapp" id="duk-spela" type="button" aria-label="Spela">${IK.spela}</button>
+          <span class="tidvis"><span id="duk-nu">0:00</span> / <span id="duk-langd">${v.langd ? tid(v.langd) : "–"}</span></span>
+          <span class="mellan"></span>
+          <button class="knapp" id="duk-cc" type="button" aria-label="Textning" aria-pressed="${textPa}"><span class="cc">CC</span></button>
+          <button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button>
+          <button class="knapp" id="duk-hel" type="button" aria-label="Helskärm">${IK.helIn}</button>
+        </div>
+      </div>`;
+    dukEl.classList.remove("igang"); dukEl.classList.add("paus");
+  }
+  function visaStyr() {
+    dukEl.classList.add("visa"); clearTimeout(gomTimer);
+    gomTimer = setTimeout(() => dukEl.classList.remove("visa"), 2600);
+  }
+  function uppdatera() {
+    if (!aktuell) return;
+    const nu = sp.nu(), langd = sp.langd() || aktuell.langd || 0, spelar = sp.spelar();
+    dukEl.classList.toggle("paus", !spelar);
+    if (sp.startad()) dukEl.classList.add("igang");
+    $("duk-spela").innerHTML = spelar ? IK.pausa : IK.spela; $("duk-spela").setAttribute("aria-label", spelar ? "Pausa" : "Spela");
+    $("duk-nu").textContent = tid(Math.floor(nu));
+    if (langd) { $("duk-langd").textContent = tid(Math.round(langd)); const p = Math.min(100, nu / langd * 100); $("duk-fylld").style.width = p + "%"; $("duk-knopp").style.left = p + "%"; $("duk-linje").setAttribute("aria-valuenow", Math.round(p)); }
+    $("duk-ljud").innerHTML = sp.tyst() ? IK.ljudAv : IK.ljudPa;
+    // Undertext ur tal.srt (sekundexakt), annars replikerna
+    let text = "";
+    if (textPa) {
+      const c = aktuell.undertext ? aktuell.undertext.find((u) => nu >= u.s && nu < u.e) : null;
+      if (c) text = c.text;
+    }
+    if ($("duk-text").textContent !== text) $("duk-text").textContent = text;
+    markeraNu(nu);
+  }
+  function vaxlaSpel() { if (sp.spelar()) sp.pausa(); else sp.spela(); setTimeout(uppdatera, 50); }
+  function vaxlaText() {
+    textPa = !textPa; $("duk-cc").setAttribute("aria-pressed", String(textPa));
+    try { localStorage.setItem("textning", textPa ? "pa" : "av"); } catch (e) {}
+    uppdatera();
+  }
+  const kanHelskarm = !!(dukEl.requestFullscreen || dukEl.webkitRequestFullscreen);
+  function iHelskarm() { return !!(document.fullscreenElement || document.webkitFullscreenElement); }
+  function vaxlaHelskarm() {
+    if (!kanHelskarm) return;
+    if (iHelskarm()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    else { const p = (dukEl.requestFullscreen || dukEl.webkitRequestFullscreen).call(dukEl); if (p && p.catch) p.catch(() => {}); }
+  }
+  ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, () => {
+    const b = $("duk-hel"); if (b) { b.innerHTML = iHelskarm() ? IK.helUt : IK.helIn; b.setAttribute("aria-label", iHelskarm() ? "Stäng helskärm" : "Helskärm"); }
+  }));
+  // Klick och drag i spelarrutan
+  dukEl.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (b) {
+      if (b.id === "duk-spela") vaxlaSpel(); else if (b.id === "duk-cc") vaxlaText();
+      else if (b.id === "duk-ljud") { sp.satTyst(!sp.tyst()); setTimeout(uppdatera, 50); }
+      else if (b.id === "duk-hel") vaxlaHelskarm();
+      visaStyr(); return;
+    }
+    if (e.target.closest("#duk-linje")) return;
+    if (e.target.closest("#duk-lock")) { vaxlaSpel(); visaStyr(); }
+  });
+  dukEl.addEventListener("dblclick", (e) => { if (e.target.closest("#duk-lock")) { vaxlaHelskarm(); } });
+  dukEl.addEventListener("pointermove", visaStyr);
+  dukEl.addEventListener("pointerleave", () => { clearTimeout(gomTimer); dukEl.classList.remove("visa"); });
+  let sokDrag = false;
+  function sokVidPunkt(e) {
+    const l = $("duk-linje"); if (!l) return;
+    const r = l.getBoundingClientRect(); const andel = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    const langd = sp.langd() || (aktuell && aktuell.langd) || 0; if (!langd) return;
+    const t = andel * langd; sp.sok(t);
+    $("duk-fylld").style.width = andel * 100 + "%"; $("duk-knopp").style.left = andel * 100 + "%"; $("duk-nu").textContent = tid(Math.floor(t));
+    if (aktuell) history.replaceState(null, "", `#${aktuell.id}&t=${Math.floor(t)}`);
+  }
+  dukEl.addEventListener("pointerdown", (e) => { const l = e.target.closest("#duk-linje"); if (!l) return; sokDrag = true; dukEl.classList.add("drar"); l.setPointerCapture(e.pointerId); sokVidPunkt(e); });
+  dukEl.addEventListener("pointermove", (e) => { if (sokDrag) sokVidPunkt(e); });
+  const slappLinje = () => { if (!sokDrag) return; sokDrag = false; dukEl.classList.remove("drar"); if (!sp.spelar()) sp.spela(); };
+  dukEl.addEventListener("pointerup", slappLinje); dukEl.addEventListener("pointercancel", slappLinje);
+  // Tangenter: mellanslag/k spela, pilar ±5 s, j/l ±10 s, f helskärm, c textning, m ljud
+  document.addEventListener("keydown", (e) => {
+    if (aktivVy !== "film" || !aktuell || sokRuta.classList.contains("oppen")) return;
+    if (e.target.matches("input, textarea")) return;
+    const k = e.key;
+    if (k === " " || k === "k") { e.preventDefault(); vaxlaSpel(); }
+    else if (k === "ArrowLeft") { e.preventDefault(); sp.sok(Math.max(0, sp.nu() - 5)); }
+    else if (k === "ArrowRight") { e.preventDefault(); sp.sok(sp.nu() + 5); }
+    else if (k === "j") sp.sok(Math.max(0, sp.nu() - 10));
+    else if (k === "l") sp.sok(sp.nu() + 10);
+    else if (k === "f") { e.preventDefault(); vaxlaHelskarm(); }
+    else if (k === "c") vaxlaText();
+    else if (k === "m") { sp.satTyst(!sp.tyst()); }
+    else return;
+    visaStyr(); setTimeout(uppdatera, 50);
+  });
 
   async function laddaFilm(v, t) {
     if (aktuell && aktuell.id === v.id) { if (Number.isFinite(t)) hoppa(t, false); return; }
@@ -483,46 +636,25 @@
     $("f-begrepp").innerHTML = v.begrepp.map((b) => `<li>${esc(b)}</li>`).join("");
     $("kapitel").innerHTML = v.repliker.map((r, i) => `<li${lugnt ? ' class="syns"' : ""}><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join("");
     if (iakttagare) $("kapitel").querySelectorAll("li").forEach((li) => iakttagare.observe(li));
-    const duk = $("duk"); duk.innerHTML = "";
     const start = Number.isFinite(t) ? t : 0;
     if (v.fil) {
-      video = document.createElement("video"); video.controls = true; video.playsInline = true; video.preload = "metadata"; video.src = v.fil;
-      if (v.textning) { const tr = document.createElement("track"); tr.kind = "subtitles"; tr.srclang = "sv"; tr.label = "Svenska"; tr.src = v.textning; video.appendChild(tr); }
-      duk.appendChild(video); video.currentTime = start; if (start) video.play().catch(() => {});
+      byggDuk(v);
+      video = document.createElement("video"); video.playsInline = true; video.preload = "metadata"; video.src = v.fil;
+      dukEl.querySelector(".halla").appendChild(video); video.currentTime = start; if (start) video.play().catch(() => {});
     } else if (v.youtube) {
+      byggDuk(v);
       await ytApi();
-      const holder = document.createElement("div"); duk.appendChild(holder);
-      yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start, autoplay: start ? 1 : 0, rel: 0, modestbranding: 1, cc_load_policy: 0, hl: "sv" } });
+      if (aktuell !== v) return;
+      const holder = document.createElement("div"); dukEl.querySelector(".halla").appendChild(holder);
+      yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start, autoplay: start ? 1 : 0, controls: 0, disablekb: 1, rel: 0, fs: 0, iv_load_policy: 3, playsinline: 1, cc_load_policy: 0, modestbranding: 1, hl: "sv" },
+        events: { onReady: (e) => { stangYtText(); uppdatera(); }, onStateChange: (e) => { stangYtText(); uppdatera(); } } });
     } else {
-      duk.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
+      dukEl.classList.remove("igang", "paus");
+      dukEl.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
     }
     markeraNu(start);
-    klocka = setInterval(() => {
-      const nu = video ? video.currentTime : (yt && yt.getCurrentTime ? yt.getCurrentTime() : null);
-      if (nu != null) markeraNu(nu);
-    }, 500);
+    klocka = setInterval(uppdatera, 200);
   }
-  // Helskärm på sidan: hela spelarrutan (inte bara YouTubes egen knapp).
-  const helskarm = $("helskarm"), dukEl = $("duk");
-  const kanHelskarm = !!(dukEl.requestFullscreen || dukEl.webkitRequestFullscreen);
-  if (!kanHelskarm) helskarm.hidden = true;
-  function vaxlaHelskarm() {
-    if (document.fullscreenElement || document.webkitFullscreenElement) {
-      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-    } else {
-      (dukEl.requestFullscreen || dukEl.webkitRequestFullscreen).call(dukEl).catch?.(() => {});
-    }
-  }
-  helskarm.addEventListener("click", vaxlaHelskarm);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "f" && aktivVy === "film" && !sokRuta.classList.contains("oppen") && kanHelskarm) { e.preventDefault(); vaxlaHelskarm(); }
-  });
-  ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, () => {
-    const i = !!(document.fullscreenElement || document.webkitFullscreenElement);
-    helskarm.querySelector("span").textContent = i ? "Stäng helskärm" : "Helskärm";
-    helskarm.querySelector(".in").style.display = i ? "none" : ""; helskarm.querySelector(".ut").style.display = i ? "" : "none";
-  }));
-
   function markeraNu(s) {
     if (!aktuell) return;
     let i = -1;
@@ -531,15 +663,14 @@
   }
   function hoppa(t, skrivAdress = true) {
     if (!Number.isFinite(t)) return;
-    if (video) { video.currentTime = t; video.play().catch(() => {}); }
-    else if (yt && yt.seekTo) { yt.seekTo(t, true); yt.playVideo(); }
-    markeraNu(t);
+    sp.sok(t); sp.spela();
+    markeraNu(t); visaStyr();
     if (aktuell && skrivAdress) history.replaceState(null, "", `#${aktuell.id}&t=${t}`);
   }
   function stangSpelare() {
     if (klocka) clearInterval(klocka); klocka = null;
     if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
-    $("duk").innerHTML = ""; yt = null; video = null; aktuell = null;
+    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar"); yt = null; video = null; aktuell = null;
   }
   function oppna(id, t) {
     stangSok();
