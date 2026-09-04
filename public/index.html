@@ -179,7 +179,8 @@
   .duk.igang .bild { opacity: 0; pointer-events: none; }
   .duk .lock { position: absolute; inset: 0; z-index: 3; }
   .duk .stor { position: absolute; inset: 0; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; transition: opacity .5s; }
-  .duk.paus .stor { opacity: 1; }
+  /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
+  .duk.paus:not(.igang) .stor, .duk.paus.nyss .stor, .duk.paus .lock:hover ~ .stor { opacity: 1; }
   .duk .stor span { width: 84px; height: 84px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .35); backdrop-filter: blur(4px); transition: background .3s, color .3s, transform .3s var(--lugn), box-shadow .3s; }
   .duk .stor svg { width: 22px; height: 22px; fill: currentColor; margin-left: 4px; }
   /* Återkoppling: hovring fyller ringen, klick ger en puls */
@@ -569,9 +570,12 @@
     dukEl.classList.add("visa"); clearTimeout(gomTimer);
     gomTimer = setTimeout(() => dukEl.classList.remove("visa"), 2600);
   }
+  let nyssTimer = null, spelarForut = false;
   function uppdatera() {
     if (!aktuell) return;
     const nu = sp.nu(), langd = sp.langd() || aktuell.langd || 0, spelar = sp.spelar();
+    if (spelarForut && !spelar) { dukEl.classList.add("nyss"); clearTimeout(nyssTimer); nyssTimer = setTimeout(() => dukEl.classList.remove("nyss"), 1200); }
+    spelarForut = spelar;
     dukEl.classList.toggle("paus", !spelar);
     if (sp.startad()) dukEl.classList.add("igang");
     $("duk-spela").innerHTML = spelar ? IK.pausa : IK.spela; $("duk-spela").setAttribute("aria-label", spelar ? "Pausa" : "Spela");
@@ -717,7 +721,7 @@
   function stangSpelare() {
     if (klocka) clearInterval(klocka); klocka = null;
     if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
-    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm"); yt = null; video = null; aktuell = null;
+    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; yt = null; video = null; aktuell = null;
   }
   function oppna(id, t) {
     stangSok();
