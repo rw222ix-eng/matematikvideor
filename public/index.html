@@ -155,7 +155,8 @@
   .film .topp { position: sticky; background: linear-gradient(var(--bg) 60%, rgba(23, 20, 20, 0)); }
   .film .tillbaka { font: 400 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben2); display: inline-flex; align-items: center; gap: 12px; transition: color .4s; }
   .film .tillbaka:hover { color: var(--ben); }
-  .film .tillbaka::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+  .film .tillbaka svg { width: 30px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; transition: transform .5s var(--lugn); }
+  .film .tillbaka:hover svg { transform: translateX(-4px); }
   .film .inre { max-width: 960px; margin: 0 auto; padding: 40px 24px 0; }
   .film .huvud { text-align: center; margin: 0 auto 44px; }
   .film .huvud .skrift { font-size: clamp(46px, 7vw, 86px); margin-top: 14px; }
@@ -268,7 +269,7 @@
 <!-- ── 3. Filmens sida ──────────────────────────────────── -->
 <section class="vy film" id="vy-film">
   <header class="topp">
-    <a class="tillbaka" href="#filmer">Alla filmer</a>
+    <a class="tillbaka" href="#filmer"><svg viewBox="0 0 32 12" aria-hidden="true"><path d="M31 6 H1 M6 1 L1 6 L6 11"/></svg>Alla filmer</a>
     <div class="hoger">
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
