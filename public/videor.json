@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-05T09:31:03.862Z",
+ "byggd": "2026-09-05T15:44:39.554Z",
  "videor": [
   {
    "id": "viete-och-chiffret",
@@ -529,7 +529,7 @@
    "titel": "Kepler och planeterna",
    "ar": 1618,
    "kurs": "Matematik 1c",
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/kepler-v1/kepler-och-planeterna-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/kepler-v2/kepler-och-planeterna-1080p.mp4",
    "moment": "Potenser med bråk i exponenten",
    "begrepp": [
     "potens",
@@ -543,606 +543,550 @@
    ],
    "beskrivning": "Johannes Kepler i Linz 1618, Tycho Brahes mätningar och upptäckten att tiden avslöjar avståndet. Potenser, rötter och bråk i exponenten, räknat med tal före bokstäver.",
    "youtube": "IqXpuh0olBc",
-   "langd": 468,
+   "langd": 463,
    "omslag": "omslag/kepler-och-planeterna.jpg",
    "omslagRen": "omslag/kepler-och-planeterna-ren.jpg",
    "repliker": [
     {
      "t": 0,
-     "text": "Våren 1618 bodde Johannes Kepler i Linz i Österrike, i ett hus nära floden Donau. Han arbetade som matematiker åt kejsaren."
+     "text": "För fyra hundra år sedan visste ingen hur långt bort från solen planeterna ligger. Man kan ju inte dra ett snöre till Mars. Men var planeterna står på himlen går att se, och det går att skriva upp."
     },
     {
-     "t": 12,
-     "text": "På hans bord låg anteckningar från en dansk astronom som hette Tycho Brahe. Tycho hade skrivit upp var planeterna stod på himlen, natt efter natt, i tjugo år."
+     "t": 15,
+     "text": "Därför satt den danske astronomen Tycho Brahe på ön Ven i Öresund i tjugo år och skrev upp var planeterna stod bland stjärnorna, natt efter natt. Han hade inget teleskop, bara ögonen och stora mätinstrument av mässing."
     },
     {
-     "t": 25,
-     "text": "Tycho gjorde sina mätningar på ön Ven i Öresund, som är svensk i dag. När Tycho dog år 1601 fick Kepler ta över alla anteckningarna."
+     "t": 34,
+     "text": "Tycho blev sedan astronom åt kejsaren i Prag, och där fick han en ung medhjälpare, Johannes Kepler. När Tycho dog år 1601 fick Kepler ta över alla anteckningarna, för han var den ende som kunde räkna på dem."
     },
     {
-     "t": 37,
-     "text": "Kepler skrev av siffrorna i tabeller, en för varje planet, och prövade sedan att gånga och dela dem på olika sätt för att hitta ett mönster som stämde för alla planeter. Det tog sjutton år."
+     "t": 50,
+     "text": "Kepler flyttade till Linz i Österrike, till ett hus nära floden Donau, och skrev av siffrorna i tabeller, en för varje planet. Sedan satt han och gångade och delade talen på alla sätt han kunde komma på, för han letade efter ett mönster som stämde för alla planeter. Det tog sjutton år."
     },
     {
-     "t": 52,
-     "text": "En sak kunde ingen mäta på den tiden, och det var hur långt bort från solen planeterna är. Man kan ju inte dra ett snöre till Mars."
+     "t": 73,
+     "text": "Hur lång tid en planet behöver för ett varv runt solen kunde man däremot räkna ut med en kalender. Man skriver upp vilken dag Mars står på ett visst ställe bland stjärnorna, och efter 687 dagar står den där igen. Så tiden för ett varv visste man för alla planeter, men avståndet till solen visste man inte för någon."
     },
     {
-     "t": 62,
-     "text": "Men hur lång tid det tar för Mars att åka ett helt varv runt solen går att räkna ut. Man skriver upp var Mars står bland stjärnorna, och efter 687 dagar är den tillbaka på samma ställe."
+     "t": 97,
+     "text": "Så Kepler undrade om tiden kan avslöja avståndet. Om man vet hur många år en planet behöver för ett varv, kan man då räkna ut hur långt från solen den ligger? Den 15 maj 1618 hittade han svaret. Tar man tiden för ett varv gånger sig själv får man samma tal som om man tar avståndet till solen gånger sig självt tre gånger, och det stämmer för alla planeter."
     },
     {
-     "t": 76,
-     "text": "Så Kepler undrade om man kan räkna ut hur långt bort en planet är, bara man vet hur lång tid den behöver för ett varv."
+     "t": 128,
+     "text": "Vi räknar på samma sätt som Kepler, och vi tar en planet som behöver 8 år för att åka ett helt varv runt solen. Tiden räknar vi i år, och avståndet räknar vi i jordavstånd, alltså så långt som det är från jorden till solen."
     },
     {
-     "t": 84,
-     "text": "Den 15 maj 1618 hittade han mönstret. Tar man tiden för ett varv gånger sig själv, får man samma tal som om man tar avståndet till solen gånger sig självt tre gånger. Och det stämmer för alla planeter."
-    },
-    {
-     "t": 102,
-     "text": "Innan vi räknar tittar vi på formelbladet, det som ni får ha på nationella provet i Matematik 1. Här står åtta regler för hur man räknar med potenser."
-    },
-    {
-     "t": 113,
-     "text": "Vi kommer att behöva två av dem, en om potenser som höjs upp igen, och en om rötter. Först räknar vi med vanliga tal, och sedan kommer vi tillbaka hit."
-    },
-    {
-     "t": 125,
-     "text": "Vi räknar på samma sätt som Kepler. Tiden mäter vi i år, alltså hur många år en planet behöver för att åka ett helt varv runt solen. Jorden behöver ett år."
-    },
-    {
-     "t": 139,
-     "text": "Avståndet mäter vi i jordavstånd. Ett jordavstånd är så långt som det är från jorden till solen. Jorden har då tiden 1 och avståndet 1."
-    },
-    {
-     "t": 151,
-     "text": "Tänk dig en planet som behöver 8 år för att åka ett helt varv runt solen. Tiden gånger sig själv blir då 8 gånger 8, alltså 64."
+     "t": 145,
+     "text": "Tiden gånger sig själv blir 8 gånger 8, alltså 64. Det skriver man kortare som 8 upphöjt till 2. Den lilla tvåan kallas exponent, och den talar om hur många åttor som gångas ihop."
     },
     {
      "t": 163,
-     "text": "Det skriver man kortare som 8 upphöjt till 2. Den lilla tvåan kallas exponent, och den talar om hur många åttor man gångar ihop."
+     "text": "Keplers lag säger att avståndet gånger sig självt tre gånger ska bli samma tal, alltså 64. Vilket tal blir 64 om man gångar det med sig självt tre gånger? Det är 4, för 4 gånger 4 gånger 4 är 64. Så planeten ligger 4 jordavstånd från solen."
     },
     {
-     "t": 173,
-     "text": "Avståndet vet vi inte än, så vi kallar det a. Avståndet gånger sig självt tre gånger blir då a upphöjt till 3."
+     "t": 189,
+     "text": "Talet 4 kallas tredje roten ur 64, för det är det tal som ger 64 när man gångar ihop tre av dem. Tredje roten ur 64 skriver man med ett rottecken och en liten trea, men roten kan också skrivas som en potens, 64 upphöjt till en tredjedel. Det är samma tal, 4."
     },
     {
-     "t": 184,
-     "text": "Keplers lag säger att de två talen är lika, så a upphöjt till 3 är 64."
+     "t": 215,
+     "text": "Nu gör vi samma räkning en gång till, men vi håller kvar åttan. 64 är ju 8 upphöjt till 2, så avståndet är tredje roten ur 8 upphöjt till 2. Roten skriver vi som upphöjt till en tredjedel, så avståndet är 8 upphöjt till 2, upphöjt till en tredjedel."
     },
     {
-     "t": 192,
-     "text": "Vilket tal blir 64 om man gångar det med sig självt tre gånger? Det är 4, för 4 gånger 4 gånger 4 är 64."
+     "t": 238,
+     "text": "När en potens höjs upp igen gångar man ihop exponenterna. 2 gånger en tredjedel är två tredjedelar, så avståndet är 8 upphöjt till två tredjedelar."
     },
     {
-     "t": 204,
-     "text": "Planeten ligger alltså 4 gånger längre bort från solen än jorden, och det räknade vi ut bara med hjälp av tiden."
+     "t": 252,
+     "text": "Så här läser man ett bråk i exponenten. Talet under bråkstrecket säger vilken rot man tar, och talet över bråkstrecket säger vad man höjer upp till. Tredje roten ur 8 är 2, för 2 gånger 2 gånger 2 är 8, och 2 upphöjt till 2 är 4. Samma svar som förut, 4 jordavstånd."
     },
     {
-     "t": 213,
-     "text": "Nu till den första regeln på bladet. Vad händer om man höjer upp en potens en gång till? Ta 4 upphöjt till 2 och höj upp det till 3. Det betyder att 4 upphöjt till 2 ska stå tre gånger i rad och gångas ihop."
+     "t": 280,
+     "text": "Kepler räknade inte bara på en planet utan på alla, så vi skriver lagen med bokstäver. Vi kallar tiden T och avståndet a. Då är T upphöjt till 2 lika med a upphöjt till 3, och avståndet a är T upphöjt till två tredjedelar. Det gäller för alla planeter runt solen."
     },
     {
-     "t": 231,
-     "text": "Det blir 4 upphöjt till 6, för när en potens höjs upp igen multipliceras exponenterna. 2 gånger 3 är 6."
+     "t": 305,
+     "text": "Vi provar på en planet som behöver 27 år för att åka ett varv runt solen. Avståndet är 27 upphöjt till två tredjedelar. Tredje roten ur 27 är 3, för 3 gånger 3 gånger 3 är 27, och 3 upphöjt till 2 är 9. Så planeten ligger 9 jordavstånd från solen."
     },
     {
-     "t": 243,
-     "text": "Det är precis det som den första regeln på formelbladet säger."
-    },
-    {
-     "t": 248,
-     "text": "Tillbaka till planeten som behöver 8 år för ett varv. Där räknade vi ut avståndet 4 ur talet 64. Talet 4 kallas tredje roten ur 64, eftersom 4 gånger 4 gånger 4 är 64. Roten kan man också skriva som en potens, 64 upphöjt till en tredjedel."
-    },
-    {
-     "t": 274,
-     "text": "Att skriva roten som en potens är den andra regeln på bladet. Och om man använder de två reglerna tillsammans får man en tredje regel, som inte står på bladet."
-    },
-    {
-     "t": 287,
-     "text": "Nu tar vi Keplers lag med bokstäver i stället för tal. Tiden upphöjt till 2 är lika med avståndet upphöjt till 3, så avståndet är tredje roten ur tiden upphöjt till 2."
-    },
-    {
-     "t": 302,
-     "text": "Tredje roten kan vi skriva som upphöjt till en tredjedel, så avståndet blir tiden upphöjt till 2, upphöjt till en tredjedel."
-    },
-    {
-     "t": 313,
-     "text": "Och 2 gånger en tredjedel är två tredjedelar, så avståndet är tiden upphöjt till två tredjedelar."
-    },
-    {
-     "t": 324,
-     "text": "Så här läser man ett bråk i exponenten. Talet under bråkstrecket säger vilken rot man ska ta, och talet över bråkstrecket säger vad man ska höja upp till."
-    },
-    {
-     "t": 337,
-     "text": "Vi provar på en planet till, som behöver 27 år för att åka ett varv runt solen. 27 upphöjt till en tredjedel är 3, för 3 gånger 3 gånger 3 är 27."
+     "t": 331,
+     "text": "En planet till, som behöver 1000 år för ett varv. Tredje roten ur 1000 är 10, för 10 gånger 10 gånger 10 är 1000, och 10 upphöjt till 2 är 100. Så den ligger 100 jordavstånd från solen."
     },
     {
      "t": 352,
-     "text": "Då är avståndet 27 upphöjt till två tredjedelar, och det är samma sak som 3 upphöjt till 2, alltså 9 jordavstånd."
+     "text": "Två av reglerna vi använde står på formelbladet, det som ni får ha på nationella provet i Matematik 1. Den ena är att man gångar ihop exponenterna när en potens höjs upp igen, och den andra är att en rot kan skrivas som en potens. Den tredje, hur man läser ett bråk i exponenten, står inte där, för den är de två reglerna tillsammans."
     },
     {
-     "t": 364,
-     "text": "Kepler prövade sin lag på Jupiter, som behöver ungefär 12 år för ett varv runt solen. 12 gånger 12 är 144. Avståndet från solen till Jupiter kände man redan till, ungefär 5,2 jordavstånd, och 5,2 gånger 5,2 gånger 5,2 är ungefär 141. Det är nästan samma tal, så lagen stämde."
+     "t": 379,
+     "text": "Kepler prövade lagen på alla sex planeter man kände till på den tiden, och den stämde för varenda en. Han skrev ner den i en bok som heter Världens harmoni, och den trycktes i Linz år 1619."
     },
     {
      "t": 396,
-     "text": "Han skrev ner lagen i en bok som heter Världens harmoni, och den trycktes i Linz år 1619."
+     "text": "Året efter blev hans mamma Katharina anklagad för att vara häxa, i staden Leonberg i Tyskland där hon bodde, och hon sattes i fängelse. Kepler slutade arbeta, reste dit och satt med henne i rätten i fjorton månader, tills hon släpptes. Hon dog ett halvår senare."
     },
     {
-     "t": 406,
-     "text": "Året efter blev hans mamma Katharina anklagad för att vara häxa, och hon sattes i fängelse. Kepler slutade arbeta, reste dit och satt med henne i rätten tills hon blev frisläppt efter fjorton månader."
+     "t": 420,
+     "text": "Kepler själv dog år 1630, men hans lag används än i dag, när man skjuter upp satelliter runt jorden. Vet man hur lång tid en satellit ska ta på ett varv, räknar man ut med lagen hur högt upp den ska ligga."
     },
     {
-     "t": 422,
-     "text": "Hon dog ett halvår senare. Kepler själv dog år 1630, men boken finns kvar på bibliotek, och lagen används än i dag för att räkna ut hur satelliter ska åka runt jorden."
-    },
-    {
-     "t": 439,
-     "text": "År 1846 upptäckte man en ny planet, Neptunus, som ingen hade sett förut. Den hinner åka ett helt varv runt solen på 165 år."
-    },
-    {
-     "t": 454,
-     "text": "Så avståndet från solen till Neptunus är 165 upphöjt till två tredjedelar. Hur många gånger längre bort än jorden ligger den?"
+     "t": 437,
+     "text": "År 1846 hittade man en planet som ingen sett förut, Neptunus, och den behöver 165 år för att åka ett varv runt solen. Det talet är inget man räknar i huvudet. Men tänk dig en planet som behöver 125 år för ett varv runt solen. Hur många jordavstånd från solen ligger den?"
     }
    ],
    "undertext": [
     {
-     "s": 0.3,
-     "e": 7.86,
-     "text": "Våren 1618 bodde Johannes Kepler i Linz i Österrike, i ett hus nära floden Donau."
+     "s": 0.16,
+     "e": 5.82,
+     "text": "För fyra hundra år sedan visste ingen hur långt bort från solen planeterna ligger."
     },
     {
-     "s": 9.08,
-     "e": 12.62,
-     "text": "Han arbetade som matematiker åt kejsaren."
-    },
-    {
-     "s": 12.66,
-     "e": 17.6,
-     "text": "På hans bord låg anteckningar från en dansk astronom som hette Tycho Brahe."
-    },
-    {
-     "s": 19,
-     "e": 23.14,
-     "text": "Tycho hade skrivit upp var planeterna stod på himlen, natt efter natt,"
-    },
-    {
-     "s": 23.46,
-     "e": 24.5,
-     "text": "i tjugo år."
-    },
-    {
-     "s": 25.89,
-     "e": 30.55,
-     "text": "Tycho gjorde sina mätningar på ön Ven i Öresund, som är svensk i dag."
-    },
-    {
-     "s": 31.64,
-     "e": 36.56,
-     "text": "När Tycho dog år 1601 fick Kepler ta över alla anteckningarna."
-    },
-    {
-     "s": 37.82,
-     "e": 43.54,
-     "text": "Kepler skrev av siffrorna i tabeller, en för varje planet, och prövade sedan att gånga"
-    },
-    {
-     "s": 43.66,
-     "e": 48.4,
-     "text": "och dela dem på olika sätt för att hitta ett mönster som stämde för alla planeter."
-    },
-    {
-     "s": 49.36,
-     "e": 51.26,
-     "text": "Det tog sjutton år."
-    },
-    {
-     "s": 52.64,
-     "e": 58.12,
-     "text": "En sak kunde ingen mäta på den tiden, och det var hur långt bort från solen planeterna"
-    },
-    {
-     "s": 58.14,
-     "e": 58.28,
-     "text": "är."
-    },
-    {
-     "s": 59.22,
-     "e": 61.1,
+     "s": 6.88,
+     "e": 9.04,
      "text": "Man kan ju inte dra ett snöre till Mars."
     },
     {
-     "s": 62.16,
-     "e": 66.96,
-     "text": "Men hur lång tid det tar för Mars att åka ett helt varv runt solen går att räkna ut."
+     "s": 9.72,
+     "e": 15,
+     "text": "Men var planeterna står på himlen går att se, och det går att skriva upp."
     },
     {
-     "s": 68.08,
-     "e": 74.7,
-     "text": "Man skriver upp var Mars står bland stjärnorna, och efter 687 dagar är den tillbaka på"
+     "s": 15.44,
+     "e": 22.6,
+     "text": "Därför satt den danske astronomen Tycho Brahe på ön Ven i Öresund i tjugo år och skrev"
     },
     {
-     "s": 74.74,
-     "e": 75.4,
-     "text": "samma ställe."
+     "s": 22.64,
+     "e": 26.6,
+     "text": "upp var planeterna stod bland stjärnorna, natt efter natt."
     },
     {
-     "s": 76.62,
-     "e": 80.18,
-     "text": "Så Kepler undrade om man kan räkna ut hur långt bort en planet är,"
+     "s": 27.9,
+     "e": 33.06,
+     "text": "Han hade inget teleskop, bara ögonen och stora mätinstrument av mässing."
     },
     {
-     "s": 80.6,
-     "e": 83.5,
-     "text": "bara man vet hur lång tid den behöver för ett varv."
+     "s": 34.3,
+     "e": 39.38,
+     "text": "Tycho blev sedan astronom åt kejsaren i Prag, och där fick han en ung medhjälpare,"
     },
     {
-     "s": 84.66,
-     "e": 88.46,
-     "text": "Den 15 maj 1618 hittade han mönstret."
+     "s": 39.62,
+     "e": 40.68,
+     "text": "Johannes Kepler."
     },
     {
-     "s": 89.53,
-     "e": 95.38,
-     "text": "Tar man tiden för ett varv gånger sig själv, får man samma tal som om man tar avståndet"
+     "s": 41.9,
+     "e": 46.22,
+     "text": "När Tycho dog år 1601 fick Kepler ta över alla anteckningarna,"
     },
     {
-     "s": 95.4,
-     "e": 98.1,
-     "text": "till solen gånger sig självt tre gånger."
+     "s": 46.56,
+     "e": 49.18,
+     "text": "för han var den ende som kunde räkna på dem."
     },
     {
-     "s": 99.06,
-     "e": 100.92,
-     "text": "Och det stämmer för alla planeter."
+     "s": 50.28,
+     "e": 55.1,
+     "text": "Kepler flyttade till Linz i Österrike, till ett hus nära floden Donau,"
     },
     {
-     "s": 102.48,
-     "e": 108.08,
-     "text": "Innan vi räknar tittar vi på formelbladet, det som ni får ha på nationella provet i Matematik"
+     "s": 55.56,
+     "e": 59.58,
+     "text": "och skrev av siffrorna i tabeller, en för varje planet."
     },
     {
-     "s": 109.44,
-     "e": 109.45,
-     "text": "1."
+     "s": 60.5,
+     "e": 65.08,
+     "text": "Sedan satt han och gångade och delade talen på alla sätt han kunde komma på,"
     },
     {
-     "s": 109.48,
-     "e": 112.62,
-     "text": "Här står åtta regler för hur man räknar med potenser."
+     "s": 65.62,
+     "e": 69.54,
+     "text": "för han letade efter ett mönster som stämde för alla planeter."
     },
     {
-     "s": 113.58,
-     "e": 117.58,
-     "text": "Vi kommer att behöva två av dem, en om potenser som höjs upp igen,"
+     "s": 70.22,
+     "e": 72.44,
+     "text": "Det tog sjutton år."
     },
     {
-     "s": 118.02,
-     "e": 119.26,
-     "text": "och en om rötter."
+     "s": 73.96,
+     "e": 78.61,
+     "text": "Hur lång tid en planet behöver för ett varv runt solen kunde man däremot räkna ut med"
     },
     {
-     "s": 120.72,
-     "e": 124.52,
-     "text": "Först räknar vi med vanliga tal, och sedan kommer vi tillbaka hit."
+     "s": 78.66,
+     "e": 79.4,
+     "text": "en kalender."
     },
     {
-     "s": 125.78,
-     "e": 127.78,
-     "text": "Vi räknar på samma sätt som Kepler."
+     "s": 80.28,
+     "e": 84.16,
+     "text": "Man skriver upp vilken dag Mars står på ett visst ställe bland stjärnorna,"
     },
     {
-     "s": 128.64,
-     "e": 134.52,
-     "text": "Tiden mäter vi i år, alltså hur många år en planet behöver för att åka ett helt varv"
+     "s": 84.58,
+     "e": 87.78,
+     "text": "och efter 687 dagar står den där igen."
     },
     {
-     "s": 134.56,
-     "e": 135.28,
-     "text": "runt solen."
+     "s": 88.78,
+     "e": 94.7,
+     "text": "Så tiden för ett varv visste man för alla planeter, men avståndet till solen visste man"
     },
     {
-     "s": 136.24,
-     "e": 137.69,
-     "text": "Jorden behöver ett år."
+     "s": 94.74,
+     "e": 95.66,
+     "text": "inte för någon."
     },
     {
-     "s": 139.04,
-     "e": 141.54,
-     "text": "Avståndet mäter vi i jordavstånd."
+     "s": 97.02,
+     "e": 100.82,
+     "text": "Så Kepler undrade om tiden kan avslöja avståndet."
     },
     {
-     "s": 142.36,
-     "e": 145.82,
-     "text": "Ett jordavstånd är så långt som det är från jorden till solen."
+     "s": 101.76,
+     "e": 107.08,
+     "text": "Om man vet hur många år en planet behöver för ett varv, kan man då räkna ut hur långt"
     },
     {
-     "s": 147.02,
-     "e": 150.24,
-     "text": "Jorden har då tiden 1 och avståndet 1."
+     "s": 107.12,
+     "e": 108.52,
+     "text": "från solen den ligger?"
     },
     {
-     "s": 151.4,
-     "e": 155.92,
-     "text": "Tänk dig en planet som behöver 8 år för att åka ett helt varv runt solen."
+     "s": 109.9,
+     "e": 114,
+     "text": "Den 15 maj 1618 hittade han svaret."
     },
     {
-     "s": 157.06,
-     "e": 162.14,
-     "text": "Tiden gånger sig själv blir då 8 gånger 8, alltså 64."
+     "s": 115,
+     "e": 121.08,
+     "text": "Tar man tiden för ett varv gånger sig själv får man samma tal som om man tar avståndet"
     },
     {
-     "s": 163.22,
-     "e": 166.2,
+     "s": 121.1,
+     "e": 126.78,
+     "text": "till solen gånger sig självt tre gånger, och det stämmer för alla planeter."
+    },
+    {
+     "s": 128.14,
+     "e": 134,
+     "text": "Vi räknar på samma sätt som Kepler, och vi tar en planet som behöver 8 år för att åka"
+    },
+    {
+     "s": 134.04,
+     "e": 135.54,
+     "text": "ett helt varv runt solen."
+    },
+    {
+     "s": 136.46,
+     "e": 141.32,
+     "text": "Tiden räknar vi i år, och avståndet räknar vi i jordavstånd,"
+    },
+    {
+     "s": 141.76,
+     "e": 144.58,
+     "text": "alltså så långt som det är från jorden till solen."
+    },
+    {
+     "s": 145.88,
+     "e": 151.16,
+     "text": "Tiden gånger sig själv blir 8 gånger 8, alltså 64."
+    },
+    {
+     "s": 152.16,
+     "e": 155.68,
      "text": "Det skriver man kortare som 8 upphöjt till 2."
     },
     {
-     "s": 167.22,
-     "e": 172.78,
-     "text": "Den lilla tvåan kallas exponent, och den talar om hur många åttor man gångar ihop."
+     "s": 156.68,
+     "e": 162.32,
+     "text": "Den lilla tvåan kallas exponent, och den talar om hur många åttor som gångas ihop."
     },
     {
-     "s": 173.92,
-     "e": 176.6,
-     "text": "Avståndet vet vi inte än, så vi kallar det a."
+     "s": 163.52,
+     "e": 169.4,
+     "text": "Keplers lag säger att avståndet gånger sig självt tre gånger ska bli samma tal,"
     },
     {
-     "s": 177.9,
-     "e": 182.58,
-     "text": "Avståndet gånger sig självt tre gånger blir då a upphöjt till 3."
+     "s": 169.72,
+     "e": 171.08,
+     "text": "alltså 64."
     },
     {
-     "s": 184.26,
-     "e": 190.82,
-     "text": "Keplers lag säger att de två talen är lika, så a upphöjt till 3 är 64."
-    },
-    {
-     "s": 192.18,
-     "e": 196.47,
+     "s": 172.32,
+     "e": 176.62,
      "text": "Vilket tal blir 64 om man gångar det med sig självt tre gånger?"
     },
     {
-     "s": 197.62,
-     "e": 203.22,
+     "s": 177.72,
+     "e": 183.26,
      "text": "Det är 4, för 4 gånger 4 gånger 4 är 64."
     },
     {
-     "s": 204.48,
-     "e": 208.7,
-     "text": "Planeten ligger alltså 4 gånger längre bort från solen än jorden,"
+     "s": 184.16,
+     "e": 188.22,
+     "text": "Så planeten ligger 4 jordavstånd från solen."
     },
     {
-     "s": 209.36,
-     "e": 211.72,
-     "text": "och det räknade vi ut bara med hjälp av tiden."
+     "s": 189.64,
+     "e": 197.34,
+     "text": "Talet 4 kallas tredje roten ur 64, för det är det tal som ger 64 när man gångar ihop"
     },
     {
-     "s": 213.28,
-     "e": 215.16,
-     "text": "Nu till den första regeln på bladet."
+     "s": 197.4,
+     "e": 199.06,
+     "text": "tre av dem."
     },
     {
-     "s": 216.16,
-     "e": 219.36,
-     "text": "Vad händer om man höjer upp en potens en gång till?"
+     "s": 199.52,
+     "e": 204.54,
+     "text": "Tredje roten ur 64 skriver man med ett rottecken och en liten trea,"
     },
     {
-     "s": 220.68,
-     "e": 224.06,
-     "text": "Ta 4 upphöjt till 2 och höj upp det till 3."
+     "s": 205.2,
+     "e": 211.12,
+     "text": "men roten kan också skrivas som en potens, 64 upphöjt till en tredjedel."
     },
     {
-     "s": 225.26,
-     "e": 230.76,
-     "text": "Det betyder att 4 upphöjt till 2 ska stå tre gånger i rad och gångas ihop."
+     "s": 211.62,
+     "e": 213.6,
+     "text": "Det är samma tal, 4."
     },
     {
-     "s": 231.9,
-     "e": 239.06,
-     "text": "Det blir 4 upphöjt till 6, för när en potens höjs upp igen multipliceras exponenterna."
+     "s": 215.18,
+     "e": 219.22,
+     "text": "Nu gör vi samma räkning en gång till, men vi håller kvar åttan."
     },
     {
-     "s": 240.46,
-     "e": 241.98,
-     "text": "2 gånger 3 är 6."
+     "s": 220.3,
+     "e": 228.08,
+     "text": "64 är ju 8 upphöjt till 2, så avståndet är tredje roten ur 8 upphöjt till 2."
     },
     {
-     "s": 243.3,
-     "e": 246.54,
-     "text": "Det är precis det som den första regeln på formelbladet säger."
+     "s": 229.18,
+     "e": 235.66,
+     "text": "Roten skriver vi som upphöjt till en tredjedel, så avståndet är 8 upphöjt till 2,"
     },
     {
-     "s": 248.06,
-     "e": 251.32,
-     "text": "Tillbaka till planeten som behöver 8 år för ett varv."
+     "s": 235.96,
+     "e": 237.8,
+     "text": "upphöjt till en tredjedel."
     },
     {
-     "s": 252.28,
-     "e": 255.94,
-     "text": "Där räknade vi ut avståndet 4 ur talet 64."
+     "s": 238.98,
+     "e": 242.64,
+     "text": "När en potens höjs upp igen gångar man ihop exponenterna."
     },
     {
-     "s": 257.28,
-     "e": 266.26,
-     "text": "Talet 4 kallas tredje roten ur 64, eftersom 4 gånger 4 gånger 4 är 64."
+     "s": 243.66,
+     "e": 251.38,
+     "text": "2 gånger en tredjedel är två tredjedelar, så avståndet är 8 upphöjt till två tredjedelar."
     },
     {
-     "s": 267.6,
-     "e": 273.62,
-     "text": "Roten kan man också skriva som en potens, 64 upphöjt till en tredjedel."
-    },
-    {
-     "s": 274.82,
-     "e": 278.56,
-     "text": "Att skriva roten som en potens är den andra regeln på bladet."
-    },
-    {
-     "s": 279.5,
-     "e": 284.08,
-     "text": "Och om man använder de två reglerna tillsammans får man en tredje regel,"
-    },
-    {
-     "s": 284.44,
-     "e": 286,
-     "text": "som inte står på bladet."
-    },
-    {
-     "s": 287.34,
-     "e": 290.48,
-     "text": "Nu tar vi Keplers lag med bokstäver i stället för tal."
-    },
-    {
-     "s": 291.76,
-     "e": 299.9,
-     "text": "Tiden upphöjt till 2 är lika med avståndet upphöjt till 3, så avståndet är tredje roten"
-    },
-    {
-     "s": 299.94,
-     "e": 301.52,
-     "text": "ur tiden upphöjt till 2."
-    },
-    {
-     "s": 302.96,
-     "e": 309.74,
-     "text": "Tredje roten kan vi skriva som upphöjt till en tredjedel, så avståndet blir tiden upphöjt"
-    },
-    {
-     "s": 309.75,
-     "e": 312.52,
-     "text": "till 2, upphöjt till en tredjedel."
-    },
-    {
-     "s": 313.86,
-     "e": 321.54,
-     "text": "Och 2 gånger en tredjedel är två tredjedelar, så avståndet är tiden upphöjt till två"
-    },
-    {
-     "s": 321.8,
-     "e": 322.66,
-     "text": "tredjedelar."
-    },
-    {
-     "s": 324.2,
-     "e": 326.82,
+     "s": 252.66,
+     "e": 255.32,
      "text": "Så här läser man ett bråk i exponenten."
     },
     {
-     "s": 327.96,
-     "e": 334.38,
-     "text": "Talet under bråkstrecket säger vilken rot man ska ta, och talet över bråkstrecket säger"
+     "s": 256.24,
+     "e": 262.44,
+     "text": "Talet under bråkstrecket säger vilken rot man tar, och talet över bråkstrecket säger"
     },
     {
-     "s": 334.4,
-     "e": 335.64,
-     "text": "vad man ska höja upp till."
+     "s": 262.54,
+     "e": 263.7,
+     "text": "vad man höjer upp till."
     },
     {
-     "s": 337.32,
-     "e": 342.82,
-     "text": "Vi provar på en planet till, som behöver 27 år för att åka ett varv runt solen."
+     "s": 264.9,
+     "e": 274.1,
+     "text": "Tredje roten ur 8 är 2, för 2 gånger 2 gånger 2 är 8, och 2 upphöjt till 2 är 4."
     },
     {
-     "s": 344.22,
-     "e": 351.38,
-     "text": "27 upphöjt till en tredjedel är 3, för 3 gånger 3 gånger 3 är 27."
+     "s": 275.08,
+     "e": 278.56,
+     "text": "Samma svar som förut, 4 jordavstånd."
     },
     {
-     "s": 352.64,
-     "e": 359.9,
-     "text": "Då är avståndet 27 upphöjt till två tredjedelar, och det är samma sak som 3 upphöjt till"
+     "s": 280.04,
+     "e": 287.08,
+     "text": "Kepler räknade inte bara på en planet utan på alla, så vi skriver lagen med bokstäver."
     },
     {
-     "s": 360.26,
-     "e": 363.1,
-     "text": "2, alltså 9 jordavstånd."
+     "s": 287.12,
+     "e": 290.24,
+     "text": "Vi kallar tiden T och avståndet a."
     },
     {
-     "s": 364.98,
-     "e": 371.68,
-     "text": "Kepler prövade sin lag på Jupiter, som behöver ungefär 12 år för ett varv runt solen."
+     "s": 291.2,
+     "e": 299.88,
+     "text": "Då är T upphöjt till 2 lika med a upphöjt till 3, och avståndet a är T upphöjt till två"
     },
     {
-     "s": 372.2,
-     "e": 375.04,
-     "text": "12 gånger 12 är 144."
+     "s": 300.04,
+     "e": 300.94,
+     "text": "tredjedelar."
     },
     {
-     "s": 376.38,
-     "e": 382.67,
-     "text": "Avståndet från solen till Jupiter kände man redan till, ungefär 5,2 jordavstånd,"
+     "s": 301.88,
+     "e": 305.38,
+     "text": "Det gäller för alla planeter runt solen."
     },
     {
-     "s": 383.7,
-     "e": 390.5,
-     "text": "och 5,2 gånger 5,2 gånger 5,2 är ungefär 141."
+     "s": 305.7,
+     "e": 310.3,
+     "text": "Vi provar på en planet som behöver 27 år för att åka ett varv runt solen."
     },
     {
-     "s": 391.8,
-     "e": 395.28,
-     "text": "Det är nästan samma tal, så lagen stämde."
+     "s": 311.26,
+     "e": 314.92,
+     "text": "Avståndet är 27 upphöjt till två tredjedelar."
     },
     {
-     "s": 396.78,
-     "e": 404.52,
-     "text": "Han skrev ner lagen i en bok som heter Världens harmoni, och den trycktes i Linz år 1619."
+     "s": 316.02,
+     "e": 325.74,
+     "text": "Tredje roten ur 27 är 3, för 3 gånger 3 gånger 3 är 27, och 3 upphöjt till 2 är 9."
     },
     {
-     "s": 406.04,
-     "e": 410.24,
+     "s": 326.68,
+     "e": 330.38,
+     "text": "Så planeten ligger 9 jordavstånd från solen."
+    },
+    {
+     "s": 331.6,
+     "e": 335.24,
+     "text": "En planet till, som behöver 1000 år för ett varv."
+    },
+    {
+     "s": 336.44,
+     "e": 343.52,
+     "text": "Tredje roten ur 1000 är 10, för 10 gånger 10 gånger 10 är 1000,"
+    },
+    {
+     "s": 344.24,
+     "e": 347.22,
+     "text": "och 10 upphöjt till 2 är 100."
+    },
+    {
+     "s": 348.22,
+     "e": 351.54,
+     "text": "Så den ligger 100 jordavstånd från solen."
+    },
+    {
+     "s": 352.94,
+     "e": 358.66,
+     "text": "Två av reglerna vi använde står på formelbladet, det som ni får ha på nationella provet"
+    },
+    {
+     "s": 358.7,
+     "e": 359.88,
+     "text": "i Matematik 1."
+    },
+    {
+     "s": 361,
+     "e": 365.4,
+     "text": "Den ena är att man gångar ihop exponenterna när en potens höjs upp igen,"
+    },
+    {
+     "s": 366.06,
+     "e": 369.54,
+     "text": "och den andra är att en rot kan skrivas som en potens."
+    },
+    {
+     "s": 370.58,
+     "e": 375,
+     "text": "Den tredje, hur man läser ett bråk i exponenten, står inte där,"
+    },
+    {
+     "s": 375.42,
+     "e": 377.92,
+     "text": "för den är de två reglerna tillsammans."
+    },
+    {
+     "s": 379.32,
+     "e": 383.7,
+     "text": "Kepler prövade lagen på alla sex planeter man kände till på den tiden,"
+    },
+    {
+     "s": 384.1,
+     "e": 386.78,
+     "text": "och den stämde för varenda en."
+    },
+    {
+     "s": 387.1,
+     "e": 395.02,
+     "text": "Han skrev ner den i en bok som heter Världens harmoni, och den trycktes i Linz år 1619."
+    },
+    {
+     "s": 396.32,
+     "e": 400.74,
      "text": "Året efter blev hans mamma Katharina anklagad för att vara häxa,"
     },
     {
-     "s": 410.96,
-     "e": 412.5,
-     "text": "och hon sattes i fängelse."
+     "s": 401.3,
+     "e": 406.58,
+     "text": "i staden Leonberg i Tyskland där hon bodde, och hon sattes i fängelse."
     },
     {
-     "s": 413.8,
-     "e": 419.94,
-     "text": "Kepler slutade arbeta, reste dit och satt med henne i rätten tills hon blev frisläppt"
+     "s": 407.92,
+     "e": 414.26,
+     "text": "Kepler slutade arbeta, reste dit och satt med henne i rätten i fjorton månader,"
     },
     {
-     "s": 420,
-     "e": 421.38,
-     "text": "efter fjorton månader."
+     "s": 414.68,
+     "e": 415.72,
+     "text": "tills hon släpptes."
     },
     {
-     "s": 422.62,
-     "e": 424.36,
+     "s": 416.88,
+     "e": 418.86,
      "text": "Hon dog ett halvår senare."
     },
     {
-     "s": 425.8,
-     "e": 431.7,
-     "text": "Kepler själv dog år 1630, men boken finns kvar på bibliotek,"
+     "s": 420.24,
+     "e": 427.6,
+     "text": "Kepler själv dog år 1630, men hans lag används än i dag, när man skjuter upp satelliter"
     },
     {
-     "s": 432.3,
-     "e": 438.26,
-     "text": "och lagen används än i dag för att räkna ut hur satelliter ska åka runt jorden."
+     "s": 427.64,
+     "e": 428.34,
+     "text": "runt jorden."
     },
     {
-     "s": 439.52,
-     "e": 447,
-     "text": "År 1846 upptäckte man en ny planet, Neptunus, som ingen hade sett förut."
+     "s": 429.42,
+     "e": 434.72,
+     "text": "Vet man hur lång tid en satellit ska ta på ett varv, räknar man ut med lagen hur högt"
     },
     {
-     "s": 448.18,
-     "e": 453.52,
-     "text": "Den hinner åka ett helt varv runt solen på 165 år."
+     "s": 434.82,
+     "e": 435.76,
+     "text": "upp den ska ligga."
     },
     {
-     "s": 454.74,
-     "e": 462,
-     "text": "Så avståndet från solen till Neptunus är 165 upphöjt till två tredjedelar."
+     "s": 437.3,
+     "e": 443.32,
+     "text": "År 1846 hittade man en planet som ingen sett förut, Neptunus,"
     },
     {
-     "s": 463.36,
-     "e": 466.3,
-     "text": "Hur många gånger längre bort än jorden ligger den?"
+     "s": 444.12,
+     "e": 449.02,
+     "text": "och den behöver 165 år för att åka ett varv runt solen."
+    },
+    {
+     "s": 450,
+     "e": 452.36,
+     "text": "Det talet är inget man räknar i huvudet."
+    },
+    {
+     "s": 453.1,
+     "e": 458.7,
+     "text": "Men tänk dig en planet som behöver 125 år för ett varv runt solen."
+    },
+    {
+     "s": 459.14,
+     "e": 462.14,
+     "text": "Hur många jordavstånd från solen ligger den?"
     }
    ]
   }
