@@ -1,6 +1,529 @@
 {
- "byggd": "2026-09-04T14:52:55.478Z",
+ "byggd": "2026-09-05T09:31:03.862Z",
  "videor": [
+  {
+   "id": "viete-och-chiffret",
+   "titel": "Viète och chiffret",
+   "ar": 1589,
+   "kurs": "Matematik 1c",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/viete-v1/viete-och-chiffret-1080p.mp4",
+   "moment": "Faktorisera och utveckla uttryck",
+   "begrepp": [
+    "faktorisera",
+    "bryta ut",
+    "gemensam faktor",
+    "utveckla",
+    "multiplicera in",
+    "parentes",
+    "term",
+    "bokstäver för tal"
+   ],
+   "beskrivning": "François Viète läser kungen av Spaniens chiffer 1590 och blir den förste att räkna med bokstäver i stället för tal. Att bryta ut det gemensamma ur ett uttryck, och att utveckla två parenteser, räknat med tal före bokstäver.",
+   "youtube": null,
+   "langd": 485,
+   "omslag": "omslag/viete-och-chiffret.jpg",
+   "omslagRen": "omslag/viete-och-chiffret-ren.jpg",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "År 1589 fick Frankrike en ny kung, Henrik den fjärde. Men han var protestant, och många i landet vägrade ta emot honom, så det blev krig. Kungen av Spanien skickade pengar och soldater till dem som slogs mot Henrik."
+    },
+    {
+     "t": 18,
+     "text": "Spanien styrde kriget med brev, och breven gick med ryttare genom Frankrike. Hösten 1589 fångade Henriks soldater en sådan ryttare och tog hans brev. Men brevet var skrivet i chiffer, med över fem hundra tecken, och bara mottagaren hade listan över vad de betydde."
+    },
+    {
+     "t": 40,
+     "text": "Henrik gav brevet till en jurist vid sitt hov, François Viète, som räknade matematik på fritiden. Viète hade ingen lista, så han letade efter tecken som upprepades, samma tecken på samma plats i brev efter brev. Våren 1590 kunde han läsa brevet."
+    },
+    {
+     "t": 62,
+     "text": "Att Viète kunde sådant var ingen slump. Fem år tidigare hade hans fiender fått honom bortkörd från hovet, och de åren bodde han i byn Beauvoir-sur-Mer vid Atlantkusten och ägnade sig bara åt matematik. Det var då han kom på sin stora idé."
+    },
+    {
+     "t": 81,
+     "text": "Idén var att låta bokstäver stå för tal, på samma sätt som tecknen i chiffret stod för ord. Då kan man räkna med ett tal utan att veta vilket det är. År 1591 tryckte han idén i en liten bok i Tours, och han skrev A och E där vi i dag skriver x och y."
+    },
+    {
+     "t": 104,
+     "text": "En av dem som höll på med samma sorts matematik var belgaren Adriaan van Roomen, professor i Würzburg. År 1593 tryckte han en ekvation som fyllde en hel sida, där det okända talet var upphöjt till 45, och utmanade alla världens matematiker att lösa den."
+    },
+    {
+     "t": 126,
+     "text": "Nederländernas sändebud berättade om utmaningen för Henrik den fjärde och sa att ingen i Frankrike kunde lösa den. Kungen skickade efter Viète, mannen som hade läst det spanska chiffret."
+    },
+    {
+     "t": 140,
+     "text": "Viète gjorde som med brevet. Han letade efter mönstret i det långa uttrycket, och såg att det var ett kort uttryck som någon hade multiplicerat ut, gång på gång, tills det fyllde en sida. Han gav en lösning på stående fot."
+    },
+    {
+     "t": 157,
+     "text": "Det Viète såg har två namn i matematiken. Att multiplicera ut ett kort uttryck så att det blir långt kallas att utveckla, och att gå tillbaka från det långa till det korta kallas att faktorisera. Det svåra är att se vad som är gemensamt i det långa uttrycket, och det är det vi ska lära oss se."
+    },
+    {
+     "t": 181,
+     "text": "Vi börjar där det syns tydligast, med vanliga tal. En handlare säljer 12 säckar på förmiddagen och 8 på eftermiddagen, och varje säck kostar 7 kronor. Han får in 7 gånger 12 plus 7 gånger 8."
+    },
+    {
+     "t": 199,
+     "text": "Sjuan finns i båda termerna, så han kan lika gärna räkna 7 gånger parentes 12 plus 8, alltså 7 kronor gånger 20 säckar, och det är 140. Det kallas att bryta ut 7. Multiplicerar man in sjuan igen får man 84 plus 56, och det är också 140."
+    },
+    {
+     "t": 228,
+     "text": "Handlaren räknade med sina egna tal, 7, 12 och 8. Viètes poäng var att samma sak gäller vilka tal som helst, så vi byter ut hans tal mot bokstäver. Om priset är a och antalen är x och y får handlaren in a gånger x plus a gånger y. Talet a finns i båda termerna, så vi bryter ut det: a gånger parentes x plus y, och nu gäller det för alla priser och alla antal på en gång."
+    },
+    {
+     "t": 268,
+     "text": "Hos handlaren var det bara ett tal som var gemensamt, och det syntes direkt. I ett större uttryck kan det gemensamma vara utspritt på flera ställen, och så är det här: 6 x i kvadrat y plus 9 x y i kvadrat. 6 och 9 går båda att dela med 3, x finns i båda, och y finns i båda. Så det största som är gemensamt är 3 x y."
+    },
+    {
+     "t": 300,
+     "text": "Vi bryter ut 3 x y. Kvar i den första termen blir 2 x, och kvar i den andra blir 3 y, så uttrycket är 3 x y gånger parentes 2 x plus 3 y. Kontrollera: 3 x y gånger 2 x är 6 x i kvadrat y, och 3 x y gånger 3 y är 9 x y i kvadrat."
+    },
+    {
+     "t": 335,
+     "text": "Nu åt andra hållet, att utveckla. Ta parentesen x plus 2 gånger parentesen y plus 3. Först x gånger hela den andra parentesen, x gånger y plus x gånger 3, och sedan 2 gånger hela den andra parentesen, 2 gånger y plus 2 gånger 3. Så utvecklat blir det x y plus 3 x plus 2 y plus 6."
+    },
+    {
+     "t": 373,
+     "text": "Två tal att räkna på. Bryt ut så mycket som möjligt ur 4 x i kvadrat minus 10 x. Gemensamt är 2 och x, så det blir 2 x gånger parentes 2 x minus 5, och kontrollen är att 2 x gånger 2 x är 4 x i kvadrat och 2 x gånger minus 5 är minus 10 x."
+    },
+    {
+     "t": 407,
+     "text": "Utveckla parentesen 2 a plus 1 gånger parentesen a plus 5. 2 a gånger a är 2 a i kvadrat, 2 a gånger 5 är 10 a, 1 gånger a är a, och 1 gånger 5 är 5. Ihop blir det 2 a i kvadrat plus 11 a plus 5."
+    },
+    {
+     "t": 441,
+     "text": "Viètes svar trycktes år 1595, och van Roomen blev så tagen att han reste till Frankrike år 1601 för att träffa honom. Viète dog i Paris år 1603. Hans lilla bok från 1591 slutar med orden \"det finns inget problem som inte kan lösas\"."
+    },
+    {
+     "t": 465,
+     "text": "Van Roomens uttryck fyllde en hel sida, men det här får plats på en rad: 10 a i kvadrat b plus 15 a b i kvadrat. Bryt ut så mycket som möjligt. Vad blir det?"
+    }
+   ],
+   "undertext": [
+    {
+     "s": 0.2,
+     "e": 5.38,
+     "text": "År 1589 fick Frankrike en ny kung, Henrik den fjärde."
+    },
+    {
+     "s": 6.36,
+     "e": 10.26,
+     "text": "Men han var protestant, och många i landet vägrade ta emot honom,"
+    },
+    {
+     "s": 10.62,
+     "e": 11.34,
+     "text": "så det blev krig."
+    },
+    {
+     "s": 12.42,
+     "e": 16.88,
+     "text": "Kungen av Spanien skickade pengar och soldater till dem som slogs mot Henrik."
+    },
+    {
+     "s": 18,
+     "e": 23.12,
+     "text": "Spanien styrde kriget med brev, och breven gick med ryttare genom Frankrike."
+    },
+    {
+     "s": 24.46,
+     "e": 30.1,
+     "text": "Hösten 1589 fångade Henriks soldater en sådan ryttare och tog hans brev."
+    },
+    {
+     "s": 31.2,
+     "e": 35.32,
+     "text": "Men brevet var skrivet i chiffer, med över fem hundra tecken,"
+    },
+    {
+     "s": 35.92,
+     "e": 38.96,
+     "text": "och bara mottagaren hade listan över vad de betydde."
+    },
+    {
+     "s": 40.48,
+     "e": 44.5,
+     "text": "Henrik gav brevet till en jurist vid sitt hov, François Viète,"
+    },
+    {
+     "s": 44.86,
+     "e": 46.8,
+     "text": "som räknade matematik på fritiden."
+    },
+    {
+     "s": 48.06,
+     "e": 52.1,
+     "text": "Viète hade ingen lista, så han letade efter tecken som upprepades,"
+    },
+    {
+     "s": 52.66,
+     "e": 56,
+     "text": "samma tecken på samma plats i brev efter brev."
+    },
+    {
+     "s": 57.3,
+     "e": 60.52,
+     "text": "Våren 1590 kunde han läsa brevet."
+    },
+    {
+     "s": 62.04,
+     "e": 64.4,
+     "text": "Att Viète kunde sådant var ingen slump."
+    },
+    {
+     "s": 65.32,
+     "e": 69.44,
+     "text": "Fem år tidigare hade hans fiender fått honom bortkörd från hovet,"
+    },
+    {
+     "s": 70,
+     "e": 76.08,
+     "text": "och de åren bodde han i byn Beauvoir-sur-Mer vid Atlantkusten och ägnade sig bara åt"
+    },
+    {
+     "s": 76.12,
+     "e": 76.88,
+     "text": "matematik."
+    },
+    {
+     "s": 77.92,
+     "e": 80.36,
+     "text": "Det var då han kom på sin stora idé."
+    },
+    {
+     "s": 81.66,
+     "e": 87.44,
+     "text": "Idén var att låta bokstäver stå för tal, på samma sätt som tecknen i chiffret stod för"
+    },
+    {
+     "s": 87.5,
+     "e": 87.86,
+     "text": "ord."
+    },
+    {
+     "s": 88.92,
+     "e": 92.12,
+     "text": "Då kan man räkna med ett tal utan att veta vilket det är."
+    },
+    {
+     "s": 93.62,
+     "e": 101.88,
+     "text": "År 1591 tryckte han idén i en liten bok i Tours, och han skrev A och E där vi i dag skriver"
+    },
+    {
+     "s": 102.4,
+     "e": 103.08,
+     "text": "x och y."
+    },
+    {
+     "s": 104.7,
+     "e": 109.72,
+     "text": "En av dem som höll på med samma sorts matematik var belgaren Adriaan van Roomen,"
+    },
+    {
+     "s": 110.08,
+     "e": 111.58,
+     "text": "professor i Würzburg."
+    },
+    {
+     "s": 112.78,
+     "e": 120.08,
+     "text": "År 1593 tryckte han en ekvation som fyllde en hel sida, där det okända talet var upphöjt"
+    },
+    {
+     "s": 120.12,
+     "e": 126.74,
+     "text": "till 45, och utmanade alla världens matematiker att lösa den."
+    },
+    {
+     "s": 126.86,
+     "e": 132.32,
+     "text": "Nederländernas sändebud berättade om utmaningen för Henrik den fjärde och sa att ingen"
+    },
+    {
+     "s": 132.36,
+     "e": 133.86,
+     "text": "i Frankrike kunde lösa den."
+    },
+    {
+     "s": 134.9,
+     "e": 139.34,
+     "text": "Kungen skickade efter Viète, mannen som hade läst det spanska chiffret."
+    },
+    {
+     "s": 140.6,
+     "e": 142.68,
+     "text": "Viète gjorde som med brevet."
+    },
+    {
+     "s": 142.72,
+     "e": 148.16,
+     "text": "Han letade efter mönstret i det långa uttrycket, och såg att det var ett kort uttryck"
+    },
+    {
+     "s": 148.36,
+     "e": 153.02,
+     "text": "som någon hade multiplicerat ut, gång på gång, tills det fyllde en sida."
+    },
+    {
+     "s": 154.18,
+     "e": 156.5,
+     "text": "Han gav en lösning på stående fot."
+    },
+    {
+     "s": 157.96,
+     "e": 160.76,
+     "text": "Det Viète såg har två namn i matematiken."
+    },
+    {
+     "s": 161.72,
+     "e": 166.8,
+     "text": "Att multiplicera ut ett kort uttryck så att det blir långt kallas att utveckla,"
+    },
+    {
+     "s": 167.68,
+     "e": 172.36,
+     "text": "och att gå tillbaka från det långa till det korta kallas att faktorisera."
+    },
+    {
+     "s": 173.56,
+     "e": 177.32,
+     "text": "Det svåra är att se vad som är gemensamt i det långa uttrycket,"
+    },
+    {
+     "s": 177.94,
+     "e": 179.78,
+     "text": "och det är det vi ska lära oss se."
+    },
+    {
+     "s": 181.2,
+     "e": 185.24,
+     "text": "Vi börjar där det syns tydligast, med vanliga tal."
+    },
+    {
+     "s": 185.82,
+     "e": 190.62,
+     "text": "En handlare säljer 12 säckar på förmiddagen och 8 på eftermiddagen,"
+    },
+    {
+     "s": 191.22,
+     "e": 193.78,
+     "text": "och varje säck kostar 7 kronor."
+    },
+    {
+     "s": 194.78,
+     "e": 198.46,
+     "text": "Han får in 7 gånger 12 plus 7 gånger 8."
+    },
+    {
+     "s": 199.78,
+     "e": 207.3,
+     "text": "Sjuan finns i båda termerna, så han kan lika gärna räkna 7 gånger parentes 12 plus 8,"
+    },
+    {
+     "s": 208.16,
+     "e": 214.12,
+     "text": "alltså 7 kronor gånger 20 säckar, och det är 140."
+    },
+    {
+     "s": 215.4,
+     "e": 217.86,
+     "text": "Det kallas att bryta ut 7."
+    },
+    {
+     "s": 219.06,
+     "e": 226.62,
+     "text": "Multiplicerar man in sjuan igen får man 84 plus 56, och det är också 140."
+    },
+    {
+     "s": 228.1,
+     "e": 232.42,
+     "text": "Handlaren räknade med sina egna tal, 7, 12 och 8."
+    },
+    {
+     "s": 233.56,
+     "e": 240.6,
+     "text": "Viètes poäng var att samma sak gäller vilka tal som helst, så vi byter ut hans tal mot"
+    },
+    {
+     "s": 240.62,
+     "e": 241.38,
+     "text": "bokstäver."
+    },
+    {
+     "s": 242.7,
+     "e": 251.74,
+     "text": "Om priset är a och antalen är x och y får handlaren in a gånger x plus a gånger y."
+    },
+    {
+     "s": 252.9,
+     "e": 261.14,
+     "text": "Talet a finns i båda termerna, så vi bryter ut det: a gånger parentes x plus y,"
+    },
+    {
+     "s": 262.1,
+     "e": 266.62,
+     "text": "och nu gäller det för alla priser och alla antal på en gång."
+    },
+    {
+     "s": 268.08,
+     "e": 273,
+     "text": "Hos handlaren var det bara ett tal som var gemensamt, och det syntes direkt."
+    },
+    {
+     "s": 274.14,
+     "e": 278.16,
+     "text": "I ett större uttryck kan det gemensamma vara utspritt på flera ställen,"
+    },
+    {
+     "s": 278.58,
+     "e": 286.62,
+     "text": "och så är det här: 6 x i kvadrat y plus 9 x y i kvadrat."
+    },
+    {
+     "s": 288.14,
+     "e": 294.78,
+     "text": "6 och 9 går båda att dela med 3, x finns i båda, och y finns i båda."
+    },
+    {
+     "s": 295.76,
+     "e": 299.5,
+     "text": "Så det största som är gemensamt är 3 x y."
+    },
+    {
+     "s": 300.72,
+     "e": 302.8,
+     "text": "Vi bryter ut 3 x y."
+    },
+    {
+     "s": 303.94,
+     "e": 310.3,
+     "text": "Kvar i den första termen blir 2 x, och kvar i den andra blir 3 y,"
+    },
+    {
+     "s": 311.22,
+     "e": 318.48,
+     "text": "så uttrycket är 3 x y gånger parentes 2 x plus 3 y."
+    },
+    {
+     "s": 319.92,
+     "e": 333.84,
+     "text": "Kontrollera: 3 x y gånger 2 x är 6 x i kvadrat y, och 3 x y gånger 3 y är 9 x y i kvadrat."
+    },
+    {
+     "s": 335.3,
+     "e": 337.98,
+     "text": "Nu åt andra hållet, att utveckla."
+    },
+    {
+     "s": 339.4,
+     "e": 345.06,
+     "text": "Ta parentesen x plus 2 gånger parentesen y plus 3."
+    },
+    {
+     "s": 346.5,
+     "e": 353.66,
+     "text": "Först x gånger hela den andra parentesen, x gånger y plus x gånger 3,"
+    },
+    {
+     "s": 354.72,
+     "e": 362.12,
+     "text": "och sedan 2 gånger hela den andra parentesen, 2 gånger y plus 2 gånger 3."
+    },
+    {
+     "s": 363.62,
+     "e": 372.32,
+     "text": "Så utvecklat blir det x y plus 3 x plus 2 y plus 6."
+    },
+    {
+     "s": 373.8,
+     "e": 375.18,
+     "text": "Två tal att räkna på."
+    },
+    {
+     "s": 376.26,
+     "e": 382.24,
+     "text": "Bryt ut så mycket som möjligt ur 4 x i kvadrat minus 10 x."
+    },
+    {
+     "s": 383.62,
+     "e": 392.84,
+     "text": "Gemensamt är 2 och x, så det blir 2 x gånger parentes 2 x minus 5,"
+    },
+    {
+     "s": 394,
+     "e": 404.88,
+     "text": "och kontrollen är att 2 x gånger 2 x är 4 x i kvadrat och 2 x gånger minus 5 är minus"
+    },
+    {
+     "s": 405.06,
+     "e": 406.1,
+     "text": "10 x."
+    },
+    {
+     "s": 407.76,
+     "e": 415.1,
+     "text": "Utveckla parentesen 2 a plus 1 gånger parentesen a plus 5."
+    },
+    {
+     "s": 416.92,
+     "e": 428.46,
+     "text": "2 a gånger a är 2 a i kvadrat, 2 a gånger 5 är 10 a, 1 gånger a är a,"
+    },
+    {
+     "s": 429.42,
+     "e": 432,
+     "text": "och 1 gånger 5 är 5."
+    },
+    {
+     "s": 433.34,
+     "e": 439.6,
+     "text": "Ihop blir det 2 a i kvadrat plus 11 a plus 5."
+    },
+    {
+     "s": 441.34,
+     "e": 448.84,
+     "text": "Viètes svar trycktes år 1595, och van Roomen blev så tagen att han reste till Frankrike"
+    },
+    {
+     "s": 449,
+     "e": 451.34,
+     "text": "år 1601 för att träffa honom."
+    },
+    {
+     "s": 452.62,
+     "e": 455.5,
+     "text": "Viète dog i Paris år 1603."
+    },
+    {
+     "s": 456.68,
+     "e": 464.58,
+     "text": "Hans lilla bok från 1591 slutar med orden \"det finns inget problem som inte kan lösas\"."
+    },
+    {
+     "s": 465.98,
+     "e": 474.64,
+     "text": "Van Roomens uttryck fyllde en hel sida, men det här får plats på en rad: 10 a i kvadrat"
+    },
+    {
+     "s": 474.76,
+     "e": 478.68,
+     "text": "b plus 15 a b i kvadrat."
+    },
+    {
+     "s": 480.04,
+     "e": 481.94,
+     "text": "Bryt ut så mycket som möjligt."
+    },
+    {
+     "s": 482.76,
+     "e": 483.34,
+     "text": "Vad blir det?"
+    }
+   ]
+  },
   {
    "id": "kepler-och-planeterna",
    "titel": "Kepler och planeterna",
