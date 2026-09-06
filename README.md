@@ -26,7 +26,9 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   Undertexterna ritas av sidan ur projektets `assets/tal.srt` (fältet `undertext` i videor.json,
   Charter som i filmen); YouTubes egna textremsor stängs av. Valet textning på/av sparas i webbläsaren.
 
-Publicera: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
+Publicera: **https://winterhalls-matte.vercel.app** (Vercel-projektet `winterhalls-matte`, kopplat till
+repot, bygger `public/` vid varje push till main — det är länken eleverna har, delad i Classroom
+2026-09-06 i Ma 1c/2c NA26F och TE26A). Reserv: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
 `rw222ix-eng/matematikvideor`. Arbetsflödet `.github/workflows/pages.yml` publicerar `public/` vid
 varje push till `main`, klart på ~1 min. Alltså: ändra register.json → `node bygg.mjs` → commit →
 `git push`. (Vercel-kopplingen saknade rättighet att skapa projekt 2026-09-04; vill man ha Vercel:
