@@ -299,6 +299,9 @@
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+    /* Oändliga animationer får inte kortas till .01 ms — då loopar de tusentals gånger i sekunden
+       och pilen under "Välj en film" fladdrar (sett på Rickards andra dator 2026-09-06). Stäng av dem. */
+    .valj .hint { animation: none !important; transform: none; }
     .intro .fram { opacity: 1; }
     .kapitel li { opacity: 1; transform: none; }
   }
