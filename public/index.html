@@ -297,14 +297,7 @@
     .duk .stor span { width: 48px; height: 48px; }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
-    /* Oändliga animationer får inte kortas till .01 ms — då loopar de tusentals gånger i sekunden
-       och pilen under "Välj en film" fladdrar (sett på Rickards andra dator 2026-09-06). Stäng av dem. */
-    .valj .hint { animation: none !important; transform: none; }
-    .intro .fram { opacity: 1; }
-    .kapitel li { opacity: 1; transform: none; }
-  }
+  /* Systeminställningen "reducera rörelse" ignoreras med flit (Rickard 2026-09-06): sidan animerar alltid. */
 </style>
 </head>
 <body class="last">
@@ -389,7 +382,8 @@
   const $ = (id) => document.getElementById(id);
   const data = await (await fetch("videor.json", { cache: "no-cache" })).json();
   const videor = data.videor;
-  const lugnt = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Alltid animera — systemets "reducera rörelse" följs inte (Rickard 2026-09-06).
+  const lugnt = false;
   const smal = () => matchMedia("(max-width: 700px)").matches;
 
   const norm = (s) => s.toLowerCase().replace(/[.,!?:;"“”()]/g, " ").replace(/\s+/g, " ").trim();
