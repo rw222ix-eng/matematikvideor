@@ -93,7 +93,8 @@
       animation: zoom 40s var(--lugn) both; will-change: transform; }
   .valj .tidslinje, .valj .nere { z-index: 2; }
   .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
-  .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
+  /* Ingen textmarkering: drar man tidslinjen ska inte årtal och titlar markeras på vägen. */
+  .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .tidslinje.drar { cursor: grabbing; }
   .tidslinje::before { content: ""; position: absolute; left: 0; right: 0; bottom: 134px; height: 1px; background: var(--linje2); }
   .spar { display: flex; align-items: stretch; height: 100%; padding: 0 max(12vw, 80px); will-change: transform; width: max-content; }
@@ -585,7 +586,8 @@
   // Pekaren tas i beslag först när man verkligen drar — annars hamnar klicket
   // på tidslinjen i stället för på omslaget.
   // Vänster eller höger knapp drar. Klick utan rörelse går som vanligt till omslaget.
-  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; malX = null; });
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; malX = null; getSelection()?.removeAllRanges(); });
+  tidslinje.addEventListener("selectstart", (e) => { if (!smal()) e.preventDefault(); });
   tidslinje.addEventListener("pointermove", (e) => {
     if (pekX == null) return;
     if (!drog) { if (Math.abs(e.clientX - pekStartX) <= 6) return; drog = true; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); }
