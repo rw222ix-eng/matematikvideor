@@ -56,7 +56,9 @@
 
   /* ── 1. Intro ─────────────────────────────────────────── */
   /* min-height i stället för height: på låga/smala skärmar får introt växa så rubriken inte krockar med logotypen. */
-  .intro { position: relative; min-height: 100vh; min-height: 100dvh; overflow: hidden; display: grid; grid-template-rows: minmax(130px, 1fr) auto minmax(150px, 1fr); place-items: center; text-align: center; padding: 0 20px; }
+  .intro { position: relative; min-height: 100vh; min-height: 100dvh; overflow: hidden; display: grid; grid-template-rows: minmax(130px, 1fr) auto minmax(100px, 1fr); place-items: center; text-align: center; padding: 0 20px; }
+  /* Introt får inte rulla (body.last), så allt måste rymmas på höjden: rubriken skalar även med vh och knappens marginal krymper på låga skärmar. */
+  .intro .skrift { font-size: clamp(48px, min(9.5vw, 15vh), 118px); }
   .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: zoom 26s var(--lugn) both; z-index: 0; will-change: transform; }
   @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
   .intro .vinjett { position: absolute; inset: 0; z-index: 1; background:
@@ -64,8 +66,8 @@
       linear-gradient(rgba(23, 20, 20, .55), rgba(23, 20, 20, 0) 30%, rgba(23, 20, 20, 0) 65%, rgba(23, 20, 20, .8)); }
   .intro .topp { justify-content: center; }
   .intro .mitt { position: relative; z-index: 2; grid-row: 2; max-width: 760px; }
-  .intro .ingress { font: 300 clamp(16px, 1.6vw, 19px)/1.8 var(--sans); color: var(--ben2); margin: 30px auto 0; max-width: 560px; }
-  .intro .knapp { position: relative; z-index: 2; grid-row: 3; align-self: end; margin-bottom: clamp(36px, 8vh, 80px); display: inline-flex; align-items: center; gap: 16px; font: 400 15px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .intro .ingress { font: 300 clamp(16px, 1.6vw, 19px)/1.8 var(--sans); color: var(--ben2); margin: clamp(14px, 3vh, 30px) auto 0; max-width: 560px; }
+  .intro .knapp { position: relative; z-index: 2; grid-row: 3; align-self: end; margin-bottom: clamp(28px, 6vh, 80px); display: inline-flex; align-items: center; gap: 16px; font: 400 15px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
   .intro .knapp .ring { width: 46px; height: 46px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; transition: background .5s, color .5s; }
   .intro .knapp .ring svg { width: 12px; height: 12px; fill: currentColor; margin-left: 2px; }
   .intro .knapp:hover .ring { background: var(--accent); color: var(--bg); }
@@ -78,10 +80,10 @@
 
   /* ── 2. Välj en film ──────────────────────────────────── */
   .valj { display: block; position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: var(--bg); }
-  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .38; z-index: 0; animation: zoom 40s var(--lugn) both; will-change: transform; }
+  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .8; z-index: 0; animation: zoom 40s var(--lugn) both; will-change: transform; }
   .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
-      radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .5) 60%, rgba(23, 20, 20, .9) 100%),
-      linear-gradient(rgba(23, 20, 20, .7), rgba(23, 20, 20, .1) 25%, rgba(23, 20, 20, .35) 60%, rgba(23, 20, 20, .97) 88%); }
+      radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .2) 60%, rgba(23, 20, 20, .6) 100%),
+      linear-gradient(rgba(23, 20, 20, .4), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, .1) 60%, rgba(23, 20, 20, .85) 88%); }
   .valj .tidslinje, .valj .nere { z-index: 2; }
   .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
   .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
