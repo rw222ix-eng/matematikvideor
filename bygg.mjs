@@ -81,7 +81,7 @@ function bakaBild(kalla, mal, bredd, filter, kvalitet) {
 const INTRO = resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png");
 if (existsSync(INTRO)) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1600, "hue=s=0.1,eq=brightness=-0.13:contrast=1.08", 5);
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");
-if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "hue=s=0.8,eq=brightness=0.2:gamma=2.0", 5);
+if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "curves=all='0/0 0.04/0.2 0.15/0.5 0.4/0.8 1/1',hue=s=0.9", 5);
 
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);

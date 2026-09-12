@@ -87,10 +87,11 @@
   /* Stjärnor som glimrar: små punkter där bara opacity animeras. Billigt, till skillnad från
      filmkornslagret som togs bort. Lagret ligger ovanpå vinjetten men under tidslinjen. */
   .valj .stjarnor { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
-  .stjarnor i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff; box-shadow: 0 0 4px 1px rgba(255, 255, 255, .5);
+  .stjarnor i { position: absolute; width: 2.5px; height: 2.5px; border-radius: 50%; background: #fff; box-shadow: 0 0 5px 1.5px rgba(255, 255, 255, .7);
       opacity: 0; animation: glimt var(--t, 4s) ease-in-out var(--d, 0s) infinite; will-change: opacity; }
-  .stjarnor i.stor { width: 3px; height: 3px; box-shadow: 0 0 6px 2px rgba(255, 250, 235, .6); }
-  @keyframes glimt { 0%, 100% { opacity: var(--lag, .15) } 50% { opacity: var(--hog, .9) } }
+  .stjarnor i.stor { width: 3.5px; height: 3.5px; box-shadow: 0 0 8px 2.5px rgba(255, 250, 235, .8); }
+  /* Ett kort, tydligt blink: nästan släckt större delen av tiden och en snabb topp. */
+  @keyframes glimt { 0%, 38%, 62%, 100% { opacity: var(--lag, .05) } 50% { opacity: var(--hog, 1) } }
   .valj .tidslinje, .valj .nere { z-index: 2; }
   .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
   .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
@@ -330,7 +331,7 @@
 
 <!-- ── 2. Välj en film ──────────────────────────────────── -->
 <section class="vy valj" id="vy-valj">
-  <img class="fond" src="omslag/valj-fond.jpg?v=2" alt="" loading="lazy">
+  <img class="fond" src="omslag/valj-fond.jpg?v=3" alt="" loading="lazy">
   <div class="vinjett"></div>
   <div class="stjarnor" id="stjarnor" aria-hidden="true"></div>
   <header class="topp">
@@ -445,9 +446,9 @@
     let frag = "";
     for (let i = 0; i < 80; i++) {
       const x = (Math.random() * 100).toFixed(2), y = (Math.random() * 66).toFixed(2);
-      const t = (3 + Math.random() * 5).toFixed(1), d = (-Math.random() * 8).toFixed(1);
-      const lag = (0.05 + Math.random() * 0.2).toFixed(2), hog = (0.5 + Math.random() * 0.5).toFixed(2);
-      frag += `<i${Math.random() < 0.18 ? ' class="stor"' : ""} style="left:${x}%;top:${y}%;--t:${t}s;--d:${d}s;--lag:${lag};--hog:${hog}"></i>`;
+      const t = (2 + Math.random() * 4).toFixed(1), d = (-Math.random() * 6).toFixed(1);
+      const lag = (Math.random() * 0.12).toFixed(2), hog = (0.8 + Math.random() * 0.2).toFixed(2);
+      frag += `<i${Math.random() < 0.3 ? ' class="stor"' : ""} style="left:${x}%;top:${y}%;--t:${t}s;--d:${d}s;--lag:${lag};--hog:${hog}"></i>`;
     }
     $("stjarnor").innerHTML = frag;
   }
