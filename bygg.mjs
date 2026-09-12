@@ -79,8 +79,15 @@ function bakaBild(kalla, mal, bredd, filter, kvalitet) {
   if (harFfmpeg) execFileSync("ffmpeg", ["-v", "error", "-y", "-i", kalla, "-vf", `scale=${bredd}:-2${filter ? "," + filter : ""}`, "-q:v", String(kvalitet), mal], { stdio: "ignore" });
   else execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "45", "--resampleWidth", String(bredd), kalla, "--out", mal], { stdio: "ignore" });
 }
-const INTRO = resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png");
-if (existsSync(INTRO)) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1600, "curves=all='0/0 0.08/0.18 0.3/0.55 0.6/0.85 1/1',hue=s=0.75", 5);
+// assets/intro-fond.png är 720 px-omslaget förstorat 4x till 2880 px i Topaz
+// Gigapixel (modell Wonder 3.5, 2026-09-12), för att fonden syntes pixlig
+// uppskalad till helskärm. Originalet i full upplösning ligger bara på Rickards
+// Mac, så den sökvägen står kvar som reserv.
+const INTRO = [
+  resolve(HÄR, "assets", "intro-fond.png"),
+  resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png"),
+].find(existsSync);
+if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "curves=all='0/0 0.08/0.18 0.3/0.55 0.6/0.85 1/1',hue=s=0.75", 2);
 // Fonden bakom "Välj en film". Den nya källbilden är rätt exponerad (medelljushet
 // omkring 61 i gråskala), så kurvan som lyfte skuggorna i den gamla nästan svarta
 // bilden är borta. Kvar är bara avmättningen.
