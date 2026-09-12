@@ -453,7 +453,7 @@
     const slump = (n) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
     let stjarnor = [], punkter = [], sprites = new Map(), bredd = 0, hojd = 0, kors = false;
 
-    function sprite(radie, varm) {
+    const sprite = (radie, varm) => {
       const nyckel = `${radie}|${varm}`;
       const fanns = sprites.get(nyckel);
       if (fanns) return fanns;
@@ -463,18 +463,18 @@
       const c = s.getContext("2d");
       const [rr, gg, bb] = varm ? [255, 246, 226] : [226, 236, 255];
       const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
-      g.addColorStop(0, `rgba(${rr},${gg},${bb},1)`);
-      g.addColorStop(.28, `rgba(${rr},${gg},${bb},.5)`);
-      g.addColorStop(.6, `rgba(${rr},${gg},${bb},.15)`);
+      g.addColorStop(0, `rgba(${rr},${gg},${bb},.7)`);
+      g.addColorStop(.3, `rgba(${rr},${gg},${bb},.3)`);
+      g.addColorStop(.6, `rgba(${rr},${gg},${bb},.08)`);
       g.addColorStop(1, `rgba(${rr},${gg},${bb},0)`);
       c.fillStyle = g; c.fillRect(0, 0, sida, sida);
       sprites.set(nyckel, s);
       return s;
-    }
+    };
 
     // object-fit: cover med object-position: center top, samma räkning som webbläsaren
     // gör på fonden, annars hamnar glimret bredvid stjärnan.
-    function mat() {
+    const matStjarnor = () => {
       bredd = duk.clientWidth; hojd = duk.clientHeight;
       if (!bredd || !hojd) { punkter = []; return; }
       const k = dpr();
@@ -484,22 +484,22 @@
       const skala = Math.max(bredd / BILD_B, hojd / BILD_H);
       const ox = (bredd - BILD_B * skala) / 2;
       punkter = stjarnor.map(([x, y, s, b, v], i) => {
-        const topp = .18 + .32 * b;  // ljusaste läget: en halv alfa för de starkaste
+        const topp = .05 + .13 * b;  // ljusaste läget: knappt en femtedel för de starkaste
         return {
           x: ox + x * BILD_B * skala,
           y: y * BILD_H * skala,
           r: Math.max(3.2, Math.round(s * skala * 4 * 2) / 2),   // skenet, inte stjärnan: några gånger hennes egen radie
           varm: v >= .5 ? 1 : 0,
-          grund: topp * .45, amp: topp * .55,
-          fart: 2 * Math.PI / (4 + slump(i) * 5),   // ett varv på 4 till 9 sekunder
+          grund: topp * .6, amp: topp * .4,
+          fart: 2 * Math.PI / (6 + slump(i) * 6),   // ett varv på 6 till 12 sekunder
           fas: slump(i + 977) * 2 * Math.PI,
         };
       });
-    }
+    };
 
     const levande = () => !document.hidden && vy.classList.contains("aktiv") && punkter.length > 0;
 
-    function rita(nu) {
+    const ritaStjarnor = (nu) => {
       if (!levande()) { kors = false; return; }
       const t = nu / 1000;
       yta.clearRect(0, 0, bredd, hojd);
@@ -509,24 +509,24 @@
         yta.drawImage(sprite(p.r, p.varm), p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
       }
       yta.globalAlpha = 1;
-      requestAnimationFrame(rita);
-    }
+      requestAnimationFrame(ritaStjarnor);
+    };
 
-    function starta() {
+    const startaStjarnor = () => {
       // Vyn är display: none tills den blir aktiv, så måtten går inte att ta förrän då.
       if (stjarnor.length && !document.hidden && vy.classList.contains("aktiv")
-          && (!punkter.length || duk.clientWidth !== bredd || duk.clientHeight !== hojd)) mat();
+          && (!punkter.length || duk.clientWidth !== bredd || duk.clientHeight !== hojd)) matStjarnor();
       if (kors || !levande()) return;
       kors = true;
-      requestAnimationFrame(rita);
-    }
+      requestAnimationFrame(ritaStjarnor);
+    };
 
-    new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
-    document.addEventListener("visibilitychange", starta);
-    addEventListener("resize", () => { mat(); starta(); });
+    new MutationObserver(startaStjarnor).observe(vy, { attributes: true, attributeFilter: ["class"] });
+    document.addEventListener("visibilitychange", startaStjarnor);
+    addEventListener("resize", () => { matStjarnor(); startaStjarnor(); });
     fetch("stjarnor.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : []))
-      .then((d) => { stjarnor = Array.isArray(d) ? d : []; starta(); })
+      .then((d) => { stjarnor = Array.isArray(d) ? d : []; startaStjarnor(); })
       .catch(() => {});
   }
 
@@ -584,7 +584,8 @@
   let pekX = null, pekStartX = 0;
   // Pekaren tas i beslag först när man verkligen drar — annars hamnar klicket
   // på tidslinjen i stället för på omslaget.
-  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || e.button !== 0) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; malX = null; });
+  // Vänster eller höger knapp drar. Klick utan rörelse går som vanligt till omslaget.
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; malX = null; });
   tidslinje.addEventListener("pointermove", (e) => {
     if (pekX == null) return;
     if (!drog) { if (Math.abs(e.clientX - pekStartX) <= 6) return; drog = true; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); }
@@ -594,6 +595,7 @@
   const slapp = () => { if (pekX == null) return; pekX = null; tidslinje.classList.remove("drar"); if (!lugnt && Math.abs(vx) > 0.5 && !rullar) { rullar = true; requestAnimationFrame(loop); } };
   tidslinje.addEventListener("pointerup", slapp); tidslinje.addEventListener("pointercancel", slapp);
   tidslinje.addEventListener("click", (e) => { if (drog) { e.stopPropagation(); e.preventDefault(); } drog = false; }, true);
+  tidslinje.addEventListener("contextmenu", (e) => { if (drog || pekX != null) { e.preventDefault(); drog = false; } });
   $("aterstall").addEventListener("click", () => {
     if (lugnt) { mal = 0; x = 0; rita(); return; }
     malX = 0; vx = 0; if (!rullar) { rullar = true; requestAnimationFrame(loop); }
