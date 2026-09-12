@@ -69,8 +69,9 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, undertext };
 });
 
-// Introbilden: Kepler-omslaget utan titel som helskärmsfond (avmättas och
-// mörkas i CSS). 1600 px bred, ~55 kB.
+// Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med
+// en kurva (svärtan fast i noll) så rummet syns; en mörkning här gjorde bilden
+// nästan helt svart (Rickard 2026-09-12). 1600 px bred.
 // Filtren (avmättning, mörkning) bakas in i filerna med ffmpeg — CSS-filter på stora bilder som
 // zoomar gjorde hela sidan trög. Saknas ffmpeg används sips utan filter.
 const harFfmpeg = (() => { try { execFileSync("ffmpeg", ["-version"], { stdio: "ignore" }); return true; } catch (e) { return false; } })();
@@ -79,7 +80,7 @@ function bakaBild(kalla, mal, bredd, filter, kvalitet) {
   else execFileSync("sips", ["-s", "format", "jpeg", "-s", "formatOptions", "45", "--resampleWidth", String(bredd), kalla, "--out", mal], { stdio: "ignore" });
 }
 const INTRO = resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png");
-if (existsSync(INTRO)) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1600, "hue=s=0.1,eq=brightness=-0.13:contrast=1.08", 5);
+if (existsSync(INTRO)) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1600, "curves=all='0/0 0.08/0.18 0.3/0.55 0.6/0.85 1/1',hue=s=0.75", 5);
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");
 if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "curves=all='0/0 0.04/0.2 0.15/0.5 0.4/0.8 1/1',hue=s=0.9", 5);
 
