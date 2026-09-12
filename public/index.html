@@ -80,10 +80,10 @@
 
   /* ── 2. Välj en film ──────────────────────────────────── */
   .valj { display: block; position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: var(--bg); }
-  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .8; z-index: 0; animation: zoom 40s var(--lugn) both; will-change: transform; }
+  .valj .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 1; z-index: 0; animation: zoom 40s var(--lugn) both; will-change: transform; }
   .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
-      radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .2) 60%, rgba(23, 20, 20, .6) 100%),
-      linear-gradient(rgba(23, 20, 20, .4), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, .1) 60%, rgba(23, 20, 20, .85) 88%); }
+      radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .08) 60%, rgba(23, 20, 20, .35) 100%),
+      linear-gradient(rgba(23, 20, 20, .2), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, 0) 60%, rgba(23, 20, 20, .7) 88%); }
   .valj .tidslinje, .valj .nere { z-index: 2; }
   .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
   .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
