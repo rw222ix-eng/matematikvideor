@@ -85,14 +85,12 @@
   .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
       radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .08) 60%, rgba(23, 20, 20, .35) 100%),
       linear-gradient(rgba(23, 20, 20, .2), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, 0) 60%, rgba(23, 20, 20, .7) 88%); }
-  /* Stjärnor som glimrar: små punkter där bara opacity animeras. Billigt, till skillnad från
-     filmkornslagret som togs bort. Lagret ligger ovanpå vinjetten men under tidslinjen. */
-  .valj .stjarnor { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
-  .stjarnor i { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff; box-shadow: 0 0 6px 2px rgba(255, 255, 255, .7);
-      opacity: 0; animation: glimt var(--t, 6s) ease-in-out var(--d, 0s) infinite; will-change: opacity; }
-  .stjarnor i.stor { width: 4px; height: 4px; box-shadow: 0 0 9px 3px rgba(255, 250, 235, .8); }
-  /* Stjärnan är alltid tänd; den glimrar bara mjukt mellan ett ljusare och ett något svagare läge. */
-  @keyframes glimt { 0%, 100% { opacity: var(--lag, .5) } 50% { opacity: var(--hog, 1) } }
+  /* Glimret ligger på målningens egna stjärnor, inte på utslumpade prickar ovanpå den:
+     verktyg/hitta-stjarnor.py letar upp dem i fonden och skriver public/stjarnor.json.
+     En canvas med färdiga sprites, inget filter per bildruta. Lagret ligger ovanpå
+     vinjetten men under tidslinjen, och zoomar med fonden så stjärnorna sitter kvar. */
+  .valj .stjarnor { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;
+      animation: zoom 40s var(--lugn) both; will-change: transform; }
   .valj .tidslinje, .valj .nere { z-index: 2; }
   .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
   .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; }
@@ -334,7 +332,7 @@
 <section class="vy valj" id="vy-valj">
   <img class="fond" src="omslag/valj-fond.jpg?v=4" alt="" loading="lazy">
   <div class="vinjett"></div>
-  <div class="stjarnor" id="stjarnor" aria-hidden="true"></div>
+  <canvas class="stjarnor" id="stjarnor" aria-hidden="true"></canvas>
   <header class="topp">
     <a class="logo" href="#" aria-label="Till början">
       <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="320" height="320">
@@ -442,16 +440,94 @@
   window.addEventListener("hashchange", ruta);
 
   // ── Stjärnhimlen ──────────────────────────────────────
-  // Ett hundrafyrtiotal punkter över övre två tredjedelarna, var och en med egen takt och fas.
+  // stjarnor.json är målningens egna stjärnor, uppmätta av verktyg/hitta-stjarnor.py:
+  // [x, y, radie vid 1600 px, ljushet, varmton]. Var och en andas mellan halv och hel
+  // styrka i sin egen takt. Sprites ritas en gång och kopieras in med drawImage, så
+  // bildrutan kostar nästan ingenting: filmkornslagret som gjorde sidan trög ska inte
+  // få en efterföljare. Slingan går bara när vyn syns.
   {
-    let frag = "";
-    for (let i = 0; i < 140; i++) {
-      const x = (Math.random() * 100).toFixed(2), y = (Math.random() * 66).toFixed(2);
-      const t = (4 + Math.random() * 5).toFixed(1), d = (-Math.random() * 9).toFixed(1);
-      const lag = (0.62 + Math.random() * 0.15).toFixed(2), hog = (0.9 + Math.random() * 0.1).toFixed(2);
-      frag += `<i${Math.random() < 0.3 ? ' class="stor"' : ""} style="left:${x}%;top:${y}%;--t:${t}s;--d:${d}s;--lag:${lag};--hog:${hog}"></i>`;
+    const duk = $("stjarnor"), yta = duk.getContext("2d"), vy = $("vy-valj");
+    const BILD_B = 1600, BILD_H = 900;  // fondens mått, samma som bygg.mjs bakar
+    const dpr = () => Math.min(devicePixelRatio || 1, 2);
+    // Samma stjärna ska ha samma takt vid varje besök, utan att tabellen bär på den.
+    const slump = (n) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
+    let stjarnor = [], punkter = [], sprites = new Map(), bredd = 0, hojd = 0, kors = false;
+
+    function sprite(radie, varm) {
+      const nyckel = `${radie}|${varm}`;
+      const fanns = sprites.get(nyckel);
+      if (fanns) return fanns;
+      const k = dpr(), r = radie * k, sida = Math.max(2, Math.ceil(r * 2));
+      const s = document.createElement("canvas");
+      s.width = s.height = sida;
+      const c = s.getContext("2d");
+      const [rr, gg, bb] = varm ? [255, 246, 226] : [226, 236, 255];
+      const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
+      g.addColorStop(0, `rgba(${rr},${gg},${bb},1)`);
+      g.addColorStop(.28, `rgba(${rr},${gg},${bb},.5)`);
+      g.addColorStop(.6, `rgba(${rr},${gg},${bb},.15)`);
+      g.addColorStop(1, `rgba(${rr},${gg},${bb},0)`);
+      c.fillStyle = g; c.fillRect(0, 0, sida, sida);
+      sprites.set(nyckel, s);
+      return s;
     }
-    $("stjarnor").innerHTML = frag;
+
+    // object-fit: cover med object-position: center top, samma räkning som webbläsaren
+    // gör på fonden, annars hamnar glimret bredvid stjärnan.
+    function mat() {
+      bredd = duk.clientWidth; hojd = duk.clientHeight;
+      if (!bredd || !hojd) { punkter = []; return; }
+      const k = dpr();
+      duk.width = Math.round(bredd * k); duk.height = Math.round(hojd * k);
+      yta.setTransform(k, 0, 0, k, 0, 0);
+      sprites.clear();
+      const skala = Math.max(bredd / BILD_B, hojd / BILD_H);
+      const ox = (bredd - BILD_B * skala) / 2;
+      punkter = stjarnor.map(([x, y, s, b, v], i) => {
+        const topp = .18 + .32 * b;  // ljusaste läget: en halv alfa för de starkaste
+        return {
+          x: ox + x * BILD_B * skala,
+          y: y * BILD_H * skala,
+          r: Math.max(3.2, Math.round(s * skala * 4 * 2) / 2),   // skenet, inte stjärnan: några gånger hennes egen radie
+          varm: v >= .5 ? 1 : 0,
+          grund: topp * .45, amp: topp * .55,
+          fart: 2 * Math.PI / (4 + slump(i) * 5),   // ett varv på 4 till 9 sekunder
+          fas: slump(i + 977) * 2 * Math.PI,
+        };
+      });
+    }
+
+    const levande = () => !document.hidden && vy.classList.contains("aktiv") && punkter.length > 0;
+
+    function rita(nu) {
+      if (!levande()) { kors = false; return; }
+      const t = nu / 1000;
+      yta.clearRect(0, 0, bredd, hojd);
+      yta.globalCompositeOperation = "lighter";
+      for (const p of punkter) {
+        yta.globalAlpha = p.grund + p.amp * (.5 + .5 * Math.sin(t * p.fart + p.fas));
+        yta.drawImage(sprite(p.r, p.varm), p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+      }
+      yta.globalAlpha = 1;
+      requestAnimationFrame(rita);
+    }
+
+    function starta() {
+      // Vyn är display: none tills den blir aktiv, så måtten går inte att ta förrän då.
+      if (stjarnor.length && !document.hidden && vy.classList.contains("aktiv")
+          && (!punkter.length || duk.clientWidth !== bredd || duk.clientHeight !== hojd)) mat();
+      if (kors || !levande()) return;
+      kors = true;
+      requestAnimationFrame(rita);
+    }
+
+    new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
+    document.addEventListener("visibilitychange", starta);
+    addEventListener("resize", () => { mat(); starta(); });
+    fetch("stjarnor.json", { cache: "no-cache" })
+      .then((r) => (r.ok ? r.json() : []))
+      .then((d) => { stjarnor = Array.isArray(d) ? d : []; starta(); })
+      .catch(() => {});
   }
 
   // ── Tidslinjen ────────────────────────────────────────

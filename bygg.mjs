@@ -93,6 +93,12 @@ if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "c
 // bilden är borta. Kvar är bara avmättningen.
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");
 if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "hue=s=0.9", 5);
+// Stjärnorna i fonden mäts upp och skrivs till public/stjarnor.json, som sidan
+// låter glimra. Går python inte att köra här får den gamla tabellen stå kvar:
+// bygget ska inte falla på en sak som bara ändras när fonden byts.
+try {
+  execFileSync("python", [join(HÄR, "verktyg", "hitta-stjarnor.py")], { stdio: "inherit" });
+} catch (e) { /* inget python, ingen ny tabell */ }
 
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);
