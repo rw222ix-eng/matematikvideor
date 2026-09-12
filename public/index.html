@@ -442,35 +442,68 @@
 
   // ── Stjärnhimlen ──────────────────────────────────────
   // stjarnor.json är målningens egna stjärnor, uppmätta av verktyg/hitta-stjarnor.py:
-  // [x, y, radie vid 1600 px, ljushet, varmton]. Var och en andas mellan halv och hel
-  // styrka i sin egen takt. Sprites ritas en gång och kopieras in med drawImage, så
-  // bildrutan kostar nästan ingenting: filmkornslagret som gjorde sidan trög ska inte
-  // få en efterföljare. Slingan går bara när vyn syns.
+  // [x, y, radie vid 1600 px, ljushet, varmton]. Att bara lägga ljus ovanpå syns inte:
+  // stjärnan är redan nästan vit. Därför pendlar varje stjärna åt båda hållen: i den
+  // svaga fasen täcks hon av en mjuk fläck i himlens egen färg (tagen ur fonden runt
+  // henne), i den starka fasen får hon en halo. Sprites ritas en gång och kopieras in
+  // med drawImage, inget filter per bildruta. Slingan går bara när vyn syns.
+  // Allt här är const-uttryck, inte function-deklarationer: i icke-strikt läge läcker en
+  // deklaration i ett block ut till hela skriptet, och en rita() här slog ut tidslinjens rita().
   {
     const duk = $("stjarnor"), yta = duk.getContext("2d"), vy = $("vy-valj");
     const BILD_B = 1600, BILD_H = 900;  // fondens mått, samma som bygg.mjs bakar
     const dpr = () => Math.min(devicePixelRatio || 1, 2);
-    // Samma stjärna ska ha samma takt vid varje besök, utan att tabellen bär på den.
     const slump = (n) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
-    let stjarnor = [], punkter = [], sprites = new Map(), bredd = 0, hojd = 0, kors = false;
+    let stjarnor = [], punkter = [], halor = new Map(), bredd = 0, hojd = 0, kors = false, fondData = null;
 
-    const sprite = (radie, varm) => {
-      const nyckel = `${radie}|${varm}`;
-      const fanns = sprites.get(nyckel);
-      if (fanns) return fanns;
+    // Fonden läses in en gång i 1600x900 så himlens färg runt varje stjärna kan tas därifrån.
+    const fondImg = new Image();
+    fondImg.onload = () => {
+      const c = document.createElement("canvas"); c.width = BILD_B; c.height = BILD_H;
+      const k = c.getContext("2d", { willReadFrequently: true });
+      k.drawImage(fondImg, 0, 0, BILD_B, BILD_H);
+      try { fondData = k.getImageData(0, 0, BILD_B, BILD_H).data; } catch (e) { fondData = null; }
+      punkter = []; startaStjarnor();
+    };
+    fondImg.src = vy.querySelector(".fond").getAttribute("src");
+
+    const himmelFarg = (x, y, r) => {
+      if (!fondData) return [40, 60, 100];
+      let rr = 0, gg = 0, bb = 0, n = 0;
+      for (let v = 0; v < 12; v++) {
+        const px = Math.round(x + Math.cos(v / 12 * 2 * Math.PI) * r), py = Math.round(y + Math.sin(v / 12 * 2 * Math.PI) * r);
+        if (px < 0 || py < 0 || px >= BILD_B || py >= BILD_H) continue;
+        const i = (py * BILD_B + px) * 4; rr += fondData[i]; gg += fondData[i + 1]; bb += fondData[i + 2]; n++;
+      }
+      return n ? [Math.round(rr / n), Math.round(gg / n), Math.round(bb / n)] : [40, 60, 100];
+    };
+
+    const mjukFlack = (radie, rgb, kant) => {
       const k = dpr(), r = radie * k, sida = Math.max(2, Math.ceil(r * 2));
-      const s = document.createElement("canvas");
-      s.width = s.height = sida;
+      const s = document.createElement("canvas"); s.width = s.height = sida;
       const c = s.getContext("2d");
-      const [rr, gg, bb] = varm ? [255, 246, 226] : [226, 236, 255];
       const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
-      g.addColorStop(0, `rgba(${rr},${gg},${bb},.7)`);
-      g.addColorStop(.3, `rgba(${rr},${gg},${bb},.3)`);
-      g.addColorStop(.6, `rgba(${rr},${gg},${bb},.08)`);
-      g.addColorStop(1, `rgba(${rr},${gg},${bb},0)`);
+      g.addColorStop(0, `rgba(${rgb},1)`);
+      g.addColorStop(kant, `rgba(${rgb},.85)`);
+      g.addColorStop(1, `rgba(${rgb},0)`);
       c.fillStyle = g; c.fillRect(0, 0, sida, sida);
-      sprites.set(nyckel, s);
       return s;
+    };
+    const halo = (radie, varm) => {
+      const nyckel = `${radie}|${varm}`;
+      let h = halor.get(nyckel);
+      if (h) return h;
+      const k = dpr(), r = radie * k, sida = Math.max(2, Math.ceil(r * 2));
+      h = document.createElement("canvas"); h.width = h.height = sida;
+      const c = h.getContext("2d"), rgb = varm ? "255,246,226" : "226,236,255";
+      const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
+      g.addColorStop(0, `rgba(${rgb},.9)`);
+      g.addColorStop(.25, `rgba(${rgb},.35)`);
+      g.addColorStop(.6, `rgba(${rgb},.08)`);
+      g.addColorStop(1, `rgba(${rgb},0)`);
+      c.fillStyle = g; c.fillRect(0, 0, sida, sida);
+      halor.set(nyckel, h);
+      return h;
     };
 
     // object-fit: cover med object-position: center top, samma räkning som webbläsaren
@@ -481,18 +514,21 @@
       const k = dpr();
       duk.width = Math.round(bredd * k); duk.height = Math.round(hojd * k);
       yta.setTransform(k, 0, 0, k, 0, 0);
-      sprites.clear();
+      halor.clear();
       const skala = Math.max(bredd / BILD_B, hojd / BILD_H);
       const ox = (bredd - BILD_B * skala) / 2;
       punkter = stjarnor.map(([x, y, s, b, v], i) => {
-        const topp = .12 + .30 * b;  // ljusaste läget: drygt 40 % för de starkaste
+        const bx = x * BILD_B, by = y * BILD_H;
+        const rTack = Math.max(2.5, s * skala * 1.8);      // täcker stjärnan själv med lite marginal
+        const rHalo = Math.max(5, s * skala * 6);          // skenet runt henne, syns mot himlen
         return {
-          x: ox + x * BILD_B * skala,
-          y: y * BILD_H * skala,
-          r: Math.max(3.2, Math.round(s * skala * 4 * 2) / 2),   // skenet, inte stjärnan: några gånger hennes egen radie
+          x: ox + bx * skala, y: by * skala, rTack, rHalo,
+          tack: mjukFlack(rTack, himmelFarg(bx, by, s * 3 + 3).join(","), .45),
           varm: v >= .5 ? 1 : 0,
-          grund: topp * .35, amp: topp * .65,
+          damp: .55 + .35 * b,          // hur långt ner den svagaste fasen tar henne
+          topp: .25 + .45 * b,          // halons styrka i den starka fasen
           fart: 2 * Math.PI / (3 + slump(i) * 4),   // ett varv på 3 till 7 sekunder
+          fart2: 2 * Math.PI / (.9 + slump(i + 31) * 1.3), // ett snabbare, svagare flimmer ovanpå
           fas: slump(i + 977) * 2 * Math.PI,
         };
       });
@@ -504,12 +540,20 @@
       if (!levande()) { kors = false; return; }
       const t = nu / 1000;
       yta.clearRect(0, 0, bredd, hojd);
-      yta.globalCompositeOperation = "lighter";
       for (const p of punkter) {
-        yta.globalAlpha = p.grund + p.amp * (.5 + .5 * Math.sin(t * p.fart + p.fas));
-        yta.drawImage(sprite(p.r, p.varm), p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+        // f går 0..1: under 0,5 dämpas stjärnan, över 0,5 får hon halo.
+        const f = .5 + .4 * Math.sin(t * p.fart + p.fas) + .1 * Math.sin(t * p.fart2 + p.fas * 3);
+        if (f < .5) {
+          yta.globalCompositeOperation = "source-over";
+          yta.globalAlpha = (.5 - f) * 2 * p.damp;
+          yta.drawImage(p.tack, p.x - p.rTack, p.y - p.rTack, p.rTack * 2, p.rTack * 2);
+        } else {
+          yta.globalCompositeOperation = "lighter";
+          yta.globalAlpha = (f - .5) * 2 * p.topp;
+          yta.drawImage(halo(p.rHalo, p.varm), p.x - p.rHalo, p.y - p.rHalo, p.rHalo * 2, p.rHalo * 2);
+        }
       }
-      yta.globalAlpha = 1;
+      yta.globalAlpha = 1; yta.globalCompositeOperation = "source-over";
       requestAnimationFrame(ritaStjarnor);
     };
 
