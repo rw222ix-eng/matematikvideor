@@ -59,7 +59,8 @@
   .intro { position: relative; min-height: 100vh; min-height: 100dvh; overflow: hidden; display: grid; grid-template-rows: minmax(130px, 1fr) auto minmax(100px, 1fr); place-items: center; text-align: center; padding: 0 20px; }
   /* Introt får inte rulla (body.last), så allt måste rymmas på höjden: rubriken skalar även med vh och knappens marginal krymper på låga skärmar. */
   .intro .skrift { font-size: clamp(48px, min(9.5vw, 15vh), 118px); }
-  .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: zoom 26s var(--lugn) both; z-index: 0; will-change: transform; }
+  /* Ingen zoom på introt: fonden är uppskalad från 720 px och inzoomad ser den pixlig ut (Rickard 2026-09-12). */
+  .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
   @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
   .intro .vinjett { position: absolute; inset: 0; z-index: 1; background:
       radial-gradient(ellipse 70% 60% at 50% 45%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .3) 60%, rgba(23, 20, 20, .7) 100%),
@@ -447,7 +448,7 @@
     for (let i = 0; i < 140; i++) {
       const x = (Math.random() * 100).toFixed(2), y = (Math.random() * 66).toFixed(2);
       const t = (4 + Math.random() * 5).toFixed(1), d = (-Math.random() * 9).toFixed(1);
-      const lag = (0.4 + Math.random() * 0.25).toFixed(2), hog = (0.85 + Math.random() * 0.15).toFixed(2);
+      const lag = (0.62 + Math.random() * 0.15).toFixed(2), hog = (0.9 + Math.random() * 0.1).toFixed(2);
       frag += `<i${Math.random() < 0.3 ? ' class="stor"' : ""} style="left:${x}%;top:${y}%;--t:${t}s;--d:${d}s;--lag:${lag};--hog:${hog}"></i>`;
     }
     $("stjarnor").innerHTML = frag;
