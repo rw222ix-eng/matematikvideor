@@ -122,7 +122,7 @@ if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "c
 // i gråskala), så här räcker en mild kurva: skuggorna lyfts en aning (Rickard ville ha
 // den "lite ljusare", 2026-09-13), svärtan står kvar i noll, mättnaden som förut.
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");
-if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "curves=all='0/0 0.1/0.15 0.4/0.48 1/1',hue=s=0.9", 5);
+if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "curves=all='0/0 0.1/0.19 0.4/0.55 0.7/0.82 1/1',hue=s=0.9", 5);
 // Stjärnorna i fonden mäts upp och skrivs till public/stjarnor.json, som sidan
 // låter glimra. Går python inte att köra här får den gamla tabellen stå kvar:
 // bygget ska inte falla på en sak som bara ändras när fonden byts.
