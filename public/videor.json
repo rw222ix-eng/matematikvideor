@@ -1,6 +1,483 @@
 {
- "byggd": "2026-09-13T19:36:24.017Z",
+ "byggd": "2026-09-13T19:58:55.435Z",
  "videor": [
+  {
+   "id": "delos-och-altaret",
+   "titel": "Delos och altaret",
+   "ar": -430,
+   "kurs": "Matematik 1c",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/delos-v1/delos-och-altaret-1080p.mp4",
+   "moment": "Potensekvationer",
+   "begrepp": [
+    "potensekvation",
+    "upphöjt till",
+    "exponent",
+    "tredje roten",
+    "upphöjt till en tredjedel",
+    "kub",
+    "formelbladet",
+    "två lösningar",
+    "jämn exponent",
+    "udda exponent"
+   ],
+   "beskrivning": "Pesten i Athen 430 f.Kr. och oraklets svar: gör altaret på Delos dubbelt så stort. Altaret är en kub, hantverkarna dubblar sidan och får åtta gånger så mycket sten. Sidan som ger ett dubbelt så stort altare är lösningen till x³ = 2, löst med formelbladets regler; sedan x⁵ = 100 och x⁴ = 81 med två lösningar. Eratosthenes bronsmaskin i Alexandria 240 f.Kr.",
+   "youtube": null,
+   "langd": 432,
+   "omslag": "omslag/delos-och-altaret.jpg?v=0bb459b9",
+   "omslagRen": "omslag/delos-och-altaret-ren.jpg?v=462e81b1",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "År 430 före Kristus kom pesten till Athen. Staden låg i krig med Sparta, och alla som bodde på landet runt omkring hade flyttat in innanför murarna, så folk trängdes överallt. Sjukdomen spred sig snabbt, och på några år dog ungefär var fjärde människa i staden."
+    },
+    {
+     "t": 22,
+     "text": "Grekerna trodde att pest kom från guden Apollon, och att bara han kunde ta bort den. Hans heliga ö hette Delos, mitt i Egeiska havet, och där stod hans tempel med ett altare av sten. Så man frågade Apollons orakel, en prästinna som talade för guden, vad Apollon ville ha för att pesten skulle sluta."
+    },
+    {
+     "t": 46,
+     "text": "Svaret var att bygga ett nytt altare som var dubbelt så stort som det gamla. Altaret var en kub, alltså lika långt, lika brett och lika högt, och hantverkarna tänkte att dubbelt så stort betyder dubbelt så lång sida. Så de byggde ett altare med dubbelt så långa sidor, men pesten fortsatte, för det altaret var inte dubbelt så stort."
+    },
+    {
+     "t": 73,
+     "text": "Hur stort blev det egentligen? Och hur lång skulle sidan ha varit för att altaret skulle bli precis dubbelt så stort? För att svara på det behöver vi en sorts ekvation som kallas potensekvation, och det ska vi lära oss nu."
+    },
+    {
+     "t": 91,
+     "text": "Tänk dig att det gamla altaret var ett enda stenblock, format som en kub med sidan en meter. Hantverkarna gjorde sidan två meter. Då får det plats två block på längden, två på bredden och två på höjden, alltså 2 gånger 2 gånger 2 block, och det är 8. Det nya altaret blev åtta gånger så stort som det gamla, inte dubbelt."
+    },
+    {
+     "t": 119,
+     "text": "2 gånger 2 gånger 2 skrivs kortare som 2 upphöjt till 3, och det är 8. Guden ville ha ett altare som var 2 gånger så stort, så sidan måste vara ett tal som upphöjt till 3 blir 2. Vi kallar den sidan x, och då ska x upphöjt till 3 vara lika med 2."
+    },
+    {
+     "t": 142,
+     "text": "En ekvation där det okända talet är upphöjt till något kallas en potensekvation. Vi börjar med en som går att gissa: x upphöjt till 3 är lika med 8. Vilket tal gånger sig självt tre gånger blir 8? Det är 2, för 2 gånger 2 gånger 2 är 8."
+    },
+    {
+     "t": 166,
+     "text": "Men x upphöjt till 3 är lika med 2 går inte att gissa. Så vi behöver ett sätt att räkna ut x, och det bygger på två regler som står på formelbladet, det som ni får ha på nationella provet i Matematik 1. Den ena regeln säger att när en potens höjs upp igen gångar man ihop exponenterna. Den andra säger att en rot kan skrivas som en potens, så tredje roten ur ett tal är talet upphöjt till en tredjedel."
+    },
+    {
+     "t": 198,
+     "text": "Nu löser vi x upphöjt till 3 är lika med 2. Vi höjer båda sidor till en tredjedel, för då gångas exponenterna ihop på vänster sida. 3 gånger en tredjedel är 1, så kvar står bara x. På höger sida står 2 upphöjt till en tredjedel, och det är svaret. Räknaren säger att det är ungefär 1,26."
+    },
+    {
+     "t": 225,
+     "text": "Så sidan skulle ha varit 1,26 meter, inte 2 meter. Vi kontrollerar: 1,26 gånger 1,26 gånger 1,26 är ungefär 2,00. Det stämmer."
+    },
+    {
+     "t": 243,
+     "text": "Samma sak fungerar för vilken exponent som helst. Är x upphöjt till 5 lika med 100, så höjer vi båda sidor till en femtedel, och då är x lika med 100 upphöjt till en femtedel. Räknaren säger ungefär 2,51."
+    },
+    {
+     "t": 263,
+     "text": "Lös ekvationen x upphöjt till 3 är lika med 27. Höj båda sidor till en tredjedel, så är x lika med 27 upphöjt till en tredjedel, och det är 3, för 3 gånger 3 gånger 3 är 27. Exponenten 3 är ett udda tal, och då finns det bara en lösning."
+    },
+    {
+     "t": 288,
+     "text": "Lös ekvationen x upphöjt till 4 är lika med 81. Höj båda sidor till en fjärdedel, så är x lika med 81 upphöjt till en fjärdedel, och det är 3, för 3 gånger 3 gånger 3 gånger 3 är 81. Men här finns en lösning till. Minus 3 gånger minus 3 är 9, och 9 gånger 9 är 81, så minus 3 gånger sig självt fyra gånger blir också 81. När exponenten är ett jämnt tal har ekvationen två lösningar, här 3 och minus 3."
+    },
+    {
+     "t": 333,
+     "text": "Platon var ett litet barn i Athen när pesten kom. När han blev vuxen och lärare sa han att guden egentligen inte brydde sig om altaret. Guden ville att grekerna skulle skämmas för att de kunde så lite matematik, och lära sig mer. Men ingen kunde räkna ut exakt hur lång sidan skulle vara, för det fanns inga räknare."
+    },
+    {
+     "t": 358,
+     "text": "Två hundra år senare, omkring år 240 före Kristus, styrdes Egypten av en grekisk kung som hette Ptolemaios. I hans huvudstad Alexandria fanns världens största bibliotek, med tiotusentals bokrullar, och kungen hämtade en man från Athen för att leda det. Mannen hette Eratosthenes."
+    },
+    {
+     "t": 386,
+     "text": "Eratosthenes löste frågan om altaret med en maskin i stället för med räkning. Han satte tre plattor av brons mellan två skenor, så att de kunde skjutas över varandra, och när man sköt ihop dem på rätt sätt visade kanterna precis hur lång sidan skulle vara. Han lät gjuta maskinen i brons och skänkte den till kungen, med en dikt om maskinen inristad."
+    },
+    {
+     "t": 413,
+     "text": "Tänk dig att oraklet i stället hade sagt att altaret skulle bli tre gånger så stort. Då måste sidan vara ett tal som upphöjt till 3 blir 3. Skriv den ekvationen för sidan x, och lös den på räknaren."
+    }
+   ],
+   "undertext": [
+    {
+     "s": 0.14,
+     "e": 4.58,
+     "text": "År 430 före Kristus kom pesten till Athen."
+    },
+    {
+     "s": 5.68,
+     "e": 10.56,
+     "text": "Staden låg i krig med Sparta, och alla som bodde på landet runt omkring hade flyttat"
+    },
+    {
+     "s": 10.64,
+     "e": 14.08,
+     "text": "in innanför murarna, så folk trängdes överallt."
+    },
+    {
+     "s": 15.08,
+     "e": 20.82,
+     "text": "Sjukdomen spred sig snabbt, och på några år dog ungefär var fjärde människa i staden."
+    },
+    {
+     "s": 22.56,
+     "e": 28.7,
+     "text": "Grekerna trodde att pest kom från guden Apollon, och att bara han kunde ta bort den."
+    },
+    {
+     "s": 28.74,
+     "e": 36.26,
+     "text": "Hans heliga ö hette Delos, mitt i Egeiska havet, och där stod hans tempel med ett altare av sten."
+    },
+    {
+     "s": 37.48,
+     "e": 41.72,
+     "text": "Så man frågade Apollons orakel, en prästinna som talade för guden,"
+    },
+    {
+     "s": 42.16,
+     "e": 45.06,
+     "text": "vad Apollon ville ha för att pesten skulle sluta."
+    },
+    {
+     "s": 46.32,
+     "e": 51,
+     "text": "Svaret var att bygga ett nytt altare som var dubbelt så stort som det gamla."
+    },
+    {
+     "s": 52.42,
+     "e": 57.44,
+     "text": "Altaret var en kub, alltså lika långt, lika brett och lika högt,"
+    },
+    {
+     "s": 58,
+     "e": 62.92,
+     "text": "och hantverkarna tänkte att dubbelt så stort betyder dubbelt så lång sida."
+    },
+    {
+     "s": 64.06,
+     "e": 68.78,
+     "text": "Så de byggde ett altare med dubbelt så långa sidor, men pesten fortsatte,"
+    },
+    {
+     "s": 69.28,
+     "e": 72.16,
+     "text": "för det altaret var inte dubbelt så stort."
+    },
+    {
+     "s": 73.9,
+     "e": 75.4,
+     "text": "Hur stort blev det egentligen?"
+    },
+    {
+     "s": 76.04,
+     "e": 80.86,
+     "text": "Och hur lång skulle sidan ha varit för att altaret skulle bli precis dubbelt så stort?"
+    },
+    {
+     "s": 82.24,
+     "e": 87.18,
+     "text": "För att svara på det behöver vi en sorts ekvation som kallas potensekvation,"
+    },
+    {
+     "s": 87.76,
+     "e": 89.28,
+     "text": "och det ska vi lära oss nu."
+    },
+    {
+     "s": 91.23,
+     "e": 97.62,
+     "text": "Tänk dig att det gamla altaret var ett enda stenblock, format som en kub med sidan en meter."
+    },
+    {
+     "s": 98.74,
+     "e": 101.12,
+     "text": "Hantverkarna gjorde sidan två meter."
+    },
+    {
+     "s": 102.12,
+     "e": 107.02,
+     "text": "Då får det plats två block på längden, två på bredden och två på höjden,"
+    },
+    {
+     "s": 107.64,
+     "e": 112.4,
+     "text": "alltså 2 gånger 2 gånger 2 block, och det är 8."
+    },
+    {
+     "s": 113.84,
+     "e": 118.56,
+     "text": "Det nya altaret blev åtta gånger så stort som det gamla, inte dubbelt."
+    },
+    {
+     "s": 119.86,
+     "e": 126.38,
+     "text": "2 gånger 2 gånger 2 skrivs kortare som 2 upphöjt till 3, och det är 8."
+    },
+    {
+     "s": 127.8,
+     "e": 133.1,
+     "text": "Guden ville ha ett altare som var 2 gånger så stort, så sidan måste vara ett tal som"
+    },
+    {
+     "s": 133.16,
+     "e": 135.1,
+     "text": "upphöjt till 3 blir 2."
+    },
+    {
+     "s": 136.32,
+     "e": 141.44,
+     "text": "Vi kallar den sidan x, och då ska x upphöjt till 3 vara lika med 2."
+    },
+    {
+     "s": 142.92,
+     "e": 148.32,
+     "text": "En ekvation där det okända talet är upphöjt till något kallas en potensekvation."
+    },
+    {
+     "s": 149.6,
+     "e": 154.44,
+     "text": "Vi börjar med en som går att gissa: x upphöjt till 3 är lika med 8."
+    },
+    {
+     "s": 155.7,
+     "e": 159.66,
+     "text": "Vilket tal gånger sig självt tre gånger blir 8?"
+    },
+    {
+     "s": 160.96,
+     "e": 165.54,
+     "text": "Det är 2, för 2 gånger 2 gånger 2 är 8."
+    },
+    {
+     "s": 166.82,
+     "e": 170.34,
+     "text": "Men x upphöjt till 3 är lika med 2 går inte att gissa."
+    },
+    {
+     "s": 170.91,
+     "e": 177.12,
+     "text": "Så vi behöver ett sätt att räkna ut x, och det bygger på två regler som står på formelbladet,"
+    },
+    {
+     "s": 177.68,
+     "e": 180.9,
+     "text": "det som ni får ha på nationella provet i Matematik 1."
+    },
+    {
+     "s": 182.28,
+     "e": 187.76,
+     "text": "Den ena regeln säger att när en potens höjs upp igen gångar man ihop exponenterna."
+    },
+    {
+     "s": 189.06,
+     "e": 195.58,
+     "text": "Den andra säger att en rot kan skrivas som en potens, så tredje roten ur ett tal är talet"
+    },
+    {
+     "s": 195.7,
+     "e": 197.12,
+     "text": "upphöjt till en tredjedel."
+    },
+    {
+     "s": 198.94,
+     "e": 202.04,
+     "text": "Nu löser vi x upphöjt till 3 är lika med 2."
+    },
+    {
+     "s": 203.34,
+     "e": 209,
+     "text": "Vi höjer båda sidor till en tredjedel, för då gångas exponenterna ihop på vänster sida."
+    },
+    {
+     "s": 210.28,
+     "e": 214.58,
+     "text": "3 gånger en tredjedel är 1, så kvar står bara x."
+    },
+    {
+     "s": 215.86,
+     "e": 220.52,
+     "text": "På höger sida står 2 upphöjt till en tredjedel, och det är svaret."
+    },
+    {
+     "s": 221.64,
+     "e": 225.04,
+     "text": "Räknaren säger att det är ungefär 1,26."
+    },
+    {
+     "s": 225.98,
+     "e": 231.14,
+     "text": "Så sidan skulle ha varit 1,26 meter, inte 2 meter."
+    },
+    {
+     "s": 232.38,
+     "e": 242.42,
+     "text": "Vi kontrollerar: 1,26 gånger 1,26 gånger 1,26 är ungefär 2,00. Det stämmer."
+    },
+    {
+     "s": 243.96,
+     "e": 247.06,
+     "text": "Samma sak fungerar för vilken exponent som helst."
+    },
+    {
+     "s": 248.18,
+     "e": 253.68,
+     "text": "Är x upphöjt till 5 lika med 100, så höjer vi båda sidor till en femtedel,"
+    },
+    {
+     "s": 254.26,
+     "e": 257.94,
+     "text": "och då är x lika med 100 upphöjt till en femtedel."
+    },
+    {
+     "s": 259.26,
+     "e": 262.26,
+     "text": "Räknaren säger ungefär 2,51."
+    },
+    {
+     "s": 263.92,
+     "e": 267.7,
+     "text": "Lös ekvationen x upphöjt till 3 är lika med 27."
+    },
+    {
+     "s": 268.94,
+     "e": 274.86,
+     "text": "Höj båda sidor till en tredjedel, så är x lika med 27 upphöjt till en tredjedel,"
+    },
+    {
+     "s": 275.54,
+     "e": 280.78,
+     "text": "och det är 3, för 3 gånger 3 gånger 3 är 27."
+    },
+    {
+     "s": 282.24,
+     "e": 286.7,
+     "text": "Exponenten 3 är ett udda tal, och då finns det bara en lösning."
+    },
+    {
+     "s": 288.36,
+     "e": 292.5,
+     "text": "Lös ekvationen x upphöjt till 4 är lika med 81."
+    },
+    {
+     "s": 293.98,
+     "e": 300.22,
+     "text": "Höj båda sidor till en fjärdedel, så är x lika med 81 upphöjt till en fjärdedel,"
+    },
+    {
+     "s": 300.86,
+     "e": 307.3,
+     "text": "och det är 3, för 3 gånger 3 gånger 3 gånger 3 är 81."
+    },
+    {
+     "s": 308.7,
+     "e": 310.38,
+     "text": "Men här finns en lösning till."
+    },
+    {
+     "s": 311.6,
+     "e": 321.02,
+     "text": "Minus 3 gånger minus 3 är 9, och 9 gånger 9 är 81, så minus 3 gånger sig självt fyra"
+    },
+    {
+     "s": 321.06,
+     "e": 323.36,
+     "text": "gånger blir också 81."
+    },
+    {
+     "s": 324.86,
+     "e": 328.68,
+     "text": "När exponenten är ett jämnt tal har ekvationen två lösningar,"
+    },
+    {
+     "s": 329.36,
+     "e": 331.76,
+     "text": "här 3 och minus 3."
+    },
+    {
+     "s": 333.54,
+     "e": 336.82,
+     "text": "Platon var ett litet barn i Athen när pesten kom."
+    },
+    {
+     "s": 337.82,
+     "e": 343.12,
+     "text": "När han blev vuxen och lärare sa han att guden egentligen inte brydde sig om altaret."
+    },
+    {
+     "s": 344.26,
+     "e": 348.94,
+     "text": "Guden ville att grekerna skulle skämmas för att de kunde så lite matematik,"
+    },
+    {
+     "s": 349.4,
+     "e": 350.48,
+     "text": "och lära sig mer."
+    },
+    {
+     "s": 351.68,
+     "e": 357.3,
+     "text": "Men ingen kunde räkna ut exakt hur lång sidan skulle vara, för det fanns inga räknare."
+    },
+    {
+     "s": 358.88,
+     "e": 366.36,
+     "text": "Två hundra år senare, omkring år 240 före Kristus, styrdes Egypten av en grekisk kung"
+    },
+    {
+     "s": 366.52,
+     "e": 368.14,
+     "text": "som hette Ptolemaios."
+    },
+    {
+     "s": 369.48,
+     "e": 374.3,
+     "text": "I hans huvudstad Alexandria fanns världens största bibliotek,"
+    },
+    {
+     "s": 374.86,
+     "e": 381.24,
+     "text": "med tiotusentals bokrullar, och kungen hämtade en man från Athen för att leda det."
+    },
+    {
+     "s": 382.44,
+     "e": 384.62,
+     "text": "Mannen hette Eratosthenes."
+    },
+    {
+     "s": 386,
+     "e": 391.1,
+     "text": "Eratosthenes löste frågan om altaret med en maskin i stället för med räkning."
+    },
+    {
+     "s": 392.32,
+     "e": 398.42,
+     "text": "Han satte tre plattor av brons mellan två skenor, så att de kunde skjutas över varandra,"
+    },
+    {
+     "s": 399.2,
+     "e": 404.6,
+     "text": "och när man sköt ihop dem på rätt sätt visade kanterna precis hur lång sidan skulle vara."
+    },
+    {
+     "s": 405.84,
+     "e": 411.92,
+     "text": "Han lät gjuta maskinen i brons och skänkte den till kungen, med en dikt om maskinen inristad."
+    },
+    {
+     "s": 413.8,
+     "e": 418.66,
+     "text": "Tänk dig att oraklet i stället hade sagt att altaret skulle bli tre gånger så stort."
+    },
+    {
+     "s": 419.8,
+     "e": 424.06,
+     "text": "Då måste sidan vara ett tal som upphöjt till 3 blir 3."
+    },
+    {
+     "s": 425.38,
+     "e": 429.46,
+     "text": "Skriv den ekvationen för sidan x, och lös den på räknaren."
+    }
+   ]
+  },
   {
    "id": "arkimedes-och-cirkeln",
    "titel": "Arkimedes och cirkeln",
@@ -22,8 +499,8 @@
    "beskrivning": "Arkimedes i Syrakusa fångar pi mellan två tal, 3 10/71 < π < 3 1/7, och belägringen 212 f.Kr. ger olikheten med ett okänt tal. Olikhetstecken, intervall på tallinjen och att lösa en olikhet som en ekvation, med regeln att tecknet vänder vid minustal.",
    "youtube": "fUrukrSffAc",
    "langd": 475,
-   "omslag": "omslag/arkimedes-och-cirkeln.jpg",
-   "omslagRen": "omslag/arkimedes-och-cirkeln-ren.jpg",
+   "omslag": "omslag/arkimedes-och-cirkeln.jpg?v=1dcbf4af",
+   "omslagRen": "omslag/arkimedes-och-cirkeln-ren.jpg?v=b5893dd3",
    "repliker": [
     {
      "t": 0,
@@ -564,8 +1041,8 @@
    "beskrivning": "François Viète läser kungen av Spaniens chiffer 1590 och blir den förste att räkna med bokstäver i stället för tal. Att bryta ut det gemensamma ur ett uttryck, och att utveckla två parenteser, räknat med tal före bokstäver.",
    "youtube": null,
    "langd": 485,
-   "omslag": "omslag/viete-och-chiffret.jpg",
-   "omslagRen": "omslag/viete-och-chiffret-ren.jpg",
+   "omslag": "omslag/viete-och-chiffret.jpg?v=d2355964",
+   "omslagRen": "omslag/viete-och-chiffret-ren.jpg?v=c08dcbe0",
    "repliker": [
     {
      "t": 0,
@@ -1087,8 +1564,8 @@
    "beskrivning": "Johannes Kepler i Linz 1618, Tycho Brahes mätningar och upptäckten att tiden avslöjar avståndet. Potenser, rötter och bråk i exponenten, räknat med tal före bokstäver.",
    "youtube": "qv5M2P65tac",
    "langd": 463,
-   "omslag": "omslag/kepler-och-planeterna.jpg",
-   "omslagRen": "omslag/kepler-och-planeterna-ren.jpg",
+   "omslag": "omslag/kepler-och-planeterna.jpg?v=5e5d08df",
+   "omslagRen": "omslag/kepler-och-planeterna-ren.jpg?v=b569a412",
    "repliker": [
     {
      "t": 0,
@@ -1655,8 +2132,8 @@
    "beskrivning": "Skeppsbrottet vid Scillyöarna 1707 och lagen 1714 som lovade 20 000 pund till den som kunde säga var ett skepp var. Lagens gränser blir intervall på tallinjen — slutna, halvöppna, öppna och utan slut — skrivna med hakparenteser och som olikheter. John Harrisons klocka och resan till Jamaica 1761.",
    "youtube": "zXaqDV_7Qno",
    "langd": 442,
-   "omslag": "omslag/harrison-och-longituden.jpg",
-   "omslagRen": "omslag/harrison-och-longituden-ren.jpg",
+   "omslag": "omslag/harrison-och-longituden.jpg?v=628c9a5b",
+   "omslagRen": "omslag/harrison-och-longituden-ren.jpg?v=047fd1ed",
    "repliker": [
     {
      "t": 0,
