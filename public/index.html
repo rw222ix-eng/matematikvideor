@@ -105,19 +105,29 @@
   .post:nth-child(4n+3) { --lyft: 13vh; }
   .post:nth-child(4n+4) { --lyft: 31vh; }
   .post .lyft { height: var(--lyft); flex: none; }
-  .post .ram { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg2); transition: transform .8s var(--lugn), box-shadow .8s var(--lugn); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); }
+  .post .ram { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg2); transform-origin: center bottom; transition: transform .5s var(--lugn), box-shadow .5s var(--lugn); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); }
   /* Korten i vila: full opacitet (den gamla .55 mot den mörka fonden var en mörk wash
      som gömde bilden) och bara en lätt avmättning, så hover ändå gör skillnad. Ljuset
      i bilderna kommer ur filerna: bygg.mjs lyfter skuggorna med en kurva. */
-  .post .ram img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) brightness(1) contrast(1); opacity: 1; transition: opacity .8s var(--lugn), filter .8s var(--lugn), transform 1.2s var(--lugn); }
-  .post:hover .ram img, .post:focus-within .ram img { opacity: 1; filter: none; transform: scale(1.03); }
+  .post .ram img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) brightness(1) contrast(1); opacity: 1; transition: opacity .5s var(--lugn), filter .5s var(--lugn), transform .5s var(--lugn); }
   .post .lina { flex: 1; width: 1px; background: linear-gradient(var(--linje), var(--linje2)); position: relative; min-height: 40px; }
   .post .lina::after { content: ""; position: absolute; left: -2.5px; bottom: -2.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--dis); }
-  .post .namn { height: 134px; padding-top: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .post .kurs { font: 400 21px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; }
-  .post .moment { font: 400 10px/1.6 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--ben2); max-width: 320px; }
-  .post .titel { font: italic 300 14px/1.4 var(--sans); color: var(--dis); letter-spacing: .04em; margin-top: -2px; transition: color .5s; }
-  .post:hover .titel { color: var(--ben2); }
+  .post .namn { height: 134px; padding-top: 22px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transform-origin: top center; transition: transform .5s var(--lugn); }
+  .post .kurs { font: 400 21px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; transition: color .5s var(--lugn); }
+  .post .moment { font: 400 10px/1.6 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--ben2); max-width: 320px; transition: color .5s var(--lugn); }
+  .post .titel { font: italic 300 14px/1.4 var(--sans); color: var(--dis); letter-spacing: .04em; margin-top: -2px; transition: color .5s var(--lugn); }
+  /* Hovring (Rickard 2026-09-13): tydlig taktil återkoppling — kortet kliver fram och
+     texten under växer och ljusnar. Bara på pekdon som hovrar; mobilen har ingen hover
+     och står still. Det hovrade kortet får z-index så det lägger sig över grannarna. */
+  @media (hover: hover) {
+    .post:hover, .post:focus-within { position: relative; z-index: 3; }
+    .post:hover .ram, .post:focus-within .ram { transform: scale(1.09); box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .9); }
+    .post:hover .ram img, .post:focus-within .ram img { opacity: 1; filter: none; transform: scale(1.03); }
+    .post:hover .namn, .post:focus-within .namn { transform: scale(1.08); }
+    .post:hover .kurs, .post:focus-within .kurs { color: #FFFBF2; }
+    .post:hover .moment, .post:focus-within .moment { color: var(--ben); }
+    .post:hover .titel, .post:focus-within .titel { color: var(--accent); }
+  }
   .post > button { all: unset; display: contents; }
   .post.kommer { pointer-events: none; }
   .post.kommer .ram { background: none; border: 1px dashed var(--linje2); box-shadow: none; }
@@ -296,6 +306,9 @@
     .post .lina { display: none; }
     .post .ram { position: relative; }
     .post .ram img { opacity: 1; filter: none; }
+    /* Ingen hover-förstoring i den lodräta listan: kortet är redan fullbrett och skulle
+       växa utanför skärmen om en mus råkar hovra på en smal ruta. */
+    .post:hover .ram, .post:focus-within .ram, .post:hover .namn, .post:focus-within .namn { transform: none; }
     .post .namn { height: auto; padding-top: 18px; text-align: left; align-items: flex-start; position: relative; }
     .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
     .post.kommer { display: none; }
@@ -320,11 +333,11 @@
 
 <!-- ── 1. Intro ─────────────────────────────────────────── -->
 <section class="vy intro" id="vy-intro">
-  <img class="fond" src="omslag/intro.jpg?v=3" alt="" fetchpriority="high">
+  <img class="fond" src="omslag/intro.jpg?v=af9ffc17" alt="" fetchpriority="high">
   <div class="vinjett"></div>
   <header class="topp fram">
     <a class="logo" href="#" aria-label="Matematikvideor med Rickard">
-      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="320" height="320">
+      <img src="omslag/logo.jpg?v=0ff4abc0" alt="Matematikvideor med Rickard" width="320" height="320">
     </a>
   </header>
   <div class="mitt">
@@ -336,12 +349,12 @@
 
 <!-- ── 2. Välj en film ──────────────────────────────────── -->
 <section class="vy valj" id="vy-valj">
-  <img class="fond" src="omslag/valj-fond.jpg?v=5" alt="" loading="lazy">
+  <img class="fond" src="omslag/valj-fond.jpg?v=a2a91687" alt="" loading="lazy">
   <div class="vinjett"></div>
   <canvas class="stjarnor" id="stjarnor" aria-hidden="true"></canvas>
   <header class="topp">
     <a class="logo" href="#" aria-label="Till början">
-      <img src="omslag/logo.jpg" alt="Matematikvideor med Rickard" width="320" height="320">
+      <img src="omslag/logo.jpg?v=0ff4abc0" alt="Matematikvideor med Rickard" width="320" height="320">
     </a>
     <div class="hoger">
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
@@ -448,12 +461,15 @@
   }
   window.addEventListener("hashchange", ruta);
 
-  // ── Stjärnhimlen ──────────────────────────────────────
-  // stjarnor.json är målningens egna stjärnor, uppmätta av verktyg/hitta-stjarnor.py:
-  // [x, y, radie vid 1600 px, ljushet, varmton]. Att bara lägga ljus ovanpå syns inte:
-  // stjärnan är redan nästan vit. Därför pendlar varje stjärna åt båda hållen: i den
-  // svaga fasen täcks hon av en mjuk fläck i himlens egen färg (tagen ur fonden runt
-  // henne), i den starka fasen får hon en halo. Sprites ritas en gång och kopieras in
+  // ── Stjärnhimlen och stadens fönster ──────────────────
+  // stjarnor.json är målningens egna ljuspunkter, uppmätta av verktyg/hitta-stjarnor.py:
+  // { stjarnor: [x, y, radie vid 1600 px, ljushet, varmton], fonster: [x, y, radie, ljushet] }.
+  // Att bara lägga ljus ovanpå syns inte: stjärnan är redan nästan vit. Därför pendlar varje
+  // stjärna åt båda hållen: i den svaga fasen täcks hon av en mjuk fläck i himlens egen färg
+  // (tagen ur fonden runt henne), i den starka fasen får hon en halo och en liten vit kärna.
+  // Fönstren i staden glimrar tvärtom bara uppåt — varm glöd i lighter, ingen täckfläck —
+  // långsammare och mjukare än stjärnorna, och några få flämtar till ibland.
+  // Sprites ritas en gång och kopieras in
   // med drawImage, inget filter per bildruta. Slingan går bara när vyn syns.
   // Allt här är const-uttryck, inte function-deklarationer: i icke-strikt läge läcker en
   // deklaration i ett block ut till hela skriptet, och en rita() här slog ut tidslinjens rita().
@@ -462,7 +478,8 @@
     const BILD_B = 1600, BILD_H = 900;  // fondens mått, samma som bygg.mjs bakar
     const dpr = () => Math.min(devicePixelRatio || 1, 2);
     const slump = (n) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
-    let stjarnor = [], punkter = [], halor = new Map(), bredd = 0, hojd = 0, kors = false, fondData = null;
+    let stjarnor = [], fonster = [], punkter = [], fonsterpunkter = [], halor = new Map(), bredd = 0, hojd = 0, kors = false, fondData = null;
+    const FONSTERFARG = "255,214,150";   // stadens varma lyktljus
 
     // Fonden läses in en gång i 1600x900 så himlens färg runt varje stjärna kan tas därifrån.
     const fondImg = new Image();
@@ -471,7 +488,7 @@
       const k = c.getContext("2d", { willReadFrequently: true });
       k.drawImage(fondImg, 0, 0, BILD_B, BILD_H);
       try { fondData = k.getImageData(0, 0, BILD_B, BILD_H).data; } catch (e) { fondData = null; }
-      punkter = []; startaStjarnor();
+      punkter = []; fonsterpunkter = []; startaStjarnor();
     };
     fondImg.src = vy.querySelector(".fond").getAttribute("src");
 
@@ -497,18 +514,32 @@
       c.fillStyle = g; c.fillRect(0, 0, sida, sida);
       return s;
     };
-    const halo = (radie, varm) => {
-      const nyckel = `${radie}|${varm}`;
+    // sort: 0 = kall stjärna, 1 = varm stjärna, 2 = stadens fönster (mjukare glöd),
+    // 3 = kärnpunkten mitt i den starka fasen (liten, nästan vit).
+    const halo = (radie, sort) => {
+      const nyckel = `${radie}|${sort}`;
       let h = halor.get(nyckel);
       if (h) return h;
       const k = dpr(), r = radie * k, sida = Math.max(2, Math.ceil(r * 2));
       h = document.createElement("canvas"); h.width = h.height = sida;
-      const c = h.getContext("2d"), rgb = varm ? "255,246,226" : "226,236,255";
+      const c = h.getContext("2d");
+      const rgb = sort === 2 ? FONSTERFARG : sort === 3 ? "255,250,238" : sort === 1 ? "255,246,226" : "226,236,255";
       const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
-      g.addColorStop(0, `rgba(${rgb},.9)`);
-      g.addColorStop(.25, `rgba(${rgb},.35)`);
-      g.addColorStop(.6, `rgba(${rgb},.08)`);
-      g.addColorStop(1, `rgba(${rgb},0)`);
+      if (sort === 2) {            // fönstret: bredare, mjukare, ingen hård kärna
+        g.addColorStop(0, `rgba(${rgb},.85)`);
+        g.addColorStop(.3, `rgba(${rgb},.34)`);
+        g.addColorStop(.65, `rgba(${rgb},.1)`);
+        g.addColorStop(1, `rgba(${rgb},0)`);
+      } else if (sort === 3) {     // kärnan: nästan solid mitt, snabbt utfall
+        g.addColorStop(0, `rgba(${rgb},1)`);
+        g.addColorStop(.45, `rgba(${rgb},.75)`);
+        g.addColorStop(1, `rgba(${rgb},0)`);
+      } else {
+        g.addColorStop(0, `rgba(${rgb},.9)`);
+        g.addColorStop(.25, `rgba(${rgb},.35)`);
+        g.addColorStop(.6, `rgba(${rgb},.08)`);
+        g.addColorStop(1, `rgba(${rgb},0)`);
+      }
       c.fillStyle = g; c.fillRect(0, 0, sida, sida);
       halor.set(nyckel, h);
       return h;
@@ -518,7 +549,7 @@
     // gör på fonden, annars hamnar glimret bredvid stjärnan.
     const matStjarnor = () => {
       bredd = duk.clientWidth; hojd = duk.clientHeight;
-      if (!bredd || !hojd) { punkter = []; return; }
+      if (!bredd || !hojd) { punkter = []; fonsterpunkter = []; return; }
       const k = dpr();
       duk.width = Math.round(bredd * k); duk.height = Math.round(hojd * k);
       yta.setTransform(k, 0, 0, k, 0, 0);
@@ -528,38 +559,65 @@
       punkter = stjarnor.map(([x, y, s, b, v], i) => {
         const bx = x * BILD_B, by = y * BILD_H;
         const rTack = Math.max(2.5, s * skala * 1.8);      // täcker stjärnan själv med lite marginal
-        const rHalo = Math.max(5, s * skala * 6);          // skenet runt henne, syns mot himlen
+        const rHalo = Math.max(7, s * skala * 8);          // skenet runt henne, syns mot himlen
         return {
-          x: ox + bx * skala, y: by * skala, rTack, rHalo,
+          x: ox + bx * skala, y: by * skala, rTack, rHalo, rKarna: Math.max(1.6, rTack * .7),
           tack: mjukFlack(rTack, himmelFarg(bx, by, s * 3 + 3).join(","), .45),
           varm: v >= .5 ? 1 : 0,
-          damp: .55 + .35 * b,          // hur långt ner den svagaste fasen tar henne
-          topp: .25 + .45 * b,          // halons styrka i den starka fasen
+          damp: .65 + .35 * b,          // hur långt ner den svagaste fasen tar henne
+          topp: .45 + .5 * b,           // halons styrka i den starka fasen
           fart: 2 * Math.PI / (3 + slump(i) * 4),   // ett varv på 3 till 7 sekunder
           fart2: 2 * Math.PI / (.9 + slump(i + 31) * 1.3), // ett snabbare, svagare flimmer ovanpå
           fas: slump(i + 977) * 2 * Math.PI,
         };
       });
+      // Fönstren: bara glöd uppåt, ingen täckfläck (huset bakom är mörkt, en fläck i
+      // väggens färg skulle synas som en prick). Långsammare gång än stjärnorna.
+      fonsterpunkter = fonster.map(([x, y, s, b], i) => ({
+        x: ox + x * BILD_B * skala, y: y * BILD_H * skala,
+        r: Math.max(4, s * skala * 5),
+        bas: .10 + .10 * b,             // glöden som alltid ligger på
+        amp: .22 + .30 * b,             // hur mycket den andas
+        fart: 2 * Math.PI / (2 + slump(i + 7) * 3),      // ett varv på 2 till 5 sekunder
+        fas: slump(i + 401) * 2 * Math.PI,
+        flamt: slump(i + 617) < .15,    // några få flämtar till då och då
+        flamtFart: 2 * Math.PI / (9 + slump(i + 863) * 8),
+      }));
     };
 
-    const levande = () => !document.hidden && vy.classList.contains("aktiv") && punkter.length > 0;
+    const levande = () => !document.hidden && vy.classList.contains("aktiv")
+      && (punkter.length > 0 || fonsterpunkter.length > 0);
 
     const ritaStjarnor = (nu) => {
       if (!levande()) { kors = false; return; }
       const t = nu / 1000;
       yta.clearRect(0, 0, bredd, hojd);
       for (const p of punkter) {
-        // f går 0..1: under 0,5 dämpas stjärnan, över 0,5 får hon halo.
+        // f går 0..1: under 0,5 dämpas stjärnan, över 0,5 får hon halo och kärna.
         const f = .5 + .4 * Math.sin(t * p.fart + p.fas) + .1 * Math.sin(t * p.fart2 + p.fas * 3);
         if (f < .5) {
           yta.globalCompositeOperation = "source-over";
           yta.globalAlpha = (.5 - f) * 2 * p.damp;
           yta.drawImage(p.tack, p.x - p.rTack, p.y - p.rTack, p.rTack * 2, p.rTack * 2);
         } else {
+          const styrka = (f - .5) * 2;
           yta.globalCompositeOperation = "lighter";
-          yta.globalAlpha = (f - .5) * 2 * p.topp;
+          yta.globalAlpha = styrka * p.topp;
           yta.drawImage(halo(p.rHalo, p.varm), p.x - p.rHalo, p.y - p.rHalo, p.rHalo * 2, p.rHalo * 2);
+          // Kärnan ovanpå: en liten skarp prick, det som gör att ögat läser "glimt".
+          yta.globalAlpha = styrka * styrka * .85;
+          yta.drawImage(halo(p.rKarna, 3), p.x - p.rKarna, p.y - p.rKarna, p.rKarna * 2, p.rKarna * 2);
         }
+      }
+      yta.globalCompositeOperation = "lighter";
+      for (const p of fonsterpunkter) {
+        let a = p.bas + p.amp * (.5 + .5 * Math.sin(t * p.fart + p.fas));
+        if (p.flamt) {   // ett kort mörkt flämt, ungefär var tionde sekund
+          const g = Math.sin(t * p.flamtFart + p.fas * 2.7);
+          if (g > .995) a *= 1 - .85 * ((g - .995) / .005);
+        }
+        yta.globalAlpha = a;
+        yta.drawImage(halo(p.r, 2), p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
       }
       yta.globalAlpha = 1; yta.globalCompositeOperation = "source-over";
       requestAnimationFrame(ritaStjarnor);
@@ -567,8 +625,8 @@
 
     const startaStjarnor = () => {
       // Vyn är display: none tills den blir aktiv, så måtten går inte att ta förrän då.
-      if (stjarnor.length && !document.hidden && vy.classList.contains("aktiv")
-          && (!punkter.length || duk.clientWidth !== bredd || duk.clientHeight !== hojd)) matStjarnor();
+      if ((stjarnor.length || fonster.length) && !document.hidden && vy.classList.contains("aktiv")
+          && ((!punkter.length && !fonsterpunkter.length) || duk.clientWidth !== bredd || duk.clientHeight !== hojd)) matStjarnor();
       if (kors || !levande()) return;
       kors = true;
       requestAnimationFrame(ritaStjarnor);
@@ -579,7 +637,12 @@
     addEventListener("resize", () => { matStjarnor(); startaStjarnor(); });
     fetch("stjarnor.json", { cache: "no-cache" })
       .then((r) => (r.ok ? r.json() : []))
-      .then((d) => { stjarnor = Array.isArray(d) ? d : []; startaStjarnor(); })
+      // Gamla formatet var en ren array med bara stjärnor; nya är { stjarnor, fonster }.
+      .then((d) => {
+        stjarnor = Array.isArray(d) ? d : (Array.isArray(d && d.stjarnor) ? d.stjarnor : []);
+        fonster = Array.isArray(d && d.fonster) ? d.fonster : [];
+        startaStjarnor();
+      })
       .catch(() => {});
   }
 

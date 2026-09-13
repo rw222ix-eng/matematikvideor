@@ -15,6 +15,7 @@
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -23,6 +24,13 @@ const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
 mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
+
+// Bilderna får ?v=<innehållshash>. Vercel lägger max-age=86400 på /omslag/*, så utan
+// version såg elever och Rickard gamla omslag ett dygn efter en ändring ("ändringarna
+// har inte gått igenom", 2026-09-13). Hashen är av den bakade filen: samma innehåll ger
+// samma hash, så ett ombygge utan ändring ger ingen diff.
+const filhash = (fil) => createHash("md5").update(readFileSync(fil)).digest("hex").slice(0, 8);
+const medVersion = (ut) => `${ut}?v=${filhash(join(HÄR, "public", ut))}`;
 
 // tal.srt → [{ s, e, text }] för sidans egna undertexter (sekundexakta, i Charter som i filmen).
 function lasSrt(fil) {
@@ -89,11 +97,11 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   const bakaOmslag = (kalla, ut) => {
     if (kalla && existsSync(kalla)) {
       bakaBild(kalla, join(HÄR, "public", ut), 720, omslagskurva(kalla), 3);
-      return ut;
+      return medVersion(ut);
     }
     if (existsSync(join(HÄR, "public", ut))) {
       console.warn(`  varning: ${kalla ? kalla.replace(HÄR + "/", "") : "omslag"} saknas — behåller public/${ut} som den är.`);
-      return ut;
+      return medVersion(ut);
     }
     if (kalla) console.warn(`  varning: ${kalla.replace(HÄR + "/", "")} saknas, inget omslag för ${v.id}.`);
     return null;
@@ -123,12 +131,34 @@ if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "c
 // den "lite ljusare", 2026-09-13), svärtan står kvar i noll, mättnaden som förut.
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");
 if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "curves=all='0/0 0.1/0.19 0.4/0.55 0.7/0.82 1/1',hue=s=0.9", 5);
-// Stjärnorna i fonden mäts upp och skrivs till public/stjarnor.json, som sidan
-// låter glimra. Går python inte att köra här får den gamla tabellen stå kvar:
-// bygget ska inte falla på en sak som bara ändras när fonden byts.
-try {
-  execFileSync("python", [join(HÄR, "verktyg", "hitta-stjarnor.py")], { stdio: "inherit" });
-} catch (e) { /* inget python, ingen ny tabell */ }
+// Stjärnorna och stadens fönsterljus i fonden mäts upp och skrivs till
+// public/stjarnor.json, som sidan låter glimra. Går python inte att köra här (numpy,
+// scipy och Pillow behövs) får den gamla tabellen stå kvar: bygget ska inte falla på en
+// sak som bara ändras när fonden byts. VIDEOTEK_PYTHON pekar ut en egen tolk.
+{
+  const skript = join(HÄR, "verktyg", "hitta-stjarnor.py");
+  const tolkar = [process.env.VIDEOTEK_PYTHON, join(HÄR, "verktyg", ".venv", "bin", "python"), "python3", "python"].filter(Boolean);
+  let kord = false;
+  for (const py of tolkar) {
+    try { console.log(execFileSync(py, [skript], { encoding: "utf8" }).trim()); kord = true; break; } catch (e) { /* nästa tolk */ }
+  }
+  if (!kord) console.warn("  varning: hitta-stjarnor.py kunde inte köras (python med numpy/scipy/Pillow saknas) — behåller public/stjarnor.json.");
+}
+
+// Fonderna och logotypen ligger i index.html, inte i videor.json. Deras ?v= skrivs om
+// här efter bakningen, så inga versionsnummer behöver hållas för hand.
+{
+  const indexFil = join(HÄR, "public", "index.html");
+  let html = readFileSync(indexFil, "utf8");
+  const fore = html;
+  for (const namn of ["intro.jpg", "valj-fond.jpg", "logo.jpg"]) {
+    const fil = join(HÄR, "public", "omslag", namn);
+    if (!existsSync(fil)) continue;
+    const v = filhash(fil);
+    html = html.replace(new RegExp(`omslag/${namn.replace(".", "\\.")}(\\?v=[A-Za-z0-9]*)?`, "g"), `omslag/${namn}?v=${v}`);
+  }
+  if (html !== fore) { writeFileSync(indexFil, html, "utf8"); console.log("public/index.html: bildernas ?v= uppdaterade."); }
+}
 
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);

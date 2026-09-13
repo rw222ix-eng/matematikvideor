@@ -10,6 +10,11 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   med uppmätta tider) och kopierar omslagen till `public/omslag/` (720 px jpeg; finns
   `omslag-utan-titel.png` bredvid omslaget blir den `<id>-ren.jpg` och används på sidan, eftersom
   titeln står i text). Introbilden `public/omslag/intro.jpg` görs av Kepler-omslaget utan titel.
+  Varje bild får `?v=<innehållshash>` i `videor.json` och i `index.html` (Vercel cachar
+  `/omslag/*` ett dygn — utan version syntes inte ett nytt omslag). Bygget kör också
+  `verktyg/hitta-stjarnor.py`, som mäter upp fondens stjärnor och stadens fönsterljus till
+  `public/stjarnor.json`. Skriptet behöver numpy, scipy och Pillow; sätt `VIDEOTEK_PYTHON`
+  eller lägg en venv i `verktyg/.venv`. Utan python behålls den gamla tabellen.
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
