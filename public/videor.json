@@ -1,6 +1,549 @@
 {
- "byggd": "2026-09-05T18:53:53.575Z",
+ "byggd": "2026-09-13T15:52:39.896Z",
  "videor": [
+  {
+   "id": "arkimedes-och-cirkeln",
+   "titel": "Arkimedes och cirkeln",
+   "ar": -212,
+   "kurs": "Matematik 1c",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/arkimedes-v1/arkimedes-och-cirkeln-1080p.mp4",
+   "moment": "Olikheter",
+   "begrepp": [
+    "olikhet",
+    "olikhetstecken",
+    "större än",
+    "mindre än",
+    "intervall",
+    "tallinjen",
+    "lösa olikheter",
+    "vända tecknet",
+    "pi"
+   ],
+   "beskrivning": "Arkimedes i Syrakusa fångar pi mellan två tal, 3 10/71 < π < 3 1/7, och belägringen 212 f.Kr. ger olikheten med ett okänt tal. Olikhetstecken, intervall på tallinjen och att lösa en olikhet som en ekvation, med regeln att tecknet vänder vid minustal.",
+   "youtube": null,
+   "langd": 475,
+   "omslag": "omslag/arkimedes-och-cirkeln.jpg",
+   "omslagRen": "omslag/arkimedes-och-cirkeln-ren.jpg",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "För ungefär två tusen tre hundra år sedan låg den grekiska staden Syrakusa på ön Sicilien, med en hamn och en hög mur runt hela staden. Kungen hette Hieron, och när han behövde räkna ut något skickade han efter en man i staden som hette Arkimedes."
+    },
+    {
+     "t": 19,
+     "text": "Arkimedes ritade sina figurer i ett tunt lager sand på ett bord. Det han ritade mest var cirklar, för det fanns en fråga om cirkeln som ingen kunde svara på."
+    },
+    {
+     "t": 31,
+     "text": "Sträckan runt om en cirkel kallas omkrets, och sträckan tvärs över kallas diameter. Omkretsen är alltid lite mer än tre gånger så lång som diametern. Men hur mycket mer? Det talet kallar vi i dag pi, och ingen visste exakt vad det var."
+    },
+    {
+     "t": 51,
+     "text": "Så Arkimedes tänkte tvärtom. Han letade i stället efter ett tal som pi är större än, och ett tal som pi är mindre än. Då vet man mellan vilka tal pi ligger, och det ska vi lära oss att skriva och räkna med."
+    },
+    {
+     "t": 68,
+     "text": "Nu kommer det Arkimedes själv gjorde i sanden, och det är det svåraste vi gör i dag. Det är så här pi bestämdes från början, så häng med så gott det går, och det är helt okej om du inte fattar varje steg. Han ritade en sexhörning inuti cirkeln, med hörnen på cirkeln. Varje sida är precis lika lång som halva diametern, och sex halva diametrar är tre hela, så sträckan runt sexhörningen är tre diametrar. Men cirkeln går utanför sexhörningen, så omkretsen är längre än tre diametrar. Pi är alltså större än 3."
+    },
+    {
+     "t": 111,
+     "text": "Sedan ritar vi en fyrkant utanför cirkeln, så att cirkeln nuddar alla fyra sidorna. Varje sida är lika lång som diametern, så sträckan runt fyrkanten är fyra diametrar. Men cirkeln går innanför fyrkanten, så omkretsen är kortare än så. Pi är mindre än 4."
+    },
+    {
+     "t": 133,
+     "text": "Det var det svåra. Kvar står två saker, att pi är större än 3 och mindre än 4. Större än och mindre än skriver man med olikhetstecken, och den breda öppningen är alltid vänd mot det största talet. Båda kan vi skriva på en enda rad: 3 mindre än pi mindre än 4. På tallinjen är det sträckan mellan 3 och 4, och en sådan sträcka kallas ett intervall. Vid 3 och 4 ritar vi ringar, för pi är inte 3 och inte 4."
+    },
+    {
+     "t": 172,
+     "text": "Mellan 3 och 4 är ett brett intervall, och Arkimedes ville ha det smalare. Så han ritade en tolvhörning, sedan 24 hörn, 48 och till sist 96 hörn, en inuti cirkeln och en utanför, och räknade ut sträckan runt båda. Ju fler hörn, desto närmare cirkeln kommer de."
+    },
+    {
+     "t": 196,
+     "text": "Då fick han att pi är större än 3 och 10 sjuttioförstedelar, men mindre än 3 och en sjundedel. Det intervallet är mindre än en femhundradel brett, och skriver man bråken som decimaltal börjar båda på 3,14."
+    },
+    {
+     "t": 216,
+     "text": "Kung Hieron dog år 215 före Kristus. Rom och Kartago låg i krig, och Syrakusa bytte sida till Kartago. Därför seglade en romersk flotta mot staden år 213 före Kristus, under generalen Marcellus."
+    },
+    {
+     "t": 235,
+     "text": "Men Hieron hade bett Arkimedes bygga maskiner som kunde försvara muren. Så när skeppen kom stod där kastmaskiner som slungade stenar långt ut över vattnet, och kranar som kunde gripa ett skepp som kom nära, lyfta det ur vattnet och släppa det. Romarna lärde sig att hålla sig på avstånd."
+    },
+    {
+     "t": 257,
+     "text": "Tänk dig ett romerskt skepp som ligger 300 meter från muren och ror in mot den, 4 meter varje sekund. Efter t sekunder är det då 300 minus 4 t meter kvar. Kastmaskinerna når 200 meter ut. Efter hur många sekunder är skeppet inom räckhåll?"
+    },
+    {
+     "t": 280,
+     "text": "Skeppet är inom räckhåll när avståndet är högst 200 meter, alltså när 300 minus 4 t är mindre än eller lika med 200. Tecknet har ett streck under sig, för avståndet får vara precis 200 också. Det är en olikhet med ett okänt tal, och vi löser den som en ekvation: ta bort 300 från båda sidor, så står det minus 4 t mindre än eller lika med minus 100."
+    },
+    {
+     "t": 313,
+     "text": "Nu ska vi dela med minus 4, och då händer något som inte händer i en ekvation. 2 är mindre än 5, men gångar man båda med minus 1 får man minus 2 och minus 5, och minus 2 är större än minus 5. Tallinjen speglas i nollan. Därför vänder man tecknet varje gång man gångar eller delar med ett minustal."
+    },
+    {
+     "t": 339,
+     "text": "Så när vi delar med minus 4 vänder tecknet, och t är större än eller lika med 25. Skeppet är inom räckhåll efter 25 sekunder och hela tiden efter det. På tallinjen blir det en fylld prick vid 25, för 25 räknas med, och allt till höger om den."
+    },
+    {
+     "t": 362,
+     "text": "Två olikheter att lösa. Lös olikheten 3 x plus 5 mindre än 20. Ta bort 5 från båda sidor, 3 x mindre än 15, dela med 3, x mindre än 5. Ring vid 5 och allt till vänster."
+    },
+    {
+     "t": 385,
+     "text": "Lös olikheten 15 minus 2 x större än eller lika med 7. Ta bort 15, minus 2 x större än eller lika med minus 8. Dela med minus 2 och vänd tecknet, x mindre än eller lika med 4. Fylld prick vid 4 och allt till vänster."
+    },
+    {
+     "t": 414,
+     "text": "Belägringen varade i två år. Hösten 212 före Kristus firade staden en fest, vakterna på muren var få, och på natten klättrade romerska soldater över muren och tog staden."
+    },
+    {
+     "t": 431,
+     "text": "Marcellus hade befallt att Arkimedes inte fick skadas, men en soldat hittade honom böjd över en figur i sanden. Arkimedes bad att få räkna klart först, och soldaten dödade honom. Han var 75 år."
+    },
+    {
+     "t": 448,
+     "text": "Tänk dig ett skepp till, som ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter. Lös olikheten 400 minus 5 t mindre än eller lika med 200. Efter hur många sekunder är skeppet inom räckhåll?"
+    }
+   ],
+   "undertext": [
+    {
+     "s": 0.16,
+     "e": 7.42,
+     "text": "För ungefär två tusen tre hundra år sedan låg den grekiska staden Syrakusa på ön Sicilien,"
+    },
+    {
+     "s": 8.02,
+     "e": 11.02,
+     "text": "med en hamn och en hög mur runt hela staden."
+    },
+    {
+     "s": 12.08,
+     "e": 17.12,
+     "text": "Kungen hette Hieron, och när han behövde räkna ut något skickade han efter en man i staden"
+    },
+    {
+     "s": 17.16,
+     "e": 18.68,
+     "text": "som hette Arkimedes."
+    },
+    {
+     "s": 19.83,
+     "e": 23.76,
+     "text": "Arkimedes ritade sina figurer i ett tunt lager sand på ett bord."
+    },
+    {
+     "s": 24.43,
+     "e": 30.32,
+     "text": "Det han ritade mest var cirklar, för det fanns en fråga om cirkeln som ingen kunde svara på."
+    },
+    {
+     "s": 31.62,
+     "e": 38.3,
+     "text": "Sträckan runt om en cirkel kallas omkrets, och sträckan tvärs över kallas diameter."
+    },
+    {
+     "s": 39.42,
+     "e": 43.36,
+     "text": "Omkretsen är alltid lite mer än tre gånger så lång som diametern."
+    },
+    {
+     "s": 43.9,
+     "e": 45.18,
+     "text": "Men hur mycket mer?"
+    },
+    {
+     "s": 46.16,
+     "e": 50.32,
+     "text": "Det talet kallar vi i dag pi, och ingen visste exakt vad det var."
+    },
+    {
+     "s": 51.71,
+     "e": 54.7,
+     "text": "Så Arkimedes tänkte tvärtom."
+    },
+    {
+     "s": 54.76,
+     "e": 60.64,
+     "text": "Han letade i stället efter ett tal som pi är större än, och ett tal som pi är mindre än."
+    },
+    {
+     "s": 61.28,
+     "e": 68.3,
+     "text": "Då vet man mellan vilka tal pi ligger, och det ska vi lära oss att skriva och räkna med."
+    },
+    {
+     "s": 68.78,
+     "e": 73.44,
+     "text": "Nu kommer det Arkimedes själv gjorde i sanden, och det är det svåraste vi gör i dag."
+    },
+    {
+     "s": 74.12,
+     "e": 78.6,
+     "text": "Det är så här pi bestämdes från början, så häng med så gott det går,"
+    },
+    {
+     "s": 78.94,
+     "e": 81.6,
+     "text": "och det är helt okej om du inte fattar varje steg."
+    },
+    {
+     "s": 82.98,
+     "e": 87.52,
+     "text": "Han ritade en sexhörning inuti cirkeln, med hörnen på cirkeln."
+    },
+    {
+     "s": 88.62,
+     "e": 95.64,
+     "text": "Varje sida är precis lika lång som halva diametern, och sex halva diametrar är tre hela,"
+    },
+    {
+     "s": 96.14,
+     "e": 99.5,
+     "text": "så sträckan runt sexhörningen är tre diametrar."
+    },
+    {
+     "s": 100.52,
+     "e": 106.76,
+     "text": "Men cirkeln går utanför sexhörningen, så omkretsen är längre än tre diametrar."
+    },
+    {
+     "s": 107.62,
+     "e": 109.78,
+     "text": "Pi är alltså större än 3."
+    },
+    {
+     "s": 111.24,
+     "e": 116.58,
+     "text": "Sedan ritar vi en fyrkant utanför cirkeln, så att cirkeln nuddar alla fyra sidorna."
+    },
+    {
+     "s": 117.6,
+     "e": 123.88,
+     "text": "Varje sida är lika lång som diametern, så sträckan runt fyrkanten är fyra diametrar."
+    },
+    {
+     "s": 124.92,
+     "e": 130.1,
+     "text": "Men cirkeln går innanför fyrkanten, så omkretsen är kortare än så."
+    },
+    {
+     "s": 131,
+     "e": 132.64,
+     "text": "Pi är mindre än 4."
+    },
+    {
+     "s": 133.84,
+     "e": 134.84,
+     "text": "Det var det svåra."
+    },
+    {
+     "s": 135.36,
+     "e": 141.04,
+     "text": "Kvar står två saker, att pi är större än 3 och mindre än 4."
+    },
+    {
+     "s": 142.22,
+     "e": 147.98,
+     "text": "Större än och mindre än skriver man med olikhetstecken, och den breda öppningen är alltid"
+    },
+    {
+     "s": 148.02,
+     "e": 149.7,
+     "text": "vänd mot det största talet."
+    },
+    {
+     "s": 150.68,
+     "e": 156.88,
+     "text": "Båda kan vi skriva på en enda rad: 3 mindre än pi mindre än 4."
+    },
+    {
+     "s": 158.2,
+     "e": 164.18,
+     "text": "På tallinjen är det sträckan mellan 3 och 4, och en sådan sträcka kallas ett intervall."
+    },
+    {
+     "s": 165.28,
+     "e": 171.08,
+     "text": "Vid 3 och 4 ritar vi ringar, för pi är inte 3 och inte 4."
+    },
+    {
+     "s": 172.38,
+     "e": 177.1,
+     "text": "Mellan 3 och 4 är ett brett intervall, och Arkimedes ville ha det smalare."
+    },
+    {
+     "s": 177.98,
+     "e": 185.36,
+     "text": "Så han ritade en tolvhörning, sedan 24 hörn, 48 och till sist 96 hörn,"
+    },
+    {
+     "s": 186,
+     "e": 191.02,
+     "text": "en inuti cirkeln och en utanför, och räknade ut sträckan runt båda."
+    },
+    {
+     "s": 192.18,
+     "e": 195.28,
+     "text": "Ju fler hörn, desto närmare cirkeln kommer de."
+    },
+    {
+     "s": 196.32,
+     "e": 201.14,
+     "text": "Då fick han att pi är större än 3 och 10 sjuttioförstedelar,"
+    },
+    {
+     "s": 201.74,
+     "e": 204.54,
+     "text": "men mindre än 3 och en sjundedel."
+    },
+    {
+     "s": 205.64,
+     "e": 211.78,
+     "text": "Det intervallet är mindre än en femhundradel brett, och skriver man bråken som decimaltal"
+    },
+    {
+     "s": 212.24,
+     "e": 214.82,
+     "text": "börjar båda på 3,14."
+    },
+    {
+     "s": 216.28,
+     "e": 220.04,
+     "text": "Kung Hieron dog år 215 före Kristus."
+    },
+    {
+     "s": 220.56,
+     "e": 226.08,
+     "text": "Rom och Kartago låg i krig, och Syrakusa bytte sida till Kartago."
+    },
+    {
+     "s": 226.5,
+     "e": 231.88,
+     "text": "Därför seglade en romersk flotta mot staden år 213 före Kristus,"
+    },
+    {
+     "s": 232.4,
+     "e": 234.24,
+     "text": "under generalen Marcellus."
+    },
+    {
+     "s": 235.28,
+     "e": 239.9,
+     "text": "Men Hieron hade bett Arkimedes bygga maskiner som kunde försvara muren."
+    },
+    {
+     "s": 240.64,
+     "e": 246.54,
+     "text": "Så när skeppen kom stod där kastmaskiner som slungade stenar långt ut över vattnet,"
+    },
+    {
+     "s": 247.04,
+     "e": 252.86,
+     "text": "och kranar som kunde gripa ett skepp som kom nära, lyfta det ur vattnet och släppa det."
+    },
+    {
+     "s": 253.9,
+     "e": 256.32,
+     "text": "Romarna lärde sig att hålla sig på avstånd."
+    },
+    {
+     "s": 257.62,
+     "e": 263.02,
+     "text": "Tänk dig ett romerskt skepp som ligger 300 meter från muren och ror in mot den,"
+    },
+    {
+     "s": 263.62,
+     "e": 265.54,
+     "text": "4 meter varje sekund."
+    },
+    {
+     "s": 266.56,
+     "e": 271.6,
+     "text": "Efter t sekunder är det då 300 minus 4 t meter kvar."
+    },
+    {
+     "s": 272.7,
+     "e": 275.42,
+     "text": "Kastmaskinerna når 200 meter ut."
+    },
+    {
+     "s": 276.04,
+     "e": 278.98,
+     "text": "Efter hur många sekunder är skeppet inom räckhåll?"
+    },
+    {
+     "s": 280.36,
+     "e": 288.48,
+     "text": "Skeppet är inom räckhåll när avståndet är högst 200 meter, alltså när 300 minus 4 t är"
+    },
+    {
+     "s": 288.58,
+     "e": 291.16,
+     "text": "mindre än eller lika med 200."
+    },
+    {
+     "s": 292.26,
+     "e": 297.34,
+     "text": "Tecknet har ett streck under sig, för avståndet får vara precis 200 också."
+    },
+    {
+     "s": 298.62,
+     "e": 305.36,
+     "text": "Det är en olikhet med ett okänt tal, och vi löser den som en ekvation: ta bort 300 från"
+    },
+    {
+     "s": 305.4,
+     "e": 312.36,
+     "text": "båda sidor, så står det minus 4 t mindre än eller lika med minus 100."
+    },
+    {
+     "s": 313.9,
+     "e": 319.06,
+     "text": "Nu ska vi dela med minus 4, och då händer något som inte händer i en ekvation."
+    },
+    {
+     "s": 320,
+     "e": 327.14,
+     "text": "2 är mindre än 5, men gångar man båda med minus 1 får man minus 2 och minus 5,"
+    },
+    {
+     "s": 327.82,
+     "e": 330.58,
+     "text": "och minus 2 är större än minus 5."
+    },
+    {
+     "s": 331.6,
+     "e": 333.52,
+     "text": "Tallinjen speglas i nollan."
+    },
+    {
+     "s": 334.2,
+     "e": 338.78,
+     "text": "Därför vänder man tecknet varje gång man gångar eller delar med ett minustal."
+    },
+    {
+     "s": 339.87,
+     "e": 346.9,
+     "text": "Så när vi delar med minus 4 vänder tecknet, och t är större än eller lika med 25."
+    },
+    {
+     "s": 348.04,
+     "e": 353,
+     "text": "Skeppet är inom räckhåll efter 25 sekunder och hela tiden efter det."
+    },
+    {
+     "s": 354.16,
+     "e": 358.8,
+     "text": "På tallinjen blir det en fylld prick vid 25, för 25 räknas med,"
+    },
+    {
+     "s": 359.28,
+     "e": 360.86,
+     "text": "och allt till höger om den."
+    },
+    {
+     "s": 362.24,
+     "e": 364.04,
+     "text": "Två olikheter att lösa."
+    },
+    {
+     "s": 365,
+     "e": 370.12,
+     "text": "Lös olikheten 3 x plus 5 mindre än 20."
+    },
+    {
+     "s": 371.3,
+     "e": 380.12,
+     "text": "Ta bort 5 från båda sidor, 3 x mindre än 15, dela med 3, x mindre än 5."
+    },
+    {
+     "s": 381.2,
+     "e": 383.86,
+     "text": "Ring vid 5 och allt till vänster."
+    },
+    {
+     "s": 385.22,
+     "e": 392.2,
+     "text": "Lös olikheten 15 minus 2 x större än eller lika med 7."
+    },
+    {
+     "s": 393.46,
+     "e": 400.2,
+     "text": "Ta bort 15, minus 2 x större än eller lika med minus 8."
+    },
+    {
+     "s": 401.3,
+     "e": 408.4,
+     "text": "Dela med minus 2 och vänd tecknet, x mindre än eller lika med 4."
+    },
+    {
+     "s": 409.72,
+     "e": 412.88,
+     "text": "Fylld prick vid 4 och allt till vänster."
+    },
+    {
+     "s": 414.56,
+     "e": 416.76,
+     "text": "Belägringen varade i två år."
+    },
+    {
+     "s": 417.42,
+     "e": 424.34,
+     "text": "Hösten 212 före Kristus firade staden en fest, vakterna på muren var få,"
+    },
+    {
+     "s": 424.96,
+     "e": 429.8,
+     "text": "och på natten klättrade romerska soldater över muren och tog staden."
+    },
+    {
+     "s": 431.08,
+     "e": 437.22,
+     "text": "Marcellus hade befallt att Arkimedes inte fick skadas, men en soldat hittade honom böjd"
+    },
+    {
+     "s": 437.3,
+     "e": 440.08,
+     "text": "över en figur i sanden."
+    },
+    {
+     "s": 440.12,
+     "e": 444.54,
+     "text": "Arkimedes bad att få räkna klart först, och soldaten dödade honom."
+    },
+    {
+     "s": 445.32,
+     "e": 447,
+     "text": "Han var 75 år."
+    },
+    {
+     "s": 448.72,
+     "e": 454.1,
+     "text": "Tänk dig ett skepp till, som ligger 400 meter från muren och ror in mot den,"
+    },
+    {
+     "s": 454.74,
+     "e": 456.68,
+     "text": "5 meter varje sekund."
+    },
+    {
+     "s": 457.66,
+     "e": 460.4,
+     "text": "Kastmaskinerna når 200 meter."
+    },
+    {
+     "s": 461.48,
+     "e": 469.26,
+     "text": "Lös olikheten 400 minus 5 t mindre än eller lika med 200."
+    },
+    {
+     "s": 470.56,
+     "e": 473.72,
+     "text": "Efter hur många sekunder är skeppet inom räckhåll?"
+    }
+   ]
+  },
   {
    "id": "viete-och-chiffret",
    "titel": "Viète och chiffret",

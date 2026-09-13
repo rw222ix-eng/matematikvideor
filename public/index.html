@@ -406,6 +406,9 @@
     for (const o of ord) if (o.length > 1) ut = ut.replace(new RegExp(`(${o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi"), "<mark>$1</mark>");
     return ut;
   };
+  // Året berättelsen utspelar sig. Negativa år är före Kristus: −212 → "212 f.Kr."
+  // Hårt mellanslag som tecken (inte &nbsp;) — används även i textContent.
+  const arText = (ar) => (ar < 0 ? `${-ar} f.Kr.` : String(ar));
   // "Matematik 1c" → "Ma 1c"
   const kursKort = (kurs) => {
     const m = kurs.match(/(\d)\s*([a-c]*)$/i);
@@ -584,7 +587,7 @@
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}</span>
         <span class="lina"></span>
         <span class="namn">
-          <span class="kurs">${v.ar ? v.ar : kursKort(v.kurs)}</span>
+          <span class="kurs">${v.ar ? arText(v.ar) : kursKort(v.kurs)}</span>
           <span class="moment">${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}</span>
           <span class="titel">${esc(v.titel)}</span>
         </span>
@@ -668,7 +671,7 @@
     const fraga = falt.value, ord = norm(fraga).split(" ").filter(Boolean), res = sok(fraga);
     $("sok-lista").innerHTML = res.map(({ v, traffar }) => `
       <article class="traff-film">
-        <h3 class="etikett"><button data-film="${v.id}">${v.ar ? `${v.ar} · ` : ""}${esc(v.kurs)} · ${esc(v.moment)}</button></h3>
+        <h3 class="etikett"><button data-film="${v.id}">${v.ar ? `${arText(v.ar)} · ` : ""}${esc(v.kurs)} · ${esc(v.moment)}</button></h3>
         <p class="titel"><button data-film="${v.id}">${esc(v.titel)}</button></p>
         ${traffar.length ? `<ul>${traffar.slice(0, 8).map((r) => `<li><button data-film="${v.id}" data-t="${r.t ?? ""}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${markera(r.text, ord)}</span></button></li>`).join("")}</ul>${traffar.length > 8 ? `<p class="fler">… och ${traffar.length - 8} ställen till i filmen</p>` : ""}` : ""}
         ${!v.youtube && !v.fil ? `<p class="fler">Filmen publiceras snart — kapitlen visar vad som sägs, minut för minut.</p>` : ""}
@@ -889,7 +892,7 @@
     if (aktuell && aktuell.id === v.id) { if (Number.isFinite(t)) hoppa(t, false); return; }
     stangSpelare();
     aktuell = v;
-    $("f-kurs").textContent = `${v.ar ? `${v.ar} · ` : ""}${v.kurs} · ${v.moment}`;
+    $("f-kurs").textContent = `${v.ar ? `${arText(v.ar)} · ` : ""}${v.kurs} · ${v.moment}`;
     $("f-titel").textContent = v.titel;
     $("f-langd").textContent = v.langd ? `${tid(v.langd)} min` : "";
     $("f-besk").textContent = v.beskrivning;
