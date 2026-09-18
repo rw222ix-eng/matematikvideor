@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-14T16:40:53.964Z",
+ "byggd": "2026-09-18T17:50:56.023Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -1551,6 +1551,507 @@
      "s": 482.76,
      "e": 483.34,
      "text": "Vad blir det?"
+    }
+   ]
+  },
+  {
+   "id": "galilei-och-rannan",
+   "titel": "Galilei och rännan",
+   "ar": 1604,
+   "kurs": "Matematik 1c",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/galilei-v1/galilei-och-rannan-1080p.mp4",
+   "moment": "Mönster och formler",
+   "begrepp": [
+    "talföljd",
+    "tal nummer n",
+    "det n:te talet",
+    "formel",
+    "skillnad",
+    "aritmetisk",
+    "kvadrattal",
+    "n upphöjt till två",
+    "kubtal",
+    "triangeltal",
+    "täljare",
+    "nämnare",
+    "mönster",
+    "kontroll"
+   ],
+   "beskrivning": "Galileo i Padua 1604 låter en bronskula rulla nerför en sju meter lång ränna, mäter tiden med vatten och sätter märken efter lika långa tidsdelar: 1, 4, 9, 16 – kvadrattalen. Ur tabellen: skillnaderna, 1, 3, 5, 7 som aritmetisk talföljd 2n − 1, kvadrattalen n², n² + 1, n² + 3n som rektangel, 2n² och 2n² − 1, kubtal n³ och nⁿ, triangeltalen n(n + 1)/2, varannat tal minus, och bråk med täljare och nämnare var för sig. Boken trycks i Leiden 1638.",
+   "youtube": null,
+   "langd": 443,
+   "omslag": "omslag/galilei-och-rannan.jpg?v=bc051bed",
+   "omslagRen": "omslag/galilei-och-rannan-ren.jpg?v=3127911a",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "År 1604 var Galileo Galilei lärare i matematik på universitetet i Padua i norra Italien. Universiteten lärde då ut Aristoteles gamla regel att en tung sten faller fortare än en lätt. Galileo trodde inte på det, och han ville veta exakt hur ett fall går till."
+    },
+    {
+     "t": 23,
+     "text": "Men ett fall går för fort, en sten från ett hustak är nere på en och en halv sekund, och det fanns inga klockor som kunde mäta sekunder. Så Galileo gjorde fallet långsammare. Han byggde en sju meter lång träbalk med en ränna, ställde den lite på lut och lät en kula av brons rulla nerför den."
+    },
+    {
+     "t": 44,
+     "text": "Tiden mätte han med vatten som rann ur ett kärl ner i en kopp, för lika mycket vatten betydde lika lång tid. Varje gång koppen var full satte han ett märke på rännan där kulan var. Vi kallar den tiden en tidsdel."
+    },
+    {
+     "t": 61,
+     "text": "Räknar vi den första sträckan som ett steg stod märkena vid ett, fyra, nio och sexton steg. Galileo ville hitta en formel så att han kunde säga var märke nummer n hamnar utan att mäta, alltså formeln för det n:te talet i en talföljd, och det ska vi göra nu."
+    },
+    {
+     "t": 82,
+     "text": "Vi börjar alltid med en tabell. I den övre raden står numret, ett, två, tre, fyra, och under står talen, ett, fyra, nio, sexton. Sedan räknar vi skillnaden mellan talen. Från ett till fyra är det tre, från fyra till nio är det fem, och från nio till sexton är det sju."
+    },
+    {
+     "t": 106,
+     "text": "Under varje tidsdel rullade kulan alltså ett, tre, fem och sju steg, och de talen ökar med två varje gång, så de är en aritmetisk talföljd med formeln två n minus ett. Men märkena ett, fyra, nio, sexton har skillnader som växer, så de är inte aritmetiska. Då jämför vi med kvadrattalen."
+    },
+    {
+     "t": 134,
+     "text": "Ett gånger ett är ett, två gånger två är fyra, tre gånger tre är nio och fyra gånger fyra är sexton. Så tal nummer n är n gånger n, alltså n upphöjt till två, och det var Galileos regel. Talen kallas kvadrattal, för n gånger n prickar bildar en kvadrat med n prickar på varje sida."
+    },
+    {
+     "t": 161,
+     "text": "Oftast stämmer det inte precis, men nästan. Ta två, fem, tio, sjutton. Vi skriver kvadrattalen under och räknar ut hur mycket större varje tal är än sitt kvadrattal. Det är ett varje gång, så formeln blir n upphöjt till två plus ett, och som figur är det en kvadrat med en extra prick."
+    },
+    {
+     "t": 186,
+     "text": "Ta talföljden fyra, tio, arton, tjugoåtta. Vi skriver kvadrattalen under igen och får skillnaderna tre, sex, nio, tolv. De är inte lika, men de är tre gånger numret, tre gånger ett, tre gånger två och så vidare. Så formeln blir n upphöjt till två plus tre n. Kontroll med nummer fyra: sexton plus tolv är tjugoåtta."
+    },
+    {
+     "t": 218,
+     "text": "Sådana tal går att rita som rektanglar. n upphöjt till två plus tre n är samma sak som n gånger, parentes, n plus tre, så figur nummer n är en rektangel med n rader och n plus tre prickar i varje rad."
+    },
+    {
+     "t": 237,
+     "text": "Ibland är talen dubbelt så stora som kvadrattalen, som två, åtta, arton, trettiotvå, så formeln är två n upphöjt till två. Talföljden ett, sju, sjutton, trettioett är ett mindre än den, så där blir formeln två n upphöjt till två minus ett."
+    },
+    {
+     "t": 261,
+     "text": "Växer talen ännu fortare, som ett, åtta, tjugosju, sextiofyra, är det kubtalen, två gånger två gånger två, tre gånger tre gånger tre, alltså n upphöjt till tre. I talföljden ett, fyra, tjugosju, tvåhundrafemtiosex gångras varje nummer med sig självt lika många gånger som numret säger, två gånger två, tre gånger tre gånger tre, så formeln är n upphöjt till n."
+    },
+    {
+     "t": 296,
+     "text": "Talföljden ett, tre, sex, tio, femton kallas triangeltalen, för prickarna bildar en triangel. Lägger man två likadana trianglar mot varandra blir det en rektangel med n rader och n plus ett prickar i varje rad. Så triangeln är hälften av det, n gånger, parentes, n plus ett, delat med två."
+    },
+    {
+     "t": 324,
+     "text": "Om varannat tal är minus, som ett, minus två, tre, minus fyra, så är talen bara numret n, och det är tecknet som växlar. Minus ett upphöjt till n plus ett byter tecken varje gång, för minus ett gånger minus ett är plus ett, och en gång till blir det minus igen. Formeln blir minus ett upphöjt till n plus ett, gånger n."
+    },
+    {
+     "t": 355,
+     "text": "Om talen är bråk, som en halv, två tredjedelar, tre fjärdedelar, så tar vi täljarna och nämnarna var för sig. Täljarna är ett, två, tre, alltså n, och nämnarna är två, tre, fyra, alltså n plus ett, så formeln blir n delat med n plus ett. I talföljden ett, fyra tredjedelar, nio femtedelar, sexton sjundedelar är täljarna kvadrattalen, och nämnarna är Galileos ett, tre, fem, sju, så formeln blir n upphöjt till två delat med två n minus ett."
+    },
+    {
+     "t": 405,
+     "text": "Boken där Galileo berättade om rännan kom först 1638, när han var 74 år, blind och satt i husarrest utanför Florens, dömd av kyrkan för att han skrivit att jorden rör sig runt solen. Hans böcker fick inte tryckas i Italien, så den smugglades ut och trycktes i Leiden i Holland."
+    },
+    {
+     "t": 430,
+     "text": "Tänk dig en annan ränna, där märkena står vid fem, åtta, tretton och tjugo steg. Skriv formeln för märke nummer n."
+    }
+   ],
+   "undertext": [
+    {
+     "s": 0.24,
+     "e": 7.7,
+     "text": "År 1604 var Galileo Galilei lärare i matematik på universitetet i Padua i norra Italien."
+    },
+    {
+     "s": 9.06,
+     "e": 15.96,
+     "text": "Universiteten lärde då ut Aristoteles gamla regel att en tung sten faller fortare än en lätt."
+    },
+    {
+     "s": 17.12,
+     "e": 21.82,
+     "text": "Galileo trodde inte på det, och han ville veta exakt hur ett fall går till."
+    },
+    {
+     "s": 23.14,
+     "e": 28.3,
+     "text": "Men ett fall går för fort, en sten från ett hustak är nere på en och en halv sekund,"
+    },
+    {
+     "s": 28.86,
+     "e": 31.36,
+     "text": "och det fanns inga klockor som kunde mäta sekunder."
+    },
+    {
+     "s": 32.28,
+     "e": 34.66,
+     "text": "Så Galileo gjorde fallet långsammare."
+    },
+    {
+     "s": 35.4,
+     "e": 41.02,
+     "text": "Han byggde en sju meter lång träbalk med en ränna, ställde den lite på lut och lät en"
+    },
+    {
+     "s": 41.1,
+     "e": 43.4,
+     "text": "kula av brons rulla nerför den."
+    },
+    {
+     "s": 44.6,
+     "e": 48.28,
+     "text": "Tiden mätte han med vatten som rann ur ett kärl ner i en kopp,"
+    },
+    {
+     "s": 48.8,
+     "e": 51.56,
+     "text": "för lika mycket vatten betydde lika lång tid."
+    },
+    {
+     "s": 52.7,
+     "e": 56.68,
+     "text": "Varje gång koppen var full satte han ett märke på rännan där kulan var."
+    },
+    {
+     "s": 57.6,
+     "e": 59.72,
+     "text": "Vi kallar den tiden en tidsdel."
+    },
+    {
+     "s": 61.04,
+     "e": 65.42,
+     "text": "Räknar vi den första sträckan som ett steg stod märkena vid ett,"
+    },
+    {
+     "s": 65.68,
+     "e": 68.24,
+     "text": "fyra, nio och sexton steg."
+    },
+    {
+     "s": 69.5,
+     "e": 74.96,
+     "text": "Galileo ville hitta en formel så att han kunde säga var märke nummer n hamnar utan att"
+    },
+    {
+     "s": 75.02,
+     "e": 81.24,
+     "text": "mäta, alltså formeln för det n:te talet i en talföljd, och det ska vi göra nu."
+    },
+    {
+     "s": 82.52,
+     "e": 84.06,
+     "text": "Vi börjar alltid med en tabell."
+    },
+    {
+     "s": 84.72,
+     "e": 90.7,
+     "text": "I den övre raden står numret, ett, två, tre, fyra, och under står talen,"
+    },
+    {
+     "s": 91.24,
+     "e": 93.68,
+     "text": "ett, fyra, nio, sexton."
+    },
+    {
+     "s": 94.78,
+     "e": 96.78,
+     "text": "Sedan räknar vi skillnaden mellan talen."
+    },
+    {
+     "s": 97.52,
+     "e": 102.14,
+     "text": "Från ett till fyra är det tre, från fyra till nio är det fem,"
+    },
+    {
+     "s": 102.84,
+     "e": 104.98,
+     "text": "och från nio till sexton är det sju."
+    },
+    {
+     "s": 106.46,
+     "e": 112.32,
+     "text": "Under varje tidsdel rullade kulan alltså ett, tre, fem och sju steg,"
+    },
+    {
+     "s": 113.02,
+     "e": 119.94,
+     "text": "och de talen ökar med två varje gång, så de är en aritmetisk talföljd med formeln två"
+    },
+    {
+     "s": 120.22,
+     "e": 121.3,
+     "text": "n minus ett."
+    },
+    {
+     "s": 122.52,
+     "e": 127.86,
+     "text": "Men märkena ett, fyra, nio, sexton har skillnader som växer,"
+    },
+    {
+     "s": 128.26,
+     "e": 130.18,
+     "text": "så de är inte aritmetiska."
+    },
+    {
+     "s": 131.22,
+     "e": 133.22,
+     "text": "Då jämför vi med kvadrattalen."
+    },
+    {
+     "s": 134.22,
+     "e": 140.96,
+     "text": "Ett gånger ett är ett, två gånger två är fyra, tre gånger tre är nio och fyra gånger"
+    },
+    {
+     "s": 141.02,
+     "e": 142.26,
+     "text": "fyra är sexton."
+    },
+    {
+     "s": 143.38,
+     "e": 150.88,
+     "text": "Så tal nummer n är n gånger n, alltså n upphöjt till två, och det var Galileos regel."
+    },
+    {
+     "s": 151.9,
+     "e": 159.76,
+     "text": "Talen kallas kvadrattal, för n gånger n prickar bildar en kvadrat med n prickar på varje sida."
+    },
+    {
+     "s": 161.26,
+     "e": 164.1,
+     "text": "Oftast stämmer det inte precis, men nästan."
+    },
+    {
+     "s": 165.04,
+     "e": 168.02,
+     "text": "Ta två, fem, tio, sjutton."
+    },
+    {
+     "s": 169.04,
+     "e": 174.96,
+     "text": "Vi skriver kvadrattalen under och räknar ut hur mycket större varje tal är än sitt kvadrattal."
+    },
+    {
+     "s": 176,
+     "e": 181.16,
+     "text": "Det är ett varje gång, så formeln blir n upphöjt till två plus ett,"
+    },
+    {
+     "s": 181.92,
+     "e": 185.08,
+     "text": "och som figur är det en kvadrat med en extra prick."
+    },
+    {
+     "s": 186.62,
+     "e": 190.68,
+     "text": "Ta talföljden fyra, tio, arton, tjugoåtta."
+    },
+    {
+     "s": 191.82,
+     "e": 196.46,
+     "text": "Vi skriver kvadrattalen under igen och får skillnaderna tre,"
+    },
+    {
+     "s": 196.82,
+     "e": 198.74,
+     "text": "sex, nio, tolv."
+    },
+    {
+     "s": 199.6,
+     "e": 204.08,
+     "text": "De är inte lika, men de är tre gånger numret, tre gånger ett,"
+    },
+    {
+     "s": 204.38,
+     "e": 206.22,
+     "text": "tre gånger två och så vidare."
+    },
+    {
+     "s": 207.1,
+     "e": 211.34,
+     "text": "Så formeln blir n upphöjt till två plus tre n."
+    },
+    {
+     "s": 212.46,
+     "e": 216.48,
+     "text": "Kontroll med nummer fyra: sexton plus tolv är tjugoåtta."
+    },
+    {
+     "s": 218,
+     "e": 220.2,
+     "text": "Sådana tal går att rita som rektanglar."
+    },
+    {
+     "s": 221.22,
+     "e": 226.66,
+     "text": "n upphöjt till två plus tre n är samma sak som n gånger, parentes,"
+    },
+    {
+     "s": 227.16,
+     "e": 236.06,
+     "text": "n plus tre, så figur nummer n är en rektangel med n rader och n plus tre prickar i varje rad."
+    },
+    {
+     "s": 237.7,
+     "e": 243.12,
+     "text": "Ibland är talen dubbelt så stora som kvadrattalen, som två, åtta,"
+    },
+    {
+     "s": 243.46,
+     "e": 248.62,
+     "text": "arton, trettiotvå, så formeln är två n upphöjt till två."
+    },
+    {
+     "s": 249.96,
+     "e": 255.2,
+     "text": "Talföljden ett, sju, sjutton, trettioett är ett mindre än den,"
+    },
+    {
+     "s": 255.9,
+     "e": 260.36,
+     "text": "så där blir formeln två n upphöjt till två minus ett."
+    },
+    {
+     "s": 261.9,
+     "e": 266.98,
+     "text": "Växer talen ännu fortare, som ett, åtta, tjugosju, sextiofyra,"
+    },
+    {
+     "s": 267.72,
+     "e": 273.74,
+     "text": "är det kubtalen, två gånger två gånger två, tre gånger tre gånger tre,"
+    },
+    {
+     "s": 274.5,
+     "e": 276.46,
+     "text": "alltså n upphöjt till tre."
+    },
+    {
+     "s": 277.86,
+     "e": 285.06,
+     "text": "I talföljden ett, fyra, tjugosju, tvåhundrafemtiosex gångras varje nummer med sig självt"
+    },
+    {
+     "s": 285.12,
+     "e": 291.06,
+     "text": "lika många gånger som numret säger, två gånger två, tre gånger tre gånger tre,"
+    },
+    {
+     "s": 291.98,
+     "e": 294.54,
+     "text": "så formeln är n upphöjt till n."
+    },
+    {
+     "s": 296.06,
+     "e": 304.48,
+     "text": "Talföljden ett, tre, sex, tio, femton kallas triangeltalen, för prickarna bildar en triangel."
+    },
+    {
+     "s": 305.68,
+     "e": 311.84,
+     "text": "Lägger man två likadana trianglar mot varandra blir det en rektangel med n rader och"
+    },
+    {
+     "s": 312.1,
+     "e": 314.2,
+     "text": "n plus ett prickar i varje rad."
+    },
+    {
+     "s": 315.32,
+     "e": 321.16,
+     "text": "Så triangeln är hälften av det, n gånger, parentes, n plus ett,"
+    },
+    {
+     "s": 321.66,
+     "e": 322.66,
+     "text": "delat med två."
+    },
+    {
+     "s": 324.4,
+     "e": 330.6,
+     "text": "Om varannat tal är minus, som ett, minus två, tre, minus fyra,"
+    },
+    {
+     "s": 331.42,
+     "e": 335.52,
+     "text": "så är talen bara numret n, och det är tecknet som växlar."
+    },
+    {
+     "s": 336.88,
+     "e": 343.04,
+     "text": "Minus ett upphöjt till n plus ett byter tecken varje gång, för minus ett gånger minus"
+    },
+    {
+     "s": 343.18,
+     "e": 347.5,
+     "text": "ett är plus ett, och en gång till blir det minus igen."
+    },
+    {
+     "s": 348.84,
+     "e": 353.82,
+     "text": "Formeln blir minus ett upphöjt till n plus ett, gånger n."
+    },
+    {
+     "s": 355.44,
+     "e": 361.5,
+     "text": "Om talen är bråk, som en halv, två tredjedelar, tre fjärdedelar,"
+    },
+    {
+     "s": 362.3,
+     "e": 365.3,
+     "text": "så tar vi täljarna och nämnarna var för sig."
+    },
+    {
+     "s": 366.62,
+     "e": 373.26,
+     "text": "Täljarna är ett, två, tre, alltså n, och nämnarna är två, tre,"
+    },
+    {
+     "s": 373.46,
+     "e": 380.72,
+     "text": "fyra, alltså n plus ett, så formeln blir n delat med n plus ett."
+    },
+    {
+     "s": 382.26,
+     "e": 391.6,
+     "text": "I talföljden ett, fyra tredjedelar, nio femtedelar, sexton sjundedelar är täljarna kvadrattalen,"
+    },
+    {
+     "s": 392.48,
+     "e": 401.04,
+     "text": "och nämnarna är Galileos ett, tre, fem, sju, så formeln blir n upphöjt till två delat"
+    },
+    {
+     "s": 401.08,
+     "e": 403.28,
+     "text": "med två n minus ett."
+    },
+    {
+     "s": 405.16,
+     "e": 411.7,
+     "text": "Boken där Galileo berättade om rännan kom först 1638, när han var 74 år,"
+    },
+    {
+     "s": 412.16,
+     "e": 419.44,
+     "text": "blind och satt i husarrest utanför Florens, dömd av kyrkan för att han skrivit att jorden"
+    },
+    {
+     "s": 419.5,
+     "e": 420.7,
+     "text": "rör sig runt solen."
+    },
+    {
+     "s": 422.12,
+     "e": 428.7,
+     "text": "Hans böcker fick inte tryckas i Italien, så den smugglades ut och trycktes i Leiden i Holland."
+    },
+    {
+     "s": 430.14,
+     "e": 437.18,
+     "text": "Tänk dig en annan ränna, där märkena står vid fem, åtta, tretton och tjugo steg."
+    },
+    {
+     "s": 438.42,
+     "e": 440.72,
+     "text": "Skriv formeln för märke nummer n."
     }
    ]
   },
