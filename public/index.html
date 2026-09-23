@@ -928,7 +928,8 @@
   // YouTubes egna undertexter av — sidan ritar sina egna ur tal.srt.
   function stangYtText() { if (yt && yt.unloadModule) { try { yt.unloadModule("captions"); yt.unloadModule("cc"); } catch (e) {} } }
   function byggDuk(v) {
-    const bild = v.omslagRen || v.omslag;
+    // Affischen i spelaren: omslaget i hög upplösning när det finns (720 px blev suddigt).
+    const bild = v.omslagStor || v.omslagRen || v.omslag;
     dukEl.innerHTML = `
       <div class="halla"></div>
       <div class="bild" style="${bild ? `background-image:url('${bild}')` : ""}"></div>

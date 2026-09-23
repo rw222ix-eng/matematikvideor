@@ -113,8 +113,15 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   // Finns omslaget även utan titel (omslag-utan-titel.png bredvid) används det
   // på sidan — titeln står ändå i text under bilden.
   const renKalla = v.omslag ? resolve(HÄR, dirname(v.omslag), "omslag-utan-titel.png") : null;
-  const omslagRen = bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, kapitel: (kapitelFil[v.id] || []).map(([t, rubrik]) => ({ t, rubrik })), undertext };
+  // Omslag i hög upplösning (assets/omslag/<id>.png, 1672 px): samma målning, målad om i
+  // ChatGPT-projektet "Skapa bilder till matematikvideos" ur 720 px-omslaget, som var för
+  // litet för spelarens affisch (Rickard 2026-09-23). Finns den ger den både kortet och
+  // affischen. Ingen omslagskurva: målningen gjordes ur det redan ljusade omslaget.
+  const hog = join(HÄR, "assets", "omslag", `${v.id}.png`);
+  const bakaHog = (ut, bredd, kvalitet) => { bakaBild(hog, join(HÄR, "public", ut), bredd, "", kvalitet); return medVersion(ut); };
+  const omslagRen = existsSync(hog) ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
+  const omslagStor = existsSync(hog) ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel: (kapitelFil[v.id] || []).map(([t, rubrik]) => ({ t, rubrik })), undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med
