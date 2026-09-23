@@ -19,6 +19,7 @@
     /* Rubrikerna var skrivstil (Pinyon Script) och gick knappt att läsa (Rickard 2026-09-23). */
     --skrift: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
     --ton: 1s; --lugn: cubic-bezier(.22, .61, .36, 1);
+    --fjader: cubic-bezier(.34, 1.56, .64, 1);   /* släpp: fjädrar tillbaka med en liten översving */
   }
   * { box-sizing: border-box; }
   html { color-scheme: dark; background: var(--bg); -webkit-text-size-adjust: 100%; }
@@ -203,7 +204,7 @@
   .sok .forslag .etikett { width: 100%; margin-bottom: 4px; }
   .sok .forslag button { font: 400 15px/1 var(--sans); color: var(--ben); padding: 10px 16px; border: 1px solid var(--linje); border-radius: 999px; transition: border-color .3s, color .3s; }
   .sok .forslag button:hover { border-color: var(--accent); color: var(--accent); }
-  .basta { margin-top: 40px; display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 18px; background: rgba(236, 230, 216, .04); border: 1px solid var(--linje2); border-radius: 12px; animation: fram .8s var(--lugn) both; }
+  .basta { margin-top: 40px; display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 18px; background: rgba(236, 230, 216, .04); border: 1px solid var(--linje2); border-radius: 12px; animation: fram .8s var(--lugn) backwards; }
   .basta .omslag { display: block; aspect-ratio: 16/9; overflow: hidden; border-radius: 6px; align-self: start; }
   .basta .omslag img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--lugn); }
   .basta .omslag:hover img { transform: scale(1.04); }
@@ -417,6 +418,84 @@
     .duk .styr { padding: 20px 6px 4px; }
     .styr .knapp { width: 36px; }
     .duk .stor span { width: 48px; height: 48px; }
+  }
+
+  /* ── Taktil återkoppling (Rickard 2026-09-23) ──────────
+     Allt man kan klicka på svarar. Vid hovring lyfter det, ljusnar eller får ett varmt sken.
+     Vid tryck trycks det ihop på 80 ms, och när man släpper fjädrar det tillbaka med en liten
+     översving (--fjader). Varje tryck ger dessutom en ring som vidgas där man tryckte (.tryck)
+     och en kort vibration på telefoner som kan. Hovring bara på pekdon som hovrar, så att
+     inget fastnar i hovrat läge på en telefon. */
+  .tryck { position: fixed; z-index: 100; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; border: 1.5px solid var(--accent); box-shadow: 0 0 14px rgba(242, 197, 114, .45); pointer-events: none; animation: tryck .55s var(--lugn) forwards; }
+  @keyframes tryck { from { transform: scale(.2); opacity: .95 } to { transform: scale(1.35); opacity: 0 } }
+
+  /* Utforska: texten och ringen (knappen själv tonar in med en animation som låser transform) */
+  .intro .knapp > span:first-child { display: inline-block; transition: transform .45s var(--fjader), letter-spacing .45s var(--lugn); }
+  .intro .knapp .ring { transition: background .35s, color .35s, transform .45s var(--fjader), box-shadow .45s var(--lugn); }
+  .intro .knapp:active > span:first-child { transform: scale(.94); transition-duration: .08s; }
+  .intro .knapp:active .ring { transform: scale(.86); transition-duration: .08s; }
+
+  /* Ikonerna: en mjuk rund platta bakom vid hovring */
+  .ikon { border-radius: 50%; transition: color .3s, background .3s, transform .45s var(--fjader); }
+  .valj .aterstall { transition: opacity .6s, color .3s, background .3s, transform .45s var(--fjader); }
+  .ikon:active { transform: scale(.86); transition-duration: .08s; }
+
+  /* Filmkorten lutar mot pekaren (--rx, --ry sätts i skriptet) och får ett sken där den är */
+  .post .ram { position: relative; }
+  .post .ram::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s var(--lugn); background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 240, 210, .24), rgba(255, 240, 210, 0) 55%); }
+  .post:active .ram { transition-duration: .1s; }
+
+  /* Sökningen */
+  .sok .forslag button { transition: border-color .3s, color .3s, background .3s, transform .4s var(--fjader); }
+  .sok .forslag button:active { transform: scale(.93); transition-duration: .08s; }
+  .basta { transition: transform .45s var(--fjader), border-color .3s, background .3s, box-shadow .45s var(--lugn); }
+  .basta .spela { transition: transform .4s var(--fjader); }
+  .basta .spela .ring { transition: background .3s, color .3s, transform .4s var(--fjader), box-shadow .4s var(--lugn); }
+  .basta .spela:active { transform: scale(.94); transition-duration: .08s; }
+  .basta .omslag:active img { transform: scale(1.01); transition-duration: .08s; }
+  .fler-stallen button, .andra button { border-radius: 6px; transition: transform .4s var(--fjader), background .3s; }
+  .fler-stallen button:active, .andra button:active { transform: translateX(6px) scale(.985); transition-duration: .08s; }
+  .andra img { transition: transform .4s var(--fjader); }
+
+  /* Filmens sida */
+  .film .tillbaka { transition: color .4s, transform .4s var(--fjader); }
+  .film .tillbaka:active { transform: scale(.94); transition-duration: .08s; }
+  .kapitel button { transition: background .3s, transform .45s var(--fjader); }
+  .kapitel .pil { transition: opacity .3s, transform .45s var(--fjader); }
+  .kapitel button:active { transform: translateX(6px) scale(.985); transition-duration: .08s; }
+  .allt summary { transition: color .3s, transform .4s var(--fjader); }
+  .allt summary:active { transform: scale(.95); transition-duration: .08s; }
+  .upp .ring { transition: background .3s, color .3s, transform .45s var(--fjader), box-shadow .45s var(--lugn); }
+  .upp:active .ring { transform: scale(.88); transition-duration: .08s; }
+
+  /* Spelaren (den andra .styr .knapp-regeln tog tidigare bort fjädringen) */
+  .styr .knapp { transition: opacity .3s, color .25s, transform .4s var(--fjader); }
+  .styr .knapp:active { transform: scale(.84); transition-duration: .07s; }
+  .duk .stor span { transition: transform .45s var(--fjader), background .25s, border-color .25s, box-shadow .45s var(--lugn); }
+  .duk .lock:active ~ .stor span { transform: scale(.84); transition-duration: .07s; }
+
+  @media (hover: hover) {
+    .intro .knapp:hover > span:first-child { transform: translateX(-3px); letter-spacing: .26em; }
+    .intro .knapp:hover .ring { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(242, 197, 114, .12), 0 0 30px rgba(242, 197, 114, .4); }
+    .ikon:hover { background: rgba(236, 230, 216, .1); color: var(--ben); transform: scale(1.08); }
+    .sok .forslag button:hover { transform: translateY(-2px); background: rgba(242, 197, 114, .08); }
+    .basta:hover { transform: translateY(-3px); border-color: rgba(242, 197, 114, .3); background: rgba(236, 230, 216, .06); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .9); }
+    .basta .spela:hover .ring { transform: scale(1.1); box-shadow: 0 0 22px rgba(242, 197, 114, .4); }
+    .fler-stallen button:hover, .andra button:hover { transform: translateX(6px); background: rgba(236, 230, 216, .04); }
+    .andra button:hover img { transform: scale(1.05); }
+    .film .tillbaka:hover { transform: translateX(-2px); }
+    .kapitel button:hover { transform: translateX(6px); }
+    .kapitel button:hover .pil { transform: translateX(3px); }
+    .allt summary:hover { transform: translateY(-1px); }
+    .upp:hover .ring { box-shadow: 0 0 22px rgba(242, 197, 114, .45); }
+    .duk.visa .lock:hover ~ .stor span, .duk.paus .lock:hover ~ .stor span { transform: scale(1.1); box-shadow: 0 0 30px rgba(242, 197, 114, .45); }
+    .styr .knapp:hover { transform: scale(1.15); }
+  }
+  @media (hover: hover) and (min-width: 701px) {
+    .post .ram { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .5s var(--fjader), box-shadow .5s var(--lugn); }
+    .post:hover .ram, .post:focus-within .ram { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(1.09); box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .9), 0 0 0 1px rgba(242, 197, 114, .35), 0 0 46px -8px rgba(242, 197, 114, .4); }
+    .post:active .ram { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(1.02); }
+    .post:hover .ram::after { opacity: 1; }
   }
 
   /* Systeminställningen "reducera rörelse" ignoreras med flit (Rickard 2026-09-06): sidan animerar alltid. */
@@ -811,6 +890,34 @@
     if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
     if (e.key === "ArrowRight") knuffa(240); if (e.key === "ArrowLeft") knuffa(-240);
   });
+
+  // ── Taktilt ───────────────────────────────────────────
+  // Filmkorten lutar mot muspekaren (högst 5 grader) och skenet följer den. Inte medan man
+  // drar tidslinjen, och bara med mus: en telefon har ingen pekare att luta mot.
+  spar.addEventListener("pointermove", (e) => {
+    if (e.pointerType !== "mouse" || tidslinje.classList.contains("drar")) return;
+    const ram = e.target.closest(".post:not(.kommer) .ram");
+    if (!ram) return;
+    const r = ram.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    ram.style.setProperty("--ry", `${((x - .5) * 10).toFixed(2)}deg`);
+    ram.style.setProperty("--rx", `${((.5 - y) * 8).toFixed(2)}deg`);
+    ram.style.setProperty("--gx", `${(x * 100).toFixed(1)}%`);
+    ram.style.setProperty("--gy", `${(y * 100).toFixed(1)}%`);
+  });
+  spar.addEventListener("pointerout", (e) => {
+    const ram = e.target.closest(".ram");
+    if (ram && !ram.contains(e.relatedTarget)) { ram.style.setProperty("--rx", "0deg"); ram.style.setProperty("--ry", "0deg"); }
+  });
+  // Ett tryck på något klickbart: en ring som vidgas där man tryckte, och på telefoner som
+  // kan (Android) en vibration på 8 ms. Iphone har inget vibrations-API i webbläsaren.
+  document.addEventListener("pointerdown", (e) => {
+    if (e.button > 0 || !e.target.closest("button, a, summary, [data-film], .linje")) return;
+    const r = document.createElement("span");
+    r.className = "tryck"; r.style.left = `${e.clientX}px`; r.style.top = `${e.clientY}px`;
+    document.body.appendChild(r);
+    r.addEventListener("animationend", () => r.remove());
+    if (e.pointerType === "touch" && navigator.vibrate) navigator.vibrate(8);
+  }, { passive: true });
 
   // ── Sök ───────────────────────────────────────────────
   const sokRuta = $("sok"), falt = $("sok-falt");
