@@ -578,9 +578,10 @@
           x: ox + bx * skala, y: oy + by * skala, rTack, rHalo, rKarna: Math.max(1.6, rTack * .7),
           tack: mjukFlack(rTack, himmelFarg(bx, by, s * 3 + 3).join(","), .45),
           varm: v >= .5 ? 1 : 0,
-          // Glimtet var för intensivt (Rickard 2026-09-23): ungefär halva utslaget åt båda hållen.
-          damp: .35 + .2 * b,           // hur långt ner den svagaste fasen tar henne
-          topp: .22 + .25 * b,          // halons styrka i den starka fasen
+          // Glimtet var för intensivt (Rickard 2026-09-23, två gånger): en fjärdedel av det
+          // ursprungliga utslaget åt båda hållen.
+          damp: .18 + .1 * b,           // hur långt ner den svagaste fasen tar henne
+          topp: .11 + .13 * b,          // halons styrka i den starka fasen
           fart: 2 * Math.PI / (3 + slump(i) * 4),   // ett varv på 3 till 7 sekunder
           fart2: 2 * Math.PI / (.9 + slump(i + 31) * 1.3), // ett snabbare, svagare flimmer ovanpå
           fas: slump(i + 977) * 2 * Math.PI,
@@ -620,7 +621,7 @@
           yta.globalAlpha = styrka * p.topp;
           yta.drawImage(halo(p.rHalo, p.varm), p.x - p.rHalo, p.y - p.rHalo, p.rHalo * 2, p.rHalo * 2);
           // Kärnan ovanpå: en liten skarp prick, det som gör att ögat läser "glimt".
-          yta.globalAlpha = styrka * styrka * .4;
+          yta.globalAlpha = styrka * styrka * .2;
           yta.drawImage(halo(p.rKarna, 3), p.x - p.rKarna, p.y - p.rKarna, p.rKarna * 2, p.rKarna * 2);
         }
       }
