@@ -42,6 +42,14 @@
   /* Vyer */
   .vy:not(.aktiv) { display: none; }
   .vy.aktiv.in { animation: ton var(--ton) var(--lugn) both; }
+  /* Vyövergångarna (se ruta i skriptet): den gamla vyn tonar ut och växer lite, den nya tonar
+     in ur en lätt oskärpa. Omslaget som flyger mellan kort och spelare tweenas för sig. */
+  ::view-transition-old(root) { animation: vy-ut .55s var(--lugn) both; }
+  ::view-transition-new(root) { animation: vy-in .7s var(--lugn) both; }
+  @keyframes vy-ut { to { opacity: 0; transform: scale(1.04); filter: blur(6px); } }
+  @keyframes vy-in { from { opacity: 0; transform: scale(.985); filter: blur(6px); } }
+  ::view-transition-group(omslag) { animation-duration: .75s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); z-index: 50; }
+  ::view-transition-old(omslag), ::view-transition-new(omslag) { height: 100%; object-fit: cover; animation-duration: .75s; }
   @keyframes ton { from { opacity: 0 } to { opacity: 1 } }
 
   /* Toppraden med logotypen */
@@ -611,29 +619,65 @@
 
   // ── Vyer och adress ───────────────────────────────────
   let aktivVy = null;
-  function visa(namn) {
+  // mjukt = false när bytet går via en vyövergång: då tonar övergången, och vyns egen
+  // intoning skulle tona en gång till.
+  function visa(namn, mjukt = true) {
     if (aktivVy === namn) return;
     aktivVy = namn;
     document.querySelectorAll(".vy").forEach((el) => {
       const ar = el.id === `vy-${namn}`;
       el.classList.remove("in");
       el.classList.toggle("aktiv", ar);
-      if (ar) requestAnimationFrame(() => el.classList.add("in"));
+      if (ar && mjukt) requestAnimationFrame(() => el.classList.add("in"));
     });
     document.body.classList.toggle("last", namn === "intro" || (namn === "valj" && !smal()));
     document.body.classList.toggle("vy-film", namn === "film");
     window.scrollTo(0, 0);
     if (namn !== "film") stangSpelare();
   }
-  function ruta() {
-    const h = decodeURIComponent(location.hash.slice(1));
-    if (!h) return visa("intro");
-    if (h === "filmer") return visa("valj");
+  // Vyövergångar (Rickard 2026-09-23): bytet mellan intro, filmval och filmsida görs i
+  // document.startViewTransition, så att den gamla vyn tonar ut med en lätt förstoring och
+  // oskärpa medan den nya tonar in (::view-transition i stilarna). Klickar man på ett omslag
+  // flyger just det omslaget upp och blir spelaren, och tillbaka krymper spelaren ner till sitt
+  // kort: båda får namnet "omslag" för en stund, och webbläsaren tweenar mellan dem.
+  // Saknas API:t (äldre webbläsare) byts vyn som förut, med vyns egen intoning.
+  let omslagFran = null;           // det klickade omslaget, satt av klicklyssnaren
+  const tomNamn = () => document.querySelectorAll("[style*='view-transition-name']").forEach((el) => { el.style.viewTransitionName = ""; });
+  function byt(h) {
+    const mjukt = !document.startViewTransition;
+    if (!h) return visa("intro", mjukt);
+    if (h === "filmer") return visa("valj", mjukt);
     const m = h.match(/^([\w-]+)(?:&t=(\d+))?/);
     const v = m && videor.find((x) => x.id === m[1]);
-    if (!v) return visa("valj");
-    visa("film");
+    if (!v) return visa("valj", mjukt);
+    visa("film", mjukt);
     laddaFilm(v, m[2] ? Number(m[2]) : undefined);
+  }
+  function ruta() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const mal = !h ? "intro" : h === "filmer" ? "valj" : "film";
+    // Hopp inom samma film (kapitel, &t=) och första laddningen: ingen övergång.
+    const stangSokOm = () => { if (sokRuta.classList.contains("oppen")) stangSok(); };
+    if (!document.startViewTransition || !aktivVy || (mal === "film" && aktivVy === "film")) { stangSokOm(); byt(h); omslagFran = null; return; }
+    let kortEfter = null;
+    if (aktivVy === "film" && mal === "valj" && aktuell) {
+      dukEl.style.viewTransitionName = "omslag";
+      kortEfter = spar.querySelector(`[data-film="${aktuell.id}"] .ram`);
+    } else if (mal === "film" && omslagFran) {
+      omslagFran.style.viewTransitionName = "omslag";
+    }
+    const fran = omslagFran;
+    omslagFran = null;
+    const overgang = document.startViewTransition(() => {
+      tomNamn();
+      stangSokOm();
+      byt(h);
+      if (kortEfter) kortEfter.style.viewTransitionName = "omslag";
+      else if (fran && mal === "film") dukEl.style.viewTransitionName = "omslag";
+    });
+    // En dold flik eller ett snabbt nytt byte avbryter övergången; bytet görs ändå.
+    overgang.ready.catch(() => {});
+    overgang.finished.finally(tomNamn);
   }
   window.addEventListener("hashchange", ruta);
 
@@ -1106,9 +1150,14 @@
     try { localStorage.setItem("textning", textPa ? "pa" : "av"); } catch (e) {}
     uppdatera();
   }
-  // Helskärm: webbläsarens äkta helskärm om den svarar, annars (inbäddade
-  // webbläsare, iPhone) fyller spelarrutan fönstret med CSS.
-  function iHelskarm() { return !!(document.fullscreenElement || document.webkitFullscreenElement) || dukEl.classList.contains("helskarm"); }
+  // Helskärm: sidans egen (spelarrutan fyller fönstret med CSS) slår till direkt vid klicket,
+  // och webbläsarens äkta helskärm begärs samtidigt. Förut väntade sidan på webbläsarens svar
+  // och tog reserven först efter en halv sekund; i inbäddade webbläsare kommer svaret aldrig,
+  // och knappen kändes som att den laggade (Rickard 2026-09-23). Stilarna är desamma, så det
+  // syns ingen skillnad när den äkta sedan slår till.
+  const aktaHelskarm = () => !!(document.fullscreenElement || document.webkitFullscreenElement);
+  let varAkta = false;
+  function iHelskarm() { return aktaHelskarm() || dukEl.classList.contains("helskarm"); }
   function ritaHelKnapp() {
     const b = $("duk-hel"); if (!b) return;
     b.innerHTML = iHelskarm() ? IK.helUt : IK.helIn; b.setAttribute("aria-label", iHelskarm() ? "Stäng helskärm" : "Helskärm");
@@ -1118,21 +1167,21 @@
     ritaHelKnapp(); visaStyr();
   }
   function vaxlaHelskarm() {
-    if (dukEl.classList.contains("helskarm")) { cssHelskarm(false); return; }
-    if (document.fullscreenElement || document.webkitFullscreenElement) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+    if (iHelskarm()) {
+      if (aktaHelskarm()) { const p = (document.exitFullscreen || document.webkitExitFullscreen).call(document); if (p && p.catch) p.catch(() => {}); }
+      cssHelskarm(false);
+      return;
+    }
+    cssHelskarm(true);
     const beg = dukEl.requestFullscreen || dukEl.webkitRequestFullscreen;
-    let avgjort = false; // bara ett beslut per försök — ett sent nej från webbläsaren får inte öppna reserven i efterhand
-    const reserv = () => { if (avgjort) return; avgjort = true; if (!document.fullscreenElement && !document.webkitFullscreenElement) cssHelskarm(true); };
-    if (beg) {
-      try {
-        const p = beg.call(dukEl);
-        if (p && p.then) p.then(() => { avgjort = true; }, reserv);
-      } catch (e) { reserv(); return; }
-    } else { reserv(); return; }
-    // Inget svar inom en halv sekund (t.ex. inbäddad webbläsare): ta reserven.
-    setTimeout(reserv, 500);
+    if (beg) { try { const p = beg.call(dukEl); if (p && p.catch) p.catch(() => {}); } catch (e) { /* sidans egen räcker */ } }
   }
-  ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, ritaHelKnapp));
+  // Lämnar man webbläsarens helskärm med Esc stänger webbläsaren den själv: då ska sidans också bort.
+  ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, () => {
+    if (aktaHelskarm()) varAkta = true;
+    else if (varAkta) { varAkta = false; if (dukEl.classList.contains("helskarm")) cssHelskarm(false); }
+    ritaHelKnapp();
+  }));
   // Klick och drag i spelarrutan
   dukEl.addEventListener("click", (e) => {
     const b = e.target.closest("button");
@@ -1282,13 +1331,16 @@
   setInterval(ritaUpp, 1000);
 
   function oppna(id, t) {
-    stangSok();
+    // Med vyövergång stängs sökningen inne i övergången (ruta), annars blinkar den bort först.
+    if (!document.startViewTransition) stangSok();
     const adress = `#${id}${Number.isFinite(t) ? `&t=${t}` : ""}`;
     if (location.hash === adress) ruta(); else location.hash = adress;
   }
 
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-film]");
+    // Omslaget i det man klickade på (kortet, sökkortet, raden) flyger upp och blir spelaren.
+    if (b) omslagFran = b.querySelector(".ram, .omslag, img") || (b.closest(".basta") && b.closest(".basta").querySelector(".omslag"));
     if (b) { const t = b.dataset.t !== "" && b.dataset.t != null ? Number(b.dataset.t) : undefined; oppna(b.dataset.film, t); return; }
     const k = e.target.closest("#kapitel [data-t], #helatext [data-t]");
     if (k) { hoppa(Number(k.dataset.t)); kapitelKlickat = true; ritaUpp(); return; }
