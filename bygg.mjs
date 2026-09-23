@@ -130,7 +130,9 @@ if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "c
 // i gråskala), så här räcker en mild kurva: skuggorna lyfts en aning (Rickard ville ha
 // den "lite ljusare", 2026-09-13), svärtan står kvar i noll, mättnaden som förut.
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");
-if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1600, "curves=all='0/0 0.1/0.19 0.4/0.55 0.7/0.82 1/1',hue=s=0.9", 5);
+// Källans egen bredd (1672 px) och hög kvalitet: sidan visar hela målningen och den
+// ska inte skalas om eller tappa skärpa på vägen (Rickard 2026-09-23).
+if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1672, "curves=all='0/0 0.1/0.19 0.4/0.55 0.7/0.82 1/1',hue=s=0.9", 2);
 // Stjärnorna och stadens fönsterljus i fonden mäts upp och skrivs till
 // public/stjarnor.json, som sidan låter glimra. Går python inte att köra här (numpy,
 // scipy och Pillow behövs) får den gamla tabellen stå kvar: bygget ska inte falla på en
