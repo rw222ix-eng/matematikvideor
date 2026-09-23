@@ -13,7 +13,9 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   Varje bild får `?v=<innehållshash>` i `videor.json` och i `index.html` (Vercel cachar
   `/omslag/*` ett dygn — utan version syntes inte ett nytt omslag). Bygget kör också
   `verktyg/hitta-stjarnor.py`, som mäter upp fondens stjärnor och stadens fönsterljus till
-  `public/stjarnor.json`. Skriptet behöver numpy, scipy och Pillow; sätt `VIDEOTEK_PYTHON`
+  `public/stjarnor.json`, och `verktyg/hitta-intro.py`, som skriver masken `public/omslag/intro-glimt.png`
+  över stjärnorna i introbildens fönster (introt ritas i WebGL2: stjärnorna glimrar i sina egna
+  pixlar, lågan fladdrar och ljuset i rummet andas; utan WebGL2 visas den vanliga bilden). Skripten behöver numpy, scipy och Pillow; sätt `VIDEOTEK_PYTHON`
   eller lägg en venv i `verktyg/.venv`. Utan python behålls den gamla tabellen.
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet

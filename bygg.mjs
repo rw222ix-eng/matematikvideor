@@ -137,14 +137,16 @@ if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.j
 // public/stjarnor.json, som sidan låter glimra. Går python inte att köra här (numpy,
 // scipy och Pillow behövs) får den gamla tabellen stå kvar: bygget ska inte falla på en
 // sak som bara ändras när fonden byts. VIDEOTEK_PYTHON pekar ut en egen tolk.
-{
-  const skript = join(HÄR, "verktyg", "hitta-stjarnor.py");
+// Samma sak för introt: hitta-intro.py skriver masken public/omslag/intro-glimt.png
+// över stjärnorna i fönstret, som introts shader låter glimra.
+for (const [namn, behall] of [["hitta-stjarnor.py", "public/stjarnor.json"], ["hitta-intro.py", "public/omslag/intro-glimt.png"]]) {
+  const skript = join(HÄR, "verktyg", namn);
   const tolkar = [process.env.VIDEOTEK_PYTHON, join(HÄR, "verktyg", ".venv", "bin", "python"), "python3", "python"].filter(Boolean);
   let kord = false;
   for (const py of tolkar) {
     try { console.log(execFileSync(py, [skript], { encoding: "utf8" }).trim()); kord = true; break; } catch (e) { /* nästa tolk */ }
   }
-  if (!kord) console.warn("  varning: hitta-stjarnor.py kunde inte köras (python med numpy/scipy/Pillow saknas) — behåller public/stjarnor.json.");
+  if (!kord) console.warn(`  varning: ${namn} kunde inte köras (python med numpy/scipy/Pillow saknas) — behåller ${behall}.`);
 }
 
 // Fonderna och logotypen ligger i index.html, inte i videor.json. Deras ?v= skrivs om
@@ -153,7 +155,7 @@ if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.j
   const indexFil = join(HÄR, "public", "index.html");
   let html = readFileSync(indexFil, "utf8");
   const fore = html;
-  for (const namn of ["intro.jpg", "valj-fond.jpg", "logo.jpg"]) {
+  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "logo.jpg"]) {
     const fil = join(HÄR, "public", "omslag", namn);
     if (!existsSync(fil)) continue;
     const v = filhash(fil);

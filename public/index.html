@@ -62,6 +62,10 @@
   /* Ingen zoom på introt: fonden är uppskalad från 720 px och inzoomad ser den pixlig ut (Rickard 2026-09-12). */
   .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
   @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
+  /* Samma bild ritad i WebGL, med levande stjärnor och ljus. Syns först när första bilden
+     är ritad; fungerar inte WebGL ligger den vanliga bilden kvar under. */
+  .intro .levande { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0; pointer-events: none; }
+  .intro .levande.klar { opacity: 1; }
   .intro .vinjett { position: absolute; inset: 0; z-index: 1; background:
       radial-gradient(ellipse 70% 60% at 50% 45%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .3) 60%, rgba(23, 20, 20, .7) 100%),
       linear-gradient(rgba(23, 20, 20, .35), rgba(23, 20, 20, 0) 30%, rgba(23, 20, 20, 0) 65%, rgba(23, 20, 20, .6)); }
@@ -347,6 +351,7 @@
 <!-- ── 1. Intro ─────────────────────────────────────────── -->
 <section class="vy intro" id="vy-intro">
   <img class="fond" src="omslag/intro.jpg?v=af9ffc17" alt="" fetchpriority="high">
+  <canvas class="levande" id="levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
   <header class="topp fram">
     <a class="logo" href="#" aria-label="Matematikvideor med Rickard">
@@ -661,6 +666,139 @@
         startaStjarnor();
       })
       .catch(() => {});
+  }
+
+  // ── Introt: levande stjärnor och ljus ─────────────────
+  // Ingenting läggs ovanpå målningen. Bilden ritas som textur i en fragment-shader som
+  // ändrar pixlarna själva (Rickard 2026-09-23):
+  // - Stjärnorna i fönstret: masken intro-glimt.png (verktyg/hitta-intro.py) säger vilka
+  //   pixlar som är stjärna, och vilken fas och takt varje stjärna har. Shadern skalar
+  //   stjärnans överskott över himlen runt henne (en suddig mipnivå) upp och ner, lugnt.
+  // - Lågan: vickar i sidled, mest i toppen, och sträcks och krymper lite.
+  // - Ljuset i rummet: bord, papper, ljusstake och händer ljusnar och mörknar med lågan.
+  // Allt är bildpixlar i 1920x1080. Går WebGL2 inte att få ligger <img> kvar.
+  {
+    const vy = $("vy-intro"), duk = $("levande"), img = vy.querySelector(".fond");
+    const GLIMT = "omslag/intro-glimt.png?v=74f1b75a";
+    const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
+    const HORN = `#version 300 es
+      in vec2 a;
+      uniform vec2 uSkala, uForskj;
+      out vec2 vUv;
+      void main() {
+        vec2 s = vec2(a.x * .5 + .5, .5 - a.y * .5);   // skärmen, 0..1 uppifrån
+        vUv = uForskj + s * uSkala;                     // bildens koordinater, som object-fit: cover
+        gl_Position = vec4(a, 0., 1.);
+      }`;
+    const YTA = `#version 300 es
+      precision highp float;
+      uniform sampler2D uBild, uMask;
+      uniform float uT;
+      uniform vec2 uPx;
+      in vec2 vUv;
+      out vec4 ut;
+      const vec2 LAGA = vec2(1667., 640.);      // lågans mitt
+      const vec2 LAGA_R = vec2(13., 36.);       // området som får röra sig
+      const float BAS = 672.;                   // lågans fot (veken)
+      float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
+      float brus(float x) { float i = floor(x), f = fract(x); f = f * f * (3. - 2. * f); return mix(h1(i), h1(i + 1.), f); }
+      void main() {
+        vec2 px = vUv * uPx;
+        // Lågan. w: 1 i lågan, tonar ut mot kanten. hojd: 0 vid veken, 1 i toppen.
+        float w = smoothstep(1., .55, length((px - LAGA) / LAGA_R));
+        float hojd = clamp((BAS - px.y) / 54., 0., 1.);
+        float sving = (brus(uT * 1.6) - .5) * 1.4 + sin(uT * 8.7 + brus(uT * .6) * 6.) * .3;
+        float strack = (brus(uT * 2.2 + 5.) - .5) * .16 * smoothstep(0., .15, hojd);
+        vec2 kalla = px;
+        kalla.x -= w * hojd * hojd * sving * 2.4;
+        kalla.y = mix(px.y, BAS - (BAS - px.y) / (1. + strack), w);
+        vec3 c = texture(uBild, kalla / uPx).rgb;
+        // Stjärnorna: överskottet över himlen skalas mellan 55 och 125 procent.
+        vec4 m = texture(uMask, vUv);
+        if (m.r > .004) {
+          vec3 himmel = textureLod(uBild, vUv, 4.).rgb;
+          float g = .5 + .5 * sin(uT * (.7 + m.b * 1.4) + m.g * 6.2832);
+          g = g * g * (3. - 2. * g);
+          vec3 ny = himmel + (c - himmel) * mix(.55, 1.25, g);
+          ny += max(textureLod(uBild, vUv, 1.5).rgb - himmel, 0.) * .35 * g * g;
+          c = mix(c, ny, m.r);
+        }
+        // Ljuset i rummet andas med lågan: nära lågan mest, ut över bordet mindre.
+        float fl = brus(uT * 2.4) * .5 + brus(uT * 5.7 + 3.) * .3 + brus(uT * 12.1 + 7.) * .2 - .5;
+        vec2 d = (px - LAGA) / uPx.y;
+        float r2 = dot(d, d);
+        float rum = exp(-r2 / (2. * .22 * .22)), nara = exp(-r2 / (2. * .035 * .035));
+        c *= 1. + fl * (.14 * rum + .4 * nara);
+        c += vec3(1., .75, .42) * nara * fl * .12;
+        ut = vec4(c, 1.);
+      }`;
+    const kompilera = (typ, kod) => {
+      const s = gl.createShader(typ); gl.shaderSource(s, kod); gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+      return s;
+    };
+    const ladda = (src) => new Promise((ok, fel) => { const i = new Image(); i.onload = () => ok(i); i.onerror = fel; i.src = src; });
+    let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1920, BH = 1080;
+
+    const mat = () => {
+      const b = duk.clientWidth, h = duk.clientHeight;
+      if (!b || !h || !prog) return;
+      const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)));   // högst ~4 miljoner pixlar
+      duk.width = Math.round(b * k); duk.height = Math.round(h * k);
+      gl.viewport(0, 0, duk.width, duk.height);
+      const s = Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
+      gl.uniform2f(uSkala, sx, sy); gl.uniform2f(uForskj, (1 - sx) / 2, (1 - sy) / 2);
+      // Ny storlek tömmer duken: rita direkt, annars blinkar den svart en bildruta.
+      gl.uniform1f(uT, performance.now() / 1000); gl.drawArrays(gl.TRIANGLES, 0, 3);
+    };
+    const levande = () => redo && !forlorad && !document.hidden && vy.classList.contains("aktiv");
+    const rita = (nu) => {
+      if (!levande()) { kor = false; return; }
+      requestAnimationFrame(rita);
+      if (nu - senast < 32) return;   // 30 bilder i sekunden räcker för ett ljus
+      senast = nu;
+      gl.uniform1f(uT, nu / 1000);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+      duk.classList.add("klar");
+    };
+    const starta = () => {
+      if (kor || !levande()) return;
+      mat(); kor = true; requestAnimationFrame(rita);
+    };
+    const textur = (enhet, bild, mip, rak) => {
+      const t = gl.createTexture();
+      gl.activeTexture(gl.TEXTURE0 + enhet); gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, rak ? gl.NONE : gl.BROWSER_DEFAULT_WEBGL);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, bild);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, mip ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR);
+      if (mip) gl.generateMipmap(gl.TEXTURE_2D);
+    };
+
+    if (gl) Promise.all([ladda(img.currentSrc || img.src), ladda(GLIMT)]).then(([bild, mask]) => {
+      prog = gl.createProgram();
+      gl.attachShader(prog, kompilera(gl.VERTEX_SHADER, HORN));
+      gl.attachShader(prog, kompilera(gl.FRAGMENT_SHADER, YTA));
+      gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+      gl.useProgram(prog);
+      const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);   // en triangel över hela rutan
+      const a = gl.getAttribLocation(prog, "a"); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+      BW = bild.naturalWidth; BH = bild.naturalHeight;
+      textur(0, bild, true, false); textur(1, mask, false, true);
+      gl.uniform1i(gl.getUniformLocation(prog, "uBild"), 0); gl.uniform1i(gl.getUniformLocation(prog, "uMask"), 1);
+      gl.uniform2f(gl.getUniformLocation(prog, "uPx"), BW, BH);
+      uT = gl.getUniformLocation(prog, "uT"); uSkala = gl.getUniformLocation(prog, "uSkala"); uForskj = gl.getUniformLocation(prog, "uForskj");
+      redo = true; starta();
+    }).catch((e) => { console.warn("Levande intro avstängt:", e); duk.remove(); });
+
+    duk.addEventListener("webglcontextlost", (e) => { e.preventDefault(); forlorad = true; duk.classList.remove("klar"); });
+    new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
+    document.addEventListener("visibilitychange", starta);
+    addEventListener("resize", () => { if (redo) mat(); });
   }
 
   // ── Tidslinjen ────────────────────────────────────────
