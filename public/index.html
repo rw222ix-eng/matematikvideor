@@ -193,21 +193,41 @@
   .sok input::-webkit-search-cancel-button { display: none; }
   .sok input:focus { border-color: var(--ben2); }
   .sok .status { margin: 22px 0 0; font: 300 10px/1.6 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--dis); }
-  .traff-film { margin-top: 56px; animation: fram 1s var(--lugn) both; }
-  .traff-film h3 { margin: 0 0 6px; }
-  .traff-film h3 button { all: unset; cursor: pointer; }
-  .traff-film h3 button:hover { color: var(--ben); }
-  .traff-film .titel { font: 400 24px/1.3 var(--skrift); font-size: 34px; color: var(--ben); margin: 0 0 18px; }
-  .traff-film .titel button { all: unset; cursor: pointer; }
-  .traff-film .titel button:hover { color: var(--accent); }
-  .traff-film ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linje2); }
-  .traff-film li { border-bottom: 1px solid var(--linje2); }
-  .traff-film li button { all: unset; cursor: pointer; display: grid; grid-template-columns: 74px 1fr; gap: 16px; padding: 16px 0; width: 100%; align-items: baseline; }
-  .traff-film li button:hover .snutt { color: var(--ben); }
   .tid { font: 500 11px/1.8 var(--sans); letter-spacing: .3em; color: var(--accent); font-variant-numeric: tabular-nums; }
   .snutt { color: var(--ben2); font-weight: 300; transition: color .4s; }
   mark { background: none; color: var(--ben); font-weight: 400; border-bottom: 1px solid var(--accent); }
-  .traff-film .fler { padding: 14px 0 0; font: italic 300 14px/1.5 var(--sans); color: var(--dis); }
+  /* Sökträffarna (Rickard 2026-09-23): en huvudträff som kort, några korta rader, inga långa
+     stycken. Förklaringen är ett utdrag på ett par rader runt stället där ordet sägs. Med
+     tomt fält visas några ord att prova, så den som aldrig sökt förut vet vad man kan skriva. */
+  .sok .forslag { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .sok .forslag .etikett { width: 100%; margin-bottom: 4px; }
+  .sok .forslag button { font: 400 15px/1 var(--sans); color: var(--ben); padding: 10px 16px; border: 1px solid var(--linje); border-radius: 999px; transition: border-color .3s, color .3s; }
+  .sok .forslag button:hover { border-color: var(--accent); color: var(--accent); }
+  .basta { margin-top: 40px; display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 18px; background: rgba(236, 230, 216, .04); border: 1px solid var(--linje2); border-radius: 12px; animation: fram .8s var(--lugn) both; }
+  .basta .omslag { display: block; aspect-ratio: 16/9; overflow: hidden; border-radius: 6px; align-self: start; }
+  .basta .omslag img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--lugn); }
+  .basta .omslag:hover img { transform: scale(1.04); }
+  .basta .text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .basta .titel { margin: 0; font: 500 32px/1.1 var(--skrift); color: var(--ben); }
+  .basta .titel button { text-align: left; transition: color .3s; }
+  .basta .titel button:hover { color: var(--accent); }
+  .basta .forklaring { margin: 2px 0 8px; color: var(--ben2); font-size: 16px; line-height: 1.6; }
+  .basta .spela { align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; font: 400 13px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-top: auto; }
+  .basta .spela .ring { width: 38px; height: 38px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; transition: background .3s, color .3s; }
+  .basta .spela .ring svg { width: 10px; height: 10px; fill: currentColor; margin-left: 2px; }
+  .basta .spela:hover .ring { background: var(--accent); color: var(--bg); }
+  .sok h4.etikett { margin: 34px 0 8px; }
+  .fler-stallen ul, .andra ul { list-style: none; margin: 0; padding: 0; }
+  .fler-stallen li + li, .andra li + li { border-top: 1px solid var(--linje2); }
+  .fler-stallen button { display: grid; grid-template-columns: 58px 1fr; gap: 14px; align-items: baseline; width: 100%; padding: 12px 0; text-align: left; }
+  .fler-stallen .rad { color: var(--ben2); font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .3s; }
+  .fler-stallen button:hover .rad { color: var(--ben); }
+  .andra button { display: flex; align-items: center; gap: 16px; width: 100%; padding: 10px 0; text-align: left; }
+  .andra img, .andra .tom { width: 96px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; flex: none; background: var(--bg2); }
+  .andra .namn { display: flex; flex-direction: column; gap: 3px; }
+  .andra .titel { font: 500 21px/1.2 var(--skrift); color: var(--ben); transition: color .3s; }
+  .andra button:hover .titel { color: var(--accent); }
+  .andra .antal { font: 400 11px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dis); }
 
   /* ── 3. Filmens sida ──────────────────────────────────── */
   .film { display: block; position: relative; min-height: 100vh; background: var(--bg); padding-bottom: 120px; }
@@ -355,7 +375,8 @@
     .post.kommer { display: none; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
-    .traff-film li button { grid-template-columns: 58px 1fr; gap: 12px; }
+    .basta { grid-template-columns: 1fr; gap: 16px; }
+    .basta .titel { font-size: 28px; }
     .film .topp { padding: 18px 20px; }
     .film .inre { padding-top: 24px; }
     .film .kap-rubrik { margin-top: 70px; }
@@ -440,8 +461,8 @@
     <button class="ikon tips-under" id="sok-stang" aria-label="Stäng sökningen" data-tips="Stäng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
   </header>
   <div class="inre">
-    <label class="etikett" for="sok-falt">Sök i det som sägs</label>
-    <input id="sok-falt" type="search" placeholder="exponent, tredje roten, Mars …" autocomplete="off" spellcheck="false">
+    <label class="etikett" for="sok-falt">Sök i filmerna</label>
+    <input id="sok-falt" type="search" placeholder="t.ex. exponent, olikhet, pi" autocomplete="off" spellcheck="false">
     <p class="status" id="sok-status"></p>
     <div id="sok-lista"></div>
   </div>
@@ -740,6 +761,8 @@
 
   // ── Sök ───────────────────────────────────────────────
   const sokRuta = $("sok"), falt = $("sok-falt");
+  // Filmerna som träffar, bäst först: ordet i titeln väger mest, sedan hur många gånger
+  // det sägs, sedan om det står bland moment, begrepp och beskrivning.
   function sok(fraga) {
     const ord = norm(fraga).split(" ").filter(Boolean);
     if (!ord.length) return [];
@@ -747,27 +770,68 @@
       const huvud = norm([v.titel, v.kurs, v.moment, v.beskrivning, ...v.begrepp].join(" "));
       const huvudTraff = ord.every((o) => huvud.includes(o));
       const traffar = v.repliker.filter((r) => { const t = norm(r.text); return ord.every((o) => t.includes(o)); });
-      return { v, huvudTraff, traffar };
-    }).filter((x) => x.huvudTraff || x.traffar.length);
+      const poang = (ord.every((o) => norm(v.titel).includes(o)) ? 20 : 0) + traffar.length * 2 + (huvudTraff ? 3 : 0);
+      return { v, huvudTraff, traffar, poang };
+    }).filter((x) => x.huvudTraff || x.traffar.length).sort((a, b) => b.poang - a.poang);
   }
+  // Ett kort utdrag runt första stället där ordet sägs: från meningens början om den börjar
+  // nära ordet, annars några ord före; högst max tecken, avkortat vid ett mellanslag.
+  const utdrag = (text, ord, max = 130) => {
+    const sma = text.toLowerCase();
+    let i = -1;
+    for (const o of ord) { const j = sma.indexOf(o); if (j >= 0 && (i < 0 || j < i)) i = j; }
+    if (i < 0) i = 0;
+    const punkt = sma.lastIndexOf(". ", i);
+    let fran = punkt < 0 ? 0 : punkt + 2;
+    if (i - fran > 60) fran = text.lastIndexOf(" ", i - 40) + 1;
+    let till = Math.min(text.length, fran + max);
+    if (till < text.length) { const m = text.lastIndexOf(" ", till); if (m > i) till = m; }
+    return (fran > 0 ? "… " : "") + markera(text.slice(fran, till).trim(), ord) + (till < text.length ? " …" : "");
+  };
+  // Ord att prova när fältet är tomt: de två första begreppen i varje film.
+  const FORSLAG = [...new Set(videor.flatMap((v) => v.begrepp.slice(0, 2)))].slice(0, 10);
+  const SPELA = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg>';
   function ritaSok() {
-    const fraga = falt.value, ord = norm(fraga).split(" ").filter(Boolean), res = sok(fraga);
-    $("sok-lista").innerHTML = res.map(({ v, traffar }) => `
-      <article class="traff-film">
-        <h3 class="etikett"><button data-film="${v.id}">${v.ar ? `${arText(v.ar)} · ` : ""}${esc(v.kurs)} · ${esc(v.moment)}</button></h3>
-        <p class="titel"><button data-film="${v.id}">${esc(v.titel)}</button></p>
-        ${traffar.length ? `<ul>${traffar.slice(0, 8).map((r) => `<li><button data-film="${v.id}" data-t="${r.t ?? ""}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${markera(r.text, ord)}</span></button></li>`).join("")}</ul>${traffar.length > 8 ? `<p class="fler">… och ${traffar.length - 8} ställen till i filmen</p>` : ""}` : ""}
-        ${!v.youtube && !v.fil ? `<p class="fler">Filmen publiceras snart — kapitlen visar vad som sägs, minut för minut.</p>` : ""}
-      </article>`).join("");
-    $("sok-status").textContent = !ord.length ? `${videor.length} film${videor.length === 1 ? "" : "er"} · sök på ett ord eller två`
-      : res.length ? `${res.length} film${res.length === 1 ? "" : "er"} · ${res.reduce((a, r) => a + r.traffar.length, 0)} ställen där det sägs`
-      : "Inget hittat. Prova ett annat ord.";
+    const ord = norm(falt.value).split(" ").filter(Boolean), res = sok(falt.value);
+    const lista = $("sok-lista"), status = $("sok-status");
+    status.textContent = ord.length && !res.length ? "Inget hittat. Prova ett annat ord." : "";
+    if (!ord.length) {
+      lista.innerHTML = `<div class="forslag"><p class="etikett">Prova att söka på</p>${FORSLAG.map((f) => `<button type="button" data-forslag="${esc(f)}">${esc(f)}</button>`).join("")}</div>`;
+      return;
+    }
+    if (!res.length) { lista.innerHTML = ""; return; }
+    const [forst, ...ovriga] = res, v = forst.v, r0 = forst.traffar[0];
+    const t0 = r0 && r0.t != null ? r0.t : "";
+    const bild = v.omslagRen || v.omslag, snart = !v.youtube && !v.fil;
+    const knapp = snart ? "Läs vad som sägs" : r0 && r0.t != null ? `Spela från ${tid(r0.t)}` : "Spela filmen";
+    lista.innerHTML = `
+      <article class="basta">
+        <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${esc(knapp)}: ${esc(v.titel)}">${bild ? `<img src="${bild}" alt="">` : ""}</button>
+        <div class="text">
+          <p class="etikett">${v.ar ? `${arText(v.ar)} · ` : ""}${kursKort(v.kurs)} · ${esc(v.moment)}</p>
+          <h3 class="titel"><button data-film="${v.id}" data-t="${t0}">${esc(v.titel)}</button></h3>
+          <p class="forklaring">${r0 ? utdrag(r0.text, ord) : esc(v.beskrivning.split(". ")[0]) + "."}</p>
+          <button class="spela" data-film="${v.id}" data-t="${t0}"><span class="ring">${SPELA}</span>${knapp}</button>
+        </div>
+      </article>
+      ${forst.traffar.length > 1 ? `<section class="fler-stallen"><h4 class="etikett">Fler ställen i filmen</h4><ul>${forst.traffar.slice(1, 4).map((r) => `
+        <li><button data-film="${v.id}" data-t="${r.t ?? ""}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="rad">${utdrag(r.text, ord, 90)}</span></button></li>`).join("")}</ul></section>` : ""}
+      ${ovriga.length ? `<section class="andra"><h4 class="etikett">Andra filmer</h4><ul>${ovriga.map(({ v: a, traffar }) => {
+        const r = traffar[0], b = a.omslagRen || a.omslag;
+        return `
+        <li><button data-film="${a.id}" data-t="${r && r.t != null ? r.t : ""}">${b ? `<img src="${b}" alt="">` : '<span class="tom"></span>'}<span class="namn"><span class="titel">${esc(a.titel)}</span><span class="antal">${traffar.length ? `Sägs ${traffar.length === 1 ? "på ett ställe" : `på ${traffar.length} ställen`}` : esc(a.moment)}</span></span></button></li>`;
+      }).join("")}</ul></section>` : ""}`;
   }
   function oppnaSok() { sokRuta.classList.add("oppen"); document.body.classList.add("last"); ritaSok(); setTimeout(() => falt.focus(), 50); }
   function stangSok() { sokRuta.classList.remove("oppen"); document.body.classList.toggle("last", aktivVy === "intro" || (aktivVy === "valj" && !smal())); }
   document.querySelectorAll(".sok-oppna").forEach((b) => b.addEventListener("click", oppnaSok));
   $("sok-stang").addEventListener("click", stangSok);
   falt.addEventListener("input", ritaSok);
+  // Ett förslag fyller i fältet och söker direkt.
+  $("sok-lista").addEventListener("click", (e) => {
+    const f = e.target.closest("[data-forslag]");
+    if (f) { falt.value = f.dataset.forslag; ritaSok(); falt.focus(); }
+  });
 
   // ── Spelaren: egen styrning ovanpå YouTube (controls=0) eller <video> ──
   let yt = null, video = null, aktuell = null, klocka = null, gomTimer = null;
