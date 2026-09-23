@@ -52,7 +52,7 @@
   .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
   .ikon:hover { color: var(--ben); }
   .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
-  .topp .hoger { display: flex; align-items: center; gap: 4px; }
+  .topp .hoger { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
   /* ── 1. Intro ─────────────────────────────────────────── */
   /* min-height i stället för height: på låga/smala skärmar får introt växa så rubriken inte krockar med logotypen. */
@@ -101,7 +101,8 @@
      vinjetten men under tidslinjen. */
   .valj .stjarnor { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
   .valj .tidslinje { z-index: 2; }
-  .valj .rubrik { position: absolute; top: 112px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; }
+  /* "Välj en film" syntes dåligt mot himlen i 11 px (Rickard 2026-09-23): större, ljusare, med skugga. */
+  .valj .rubrik { position: absolute; top: 106px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; font-size: 16px; letter-spacing: .3em; color: var(--ben); text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 16px rgba(0, 0, 0, .8); }
   /* Ingen textmarkering: drar man tidslinjen ska inte årtal och titlar markeras på vägen. */
   .tidslinje { position: absolute; top: 150px; bottom: 0; left: 0; right: 0; overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
   .tidslinje.drar { cursor: grabbing; }
@@ -364,10 +365,9 @@
   <img class="fond" src="omslag/valj-fond.jpg?v=cf673fd8" alt="" loading="lazy">
   <div class="vinjett"></div>
   <canvas class="stjarnor" id="stjarnor" aria-hidden="true"></canvas>
+  <!-- Ingen logotyp här: den ledde bara tillbaka till introt, och där finns inget att göra
+       utom att klicka Utforska (Rickard 2026-09-23). -->
   <header class="topp">
-    <a class="logo" href="#" aria-label="Till början">
-      <img src="omslag/logo.jpg?v=0ff4abc0" alt="Matematikvideor med Rickard" width="320" height="320">
-    </a>
     <div class="hoger">
       <!-- Återställ ligger här uppe: nere i hörnet hamnade den över titlarna när de blev större. -->
       <button class="ikon aterstall" id="aterstall" aria-label="Till början av tidslinjen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 a8 8 0 1 0 2.4-5.7"/><path d="M4 4 v5 h5"/></svg></button>
@@ -578,8 +578,9 @@
           x: ox + bx * skala, y: oy + by * skala, rTack, rHalo, rKarna: Math.max(1.6, rTack * .7),
           tack: mjukFlack(rTack, himmelFarg(bx, by, s * 3 + 3).join(","), .45),
           varm: v >= .5 ? 1 : 0,
-          damp: .65 + .35 * b,          // hur långt ner den svagaste fasen tar henne
-          topp: .45 + .5 * b,           // halons styrka i den starka fasen
+          // Glimtet var för intensivt (Rickard 2026-09-23): ungefär halva utslaget åt båda hållen.
+          damp: .35 + .2 * b,           // hur långt ner den svagaste fasen tar henne
+          topp: .22 + .25 * b,          // halons styrka i den starka fasen
           fart: 2 * Math.PI / (3 + slump(i) * 4),   // ett varv på 3 till 7 sekunder
           fart2: 2 * Math.PI / (.9 + slump(i + 31) * 1.3), // ett snabbare, svagare flimmer ovanpå
           fas: slump(i + 977) * 2 * Math.PI,
@@ -619,7 +620,7 @@
           yta.globalAlpha = styrka * p.topp;
           yta.drawImage(halo(p.rHalo, p.varm), p.x - p.rHalo, p.y - p.rHalo, p.rHalo * 2, p.rHalo * 2);
           // Kärnan ovanpå: en liten skarp prick, det som gör att ögat läser "glimt".
-          yta.globalAlpha = styrka * styrka * .85;
+          yta.globalAlpha = styrka * styrka * .4;
           yta.drawImage(halo(p.rKarna, 3), p.x - p.rKarna, p.y - p.rKarna, p.rKarna * 2, p.rKarna * 2);
         }
       }
