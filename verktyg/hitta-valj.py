@@ -52,14 +52,14 @@ F_MAX_ANTAL = 320
 VÄXT = 2
 
 # Molnen: ljusa, mjuka partier pa himlen. Galaxen och manen ar ocksa ljusa och far inte
-# flyta med, och inte heller husen: molnen forskjuts upp till ~15 px, sa masken tonas ut
-# pa 30 px fran dem. Galaxen ar en sned ellips, uppmatt i 1672x1300.
+# flyta med, och inte heller husen: molnen forskjuts upp till ~45 px, sa masken tonas ut
+# pa 60 px fran dem. Galaxen ar en sned ellips, uppmatt i 1672x1300.
 GALAX = (650, 185, 265, 90, 39)        # mitt x, mitt y, halvaxlar, vinkel i grader
 GALAX_LITEN = (560, 285, 30)          # den lilla galaxen nedanfor
 MANE = (1470, 150, 70)
 MOLN_TRÖSKEL = (72, 110)              # ljushet i en suddad kopia: himmel ~45, moln 90-180
 HUS_MÖRK = 38                         # husen i staden ar morkare an sa
-MOLN_FRI = 30                         # sa langt fran galax, mane och hus borjar molnen rora sig
+MOLN_FRI = 60                         # sa langt fran galax, mane och hus borjar molnen rora sig
 
 # Flodens kontur i 1672x1300, uppmatt i bilden.
 FLOD = [(0, 893), (540, 893), (590, 950), (660, 1010), (705, 1080), (705, 1135),

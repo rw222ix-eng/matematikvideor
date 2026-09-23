@@ -612,14 +612,15 @@
         kalla.x -= w * hojd * hojd * sving * 2.4;
         kalla.y = mix(px.y, BAS - (BAS - px.y) / (1. + strack), w);
       }
-      // Molnen (bara filmvalet): flyter långsamt i ett mjukt flöde, ungefär ett halvt varv i
-      // minuten, och driver lite åt sidan. Masken tonar ut mot galaxen, månen och husen.
+      // Molnen (bara filmvalet): böljar i ett mjukt flöde som byter form på ungefär tio
+      // sekunder och driver fram och tillbaka i sidled, upp till ~45 px. Svagare syntes knappt
+      // (Rickard 2026-09-23). Masken tonar ut 60 px från galaxen, månen och husen.
       if (uHarMoln > .5) {
         float moln = texture(uMoln, vUv).r;
         if (moln > .004) {
           vec2 q = px * .0035;
-          vec2 flode = vec2(brus2(q + vec2(uT * .035, 0.)) - .5, brus2(q + vec2(7.3, uT * .03)) - .5);
-          kalla += (flode * 26. + vec2(sin(uT * .09) * 6., 0.)) * moln;
+          vec2 flode = vec2(brus2(q + vec2(uT * .09, 0.)) - .5, brus2(q + vec2(7.3, uT * .075)) - .5);
+          kalla += (flode * vec2(60., 36.) + vec2(sin(uT * .16) * 16., 0.)) * moln;
         }
       }
       // Vattnet: tre våglängder som går åt olika håll, mest i sidled, plus en lång dyning.
@@ -731,7 +732,7 @@
     addEventListener("resize", () => { if (redo) mat(); });
   };
   levandeMalning({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), mask: "omslag/intro-glimt.png?v=4fd9ee1e", laga: true });
-  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=c0d9e14d", moln: "omslag/valj-moln.png?v=16c690a6", fastTopp: true });
+  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=c0d9e14d", moln: "omslag/valj-moln.png?v=6853e573", fastTopp: true });
 
   // ── Tidslinjen ────────────────────────────────────────
   const spar = $("spar"), tidslinje = $("tidslinje");
