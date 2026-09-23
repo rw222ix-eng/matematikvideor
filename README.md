@@ -12,11 +12,11 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   titeln står i text). Introbilden `public/omslag/intro.jpg` görs av Kepler-omslaget utan titel.
   Varje bild får `?v=<innehållshash>` i `videor.json` och i `index.html` (Vercel cachar
   `/omslag/*` ett dygn — utan version syntes inte ett nytt omslag). Bygget kör också
-  `verktyg/hitta-stjarnor.py`, som mäter upp fondens stjärnor och stadens fönsterljus till
-  `public/stjarnor.json`, och `verktyg/hitta-intro.py`, som skriver masken `public/omslag/intro-glimt.png`
-  över stjärnorna i introbildens fönster (introt ritas i WebGL2: stjärnorna glimrar i sina egna
-  pixlar, lågan fladdrar och ljuset i rummet andas; utan WebGL2 visas den vanliga bilden). Skripten behöver numpy, scipy och Pillow; sätt `VIDEOTEK_PYTHON`
-  eller lägg en venv i `verktyg/.venv`. Utan python behålls den gamla tabellen.
+  `verktyg/hitta-intro.py` och `verktyg/hitta-valj.py`, som mäter upp maskerna `public/omslag/intro-glimt.png`
+  och `valj-glimt.png`: stjärnor, stadens ljus och floden. Båda målningarna ritas i WebGL2 och shadern
+  ändrar deras egna pixlar: stjärnor och ljus glimrar, vattnet rör sig, introts låga fladdrar. Utan
+  WebGL2 visas bilderna stilla. Skripten behöver numpy, scipy och Pillow; sätt `VIDEOTEK_PYTHON`
+  eller lägg en venv i `verktyg/.venv`. Utan python behålls de gamla maskerna.
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via

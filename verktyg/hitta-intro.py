@@ -15,8 +15,8 @@ flackar (manen ar for stor och faller bort).
 
 Utdata, en png i introbildens storlek:
   R = hur mycket pixeln hor till en stjarna, 0..255 med mjuk kant
-  G = stjarnans fas, samma for alla hennes pixlar
-  B = stjarnans takt, samma for alla hennes pixlar
+  G = stjarnans fas, samma for alla hennes pixlar (takten raknas ur fasen i shadern)
+  B = 0 (i filmvalets mask ar B vatten; samma shader laser bada)
 """
 import sys
 from pathlib import Path
@@ -83,7 +83,6 @@ def main():
     nr = nr[iy, ix]
     slump = np.random.default_rng(1618)
     fas = np.concatenate([[0], slump.random(antal)])
-    takt = np.concatenate([[0], slump.random(antal)])
 
     vikt = ndimage.gaussian_filter(vuxen.astype(np.float32), 0.8)
     vikt = np.clip(vikt * 1.4, 0, 1)
@@ -91,7 +90,6 @@ def main():
     ut = np.zeros((H, W, 3), np.uint8)
     ut[..., 0] = np.round(vikt * 255)
     ut[..., 1] = np.round(fas[nr] * 255) * (vikt > 0)
-    ut[..., 2] = np.round(takt[nr] * 255) * (vikt > 0)
     Image.fromarray(ut, "RGB").save(MÅL, optimize=True)
     print(f"public/omslag/intro-glimt.png: {antal} stjarnor i fonstret.")
 

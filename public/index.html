@@ -124,11 +124,10 @@
   .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
       radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .03) 60%, rgba(23, 20, 20, .16) 100%),
       linear-gradient(rgba(23, 20, 20, .09), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, 0) 60%, rgba(23, 20, 20, .38) 88%); }
-  /* Glimret ligger på målningens egna stjärnor, inte på utslumpade prickar ovanpå den:
-     verktyg/hitta-stjarnor.py letar upp dem i fonden och skriver public/stjarnor.json.
-     En canvas med färdiga sprites, inget filter per bildruta. Lagret ligger ovanpå
-     vinjetten men under tidslinjen. */
-  .valj .stjarnor { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+  /* Samma målning ritad i WebGL, med glimrande stjärnor och ljus och rörligt vatten (se
+     levandeMalning i skriptet). Duken har exakt fondens ruta och syns när första bilden är ritad. */
+  .valj .levande { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: max(100%, 128.6vh); width: max(100%, 128.6dvh); height: auto; aspect-ratio: 1672 / 1300; z-index: 0; opacity: 0; pointer-events: none; }
+  .valj .levande.klar { opacity: 1; }
   .valj .tidslinje { z-index: 2; }
   /* "Välj en film" syntes dåligt mot himlen i 11 px (Rickard 2026-09-23): större, ljusare, med skugga. */
   .valj .rubrik { position: absolute; top: 106px; left: 0; right: 0; text-align: center; z-index: 4; pointer-events: none; font-size: 16px; letter-spacing: .3em; color: var(--ben); text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 16px rgba(0, 0, 0, .8); }
@@ -336,7 +335,7 @@
     /* I porträtt går hela målningen inte att visa utan en tunn remsa; här fyller den skärmen som förut. */
     .valj .fond { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; object-fit: cover; object-position: center top; -webkit-mask-image: none; mask-image: none; }
     .valj .vinjett { position: fixed; height: 100vh; }
-    .valj .stjarnor { position: fixed; height: 100vh; }
+    .valj .levande { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; }
     .valj .rubrik, .valj .tidslinje { position: relative; z-index: 2; }
     .valj .rubrik { position: static; padding: 108px 0 8px; }
     .tidslinje { position: static; overflow: visible; cursor: default; }
@@ -393,8 +392,8 @@
 <!-- ── 2. Välj en film ──────────────────────────────────── -->
 <section class="vy valj" id="vy-valj">
   <img class="fond" src="omslag/valj-fond.jpg?v=a16f2f4d" alt="" loading="lazy">
+  <canvas class="levande" id="valj-levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
-  <canvas class="stjarnor" id="stjarnor" aria-hidden="true"></canvas>
   <!-- Ingen logotyp här: den ledde bara tillbaka till introt, och där finns inget att göra
        utom att klicka Utforska (Rickard 2026-09-23). -->
   <header class="topp">
@@ -502,272 +501,102 @@
   }
   window.addEventListener("hashchange", ruta);
 
-  // ── Stjärnhimlen och stadens fönster ──────────────────
-  // stjarnor.json är målningens egna ljuspunkter, uppmätta av verktyg/hitta-stjarnor.py:
-  // { stjarnor: [x, y, radie vid 1600 px, ljushet, varmton], fonster: [x, y, radie, ljushet] }.
-  // Att bara lägga ljus ovanpå syns inte: stjärnan är redan nästan vit. Därför pendlar varje
-  // stjärna åt båda hållen: i den svaga fasen täcks hon av en mjuk fläck i himlens egen färg
-  // (tagen ur fonden runt henne), i den starka fasen får hon en halo och en liten vit kärna.
-  // Fönstren i staden glimrar tvärtom bara uppåt — varm glöd i lighter, ingen täckfläck —
-  // långsammare och mjukare än stjärnorna, och några få flämtar till ibland.
-  // Sprites ritas en gång och kopieras in
-  // med drawImage, inget filter per bildruta. Slingan går bara när vyn syns.
-  // Allt här är const-uttryck, inte function-deklarationer: i icke-strikt läge läcker en
-  // deklaration i ett block ut till hela skriptet, och en rita() här slog ut tidslinjens rita().
-  {
-    const duk = $("stjarnor"), yta = duk.getContext("2d"), vy = $("vy-valj");
-    // Stjärnornas lägen är 0..1 i fondens bredd och höjd. Höjden tas ur bilden själv,
-    // så att målningen kan förlängas utan att glimret hamnar fel.
-    const BILD_B = 1600; let BILD_H = 900;
-    const dpr = () => Math.min(devicePixelRatio || 1, 2);
-    const slump = (n) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
-    let stjarnor = [], fonster = [], punkter = [], fonsterpunkter = [], halor = new Map(), bredd = 0, hojd = 0, kors = false, fondData = null;
-    const FONSTERFARG = "255,214,150";   // stadens varma lyktljus
-
-    // Fonden läses in en gång i 1600 px bredd så himlens färg runt varje stjärna kan tas därifrån.
-    const fondImg = new Image();
-    fondImg.onload = () => {
-      BILD_H = Math.round(BILD_B * fondImg.naturalHeight / fondImg.naturalWidth);
-      const c = document.createElement("canvas"); c.width = BILD_B; c.height = BILD_H;
-      const k = c.getContext("2d", { willReadFrequently: true });
-      k.drawImage(fondImg, 0, 0, BILD_B, BILD_H);
-      try { fondData = k.getImageData(0, 0, BILD_B, BILD_H).data; } catch (e) { fondData = null; }
-      punkter = []; fonsterpunkter = []; startaStjarnor();
-    };
-    fondImg.src = vy.querySelector(".fond").getAttribute("src");
-
-    const himmelFarg = (x, y, r) => {
-      if (!fondData) return [40, 60, 100];
-      let rr = 0, gg = 0, bb = 0, n = 0;
-      for (let v = 0; v < 12; v++) {
-        const px = Math.round(x + Math.cos(v / 12 * 2 * Math.PI) * r), py = Math.round(y + Math.sin(v / 12 * 2 * Math.PI) * r);
-        if (px < 0 || py < 0 || px >= BILD_B || py >= BILD_H) continue;
-        const i = (py * BILD_B + px) * 4; rr += fondData[i]; gg += fondData[i + 1]; bb += fondData[i + 2]; n++;
-      }
-      return n ? [Math.round(rr / n), Math.round(gg / n), Math.round(bb / n)] : [40, 60, 100];
-    };
-
-    const mjukFlack = (radie, rgb, kant) => {
-      const k = dpr(), r = radie * k, sida = Math.max(2, Math.ceil(r * 2));
-      const s = document.createElement("canvas"); s.width = s.height = sida;
-      const c = s.getContext("2d");
-      const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
-      g.addColorStop(0, `rgba(${rgb},1)`);
-      g.addColorStop(kant, `rgba(${rgb},.85)`);
-      g.addColorStop(1, `rgba(${rgb},0)`);
-      c.fillStyle = g; c.fillRect(0, 0, sida, sida);
-      return s;
-    };
-    // sort: 0 = kall stjärna, 1 = varm stjärna, 2 = stadens fönster (mjukare glöd),
-    // 3 = kärnpunkten mitt i den starka fasen (liten, nästan vit).
-    const halo = (radie, sort) => {
-      const nyckel = `${radie}|${sort}`;
-      let h = halor.get(nyckel);
-      if (h) return h;
-      const k = dpr(), r = radie * k, sida = Math.max(2, Math.ceil(r * 2));
-      h = document.createElement("canvas"); h.width = h.height = sida;
-      const c = h.getContext("2d");
-      const rgb = sort === 2 ? FONSTERFARG : sort === 3 ? "255,250,238" : sort === 1 ? "255,246,226" : "226,236,255";
-      const g = c.createRadialGradient(sida / 2, sida / 2, 0, sida / 2, sida / 2, sida / 2);
-      if (sort === 2) {            // fönstret: bredare, mjukare, ingen hård kärna
-        g.addColorStop(0, `rgba(${rgb},.85)`);
-        g.addColorStop(.3, `rgba(${rgb},.34)`);
-        g.addColorStop(.65, `rgba(${rgb},.1)`);
-        g.addColorStop(1, `rgba(${rgb},0)`);
-      } else if (sort === 3) {     // kärnan: nästan solid mitt, snabbt utfall
-        g.addColorStop(0, `rgba(${rgb},1)`);
-        g.addColorStop(.45, `rgba(${rgb},.75)`);
-        g.addColorStop(1, `rgba(${rgb},0)`);
-      } else {
-        g.addColorStop(0, `rgba(${rgb},.9)`);
-        g.addColorStop(.25, `rgba(${rgb},.35)`);
-        g.addColorStop(.6, `rgba(${rgb},.08)`);
-        g.addColorStop(1, `rgba(${rgb},0)`);
-      }
-      c.fillStyle = g; c.fillRect(0, 0, sida, sida);
-      halor.set(nyckel, h);
-      return h;
-    };
-
-    // Glimret ska hamna på stjärnan, så räkningen följer fondens faktiska ruta: på datorn
-    // har bilden sitt eget format (rutan = bilden), i mobilen object-fit: cover, center top.
-    const fondEl = vy.querySelector(".fond");
-    const matStjarnor = () => {
-      bredd = duk.clientWidth; hojd = duk.clientHeight;
-      if (!bredd || !hojd) { punkter = []; fonsterpunkter = []; return; }
-      const k = dpr();
-      duk.width = Math.round(bredd * k); duk.height = Math.round(hojd * k);
-      yta.setTransform(k, 0, 0, k, 0, 0);
-      halor.clear();
-      const r = fondEl.getBoundingClientRect(), c = duk.getBoundingClientRect();
-      const tackt = getComputedStyle(fondEl).objectFit === "cover";
-      const skala = tackt ? Math.max(r.width / BILD_B, r.height / BILD_H) : r.width / BILD_B;
-      const ox = r.left - c.left + (r.width - BILD_B * skala) / 2, oy = r.top - c.top;
-      punkter = stjarnor.map(([x, y, s, b, v], i) => {
-        const bx = x * BILD_B, by = y * BILD_H;
-        const rTack = Math.max(2.5, s * skala * 1.8);      // täcker stjärnan själv med lite marginal
-        const rHalo = Math.max(7, s * skala * 8);          // skenet runt henne, syns mot himlen
-        return {
-          x: ox + bx * skala, y: oy + by * skala, rTack, rHalo, rKarna: Math.max(1.6, rTack * .7),
-          tack: mjukFlack(rTack, himmelFarg(bx, by, s * 3 + 3).join(","), .45),
-          varm: v >= .5 ? 1 : 0,
-          // Styrkan har provats fram 2026-09-23: fullt utslag var för intensivt, halva likaså,
-          // en fjärdedel för lite. Nu ungefär 40 procent av det ursprungliga.
-          damp: .27 + .15 * b,          // hur långt ner den svagaste fasen tar henne
-          topp: .17 + .19 * b,          // halons styrka i den starka fasen
-          fart: 2 * Math.PI / (3 + slump(i) * 4),   // ett varv på 3 till 7 sekunder
-          fart2: 2 * Math.PI / (.9 + slump(i + 31) * 1.3), // ett snabbare, svagare flimmer ovanpå
-          fas: slump(i + 977) * 2 * Math.PI,
-        };
-      });
-      // Fönstren: bara glöd uppåt, ingen täckfläck (huset bakom är mörkt, en fläck i
-      // väggens färg skulle synas som en prick). Långsammare gång än stjärnorna.
-      fonsterpunkter = fonster.map(([x, y, s, b], i) => ({
-        x: ox + x * BILD_B * skala, y: oy + y * BILD_H * skala,
-        r: Math.max(4, s * skala * 5),
-        bas: .10 + .10 * b,             // glöden som alltid ligger på
-        amp: .22 + .30 * b,             // hur mycket den andas
-        fart: 2 * Math.PI / (2 + slump(i + 7) * 3),      // ett varv på 2 till 5 sekunder
-        fas: slump(i + 401) * 2 * Math.PI,
-        flamt: slump(i + 617) < .15,    // några få flämtar till då och då
-        flamtFart: 2 * Math.PI / (9 + slump(i + 863) * 8),
-      }));
-    };
-
-    const levande = () => !document.hidden && vy.classList.contains("aktiv")
-      && (punkter.length > 0 || fonsterpunkter.length > 0);
-
-    const ritaStjarnor = (nu) => {
-      if (!levande()) { kors = false; return; }
-      const t = nu / 1000;
-      yta.clearRect(0, 0, bredd, hojd);
-      for (const p of punkter) {
-        // f går 0..1: under 0,5 dämpas stjärnan, över 0,5 får hon halo och kärna.
-        const f = .5 + .4 * Math.sin(t * p.fart + p.fas) + .1 * Math.sin(t * p.fart2 + p.fas * 3);
-        if (f < .5) {
-          yta.globalCompositeOperation = "source-over";
-          yta.globalAlpha = (.5 - f) * 2 * p.damp;
-          yta.drawImage(p.tack, p.x - p.rTack, p.y - p.rTack, p.rTack * 2, p.rTack * 2);
-        } else {
-          const styrka = (f - .5) * 2;
-          yta.globalCompositeOperation = "lighter";
-          yta.globalAlpha = styrka * p.topp;
-          yta.drawImage(halo(p.rHalo, p.varm), p.x - p.rHalo, p.y - p.rHalo, p.rHalo * 2, p.rHalo * 2);
-          // Kärnan ovanpå: en liten skarp prick, det som gör att ögat läser "glimt".
-          yta.globalAlpha = styrka * styrka * .3;
-          yta.drawImage(halo(p.rKarna, 3), p.x - p.rKarna, p.y - p.rKarna, p.rKarna * 2, p.rKarna * 2);
-        }
-      }
-      yta.globalCompositeOperation = "lighter";
-      for (const p of fonsterpunkter) {
-        let a = p.bas + p.amp * (.5 + .5 * Math.sin(t * p.fart + p.fas));
-        if (p.flamt) {   // ett kort mörkt flämt, ungefär var tionde sekund
-          const g = Math.sin(t * p.flamtFart + p.fas * 2.7);
-          if (g > .995) a *= 1 - .85 * ((g - .995) / .005);
-        }
-        yta.globalAlpha = a;
-        yta.drawImage(halo(p.r, 2), p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
-      }
-      yta.globalAlpha = 1; yta.globalCompositeOperation = "source-over";
-      requestAnimationFrame(ritaStjarnor);
-    };
-
-    const startaStjarnor = () => {
-      // Vyn är display: none tills den blir aktiv, så måtten går inte att ta förrän då.
-      if ((stjarnor.length || fonster.length) && !document.hidden && vy.classList.contains("aktiv")
-          && ((!punkter.length && !fonsterpunkter.length) || duk.clientWidth !== bredd || duk.clientHeight !== hojd)) matStjarnor();
-      if (kors || !levande()) return;
-      kors = true;
-      requestAnimationFrame(ritaStjarnor);
-    };
-
-    new MutationObserver(startaStjarnor).observe(vy, { attributes: true, attributeFilter: ["class"] });
-    document.addEventListener("visibilitychange", startaStjarnor);
-    addEventListener("resize", () => { matStjarnor(); startaStjarnor(); });
-    fetch("stjarnor.json", { cache: "no-cache" })
-      .then((r) => (r.ok ? r.json() : []))
-      // Gamla formatet var en ren array med bara stjärnor; nya är { stjarnor, fonster }.
-      .then((d) => {
-        stjarnor = Array.isArray(d) ? d : (Array.isArray(d && d.stjarnor) ? d.stjarnor : []);
-        fonster = Array.isArray(d && d.fonster) ? d.fonster : [];
-        startaStjarnor();
-      })
-      .catch(() => {});
-  }
-
-  // ── Introt: levande stjärnor och ljus ─────────────────
-  // Ingenting läggs ovanpå målningen. Bilden ritas som textur i en fragment-shader som
-  // ändrar pixlarna själva (Rickard 2026-09-23):
-  // - Stjärnorna i fönstret: masken intro-glimt.png (verktyg/hitta-intro.py) säger vilka
-  //   pixlar som är stjärna, och vilken fas och takt varje stjärna har. Shadern skalar
-  //   stjärnans överskott över himlen runt henne (en suddig mipnivå) upp och ner.
-  // - Lågan: vickar i sidled, mest i toppen, och sträcks och krymper lite.
-  // - Ljuset i rummet: bord, papper, ljusstake och händer ljusnar och mörknar med lågan.
-  // Allt är bildpixlar i 1920x1080. Går WebGL2 inte att få ligger <img> kvar.
-  {
-    const vy = $("vy-intro"), duk = $("levande"), img = vy.querySelector(".fond");
-    const GLIMT = "omslag/intro-glimt.png?v=3bc0ca9e";
-    const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
-    const HORN = `#version 300 es
-      in vec2 a;
-      uniform vec2 uSkala, uForskj;
-      out vec2 vUv;
-      void main() {
-        vec2 s = vec2(a.x * .5 + .5, .5 - a.y * .5);   // skärmen, 0..1 uppifrån
-        vUv = uForskj + s * uSkala;                     // bildens koordinater, som object-fit: cover
-        gl_Position = vec4(a, 0., 1.);
-      }`;
-    const YTA = `#version 300 es
-      precision highp float;
-      uniform sampler2D uBild, uMask;
-      uniform float uT;
-      uniform vec2 uPx;
-      in vec2 vUv;
-      out vec4 ut;
-      const vec2 LAGA = vec2(1667., 640.);      // lågans mitt
-      const vec2 LAGA_R = vec2(13., 36.);       // området som får röra sig
-      const float BAS = 672.;                   // lågans fot (veken)
-      float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
-      float brus(float x) { float i = floor(x), f = fract(x); f = f * f * (3. - 2. * f); return mix(h1(i), h1(i + 1.), f); }
-      void main() {
-        vec2 px = vUv * uPx;
+  // ── Levande målningar: introt och fonden bakom filmvalet ──
+  // Ingenting läggs ovanpå målningarna. Bilden ritas som textur i en fragment-shader som
+  // ändrar pixlarna själva (Rickard 2026-09-23). En mask per målning, uppmätt i förväg:
+  //   R = stjärna eller ljus (mjuk kant), G = dess fas, B = vatten.
+  //   introt:    omslag/intro-glimt.png ur verktyg/hitta-intro.py (stjärnorna i fönstret)
+  //   filmvalet: omslag/valj-glimt.png ur verktyg/hitta-valj.py (stjärnor, stadens ljus, floden)
+  // - Stjärnor och ljus glimrar: överskottet över omgivningen (en suddig mipnivå) skalas
+  //   mellan 25 och 170 procent, var och en i sin egen takt, och i toppen sprids ljuset ut i
+  //   ett litet sken (Rickard ville ha det tydligare, 2026-09-23).
+  // - Vattnet: bilden förskjuts lite i vågor, mest i sidled, så reflexerna krusar, och de
+  //   ljusa reflexerna skimrar.
+  // - Lågan (bara introt): vickar i sidled, mest i toppen, och sträcks och krymper lite;
+  //   ljuset på bord, papper och händer andas med den.
+  // Går WebGL2 inte att få ligger <img> kvar, utan rörelse.
+  const HORN = `#version 300 es
+    in vec2 a;
+    uniform vec2 uSkala, uForskj;
+    out vec2 vUv;
+    void main() {
+      vec2 s = vec2(a.x * .5 + .5, .5 - a.y * .5);   // duken, 0..1 uppifrån
+      vUv = uForskj + s * uSkala;                     // bildens koordinater, som object-fit: cover
+      gl_Position = vec4(a, 0., 1.);
+    }`;
+  const YTA = `#version 300 es
+    precision highp float;
+    uniform sampler2D uBild, uMask;
+    uniform float uT, uLaga;
+    uniform vec2 uPx;
+    in vec2 vUv;
+    out vec4 ut;
+    const vec2 LAGA = vec2(1667., 640.);      // introts låga, i 1920x1080
+    const vec2 LAGA_R = vec2(13., 36.);       // området som får röra sig
+    const float BAS = 672.;                   // lågans fot (veken)
+    float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
+    float brus(float x) { float i = floor(x), f = fract(x); f = f * f * (3. - 2. * f); return mix(h1(i), h1(i + 1.), f); }
+    float h2(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    float brus2(vec2 p) {
+      vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
+      return mix(mix(h2(i), h2(i + vec2(1., 0.)), f.x), mix(h2(i + vec2(0., 1.)), h2(i + vec2(1., 1.)), f.x), f.y);
+    }
+    void main() {
+      vec2 px = vUv * uPx;
+      vec4 m = texture(uMask, vUv);
+      vec2 kalla = px;
+      if (uLaga > .5) {
         // Lågan. w: 1 i lågan, tonar ut mot kanten. hojd: 0 vid veken, 1 i toppen.
         float w = smoothstep(1., .55, length((px - LAGA) / LAGA_R));
         float hojd = clamp((BAS - px.y) / 54., 0., 1.);
         float sving = (brus(uT * 1.6) - .5) * 1.4 + sin(uT * 8.7 + brus(uT * .6) * 6.) * .3;
         float strack = (brus(uT * 2.2 + 5.) - .5) * .16 * smoothstep(0., .15, hojd);
-        vec2 kalla = px;
         kalla.x -= w * hojd * hojd * sving * 2.4;
         kalla.y = mix(px.y, BAS - (BAS - px.y) / (1. + strack), w);
-        vec3 c = texture(uBild, kalla / uPx).rgb;
-        // Stjärnorna: överskottet över himlen skalas mellan 25 och 170 procent, och i toppen
-        // sprids stjärnans eget ljus ut i ett litet sken (55–125 syntes knappt, Rickard 2026-09-23).
-        vec4 m = texture(uMask, vUv);
-        if (m.r > .004) {
-          vec3 himmel = textureLod(uBild, vUv, 4.).rgb;
-          float g = .5 + .5 * sin(uT * (.7 + m.b * 1.4) + m.g * 6.2832);
-          g = g * g * (3. - 2. * g);
-          vec3 ny = himmel + (c - himmel) * mix(.25, 1.7, g);
-          ny += max(textureLod(uBild, vUv, 1.5).rgb - himmel, 0.) * 1.1 * g * g;
-          c = mix(c, ny, m.r);
-        }
-        // Ljuset i rummet andas med lågan: nära lågan mest, ut över bordet mindre.
+      }
+      // Vattnet: två våglängder som går åt var sitt håll, mest i sidled.
+      float dx = sin(px.y * .42 + uT * 1.7) * .9 + sin(px.y * 1.1 - uT * 2.6 + px.x * .015) * .45;
+      float dy = sin(px.x * .03 + px.y * .2 + uT * 1.1) * .35;
+      kalla += vec2(dx, dy) * 1.6 * m.b;
+      vec3 c = texture(uBild, kalla / uPx).rgb;
+      if (m.b > .004) {
+        float l = dot(c, vec3(.299, .587, .114));
+        // Skimret: brus i avlånga fläckar (20 px breda, 3 px höga) som vandrar, bara på de
+        // ljusaste reflexerna. En jämn sinus gav regelbundna ränder över hela vattnet.
+        float skimmer = brus2(vec2(px.x * .05 + uT * .3, px.y * .35 - uT * 1.2));
+        c *= 1. + m.b * smoothstep(.35, .7, l) * (skimmer - .5) * .35;
+      }
+      if (m.r > .004) {
+        vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
+        float g = .5 + .5 * sin(uT * (.7 + fract(m.g * 7.31 + .17) * 1.4) + m.g * 6.2832);
+        g = g * g * (3. - 2. * g);
+        vec3 ny = omkring + (c - omkring) * mix(.25, 1.7, g);
+        ny += max(textureLod(uBild, vUv, 1.5).rgb - omkring, 0.) * 1.1 * g * g;
+        c = mix(c, ny, m.r);
+      }
+      if (uLaga > .5) {
         float fl = brus(uT * 2.4) * .5 + brus(uT * 5.7 + 3.) * .3 + brus(uT * 12.1 + 7.) * .2 - .5;
         vec2 d = (px - LAGA) / uPx.y;
         float r2 = dot(d, d);
         float rum = exp(-r2 / (2. * .22 * .22)), nara = exp(-r2 / (2. * .035 * .035));
         c *= 1. + fl * (.14 * rum + .4 * nara);
         c += vec3(1., .75, .42) * nara * fl * .12;
-        ut = vec4(c, 1.);
-      }`;
+      }
+      ut = vec4(c, 1.);
+    }`;
+  const levandeMalning = ({ vy, duk, img, mask, laga = false, fastTopp = false }) => {
+    const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
+    if (!gl) { duk.remove(); return; }
     const kompilera = (typ, kod) => {
       const s = gl.createShader(typ); gl.shaderSource(s, kod); gl.compileShader(s);
       if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
       return s;
     };
     const ladda = (src) => new Promise((ok, fel) => { const i = new Image(); i.onload = () => ok(i); i.onerror = fel; i.src = src; });
-    let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1920, BH = 1080;
+    let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1;
 
+    // Duken har bildens ruta (filmvalet på datorn) eller hela fönstret (introt, mobilen);
+    // bilden läggs i den som object-fit: cover, i mitten eller fäst i överkanten.
     const mat = () => {
       const b = duk.clientWidth, h = duk.clientHeight;
       if (!b || !h || !prog) return;
@@ -775,7 +604,7 @@
       duk.width = Math.round(b * k); duk.height = Math.round(h * k);
       gl.viewport(0, 0, duk.width, duk.height);
       const s = Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
-      gl.uniform2f(uSkala, sx, sy); gl.uniform2f(uForskj, (1 - sx) / 2, (1 - sy) / 2);
+      gl.uniform2f(uSkala, sx, sy); gl.uniform2f(uForskj, (1 - sx) / 2, fastTopp ? 0 : (1 - sy) / 2);
       // Ny storlek tömmer duken: rita direkt, annars blinkar den svart en bildruta.
       gl.uniform1f(uT, performance.now() / 1000); gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
@@ -783,7 +612,7 @@
     const rita = (nu) => {
       if (!levande()) { kor = false; return; }
       requestAnimationFrame(rita);
-      if (nu - senast < 32) return;   // 30 bilder i sekunden räcker för ett ljus
+      if (nu - senast < 32) return;   // 30 bilder i sekunden räcker
       senast = nu;
       gl.uniform1f(uT, nu / 1000);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
@@ -805,7 +634,7 @@
       if (mip) gl.generateMipmap(gl.TEXTURE_2D);
     };
 
-    if (gl) Promise.all([ladda(img.currentSrc || img.src), ladda(GLIMT)]).then(([bild, mask]) => {
+    Promise.all([ladda(img.currentSrc || img.src), ladda(mask)]).then(([bild, maskBild]) => {
       prog = gl.createProgram();
       gl.attachShader(prog, kompilera(gl.VERTEX_SHADER, HORN));
       gl.attachShader(prog, kompilera(gl.FRAGMENT_SHADER, YTA));
@@ -813,21 +642,24 @@
       if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
       gl.useProgram(prog);
       const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);   // en triangel över hela rutan
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);   // en triangel över hela duken
       const a = gl.getAttribLocation(prog, "a"); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
       BW = bild.naturalWidth; BH = bild.naturalHeight;
-      textur(0, bild, true, false); textur(1, mask, false, true);
+      textur(0, bild, true, false); textur(1, maskBild, false, true);
       gl.uniform1i(gl.getUniformLocation(prog, "uBild"), 0); gl.uniform1i(gl.getUniformLocation(prog, "uMask"), 1);
       gl.uniform2f(gl.getUniformLocation(prog, "uPx"), BW, BH);
+      gl.uniform1f(gl.getUniformLocation(prog, "uLaga"), laga ? 1 : 0);
       uT = gl.getUniformLocation(prog, "uT"); uSkala = gl.getUniformLocation(prog, "uSkala"); uForskj = gl.getUniformLocation(prog, "uForskj");
       redo = true; starta();
-    }).catch((e) => { console.warn("Levande intro avstängt:", e); duk.remove(); });
+    }).catch((e) => { console.warn("Levande målning avstängd:", e); duk.remove(); });
 
     duk.addEventListener("webglcontextlost", (e) => { e.preventDefault(); forlorad = true; duk.classList.remove("klar"); });
     new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
     document.addEventListener("visibilitychange", starta);
     addEventListener("resize", () => { if (redo) mat(); });
-  }
+  };
+  levandeMalning({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), mask: "omslag/intro-glimt.png?v=4fd9ee1e", laga: true });
+  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=c0d9e14d", fastTopp: true });
 
   // ── Tidslinjen ────────────────────────────────────────
   const spar = $("spar"), tidslinje = $("tidslinje");

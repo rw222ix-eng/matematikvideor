@@ -134,13 +134,12 @@ const VALJ = resolve(HÄR, "assets", "valj-fond.png");
 // Källans egen bredd (1672 px) och hög kvalitet: sidan visar hela målningen och den
 // ska inte skalas om eller tappa skärpa på vägen (Rickard 2026-09-23).
 if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1672, "curves=all='0/0 0.1/0.19 0.4/0.55 0.7/0.82 1/1',hue=s=0.9", 2);
-// Stjärnorna och stadens fönsterljus i fonden mäts upp och skrivs till
-// public/stjarnor.json, som sidan låter glimra. Går python inte att köra här (numpy,
-// scipy och Pillow behövs) får den gamla tabellen stå kvar: bygget ska inte falla på en
-// sak som bara ändras när fonden byts. VIDEOTEK_PYTHON pekar ut en egen tolk.
-// Samma sak för introt: hitta-intro.py skriver masken public/omslag/intro-glimt.png
-// över stjärnorna i fönstret, som introts shader låter glimra.
-for (const [namn, behall] of [["hitta-stjarnor.py", "public/stjarnor.json"], ["hitta-intro.py", "public/omslag/intro-glimt.png"]]) {
+// Maskerna till de levande målningarna mäts upp ur bilderna: stjärnor, ljus och vatten
+// (verktyg/hitta-intro.py och hitta-valj.py, se levandeMalning i index.html). Går python
+// inte att köra här (numpy, scipy och Pillow behövs) får de gamla maskerna stå kvar:
+// bygget ska inte falla på en sak som bara ändras när en fond byts. VIDEOTEK_PYTHON
+// pekar ut en egen tolk.
+for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"], ["hitta-valj.py", "public/omslag/valj-glimt.png"]]) {
   const skript = join(HÄR, "verktyg", namn);
   const tolkar = [process.env.VIDEOTEK_PYTHON, join(HÄR, "verktyg", ".venv", "bin", "python"), "python3", "python"].filter(Boolean);
   let kord = false;
@@ -156,7 +155,7 @@ for (const [namn, behall] of [["hitta-stjarnor.py", "public/stjarnor.json"], ["h
   const indexFil = join(HÄR, "public", "index.html");
   let html = readFileSync(indexFil, "utf8");
   const fore = html;
-  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "logo.jpg"]) {
+  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "valj-glimt.png", "logo.jpg"]) {
     const fil = join(HÄR, "public", "omslag", namn);
     if (!existsSync(fil)) continue;
     const v = filhash(fil);
