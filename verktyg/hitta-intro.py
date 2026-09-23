@@ -43,7 +43,7 @@ RUTA = 15
 TRÖSKEL = 14.0           # ljusare an omgivningen, i 0..255
 MAX_DIAMETER = 9
 KANT = 5                 # sa manga pixlar in i ren himmel (inte har eller axel)
-VÄXT = 2                 # masken vaxer sa manga pixlar runt stjarnan, for skenet
+VÄXT = 3                 # masken vaxer sa manga pixlar runt stjarnan, for skenet
 
 
 def main():
