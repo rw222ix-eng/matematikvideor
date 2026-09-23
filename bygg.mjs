@@ -21,6 +21,9 @@ import { fileURLToPath } from "node:url";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
+// Kapitlen: en kort rubrik med starttid per avsnitt, skrivna för hand utifrån vad som sägs
+// (kapitel.json, id → [[sekund, rubrik], ...]). Tiderna är replikernas egna starttider.
+const kapitelFil = existsSync(join(HÄR, "kapitel.json")) ? JSON.parse(readFileSync(join(HÄR, "kapitel.json"), "utf8")) : {};
 mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
@@ -111,7 +114,7 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   // på sidan — titeln står ändå i text under bilden.
   const renKalla = v.omslag ? resolve(HÄR, dirname(v.omslag), "omslag-utan-titel.png") : null;
   const omslagRen = bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, undertext };
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, repliker, kapitel: (kapitelFil[v.id] || []).map(([t, rubrik]) => ({ t, rubrik })), undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med
