@@ -13,7 +13,7 @@ lokala maxima som sticker upp over troskeln och behaller bara de sma omradena.
 Manen och galaxkarnan ar ocksa ljusa, men stora: de maskas bort via en kraftigt
 suddad kopia av bilden. Allt under stadssilhuetten hoppas over.
 
-Metod (fonster): samma lokala maxima, men i bandet under NEDRE_KANT och bara
+Metod (fonster): samma lokala maxima, men i bandet under NEDRE_KANT_AV_BREDD och bara
 punkter som ar tydligt VARMA (R - B over troskeln). Manens reflex i vattnet och
 molnen ar kalla eller stora och faller darfor bort.
 
@@ -40,10 +40,13 @@ TRÖSKEL = 12.0        # hur mycket ljusare an omgivningen en stjarna maste vara
 MAX_DIAMETER = 8     # storre ljusa flackar ar moln, mane eller galaxkarna
 SUDD = 26            # radie pa suddet som hittar de stora ljusa omradena
 SUDD_TRÖSKEL = 96    # gransvarde i den suddade bilden: over det ar det mane/karna
-NEDRE_KANT = 0.66    # under det har (0..1) ar det moln och stad, inga stjarnor
+# Under den har linjen ar det moln och stad, inga stjarnor. Angiven i bildens BREDD
+# (0.3714 x bredden = 0.66 av den ursprungliga 16:9-hojden), sa den star kvar pa samma
+# stalle i malningen nar den forlangs nedat.
+NEDRE_KANT_AV_BREDD = 0.3714
 MAX_ANTAL = 320      # malningen har tusentals flackar, vi tar de starkaste
 
-# Stadens fonsterljus, i bandet under NEDRE_KANT.
+# Stadens fonsterljus, i bandet under NEDRE_KANT_AV_BREDD.
 F_TRÖSKEL = 10.0       # hur mycket ljusare an omgivningen ett fonster maste vara
 F_VÄRME = 25.0         # R - B: under det ar det manreflex, moln eller dis
 F_MAX_DIAMETER = 10    # storre varma flackar ar ljusgardar, inte fonster
@@ -80,7 +83,7 @@ def hitta_fönster(rgb, grå, omgivning, över, skala):
     topp = ndimage.maximum_filter(grå, size=7)
     kandidater = ((grå >= topp) & (över > F_TRÖSKEL) & (värme > F_VÄRME)
                   & (omgivning < F_MÖRK_OMGIVNING))
-    kandidater[:int(h * NEDRE_KANT), :] = False
+    kandidater[:int(b * NEDRE_KANT_AV_BREDD), :] = False
     kandidater[-2:, :] = False
     kandidater[:, :2] = False
     kandidater[:, -2:] = False
@@ -122,7 +125,7 @@ def hitta(bild):
 
     topp = ndimage.maximum_filter(grå, size=7)
     kandidater = (grå >= topp) & (över > TRÖSKEL) & (~stort)
-    kandidater[int(h * NEDRE_KANT):, :] = False
+    kandidater[int(b * NEDRE_KANT_AV_BREDD):, :] = False
     kandidater[:2, :] = False
     kandidater[-2:, :] = False
     kandidater[:, :2] = False

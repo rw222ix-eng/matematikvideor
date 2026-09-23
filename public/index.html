@@ -52,6 +52,30 @@
   .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
   .ikon:hover { color: var(--ben); }
   .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
+  /* Egna tooltips (Rickard 2026-09-23), inte webbläsarens title. De tonar fram ovanför ikonen
+     vid hovring eller tangentbordsfokus. I toppraden på filmens sida och i sökningen finns ingen
+     plats ovanför, där hamnar de under (.tips-under). Pilspetsen ligger över rutan och täcker
+     dess kantlinje. Längst till höger fästs rutan i högerkanten så den inte går utanför fönstret.
+     Bara på pekdon som hovrar: på en telefon finns ingen hovring att visa dem vid. */
+  .ikon[data-tips] { position: relative; }
+  @media (hover: hover) {
+    .ikon[data-tips]::before, .ikon[data-tips]::after { position: absolute; pointer-events: none; opacity: 0; transition: opacity .22s var(--lugn), transform .22s var(--lugn); }
+    .ikon[data-tips]::after { content: attr(data-tips); z-index: 1; left: 50%; bottom: calc(100% + 9px); transform: translate(-50%, 5px); white-space: nowrap; padding: 9px 13px 8px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); background: rgba(23, 20, 20, .86); border: 1px solid rgba(236, 230, 216, .2); border-radius: 6px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+    .ikon[data-tips]::before { content: ""; z-index: 2; left: 50%; bottom: calc(100% + 5px); width: 8px; height: 8px; margin-left: -4px; transform: translateY(5px) rotate(45deg); background: rgb(28, 25, 25); border-right: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
+    .ikon[data-tips]:hover::before, .ikon[data-tips]:focus-visible::before { opacity: 1; transform: translateY(0) rotate(45deg); transition-delay: .1s; }
+    .ikon[data-tips]:hover::after, .ikon[data-tips]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: .1s; }
+    .hoger .ikon[data-tips]:last-child::after { left: auto; right: 0; transform: translate(0, 5px); }
+    .hoger .ikon[data-tips]:last-child:hover::after, .hoger .ikon[data-tips]:last-child:focus-visible::after { transform: translate(0, 0); }
+    .ikon.tips-under[data-tips]::after { bottom: auto; top: calc(100% + 9px); transform: translate(-50%, -5px); }
+    .ikon.tips-under[data-tips]::before { bottom: auto; top: calc(100% + 5px); transform: translateY(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-top: 1px solid rgba(236, 230, 216, .2); }
+    .ikon.tips-under[data-tips]:hover::before, .ikon.tips-under[data-tips]:focus-visible::before { transform: translateY(0) rotate(45deg); }
+    .ikon.tips-under[data-tips]:hover::after, .ikon.tips-under[data-tips]:focus-visible::after { transform: translate(-50%, 0); }
+    .hoger .ikon.tips-under[data-tips]:last-child::after, .topp > .ikon.tips-under[data-tips]:last-child::after { left: auto; right: 0; transform: translate(0, -5px); }
+    .hoger .ikon.tips-under[data-tips]:last-child:hover::after, .topp > .ikon.tips-under[data-tips]:last-child:hover::after,
+    .hoger .ikon.tips-under[data-tips]:last-child:focus-visible::after, .topp > .ikon.tips-under[data-tips]:last-child:focus-visible::after { transform: translate(0, 0); }
+  }
+  /* Ikonerna på filmvalet sitter lägre, så tooltipen får plats ovanför dem. */
+  .valj .topp { padding-top: 64px; }
   .topp .hoger { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 
   /* ── 1. Intro ─────────────────────────────────────────── */
@@ -301,6 +325,7 @@
   @media (max-width: 700px) {
     body { font-size: 16px; }
     .topp { padding: 22px 20px; }
+    .valj .topp { padding-top: 22px; }
     .logo img { height: 48px; width: 48px; }
     .intro .logo img { height: 68px; width: 68px; }
     .intro .ingress br { display: none; }
@@ -374,8 +399,8 @@
   <header class="topp">
     <div class="hoger">
       <!-- Återställ ligger här uppe: nere i hörnet hamnade den över titlarna när de blev större. -->
-      <button class="ikon aterstall" id="aterstall" aria-label="Till början av tidslinjen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 a8 8 0 1 0 2.4-5.7"/><path d="M4 4 v5 h5"/></svg></button>
-      <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
+      <button class="ikon aterstall" id="aterstall" aria-label="Till början av tidslinjen" data-tips="Till början"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 a8 8 0 1 0 2.4-5.7"/><path d="M4 4 v5 h5"/></svg></button>
+      <button class="ikon sok-oppna" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
   </header>
   <h2 class="etikett rubrik">Välj en film</h2>
@@ -388,7 +413,7 @@
   <header class="topp">
     <a class="tillbaka" href="#filmer"><svg viewBox="0 0 32 12" aria-hidden="true"><path d="M31 6 H1 M6 1 L1 6 L6 11"/></svg>Alla filmer</a>
     <div class="hoger">
-      <button class="ikon sok-oppna" aria-label="Sök i det som sägs"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
+      <button class="ikon sok-oppna tips-under" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
   </header>
   <div class="inre">
@@ -412,7 +437,7 @@
 <div class="sok" id="sok" role="dialog" aria-modal="true" aria-label="Sök">
   <header class="topp">
     <span class="etikett">Sök</span>
-    <button class="ikon" id="sok-stang" aria-label="Stäng sökningen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
+    <button class="ikon tips-under" id="sok-stang" aria-label="Stäng sökningen" data-tips="Stäng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
   </header>
   <div class="inre">
     <label class="etikett" for="sok-falt">Sök i det som sägs</label>
@@ -490,15 +515,18 @@
   // deklaration i ett block ut till hela skriptet, och en rita() här slog ut tidslinjens rita().
   {
     const duk = $("stjarnor"), yta = duk.getContext("2d"), vy = $("vy-valj");
-    const BILD_B = 1600, BILD_H = 900;  // fondens mått, samma som bygg.mjs bakar
+    // Stjärnornas lägen är 0..1 i fondens bredd och höjd. Höjden tas ur bilden själv,
+    // så att målningen kan förlängas utan att glimret hamnar fel.
+    const BILD_B = 1600; let BILD_H = 900;
     const dpr = () => Math.min(devicePixelRatio || 1, 2);
     const slump = (n) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); };
     let stjarnor = [], fonster = [], punkter = [], fonsterpunkter = [], halor = new Map(), bredd = 0, hojd = 0, kors = false, fondData = null;
     const FONSTERFARG = "255,214,150";   // stadens varma lyktljus
 
-    // Fonden läses in en gång i 1600x900 så himlens färg runt varje stjärna kan tas därifrån.
+    // Fonden läses in en gång i 1600 px bredd så himlens färg runt varje stjärna kan tas därifrån.
     const fondImg = new Image();
     fondImg.onload = () => {
+      BILD_H = Math.round(BILD_B * fondImg.naturalHeight / fondImg.naturalWidth);
       const c = document.createElement("canvas"); c.width = BILD_B; c.height = BILD_H;
       const k = c.getContext("2d", { willReadFrequently: true });
       k.drawImage(fondImg, 0, 0, BILD_B, BILD_H);
