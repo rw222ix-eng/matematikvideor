@@ -137,6 +137,9 @@ const VALJ = resolve(HÄR, "assets", "valj-fond.png");
 // Källans egen bredd (1672 px) och hög kvalitet: sidan visar hela målningen och den
 // ska inte skalas om eller tappa skärpa på vägen (Rickard 2026-09-23).
 if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.jpg"), 1672, "curves=all='0/0 0.1/0.19 0.4/0.55 0.7/0.82 1/1',hue=s=0.9", 2);
+// Bakgrunden på filmens sida: biblioteket ur ChatGPT-projektet, suddigt redan i filen.
+const FILMFOND = resolve(HÄR, "assets", "film-fond.png");
+if (existsSync(FILMFOND)) bakaBild(FILMFOND, join(HÄR, "public", "omslag", "film-fond.jpg"), 1280, "gblur=sigma=14,eq=saturation=0.85", 3);
 // Maskerna till de levande målningarna mäts upp ur bilderna: stjärnor, ljus och vatten
 // (verktyg/hitta-intro.py och hitta-valj.py, se levandeMalning i index.html). Går python
 // inte att köra här (numpy, scipy och Pillow behövs) får de gamla maskerna stå kvar:
@@ -158,7 +161,7 @@ for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"
   const indexFil = join(HÄR, "public", "index.html");
   let html = readFileSync(indexFil, "utf8");
   const fore = html;
-  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "valj-glimt.png", "valj-moln.png", "logo.jpg"]) {
+  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "valj-glimt.png", "valj-moln.png", "film-fond.jpg", "logo.jpg"]) {
     const fil = join(HÄR, "public", "omslag", namn);
     if (!existsSync(fil)) continue;
     const v = filhash(fil);
