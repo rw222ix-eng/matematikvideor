@@ -575,17 +575,19 @@
         kalla.x -= w * hojd * hojd * sving * 2.4;
         kalla.y = mix(px.y, BAS - (BAS - px.y) / (1. + strack), w);
       }
-      // Vattnet: två våglängder som går åt var sitt håll, mest i sidled.
-      float dx = sin(px.y * .42 + uT * 1.7) * .9 + sin(px.y * 1.1 - uT * 2.6 + px.x * .015) * .45;
+      // Vattnet: tre våglängder som går åt olika håll, mest i sidled, plus en lång dyning.
+      // Utslaget är upp till ungefär 7 px i bilden: 2 px syntes för lite (Rickard 2026-09-23).
+      float dx = sin(px.y * .42 + uT * 1.7) * .9 + sin(px.y * 1.1 - uT * 2.6 + px.x * .015) * .45
+               + sin(px.y * .12 + px.x * .004 + uT * 1.1) * .8;
       float dy = sin(px.x * .03 + px.y * .2 + uT * 1.1) * .35;
-      kalla += vec2(dx, dy) * 1.6 * m.b;
+      kalla += vec2(dx, dy) * 3.2 * m.b;
       vec3 c = texture(uBild, kalla / uPx).rgb;
       if (m.b > .004) {
         float l = dot(c, vec3(.299, .587, .114));
         // Skimret: brus i avlånga fläckar (20 px breda, 3 px höga) som vandrar, bara på de
         // ljusaste reflexerna. En jämn sinus gav regelbundna ränder över hela vattnet.
         float skimmer = brus2(vec2(px.x * .05 + uT * .3, px.y * .35 - uT * 1.2));
-        c *= 1. + m.b * smoothstep(.35, .7, l) * (skimmer - .5) * .35;
+        c *= 1. + m.b * smoothstep(.3, .65, l) * (skimmer - .5) * .6;
       }
       if (m.r > .004) {
         vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
