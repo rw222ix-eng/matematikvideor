@@ -84,11 +84,12 @@
   /* Hela målningen ska synas, stad och galax, aldrig beskuren eller inzoomad (Rickard 2026-09-23).
      Bilden får därför exakt sitt eget format, så stor som fönstret tillåter, fäst i överkanten.
      Det som blir över på sidorna eller nedtill fylls av samma bild suddad (.dis), och den
-     skarpa bildens kanter tonas mjukt ut i den. Bredden 177.87vh = 100vh · 1672/940. */
-  .valj .dis { position: absolute; top: -40px; left: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) brightness(.42); z-index: 0; pointer-events: none; }
+     skarpa bildens kanter tonas ut i den på 24 px, och bara till 35 %: en längre och mörkare
+     övergång syntes som en mörk rand nedtill (Rickard 2026-09-23). Bredden 177.87vh = 100vh · 1672/940. */
+  .valj .dis { position: absolute; top: -40px; left: -40px; width: calc(100% + 80px); height: calc(100% + 80px); object-fit: cover; filter: blur(28px) brightness(.75); z-index: 0; pointer-events: none; }
   .valj .fond { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: min(100%, 177.87vh); width: min(100%, 177.87dvh); height: auto; aspect-ratio: 1672 / 940; z-index: 0;
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent), linear-gradient(#000 calc(100% - 72px), transparent);
-    -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent, #000 56px, #000 calc(100% - 56px), transparent), linear-gradient(#000 calc(100% - 72px), transparent);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, .35), #000 24px, #000 calc(100% - 24px), rgba(0, 0, 0, .35)), linear-gradient(#000 calc(100% - 24px), rgba(0, 0, 0, .35));
+    -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, rgba(0, 0, 0, .35), #000 24px, #000 calc(100% - 24px), rgba(0, 0, 0, .35)), linear-gradient(#000 calc(100% - 24px), rgba(0, 0, 0, .35));
     mask-composite: intersect; }
   /* Vinjetten är nedtonad till ungefär hälften (Rickard 2026-09-13, "lite ljusare" två gånger): fonden ska synas lite mer,
      men kanterna måste fortfarande mörkna så tidslinjens text går att läsa. */
