@@ -115,9 +115,10 @@
      förlängd nedåt till 1672x1300 (floden och staden fortsätter, målat i ChatGPT-projektet
      "Skapa bilder till matematikvideos"; originalet i 16:9 är orört överst och ligger i
      assets/valj-fond-original.png). Därför når den botten i alla fönster ner till formatet
-     1,29:1; i bredare fönster kapas bara den mörka förgrunden nedtill. Ingen remsa. */
-  .valj .fond { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1672 / 1300; z-index: 0;
-    -webkit-mask-image: linear-gradient(#000 calc(100% - 16px), transparent); mask-image: linear-gradient(#000 calc(100% - 16px), transparent); }
+     1,29:1; i bredare fönster kapas bara den mörka förgrunden nedtill. I ännu smalare fönster
+     blir den så hög som fönstret och kapas lika mycket på båda sidor: det får aldrig bli en
+     remsa under målningen (Rickard 2026-09-23). Bredden 128.6vh = 100vh · 1672/1300. */
+  .valj .fond { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: max(100%, 128.6vh); width: max(100%, 128.6dvh); max-width: none; height: auto; aspect-ratio: 1672 / 1300; z-index: 0; }
   /* Vinjetten är nedtonad till ungefär hälften (Rickard 2026-09-13, "lite ljusare" två gånger): fonden ska synas lite mer,
      men kanterna måste fortfarande mörkna så tidslinjens text går att läsa. */
   .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
@@ -333,7 +334,7 @@
     .intro .knapp { margin-bottom: 40px; }
     .valj { height: auto; min-height: 100vh; overflow: visible; }
     /* I porträtt går hela målningen inte att visa utan en tunn remsa; här fyller den skärmen som förut. */
-    .valj .fond { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; aspect-ratio: auto; object-fit: cover; object-position: center top; -webkit-mask-image: none; mask-image: none; }
+    .valj .fond { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; object-fit: cover; object-position: center top; -webkit-mask-image: none; mask-image: none; }
     .valj .vinjett { position: fixed; height: 100vh; }
     .valj .stjarnor { position: fixed; height: 100vh; }
     .valj .rubrik, .valj .tidslinje { position: relative; z-index: 2; }
