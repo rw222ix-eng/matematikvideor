@@ -126,7 +126,8 @@ const INTRO = [
   resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png"),
 ].find(existsSync);
 if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "curves=all='0/0 0.08/0.18 0.3/0.55 0.6/0.85 1/1',hue=s=0.75", 2);
-// Fonden bakom "Välj en film". Källbilden är rätt exponerad (medelljushet omkring 61
+// Fonden bakom "Välj en film", förlängd nedåt till 1672x1300 (originalet i 16:9 ligger i
+// assets/valj-fond-original.png). Källbilden är rätt exponerad (medelljushet omkring 61
 // i gråskala), så här räcker en mild kurva: skuggorna lyfts en aning (Rickard ville ha
 // den "lite ljusare", 2026-09-13), svärtan står kvar i noll, mättnaden som förut.
 const VALJ = resolve(HÄR, "assets", "valj-fond.png");

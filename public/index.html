@@ -108,15 +108,15 @@
   @keyframes fram { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
 
   /* ── 2. Välj en film ──────────────────────────────────── */
-  /* Bakgrunden är målningens egen färg längst ner (medel av nedersta raderna), så att det
-     som blir över under bilden ser ut som den mörka förgrunden som fortsätter. */
-  .valj { display: block; position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: #2b3134; }
+  /* Bakgrunden är målningens egen färg längst ner, för fönster som är ännu högre än målningen. */
+  .valj { display: block; position: relative; height: 100vh; height: 100dvh; overflow: hidden; background: #242829; }
   /* Målningen fyller alltid hela bredden och sitter fäst i överkanten: aldrig förstorad,
-     aldrig kapad på sidorna, så stad och galax syns hela (Rickard 2026-09-23). Är fönstret
-     bredare än 16:9 kapas en bit av den mörka förgrunden nedtill; är det högre fortsätter
-     bakgrunden i målningens nederkantsfärg, och skarven tonas på 16 px. En suddig kopia
-     som fyllnad syntes som en grå, suddig remsa och är borttagen. */
-  .valj .fond { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1672 / 940; z-index: 0;
+     aldrig kapad på sidorna, så stad och galax syns hela (Rickard 2026-09-23). Den är
+     förlängd nedåt till 1672x1300 (floden och staden fortsätter, målat i ChatGPT-projektet
+     "Skapa bilder till matematikvideos"; originalet i 16:9 är orört överst och ligger i
+     assets/valj-fond-original.png). Därför når den botten i alla fönster ner till formatet
+     1,29:1; i bredare fönster kapas bara den mörka förgrunden nedtill. Ingen remsa. */
+  .valj .fond { position: absolute; top: 0; left: 0; width: 100%; height: auto; aspect-ratio: 1672 / 1300; z-index: 0;
     -webkit-mask-image: linear-gradient(#000 calc(100% - 16px), transparent); mask-image: linear-gradient(#000 calc(100% - 16px), transparent); }
   /* Vinjetten är nedtonad till ungefär hälften (Rickard 2026-09-13, "lite ljusare" två gånger): fonden ska synas lite mer,
      men kanterna måste fortfarande mörkna så tidslinjens text går att läsa. */
@@ -391,7 +391,7 @@
 
 <!-- ── 2. Välj en film ──────────────────────────────────── -->
 <section class="vy valj" id="vy-valj">
-  <img class="fond" src="omslag/valj-fond.jpg?v=cf673fd8" alt="" loading="lazy">
+  <img class="fond" src="omslag/valj-fond.jpg?v=a16f2f4d" alt="" loading="lazy">
   <div class="vinjett"></div>
   <canvas class="stjarnor" id="stjarnor" aria-hidden="true"></canvas>
   <!-- Ingen logotyp här: den ledde bara tillbaka till introt, och där finns inget att göra
