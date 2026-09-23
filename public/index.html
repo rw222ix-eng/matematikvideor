@@ -554,7 +554,8 @@
   // ändrar pixlarna själva (Rickard 2026-09-23). En mask per målning, uppmätt i förväg:
   //   R = stjärna eller ljus (mjuk kant), G = dess fas, B = vatten.
   //   introt:    omslag/intro-glimt.png ur verktyg/hitta-intro.py (stjärnorna i fönstret)
-  //   filmvalet: omslag/valj-glimt.png ur verktyg/hitta-valj.py (stjärnor, stadens ljus, floden)
+  //   filmvalet: omslag/valj-glimt.png ur verktyg/hitta-valj.py (stjärnor, stadens ljus, floden),
+  //              och omslag/valj-moln.png (molnen, i en fjärdedels storlek)
   // - Stjärnor och ljus glimrar: överskottet över omgivningen (en suddig mipnivå) skalas
   //   mellan 25 och 170 procent, var och en i sin egen takt, och i toppen sprids ljuset ut i
   //   ett litet sken (Rickard ville ha det tydligare, 2026-09-23).
@@ -574,8 +575,8 @@
     }`;
   const YTA = `#version 300 es
     precision highp float;
-    uniform sampler2D uBild, uMask;
-    uniform float uT, uLaga;
+    uniform sampler2D uBild, uMask, uMoln;
+    uniform float uT, uLaga, uHarMoln;
     uniform vec2 uPx;
     in vec2 vUv;
     out vec4 ut;
@@ -601,6 +602,16 @@
         float strack = (brus(uT * 2.2 + 5.) - .5) * .16 * smoothstep(0., .15, hojd);
         kalla.x -= w * hojd * hojd * sving * 2.4;
         kalla.y = mix(px.y, BAS - (BAS - px.y) / (1. + strack), w);
+      }
+      // Molnen (bara filmvalet): flyter långsamt i ett mjukt flöde, ungefär ett halvt varv i
+      // minuten, och driver lite åt sidan. Masken tonar ut mot galaxen, månen och husen.
+      if (uHarMoln > .5) {
+        float moln = texture(uMoln, vUv).r;
+        if (moln > .004) {
+          vec2 q = px * .0035;
+          vec2 flode = vec2(brus2(q + vec2(uT * .035, 0.)) - .5, brus2(q + vec2(7.3, uT * .03)) - .5);
+          kalla += (flode * 26. + vec2(sin(uT * .09) * 6., 0.)) * moln;
+        }
       }
       // Vattnet: tre våglängder som går åt olika håll, mest i sidled, plus en lång dyning.
       // Utslaget är upp till ungefär 7 px i bilden: 2 px syntes för lite (Rickard 2026-09-23).
@@ -634,7 +645,7 @@
       }
       ut = vec4(c, 1.);
     }`;
-  const levandeMalning = ({ vy, duk, img, mask, laga = false, fastTopp = false }) => {
+  const levandeMalning = ({ vy, duk, img, mask, moln = null, laga = false, fastTopp = false }) => {
     const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
     if (!gl) { duk.remove(); return; }
     const kompilera = (typ, kod) => {
@@ -684,7 +695,7 @@
       if (mip) gl.generateMipmap(gl.TEXTURE_2D);
     };
 
-    Promise.all([ladda(img.currentSrc || img.src), ladda(mask)]).then(([bild, maskBild]) => {
+    Promise.all([ladda(img.currentSrc || img.src), ladda(mask), moln ? ladda(moln) : null]).then(([bild, maskBild, molnBild]) => {
       prog = gl.createProgram();
       gl.attachShader(prog, kompilera(gl.VERTEX_SHADER, HORN));
       gl.attachShader(prog, kompilera(gl.FRAGMENT_SHADER, YTA));
@@ -696,7 +707,9 @@
       const a = gl.getAttribLocation(prog, "a"); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
       BW = bild.naturalWidth; BH = bild.naturalHeight;
       textur(0, bild, true, false); textur(1, maskBild, false, true);
+      if (molnBild) textur(2, molnBild, false, true);
       gl.uniform1i(gl.getUniformLocation(prog, "uBild"), 0); gl.uniform1i(gl.getUniformLocation(prog, "uMask"), 1);
+      gl.uniform1i(gl.getUniformLocation(prog, "uMoln"), 2); gl.uniform1f(gl.getUniformLocation(prog, "uHarMoln"), molnBild ? 1 : 0);
       gl.uniform2f(gl.getUniformLocation(prog, "uPx"), BW, BH);
       gl.uniform1f(gl.getUniformLocation(prog, "uLaga"), laga ? 1 : 0);
       uT = gl.getUniformLocation(prog, "uT"); uSkala = gl.getUniformLocation(prog, "uSkala"); uForskj = gl.getUniformLocation(prog, "uForskj");
@@ -709,7 +722,7 @@
     addEventListener("resize", () => { if (redo) mat(); });
   };
   levandeMalning({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), mask: "omslag/intro-glimt.png?v=4fd9ee1e", laga: true });
-  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=c0d9e14d", fastTopp: true });
+  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=c0d9e14d", moln: "omslag/valj-moln.png?v=16c690a6", fastTopp: true });
 
   // ── Tidslinjen ────────────────────────────────────────
   const spar = $("spar"), tidslinje = $("tidslinje");

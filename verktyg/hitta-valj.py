@@ -21,6 +21,9 @@ fargkanalerna nar webblasaren forbehandlar bilden):
   R = hur mycket pixeln hor till en stjarna eller ett ljus, 0..255 med mjuk kant
   G = ljusets fas, samma for alla dess pixlar (takten raknas ur fasen i shadern)
   B = hur mycket pixeln ar vatten, 0..255 med mjuk kant
+Och en mask for molnen, public/omslag/valj-moln.png, i en fjardedels storlek (molnen ar
+stora och mjuka, och skalas upp linjart i shadern):
+  L = hur mycket pixeln ar moln och far flyta, 0..255
 """
 import sys
 from pathlib import Path
@@ -32,6 +35,7 @@ from scipy import ndimage
 HÄR = Path(__file__).resolve().parent.parent
 KÄLLA = HÄR / "assets" / "valj-fond.png"
 MÅL = HÄR / "public" / "omslag" / "valj-glimt.png"
+MOLN_MÅL = HÄR / "public" / "omslag" / "valj-moln.png"
 
 # Linjen mellan himmel och stad, i bildens bredd (0.66 av den ursprungliga 16:9-hojden).
 SKYLINE_AV_BREDD = 0.3714
@@ -46,6 +50,16 @@ F_MÖRK = 80              # ett fonster sitter i en mork vagg
 F_MAX_DIAMETER = 9
 F_MAX_ANTAL = 320
 VÄXT = 2
+
+# Molnen: ljusa, mjuka partier pa himlen. Galaxen och manen ar ocksa ljusa och far inte
+# flyta med, och inte heller husen: molnen forskjuts upp till ~15 px, sa masken tonas ut
+# pa 30 px fran dem. Galaxen ar en sned ellips, uppmatt i 1672x1300.
+GALAX = (650, 185, 265, 90, 39)        # mitt x, mitt y, halvaxlar, vinkel i grader
+GALAX_LITEN = (560, 285, 30)          # den lilla galaxen nedanfor
+MANE = (1470, 150, 70)
+MOLN_TRÖSKEL = (72, 110)              # ljushet i en suddad kopia: himmel ~45, moln 90-180
+HUS_MÖRK = 38                         # husen i staden ar morkare an sa
+MOLN_FRI = 30                         # sa langt fran galax, mane och hus borjar molnen rora sig
 
 # Flodens kontur i 1672x1300, uppmatt i bilden.
 FLOD = [(0, 893), (540, 893), (590, 950), (660, 1010), (705, 1080), (705, 1135),
@@ -107,6 +121,29 @@ def main():
     vatten = inom & (median > 28) & (ndimage.median_filter(bild[..., 2] - bild[..., 0], size=RUTA) > 3)
     vatten = ndimage.binary_opening(vatten, iterations=2)
     vatten = np.clip(ndimage.gaussian_filter(vatten.astype(np.float32), 5) * 1.3, 0, 1)
+
+    # Molnen.
+    sx, sy = W / 1672, H / 1300
+    sudd = ndimage.gaussian_filter(lum, 4)
+    a, b = MOLN_TRÖSKEL
+    moln = np.clip((sudd - a) / (b - a), 0, 1)
+    fri = np.ones((H, W), bool)
+    yy, xx = np.mgrid[0:H, 0:W]
+    gx, gy, ga, gb, gv = GALAX
+    v = np.radians(gv)
+    dx, dy = (xx - gx * sx), (yy - gy * sy)
+    u = (dx * np.cos(v) + dy * np.sin(v)) / (ga * sx)
+    w = (-dx * np.sin(v) + dy * np.cos(v)) / (gb * sy)
+    fri &= u * u + w * w > 1
+    for cx, cy, r in (GALAX_LITEN, MANE):
+        fri &= (xx - cx * sx) ** 2 + (yy - cy * sy) ** 2 > (r * sx) ** 2
+    hus = (sudd < HUS_MÖRK) & (yy > linje - 40)
+    fri &= ~hus
+    avstånd = ndimage.distance_transform_edt(fri)
+    moln *= np.clip(avstånd / MOLN_FRI, 0, 1)
+    moln[yy > linje + 160] = 0
+    moln = ndimage.gaussian_filter(moln, 6)
+    Image.fromarray(np.round(moln * 255).astype(np.uint8), "L").resize((W // 4, H // 4), Image.BOX).save(MOLN_MÅL, optimize=True)
 
     ut = np.zeros((H, W, 3), np.uint8)
     ut[..., 0] = np.round(vikt * 255)

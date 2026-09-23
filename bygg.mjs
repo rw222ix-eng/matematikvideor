@@ -158,7 +158,7 @@ for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"
   const indexFil = join(HÄR, "public", "index.html");
   let html = readFileSync(indexFil, "utf8");
   const fore = html;
-  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "valj-glimt.png", "logo.jpg"]) {
+  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "valj-glimt.png", "valj-moln.png", "logo.jpg"]) {
     const fil = join(HÄR, "public", "omslag", namn);
     if (!existsSync(fil)) continue;
     const v = filhash(fil);
