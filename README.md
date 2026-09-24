@@ -5,7 +5,15 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
 
 - `register.json` — en post per video: titel, `ar` (året berättelsen utspelar sig; tidslinjen
   sorteras kronologiskt efter det), kurs, moment, begrepp, beskrivning, sökväg till projektet, `youtube` (video-id, tomt tills filmen är uppladdad), `omslag`. Valfritt `fil`
-  (direktlänk till mp4 i full kvalitet — spelas då i stället för YouTube) och `textning` (vtt).
+  (direktlänk till mp4 i full kvalitet — spelas då i stället för YouTube). Lägg också in
+  `youtube` när det finns: spärrar skolans nät GitHub byter spelaren till YouTube själv.
+- `kapitel.json` — kapitlen per film, `[sekund, rubrik]`, skrivna för hand.
+- `dintur.json` — uppgiften "Din tur" som varje film slutar med. Per film: `fraga`, `delar`
+  (en eller flera frågor med `typ` `tal`, `ekvation`, `uttryck`, `olikhet` eller `intervall`,
+  `svar`, `fel` med vanliga fel och förklaringen till dem, `tangenter` för telefonens knappar),
+  `ledtrad` (`t` = kapitlet att se om) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
+  jämförs genom att räknas ut i några punkter, så 5ab(3b + 2a) räknas som rätt. `utanfor` kräver
+  att så mycket som möjligt är utbrutet, `prova` visar elevens formel för n = 1, 2, 3 …
 - `node bygg.mjs` — bygger `public/videor.json` ur projektens `assets/tal-tider.json` (replikerna
   med uppmätta tider) och kopierar omslagen till `public/omslag/` (720 px jpeg; finns
   `omslag-utan-titel.png` bredvid omslaget blir den `<id>-ren.jpg` och används på sidan, eftersom
@@ -16,20 +24,28 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   och `valj-glimt.png`: stjärnor, stadens ljus och floden. Båda målningarna ritas i WebGL2 och shadern
   ändrar deras egna pixlar: stjärnor och ljus glimrar, vattnet rör sig, introts låga fladdrar. Utan
   WebGL2 visas bilderna stilla. Skripten behöver numpy, scipy och Pillow; sätt `VIDEOTEK_PYTHON`
-  eller lägg en venv i `verktyg/.venv`. Utan python behålls de gamla maskerna.
+  eller lägg en venv i `verktyg/.venv`. Utan python behålls de gamla maskerna. Sist skriver
+  `verktyg/filmsidor.mjs` en sida per film i `public/film/<id>/` med filmens titel och bild, så att
+  en länk i Classroom får förhandsvisning. Sidan skickar vidare till `#<id>&t=<sekund>`.
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
-  förstoringsglaset (eller tangenten `/`). Adresser: `#filmer`, `#<id>`, `#<id>&t=<sekund>`.
-  Typsnitt från Google Fonts (Jost + Pinyon Script); en accentfärg (`--accent`).
+  förstoringsglaset (eller tangenten `/`). Adresser: `#filmer`, `#<id>`, `#<id>&t=<sekund>`, och
+  `film/<id>/?t=<sekund>` för länkar som delas. Typsnitt från Google Fonts (Jost + Cormorant
+  Garamond); en accentfärg (`--accent`).
+- Framsteg sparas i elevens webbläsare (`localStorage`, nyckeln `framsteg`): var eleven slutade,
+  om filmen är sedd och om Din tur är löst. Korten i filmvalet visar det, och filmen fortsätter där
+  eleven slutade.
 - Filmen spelas från egen fil (`fil` i registret): en 1080p-mp4 som ligger som GitHub-release i
   det här repot (`gh release create <tag>` + `gh release upload <tag> <mp4>`, adress
   `https://github.com/rw222ix-eng/matematikvideor/releases/download/<tag>/<fil>`; stöder
   delvisa hämtningar så hopp i filmen fungerar). Kodning ur 4K-exporten:
   `ffmpeg -i <2160p.mp4> -vf scale=1920:1080 -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -movflags +faststart <1080p.mp4>`
-  (Kepler: 137 MB). Utan `fil` används YouTube (`youtube`-id) i stället.
+  (filerna är 50–75 MB). Utan `fil` används YouTube (`youtube`-id) i stället.
 - Spelaren är sidans egen: `<video>` med egna kontroller; med YouTube körs inbäddningen med `controls=0` och styrs via IFrame API
-  (spela/pausa, tidslinje, ljud, helskärm, tangenterna mellanslag/k, ←/→ 5 s, j/l 10 s, f, c, m).
+  (spela/pausa, tidslinje, hastighet, kopiera länk hit, ljud, helskärm, tangenterna mellanslag/k,
+  ←/→ 5 s, j/l 10 s, < och > hastighet, f, c, m). Tangenterna gäller när spelaren har fokus eller
+  inget annat har det, så mellanslag på en knapp trycker på knappen.
   Undertexterna ritas av sidan ur projektets `assets/tal.srt` (fältet `undertext` i videor.json,
   Charter som i filmen); YouTubes egna textremsor stängs av. Valet textning på/av sparas i webbläsaren.
 

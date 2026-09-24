@@ -143,6 +143,85 @@
      "rubrik": "Din tur: tre gånger så stort"
     }
    ],
+   "dinTur": {
+    "fraga": "Tänk dig att oraklet i stället hade sagt att altaret skulle bli tre gånger så stort. Då måste sidan vara ett tal som upphöjt till 3 blir 3.",
+    "delar": [
+     {
+      "fraga": "Skriv ekvationen för sidan x.",
+      "typ": "ekvation",
+      "svar": "x^3 = 3",
+      "exempel": "t.ex. x^3 = 2",
+      "tangenter": [
+       "^",
+       "³",
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "x^3 = 2",
+        "text": "Det är ekvationen för dubbelt så stort. Nu ska altaret bli tre gånger så stort."
+       },
+       {
+        "svar": "3x = 3",
+        "text": "3x betyder 3 gånger x. Sidan ska upphöjd till 3 bli 3, så det är x³ som ska stå till vänster."
+       },
+       {
+        "svar": "x^2 = 3",
+        "text": "Altaret är en kub, så sidan ska upphöjd till 3, inte till 2."
+       }
+      ]
+     },
+     {
+      "fraga": "Lös den på räknaren. Hur lång blir sidan, med två decimaler?",
+      "typ": "tal",
+      "svar": 1.44225,
+      "tolerans": 0.006,
+      "enhet": "meter",
+      "exempel": "t.ex. 1,26",
+      "tangenter": [
+       "^",
+       "(",
+       ")",
+       "/"
+      ],
+      "nara": {
+       "tolerans": 0.05,
+       "text": "Nästan. Svara med två decimaler, som 1,26 i filmen."
+      },
+      "fel": [
+       {
+        "svar": "1.26",
+        "tolerans": 0.006,
+        "text": "1,26 var sidan när altaret skulle bli dubbelt så stort. Nu står det 3 på höger sida."
+       },
+       {
+        "svar": "1.732",
+        "tolerans": 0.006,
+        "text": "Det är kvadratroten ur 3. Sidan ska upphöjd till 3 bli 3, så det är tredje roten du behöver."
+       },
+       {
+        "svar": "1",
+        "text": "1 upphöjt till 3 är 1, inte 3. Höj båda sidor till en tredjedel."
+       },
+       {
+        "svar": "27",
+        "text": "Du har räknat 3 upphöjt till 3. Gå åt andra hållet och höj till en tredjedel."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "t": 179,
+     "text": "Gör som med x³ = 2 i filmen. Höj båda sidor till en tredjedel."
+    },
+    "losning": [
+     "Altaret ska bli 3 gånger så stort, så x³ = 3.",
+     "Höj båda sidor till en tredjedel, (x³)^(1/3) = 3^(1/3).",
+     "3 · 1/3 = 1, så kvar till vänster står bara x. Alltså x = 3^(1/3).",
+     "Räknaren ger 3^(1/3) ≈ 1,44.",
+     "Sidan blir ungefär 1,44 meter. Kontroll: 1,44 · 1,44 · 1,44 ≈ 2,99."
+    ]
+   },
    "undertext": [
     {
      "s": 0.1,
@@ -703,6 +782,67 @@
      "rubrik": "Din tur: ett skepp till"
     }
    ],
+   "dinTur": {
+    "fraga": "Ett skepp till ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter.",
+    "delar": [
+     {
+      "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder är skeppet inom räckhåll?",
+      "typ": "olikhet",
+      "variabel": "t",
+      "svar": "t >= 40",
+      "ocksaTal": 40,
+      "enhet": "sekunder",
+      "exempel": "t.ex. t ≥ 10",
+      "tangenter": [
+       "≤",
+       "≥",
+       "<",
+       ">"
+      ],
+      "fel": [
+       {
+        "svar": "t <= 40",
+        "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett minustal?"
+       },
+       {
+        "svar": "t > 40",
+        "text": "Nästan. Kastmaskinerna når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med."
+       },
+       {
+        "svar": "t >= -40",
+        "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal."
+       },
+       {
+        "svar": "t <= -40",
+        "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal."
+       },
+       {
+        "svar": "-40",
+        "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal."
+       },
+       {
+        "svar": "t >= 120",
+        "text": "Dra 400 från båda sidor först. Då står det −5t ≤ −200."
+       },
+       {
+        "svar": "120",
+        "text": "Dra 400 från båda sidor först. Då står det −5t ≤ −200."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "t": 339,
+     "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet."
+    },
+    "losning": [
+     "400 − 5t ≤ 200",
+     "Dra 400 från båda sidor. Då blir det −5t ≤ −200.",
+     "Dela med −5. Det är ett minustal, så tecknet vänder, och t ≥ 40.",
+     "Skeppet är inom räckhåll efter 40 sekunder.",
+     "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinerna når."
+    ]
+   },
    "undertext": [
     {
      "s": 0.14,
@@ -1268,6 +1408,42 @@
      "rubrik": "Din tur: bryt ut så mycket som möjligt"
     }
    ],
+   "dinTur": {
+    "fraga": "Van Roomens uttryck fyllde en hel sida, men det här får plats på en rad.",
+    "delar": [
+     {
+      "fraga": "Bryt ut så mycket som möjligt ur 10a²b + 15ab².",
+      "typ": "uttryck",
+      "svar": "10a^2b + 15ab^2",
+      "visa": "10a²b + 15ab²",
+      "utanfor": "5ab",
+      "exempel": "t.ex. 3xy(2x + 3y)",
+      "tangenter": [
+       "(",
+       ")",
+       "²"
+      ],
+      "fel": [
+       {
+        "svar": "25a^3b^3",
+        "text": "Termerna går inte att lägga ihop, för de har olika bokstäver i kvadrat. Bryt ut det som är gemensamt i stället."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "t": 268,
+     "text": "Vilket är det största tal som både 10 och 15 går att dela med? Vilka bokstäver finns i båda termerna?"
+    },
+    "losning": [
+     "10 och 15 går båda att dela med 5.",
+     "a finns i båda termerna, och b finns i båda.",
+     "Det största som är gemensamt är alltså 5ab.",
+     "Kvar i den första termen blir 2a, och kvar i den andra blir 3b.",
+     "10a²b + 15ab² = 5ab(2a + 3b)",
+     "Kontroll: 5ab · 2a = 10a²b och 5ab · 3b = 15ab²."
+    ]
+   },
    "undertext": [
     {
      "s": 0.2,
@@ -1836,6 +2012,57 @@
      "rubrik": "Din tur: en ny ränna"
     }
    ],
+   "dinTur": {
+    "fraga": "Tänk dig en annan ränna, där märkena står vid 5, 8, 13 och 20 steg.",
+    "delar": [
+     {
+      "fraga": "Skriv formeln för märke nummer n.",
+      "typ": "uttryck",
+      "svar": "n^2 + 4",
+      "variabler": [
+       "n"
+      ],
+      "prova": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "exempel": "t.ex. n^2 + 1",
+      "tangenter": [
+       "^",
+       "²",
+       "(",
+       ")"
+      ],
+      "fel": [
+       {
+        "svar": "n^2",
+        "text": "n² ger 1, 4, 9 och 16. Hur mycket längre bort ligger varje märke?"
+       },
+       {
+        "svar": "3n + 2",
+        "text": "Det ger 5, 8, 11 och 14. Skillnaderna i rännan växer, 3, 5 och 7, så kvadrattalen är med."
+       },
+       {
+        "svar": "n^2 + 3",
+        "text": "Pröva med märke nummer 1. 1 + 3 är 4, men märket står vid 5."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "t": 161,
+     "text": "Skriv kvadrattalen 1, 4, 9 och 16 under märkena och räkna ut skillnaden."
+    },
+    "losning": [
+     "Märkena: 5, 8, 13, 20.",
+     "Kvadrattalen: 1, 4, 9, 16.",
+     "Varje märke ligger 4 steg längre bort än sitt kvadrattal.",
+     "Formeln blir n² + 4.",
+     "Kontroll med nummer 4: 4² + 4 = 16 + 4 = 20."
+    ]
+   },
    "undertext": [
     {
      "s": 0.24,
@@ -2398,6 +2625,61 @@
      "rubrik": "Din tur: Neptunus"
     }
    ],
+   "dinTur": {
+    "fraga": "Tänk dig en planet som behöver 125 år för ett varv runt solen.",
+    "delar": [
+     {
+      "fraga": "Hur många jordavstånd från solen ligger den?",
+      "typ": "tal",
+      "svar": 25,
+      "tolerans": 0.01,
+      "enhet": "jordavstånd",
+      "exempel": "t.ex. 4",
+      "tangenter": [
+       "^",
+       "(",
+       ")",
+       "/"
+      ],
+      "fel": [
+       {
+        "svar": "5",
+        "text": "5 är tredje roten ur 125. Talet över bråkstrecket säger att du också ska höja upp till 2."
+       },
+       {
+        "svar": "125^(3/2)",
+        "tolerans": 1,
+        "text": "Du har vänt på bråket. Avståndet är T upphöjt till två tredjedelar, inte tre halva."
+       },
+       {
+        "svar": "125*2/3",
+        "tolerans": 0.05,
+        "text": "Två tredjedelar i exponenten betyder inte att du ska gånga med 2/3. Ta tredje roten ur 125 och höj sedan upp till 2."
+       },
+       {
+        "svar": "125^2",
+        "text": "Du har höjt upp till 2 men glömt roten. Talet under bråkstrecket säger att du också ska ta tredje roten."
+       },
+       {
+        "svar": "125^(1/2)",
+        "tolerans": 0.01,
+        "text": "Det är kvadratroten ur 125. Talet under bråkstrecket är 3, så det är tredje roten."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "t": 252,
+     "text": "Avståndet är a = T^(2/3). Talet under bråkstrecket säger vilken rot du tar, och talet över vad du höjer upp till."
+    },
+    "losning": [
+     "Keplers lag ger a = T^(2/3), och här är T = 125.",
+     "a = 125^(2/3)",
+     "Tredje roten ur 125 är 5, för 5 · 5 · 5 = 125.",
+     "5 upphöjt till 2 är 25.",
+     "Planeten ligger 25 jordavstånd från solen. Samma räkning för Neptunus, 165^(2/3), ger ungefär 30."
+    ]
+   },
    "undertext": [
     {
      "s": 0.16,
@@ -2997,6 +3279,51 @@
      "rubrik": "Din tur: ett fjärde pris"
     }
    ],
+   "dinTur": {
+    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer men högst 150.",
+    "delar": [
+     {
+      "fraga": "Skriv intervallet med hakparenteser.",
+      "typ": "intervall",
+      "svar": "]110, 150]",
+      "exempel": "t.ex. [0, 55]",
+      "tangenter": [
+       "[",
+       "]",
+       "∞"
+      ],
+      "fel": [
+       {
+        "svar": "[110, 150]",
+        "text": "110 ska inte räknas med, för felet ska vara större än 110. Vänd parentesen vid 110 utåt."
+       },
+       {
+        "svar": "]110, 150[",
+        "text": "150 ska räknas med, för felet får vara högst 150. Vänd parentesen vid 150 inåt."
+       },
+       {
+        "svar": "[110, 150[",
+        "text": "Båda parenteserna är vända åt fel håll. 110 räknas inte med, men 150 gör det."
+       },
+       {
+        "svar": "]110, ∞[",
+        "text": "Det var det tredje priset utan slut. Nu finns ett slut, högst 150 kilometer."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "t": 160,
+     "text": "Räknas talet med vänds parentesen inåt, mot talet. Räknas det inte med vänds den utåt."
+    },
+    "losning": [
+     "Större än 110 betyder att 110 inte räknas med, så parentesen vid 110 vänds utåt.",
+     "Högst 150 betyder att 150 räknas med, så parentesen vid 150 vänds inåt.",
+     "Intervallet är ]110, 150].",
+     "Som olikhet blir det 110 < x ≤ 150.",
+     "På tallinjen blir det en ring vid 110 och en fylld prick vid 150."
+    ]
+   },
    "undertext": [
     {
      "s": 0.18,

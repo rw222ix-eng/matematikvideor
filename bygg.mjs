@@ -18,12 +18,16 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { skrivFilmsidor } from "./verktyg/filmsidor.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
 // Kapitlen: en kort rubrik med starttid per avsnitt, skrivna för hand utifrån vad som sägs
 // (kapitel.json, id → [[sekund, rubrik], ...]). Tiderna är replikernas egna starttider.
 const kapitelFil = existsSync(join(HÄR, "kapitel.json")) ? JSON.parse(readFileSync(join(HÄR, "kapitel.json"), "utf8")) : {};
+// Uppgiften "Din tur" som varje film slutar med, med svar, vanliga fel, ledtråd och lösning
+// (dintur.json, id → { fraga, delar, ledtrad, losning }). Sidan rättar svaret i webbläsaren.
+const dinturFil = existsSync(join(HÄR, "dintur.json")) ? JSON.parse(readFileSync(join(HÄR, "dintur.json"), "utf8")) : {};
 mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
@@ -121,7 +125,7 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   const bakaHog = (ut, bredd, kvalitet) => { bakaBild(hog, join(HÄR, "public", ut), bredd, "", kvalitet); return medVersion(ut); };
   const omslagRen = existsSync(hog) ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
   const omslagStor = existsSync(hog) ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel: (kapitelFil[v.id] || []).map(([t, rubrik]) => ({ t, rubrik })), undertext };
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel: (kapitelFil[v.id] || []).map(([t, rubrik]) => ({ t, rubrik })), dinTur: dinturFil[v.id] || null, undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med
@@ -179,3 +183,4 @@ for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"
 
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);
+skrivFilmsidor(videor, join(HÄR, "public"));
