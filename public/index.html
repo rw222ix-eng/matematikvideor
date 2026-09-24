@@ -57,7 +57,6 @@
   .logo { display: inline-flex; align-items: center; opacity: .95; transition: opacity .5s; }
   .logo:hover { opacity: 1; }
   .logo img { height: 64px; width: 64px; display: block; border-radius: 50%; box-shadow: 0 0 0 1px var(--linje2), 0 12px 30px -10px rgba(0, 0, 0, .9); }
-  .intro .logo img { height: 92px; width: 92px; }
   .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
   .ikon:hover { color: var(--ben); }
   .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
@@ -107,11 +106,6 @@
       linear-gradient(90deg, rgba(23, 20, 20, .86) 0%, rgba(23, 20, 20, .6) 36%, rgba(23, 20, 20, 0) 60%),
       linear-gradient(rgba(23, 20, 20, .4), rgba(23, 20, 20, 0) 26%, rgba(23, 20, 20, 0) 72%, rgba(23, 20, 20, .6)); }
   .intro .topp { padding: 32px clamp(24px, 3.9vw, 56px); }
-  .intro .logo { gap: 16px; }
-  .intro .logo img { height: 56px; width: 56px; }
-  .ordmarke { display: flex; flex-direction: column; gap: 2px; }
-  .ordmarke .namn { font: 500 12px/1.4 var(--sans); letter-spacing: .34em; text-transform: uppercase; color: var(--ben); }
-  .ordmarke .med { font: italic 500 19px/1.1 var(--skrift); color: var(--ben2); }
   .intro .mitt { position: relative; z-index: 2; grid-row: 2; max-width: 640px; display: flex; flex-direction: column; align-items: flex-start; }
   .intro .ingress { font: 300 clamp(16px, 1.6vw, 19px)/1.8 var(--sans); color: #D6CFC1; margin: clamp(18px, 3.8vh, 34px) 0 0; max-width: 500px; }
   .intro .knapp { position: relative; z-index: 2; margin-top: clamp(24px, 4.9vh, 44px); display: inline-flex; align-items: center; gap: 16px; min-height: 48px; font: 400 15px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
@@ -421,10 +415,7 @@
     .topp { padding: 22px 20px; }
     .valj .topp { padding-top: 22px; }
     .logo img { height: 48px; width: 48px; }
-    .intro .logo img { height: 48px; width: 48px; }
     .intro .topp { padding: 22px 16px 22px 24px; }
-    .ordmarke .namn { font-size: 11px; letter-spacing: .28em; }
-    .ordmarke .med { font-size: 17px; }
     .intro .skrift { font-size: clamp(44px, 13vw, 72px); }
     /* Nedtill i porträtt: målningens ljus ligger bakom texten, så slöjan täcker hela bredden. */
     .intro .vinjett { background:
@@ -561,10 +552,6 @@
   <canvas class="levande" id="levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
   <header class="topp fram">
-    <a class="logo" href="#" aria-label="Matematikvideor med Rickard">
-      <img src="omslag/logo.jpg?v=0ff4abc0" alt="" width="320" height="320">
-      <span class="ordmarke" aria-hidden="true"><span class="namn">Matematikvideor</span><span class="med">med Rickard</span></span>
-    </a>
     <div class="hoger">
       <button class="ikon sok-oppna tips-under" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
