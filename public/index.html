@@ -248,20 +248,22 @@
      flikar under "Välj en film" byter vad som hänger på linan: berättelserna i årsordning eller
      formelbladets delar 1–5. Guldplattan glider till den valda fliken (fjädrar lite). Flikarna
      syns först när det finns en formelbladsfilm (.har-flikar); utan dem ser filmvalet ut som förut.
-     Med flikarna flyttas rubrik, pil och lina ner 26 px; pilens text slutar som förut 37 px ner
+     Med flikarna flyttas pil och lina ner 30 px; pilens text slutar som förut 37 px ner
      i tidslinjen, så kortens minsta upphängning (72 px) gäller fortfarande. */
-  .valj .flikar { position: absolute; top: 122px; left: 50%; transform: translateX(-50%); z-index: 4; display: none; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 20, .66); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .valj .flikar { position: absolute; top: 62px; left: 50%; transform: translateX(-50%); z-index: 4; display: none; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 20, .66); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
   .valj.har-flikar .flikar { display: grid; }
-  .valj.har-flikar .rubrik { top: 90px; }
-  .valj.har-flikar .hint { top: 172px; }
-  .valj.har-flikar .tidslinje { top: 176px; }
+  /* Flikarna överst, "Välj en film" under dem och sedan pilen (Rickard 2026-09-25: rubriken ska stå
+     under flikarna, och pilen låg 2 px under flikarna, alldeles för nära). */
+  .valj.har-flikar .rubrik { top: 134px; }
+  .valj.har-flikar .hint { top: 176px; }
+  .valj.har-flikar .tidslinje { top: 180px; }
   /* Låga fönster (en laptop med webbläsarens verktygsrader): allt ovanför linan 12 px högre upp, så
      att kort, lina och text ryms ner till 610 px höjd. */
   @media (min-width: 701px) and (max-height: 660px) {
-    .valj.har-flikar .rubrik { top: 80px; }
-    .valj.har-flikar .flikar { top: 110px; }
-    .valj.har-flikar .hint { top: 160px; }
-    .valj.har-flikar .tidslinje { top: 164px; }
+    .valj.har-flikar .flikar { top: 54px; }
+    .valj.har-flikar .rubrik { top: 118px; }
+    .valj.har-flikar .hint { top: 162px; }
+    .valj.har-flikar .tidslinje { top: 166px; }
   }
   .flikar .platta { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--accent); box-shadow: 0 0 20px rgba(242, 197, 114, .35); transition: transform .5s var(--fjader); }
   .flikar[data-hylla="formelbladet"] .platta { transform: translateX(100%); }
@@ -695,7 +697,12 @@
     .post.kommer.del { display: flex; margin-bottom: 40px; }
     .post.kommer.del .ram { display: none; }
     /* Flikarna följer med överst när listan rullas, så man kan byta var man än är. */
-    .valj .flikar { position: sticky; top: 12px; left: auto; transform: none; width: max-content; margin: 2px auto 0; z-index: 6; }
+    /* Avståndet ovanför flikarna är vyns padding, inte flikarnas marginal: en marginal slogs ihop med
+       vyns och sköt ner hela vyn, också förstoringsglaset. Linans förskjutning är densamma som utan flikar. */
+    .valj.har-flikar { padding-top: 96px; }
+    .valj .flikar { position: sticky; top: 12px; left: auto; transform: none; width: max-content; margin: 0 auto; z-index: 6; }
+    .valj.har-flikar .rubrik { padding-top: 22px; }
+    .valj.har-flikar .tidslinje { top: 150px; }
     .flikar button { padding: 0 16px; letter-spacing: .16em; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
@@ -952,13 +959,13 @@
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
   </header>
-  <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
-  <!-- Flikarna: berättelserna eller formelbladets delar på linan. Syns när en formelbladsfilm finns. -->
+  <!-- Flikarna överst, "Välj en film" under dem (Rickard 2026-09-25): berättelserna eller formelbladets delar på linan. Syns när en formelbladsfilm finns. -->
   <div class="flikar" id="flikar" role="tablist" aria-label="Vilka filmer" data-hylla="berattelser">
     <span class="platta" aria-hidden="true"></span>
     <button type="button" role="tab" data-hylla="berattelser" aria-selected="true" aria-controls="tidslinje">Berättelser</button>
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
   </div>
+  <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
   <div class="hint" id="hint" aria-hidden="true"><svg viewBox="0 0 64 12"><path d="M1 6 H63 M6 1 L1 6 L6 11 M58 1 L63 6 L58 11"/></svg><span>Scrolla eller dra i sidled</span></div>
 </section>
