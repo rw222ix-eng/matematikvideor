@@ -3115,8 +3115,16 @@
     const aktivVyEl = () => document.querySelector(".vy.aktiv") || document;
     // Newton står på sidans nederkant, nära det han pratar om: vid högerkanten av små mål och i
     // högra hörnet av stora. Bubblan hamnar på den sida där det finns mest plats.
-    function plats(r) {
+    function plats(r, iSpelaren = false) {
       const [b, h] = figur(), vw = innerWidth, vh = innerHeight;
+      // Nere vid golvet i spelaren (lågt fönster, se spelarTopp) ställer han sig bredvid knappen med bubblan
+      // åt andra hållet, för fartmenyn och volymreglaget öppnas uppåt och ska inte hamna under bubblan.
+      // Hela spelaren och linjen är breda: då står han vid fönsterkanten och täcker så lite som möjligt.
+      if (r && iSpelaren && r.bottom > vh - h - 14) {
+        if (r.width > vw * 0.55) return { x: vw - b - 10, y: vh - h - 4, hoger: false };
+        const vanster = r.left + r.width / 2 > vw / 2;   // knappen i högra halvan: han står till vänster om den
+        return { x: Math.max(10, Math.min(vw - b - 10, vanster ? r.left - b - 14 : r.right + 14)), y: vh - h - 4, hoger: !vanster };
+      }
       let x = r ? (r.width > vw * 0.55 ? r.right - b - 12 : r.right - b * 0.35) : vw - b - 28;
       // Ligger målet nere vid golvet (t.ex. frågetecknet) ställer han sig bredvid det, inte framför.
       if (r && r.width <= vw * 0.55 && r.bottom > vh - h - 14) x = r.right + 14 <= vw - b - 10 ? r.right + 14 : r.left - b - 14;
@@ -3126,8 +3134,9 @@
       if ((x + b / 2 < vw * 0.5 ? vw - x - b : x) - 14 < 220) x = x + b / 2 < vw * 0.5 ? 10 : vw - b - 10;
       return { x, y: vh - h - 4, hoger: x + b / 2 < vw * 0.5 };
     }
-    // Hur högt upp bubblan ungefär når med en viss text (samma uppskattning som i tillMal).
-    const bubbelTopp = (text) => innerHeight - ((smal() ? 92 : 128) + 72 + Math.ceil(text.length / 32) * 24);
+    // Hur högt upp bubblan ungefär når med en viss text (samma uppskattning som i tillMal), och var den slutar.
+    const bubbelTopp = (text, tecken = text.length) => innerHeight - ((smal() ? 92 : 128) + 72 + Math.ceil(tecken / 32) * 24);
+    const bubbelBotten = () => innerHeight - (smal() ? 92 : 128) - 4;
     // Introt kan inte rulla. Skulle bubblan täcka Utforska lyfts introts text och knapp upp en bit medan
     // Newton pratar (--lyft), annars går knappen inte att trycka på (mobilen, 2026-09-25).
     function lyftIntro(text) {
@@ -3184,18 +3193,50 @@
     const folj = () => { if (!visar || !malEls.length) return; ljus.classList.add("folj"); lys(malEls); clearTimeout(foljTimer); foljTimer = setTimeout(() => ljus.classList.remove("folj"), 160); };
     addEventListener("scroll", folj, { passive: true, capture: true }); addEventListener("resize", folj);
     setInterval(() => { if (visar && ljusFor) { const nya = ljusFor(); if (nya.length !== malEls.length || nya.some((e, i) => e !== malEls[i])) lys(nya); else folj(); } }, 400);
-    // Målet rullas upp i övre delen av fönstret; nederkanten är Newtons golv.
+    // Var spelarens överkant ska stå i fönstret när guiden visar något i den. Hela spelaren ska synas så långt
+    // det går, och linjen och knapparna får aldrig hamna under bubblan. Det går på två sätt: hela spelaren
+    // ovanför Newton och bubblan (mobilen, höga fönster), eller spelarens nederkant nere vid golvet med linjen
+    // under bubblan, och Newton bredvid knappen (plats). Förut rullades knappen upp överst och bara en remsa
+    // av spelaren syntes (1200×720, 2026-09-25). Läget är detsamma i alla spelarens steg, så sidan står still.
+    function spelarTopp() {
+      // golv: spelarens nederkant som lägst, så att guldramen runt den (8 px utanför) syns hela.
+      const d = dukEl.getBoundingClientRect(), vh = innerHeight, [, h] = figur(), topp = 64, golv = vh - 12;
+      const over = $("duk-linje").getBoundingClientRect().top - d.top, under = $("duk-hel").getBoundingClientRect().bottom - d.top;
+      // Den längsta repliken bland spelarens steg ger den högsta bubblan.
+      const tecken = Math.max(0, ...guideSteg.filter((s) => s.mal && dukEl.contains(s.mal())).map((s) => s.text.length));
+      const satt = [[-Infinity, Math.min(vh - h - 30 - d.height, bubbelTopp("", tecken) - 12 - under)], [bubbelBotten() + 8 - over, golv - d.height]];
+      // Så långt sidan går att rulla åt vardera hållet.
+      const yMax = d.top + scrollY, yMin = yMax - (document.documentElement.scrollHeight - vh);
+      const syns = (y) => Math.min(y + d.height, golv) - Math.max(y, topp);
+      // Där hela spelaren syns (eller så mycket som ryms), och i vart och ett av sätten det läge som är närmast.
+      const pLo = Math.min(topp, golv - d.height), pHi = Math.max(topp, golv - d.height);
+      const lagen = satt.map(([lo, hi]) => [Math.max(lo, yMin), Math.min(hi, yMax)]).filter(([lo, hi]) => lo <= hi).map(([lo, hi]) => {
+        const a = Math.max(lo, pLo), b = Math.min(hi, pHi);
+        return a <= b ? Math.min(Math.max(d.top, a), b) : hi < pLo ? hi : lo;
+      });
+      if (!lagen.length) return Math.min(Math.max(golv - d.height, yMin), yMax);
+      // Mest synligt vinner; lika mycket: det som flyttar sidan minst.
+      return lagen.reduce((x, y) => (syns(y) > syns(x) + 1 || (syns(y) > syns(x) - 1 && Math.abs(y - d.top) < Math.abs(x - d.top)) ? y : x));
+    }
+    // Målet rullas upp i övre delen av fönstret; nederkanten är Newtons golv. I spelaren gäller spelarTopp.
     async function tillMal(e, text = "") {
-      const r = e.getBoundingClientRect(), vh = innerHeight, [, h] = figur();
-      // Utanför spelaren ska målet också ligga ovanför bubblan, som står bredvid Newton en bit upp och
-      // annars täcker det han pratar om (begreppen i Om filmen, 2026-09-25). Längst ner på sidan finns
-      // luft att rulla i (body.guidar).
-      const fri = dukEl.contains(e) ? vh - h - 30 : Math.min(vh - h - 30, bubbelTopp(text) - 12);
-      if (r.top >= 64 && r.bottom <= fri) return;
-      // Ett högt mål som redan fyller fönstret (tidslinjen på mobilen, en lång kapitellista, texten
-      // under Visa allt) står kvar där eleven läser: guiden rullar inte tillbaka till början av det.
-      if (r.top <= 64 && r.bottom >= fri) return;
-      const onskad = Math.max(64, Math.min(vh * 0.14, fri - r.height)), mal = Math.max(0, Math.min(document.documentElement.scrollHeight - vh, scrollY + r.top - onskad));
+      const r = e.getBoundingClientRect(), vh = innerHeight, [, h] = figur(), ned = document.documentElement.scrollHeight - vh;
+      let mal;
+      if (dukEl.contains(e)) {
+        if (iHelskarm()) return;   // spelaren fyller skärmen; sidan bakom ska stå kvar
+        mal = Math.max(0, Math.min(ned, Math.round(scrollY + dukEl.getBoundingClientRect().top - spelarTopp())));
+      } else {
+        // Målet ska också ligga ovanför bubblan, som står bredvid Newton en bit upp och annars täcker det
+        // han pratar om (begreppen i Om filmen, 2026-09-25). Längst ner på sidan finns luft att rulla i
+        // (body.guidar).
+        const fri = Math.min(vh - h - 30, bubbelTopp(text) - 12);
+        if (r.top >= 64 && r.bottom <= fri) return;
+        // Ett högt mål som redan fyller fönstret (tidslinjen på mobilen, en lång kapitellista, texten
+        // under Visa allt) står kvar där eleven läser: guiden rullar inte tillbaka till början av det.
+        if (r.top <= 64 && r.bottom >= fri) return;
+        const onskad = Math.max(64, Math.min(vh * 0.14, fri - r.height));
+        mal = Math.max(0, Math.min(ned, scrollY + r.top - onskad));
+      }
       if (Math.abs(scrollY - mal) < 2) return;
       // Guidens egen rullning är inte eleven som scrollar (tidslinjen på mobilen räknas annars som gjord).
       rullarTill = performance.now() + (stilla ? 60 : 720) + 300;
@@ -3407,7 +3448,7 @@
       if (!lever()) return;
       ljusFor = s.ljus || (mal ? () => [mal] : () => []);
       lys(ljusFor());
-      await gaTill(plats(mal ? mal.getBoundingClientRect() : null));
+      await gaTill(plats(mal ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)));
       if (!lever()) return;
       // Det första steget han säger något i vinkar han, var guiden än börjar.
       if (s.rorelse === "kasta") await kasta("guide");

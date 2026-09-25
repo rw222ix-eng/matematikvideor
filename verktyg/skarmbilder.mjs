@@ -4,7 +4,7 @@
 // av steg (vänta, flytta musen, kör JS, ta skärmbild):
 //   node verktyg/skarmbilder.mjs <url> <utmapp> <bredd> <höjd> '[{"js":"…"},{"vanta":1500,"bild":"namn"}]'
 // Stegen: vanta (ms), mus [x,y] (hovring), klick [x,y] (musklick), tryck [x,y] (pekskärm),
-// klickPa/tryckPa "css-väljare" (klick/tryck mitt på elementet), js, bild.
+// klickPa/tryckPa/musPa "css-väljare" (klick/tryck/hovring mitt på elementet), js, bild.
 // Lokal server: python3 -m http.server 8765 --directory public; öppna http://[::1]:8765/#filmer.
 import { spawn } from "node:child_process";
 import { writeFileSync, mkdirSync, rmSync } from "node:fs";
@@ -34,15 +34,15 @@ try {
   let n = 0;
   for (const s of JSON.parse(stegJson)) {
     if (s.vanta) await vila(s.vanta);
-    if (s.mus) await skicka("Input.dispatchMouseEvent", { type: "mouseMoved", x: s.mus[0], y: s.mus[1] });   // flytta musen dit (hovring)
     // Riktiga klick och tryck, som går genom webbläsarens träffprov: ett element() .click() i js
     // hoppar över det och märker inte om något genomskinligt ligger ovanpå (flikarna, 2026-09-25).
-    // klickPa/tryckPa "<css-väljare>": samma riktiga klick/tryck, mitt på det första synliga elementet som passar.
-    for (const [nyckel, typ] of [["klickPa", "klick"], ["tryckPa", "tryck"]]) {
+    // klickPa/tryckPa/musPa "<css-väljare>": samma riktiga klick/tryck/hovring, mitt på det första synliga elementet som passar.
+    for (const [nyckel, typ] of [["klickPa", "klick"], ["tryckPa", "tryck"], ["musPa", "mus"]]) {
       if (!s[nyckel]) continue;
       const r = await skicka("Runtime.evaluate", { expression: `(() => { const e = [...document.querySelectorAll(${JSON.stringify(s[nyckel])})].find((x) => x.getClientRects().length); if (!e) return null; const b = e.getBoundingClientRect(); return [Math.round(b.left + b.width / 2), Math.round(b.top + b.height / 2)]; })()`, returnByValue: true });
       if (r.result.value) s[typ] = r.result.value; else console.log(`hittar inte ${s[nyckel]}`);
     }
+    if (s.mus) await skicka("Input.dispatchMouseEvent", { type: "mouseMoved", x: s.mus[0], y: s.mus[1] });   // flytta musen dit (hovring)
     if (s.klick) for (const type of ["mouseMoved", "mousePressed", "mouseReleased"]) await skicka("Input.dispatchMouseEvent", { type, x: s.klick[0], y: s.klick[1], button: "left", clickCount: 1 });
     if (s.tryck) { await skicka("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: s.tryck[0], y: s.tryck[1] }] }); await vila(60); await skicka("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] }); }
     if (s.js) { const r = await skicka("Runtime.evaluate", { expression: s.js, awaitPromise: true, returnByValue: true }); if (r.result && r.result.value !== undefined) console.log(`js: ${JSON.stringify(r.result.value)}`); if (r.exceptionDetails) console.log("fel:", r.exceptionDetails.text, r.exceptionDetails.exception && r.exceptionDetails.exception.description); }
