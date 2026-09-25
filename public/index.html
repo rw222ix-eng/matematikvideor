@@ -1147,6 +1147,12 @@
   const antalDelar = () => Math.max(SERIER.formelbladet.delar, ...formelblad.map((v) => v.del || 0));
   // Delens namn utan serien: "Formelbladet 2 – Funktioner" → "Funktioner".
   const delNamn = (v) => { const m = v.titel.match(/\d+\s*[–-]\s*(.+)$/); return m ? m[1].charAt(0).toUpperCase() + m[1].slice(1) : v.titel; };
+  // Momentet för en seriedel, utan serien först ("Formelbladet: prefix och potenser" → "prefix och
+  // potenser"), och tomt när det inte säger mer än delens namn. Serien står redan i fliken och rubriken.
+  const serieMoment = (v) => {
+    const m = String(v.moment || "").replace(new RegExp(`^${SERIER[v.serie].namn}\\s*[:–-]\\s*`, "i"), "");
+    return norm(m) === norm(delNamn(v)) ? "" : m;
+  };
   // Vilken sort en film är, i sökningen: "Berättelse · 1618" eller "Formelbladet · del 2".
   const sortText = (v) => (v.serie ? `${SERIER[v.serie].namn} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
   const sortEtikett = (v) => `<span class="sort${v.serie ? " serie" : ""}">${esc(sortText(v))}</span>`;
@@ -1433,7 +1439,7 @@
         <span class="lina"></span>
         <span class="namn">
           <span class="kurs">${v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs)}</span>
-          <span class="moment">${v.serie ? `${kursKort(v.kurs)}${norm(v.moment) !== norm(delNamn(v)) ? ` · ${esc(v.moment)}` : ""}` : `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`}</span>
+          <span class="moment">${v.serie ? `${kursKort(v.kurs)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}` : `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`}</span>
           <span class="titel">${esc(v.serie ? delNamn(v) : v.titel)}</span>
         </span>
       </button>
@@ -2381,7 +2387,7 @@
     // En formelbladsdel: "Formelbladet · Del 2 av 5" överst och delens namn som rubrik, siffrorna
     // 1–5 bredvid, nästa del efter Din tur, och tillbaka-länken leder till formelbladets flik.
     const serie = v.serie ? SERIER[v.serie] : null;
-    $("f-kurs").textContent = serie ? `${serie.namn} · Del ${v.del ?? "–"} av ${antalDelar()} · ${v.kurs}${norm(v.moment) !== norm(delNamn(v)) ? ` · ${v.moment}` : ""}`
+    $("f-kurs").textContent = serie ? `${serie.namn} · Del ${v.del ?? "–"} av ${antalDelar()} · ${v.kurs}${serieMoment(v) ? ` · ${serieMoment(v)}` : ""}`
       : `${v.ar ? `${arText(v.ar)} · ` : ""}${v.kurs} · ${v.moment}`;
     $("f-titel").textContent = serie ? delNamn(v) : v.titel;
     $("f-tillbaka").setAttribute("href", serie ? "#formelbladet" : "#filmer");
