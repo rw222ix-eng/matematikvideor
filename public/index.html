@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
-<meta name="description" content="Korta filmer om matematik på gymnasiet, berättade genom historien. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
+<meta name="description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och en serie som går igenom formelbladet. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
 <meta name="theme-color" content="#171414">
 <meta name="robots" content="noindex, nofollow">
 <!-- Förhandsvisning när länken klistras in i Classroom (2026-09-24). Varje film har en egen sida
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="sv_SE">
 <meta property="og:site_name" content="Matematikvideor av Rickard">
 <meta property="og:title" content="Matematikvideor av Rickard">
-<meta property="og:description" content="Korta filmer om matematik på gymnasiet, berättade genom historien. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
+<meta property="og:description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och en serie som går igenom formelbladet. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
 <meta property="og:url" content="https://winterhalls-matte.vercel.app/">
 <meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=af9ffc17">
 <meta name="twitter:card" content="summary_large_image">
@@ -885,6 +885,12 @@
   @media (hover: hover) { .hjalp:hover::before, .hjalp:focus-visible::before { opacity: 1; transform: rotate(45deg); transition-delay: .1s; } .hjalp:hover::after, .hjalp:focus-visible::after { opacity: 1; transform: none; transition-delay: .1s; } }
   .hjalp.lockar::before { opacity: 1; transform: rotate(45deg); }
   .hjalp.lockar::after { opacity: 1; transform: none; }
+  /* Låga fönster: tooltipen står till höger om frågetecknet. Ovanför täckte den Utforska i introt när
+     ingressen fick en mening om formelbladet (1280×610, 2026-09-25). */
+  @media (max-height: 660px) {
+    .hjalp::after { left: calc(100% + 12px); bottom: 7px; transform: translateX(-5px); }
+    .hjalp::before { left: calc(100% + 8px); bottom: 18px; margin-left: 0; transform: translateX(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
+  }
   .hjalp.lockar { animation: hjalp-puls 1.6s ease-in-out infinite; }
   @keyframes hjalp-puls { 0%, 100% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 0 rgba(242, 197, 114, 0); border-color: rgba(242, 197, 114, .5); } 50% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 7px rgba(242, 197, 114, .2), 0 0 26px 4px rgba(242, 197, 114, .45); border-color: rgba(242, 197, 114, 1); } }
   @media (hover: hover) { .hjalp:hover { background: var(--accent); color: var(--bg); transform: scale(1.08); } }
@@ -926,7 +932,8 @@
   <div class="mitt">
     <h1 class="skrift fram" id="intro-rubrik" tabindex="-1"><span class="hang">“</span>Historien<br><span class="amp">&amp;</span>&nbsp;matten…”</h1>
     <!-- Kurserna skrivs ur videor.json: det stod "1c och 2c" när alla filmer var 1c. -->
-    <p class="ingress fram">Korta filmer där matten i <span id="intro-kurser">Matematik 1c</span> kommer ur en verklig historia. Sök på det du tycker är svårt och hoppa till stället i filmen där det förklaras.</p>
+    <!-- Meningen om formelbladet visas när det finns filmer i serien (Rickard 2026-09-25). -->
+    <p class="ingress fram">Korta filmer där matten i <span id="intro-kurser">Matematik 1c</span> kommer ur en verklig historia.<span id="intro-serie" hidden> Här finns också en serie som går igenom formelbladet, del för del.</span> Sök på det du tycker är svårt och hoppa till stället i filmen där det förklaras.</p>
     <a class="knapp fram" href="#filmer"><span>Utforska</span><span class="ring"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></span></a>
   </div>
 </section>
@@ -1080,9 +1087,11 @@
   const BOCK = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9.5 L10 3"/></svg>';
   const SAJTNAMN = "Matematikvideor av Rickard";
 
-  // Introts ingress nämner de kurser som faktiskt har filmer: "Matematik 1c", "Matematik 1c och 2c".
+  // Introts ingress nämner de kurser som faktiskt har filmer ("Matematik 1c", "Matematik 1c och 2c"),
+  // och serien om formelbladet när den har en film.
   {
     const kurser = [...new Set(videor.map((v) => v.kurs))];
+    if (videor.some((v) => v.serie === "formelbladet" || /^formelbladet-/.test(v.id))) $("intro-serie").hidden = false;
     if (kurser.length) $("intro-kurser").textContent = kurser.length === 1 ? kurser[0]
       : `${kurser.slice(0, -1).join(", ")} och ${kurser[kurser.length - 1].replace(/^Matematik\s*/, "")}`;
   }
