@@ -1641,13 +1641,11 @@
   }
   let nyssTimer = null, spelarForut = false, senastSparat = 0, sparatSlut = false, pausadSedan = 0;
   // Från vilken tid notisen om Din tur får visas (Rickard 2026-09-25: inte samma gräns för alla
-  // filmer). dintur.json kan ange "notisFran" i sekunder; annars slutet av kapitlet som ledtråden
-  // pekar in i, för då har filmen visat metoden; annars 70 % av filmen.
+  // filmer). bygg.mjs räknar ut den per film ur ledtråden och kapitlen, skriver ut den vid
+  // varje bygge och varnar när den faller tillbaka; 70 % här är bara reserv för gammal data.
   function notisFran(v) {
     const d = v.dinTur; if (!d) return Infinity;
-    if (Number.isFinite(d.notisFran)) return d.notisFran;
-    const lt = d.ledtrad && d.ledtrad.t, nasta = Number.isFinite(lt) && (v.kapitel || []).find((k) => k.t > lt);
-    return nasta ? nasta.t : (v.langd || 0) * 0.7;
+    return Number.isFinite(d.notisFran) ? d.notisFran : (v.langd || 0) * 0.7;
   }
   let kapitelAntal = 0, egnaKapitelNu = false;
   const langdRad = (sek) => [sek ? `${tid(Math.floor(sek))} min` : "", egnaKapitelNu ? `${kapitelAntal} kapitel` : ""].filter(Boolean).join(" · ");

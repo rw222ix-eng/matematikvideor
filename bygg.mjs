@@ -22,15 +22,56 @@ import { skrivFilmsidor } from "./verktyg/filmsidor.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
-// Kapitlen: en kort rubrik med starttid per avsnitt, skrivna för hand utifrån vad som sägs
-// (kapitel.json, id → [[sekund, rubrik], ...]). Tiderna är replikernas egna starttider.
+// Kapitlen: en kort rubrik per avsnitt, skrivna för hand utifrån vad som sägs
+// (kapitel.json, id → [[fras, rubrik], ...]). Frasen är de första orden där kapitlet börjar,
+// och sekunden slås upp i rösten vid varje bygge (se tidFor), så att kapitlen följer med
+// när rösten görs om (Rickard 2026-09-25). En sekund i stället för fras går också, men då
+// varnar bygget.
 const kapitelFil = existsSync(join(HÄR, "kapitel.json")) ? JSON.parse(readFileSync(join(HÄR, "kapitel.json"), "utf8")) : {};
 // Uppgiften "Din tur" som varje film slutar med, med svar, vanliga fel, ledtråd och lösning
 // (dintur.json, id → { fraga, delar, ledtrad, losning }). Sidan rättar svaret i webbläsaren.
+// ledtrad.fras är var i filmen metoden visas (knappen "Se det i filmen"); notisFran (fras
+// eller sekund) får sätta notisgränsen för hand, se notisgrans.
 const dinturFil = existsSync(join(HÄR, "dintur.json")) ? JSON.parse(readFileSync(join(HÄR, "dintur.json"), "utf8")) : {};
+// Fel som gör att bygget inte får skriva videor.json: en fras som inte finns i rösten, eller
+// finns på flera ställen. Samlas ihop så att alla syns på en gång.
+const byggfel = [];
 mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
+
+// ── Tider ur fraser ─────────────────────────────────────
+// Orden jämförs utan versaler och skiljetecken: "Men x upphöjt till 3" hittar
+// "men x upphöjt till 3," i rösten. ord är filmens alla ord med starttid (tal-tider.json).
+const normOrd = (s) => s.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+const tidText = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+function tidFor(fras, ord, id, vad) {
+  if (typeof fras === "number") { console.warn(`  varning: ${id}: ${vad} har en fast sekund (${fras}) — skriv en fras, annars flyttar den inte med när rösten görs om.`); return fras; }
+  if (!ord) { byggfel.push(`${id}: ${vad} "${fras}" går inte att slå upp, rösten (tal-tider.json) saknas.`); return null; }
+  const f = normOrd(fras), traffar = [];
+  for (let i = 0; i + f.length <= ord.length; i++) if (f.every((w, k) => ord[i + k].n === w)) traffar.push(ord[i].start);
+  if (traffar.length === 1) return Math.max(0, Math.floor(traffar[0]));
+  byggfel.push(`${id}: ${vad}: frasen "${fras}" ${traffar.length ? `finns ${traffar.length} gånger (${traffar.map(tidText).join(", ")}). Gör den längre.` : "finns inte i det som sägs. Har manuset ändrats?"}`);
+  return null;
+}
+// Från vilken tid notisen om Din tur får visas när eleven pausar. I tur och ordning:
+//  1. notisFran i dintur.json (fras eller sekund), satt för hand;
+//  2. början på kapitlet efter det där ledtråden pekar: då har filmen visat metoden;
+//  3. början på Din tur-kapitlet, om ledtråden saknas eller ligger i sista kapitlet;
+//  4. 70 % av filmen.
+// 3 och 4 varnar, så att ingen film tyst hamnar på en gissning.
+function notisgrans(id, d, kapitel, langd, ord) {
+  if (d.notisFran != null) { const t = tidFor(d.notisFran, ord, id, "notisFran"); if (t != null) return { t, kalla: "satt för hand (notisFran)" }; }
+  const lt = d.ledtrad && d.ledtrad.t;
+  if (Number.isFinite(lt)) {
+    const nasta = kapitel.find((k) => k.t > lt);
+    if (nasta) return { t: nasta.t, kalla: `när kapitlet med ledtråden är slut ("${nasta.rubrik}" börjar)` };
+  }
+  const dinTurKapitel = kapitel.find((k) => /^din tur/i.test(k.rubrik));
+  if (dinTurKapitel) return { t: dinTurKapitel.t, kalla: "Din tur-kapitlet — ledtråden gav ingen gräns", varning: true };
+  return { t: Math.round((langd || 0) * 0.7), kalla: "70 % av filmen — varken ledtråd eller Din tur-kapitel", varning: true };
+}
+const notisRader = [];
 
 // Bilderna får ?v=<innehållshash>. Vercel lägger max-age=86400 på /omslag/*, så utan
 // version såg elever och Rickard gamla omslag ett dygn efter en ändring ("ändringarna
@@ -90,10 +131,12 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   const undertext = existsSync(srtFil) ? lasSrt(srtFil) : null;
   let repliker = [];
   let langd = null;
+  let ord = null;
   if (existsSync(tiderFil)) {
     const d = JSON.parse(readFileSync(tiderFil, "utf8"));
     repliker = d.repliker.map((r) => ({ t: Math.max(0, Math.floor(r.start)), text: r.text }));
     langd = Math.round(d.langd);
+    ord = d.repliker.flatMap((r) => (r.ord || []).flatMap((w) => normOrd(w.ord).map((n) => ({ n, start: w.start }))));
   } else if (existsSync(manusFil)) {
     repliker = readFileSync(manusFil, "utf8").split("\n").filter((r) => r.trim()).map((r) => ({ t: null, text: taggfri(r) }));
   }
@@ -125,7 +168,18 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
   const bakaHog = (ut, bredd, kvalitet) => { bakaBild(hog, join(HÄR, "public", ut), bredd, "", kvalitet); return medVersion(ut); };
   const omslagRen = existsSync(hog) ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
   const omslagStor = existsSync(hog) ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel: (kapitelFil[v.id] || []).map(([t, rubrik]) => ({ t, rubrik })), dinTur: dinturFil[v.id] || null, undertext };
+  const kapitel = (kapitelFil[v.id] || []).map(([fras, rubrik]) => ({ t: tidFor(fras, ord, v.id, `kapitlet "${rubrik}"`), rubrik })).filter((k) => k.t != null);
+  for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
+  let dinTur = null;
+  if (dinturFil[v.id]) {
+    const { fras, ...ledtrad } = dinturFil[v.id].ledtrad || {};
+    dinTur = { ...dinturFil[v.id] };
+    if (dinturFil[v.id].ledtrad) dinTur.ledtrad = { ...ledtrad, t: fras != null ? tidFor(fras, ord, v.id, "ledtråden") : ledtrad.t };
+    const g = notisgrans(v.id, dinTur, kapitel, langd, ord);
+    dinTur.notisFran = g.t;
+    notisRader.push(`  ${g.varning ? "varning: " : ""}${v.id.padEnd(24)} ${tidText(g.t)}${langd ? ` (${Math.round(g.t / langd * 100)} %)` : ""}  ${g.kalla}`);
+  }
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med
@@ -181,6 +235,11 @@ for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"
   if (html !== fore) { writeFileSync(indexFil, html, "utf8"); console.log("public/index.html: bildernas ?v= uppdaterade."); }
 }
 
+if (notisRader.length) console.log(`Din tur-notisen visas från:\n${notisRader.join("\n")}`);
+if (byggfel.length) {
+  console.error(`\nBygget stoppat, public/videor.json är inte ändrad:\n${byggfel.map((f) => `  · ${f}`).join("\n")}`);
+  process.exit(1);
+}
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);
 skrivFilmsidor(videor, join(HÄR, "public"));

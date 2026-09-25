@@ -7,13 +7,18 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   sorteras kronologiskt efter det), kurs, moment, begrepp, beskrivning, sökväg till projektet, `youtube` (video-id, tomt tills filmen är uppladdad), `omslag`. Valfritt `fil`
   (direktlänk till mp4 i full kvalitet — spelas då i stället för YouTube). Lägg också in
   `youtube` när det finns: spärrar skolans nät GitHub byter spelaren till YouTube själv.
-- `kapitel.json` — kapitlen per film, `[sekund, rubrik]`, skrivna för hand.
+- `kapitel.json` — kapitlen per film, `[fras, rubrik]`, skrivna för hand. Frasen är de första orden
+  där kapitlet börjar (minst fem, så att den bara finns på ett ställe); `node bygg.mjs` slår upp
+  sekunden i rösten, så kapitlen flyttar med när rösten görs om.
 - `dintur.json` — uppgiften "Din tur" som varje film slutar med. Per film: `fraga`, `delar`
   (en eller flera frågor med `typ` `tal`, `ekvation`, `uttryck`, `olikhet` eller `intervall`,
   `svar`, `fel` med vanliga fel och förklaringen till dem, `tangenter` för telefonens knappar),
-  `ledtrad` (`t` = kapitlet att se om) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
+  `ledtrad` (`fras` = var i filmen metoden visas, slås upp som kapitlen) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
   jämförs genom att räknas ut i några punkter, så 5ab(3b + 2a) räknas som rätt. `utanfor` kräver
   att så mycket som möjligt är utbrutet, `prova` visar elevens formel för n = 1, 2, 3 …
+  Notisen om Din tur (när eleven pausar) visas från slutet av kapitlet där ledtråden ligger;
+  `notisFran` (fras eller sekund) sätter gränsen för hand. Bygget skriver ut gränsen för varje film
+  och varnar om den faller tillbaka på Din tur-kapitlet eller 70 %.
 - `node bygg.mjs` — bygger `public/videor.json` ur projektens `assets/tal-tider.json` (replikerna
   med uppmätta tider) och kopierar omslagen till `public/omslag/` (720 px jpeg; finns
   `omslag-utan-titel.png` bredvid omslaget blir den `<id>-ren.jpg` och används på sidan, eftersom
@@ -58,7 +63,8 @@ varje push till `main`, klart på ~1 min. Alltså: ändra register.json → `nod
 importera repot i Vercels instrumentpanel.)
 
 Ny video: lägg en post i `register.json` (youtube-id från den olistade uppladdningen), kör
-`node bygg.mjs`, commit, push.
+`node bygg.mjs`, commit, push. Stoppar bygget på en fras (finns inte, eller finns flera gånger)
+har manuset ändrats: skriv om frasen i `kapitel.json` eller `dintur.json`.
 
 Kvalitet: exportera i högsta bitrate ur Diffusion Studio; ladda upp till YouTube som 2160p
 (uppskalad 1080-master) så hamnar filmen i YouTubes högsta kvalitetsskikt. Vill man ha originalfilen
