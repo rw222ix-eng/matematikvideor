@@ -3351,7 +3351,8 @@
         { id: "om", vy: "film", mal: () => document.querySelector("#vy-film .om"), ljus: () => [$("f-besk").parentElement, $("f-begrepp")], lage: "pekar", nar: "begrepp",
           hoppa: async () => { const b = $("f-begrepp").querySelector("button"); if (b) { b.click(); await vila(450); } }, svar: "Där har du sökningen.",
           text: "Här står vad filmen handlar om. Orden under Begrepp är knappar. Tryck på ett av dem, så söker du efter ordet i alla filmer." },
-        { id: "slut", vy: "film", lage: "glad", rorelse: "kasta", text: "Nu vet du hur allt fungerar. Vill du gå igenom det igen trycker du på frågetecknet nere till vänster. Lycka till med matten!", knappar: [["Klar", () => slutaGuide()]] },
+        // Frågetecknet är dolt medan guiden pågår; här visas det och lyser, så att eleven ser det han pratar om.
+        { id: "slut", vy: "film", ljus: () => [$("hjalp")], fore: () => document.body.classList.add("visa-hjalp"), lage: "glad", rorelse: "kasta", text: "Nu vet du hur allt fungerar. Vill du gå igenom det igen trycker du på frågetecknet nere till vänster. Lycka till med matten!", knappar: [["Klar", () => slutaGuide()]] },
         // Började guiden längre ner på sidan: när den delen är klar får eleven välja om guiden ska visa resten också.
         { id: "erbjud", vy: "film", lage: "glad",
           get text() { return resten.includes("kapitel") ? "Nu har du sett den här delen av sidan. Vill du också se resten, från spelaren och neråt?" : "Nu har du sett den här delen av sidan. Vill du också se hur spelaren fungerar?"; },
