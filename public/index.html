@@ -3146,6 +3146,19 @@
       const lyft = krockar ? Math.max(0, Math.min(r.bottom + 16 - bubbelTopp(text), $("intro-rubrik").getBoundingClientRect().top - 56)) : 0;
       vy.style.setProperty("--lyft", `${Math.round(lyft)}px`);
     }
+    // Där Newton och bubblan ungefär står när han står i p och säger text (samma uppskattning som i tillMal).
+    function newtonRutor(p, text) {
+      const [b, h] = figur(), vh = innerHeight, w = Math.max(180, Math.min(290, (p.hoger ? innerWidth - p.x - b : p.x) - 14)), v = p.hoger ? p.x + b + 4 : p.x - 4 - w;
+      return [{ left: v, right: v + w, top: bubbelTopp(text), bottom: bubbelBotten() }, { left: p.x, right: p.x + b, top: vh - h - 4, bottom: vh - 4 }];
+    }
+    // Skulle Newton eller bubblan täcka något som lyser (guldramen räknas med) och ett av de nedre hörnen är
+    // fritt, ställer han sig där. Filmvalet i 1200×720: bubblan låg över filmkortet bredvid (2026-09-25).
+    function friPlats(p, text) {
+      const [b] = figur(), lyser = malEls.map((e) => e.getBoundingClientRect());
+      const tacker = (q) => newtonRutor(q, text).some((a) => lyser.some((r) => a.left < r.right + 8 && a.right > r.left - 8 && a.top < r.bottom + 8 && a.bottom > r.top - 8));
+      if (!tacker(p)) return p;
+      return [{ x: 10, y: p.y, hoger: true }, { x: innerWidth - b - 10, y: p.y, hoger: false }].find((q) => !tacker(q)) || p;
+    }
     // Bubblan får aldrig gå utanför fönstret: bredden räknas från den sida där den hamnar.
     const bubbelBredd = (p) => { const [b] = figur(); el.style.setProperty("--bubbla-max", `${Math.max(180, Math.min(290, (p.hoger ? innerWidth - p.x - b : p.x) - 14))}px`); };
     // Gången: en ny gång avbryter den som pågår (gangId), t.ex. när en snabb elev redan gjort uppgiften.
@@ -3449,7 +3462,7 @@
       if (!lever()) return;
       ljusFor = s.ljus || (mal ? () => [mal] : () => []);
       lys(ljusFor());
-      await gaTill(plats(mal ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)));
+      await gaTill(friPlats(plats(mal ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)), s.text));
       if (!lever()) return;
       // Det första steget han säger något i vinkar han, var guiden än börjar.
       if (s.rorelse === "kasta") await kasta("guide");
