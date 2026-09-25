@@ -27,7 +27,7 @@ https://www.stgeorgescrypt.org.uk/then-and-now . Sidan är i dag en snabb funkti
 ## Så här översätts det till videoteket
 - **Intro:** Kepler-omslaget utan titel (`../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png`,
   finns även som `public/omslag/…`) som helskärmsbild, avmättad och mörkad. Liten "logotyp":
-  "Matematikvideor | med Rickard". Skrivstilsrubrik med citattecken — förslag: "Historien &
+  "Matematikvideor | av Rickard". Skrivstilsrubrik med citattecken — förslag: "Historien &
   matten…" (Rickard väljer ordalydelse). Ingress: "Korta filmer där matten kommer ur en verklig
   historia. Sök på det du tycker är svårt och hoppa till stället i filmen där det förklaras."
   Knapp "Utforska ▶".

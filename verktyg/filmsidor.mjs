@@ -30,7 +30,7 @@ function sida(v) {
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="video.other">
 <meta property="og:locale" content="sv_SE">
-<meta property="og:site_name" content="Matematikvideor med Rickard">
+<meta property="og:site_name" content="Matematikvideor av Rickard">
 <meta property="og:title" content="${attr(titel)}">
 <meta property="og:description" content="${attr(v.beskrivning)}">
 <meta property="og:url" content="${SAJT}/film/${v.id}/">
