@@ -1,7 +1,7 @@
 // Skärmbilder av sidan i en egen headless Chrome (2026-09-25). Den inbyggda webbläsarpanelen och
 // Rickards Chrome-flikar ligger ofta dolda, och då stryps timrar och animationer, så att guiden och
 // Newtons rörelser inte går att se där. Startar en egen Chrome, öppnar en sida och kör ett manus
-// av steg (vänta, kör JS, ta skärmbild):
+// av steg (vänta, flytta musen, kör JS, ta skärmbild):
 //   node verktyg/skarmbilder.mjs <url> <utmapp> <bredd> <höjd> '[{"js":"…"},{"vanta":1500,"bild":"namn"}]'
 // Lokal server: python3 -m http.server 8765 --directory public; öppna http://[::1]:8765/#filmer.
 import { spawn } from "node:child_process";
@@ -32,6 +32,7 @@ try {
   let n = 0;
   for (const s of JSON.parse(stegJson)) {
     if (s.vanta) await vila(s.vanta);
+    if (s.mus) await skicka("Input.dispatchMouseEvent", { type: "mouseMoved", x: s.mus[0], y: s.mus[1] });   // flytta musen dit (hovring)
     if (s.js) { const r = await skicka("Runtime.evaluate", { expression: s.js, awaitPromise: true, returnByValue: true }); if (r.result && r.result.value !== undefined) console.log(`js: ${JSON.stringify(r.result.value)}`); if (r.exceptionDetails) console.log("fel:", r.exceptionDetails.text, r.exceptionDetails.exception && r.exceptionDetails.exception.description); }
     if (s.bild) { const r = await skicka("Page.captureScreenshot", { format: "jpeg", quality: 80 }); const fil = join(ut, `${String(++n).padStart(2, "0")}-${s.bild}.jpg`); writeFileSync(fil, Buffer.from(r.data, "base64")); console.log(fil); }
   }

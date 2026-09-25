@@ -781,6 +781,18 @@
   /* Frågetecknet: startar guiden. Nere till vänster på alla sidor; döljs medan guiden pågår. */
   .hjalp { position: fixed; left: 16px; bottom: 16px; z-index: 34; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font: 500 21px/1 Charter, "Iowan Old Style", Georgia, serif; color: var(--accent); background: rgba(23, 20, 20, .82); border: 1px solid rgba(242, 197, 114, .5); box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .3s, color .3s, transform .4s var(--fjader), opacity .4s; }
   .hjalp:active { transform: scale(.9); transition-duration: .08s; }
+  /* Frågetecknets tooltip, i sidans egen stil men fäst i vänsterkanten: knappen sitter längst ner
+     till vänster, och en centrerad ruta skulle gå utanför fönstret. Den visas vid hovring, och första
+     gången någon kommer till startsidan en stund av sig själv (.lockar, också på mobil) medan
+     knappen pulserar i guld. */
+  .hjalp::before, .hjalp::after { position: absolute; pointer-events: none; opacity: 0; transition: opacity .22s var(--lugn), transform .22s var(--lugn); }
+  .hjalp::after { content: attr(data-tips); left: -2px; bottom: calc(100% + 11px); transform: translateY(5px); white-space: nowrap; padding: 9px 13px 8px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); background: rgba(23, 20, 20, .9); border: 1px solid rgba(236, 230, 216, .2); border-radius: 6px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .hjalp::before { content: ""; z-index: 1; left: 50%; bottom: calc(100% + 7px); width: 8px; height: 8px; margin-left: -4px; transform: translateY(5px) rotate(45deg); background: rgb(28, 25, 25); border-right: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
+  @media (hover: hover) { .hjalp:hover::before, .hjalp:focus-visible::before { opacity: 1; transform: rotate(45deg); transition-delay: .1s; } .hjalp:hover::after, .hjalp:focus-visible::after { opacity: 1; transform: none; transition-delay: .1s; } }
+  .hjalp.lockar::before { opacity: 1; transform: rotate(45deg); }
+  .hjalp.lockar::after { opacity: 1; transform: none; }
+  .hjalp.lockar { animation: hjalp-puls 1.6s ease-in-out infinite; }
+  @keyframes hjalp-puls { 0%, 100% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 0 rgba(242, 197, 114, 0); border-color: rgba(242, 197, 114, .5); } 50% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 7px rgba(242, 197, 114, .2), 0 0 26px 4px rgba(242, 197, 114, .45); border-color: rgba(242, 197, 114, 1); } }
   @media (hover: hover) { .hjalp:hover { background: var(--accent); color: var(--bg); transform: scale(1.08); } }
   body.guidar .hjalp { opacity: 0; pointer-events: none; }
   body.guidar.visa-hjalp .hjalp { opacity: 1; }
@@ -926,7 +938,7 @@
   <div class="newton-figur" id="newton-figur" aria-hidden="true"><div class="newton-spegel"><div class="newton-gunga"><div class="newton-kropp"><img id="newton-bild" alt=""><img class="newton-blink" id="newton-blink" alt=""><img class="newton-uttryck" id="newton-uttryck" alt=""><div class="newton-rorelse" id="newton-rorelse"></div><div class="newton-apple" id="newton-apple"></div></div></div></div></div>
 </aside>
 <div class="guide-ljus" id="guide-ljus" aria-hidden="true"><div class="guide-dim" id="guide-dim"></div></div>
-<button class="hjalp" id="hjalp" type="button" aria-label="Så fungerar sidan: Newton visar runt">?</button>
+<button class="hjalp" id="hjalp" type="button" aria-label="Så fungerar sidan: Newton visar runt" data-tips="Så fungerar sidan">?</button>
 <script>
 (async () => {
   const $ = (id) => document.getElementById(id);
@@ -1012,6 +1024,7 @@
     aktivVy = namn;
     // Newton: tipset går undan vid vybyte, guiden följer med (se Newton.vybyte).
     try { Newton.vybyte(namn); } catch (e) { /* allra första vyn: Newton finns inte än */ }
+    if (namn === "intro") lockaHjalp(); else $("hjalp").classList.remove("lockar");
     document.querySelectorAll(".vy").forEach((el) => {
       const ar = el.id === `vy-${namn}`;
       el.classList.remove("in");
@@ -3045,7 +3058,7 @@
       await vila(stilla ? 150 : 750);
       if (visar === "guide") visaSteg(0);
     }
-    $("hjalp").addEventListener("click", startaGuide);
+    $("hjalp").addEventListener("click", () => { $("hjalp").classList.remove("lockar"); startaGuide(); });
     // Tangenterna i guiden: → nästa (eller skriv klart texten), Esc slutar. Lyssnaren fångar
     // tangenten före sidans egna, så att Esc inte också lämnar filmen och → inte spolar.
     document.addEventListener("keydown", (e) => {
@@ -3062,6 +3075,15 @@
     el.addEventListener("pointerleave", () => { if (visar && visar !== "guide" && !skrivKlar) { clearTimeout(gomTimer); gomTimer = setTimeout(gom, 3500); } });
     return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, harSett: (id) => av || sett.has(id), get visar() { return visar; } };
   })();
+  // Första gången någon kommer till startsidan lyser frågetecknet en stund, med sin text, så att man
+  // hittar guiden (Rickard 2026-09-25). Bara en gång per webbläsare ("hjalpVisad").
+  function lockaHjalp() {
+    let visad = false; try { visad = localStorage.getItem("hjalpVisad") === "ja"; } catch (e) {}
+    if (visad) return;
+    try { localStorage.setItem("hjalpVisad", "ja"); } catch (e) {}
+    const k = $("hjalp");
+    setTimeout(() => { if (aktivVy === "intro") k.classList.add("lockar"); setTimeout(() => k.classList.remove("lockar"), 7000); }, 1600);
+  }
   const TIPS = {
     sok: ["pekar", "Fastnat på något? Tryck på förstoringsglaset uppe till höger och sök på det, till exempel olikhet. Du hamnar på rätt ställe i filmen."],
     spolaMus: ["pekar", "Visste du att du kan dubbelklicka på bilden för att se den på hela skärmen? Med piltangenterna hoppar du 5 sekunder i taget."],
