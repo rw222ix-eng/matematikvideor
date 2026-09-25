@@ -11,6 +11,9 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   (och gärna `"del": N`). De står inte på tidslinjen utan under fliken Formelbladet på filmvalet
   (`#formelbladet`), i delordning; filmsidan visar "Del N av 5", siffrorna 1–5 och nästa del.
   Glöms fältet känns serien igen på id:t (`formelbladet-N-…`), och delen på siffran i id:t.
+  Formelbladsdelarnas kort visar den del av formelbladet som filmen går igenom (utklipp tejpade på
+  papper, som i videorna): `node verktyg/formelblad-kort.mjs` skriver `assets/kort/<id>.png`, och
+  bygg.mjs använder den före omslaget till kortet, sökträffarna, Nästa del och affischen.
 - `kapitel.json` — kapitlen per film, `[fras, rubrik]`, skrivna för hand. Frasen är de första orden
   där kapitlet börjar (minst fem, så att den bara finns på ett ställe); `node bygg.mjs` slår upp
   sekunden i rösten, så kapitlen flyttar med när rösten görs om.

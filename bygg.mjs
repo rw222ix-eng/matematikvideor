@@ -182,10 +182,15 @@ const videor = [...register].sort(ordning).map((v) => {
   // ChatGPT-projektet "Skapa bilder till matematikvideos" ur 720 px-omslaget, som var för
   // litet för spelarens affisch (Rickard 2026-09-23). Finns den ger den både kortet och
   // affischen. Ingen omslagskurva: målningen gjordes ur det redan ljusade omslaget.
-  const hog = join(HÄR, "assets", "omslag", `${v.id}.png`);
+  // Kortbild (assets/kort/<id>.png, byggd av verktyg/formelblad-kort.mjs): för formelbladets delar
+  // visar kortet den del av formelbladet som filmen går igenom, utklippt och tejpad på papper som i
+  // videorna, i stället för videons omslag (Rickard 2026-09-25). Den går före omslaget och ger
+  // kortet, sökträffarna, Nästa del och affischen i spelaren.
+  const kortbild = join(HÄR, "assets", "kort", `${v.id}.png`);
+  const hog = [kortbild, join(HÄR, "assets", "omslag", `${v.id}.png`)].find(existsSync);
   const bakaHog = (ut, bredd, kvalitet) => { bakaBild(hog, join(HÄR, "public", ut), bredd, "", kvalitet); return medVersion(ut); };
-  const omslagRen = existsSync(hog) ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
-  const omslagStor = existsSync(hog) ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
+  const omslagRen = hog ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
+  const omslagStor = hog ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
   const kapitel = (kapitelFil[v.id] || []).map(([fras, rubrik]) => ({ t: tidFor(fras, ord, v.id, `kapitlet "${rubrik}"`), rubrik })).filter((k) => k.t != null);
   for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
   let dinTur = null;
