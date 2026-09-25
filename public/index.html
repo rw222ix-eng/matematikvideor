@@ -176,8 +176,11 @@
   .post:nth-child(4n+3) { --lyft: 13vh; }
   .post:nth-child(4n+4) { --lyft: 31vh; }
   /* På låga fönster är det upphängningen som får ge efter, aldrig ramen: krympte ramen
-     blev omslaget bredare än 16:9 och beskars upptill och nedtill (Galilei, 2026-09-23). */
-  .post .lyft { height: var(--lyft); flex: 0 1 auto; min-height: 0; }
+     blev omslaget bredare än 16:9 och beskars upptill och nedtill (Galilei, 2026-09-23).
+     Men aldrig under 72 px: hintens text slutar 37 px ner i tidslinjen, och ett hovrat kort
+     (scale 1.09 + lutning) lyfter överkanten ~19 px. Vid 6vh på en laptop gled det in i
+     "Scrolla eller dra i sidled" (Rickard 2026-09-25). */
+  .post .lyft { height: var(--lyft); flex: 0 1 auto; min-height: 72px; }
   .post .ram { flex: none; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg2); transform-origin: center bottom; transition: transform .5s var(--lugn), box-shadow .5s var(--lugn); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8); }
   /* Korten i vila: full opacitet (den gamla .55 mot den mörka fonden var en mörk wash
      som gömde bilden) och bara en lätt avmättning, så hover ändå gör skillnad. Ljuset
@@ -596,9 +599,10 @@
   /* ── Taktil återkoppling (Rickard 2026-09-23) ──────────
      Allt man kan klicka på svarar. Vid hovring lyfter det, ljusnar eller får ett varmt sken.
      Vid tryck trycks det ihop på 80 ms, och när man släpper fjädrar det tillbaka med en liten
-     översving (--fjader). Varje tryck ger dessutom en ring som vidgas där man tryckte (.tryck)
-     och en kort vibration på telefoner som kan. Hovring bara på pekdon som hovrar, så att
-     inget fastnar i hovrat läge på en telefon. */
+     översving (--fjader). Varje tryck ger dessutom en ring som vidgas där man tryckte (.tryck).
+     Ingen vibration: den gick av vid varje scroll på mobilen, där fingret landar på korten
+     (borttagen 2026-09-25). Hovring bara på pekdon som hovrar, så att inget fastnar i
+     hovrat läge på en telefon. */
   .tryck { position: fixed; z-index: 100; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; border: 1.5px solid var(--accent); box-shadow: 0 0 14px rgba(242, 197, 114, .45); pointer-events: none; animation: tryck .55s var(--lugn) forwards; }
   @keyframes tryck { from { transform: scale(.2); opacity: .95 } to { transform: scale(1.35); opacity: 0 } }
 
@@ -1258,15 +1262,13 @@
     const ram = e.target.closest(".ram");
     if (ram && !ram.contains(e.relatedTarget)) { ram.style.setProperty("--rx", "0deg"); ram.style.setProperty("--ry", "0deg"); }
   });
-  // Ett tryck på något klickbart: en ring som vidgas där man tryckte, och på telefoner som
-  // kan (Android) en vibration på 8 ms. Iphone har inget vibrations-API i webbläsaren.
+  // Ett tryck på något klickbart: en ring som vidgas där man tryckte.
   document.addEventListener("pointerdown", (e) => {
     if (e.button > 0 || !e.target.closest("button, a, summary, [data-film], .linje")) return;
     const r = document.createElement("span");
     r.className = "tryck"; r.style.left = `${e.clientX}px`; r.style.top = `${e.clientY}px`;
     document.body.appendChild(r);
     r.addEventListener("animationend", () => r.remove());
-    if (e.pointerType === "touch" && navigator.vibrate) navigator.vibrate(8);
   }, { passive: true });
 
   // ── Sök ───────────────────────────────────────────────
@@ -1505,6 +1507,7 @@
     spela: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M7 4.5 L19 12 L7 19.5 Z"/></svg>',
     pausa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M6 4.5 H9.5 V19.5 H6 Z M14.5 4.5 H18 V19.5 H14.5 Z"/></svg>',
     ljudPa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M4 9.5 H8 L13 5.5 V18.5 L8 14.5 H4 Z"/><path d="M16 9 A4 4 0 0 1 16 15 M18.5 6.5 A7.5 7.5 0 0 1 18.5 17.5"/></svg>',
+    ljudLag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M4 9.5 H8 L13 5.5 V18.5 L8 14.5 H4 Z"/><path d="M16 9 A4 4 0 0 1 16 15"/></svg>',
     ljudAv: '<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fyll" d="M4 9.5 H8 L13 5.5 V18.5 L8 14.5 H4 Z"/><path d="M16.5 9.5 L21 14.5 M21 9.5 L16.5 14.5"/></svg>',
     helIn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9 V3 H9 M15 3 H21 V9 M21 15 V21 H15 M9 21 H3 V15"/></svg>',
     helUt: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 V9 H3 M21 9 H15 V3 M15 21 V15 H21 M3 15 H9 V21"/></svg>',
@@ -1544,6 +1547,15 @@
     dukEl.classList.add("visa"); clearTimeout(gomTimer);
     gomTimer = setTimeout(() => dukEl.classList.remove("visa"), iHelskarm() ? 1000 : 3000);
   }
+  // Ljudknappen följer reglaget medan man drar (Rickard 2026-09-25):
+  // kryss vid 0, en våg under hälften, två vågor från hälften och uppåt.
+  function visaLjud(v) {
+    const k = $("duk-ljud"); if (!k) return;
+    const lage = v === 0 ? "av" : v < 50 ? "lag" : "hog";
+    if (k.dataset.lage === lage) return;
+    k.innerHTML = lage === "av" ? IK.ljudAv : lage === "lag" ? IK.ljudLag : IK.ljudPa;
+    k.setAttribute("aria-label", lage === "av" ? "Ljud på" : "Ljud av"); k.dataset.lage = lage;
+  }
   function uppdatera() {
     if (!aktuell) return;
     const nu = sp.nu(), langd = sp.langd() || aktuell.langd || 0, spelar = sp.spelar(), slut = sp.slut();
@@ -1580,8 +1592,7 @@
         l.setAttribute("aria-valuetext", `${tid(Math.floor(nu))} av ${tid(Math.floor(langd))}`);
       }
     }
-    const tyst = sp.tyst() || sp.volym() === 0; const ljudK = $("duk-ljud");
-    if (ljudK.dataset.lage !== String(tyst)) { ljudK.innerHTML = tyst ? IK.ljudAv : IK.ljudPa; ljudK.setAttribute("aria-label", tyst ? "Ljud på" : "Ljud av"); ljudK.dataset.lage = String(tyst); }
+    visaLjud(sp.tyst() ? 0 : sp.volym());
     const vr = $("duk-volym"); if (vr && document.activeElement !== vr && !vr.matches(":active")) vr.value = sp.tyst() ? 0 : sp.volym();
     // Undertext ur tal.srt (sekundexakt), annars replikerna
     let text = "";
@@ -1685,7 +1696,7 @@
   dukEl.addEventListener("pointerup", (e) => { if (e.target.id === "duk-volym") setTimeout(() => e.target.blur(), 0); });
   dukEl.addEventListener("input", (e) => {
     if (e.target.id !== "duk-volym") return;
-    volym = Number(e.target.value); sp.satVolym(volym); sp.satTyst(volym === 0);
+    volym = Number(e.target.value); sp.satVolym(volym); sp.satTyst(volym === 0); visaLjud(volym);
     try { localStorage.setItem("volym", String(volym)); } catch (x) {}
     visaStyr(); setTimeout(uppdatera, 50);
   });
