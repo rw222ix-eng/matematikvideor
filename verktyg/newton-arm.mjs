@@ -1,12 +1,13 @@
 /**
  * Lägger en rörelse (t.ex. armen i en vinkning) från ChatGPT-rutor på Newtons grundbild.
  *
- *   node verktyg/newton-arm.mjs <namn> <x0,y0,x1,y1> <ruta1.png> [<ruta2.png> ...]
+ *   node verktyg/newton-arm.mjs <namn> <x0,y0,x1,y1[;x0,y0,x1,y1…]> <ruta1.png> [<ruta2.png> ...]
  *
  * ChatGPT målar om hela bilden varje gång: penseldragen ändras lite överallt och huvudet vrids
  * ofta. Ett bildspel av rena rutor skulle därför "koka". Här tas ur varje ruta bara det som
  * skiljer sig tydligt från grundbilden (assets/figur/newton-prata.png) och bara inom området
- * x0,y0–x1,y1 (originalets pixlar), med mjuk kant; allt annat är grundbildens pixlar. Resultatet
+ * x0,y0–x1,y1 (originalets pixlar; flera områden skiljs med semikolon, t.ex. när en lyft hand
+ * ligger nära håret och området måste gå runt huvudet), med mjuk kant; allt annat är grundbildens pixlar. Resultatet
  * skrivs som assets/figur/<namn>-01.png, -02.png … och friställs sedan med verktyg/newton.mjs
  * tillsammans med de andra bilderna, så att allt får samma ram.
  */
@@ -17,7 +18,7 @@ import { fileURLToPath } from "node:url";
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const [namn, omrade, ...rutor] = process.argv.slice(2);
 if (!namn || !omrade || !rutor.length) { console.error("Användning: node verktyg/newton-arm.mjs <namn> <x0,y0,x1,y1> <ruta.png> ..."); process.exit(1); }
-const [X0, Y0, X1, Y1] = omrade.split(",").map(Number);
+const OMRADEN = omrade.split(";").map((r) => r.split(",").map(Number));
 const W = 1254, H = 1254;
 const las = (fil) => execFileSync("ffmpeg", ["-v", "error", "-i", fil, "-f", "rawvideo", "-pix_fmt", "rgba", "-"], { maxBuffer: 1 << 28 });
 const bas = las(join(HÄR, "..", "assets", "figur", "newton-prata.png"));
@@ -46,9 +47,9 @@ rutor.forEach((fil, n) => {
   for (let i = 0; i < W * H; i++) diff[i] = Math.abs(r[i * 4] - bas[i * 4]) + Math.abs(r[i * 4 + 1] - bas[i * 4 + 1]) + Math.abs(r[i * 4 + 2] - bas[i * 4 + 2]);
   const jamn = boxsudd(diff, 3);
   let mask = new Float32Array(W * H);
-  for (let y = Y0; y <= Y1; y++) for (let x = X0; x <= X1; x++) {
+  for (const [X0, Y0, X1, Y1] of OMRADEN) for (let y = Y0; y <= Y1; y++) for (let x = X0; x <= X1; x++) {
     const i = y * W + x, kant = Math.min(x - X0, X1 - x, y - Y0, Y1 - y);
-    mask[i] = steg(LAG, HOG, jamn[i]) * steg(0, KANT, kant);
+    mask[i] = Math.max(mask[i], steg(LAG, HOG, jamn[i]) * steg(0, KANT, kant));
   }
   mask = boxsudd(vax(mask, VAXT), SUDD);
   const ut = Buffer.from(bas);
