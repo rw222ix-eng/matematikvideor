@@ -328,7 +328,18 @@
   .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk.visa .lock:hover ~ .stor { visibility: visible; }
   /* Ringen syns före första start, en kort stund efter paus, och vid hovring — inte permanent över bilden. */
   .duk.paus:not(.igang) .stor, .duk.nyss .stor, .duk.visa .lock:hover ~ .stor { opacity: 1; }
-  .duk .lock { cursor: pointer; }
+  .duk .lock { cursor: pointer; touch-action: manipulation; }
+  /* Dubbelklick på en halva spolar 5 s: ett ljussken från den kanten och "+5 s" / "−5 s". */
+  .duk .spol { position: absolute; top: 0; bottom: 0; width: 38%; z-index: 4; display: grid; place-items: center; pointer-events: none; opacity: 0; font: 500 14px/1 var(--sans); letter-spacing: .14em; color: #FFFBF2; text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 12px rgba(0, 0, 0, .7); }
+  .duk .spol.fram { right: 0; background: radial-gradient(ellipse 100% 70% at 100% 50%, rgba(236, 230, 216, .16), rgba(236, 230, 216, 0) 70%); }
+  .duk .spol.bak { left: 0; background: radial-gradient(ellipse 100% 70% at 0% 50%, rgba(236, 230, 216, .16), rgba(236, 230, 216, 0) 70%); }
+  .duk .spol.syns { animation: spol .7s var(--lugn) forwards; }
+  .duk .spol.haller { opacity: 1; }
+  .duk .spol.slapp { animation: spol-ut .5s var(--lugn) forwards; }
+  @keyframes spol { 0% { opacity: 0 } 12% { opacity: 1 } 65% { opacity: 1 } 100% { opacity: 0 } }
+  @keyframes spol-ut { from { opacity: 1 } to { opacity: 0 } }
+  /* Håll in fingret för att spola: ingen textmarkering eller meny på det långa trycket. */
+  .duk .lock { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
   .duk .stor span { width: 58px; height: 58px; border: 1px solid rgba(242, 197, 114, .75); border-radius: 50%; display: grid; place-items: center; color: var(--accent); background: rgba(23, 20, 20, .45); transition: transform .08s ease-out; }
   .duk .stor svg { width: 15px; height: 15px; fill: currentColor; }
   .duk .stor svg.spela-ikon { margin-left: 3px; }
@@ -395,6 +406,14 @@
   .duk .fortsatt[hidden], .duk.igang .fortsatt { display: none; }
   .duk .fortsatt button { padding: 8px 12px 7px; border-radius: 999px; border: 1px solid rgba(242, 197, 114, .5); color: var(--accent); font: inherit; letter-spacing: inherit; text-transform: inherit; transition: background .3s, color .3s; }
   .duk .fortsatt button:hover { background: var(--accent); color: var(--bg); }
+  /* Pausar eleven efter 70 % av filmen visas en liten notis om Din tur (Rickard 2026-09-25).
+     Sidan rullar bara om eleven trycker på den. */
+  .duk .dintur-notis { position: absolute; right: 16px; top: 14px; z-index: 6; display: flex; align-items: center; gap: 10px; padding: 10px 14px 9px; border-radius: 999px; background: rgba(23, 20, 20, .85); border: 1px solid rgba(242, 197, 114, .55); font: 500 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ben); animation: fram .5s var(--lugn) both; transition: background .3s, color .3s, transform .4s var(--fjader); }
+  .duk .dintur-notis[hidden] { display: none; }
+  .duk .dintur-notis b { font-weight: 500; color: var(--accent); transition: color .3s; }
+  .duk .dintur-notis svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .duk .dintur-notis:active { transform: scale(.94); transition-duration: .08s; }
+  @media (hover: hover) { .duk .dintur-notis:hover { background: var(--accent); color: var(--bg); } .duk .dintur-notis:hover b { color: var(--bg); } }
   /* En kort rad överst i spelaren, t.ex. "Länken är kopierad". */
   .duk .besked { position: absolute; left: 50%; top: 14px; z-index: 8; transform: translate(-50%, -6px); padding: 9px 14px 8px; border-radius: 999px; background: rgba(23, 20, 20, .9); border: 1px solid rgba(242, 197, 114, .4); font: 500 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--ben); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s var(--lugn); }
   .duk .besked.syns { opacity: 1; transform: translate(-50%, 0); }
@@ -588,7 +607,13 @@
     .styr .knapp { width: 36px; }
     .duk .stor span { width: 48px; height: 48px; }
     .dintur { margin-top: 40px; padding: 22px 18px 24px; }
-    .del-svar input { flex-basis: 100%; }
+    /* Fält, enhet och Kolla på samma rad: förut hamnade "meter" och Kolla ensamma på en rad
+       under fältet (Rickard 2026-09-25). */
+    .del-svar { flex-wrap: nowrap; gap: 8px; }
+    .del-svar input { flex: 1 1 0; width: 0; font-size: 20px; padding: 8px 12px; }
+    .del-svar .enhet { font-size: 15px; }
+    .del-svar .kolla { flex: none; padding: 0 16px; }
+    .duk .dintur-notis { right: 8px; top: 8px; gap: 8px; padding: 9px 12px 8px; letter-spacing: .12em; }
     .duk .slut { padding: 12px 12px 56px; }
     .duk .slut-fraga { display: none; }
     .duk .slut .knapprad { margin-top: 12px; }
@@ -1523,8 +1548,10 @@
       <div class="bild" style="${bild ? `background-image:url('${bild}')` : ""}"></div>
       <div class="lock" id="duk-lock" aria-hidden="true"></div>
       <div class="stor" aria-hidden="true"><span id="duk-stor">${IK.spela.replace('class="fyll" ', 'class="spela-ikon" ')}</span></div>
+      <div class="spol" id="duk-spol" aria-hidden="true"></div>
       <div class="undertext" id="duk-text" aria-live="off"></div>
       <div class="fortsatt" id="duk-fortsatt" hidden><span>Fortsätter från <span id="duk-fortsatt-tid"></span></span><button type="button" id="duk-borja-om">Börja om</button></div>
+      ${v.dinTur ? `<button type="button" class="dintur-notis" id="duk-dintur" hidden><b>Din tur</b>Pröva uppgiften<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5 V10 M2.5 6.5 L6 10 L9.5 6.5"/></svg></button>` : ""}
       <div class="besked" id="duk-besked" role="status" aria-live="polite"></div>
       ${v.dinTur ? `<div class="slut" id="duk-slut" hidden><div><p class="etikett">Din tur</p><p class="slut-fraga">${esc(v.dinTur.delar[0].fraga)}</p><div class="knapprad"><button type="button" class="kolla" id="duk-svara">Svara på frågan</button><button type="button" class="kant" id="duk-se-igen">Se filmen igen</button></div></div></div>` : ""}
       <div class="styr" id="duk-styr">
@@ -1575,6 +1602,15 @@
       slutRuta.hidden = !slut;
       if (slut && dukEl.contains(document.activeElement)) $("duk-svara").focus({ preventScroll: true });
     }
+    // Notisen om Din tur: filmen har stått pausad en halv sekund efter notisgränsen, och uppgiften
+    // är inte redan löst. Halvsekunden gör att den inte blinkar till vid ett dubbelklick.
+    if (spelar) pausadSedan = 0; else if (!pausadSedan) pausadSedan = performance.now();
+    const notis = $("duk-dintur");
+    if (notis) {
+      const f = framsteg[aktuell.id];
+      const visa = !spelar && !slut && sp.startad() && nu >= notisFran(aktuell) && performance.now() - pausadSedan > 500 && !(f && f.lost);
+      if (notis.hidden === visa) notis.hidden = !visa;
+    }
     // Längden i huvudet är filmens egen, så att den stämmer med spelarens (7:43 mot 7:44).
     if (sp.langd()) { const lt = langdRad(sp.langd()); if ($("f-langd").textContent !== lt) $("f-langd").textContent = lt; }
     dukEl.classList.toggle("paus", !spelar); ritaMitt(spelar);
@@ -1603,7 +1639,16 @@
     if ($("duk-text").textContent !== text) $("duk-text").textContent = text;
     markeraNu(nu);
   }
-  let nyssTimer = null, spelarForut = false, senastSparat = 0, sparatSlut = false;
+  let nyssTimer = null, spelarForut = false, senastSparat = 0, sparatSlut = false, pausadSedan = 0;
+  // Från vilken tid notisen om Din tur får visas (Rickard 2026-09-25: inte samma gräns för alla
+  // filmer). dintur.json kan ange "notisFran" i sekunder; annars slutet av kapitlet som ledtråden
+  // pekar in i, för då har filmen visat metoden; annars 70 % av filmen.
+  function notisFran(v) {
+    const d = v.dinTur; if (!d) return Infinity;
+    if (Number.isFinite(d.notisFran)) return d.notisFran;
+    const lt = d.ledtrad && d.ledtrad.t, nasta = Number.isFinite(lt) && (v.kapitel || []).find((k) => k.t > lt);
+    return nasta ? nasta.t : (v.langd || 0) * 0.7;
+  }
   let kapitelAntal = 0, egnaKapitelNu = false;
   const langdRad = (sek) => [sek ? `${tid(Math.floor(sek))} min` : "", egnaKapitelNu ? `${kapitelAntal} kapitel` : ""].filter(Boolean).join(" · ");
   function ritaMitt(spelar) {
@@ -1621,11 +1666,13 @@
     if (fortsatt != null) $("duk-fortsatt-tid").textContent = tid(fortsatt);
   }
   function glomFortsatt() { if (fortsatt != null) { fortsatt = null; visaFortsatt(); } }
-  function vaxlaSpel() {
+  // tyst: utan mittknappens blink (när ett dubbelklick tar tillbaka första klickets paus/start).
+  function vaxlaSpel(tyst) {
     const ska = !sp.spelar();
     if (ska && fortsatt != null && !sp.startad()) { sp.sok(fortsatt); glomFortsatt(); }
     if (ska) sp.spela(); else sp.pausa();
-    ritaMitt(ska); dukEl.classList.toggle("paus", !ska); spelarForut = ska; visaNyss();
+    ritaMitt(ska); dukEl.classList.toggle("paus", !ska); spelarForut = ska;
+    if (tyst === true) { clearTimeout(nyssTimer); dukEl.classList.remove("nyss"); } else visaNyss();
     setTimeout(uppdatera, 50);
   }
   function vaxlaText() {
@@ -1683,14 +1730,74 @@
       else if (b.id === "duk-dela") kopieraLank();
       else if (b.id === "duk-borja-om") { glomFortsatt(); vaxlaSpel(); }
       else if (b.id === "duk-se-igen") { $("duk-slut").hidden = true; sp.sok(0); sp.spela(); setTimeout(uppdatera, 50); }
-      else if (b.id === "duk-svara") tillDinTur();
+      else if (b.id === "duk-svara" || b.id === "duk-dintur") tillDinTur();
       else if (b.id === "duk-igen" && aktuell) { const v = aktuell; stangSpelare(); laddaFilm(v); }
       visaStyr(); return;
     }
     if (e.target.closest("#duk-linje")) return;
-    if (e.target.closest("#duk-lock")) { vaxlaSpel(); visaStyr(); }
+    if (e.target.closest("#duk-lock")) klickIBilden(e);
   });
-  dukEl.addEventListener("dblclick", (e) => { if (e.target.closest("#duk-lock")) { vaxlaHelskarm(); } });
+  // Klick i bilden (Rickard 2026-09-25). Ett klick pausar/startar direkt, som förut. Dubbelklick
+  // med mus: höger halva spolar fram 5 s, vänster tillbaka 5 s, och varje klick till i samma följd
+  // spolar 5 s till. Dubbeltryck på pekskärm: helskärm på/av. Andra klicket tar tillbaka det
+  // första klickets paus/start, så filmen fortsätter som den gjorde. Följden räknas själv
+  // (tid + avstånd), för iPhone skickar varken dblclick eller detail > 1 på tryck.
+  let tryckTyp = "mouse", foljd = { t: 0, x: 0, y: 0, antal: 0 }, spolTimer = null, hall = null, hallSlapptes = 0;
+  dukEl.addEventListener("pointerdown", (e) => { if (e.target.closest("#duk-lock")) tryckTyp = e.pointerType; });
+  // Håll in fingret på en halva (Rickard 2026-09-25): höger spolar fram och vänster bakåt så länge
+  // man håller, 10 gånger fortare än filmen och 20 efter två sekunder. Rör sig fingret innan det
+  // gått en knapp halv sekund är det en scrollning, inte ett håll. Klicket som kommer när man
+  // släpper räknas inte som ett tryck på bilden.
+  dukEl.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "touch" || !e.target.closest("#duk-lock")) return;
+    const r = $("duk-lock").getBoundingClientRect(), fram = e.clientX >= r.left + r.width / 2;
+    const h = hall = { x: e.clientX, y: e.clientY, igang: false, totalt: 0, start: 0, timer: 0, steg: 0 };
+    h.timer = setTimeout(() => {
+      h.igang = true; h.start = performance.now();
+      const stega = () => { const sek = performance.now() - h.start > 2000 ? 4 : 2; h.totalt += sek; spola(fram ? sek : -sek, fram, h.totalt, true); visaStyr(); };
+      stega(); h.steg = setInterval(stega, 200);
+    }, 450);
+  });
+  function slappHall() {
+    if (!hall) return;
+    clearTimeout(hall.timer); clearInterval(hall.steg);
+    if (hall.igang) {
+      hallSlapptes = performance.now();
+      const s = $("duk-spol"); s.classList.remove("haller"); s.classList.add("slapp");
+      clearTimeout(spolTimer); spolTimer = setTimeout(() => s.classList.remove("slapp"), 500);
+    }
+    hall = null;
+  }
+  dukEl.addEventListener("pointermove", (e) => { if (hall && !hall.igang && Math.hypot(e.clientX - hall.x, e.clientY - hall.y) > 10) slappHall(); });
+  ["pointerup", "pointercancel"].forEach((t) => dukEl.addEventListener(t, slappHall));
+  dukEl.addEventListener("contextmenu", (e) => { if (e.target.closest("#duk-lock")) e.preventDefault(); });
+  function klickIBilden(e) {
+    const nu = performance.now();
+    if (nu - hallSlapptes < 400) { foljd = { t: 0, x: 0, y: 0, antal: 0 }; return; }
+    const iFoljd = nu - foljd.t < 350 && Math.hypot(e.clientX - foljd.x, e.clientY - foljd.y) < 60;
+    foljd = { t: nu, x: e.clientX, y: e.clientY, antal: iFoljd ? foljd.antal + 1 : 1 };
+    if (foljd.antal === 1) { vaxlaSpel(); visaStyr(); return; }
+    if (foljd.antal === 2) vaxlaSpel(true);
+    if (tryckTyp === "touch") { if (foljd.antal === 2) vaxlaHelskarm(); }
+    else {
+      const r = $("duk-lock").getBoundingClientRect(), fram = e.clientX >= r.left + r.width / 2;
+      spola(fram ? 5 : -5, fram, 5 * (foljd.antal - 1));
+    }
+    visaStyr();
+  }
+  // haller: fingret hålls in, skenet står kvar tills det släpps (slappHall tonar ut det).
+  function spola(steg, fram, totalt, haller) {
+    glomFortsatt();
+    const langd = sp.langd() || (aktuell && aktuell.langd) || 0;
+    sp.sok(Math.max(0, langd ? Math.min(langd - .5, sp.nu() + steg) : sp.nu() + steg));
+    const s = $("duk-spol");
+    s.textContent = `${fram ? "+" : "−"}${totalt} s`;
+    s.classList.toggle("fram", fram); s.classList.toggle("bak", !fram); s.classList.remove("slapp");
+    clearTimeout(spolTimer);
+    if (haller) { s.classList.remove("syns"); s.classList.add("haller"); }
+    else { s.classList.remove("syns", "haller"); void s.offsetWidth; s.classList.add("syns"); spolTimer = setTimeout(() => s.classList.remove("syns"), 700); }
+    setTimeout(uppdatera, 50);
+  }
   // Reglaget ska stängas när musen lämnar det: släpp fokus när man är klar med det.
   dukEl.addEventListener("change", (e) => { if (e.target.id === "duk-volym") e.target.blur(); });
   dukEl.addEventListener("pointerup", (e) => { if (e.target.id === "duk-volym") setTimeout(() => e.target.blur(), 0); });
@@ -2261,15 +2368,18 @@
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
   visaAllt.addEventListener("click", () => { alltRuta.open = !alltRuta.open; });
   alltRuta.addEventListener("toggle", () => { visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); });
+  // Skriver eleven i ett svarsfält tillhör tangenterna fältet: "/" i 3^(1/3) öppnade sökningen
+  // och Escape lämnade filmen (Rickard 2026-09-25, "Din tur fungerar inte").
+  const skriver = (e) => e.target.matches && e.target.matches("input, textarea, [contenteditable]") && !e.target.closest("#sok");
   document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
+    if (e.key !== "Escape" || skriver(e)) return;
     if (document.fullscreenElement || document.webkitFullscreenElement) return; // webbläsaren stänger helskärmen själv
     if (dukEl.classList.contains("helskarm")) { cssHelskarm(false); return; }
     if (sokRuta.classList.contains("oppen")) stangSok();
     else if (aktivVy === "film") location.hash = "filmer";
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "/" && !sokRuta.classList.contains("oppen")) { e.preventDefault(); oppnaSok(); }
+    if (e.key === "/" && !sokRuta.classList.contains("oppen") && !skriver(e)) { e.preventDefault(); oppnaSok(); }
   });
 
   ruta();
