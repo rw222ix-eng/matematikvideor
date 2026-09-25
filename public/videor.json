@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-25T15:58:37.821Z",
+ "byggd": "2026-09-25T16:06:55.512Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -3869,7 +3869,86 @@
     }
    ],
    "kapitel": [],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "Skriv 10⁶ · 10⁻³ som en enda potens, och säg vilket prefix det blir.",
+    "delar": [
+     {
+      "fraga": "Vilken potens blir det?",
+      "typ": "tal",
+      "svar": 1000,
+      "exempel": "t.ex. 10^6",
+      "tangenter": [
+       "^",
+       "-",
+       "(",
+       ")"
+      ],
+      "fel": [
+       {
+        "svar": "10^(-18)",
+        "text": "Du har gångrat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 6 + (−3)."
+       },
+       {
+        "svar": "10^9",
+        "text": "Exponenten −3 är negativ. 6 plus minus 3 är detsamma som 6 minus 3."
+       },
+       {
+        "svar": "10^(-2)",
+        "text": "Du har delat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 6 + (−3)."
+       }
+      ]
+     },
+     {
+      "fraga": "Vilket prefix står för den tiopotensen?",
+      "typ": "ord",
+      "svar": [
+       "kilo",
+       "k"
+      ],
+      "exempel": "t.ex. mega",
+      "fel": [
+       {
+        "svar": [
+         "mega",
+         "M"
+        ],
+        "text": "Mega är 10⁶, det tal du började med. Efter gånger 10⁻³ blir det en annan tiopotens."
+       },
+       {
+        "svar": [
+         "milli",
+         "m"
+        ],
+        "text": "Milli är 10⁻³, det andra talet. Leta upp tiopotensen du fick i a) i tabellen."
+       },
+       {
+        "svar": [
+         "giga",
+         "G"
+        ],
+        "text": "Giga är 10⁹. Exponenterna ska läggas ihop, och 6 + (−3) är 3."
+       },
+       {
+        "svar": [
+         "K"
+        ],
+        "text": "Nästan. Kilo skrivs med litet k, stort K är inget prefix."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "När två tiopotenser gångras läggs exponenterna ihop. Sedan letar du upp tiopotensen i prefixtabellen.",
+     "t": 405
+    },
+    "losning": [
+     "När två tiopotenser gångras läggs exponenterna ihop.",
+     "10⁶ · 10⁻³ = 10^(6 + (−3))",
+     "6 + (−3) = 3, så det blir 10³.",
+     "I tabellen står 10³ under bokstaven k, och det är kilo."
+    ],
+    "notisFran": 386
+   },
    "undertext": [
     {
      "s": 0.1,
@@ -4355,7 +4434,83 @@
     }
    ],
    "kapitel": [],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "En mobil kostar 6000 kronor när den är ny och tappar 20 procent av sitt värde varje år.",
+    "delar": [
+     {
+      "fraga": "Vilken sorts funktion är värdet?",
+      "typ": "ord",
+      "svar": [
+       "exponentialfunktion",
+       "exponentialfunktionen",
+       "en exponentialfunktion",
+       "exponentiell",
+       "exponentiell funktion",
+       "en exponentiell funktion"
+      ],
+      "exempel": "t.ex. räta linjen",
+      "fel": [
+       {
+        "svar": [
+         "räta linjen",
+         "rät linje",
+         "en rät linje",
+         "linje",
+         "linjen",
+         "linjär",
+         "linjär funktion",
+         "en linjär funktion"
+        ],
+        "text": "Värdet minskar inte med lika många kronor varje år, utan med lika många procent. Då gångras värdet med samma tal varje år."
+       },
+       {
+        "svar": [
+         "potensfunktion",
+         "potensfunktionen",
+         "en potensfunktion"
+        ],
+        "text": "I en potensfunktion står x nere i basen. Här gångras värdet med samma tal varje år, och då står x uppe i exponenten."
+       }
+      ]
+     },
+     {
+      "fraga": "Skriv funktionen, med x för antalet år.",
+      "typ": "ekvation",
+      "svar": "y = 6000*0.8^x",
+      "exempel": "t.ex. y = 1000 · 1,05^x",
+      "tangenter": [
+       "^",
+       "·",
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "y = 6000*0.2^x",
+        "text": "0,2 är det som försvinner varje år. Kvar blir 100 − 20 = 80 procent, så värdet gångras med 0,8."
+       },
+       {
+        "svar": "y = 6000*1.2^x",
+        "text": "1,2 betyder att värdet ökar med 20 procent. Här minskar det, så värdet gångras med 0,8."
+       },
+       {
+        "svar": "y = -1200*x + 6000",
+        "text": "Det är räta linjen, som drar bort 1200 kronor varje år. Men 20 procent av ett mindre värde är färre kronor, så värdet gångras med 0,8 varje år i stället."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Värdet gångras med samma tal varje år, så det är y = C · aˣ. C är värdet när mobilen är ny, och a är det som blir kvar av 100 procent.",
+     "t": 310
+    },
+    "losning": [
+     "Värdet minskar med lika många procent varje år, inte med lika många kronor. Då är det en exponentialfunktion, y = C · aˣ.",
+     "C är startvärdet, 6000 kronor.",
+     "Kvar varje år är 100 − 20 = 80 procent, så förändringsfaktorn är a = 0,8.",
+     "y = 6000 · 0,8ˣ, där x är antalet år."
+    ],
+    "notisFran": 398
+   },
    "undertext": [
     {
      "s": 0.14,
@@ -4857,7 +5012,72 @@
     }
    ],
    "kapitel": [],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "Pizzan från filmen har omkretsen 62,8 centimeter. Nu delas den i sex lika stora bitar.",
+    "delar": [
+     {
+      "fraga": "Hur stor blir vinkeln i spetsen?",
+      "typ": "tal",
+      "svar": 60,
+      "enhet": "grader",
+      "exempel": "t.ex. 45",
+      "fel": [
+       {
+        "svar": "45",
+        "text": "45 grader är vinkeln när pizzan delas i åtta bitar. Här är det sex: 360 delat med 6."
+       },
+       {
+        "svar": "6",
+        "text": "6 är antalet bitar. Hela varvet är 360 grader, och det delas i 6 lika stora bitar."
+       },
+       {
+        "svar": "2160",
+        "text": "Du har gångrat med 6. Hela varvet, 360 grader, ska delas i 6 bitar."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur lång blir kanten på en bit?",
+      "typ": "tal",
+      "svar": 10.4667,
+      "tolerans": 0.06,
+      "enhet": "cm",
+      "exempel": "t.ex. 7,85",
+      "fel": [
+       {
+        "svar": "7.85",
+        "tolerans": 0.01,
+        "text": "7,85 centimeter är kanten när pizzan delas i åtta bitar. Här tar du en sjättedel av 62,8."
+       },
+       {
+        "svar": "52.33",
+        "tolerans": 0.05,
+        "text": "Det är bitens area, 314 delat med 6. Kanten är en sjättedel av omkretsen, 62,8."
+       },
+       {
+        "svar": "376.8",
+        "tolerans": 0.05,
+        "text": "Du har gångrat med 6. En bit har en sjättedel av kanten, så dela 62,8 med 6."
+       },
+       {
+        "svar": "10",
+        "text": "10 centimeter är radien, den raka sidan på biten. Kanten är den böjda bågen, en sjättedel av 62,8."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Vinkeln är 360 grader delat på antalet bitar. Kanten är samma andel av omkretsen 62,8.",
+     "t": 394
+    },
+    "losning": [
+     "Hela varvet är 360 grader, och det delas i 6 lika stora bitar.",
+     "360 / 6 = 60, så vinkeln blir 60 grader.",
+     "60 delat med 360 är en sjättedel.",
+     "Kanten är en sjättedel av omkretsen: 62,8 / 6 ≈ 10,5 centimeter."
+    ],
+    "notisFran": 383
+   },
    "undertext": [
     {
      "s": 0.16,
@@ -5353,7 +5573,69 @@
     }
    ],
    "kapitel": [],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "Tänk dig att du bygger en modell av ert klassrum i skala 1 till 5.",
+    "delar": [
+     {
+      "fraga": "Hur många gånger större är golvytan i det riktiga klassrummet?",
+      "typ": "tal",
+      "svar": 25,
+      "exempel": "t.ex. 100",
+      "fel": [
+       {
+        "svar": "5",
+        "text": "5 är längdskalan. En yta har både längd och bredd, så areaskalan är 5 gånger 5."
+       },
+       {
+        "svar": "10",
+        "text": "Areaskalan är längdskalan upphöjt till 2, alltså 5 gånger 5, inte 5 plus 5."
+       },
+       {
+        "svar": "125",
+        "text": "125 är volymskalan. Golvytan är en yta, så det är 5 upphöjt till 2."
+       },
+       {
+        "svar": "100",
+        "text": "100 gällde dockhuset i skala 1 till 10. Här är längdskalan 1 till 5."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur många gånger större är volymen?",
+      "typ": "tal",
+      "svar": 125,
+      "exempel": "t.ex. 1000",
+      "fel": [
+       {
+        "svar": "15",
+        "text": "Volymskalan är längdskalan upphöjt till 3, alltså 5 gånger 5 gånger 5, inte 5 gånger 3."
+       },
+       {
+        "svar": "25",
+        "text": "25 är areaskalan. En volym har också höjd, så det är 5 upphöjt till 3."
+       },
+       {
+        "svar": "5",
+        "text": "5 är längdskalan. En volym har längd, bredd och höjd, så volymskalan är 5 · 5 · 5."
+       },
+       {
+        "svar": "1000",
+        "text": "1000 gällde dockhuset i skala 1 till 10. Här är längdskalan 1 till 5."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Areaskalan är längdskalan upphöjt till 2, och volymskalan är längdskalan upphöjt till 3.",
+     "t": 410
+    },
+    "losning": [
+     "Längdskalan är 1 till 5, så varje längd är 5 gånger större i verkligheten.",
+     "Areaskalan är 5² = 5 · 5 = 25, så golvytan är 25 gånger större.",
+     "Volymskalan är 5³ = 5 · 5 · 5 = 125, så volymen är 125 gånger större."
+    ],
+    "notisFran": 395
+   },
    "undertext": [
     {
      "s": 0.08,
@@ -5871,7 +6153,60 @@
     }
    ],
    "kapitel": [],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "En rutschkana är 6 meter lång och lutar 40 grader mot marken.",
+    "delar": [
+     {
+      "fraga": "Hur högt upp sitter toppen? Svara med två decimaler.",
+      "typ": "tal",
+      "svar": 3.8567,
+      "tolerans": 0.006,
+      "enhet": "meter",
+      "exempel": "t.ex. 2,00",
+      "fel": [
+       {
+        "svar": "4.596",
+        "tolerans": 0.01,
+        "text": "Det är 6 gånger cosinus 40°, sträckan längs marken. Höjden ligger mitt emot vinkeln, och då är det sinus."
+       },
+       {
+        "svar": "5.035",
+        "tolerans": 0.01,
+        "text": "Tangens hör ihop med de två kateterna. Här vet du hypotenusan, rutschkanan, och höjden ligger mitt emot vinkeln, så det är sinus."
+       },
+       {
+        "svar": "9.334",
+        "tolerans": 0.01,
+        "text": "Du har delat med sinus. sin 40° = höjden / 6, så höjden är 6 gånger sin 40°."
+       },
+       {
+        "svar": "4.471",
+        "tolerans": 0.01,
+        "text": "Räknaren står i radianer. Ställ om den till grader (DEG) och räkna igen."
+       },
+       {
+        "svar": "3",
+        "text": "3 meter blir det om rutschkanan lutar 30 grader. Här lutar den 40 grader."
+       }
+      ],
+      "nara": {
+       "tolerans": 0.06,
+       "text": "Nästan. Räkna 6 · sin 40° och avrunda till två decimaler."
+      }
+     }
+    ],
+    "ledtrad": {
+     "text": "Höjden ligger mitt emot vinkeln och rutschkanan är hypotenusan. Då är sinus 40° lika med höjden delat med 6.",
+     "t": 415
+    },
+    "losning": [
+     "Höjden ligger mitt emot vinkeln, och rutschkanan är hypotenusan.",
+     "sin 40° = h / 6",
+     "h = 6 · sin 40°",
+     "Räknaren ger sin 40° ≈ 0,643, så h ≈ 6 · 0,643 ≈ 3,86 meter."
+    ],
+    "notisFran": 398
+   },
    "undertext": [
     {
      "s": 0.08,
