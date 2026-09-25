@@ -467,7 +467,11 @@
   /* Kapitlen (Rickard 2026-09-23): 10–12 korta rubriker med tid, direkt under filmen. I två
      spalter (2026-09-24) så alla syns utan att man scrollar. Det som spelas nu lyser och får en
      guldlinje som visar hur långt in i kapitlet man är. Hela texten fälls ut under kapitlen. */
-  .film .kap-rubrik { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 44px 0 8px; }
+  .film .kap-rubrik { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; margin: 44px 0 8px; }
+  /* "Visa allt som sägs" står i en egen rad under kapitlen, mitt över texten den fäller ut, med en
+     tunn linje på var sida: då ser man att texten kommer just där. */
+  .allt-rad { display: flex; align-items: center; gap: 18px; max-width: 640px; margin: 40px auto 0; scroll-margin-top: 96px; }
+  .allt-rad::before, .allt-rad::after { content: ""; flex: 1; height: 1px; background: var(--linje2); }
   .film .kap-rubrik h3 { margin: 0; font-size: 12px; }
   .visa-allt { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font: 500 12px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--ben2); transition: color .3s, transform .4s var(--fjader); }
   .visa-allt:hover { color: var(--ben); }
@@ -492,7 +496,7 @@
   /* Hela texten, replik för replik, för den som vill läsa. */
   /* Knappen "Visa allt som sägs" sitter vid kapitelrubriken och styr den här rutan; rutans egen
      summary används inte. */
-  .allt { max-width: 640px; margin: 40px auto 0; }
+  .allt { max-width: 640px; margin: 8px auto 0; }
   .allt > summary { display: none; }
   .helatext { list-style: none; margin: 32px auto 0; padding: 0; max-width: 640px; }
   .helatext li { margin: 0 0 40px; opacity: 0; transform: translateY(18px); transition: opacity 1.1s var(--lugn), transform 1.1s var(--lugn); }
@@ -860,9 +864,12 @@
     <div class="duk" id="duk" tabindex="0" role="region" aria-label="Filmspelare"></div>
     <div class="kap-rubrik">
       <h3 class="etikett">Kapitel</h3>
-      <button class="visa-allt" id="visa-allt" type="button" aria-expanded="false" aria-controls="allt"><span class="visa">Visa allt som sägs</span><span class="dolj">Dölj texten</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4 L6 8 L10 4"/></svg></button>
     </div>
     <ol class="kapitel" id="kapitel"></ol>
+    <!-- Knappen står direkt ovanför texten den fäller ut, så att man ser vad som händer (Rickard 2026-09-25). -->
+    <div class="allt-rad">
+      <button class="visa-allt" id="visa-allt" type="button" aria-expanded="false" aria-controls="allt"><span class="visa">Visa allt som sägs</span><span class="dolj">Dölj texten</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4 L6 8 L10 4"/></svg></button>
+    </div>
     <details class="allt" id="allt">
       <summary>Allt som sägs</summary>
       <ol class="helatext" id="helatext"></ol>
@@ -2523,9 +2530,13 @@
     if (e.target.closest("#dintur-nasta")) { nastaSteg(); if ($("dintur-nasta").hidden) $("losning-steg").focus({ preventScroll: true }); }
   });
 
-  // "Visa allt som sägs" vid kapitelrubriken fäller ut hela texten under kapitlen.
+  // "Visa allt som sägs" fäller ut hela texten direkt under knappen. Öppnas den glider sidan så att
+  // knappen hamnar högt upp och texten syns under den.
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
-  visaAllt.addEventListener("click", () => { alltRuta.open = !alltRuta.open; if (alltRuta.open) Newton.hande("allt"); });
+  visaAllt.addEventListener("click", () => {
+    alltRuta.open = !alltRuta.open;
+    if (alltRuta.open) { requestAnimationFrame(() => visaAllt.parentElement.scrollIntoView({ behavior: "smooth", block: "start" })); Newton.hande("allt"); }
+  });
   alltRuta.addEventListener("toggle", () => { visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); });
   // Skriver eleven i ett svarsfält tillhör tangenterna fältet: "/" i 3^(1/3) öppnade sökningen
   // och Escape lämnade filmen (Rickard 2026-09-25, "Din tur fungerar inte").
