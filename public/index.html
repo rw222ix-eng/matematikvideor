@@ -729,7 +729,7 @@
      glad, fundersam, förvånad, blink) och rörelser som bildremsor (vinka, kasta, putsa, gest, steg),
      alla med samma ram. Lagren: .newton-spegel (vänds när han går åt höger), .newton-gunga (hela
      kroppen gungar lätt), .newton-kropp (andas). */
-  .newton { position: fixed; right: 14px; bottom: 0; z-index: 35; width: 102px; height: 190px; pointer-events: none; }
+  .newton { position: fixed; right: 14px; bottom: 0; z-index: 45; width: 102px; height: 190px; pointer-events: none; }
   .newton[hidden] { display: none; }
   .newton.guide { right: auto; bottom: auto; left: 0; top: 0; z-index: 45; transition: transform var(--gang, 1s) cubic-bezier(.42, 0, .58, 1); }
   .newton-figur { position: absolute; inset: 0; pointer-events: auto; cursor: pointer; animation: newton-in .75s var(--fjader) both; }
@@ -790,6 +790,7 @@
      Lagret ligger över sökrutan (z 40) så att det kan visa saker där också; Newton ligger över det. */
   .guide-ljus { position: fixed; inset: 0; z-index: 41; pointer-events: none; opacity: 0; transition: opacity .4s; }
   .guide-ljus.syns { opacity: 1; }
+  .guide-ljus.latt .guide-dim { background: rgba(10, 8, 8, .38); }   /* tipsen: bara en lätt dämpning */
   .guide-dim { position: absolute; inset: 0; background: rgba(10, 8, 8, .6); transition: clip-path .6s var(--lugn); }
   .guide-ram { position: absolute; border-radius: 12px; box-shadow: 0 0 0 1.5px rgba(242, 197, 114, .8), 0 0 26px 2px rgba(242, 197, 114, .3); transition: left .6s var(--lugn), top .6s var(--lugn), width .6s var(--lugn), height .6s var(--lugn), opacity .3s; animation: ram-puls 2.2s ease-in-out infinite; }
   .guide-ljus.folj .guide-dim, .guide-ljus.folj .guide-ram { transition: opacity .3s; }
@@ -1717,13 +1718,20 @@
       const visa = !spelar && !slut && sp.startad() && nu >= notisFran(aktuell) && performance.now() - pausadSedan > 500 && !(f && f.lost);
       if (notis.hidden === visa) notis.hidden = !visa;
     }
-    // Newton går undan när filmen börjar spela. Står den pausad en stund kommer ett tips: om
-    // notisen om Din tur syns handlar det om den, annars om hur man spolar (mus eller finger).
+    // Newton går undan när filmen börjar spela. Står den pausad en stund kommer ett tips, och det
+    // handlar om det eleven ser i fönstret (Rickard 2026-09-25): syns spelaren och notisen om Din
+    // tur lyser notisen; har eleven i stället scrollat ner till Din tur-rutan lyser rutan och Newton
+    // säger kort vad den är. De två räknas som samma tips och kommer bara en gång. Annars, med
+    // spelaren i bild, tipset om hur man spolar.
     if (spelar && !spelade && Newton.visar !== "guide") Newton.gom();
     spelade = spelar;
-    if (!spelar && !slut && sp.startad() && pausadSedan && performance.now() - pausadSedan > 1200) {
-      if (notis && !notis.hidden) Newton.visa("notis", ...TIPS.notis);
-      else if (nu > 3) { const id = kanHovra() ? "spolaMus" : "spolaTryck"; Newton.visa(id, ...TIPS[id]); }
+    const dtRuta = $("dintur"), rutan = !!aktuell.dinTur && !dtRuta.hidden && synsIFonster(dtRuta, 0.35) && !dtRuta.contains(document.activeElement) && !(framsteg[aktuell.id] && framsteg[aktuell.id].lost);
+    if (!rutan) rutanSedan = 0; else if (!rutanSedan) rutanSedan = performance.now();
+    if (!spelar && !slut && pausadSedan && performance.now() - pausadSedan > 1200) {
+      const spelaren = synsIFonster(dukEl, 0.5);
+      if (notis && !notis.hidden && spelaren && !Newton.harSett("notis")) Newton.visa("notis", ...TIPS.notis, { markera: () => [notis], ocksa: ["dinturRuta"] });
+      else if (rutan && !spelaren && performance.now() - rutanSedan > 700 && !Newton.harSett("dinturRuta")) Newton.visa("dinturRuta", ...TIPS.dinturRuta, { markera: () => [dtRuta], ocksa: ["notis"] });
+      else if (sp.startad() && nu > 3 && spelaren) { const id = kanHovra() ? "spolaMus" : "spolaTryck"; Newton.visa(id, ...TIPS[id], { markera: () => [dukEl] }); }
     }
     // Längden i huvudet är filmens egen, så att den stämmer med spelarens (7:43 mot 7:44).
     if (sp.langd()) { const lt = langdRad(sp.langd()); if ($("f-langd").textContent !== lt) $("f-langd").textContent = lt; }
@@ -1753,7 +1761,15 @@
     if ($("duk-text").textContent !== text) $("duk-text").textContent = text;
     markeraNu(nu);
   }
-  let nyssTimer = null, spelarForut = false, senastSparat = 0, sparatSlut = false, pausadSedan = 0, spelade = false;
+  let nyssTimer = null, spelarForut = false, senastSparat = 0, sparatSlut = false, pausadSedan = 0, spelade = false, rutanSedan = 0;
+  // Hur stor del av ett element som syns i fönstret (eller om det fyller det mesta av fönstret, för
+  // höga rutor som Din tur). Newton ska bara tala om det eleven faktiskt ser.
+  const synsIFonster = (e, andel = 0.5) => {
+    if (!e) return false;
+    const r = e.getBoundingClientRect(); if (!r.width || !r.height) return false;
+    const h = Math.max(0, Math.min(r.bottom, innerHeight) - Math.max(r.top, 0)), w = Math.max(0, Math.min(r.right, innerWidth) - Math.max(r.left, 0));
+    return (h * w) / (r.width * r.height) >= andel || h >= innerHeight * 0.6;
+  };
   // Från vilken tid notisen om Din tur får visas (Rickard 2026-09-25: inte samma gräns för alla
   // filmer). bygg.mjs räknar ut den per film ur ledtråden och kapitlen, skriver ut den vid
   // varje bygge och varnar när den faller tillbaka; 70 % här är bara reserv för gammal data.
@@ -2498,9 +2514,10 @@
     }
     if ((dt.fel >= 2 || allt) && $("dintur-losning").hidden) $("dintur-losning-knapp").hidden = false;
     // Newton: två svar sidan inte kan läsa, två fel, eller hela uppgiften löst.
-    if (!r.ok && !r.forstod) { dt.oforstatt = (dt.oforstatt || 0) + 1; if (dt.oforstatt >= 2) Newton.visa("format", ...TIPS.format, { direkt: true }); }
-    if (!r.ok && r.forstod && dt.fel >= 2) Newton.visa("ledtrad", ...TIPS.ledtrad, { direkt: true });
-    if (allt) Newton.visa(`lost-${dt.v.id}`, ...TIPS.lost, { direkt: true, rorelse: "kasta" });
+    // Tipsen lyser på det de handlar om: svarsraden med tecknen, ledtrådsknappen, lösningen.
+    if (!r.ok && !r.forstod) { dt.oforstatt = (dt.oforstatt || 0) + 1; if (dt.oforstatt >= 2) Newton.visa("format", ...TIPS.format, { direkt: true, markera: () => [li] }); }
+    if (!r.ok && r.forstod && dt.fel >= 2) Newton.visa("ledtrad", ...TIPS.ledtrad, { direkt: true, markera: () => [$("dintur-ledtrad-knapp")] });
+    if (allt) Newton.visa(`lost-${dt.v.id}`, ...TIPS.lost, { direkt: true, rorelse: "kasta", markera: () => [$("dintur-losning-knapp")] });
     // Rätt på en del: nästa olösta del får fokus.
     if (r.ok && !allt) { const nasta = [...dtEl.querySelectorAll(".del")].find((x) => !x.classList.contains("lost")); if (nasta) nasta.querySelector("input").focus(); }
   });
@@ -2557,6 +2574,9 @@
   // inte kan läsa, två fel, uppgiften löst, en stund i filmvalet). Varje tips en gång
   // (localStorage "tipsSedda"), ett i taget, minst en halv minut mellan tipsen som inte är svar på
   // något eleven just gjort, aldrig medan filmen spelar eller i helskärm; "Inga fler tips" = "tips": "av".
+  // Tipsen ser det eleven ser (Rickard 2026-09-25): ett tips kommer bara när det det handlar om syns
+  // i fönstret, och det lyser då med en guldram (markera). Har eleven scrollat någon annanstans väljs
+  // tipset om det som syns där i stället (t.ex. Din tur-rutan i stället för notisen i spelaren).
   // Guide: frågetecknet nere till vänster. Newton går till en del av sidan i taget, strålkastaren
   // lyser på den och han förklarar med enkla ord; "Nästa" i bubblan (eller →) tar nästa del, Esc slutar.
   const Newton = (() => {
@@ -2704,11 +2724,12 @@
       const id = visar; visar = null; senast = performance.now();
       [skrivTimer, gomTimer, blinkTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
       el.classList.add("gar"); el.classList.remove("pratar", "blinkar");
-      if (id === "guide") { dukEl.classList.remove("guide-styr"); slack(); ljusFor = null; senHandelse = null; document.body.classList.remove("visa-hjalp"); }
+      if (id === "guide") { dukEl.classList.remove("guide-styr"); senHandelse = null; document.body.classList.remove("visa-hjalp"); }
+      if (ljusFor || malEls.length) { slack(); ljusFor = null; }
       setTimeout(() => {
         if (visar) return;
         el.hidden = true; el.classList.remove("gar", "talar", "ror", "kastar", "guide", "hoger", "speglad", "gar-steg");
-        el.style.transform = ""; uttryck.classList.remove("syns");
+        el.style.transform = ""; uttryck.classList.remove("syns"); ljus.classList.remove("latt");
         document.body.classList.remove("newton-syns", "guidar");
       }, 460);
       return id;
@@ -2717,16 +2738,19 @@
     // ── Tipsen ─────────────────────────────────────────────
     // Newton glider upp i grundställning och vinkar (eller kastar äpplet), sedan tonar tipsets
     // uttryck fram och texten skrivs.
-    async function visa(id, lage, text, { direkt = false, rorelse: hur = "vinka" } = {}) {
+    // markera: det tipset handlar om lyser (guldram, svagare dämpning) medan Newton pratar.
+    // ocksa: tips som säger samma sak på ett annat ställe och räknas som sedda samtidigt.
+    async function visa(id, lage, text, { direkt = false, rorelse: hur = "vinka", markera: vad = null, ocksa = [] } = {}) {
       if (av || sett.has(id) || visar) return false;
       if (!direkt && performance.now() - senast < 30000) return false;
       if (sokRuta.classList.contains("oppen") || (aktuell && (iHelskarm() || (!direkt && sp.spelar())))) return false;
       visar = id;
       if (!(await forbered(lage))) { if (visar === id) visar = null; return false; }
       if (visar !== id) return false;
-      sett.add(id); spara();   // sett först när det faktiskt visas
+      sett.add(id); ocksa.forEach((o) => sett.add(o)); spara();   // sett först när det faktiskt visas
       el.classList.remove("guide", "hoger"); el.style.transform = ""; el.style.removeProperty("--bubbla-max");
       fram();
+      if (vad) { ljusFor = vad; ljus.classList.add("latt"); lys(vad()); }
       await vila(stilla ? 150 : 750);
       if (visar !== id) return true;
       if (hur === "kasta") await kasta(id); else await spela("vinka", id);
@@ -2736,7 +2760,14 @@
       prata(text, [{ text: "Okej", forst: true, gor: gom }, { text: "Inga fler tips", gor: () => { av = true; try { localStorage.setItem("tips", "av"); } catch (e) {} gom(); } }]);
       return true;
     }
-    function efter(ms, villkor, ...arg) { clearTimeout(efterTimer); efterTimer = setTimeout(() => { if (villkor()) visa(...arg); }, ms); }
+    // Ett tips en stund senare. Håller villkoret inte just då (t.ex. det tipset handlar om är
+    // utanför fönstret) försöker det igen var fjärde sekund, några gånger. vybyte avbryter.
+    function efter(ms, villkor, ...arg) {
+      clearTimeout(efterTimer);
+      let forsok = 0;
+      const prova = () => { if (villkor()) visa(...arg); else if (++forsok < 8) efterTimer = setTimeout(prova, 4000); };
+      efterTimer = setTimeout(prova, ms);
+    }
     const avbryt = () => clearTimeout(efterTimer);
     // Det eleven redan gör behöver inget tips: dubbelklickar någon redan räknas spolaMus som sett.
     const markera = (id) => { if (!sett.has(id)) { sett.add(id); spara(); } };
@@ -2747,7 +2778,9 @@
       // guideByter: guiden byter själv vy (från introt till filmvalet).
       if (visar === "guide") { if (guideByter) return; if (namn === "film") tillFilmSteg(); else slutaGuide(); return; }
       gom();
-      if (namn === "valj") efter(9000, () => aktivVy === "valj", "sok", ...TIPS.sok);
+      // I filmvalet kommer tipset om sökningen efter en stund, när förstoringsglaset syns, och det lyser.
+      const sokIkon = () => document.querySelector("#vy-valj .sok-oppna");
+      if (namn === "valj") efter(9000, () => aktivVy === "valj" && synsIFonster(sokIkon(), 0.8), "sok", ...TIPS.sok, { markera: () => [sokIkon()] });
     }
 
     // ── Guiden ─────────────────────────────────────────────
@@ -2813,9 +2846,9 @@
     // Strålkastaren följer med när sidan eller sökrutan scrollas, och när det den lyser på ändrar
     // sig (t.ex. nya sökträffar): då utan fördröjning, annars ligger ramarna efter.
     let foljTimer = null;
-    const folj = () => { if (visar !== "guide" || !malEls.length) return; ljus.classList.add("folj"); lys(malEls); clearTimeout(foljTimer); foljTimer = setTimeout(() => ljus.classList.remove("folj"), 160); };
+    const folj = () => { if (!visar || !malEls.length) return; ljus.classList.add("folj"); lys(malEls); clearTimeout(foljTimer); foljTimer = setTimeout(() => ljus.classList.remove("folj"), 160); };
     addEventListener("scroll", folj, { passive: true, capture: true }); addEventListener("resize", folj);
-    setInterval(() => { if (visar === "guide" && ljusFor) { const nya = ljusFor(); if (nya.length !== malEls.length || nya.some((e, i) => e !== malEls[i])) lys(nya); else folj(); } }, 400);
+    setInterval(() => { if (visar && ljusFor) { const nya = ljusFor(); if (nya.length !== malEls.length || nya.some((e, i) => e !== malEls[i])) lys(nya); else folj(); } }, 400);
     // Målet rullas upp i övre delen av fönstret; nederkanten är Newtons golv.
     async function tillMal(e) {
       const r = e.getBoundingClientRect(), vh = innerHeight, [, h] = figur(), fri = vh - h - 30;
@@ -3008,7 +3041,7 @@
       if (aktivVy === "film") dukEl.classList.add("guide-styr");
       const p = plats(null); el.style.setProperty("--gang", "0ms"); el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
       el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`; pos = p;
-      fram(); ljusFor = null; lys([]);
+      fram(); ljusFor = null; ljus.classList.remove("latt"); lys([]);
       await vila(stilla ? 150 : 750);
       if (visar === "guide") visaSteg(0);
     }
@@ -3027,13 +3060,14 @@
     el.addEventListener("click", (e) => { if (!e.target.closest("button") && skrivKlar) skrivKlar(); });
     el.addEventListener("pointerenter", () => { if (visar !== "guide") clearTimeout(gomTimer); });
     el.addEventListener("pointerleave", () => { if (visar && visar !== "guide" && !skrivKlar) { clearTimeout(gomTimer); gomTimer = setTimeout(gom, 3500); } });
-    return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, get visar() { return visar; } };
+    return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, harSett: (id) => av || sett.has(id), get visar() { return visar; } };
   })();
   const TIPS = {
     sok: ["pekar", "Fastnat på något? Tryck på förstoringsglaset uppe till höger och sök på det, till exempel olikhet. Du hamnar på rätt ställe i filmen."],
     spolaMus: ["pekar", "Visste du att du kan dubbelklicka på bilden för att se den på hela skärmen? Med piltangenterna hoppar du 5 sekunder i taget."],
     spolaTryck: ["pekar", "Visste du att du kan dubbeltrycka på bildens högra eller vänstra sida? Då hoppar filmen 10 sekunder. Håller du in fingret går den dubbelt så fort."],
     notis: ["forvanad", "Nu har du sett det du behöver för uppgiften i slutet. Vill du pröva redan nu? Tryck på Din tur."],
+    dinturRuta: ["forvanad", "Här är Din tur, filmens egen uppgift. Skriv ditt svar och tryck på Kolla. Fastnar du kan du ta en ledtråd."],
     format: ["pekar", "Jag förstår inte riktigt ditt svar. Skriv det som på räknaren, till exempel x^3 = 2 eller 1,44. Knapparna under rutan hjälper dig med tecknen."],
     ledtrad: ["fundersam", "Den här är inte lätt. Ta gärna en ledtråd. Den visar var i filmen det förklaras, så att du kan se den biten igen."],
     lost: ["glad", "Du löste hela uppgiften! Under den kan du se lösningen steg för steg, om du vill jämföra."],
