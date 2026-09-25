@@ -25,6 +25,8 @@ try {
   ws.addEventListener("message", (e) => { const m = JSON.parse(e.data); if (m.id && svar.has(m.id)) { const s = svar.get(m.id); svar.delete(m.id); m.error ? s.fel(new Error(m.error.message)) : s.klar(m.result); } });
   await skicka("Page.enable"); await skicka("Runtime.enable");
   await skicka("Emulation.setDeviceMetricsOverride", { width: +B, height: +H, deviceScaleFactor: 1, mobile: +B < 700 });
+  // Smalare än 700 px: en telefon, med pekskärm (då gäller (hover: none) som på en riktig telefon).
+  if (+B < 700) await skicka("Emulation.setTouchEmulationEnabled", { enabled: true, maxTouchPoints: 5 });
   await skicka("Page.navigate", { url });
   await vila(2500);
   let n = 0;
