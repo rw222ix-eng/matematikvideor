@@ -122,8 +122,26 @@ function omslagskurva(fil) {
   return "";
 }
 
-// Tidslinjen är kronologisk: `ar` i registret är året berättelsen utspelar sig.
-const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map((v) => {
+// Serier (Rickard 2026-09-25): filmer som inte är historiska berättelser utan hör till en serie,
+// i dag bara "formelbladet" (fem delar som går igenom formelbladet). De står inte på den
+// historiska tidslinjen utan under en egen flik på filmvalet, i delordning. En post i
+// register.json markeras med "serie": "formelbladet"; glöms fältet känns serien igen på id:t
+// (formelbladet-N-…). Delens nummer är "del", annars siffran i id:t eller i titeln.
+const serieAv = (v) => v.serie || (/^formelbladet-/.test(v.id) ? "formelbladet" : null);
+const delAv = (v) => {
+  if (Number.isFinite(v.del)) return v.del;
+  const m = v.id.match(/^[a-z]+-(\d+)-/) || String(v.titel).match(/(\d+)\s*[–-]/);
+  return m ? Number(m[1]) : null;
+};
+// Tidslinjen är kronologisk: `ar` i registret är året berättelsen utspelar sig. Serierna kommer
+// efter berättelserna, var serie för sig och i delordning.
+const ordning = (a, b) => {
+  const sa = serieAv(a), sb = serieAv(b);
+  if (!sa !== !sb) return sa ? 1 : -1;
+  if (sa) return sa !== sb ? sa.localeCompare(sb) : (delAv(a) ?? 99) - (delAv(b) ?? 99);
+  return (a.ar ?? 9999) - (b.ar ?? 9999);
+};
+const videor = [...register].sort(ordning).map((v) => {
   const projekt = resolve(HÄR, v.projekt);
   const tiderFil = join(projekt, "assets", "tal-tider.json");
   const manusFil = join(projekt, "assets", "manus.txt");
@@ -179,7 +197,8 @@ const videor = [...register].sort((a, b) => (a.ar ?? 9999) - (b.ar ?? 9999)).map
     dinTur.notisFran = g.t;
     notisRader.push(`  ${g.varning ? "varning: " : ""}${v.id.padEnd(24)} ${tidText(g.t)}${langd ? ` (${Math.round(g.t / langd * 100)} %)` : ""}  ${g.kalla}`);
   }
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
+  const serie = serieAv(v);
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, serie, del: serie ? delAv(v) : null, kurs: v.kurs, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
 });
 
 // Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med

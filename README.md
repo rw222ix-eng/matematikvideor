@@ -7,6 +7,10 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   sorteras kronologiskt efter det), kurs, moment, begrepp, beskrivning, sökväg till projektet, `youtube` (video-id, tomt tills filmen är uppladdad), `omslag`. Valfritt `fil`
   (direktlänk till mp4 i full kvalitet — spelas då i stället för YouTube). Lägg också in
   `youtube` när det finns: spärrar skolans nät GitHub byter spelaren till YouTube själv.
+  Filmer som hör till en serie och inte är historiska berättelser får `"serie": "formelbladet"`
+  (och gärna `"del": N`). De står inte på tidslinjen utan under fliken Formelbladet på filmvalet
+  (`#formelbladet`), i delordning; filmsidan visar "Del N av 5", siffrorna 1–5 och nästa del.
+  Glöms fältet känns serien igen på id:t (`formelbladet-N-…`), och delen på siffran i id:t.
 - `kapitel.json` — kapitlen per film, `[fras, rubrik]`, skrivna för hand. Frasen är de första orden
   där kapitlet börjar (minst fem, så att den bara finns på ett ställe); `node bygg.mjs` slår upp
   sekunden i rösten, så kapitlen flyttar med när rösten görs om.
@@ -35,7 +39,7 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
-  förstoringsglaset (eller tangenten `/`). Adresser: `#filmer`, `#<id>`, `#<id>&t=<sekund>`, och
+  förstoringsglaset (eller tangenten `/`). Adresser: `#filmer` (berättelserna), `#formelbladet` (serien), `#<id>`, `#<id>&t=<sekund>`, och
   `film/<id>/?t=<sekund>` för länkar som delas. Typsnitt från Google Fonts (Jost + Cormorant
   Garamond); en accentfärg (`--accent`).
 - Framsteg sparas i elevens webbläsare (`localStorage`, nyckeln `framsteg`): var eleven slutade,

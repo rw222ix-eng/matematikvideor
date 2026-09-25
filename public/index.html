@@ -84,15 +84,18 @@
      plats ovanför, där hamnar de under (.tips-under). Pilspetsen ligger över rutan och täcker
      dess kantlinje. Längst till höger fästs rutan i högerkanten så den inte går utanför fönstret.
      Bara på pekdon som hovrar: på en telefon finns ingen hovring att visa dem vid. */
-  :is(.ikon, .styr .knapp)[data-tips] { position: relative; }
+  :is(.ikon, .styr .knapp, .delrad .nr)[data-tips] { position: relative; }
   @media (hover: hover) {
-    :is(.ikon, .styr .knapp)[data-tips]::before, :is(.ikon, .styr .knapp)[data-tips]::after { position: absolute; pointer-events: none; opacity: 0; transition: opacity .22s var(--lugn), transform .22s var(--lugn); }
-    :is(.ikon, .styr .knapp)[data-tips]::after { content: attr(data-tips); z-index: 1; left: 50%; bottom: calc(100% + 9px); transform: translate(-50%, 5px); white-space: nowrap; padding: 9px 13px 8px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); background: rgba(23, 20, 20, .86); border: 1px solid rgba(236, 230, 216, .2); border-radius: 6px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-    :is(.ikon, .styr .knapp)[data-tips]::before { content: ""; z-index: 2; left: 50%; bottom: calc(100% + 5px); width: 8px; height: 8px; margin-left: -4px; transform: translateY(5px) rotate(45deg); background: rgb(28, 25, 25); border-right: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
-    :is(.ikon, .styr .knapp)[data-tips]:hover::before, :is(.ikon, .styr .knapp)[data-tips]:focus-visible::before { opacity: 1; transform: translateY(0) rotate(45deg); transition-delay: .1s; }
-    :is(.ikon, .styr .knapp)[data-tips]:hover::after, :is(.ikon, .styr .knapp)[data-tips]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: .1s; }
+    :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]::before, :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]::after { position: absolute; pointer-events: none; opacity: 0; transition: opacity .22s var(--lugn), transform .22s var(--lugn); }
+    :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]::after { content: attr(data-tips); z-index: 1; left: 50%; bottom: calc(100% + 9px); transform: translate(-50%, 5px); white-space: nowrap; padding: 9px 13px 8px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); background: rgba(23, 20, 20, .86); border: 1px solid rgba(236, 230, 216, .2); border-radius: 6px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+    :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]::before { content: ""; z-index: 2; left: 50%; bottom: calc(100% + 5px); width: 8px; height: 8px; margin-left: -4px; transform: translateY(5px) rotate(45deg); background: rgb(28, 25, 25); border-right: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
+    :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]:hover::before, :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]:focus-visible::before { opacity: 1; transform: translateY(0) rotate(45deg); transition-delay: .1s; }
+    :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]:hover::after, :is(.ikon, .styr .knapp, .delrad .nr)[data-tips]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: .1s; }
     .hoger .ikon[data-tips]:last-child::after { left: auto; right: 0; transform: translate(0, 5px); }
     .hoger .ikon[data-tips]:last-child:hover::after, .hoger .ikon[data-tips]:last-child:focus-visible::after { transform: translate(0, 0); }
+    /* Siffrorna står vid högerkanten: rutan växer åt vänster, så att den aldrig går utanför fönstret. */
+    .delrad .nr[data-tips]::after { left: auto; right: -6px; transform: translate(0, 5px); }
+    .delrad .nr[data-tips]:hover::after, .delrad .nr[data-tips]:focus-visible::after { transform: translate(0, 0); }
     .ikon.tips-under[data-tips]::after { bottom: auto; top: calc(100% + 9px); transform: translate(-50%, -5px); }
     .ikon.tips-under[data-tips]::before { bottom: auto; top: calc(100% + 5px); transform: translateY(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-top: 1px solid rgba(236, 230, 216, .2); }
     .ikon.tips-under[data-tips]:hover::before, .ikon.tips-under[data-tips]:focus-visible::before { transform: translateY(0) rotate(45deg); }
@@ -187,11 +190,15 @@
      som gömde bilden) och bara en lätt avmättning, så hover ändå gör skillnad. Ljuset
      i bilderna kommer ur filerna: bygg.mjs lyfter skuggorna med en kurva. */
   .post .ram img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) brightness(1) contrast(1); opacity: 1; transition: opacity .5s var(--lugn), filter .5s var(--lugn), transform .5s var(--lugn); }
-  .post .lina { flex: 1; width: 1px; background: linear-gradient(var(--linje), var(--linje2)); position: relative; min-height: 40px; }
+  /* Linan får bli 24 px kort på låga fönster (förut 40): med flikarna ovanför räckte höjden annars
+     inte i ett 610 px högt fönster, och prickarna hamnade under linan. */
+  .post .lina { flex: 1; width: 1px; background: linear-gradient(var(--linje), var(--linje2)); position: relative; min-height: 24px; }
   .post .lina::after { content: ""; position: absolute; left: -2.5px; bottom: -2.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--dis); }
   /* Texten under korten ska gå att läsa på avstånd, ovanpå stadens ljus (Rickard 2026-09-23):
      större grader, ljusare färg och en skugga som lyfter den från målningen. */
-  .post .namn { height: 168px; padding-top: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transform-origin: top center; transition: transform .5s var(--lugn); text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 14px rgba(0, 0, 0, .75); }
+  /* flex: none — på låga fönster krympte texten under korten i stället för upphängningen, och
+     prickarna hamnade under linan (syntes när flikarna flyttade ner linan 26 px, 2026-09-25). */
+  .post .namn { flex: none; height: 168px; padding-top: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; transform-origin: top center; transition: transform .5s var(--lugn); text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 14px rgba(0, 0, 0, .75); }
   .post .kurs { font: 400 22px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; transition: color .5s var(--lugn); }
   .post .moment { font: 500 13px/1.5 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--ben); max-width: 340px; transition: color .5s var(--lugn); }
   .post .titel { font: italic 400 21px/1.3 var(--sans); color: var(--ben); letter-spacing: .02em; margin-top: 2px; transition: color .5s var(--lugn); }
@@ -236,6 +243,41 @@
   /* Osynlig är den också borta för Tab (visibility), inte bara genomskinlig. */
   .valj .aterstall { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .6s, visibility 0s .6s; }
   .valj .aterstall.syns { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .6s, visibility 0s; }
+  /* ── Flikarna: Berättelser och Formelbladet (Rickard 2026-09-25) ──
+     Formelbladets filmer är ingen historia och hör inte hemma på den historiska tidslinjen. Två
+     flikar under "Välj en film" byter vad som hänger på linan: berättelserna i årsordning eller
+     formelbladets delar 1–5. Guldplattan glider till den valda fliken (fjädrar lite). Flikarna
+     syns först när det finns en formelbladsfilm (.har-flikar); utan dem ser filmvalet ut som förut.
+     Med flikarna flyttas rubrik, pil och lina ner 26 px; pilens text slutar som förut 37 px ner
+     i tidslinjen, så kortens minsta upphängning (72 px) gäller fortfarande. */
+  .valj .flikar { position: absolute; top: 122px; left: 50%; transform: translateX(-50%); z-index: 4; display: none; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 20, .66); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .valj.har-flikar .flikar { display: grid; }
+  .valj.har-flikar .rubrik { top: 90px; }
+  .valj.har-flikar .hint { top: 172px; }
+  .valj.har-flikar .tidslinje { top: 176px; }
+  /* Låga fönster (en laptop med webbläsarens verktygsrader): allt ovanför linan 12 px högre upp, så
+     att kort, lina och text ryms ner till 610 px höjd. */
+  @media (min-width: 701px) and (max-height: 660px) {
+    .valj.har-flikar .rubrik { top: 80px; }
+    .valj.har-flikar .flikar { top: 110px; }
+    .valj.har-flikar .hint { top: 160px; }
+    .valj.har-flikar .tidslinje { top: 164px; }
+  }
+  .flikar .platta { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--accent); box-shadow: 0 0 20px rgba(242, 197, 114, .35); transition: transform .5s var(--fjader); }
+  .flikar[data-hylla="formelbladet"] .platta { transform: translateX(100%); }
+  .flikar button { position: relative; z-index: 1; min-height: 38px; padding: 0 20px; border-radius: 999px; font: 500 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); transition: color .35s, transform .4s var(--fjader); }
+  .flikar button[aria-selected="true"] { color: var(--bg); }
+  .flikar button:active { transform: scale(.93); transition-duration: .08s; }
+  .flikar button:focus-visible { outline-offset: 1px; }
+  @media (hover: hover) { .flikar button[aria-selected="false"]:hover { color: var(--accent); } }
+  /* Bytet av flik: korten tonar ut, och de nya faller ner i linan ett i taget och gungar till. */
+  .spar { transition: opacity .22s var(--lugn); }
+  .tidslinje.byter .spar { opacity: 0; }
+  .spar.nytt .post { animation: hanga .85s var(--fjader) both; animation-delay: calc(var(--i, 0) * 70ms); }
+  @keyframes hanga { from { opacity: 0; transform: translateY(-30px); } }
+  /* En formelbladsdel som inte är klar: streckad ram med delens siffra. */
+  .post.kommer.del .ram { border-color: rgba(236, 230, 216, .26); background: rgba(23, 20, 20, .18); }
+  .post.kommer .ram .nr { display: grid; place-items: center; height: 100%; font: 500 76px/1 var(--skrift); font-variant-numeric: lining-nums; color: rgba(236, 230, 216, .3); text-shadow: 0 2px 12px rgba(0, 0, 0, .6); }
 
   /* ── Sök ──────────────────────────────────────────────── */
   .sok { position: fixed; inset: 0; z-index: 40; background: rgba(23, 20, 20, .97); display: none; overflow-y: auto; }
@@ -282,6 +324,9 @@
   .andra .titel { font: 500 21px/1.2 var(--skrift); color: var(--ben); transition: color .3s; }
   .andra button:hover .titel { color: var(--accent); }
   .andra .antal { font: 400 11px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dis); }
+  /* Vilken sort träffen är: "Berättelse · 1618" eller "Formelbladet · del 2" (i guld). */
+  .andra .sort { font: 500 10px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--dis); }
+  .sok .sort.serie { color: var(--accent); }
 
   /* ── 3. Filmens sida ──────────────────────────────────── */
   .film { display: block; position: relative; min-height: 100vh; background: var(--bg); padding-bottom: 120px; }
@@ -306,6 +351,39 @@
   .film .huvud .etikett { font-size: 12px; letter-spacing: .3em; }
   .film .huvud .skrift { font-size: clamp(42px, 5.3vw, 76px); line-height: 1.05; padding: 0; }
   .film .huvud .langd { margin: 0 0 14px; white-space: nowrap; }
+  /* Formelbladets delar (Rickard 2026-09-25): en siffra per del till höger om rubriken, den som
+     visas i guld. En del som inte är klar står streckad och går inte att trycka på. */
+  .film .huvud-hoger { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; flex: none; }
+  .delrad[hidden] { display: none; }
+  .delrad ol { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .delrad .nr { position: relative; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--linje); background: rgba(23, 20, 20, .55); font: 500 15px/1 var(--sans); color: var(--ben); font-variant-numeric: tabular-nums; transition: border-color .3s, color .3s, background .3s, transform .4s var(--fjader), box-shadow .4s var(--lugn); }
+  .delrad .nr[aria-current] { background: var(--accent); border-color: var(--accent); color: var(--bg); box-shadow: 0 0 22px rgba(242, 197, 114, .35); }
+  .delrad .nr.saknas { border-style: dashed; border-color: rgba(236, 230, 216, .2); background: none; color: var(--dis); }
+  a.nr:active { transform: scale(.88); transition-duration: .08s; }
+  @media (hover: hover) { .delrad a.nr:hover { border-color: var(--accent); color: var(--accent); background: rgba(242, 197, 114, .1); transform: translateY(-2px); box-shadow: 0 0 20px rgba(242, 197, 114, .3); } }
+  /* Nästa del, efter Din tur: omslaget, delens namn och en spelknapp. */
+  .nasta-del { margin: 56px 0 0; }
+  .nasta-del[hidden] { display: none; }
+  .nasta-del h3 { margin: 0 0 14px; font-size: 12px; }
+  .nasta-kort { display: grid; grid-template-columns: 240px minmax(0, 1fr) auto; align-items: center; gap: 24px; width: 100%; padding: 16px 24px 16px 16px; text-align: left; background: rgba(236, 230, 216, .04); border: 1px solid var(--linje2); border-radius: 12px; transition: transform .45s var(--fjader), border-color .3s, background .3s, box-shadow .45s var(--lugn); }
+  .nasta-kort .omslag { display: block; aspect-ratio: 16/9; overflow: hidden; border-radius: 6px; background: var(--bg2); }
+  .nasta-kort .omslag img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--lugn); }
+  .nasta-kort .text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .nasta-kort .titel { font: 500 32px/1.1 var(--skrift); color: var(--ben); transition: color .3s; }
+  .nasta-kort .brod { font-size: 15px; line-height: 1.6; }
+  .nasta-kort .ring { width: 52px; height: 52px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; color: var(--accent); transition: background .3s, color .3s, transform .4s var(--fjader), box-shadow .4s var(--lugn); }
+  .nasta-kort .ring svg { width: 13px; height: 13px; fill: currentColor; margin-left: 3px; }
+  .nasta-kort.kommer { border-style: dashed; background: none; }
+  .nasta-kort.kommer .omslag { display: grid; place-items: center; background: none; border: 1px dashed var(--linje2); font: 500 64px/1 var(--skrift); font-variant-numeric: lining-nums; color: rgba(236, 230, 216, .16); }
+  .nasta-kort.kommer .titel { color: var(--ben2); }
+  button.nasta-kort:active { transform: scale(.985); transition-duration: .08s; }
+  @media (hover: hover) {
+    button.nasta-kort:hover { transform: translateY(-3px); border-color: rgba(242, 197, 114, .3); background: rgba(236, 230, 216, .06); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .9); }
+    button.nasta-kort:hover .titel { color: var(--accent); }
+    button.nasta-kort:hover .omslag img { transform: scale(1.04); }
+    button.nasta-kort:hover .ring { background: var(--accent); color: var(--bg); transform: scale(1.08); box-shadow: 0 0 22px rgba(242, 197, 114, .4); }
+  }
+  .knapprad .kolla svg, .knapprad .kant svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .duk { position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
   .duk video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   /* YouTube-lagret (titelrad, vattenstämpel, dela-ikoner) ligger i inbäddningens över- och underkant.
@@ -595,7 +673,9 @@
     .valj .vinjett { position: fixed; height: 100vh; }
     .valj .levande { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; }
     .valj .rubrik, .valj .tidslinje { position: relative; z-index: 2; }
-    .valj .rubrik { position: static; padding: 108px 0 8px; }
+    /* relative, inte static: en statisk rubrik målades under den fasta målningen och syntes inte på
+       mobilen (upptäckt 2026-09-25). */
+    .valj .rubrik, .valj.har-flikar .rubrik { position: relative; top: auto; padding: 108px 0 8px; }
     .tidslinje { position: static; overflow: visible; cursor: default; }
     .tidslinje::before { display: none; }
     .spar { flex-direction: column; width: auto; padding: 24px 24px 60px 44px; transform: none !important; position: relative; }
@@ -611,6 +691,12 @@
     .post .namn { height: auto; padding-top: 18px; text-align: left; align-items: flex-start; position: relative; }
     .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
     .post.kommer { display: none; }
+    /* En formelbladsdel som inte är klar: bara raden med namnet, utan den streckade ramen. */
+    .post.kommer.del { display: flex; margin-bottom: 40px; }
+    .post.kommer.del .ram { display: none; }
+    /* Flikarna följer med överst när listan rullas, så man kan byta var man än är. */
+    .valj .flikar { position: sticky; top: 12px; left: auto; transform: none; width: max-content; margin: 2px auto 0; z-index: 6; }
+    .flikar button { padding: 0 16px; letter-spacing: .16em; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .basta { grid-template-columns: 1fr; gap: 16px; }
@@ -620,7 +706,11 @@
     .film .kap-rubrik { margin-top: 36px; }
     .film .huvud { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 28px; }
     .film .huvud .langd { margin: 0; }
-    .kapitel { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
+    .film .huvud-hoger { align-items: flex-start; gap: 12px; }
+    .nasta-del { margin-top: 40px; }
+    .nasta-kort { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 14px; }
+    .nasta-kort .titel { font-size: 28px; }
+    .nasta-kort .ring { display: none; }    .kapitel { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-flow: row; }
     .film .om { grid-template-columns: minmax(0, 1fr); margin-top: 40px; }
     .styr .kap-namn { display: none; }
     .kapitel button { grid-template-columns: 52px 1fr 14px; gap: 12px; padding: 12px 8px; }
@@ -856,6 +946,12 @@
     </div>
   </header>
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
+  <!-- Flikarna: berättelserna eller formelbladets delar på linan. Syns när en formelbladsfilm finns. -->
+  <div class="flikar" id="flikar" role="tablist" aria-label="Vilka filmer" data-hylla="berattelser">
+    <span class="platta" aria-hidden="true"></span>
+    <button type="button" role="tab" data-hylla="berattelser" aria-selected="true" aria-controls="tidslinje">Berättelser</button>
+    <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
+  </div>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
   <div class="hint" id="hint" aria-hidden="true"><svg viewBox="0 0 64 12"><path d="M1 6 H63 M6 1 L1 6 L6 11 M58 1 L63 6 L58 11"/></svg><span>Scrolla eller dra i sidled</span></div>
 </section>
@@ -864,7 +960,8 @@
 <section class="vy film" id="vy-film">
   <div class="film-fond" aria-hidden="true"><img src="omslag/film-fond.jpg?v=186ba523" alt="" loading="lazy"></div>
   <header class="topp">
-    <a class="tillbaka" href="#filmer"><svg viewBox="0 0 32 12" aria-hidden="true"><path d="M31 6 H1 M6 1 L1 6 L6 11"/></svg>Alla filmer</a>
+    <!-- Från en formelbladsfilm leder den till formelbladets flik (texten blir "Formelbladet"). -->
+    <a class="tillbaka" id="f-tillbaka" href="#filmer"><svg viewBox="0 0 32 12" aria-hidden="true"><path d="M31 6 H1 M6 1 L1 6 L6 11"/></svg><span id="f-tillbaka-text">Alla filmer</span></a>
     <div class="hoger">
       <button class="ikon sok-oppna tips-under" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
@@ -875,7 +972,10 @@
         <p class="etikett" id="f-kurs"></p>
         <h1 class="skrift" id="f-titel" tabindex="-1"></h1>
       </div>
-      <p class="etikett langd" id="f-langd"></p>
+      <div class="huvud-hoger">
+        <nav class="delrad" id="f-delar" aria-label="Formelbladets delar" hidden></nav>
+        <p class="etikett langd" id="f-langd"></p>
+      </div>
     </div>
     <!-- Spelaren tar fokus när man klickar i den; snabbtangenterna gäller där (se tangentlyssnaren). -->
     <div class="duk" id="duk" tabindex="0" role="region" aria-label="Filmspelare"></div>
@@ -904,6 +1004,10 @@
       </div>
       <div class="dintur-ledtrad" id="dintur-ledtrad" hidden></div>
       <div class="dintur-losning" id="dintur-losning" hidden></div>
+    </section>
+    <section class="nasta-del" id="f-nasta" aria-labelledby="f-nasta-rubrik" hidden>
+      <h3 class="etikett" id="f-nasta-rubrik">Nästa del</h3>
+      <div id="f-nasta-kort"></div>
     </section>
     <div class="om">
       <div>
@@ -1019,6 +1123,36 @@
     return m ? `Ma&nbsp;${m[1]}${m[2].toLowerCase()}` : esc(kurs);
   };
 
+  // ── Serierna (Rickard 2026-09-25) ─────────────────────
+  // Formelbladets filmer är ingen historia: de står inte på den historiska tidslinjen utan under en
+  // egen flik, i delordning, och filmsidan visar "Del N av 5" och vägen till de andra delarna.
+  // bygg.mjs sätter serie och del; saknas de (en post där fältet glömts) känns serien igen på
+  // id:t, formelbladet-N-…, och delen på siffran i id:t eller titeln.
+  const SERIER = { formelbladet: { namn: "Formelbladet", delar: 5 } };
+  for (const v of videor) {
+    if (!v.serie && /^formelbladet-/.test(v.id)) v.serie = "formelbladet";
+    if (v.serie && !Number.isFinite(v.del)) { const m = v.id.match(/^[a-z]+-(\d+)-/) || v.titel.match(/(\d+)\s*[–-]/); v.del = m ? Number(m[1]) : null; }
+  }
+  const berattelser = videor.filter((v) => !v.serie);
+  const formelblad = videor.filter((v) => v.serie === "formelbladet").sort((a, b) => (a.del ?? 99) - (b.del ?? 99));
+  const harFlikar = formelblad.length > 0;
+  // En plats per del, 1 till 5 (eller fler om serien växer). En del som inte finns än är
+  // { del, saknas: true } och ritas streckad. En film utan delnummer läggs sist.
+  const delPlatser = () => {
+    const antal = Math.max(SERIER.formelbladet.delar, ...formelblad.map((v) => v.del || 0));
+    const platser = [];
+    for (let d = 1; d <= antal; d++) platser.push(formelblad.find((v) => v.del === d) || { del: d, saknas: true });
+    return platser.concat(formelblad.filter((v) => !Number.isFinite(v.del)));
+  };
+  const antalDelar = () => Math.max(SERIER.formelbladet.delar, ...formelblad.map((v) => v.del || 0));
+  // Delens namn utan serien: "Formelbladet 2 – Funktioner" → "Funktioner".
+  const delNamn = (v) => { const m = v.titel.match(/\d+\s*[–-]\s*(.+)$/); return m ? m[1].charAt(0).toUpperCase() + m[1].slice(1) : v.titel; };
+  // Vilken sort en film är, i sökningen: "Berättelse · 1618" eller "Formelbladet · del 2".
+  const sortText = (v) => (v.serie ? `${SERIER[v.serie].namn} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
+  const sortEtikett = (v) => `<span class="sort${v.serie ? " serie" : ""}">${esc(sortText(v))}</span>`;
+  // Nästa del i serien: en film, en plats som inte är klar ({ saknas }), eller null efter sista delen.
+  const nastaDel = (v) => { if (!v.serie) return null; const p = delPlatser(), i = p.findIndex((x) => x.id === v.id); return i >= 0 ? p[i + 1] || null : null; };
+
   // ── Vyer och adress ───────────────────────────────────
   let aktivVy = null, forstaVyn = true;
   // mjukt = false när bytet går via en vyövergång: då tonar övergången, och vyns egen
@@ -1058,20 +1192,32 @@
   function byt(h) {
     const mjukt = !document.startViewTransition;
     if (!h) return visa("intro", mjukt);
-    if (h === "filmer") return visa("valj", mjukt);
+    if (h === "filmer" || h === "formelbladet") return visa("valj", mjukt);
     const m = h.match(/^([\w-]+)(?:&t=(\d+))?/);
     const v = m && videor.find((x) => x.id === m[1]);
     if (!v) return visa("valj", mjukt);
+    // Från en film till en annan (formelbladets siffror och Nästa del): sidan börjar om uppifrån,
+    // rubriken får fokus, och Newton följer med som vid ett vybyte.
+    const bytFilm = aktivVy === "film" && aktuell && aktuell.id !== v.id;
     visa("film", mjukt);
+    if (bytFilm) Newton.vybyte("film");
     laddaFilm(v, m[2] ? Number(m[2]) : undefined);
+    if (bytFilm) { window.scrollTo(0, 0); $("f-titel").focus({ preventScroll: true }); }
   }
   function ruta() {
     let h = location.hash.slice(1);
     try { h = decodeURIComponent(h); } catch (e) { /* trasig adress: använd den som den är */ }
-    const mal = !h ? "intro" : h === "filmer" ? "valj" : "film";
-    // Hopp inom samma film (kapitel, &t=) och första laddningen: ingen övergång.
+    // Utan formelbladsfilmer finns ingen flik att visa: adressen blir #filmer.
+    if (h === "formelbladet" && !harFlikar) { h = "filmer"; history.replaceState(null, "", "#filmer"); }
+    const mal = !h ? "intro" : h === "filmer" || h === "formelbladet" ? "valj" : "film";
+    // Filmvalets flik följer adressen: #formelbladet är formelbladets delar, #filmer berättelserna.
+    // Den ritas innan övergången, så att kortet som spelaren krymper ner till redan finns på linan.
+    if (mal === "valj") valjHylla(h === "formelbladet" ? "formelbladet" : "berattelser", aktivVy !== "valj");
+    // Hopp inom samma film (kapitel, &t=), flikbyte och första laddningen: ingen övergång. Från en
+    // film till en annan tonar sidan som vid andra vybyten.
+    const annanFilm = mal === "film" && aktivVy === "film" && !!aktuell && h.split("&")[0] !== aktuell.id;
     const stangSokOm = () => { if (sokRuta.classList.contains("oppen")) stangSok(); };
-    if (!document.startViewTransition || !aktivVy || (mal === "film" && aktivVy === "film")) { stangSokOm(); byt(h); omslagFran = null; return; }
+    if (!document.startViewTransition || !aktivVy || (mal === "film" && aktivVy === "film" && !annanFilm) || (mal === "valj" && aktivVy === "valj")) { stangSokOm(); byt(h); omslagFran = null; return; }
     let kortEfter = null;
     if (aktivVy === "film" && mal === "valj" && aktuell) {
       dukEl.style.viewTransitionName = "omslag";
@@ -1276,23 +1422,70 @@
 
   // ── Tidslinjen ────────────────────────────────────────
   const spar = $("spar"), tidslinje = $("tidslinje");
-  spar.innerHTML = videor.map((v) => `
-    <div class="post">
+  // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
+  // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
+  // det säger något mer än namnet.
+  const kortHtml = (v, i) => `
+    <div class="post" style="--i:${i}">
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${v.kurs}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina"></span>
         <span class="namn">
-          <span class="kurs">${v.ar ? arText(v.ar) : kursKort(v.kurs)}</span>
-          <span class="moment">${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}</span>
-          <span class="titel">${esc(v.titel)}</span>
+          <span class="kurs">${v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs)}</span>
+          <span class="moment">${v.serie ? `${kursKort(v.kurs)}${norm(v.moment) !== norm(delNamn(v)) ? ` · ${esc(v.moment)}` : ""}` : `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`}</span>
+          <span class="titel">${esc(v.serie ? delNamn(v) : v.titel)}</span>
         </span>
       </button>
-    </div>`).join("") + [1, 2, 3].map(() => `
-    <div class="post kommer" aria-hidden="true">
+    </div>`;
+  // Vilken flik som visas: "berattelser" (den historiska tidslinjen) eller "formelbladet".
+  let hylla = "berattelser";
+  $("vy-valj").classList.toggle("har-flikar", harFlikar);
+  if (harFlikar) tidslinje.setAttribute("role", "tabpanel");
+  function ritaHylla() {
+    spar.innerHTML = hylla === "formelbladet"
+      ? delPlatser().map((p, i) => (p.saknas ? `
+    <div class="post kommer del" style="--i:${i}">
+      <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
+      <span class="namn"><span class="kurs">Del ${p.del}</span><span class="moment">kommer snart</span></span>
+    </div>` : kortHtml(p, i))).join("")
+      : berattelser.map(kortHtml).join("") + [1, 2, 3].map((n) => `
+    <div class="post kommer" aria-hidden="true" style="--i:${berattelser.length + n - 1}">
       <span class="lyft"></span><span class="ram"></span><span class="lina"></span>
       <span class="namn"><span class="kurs">· · ·</span><span class="moment">fler filmer kommer</span></span>
     </div>`).join("");
+    if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${hylla}"]`); flik.id = `flik-${hylla}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
+  }
+  ritaHylla();
+  // Byt flik. Syns filmvalet tonar korten ut och de nya faller ner i linan; annars (sidan laddas,
+  // eller eleven kommer tillbaka från en film) ritas fliken direkt. Linan börjar om från början.
+  let bytTimer = null;
+  function valjHylla(namn, direkt = false) {
+    if (namn !== "formelbladet" || !harFlikar) namn = "berattelser";
+    $("flikar").dataset.hylla = namn;
+    $("flikar").querySelectorAll("[role=tab]").forEach((b) => { const ar = b.dataset.hylla === namn; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar ? 0 : -1; });
+    if (namn === hylla) return;
+    hylla = namn;
+    if (namn === "formelbladet") Newton.markera("formelbladet");   // den som hittat fliken behöver inte tipset om den
+    const nollstall = () => { ritaHylla(); x = 0; vx = 0; malX = null; rita(); ritaFramstegKort(); };
+    clearTimeout(bytTimer); spar.classList.remove("nytt");
+    if (direkt || aktivVy !== "valj") { tidslinje.classList.remove("byter"); nollstall(); return; }
+    tidslinje.classList.add("byter");
+    bytTimer = setTimeout(() => {
+      nollstall();
+      if (smal() && scrollY > 0) window.scrollTo(0, 0);
+      tidslinje.classList.remove("byter"); spar.classList.add("nytt");
+      bytTimer = setTimeout(() => spar.classList.remove("nytt"), 1500);
+    }, 230);
+  }
+  // Ett tryck på en flik byter adressen utan att lägga en ny rad i historiken (bakåt går till introt
+  // som förut), och en film som öppnas härifrån leder tillbaka hit med "Alla filmer"/"Formelbladet".
+  const bytHylla = (namn) => {
+    history.replaceState(null, "", namn === "formelbladet" ? "#formelbladet" : "#filmer");
+    valjHylla(namn);
+    Newton.hande("flik");
+  };
+  $("flikar").addEventListener("click", (e) => { const b = e.target.closest("[role=tab]"); if (b) bytHylla(b.dataset.hylla); });
 
   let x = 0, vx = 0, mal = 0, rullar = false, drog = false;
   const maxX = () => Math.max(0, spar.scrollWidth - tidslinje.clientWidth);
@@ -1353,6 +1546,13 @@
   document.addEventListener("keydown", (e) => {
     if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    // På flikarna byter pilarna flik, som i en vanlig flikrad.
+    if (e.target.closest && e.target.closest("#flikar")) {
+      e.preventDefault();
+      const annan = hylla === "formelbladet" ? "berattelser" : "formelbladet";
+      bytHylla(annan); $("flikar").querySelector(`[data-hylla="${annan}"]`).focus();
+      return;
+    }
     const kort = e.target.closest && e.target.closest(".post > button");
     if (kort) {
       const alla = [...spar.querySelectorAll(".post > button")];
@@ -1532,13 +1732,14 @@
     return (fran > 0 ? "… " : "") + markera(text.slice(fran, till).trim(), re) + (till < text.length ? " …" : "");
   };
   const stalleText = (s, re, max) => (s.kap ? `Kapitel · ${markera(s.text, re)}` : utdrag(s.text, re, max));
-  // Ord att prova när fältet är tomt: de två första begreppen i varje film.
-  const FORSLAG = [...new Set(videor.flatMap((v) => v.begrepp.slice(0, 2)))].slice(0, 10);
+  // Ord att prova när fältet är tomt: de två första begreppen i varje berättelse, och formelbladet
+  // först när det finns filmer om det (begreppen där är formlerna, som berättelserna redan tar upp).
+  const FORSLAG = [...new Set([...(harFlikar ? ["formelbladet"] : []), ...berattelser.flatMap((v) => v.begrepp.slice(0, 2))])].slice(0, 10);
   const SPELA = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg>';
   const filmRad = (a, t, under) => {
     const b = a.omslagRen || a.omslag;
     return `
-        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${b}" alt="">` : '<span class="tom"></span>'}<span class="namn"><span class="titel">${esc(a.titel)}</span><span class="antal">${under}</span></span></button></li>`;
+        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${b}" alt="">` : '<span class="tom"></span>'}<span class="namn">${sortEtikett(a)}<span class="titel">${esc(a.titel)}</span><span class="antal">${under}</span></span></button></li>`;
   };
   function ritaSok() {
     const lista = $("sok-lista"), status = $("sok-status");
@@ -1562,7 +1763,7 @@
       <article class="basta">
         <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${bild}" alt="">` : ""}</button>
         <div class="text">
-          <p class="etikett">${v.ar ? `${arText(v.ar)} · ` : ""}${kursKort(v.kurs)} · ${esc(v.moment)}</p>
+          <p class="etikett">${sortEtikett(v)} · ${kursKort(v.kurs)} · ${esc(v.moment)}</p>
           <h3 class="titel"><button data-film="${v.id}" data-t="${t0}">${esc(v.titel)}</button></h3>
           <p class="forklaring">${s0 ? stalleText(s0, q.markRe) : esc(v.beskrivning.split(". ")[0]) + "."}</p>
           <button class="spela" data-film="${v.id}" data-t="${t0}"><span class="ring">${SPELA}</span>${knapp}</button>
@@ -1663,6 +1864,15 @@
   };
   // YouTubes egna undertexter av — sidan ritar sina egna ur tal.srt.
   function stangYtText() { if (yt && yt.unloadModule) { try { yt.unloadModule("captions"); yt.unloadModule("cc"); } catch (e) {} } }
+  // När filmen är slut: Din tur-frågan och vägen till svaret, och i en formelbladsdel också Nästa del.
+  function slutHtml(v) {
+    const n = nastaDel(v), nasta = n && !n.saknas ? n : null;
+    if (!v.dinTur && !nasta) return "";
+    const pil = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.5 6 H10.5 M6.5 2 L10.5 6 L6.5 10"/></svg>';
+    return `<div class="slut" id="duk-slut" hidden><div>${v.dinTur
+      ? `<p class="etikett">Din tur</p><p class="slut-fraga">${esc(v.dinTur.delar[0].fraga)}</p>`
+      : `<p class="etikett">Nästa del</p><p class="slut-fraga">${esc(`Del ${nasta.del}: ${delNamn(nasta)}`)}</p>`}<div class="knapprad">${v.dinTur ? `<button type="button" class="kolla" id="duk-svara">Svara på frågan</button>` : ""}${nasta ? `<button type="button" class="${v.dinTur ? "kant" : "kolla"}" id="duk-nasta" data-film="${nasta.id}">Nästa del${pil}</button>` : ""}<button type="button" class="kant" id="duk-se-igen">Se filmen igen</button></div></div></div>`;
+  }
   function byggDuk(v) {
     // Affischen i spelaren: omslaget i hög upplösning när det finns (720 px blev suddigt).
     const bild = v.omslagStor || v.omslagRen || v.omslag;
@@ -1677,7 +1887,7 @@
       <div class="fortsatt" id="duk-fortsatt" hidden><span>Fortsätter från <span id="duk-fortsatt-tid"></span></span><button type="button" id="duk-borja-om">Börja om</button></div>
       ${v.dinTur ? `<button type="button" class="dintur-notis" id="duk-dintur" hidden><b>Din tur</b>Pröva uppgiften<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5 V10 M2.5 6.5 L6 10 L9.5 6.5"/></svg></button>` : ""}
       <div class="besked" id="duk-besked" role="status" aria-live="polite"></div>
-      ${v.dinTur ? `<div class="slut" id="duk-slut" hidden><div><p class="etikett">Din tur</p><p class="slut-fraga">${esc(v.dinTur.delar[0].fraga)}</p><div class="knapprad"><button type="button" class="kolla" id="duk-svara">Svara på frågan</button><button type="button" class="kant" id="duk-se-igen">Se filmen igen</button></div></div></div>` : ""}
+      ${slutHtml(v)}
       <div class="styr" id="duk-styr">
         <div class="linje" id="duk-linje" role="slider" aria-label="Position i filmen" aria-valuemin="0" aria-valuemax="${v.langd || 0}" aria-valuenow="0" aria-valuetext="0:00" tabindex="0"><div class="fylld" id="duk-fylld"></div>${v.langd ? aktuellaKapitel.filter((k) => k.t > 0 && k.t < v.langd).map((k) => `<div class="kap-mark" style="left:${(k.t / v.langd * 100).toFixed(2)}%"></div>`).join("") : ""}<div class="knopp" id="duk-knopp"></div><div class="kap-tips" id="kap-tips" aria-hidden="true"><span class="t"></span><span class="n"></span></div></div>
         <div class="rad">
@@ -1724,7 +1934,7 @@
     const slutRuta = $("duk-slut");
     if (slutRuta && slutRuta.hidden === slut) {
       slutRuta.hidden = !slut;
-      if (slut && dukEl.contains(document.activeElement)) $("duk-svara").focus({ preventScroll: true });
+      if (slut && dukEl.contains(document.activeElement)) slutRuta.querySelector("button").focus({ preventScroll: true });
     }
     // Notisen om Din tur: filmen har stått pausad en halv sekund efter notisgränsen, och uppgiften
     // är inte redan löst. Halvsekunden gör att den inte blinkar till vid ett dubbelklick.
@@ -2138,13 +2348,46 @@
     dukEl.appendChild(el);
   }
 
+  // Siffrorna 1–5 för formelbladets delar. Den som visas är guld (och ingen länk); en del som inte
+  // är klar är streckad.
+  function ritaDelrad(v) {
+    const nav = $("f-delar");
+    nav.hidden = !v.serie;
+    if (!v.serie) { nav.innerHTML = ""; return; }
+    nav.innerHTML = `<ol>${delPlatser().map((p) => {
+      if (p.saknas) return `<li><span class="nr saknas" data-tips="Del ${p.del} · kommer snart"><span class="sr">Del ${p.del}, kommer snart</span><span aria-hidden="true">${p.del}</span></span></li>`;
+      const namn = attr(`Del ${p.del} · ${delNamn(p)}`);
+      return p.id === v.id ? `<li><span class="nr" aria-current="page" data-tips="${namn}"><span class="sr">Del ${p.del}, den här filmen</span><span aria-hidden="true">${p.del}</span></span></li>`
+        : `<li><a class="nr" href="#${p.id}" data-tips="${namn}" aria-label="Del ${p.del}: ${attr(delNamn(p))}">${p.del}</a></li>`;
+    }).join("")}</ol>`;
+  }
+  // Nästa del efter Din tur: omslaget och namnet, eller streckad om den inte är klar. Efter sista
+  // delen finns ingen (siffrorna överst leder ändå till alla delar).
+  function ritaNastaDel(v) {
+    const n = nastaDel(v), sek = $("f-nasta"), ruta = $("f-nasta-kort");
+    sek.hidden = !n;
+    if (!n) { ruta.innerHTML = ""; return; }
+    const bild = n.omslagRen || n.omslag;
+    ruta.innerHTML = n.saknas
+      ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar()}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
+      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`Nästa del, del ${n.del}: ${delNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${bild}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar()} · ${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
+  }
+
   async function laddaFilm(v, t) {
     if (aktuell && aktuell.id === v.id) { if (Number.isFinite(t)) hoppa(t, false); return; }
     stangSpelare();
     aktuell = v;
     document.title = `${v.titel} · ${SAJTNAMN}`;
-    $("f-kurs").textContent = `${v.ar ? `${arText(v.ar)} · ` : ""}${v.kurs} · ${v.moment}`;
-    $("f-titel").textContent = v.titel;
+    // En formelbladsdel: "Formelbladet · Del 2 av 5" överst och delens namn som rubrik, siffrorna
+    // 1–5 bredvid, nästa del efter Din tur, och tillbaka-länken leder till formelbladets flik.
+    const serie = v.serie ? SERIER[v.serie] : null;
+    $("f-kurs").textContent = serie ? `${serie.namn} · Del ${v.del ?? "–"} av ${antalDelar()} · ${v.kurs}${norm(v.moment) !== norm(delNamn(v)) ? ` · ${v.moment}` : ""}`
+      : `${v.ar ? `${arText(v.ar)} · ` : ""}${v.kurs} · ${v.moment}`;
+    $("f-titel").textContent = serie ? delNamn(v) : v.titel;
+    $("f-tillbaka").setAttribute("href", serie ? "#formelbladet" : "#filmer");
+    $("f-tillbaka-text").textContent = serie ? serie.namn : "Alla filmer";
+    ritaDelrad(v); ritaNastaDel(v);
+    if (serie) Newton.efter(8000, () => aktivVy === "film" && aktuell === v && !sp.spelar() && synsIFonster($("f-delar"), 0.9), "delar", ...TIPS.delar, { markera: () => [$("f-delar")] });
     $("f-besk").textContent = v.beskrivning;
     // Begreppen är knappar: ett klick söker på ordet i alla filmer.
     $("f-begrepp").innerHTML = v.begrepp.map((b) => `<li><button type="button" data-sok="${esc(b).replace(/"/g, "&quot;")}">${esc(b)}</button></li>`).join("");
@@ -2796,8 +3039,11 @@
       if (visar === "guide") { if (guideByter) return; if (namn === "film") tillFilmSteg(); else slutaGuide(); return; }
       gom();
       // I filmvalet kommer tipset om sökningen efter en stund, när förstoringsglaset syns, och det lyser.
+      // Har eleven redan fått det kommer i stället tipset om formelbladets flik, när berättelserna visas.
       const sokIkon = () => document.querySelector("#vy-valj .sok-oppna");
-      if (namn === "valj") efter(9000, () => aktivVy === "valj" && synsIFonster(sokIkon(), 0.8), "sok", ...TIPS.sok, { markera: () => [sokIkon()] });
+      const formelFlik = () => document.querySelector('#flikar [data-hylla="formelbladet"]');
+      if (namn === "valj" && !sett.has("sok")) efter(9000, () => aktivVy === "valj" && synsIFonster(sokIkon(), 0.8), "sok", ...TIPS.sok, { markera: () => [sokIkon()] });
+      else if (namn === "valj" && harFlikar) efter(9000, () => aktivVy === "valj" && hylla === "berattelser" && synsIFonster(formelFlik(), 0.8), "formelbladet", ...TIPS.formelbladet, { markera: () => [formelFlik()] });
     }
 
     // ── Guiden ─────────────────────────────────────────────
@@ -2899,8 +3145,17 @@
       // eleven gjorde, i stället för samma "Bra!" varje gång.
       valj: () => [
         { lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
-        { mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: "Just så. Nu ska vi leta efter något i filmerna.",
-          text: smal() ? "Här ligger alla filmer, i den ordning som historierna hände. Scrolla neråt, så ser du fler." : "Här ligger alla filmer, i den ordning som historierna hände. Scrolla eller dra lite åt sidan, så ser du fler." },
+        { mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: harFlikar ? "Just så." : "Just så. Nu ska vi leta efter något i filmerna.",
+          text: `${hylla === "formelbladet" ? "Här ligger filmerna om formelbladet, från del 1 till del 5." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+        // Flikarna (när det finns filmer om formelbladet): eleven byter till den andra fliken.
+        ...(() => {
+          const annan = hylla === "formelbladet" ? "berattelser" : "formelbladet", flik = () => $("flikar").querySelector(`[data-hylla="${annan}"]`);
+          // Efter bytet lyser också de nya korten, medan han säger vad det är.
+          return [{ mal: () => $("flikar"), ljus: () => [flik(), ...(hylla === annan ? synligaKort("#spar .post:not(.kommer) .ram") : [])], lage: "pekar", nar: "flik", hoppaOm: () => !harFlikar, hoppa: async () => { bytHylla(annan); await vila(700); },
+            svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
+            text: annan === "formelbladet" ? "Det finns också filmer som går igenom formelbladet, del för del. De ligger för sig. Tryck på Formelbladet, så ser du dem."
+              : "Berättelserna, där matten kommer ur historien, ligger för sig. Tryck på Berättelser, så ser du dem." }];
+        })(),
         { mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: sokOppen, hoppa: async () => { oppnaSok(); await vila(450); }, svar: "Där är sökrutan.",
           text: "Har du fastnat på något i matten? Tryck på förstoringsglaset, så kan vi söka i allt som sägs i filmerna." },
         { ljus: () => [$("sok-falt"), $("sok-lista").querySelector(".forslag")], lage: "prata", nar: "sokt", sok: true, hoppaOm: () => !sokOppen() || $("sok-falt").value.trim().length >= 3, hoppa: () => skrivIn("olikhet"),
@@ -2939,6 +3194,17 @@
           text: "Vill du läsa allt i lugn och ro? Tryck på Visa allt som sägs." },
         { mal: () => $("dintur"), lage: "forvanad", nar: "dintur", svar: "Så gör du i varje film.",
           text: "Sist i varje film får du pröva själv. Skriv ditt svar och tryck på Kolla. Fastnar du finns det en ledtråd." },
+        // En formelbladsdel: nästa del längst ner, och siffrorna högst upp.
+        ...(() => {
+          if (!aktuell || !aktuell.serie) return [];
+          const n = nastaDel(aktuell), saknas = delPlatser().some((p) => p.saknas);
+          return [
+            { mal: () => $("f-nasta"), lage: n && n.saknas ? "fundersam" : "pekar",
+              text: n && n.saknas ? "Nästa del om formelbladet är inte klar än. När den är klar kommer den upp här." : "När du är klar med den här filmen ligger nästa del här. Tryck på den, så fortsätter du." },
+            { mal: () => $("f-delar"), lage: "pekar",
+              text: `Den här filmen är del ${aktuell.del} av ${antalDelar()} om formelbladet. Siffrorna här uppe är alla delarna, och du byter del genom att trycka på en siffra.${saknas ? " De streckade är inte klara än." : ""}` },
+          ];
+        })(),
         { lage: "glad", rorelse: "kasta", text: "Nu vet du hur allt fungerar. Vill du gå igenom det igen trycker du på frågetecknet nere till vänster. Lycka till med matten!", knappar: [["Klar", () => slutaGuide()]] },
       ],
     };
@@ -3097,6 +3363,8 @@
     format: ["pekar", "Jag förstår inte riktigt ditt svar. Skriv det som på räknaren, till exempel x^3 = 2 eller 1,44. Knapparna under rutan hjälper dig med tecknen."],
     ledtrad: ["fundersam", "Den här är inte lätt. Ta gärna en ledtråd. Den visar var i filmen det förklaras, så att du kan se den biten igen."],
     lost: ["glad", "Du löste hela uppgiften! Under den kan du se lösningen steg för steg, om du vill jämföra."],
+    formelbladet: ["pekar", "Visste du att det finns filmer om formelbladet också? Tryck på Formelbladet här uppe, så ser du dem."],
+    delar: ["pekar", "Den här filmen är en del av formelbladet. Med siffrorna här uppe byter du till en annan del."],
   };
 
   ruta();
