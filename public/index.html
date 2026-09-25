@@ -80,13 +80,13 @@
      plats ovanför, där hamnar de under (.tips-under). Pilspetsen ligger över rutan och täcker
      dess kantlinje. Längst till höger fästs rutan i högerkanten så den inte går utanför fönstret.
      Bara på pekdon som hovrar: på en telefon finns ingen hovring att visa dem vid. */
-  .ikon[data-tips] { position: relative; }
+  :is(.ikon, .styr .knapp)[data-tips] { position: relative; }
   @media (hover: hover) {
-    .ikon[data-tips]::before, .ikon[data-tips]::after { position: absolute; pointer-events: none; opacity: 0; transition: opacity .22s var(--lugn), transform .22s var(--lugn); }
-    .ikon[data-tips]::after { content: attr(data-tips); z-index: 1; left: 50%; bottom: calc(100% + 9px); transform: translate(-50%, 5px); white-space: nowrap; padding: 9px 13px 8px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); background: rgba(23, 20, 20, .86); border: 1px solid rgba(236, 230, 216, .2); border-radius: 6px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-    .ikon[data-tips]::before { content: ""; z-index: 2; left: 50%; bottom: calc(100% + 5px); width: 8px; height: 8px; margin-left: -4px; transform: translateY(5px) rotate(45deg); background: rgb(28, 25, 25); border-right: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
-    .ikon[data-tips]:hover::before, .ikon[data-tips]:focus-visible::before { opacity: 1; transform: translateY(0) rotate(45deg); transition-delay: .1s; }
-    .ikon[data-tips]:hover::after, .ikon[data-tips]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: .1s; }
+    :is(.ikon, .styr .knapp)[data-tips]::before, :is(.ikon, .styr .knapp)[data-tips]::after { position: absolute; pointer-events: none; opacity: 0; transition: opacity .22s var(--lugn), transform .22s var(--lugn); }
+    :is(.ikon, .styr .knapp)[data-tips]::after { content: attr(data-tips); z-index: 1; left: 50%; bottom: calc(100% + 9px); transform: translate(-50%, 5px); white-space: nowrap; padding: 9px 13px 8px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); background: rgba(23, 20, 20, .86); border: 1px solid rgba(236, 230, 216, .2); border-radius: 6px; box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+    :is(.ikon, .styr .knapp)[data-tips]::before { content: ""; z-index: 2; left: 50%; bottom: calc(100% + 5px); width: 8px; height: 8px; margin-left: -4px; transform: translateY(5px) rotate(45deg); background: rgb(28, 25, 25); border-right: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
+    :is(.ikon, .styr .knapp)[data-tips]:hover::before, :is(.ikon, .styr .knapp)[data-tips]:focus-visible::before { opacity: 1; transform: translateY(0) rotate(45deg); transition-delay: .1s; }
+    :is(.ikon, .styr .knapp)[data-tips]:hover::after, :is(.ikon, .styr .knapp)[data-tips]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); transition-delay: .1s; }
     .hoger .ikon[data-tips]:last-child::after { left: auto; right: 0; transform: translate(0, 5px); }
     .hoger .ikon[data-tips]:last-child:hover::after, .hoger .ikon[data-tips]:last-child:focus-visible::after { transform: translate(0, 0); }
     .ikon.tips-under[data-tips]::after { bottom: auto; top: calc(100% + 9px); transform: translate(-50%, -5px); }
@@ -388,18 +388,33 @@
   .styr .knapp[aria-pressed="true"] .cc { background: var(--ben); color: #171414; }
   .styr .tidvis { font: 400 11px/1 var(--sans); letter-spacing: .18em; color: var(--ben2); font-variant-numeric: tabular-nums; margin-left: 8px; white-space: nowrap; }
   .styr .mellan { flex: 1; }
-  /* Volymreglaget svävar ovanför högtalaren, så inget i raden flyttar sig när det fälls in eller ut. */
-  .styr .ljud { display: inline-flex; align-items: center; position: relative; }
-  .styr .volym { -webkit-appearance: none; appearance: none; position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%); width: 110px; height: 30px; margin: 0; padding: 0 12px; box-sizing: border-box; background: rgba(23, 20, 20, .88); border: 1px solid var(--linje2); border-radius: 15px; opacity: 0; pointer-events: none; transition: opacity .15s; cursor: pointer; }
-  .styr .ljud:hover .volym, .styr .volym:focus-visible, .styr .volym.oppen { opacity: 1; pointer-events: auto; }
-  .styr .volym::-webkit-slider-runnable-track { height: 1px; background: rgba(236, 230, 216, .45); margin-top: 0; }
-  .styr .volym::-moz-range-track { height: 1px; background: rgba(236, 230, 216, .45); }
-  .styr .volym::-webkit-slider-thumb { -webkit-appearance: none; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); margin-top: -5px; border: 0; }
-  .styr .volym::-moz-range-thumb { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 0; }
+  /* Ljud och hastighet (Rickard 2026-09-25): en ruta tonar fram rakt ovanför knappen vid hovring,
+     kant i kant med den, så att man kan föra musen rakt upp i rutan utan att tappa hovringen.
+     Lämnar musen både knapp och ruta tonar rutan ut efter en kort stund. På pekskärm öppnas den
+     med ett tryck (.oppen). Scrollhjulet över ljudknappen eller reglaget ändrar volymen. */
+  .styr .ljud, .styr .fartval { display: inline-flex; align-items: center; position: relative; }
+  .styr .pop { position: absolute; left: 50%; bottom: 100%; z-index: 3; padding-bottom: 6px; opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 6px); transition: opacity .25s var(--lugn) .2s, transform .25s var(--lugn) .2s, visibility 0s .45s; }
+  .styr .ljud:hover .pop, .styr .fartval:hover .pop, .styr .ljud:has(:focus-visible) .pop, .styr .fartval:has(:focus-visible) .pop, .styr .pop.oppen { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); transition: opacity .18s var(--lugn), transform .18s var(--lugn), visibility 0s; }
+  @media (hover: none) { .styr .ljud:hover .pop:not(.oppen), .styr .fartval:hover .pop:not(.oppen) { opacity: 0; visibility: hidden; pointer-events: none; } }
+  .styr .pop-ruta { display: block; background: rgba(23, 20, 20, .92); border: 1px solid var(--linje2); border-radius: 12px; box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  /* Volymen: ett lodrätt reglage (ett vanligt range-reglage vridet ett kvarts varv), guld upp till nivån. */
+  .styr .volym-ruta { position: relative; width: 40px; height: 128px; }
+  .styr .volym { -webkit-appearance: none; appearance: none; position: absolute; left: 50%; top: 50%; width: 104px; height: 28px; margin: 0; padding: 0; background: none; transform: translate(-50%, -50%) rotate(-90deg); cursor: pointer; }
+  .styr .volym::-webkit-slider-runnable-track { height: 3px; border-radius: 2px; background: linear-gradient(to right, var(--accent) var(--niva, 100%), rgba(236, 230, 216, .28) var(--niva, 100%)); }
+  .styr .volym::-moz-range-track { height: 3px; border-radius: 2px; background: rgba(236, 230, 216, .28); }
+  .styr .volym::-moz-range-progress { height: 3px; border-radius: 2px; background: var(--accent); }
+  .styr .volym::-webkit-slider-thumb { -webkit-appearance: none; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); margin-top: -5px; border: 0; transition: transform .15s; }
+  .styr .volym::-moz-range-thumb { width: 13px; height: 13px; border-radius: 50%; background: var(--accent); border: 0; }
+  .styr .volym:hover::-webkit-slider-thumb, .styr .volym:active::-webkit-slider-thumb { transform: scale(1.25); }
   .styr .volym:focus-visible { outline: none; }
-  @media (max-width: 700px) { .styr .ljud:hover .volym, .styr .volym:focus-visible { opacity: 0; pointer-events: none; } .styr .volym.oppen { opacity: 1; pointer-events: auto; } }
+  .styr .volym:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(242, 197, 114, .3); }
+  /* Hastigheten: alla val i en lista, snabbast överst. Den som gäller lyser i guld. */
+  .styr .fart-lista { display: flex; flex-direction: column; gap: 2px; padding: 6px; min-width: 74px; }
+  .styr .fart-lista button { padding: 8px 12px 7px; border-radius: 7px; font: 500 12px/1 var(--sans); letter-spacing: .06em; font-variant-numeric: tabular-nums; color: var(--ben2); text-align: center; transition: background .2s, color .2s; }
+  .styr .fart-lista button:hover, .styr .fart-lista button:focus-visible { background: rgba(236, 230, 216, .09); color: var(--ben); outline: none; }
+  .styr .fart-lista button[aria-checked="true"] { color: var(--accent); }
   .styr .dolj { display: none; }
-  /* Hastigheten står som text i knappen: 1×, 1,25×, 1,5×, 0,75×. */
+  /* Hastigheten står som text i knappen: 0,75× till 2×. */
   .styr .knapp.fart { width: auto; min-width: 44px; padding: 0 6px; font: 500 12px/1 var(--sans); letter-spacing: .06em; font-variant-numeric: tabular-nums; }
   /* Fortsätt där du slutade: syns på affischen tills filmen startar. */
   .duk .fortsatt { position: absolute; left: 16px; top: 14px; z-index: 6; display: flex; align-items: center; gap: 12px; padding: 6px 6px 6px 14px; border-radius: 999px; background: rgba(23, 20, 20, .82); border: 1px solid var(--linje2); font: 500 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--ben); }
@@ -1489,7 +1504,7 @@
   let volym = 100; try { const v = Number(localStorage.getItem("volym")); if (Number.isFinite(v) && v >= 0 && v <= 100 && localStorage.getItem("volym") !== null) volym = v; } catch (e) {}
   // Uppspelningshastigheten (2026-09-24): långsammare för den som vill hänga med i en uträkning,
   // snabbare för den som ser om. Sparas i webbläsaren som textningen.
-  const FARTER = [1, 1.25, 1.5, 0.75];
+  const FARTER = [1, 1.25, 1.5, 1.75, 2, 0.75];
   let fart = 1; try { const f = Number(localStorage.getItem("fart")); if (FARTER.includes(f)) fart = f; } catch (e) {}
   const fartText = (f) => `${String(f).replace(".", ",")}×`;
   // YouTube-skriptet kan spärras av skolans filter. Då ska spelaren säga det, inte vänta för evigt.
@@ -1561,10 +1576,10 @@
           <span class="tidvis"><span id="duk-nu">0:00</span> / <span id="duk-langd">${v.langd ? tid(v.langd) : "–"}</span></span>
           <span class="kap-namn" id="duk-kap"></span>
           <span class="mellan"></span>
-          <button class="knapp fart" id="duk-fart" type="button" aria-label="Hastighet ${fartText(fart)}">${fartText(fart)}</button>
-          <button class="knapp" id="duk-dela" type="button" aria-label="Kopiera länk till den här stunden">${IK.dela}</button>
+          <span class="fartval"><button class="knapp fart" id="duk-fart" type="button" aria-label="Hastighet ${fartText(fart)}" aria-haspopup="menu">${fartText(fart)}</button><span class="pop" id="duk-fart-pop"><span class="pop-ruta fart-lista" role="menu" aria-label="Hastighet">${[...FARTER].sort((a, b) => b - a).map((f) => `<button type="button" role="menuitemradio" data-fart="${f}" aria-checked="${f === fart}">${fartText(f)}</button>`).join("")}</span></span></span>
+          <button class="knapp" id="duk-dela" type="button" aria-label="Kopiera länk till den här stunden" data-tips="Kopiera länk till filmen">${IK.dela}</button>
           <button class="knapp" id="duk-cc" type="button" aria-label="Textning" aria-pressed="${textPa}"><span class="cc">CC</span></button>
-          <span class="ljud"><button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button><input class="volym" id="duk-volym" type="range" min="0" max="100" step="1" value="${volym}" aria-label="Volym"></span>
+          <span class="ljud"><button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button><span class="pop" id="duk-volym-pop"><span class="pop-ruta volym-ruta"><input class="volym" id="duk-volym" type="range" min="0" max="100" step="1" value="${volym}" aria-label="Volym" style="--niva:${volym}%"></span></span></span>
           <button class="knapp" id="duk-hel" type="button" aria-label="Helskärm">${IK.helIn}</button>
         </div>
       </div>`;
@@ -1629,7 +1644,7 @@
       }
     }
     visaLjud(sp.tyst() ? 0 : sp.volym());
-    const vr = $("duk-volym"); if (vr && document.activeElement !== vr && !vr.matches(":active")) vr.value = sp.tyst() ? 0 : sp.volym();
+    const vr = $("duk-volym"); if (vr && document.activeElement !== vr && !vr.matches(":active")) { const n = sp.tyst() ? 0 : sp.volym(); vr.value = n; vr.style.setProperty("--niva", `${n}%`); }
     // Undertext ur tal.srt (sekundexakt), annars replikerna
     let text = "";
     if (textPa) {
@@ -1717,14 +1732,17 @@
       if (e.detail > 0) b.blur();
       if (b.id === "duk-spela") vaxlaSpel(); else if (b.id === "duk-cc") vaxlaText();
       else if (b.id === "duk-ljud") {
-        const vr = $("duk-volym");
-        if (smal() && vr && !vr.classList.contains("oppen")) { vr.classList.add("oppen"); setTimeout(() => vr.classList.remove("oppen"), 4000); }
-        else if (sp.tyst() || sp.volym() === 0) { if (sp.volym() === 0) { volym = 50; sp.satVolym(50); } sp.satTyst(false); }
+        const pop = $("duk-volym-pop");
+        if (!kanHovra() && pop && !pop.classList.contains("oppen")) oppnaPop(pop);
+        else if (sp.tyst() || sp.volym() === 0) { if (sp.volym() === 0) satVolymTill(50); else sp.satTyst(false); }
         else sp.satTyst(true);
         setTimeout(uppdatera, 50);
       }
       else if (b.id === "duk-hel") vaxlaHelskarm();
-      else if (b.id === "duk-fart") bytFart(1);
+      // Med mus visas listan vid hovring och ett klick på knappen stegar som förut; på
+      // pekskärm öppnar trycket listan.
+      else if (b.id === "duk-fart") { if (kanHovra()) bytFart(1); else { const pop = $("duk-fart-pop"); if (pop.classList.contains("oppen")) stangPoppar(); else oppnaPop(pop); } }
+      else if (b.dataset.fart) { valjFart(Number(b.dataset.fart)); stangPoppar(); }
       else if (b.id === "duk-dela") kopieraLank();
       else if (b.id === "duk-borja-om") { glomFortsatt(); vaxlaSpel(); }
       else if (b.id === "duk-se-igen") { $("duk-slut").hidden = true; sp.sok(0); sp.spela(); setTimeout(uppdatera, 50); }
@@ -1801,10 +1819,35 @@
   dukEl.addEventListener("pointerup", (e) => { if (e.target.id === "duk-volym") setTimeout(() => e.target.blur(), 0); });
   dukEl.addEventListener("input", (e) => {
     if (e.target.id !== "duk-volym") return;
-    volym = Number(e.target.value); sp.satVolym(volym); sp.satTyst(volym === 0); visaLjud(volym);
-    try { localStorage.setItem("volym", String(volym)); } catch (x) {}
+    satVolymTill(Number(e.target.value));
+    if ($("duk-volym-pop").classList.contains("oppen")) { clearTimeout(popTimer); popTimer = setTimeout(stangPoppar, 4000); }
     visaStyr(); setTimeout(uppdatera, 50);
   });
+  // Volymen från reglaget, scrollhjulet och ljudknappen: spelaren, ikonen, reglagets guld och minnet.
+  function satVolymTill(v) {
+    volym = v; sp.satVolym(v); sp.satTyst(v === 0); visaLjud(v);
+    const vr = $("duk-volym"); if (vr) { vr.value = v; vr.style.setProperty("--niva", `${v}%`); }
+    try { localStorage.setItem("volym", String(v)); } catch (x) {}
+  }
+  // Scrollhjulet över ljudknappen eller reglaget: 5 procentenheter per hack uppåt eller nedåt.
+  // Styrplattans små steg samlas ihop, så att en lätt svepning inte slår i taket direkt.
+  let hjulRest = 0;
+  dukEl.addEventListener("wheel", (e) => {
+    if (!e.target.closest(".ljud")) return;
+    e.preventDefault();
+    hjulRest += e.deltaMode === 1 ? e.deltaY * 33 : e.deltaY;
+    const steg = Math.trunc(hjulRest / 100); if (!steg) return;
+    hjulRest -= steg * 100;
+    satVolymTill(Math.max(0, Math.min(100, (sp.tyst() ? 0 : sp.volym()) - steg * 5)));
+    visaStyr(); setTimeout(uppdatera, 50);
+  }, { passive: false });
+  // Rutorna ovanför ljud- och hastighetsknappen. Med mus öppnas de av hovringen (CSS). På
+  // pekskärm öppnas de med ett tryck och stängs av ett tryck utanför, eller efter fyra sekunder.
+  const kanHovra = () => matchMedia("(hover: hover)").matches;
+  let popTimer = null;
+  function oppnaPop(pop) { stangPoppar(); pop.classList.add("oppen"); popTimer = setTimeout(stangPoppar, 4000); }
+  function stangPoppar() { clearTimeout(popTimer); dukEl.querySelectorAll(".pop.oppen").forEach((p) => p.classList.remove("oppen")); }
+  document.addEventListener("pointerdown", (e) => { if (!e.target.closest(".ljud, .fartval")) stangPoppar(); });
   dukEl.addEventListener("pointermove", visaStyr);
   dukEl.addEventListener("pointerleave", () => { clearTimeout(gomTimer); dukEl.classList.remove("visa"); });
   let sokDrag = false;
@@ -1860,18 +1903,22 @@
     else if (k === ">") bytFart(1);
     else if (k === "<") bytFart(-1);
     else if (k === "m") { if (sp.tyst()) { if (sp.volym() === 0) { volym = 50; sp.satVolym(50); } sp.satTyst(false); } else sp.satTyst(true); }
-    else if (k === "ArrowUp" && iSpelaren) { e.preventDefault(); volym = Math.min(100, sp.volym() + 10); sp.satVolym(volym); sp.satTyst(false); }
-    else if (k === "ArrowDown" && iSpelaren) { e.preventDefault(); volym = Math.max(0, sp.volym() - 10); sp.satVolym(volym); }
+    else if (k === "ArrowUp" && iSpelaren) { e.preventDefault(); satVolymTill(Math.min(100, sp.volym() + 10)); }
+    else if (k === "ArrowDown" && iSpelaren) { e.preventDefault(); satVolymTill(Math.max(0, sp.volym() - 10)); }
     else return;
     visaStyr(); setTimeout(uppdatera, 50);
   });
   // Hastigheten stegar uppåt och börjar om (1 → 1,25 → 1,5 → 0,75 → 1). Med < går den bakåt.
   function bytFart(steg) {
     const ordning = [...FARTER].sort((a, b) => a - b), i = ordning.indexOf(fart);
-    fart = steg > 0 ? FARTER[(FARTER.indexOf(fart) + 1) % FARTER.length] : ordning[Math.max(0, i - 1)];
+    valjFart(steg > 0 ? FARTER[(FARTER.indexOf(fart) + 1) % FARTER.length] : ordning[Math.max(0, i - 1)]);
+  }
+  function valjFart(f) {
+    fart = f;
     try { localStorage.setItem("fart", String(fart)); } catch (e) {}
     sp.satFart(fart);
     const b = $("duk-fart"); if (b) { b.textContent = fartText(fart); b.setAttribute("aria-label", `Hastighet ${fartText(fart)}`); }
+    dukEl.querySelectorAll("[data-fart]").forEach((x) => x.setAttribute("aria-checked", String(Number(x.dataset.fart) === fart)));
   }
   // Kopiera en länk till den här sekunden. Länken går till filmens egen sida (film/<id>/), som har
   // bild och titel för förhandsvisningen i Classroom och skickar vidare hit.
