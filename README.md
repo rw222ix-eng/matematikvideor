@@ -18,8 +18,10 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   där kapitlet börjar (minst fem, så att den bara finns på ett ställe); `node bygg.mjs` slår upp
   sekunden i rösten, så kapitlen flyttar med när rösten görs om.
 - `dintur.json` — uppgiften "Din tur" som varje film slutar med. Per film: `fraga`, `delar`
-  (en eller flera frågor med `typ` `tal`, `ekvation`, `uttryck`, `olikhet` eller `intervall`,
-  `svar`, `fel` med vanliga fel och förklaringen till dem, `tangenter` för telefonens knappar),
+  (en eller flera frågor med `typ` `tal`, `ekvation`, `uttryck`, `olikhet`, `intervall` eller `ord`,
+  `svar`, `fel` med vanliga fel och förklaringen till dem, `tangenter` för telefonens knappar;
+  `ord` jämför ett ord, t.ex. ett prefix, med en lista av godkända stavningar, och en ensam bokstav
+  jämförs exakt så att M och m är olika),
   `ledtrad` (`fras` = var i filmen metoden visas, slås upp som kapitlen) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
   jämförs genom att räknas ut i några punkter, så 5ab(3b + 2a) räknas som rätt. `utanfor` kräver
   att så mycket som möjligt är utbrutet, `prova` visar elevens formel för n = 1, 2, 3 …

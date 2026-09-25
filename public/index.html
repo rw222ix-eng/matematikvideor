@@ -2621,7 +2621,8 @@
   const lista = (xs) => xs.map(svTal).join(", ").replace(/, ([^,]*)$/, " och $1");
   const snygg = (s) => s.replace(/>=/g, "≥").replace(/<=/g, "≤").replace(/\^2(?![\d(])/g, "²").replace(/\^3(?![\d(])/g, "³").replace(/\*/g, "·").replace(/(\S)-/g, "$1 − ");
   // "x = 1,44 m" → 1,44: allt före sista = eller ≈ och en enhet sist tas bort.
-  const talUr = (svar) => rakna(tolka(stada(svar).replace(/^.*[=≈]/, "").replace(/[a-zåäö]+\.?$/, "")), {});
+  // Gradtecknet räknas inte: "60°" är 60 (formelbladet 3, vinkeln i pizzabiten).
+  const talUr = (svar) => rakna(tolka(stada(svar).replace(/°/g, "").replace(/^.*[=≈]/, "").replace(/[a-zåäö]+\.?$/, "")), {});
   const ekvUr = (svar) => { const d = stada(svar).split("="); if (d.length !== 2) throw new Error("likhetstecken"); return { typ: "-", a: tolka(d[0]), b: tolka(d[1]) }; };
   // "a_n = n^2 + 4" och "f(n) = …": det som står före = är ett namn, inte en del av svaret.
   const uttrUr = (svar) => { let s = stada(svar); const d = s.split("="); if (d.length === 2) s = /^[a-zåäö_()0-9]*$/.test(d[0]) ? d[1] : d[0]; return tolka(s); };
@@ -2670,6 +2671,15 @@
   const fel = (text) => ({ ok: false, forstod: true, text });
   function ratta(del, svar) {
     try {
+      // Ett ord (formelbladet: prefixet, sorten av funktion). Stora och små bokstäver och accenter
+      // spelar ingen roll, utom för en ensam bokstav: M (mega) och m (milli) är olika prefix.
+      if (del.typ === "ord") {
+        const du = svar.trim().replace(/[.!]+$/, "").replace(/\s+/g, " ");
+        const sammaOrd = (s) => [].concat(s).some((x) => (x.length === 1 ? du === x : fold(du.toLowerCase()) === fold(x.toLowerCase())));
+        if (sammaOrd(del.svar)) return { ok: true, text: "Rätt!" };
+        for (const f of del.fel || []) if (sammaOrd(f.svar)) return fel(f.text);
+        return fel(INTE);
+      }
       if (del.typ === "tal") {
         const x = talUr(svar);
         if (!Number.isFinite(x)) throw new Error("tal");
