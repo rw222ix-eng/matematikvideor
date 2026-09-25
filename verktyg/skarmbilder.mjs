@@ -3,6 +3,7 @@
 // Newtons rörelser inte går att se där. Startar en egen Chrome, öppnar en sida och kör ett manus
 // av steg (vänta, flytta musen, kör JS, ta skärmbild):
 //   node verktyg/skarmbilder.mjs <url> <utmapp> <bredd> <höjd> '[{"js":"…"},{"vanta":1500,"bild":"namn"}]'
+// Stegen: vanta (ms), mus [x,y] (hovring), klick [x,y] (musklick), tryck [x,y] (pekskärm), js, bild.
 // Lokal server: python3 -m http.server 8765 --directory public; öppna http://[::1]:8765/#filmer.
 import { spawn } from "node:child_process";
 import { writeFileSync, mkdirSync, rmSync } from "node:fs";
@@ -33,6 +34,10 @@ try {
   for (const s of JSON.parse(stegJson)) {
     if (s.vanta) await vila(s.vanta);
     if (s.mus) await skicka("Input.dispatchMouseEvent", { type: "mouseMoved", x: s.mus[0], y: s.mus[1] });   // flytta musen dit (hovring)
+    // Riktiga klick och tryck, som går genom webbläsarens träffprov: ett element() .click() i js
+    // hoppar över det och märker inte om något genomskinligt ligger ovanpå (flikarna, 2026-09-25).
+    if (s.klick) for (const type of ["mouseMoved", "mousePressed", "mouseReleased"]) await skicka("Input.dispatchMouseEvent", { type, x: s.klick[0], y: s.klick[1], button: "left", clickCount: 1 });
+    if (s.tryck) { await skicka("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: s.tryck[0], y: s.tryck[1] }] }); await vila(60); await skicka("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] }); }
     if (s.js) { const r = await skicka("Runtime.evaluate", { expression: s.js, awaitPromise: true, returnByValue: true }); if (r.result && r.result.value !== undefined) console.log(`js: ${JSON.stringify(r.result.value)}`); if (r.exceptionDetails) console.log("fel:", r.exceptionDetails.text, r.exceptionDetails.exception && r.exceptionDetails.exception.description); }
     if (s.bild) { const r = await skicka("Page.captureScreenshot", { format: "jpeg", quality: 80 }); const fil = join(ut, `${String(++n).padStart(2, "0")}-${s.bild}.jpg`); writeFileSync(fil, Buffer.from(r.data, "base64")); console.log(fil); }
   }

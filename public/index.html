@@ -252,6 +252,13 @@
      i tidslinjen, så kortens minsta upphängning (72 px) gäller fortfarande. */
   .valj .flikar { position: absolute; top: 62px; left: 50%; transform: translateX(-50%); z-index: 4; display: none; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 20, .66); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
   .valj.har-flikar .flikar { display: grid; }
+  /* Sidhuvudet är en genomskinlig remsa över hela bredden (z 5). Den låg över flikarna och tog
+     klicken: förut fick man sikta långt ut på knapparna, och när flikarna flyttades upp gick de inte
+     att trycka på alls (Rickard 2026-09-25). Remsan släpper igenom pekaren, bara ikonerna tar den,
+     och flikarna ligger över den. */
+  .valj .topp { pointer-events: none; }
+  .valj .topp .hoger { pointer-events: auto; }
+  .valj .flikar { z-index: 6; }
   /* Flikarna överst, "Välj en film" under dem och sedan pilen (Rickard 2026-09-25: rubriken ska stå
      under flikarna, och pilen låg 2 px under flikarna, alldeles för nära). */
   .valj.har-flikar .rubrik { top: 134px; }
