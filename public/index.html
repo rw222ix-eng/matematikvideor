@@ -781,10 +781,15 @@
   body.guidar .hjalp { opacity: 0; pointer-events: none; }
   body.guidar.visa-hjalp .hjalp { opacity: 1; }
   /* Strålkastaren: det Newton pratar om ligger ljust, resten av sidan dämpas. */
-  .guide-ljus { position: fixed; z-index: 36; left: 0; top: 0; width: 0; height: 0; border-radius: 12px; pointer-events: none; opacity: 0; box-shadow: 0 0 0 200vmax rgba(10, 8, 8, .6), 0 0 0 1.5px rgba(242, 197, 114, .7), 0 0 26px 2px rgba(242, 197, 114, .25); transition: opacity .4s; }
-  .guide-ljus.flytt { transition: left .6s var(--lugn), top .6s var(--lugn), width .6s var(--lugn), height .6s var(--lugn), opacity .4s; }
+  /* Den kan lysa på flera saker samtidigt (t.ex. krysset och träffarna i sökningen): hålen i det
+     dämpade lagret är en path med evenodd, och varje hål har en egen guldram som pulserar lätt.
+     Lagret ligger över sökrutan (z 40) så att det kan visa saker där också; Newton ligger över det. */
+  .guide-ljus { position: fixed; inset: 0; z-index: 41; pointer-events: none; opacity: 0; transition: opacity .4s; }
   .guide-ljus.syns { opacity: 1; }
-  .guide-ljus.tom { box-shadow: 0 0 0 200vmax rgba(10, 8, 8, .6); }
+  .guide-dim { position: absolute; inset: 0; background: rgba(10, 8, 8, .6); transition: clip-path .6s var(--lugn); }
+  .guide-ram { position: absolute; border-radius: 12px; box-shadow: 0 0 0 1.5px rgba(242, 197, 114, .8), 0 0 26px 2px rgba(242, 197, 114, .3); transition: left .6s var(--lugn), top .6s var(--lugn), width .6s var(--lugn), height .6s var(--lugn), opacity .3s; animation: ram-puls 2.2s ease-in-out infinite; }
+  .guide-ljus.folj .guide-dim, .guide-ljus.folj .guide-ram { transition: opacity .3s; }
+  @keyframes ram-puls { 50% { box-shadow: 0 0 0 2px rgba(242, 197, 114, 1), 0 0 36px 5px rgba(242, 197, 114, .42); } }
   .duk.guide-styr .styr { opacity: 1 !important; pointer-events: auto; }
   @media (max-width: 700px) {
     .newton { right: 6px; width: 73px; height: 136px; }
@@ -912,7 +917,7 @@
   </div>
   <div class="newton-figur" id="newton-figur" aria-hidden="true"><div class="newton-spegel"><div class="newton-gunga"><div class="newton-kropp"><img id="newton-bild" alt=""><img class="newton-blink" id="newton-blink" alt=""><img class="newton-uttryck" id="newton-uttryck" alt=""><div class="newton-rorelse" id="newton-rorelse"></div><div class="newton-apple" id="newton-apple"></div></div></div></div></div>
 </aside>
-<div class="guide-ljus" id="guide-ljus" aria-hidden="true"></div>
+<div class="guide-ljus" id="guide-ljus" aria-hidden="true"><div class="guide-dim" id="guide-dim"></div></div>
 <button class="hjalp" id="hjalp" type="button" aria-label="Så fungerar sidan: Newton visar runt">?</button>
 <script>
 (async () => {
@@ -1572,7 +1577,7 @@
   // Ett förslag fyller i fältet och söker direkt.
   $("sok-lista").addEventListener("click", (e) => {
     const f = e.target.closest("[data-forslag]");
-    if (f) { falt.value = f.dataset.forslag; ritaSok(); falt.focus(); }
+    if (f) { falt.value = f.dataset.forslag; ritaSok(); falt.focus(); Newton.hande("sokt"); }
   });
 
   // ── Spelaren: egen styrning ovanpå YouTube (controls=0) eller <video> ──
@@ -2661,7 +2666,7 @@
         if (id === "guide") {
           // I guiden väntar han på Nästa; står han kvar en stund putsar han äpplet.
           // Knappen får fokus bara i rena informationssteg; i en uppgift ska tangenterna gå till sidan.
-          const forsta = knappar.querySelector("button"); if (forsta && !vantarPa) forsta.focus({ preventScroll: true });
+          const forsta = knappar.querySelector("button"); if (forsta && !vantar()) forsta.focus({ preventScroll: true });
           vilaTimer = setTimeout(() => { if (visar === "guide" && nuLage === "prata") spela("putsa", "guide"); }, 3800);
         } else { clearTimeout(gomTimer); gomTimer = setTimeout(gom, Math.max(7000, text.length * 70)); }
       };
@@ -2688,7 +2693,7 @@
       const id = visar; visar = null; senast = performance.now();
       [skrivTimer, gomTimer, blinkTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
       el.classList.add("gar"); el.classList.remove("pratar", "blinkar");
-      if (id === "guide") { dukEl.classList.remove("guide-styr"); ljus.classList.remove("syns", "tom"); malEl = null; document.body.classList.remove("visa-hjalp"); }
+      if (id === "guide") { dukEl.classList.remove("guide-styr"); slack(); ljusFor = null; senHandelse = null; document.body.classList.remove("visa-hjalp"); }
       setTimeout(() => {
         if (visar) return;
         el.hidden = true; el.classList.remove("gar", "talar", "ror", "kastar", "guide", "hoger", "speglad", "gar-steg");
@@ -2735,9 +2740,11 @@
     }
 
     // ── Guiden ─────────────────────────────────────────────
-    let guideSteg = [], guideNr = 0, malEl = null, pos = null, guideByter = false;
-    // Ett filmkort som syns i fönstret (tidslinjen kan vara rullad åt sidan).
-    const synligtKort = (sel) => [...document.querySelectorAll(sel)].find((k) => { const b = k.getBoundingClientRect(); return b.width && b.left >= 0 && b.right <= innerWidth && b.top >= 0 && b.bottom <= innerHeight; }) || document.querySelector(sel);
+    let guideSteg = [], guideNr = 0, malEls = [], pos = null, guideByter = false, gangId = 0;
+    const dim = $("guide-dim"), ramar = [];
+    // Filmkorten som syns i fönstret (tidslinjen kan vara rullad åt sidan).
+    const synligaKort = (sel) => [...document.querySelectorAll(sel)].filter((k) => { const b = k.getBoundingClientRect(); return b.width && b.left >= 0 && b.right <= innerWidth && b.top >= 0 && b.bottom <= innerHeight; });
+    const synligtKort = (sel) => synligaKort(sel)[0] || document.querySelector(sel);
     const figur = () => (smal() ? [73, 136] : [102, 190]);
     const synlig = (e) => !!e && e.getClientRects().length > 0 && getComputedStyle(e).visibility !== "hidden";
     const aktivVyEl = () => document.querySelector(".vy.aktiv") || document;
@@ -2753,7 +2760,9 @@
     }
     // Bubblan får aldrig gå utanför fönstret: bredden räknas från den sida där den hamnar.
     const bubbelBredd = (p) => { const [b] = figur(); el.style.setProperty("--bubbla-max", `${Math.max(180, Math.min(290, (p.hoger ? innerWidth - p.x - b : p.x) - 14))}px`); };
+    // Gången: en ny gång avbryter den som pågår (gangId), t.ex. när en snabb elev redan gjort uppgiften.
     async function gaTill(p) {
+      const mitt = ++gangId;
       el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
       const flytta = () => { el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`; };
       const dx = pos ? p.x - pos.x : 0, d = pos ? Math.hypot(dx, p.y - pos.y) : 0;
@@ -2766,20 +2775,36 @@
       el.classList.add("gar-steg");
       flytta();
       const slut = performance.now() + tid;
-      if (await laddaRorelse("steg")) { while (performance.now() < slut && visar === "guide") await spela("steg", "guide"); }
+      if (await laddaRorelse("steg")) { while (performance.now() < slut && visar === "guide" && gangId === mitt) await spela("steg", "guide"); }
       else await vila(tid);
-      el.classList.remove("gar-steg", "speglad");
+      if (gangId === mitt) el.classList.remove("gar-steg", "speglad");
     }
-    function lys(e) {
-      malEl = e;
-      if (!e) { ljus.classList.add("syns", "tom"); Object.assign(ljus.style, { left: "50%", top: "50%", width: "0px", height: "0px" }); return; }
-      const r = e.getBoundingClientRect(), m = 8;
-      ljus.classList.remove("tom"); ljus.classList.add("syns");
-      Object.assign(ljus.style, { left: `${r.left - m}px`, top: `${r.top - m}px`, width: `${r.width + 2 * m}px`, height: `${r.height + 2 * m}px` });
+    // Strålkastaren på en eller flera saker: hål i det dämpade lagret (en path med evenodd, rundade
+    // hörn) och en guldram runt varje hål. Utan mål dämpas hela sidan.
+    function lys(lista) {
+      malEls = (lista || []).filter((e) => synlig(e));
+      const vw = innerWidth, vh = innerHeight, m = 8;
+      const rs = malEls.map((e) => {
+        const r = e.getBoundingClientRect(), x = Math.max(-m, r.left - m), y = Math.max(-m, r.top - m);
+        return { x, y, w: Math.max(0, Math.min(vw + m, r.right + m) - x), h: Math.max(0, Math.min(vh + m, r.bottom + m) - y) };
+      }).filter((r) => r.w > 0 && r.h > 0);
+      const rundad = ({ x, y, w, h }) => { const k = Math.min(12, w / 2, h / 2); return `M${x + k} ${y}H${x + w - k}A${k} ${k} 0 0 1 ${x + w} ${y + k}V${y + h - k}A${k} ${k} 0 0 1 ${x + w - k} ${y + h}H${x + k}A${k} ${k} 0 0 1 ${x} ${y + h - k}V${y + k}A${k} ${k} 0 0 1 ${x + k} ${y}Z`; };
+      dim.style.clipPath = rs.length ? `path(evenodd, "M0 0H${vw}V${vh}H0Z ${rs.map(rundad).join(" ")}")` : "none";
+      while (ramar.length < rs.length) { const d = document.createElement("div"); d.className = "guide-ram"; ljus.appendChild(d); ramar.push(d); }
+      ramar.forEach((d, i) => {
+        const r = rs[i];
+        if (!r) { d.style.opacity = "0"; return; }
+        Object.assign(d.style, { opacity: "1", left: `${r.x}px`, top: `${r.y}px`, width: `${r.w}px`, height: `${r.h}px` });
+      });
+      ljus.classList.add("syns");
     }
-    let lysRaf = 0;
-    const folj = () => { if (!lysRaf && visar === "guide" && malEl) lysRaf = requestAnimationFrame(() => { lysRaf = 0; lys(malEl); }); };
-    addEventListener("scroll", folj, { passive: true }); addEventListener("resize", folj);
+    const slack = () => { ljus.classList.remove("syns"); malEls = []; };
+    // Strålkastaren följer med när sidan eller sökrutan scrollas, och när det den lyser på ändrar
+    // sig (t.ex. nya sökträffar): då utan fördröjning, annars ligger ramarna efter.
+    let foljTimer = null;
+    const folj = () => { if (visar !== "guide" || !malEls.length) return; ljus.classList.add("folj"); lys(malEls); clearTimeout(foljTimer); foljTimer = setTimeout(() => ljus.classList.remove("folj"), 160); };
+    addEventListener("scroll", folj, { passive: true, capture: true }); addEventListener("resize", folj);
+    setInterval(() => { if (visar === "guide" && ljusFor) { const nya = ljusFor(); if (nya.length !== malEls.length || nya.some((e, i) => e !== malEls[i])) lys(nya); else folj(); } }, 400);
     // Målet rullas upp i övre delen av fönstret; nederkanten är Newtons golv.
     async function tillMal(e) {
       const r = e.getBoundingClientRect(), vh = innerHeight, [, h] = figur(), fri = vh - h - 30;
@@ -2790,92 +2815,163 @@
       // Kom den mjuka scrollen inte fram (t.ex. i en flik som inte ritas) hoppar sidan dit.
       if (Math.abs(scrollY - mal) > 4) window.scrollTo({ top: mal, behavior: "instant" });
     }
+    // "Hoppa över" gör det eleven hoppade över, som när någon snabbt tar över datorn: öppnar
+    // sökningen, skriver ett ord, stänger den, öppnar en film, startar, pausar eller hoppar i filmen.
+    const sokOppen = () => sokRuta.classList.contains("oppen");
+    async function skrivIn(text) {
+      const f = $("sok-falt"); f.focus(); f.value = "";
+      for (const c of text) { f.value += c; f.dispatchEvent(new Event("input", { bubbles: true })); await vila(110); }
+    }
+
     // Stegen. Ett steg med nar är en uppgift: guiden väntar tills eleven gör det Newton säger
-    // (händelsen kommer från sidan via Newton.hande), säger "Bra!" och går vidare själv. "Hoppa
-    // över" finns ändå. bara: "mus" eller "tryck" visar steget bara med den sortens pekare.
-    // hoppaOm: steget behövs inte just nu (t.ex. filmen spelar redan). pausaEfter: handlingen
-    // startade filmen, som pausas igen innan nästa steg.
+    // (händelsen kommer från sidan via Newton.hande), reagerar (svar) och går vidare själv. Guiden
+    // lyssnar redan medan han går och pratar, och hinner eleven före till ett senare steg hoppar
+    // guiden dit. "Hoppa över" gör handlingen åt eleven (hoppa). mal: där Newton ställer sig och som
+    // rullas fram; ljus: det som lyser (standard: mal). bara: "mus" eller "tryck". hoppaOm: steget
+    // behövs inte just nu. spelar: filmen ska spela i steget (annars pausas den medan han pratar).
+    // pausaEfter: handlingen startade filmen, som pausas igen innan nästa steg. helskarm: steget får
+    // vara i helskärm (andra steg lämnar den).
     const tryck = () => !kanHovra();
     const STEG = {
+      // Replikerna (Rickard 2026-09-25): talad svenska, som en lärare som visar runt, med enkla ord
+      // för den som har svenska som andraspråk. Varje steg har en egen reaktion (svar) på det
+      // eleven gjorde, i stället för samma "Bra!" varje gång.
       valj: () => [
-        { lage: "prata", rorelse: "vinka", text: "Hej! Jag heter Isaac Newton. Jag visar dig hur sidan fungerar. Gör det jag säger, så går vi vidare tillsammans." },
-        { mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", text: smal() ? "Här är alla filmer, i den ordning som historierna hände. Scrolla neråt för att se fler." : "Här är alla filmer, i den ordning som historierna hände. Scrolla eller dra åt sidan för att se fler." },
-        { mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: () => sokRuta.classList.contains("oppen"), text: "Tryck på förstoringsglaset. Där kan du söka i allt som sägs i filmerna." },
-        { lys: false, lage: "prata", nar: "sokt", hoppaOm: () => !sokRuta.classList.contains("oppen"), text: "Skriv ett ord som du tycker är svårt, till exempel olikhet." },
-        { lys: false, lage: "pekar", nar: ["sokStangd"], hoppaOm: () => !sokRuta.classList.contains("oppen"), text: "Här ser du var i filmerna ordet sägs. Tryck på ett ställe för att hoppa dit, eller stäng sökningen med krysset." },
-        { mal: () => synligtKort("#spar .post:not(.kommer) .ram"), lage: "prata", nar: "film", hoppaOver: () => tillFilm(), text: "Tryck nu på en film för att öppna den." },
+        { lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
+        { mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: "Just så. Nu ska vi leta efter något i filmerna.",
+          text: smal() ? "Här ligger alla filmer, i den ordning som historierna hände. Scrolla neråt, så ser du fler." : "Här ligger alla filmer, i den ordning som historierna hände. Scrolla eller dra lite åt sidan, så ser du fler." },
+        { mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: sokOppen, hoppa: async () => { oppnaSok(); await vila(450); }, svar: "Där är sökrutan.",
+          text: "Har du fastnat på något i matten? Tryck på förstoringsglaset, så kan vi söka i allt som sägs i filmerna." },
+        { ljus: () => [$("sok-falt"), $("sok-lista").querySelector(".forslag")], lage: "prata", nar: "sokt", sok: true, hoppaOm: () => !sokOppen() || $("sok-falt").value.trim().length >= 3, hoppa: () => skrivIn("olikhet"),
+          svar: "Titta, där kom träffarna.", text: "Skriv ett ord som du tycker är svårt. Pröva till exempel olikhet, eller tryck på ett av förslagen." },
+        { ljus: () => [$("sok-stang"), $("sok-lista").querySelector(".basta"), $("sok-lista").querySelector(".fler-stallen")], lage: "pekar", nar: ["sokStangd"], sok: true,
+          hoppaOm: () => !sokOppen(), hoppa: async () => { stangSok(); await vila(350); }, svar: "Då är vi tillbaka bland filmerna.",
+          text: "Här ser du var i filmerna ordet sägs. Trycker du på ett ställe hamnar du precis där i filmen. Vill du hellre gå tillbaka stänger du med krysset." },
+        { mal: () => synligtKort("#spar .post:not(.kommer) .ram"), ljus: () => synligaKort("#spar .post:not(.kommer) .ram"), lage: "prata", nar: "film",
+          hoppa: async () => { tillFilm(); await vantaPa(() => aktivVy === "film", 4000); },
+          text: "Välj nu en film och tryck på den, så tittar vi på hur spelaren fungerar." },
       ],
       film: () => [
-        { mal: () => dukEl, lage: "prata", rorelse: pos ? null : "vinka", nar: "spela", hoppaOm: () => sp.spelar(), text: "Här är filmen. Tryck på bilden för att starta den." },
-        { bara: "tryck", mal: () => dukEl, lage: "pekar", nar: "snabb", hoppaOm: () => !sp.spelar(), text: "Håll in fingret på bilden. Då går filmen dubbelt så fort, så länge du håller." },
-        { mal: () => dukEl, lage: "pekar", nar: "pausa", hoppaOm: () => !sp.spelar(), text: tryck() ? "Tryck på bilden och sedan på pausknappen i mitten för att pausa." : "Klicka på bilden igen för att pausa." },
-        { mal: () => dukEl, lage: "pekar", nar: "spola", fore: slappFokus, text: tryck() ? "Dubbeltryck på höger sida av bilden. Då hoppar filmen fram 10 sekunder." : "Tryck på pil höger på tangentbordet. Då hoppar filmen fram 5 sekunder." },
-        { mal: () => $("duk-linje"), lage: "pekar", nar: "linje", pausaEfter: true, text: "Dra i linjen för att hoppa i filmen. De små strecken är kapitel." },
-        { mal: () => $("duk-fart"), lage: "prata", nar: "fart", text: tryck() ? "Tryck på 1× och välj hur fort filmen ska gå." : "Håll musen över 1× och välj hur fort filmen ska gå." },
-        { mal: () => $("duk-cc"), lage: "pekar", nar: "cc", text: "Tryck på CC. Då visas texten till det som sägs, längst ner i bilden." },
-        { mal: () => $("duk-dela"), lage: "pekar", nar: "dela", text: "Tryck på länken. Då kopieras en länk till just det här stället i filmen, som du kan skicka till en kompis." },
-        { mal: () => dukEl.querySelector(".ljud"), lage: "prata", nar: "ljud", text: tryck() ? "Tryck på högtalaren och dra i reglaget för att ändra ljudet." : "Håll musen över högtalaren och scrolla för att ändra ljudet." },
-        { mal: () => $("duk-hel"), lage: "pekar", nar: "helUt", text: tryck() ? "Tryck här för att se filmen på hela skärmen. Tryck igen för att gå tillbaka." : "Tryck här för att se filmen på hela skärmen, eller dubbelklicka på bilden. Gör det igen för att gå tillbaka." },
-        { mal: () => $("kapitel"), lage: "pekar", nar: "kapitel", pausaEfter: true, text: "Här är kapitlen. Tryck på ett kapitel, så hoppar filmen dit." },
-        { mal: () => $("visa-allt"), lage: "prata", nar: "allt", text: "Tryck på Visa allt som sägs. Då kan du läsa hela texten i lugn och ro." },
-        { mal: () => $("dintur"), lage: "forvanad", nar: "dintur", text: "Varje film slutar med en uppgift, Din tur. Pröva själv: skriv ett svar och tryck på Kolla." },
-        { lage: "glad", rorelse: "kasta", text: "Nu kan du allt på sidan. Vill du se det här igen, tryck på frågetecknet nere till vänster. Lycka till med matten!", knappar: [["Klar", () => slutaGuide()]] },
+        { mal: () => dukEl, lage: "prata", rorelse: pos ? null : "vinka", nar: "spela", hoppaOm: () => sp.spelar(), hoppa: () => { if (!sp.spelar()) vaxlaSpel(); }, svar: "Nu är den igång.",
+          text: "Det här är spelaren. Tryck på bilden, så börjar filmen." },
+        { bara: "tryck", mal: () => dukEl, lage: "pekar", nar: "snabb", spelar: true, hoppaOm: () => !sp.spelar(), svar: "Märkte du hur fort det gick?",
+          text: "Om du håller fingret på bilden går filmen dubbelt så fort. Pröva att hålla in en stund." },
+        { mal: () => dukEl, lage: "pekar", nar: "pausa", spelar: true, hoppaOm: () => !sp.spelar(), hoppa: () => { if (sp.spelar()) vaxlaSpel(true); }, svar: "Då står den still.",
+          text: tryck() ? "Tryck på bilden, och sedan på pausknappen i mitten." : "Klicka på bilden en gång till, så pausar du." },
+        { mal: () => dukEl, lage: "pekar", nar: "spola", fore: slappFokus, hoppa: () => spola(tryck() ? 10 : 5, true, tryck() ? 10 : 5), svar: "Där hoppade den fram.",
+          text: tryck() ? "Missade du något? Dubbeltryck på vänster eller höger sida av bilden, så hoppar filmen 10 sekunder. Pröva höger sida." : "Missade du något? Med pil vänster och pil höger hoppar du 5 sekunder bakåt eller framåt. Pröva pil höger." },
+        { mal: () => $("duk-linje"), lage: "pekar", nar: "linje", pausaEfter: true, svar: "Där är du nu.",
+          text: "Linjen under bilden är hela filmen, och de små strecken är kapitlen. Dra i linjen, så kommer du dit du vill." },
+        { mal: () => $("duk-fart"), lage: "prata", nar: "fart", svar: "Nu går filmen i din fart.",
+          text: tryck() ? "Går det för fort, eller för långsamt? Tryck på 1× och välj en annan fart." : "Går det för fort, eller för långsamt? Håll musen över 1× och välj en annan fart." },
+        { mal: () => $("duk-cc"), lage: "pekar", nar: "cc", svar: "Nu kan du läsa samtidigt.",
+          text: "Vill du läsa samtidigt som du lyssnar? Tryck på CC, så kommer texten längst ner i bilden." },
+        { mal: () => $("duk-dela"), lage: "pekar", nar: "dela", svar: "Nu finns länken i urklippet.",
+          text: "Den här knappen kopierar en länk till just det här stället i filmen. Den kan du skicka till en kompis, eller till din lärare." },
+        { mal: () => dukEl.querySelector(".ljud"), lage: "prata", nar: "ljud", svar: "Nu låter det som du vill.",
+          text: tryck() ? "För högt eller för tyst? Tryck på högtalaren och dra i reglaget." : "För högt eller för tyst? Håll musen över högtalaren och scrolla upp eller ner." },
+        { mal: () => $("duk-hel"), lage: "pekar", nar: "helUt", helskarm: true, hoppa: () => { if (iHelskarm()) vaxlaHelskarm(); }, svar: "Välkommen tillbaka.",
+          text: tryck() ? "Vill du se filmen större? Tryck på knappen i hörnet, och tryck igen när du vill tillbaka." : "Vill du se filmen större? Tryck på knappen i hörnet, eller dubbelklicka på bilden. Gör samma sak igen när du vill tillbaka." },
+        { mal: () => $("kapitel"), lage: "pekar", nar: "kapitel", pausaEfter: true, svar: "Där börjar det kapitlet.",
+          text: "Här är kapitlen. Varje kapitel är en del av filmen. Tryck på ett, så hoppar filmen dit." },
+        { mal: () => $("visa-allt"), lage: "prata", nar: "allt", svar: "Här står allt som sägs i filmen.",
+          text: "Vill du läsa allt i lugn och ro? Tryck på Visa allt som sägs." },
+        { mal: () => $("dintur"), lage: "forvanad", nar: "dintur", svar: "Så gör du i varje film.",
+          text: "Sist i varje film får du pröva själv. Skriv ditt svar och tryck på Kolla. Fastnar du finns det en ledtråd." },
+        { lage: "glad", rorelse: "kasta", text: "Nu vet du hur allt fungerar. Vill du gå igenom det igen trycker du på frågetecknet nere till vänster. Lycka till med matten!", knappar: [["Klar", () => slutaGuide()]] },
       ],
     };
-    const BRA = ["Bra!", "Snyggt!", "Precis så!", "Just det!"];
-    let vantarPa = null, bekraftar = false;
+    let bekraftar = false, sjalv = false, ljusFor = null, senHandelse = null;
     function slappFokus() { const a = document.activeElement; if (a && el.contains(a)) a.blur(); }
+    const passar = (s) => !((s.bara === "tryck" && !tryck()) || (s.bara === "mus" && tryck()));
+    // Vyn ska stå rätt innan steget börjar: sökrutan öppen bara i sökstegen, ingen helskärm utanför
+    // helskärmssteget, och filmen pausad medan Newton pratar (utom i steg där den ska spela).
+    function stallIOrdning(s) {
+      if (!s.sok && sokOppen()) stangSok();
+      if (aktivVy === "film" && aktuell) {
+        if (!s.helskarm && iHelskarm()) vaxlaHelskarm();
+        if (!s.spelar && s.nar !== "spela" && sp.spelar()) vaxlaSpel(true);
+      }
+    }
     async function visaSteg(n) {
       if (visar !== "guide") return;
       if (n >= guideSteg.length) return slutaGuide();
-      guideNr = n; vantarPa = null; bekraftar = false;
+      guideNr = n; bekraftar = false;
       const s = guideSteg[n];
       [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
       el.classList.remove("talar", "pratar"); knappar.innerHTML = ""; stoppaRorelse();
-      if ((s.bara === "tryck" && !tryck()) || (s.bara === "mus" && tryck()) || (s.hoppaOm && s.hoppaOm())) return visaSteg(n + 1);
+      if (!passar(s) || (s.hoppaOm && s.hoppaOm())) return visaSteg(n + 1);
       const mal = s.mal ? s.mal() : null;
       if (s.mal && !synlig(mal)) return visaSteg(n + 1);   // finns inte här, t.ex. en film utan Din tur
+      if (senHandelse) { const h = senHandelse; senHandelse = null; if (stegFor(h) >= 0) return hande(h); }
+      sjalv = true; try { stallIOrdning(s); } finally { sjalv = false; }
+      // Guiden lyssnar från första stund: en snabb elev kan göra uppgiften medan Newton går dit.
+      const lever = () => visar === "guide" && guideNr === n && !bekraftar;
       if (s.fore) s.fore();
       if (mal) await tillMal(mal);
-      if (visar !== "guide" || guideNr !== n) return;
-      if (s.lys === false) { ljus.classList.remove("syns"); malEl = null; }
-      else { ljus.classList.add("flytt"); lys(mal); setTimeout(() => ljus.classList.remove("flytt"), 650); }
+      if (!lever()) return;
+      ljusFor = s.ljus || (mal ? () => [mal] : () => []);
+      lys(ljusFor());
       await gaTill(plats(mal ? mal.getBoundingClientRect() : null));
-      if (visar !== "guide" || guideNr !== n) return;
+      if (!lever()) return;
       if (s.rorelse === "vinka") await spela("vinka", "guide");
       else if (s.rorelse === "kasta") await kasta("guide");
-      if (visar !== "guide" || guideNr !== n) return;
+      if (!lever()) return;
       await satLage(s.lage || "prata");
-      if (visar !== "guide" || guideNr !== n) return;
+      if (!lever()) return;
       const sista = n === guideSteg.length - 1;
       const lista = s.knappar ? s.knappar.map(([text, gor], i) => ({ text, gor, forst: i === 0 }))
-        : s.nar ? [{ text: "Hoppa över", gor: () => (s.hoppaOver ? s.hoppaOver() : visaSteg(n + 1)) }, { text: "Avsluta", gor: slutaGuide }]
+        : s.nar ? [{ text: "Hoppa över", gor: () => hoppaOver(n) }, { text: "Avsluta", gor: slutaGuide }]
         : [{ text: sista ? "Klar" : "Nästa", forst: true, gor: () => visaSteg(n + 1) }, { text: "Avsluta", gor: slutaGuide }];
-      vantarPa = s.nar || null;
       prata(s.text, lista, `${n + 1}/${guideSteg.length}`);
     }
-    // Eleven gjorde det Newton sa: han blir glad, säger något kort, och guiden går vidare.
+    // Väntar det aktuella steget på något eleven ska göra?
+    const vantar = () => !!(guideSteg[guideNr] && guideSteg[guideNr].nar);
+    function stegFor(namn) {
+      for (let i = guideNr; i < guideSteg.length; i++) { const s = guideSteg[i]; if (s.nar && passar(s) && [].concat(s.nar).includes(namn)) return i; }
+      return -1;
+    }
+    // Eleven gjorde det Newton sa (eller något han skulle säga strax): han blir glad, säger stegets
+    // egen korta reaktion, och guiden går vidare till steget efter.
     function hande(namn) {
-      if (visar !== "guide" || !vantarPa || bekraftar || ![].concat(vantarPa).includes(namn)) return;
+      if (visar !== "guide" || sjalv) return;
+      // Medan han reagerar sparas det eleven gör, och räknas i nästa steg.
+      if (bekraftar) { senHandelse = namn; return; }
+      const k = stegFor(namn); if (k < 0) return;
       bekraftar = true;
-      const n = guideNr, s = guideSteg[n];
+      const n = guideNr, s = guideSteg[k];
       [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null; stoppaRorelse();
       (async () => {
         await satLage("glad");
         if (visar !== "guide" || guideNr !== n) return;
-        prata(BRA[Math.floor(Math.random() * BRA.length)], []);
-        await vila(1300);
+        knappar.innerHTML = "";
+        // Stegets egen reaktion, så länge att den hinner läsas.
+        const svar = s.svar || "Just så.";
+        prata(svar, []);
+        await vila(Math.max(1400, 500 + svar.length * 60));
         if (visar !== "guide" || guideNr !== n) return;
         if (s.pausaEfter && aktuell && sp.spelar()) vaxlaSpel(true);
-        visaSteg(n + 1);
+        visaSteg(k + 1);
       })();
+    }
+    // "Hoppa över": guiden gör handlingen själv (utan reaktion) och går till nästa steg. Leder
+    // handlingen till en film tar filmens steg över (tillFilmSteg).
+    async function hoppaOver(n) {
+      if (visar !== "guide" || guideNr !== n) return;
+      bekraftar = true;
+      const s = guideSteg[n];
+      [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
+      el.classList.remove("talar", "pratar");
+      sjalv = true;
+      try { if (s.hoppa) await s.hoppa(); } finally { sjalv = false; }
+      if (visar === "guide" && guideNr === n) visaSteg(n + 1);
     }
     const vantaPa = async (villkor, ms) => { const slut = performance.now() + ms; while (!villkor() && performance.now() < slut) await vila(80); return villkor(); };
     // Eleven öppnade en film (eller guiden gjorde det): filmens steg tar vid när spelaren finns.
     async function tillFilmSteg() {
-      guideNr = -1; vantarPa = null; bekraftar = false;   // en bekräftelse som pågår (t.ex. sökningen stängdes) får inte gå vidare i filmvalets steg
+      guideNr = -1; bekraftar = false;   // en bekräftelse som pågår (t.ex. sökningen stängdes) får inte gå vidare i filmvalets steg
       [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
-      el.classList.remove("talar", "pratar"); ljus.classList.remove("syns"); malEl = null;
+      el.classList.remove("talar", "pratar"); slack(); ljusFor = null;
       const framme = await vantaPa(() => aktivVy === "film" && !!$("duk-lock"), 5000);
       if (!framme || visar !== "guide") return;
       await vila(500);
@@ -2901,7 +2997,7 @@
       if (aktivVy === "film") dukEl.classList.add("guide-styr");
       const p = plats(null); el.style.setProperty("--gang", "0ms"); el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
       el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`; pos = p;
-      fram(); lys(null);
+      fram(); ljusFor = null; lys([]);
       await vila(stilla ? 150 : 750);
       if (visar === "guide") visaSteg(0);
     }
@@ -2913,7 +3009,7 @@
       // I helskärm stänger Esc helskärmen (det kan vara uppgiften), inte guiden. I en uppgift är
       // → sidans egen tangent (pil höger hoppar fram i filmen), inte guidens.
       if (e.key === "Escape") { if (iHelskarm()) return; e.preventDefault(); e.stopImmediatePropagation(); slutaGuide(); }
-      else if (e.key === "ArrowRight" && !skriver(e) && !vantarPa) { e.preventDefault(); e.stopImmediatePropagation(); if (skrivKlar) skrivKlar(); else visaSteg(guideNr + 1); }
+      else if (e.key === "ArrowRight" && !skriver(e) && !vantar()) { e.preventDefault(); e.stopImmediatePropagation(); if (skrivKlar) skrivKlar(); else visaSteg(guideNr + 1); }
     }, true);
     // Ett klick på Newton eller bubblan skriver klart texten direkt; när musen vilar på bubblan
     // väntar ett tips med att gå.
@@ -2924,12 +3020,12 @@
   })();
   const TIPS = {
     sok: ["pekar", "Fastnat på något? Tryck på förstoringsglaset uppe till höger och sök på det, till exempel olikhet. Du hamnar på rätt ställe i filmen."],
-    spolaMus: ["pekar", "Dubbelklicka på bilden för helskärm. Med piltangenterna hoppar du 5 sekunder, och med J och L 10 sekunder."],
-    spolaTryck: ["pekar", "Dubbeltryck på höger eller vänster sida av bilden för att hoppa 10 sekunder. Håll in fingret för dubbel fart."],
-    notis: ["forvanad", "Nu har filmen visat det du behöver för uppgiften. Tryck på Din tur och pröva själv."],
-    format: ["pekar", "Skriv som på räknaren, till exempel x^3 = 2 eller 1,44. Knapparna under fältet skriver de svåra tecknen."],
-    ledtrad: ["fundersam", "Ta en ledtråd. Den visar var i filmen metoden finns, så att du kan se det avsnittet igen."],
-    lost: ["glad", "Rätt, hela uppgiften är löst. Vill du jämföra finns lösningen steg för steg under uppgiften."],
+    spolaMus: ["pekar", "Visste du att du kan dubbelklicka på bilden för att se den på hela skärmen? Med piltangenterna hoppar du 5 sekunder i taget."],
+    spolaTryck: ["pekar", "Visste du att du kan dubbeltrycka på bildens högra eller vänstra sida? Då hoppar filmen 10 sekunder. Håller du in fingret går den dubbelt så fort."],
+    notis: ["forvanad", "Nu har du sett det du behöver för uppgiften i slutet. Vill du pröva redan nu? Tryck på Din tur."],
+    format: ["pekar", "Jag förstår inte riktigt ditt svar. Skriv det som på räknaren, till exempel x^3 = 2 eller 1,44. Knapparna under rutan hjälper dig med tecknen."],
+    ledtrad: ["fundersam", "Den här är inte lätt. Ta gärna en ledtråd. Den visar var i filmen det förklaras, så att du kan se den biten igen."],
+    lost: ["glad", "Du löste hela uppgiften! Under den kan du se lösningen steg för steg, om du vill jämföra."],
   };
 
   ruta();
