@@ -250,7 +250,7 @@
      syns först när det finns en formelbladsfilm (.har-flikar); utan dem ser filmvalet ut som förut.
      Med flikarna flyttas pil och lina ner 30 px; pilens text slutar som förut 37 px ner
      i tidslinjen, så kortens minsta upphängning (72 px) gäller fortfarande. */
-  .valj .flikar { position: absolute; top: 62px; left: 50%; transform: translateX(-50%); z-index: 4; display: none; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 20, .66); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .valj .flikar { position: absolute; top: 62px; left: 50%; transform: translateX(-50%); z-index: 4; display: none; grid-auto-flow: column; grid-auto-columns: 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 20, .66); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
   .valj.har-flikar .flikar { display: grid; }
   /* Sidhuvudet är en genomskinlig remsa över hela bredden (z 5). Den låg över flikarna och tog
      klicken: förut fick man sikta långt ut på knapparna, och när flikarna flyttades upp gick de inte
@@ -272,8 +272,9 @@
     .valj.har-flikar .hint { top: 162px; }
     .valj.har-flikar .tidslinje { top: 166px; }
   }
-  .flikar .platta { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--accent); box-shadow: 0 0 20px rgba(242, 197, 114, .35); transition: transform .5s var(--fjader); }
-  .flikar[data-hylla="formelbladet"] .platta { transform: translateX(100%); }
+  /* Plattan under den valda fliken. Läget och bredden mäts i JS (placeraPlatta), eftersom flikarna kan
+     vara två eller tre och på mobilen olika breda. */
+  .flikar .platta { position: absolute; top: 4px; bottom: 4px; left: 4px; width: var(--platta-b, calc(50% - 4px)); transform: translateX(var(--platta-x, 0px)); border-radius: 999px; background: var(--accent); box-shadow: 0 0 20px rgba(242, 197, 114, .35); transition: transform .5s var(--fjader), width .5s var(--fjader); }
   .flikar button { position: relative; z-index: 1; min-height: 38px; padding: 0 20px; border-radius: 999px; font: 500 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); transition: color .35s, transform .4s var(--fjader); }
   .flikar button[aria-selected="true"] { color: var(--bg); }
   .flikar button:active { transform: scale(.93); transition-duration: .08s; }
@@ -711,6 +712,9 @@
     .valj.har-flikar .rubrik { padding-top: 22px; }
     .valj.har-flikar .tidslinje { top: 150px; }
     .flikar button { padding: 0 16px; letter-spacing: .16em; }
+    /* Tre flikar (Berättelser, Formelbladet, Ma 2a) ryms inte lika breda på en telefon. */
+    .valj .flikar.tre { grid-auto-columns: auto; }
+    .flikar.tre button { padding: 0 12px; letter-spacing: .1em; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .basta { grid-template-columns: 1fr; gap: 16px; }
@@ -973,11 +977,12 @@
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
   </header>
-  <!-- Flikarna överst, "Välj en film" under dem (Rickard 2026-09-25): berättelserna eller formelbladets delar på linan. Syns när en formelbladsfilm finns. -->
+  <!-- Flikarna överst, "Välj en film" under dem (Rickard 2026-09-25): berättelserna, formelbladets delar eller Ma 2a på linan. En flik syns när den har minst en film. -->
   <div class="flikar" id="flikar" role="tablist" aria-label="Vilka filmer" data-hylla="berattelser">
     <span class="platta" aria-hidden="true"></span>
     <button type="button" role="tab" data-hylla="berattelser" aria-selected="true" aria-controls="tidslinje">Berättelser</button>
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
+    <button type="button" role="tab" data-hylla="ma2a" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden>Ma 2a</button>
   </div>
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
@@ -1154,40 +1159,66 @@
   };
 
   // ── Serierna (Rickard 2026-09-25) ─────────────────────
-  // Formelbladets filmer är ingen historia: de står inte på den historiska tidslinjen utan under en
-  // egen flik, i delordning, och filmsidan visar "Del N av 5" och vägen till de andra delarna.
-  // bygg.mjs sätter serie och del; saknas de (en post där fältet glömts) känns serien igen på
-  // id:t, formelbladet-N-…, och delen på siffran i id:t eller titeln.
-  const SERIER = { formelbladet: { namn: "Formelbladet", delar: 5 } };
+  // Filmer i en serie står inte på den historiska tidslinjen utan under en egen flik.
+  // Formelbladet: fem delar i delordning, "Del N av 5" och siffrorna 1–5 på filmsidan, och streckade
+  // platser för delar som inte är klara (platser). Ma 2a (IndA, 19 videor i kursens ordning, MA2A-SERIE.md):
+  // korten står per kapitel i Origo 2a och bara de filmer som finns syns. Kepler, Delos och Formelbladet 2
+  // ligger också där (registrets "ocksa": { "ma2a": plats }). bygg.mjs sätter serie och del; saknas de
+  // känns serien igen på id:t (formelbladet-N-…, ma2a-NN-…) och delen på siffran i id:t eller titeln.
+  const SERIER = {
+    formelbladet: { namn: "Formelbladet", delar: 5, platser: true },
+    // kapitel: den första delen i kapitel 1, 2, 3, 4 och 5 (Origo 2a).
+    ma2a: { namn: "Ma 2a", delar: 19, kapitel: [1, 5, 9, 14, 18] },
+  };
   for (const v of videor) {
-    if (!v.serie && /^formelbladet-/.test(v.id)) v.serie = "formelbladet";
-    if (v.serie && !Number.isFinite(v.del)) { const m = v.id.match(/^[a-z]+-(\d+)-/) || v.titel.match(/(\d+)\s*[–-]/); v.del = m ? Number(m[1]) : null; }
+    if (!v.serie) v.serie = Object.keys(SERIER).find((namn) => v.id.startsWith(`${namn}-`)) || null;
+    if (v.serie && !Number.isFinite(v.del)) { const m = v.id.match(/^[a-z0-9]+-(\d+)-/) || v.titel.match(/(\d+)\s*[–-]/); v.del = m ? Number(m[1]) : null; }
   }
   const berattelser = videor.filter((v) => !v.serie);
-  const formelblad = videor.filter((v) => v.serie === "formelbladet").sort((a, b) => (a.del ?? 99) - (b.del ?? 99));
-  const harFlikar = formelblad.length > 0;
-  // En plats per del, 1 till 5 (eller fler om serien växer). En del som inte finns än är
-  // { del, saknas: true } och ritas streckad. En film utan delnummer läggs sist.
-  const delPlatser = () => {
-    const antal = Math.max(SERIER.formelbladet.delar, ...formelblad.map((v) => v.del || 0));
+  const iSerie = (namn) => videor.filter((v) => v.serie === namn).sort((a, b) => (a.del ?? 99) - (b.del ?? 99));
+  const formelblad = iSerie("formelbladet");
+  // Flikarna: berättelserna, och en flik per serie som har minst en film.
+  const HYLLOR = ["berattelser", ...Object.keys(SERIER).filter((namn) => iSerie(namn).length)];
+  const harFlikar = HYLLOR.length > 1;
+  const antalDelar = (namn) => Math.max(SERIER[namn].delar, ...iSerie(namn).map((v) => v.del || 0));
+  // Seriens filmer i ordning, för Nästa del och siffrorna. Formelbladet har en plats per del, 1 till 5
+  // (eller fler om serien växer): en del som inte finns än är { del, saknas: true } och ritas streckad.
+  // En film utan delnummer läggs sist.
+  const delPlatser = (namn) => {
+    const filmer = iSerie(namn);
+    if (!SERIER[namn].platser) return filmer;
     const platser = [];
-    for (let d = 1; d <= antal; d++) platser.push(formelblad.find((v) => v.del === d) || { del: d, saknas: true });
-    return platser.concat(formelblad.filter((v) => !Number.isFinite(v.del)));
+    for (let d = 1; d <= antalDelar(namn); d++) platser.push(filmer.find((v) => v.del === d) || { del: d, saknas: true });
+    return platser.concat(filmer.filter((v) => !Number.isFinite(v.del)));
   };
-  const antalDelar = () => Math.max(SERIER.formelbladet.delar, ...formelblad.map((v) => v.del || 0));
-  // Delens namn utan serien: "Formelbladet 2 – Funktioner" → "Funktioner".
-  const delNamn = (v) => { const m = v.titel.match(/\d+\s*[–-]\s*(.+)$/); return m ? m[1].charAt(0).toUpperCase() + m[1].slice(1) : v.titel; };
+  // Var en film står under en seriens flik: delen, eller platsen i registrets "ocksa" (Kepler i Ma 2a).
+  const plats = (v, namn) => (v.serie === namn ? v.del : v.ocksa ? v.ocksa[namn] : undefined);
+  const hyllaFilmer = (namn) => videor.filter((v) => Number.isFinite(plats(v, namn))).sort((a, b) => plats(a, namn) - plats(b, namn));
+  // Kapitlet i boken för en film under fliken: i Ma 2a ligger plats 13.5 (Formelbladet 2) i kapitel 3.
+  const kapAv = (v, namn) => {
+    const k = SERIER[namn].kapitel, p = plats(v, namn);
+    if (!k || !Number.isFinite(p)) return null;
+    return Math.max(1, k.filter((forsta) => p >= forsta).length);
+  };
+  // Titeln är "<något> – <delens namn>": "Formelbladet 2 – Funktioner", "Kvartskvadraterna – Kvadreringsreglerna".
+  const titelDelar = (v) => { const m = String(v.titel).match(/^(.+?)\s+[–—-]\s+(.+)$/); return m ? [m[1], m[2]] : [v.titel, ""]; };
+  // Delens namn utan serien: "Formelbladet 2 – funktioner" → "Funktioner". I Ma 2a är det momentet.
+  const delNamn = (v) => { const n = titelDelar(v)[1]; if (!n) return v.titel; return v.serie === "formelbladet" ? n.charAt(0).toUpperCase() + n.slice(1) : n; };
   // Momentet för en seriedel, utan serien först ("Formelbladet: prefix och potenser" → "prefix och
   // potenser"), och tomt när det inte säger mer än delens namn. Serien står redan i fliken och rubriken.
   const serieMoment = (v) => {
     const m = String(v.moment || "").replace(new RegExp(`^${SERIER[v.serie].namn}\\s*[:–-]\\s*`, "i"), "");
     return norm(m) === norm(delNamn(v)) ? "" : m;
   };
-  // Vilken sort en film är, i sökningen: "Berättelse · 1618" eller "Formelbladet · del 2".
-  const sortText = (v) => (v.serie ? `${SERIER[v.serie].namn} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
+  // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · kapitel 1".
+  const sortText = (v) => (v.serie === "ma2a" ? `Ma 2a · kapitel ${kapAv(v, "ma2a") ?? ""}`.trim()
+    : v.serie ? `${SERIER[v.serie].namn} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
   const sortEtikett = (v) => `<span class="sort${v.serie ? " serie" : ""}">${esc(sortText(v))}</span>`;
-  // Nästa del i serien: en film, en plats som inte är klar ({ saknas }), eller null efter sista delen.
-  const nastaDel = (v) => { if (!v.serie) return null; const p = delPlatser(), i = p.findIndex((x) => x.id === v.id); return i >= 0 ? p[i + 1] || null : null; };
+  // Nästa film i serien: en film, en plats som inte är klar ({ saknas }), eller null efter sista delen.
+  const nastaDel = (v) => { if (!v.serie) return null; const p = delPlatser(v.serie), i = p.findIndex((x) => x.id === v.id); return i >= 0 ? p[i + 1] || null : null; };
+  // I formelbladet heter nästa film "Nästa del", och delen har sitt nummer.
+  const nastaOrd = (v) => (v.serie === "formelbladet" ? "Nästa del" : "Nästa film");
+  const nastaNamn = (n) => (n.serie === "formelbladet" ? `Del ${n.del}: ${delNamn(n)}` : delNamn(n));
 
   // ── Vyer och adress ───────────────────────────────────
   let aktivVy = null, forstaVyn = true;
@@ -1228,7 +1259,7 @@
   function byt(h) {
     const mjukt = !document.startViewTransition;
     if (!h) return visa("intro", mjukt);
-    if (h === "filmer" || h === "formelbladet") return visa("valj", mjukt);
+    if (h === "filmer" || SERIER[h]) return visa("valj", mjukt);
     const m = h.match(/^([\w-]+)(?:&t=(\d+))?/);
     const v = m && videor.find((x) => x.id === m[1]);
     if (!v) return visa("valj", mjukt);
@@ -1243,12 +1274,12 @@
   function ruta() {
     let h = location.hash.slice(1);
     try { h = decodeURIComponent(h); } catch (e) { /* trasig adress: använd den som den är */ }
-    // Utan formelbladsfilmer finns ingen flik att visa: adressen blir #filmer.
-    if (h === "formelbladet" && !harFlikar) { h = "filmer"; history.replaceState(null, "", "#filmer"); }
-    const mal = !h ? "intro" : h === "filmer" || h === "formelbladet" ? "valj" : "film";
-    // Filmvalets flik följer adressen: #formelbladet är formelbladets delar, #filmer berättelserna.
+    // En serie utan filmer har ingen flik att visa: adressen blir #filmer.
+    if (SERIER[h] && !HYLLOR.includes(h)) { h = "filmer"; history.replaceState(null, "", "#filmer"); }
+    const mal = !h ? "intro" : h === "filmer" || SERIER[h] ? "valj" : "film";
+    // Filmvalets flik följer adressen: #formelbladet och #ma2a är seriernas flikar, #filmer berättelserna.
     // Den ritas innan övergången, så att kortet som spelaren krymper ner till redan finns på linan.
-    if (mal === "valj") valjHylla(h === "formelbladet" ? "formelbladet" : "berattelser", aktivVy !== "valj");
+    if (mal === "valj") valjHylla(SERIER[h] ? h : "berattelser", aktivVy !== "valj");
     // Hopp inom samma film (kapitel, &t=), flikbyte och första laddningen: ingen övergång. Från en
     // film till en annan tonar sidan som vid andra vybyten.
     const annanFilm = mal === "film" && aktivVy === "film" && !!aktuell && h.split("&")[0] !== aktuell.id;
@@ -1460,36 +1491,58 @@
   const spar = $("spar"), tidslinje = $("tidslinje");
   // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
   // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
-  // det säger något mer än namnet.
-  const kortHtml = (v, i) => `
+  // det säger något mer än namnet. Under fliken Ma 2a står kapitlet överst, sedan berättelsen och
+  // störst momentet; Kepler och de andra som också ligger där har kapitlet i stället för året.
+  const kortOverst = (v, h) => { const kap = h === "ma2a" ? kapAv(v, h) : null; return kap ? `Kap ${kap}` : v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs); };
+  const kortMoment = (v, h) => {
+    if (v.serie === "ma2a") { const [berattelse, moment] = titelDelar(v); return `${kursKort(v.kurs)} · ${esc(moment ? berattelse : v.moment)}`; }
+    if (v.serie && h === "ma2a") return `${kursKort(v.kurs)} · ${esc(SERIER[v.serie].namn)} ${v.del ?? ""}`;
+    if (v.serie) return `${kursKort(v.kurs)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`;
+    return `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`;
+  };
+  const kortHtml = (v, i, h = "berattelser") => `
     <div class="post" style="--i:${i}">
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${v.kurs}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina"></span>
         <span class="namn">
-          <span class="kurs">${v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs)}</span>
-          <span class="moment">${v.serie ? `${kursKort(v.kurs)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}` : `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`}</span>
+          <span class="kurs">${kortOverst(v, h)}</span>
+          <span class="moment">${kortMoment(v, h)}</span>
           <span class="titel">${esc(v.serie ? delNamn(v) : v.titel)}</span>
         </span>
       </button>
     </div>`;
-  // Vilken flik som visas: "berattelser" (den historiska tidslinjen) eller "formelbladet".
+  // Vilken flik som visas: "berattelser" (den historiska tidslinjen), "formelbladet" eller "ma2a".
   let hylla = "berattelser";
   $("vy-valj").classList.toggle("har-flikar", harFlikar);
   if (harFlikar) tidslinje.setAttribute("role", "tabpanel");
-  function ritaHylla() {
-    spar.innerHTML = hylla === "formelbladet"
-      ? delPlatser().map((p, i) => (p.saknas ? `
-    <div class="post kommer del" style="--i:${i}">
-      <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
-      <span class="namn"><span class="kurs">Del ${p.del}</span><span class="moment">kommer snart</span></span>
-    </div>` : kortHtml(p, i))).join("")
-      : berattelser.map(kortHtml).join("") + [1, 2, 3].map((n) => `
-    <div class="post kommer" aria-hidden="true" style="--i:${berattelser.length + n - 1}">
+  // Bara flikarna som har filmer syns. Plattan glider till den valda fliken; på mobilen är flikarna
+  // olika breda när de är tre, så läget mäts.
+  $("flikar").querySelectorAll("[role=tab]").forEach((b) => { b.hidden = !HYLLOR.includes(b.dataset.hylla); });
+  $("flikar").classList.toggle("tre", HYLLOR.length > 2);
+  function placeraPlatta() {
+    const f = $("flikar"), b = f.querySelector(`[data-hylla="${f.dataset.hylla}"]`);
+    if (!b || !b.offsetWidth) return;
+    f.style.setProperty("--platta-x", `${b.offsetLeft - 4}px`);
+    f.style.setProperty("--platta-b", `${b.offsetWidth}px`);
+  }
+  if (window.ResizeObserver) new ResizeObserver(placeraPlatta).observe($("flikar"));
+  // Linan slutar med tre tomma kort: fler filmer kommer.
+  const flerKommer = (fran) => [1, 2, 3].map((n) => `
+    <div class="post kommer" aria-hidden="true" style="--i:${fran + n - 1}">
       <span class="lyft"></span><span class="ram"></span><span class="lina"></span>
       <span class="namn"><span class="kurs">· · ·</span><span class="moment">fler filmer kommer</span></span>
     </div>`).join("");
+  function ritaHylla() {
+    const filmer = hylla === "berattelser" ? berattelser : hylla === "formelbladet" ? null : hyllaFilmer(hylla);
+    spar.innerHTML = hylla === "formelbladet"
+      ? delPlatser("formelbladet").map((p, i) => (p.saknas ? `
+    <div class="post kommer del" style="--i:${i}">
+      <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
+      <span class="namn"><span class="kurs">Del ${p.del}</span><span class="moment">kommer snart</span></span>
+    </div>` : kortHtml(p, i, hylla))).join("")
+      : filmer.map((v, i) => kortHtml(v, i, hylla)).join("") + flerKommer(filmer.length);
     if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${hylla}"]`); flik.id = `flik-${hylla}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
   }
   ritaHylla();
@@ -1497,9 +1550,10 @@
   // eller eleven kommer tillbaka från en film) ritas fliken direkt. Linan börjar om från början.
   let bytTimer = null;
   function valjHylla(namn, direkt = false) {
-    if (namn !== "formelbladet" || !harFlikar) namn = "berattelser";
+    if (!HYLLOR.includes(namn)) namn = "berattelser";
     $("flikar").dataset.hylla = namn;
     $("flikar").querySelectorAll("[role=tab]").forEach((b) => { const ar = b.dataset.hylla === namn; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar ? 0 : -1; });
+    placeraPlatta();
     if (namn === hylla) return;
     hylla = namn;
     if (namn === "formelbladet") Newton.markera("formelbladet");   // den som hittat fliken behöver inte tipset om den
@@ -1515,9 +1569,9 @@
     }, 230);
   }
   // Ett tryck på en flik byter adressen utan att lägga en ny rad i historiken (bakåt går till introt
-  // som förut), och en film som öppnas härifrån leder tillbaka hit med "Alla filmer"/"Formelbladet".
+  // som förut), och en film som öppnas härifrån leder tillbaka hit med "Alla filmer", "Formelbladet" eller "Ma 2a".
   const bytHylla = (namn) => {
-    history.replaceState(null, "", namn === "formelbladet" ? "#formelbladet" : "#filmer");
+    history.replaceState(null, "", namn === "berattelser" ? "#filmer" : `#${namn}`);
     valjHylla(namn);
     Newton.hande("flik");
   };
@@ -1582,10 +1636,10 @@
   document.addEventListener("keydown", (e) => {
     if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-    // På flikarna byter pilarna flik, som i en vanlig flikrad.
+    // På flikarna byter pilarna flik, som i en vanlig flikrad (runt, från sista till första).
     if (e.target.closest && e.target.closest("#flikar")) {
       e.preventDefault();
-      const annan = hylla === "formelbladet" ? "berattelser" : "formelbladet";
+      const annan = HYLLOR[(HYLLOR.indexOf(hylla) + (e.key === "ArrowRight" ? 1 : HYLLOR.length - 1)) % HYLLOR.length];
       bytHylla(annan); $("flikar").querySelector(`[data-hylla="${annan}"]`).focus();
       return;
     }
@@ -1907,7 +1961,7 @@
     const pil = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.5 6 H10.5 M6.5 2 L10.5 6 L6.5 10"/></svg>';
     return `<div class="slut" id="duk-slut" hidden><div>${v.dinTur
       ? `<p class="etikett">Din tur</p><p class="slut-fraga">${esc(v.dinTur.delar[0].fraga)}</p>`
-      : `<p class="etikett">Nästa del</p><p class="slut-fraga">${esc(`Del ${nasta.del}: ${delNamn(nasta)}`)}</p>`}<div class="knapprad">${v.dinTur ? `<button type="button" class="kolla" id="duk-svara">Svara på frågan</button>` : ""}${nasta ? `<button type="button" class="${v.dinTur ? "kant" : "kolla"}" id="duk-nasta" data-film="${nasta.id}">Nästa del${pil}</button>` : ""}<button type="button" class="kant" id="duk-se-igen">Se filmen igen</button></div></div></div>`;
+      : `<p class="etikett">${nastaOrd(v)}</p><p class="slut-fraga">${esc(nastaNamn(nasta))}</p>`}<div class="knapprad">${v.dinTur ? `<button type="button" class="kolla" id="duk-svara">Svara på frågan</button>` : ""}${nasta ? `<button type="button" class="${v.dinTur ? "kant" : "kolla"}" id="duk-nasta" data-film="${nasta.id}">${nastaOrd(v)}${pil}</button>` : ""}<button type="button" class="kant" id="duk-se-igen">Se filmen igen</button></div></div></div>`;
   }
   function byggDuk(v) {
     // Affischen i spelaren: omslaget i hög upplösning när det finns (720 px blev suddigt).
@@ -2388,9 +2442,10 @@
   // är klar är streckad.
   function ritaDelrad(v) {
     const nav = $("f-delar");
-    nav.hidden = !v.serie;
-    if (!v.serie) { nav.innerHTML = ""; return; }
-    nav.innerHTML = `<ol>${delPlatser().map((p) => {
+    const visas = !!(v.serie && SERIER[v.serie].platser);   // siffrorna bara i formelbladet (Ma 2a har 19)
+    nav.hidden = !visas;
+    if (!visas) { nav.innerHTML = ""; return; }
+    nav.innerHTML = `<ol>${delPlatser(v.serie).map((p) => {
       if (p.saknas) return `<li><span class="nr saknas" data-tips="Del ${p.del} · kommer snart"><span class="sr">Del ${p.del}, kommer snart</span><span aria-hidden="true">${p.del}</span></span></li>`;
       const namn = attr(`Del ${p.del} · ${delNamn(p)}`);
       return p.id === v.id ? `<li><span class="nr" aria-current="page" data-tips="${namn}"><span class="sr">Del ${p.del}, den här filmen</span><span aria-hidden="true">${p.del}</span></span></li>`
@@ -2402,11 +2457,12 @@
   function ritaNastaDel(v) {
     const n = nastaDel(v), sek = $("f-nasta"), ruta = $("f-nasta-kort");
     sek.hidden = !n;
+    $("f-nasta-rubrik").textContent = nastaOrd(v);
     if (!n) { ruta.innerHTML = ""; return; }
     const bild = n.omslagRen || n.omslag;
     ruta.innerHTML = n.saknas
-      ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar()}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
-      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`Nästa del, del ${n.del}: ${delNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${bild}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar()} · ${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
+      ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar(v.serie)}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
+      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${bild}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${n.serie === "ma2a" ? `Kapitel ${kapAv(n, "ma2a")}` : `Del ${n.del} av ${antalDelar(n.serie)}`} · ${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
   }
 
   async function laddaFilm(v, t) {
@@ -2416,14 +2472,19 @@
     document.title = `${v.titel} · ${SAJTNAMN}`;
     // En formelbladsdel: "Formelbladet · Del 2 av 5" överst och delens namn som rubrik, siffrorna
     // 1–5 bredvid, nästa del efter Din tur, och tillbaka-länken leder till formelbladets flik.
+    // En Ma 2a-film är en berättelse: "Ma 2a · Kapitel 1 · 1856 · <moment>" överst och berättelsen som
+    // rubrik. Tillbaka leder till fliken filmen hör till, eller till Ma 2a om eleven kom därifrån
+    // till en film som också ligger där (Kepler).
     const serie = v.serie ? SERIER[v.serie] : null;
-    $("f-kurs").textContent = serie ? `${serie.namn} · Del ${v.del ?? "–"} av ${antalDelar()} · ${v.kurs}${serieMoment(v) ? ` · ${serieMoment(v)}` : ""}`
+    const hem = hylla !== "berattelser" && hyllaFilmer(hylla).some((x) => x.id === v.id) ? hylla : v.serie || "berattelser";
+    $("f-kurs").textContent = v.serie === "ma2a" ? `${serie.namn} · Kapitel ${kapAv(v, "ma2a") ?? "–"}${v.ar ? ` · ${arText(v.ar)}` : ""} · ${v.moment}`
+      : serie ? `${serie.namn} · Del ${v.del ?? "–"} av ${antalDelar(v.serie)} · ${v.kurs}${serieMoment(v) ? ` · ${serieMoment(v)}` : ""}`
       : `${v.ar ? `${arText(v.ar)} · ` : ""}${v.kurs} · ${v.moment}`;
-    $("f-titel").textContent = serie ? delNamn(v) : v.titel;
-    $("f-tillbaka").setAttribute("href", serie ? "#formelbladet" : "#filmer");
-    $("f-tillbaka-text").textContent = serie ? serie.namn : "Alla filmer";
+    $("f-titel").textContent = v.serie === "ma2a" ? titelDelar(v)[0] : serie ? delNamn(v) : v.titel;
+    $("f-tillbaka").setAttribute("href", hem === "berattelser" ? "#filmer" : `#${hem}`);
+    $("f-tillbaka-text").textContent = hem === "berattelser" ? "Alla filmer" : SERIER[hem].namn;
     ritaDelrad(v); ritaNastaDel(v);
-    if (serie) Newton.efter(8000, () => aktivVy === "film" && aktuell === v && !sp.spelar() && synsIFonster($("f-delar"), 0.9), "delar", ...TIPS.delar, { markera: () => [$("f-delar")] });
+    if (serie && serie.platser) Newton.efter(8000, () => aktivVy === "film" && aktuell === v && !sp.spelar() && synsIFonster($("f-delar"), 0.9), "delar", ...TIPS.delar, { markera: () => [$("f-delar")] });
     $("f-besk").textContent = v.beskrivning;
     // Begreppen är knappar: ett klick söker på ordet i alla filmer.
     $("f-begrepp").innerHTML = v.begrepp.map((b) => `<li><button type="button" data-sok="${esc(b).replace(/"/g, "&quot;")}">${esc(b)}</button></li>`).join("");
@@ -3290,14 +3351,16 @@
       valj: () => [
         { id: "hej", lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
         { id: "tidslinje", vy: "valj", mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: harFlikar ? "Just så." : "Just så. Nu ska vi leta efter något i filmerna.",
-          text: `${hylla === "formelbladet" ? "Här ligger filmerna om formelbladet, från del 1 till del 5." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+          text: `${hylla === "formelbladet" ? "Här ligger filmerna om formelbladet, från del 1 till del 5." : hylla === "ma2a" ? "Här ligger filmerna för Matematik 2a, i samma ordning som i boken." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
         // Flikarna (när det finns filmer om formelbladet): eleven byter till den andra fliken.
         ...(() => {
-          const annan = hylla === "formelbladet" ? "berattelser" : "formelbladet", flik = () => $("flikar").querySelector(`[data-hylla="${annan}"]`);
+          // Från berättelserna visar han den första serien (formelbladet), från en serie berättelserna.
+          const annan = hylla === "berattelser" ? HYLLOR[1] : "berattelser", flik = () => $("flikar").querySelector(`[data-hylla="${annan}"]`);
           // Efter bytet lyser också de nya korten, medan han säger vad det är.
           return [{ id: "flik", vy: "valj", mal: () => $("flikar"), ljus: () => [flik(), ...(hylla === annan ? synligaKort("#spar .post:not(.kommer) .ram") : [])], lage: "pekar", nar: "flik", finns: () => harFlikar, hoppa: async () => { bytHylla(annan); await vila(700); },
-            svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
+            svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : annan === "ma2a" ? "Här är filmerna för Matematik 2a. Nu ska vi leta efter något i filmerna." : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
             text: annan === "formelbladet" ? "Det finns också filmer som går igenom formelbladet, del för del. De ligger för sig. Tryck på Formelbladet, så ser du dem."
+              : annan === "ma2a" ? "Det finns också filmer för Matematik 2a. De ligger för sig. Tryck på Ma 2a, så ser du dem."
               : "Berättelserna, där matten kommer ur historien, ligger för sig. Tryck på Berättelser, så ser du dem." }];
         })(),
         { id: "sok", mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: sokOppen, hoppa: async () => { oppnaSok(); await vila(450); }, svar: "Där är sökrutan.",
@@ -3313,7 +3376,7 @@
         { id: "sokStangd", ljus: () => [$("sok-stang"), $("sok-lista").querySelector(".basta"), $("sok-lista").querySelector(".fler-stallen")], lage: "pekar", nar: ["sokStangd"], sok: true,
           hoppaOm: () => !sokOppen(), hoppa: async () => { stangSok(); await vila(350); },
           // Svaret säger var eleven hamnade: i en film (tryckte på en träff), eller tillbaka där sökningen öppnades.
-          svar: () => { let h = location.hash.slice(1); try { h = decodeURIComponent(h); } catch (e) { /* trasig adress */ } return h && h !== "filmer" && h !== "formelbladet" && (aktivVy !== "film" || h.includes("&t=") || !aktuell || h.split("&")[0] !== aktuell.id) ? "Nu hoppar vi dit i filmen." : aktivVy === "film" ? "Då är vi tillbaka i filmen." : aktivVy === "intro" ? "Då är vi tillbaka på startsidan." : "Då är vi tillbaka bland filmerna."; },
+          svar: () => { let h = location.hash.slice(1); try { h = decodeURIComponent(h); } catch (e) { /* trasig adress */ } return h && h !== "filmer" && !SERIER[h] && (aktivVy !== "film" || h.includes("&t=") || !aktuell || h.split("&")[0] !== aktuell.id) ? "Nu hoppar vi dit i filmen." : aktivVy === "film" ? "Då är vi tillbaka i filmen." : aktivVy === "intro" ? "Då är vi tillbaka på startsidan." : "Då är vi tillbaka bland filmerna."; },
           text: "Här ser du var i filmerna ordet sägs. Trycker du på ett ställe hamnar du precis där i filmen. Vill du hellre gå tillbaka stänger du med krysset." },
       ],
       film: () => [
@@ -3352,12 +3415,14 @@
         // En formelbladsdel: nästa del längst ner, och siffrorna högst upp.
         ...(() => {
           if (!aktuell || !aktuell.serie) return [];
-          const n = nastaDel(aktuell), saknas = delPlatser().some((p) => p.saknas);
+          const s = aktuell.serie, n = nastaDel(aktuell), saknas = delPlatser(s).some((p) => p.saknas);
           return [
             { id: "nasta", vy: "film", mal: () => $("f-nasta"), lage: n && n.saknas ? "fundersam" : "pekar",
-              text: n && n.saknas ? "Nästa del om formelbladet är inte klar än. När den är klar kommer den upp här." : "När du är klar med den här filmen ligger nästa del här. Tryck på den, så fortsätter du." },
-            { id: "delar", vy: "film", mal: () => $("f-delar"), lage: "pekar",
-              text: `Den här filmen är del ${aktuell.del} av ${antalDelar()} om formelbladet. Siffrorna här uppe är alla delarna, och du byter del genom att trycka på en siffra.${saknas ? " De streckade är inte klara än." : ""}` },
+              text: n && n.saknas ? "Nästa del om formelbladet är inte klar än. När den är klar kommer den upp här."
+                : s === "ma2a" ? "När du är klar med den här filmen ligger nästa film i Ma 2a här. Tryck på den, så fortsätter du." : "När du är klar med den här filmen ligger nästa del här. Tryck på den, så fortsätter du." },
+            // Siffrorna finns bara i formelbladet.
+            ...(SERIER[s].platser ? [{ id: "delar", vy: "film", mal: () => $("f-delar"), lage: "pekar",
+              text: `Den här filmen är del ${aktuell.del} av ${antalDelar(s)} om formelbladet. Siffrorna här uppe är alla delarna, och du byter del genom att trycka på en siffra.${saknas ? " De streckade är inte klara än." : ""}` }] : []),
           ];
         })(),
         // Om filmen: begreppen är knappar som söker på ordet. Sökningens steg kommer efter (sokStangd).
