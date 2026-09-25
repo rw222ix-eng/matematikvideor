@@ -730,10 +730,18 @@
   .newton-kropp { position: absolute; inset: 0; transform-origin: 50% 100%; animation: newton-andas 4.2s ease-in-out .8s infinite; }
   .newton.pratar .newton-kropp { animation: newton-pratar .32s ease-in-out infinite alternate; }
   .newton-kropp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; filter: drop-shadow(0 10px 16px rgba(0, 0, 0, .55)); transition: opacity .3s var(--lugn); }
-  .newton-kropp img.ut { opacity: 0; }
+  /* Uttrycket tonar över grundbilden när vinkningen är klar. Vinkningen är en bildremsa
+     (public/figur/newton-vinka.webp) där sidan stegar ruta för ruta; under tiden är grundbilden
+     dold, för i rutorna är armen flyttad och grundbildens hand skulle annars synas igenom. */
+  .newton-kropp .newton-uttryck { opacity: 0; }
+  .newton-kropp .newton-uttryck.syns { opacity: 1; }
+  .newton-vinka { position: absolute; inset: 0; display: none; background: url(figur/newton-vinka.webp) no-repeat 0 100% / 600% 100%; filter: drop-shadow(0 10px 16px rgba(0, 0, 0, .55)); }
+  .newton.vinkar .newton-vinka { display: block; }
+  .newton.vinkar #newton-bild, .newton.vinkar .newton-blink { opacity: 0; transition: none; }
   .newton-kropp .newton-blink { opacity: 0; transition: none; }
   .newton.blinkar .newton-kropp .newton-blink { opacity: 1; }
-  .newton-bubbla { position: relative; margin: 0 4px 128px 0; width: max-content; max-width: 280px; padding: 14px 16px 12px; background: rgba(28, 25, 25, .95); border: 1px solid rgba(242, 197, 114, .35); border-radius: 14px; box-shadow: 0 16px 36px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); pointer-events: auto; transform-origin: 100% 100%; animation: bubbla-in .45s var(--lugn) .35s both; }
+  .newton-bubbla { position: relative; margin: 0 4px 128px 0; width: max-content; max-width: 280px; padding: 14px 16px 12px; background: rgba(28, 25, 25, .95); border: 1px solid rgba(242, 197, 114, .35); border-radius: 14px; box-shadow: 0 16px 36px -14px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); pointer-events: auto; transform-origin: 100% 100%; visibility: hidden; }
+  .newton.talar .newton-bubbla { visibility: visible; animation: bubbla-in .4s var(--lugn) both; }
   .newton-bubbla::after { content: ""; position: absolute; right: -7px; bottom: 26px; width: 12px; height: 12px; background: rgb(28, 25, 25); border-top: 1px solid rgba(242, 197, 114, .35); border-right: 1px solid rgba(242, 197, 114, .35); transform: rotate(45deg); }
   .newton-text { margin: 0; font: 400 16px/1.5 var(--sans); color: var(--ben); }
   .newton-text .rest { visibility: hidden; }
@@ -880,7 +888,7 @@
     <p class="newton-text" id="newton-text"></p>
     <div class="newton-knappar"><button type="button" class="newton-ok" id="newton-ok">Okej</button><button type="button" class="newton-tyst" id="newton-tyst">Inga fler tips</button></div>
   </div>
-  <div class="newton-figur" id="newton-figur" aria-hidden="true"><div class="newton-kropp"><img id="newton-bild" alt=""><img class="newton-blink" id="newton-blink" alt=""></div></div>
+  <div class="newton-figur" id="newton-figur" aria-hidden="true"><div class="newton-kropp"><img id="newton-bild" alt=""><img class="newton-blink" id="newton-blink" alt=""><img class="newton-uttryck" id="newton-uttryck" alt=""><div class="newton-vinka" id="newton-vinka"></div></div></div>
 </aside>
 <script>
 (async () => {
@@ -2503,7 +2511,7 @@
   // taget, minst en halv minut mellan tipsen som inte är svar på något eleven just gjort,
   // aldrig medan filmen spelar eller i helskärm. "Inga fler tips" stänger av dem ("tips" = "av").
   const Newton = (() => {
-    const el = $("newton"), bild = $("newton-bild"), blink = $("newton-blink"), textEl = $("newton-text");
+    const el = $("newton"), bild = $("newton-bild"), blink = $("newton-blink"), uttryck = $("newton-uttryck"), textEl = $("newton-text");
     let sett = new Set(), av = false;
     try { sett = new Set(JSON.parse(localStorage.getItem("tipsSedda") || "[]")); av = localStorage.getItem("tips") === "av"; } catch (e) {}
     let visar = null, senast = -1e9, skrivTimer = null, gomTimer = null, blinkTimer = null, efterTimer = null, harBlink = true, skrivKlar = null;
@@ -2515,7 +2523,7 @@
       if (!visar) return;
       blinkTimer = setTimeout(() => {
         if (!visar) return;
-        if (harBlink && !stilla && !el.classList.contains("pratar")) { el.classList.add("blinkar"); setTimeout(() => el.classList.remove("blinkar"), 140); }
+        if (harBlink && !stilla && nuLage === "prata" && !el.classList.contains("pratar") && !el.classList.contains("vinkar")) { el.classList.add("blinkar"); setTimeout(() => el.classList.remove("blinkar"), 140); }
         blinka();
       }, 2400 + Math.random() * 3600);
     }
@@ -2533,24 +2541,41 @@
       skrivTimer = setTimeout(steg, 550);
     }
     function vantaOchGom(text) { clearTimeout(gomTimer); gomTimer = setTimeout(gom, Math.max(7000, text.length * 70)); }
+    const ladda = (img, url) => new Promise((klar) => { img.onload = () => klar(true); img.onerror = () => klar(false); img.src = url; if (img.complete && img.naturalWidth) klar(true); });
+    const vila = (ms) => new Promise((r) => setTimeout(r, ms));
+    let harVinka = null, nuLage = "prata";
+    const laddaVinka = async () => { if (harVinka === null) harVinka = await ladda(new Image(), src("vinka")); return harVinka; };
+    // Vinkningen (Rickard 2026-09-25, bildspel ur ChatGPT): remsans rutor är armen halvvägs upp,
+    // upprätt, 10° och 20° utåt, 10° och 20° inåt. Fram och tillbaka blir det 15 rutor, drygt en sekund.
+    const VINKA = [0, 1, 2, 3, 2, 1, 4, 5, 4, 1, 2, 3, 2, 1, 0];
+    async function vinka(id) {
+      const v = $("newton-vinka");
+      el.classList.add("vinkar");
+      for (const i of VINKA) { if (visar !== id) break; v.style.backgroundPositionX = `${i * 20}%`; await vila(i === 0 ? 70 : 85); }
+      el.classList.remove("vinkar");
+    }
+    // Newton glider upp i grundställning och vinkar; sedan tonar tipsets uttryck fram och texten
+    // skrivs. Bilderna laddas först (load kommer även i en flik som inte ritas just då).
     async function visa(id, lage, text, { direkt = false } = {}) {
       if (av || sett.has(id) || visar) return false;
       if (!direkt && performance.now() - senast < 30000) return false;
       if (sokRuta.classList.contains("oppen") || (aktuell && (iHelskarm() || (!direkt && sp.spelar())))) return false;
       visar = id;
-      if (harBlink && lage === "prata") blink.src = src("blink"); else blink.removeAttribute("src");
-      // Bilden ska vara laddad innan Newton glider upp. load kommer även i en flik som inte
-      // ritas just då (decode() gör inte det, och då fastnade tipset).
-      const laddad = await new Promise((klar) => {
-        bild.onload = () => klar(true); bild.onerror = () => klar(false);
-        bild.src = src(lage);
-        if (bild.complete && bild.naturalWidth) klar(true);
-      });
-      if (!laddad) { if (visar === id) visar = null; return false; }
+      if (harBlink) blink.src = src("blink");
+      const [okBas, okUttryck] = await Promise.all([ladda(bild, src("prata")), lage === "prata" ? true : ladda(uttryck, src(lage)), laddaVinka()]);
+      if (!okBas || !okUttryck) { if (visar === id) visar = null; return false; }
       if (visar !== id) return false;
       sett.add(id); spara();   // sett först när det faktiskt visas
-      el.classList.remove("gar", "blinkar"); el.hidden = false; document.body.classList.add("newton-syns");
-      skriv(text); blinka();
+      nuLage = "prata"; uttryck.classList.remove("syns");
+      el.classList.remove("gar", "blinkar", "talar"); el.hidden = false; document.body.classList.add("newton-syns");
+      blinka();
+      await vila(stilla ? 150 : 750);
+      if (visar !== id) return true;
+      if (harVinka && !stilla) await vinka(id);
+      if (visar !== id) return true;
+      if (lage !== "prata") { uttryck.classList.add("syns"); nuLage = lage; }
+      el.classList.add("talar");
+      skriv(text);
       return true;
     }
     function gom() {
@@ -2558,7 +2583,7 @@
       const id = visar; visar = null; senast = performance.now();
       clearTimeout(skrivTimer); clearTimeout(gomTimer); clearTimeout(blinkTimer); skrivKlar = null;
       el.classList.add("gar"); el.classList.remove("pratar", "blinkar");
-      setTimeout(() => { if (!visar) { el.hidden = true; el.classList.remove("gar"); document.body.classList.remove("newton-syns"); } }, 460);
+      setTimeout(() => { if (!visar) { el.hidden = true; el.classList.remove("gar", "talar", "vinkar"); uttryck.classList.remove("syns"); document.body.classList.remove("newton-syns"); } }, 460);
       return id;
     }
     // Ett tips en stund senare, om villkoret fortfarande håller (eleven är kvar i vyn).

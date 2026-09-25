@@ -116,12 +116,24 @@ const bw = x1 - x0 + 1, bh = y1 - y0 + 1;
 console.log(`Gemensam ram: ${bw}×${bh} från (${x0}, ${y0}), skalas till höjd ${HOJD}.`);
 
 mkdirSync(UT, { recursive: true });
+// Rutor i en animation heter <grupp>-01.png, <grupp>-02.png …: de läggs i EN bildremsa,
+// public/figur/<grupp>.webp, ruta efter ruta från vänster, så att sidan hämtar en fil.
+const grupper = new Map();
 for (const b of bilder) {
   const beskuren = Buffer.alloc(bw * bh * 4);
   for (let y = 0; y < bh; y++) b.rgba.copy(beskuren, y * bw * 4, ((y0 + y) * w + x0) * 4, ((y0 + y) * w + x0 + bw) * 4);
   const namn = basename(b.fil, ".png"), tmp = join(tmpdir(), `${namn}-${process.pid}.png`), ut = join(UT, `${namn}.webp`);
-  execFileSync("ffmpeg", ["-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", `${bw}x${bh}`, "-i", "-", "-vf", `scale=-2:${HOJD}:flags=lanczos`, "-pix_fmt", "rgba", tmp], { input: beskuren });
+  execFileSync("ffmpeg", ["-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", `${bw}x${bh}`, "-i", "pipe:0", "-vf", `scale=-2:${HOJD}:flags=lanczos`, "-pix_fmt", "rgba", tmp], { input: beskuren });
+  const grupp = /^(.*)-(\d\d)$/.exec(namn);
+  if (grupp) { if (!grupper.has(grupp[1])) grupper.set(grupp[1], []); grupper.get(grupp[1]).push(tmp); continue; }
   execFileSync("cwebp", ["-quiet", "-q", "86", "-alpha_q", "92", "-m", "6", tmp, "-o", ut]);
   unlinkSync(tmp);
   console.log(`  public/figur/${namn}.webp`);
+}
+for (const [grupp, filer] of grupper) {
+  const remsa = join(tmpdir(), `${grupp}-remsa-${process.pid}.png`), ut = join(UT, `${grupp}.webp`);
+  execFileSync("ffmpeg", ["-v", "error", "-y", ...filer.sort().flatMap((f) => ["-i", f]), "-filter_complex", `${filer.map((_, i) => `[${i}]`).join("")}hstack=inputs=${filer.length}`, "-pix_fmt", "rgba", remsa]);
+  execFileSync("cwebp", ["-quiet", "-q", "84", "-alpha_q", "90", "-m", "6", remsa, "-o", ut]);
+  for (const f of [...filer, remsa]) unlinkSync(f);
+  console.log(`  public/figur/${grupp}.webp (${filer.length} rutor i en remsa)`);
 }
