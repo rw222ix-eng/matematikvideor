@@ -69,3 +69,9 @@ har manuset ändrats: skriv om frasen i `kapitel.json` eller `dintur.json`.
 Kvalitet: exportera i högsta bitrate ur Diffusion Studio; ladda upp till YouTube som 2160p
 (uppskalad 1080-master) så hamnar filmen i YouTubes högsta kvalitetsskikt. Vill man ha originalfilen
 utan omkodning: lägg mp4:n hos Cloudflare R2 (fri utgående trafik) och sätt `fil` i registret.
+
+Newton, tipsfiguren (2026-09-25): sex bilder i `assets/figur/` (prata, blink, pekar, glad, fundersam,
+förvånad), målade i ChatGPT-projektet som riktade ändringar av samma bild. `node verktyg/newton-blink.mjs`
+målar blinkbilden ur prata (ChatGPT vred huvudet när ögonen stängdes). `node verktyg/newton.mjs 376
+assets/figur/newton-*.png` friställer dem med gemensam ram till `public/figur/*.webp` (kräver cwebp).
+Tipsen och när de visas står i `TIPS` och `Newton` i index.html.
