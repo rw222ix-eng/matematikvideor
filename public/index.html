@@ -202,6 +202,12 @@
      inte i ett 610 px högt fönster, och prickarna hamnade under linan. */
   .post .lina { flex: 1; width: 1px; background: linear-gradient(var(--linje), var(--linje2)); position: relative; min-height: 24px; }
   .post .lina::after { content: ""; position: absolute; left: -2.5px; bottom: -2.5px; width: 6px; height: 6px; border-radius: 50%; background: var(--dis); }
+  /* Årtalet på tidslinjen (Rickard 2026-09-26): en guldkantad markering mitt på linjen, där kortets tråd möter den,
+     så att det syns direkt när filmen utspelar sig. Den täcker pricken och ligger över linjen. */
+  .post .ar { position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 50%); z-index: 1; white-space: nowrap; padding: 6px 13px 5px; border-radius: 999px; background: rgba(23, 20, 20, .82); border: 1px solid rgba(242, 197, 114, .6); box-shadow: 0 6px 18px -6px rgba(0, 0, 0, .9); font: 500 13px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); text-shadow: none; }
+  .post .ar-lista { display: none; }
+  /* Luft mellan markeringen och texten under (bara där ett årtal står på linjen; telefonen har egen uppställning). */
+  @media (min-width: 701px) { .post .lina:has(.ar) + .namn { padding-top: 32px; } }
   /* Texten under korten ska gå att läsa på avstånd, ovanpå stadens ljus (Rickard 2026-09-23):
      större grader, ljusare färg och en skugga som lyfter den från målningen. */
   /* flex: none — på låga fönster krympte texten under korten i stället för upphängningen, och
@@ -819,6 +825,9 @@
     .post .rad1 { justify-content: flex-start; width: auto; max-width: 100%; }
     .post .rad1.stapel { align-items: flex-start; }
     .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
+    /* Telefonen: tidslinjen är den lodräta linjen till vänster; årtalet står först i texten, i höjd med pricken. */
+    .post .ar-lista { display: inline-block; position: static; transform: none; margin-bottom: 10px; }
+    .post .namn:has(.ar-lista)::before { top: 30px; background: var(--accent); }
     .post.kommer { display: none; }
     /* En formelbladsdel som inte är klar: bara raden med namnet, utan den streckade ramen. */
     .post.kommer.del { display: flex; margin-bottom: 40px; }
@@ -1772,18 +1781,19 @@
     if (!matte.test(t)) return esc(t);   // ingen ekvation: allt i versaler (också ett "i" som i "bråk i exponenten")
     return t.split(/(\s+)/).map((d) => (matte.test(d) || /^[a-z]$/.test(d) ? `<span class="ej-versal">${esc(d)}</span>` : esc(d))).join("");
   }
-  // Raden under: årtalet och kurserna (berättelserna och Ma 2a; Rickard 2026-09-26 flyttade ner årtalet), eller
-  // kurserna och det som formelbladsdelen tar upp.
+  // Raden under: kurserna (och det som en formelbladsdel tar upp). Årtalet för en berättelse står på tidslinjen
+  // (Rickard 2026-09-26), så att det syns direkt när filmen utspelar sig.
   const kortMoment = (v, h) => (arDelserie(v)
     ? `${kurserKort(v)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`
-    : `${v.ar != null ? `${arText(v.ar)} · ` : ""}${kurserKort(v)}`);
+    : kurserKort(v));
+  const visaAr = (v) => v.ar != null && !arDelserie(v);
   const kortHtml = (v, i, h = "berattelser") => `
     <div class="post" style="--i:${i}">
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
-        <span class="lina"></span>
-        <span class="namn">
+        <span class="lina">${visaAr(v) ? `<span class="ar">${arText(v.ar)}</span>` : ""}</span>
+        <span class="namn">${visaAr(v) ? `<span class="ar ar-lista" aria-hidden="true">${arText(v.ar)}</span>` : ""}
           <span class="rad1${arDelserie(v) ? "" : " stapel"}"><span class="kurs">${kortOverst(v, h)}</span><span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span></span>
           <span class="moment">${kortMoment(v, h)}</span>
         </span>
