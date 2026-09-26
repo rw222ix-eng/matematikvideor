@@ -200,9 +200,12 @@ const videor = [...register].sort(ordning).map((v) => {
   const omslagRen = hog ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
   const omslagStor = hog ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
   const kapitel = (kapitelFil[v.id] || []).map(([fras, rubrik, typ]) => ({ t: tidFor(fras, ord, v.id, `kapitlet "${rubrik}"`), rubrik, typ: typ || (/^din tur/i.test(rubrik) ? "uppgift" : null) })).filter((k) => k.t != null);
-  // En film utan kapitel får på sidan sex jämna bitar med första meningen som rubrik: det fungerar,
-  // men skriv kapitel (historia, matte, uppgift) i kapitel.json som för de andra filmerna.
-  if (!kapitel.length && repliker.length) console.warn(`  varning: ${v.id} har inga kapitel i kapitel.json.`);
+  // En film utan kapitel får på sidan sex jämna bitar med hela meningar som rubriker, den gamla
+  // kapitelvyn, och en film utan Din tur saknar rutan. Rickard 2026-09-26 ("det skall det finnas"):
+  // en publicerad film ska ha båda, som de andra. Därför stoppar bygget i stället för att varna.
+  const publicerad = !!(v.fil || v.youtube);
+  if (!kapitelFil[v.id] && repliker.length) (publicerad ? (f) => byggfel.push(f) : (f) => console.warn(`  varning: ${f}`))(`${v.id} har inga kapitel i kapitel.json. Skriv kapitel (historia eller inledning, matte, uppgift) som för de andra filmerna.`);
+  if (!dinturFil[v.id]) (publicerad ? (f) => byggfel.push(f) : (f) => console.warn(`  varning: ${f}`))(`${v.id} har ingen Din tur i dintur.json. Skriv den ur videons slutuppgift som för de andra filmerna.`);
   for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
   let dinTur = null;
   if (dinturFil[v.id]) {

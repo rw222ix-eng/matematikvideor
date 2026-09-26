@@ -448,6 +448,35 @@
       "31 och 29 är primtal, så längre än så går det inte. Kontroll: 31 · 29 = 899."
     ]
   },
+  "ma2a-03-x2-och-nollprodukt": {
+    "fraga": "Tänk dig en kanonkula som slår ner 8 sekunder efter skottet.",
+    "delar": [
+      {
+        "fraga": "Skriv en andragradsekvation med lösningarna 0 och 8, med t för tiden.",
+        "typ": "ekvation",
+        "svar": "t*(t - 8) = 0",
+        "exempel": "t.ex. (t − 5)(t − 2) = 0",
+        "tangenter": ["(", ")", "^", "="],
+        "fel": [
+          { "svar": "t*(t + 8) = 0", "text": "Den ekvationen har lösningarna 0 och −8. För att faktorn ska bli 0 när t är 8 ska det stå t − 8." },
+          { "svar": "(t - 8)^2 = 0", "text": "Den har bara lösningen 8. Den ena faktorn ska i stället bli 0 när t är 0." },
+          { "svar": "t - 8 = 0", "text": "Den har bara lösningen 8, och det är ingen andragradsekvation. Det behövs en faktor till, som blir 0 när t är 0." },
+          { "svar": "t^2 = 64", "text": "Den har lösningarna 8 och −8. Gör som med 5 och 2 i filmen: en faktor för varje lösning, och produkten lika med 0." }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Man kan också gå baklänges",
+      "text": "Gör som med lösningarna 5 och 2 i filmen. Vilken faktor blir 0 när t är 0, och vilken blir 0 när t är 8?"
+    },
+    "losning": [
+      "Varje lösning ger en faktor som blir 0 för just den lösningen.",
+      "Lösningen t = 0 ger faktorn t. Lösningen t = 8 ger faktorn t − 8, för 8 − 8 = 0.",
+      "Produkten ska vara 0: t(t − 8) = 0.",
+      "Kontroll med nollproduktmetoden: t = 0 eller t − 8 = 0, alltså t = 0 eller t = 8.",
+      "Multiplicerar man in t blir det t² − 8t = 0, och det är samma ekvation."
+    ]
+  },
   "ma2a-04-pq-formeln": {
     "fraga": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar, och att produkten blev 35.",
     "delar": [
