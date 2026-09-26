@@ -1443,8 +1443,17 @@
   const serieMoment = (v) => {
     // Både seriens namn ("Formelbladet Ma 2: …") och bara "Formelbladet: …" tas bort (Ma 2-delarnas moment).
     const m = String(v.moment || "").replace(new RegExp(`^(${SERIER[v.serie].namn}|Formelbladet)\\s*[:–-]\\s*`, "i"), "");
-    return norm(m) === norm(delNamn(v)) ? "" : m;
+    // Bara det som inte redan står i delens namn (Rickard 2026-09-26: "Pythagoras sats, trigonometri och vektorer" under
+    // "Pythagoras, trigonometri och vektorer" är onödigt). Momentet delas vid komma och "och"; en bit vars ord alla står i
+    // namnet stryks, och resten skrivs ihop igen: "andragradsfunktionen, vinkelräta linjer, avstånd och mittpunkt" under
+    // "Andragradsfunktionen" blir "vinkelräta linjer, avstånd och mittpunkt"; "lådagram och normalfördelning" står kvar.
+    const ord = (t) => norm(t).split(/[^\p{L}\p{N}^]+/u).filter((w) => w && !MOMENT_FYLL.has(w));
+    const iNamnet = new Set(ord(delNamn(v)));
+    const kvar = m.split(/\s*,\s*|\s+och\s+/).map((d) => d.trim()).filter((d) => d && !ord(d).every((w) => iNamnet.has(w)));
+    return kvar.length <= 1 ? kvar.join("") : `${kvar.slice(0, -1).join(", ")} och ${kvar[kvar.length - 1]}`;
   };
+  // Småord som inte gör en bit av momentet ny ("Pythagoras sats" är samma sak som "Pythagoras" i namnet).
+  const MOMENT_FYLL = new Set(["och", "sats", "satsen", "i", "med", "en", "ett", "av", "för", "om", "på"]);
   // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · 1919".
   const sortText = (v) => (v.serie === "ma2a" ? `Ma 2a${v.ar != null ? ` · ${arText(v.ar)}` : ""}`
     : v.serie ? `${serieNamn(v.serie)} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
