@@ -1581,6 +1581,8 @@
   let aktivOvergang = null;
   addEventListener("click", (e) => {
     if (!aktivOvergang || e.target !== document.documentElement) return;
+    // Det andra klicket i ett dubbelklick på guidens knappar ska inte vidare till den nya sidan (Newton.skyddar).
+    if (Newton.skyddar(e)) return;
     e.preventDefault(); e.stopPropagation();
     const { clientX: x, clientY: y } = e, vt = aktivOvergang;
     aktivOvergang = null;
@@ -1589,7 +1591,8 @@
       const el = document.elementFromPoint(x, y);
       if (!el || el === document.documentElement || el === document.body) return;
       const falt = el.closest("input, textarea, select");
-      if (falt) falt.focus(); else el.click();
+      // En ikon (svg) har ingen click(): då ett klick som bubblar upp till knappen runt den (stresstestet 2026-09-26).
+      if (falt) falt.focus(); else if (typeof el.click === "function") el.click(); else el.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true, clientX: x, clientY: y }));
     }));
   }, true);
 
@@ -3574,7 +3577,7 @@
       rorelse = $("newton-rorelse"), apple = $("newton-apple"), textEl = $("newton-text"), knappar = $("newton-knappar"), ljus = $("guide-ljus");
     let sett = new Set(), av = false;
     try { sett = new Set(JSON.parse(localStorage.getItem("tipsSedda") || "[]")); av = localStorage.getItem("tips") === "av"; } catch (e) {}
-    let visar = null, senast = -1e9, skrivTimer = null, gomTimer = null, blinkTimer = null, efterTimer = null, gestTimer = null, vilaTimer = null, skrivKlar = null, nuLage = "prata", harBlink = true;
+    let visar = null, senast = -1e9, skrivTimer = null, gomTimer = null, blinkTimer = null, efterTimer = null, gestTimer = null, livTimer = null, skrivKlar = null, nuLage = "prata", harBlink = true;
     const src = (namn) => `figur/newton-${namn}.webp`;
     const ladda = (img, url) => new Promise((klar) => { img.onload = () => klar(true); img.onerror = () => klar(false); img.src = url; if (img.complete && img.naturalWidth) klar(true); });
     const vila = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -3595,6 +3598,7 @@
     const laddaRorelse = (namn) => (laddade[namn] ||= ladda(new Image(), src(namn)));
     function ruta(namn, i) {
       if (i < 0) { el.classList.remove("ror"); return; }
+      el.classList.remove("blinkar");   // blinkbilden hör till grundbilden, inte till remsan
       const n = RORELSER[namn].rutor;
       rorelse.style.backgroundImage = `url(${src(namn)})`;
       rorelse.style.backgroundSize = `${n * 100}% 100%`;
@@ -3603,7 +3607,7 @@
     }
     // En ny rörelse avbryter den som pågår (rorId), så att t.ex. putsningen inte fortsätter när han går.
     let rorId = 0;
-    const stoppaRorelse = () => { rorId++; ruta("", -1); };
+    const stoppaRorelse = () => { rorId++; ruta("", -1); el.classList.remove("kastar"); };
     async function spela(namn, id, foljd = RORELSER[namn].foljd, ms = RORELSER[namn].ms) {
       const mitt = ++rorId;
       if (stilla || !(await laddaRorelse(namn))) return false;
@@ -3615,10 +3619,14 @@
     // öppen (ruta 2), och när det landar tar grundbilden över, med äpplet i handen igen. Lägena är
     // uppmätta i originalet och räknade om till procent av figurens ruta.
     const KAST = { fran: [9.7, 19.3], till: [31.8, 36.4], hojd: 36, tid: 1050 };   // ram 648×1201 från (327, 13)
+    // Kastet är en rörelse som de andra (rorId): en ny rörelse eller stoppaRorelse avbryter det, och äpplet
+    // är då direkt tillbaka i handen (grundbilden).
     async function kasta(id) {
+      const mitt = ++rorId, lever = () => visar === id && rorId === mitt;
       if (stilla || !(await laddaRorelse("kasta")) || !(await ladda(new Image(), src("apple")))) return false;
+      if (!lever()) return false;
       ruta("kasta", 0); await vila(90);
-      if (visar !== id) { ruta("kasta", -1); return false; }
+      if (!lever()) { if (rorId === mitt) ruta("kasta", -1); return false; }
       ruta("kasta", 1); el.classList.add("kastar");
       const t0 = performance.now();
       await new Promise((klar) => {
@@ -3627,11 +3635,12 @@
           const x = KAST.fran[0] + (KAST.till[0] - KAST.fran[0]) * t;
           const y = KAST.fran[1] + (KAST.till[1] - KAST.fran[1]) * t - 4 * KAST.hojd * t * (1 - t);
           apple.style.left = `${x}%`; apple.style.top = `${y}%`; apple.style.transform = `rotate(${t * 540}deg)`;
-          if (t < 1 && visar === id) requestAnimationFrame(steg); else klar();
+          if (t < 1 && lever()) requestAnimationFrame(steg); else klar();
         };
         requestAnimationFrame(steg);
         setTimeout(klar, KAST.tid + 400);   // ritas inte fliken går rutorna inte: kastet får inte fastna
       });
+      if (rorId !== mitt) return false;
       el.classList.remove("kastar"); ruta("kasta", -1);
       return true;
     }
@@ -3646,19 +3655,29 @@
       };
       gestTimer = setTimeout(nasta, 450);
     }
-    function blinka() {
+    // Blinket (Rickard 2026-09-26): ett var 2,5–6 s, 120–160 ms, ibland två i rad, också medan han pratar.
+    // Bara när grundbilden syns (nuLage "prata") och ingen bildremsa spelar, för blinkbilden är grundbildens
+    // ansikte med stängda ögon. En remsa som börjar eller ett uttryck som tonar fram tar bort blinket.
+    // Går det inte just då (en remsa spelar, ett uttryck syns) försöker han igen strax, så att det inte blir
+    // långa stunder utan blink efter en rörelse.
+    function blinka(om = 2500 + Math.random() * 3500) {
       clearTimeout(blinkTimer);
       if (!visar) return;
+      const kan = () => visar && harBlink && !stilla && !document.hidden && nuLage === "prata" && !el.classList.contains("ror") && !el.classList.contains("gar");
+      const ett = (ms, sedan) => { el.classList.add("blinkar"); blinkTimer = setTimeout(() => { el.classList.remove("blinkar"); sedan(); }, ms); };
       blinkTimer = setTimeout(() => {
-        if (!visar) return;
-        if (harBlink && !stilla && nuLage === "prata" && !el.classList.contains("pratar") && !el.classList.contains("ror")) { el.classList.add("blinkar"); setTimeout(() => el.classList.remove("blinkar"), 140); }
-        blinka();
-      }, 2400 + Math.random() * 3600);
+        if (!kan()) return blinka(400 + Math.random() * 600);
+        ett(120 + Math.random() * 40, () => {
+          if (Math.random() < 0.22) blinkTimer = setTimeout(() => (kan() ? ett(120 + Math.random() * 30, () => blinka()) : blinka()), 150 + Math.random() * 60);
+          else blinka();
+        });
+      }, om);
     }
     // Uttrycket tonar över grundbilden. Från ett uttryck till ett annat går det via grundbilden,
     // så att bilden aldrig byts rakt av.
     async function satLage(lage) {
       if (lage === nuLage) return;
+      el.classList.remove("blinkar");
       if (uttryck.classList.contains("syns")) { uttryck.classList.remove("syns"); nuLage = "prata"; await vila(230); }
       if (lage === "prata") return;
       if (!(await ladda(uttryck, src(lage)))) return;
@@ -3672,23 +3691,23 @@
       knappar.innerHTML = "";
       for (const k of lista) {
         const b = document.createElement("button"); b.type = "button"; b.className = k.forst ? "forst" : "sedan"; b.textContent = k.text;
-        b.addEventListener("click", (e) => { e.stopPropagation(); k.gor(); });
+        b.addEventListener("click", (e) => { e.stopPropagation(); if (visar === "guide") skydda(e); k.gor(); });
         knappar.appendChild(b);
       }
       if (raknare) { const s = document.createElement("span"); s.className = "raknare"; s.textContent = raknare; knappar.appendChild(s); }
       textEl.innerHTML = `<span class="sr">${esc(text)}</span><span aria-hidden="true"><span class="skrivet"></span><span class="rest">${esc(text)}</span></span>`;
       const skrivet = textEl.querySelector(".skrivet"), rest = textEl.querySelector(".rest"), id = visar;
       let n = 0;
-      clearTimeout(skrivTimer); clearTimeout(vilaTimer);
+      clearTimeout(skrivTimer); stoppaLiv();
       el.classList.add("talar", "pratar");
       if (nuLage === "prata") gestikulera();
       skrivKlar = () => {
         clearTimeout(skrivTimer); skrivet.textContent = text; rest.textContent = ""; el.classList.remove("pratar"); skrivKlar = null;
         if (id === "guide") {
-          // I guiden väntar han på Nästa; står han kvar en stund putsar han äpplet.
+          // I guiden väntar han på Nästa eller på att eleven gör uppgiften, och lever under tiden (vantaLiv).
           // Knappen får fokus bara i rena informationssteg; i en uppgift ska tangenterna gå till sidan.
           const forsta = knappar.querySelector("button"); if (forsta && !vantar()) forsta.focus({ preventScroll: true });
-          vilaTimer = setTimeout(() => { if (visar === "guide" && nuLage === "prata") spela("putsa", "guide"); }, 3800);
+          if (lista.length) { klarVid = performance.now(); vantaLiv(true); }
         } else { clearTimeout(gomTimer); gomTimer = setTimeout(gom, Math.max(7000, text.length * 70)); }
       };
       if (stilla) { skrivTimer = setTimeout(skrivKlar, 300); return; }
@@ -3712,9 +3731,10 @@
     function gom() {
       if (!visar) return;
       const id = visar; visar = null; senast = performance.now(); $("vy-intro").style.removeProperty("--lyft");
-      [skrivTimer, gomTimer, blinkTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
+      [skrivTimer, gomTimer, blinkTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv();
       el.classList.add("gar"); el.classList.remove("pratar", "blinkar");
       if (id === "guide") {
+        guideGang++;
         dukEl.classList.remove("guide-styr"); senHandelse = null; document.body.classList.remove("visa-hjalp");
         // Luften under filmsidan försvinner strax: står sidan nere i den glider den upp till sidans slut.
         if (aktivVy === "film") { const ner = Math.max(0, document.querySelector("#vy-film .inre").getBoundingClientRect().bottom + scrollY + 120 - innerHeight); if (scrollY > ner + 2) glid(ner); }
@@ -3789,6 +3809,10 @@
 
     // ── Guiden ─────────────────────────────────────────────
     let guideSteg = [], guideNr = 0, nastaNr = 0, malEls = [], pos = null, guideByter = false, gangId = 0, vinkat = false, rullarTill = 0, borjan = false;
+    // guideGang räknas upp när en guide startar eller slutar. Det som väntar på något (en gång, en reaktion,
+    // Hoppa över som skriver i sökrutan) ser efter att det fortfarande är samma guide innan det gör något mer:
+    // förut kunde en guide som avslutats och startats om fortsätta i den nya (stresstestet 2026-09-26).
+    let guideGang = 0;
     const dim = $("guide-dim"), ramar = [];
     // Filmkorten som syns i fönstret (tidslinjen kan vara rullad åt sidan).
     const synligaKort = (sel) => [...document.querySelectorAll(sel)].filter((k) => { const b = k.getBoundingClientRect(); return b.width && b.left >= 0 && b.right <= innerWidth && b.top >= 0 && b.bottom <= innerHeight; });
@@ -3863,6 +3887,96 @@
       else await vila(tid);
       if (gangId === mitt) el.classList.remove("gar-steg", "speglad");
     }
+
+    // ── Medan han väntar (Rickard 2026-09-26) ──────────────
+    // När texten är klar och han väntar på eleven lever han: en stund efter texten slappnar han av (släpper
+    // uttrycket, så att grundbilden och blinket syns) och gör sedan då och då något, med paus emellan och
+    // aldrig samma sak två gånger i rad: putsar äpplet, kastar det (bara i en uppgift, tidigast 8 s efter
+    // texten och högst en gång per 25–40 s) eller tar 2–4 små steg åt sidan och tillbaka, eller till ett nytt
+    // ställe nära där han stod. Ibland står han bara. Stegen går aldrig så att han eller bubblan kommer
+    // utanför fönstret eller över något som lyser (det han pekar på, korten eleven ska trycka på); på
+    // telefonen är de kortare. Allt avbryts direkt (stoppaLiv) när han börjar prata, guiden går vidare, eleven
+    // gör något (tryck, tangent, hjul), vyn byts, fliken döljs eller guiden slutar.
+    let livId = 0, sistaLiv = "", sistaKast = -1e9, kastPaus = 30000, klarVid = 0, hem = null, livGar = false;
+    const kanLeva = () => visar === "guide" && !skrivKlar && !bekraftar && guideNr >= 0 && el.classList.contains("talar") && !document.hidden && !stilla;
+    function vantaLiv(forst) {
+      clearTimeout(livTimer);
+      if (!kanLeva()) return;
+      livTimer = setTimeout(livSteg, forst ? 3500 + Math.random() * 2500 : 5000 + Math.random() * 5000);
+    }
+    // Avbryter det han gör. Går han några små steg stannar han där han är (sträckan var fri).
+    function stoppaLiv() {
+      clearTimeout(livTimer); livId++;
+      if (livGar) {
+        livGar = false; gangId++;
+        const m = new DOMMatrixReadOnly(getComputedStyle(el).transform);
+        el.style.setProperty("--gang", "0ms"); el.style.transform = `translate3d(${Math.round(m.m41)}px, ${Math.round(m.m42)}px, 0)`;
+        el.classList.remove("gar-steg", "speglad");
+        if (pos) pos = { ...pos, x: m.m41 };
+        stoppaRorelse();
+      } else if (el.classList.contains("ror") && !el.classList.contains("pratar")) stoppaRorelse();   // putsningen eller kastet
+    }
+    // Hur mycket Newton och bubblan täcker av det som lyser om han står dx längre åt sidan.
+    function tackerVid(dx) {
+      const lyser = malEls.map((e) => e.getBoundingClientRect());
+      return [el.querySelector(".newton-figur"), el.querySelector(".newton-bubbla")].reduce((sum, e) => {
+        const r = e.getBoundingClientRect(), a = { left: r.left + dx, right: r.right + dx, top: r.top, bottom: r.bottom };
+        if (a.left < 6 || a.right > innerWidth - 6) return Infinity;
+        return sum + lyser.reduce((s, l) => s + Math.max(0, Math.min(a.right, l.right + 8) - Math.max(a.left, l.left - 8)) * Math.max(0, Math.min(a.bottom, l.bottom + 8) - Math.max(a.top, l.top - 8)), 0);
+      }, 0);
+    }
+    // Ett ställe några små steg bort: nära hem, och så att varken han eller bubblan på vägen dit täcker mer av
+    // det som lyser än han gör där han står.
+    function smaStegMal() {
+      if (!pos || !hem) return null;
+      const sm = smal(), langd = sm ? 14 + Math.random() * 12 : 28 + Math.random() * 30, radie = sm ? 30 : 90;
+      const nu = tackerVid(0), val = [];
+      if (Math.abs(pos.x - hem.x) > 4) val.push(hem.x);
+      for (const r of Math.random() < 0.5 ? [1, -1] : [-1, 1]) val.push(pos.x + r * langd);
+      return val.find((x) => {
+        if (Math.abs(x - hem.x) > radie) return false;
+        for (let k = 1; k <= 6; k++) if (tackerVid((x - pos.x) * k / 6) > nu + 1) return false;
+        return true;
+      }) ?? null;
+    }
+    async function livSteg() {
+      if (!kanLeva() || el.classList.contains("ror") || el.classList.contains("gar-steg")) return vantaLiv(false);
+      const mitt = ++livId, nu = performance.now(), lever = () => livId === mitt && kanLeva();
+      const val = ["inget", "inget"];
+      if (sistaLiv !== "putsa") val.push("putsa", "putsa");
+      if (sistaLiv !== "kasta" && vantar() && nu - sistaKast > kastPaus && nu - klarVid > 8000) val.push("kasta", "kasta", "kasta");
+      const x = sistaLiv !== "ga" && Math.random() < (smal() ? 0.5 : 0.8) ? smaStegMal() : null;
+      if (x !== null) val.push("ga", "ga");
+      const bland = sistaLiv === "inget" ? val.filter((v) => v !== "inget") : val;   // aldrig två stilla pauser i rad
+      const hur = bland.length ? bland[Math.floor(Math.random() * bland.length)] : "inget";
+      sistaLiv = hur;
+      if (hur !== "inget") {
+        // Han slappnar av först: uttrycket (t.ex. pekar) tonar bort, och det han gör utgår från grundbilden.
+        if (nuLage !== "prata") { await satLage("prata"); if (!lever()) return; await vila(350); if (!lever()) return; }
+        if (hur === "putsa") await spela("putsa", "guide");
+        else if (hur === "kasta") { sistaKast = performance.now(); kastPaus = 25000 + Math.random() * 15000; await kasta("guide"); }
+        else if (hur === "ga") { const x2 = smaStegMal(); if (x2 !== null) await smaSteg(x2, mitt); }   // igen: sidan kan ha rört sig
+        if (livId !== mitt) return;
+      }
+      vantaLiv(false);
+    }
+    // 2–4 små steg (1–2 varv i stegremsan) åt sidan, vänd åt det håll han går. Bubblan följer med och behåller
+    // sin bredd, så att texten inte bryts om.
+    async function smaSteg(x, mitt) {
+      const dx = x - pos.x, varv = Math.abs(dx) > (smal() ? 20 : 40) ? 2 : 1, tid = varv * 4 * RORELSER.steg.ms, gang = ++gangId;
+      livGar = true;
+      el.style.setProperty("--gang", `${tid}ms`);
+      el.classList.toggle("speglad", dx > 0);
+      el.classList.add("gar-steg");
+      el.style.transform = `translate3d(${Math.round(x)}px, ${Math.round(pos.y)}px, 0)`; pos = { ...pos, x };
+      for (let k = 0; k < varv && livId === mitt && gangId === gang; k++) await spela("steg", "guide");
+      if (gangId !== gang) return;
+      livGar = false; el.classList.remove("gar-steg", "speglad");
+    }
+    // Eleven gör något: det han håller på med slutar, och han väntar en stund innan han gör något nytt.
+    const eleven = () => { if (visar !== "guide" || !kanLeva()) return; stoppaLiv(); vantaLiv(true); };
+    for (const h of ["pointerdown", "keydown", "wheel", "touchstart"]) addEventListener(h, eleven, { capture: true, passive: true });
+    document.addEventListener("visibilitychange", () => { if (visar !== "guide") return; if (document.hidden) stoppaLiv(); else if (kanLeva()) vantaLiv(true); });
     // Strålkastaren på en eller flera saker: hål i det dämpade lagret (en path med evenodd, rundade
     // hörn) och en guldram runt varje hål. Utan mål dämpas hela sidan.
     function lys(lista) {
@@ -3945,8 +4059,8 @@
     // sökningen, skriver ett ord, stänger den, öppnar en film, startar, pausar eller hoppar i filmen.
     const sokOppen = () => sokRuta.classList.contains("oppen");
     async function skrivIn(text) {
-      const f = $("sok-falt"); f.focus(); f.value = "";
-      for (const c of text) { f.value += c; f.dispatchEvent(new Event("input", { bubbles: true })); await vila(110); }
+      const f = $("sok-falt"), gang = guideGang; f.focus(); f.value = "";
+      for (const c of text) { if (visar !== "guide" || guideGang !== gang) return; f.value += c; f.dispatchEvent(new Event("input", { bubbles: true })); await vila(110); }
     }
 
     // Stegen. Ett steg med nar är en uppgift: guiden väntar tills eleven gör det Newton säger
@@ -4134,21 +4248,21 @@
       if (visar !== "guide") return;
       if (n >= guideSteg.length) return slutaGuide();
       guideNr = n; bekraftar = false;
-      const s = guideSteg[n];
-      [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
+      const s = guideSteg[n], gang = guideGang;
+      [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv();
       el.classList.remove("talar", "pratar"); knappar.innerHTML = ""; stoppaRorelse();
       // Ett steg som inte behövs hoppas över. Har Newton inte sagt något än i den här omgången tas det
       // bort i stället, så att räknaren börjar på 1 där han börjar prata.
       const forbi = () => { if (borjan && n === 0 && guideSteg.length > 1) { guideSteg.shift(); return visaSteg(0); } return visaSteg(n + 1); };
       if (!passar(s) || (s.hoppaOm && s.hoppaOm())) return forbi();
       // Ett steg i filmvalet medan eleven är kvar i introt (sökte därifrån): guiden går till filmvalet först.
-      if (s.vy === "valj" && aktivVy === "intro") { await tillValj(); if (visar !== "guide" || guideNr !== n || bekraftar) return; }
+      if (s.vy === "valj" && aktivVy === "intro") { await tillValj(); if (visar !== "guide" || guideGang !== gang || guideNr !== n || bekraftar) return; }
       const mal = s.mal ? s.mal() : null;
       if (s.mal && !synlig(mal)) return forbi();   // finns inte här just nu
       if (senHandelse) { const h = senHandelse; senHandelse = null; if (stegFor(h) >= 0) return hande(h); }
       sjalv = true; try { stallIOrdning(s); } finally { sjalv = false; }
       // Guiden lyssnar från första stund: en snabb elev kan göra uppgiften medan Newton går dit.
-      const lever = () => visar === "guide" && guideNr === n && !bekraftar;
+      const lever = () => visar === "guide" && guideGang === gang && guideNr === n && !bekraftar;
       if (s.fore) s.fore();
       if (mal) await tillMal(mal, s.text);
       if (!lever()) return;
@@ -4156,6 +4270,7 @@
       lys(ljusFor());
       await gaTill(friPlats(plats(mal ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)), s.text));
       if (!lever()) return;
+      hem = pos;   // de små stegen medan han väntar går nära hit
       // Det första steget han säger något i vinkar han, var guiden än börjar.
       if (s.rorelse === "kasta") await kasta("guide");
       else if (s.rorelse === "vinka" || !vinkat) { vinkat = true; await spela("vinka", "guide"); }
@@ -4171,8 +4286,10 @@
     }
     // Väntar det aktuella steget på något eleven ska göra?
     const vantar = () => !!(guideSteg[guideNr] && guideSteg[guideNr].nar);
+    // Från det aktuella steget och framåt. guideNr är -1 medan guiden väntar på en film: då från början (förut
+    // kraschade det på guideSteg[-1] när eleven gick bakåt medan filmen laddades, och guiden blev hängande).
     function stegFor(namn) {
-      for (let i = guideNr; i < guideSteg.length; i++) { const s = guideSteg[i]; if (s.nar && passar(s) && [].concat(s.nar).includes(namn)) return i; }
+      for (let i = Math.max(0, guideNr); i < guideSteg.length; i++) { const s = guideSteg[i]; if (s.nar && passar(s) && [].concat(s.nar).includes(namn)) return i; }
       return -1;
     }
     // Eleven gjorde det Newton sa (eller något han skulle säga strax): han blir glad, säger stegets
@@ -4186,18 +4303,18 @@
       if (bekraftar) { senHandelse = namn; return; }
       const k = stegFor(namn); if (k < 0) return;
       bekraftar = true; nastaNr = k + 1;
-      const n = guideNr, s = guideSteg[k];
-      [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null; stoppaRorelse();
+      const n = guideNr, s = guideSteg[k], gang = guideGang, samma = () => visar === "guide" && guideGang === gang && guideNr === n;
+      [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv(); stoppaRorelse();
       // Reaktionen kan bero på vad eleven gjorde (t.ex. öppnade texten eller tryckte på en rad i den).
       const svar = (typeof s.svar === "function" ? s.svar(namn) : s.svar) || "Just så.";
       (async () => {
         await satLage("glad");
-        if (visar !== "guide" || guideNr !== n) return;
+        if (!samma()) return;
         knappar.innerHTML = "";
         // Stegets egen reaktion, så länge att den hinner läsas.
         prata(svar, []);
         await vila(Math.max(1400, 500 + svar.length * 60));
-        if (visar !== "guide" || guideNr !== n) return;
+        if (!samma()) return;
         if (s.pausaEfter && aktuell && sp.spelar()) vaxlaSpel(true);
         visaSteg(k + 1);
       })();
@@ -4207,12 +4324,12 @@
     async function hoppaOver(n) {
       if (visar !== "guide" || guideNr !== n) return;
       bekraftar = true; nastaNr = n + 1;
-      const s = guideSteg[n];
-      [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
+      const s = guideSteg[n], gang = guideGang;
+      [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv(); stoppaRorelse();
       el.classList.remove("talar", "pratar");
       sjalv = true;
-      try { if (s.hoppa) await s.hoppa(); } finally { sjalv = false; }
-      if (visar === "guide" && guideNr === n) visaSteg(n + 1);
+      try { if (s.hoppa) await s.hoppa(); } finally { if (guideGang === gang) sjalv = false; }
+      if (visar === "guide" && guideGang === gang && guideNr === n) visaSteg(n + 1);
     }
     const vantaPa = async (villkor, ms) => { const slut = performance.now() + ms; while (!villkor() && performance.now() < slut) await vila(80); return villkor(); };
     // Eleven öppnade en film (eller guiden gjorde det): filmens steg tar vid när spelaren finns.
@@ -4225,11 +4342,14 @@
       const fran = bekraftar ? nastaNr : vantar() ? guideNr : guideNr + 1;
       const gjorda = iFilm ? guideSteg.slice(0, Math.max(0, fran)) : [], kvar = iFilm ? guideSteg.slice(Math.max(0, fran)).map((s) => s.id) : null;
       guideNr = -1; bekraftar = false;   // en bekräftelse som pågår (t.ex. sökningen stängdes) får inte gå vidare i filmvalets steg
-      [skrivTimer, gestTimer, vilaTimer].forEach(clearTimeout); skrivKlar = null;
+      [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv();
       el.classList.remove("talar", "pratar"); slack(); ljusFor = null;
-      const framme = await vantaPa(() => aktivVy === "film" && !!$("duk-lock"), 5000);
-      if (!framme || visar !== "guide") return;
+      const gang = guideGang, framme = await vantaPa(() => aktivVy === "film" && !!$("duk-lock"), 5000);
+      if (!framme || visar !== "guide" || guideGang !== gang) return;
       await vila(500);
+      // Har eleven hunnit gå tillbaka till filmvalet under tiden visas inga filmsteg där (förut kom filmens
+      // sista steg, "Nu vet du hur allt fungerar", i filmvalet med räknaren 1/1).
+      if (visar !== "guide" || guideGang !== gang || aktivVy !== "film" || guideNr !== -1) return;
       dukEl.classList.add("guide-styr");
       if (kvar) { guideSteg = [...gjorda, ...losa(kvar)]; visaSteg(gjorda.length); }
       else { guideSteg = losa([...FILM, "slut"]); borjan = true; visaSteg(0); }
@@ -4239,25 +4359,31 @@
       if (kort) kort.click(); else slutaGuide();
     }
     function slutaGuide() { if (visar === "guide") gom(); }
-    async function startaGuide() {
+    // startId: trycker eleven på frågetecknet igen medan ett tips går undan (480 ms) startar bara det sista
+    // trycket guiden; förut startade båda, och den första började om den andra (stresstestet 2026-09-26).
+    let startId = 0;
+    async function startaGuide(e) {
       if (visar === "guide") return;
-      if (visar) { gom(); await vila(480); }
+      const mitt = ++startId;
+      if (visar) { gom(); await vila(480); if (startId !== mitt || visar) return; }
       if (aktuell && sp.spelar()) vaxlaSpel();
       if (iHelskarm()) vaxlaHelskarm();
       // Var guiden börjar bestäms innan något flyttar sig: det eleven har framför sig just nu
       // (planera). Sökrutan får stå öppen, för då börjar guiden med sökningen.
       guideSteg = losa(planera());
-      visar = "guide"; guideNr = -1; pos = null; vinkat = false; borjan = true;
-      if (!(await forbered("prata")) || visar !== "guide") { if (visar === "guide") visar = null; return; }
+      visar = "guide"; guideNr = -1; pos = null; hem = null; vinkat = false; borjan = true; sjalv = false;
+      const gang = ++guideGang;
+      skydda(e);   // ett dubbelklick på frågetecknet: andra klicket ska inte hamna på sidan under det
+      if (!(await forbered("prata")) || visar !== "guide" || guideGang !== gang) { if (visar === "guide" && guideGang === gang) visar = null; return; }
       document.body.classList.add("guidar"); el.classList.add("guide");
       if (aktivVy === "film") dukEl.classList.add("guide-styr");
       const p = plats(null); el.style.setProperty("--gang", "0ms"); el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
       el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`; pos = p;
       fram(); ljusFor = null; ljus.classList.remove("latt"); lys([]);
       await vila(stilla ? 150 : 750);
-      if (visar === "guide") visaSteg(0);
+      if (visar === "guide" && guideGang === gang) visaSteg(0);
     }
-    $("hjalp").addEventListener("click", () => { $("hjalp").classList.remove("lockar"); startaGuide(); });
+    $("hjalp").addEventListener("click", (e) => { $("hjalp").classList.remove("lockar"); startaGuide(e); });
     // Tangenterna i guiden: → nästa (eller skriv klart texten), Esc slutar. Lyssnaren fångar
     // tangenten före sidans egna, så att Esc inte också lämnar filmen och → inte spolar.
     document.addEventListener("keydown", (e) => {
@@ -4265,15 +4391,82 @@
       // I helskärm stänger Esc helskärmen (det kan vara uppgiften), inte guiden. I en uppgift är
       // → sidans egen tangent (pil höger hoppar fram i filmen), inte guidens.
       if (e.key === "Escape") { if (iHelskarm()) return; e.preventDefault(); e.stopImmediatePropagation(); slutaGuide(); }
-      // → är bubblans guldknapp (Nästa, Klar, Visa resten).
-      else if (e.key === "ArrowRight" && !skriver(e) && !vantar()) { e.preventDefault(); e.stopImmediatePropagation(); if (skrivKlar) skrivKlar(); else { const b = knappar.querySelector("button.forst"); if (b) b.click(); else if (!bekraftar) visaSteg(guideNr + 1); } }
+      // → är bubblans guldknapp (Nästa, Klar, Visa resten), och bara när bubblan syns: medan han går till
+      // nästa steg hoppade → förut över det stället innan han sagt något, och en nedtryckt → (upprepning)
+      // for igenom flera steg (stresstestet 2026-09-26).
+      else if (e.key === "ArrowRight" && !skriver(e) && !vantar()) {
+        e.preventDefault(); e.stopImmediatePropagation();
+        if (e.repeat || !el.classList.contains("talar")) return;
+        if (skrivKlar) skrivKlar(); else { const b = knappar.querySelector("button.forst"); if (b) b.click(); }
+      }
     }, true);
     // Ett klick på Newton eller bubblan skriver klart texten direkt; när musen vilar på bubblan
     // väntar ett tips med att gå.
     el.addEventListener("click", (e) => { if (!e.target.closest("button") && skrivKlar) skrivKlar(); });
+
+    // ── Klick och tryck utanför bubblan (Rickard 2026-09-26) ──
+    // Första klicket utanför bubblan medan texten skrivs fram skriver klart den. När texten är klar tar nästa
+    // klick utanför ett steg med Nästa (eller Klar) framåt, som om eleven tryckt på knappen. I en uppgift (nar)
+    // gör klicket inget mer: där ska eleven göra uppgiften eller trycka på Hoppa över. Klick på något som går
+    // att använda (ANVANDBART) fungerar som förut och tar aldrig guiden framåt; högst skriver det klart texten.
+    // Klick i bubblan eller på Newton räknas inte här. pointerup och inte pointerdown, så att den som drar i
+    // tidslinjen eller filmens linje inte räknas, och ett drag längre än 8 px är inget klick.
+    const ANVANDBART = "a, button, input, textarea, select, label, summary, [role=button], [role=tab], [role=slider], [role=menuitemradio], [contenteditable], [tabindex]:not([tabindex='-1']), [data-t], [data-film], [data-sok], [data-forslag], [data-tecken], #duk, #sok, .post, .hjalp";
+    // Skydd: 500 ms (systemens dubbelklickstid) efter att guiden tagits framåt med ett tryck (Nästa, Hoppa över, Klar, klick utanför,
+    // frågetecknet) når inga tryck eller klick på samma ställe (inom 40 px) sidan. Bubblan döljs direkt när
+    // eleven trycker Nästa, så det andra klicket i ett dubbelklick hamnade på det som låg under den: ett
+    // filmkort öppnades, filmen startade eller gick till helskärm, en rad i kapitlen hoppade fram i filmen,
+    // eller nästa stegs Hoppa över tog ett steg till (stresstestet 2026-09-26). Ett tryck någon annanstans
+    // (eleven trycker direkt på ett filmkort) går fram som vanligt.
+    // Tiden jämförs med händelsens egen tidsstämpel (när eleven tryckte): laddas en film köas det andra klicket
+    // medan sidan är upptagen, och kom förut fram först när skyddet redan släppt.
+    let skyddTill = 0, skyddVid = null, trycktNer = null, vidareFran = 0;
+    // Bara ett riktigt tryck sätter skyddet (guidens egna .click() och tangentbordets klick har ingen punkt).
+    function skydda(e) { if (e && e.isTrusted && (e.detail > 0 || e.type.startsWith("pointer"))) { skyddTill = e.timeStamp + 500; skyddVid = { x: e.clientX, y: e.clientY }; } }
+    const skyddat = (e) => visar === "guide" && !!skyddVid && e.timeStamp < skyddTill && Math.hypot(e.clientX - skyddVid.x, e.clientY - skyddVid.y) < 40;
+    // Bara riktiga tryck och klick: guidens egna klick (Hoppa över öppnar ett filmkort med .click()) och klick
+    // från tangentbordet (detail 0) går alltid fram.
+    const stoppa = (e) => { e.stopImmediatePropagation(); if (e.cancelable && e.type !== "pointerdown" && e.type !== "pointerup") e.preventDefault(); };
+    for (const typ of ["mousedown", "mouseup", "click", "dblclick", "contextmenu"]) addEventListener(typ, (e) => { if (e.isTrusted && skyddat(e) && (e.detail > 0 || typ === "contextmenu")) stoppa(e); }, true);
+    addEventListener("pointerdown", (e) => {
+      if (e.isTrusted && skyddat(e)) { trycktNer = null; return stoppa(e); }
+      trycktNer = visar === "guide" && e.isPrimary && e.button === 0 ? { id: e.pointerId, x: e.clientX, y: e.clientY } : null;
+    }, true);
+    addEventListener("pointercancel", () => { trycktNer = null; }, true);
+    addEventListener("pointerup", (e) => {
+      if (e.isTrusted && skyddat(e)) { trycktNer = null; return stoppa(e); }
+      const ner = trycktNer; trycktNer = null;
+      if (!ner || ner.id !== e.pointerId || visar !== "guide" || guideNr < 0 || !el.classList.contains("talar")) return;
+      if (Math.hypot(e.clientX - ner.x, e.clientY - ner.y) > 8) return;   // ett drag
+      const mal = e.target instanceof Element ? e.target : null;
+      if (!mal || el.contains(mal)) return;
+      // Första klicket skriver klart. Ett snabbt klick till (ett dubbelklick) tar inte guiden vidare: eleven
+      // ska hinna se texten.
+      if (skrivKlar) { skrivKlar(); vidareFran = e.timeStamp + 500; return; }
+      if (mal.closest(ANVANDBART) || vantar() || bekraftar || e.timeStamp < vidareFran) return;
+      const b = knappar.querySelector("button.forst");
+      if (b && (b.textContent === "Nästa" || b.textContent === "Klar")) { skydda(e); b.click(); }
+    }, true);
+
+    // Byter fönstret storlek (dator ↔ telefon, telefonen vrids) ställer han sig direkt där steget vill ha
+    // honom i det nya fönstret. Förut stod han kvar på samma pixel, utanför fönstret (stresstestet 2026-09-26).
+    // Direkt i resize (som webbläsaren skickar en gång per bildruta, före ritningen), så att han aldrig syns på fel ställe.
+    addEventListener("resize", () => stallOm());
+    function stallOm() {
+      if (visar !== "guide" || guideNr < 0 || !pos) return;
+      const s = guideSteg[guideNr]; if (!s) return;
+      const mal = s.mal ? s.mal() : null;
+      const p = friPlats(plats(mal && synlig(mal) ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)), s.text);
+      stoppaLiv(); gangId++;
+      el.classList.remove("gar-steg", "speglad"); el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
+      el.style.setProperty("--gang", "0ms"); el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`;
+      pos = p; hem = p;
+      if (ljusFor) lys(ljusFor());
+      if (kanLeva()) vantaLiv(true);
+    }
     el.addEventListener("pointerenter", () => { if (visar !== "guide") clearTimeout(gomTimer); });
     el.addEventListener("pointerleave", () => { if (visar && visar !== "guide" && !skrivKlar) { clearTimeout(gomTimer); gomTimer = setTimeout(gom, 3500); } });
-    return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, harSett: (id) => av || sett.has(id), get visar() { return visar; } };
+    return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, harSett: (id) => av || sett.has(id), skyddar: (e) => e.isTrusted && skyddat(e), get visar() { return visar; } };
   })();
   // Första gången någon kommer till startsidan lyser frågetecknet en stund, med sin text, så att man
   // hittar guiden (Rickard 2026-09-25). Bara en gång per webbläsare ("hjalpVisad").
