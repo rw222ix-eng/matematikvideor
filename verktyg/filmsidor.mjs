@@ -18,7 +18,8 @@ const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").rep
 const kursKort = (kurs) => { const m = kurs.match(/(\d)\s*([a-c]*)$/i); return m ? `Ma ${m[1]}${m[2].toLowerCase()}` : kurs; };
 
 function sida(v) {
-  const titel = `${v.titel} · ${kursKort(v.kurs)}, ${v.moment}`;
+  const kurser = v.kurser && v.kurser.length ? v.kurser.map(kursKort).join(" / ") : kursKort(v.kurs);
+  const titel = `${v.titel} · ${kurser}, ${v.moment}`;
   const bild = v.omslagStor || v.omslag || v.omslagRen;
   return `<!doctype html>
 <html lang="sv">

@@ -1300,6 +1300,14 @@
     const m = kurs.match(/(\d)\s*([a-c]*)$/i);
     return m ? `Ma&nbsp;${m[1]}${m[2].toLowerCase()}` : esc(kurs);
   };
+  // Alla kurser en film passar, ur registrets "kurser" (Rickard 2026-09-26: Kepler och Delos är för
+  // Ma 1c, Ma 2a och Ma 2c), annars filmens kurs. Kort på korten och i sökningen: "Ma 1c / Ma 2a /
+  // Ma 2c"; utskrivet på filmens sida: "Matematik 1c, 2a och 2c".
+  const kurserKort = (v) => (v.kurser && v.kurser.length ? v.kurser.map(kursKort).join(" / ") : kursKort(v.kurs));
+  const kurserLang = (v) => {
+    const k = (v.kurser && v.kurser.length ? v.kurser : [v.kurs]).map((x, i) => (i ? x.replace(/^Matematik\s*/, "") : x));
+    return k.length === 1 ? k[0] : `${k.slice(0, -1).join(", ")} och ${k[k.length - 1]}`;
+  };
 
   // ── Serierna (Rickard 2026-09-25) ─────────────────────
   // Filmer i en serie står inte på den historiska tidslinjen utan under en egen flik.
@@ -1310,8 +1318,8 @@
   // känns serien igen på id:t (formelbladet-N-…, ma2a-NN-…) och delen på siffran i id:t eller titeln.
   const SERIER = {
     formelbladet: { namn: "Formelbladet", delar: 5, platser: true },
-    // kapitel: den första delen i kapitel 1, 2, 3, 4 och 5 (Origo 2a).
-    ma2a: { namn: "Ma 2a", delar: 19, kapitel: [1, 5, 9, 14, 18] },
+    // Kapitlen i boken visas inte längre (Rickard 2026-09-26); filmerna står i tidsordning.
+    ma2a: { namn: "Ma 2a", delar: 19 },
   };
   for (const v of videor) {
     if (!v.serie) v.serie = Object.keys(SERIER).find((namn) => v.id.startsWith(`${namn}-`)) || null;
@@ -1342,12 +1350,6 @@
   // år hamnar sist, i bokens ordning. (Formelbladets delar ritas för sig, i delarnas ordning.)
   const hyllaFilmer = (namn) => videor.filter((v) => Number.isFinite(plats(v, namn)))
     .sort((a, b) => (a.ar ?? Infinity) - (b.ar ?? Infinity) || plats(a, namn) - plats(b, namn));
-  // Kapitlet i boken för en film under fliken: i Ma 2a ligger plats 13.5 (Formelbladet 2) i kapitel 3.
-  const kapAv = (v, namn) => {
-    const k = SERIER[namn].kapitel, p = plats(v, namn);
-    if (!k || !Number.isFinite(p)) return null;
-    return Math.max(1, k.filter((forsta) => p >= forsta).length);
-  };
   // Titeln är "<något> – <delens namn>": "Formelbladet 2 – Funktioner", "Kvartskvadraterna – Kvadreringsreglerna".
   const titelDelar = (v) => { const m = String(v.titel).match(/^(.+?)\s+[–—-]\s+(.+)$/); return m ? [m[1], m[2]] : [v.titel, ""]; };
   // Delens namn utan serien: "Formelbladet 2 – funktioner" → "Funktioner". I Ma 2a är det momentet.
@@ -1358,8 +1360,8 @@
     const m = String(v.moment || "").replace(new RegExp(`^${SERIER[v.serie].namn}\\s*[:–-]\\s*`, "i"), "");
     return norm(m) === norm(delNamn(v)) ? "" : m;
   };
-  // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · kapitel 1".
-  const sortText = (v) => (v.serie === "ma2a" ? `Ma 2a · kapitel ${kapAv(v, "ma2a") ?? ""}`.trim()
+  // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · 1919".
+  const sortText = (v) => (v.serie === "ma2a" ? `Ma 2a${v.ar != null ? ` · ${arText(v.ar)}` : ""}`
     : v.serie ? `${SERIER[v.serie].namn} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
   const sortEtikett = (v) => `<span class="sort${v.serie ? " serie" : ""}">${esc(sortText(v))}</span>`;
   // Nästa film i serien: en film, en plats som inte är klar ({ saknas }), eller null efter sista delen.
@@ -1659,32 +1661,26 @@
   const spar = $("spar"), tidslinje = $("tidslinje");
   // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
   // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
-  // det säger något mer än namnet. Under fliken Matematik 2a står året överst, som under Matematik 1c
-  // (Rickard 2026-09-26: "det ska stå årtal"), och kapitlet i boken först på raden under: "Kap 1 ·
-  // Carissans maskin", störst momentet. Kepler och de andra som också ligger där får "Kap 1 · Ma 1c ·
-  // momentet". En film utan år har kapitlet överst som förut.
-  const kortOverst = (v, h) => {
-    if (h === "ma2a") { const kap = kapAv(v, h); return v.ar ? arText(v.ar) : kap ? `Kap ${kap}` : kursKort(v.kurs); }
-    return v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs);
-  };
+  // det säger något mer än namnet. Under fliken Matematik 2a ser korten ut som under Matematik 1c
+  // (Rickard 2026-09-26: kapitlen i boken bort helt): året överst, sedan kursen och momentet
+  // ("Ma 2a · Faktorisera"), störst berättelsen ("Carissans maskin"). Kepler och Delos har alla sina
+  // kurser: "Ma 1c / Ma 2a / Ma 2c · Potensekvationer".
+  const kortOverst = (v, h) => (v.serie && v.serie !== "ma2a" ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kurserKort(v));
   const kortMoment = (v, h) => {
-    const kap = h === "ma2a" && v.ar ? kapAv(v, h) : null, fore = kap ? `Kap ${kap}` : kursKort(v.kurs);
-    if (v.serie === "ma2a") { const [berattelse, moment] = titelDelar(v); return `${fore} · ${esc(moment ? berattelse : v.moment)}`; }
-    if (v.serie && h === "ma2a") return `${fore} · ${esc(SERIER[v.serie].namn)} ${v.del ?? ""}`;
-    if (v.serie) return `${kursKort(v.kurs)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`;
-    if (kap) return `${fore} · ${kursKort(v.kurs)} · ${esc(v.moment)}`;
-    return `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`;
+    if (v.serie === "ma2a") { const [, moment] = titelDelar(v); return `${kurserKort(v)} · ${esc(moment || v.moment)}`; }
+    if (v.serie) return `${kurserKort(v)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`;
+    return `${v.ar ? `${kurserKort(v)} · ` : ""}${esc(v.moment)}`;
   };
   const kortHtml = (v, i, h = "berattelser") => `
     <div class="post" style="--i:${i}">
-      <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${v.kurs}, ${v.moment}`)}">
+      <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina"></span>
         <span class="namn">
           <span class="kurs">${kortOverst(v, h)}</span>
           <span class="moment">${kortMoment(v, h)}</span>
-          <span class="titel">${esc(v.serie ? delNamn(v) : v.titel)}</span>
+          <span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span>
         </span>
       </button>
     </div>`;
@@ -1849,7 +1845,7 @@
       const linje = b.querySelector(".sett-linje");
       linje.hidden = !(andel > 0.02);
       linje.style.setProperty("--andel", (f.sett ? 1 : andel).toFixed(3));
-      b.setAttribute("aria-label", `${v.titel} — ${v.kurs}, ${v.moment}${lagen.length ? `. ${lagen.join(", ")}` : ""}`);
+      b.setAttribute("aria-label", `${v.titel} — ${kurserLang(v)}, ${v.moment}${lagen.length ? `. ${lagen.join(", ")}` : ""}`);
     });
   }
 
@@ -2028,7 +2024,7 @@
       <article class="basta">
         <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${bild}" alt="">` : ""}</button>
         <div class="text">
-          <p class="etikett">${sortEtikett(v)} · ${kursKort(v.kurs)} · ${esc(v.moment)}</p>
+          <p class="etikett">${sortEtikett(v)} · ${kurserKort(v)} · ${esc(v.moment)}</p>
           <h3 class="titel"><button data-film="${v.id}" data-t="${t0}">${esc(v.titel)}</button></h3>
           <p class="forklaring">${s0 ? stalleText(s0, q.markRe) : esc(v.beskrivning.split(". ")[0]) + "."}</p>
           <button class="spela" data-film="${v.id}" data-t="${t0}"><span class="ring">${SPELA}</span>${knapp}</button>
@@ -2637,7 +2633,7 @@
     const bild = n.omslagRen || n.omslag;
     ruta.innerHTML = n.saknas
       ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar(v.serie)}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
-      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${bild}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${n.serie === "ma2a" ? `Kapitel ${kapAv(n, "ma2a")}` : `Del ${n.del} av ${antalDelar(n.serie)}`} · ${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
+      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${bild}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${n.serie === "ma2a" ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${n.serie === "ma2a" && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
   }
 
   async function laddaFilm(v, t) {
@@ -2652,9 +2648,9 @@
     // till en film som också ligger där (Kepler).
     const serie = v.serie ? SERIER[v.serie] : null;
     const hem = hylla !== "berattelser" && hyllaFilmer(hylla).some((x) => x.id === v.id) ? hylla : v.serie || "berattelser";
-    $("f-kurs").textContent = v.serie === "ma2a" ? `${serie.namn} · Kapitel ${kapAv(v, "ma2a") ?? "–"}${v.ar ? ` · ${arText(v.ar)}` : ""} · ${v.moment}`
+    $("f-kurs").textContent = v.serie === "ma2a" ? `${v.ar ? `${arText(v.ar)} · ` : ""}${kurserLang(v)} · ${v.moment}`
       : serie ? `${serie.namn} · Del ${v.del ?? "–"} av ${antalDelar(v.serie)} · ${v.kurs}${serieMoment(v) ? ` · ${serieMoment(v)}` : ""}`
-      : `${v.ar ? `${arText(v.ar)} · ` : ""}${v.kurs} · ${v.moment}`;
+      : `${v.ar ? `${arText(v.ar)} · ` : ""}${kurserLang(v)} · ${v.moment}`;
     $("f-titel").textContent = v.serie === "ma2a" ? titelDelar(v)[0] : serie ? delNamn(v) : v.titel;
     $("f-tillbaka").setAttribute("href", hem === "berattelser" ? "#filmer" : `#${hem}`);
     $("f-tillbaka-text").textContent = hem === "berattelser" ? "Alla filmer" : SERIER[hem].namn;
@@ -3720,7 +3716,7 @@
       valj: () => [
         { id: "hej", lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
         { id: "tidslinje", vy: "valj", mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: harFlikar ? "Just så." : "Just så. Nu ska vi leta efter något i filmerna.",
-          text: `${hylla === "formelbladet" ? "Här ligger filmerna om formelbladet, från del 1 till del 5." : hylla === "ma2a" ? "Här ligger filmerna för Matematik 2a, i samma ordning som i boken." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+          text: `${hylla === "formelbladet" ? "Här ligger filmerna om formelbladet, från del 1 till del 5." : hylla === "ma2a" ? "Här ligger filmerna för Matematik 2a, i den ordning som de hände." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
         // Flikarna (när det finns filmer om formelbladet): eleven byter till den andra fliken.
         ...(() => {
           // Från berättelserna visar han den första serien (formelbladet), från en serie berättelserna.
