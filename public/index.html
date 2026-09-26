@@ -621,13 +621,14 @@
   /* Ett blink är 0,45 s (BLINK i skriptet; 0,9 och 0,6 s var för långsamt, Rickard 2026-09-26). Innan skrivandet tonar blocket fram och börjar sedan
      blinka; när raderingen är klar tonar det bort. */
   .markor.in { animation: markor-in .6s var(--lugn) both, markor .45s steps(1, end) .6s infinite; }
-  .markor.ut { animation: markor-ut .45s var(--lugn) both; }
+  .markor.ut { animation: markor-ut .25s var(--lugn) both; }
+  .markor.snabb { animation-duration: .3s; }   /* blinken när raderingen är klar */
   @keyframes markor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   @keyframes markor-in { from { opacity: 0; } to { opacity: 1; } }
   @keyframes markor-ut { from { opacity: 1; } to { opacity: 0; } }
   /* Första radens tid och streck (0:00 —) tonar fram samtidigt med blocket och bort sist. */
   .helatext .tid.tona-in { animation: ton .6s var(--lugn) both; }
-  .helatext .tid.tona-ut { animation: tid-ut .7s var(--lugn) both; }
+  .helatext .tid.tona-ut { animation: tid-ut .4s var(--lugn) both; }
   @keyframes tid-ut { to { opacity: 0; } }
   .helatext li.syns { opacity: 1; transform: none; }
   .helatext button { all: unset; cursor: pointer; display: block; width: 100%; }
@@ -3110,6 +3111,7 @@
   markor.className = "markor"; markor.setAttribute("aria-hidden", "true");
   let skrivId = 0;
   const BLINK = 450;   // ett blink: blocket syns 0,225 s och är borta lika länge (.markor i stilarna)
+  const BLINK_SLUT = 300;   // blinken när raderingen är klar (.markor.snabb)
   const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
   const takt = (t) => 150 * t + 80 * t * t;   // antal tecken efter t sekunder
   const raderna = () => [...$("helatext").children].map((li) => ({ li, s: li.querySelector(".snutt") }));
@@ -3194,16 +3196,17 @@
     if (id !== skrivId) return false;
     // Tillbaka där det började: tom första rad med tid, streck och block. Blocket sätts in på nytt så
     // att blinkandet börjar om, blinkar tre gånger och tonar bort; sist tonar tiden och strecket bort.
-    markor.remove(); markor.className = "markor"; synliga[0].s.append(markor);
-    await vanta(3 * BLINK);
+    // Slutet går fortare än början (Rickard 2026-09-26): snabbare blink (.markor.snabb), kortare toningar.
+    markor.remove(); markor.className = "markor snabb"; synliga[0].s.append(markor);
+    await vanta(3 * BLINK_SLUT);
     if (id !== skrivId) return false;
     markor.className = "markor ut";
-    await vanta(450);
+    await vanta(250);
     if (id !== skrivId) return false;
     markor.remove();
     const tid0 = synliga[0].li.querySelector(".tid");
     if (tid0) { tid0.classList.remove("tona-in"); tid0.classList.add("tona-ut"); }
-    await vanta(750);
+    await vanta(420);
     return id === skrivId;
   }
   async function doljHelaTexten() {
