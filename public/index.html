@@ -15,7 +15,7 @@
 <meta property="og:title" content="Matematikvideor av Rickard">
 <meta property="og:description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och filmer som går igenom formelbladet för Matematik 1 och 2. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
 <meta property="og:url" content="https://winterhalls-matte.vercel.app/">
-<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=af9ffc17">
+<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=cf9a38b7">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,10 +123,10 @@
   .intro .skrift { font-size: clamp(48px, min(9.5vw, 15vh), 118px); line-height: 1.02; padding: 0; }
   /* Det inledande citattecknet hänger ut i marginalen, så bokstäverna linjerar med ingressen. */
   .intro .skrift .hang { margin-left: -.4em; }
-  /* Ingen zoom på introt: fonden är uppskalad från 720 px och inzoomad ser den pixlig ut (Rickard 2026-09-12). */
+  /* Ingen zoom på introt (Rickard 2026-09-12). Fonden är startsidans levande scen (levandeScen i skriptet). */
   .intro .fond { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
   @keyframes zoom { from { transform: scale(1.09) } to { transform: scale(1) } }
-  /* Samma bild ritad i WebGL, med levande stjärnor och ljus. Syns först när första bilden
+  /* Samma bild ritad i WebGL, där figurerna rör sig. Syns först när första bilden
      är ritad; fungerar inte WebGL ligger den vanliga bilden kvar under. */
   .intro .levande { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0; pointer-events: none; }
   .intro .levande.klar { opacity: 1; }
@@ -1133,7 +1133,7 @@
 
 <!-- ── 1. Intro ─────────────────────────────────────────── -->
 <section class="vy intro" id="vy-intro">
-  <img class="fond" src="omslag/intro.jpg?v=af9ffc17" alt="" fetchpriority="high">
+  <img class="fond" src="omslag/intro.jpg?v=cf9a38b7" alt="" fetchpriority="high">
   <canvas class="levande" id="levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
   <header class="topp fram">
@@ -1604,11 +1604,10 @@
     }));
   }, true);
 
-  // ── Levande målningar: introt och fonden bakom filmvalet ──
+  // ── Levande målningar: fonden bakom filmvalet (startsidans scen: levandeScen nedan) ──
   // Ingenting läggs ovanpå målningarna. Bilden ritas som textur i en fragment-shader som
   // ändrar pixlarna själva (Rickard 2026-09-23). En mask per målning, uppmätt i förväg:
   //   R = stjärna eller ljus (mjuk kant), G = dess fas, B = vatten.
-  //   introt:    omslag/intro-glimt.png?v=4fd9ee1e ur verktyg/hitta-intro.py (stjärnorna i fönstret)
   //   filmvalet: omslag/valj-glimt.png?v=9e2e378b ur verktyg/hitta-valj.py (stjärnor, fönster och gatljus, floden),
   //              och omslag/valj-himmel.png?v=f7dc4496 (staden som står still, molnen, himlen bakom tornen)
   // - Stjärnor glimrar: överskottet över omgivningen (en suddig mipnivå) skalas mellan 25 och
@@ -1617,8 +1616,6 @@
   // - Molnen (filmvalet) driver åt höger bakom tornen: se himlen i shadern.
   // - Vattnet: bilden förskjuts lite i vågor, mest i sidled, så reflexerna krusar, och de
   //   ljusa reflexerna skimrar.
-  // - Lågan (bara introt): vickar i sidled, mest i toppen, och sträcks och krymper lite;
-  //   ljuset på bord, papper och händer andas med den.
   // Går WebGL2 inte att få ligger <img> kvar, utan rörelse.
   const HORN = `#version 300 es
     in vec2 a;
@@ -1632,13 +1629,10 @@
   const YTA = `#version 300 es
     precision highp float;
     uniform sampler2D uBild, uMask, uHimmel;
-    uniform float uT, uLaga, uHarMoln;
+    uniform float uT, uHarMoln;
     uniform vec2 uPx;
     in vec2 vUv;
     out vec4 ut;
-    const vec2 LAGA = vec2(1667., 640.);      // introts låga, i 1920x1080
-    const vec2 LAGA_R = vec2(13., 36.);       // området som får röra sig
-    const float BAS = 672.;                   // lågans fot (veken)
     float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
     float brus(float x) { float i = floor(x), f = fract(x); f = f * f * (3. - 2. * f); return mix(h1(i), h1(i + 1.), f); }
     float h2(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -1690,15 +1684,6 @@
       float lod = log2(max(max(length(gx * uPx), length(gy * uPx)), 1e-4));
       vec4 m = texture(uMask, vUv);
       vec2 kalla = px;
-      if (uLaga > .5) {
-        // Lågan. w: 1 i lågan, tonar ut mot kanten. hojd: 0 vid veken, 1 i toppen.
-        float w = smoothstep(1., .55, length((px - LAGA) / LAGA_R));
-        float hojd = clamp((BAS - px.y) / 54., 0., 1.);
-        float sving = (brus(uT * 1.6) - .5) * 1.4 + sin(uT * 8.7 + brus(uT * .6) * 6.) * .3;
-        float strack = (brus(uT * 2.2 + 5.) - .5) * .16 * smoothstep(0., .15, hojd);
-        kalla.x -= w * hojd * hojd * sving * 2.4;
-        kalla.y = mix(px.y, BAS - (BAS - px.y) / (1. + strack), w);
-      }
       // Vattnet: tre våglängder som går åt olika håll, mest i sidled, plus en lång dyning.
       // Utslaget är upp till ungefär 7 px i bilden: 2 px syntes för lite (Rickard 2026-09-23).
       float dx = sin(px.y * .42 + uT * 1.7) * .9 + sin(px.y * 1.1 - uT * 2.6 + px.x * .015) * .45
@@ -1743,17 +1728,9 @@
         ny += max(textureLod(uBild, vUv, 1.5).rgb - omkring, 0.) * 1.1 * g * g;
         c = mix(c, ny, m.r * (1. - molnigt));   // en stjärna som driver med molnen glimrar inte på sin gamla plats
       }
-      if (uLaga > .5) {
-        float fl = brus(uT * 2.4) * .5 + brus(uT * 5.7 + 3.) * .3 + brus(uT * 12.1 + 7.) * .2 - .5;
-        vec2 d = (px - LAGA) / uPx.y;
-        float r2 = dot(d, d);
-        float rum = exp(-r2 / (2. * .22 * .22)), nara = exp(-r2 / (2. * .035 * .035));
-        c *= 1. + fl * (.14 * rum + .4 * nara);
-        c += vec3(1., .75, .42) * nara * fl * .12;
-      }
       ut = vec4(c, 1.);
     }`;
-  const levandeMalning = ({ vy, duk, img, mask, himmel = null, laga = false, fastTopp = false }) => {
+  const levandeMalning = ({ vy, duk, img, mask, himmel = null, fastTopp = false }) => {
     const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
     if (!gl) { duk.remove(); return; }
     const kompilera = (typ, kod) => {
@@ -1764,7 +1741,7 @@
     const ladda = (src) => new Promise((ok, fel) => { const i = new Image(); i.onload = () => ok(i); i.onerror = fel; i.src = src; });
     let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1;
 
-    // Duken har bildens ruta (filmvalet på datorn) eller hela fönstret (introt, mobilen);
+    // Duken har bildens ruta (på datorn) eller hela fönstret (mobilen);
     // bilden läggs i den som object-fit: cover, i mitten eller fäst i överkanten.
     const mat = () => {
       const b = duk.clientWidth, h = duk.clientHeight;
@@ -1821,7 +1798,6 @@
       gl.uniform1i(gl.getUniformLocation(prog, "uBild"), 0); gl.uniform1i(gl.getUniformLocation(prog, "uMask"), 1);
       gl.uniform1i(gl.getUniformLocation(prog, "uHimmel"), 2); gl.uniform1f(gl.getUniformLocation(prog, "uHarMoln"), himmelBild ? 1 : 0);
       gl.uniform2f(gl.getUniformLocation(prog, "uPx"), BW, BH);
-      gl.uniform1f(gl.getUniformLocation(prog, "uLaga"), laga ? 1 : 0);
       uT = gl.getUniformLocation(prog, "uT"); uSkala = gl.getUniformLocation(prog, "uSkala"); uForskj = gl.getUniformLocation(prog, "uForskj");
       redo = true; starta();
     }).catch((e) => { console.warn("Levande målning avstängd:", e); duk.remove(); });
@@ -1832,8 +1808,450 @@
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
   };
-  levandeMalning({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), mask: "omslag/intro-glimt.png?v=4fd9ee1e", laga: true });
   levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=9e2e378b", himmel: "omslag/valj-himmel.png?v=f7dc4496", fastTopp: true });
+
+  // ── Startsidans levande scen (Rickard 2026-09-26) ──
+  // En natt på ett observatorium som byggs: stenhuggare som klyver ett block med slägga och kilar och en
+  // som mäter, en matematiker vid lyktan och en astronom i teleskopet uppe på tornet. Målningen och lägena
+  // är målade i ChatGPT-projektet som ändringar av samma bild, pixelexakta (assets/intro-scen/prompter.md),
+  // och klipps ut av verktyg/hitta-scen.py: stenhuggaren i sju lägen genom svingen och bakgrunden utan
+  // honom, astronomen upprätt, matematikern som tittar upp och mätaren som vänder huvudet.
+  // Rörelsen räknas fram i varje bildruta, inga bildremsor: mellan två lägen vrids armarna och släggan
+  // (eller huvudet, överkroppen) så att de möts halvvägs, samtidigt som lägena tonas. Lyftet börjar och
+  // slutar mjukt, slaget accelererar och har rörelseoskärpa. Vid slaget: damm, flisor och en spricka som
+  // växer längs kilarna. Pauser, antal slag i en serie och när de andra rör sig slumpas, så att inget
+  // upprepar sig. Alla andas. Lyktan fladdrar, stjärnorna glimrar (intro-glimt.png).
+  const SCEN = `#version 300 es
+    precision highp float;
+    uniform sampler2D uBild, uLager, uLagerM, uMask;
+    uniform vec2 uPx, uKarta;
+    uniform float uT;
+    uniform vec4 uSlRuta;           // stenhuggarens ruta i bilden: x0, y0, bredd, höjd
+    uniform vec2 uBakom;            // bakgrunden utan honom: hörnet i kartan
+    uniform vec4 uSlLage;           // läge a (xy) och b (zw): hörnen i kartan
+    uniform vec4 uSlVrid;           // vridpunkt (xy), vridning av a (z) och av b (w), radianer
+    uniform vec2 uSlTon;            // tonvikt mot b, rörelseoskärpa (radianer)
+    uniform vec4 uFigKalla[3];      // astronomen, matematikern, mätaren: rutan i bilden
+    uniform vec2 uFigKarta[3];      // hörnet i kartan
+    uniform vec4 uFigVrid[3];       // vridpunkt (xy), hela vridningen (z), hur långt (w, 0 = vila)
+    uniform vec2 uFigFlytt[3];      // och hela förflyttningen, px
+    uniform vec4 uAnd[4];           // andning: punkt (xy), radie (z), hur mycket (w)
+    uniform vec2 uPenna;            // matematikerns hand, förskjutning i px
+    uniform vec4 uDamm[18];         // x, y, radie, styrka
+    uniform vec4 uFlis[14];         // x, y, storlek, styrka
+    uniform vec2 uSpricka;          // hur långt (0..1), styrka
+    in vec2 vUv;
+    out vec4 ut;
+    const vec2 LYKTA = vec2(1231., 516.), LYKTA_R = vec2(7., 13.);
+    const float VEKE = 528.;
+    const vec2 SPRICKA[8] = vec2[8](vec2(1112., 669.), vec2(1150., 672.), vec2(1186., 677.), vec2(1218., 682.),
+                                    vec2(1251., 689.), vec2(1287., 696.), vec2(1323., 704.), vec2(1362., 710.));
+    float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
+    float brus(float x) { float i = floor(x), f = fract(x); f = f * f * (3. - 2. * f); return mix(h1(i), h1(i + 1.), f); }
+    float h2(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+    float brus2(vec2 p) {
+      vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
+      return mix(mix(h2(i), h2(i + vec2(1., 0.)), f.x), mix(h2(i + vec2(0., 1.)), h2(i + vec2(1., 1.)), f.x), f.y);
+    }
+    // Målningen vid en flyttad eller vriden punkt, med målningens egen mipnivå. Med texture() valde
+    // GPU:n en suddigare nivå i 2x2-block där vridningen ändrar sig snabbt, och det blev prickade konturer.
+    vec2 GX, GY;
+    vec3 bild(vec2 q) { return textureGrad(uBild, q / uPx, GX, GY).rgb; }
+    vec2 vrid(vec2 p, vec2 c, float a) { float s = sin(a), k = cos(a); p -= c; return c + vec2(k * p.x - s * p.y, s * p.x + k * p.y); }
+    // En ruta i kartan: bildens pixel q i källrutan k, vars kopia börjar i h i kartan. Utanför: ingenting.
+    vec3 ruta(vec2 q, vec4 k, vec2 h, out vec2 m) {
+      vec2 l = q - k.xy;
+      if (l.x < .5 || l.y < .5 || l.x > k.z - .5 || l.y > k.w - .5) { m = vec2(0.); return vec3(0.); }
+      vec2 uv = (h + l) / uKarta;
+      m = texture(uLagerM, uv).rg;
+      return texture(uLager, uv).rgb;
+    }
+    // Stenhuggaren: bakgrunden utan honom, kroppen (R) ur båda lägena, armarna och släggan (G) vridna.
+    vec3 stenhuggare(vec2 p) {
+      vec2 m;
+      vec3 bak = ruta(p, uSlRuta, uBakom, m);
+      vec2 ma, mb;
+      vec3 ka = ruta(p, uSlRuta, uSlLage.xy, ma), kb = ruta(p, uSlRuta, uSlLage.zw, mb);
+      // Släggan, med rörelseoskärpa: fem prov längs vridningen, tätast i mitten.
+      vec3 aa = vec3(0.), ab = vec3(0.);
+      float ta = 0., tb = 0.;
+      for (int i = -2; i <= 2; i++) {
+        float d = float(i) * .5 * uSlTon.y, v = (3. - abs(float(i))) / 9.;
+        vec2 m1, m2;
+        vec3 f1 = ruta(vrid(p, uSlVrid.xy, -(uSlVrid.z + d)), uSlRuta, uSlLage.xy, m1);
+        vec3 f2 = ruta(vrid(p, uSlVrid.xy, -(uSlVrid.w + d)), uSlRuta, uSlLage.zw, m2);
+        aa += f1 * m1.g * v; ta += m1.g * v; ab += f2 * m2.g * v; tb += m2.g * v;
+      }
+      vec3 pa = aa + (1. - ta) * ma.r * ka, pb = ab + (1. - tb) * mb.r * kb;
+      float Aa = ta + (1. - ta) * ma.r, Ab = tb + (1. - tb) * mb.r, u = uSlTon.x;
+      float A = mix(Aa, Ab, u);
+      return bak * (1. - A) + mix(pa, pb, u);
+    }
+    void main() {
+      vec2 px = vUv * uPx;
+      GX = dFdx(vUv); GY = dFdy(vUv);
+      // Andningen: överkroppen sträcks lite uppåt från en punkt, mjukt utåt.
+      vec2 p = px;
+      for (int i = 0; i < 4; i++) {
+        vec4 a = uAnd[i];
+        vec2 d = (px - a.xy) / vec2(a.z * .75, a.z);
+        float w = smoothstep(1., .45, length(d)) * step(px.y, a.y);
+        p.y = a.y + (p.y - a.y) * (1. - a.w * w);
+      }
+      // Matematikerns hand och penna.
+      vec2 hd = (px - vec2(1312., 512.)) / vec2(19., 34.);
+      p -= uPenna * smoothstep(1., .5, length(hd));
+      vec4 m = texture(uMask, vUv);
+      vec2 q = p;
+      // Lyktans låga vickar i sidled, mest i toppen, och sträcks och krymper lite.
+      {
+        float w = smoothstep(1., .55, length((px - LYKTA) / LYKTA_R));
+        float hojd = clamp((VEKE - px.y) / 22., 0., 1.);
+        float sving = (brus(uT * 1.6) - .5) * 1.4 + sin(uT * 8.7 + brus(uT * .6) * 6.) * .3;
+        float strack = (brus(uT * 2.2 + 5.) - .5) * .18 * smoothstep(0., .15, hojd);
+        q.x -= w * hojd * hojd * sving * 1.6;
+        q.y = mix(q.y, VEKE - (VEKE - q.y) / (1. + strack), w);
+      }
+      vec3 c = bild(q);
+      // Rutans kant tonas in mot målningen (där är bakgrunden utan honom samma som målningen).
+      vec2 sl = min(px - uSlRuta.xy, uSlRuta.xy + uSlRuta.zw - px);
+      if (min(sl.x, sl.y) > 1.) c = mix(c, stenhuggare(p), smoothstep(1., 8., min(sl.x, sl.y)));
+      for (int i = 0; i < 3; i++) {
+        vec4 k = uFigKalla[i], v = uFigVrid[i];
+        vec2 l = px - k.xy;
+        if (v.w < .001 || l.x < 0. || l.y < 0. || l.x > k.z || l.y > k.w) continue;
+        // Båda lägena vrids mot varandra (G = hur mycket), och bytet sker i mitten av rörelsen, där de
+        // ligger närmast varandra, så att figuren inte syns dubbel länge.
+        // Utanför figuren (maskens kant) står målningen still, också när han har rört sig.
+        vec2 m0; ruta(p, k, uFigKarta[i], m0);
+        if (m0.r < .002) continue;
+        vec2 f = uFigFlytt[i] * m0.g;
+        vec3 c0 = bild(vrid(p - v.w * f, v.xy, -v.w * v.z * m0.g));
+        vec2 q1 = vrid(p + (1. - v.w) * f, v.xy, (1. - v.w) * v.z * m0.g), l1 = q1 - k.xy, m1;
+        vec3 c1 = ruta(q1, k, uFigKarta[i], m1);
+        float inne = step(.5, l1.x) * step(.5, l1.y) * step(l1.x, k.z - .5) * step(l1.y, k.w - .5);
+        c = mix(c, mix(c0, mix(c0, c1, inne), smoothstep(.25, .75, v.w)), m0.r);
+      }
+      // Sprickan längs kilarna: taggig, smal ute i spetsen och bredare där den har öppnat sig, med skugga
+      // och en ljus bruten kant på ena sidan. Den växer för varje slag.
+      if (uSpricka.x > .001 && px.x > 1100. && px.x < 1375. && px.y > 655. && px.y < 725.) {
+        float total = 0.;
+        for (int i = 0; i < 7; i++) total += length(SPRICKA[i + 1] - SPRICKA[i]);
+        float kvar = uSpricka.x * total, s0 = 0., karn = 0., skugga = 0., kant = 0.;
+        for (int i = 0; i < 7; i++) {
+          vec2 a = SPRICKA[i], b = SPRICKA[i + 1], ab = b - a;
+          float len = length(ab), t0 = dot(px - a, ab) / (len * len), t = clamp(t0, 0., 1.);
+          float s = s0 + t * len;
+          s0 += len;
+          if (s > kvar || abs(t0 - t) * len > .8) continue;   // bara inom segmentet
+          vec2 n = vec2(-ab.y, ab.x) / len;
+          float ojamn = (brus(s * .21) - .5) * 3.4 + (brus(s * .9 + 4.) - .5) * 1.5 + (brus(s * 2.7 + 9.) - .5) * .6;
+          float d = dot(px - (a + ab * t), n) - ojamn;
+          float bredd = (.45 + .9 * brus(s * .13 + 2.)) * smoothstep(0., 22., kvar - s);   // spetsen är tunnast
+          karn = max(karn, smoothstep(bredd + .7, bredd * .3, abs(d)));
+          skugga = max(skugga, smoothstep(bredd + 3., bredd, abs(d)) * step(0., d));
+          kant = max(kant, smoothstep(1.4, 0., abs(d + bredd + 1.1)));
+        }
+        float k = uSpricka.y;
+        c *= 1. - k * (.68 * karn + .22 * skugga);
+        c += vec3(.09, .075, .05) * kant * k * (1. - karn);
+      }
+      // Damm och flisor vid slaget.
+      if (px.x > 980. && px.x < 1330. && px.y > 470. && px.y < 900.) {
+        float damm = 0.;
+        for (int i = 0; i < 18; i++) {
+          vec4 d = uDamm[i];
+          if (d.w <= 0.) continue;
+          vec2 e = (px - d.xy) / d.z;
+          damm += exp(-dot(e, e) * 2.2) * d.w;
+        }
+        // Stendammet är kornigt och flockigt, inte en jämn boll: två lager brus som driver uppåt.
+        float korn = brus2(px * .16 + vec2(0., uT * 2.)) * .6 + brus2(px * .05 - vec2(uT * .4, uT * .9)) * .8;
+        c = mix(c, vec3(.82, .72, .57), clamp(damm * korn, 0., .5));
+        for (int i = 0; i < 14; i++) {
+          vec4 f = uFlis[i];
+          if (f.w <= 0.) continue;
+          c = mix(c, vec3(.93, .86, .72), smoothstep(f.z, f.z * .3, length(px - f.xy)) * f.w);
+        }
+      }
+      // Stjärnorna glimrar, var och en i sin takt (som förut).
+      if (m.r > .004) {
+        vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
+        float g = .5 + .5 * sin(uT * (.7 + fract(m.g * 7.31 + .17) * 1.4) + m.g * 6.2832);
+        g = g * g * (3. - 2. * g);
+        vec3 ny = omkring + (c - omkring) * mix(.25, 1.7, g);
+        ny += max(textureLod(uBild, vUv, 1.5).rgb - omkring, 0.) * 1.1 * g * g;
+        c = mix(c, ny, m.r);
+      }
+      // Lyktans ljus andas med lågan: på bordet, papperet, väggen och matematikern.
+      {
+        float fl = brus(uT * 2.4) * .5 + brus(uT * 5.7 + 3.) * .3 + brus(uT * 12.1 + 7.) * .2 - .5;
+        vec2 d = (px - LYKTA) / uPx.y;
+        float r2 = dot(d, d), rum = exp(-r2 / (2. * .13 * .13)), nara = exp(-r2 / (2. * .02 * .02));
+        c *= 1. + fl * (.16 * rum + .4 * nara);
+        c += vec3(1., .75, .42) * nara * fl * .1;
+      }
+      ut = vec4(c, 1.);
+    }`;
+  const levandeScen = ({ vy, duk, img, fokus }) => {
+    const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
+    if (!gl) { duk.remove(); return; }
+    const kompilera = (typ, kod) => {
+      const s = gl.createShader(typ); gl.shaderSource(s, kod); gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+      return s;
+    };
+    const ladda = (src) => new Promise((ok, fel) => { const i = new Image(); i.onload = () => ok(i); i.onerror = fel; i.src = src; });
+    let prog = null, U = {}, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1, scen = null;
+
+    // Duken täcker fönstret som fondens object-fit: cover; fokus är bildens punkt (0..1) som ska synas.
+    const mat = () => {
+      const b = duk.clientWidth, h = duk.clientHeight;
+      if (!b || !h || !prog) return;
+      const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)));
+      duk.width = Math.round(b * k); duk.height = Math.round(h * k);
+      gl.viewport(0, 0, duk.width, duk.height);
+      const s = Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
+      const [fx, fy] = fokus();
+      gl.uniform2f(U.uSkala, sx, sy); gl.uniform2f(U.uForskj, (1 - sx) * fx, (1 - sy) * fy);
+      rita1(performance.now());
+    };
+
+    // ── Styrningen ──
+    const slump = (a, b) => a + Math.random() * (b - a);
+    const mjukt = (x) => x * x * (3 - 2 * x);
+    const mjukare = (x) => x * x * x * (x * (x * 6 - 15) + 10);
+    let T0 = 0;
+    // Stenhuggaren: lägena 0..6 i svingens ordning (se hitta-scen.py). Mellan två lägen: vridpunkt och
+    // vinkel som för det ena handtaget till det andra (en vridning i planet har en enda mittpunkt).
+    let vridMellan = null;
+    const bygg = () => {
+      const L = scen.lagen, H = scen.handtag;
+      const vinkel = (n) => Math.atan2(H[n][1][1] - H[n][0][1], H[n][1][0] - H[n][0][0]);
+      const mitt = (n) => [(H[n][0][0] + H[n][1][0]) / 2, (H[n][0][1] + H[n][1][1]) / 2];
+      vridMellan = (a, b) => {
+        let d = vinkel(L[b]) - vinkel(L[a]);
+        d = Math.atan2(Math.sin(d), Math.cos(d));
+        const [ax, ay] = mitt(L[a]), [bx, by] = mitt(L[b]);
+        const c = Math.cos(d), s = Math.sin(d);
+        // (I − R)·C = B − R·A
+        const rx = bx - (c * ax - s * ay), ry = by - (s * ax + c * ay);
+        const m00 = 1 - c, m01 = s, m10 = -s, m11 = 1 - c, det = m00 * m11 - m01 * m10;
+        return Math.abs(det) < 1e-6 ? { d: 0, cx: ax, cy: ay } : { d, cx: (m11 * rx - m01 * ry) / det, cy: (-m10 * rx + m00 * ry) / det };
+      };
+    };
+    const sl = { fas: "vila", start: 0, slut: 0, kvar: 0, s: 0, forraS: 0, studs: 0 };
+    // Svingen: vila → lyft vid höften → över axeln → uppe (lyftet), uppe → rakt fram → halvvägs → vila (slaget).
+    // Läget "lodrät framför ansiktet" (lyft2) används inte: där står huvudet 90 px åt sidan och tonades dubbelt.
+    const VAG = [0, 1, 3, 4, 5, 6, 0];
+    const damm = [], flis = [];
+    let spricka = 0, sprickStyrka = 1, sprickTona = -1;
+    const slag = (t) => {
+      const [x, y] = [1114, 668];
+      for (let i = 0; i < 12; i++) damm.push({ x: x + slump(-10, 18), y: y + slump(-8, 3), vx: slump(-22, 34), vy: slump(-34, -6), r: slump(4, 9), rv: slump(14, 30), a: slump(.35, .6), liv: slump(1.2, 2.6), t0: t });
+      for (let i = 0; i < 9; i++) flis.push({ x: x + slump(-4, 8), y: y - 2, vx: slump(-70, 110), vy: slump(-150, -60), s: slump(1.1, 2.2), a: 1, t0: t, liv: slump(.5, .9) });
+      // Sprickan växer för varje slag. När den gått hela vägen spricker blocket: ett stort dammoln och
+      // serien är slut. Nästa seriens första slag är på ett nytt ställe: sprickan tonar bort under dammet.
+      if (sprickTona === 0) sprickTona = t;
+      else if (sprickTona < 0) {
+        spricka = Math.min(1, spricka + slump(.06, .12));
+        if (spricka >= 1) {
+          for (let i = 0; i < 10; i++) damm.push({ x: slump(1110, 1330), y: slump(662, 700), vx: slump(-10, 20), vy: slump(-22, -6), r: slump(8, 14), rv: slump(20, 36), a: slump(.25, .4), liv: slump(2, 3.2), t0: t });
+          sprickTona = 0; sl.kvar = 0;
+        }
+      }
+    };
+    const styrStenhuggare = (t, dt) => {
+      let a = 0, b = 0, u = 0, extra = 0;
+      if (sl.fas === "vila") {
+        if (t >= sl.slut) {
+          if (sl.kvar <= 0) sl.kvar = Math.round(slump(4, 8));   // en ny serie efter vilan
+          sl.fas = "lyft"; sl.start = t; sl.slut = t + slump(.78, 1.0);
+        }
+        if (sl.studs > 0) { const x = (t - sl.studs) / .22; if (x < 1) extra = -.05 * Math.sin(Math.PI * x) * (1 - x); }
+      }
+      if (sl.fas === "lyft") {
+        const x = Math.min(1, Math.max(0, (t - sl.start) / (sl.slut - sl.start)));
+        sl.s = 3 * mjukt(x);
+        if (x >= 1) { sl.fas = "uppe"; sl.start = t; sl.slut = t + slump(.12, .32); }
+      }
+      if (sl.fas === "uppe") {
+        const x = Math.min(1, Math.max(0, (t - sl.start) / (sl.slut - sl.start)));
+        sl.s = 3; extra = -.06 * Math.sin(Math.PI * x);
+        if (x >= 1) { sl.fas = "slag"; sl.start = t; sl.slut = t + slump(.15, .2); }
+      }
+      if (sl.fas === "slag") {
+        const x = Math.min(1, Math.max(0, (t - sl.start) / (sl.slut - sl.start)));
+        sl.s = 3 + 3 * Math.pow(x, 1.7);
+        if (x >= 1) {
+          sl.fas = "vila"; sl.s = 0; sl.kvar--; sl.studs = t; slag(t);
+          // Mellan slagen en kort paus; efter serien vilar han, och mätaren tittar upp.
+          if (sl.kvar > 0) sl.slut = t + slump(.35, .95);
+          else { sl.kvar = 0; sl.slut = t + slump(6, 13); mataren.tittaEfter = t + slump(.3, .9); }
+        }
+      }
+      if (sl.fas === "vila") sl.s = 0;
+      // s går 0 → 3 genom lyftet och 3 → 6 genom slaget; varje heltal är ett läge i VAG.
+      const s = sl.s, i = Math.min(5, Math.floor(s));
+      a = VAG[i]; b = VAG[i + 1]; u = Math.min(1, s - i);
+      if (u >= 1 - 1e-4) { a = b; u = 0; }
+      if (u < 1e-4) b = a;
+      // Samma läge: vridningen (studsen, uppsvingen) sker kring händerna.
+      const v = b === a ? { d: 0, cx: scen.handtag[scen.lagen[a]][0][0], cy: scen.handtag[scen.lagen[a]][0][1] } : vridMellan(a, b);
+      // Rörelseoskärpa: så långt armarna hinner vrida sig på en halv bildruta.
+      const fart = Math.abs(s - sl.forraS) / Math.max(dt, 1 / 120);
+      sl.forraS = s;
+      const sudd = Math.min(.35, Math.abs(v.d) * fart / 60 * .5);
+      const R = scen.rutor, L = scen.lagen;
+      gl.uniform4f(U.uSlLage, R[L[a]][0], R[L[a]][1], R[L[b]][0], R[L[b]][1]);
+      const um = mjukt(u);
+      gl.uniform4f(U.uSlVrid, v.cx, v.cy, u * v.d + extra, -(1 - u) * v.d + extra);
+      gl.uniform2f(U.uSlTon, um, sudd);
+    };
+    // Astronomen, matematikern och mätaren: vila, sedan en rörelse (0 → 1), en stund, och tillbaka.
+    const figur = (vilaMin, vilaMax, upp, hallMin, hallMax, ned) => ({ fas: "vila", start: 0, slut: slump(vilaMin * .4, vilaMax * .6), vilaMin, vilaMax, upp, hallMin, hallMax, ned, u: 0 });
+    const astronomen = figur(8, 18, 1.2, 2.5, 6, 1.35);
+    const matematikern = figur(5, 13, .8, 1.5, 4, .75);
+    const mataren = figur(12, 26, .55, 1.4, 3.2, .6);
+    mataren.tittaEfter = 0;
+    const styrFigur = (f, t) => {
+      if (f.fas === "vila" && (t >= f.slut || (f.tittaEfter && t >= f.tittaEfter))) { f.tittaEfter = 0; f.fas = "upp"; f.start = t; f.slut = t + f.upp; }
+      if (f.fas === "upp") { const x = Math.min(1, (t - f.start) / f.upp); f.u = mjukare(x); if (x >= 1) { f.fas = "hall"; f.slut = t + slump(f.hallMin, f.hallMax); } }
+      else if (f.fas === "hall") { f.u = 1; if (t >= f.slut) { f.fas = "ned"; f.start = t; } }
+      else if (f.fas === "ned") { const x = Math.min(1, (t - f.start) / f.ned); f.u = 1 - mjukare(x); if (x >= 1) { f.fas = "vila"; f.slut = t + slump(f.vilaMin, f.vilaMax); } }
+      else f.u = 0;
+      return f.u;
+    };
+    // Andningen: var och en i sin takt, som varierar lite.
+    const andas = [[960, 700, 260, .0045, 4.3], [1415, 150, 95, .007, 3.7], [1390, 520, 85, .007, 4.1], [1530, 690, 95, .006, 3.9]];
+    const andfas = andas.map(() => Math.random() * 6.28);
+    // Matematikerns penna: små rörelser i skrivtakt, raden glider åt höger och börjar om.
+    const penna = (t) => {
+      const rad = 4.2, x = (t % rad) / rad, gang = x < .92 ? x / .92 : 1 - (x - .92) / .08;
+      return [(gang - .5) * 5 + Math.sin(t * 23) * .5, Math.sin(t * 13.7) * .45 + Math.sin(t * 29.3) * .3];
+    };
+    const dammArr = new Float32Array(18 * 4), flisArr = new Float32Array(14 * 4);
+    const styr = (t, dt) => {
+      styrStenhuggare(t, dt);
+      const fig = [[astronomen, "astronom"], [matematikern, "matematiker"], [mataren, "matare"]];
+      fig.forEach(([f, namn], i) => {
+        const [[cx, cy], grader, [fx, fy]] = scen.vridning[namn];
+        gl.uniform4f(U[`uFigVrid[${i}]`], cx, cy, grader * Math.PI / 180, styrFigur(f, t));
+        gl.uniform2f(U[`uFigFlytt[${i}]`], fx, fy);
+      });
+      andas.forEach(([x, y, r, amp, takt], i) => {
+        andfas[i] += dt * 6.2832 / (takt * (1 + .15 * Math.sin(t * .05 + i)));
+        let a = amp * (.5 - .5 * Math.cos(andfas[i]));
+        if (i === 0 && sl.fas !== "vila") a = 0;   // stenhuggaren andas bara när han vilar
+        gl.uniform4f(U[`uAnd[${i}]`], x, y, r, a);
+      });
+      const [px, py] = matematikern.u < .02 ? penna(t) : [0, 0];
+      gl.uniform2f(U.uPenna, px, py);
+      // Damm och flisor.
+      dammArr.fill(0); flisArr.fill(0);
+      for (let i = damm.length - 1; i >= 0; i--) { const d = damm[i]; if (t - d.t0 > d.liv) damm.splice(i, 1); }
+      for (let i = flis.length - 1; i >= 0; i--) { const f = flis[i]; if (t - f.t0 > f.liv) flis.splice(i, 1); }
+      damm.slice(-18).forEach((d, i) => {
+        const x = (t - d.t0) / d.liv, e = t - d.t0;
+        dammArr.set([d.x + d.vx * e, d.y + d.vy * e * (1 - x * .4), d.r + d.rv * e, d.a * Math.pow(1 - x, 1.6) * Math.min(1, e * 12)], i * 4);
+      });
+      flis.slice(-14).forEach((f, i) => {
+        const e = t - f.t0, x = e / f.liv;
+        const fx = f.x + f.vx * e, mark = fx > 1020 ? 672 + (fx - 1110) * .17 : 860;   // blockets ovansida, annars marken
+        flisArr.set([fx, Math.min(f.y + f.vy * e + 420 * e * e, mark), f.s, 1 - x * x], i * 4);
+      });
+      gl.uniform4fv(U.uDamm, dammArr); gl.uniform4fv(U.uFlis, flisArr);
+      // Sprickan tonar bort när blocket har spruckit och nästa serie börjar (under dammet).
+      if (sprickTona > 0) { const x = (t - sprickTona) / .8; sprickStyrka = Math.max(0, 1 - x); if (x >= 1) { spricka = 0; sprickStyrka = 1; sprickTona = -1; } }
+      gl.uniform2f(U.uSpricka, spricka, sprickStyrka);
+    };
+
+    const levande = () => redo && !forlorad && !stilla && !document.hidden && vy.classList.contains("aktiv");
+    let forra = 0;
+    const rita1 = (nu) => {
+      const t = nu / 1000 - T0, dt = forra ? Math.min(.1, t - forra) : 1 / 30;
+      forra = t;
+      gl.uniform1f(U.uT, t); styr(t, dt);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    };
+    const rita = (nu) => {
+      if (!levande()) { kor = false; return; }
+      requestAnimationFrame(rita);
+      if (nu - senast < 15) return;   // 60 bilder i sekunden: släggan är snabb
+      senast = nu;
+      rita1(nu);
+      duk.classList.add("klar");
+    };
+    const starta = () => { if (kor || !levande()) return; mat(); kor = true; requestAnimationFrame(rita); };
+    const textur = (enhet, bild, mip, rak) => {
+      const t = gl.createTexture();
+      gl.activeTexture(gl.TEXTURE0 + enhet); gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, rak ? gl.NONE : gl.BROWSER_DEFAULT_WEBGL);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, bild);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, mip ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR);
+      if (mip) gl.generateMipmap(gl.TEXTURE_2D);
+    };
+    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=c0893521"), ladda("omslag/intro-lager.png?v=9884cb2f"),
+                 ladda("omslag/intro-glimt.png?v=7f74e79a"), fetch("omslag/intro-scen.json?v=11406b7b").then((r) => r.json())])
+      .then(([bild, lager, lagerM, glimt, data]) => {
+        scen = data; bygg();
+        prog = gl.createProgram();
+        gl.attachShader(prog, kompilera(gl.VERTEX_SHADER, HORN));
+        gl.attachShader(prog, kompilera(gl.FRAGMENT_SHADER, SCEN));
+        gl.linkProgram(prog);
+        if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+        gl.useProgram(prog);
+        const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+        const a = gl.getAttribLocation(prog, "a"); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+        const n = gl.getProgramParameter(prog, gl.ACTIVE_UNIFORMS);
+        for (let i = 0; i < n; i++) { const nm = gl.getActiveUniform(prog, i).name; U[nm] = gl.getUniformLocation(prog, nm); U[nm.replace("[0]", "")] = U[nm]; }
+        for (let i = 0; i < 4; i++) U[`uAnd[${i}]`] = gl.getUniformLocation(prog, `uAnd[${i}]`);
+        for (let i = 0; i < 3; i++) for (const nm of ["uFigKalla", "uFigKarta", "uFigVrid", "uFigFlytt"]) U[`${nm}[${i}]`] = gl.getUniformLocation(prog, `${nm}[${i}]`);
+        BW = bild.naturalWidth; BH = bild.naturalHeight;
+        textur(0, bild, true, false); textur(1, lager, false, false); textur(2, lagerM, false, true); textur(3, glimt, false, true);
+        [["uBild", 0], ["uLager", 1], ["uLagerM", 2], ["uMask", 3]].forEach(([nm, e]) => gl.uniform1i(U[nm], e));
+        gl.uniform2f(U.uPx, BW, BH); gl.uniform2f(U.uKarta, scen.karta[0], scen.karta[1]);
+        const [x0, y0, x1, y1] = scen.slaggare;
+        gl.uniform4f(U.uSlRuta, x0, y0, x1 - x0, y1 - y0);
+        gl.uniform2f(U.uBakom, scen.rutor.bakom[0], scen.rutor.bakom[1]);
+        ["astronom", "matematiker", "matare"].forEach((namn, i) => {
+          const [a0, b0, a1, b1] = scen[`${namn}_kalla`];
+          gl.uniform4f(U[`uFigKalla[${i}]`], a0, b0, a1 - a0, b1 - b0);
+          gl.uniform2f(U[`uFigKarta[${i}]`], scen.rutor[namn][0], scen.rutor[namn][1]);
+        });
+        T0 = performance.now() / 1000;
+        sl.kvar = Math.round(slump(4, 8)); sl.slut = slump(1.2, 2.5);
+        redo = true; starta();
+      }).catch((e) => { console.warn("Levande scen avstängd:", e); duk.remove(); });
+
+    duk.addEventListener("webglcontextlost", (e) => { e.preventDefault(); forlorad = true; duk.classList.remove("klar"); });
+    new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
+    document.addEventListener("visibilitychange", starta);
+    addEventListener("resize", () => { if (redo) mat(); });
+    malningar.push(starta);
+    // För granskningen (bildrutor i fast takt): stoppa den egna loopen och rita en given tid.
+    duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, astronomen, matematikern, mataren };
+  };
+  // Var målningen ligger i fönstret. På datorn: i mitten, men inte så att stenhuggaren (x 845 i målningen,
+  // 1672 bred) hamnar bakom texten; i fönster nära 4:3 flyttas den åt höger (1024x768: skjortan låg bakom
+  // ingressen). På telefonen ligger texten över hela bredden: där visas astronomen, matematikern och blocket.
+  const introFokus = () => {
+    const vy = $("vy-intro"), fond = vy.querySelector(".fond"), b = vy.clientWidth, h = vy.clientHeight;
+    let fx = .8;
+    if (b > 700) {
+      const s = Math.max(b / 1672, h / 941), over = 1672 * s - b;
+      const hoger = Math.max(...[".skrift", ".ingress"].map((q) => vy.querySelector(q).getBoundingClientRect().right));
+      fx = over < 1 ? .5 : Math.min(.5, Math.max(0, (845 * s - hoger - 24) / over));
+    }
+    fond.style.objectPosition = `${(fx * 100).toFixed(1)}% 50%`;
+    return [fx, .5];
+  };
+  introFokus();
+  levandeScen({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), fokus: introFokus });
 
   // ── Tidslinjen ────────────────────────────────────────
   const spar = $("spar"), tidslinje = $("tidslinje");

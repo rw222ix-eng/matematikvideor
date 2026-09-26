@@ -220,18 +220,9 @@ const videor = [...register].sort(ordning).map((v) => {
   return { id: v.id, titel: v.titel, ar: v.ar ?? null, serie, del: serie ? delAv(v) : null, ocksa: v.ocksa || null, kurs: v.kurs, kurser: v.kurser || null, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
 });
 
-// Introbilden: Kepler-omslaget utan titel som helskärmsfond. Skuggorna lyfts med
-// en kurva (svärtan fast i noll) så rummet syns; en mörkning här gjorde bilden
-// nästan helt svart (Rickard 2026-09-12). 1600 px bred.
-// assets/intro-fond.png är 720 px-omslaget förstorat 4x till 2880 px i Topaz
-// Gigapixel (modell Wonder 3.5, 2026-09-12), för att fonden syntes pixlig
-// uppskalad till helskärm. Originalet i full upplösning ligger bara på Rickards
-// Mac, så den sökvägen står kvar som reserv.
-const INTRO = [
-  resolve(HÄR, "assets", "intro-fond.png"),
-  resolve(HÄR, "../kepler-och-planeterna/assets/omslag/omslag-utan-titel.png"),
-].find(existsSync);
-if (INTRO) bakaBild(INTRO, join(HÄR, "public", "omslag", "intro.jpg"), 1920, "curves=all='0/0 0.08/0.18 0.3/0.55 0.6/0.85 1/1',hue=s=0.75", 2);
+// Introbilden (startsidans levande scen, 2026-09-26) skrivs av verktyg/hitta-scen.py tillsammans med
+// lägena den animeras med: bilden och lägena måste ha exakt samma färger, så den bakas inte om här.
+// (Förut: Kepler-omslaget ur assets/intro-fond.png med en ljuskurva.)
 // Fonden bakom "Välj en film", förlängd nedåt till 1672x1300 (originalet i 16:9 ligger i
 // assets/valj-fond-original.png). Källbilden är rätt exponerad (medelljushet omkring 61
 // i gråskala), så här räcker en mild kurva: skuggorna lyfts en aning (Rickard ville ha
@@ -244,11 +235,11 @@ if (existsSync(VALJ)) bakaBild(VALJ, join(HÄR, "public", "omslag", "valj-fond.j
 const FILMFOND = resolve(HÄR, "assets", "film-fond.png");
 if (existsSync(FILMFOND)) bakaBild(FILMFOND, join(HÄR, "public", "omslag", "film-fond.jpg"), 1280, "gblur=sigma=14,eq=saturation=0.85", 3);
 // Maskerna till de levande målningarna mäts upp ur bilderna: stjärnor, ljus och vatten
-// (verktyg/hitta-intro.py och hitta-valj.py, se levandeMalning i index.html). Går python
+// (verktyg/hitta-scen.py och hitta-valj.py, se levandeScen och levandeMalning i index.html). Går python
 // inte att köra här (numpy, scipy och Pillow behövs) får de gamla maskerna stå kvar:
 // bygget ska inte falla på en sak som bara ändras när en fond byts. VIDEOTEK_PYTHON
 // pekar ut en egen tolk.
-for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"], ["hitta-valj.py", "public/omslag/valj-glimt.png"]]) {
+for (const [namn, behall] of [["hitta-scen.py", "public/omslag/intro-lager.webp"], ["hitta-valj.py", "public/omslag/valj-glimt.png"]]) {
   const skript = join(HÄR, "verktyg", namn);
   const tolkar = [process.env.VIDEOTEK_PYTHON, join(HÄR, "verktyg", ".venv", "bin", "python"), "python3", "python"].filter(Boolean);
   let kord = false;
@@ -264,7 +255,7 @@ for (const [namn, behall] of [["hitta-intro.py", "public/omslag/intro-glimt.png"
   const indexFil = join(HÄR, "public", "index.html");
   let html = readFileSync(indexFil, "utf8");
   const fore = html;
-  for (const namn of ["intro.jpg", "intro-glimt.png", "valj-fond.jpg", "valj-glimt.png", "valj-himmel.png", "film-fond.jpg", "logo.jpg"]) {
+  for (const namn of ["intro.jpg", "intro-glimt.png", "intro-lager.webp", "intro-lager.png", "intro-scen.json", "valj-fond.jpg", "valj-glimt.png", "valj-himmel.png", "film-fond.jpg", "logo.jpg"]) {
     const fil = join(HÄR, "public", "omslag", namn);
     if (!existsSync(fil)) continue;
     const v = filhash(fil);
