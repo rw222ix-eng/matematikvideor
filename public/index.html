@@ -823,6 +823,10 @@
     /* Namnraden fyller kortets bredd, så att ett långt namn bryts i stället för att gå ut över kanten. */
     .post .namn { align-self: stretch; }
     .post .rad1 { justify-content: flex-start; width: auto; max-width: 100%; }
+    /* Något mindre på telefonen, så att en formelbladsrubrik ("Del 2  Parabler, linjer och avstånd") ryms på en rad ner till 375 px. */
+    .post .rad1 { column-gap: 10px; }
+    .post .rad1 .kurs { font-size: 19px; letter-spacing: .1em; }
+    .post .rad1 .titel { font-size: 20px; }
     .post .rad1.stapel { align-items: flex-start; }
     .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
     /* Telefonen: tidslinjen är den lodräta linjen till vänster; årtalet står först i texten, i höjd med pricken. */
@@ -1107,6 +1111,11 @@
     .newton-bubbla { bottom: 92px; max-width: min(var(--bubbla-max, 290px), calc(100vw - 96px)); padding: 12px 14px 10px; }
     .newton-text { font-size: 15px; }
     .hjalp { left: 12px; bottom: 12px; width: 40px; height: 40px; font-size: 19px; }
+  }
+  /* De minsta telefonerna (≤ 380 px): ännu lite mindre, så att "Del 2  Parabler, linjer och avstånd" ryms på en rad. */
+  @media (max-width: 380px) {
+    .post .rad1 .kurs { font-size: 18px; letter-spacing: .08em; }
+    .post .rad1 .titel { font-size: 19px; }
   }
 </style>
 </head>
@@ -1772,7 +1781,7 @@
   // Överst bredvid namnet: delen (formelbladet) eller momentet (berättelserna och Ma 2a), så att det syns direkt vad
   // filmen handlar om (Rickard 2026-09-26: "Del 3  Logaritmer", "Olikheter  Arkimedes och cirkeln").
   const kortOverst = (v, h) => (arDelserie(v)
-    ? (h && h !== v.serie && SERIER[h] && SERIER[h].platser ? `${SERIER[v.serie].kort} · del ${v.del ?? ""}` : `Del ${v.del ?? ""}`)
+    ? `Del ${v.del ?? ""}`   // också Ma 1-delarna på Ma 2-hyllan: "Ma 1 / Ma 2" står på raden under, och rubriken ryms på en rad
     : versalTrygg(v.serie === "ma2a" ? titelDelar(v)[1] || v.moment : v.moment));
   // Raden står i versaler, men en ekvation får inte bli versaler ("x² = a" är inte "X² = A"): ord med en exponent,
   // ett likhetstecken eller en ensam bokstav som variabel står kvar som de skrivs. Namn som pq-formeln blir versaler.
@@ -1783,9 +1792,9 @@
   }
   // Raden under: kurserna (och det som en formelbladsdel tar upp). Årtalet för en berättelse står på tidslinjen
   // (Rickard 2026-09-26), så att det syns direkt när filmen utspelar sig.
-  const kortMoment = (v, h) => (arDelserie(v)
-    ? `${kurserKort(v)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`
-    : kurserKort(v));
+  // Formelbladet: bara kurserna — rubriken ("Del 2  Parabler, linjer och avstånd") ska själv säga vad hela delen tar
+  // upp, på en rad (Rickard 2026-09-26). Det som delen tar upp i detalj står på filmsidan.
+  const kortMoment = (v, h) => kurserKort(v);
   const visaAr = (v) => v.ar != null && !arDelserie(v);
   const kortHtml = (v, i, h = "berattelser") => `
     <div class="post" style="--i:${i}">
