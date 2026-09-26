@@ -5,28 +5,36 @@ startsidans shader laser (levandeScen i public/index.html):
     python verktyg/hitta-scen.py [--kontroll mapp]
 
 Bilderna ar malade i ChatGPT-projektet (prompter och chattar i assets/intro-scen/prompter.md):
-grundmalningen och sex andringar av den, var och en pixelexakt pa grundbilden. Precis som med
-Newton (verktyg/newton-arm.mjs) tas ur en andring bara det som skiljer sig tydligt fran grunden.
+grundmalningen och andringar av den, var och en pixelexakt pa den bild den gjordes fran. Ur en
+andring tas bara det som skiljer sig tydligt fran den bilden (som med Newton, verktyg/newton-arm.mjs).
 Rorelsen mellan lagena raknas sedan fram i shadern, i varje bildruta.
 
+Tva grundbilder:
+  A = intro-grund-a.png: forsta malningen (matematikern vid bordet). Stenhuggaren, astronomen
+      och matstickans man ar malade som andringar av den.
+  B = grund2-b.png: samma malning, men matematikern star vid en tavla pa tornets vagg (Rickard
+      2026-09-26: "jag vill helst att man ser att nagot skrivs"). Den visas; matematikerns lagen
+      ar andringar av den. A och B ar lika utom kring tavlan (och nagra fa smafläckar).
+
 Utdata i public/omslag/:
-  intro.jpg          grundmalningen (1672x941): alla i vilolaget. Syns ocksa utan WebGL.
-  intro-lager.webp   lagena, packade i en karta: stenhuggaren (slaggaren) i sju lagen och
-                     bakgrunden utan honom, astronomen upprest, matematikern som tittar upp,
-                     matstickans man som vander huvudet.
-  intro-lager.png    samma karta, masker: R = figuren (for slaggaren: allt utom slaggan), G = det som
-                     vrids (slaggan; for de andra figurerna huvudet och kroppen).
-  intro-glimt.png    stjarnorna (R = stjarna, G = fas), som forut.
-  intro-scen.json    rutorna i kartan och de uppmatta punkterna (axlar, kilar, lagan ...).
+  intro.jpg          grundbilden B (1672x941). Syns ocksa utan WebGL.
+  intro-lager.webp   lagena, packade i en karta.
+  intro-lager.png    samma karta, masker: R = det som tonas (figuren), G = det som vrids eller
+                     flyttas (slaggan, huvudet, handen med kritan, matstickan), B = var figuren
+                     tacker tavlan (kritan ritas inte dar).
+  intro-glimt.png    stjarnorna (R = stjarna, G = fas).
+  intro-scen.json    rutorna i kartan och de uppmatta punkterna.
 
 Metoder:
-- Slaggarens lagen jamfors med bilden utan honom: skillnad (summa |RGB|, utjamnad 5x5) over 45
-  inom hans ruta, hal fyllda, sma flackar bort. Kroppen = det som ar figur i alla tre lagena
-  (ben, forklade), krympt 3 px; armar och slagga = resten av figuren i det laget.
-- De andra lagena jamfors med grundbilden: skillnad over 30 inom figurens ruta, vuxen 6 px och
-  mjuk kant, sa att bara figuren tonas.
-- Stjarnor: som hitta-intro.py, en liten punkt klart ljusare an medianen i 15x15 runt den, bara
-  i himlen (ovanfor muren och tornet, utanfor figurerna).
+- Stenhuggarens lagen jamfors med bilden utan honom: skillnad (summa |RGB|, utjamnad 5x5) over 45
+  inom hans ruta, hal fyllda, sma flackar bort. Slaggan = figuren nara skaftets linje (bakre handen
+  -> huvudets mitt, uppmatt per lage) eller slagghuvudet. Bakom honom: bilden utan honom dar han
+  star i vilolaget, annars B.
+- De andra lagena jamfors med sin grundbild: skillnad over 30, vuxen 6 px och mjuk kant.
+- Matematikerns skrivlagen: R = unionen av skillnaderna mot B (samma for alla fyra), G = handen
+  och underarmen (nara kritans spets, avtagande mot armbagen), B = var figuren tacker tavlan
+  (skillnad mot medianen av de andra lagena).
+- Stjarnor: en liten punkt klart ljusare an medianen i 15x15 runt den, bara i himlen.
 """
 import json
 import sys
@@ -39,34 +47,56 @@ from scipy import ndimage
 HÄR = Path(__file__).resolve().parent.parent
 KÄLLA = HÄR / "assets" / "intro-scen"
 UT = HÄR / "public" / "omslag"
+A_NAMN, B_NAMN, UTAN = "intro-grund-a", "grund2-b", "utan-slaggare"
+FORSKJUTNING = {"m-tanker-2": (-1, -1)}   # rad, kolumn: m-tanker-2 kom 1 px forskjuten
 
-GRUND, UTAN = "intro-grund-a", "utan-slaggare"
-# Svingen i ordning: vila (= slaget), lyft vid hoften, lodratt framfor ansiktet, over axeln, uppe,
-# rakt fram i slaget, halvvags ner. Handtaget i varje lage (bakre handen -> slagghuvudets mitt),
-# uppmatt i 20 px-rutnat: shadern vrider armarna och slaggan mellan tva lagen sa att handtagen moter varandra.
-SLAGGA = ["intro-grund-a", "lyft-1", "lyft-2", "slagga-mitt", "slagga-uppe", "slag-1", "slag-2"]
-LAGEN = ["vila", "lyft1", "lyft2", "mitt", "uppe", "slag1", "slag2"]
-HANDTAG = {"vila": [(990, 565), (1115, 640)], "lyft1": [(950, 590), (1130, 585)], "lyft2": [(1005, 480), (1018, 330)],
+# ── Stenhuggaren ──
+# Lagena i svingens ordning, och vilan (torkar svetten) och stjarnfallet (tittar upp).
+# Skaftet i varje lage (bakre handen -> slagghuvudets mitt), uppmatt i rutnat.
+SLAGGARE = [("vila", "intro-grund-a"), ("lyft1", "lyft-1"), ("mitt", "slagga-mitt"), ("uppe", "slagga-uppe"),
+            ("slag1", "slag-1"), ("slag2", "slag-2"), ("torkar", "torkar"), ("upp", "upp-slaggare")]
+HANDTAG = {"vila": [(990, 565), (1115, 640)], "lyft1": [(950, 590), (1130, 585)],
            "mitt": [(975, 470), (890, 375)], "uppe": [(970, 320), (835, 225)], "slag1": [(1050, 485), (1193, 445)],
-           "slag2": [(1025, 575), (1130, 620)]}
-SLAGGARE_RUTA = (805, 190, 1225, 905)                      # x0, y0, x1, y1
-ANDRA = {                                                  # lage: (bild, ruta)
-    "astronom": ("astronom-upp", (1250, 0, 1500, 215)),
-    "matematiker": ("matematiker-upp", (1280, 395, 1470, 560)),
-    "matare": ("matare-tittar", (1440, 545, 1620, 700)),
+           "slag2": [(1025, 575), (1130, 620)], "torkar": [(918, 560), (945, 820)], "upp": [(990, 565), (1115, 640)]}
+SLAGGARE_RUTA = (805, 190, 1225, 905)
+
+# ── Figurer som gar fran vila till ett lage och tillbaka ──
+# namn: (bild, grundbild, ruta, vridpunkt, grader, flytt). Vridningen och flytten galler G-masken.
+LAGEN = {
+    "astronom": ("astronom-upp", "A", (1250, 0, 1500, 215), (1420, 165), 27, (0, -23)),
+    "matare-titta": ("matare-tittar", "A", (1430, 540, 1600, 690), (1515, 625), 15, (0, 0)),
+    "matare-upp": ("upp-matare", "A", (1430, 530, 1600, 690), (1510, 640), 22, (0, 0)),
+    "matare-krita": ("kritar", "A", (1360, 560, 1600, 760), (0, 0), 0, (0, 0)),
+    "matare-flytta": ("matare-flyttar", "A", (1340, 540, 1640, 760), (0, 0), 0, (-26, 0)),
+    "matem-tanker": ("m-tanker-2", "B", (1250, 330, 1530, 690), (0, 0), 0, (0, 0)),
+    "matem-upp": ("upp-matematiker", "B", (1250, 330, 1530, 690), (0, 0), 0, (0, 0)),
 }
-# Vridpunkt och vinkel fran vilolaget till det andra laget (uppmatt: huvudets lage sett fran punkten).
-# Astronomen reser sig: vridning kring midjan och ett lyft (huvudet (1370, 85) -> (1410, 48)); benen star kvar.
-VRIDNING = {"astronom": ((1420, 165), 27, (0, -23)), "matematiker": ((1385, 470), 33, (0, 0)), "matare": ((1515, 625), 15, (0, 0))}
-# Teleskopet och stativet star still (ChatGPT malade om dem lite i lagesbilden): aldrig med i astronomens mask.
+# Var en figur far finnas. Matematikerns lagesbilder skiljer sig lite overallt (lyktan, blocket):
+# bara kring honom, inte vid lyktan och inte pa matstickans man.
+OMRADE = {"matem": lambda x, y: (x >= 1272) & (y < 640) & ~((x > 1438) & (y > 546)),
+          "matare": lambda x, y: (x >= 1360) & (y >= 540) & ~((x < 1440) & (y < 690))}
+# Astronomen: teleskopet och stativet star still; hander och okular tonas bara.
 STILLA = {"astronom": lambda x, y: (x < 1305) | ((x < 1316) & (y > 104))}
-# Vrids inte (tonas bara): astronomens hander och okularet, dar lagena skiljer sig mer an en vridning.
 BARA_TONA = {"astronom": lambda x, y: np.maximum(np.clip((1372 - x) / 36, 0, 1), np.clip((y - 150) / 30, 0, 1))}
+
+# ── Matematikern vid tavlan ──
+TAVLA = (1186, 349, 1444, 508)                 # den morka ytan, x0 y0 x1 y1
+SKRIV_RUTA = (1250, 330, 1530, 690)
+SKRIV = {"bas": ("grund2-b", (1361, 415)), "mitt": ("m-mitt", (1297, 411)),
+         "nere": ("m-nere", (1352, 483)), "nm": ("m-nere-mitt", (1310, 490))}
+LYKTA = (1230, 521)
+
 PAD = 6
 
 
 def las(namn):
-    return np.asarray(Image.open(KÄLLA / f"{namn}.png").convert("RGB")).astype(np.float32)
+    b = np.asarray(Image.open(KÄLLA / f"{namn}.png").convert("RGB")).astype(np.float32)
+    if b.shape[1] < 1672:
+        b = np.pad(b, ((0, 0), (0, 1672 - b.shape[1]), (0, 0)), mode="edge")
+    if namn in FORSKJUTNING:
+        dy, dx = FORSKJUTNING[namn]
+        b = np.roll(np.roll(b, dy, 0), dx, 1)
+    return b
 
 
 def rensa(mask, min_yta):
@@ -85,96 +115,126 @@ def mjuk(mask, vaxt=0, sudd=1.2):
     return np.clip(ndimage.gaussian_filter(mask.astype(np.float32), sudd) * 1.15, 0, 1)
 
 
-def main():
-    grund, utan = las(GRUND), las(UTAN)
-    H, W, _ = grund.shape
-    Image.fromarray(grund.astype(np.uint8)).save(UT / "intro.jpg", quality=90, optimize=True, progressive=True)
+def kantton(h, w, bredd=8):
+    k = np.minimum.outer(np.minimum(np.arange(h), np.arange(h)[::-1]), np.minimum(np.arange(w), np.arange(w)[::-1]))
+    return np.clip(k / bredd, 0, 1)
 
-    # Slaggaren.
+
+def main():
+    A, B, utan = las(A_NAMN), las(B_NAMN), las(UTAN)
+    H, W, _ = B.shape
+    Image.fromarray(B.astype(np.uint8)).save(UT / "intro.jpg", quality=90, optimize=True, progressive=True)
+    bitar = []          # (namn, farg, R, G, B)
+
+    # Stenhuggaren.
     x0, y0, x1, y1 = SLAGGARE_RUTA
-    bak = utan[y0:y1, x0:x1]
-    figurer, farger = [], []
-    # ChatGPT malade om blockets framsida, lyktan och teleskopets spets lite i bilden utan honom:
-    # de far aldrig raknas som figur (blockets ovansida borjar vid y 650; bara slagghuvudet i vilolaget, 1085-1135, nar ner dit).
     yy, xx = np.mgrid[y0:y1, x0:x1]
-    utanfor = (((xx >= 1012) & (yy >= 650) & ~((xx >= 1080) & (xx <= 1140) & (yy <= 675))) | ((xx >= 1150) & (yy < 130))
-               | ((xx >= 1195) & (yy >= 440) & (yy < 560)))
-    kil = (xx >= 1080) & (xx <= 1140) & (yy >= 650)   # forsta kilen: bara i vilolaget ligger slaggan dar
-    for namn in SLAGGA:
-        b = las(namn)[y0:y1, x0:x1]
-        d = ndimage.uniform_filter(np.abs(b - bak).sum(-1), 5)
-        figurer.append(rensa((d > 45) & ~utanfor & ~(kil & (namn != SLAGGA[0])), 400))
-        farger.append(b)
-    # Bakom honom: bilden utan honom bara dar han (i nagot lage) star, annars grundbilden.
-    alla = mjuk(np.logical_or.reduce(figurer), 8, 3.0)[..., None]
-    bak = grund[y0:y1, x0:x1] * (1 - alla) + bak * alla
-    rutor = {}
-    bitar = []          # (namn, farg, mask R, mask G)
-    bitar.append(("bakom", bak, np.zeros(bak.shape[:2]), np.zeros(bak.shape[:2])))
-    # Slaggan (handtag och huvud) ur det uppmatta handtaget: allt i figuren nara handtagets linje eller
-    # slagghuvudet. Bara slaggan vrids mellan lagena; armar, huvud och kropp tonas (en vriden arm eller
-    # ett vridet huvud syntes som en los remsa och ett dubbelt huvud).
-    for namn, fig, farg in zip(LAGEN, figurer, farger):
+    px, py = xx.astype(np.float32), yy.astype(np.float32)
+    bak_utan = utan[y0:y1, x0:x1]
+    # Blockets framsida, lyktan och teleskopets spets far aldrig raknas som figur; forsta kilen
+    # bara i vilolaget (dar ligger slaggan).
+    utanfor = (((xx >= 1012) & (yy >= 650) & ~((xx >= 1080) & (xx <= 1140) & (yy <= 675)))
+               | ((xx >= 1150) & (yy < 130)) | ((xx >= 1195) & (yy >= 440) & (yy < 560)))
+    kil = (xx >= 1080) & (xx <= 1140) & (yy >= 650)
+    figurer = {}
+    for namn, bild in SLAGGARE:
+        b = las(bild)[y0:y1, x0:x1]
+        d = ndimage.uniform_filter(np.abs(b - bak_utan).sum(-1), 5)
+        pa_kil = kil & (namn not in ("vila", "upp"))
+        figurer[namn] = (rensa((d > 45) & ~utanfor & ~pa_kil, 400), b)
+    vila = mjuk(figurer["vila"][0], 8, 3.0)[..., None]
+    bakom = B[y0:y1, x0:x1] * (1 - vila) + bak_utan * vila
+    bitar.append(("s-bakom", bakom, None, None, None))
+    for namn, (fig, farg) in figurer.items():
         (gx, gy), (hx, hy) = HANDTAG[namn]
-        px, py = xx.astype(np.float32), yy.astype(np.float32)
         vx, vy = hx - gx, hy - gy
         t = np.clip(((px - gx) * vx + (py - gy) * vy) / (vx * vx + vy * vy), -0.08, 1)
         linje = np.hypot(px - (gx + t * vx), py - (gy + t * vy)) < 9
         huvud = np.hypot(px - hx, py - hy) < 34
         slagga = fig & (linje | huvud)
-        bitar.append((namn, farg, mjuk(fig & ~slagga, 1), mjuk(slagga, 1)))
+        bitar.append(("s-" + namn, farg, mjuk(fig & ~slagga, 1), mjuk(slagga, 1), None))
 
-    # De andra: bara det som andrats, med mjuk kant.
-    for figur, (namn, (a0, b0, a1, b1)) in ANDRA.items():
-        b = las(namn)[b0:b1, a0:a1]
-        d = ndimage.uniform_filter(np.abs(b - grund[b0:b1, a0:a1]).sum(-1), 5)
-        m = rensa(d > 30, 60)
-        m = mjuk(m, 6, 3.0)
+    # Figurerna med ett lage.
+    grund = {"A": A, "B": B}
+    lagen = {}
+    for namn, (bild, ref, (a0, b0, a1, b1), vp, grader, flytt) in LAGEN.items():
+        b = las(bild)[b0:b1, a0:a1]
+        d = ndimage.uniform_filter(np.abs(b - grund[ref][b0:b1, a0:a1]).sum(-1), 5)
+        yy2, xx2 = np.mgrid[b0:b1, a0:a1]
+        omr = OMRADE.get(namn.split("-")[0], lambda x, y: True)(xx2, yy2)
+        if namn.startswith("matem-"):
+            omr &= xx2 >= 1325        # tanker och upp: handen lamnar tavlan, bara kroppen andras
+        m = mjuk(rensa((d > 30) & omr, 60), 6, 3.0) * kantton(b1 - b0, a1 - a0)
+        figur = namn.split("-")[0]
         if figur in STILLA:
-            yy2, xx2 = np.mgrid[b0:b1, a0:a1]
             m *= 1 - mjuk(STILLA[figur](xx2, yy2), 0, 2.0)
-        # Kanten av rutan: tona ut, sa att inget skarvas.
-        kant = np.minimum.outer(np.minimum(np.arange(b1 - b0), np.arange(b1 - b0)[::-1]),
-                                np.minimum(np.arange(a1 - a0), np.arange(a1 - a0)[::-1]))
-        m *= np.clip(kant / 8, 0, 1)
-        v = m.copy()
+        v = m.copy() if (grader or tuple(flytt) != (0, 0)) else np.zeros_like(m)
         if figur in BARA_TONA:
-            yy2, xx2 = np.mgrid[b0:b1, a0:a1]
             v *= 1 - BARA_TONA[figur](xx2, yy2)
-        bitar.append((figur, b, m, v))
-        rutor_andra = (a0, b0, a1, b1)
-        rutor[figur + "_kalla"] = list(rutor_andra)
+        if namn == "matare-flytta":
+            # Bara matstickan och handerna flyttas: bandet langs stickan pa blockets ovansida.
+            v *= np.clip(1 - np.abs(yy2 - (706 + (xx2 - 1375) * 0.23)) / 16, 0, 1) * (xx2 < 1500)
+        bitar.append((namn, b, m, v, np.zeros_like(m)))
+        lagen[namn] = {"kalla": [a0, b0, a1 - a0, b1 - b0], "vrid": [vp[0], vp[1], grader], "flytt": list(flytt)}
 
-    # Packa kartan: slaggarens atta rutor i tva rader, de andra under.
+    # Matematikern vid tavlan: skrivlagena.
+    a0, b0, a1, b1 = SKRIV_RUTA
+    yy2, xx2 = np.mgrid[b0:b1, a0:a1]
+    skriv = {k: las(bild)[b0:b1, a0:a1] for k, (bild, _) in SKRIV.items()}
+    alla_m = {**skriv, "tanker": las("m-tanker-2")[b0:b1, a0:a1], "upp": las("upp-matematiker")[b0:b1, a0:a1]}
+    union = np.zeros(skriv["bas"].shape[:2], bool)
+    for k, b in skriv.items():
+        if k != "bas":
+            union |= rensa((ndimage.uniform_filter(np.abs(b - skriv["bas"]).sum(-1), 5) > 30) & OMRADE["matem"](xx2, yy2), 60)
+    U = mjuk(union, 8, 3.0) * kantton(b1 - b0, a1 - a0)
+    tavla = (xx2 >= TAVLA[0]) & (xx2 < TAVLA[2]) & (yy2 >= TAVLA[1]) & (yy2 < TAVLA[3])
+    stack = np.stack(list(alla_m.values()))
+    for i, (k, b) in enumerate(alla_m.items()):
+        ovriga = np.median(np.delete(stack, i, axis=0), axis=0)
+        fig = rensa((ndimage.uniform_filter(np.abs(b - ovriga).sum(-1), 3) > 28) & OMRADE["matem"](xx2, yy2), 30)
+        tacker = mjuk(fig & tavla, 2, 1.0)
+        if k in SKRIV:
+            sx, sy = SKRIV[k][1]
+            nara = np.clip(1 - (np.hypot(xx2 - sx, yy2 - sy) - 22) / 60, 0, 1)
+            g = mjuk(fig, 3, 2.0) * nara
+            bitar.append(("w-" + k, b, U, g, tacker))
+        else:
+            namn = "matem-" + k
+            j = [x[0] for x in bitar].index(namn)
+            n0, f0, m0, v0, _ = bitar[j]
+            bitar[j] = (n0, f0, m0, v0, tacker)
+
+    # Packa kartan: hyllor, hogst 2200 bred.
+    MAXB = 2200
     placering = {}
-    x, y, radh = 0, 0, 0
-    bredd = 4 * (x1 - x0 + PAD)
-    for namn, farg, _, _ in bitar:
+    x = y = radh = 0
+    for namn, farg, *_ in bitar:
         h, w = farg.shape[:2]
-        if x + w > bredd:
+        if x + w > MAXB:
             x, y, radh = 0, y + radh + PAD, 0
         placering[namn] = (x, y, w, h)
         x += w + PAD
         radh = max(radh, h)
-    KW, KH = bredd, y + radh
+    KW = max(p[0] + p[2] for p in placering.values())
+    KH = y + radh
     karta = np.zeros((KH, KW, 3), np.float32)
     mask = np.zeros((KH, KW, 3), np.float32)
-    for namn, farg, mr, mg in bitar:
-        px, py, w, h = placering[namn]
-        karta[py:py + h, px:px + w] = farg
-        mask[py:py + h, px:px + w, 0] = mr
-        mask[py:py + h, px:px + w, 1] = mg
+    for namn, farg, r, g, bb in bitar:
+        px0, py0, w, h = placering[namn]
+        karta[py0:py0 + h, px0:px0 + w] = farg
+        for k, kanal in enumerate((r, g, bb)):
+            if kanal is not None:
+                mask[py0:py0 + h, px0:px0 + w, k] = kanal
     Image.fromarray(np.round(karta).astype(np.uint8)).save(UT / "intro-lager.webp", quality=88, method=6)
     Image.fromarray(np.round(mask * 255).astype(np.uint8)).save(UT / "intro-lager.png", optimize=True)
 
-
-    # Stjarnorna i himlen.
-    lum = grund @ np.array([0.299, 0.587, 0.114], np.float32)
+    # Stjarnorna i himlen (bade A och B har samma himmel).
+    lum = B @ np.array([0.299, 0.587, 0.114], np.float32)
     median = ndimage.median_filter(lum, size=15)
     yy, xx = np.mgrid[0:H, 0:W]
     himmel = (median < 60) & (yy < 440)
-    for a in [(1100, 170, W, H), (1150, 0, 1480, 230), (780, 30, 1230, H)]:
-        himmel &= ~((xx >= a[0]) & (xx < a[2]) & (yy >= a[1]) & (yy < a[3]))
+    for r in [(1100, 170, W, H), (1150, 0, 1480, 230), (780, 30, 1230, H)]:
+        himmel &= ~((xx >= r[0]) & (xx < r[2]) & (yy >= r[1]) & (yy < r[3]))
     himmel = ndimage.binary_erosion(himmel, iterations=4)
     kand = (lum - median > 14) & himmel
     et, n = ndimage.label(kand)
@@ -195,24 +255,22 @@ def main():
     Image.fromarray(glimt, "RGB").save(UT / "intro-glimt.png", optimize=True)
 
     scen = {
-        "bild": [W, H],
-        "karta": [KW, KH],
+        "bild": [W, H], "karta": [KW, KH],
         "rutor": {k: list(v) for k, v in placering.items()},
-        "slaggare": list(SLAGGARE_RUTA),
-        "lagen": LAGEN,
-        "handtag": HANDTAG,
-        "vridning": VRIDNING,
-        **{k: v for k, v in rutor.items()},
+        "stenhuggare": {"ruta": list(SLAGGARE_RUTA), "lagen": [n for n, _ in SLAGGARE], "handtag": HANDTAG},
+        "lagen": lagen,
+        "skriv": {"ruta": [a0, b0, a1 - a0, b1 - b0], "spetsar": {k: v[1] for k, v in SKRIV.items()}, "tavla": list(TAVLA)},
+        "lykta": list(LYKTA),
     }
-    (UT / "intro-scen.json").write_text(json.dumps(scen, indent=1), encoding="utf8")
-    print(f"intro-lager: {KW}x{KH}, {antal} stjarnor")
+    (UT / "intro-scen.json").write_text(json.dumps(scen), encoding="utf8")
+    print(f"intro-lager: {KW}x{KH}, {len(bitar)} rutor, {antal} stjarnor")
 
     if "--kontroll" in sys.argv:
         mapp = Path(sys.argv[sys.argv.index("--kontroll") + 1])
         mapp.mkdir(parents=True, exist_ok=True)
         k = karta.copy()
-        k[..., 0] = np.clip(k[..., 0] * 0.5 + mask[..., 0] * 200, 0, 255)
-        k[..., 1] = np.clip(k[..., 1] * 0.5 + mask[..., 1] * 200, 0, 255)
+        for c in range(3):
+            k[..., c] = np.clip(k[..., c] * 0.45 + mask[..., c] * 210, 0, 255)
         Image.fromarray(k.astype(np.uint8)).save(mapp / "karta-kontroll.png")
 
 

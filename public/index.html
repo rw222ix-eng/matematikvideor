@@ -15,12 +15,12 @@
 <meta property="og:title" content="Matematikvideor av Rickard">
 <meta property="og:description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och filmer som går igenom formelbladet för Matematik 1 och 2. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
 <meta property="og:url" content="https://winterhalls-matte.vercel.app/">
-<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=cf9a38b7">
+<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=e3eb79e9">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Kalam&display=swap" rel="stylesheet">
 <style>
   :root {
     /* --dis var #7A7369, 3,9:1 mot bakgrunden. #938B7F ger 5,4:1 och klarar WCAG AA (2026-09-24). */
@@ -1133,7 +1133,7 @@
 
 <!-- ── 1. Intro ─────────────────────────────────────────── -->
 <section class="vy intro" id="vy-intro">
-  <img class="fond" src="omslag/intro.jpg?v=cf9a38b7" alt="" fetchpriority="high">
+  <img class="fond" src="omslag/intro.jpg?v=e3eb79e9" alt="" fetchpriority="high">
   <canvas class="levande" id="levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
   <header class="topp fram">
@@ -1811,39 +1811,49 @@
   levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=9e2e378b", himmel: "omslag/valj-himmel.png?v=f7dc4496", fastTopp: true });
 
   // ── Startsidans levande scen (Rickard 2026-09-26) ──
-  // En natt på ett observatorium som byggs: stenhuggare som klyver ett block med slägga och kilar och en
-  // som mäter, en matematiker vid lyktan och en astronom i teleskopet uppe på tornet. Målningen och lägena
-  // är målade i ChatGPT-projektet som ändringar av samma bild, pixelexakta (assets/intro-scen/prompter.md),
-  // och klipps ut av verktyg/hitta-scen.py: stenhuggaren i sju lägen genom svingen och bakgrunden utan
-  // honom, astronomen upprätt, matematikern som tittar upp och mätaren som vänder huvudet.
-  // Rörelsen räknas fram i varje bildruta, inga bildremsor: mellan två lägen vrids armarna och släggan
-  // (eller huvudet, överkroppen) så att de möts halvvägs, samtidigt som lägena tonas. Lyftet börjar och
-  // slutar mjukt, slaget accelererar och har rörelseoskärpa. Vid slaget: damm, flisor och en spricka som
-  // växer längs kilarna. Pauser, antal slag i en serie och när de andra rör sig slumpas, så att inget
-  // upprepar sig. Alla andas. Lyktan fladdrar, stjärnorna glimrar (intro-glimt.png).
+  // En natt på ett observatorium som byggs: en stenhuggare klyver ett block med slägga och kilar, en annan
+  // mäter och märker med krita, en matematiker räknar med krita på en tavla vid lyktan och en astronom
+  // tittar i teleskopet uppe på tornet. Ibland faller en stjärna, och alla vänder blicken mot himlen.
+  // Målningen och lägena är målade i ChatGPT-projektet som ändringar av samma bild, pixelexakta
+  // (assets/intro-scen/prompter.md), och klipps ut av verktyg/hitta-scen.py.
+  // Rörelsen räknas fram i varje bildruta, inga bildremsor: mellan två lägen vrids eller flyttas det som
+  // rör sig (släggan, huvudet, handen med kritan, måttstocken) så att lägena möts, samtidigt som de tonas.
+  // Alla rör sig hela tiden (Rickard 2026-09-26): stenhuggaren slår en serie, torkar svetten, vilar en
+  // sekund och slår igen; matematikern skriver sanna uträkningar rad för rad, kliver bak och tänker och
+  // suddar; mätaren flyttar måttstocken och drar kritstreck; astronomen tittar växelvis i teleskopet och
+  // upp. Pauser, ordning och längd slumpas, så att inget upprepar sig. Alla andas. Lyktan fladdrar.
   const SCEN = `#version 300 es
     precision highp float;
-    uniform sampler2D uBild, uLager, uLagerM, uMask;
+    uniform sampler2D uBild, uLager, uLagerM, uMask, uText;
     uniform vec2 uPx, uKarta;
-    uniform float uT;
+    uniform float uT, uKantTon;
     uniform vec4 uSlRuta;           // stenhuggarens ruta i bilden: x0, y0, bredd, höjd
     uniform vec2 uBakom;            // bakgrunden utan honom: hörnet i kartan
     uniform vec4 uSlLage;           // läge a (xy) och b (zw): hörnen i kartan
     uniform vec4 uSlVrid;           // vridpunkt (xy), vridning av a (z) och av b (w), radianer
     uniform vec2 uSlTon;            // tonvikt mot b, rörelseoskärpa (radianer)
-    uniform vec4 uFigKalla[3];      // astronomen, matematikern, mätaren: rutan i bilden
+    uniform vec4 uFigKalla[3];      // astronomen, matematikern (tänker, tittar upp), mätaren: lägets ruta
     uniform vec2 uFigKarta[3];      // hörnet i kartan
     uniform vec4 uFigVrid[3];       // vridpunkt (xy), hela vridningen (z), hur långt (w, 0 = vila)
     uniform vec2 uFigFlytt[3];      // och hela förflyttningen, px
+    uniform vec4 uWRuta;            // matematikerns skrivlägen: rutan
+    uniform vec2 uWKarta[4];        // bas, mitt, nere, nere-mitt: hörnen i kartan
+    uniform vec4 uWVikt;            // hur mycket av varje
+    uniform vec2 uWFlytt[4];        // handen flyttas så att kritan hamnar där den skriver
+    uniform vec4 uTavla;            // tavlan: x0, y0, bredd, höjd
+    uniform vec4 uKrita;            // hur långt rad 1 och 2 är skrivna (xy) och suddade (zw), tavlans bredd 0..1
+    uniform vec2 uKritaRest;        // radgränsen (tavlans höjd 0..1), kvar av det suddade (0..1)
+    uniform vec4 uMeteor;           // stjärnfallet: start (xy), slut (zw)
+    uniform vec3 uMeteorT;          // huvudets läge 0..1, ljus, svansen som dröjer kvar
     uniform vec4 uAnd[4];           // andning: punkt (xy), radie (z), hur mycket (w)
-    uniform vec2 uPenna;            // matematikerns hand, förskjutning i px
     uniform vec4 uDamm[18];         // x, y, radie, styrka
     uniform vec4 uFlis[14];         // x, y, storlek, styrka
     uniform vec2 uSpricka;          // hur långt (0..1), styrka
     in vec2 vUv;
     out vec4 ut;
-    const vec2 LYKTA = vec2(1231., 516.), LYKTA_R = vec2(7., 13.);
-    const float VEKE = 528.;
+    const vec2 LYKTA = vec2(1230., 521.), LYKTA_R = vec2(7., 12.);
+    const float VEKE = 531.;
+    const vec3 SIDA = vec3(.09, .078, .078);   // sidans bakgrund (#171414)
     const vec2 SPRICKA[8] = vec2[8](vec2(1112., 669.), vec2(1150., 672.), vec2(1186., 677.), vec2(1218., 682.),
                                     vec2(1251., 689.), vec2(1287., 696.), vec2(1323., 704.), vec2(1362., 710.));
     float h1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
@@ -1858,26 +1868,27 @@
     vec2 GX, GY;
     vec3 bild(vec2 q) { return textureGrad(uBild, q / uPx, GX, GY).rgb; }
     vec2 vrid(vec2 p, vec2 c, float a) { float s = sin(a), k = cos(a); p -= c; return c + vec2(k * p.x - s * p.y, s * p.x + k * p.y); }
+    float inom(vec2 q, vec4 k) { vec2 l = q - k.xy; return step(.5, l.x) * step(.5, l.y) * step(l.x, k.z - .5) * step(l.y, k.w - .5); }
     // En ruta i kartan: bildens pixel q i källrutan k, vars kopia börjar i h i kartan. Utanför: ingenting.
-    vec3 ruta(vec2 q, vec4 k, vec2 h, out vec2 m) {
-      vec2 l = q - k.xy;
-      if (l.x < .5 || l.y < .5 || l.x > k.z - .5 || l.y > k.w - .5) { m = vec2(0.); return vec3(0.); }
-      vec2 uv = (h + l) / uKarta;
-      m = texture(uLagerM, uv).rg;
+    // m: R = det som tonas, G = det som vrids eller flyttas, B = var figuren täcker tavlan.
+    vec3 ruta(vec2 q, vec4 k, vec2 h, out vec3 m) {
+      if (inom(q, k) < .5) { m = vec3(0.); return vec3(0.); }
+      vec2 uv = (h + q - k.xy) / uKarta;
+      m = texture(uLagerM, uv).rgb;
       return texture(uLager, uv).rgb;
     }
-    // Stenhuggaren: bakgrunden utan honom, kroppen (R) ur båda lägena, armarna och släggan (G) vridna.
+    // Stenhuggaren: bakgrunden utan honom, kroppen (R) ur båda lägena, släggan (G) vriden.
     vec3 stenhuggare(vec2 p) {
-      vec2 m;
+      vec3 m;
       vec3 bak = ruta(p, uSlRuta, uBakom, m);
-      vec2 ma, mb;
+      vec3 ma, mb;
       vec3 ka = ruta(p, uSlRuta, uSlLage.xy, ma), kb = ruta(p, uSlRuta, uSlLage.zw, mb);
       // Släggan, med rörelseoskärpa: fem prov längs vridningen, tätast i mitten.
       vec3 aa = vec3(0.), ab = vec3(0.);
       float ta = 0., tb = 0.;
       for (int i = -2; i <= 2; i++) {
         float d = float(i) * .5 * uSlTon.y, v = (3. - abs(float(i))) / 9.;
-        vec2 m1, m2;
+        vec3 m1, m2;
         vec3 f1 = ruta(vrid(p, uSlVrid.xy, -(uSlVrid.z + d)), uSlRuta, uSlLage.xy, m1);
         vec3 f2 = ruta(vrid(p, uSlVrid.xy, -(uSlVrid.w + d)), uSlRuta, uSlLage.zw, m2);
         aa += f1 * m1.g * v; ta += m1.g * v; ab += f2 * m2.g * v; tb += m2.g * v;
@@ -1898,9 +1909,6 @@
         float w = smoothstep(1., .45, length(d)) * step(px.y, a.y);
         p.y = a.y + (p.y - a.y) * (1. - a.w * w);
       }
-      // Matematikerns hand och penna.
-      vec2 hd = (px - vec2(1312., 512.)) / vec2(19., 34.);
-      p -= uPenna * smoothstep(1., .5, length(hd));
       vec4 m = texture(uMask, vUv);
       vec2 q = p;
       // Lyktans låga vickar i sidled, mest i toppen, och sträcks och krymper lite.
@@ -1916,21 +1924,52 @@
       // Rutans kant tonas in mot målningen (där är bakgrunden utan honom samma som målningen).
       vec2 sl = min(px - uSlRuta.xy, uSlRuta.xy + uSlRuta.zw - px);
       if (min(sl.x, sl.y) > 1.) c = mix(c, stenhuggare(p), smoothstep(1., 8., min(sl.x, sl.y)));
+      // Matematikern vid tavlan: fyra skrivlägen, var och ens hand flyttad dit kritan skriver.
+      float tacker = 0.;
+      if (inom(px, uWRuta) > .5) {
+        vec3 m0; ruta(p, uWRuta, uWKarta[0], m0);
+        vec3 f = vec3(0.);
+        for (int k = 0; k < 4; k++) {
+          float w = uWVikt[k];
+          if (w < .001) continue;
+          vec3 mk; ruta(p, uWRuta, uWKarta[k], mk);
+          vec2 qk = p - uWFlytt[k] * mk.g;
+          vec3 mq; vec3 fk = ruta(qk, uWRuta, uWKarta[k], mq);
+          f += w * mix(bild(p), fk, inom(qk, uWRuta));
+          tacker += w * mq.b;
+        }
+        c = mix(c, f, m0.r);
+      }
       for (int i = 0; i < 3; i++) {
         vec4 k = uFigKalla[i], v = uFigVrid[i];
-        vec2 l = px - k.xy;
-        if (v.w < .001 || l.x < 0. || l.y < 0. || l.x > k.z || l.y > k.w) continue;
-        // Båda lägena vrids mot varandra (G = hur mycket), och bytet sker i mitten av rörelsen, där de
-        // ligger närmast varandra, så att figuren inte syns dubbel länge.
+        if (v.w < .001 || inom(px, k) < .5) continue;
+        // Båda lägena vrids eller flyttas mot varandra (G = hur mycket), och bytet sker i mitten av
+        // rörelsen, där de ligger närmast varandra, så att figuren inte syns dubbel länge.
         // Utanför figuren (maskens kant) står målningen still, också när han har rört sig.
-        vec2 m0; ruta(p, k, uFigKarta[i], m0);
+        vec3 m0; ruta(p, k, uFigKarta[i], m0);
         if (m0.r < .002) continue;
         vec2 f = uFigFlytt[i] * m0.g;
-        vec3 c0 = bild(vrid(p - v.w * f, v.xy, -v.w * v.z * m0.g));
-        vec2 q1 = vrid(p + (1. - v.w) * f, v.xy, (1. - v.w) * v.z * m0.g), l1 = q1 - k.xy, m1;
-        vec3 c1 = ruta(q1, k, uFigKarta[i], m1);
-        float inne = step(.5, l1.x) * step(.5, l1.y) * step(l1.x, k.z - .5) * step(l1.y, k.w - .5);
-        c = mix(c, mix(c0, mix(c0, c1, inne), smoothstep(.25, .75, v.w)), m0.r);
+        float byt = smoothstep(.25, .75, v.w);
+        vec3 c0 = (m0.g > .001) ? bild(vrid(p - v.w * f, v.xy, -v.w * v.z * m0.g)) : c;
+        vec2 q1 = vrid(p + (1. - v.w) * f, v.xy, (1. - v.w) * v.z * m0.g);
+        vec3 m1; vec3 c1 = ruta(q1, k, uFigKarta[i], m1);
+        c = mix(c, mix(c0, mix(c0, c1, inom(q1, k)), byt), m0.r);
+        if (i == 1) tacker = mix(tacker, m1.b, byt * m0.r);
+      }
+      // Kritan på tavlan: raderna skrivs fram där kritan är, och suddas bakom handen. Ljuset från
+      // lyktan faller på skriften som på tavlan, och kritan är kornig.
+      if (inom(px, uTavla) > .5) {
+        vec2 bu = (px - uTavla.xy) / uTavla.zw;
+        float a = texture(uText, bu).a;
+        if (a > .003) {
+          bool rad1 = bu.y < uKritaRest.x;
+          float skriven = smoothstep(.004, -.002, bu.x - (rad1 ? uKrita.x : uKrita.y));
+          float kvar = bu.x < (rad1 ? uKrita.z : uKrita.w) ? 1. : uKritaRest.y * .3;
+          float korn = .72 + .5 * brus2(px * 1.7) - .22 * brus2(px * .45 + 3.);
+          float lum = dot(bild(px), vec3(.3, .59, .11));
+          vec3 krita = vec3(.9, .87, .8) * clamp(.52 + 2.2 * lum, .5, 1.05);
+          c = mix(c, krita, clamp(a * skriven * kvar * korn, 0., 1.) * .9 * (1. - clamp(tacker, 0., 1.)));
+        }
       }
       // Sprickan längs kilarna: taggig, smal ute i spetsen och bredare där den har öppnat sig, med skugga
       // och en ljus bruten kant på ena sidan. Den växer för varje slag.
@@ -1974,7 +2013,7 @@
           c = mix(c, vec3(.93, .86, .72), smoothstep(f.z, f.z * .3, length(px - f.xy)) * f.w);
         }
       }
-      // Stjärnorna glimrar, var och en i sin takt (som förut).
+      // Stjärnorna glimrar, var och en i sin takt.
       if (m.r > .004) {
         vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
         float g = .5 + .5 * sin(uT * (.7 + fract(m.g * 7.31 + .17) * 1.4) + m.g * 6.2832);
@@ -1983,7 +2022,23 @@
         ny += max(textureLod(uBild, vUv, 1.5).rgb - omkring, 0.) * 1.1 * g * g;
         c = mix(c, ny, m.r);
       }
-      // Lyktans ljus andas med lågan: på bordet, papperet, väggen och matematikern.
+      // Stjärnfallet: ett ljust huvud med en svans som smalnar och slocknar bakåt, och ett svagt spår
+      // efter det som dröjer kvar en stund.
+      if (uMeteorT.y + uMeteorT.z > .001) {
+        vec2 S = uMeteor.xy, E = uMeteor.zw, dir = normalize(E - S), n = vec2(-dir.y, dir.x);
+        vec2 huvud = mix(S, E, uMeteorT.x);
+        vec2 v = px - huvud;
+        float bak = -dot(v, dir), tvar = dot(v, n), gatt = length(huvud - S);
+        float L = min(170., gatt), sken = 0.;
+        if (bak > 0. && bak < L) {
+          float x = bak / L;
+          sken += exp(-pow(tvar / (1.6 - .9 * x), 2.)) * pow(1. - x, 1.7) * .9;
+        }
+        sken += exp(-dot(v, v) / 9.) * 1.3 + exp(-dot(v, v) / 90.) * .25;
+        float spar = (bak > 0. && bak < gatt) ? exp(-pow(tvar / 1.3, 2.)) * .22 * uMeteorT.z : 0.;
+        c += vec3(.86, .93, 1.) * (sken * uMeteorT.y + spar);
+      }
+      // Lyktans ljus andas med lågan: på tavlan, väggen och matematikern.
       {
         float fl = brus(uT * 2.4) * .5 + brus(uT * 5.7 + 3.) * .3 + brus(uT * 12.1 + 7.) * .2 - .5;
         vec2 d = (px - LYKTA) / uPx.y;
@@ -1991,8 +2046,14 @@
         c *= 1. + fl * (.16 * rum + .4 * nara);
         c += vec3(1., .75, .42) * nara * fl * .1;
       }
+      // I breda, låga fönster visas hela målningens höjd, och till vänster om den tar sidans mörker vid.
+      c = mix(SIDA, c, mix(1., smoothstep(0., .07, vUv.x), uKantTon));
       ut = vec4(c, 1.);
     }`;
+  // Matematikerns uträkningar: enkla och sanna, två rader per tavla.
+  // Korta rader, så att skriften blir stor nog att läsa.
+  const TAVLOR = [["3²+4² = 5²", "9+16 = 25"], ["12·12 = 144", "144:16 = 9"], ["7·8 = 56", "56:7 = 8"],
+                  ["2³ = 8", "8·8 = 64"], ["6·6 = 36", "36+64 = 100"], ["5² = 25", "25+25 = 50"]];
   const levandeScen = ({ vy, duk, img, fokus }) => {
     const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
     if (!gl) { duk.remove(); return; }
@@ -2003,30 +2064,37 @@
     };
     const ladda = (src) => new Promise((ok, fel) => { const i = new Image(); i.onload = () => ok(i); i.onerror = fel; i.src = src; });
     let prog = null, U = {}, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1, scen = null;
+    let synlig = [0, 0, 1672, 941];   // den del av målningen som syns, i bildens px
 
-    // Duken täcker fönstret som fondens object-fit: cover; fokus är bildens punkt (0..1) som ska synas.
+    // Duken täcker fönstret som fondens object-fit: cover (fokus är bildens punkt 0..1 som ska synas),
+    // eller visar hela höjden i ett brett fönster (introFokus).
     const mat = () => {
       const b = duk.clientWidth, h = duk.clientHeight;
       if (!b || !h || !prog) return;
       const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)));
       duk.width = Math.round(b * k); duk.height = Math.round(h * k);
       gl.viewport(0, 0, duk.width, duk.height);
-      const s = Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
-      const [fx, fy] = fokus();
-      gl.uniform2f(U.uSkala, sx, sy); gl.uniform2f(U.uForskj, (1 - sx) * fx, (1 - sy) * fy);
+      const [fx, fy, bred] = fokus();
+      const s = bred ? h / BH : Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
+      const ox = bred ? 1 - sx : (1 - sx) * fx, oy = bred ? 0 : (1 - sy) * fy;
+      gl.uniform2f(U.uSkala, sx, sy); gl.uniform2f(U.uForskj, ox, oy); gl.uniform1f(U.uKantTon, bred ? 1 : 0);
+      synlig = [Math.max(0, ox * BW), oy * BH, Math.min(BW, (ox + sx) * BW), (oy + sy) * BH];
       rita1(performance.now());
     };
 
     // ── Styrningen ──
     const slump = (a, b) => a + Math.random() * (b - a);
+    const valj = (lista) => lista[Math.floor(Math.random() * lista.length)];
     const mjukt = (x) => x * x * (3 - 2 * x);
     const mjukare = (x) => x * x * x * (x * (x * 6 - 15) + 10);
+    const klamp = (x) => Math.max(0, Math.min(1, x));
     let T0 = 0;
-    // Stenhuggaren: lägena 0..6 i svingens ordning (se hitta-scen.py). Mellan två lägen: vridpunkt och
-    // vinkel som för det ena handtaget till det andra (en vridning i planet har en enda mittpunkt).
-    let vridMellan = null;
+    // Stenhuggarens lägen (se hitta-scen.py). Mellan två lägen: vridpunkt och vinkel som för det ena
+    // skaftet till det andra (en vridning i planet har en enda mittpunkt).
+    let vridMellan = null, L = null;
     const bygg = () => {
-      const L = scen.lagen, H = scen.handtag;
+      L = scen.stenhuggare.lagen;
+      const H = scen.stenhuggare.handtag;
       const vinkel = (n) => Math.atan2(H[n][1][1] - H[n][0][1], H[n][1][0] - H[n][0][0]);
       const mitt = (n) => [(H[n][0][0] + H[n][1][0]) / 2, (H[n][0][1] + H[n][1][1]) / 2];
       vridMellan = (a, b) => {
@@ -2040,10 +2108,45 @@
         return Math.abs(det) < 1e-6 ? { d: 0, cx: ax, cy: ay } : { d, cx: (m11 * rx - m01 * ry) / det, cy: (-m10 * rx + m00 * ry) / det };
       };
     };
-    const sl = { fas: "vila", start: 0, slut: 0, kvar: 0, s: 0, forraS: 0, studs: 0 };
+    const LAGE = { vila: 0, lyft1: 1, mitt: 2, uppe: 3, slag1: 4, slag2: 5, torkar: 6, upp: 7 };
     // Svingen: vila → lyft vid höften → över axeln → uppe (lyftet), uppe → rakt fram → halvvägs → vila (slaget).
-    // Läget "lodrät framför ansiktet" (lyft2) används inte: där står huvudet 90 px åt sidan och tonades dubbelt.
-    const VAG = [0, 1, 3, 4, 5, 6, 0];
+    const VAG = [0, 1, 2, 3, 4, 5, 0];
+
+    // ── Stjärnfallet ──
+    // Var 30–60:e sekund (det första efter 12–20 s). Det väntar tills stenhuggaren vilar mellan två slag.
+    const met = { nasta: slump(12, 20), start: -1, dur: 1.9, S: [0, 0], E: [0, 0], slut: -1 };
+    const metSlut = () => met.start + met.dur;
+    const startaMeteor = (t) => {
+      const [x0, y0, x1] = synlig;
+      // Datorn: över himlen till vänster om tornet, ovanför rubriken. Telefonen: den lilla himlen vid tornet.
+      if (x1 - x0 > 800) { met.S = [slump(1030, 1090), slump(35, 60) + y0]; met.E = [slump(640, 720), slump(170, 205) + y0]; }
+      else { met.S = [slump(1120, 1140), y0 + 22]; met.E = [slump(990, 1010), y0 + slump(125, 145)]; }
+      met.start = t; met.dur = slump(1.6, 2.2);
+      met.nasta = t + slump(30, 60);
+      // Alla vänder blicken mot himlen, var och en med sin egen lilla fördröjning, och tittar tills
+      // spåret har slocknat.
+      const langd = met.dur + slump(1.4, 2.4);
+      sl.tittaVid = t + slump(.15, .35); sl.tittaTill = t + langd; sl.slut = Math.max(sl.slut, sl.tittaVid + .1);
+      slot(fig.astronom, "astronom", slump(.1, .3), .9, langd, 1.2, true);
+      slot(fig.matare, "matare-upp", slump(.2, .45), .6, langd, .7, true);
+      mt.upp = { vid: t + slump(.05, .2), till: t + langd };
+    };
+    const styrMeteor = (t) => {
+      if (met.start < 0 && t >= met.nasta && sl.fas === "vila" && sl.s === 0) startaMeteor(t);
+      let h = 0, ljus = 0, spar = 0;
+      if (met.start >= 0) {
+        const e = t - met.start, x = e / met.dur;
+        h = klamp(x);
+        ljus = x < 1 ? Math.min(1, e * 8) * (.75 + .45 * Math.pow(h, 3)) : Math.max(0, 1 - (e - met.dur) / .25);
+        spar = x < 1 ? h : Math.max(0, 1 - (e - met.dur) / 1.8);
+        if (e > met.dur + 1.9) met.start = -1;
+      }
+      gl.uniform4f(U.uMeteor, met.S[0], met.S[1], met.E[0], met.E[1]);
+      gl.uniform3f(U.uMeteorT, h, ljus, spar);
+    };
+
+    // ── Stenhuggaren ──
+    const sl = { fas: "vila", start: 0, slut: 0, kvar: 0, s: 0, forraS: 0, studs: 0, u: 0, mal: 0, tittaVid: -1, tittaTill: -1 };
     const damm = [], flis = [];
     let spricka = 0, sprickStyrka = 1, sprickTona = -1;
     const slag = (t) => {
@@ -2061,15 +2164,17 @@
         }
       }
     };
+    // Faser: vila (mellan slagen), lyft, uppe, slag; efter serien: tillTork, torkar, franTork, paus;
+    // vid stjärnfallet: tillUpp, upp, franUpp. s: svingen 0..6; mal/u: övergång vila → torkar/upp.
+    const dela = (t, dur) => Math.min(1, Math.max(0, (t - sl.start) / dur));
     const styrStenhuggare = (t, dt) => {
       let a = 0, b = 0, u = 0, extra = 0;
-      if (sl.fas === "vila") {
-        if (t >= sl.slut) {
-          if (sl.kvar <= 0) sl.kvar = Math.round(slump(4, 8));   // en ny serie efter vilan
-          sl.fas = "lyft"; sl.start = t; sl.slut = t + slump(.78, 1.0);
-        }
-        if (sl.studs > 0) { const x = (t - sl.studs) / .22; if (x < 1) extra = -.05 * Math.sin(Math.PI * x) * (1 - x); }
+      if (sl.fas === "vila" && sl.tittaVid > 0 && t >= sl.tittaVid) { sl.fas = "tillUpp"; sl.start = t; sl.tittaVid = -1; }
+      if (sl.fas === "vila" && t >= sl.slut) {
+        if (sl.kvar > 0) { sl.fas = "lyft"; sl.start = t; sl.slut = t + slump(.78, 1.0); }
+        else { sl.fas = "tillTork"; sl.start = t; }
       }
+      if (sl.fas === "vila" && sl.studs > 0) { const x = (t - sl.studs) / .22; if (x < 1) extra = -.05 * Math.sin(Math.PI * x) * (1 - x); }
       if (sl.fas === "lyft") {
         const x = Math.min(1, Math.max(0, (t - sl.start) / (sl.slut - sl.start)));
         sl.s = 3 * mjukt(x);
@@ -2085,68 +2190,234 @@
         sl.s = 3 + 3 * Math.pow(x, 1.7);
         if (x >= 1) {
           sl.fas = "vila"; sl.s = 0; sl.kvar--; sl.studs = t; slag(t);
-          // Mellan slagen en kort paus; efter serien vilar han, och mätaren tittar upp.
-          if (sl.kvar > 0) sl.slut = t + slump(.35, .95);
-          else { sl.kvar = 0; sl.slut = t + slump(6, 13); mataren.tittaEfter = t + slump(.3, .9); }
+          // Mellan slagen en kort paus; efter serien torkar han svetten, och mätaren tittar upp.
+          sl.slut = t + (sl.kvar > 0 ? slump(.35, .95) : slump(.3, .6));
+          if (sl.kvar <= 0) { sl.kvar = 0; if (!fig.matare.pose) slot(fig.matare, "matare-titta", slump(.3, .7), .55, slump(1.2, 2), .6); }
         }
       }
-      if (sl.fas === "vila") sl.s = 0;
-      // s går 0 → 3 genom lyftet och 3 → 6 genom slaget; varje heltal är ett läge i VAG.
-      const s = sl.s, i = Math.min(5, Math.floor(s));
-      a = VAG[i]; b = VAG[i + 1]; u = Math.min(1, s - i);
-      if (u >= 1 - 1e-4) { a = b; u = 0; }
-      if (u < 1e-4) b = a;
-      // Samma läge: vridningen (studsen, uppsvingen) sker kring händerna.
-      const v = b === a ? { d: 0, cx: scen.handtag[scen.lagen[a]][0][0], cy: scen.handtag[scen.lagen[a]][0][1] } : vridMellan(a, b);
-      // Rörelseoskärpa: så långt armarna hinner vrida sig på en halv bildruta.
-      const fart = Math.abs(s - sl.forraS) / Math.max(dt, 1 / 120);
-      sl.forraS = s;
-      const sudd = Math.min(.35, Math.abs(v.d) * fart / 60 * .5);
-      const R = scen.rutor, L = scen.lagen;
-      gl.uniform4f(U.uSlLage, R[L[a]][0], R[L[a]][1], R[L[b]][0], R[L[b]][1]);
-      const um = mjukt(u);
+      if (sl.fas === "tillTork") { sl.u = mjukare(dela(t, .8)); sl.mal = LAGE.torkar; if (sl.u >= 1) { sl.fas = "torkar"; sl.start = t; sl.slut = t + slump(1.6, 2.8); } }
+      if (sl.fas === "torkar") { sl.u = 1; if (t >= sl.slut) { sl.fas = "franTork"; sl.start = t; } }
+      if (sl.fas === "franTork") { sl.u = 1 - mjukare(dela(t, .85)); if (sl.u <= 0) { sl.fas = "vila"; sl.u = 0; sl.kvar = Math.round(slump(4, 8)); sl.slut = t + slump(.8, 1.6); } }
+      if (sl.fas === "tillUpp") { sl.u = mjukare(dela(t, .6)); sl.mal = LAGE.upp; if (sl.u >= 1) { sl.fas = "upp"; } }
+      if (sl.fas === "upp") { sl.u = 1; if (t >= sl.tittaTill) { sl.fas = "franUpp"; sl.start = t; } }
+      if (sl.fas === "franUpp") { sl.u = 1 - mjukare(dela(t, .7)); if (sl.u <= 0) { sl.fas = "vila"; sl.u = 0; sl.slut = t + slump(.5, 1.2); } }
+      const R = scen.rutor;
+      let v;
+      if (["tillTork", "torkar", "franTork", "tillUpp", "upp", "franUpp"].includes(sl.fas)) {
+        a = 0; b = sl.mal; u = sl.u; sl.s = 0;
+        v = vridMellan(a, b);
+      } else {
+        if (sl.fas === "vila") sl.s = 0;
+        // s går 0 → 3 genom lyftet och 3 → 6 genom slaget; varje heltal är ett läge i VAG.
+        const s = sl.s, i = Math.min(5, Math.floor(s));
+        a = VAG[i]; b = VAG[i + 1]; u = Math.min(1, s - i);
+        if (u >= 1 - 1e-4) { a = b; u = 0; }
+        if (u < 1e-4) b = a;
+        // Samma läge: vridningen (studsen, uppsvingen) sker kring händerna.
+        const H = scen.stenhuggare.handtag[L[a]][0];
+        v = b === a ? { d: 0, cx: H[0], cy: H[1] } : vridMellan(a, b);
+      }
+      // Rörelseoskärpa: så långt släggan hinner vrida sig på en halv bildruta.
+      const pos = sl.s + sl.u * 10;
+      const fart = Math.abs(pos - sl.forraS) / Math.max(dt, 1 / 120);
+      sl.forraS = pos;
+      const sudd = sl.u > 0 ? 0 : Math.min(.35, Math.abs(v.d) * fart / 60 * .5);
+      gl.uniform4f(U.uSlLage, R["s-" + L[a]][0], R["s-" + L[a]][1], R["s-" + L[b]][0], R["s-" + L[b]][1]);
       gl.uniform4f(U.uSlVrid, v.cx, v.cy, u * v.d + extra, -(1 - u) * v.d + extra);
-      gl.uniform2f(U.uSlTon, um, sudd);
+      gl.uniform2f(U.uSlTon, mjukt(u), sudd);
     };
-    // Astronomen, matematikern och mätaren: vila, sedan en rörelse (0 → 1), en stund, och tillbaka.
-    const figur = (vilaMin, vilaMax, upp, hallMin, hallMax, ned) => ({ fas: "vila", start: 0, slut: slump(vilaMin * .4, vilaMax * .6), vilaMin, vilaMax, upp, hallMin, hallMax, ned, u: 0 });
-    const astronomen = figur(8, 18, 1.2, 2.5, 6, 1.35);
-    const matematikern = figur(5, 13, .8, 1.5, 4, .75);
-    const mataren = figur(12, 26, .55, 1.4, 3.2, .6);
-    mataren.tittaEfter = 0;
-    const styrFigur = (f, t) => {
-      if (f.fas === "vila" && (t >= f.slut || (f.tittaEfter && t >= f.tittaEfter))) { f.tittaEfter = 0; f.fas = "upp"; f.start = t; f.slut = t + f.upp; }
-      if (f.fas === "upp") { const x = Math.min(1, (t - f.start) / f.upp); f.u = mjukare(x); if (x >= 1) { f.fas = "hall"; f.slut = t + slump(f.hallMin, f.hallMax); } }
-      else if (f.fas === "hall") { f.u = 1; if (t >= f.slut) { f.fas = "ned"; f.start = t; } }
-      else if (f.fas === "ned") { const x = Math.min(1, (t - f.start) / f.ned); f.u = 1 - mjukare(x); if (x >= 1) { f.fas = "vila"; f.slut = t + slump(f.vilaMin, f.vilaMax); } }
-      else f.u = 0;
-      return f.u;
+
+    // ── Figurer som går från vila till ett läge och tillbaka (astronomen, mätaren, matematikern) ──
+    // En plats per figur; ett läge i taget. In, håll, ut; mjuk början och slut.
+    const fig = { astronom: { i: 0, pose: null }, matem: { i: 1, pose: null }, matare: { i: 2, pose: null } };
+    let tNu = 0;
+    const slot = (f, namn, fore, inn, hall, ut, tvinga = false) => {
+      if (f.pose && !tvinga) return false;
+      if (f.pose === namn && f.fas !== "ut") { f.hallTill = Math.max(f.hallTill || 0, tNu + fore + inn + hall); return true; }
+      if (f.pose && f.pose !== namn) {   // byt läge: ut ur det gamla först, snabbt
+        f.nasta = [namn, fore, inn, hall, ut]; if (f.fas !== "ut") { f.fas = "ut"; f.start = tNu; f.ut = .45; f.fran = f.u; }
+        return true;
+      }
+      const p = scen.lagen[namn];
+      f.pose = namn; f.fas = "fore"; f.start = tNu; f.fore = fore; f.inn = inn; f.hallTill = tNu + fore + inn + hall; f.ut = ut; f.u = 0;
+      const [cx, cy, grader] = p.vrid;
+      gl.uniform4f(U[`uFigKalla[${f.i}]`], ...p.kalla);
+      gl.uniform2f(U[`uFigKarta[${f.i}]`], scen.rutor[namn][0], scen.rutor[namn][1]);
+      gl.uniform2f(U[`uFigFlytt[${f.i}]`], p.flytt[0], p.flytt[1]);
+      f.vrid = [cx, cy, grader * Math.PI / 180];
+      return true;
     };
+    const styrSlot = (f, t) => {
+      if (f.pose) {
+        if (f.fas === "fore" && t >= f.start + f.fore) { f.fas = "in"; f.start = t; }
+        if (f.fas === "in") { f.u = mjukare(Math.min(1, (t - f.start) / f.inn)); if (f.u >= 1) f.fas = "hall"; }
+        if (f.fas === "hall" && t >= f.hallTill) { f.fas = "ut"; f.start = t; f.fran = 1; }
+        if (f.fas === "ut") {
+          const x = Math.min(1, (t - f.start) / f.ut);
+          f.u = f.fran * (1 - mjukare(x));
+          if (x >= 1) {
+            f.pose = null; f.u = 0;
+            if (f.nasta) { const n = f.nasta; f.nasta = null; slot(f, ...n); }
+          }
+        }
+      }
+      const [cx, cy, a] = f.vrid || [0, 0, 0];
+      gl.uniform4f(U[`uFigVrid[${f.i}]`], cx, cy, a, f.pose ? f.u : 0);
+    };
+    // Astronomen: tittar växelvis i teleskopet och upp mot himlen.
+    const as = { nasta: slump(2, 5) };
+    const styrAstronom = (t) => {
+      if (!fig.astronom.pose && t >= as.nasta) {
+        slot(fig.astronom, "astronom", 0, slump(1.0, 1.4), slump(1.2, 3.5), slump(1.1, 1.5));
+        as.nasta = t + slump(7, 13);
+      }
+    };
+    // Mätaren: flyttar måttstocken, drar kritstreck, tittar på slagen och upp mot stjärnfallet.
+    const ma = { nasta: slump(1, 3) };
+    const styrMatare = (t) => {
+      if (!fig.matare.pose && t >= ma.nasta) {
+        if (Math.random() < .55) slot(fig.matare, "matare-flytta", 0, slump(.9, 1.3), slump(.6, 1.6), slump(.9, 1.3));
+        else slot(fig.matare, "matare-krita", 0, slump(.6, .9), slump(1.0, 2.0), slump(.6, .9));
+        ma.nasta = t + slump(4.5, 7.5);
+      }
+    };
+
+    // ── Matematikern vid tavlan ──
+    // Kritan skriver en rad i taget, tecken för tecken; handen följer kritan: de fyra skrivlägena (spetsen
+    // uppe och nere, till höger och mitt på tavlan) vägs efter var kritan är, och varje läges hand flyttas
+    // dit. Efter två rader kliver han bak och tänker, och sedan suddar han med handen och börjar om.
+    const mt = { fas: "vanta", slut: .8, rad: 0, tecken: 0, tavla: 0, P: [1361, 415], fran: null, till: null, start: 0, dur: 0,
+                 skriven: [0, 0], suddad: [1, 1], rest: 0, upp: null, efter: null, nyTavla: false, tDur: 0 };
+    const text = document.createElement("canvas");
+    const TX = 4;   // texturens px per bildens px
+    let rader = [];   // per rad: tecknens gränser (bildens x), mitten (bildens y)
+    let textTex = null;
+    const ritaTavla = () => {
+      const [x0, y0, x1, y1] = scen.skriv.tavla;
+      text.width = (x1 - x0) * TX; text.height = (y1 - y0) * TX;
+      const g = text.getContext("2d");
+      g.clearRect(0, 0, text.width, text.height);
+      g.fillStyle = "#fff"; g.textBaseline = "middle";
+      const SX = 1276, SB = 84, Y = [413, 486];
+      rader = TAVLOR[mt.tavla % TAVLOR.length].map((rad, r) => {
+        let f = 88;
+        g.font = `400 ${f}px Kalam, "Bradley Hand", "Segoe Print", cursive`;
+        const w0 = g.measureText(rad).width;
+        f = Math.min(88, f * SB * TX / w0);
+        g.font = `400 ${f}px Kalam, "Bradley Hand", "Segoe Print", cursive`;
+        const x = (SX - x0) * TX, y = (Y[r] - y0) * TX;
+        // Kritan: ett kraftigt drag och ett lager med lite förskjutning ger en ojämn, torr kant.
+        g.strokeStyle = "#fff"; g.lineWidth = 3.2; g.lineJoin = "round";
+        g.globalAlpha = .8; g.fillText(rad, x, y); g.strokeText(rad, x, y);
+        g.globalAlpha = .4; g.fillText(rad, x + 1.5, y - 1);
+        g.globalAlpha = 1;
+        const granser = [];
+        for (let i = 0; i <= rad.length; i++) granser.push(SX + g.measureText(rad.slice(0, i)).width / TX);
+        return { text: rad, granser, y: Y[r] };
+      });
+      gl.activeTexture(gl.TEXTURE4); gl.bindTexture(gl.TEXTURE_2D, textTex);
+      gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, gl.NONE);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, text);
+    };
+    const tillBu = (x) => (x - scen.skriv.tavla[0]) / (scen.skriv.tavla[2] - scen.skriv.tavla[0]);
+    const flyttaPenna = (t, till, dur, sedan) => { mt.fas = "flytt"; mt.fran = mt.P.slice(); mt.till = till; mt.start = t; mt.dur = dur; mt.efter = sedan; };
+    const radStart = (r) => [rader[r].granser[0] - 2, rader[r].y];
+    const styrMatem = (t, dt) => {
+      const sp = scen.skriv.spetsar;
+      // Stjärnfallet: kritan tillbaka till viloläget, sedan vänder han sig om och tittar upp.
+      if (mt.upp && t > mt.upp.till - 1) mt.upp = null;
+      if (mt.upp && t >= mt.upp.vid && (mt.fas === "skriv" || mt.fas === "vanta" || mt.fas === "tanker")) {
+        const langd = mt.upp.till - t;
+        mt.upp = null;
+        if (mt.fas === "tanker") slot(fig.matem, "matem-upp", 0, .5, Math.max(.5, langd - .7), .7, true);
+        else {
+          const aterupp = { fas: mt.fas, P: mt.P.slice(), slut: mt.slut };
+          flyttaPenna(t, sp.bas.slice(), .3, () => {
+            mt.fas = "upp"; slot(fig.matem, "matem-upp", 0, .55, Math.max(.5, langd - .8), .7, true);
+            mt.aterupp = aterupp;
+          });
+        }
+      }
+      if (mt.fas === "vanta" && t >= mt.slut) {
+        if (mt.nyTavla) { mt.nyTavla = false; mt.tavla++; ritaTavla(); mt.rest = 0; mt.skriven = [0, 0]; mt.suddad = [1, 1]; }
+        mt.rad = 0; mt.tecken = 0; mt.tDur = 0; flyttaPenna(t, radStart(0), .5, () => { mt.fas = "skriv"; mt.start = t; mt.tstart = tNu; }); }
+      if (mt.fas === "flytt") {
+        const x = mjukare(klamp((t - mt.start) / mt.dur));
+        const lyft = Math.sin(Math.PI * x) * 4;   // kritan lyfts från tavlan medan handen flyttas
+        mt.P = [mt.fran[0] + (mt.till[0] - mt.fran[0]) * x, mt.fran[1] + (mt.till[1] - mt.fran[1]) * x - lyft];
+        if (x >= 1) { const f = mt.efter; mt.efter = null; mt.fas = "?"; f && f(); }
+      }
+      if (mt.fas === "skriv") {
+        const r = rader[mt.rad], n = r.text.length;
+        if (!mt.tDur) { const tk = r.text[mt.tecken]; mt.tDur = tk === " " ? slump(.07, .12) : slump(.2, .34); mt.tstart = t; }
+        const x = klamp((t - mt.tstart) / mt.tDur);
+        const x0 = r.granser[mt.tecken], x1 = r.granser[mt.tecken + 1];
+        const px = x0 + (x1 - x0) * x;
+        // Handen går i små bågar upp och ner medan tecknet skrivs.
+        const ry = r.y + Math.sin(x * Math.PI * 2 * (1.5 + (mt.tecken % 3) * .5)) * 4.5 - 1;
+        mt.P = [px, ry];
+        mt.skriven[mt.rad] = tillBu(px) + .002;
+        if (x >= 1) {
+          mt.tecken++; mt.tDur = 0;
+          if (mt.tecken >= n) {
+            mt.skriven[mt.rad] = 1.1;
+            if (mt.rad === 0) { mt.rad = 1; mt.tecken = 0; flyttaPenna(t, radStart(1), slump(.45, .6), () => { mt.fas = "skriv"; }); }
+            else flyttaPenna(t, sp.bas.slice(), .45, () => { mt.fas = "tanker"; slot(fig.matem, "matem-tanker", slump(.2, .5), .8, slump(1.6, 3), .8, true); mt.slut = t + 4.6; });
+          }
+        }
+      }
+      if (mt.fas === "tanker" && !fig.matem.pose) {
+        // Sudda: handen sveper över raderna från höger till vänster, och kritan försvinner bakom den.
+        mt.fas = "?";
+        const svep = (r, klar) => {
+          const rr = rader[r], xs = rr.granser[rr.granser.length - 1] + 2, xe = Math.max(rr.granser[0] - 3, 1283);   // längre vänsterut sträcks handen
+          flyttaPenna(tNu, [xs, rr.y], .35, () => {
+            mt.fas = "sudd"; mt.srad = r; mt.start = tNu; mt.dur = slump(.9, 1.2); mt.xs = xs; mt.xe = xe; mt.efter = klar; mt.rest = 1;
+          });
+        };
+        // Den nya tavlan ritas först när han börjar skriva igen: då har det suddade hunnit blekna.
+        svep(0, () => svep(1, () => { mt.nyTavla = true; mt.fas = "vanta"; mt.slut = tNu + slump(1.6, 2.4); }));
+      }
+      if (mt.fas === "sudd") {
+        const x = klamp((t - mt.start) / mt.dur);
+        const px = mt.xs + (mt.xe - mt.xs) * mjukt(x);
+        mt.P = [px, rader[mt.srad].y + Math.sin(x * Math.PI * 7) * 9];
+        mt.suddad[mt.srad] = x >= 1 ? 0 : tillBu(px);
+        if (x >= 1) { const f = mt.efter; mt.efter = null; mt.fas = "?"; f(); }
+      }
+      if (mt.fas === "upp" && !fig.matem.pose) {
+        const a = mt.aterupp; mt.aterupp = null; mt.fas = "?";
+        flyttaPenna(t, a.P, .35, () => { mt.fas = a.fas; mt.tDur = 0; mt.slut = Math.max(tNu, a.slut || 0); });
+      }
+      mt.rest = Math.max(0, mt.rest - dt / 2);
+      // Skrivlägenas vikter efter var kritan är.
+      const [X, Y] = mt.P;
+      const v = mjukt(klamp((Y - 413) / 73 * 2.2 - .6));   // kort övergång mellan raderna: annars två huvuden
+      const uo = mjukt(klamp((X - sp.mitt[0]) / (sp.bas[0] - sp.mitt[0]))), un = mjukt(klamp((X - sp.nm[0]) / (sp.nere[0] - sp.nm[0])));
+      const w = [uo * (1 - v), (1 - uo) * (1 - v), un * v, (1 - un) * v];
+      gl.uniform4f(U.uWVikt, ...w);
+      ["bas", "mitt", "nere", "nm"].forEach((k, i) => gl.uniform2f(U[`uWFlytt[${i}]`], X - sp[k][0], Y - sp[k][1]));
+      gl.uniform4f(U.uKrita, mt.skriven[0], mt.skriven[1], mt.suddad[0], mt.suddad[1]);
+      gl.uniform2f(U.uKritaRest, (450 - scen.skriv.tavla[1]) / (scen.skriv.tavla[3] - scen.skriv.tavla[1]), mt.rest);
+    };
+
     // Andningen: var och en i sin takt, som varierar lite.
-    const andas = [[960, 700, 260, .0045, 4.3], [1415, 150, 95, .007, 3.7], [1390, 520, 85, .007, 4.1], [1530, 690, 95, .006, 3.9]];
+    const andas = [[960, 700, 260, .0045, 4.3], [1415, 150, 95, .008, 3.7], [1445, 530, 100, .007, 4.1], [1530, 690, 95, .007, 3.9]];
     const andfas = andas.map(() => Math.random() * 6.28);
-    // Matematikerns penna: små rörelser i skrivtakt, raden glider åt höger och börjar om.
-    const penna = (t) => {
-      const rad = 4.2, x = (t % rad) / rad, gang = x < .92 ? x / .92 : 1 - (x - .92) / .08;
-      return [(gang - .5) * 5 + Math.sin(t * 23) * .5, Math.sin(t * 13.7) * .45 + Math.sin(t * 29.3) * .3];
-    };
     const dammArr = new Float32Array(18 * 4), flisArr = new Float32Array(14 * 4);
     const styr = (t, dt) => {
+      tNu = t;
+      styrMeteor(t);
       styrStenhuggare(t, dt);
-      const fig = [[astronomen, "astronom"], [matematikern, "matematiker"], [mataren, "matare"]];
-      fig.forEach(([f, namn], i) => {
-        const [[cx, cy], grader, [fx, fy]] = scen.vridning[namn];
-        gl.uniform4f(U[`uFigVrid[${i}]`], cx, cy, grader * Math.PI / 180, styrFigur(f, t));
-        gl.uniform2f(U[`uFigFlytt[${i}]`], fx, fy);
-      });
+      styrAstronom(t); styrMatare(t); styrMatem(t, dt);
+      for (const f of Object.values(fig)) styrSlot(f, t);
       andas.forEach(([x, y, r, amp, takt], i) => {
         andfas[i] += dt * 6.2832 / (takt * (1 + .15 * Math.sin(t * .05 + i)));
         let a = amp * (.5 - .5 * Math.cos(andfas[i]));
-        if (i === 0 && sl.fas !== "vila") a = 0;   // stenhuggaren andas bara när han vilar
+        if (i === 0 && ["lyft", "uppe", "slag"].includes(sl.fas)) a = 0;   // stenhuggaren andas inte mitt i slaget
+        if (i === 0 && sl.fas === "torkar") a *= 2.2;                        // men djupt när han vilar
         gl.uniform4f(U[`uAnd[${i}]`], x, y, r, a);
       });
-      const [px, py] = matematikern.u < .02 ? penna(t) : [0, 0];
-      gl.uniform2f(U.uPenna, px, py);
       // Damm och flisor.
       dammArr.fill(0); flisArr.fill(0);
       for (let i = damm.length - 1; i >= 0; i--) { const d = damm[i]; if (t - d.t0 > d.liv) damm.splice(i, 1); }
@@ -2169,7 +2440,7 @@
     const levande = () => redo && !forlorad && !stilla && !document.hidden && vy.classList.contains("aktiv");
     let forra = 0;
     const rita1 = (nu) => {
-      const t = nu / 1000 - T0, dt = forra ? Math.min(.1, t - forra) : 1 / 30;
+      const t = nu / 1000 - T0, dt = forra ? Math.min(.1, Math.max(0, t - forra)) : 1 / 30;
       forra = t;
       gl.uniform1f(U.uT, t); styr(t, dt);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
@@ -2187,15 +2458,18 @@
       const t = gl.createTexture();
       gl.activeTexture(gl.TEXTURE0 + enhet); gl.bindTexture(gl.TEXTURE_2D, t);
       gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, rak ? gl.NONE : gl.BROWSER_DEFAULT_WEBGL);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, bild);
+      if (bild) gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA8, gl.RGBA, gl.UNSIGNED_BYTE, bild);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, mip ? gl.LINEAR_MIPMAP_LINEAR : gl.LINEAR);
       if (mip) gl.generateMipmap(gl.TEXTURE_2D);
+      return t;
     };
-    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=c0893521"), ladda("omslag/intro-lager.png?v=9884cb2f"),
-                 ladda("omslag/intro-glimt.png?v=7f74e79a"), fetch("omslag/intro-scen.json?v=11406b7b").then((r) => r.json())])
+    // Kritans handstil: Kalam (samma som i filmerna), annars datorns egen handstil.
+    const typsnitt = document.fonts ? document.fonts.load('400 64px "Kalam"').catch(() => null) : Promise.resolve();
+    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=584e770e"), ladda("omslag/intro-lager.png?v=33630862"),
+                 ladda("omslag/intro-glimt.png?v=ee1a49f5"), fetch("omslag/intro-scen.json?v=16ae32de").then((r) => r.json()), typsnitt])
       .then(([bild, lager, lagerM, glimt, data]) => {
         scen = data; bygg();
         prog = gl.createProgram();
@@ -2209,20 +2483,22 @@
         const a = gl.getAttribLocation(prog, "a"); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
         const n = gl.getProgramParameter(prog, gl.ACTIVE_UNIFORMS);
         for (let i = 0; i < n; i++) { const nm = gl.getActiveUniform(prog, i).name; U[nm] = gl.getUniformLocation(prog, nm); U[nm.replace("[0]", "")] = U[nm]; }
-        for (let i = 0; i < 4; i++) U[`uAnd[${i}]`] = gl.getUniformLocation(prog, `uAnd[${i}]`);
+        for (let i = 0; i < 4; i++) for (const nm of ["uAnd", "uWKarta", "uWFlytt"]) U[`${nm}[${i}]`] = gl.getUniformLocation(prog, `${nm}[${i}]`);
         for (let i = 0; i < 3; i++) for (const nm of ["uFigKalla", "uFigKarta", "uFigVrid", "uFigFlytt"]) U[`${nm}[${i}]`] = gl.getUniformLocation(prog, `${nm}[${i}]`);
         BW = bild.naturalWidth; BH = bild.naturalHeight;
         textur(0, bild, true, false); textur(1, lager, false, false); textur(2, lagerM, false, true); textur(3, glimt, false, true);
-        [["uBild", 0], ["uLager", 1], ["uLagerM", 2], ["uMask", 3]].forEach(([nm, e]) => gl.uniform1i(U[nm], e));
+        textTex = textur(4, null, false, true);
+        [["uBild", 0], ["uLager", 1], ["uLagerM", 2], ["uMask", 3], ["uText", 4]].forEach(([nm, e]) => gl.uniform1i(U[nm], e));
         gl.uniform2f(U.uPx, BW, BH); gl.uniform2f(U.uKarta, scen.karta[0], scen.karta[1]);
-        const [x0, y0, x1, y1] = scen.slaggare;
+        const [x0, y0, x1, y1] = scen.stenhuggare.ruta;
         gl.uniform4f(U.uSlRuta, x0, y0, x1 - x0, y1 - y0);
-        gl.uniform2f(U.uBakom, scen.rutor.bakom[0], scen.rutor.bakom[1]);
-        ["astronom", "matematiker", "matare"].forEach((namn, i) => {
-          const [a0, b0, a1, b1] = scen[`${namn}_kalla`];
-          gl.uniform4f(U[`uFigKalla[${i}]`], a0, b0, a1 - a0, b1 - b0);
-          gl.uniform2f(U[`uFigKarta[${i}]`], scen.rutor[namn][0], scen.rutor[namn][1]);
-        });
+        gl.uniform2f(U.uBakom, scen.rutor["s-bakom"][0], scen.rutor["s-bakom"][1]);
+        gl.uniform4f(U.uWRuta, ...scen.skriv.ruta);
+        ["bas", "mitt", "nere", "nm"].forEach((k, i) => gl.uniform2f(U[`uWKarta[${i}]`], scen.rutor["w-" + k][0], scen.rutor["w-" + k][1]));
+        const [tx0, ty0, tx1, ty1] = scen.skriv.tavla;
+        gl.uniform4f(U.uTavla, tx0, ty0, tx1 - tx0, ty1 - ty0);
+        mt.tavla = Math.floor(Math.random() * TAVLOR.length);
+        ritaTavla();
         T0 = performance.now() / 1000;
         sl.kvar = Math.round(slump(4, 8)); sl.slut = slump(1.2, 2.5);
         redo = true; starta();
@@ -2234,13 +2510,18 @@
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
     // För granskningen (bildrutor i fast takt): stoppa den egna loopen och rita en given tid.
-    duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, astronomen, matematikern, mataren };
+    duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, mt, met, fig, as, ma };
   };
   // Var målningen ligger i fönstret. På datorn: i mitten, men inte så att stenhuggaren (x 845 i målningen,
   // 1672 bred) hamnar bakom texten; i fönster nära 4:3 flyttas den åt höger (1024x768: skjortan låg bakom
   // ingressen). På telefonen ligger texten över hela bredden: där visas astronomen, matematikern och blocket.
+  // Är fönstret bredare än målningen (Rickards Chrome med flikar, bokmärken och felsökningsrad: astronomen och
+  // blocket klipptes av) visas hela höjden, fäst till höger, och till vänster tar sidans mörker vid.
   const introFokus = () => {
     const vy = $("vy-intro"), fond = vy.querySelector(".fond"), b = vy.clientWidth, h = vy.clientHeight;
+    const bred = b > 700 && b / h > 1672 / 941 * 1.02;
+    fond.style.objectFit = bred ? "contain" : "";
+    if (bred) { fond.style.objectPosition = "100% 50%"; return [1, .5, true]; }
     let fx = .8;
     if (b > 700) {
       const s = Math.max(b / 1672, h / 941), over = 1672 * s - b;
@@ -2248,7 +2529,7 @@
       fx = over < 1 ? .5 : Math.min(.5, Math.max(0, (845 * s - hoger - 24) / over));
     }
     fond.style.objectPosition = `${(fx * 100).toFixed(1)}% 50%`;
-    return [fx, .5];
+    return [fx, .5, false];
   };
   introFokus();
   levandeScen({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), fokus: introFokus });
