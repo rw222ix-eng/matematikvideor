@@ -521,6 +521,89 @@
       "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
     ]
   },
+  "formelbladet-ma2-3-logaritmer": {
+    "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?",
+    "delar": [
+      {
+        "fraga": "Skriv ekvationen, med x för antalet år.",
+        "typ": "ekvation",
+        "svar": "1000*1.02^x = 2000",
+        "exempel": "t.ex. 1000 · 1,1^x = 2000",
+        "tangenter": [
+          "^",
+          "·",
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "1000*1.2^x = 2000",
+            "text": "2 procent är 0,02, inte 0,2. Pengarna blir 102 procent av vad de var, så de gångras med 1,02 varje år."
+          },
+          {
+            "svar": "1000*0.02^x = 2000",
+            "text": "0,02 är räntan, alltså det som läggs till. Pengarna blir 100 + 2 = 102 procent av vad de var, så de gångras med 1,02."
+          },
+          {
+            "svar": "1000*1.02*x = 2000",
+            "text": "Pengarna gångras med 1,02 en gång för varje år, så x ska stå uppe i exponenten: 1,02ˣ."
+          },
+          {
+            "svar": "1000 + 20*x = 2000",
+            "text": "Då får du 20 kronor varje år. Men räntan räknas på allt som finns på kontot, så pengarna gångras med 1,02 varje år."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många år tar det? Svara med en decimal.",
+        "typ": "tal",
+        "svar": 35.0028,
+        "tolerans": 0.06,
+        "enhet": "år",
+        "exempel": "t.ex. 7,3",
+        "fel": [
+          {
+            "svar": "3.802",
+            "tolerans": 0.06,
+            "text": "Det är svaret med 20 procent ränta. 2 procent ger förändringsfaktorn 1,02, så x = lg 2 / lg 1,02."
+          },
+          {
+            "svar": "0.0286",
+            "tolerans": 0.002,
+            "text": "Du har delat åt fel håll. x · lg 1,02 = lg 2, så x = lg 2 delat med lg 1,02."
+          },
+          {
+            "svar": "-0.1772",
+            "tolerans": 0.01,
+            "text": "Ett antal år kan inte vara negativt. Förändringsfaktorn är 1,02, inte 0,02."
+          },
+          {
+            "svar": "50",
+            "text": "50 år blir det om du får 20 kronor varje år. Men räntan räknas på allt som finns på kontot, så det går lite fortare: x = lg 2 / lg 1,02."
+          },
+          {
+            "svar": "36",
+            "text": "Nästan. Ekvationen ger x = lg 2 / lg 1,02 ≈ 35,0. (Räknar man bara hela år har pengarna gått över 2000 kronor under år 36.)"
+          }
+        ],
+        "nara": {
+          "tolerans": 0.6,
+          "text": "Nästan. Räkna lg 2 / lg 1,02 på räknaren och avrunda till en decimal."
+        }
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu blir pengarna 110 procent",
+      "text": "Pengarna gångras med samma tal varje år, så ekvationen blir 1000 · 1,02ˣ = 2000. Dela med 1000, ta lg av båda sidorna och låt regeln lg xᵖ = p · lg x flytta ner x."
+    },
+    "losning": [
+      "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år, så de gångras med 1,02.",
+      "Efter x år finns det 1000 · 1,02ˣ kronor, så ekvationen blir 1000 · 1,02ˣ = 2000.",
+      "Dela båda sidorna med 1000: 1,02ˣ = 2.",
+      "Ta lg av båda sidorna: lg 1,02ˣ = lg 2, och regeln flyttar ner x: x · lg 1,02 = lg 2.",
+      "x = lg 2 / lg 1,02 ≈ 35,0. Det tar ungefär 35 år."
+    ],
+    "notisFran": "Tänk dig ett sparkonto med 10 procent"
+  },
   "formelbladet-ma2-6-statistik": {
     "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
     "delar": [

@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-26T12:55:42.206Z",
+ "byggd": "2026-09-26T13:01:58.853Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -6682,6 +6682,571 @@
      "s": 454.04,
      "e": 455.78,
      "text": "Hur högt upp sitter toppen?"
+    }
+   ]
+  },
+  {
+   "id": "formelbladet-ma2-3-logaritmer",
+   "titel": "Formelbladet Ma 2, del 3 – Logaritmer",
+   "ar": 2025,
+   "serie": "formelbladet-ma2",
+   "del": 3,
+   "ocksa": null,
+   "kurs": "Matematik 2",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-ma2-3-v1/formelbladet-ma2-3-logaritmer-1080p.mp4",
+   "moment": "Formelbladet: logaritmer",
+   "begrepp": [
+    "formelbladet",
+    "logaritm",
+    "lg",
+    "tiopotens",
+    "exponent",
+    "prefix",
+    "logaritmlagarna",
+    "potensregler",
+    "exponentialekvation",
+    "förändringsfaktor",
+    "ränta",
+    "sparkonto",
+    "räknarens log-knapp"
+   ],
+   "beskrivning": "Vi går igenom logaritmerna längst ner på första sidan av formelbladet till nationella provet i matematik 2: vad lg betyder och de tre reglerna för logaritmer. Med dem räknar vi ut hur många år det tar innan pengarna på ett sparkonto har blivit dubbelt så många.",
+   "youtube": null,
+   "langd": 390,
+   "omslag": "omslag/formelbladet-ma2-3-logaritmer.jpg?v=2bbbf06c",
+   "omslagRen": "omslag/formelbladet-ma2-3-logaritmer-ren.jpg?v=6686a259",
+   "omslagStor": "omslag/formelbladet-ma2-3-logaritmer-stor.jpg?v=4eb719c2",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "På nationella provet i matematik 2 får alla ett formelblad från Skolverket. Längst ner på första sidan står rubriken logaritmer, och under den står fyra formler med bokstäverna lg."
+    },
+    {
+     "t": 14,
+     "text": "Logaritmer behövs till exempel för att svara på en fråga om ett sparkonto. Sätter du in 1000 kronor med 5 procent ränta, hur många år tar det innan pengarna har blivit 2000 kronor?"
+    },
+    {
+     "t": 26,
+     "text": "För att svara på det börjar vi med tiopotenserna från matematik 1. Lite högre upp på samma sida står prefixtabellen, och där står att kilo är 10 upphöjt till 3, alltså 1000."
+    },
+    {
+     "t": 40,
+     "text": "I tabellen vet man exponenten och räknar ut talet. Men ofta är det tvärtom, så man vet talet och söker exponenten, till exempel vad 10 ska upphöjas till för att det ska bli 1000. Svaret är 3, för 10 gånger 10 gånger 10 är 1000."
+    },
+    {
+     "t": 57,
+     "text": "Den exponenten kallas logaritmen, och man skriver lg 1000 är lika med 3. Första raden på bladet skriver det med bokstäver. Där står y är lika med 10 upphöjt till x, och till höger x är lika med lg y."
+    },
+    {
+     "t": 75,
+     "text": "Pilen mellan dem betyder att de två ekvationerna säger samma sak. y är talet och x är exponenten, så lg y är den exponent som tian ska ha för att det ska bli y."
+    },
+    {
+     "t": 88,
+     "text": "På samma sätt är lg 100 lika med 2, för 10 upphöjt till 2 är 100. I prefixtabellen står milli som 10 upphöjt till minus 3, och därför är lg av en tusendel minus 3."
+    },
+    {
+     "t": 104,
+     "text": "Med första raden kan man också lösa ekvationer. Ekvationen 10 upphöjt till x är lika med 2 har lösningen x är lika med lg 2, och lg 2 ligger mellan 0 och 1, för 10 upphöjt till 0 är 1 och 10 upphöjt till 1 är 10."
+    },
+    {
+     "t": 124,
+     "text": "Exakt hur stort lg 2 är räknar man ut på räknaren, där knappen heter log. Det blir ungefär noll komma tre noll ett, och 10 upphöjt till noll komma tre noll ett är mycket riktigt ungefär 2."
+    },
+    {
+     "t": 139,
+     "text": "På raden under står tre regler, och de är potensreglerna från matematik 1 skrivna med logaritmer. Längst till vänster står att lg x plus lg y är lika med lg av x gånger y."
+    },
+    {
+     "t": 154,
+     "text": "10 gånger 100 är 1000, och när man gångrar tiopotenser lägger man ihop exponenterna. Alltså är lg 10 plus lg 100 lika med lg 1000, för 1 plus 2 är 3."
+    },
+    {
+     "t": 169,
+     "text": "Regeln gäller också tal som inte är tiopotenser. lg 2 plus lg 5 är lg 10, för 2 gånger 5 är 10, och lg 10 är 1. På räknaren är lg 5 ungefär 0,699, och noll komma tre noll ett plus 0,699 är precis 1."
+    },
+    {
+     "t": 194,
+     "text": "I mitten står att lg x minus lg y är lika med lg av x delat med y. När man delar tiopotenser drar man bort exponenterna, så lg 1000 minus lg 10 är lg 100, för 3 minus 1 är 2."
+    },
+    {
+     "t": 213,
+     "text": "Längst till höger står att lg av x upphöjt till p är lika med p gånger lg x. Exponenten p flyttas alltså ner och står framför lg."
+    },
+    {
+     "t": 225,
+     "text": "1000 upphöjt till 2 är en miljon, och det är 10 upphöjt till 6. Därför är lg av 1000 upphöjt till 2 lika med 2 gånger lg 1000, för 2 gånger 3 är 6."
+    },
+    {
+     "t": 240,
+     "text": "Med den regeln kan man uppskatta stora tal. lg av 2 upphöjt till 10 är 10 gånger lg 2, alltså ungefär 10 gånger noll komma tre noll ett, och det är tre komma noll ett."
+    },
+    {
+     "t": 256,
+     "text": "Därför är 2 upphöjt till 10 ungefär 10 upphöjt till tre komma noll ett, alltså lite mer än 1000."
+    },
+    {
+     "t": 264,
+     "text": "Regeln längst till höger löser frågan om sparkontot, för med den kan man få ner ett x som står i en exponent."
+    },
+    {
+     "t": 271,
+     "text": "Med 5 procent ränta blir pengarna 105 procent av vad de var varje år, alltså gångras de med 1,05. Efter x år finns det därför 1000 gånger 1,05 upphöjt till x kronor."
+    },
+    {
+     "t": 287,
+     "text": "Pengarna har blivit 2000 kronor när 1000 gånger 1,05 upphöjt till x är lika med 2000. Delar man båda sidorna med 1000 blir ekvationen 1,05 upphöjt till x är lika med 2."
+    },
+    {
+     "t": 303,
+     "text": "Här syns inte direkt vad x är, så man tar lg av båda sidorna. Det får man göra, för är två tal lika stora är deras logaritmer också lika stora."
+    },
+    {
+     "t": 314,
+     "text": "Nu kan regeln längst till höger flytta ner x framför lg. Vänstra sidan blir x gånger lg 1,05, och högra sidan är lg 2."
+    },
+    {
+     "t": 326,
+     "text": "Sedan delar man båda sidorna med lg 1,05, så x är lika med lg 2 delat med lg 1,05. Räknaren ger ungefär 14,2, så det tar drygt 14 år innan pengarna har blivit 2000 kronor."
+    },
+    {
+     "t": 344,
+     "text": "Tänk dig ett sparkonto med 10 procent ränta i stället. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?"
+    },
+    {
+     "t": 353,
+     "text": "Nu blir pengarna 110 procent av vad de var varje år, så de gångras med 1,1 och ekvationen blir 1,1 upphöjt till x är lika med 2. Då är x lika med lg 2 delat med lg 1,1, och det är ungefär 7,3 år."
+    },
+    {
+     "t": 373,
+     "text": "På provet står alla fyra formlerna längst ner på första sidan, så du kan slå upp dem när du behöver. Tänk dig ett sparkonto med 2 procent ränta i stället. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?"
+    }
+   ],
+   "kapitel": [],
+   "dinTur": {
+    "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?",
+    "delar": [
+     {
+      "fraga": "Skriv ekvationen, med x för antalet år.",
+      "typ": "ekvation",
+      "svar": "1000*1.02^x = 2000",
+      "exempel": "t.ex. 1000 · 1,1^x = 2000",
+      "tangenter": [
+       "^",
+       "·",
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "1000*1.2^x = 2000",
+        "text": "2 procent är 0,02, inte 0,2. Pengarna blir 102 procent av vad de var, så de gångras med 1,02 varje år."
+       },
+       {
+        "svar": "1000*0.02^x = 2000",
+        "text": "0,02 är räntan, alltså det som läggs till. Pengarna blir 100 + 2 = 102 procent av vad de var, så de gångras med 1,02."
+       },
+       {
+        "svar": "1000*1.02*x = 2000",
+        "text": "Pengarna gångras med 1,02 en gång för varje år, så x ska stå uppe i exponenten: 1,02ˣ."
+       },
+       {
+        "svar": "1000 + 20*x = 2000",
+        "text": "Då får du 20 kronor varje år. Men räntan räknas på allt som finns på kontot, så pengarna gångras med 1,02 varje år."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur många år tar det? Svara med en decimal.",
+      "typ": "tal",
+      "svar": 35.0028,
+      "tolerans": 0.06,
+      "enhet": "år",
+      "exempel": "t.ex. 7,3",
+      "fel": [
+       {
+        "svar": "3.802",
+        "tolerans": 0.06,
+        "text": "Det är svaret med 20 procent ränta. 2 procent ger förändringsfaktorn 1,02, så x = lg 2 / lg 1,02."
+       },
+       {
+        "svar": "0.0286",
+        "tolerans": 0.002,
+        "text": "Du har delat åt fel håll. x · lg 1,02 = lg 2, så x = lg 2 delat med lg 1,02."
+       },
+       {
+        "svar": "-0.1772",
+        "tolerans": 0.01,
+        "text": "Ett antal år kan inte vara negativt. Förändringsfaktorn är 1,02, inte 0,02."
+       },
+       {
+        "svar": "50",
+        "text": "50 år blir det om du får 20 kronor varje år. Men räntan räknas på allt som finns på kontot, så det går lite fortare: x = lg 2 / lg 1,02."
+       },
+       {
+        "svar": "36",
+        "text": "Nästan. Ekvationen ger x = lg 2 / lg 1,02 ≈ 35,0. (Räknar man bara hela år har pengarna gått över 2000 kronor under år 36.)"
+       }
+      ],
+      "nara": {
+       "tolerans": 0.6,
+       "text": "Nästan. Räkna lg 2 / lg 1,02 på räknaren och avrunda till en decimal."
+      }
+     }
+    ],
+    "ledtrad": {
+     "text": "Pengarna gångras med samma tal varje år, så ekvationen blir 1000 · 1,02ˣ = 2000. Dela med 1000, ta lg av båda sidorna och låt regeln lg xᵖ = p · lg x flytta ner x.",
+     "t": 353
+    },
+    "losning": [
+     "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år, så de gångras med 1,02.",
+     "Efter x år finns det 1000 · 1,02ˣ kronor, så ekvationen blir 1000 · 1,02ˣ = 2000.",
+     "Dela båda sidorna med 1000: 1,02ˣ = 2.",
+     "Ta lg av båda sidorna: lg 1,02ˣ = lg 2, och regeln flyttar ner x: x · lg 1,02 = lg 2.",
+     "x = lg 2 / lg 1,02 ≈ 35,0. Det tar ungefär 35 år."
+    ],
+    "notisFran": 344
+   },
+   "undertext": [
+    {
+     "s": 0.14,
+     "e": 5.34,
+     "text": "På nationella provet i matematik 2 får alla ett formelblad från Skolverket."
+    },
+    {
+     "s": 6.12,
+     "e": 12.02,
+     "text": "Längst ner på första sidan står rubriken logaritmer, och under den står fyra formler"
+    },
+    {
+     "s": 12.06,
+     "e": 13.64,
+     "text": "med bokstäverna lg."
+    },
+    {
+     "s": 14.58,
+     "e": 18.6,
+     "text": "Logaritmer behövs till exempel för att svara på en fråga om ett sparkonto."
+    },
+    {
+     "s": 19.4,
+     "e": 24.56,
+     "text": "Sätter du in 1000 kronor med 5 procent ränta, hur många år tar det innan pengarna har"
+    },
+    {
+     "s": 24.6,
+     "e": 26.16,
+     "text": "blivit 2000 kronor?"
+    },
+    {
+     "s": 26.92,
+     "e": 30.66,
+     "text": "För att svara på det börjar vi med tiopotenserna från matematik 1."
+    },
+    {
+     "s": 31.44,
+     "e": 37.6,
+     "text": "Lite högre upp på samma sida står prefixtabellen, och där står att kilo är 10 upphöjt"
+    },
+    {
+     "s": 37.64,
+     "e": 39.38,
+     "text": "till 3, alltså 1000."
+    },
+    {
+     "s": 40.24,
+     "e": 43.42,
+     "text": "I tabellen vet man exponenten och räknar ut talet."
+    },
+    {
+     "s": 44.06,
+     "e": 47.96,
+     "text": "Men ofta är det tvärtom, så man vet talet och söker exponenten,"
+    },
+    {
+     "s": 48.56,
+     "e": 51.86,
+     "text": "till exempel vad 10 ska upphöjas till för att det ska bli 1000."
+    },
+    {
+     "s": 52.8,
+     "e": 56.96,
+     "text": "Svaret är 3, för 10 gånger 10 gånger 10 är 1000."
+    },
+    {
+     "s": 57.6,
+     "e": 63.3,
+     "text": "Den exponenten kallas logaritmen, och man skriver lg 1000 är lika med 3."
+    },
+    {
+     "s": 64.26,
+     "e": 66.68,
+     "text": "Första raden på bladet skriver det med bokstäver."
+    },
+    {
+     "s": 67.28,
+     "e": 73.94,
+     "text": "Där står y är lika med 10 upphöjt till x, och till höger x är lika med lg y."
+    },
+    {
+     "s": 75.2,
+     "e": 79.08,
+     "text": "Pilen mellan dem betyder att de två ekvationerna säger samma sak."
+    },
+    {
+     "s": 79.78,
+     "e": 87.94,
+     "text": "y är talet och x är exponenten, så lg y är den exponent som tian ska ha för att det ska bli y."
+    },
+    {
+     "s": 88.56,
+     "e": 94.72,
+     "text": "På samma sätt är lg 100 lika med 2, för 10 upphöjt till 2 är 100."
+    },
+    {
+     "s": 95.48,
+     "e": 103.82,
+     "text": "I prefixtabellen står milli som 10 upphöjt till minus 3, och därför är lg av en tusendel minus 3."
+    },
+    {
+     "s": 104.7,
+     "e": 107.12,
+     "text": "Med första raden kan man också lösa ekvationer."
+    },
+    {
+     "s": 107.94,
+     "e": 114.46,
+     "text": "Ekvationen 10 upphöjt till x är lika med 2 har lösningen x är lika med lg 2,"
+    },
+    {
+     "s": 115.14,
+     "e": 123.18,
+     "text": "och lg 2 ligger mellan 0 och 1, för 10 upphöjt till 0 är 1 och 10 upphöjt till 1 är 10."
+    },
+    {
+     "s": 124.12,
+     "e": 129.68,
+     "text": "Exakt hur stort lg 2 är räknar man ut på räknaren, där knappen heter log."
+    },
+    {
+     "s": 130.48,
+     "e": 136.82,
+     "text": "Det blir ungefär 0,301, och 10 upphöjt till 0,301"
+    },
+    {
+     "s": 136.86,
+     "e": 138.68,
+     "text": "är mycket riktigt ungefär 2."
+    },
+    {
+     "s": 139.4,
+     "e": 145.9,
+     "text": "På raden under står tre regler, och de är potensreglerna från matematik 1 skrivna med logaritmer."
+    },
+    {
+     "s": 146.84,
+     "e": 153.58,
+     "text": "Längst till vänster står att lg x plus lg y är lika med lg av x gånger y."
+    },
+    {
+     "s": 154.5,
+     "e": 160.4,
+     "text": "10 gånger 100 är 1000, och när man gångrar tiopotenser lägger man ihop exponenterna."
+    },
+    {
+     "s": 161.06,
+     "e": 168.74,
+     "text": "Alltså är lg 10 plus lg 100 lika med lg 1000, för 1 plus 2 är 3."
+    },
+    {
+     "s": 169.26,
+     "e": 172.24,
+     "text": "Regeln gäller också tal som inte är tiopotenser."
+    },
+    {
+     "s": 173.1,
+     "e": 181.74,
+     "text": "lg 2 plus lg 5 är lg 10, för 2 gånger 5 är 10, och lg 10 är 1."
+    },
+    {
+     "s": 182.52,
+     "e": 193.34,
+     "text": "På räknaren är lg 5 ungefär 0,699, och 0,301 plus 0,699 är precis 1."
+    },
+    {
+     "s": 194.28,
+     "e": 201.06,
+     "text": "I mitten står att lg x minus lg y är lika med lg av x delat med y."
+    },
+    {
+     "s": 201.92,
+     "e": 210.38,
+     "text": "När man delar tiopotenser drar man bort exponenterna, så lg 1000 minus lg 10 är lg 100,"
+    },
+    {
+     "s": 210.86,
+     "e": 212.78,
+     "text": "för 3 minus 1 är 2."
+    },
+    {
+     "s": 213.6,
+     "e": 220.04,
+     "text": "Längst till höger står att lg av x upphöjt till p är lika med p gånger lg x."
+    },
+    {
+     "s": 220.86,
+     "e": 224.68,
+     "text": "Exponenten p flyttas alltså ner och står framför lg."
+    },
+    {
+     "s": 225.74,
+     "e": 231,
+     "text": "1000 upphöjt till 2 är en miljon, och det är 10 upphöjt till 6."
+    },
+    {
+     "s": 231.76,
+     "e": 237.52,
+     "text": "Därför är lg av 1000 upphöjt till 2 lika med 2 gånger lg 1000,"
+    },
+    {
+     "s": 237.98,
+     "e": 239.88,
+     "text": "för 2 gånger 3 är 6."
+    },
+    {
+     "s": 240.6,
+     "e": 243.12,
+     "text": "Med den regeln kan man uppskatta stora tal."
+    },
+    {
+     "s": 244.26,
+     "e": 252.36,
+     "text": "lg av 2 upphöjt till 10 är 10 gånger lg 2, alltså ungefär 10 gånger 0,301,"
+    },
+    {
+     "s": 252.46,
+     "e": 255.3,
+     "text": "och det är 3,01."
+    },
+    {
+     "s": 256.12,
+     "e": 261.18,
+     "text": "Därför är 2 upphöjt till 10 ungefär 10 upphöjt till 3,01,"
+    },
+    {
+     "s": 261.74,
+     "e": 263.38,
+     "text": "alltså lite mer än 1000."
+    },
+    {
+     "s": 264.2,
+     "e": 269.6,
+     "text": "Regeln längst till höger löser frågan om sparkontot, för med den kan man få ner ett x"
+    },
+    {
+     "s": 269.66,
+     "e": 271.08,
+     "text": "som står i en exponent."
+    },
+    {
+     "s": 271.88,
+     "e": 276.94,
+     "text": "Med 5 procent ränta blir pengarna 105 procent av vad de var varje år,"
+    },
+    {
+     "s": 277.56,
+     "e": 279.96,
+     "text": "alltså gångras de med 1,05."
+    },
+    {
+     "s": 280.88,
+     "e": 286.6,
+     "text": "Efter x år finns det därför 1000 gånger 1,05 upphöjt till x kronor."
+    },
+    {
+     "s": 287.56,
+     "e": 294.86,
+     "text": "Pengarna har blivit 2000 kronor när 1000 gånger 1,05 upphöjt till x är lika med 2000."
+    },
+    {
+     "s": 295.78,
+     "e": 302.26,
+     "text": "Delar man båda sidorna med 1000 blir ekvationen 1,05 upphöjt till x är lika med 2."
+    },
+    {
+     "s": 303.2,
+     "e": 307.86,
+     "text": "Här syns inte direkt vad x är, så man tar lg av båda sidorna."
+    },
+    {
+     "s": 308.5,
+     "e": 313.78,
+     "text": "Det får man göra, för är två tal lika stora är deras logaritmer också lika stora."
+    },
+    {
+     "s": 314.5,
+     "e": 318.14,
+     "text": "Nu kan regeln längst till höger flytta ner x framför lg."
+    },
+    {
+     "s": 319.06,
+     "e": 325.82,
+     "text": "Vänstra sidan blir x gånger lg 1,05, och högra sidan är lg 2."
+    },
+    {
+     "s": 326.62,
+     "e": 335.36,
+     "text": "Sedan delar man båda sidorna med lg 1,05, så x är lika med lg 2 delat med lg 1,05."
+    },
+    {
+     "s": 336.32,
+     "e": 343.78,
+     "text": "Räknaren ger ungefär 14,2, så det tar drygt 14 år innan pengarna har blivit 2000 kronor."
+    },
+    {
+     "s": 344.3,
+     "e": 347.42,
+     "text": "Tänk dig ett sparkonto med 10 procent ränta i stället."
+    },
+    {
+     "s": 348.1,
+     "e": 352.44,
+     "text": "Hur många år tar det innan 1000 kronor har blivit 2000 kronor?"
+    },
+    {
+     "s": 353.46,
+     "e": 360.72,
+     "text": "Nu blir pengarna 110 procent av vad de var varje år, så de gångras med 1,1 och ekvationen"
+    },
+    {
+     "s": 360.76,
+     "e": 364.08,
+     "text": "blir 1,1 upphöjt till x är lika med 2."
+    },
+    {
+     "s": 365.02,
+     "e": 372.68,
+     "text": "Då är x lika med lg 2 delat med lg 1,1, och det är ungefär 7,3 år."
+    },
+    {
+     "s": 373.36,
+     "e": 377.26,
+     "text": "På provet står alla fyra formlerna längst ner på första sidan,"
+    },
+    {
+     "s": 377.74,
+     "e": 379.46,
+     "text": "så du kan slå upp dem när du behöver."
+    },
+    {
+     "s": 380.32,
+     "e": 383.34,
+     "text": "Tänk dig ett sparkonto med 2 procent ränta i stället."
+    },
+    {
+     "s": 384.04,
+     "e": 388.3,
+     "text": "Hur många år tar det innan 1000 kronor har blivit 2000 kronor?"
     }
    ]
   },
