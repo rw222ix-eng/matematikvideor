@@ -1846,6 +1846,7 @@
     uniform vec4 uMeteor;           // stjärnfallet: start (xy), slut (zw)
     uniform vec3 uMeteorT;          // huvudets läge 0..1, ljus, svansen som dröjer kvar
     uniform vec4 uAnd[4];           // andning: punkt (xy), radie (z), hur mycket (w)
+    uniform vec4 uGung;             // mätarens överkropp: mitt (xy), förskjutning (zw), px
     uniform vec4 uDamm[18];         // x, y, radie, styrka
     uniform vec4 uFlis[14];         // x, y, storlek, styrka
     uniform vec2 uSpricka;          // hur långt (0..1), styrka
@@ -1908,6 +1909,12 @@
         vec2 d = (px - a.xy) / vec2(a.z * .75, a.z);
         float w = smoothstep(1., .45, length(d)) * step(px.y, a.y);
         p.y = a.y + (p.y - a.y) * (1. - a.w * w);
+      }
+      // Mätaren lutar sig fram mot måttstocken och tillbaka, och gungar lite medan han arbetar: huvud och
+      // axlar flyttas några px, mjukt avtagande mot händerna och knäna, som står kvar.
+      {
+        vec2 d = (px - uGung.xy) / vec2(80., 70.);
+        p -= uGung.zw * exp(-dot(d, d) * 1.6) * smoothstep(705., 660., px.y);
       }
       vec4 m = texture(uMask, vUv);
       vec2 q = p;
@@ -2272,14 +2279,22 @@
         as.nasta = t + slump(7, 13);
       }
     };
-    // Mätaren: flyttar måttstocken, drar kritstreck, tittar på slagen och upp mot stjärnfallet.
-    const ma = { nasta: slump(1, 3) };
+    // Mätaren: lutar sig fram över måttstocken, drar kritstreck, tittar på slagen och upp mot stjärnfallet.
+    // Lutningen är en förskjutning av hans egen överkropp (4–7 px fram och ner), aldrig en toning.
+    const ma = { nasta: slump(1, 3), lut: 0, lutFran: 0, lutTill: 0, lutStart: 0, lutDur: 1, lutHall: 0 };
     const styrMatare = (t) => {
-      if (!fig.matare.pose && t >= ma.nasta) {
-        if (Math.random() < .55) slot(fig.matare, "matare-flytta", 0, slump(.9, 1.3), slump(.6, 1.6), slump(.9, 1.3));
-        else slot(fig.matare, "matare-krita", 0, slump(.6, .9), slump(1.0, 2.0), slump(.6, .9));
+      if (!fig.matare.pose && t >= ma.nasta && t >= ma.lutHall) {
+        if (Math.random() < .5) {
+          ma.lutFran = ma.lut; ma.lutTill = 1; ma.lutStart = t; ma.lutDur = slump(.9, 1.3);
+          ma.lutHall = t + ma.lutDur + slump(1.2, 2.6);
+        } else slot(fig.matare, "matare-krita", 0, slump(.6, .9), slump(1.0, 2.0), slump(.6, .9));
         ma.nasta = t + slump(4.5, 7.5);
       }
+      if (ma.lutTill === 1 && t >= ma.lutHall) { ma.lutFran = ma.lut; ma.lutTill = 0; ma.lutStart = t; ma.lutDur = slump(.9, 1.2); }
+      ma.lut = ma.lutFran + (ma.lutTill - ma.lutFran) * mjukare(klamp((t - ma.lutStart) / ma.lutDur));
+      // Lutar sig fram (mot vänster och ner), och gungar lite i sin egen takt.
+      const g = Math.sin(t * .83) * 1.1 + Math.sin(t * 1.91 + 1.3) * .5;
+      gl.uniform4f(U.uGung, 1500, 600, -6 * ma.lut + g, 3.5 * ma.lut + .4 * Math.sin(t * 1.1));
     };
 
     // ── Matematikern vid tavlan ──
@@ -2468,8 +2483,8 @@
     };
     // Kritans handstil: Kalam (samma som i filmerna), annars datorns egen handstil.
     const typsnitt = document.fonts ? document.fonts.load('400 64px "Kalam"').catch(() => null) : Promise.resolve();
-    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=584e770e"), ladda("omslag/intro-lager.png?v=33630862"),
-                 ladda("omslag/intro-glimt.png?v=ee1a49f5"), fetch("omslag/intro-scen.json?v=16ae32de").then((r) => r.json()), typsnitt])
+    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=10dd680c"), ladda("omslag/intro-lager.png?v=679bc675"),
+                 ladda("omslag/intro-glimt.png?v=ee1a49f5"), fetch("omslag/intro-scen.json?v=154a2c4f").then((r) => r.json()), typsnitt])
       .then(([bild, lager, lagerM, glimt, data]) => {
         scen = data; bygg();
         prog = gl.createProgram();
@@ -2510,7 +2525,7 @@
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
     // För granskningen (bildrutor i fast takt): stoppa den egna loopen och rita en given tid.
-    duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, mt, met, fig, as, ma };
+    duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, mt, met, fig, as, ma, slot: (...x) => { tNu = x.pop(); return slot(...x); } };
   };
   // Var målningen ligger i fönstret. På datorn: i mitten, men inte så att stenhuggaren (x 845 i målningen,
   // 1672 bred) hamnar bakom texten; i fönster nära 4:3 flyttas den åt höger (1024x768: skjortan låg bakom

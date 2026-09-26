@@ -20,7 +20,7 @@ Utdata i public/omslag/:
   intro.jpg          grundbilden B (1672x941). Syns ocksa utan WebGL.
   intro-lager.webp   lagena, packade i en karta.
   intro-lager.png    samma karta, masker: R = det som tonas (figuren), G = det som vrids eller
-                     flyttas (slaggan, huvudet, handen med kritan, matstickan), B = var figuren
+                     flyttas (slaggan, huvudet, handen med kritan), B = var figuren
                      tacker tavlan (kritan ritas inte dar).
   intro-glimt.png    stjarnorna (R = stjarna, G = fas).
   intro-scen.json    rutorna i kartan och de uppmatta punkterna.
@@ -67,7 +67,6 @@ LAGEN = {
     "matare-titta": ("matare-tittar", "A", (1430, 540, 1600, 690), (1515, 625), 15, (0, 0)),
     "matare-upp": ("upp-matare", "A", (1430, 530, 1600, 690), (1510, 640), 22, (0, 0)),
     "matare-krita": ("kritar", "A", (1360, 560, 1600, 760), (0, 0), 0, (0, 0)),
-    "matare-flytta": ("matare-flyttar", "A", (1340, 540, 1640, 760), (0, 0), 0, (-26, 0)),
     "matem-tanker": ("m-tanker-2", "B", (1250, 330, 1530, 690), (0, 0), 0, (0, 0)),
     "matem-upp": ("upp-matematiker", "B", (1250, 330, 1530, 690), (0, 0), 0, (0, 0)),
 }
@@ -75,6 +74,9 @@ LAGEN = {
 # bara kring honom, inte vid lyktan och inte pa matstickans man.
 OMRADE = {"matem": lambda x, y: (x >= 1272) & (y < 640) & ~((x > 1438) & (y > 546)),
           "matare": lambda x, y: (x >= 1360) & (y >= 540) & ~((x < 1440) & (y < 690))}
+# matare-flyttar.png anvands inte: den ar malad fran A och hela overkroppen flyttade sig ~65 px, dit dar A har
+# den gamla matematikerns stol och B tavlans vagg. Med huvudet utanfor masken forsvann ansiktet (Rickard
+# 2026-09-26). Hans lutning gors i stallet som en liten forskjutning i shadern.
 # Astronomen: teleskopet och stativet star still; hander och okular tonas bara.
 STILLA = {"astronom": lambda x, y: (x < 1305) | ((x < 1316) & (y > 104))}
 BARA_TONA = {"astronom": lambda x, y: np.maximum(np.clip((1372 - x) / 36, 0, 1), np.clip((y - 150) / 30, 0, 1))}
@@ -161,7 +163,7 @@ def main():
         b = las(bild)[b0:b1, a0:a1]
         d = ndimage.uniform_filter(np.abs(b - grund[ref][b0:b1, a0:a1]).sum(-1), 5)
         yy2, xx2 = np.mgrid[b0:b1, a0:a1]
-        omr = OMRADE.get(namn.split("-")[0], lambda x, y: True)(xx2, yy2)
+        omr = OMRADE.get(namn, OMRADE.get(namn.split("-")[0], lambda x, y: True))(xx2, yy2)
         if namn.startswith("matem-"):
             omr &= xx2 >= 1325        # tanker och upp: handen lamnar tavlan, bara kroppen andras
         m = mjuk(rensa((d > 30) & omr, 60), 6, 3.0) * kantton(b1 - b0, a1 - a0)
@@ -171,11 +173,8 @@ def main():
         v = m.copy() if (grader or tuple(flytt) != (0, 0)) else np.zeros_like(m)
         if figur in BARA_TONA:
             v *= 1 - BARA_TONA[figur](xx2, yy2)
-        if namn == "matare-flytta":
-            # Bara matstickan och handerna flyttas: bandet langs stickan pa blockets ovansida.
-            v *= np.clip(1 - np.abs(yy2 - (706 + (xx2 - 1375) * 0.23)) / 16, 0, 1) * (xx2 < 1500)
         bitar.append((namn, b, m, v, np.zeros_like(m)))
-        lagen[namn] = {"kalla": [a0, b0, a1 - a0, b1 - b0], "vrid": [vp[0], vp[1], grader], "flytt": list(flytt)}
+        lagen[namn] = {"kalla": [a0, b0, a1 - a0, b1 - b0], "vrid": [vp[0], vp[1], grader], "flytt": [float(f) for f in flytt]}
 
     # Matematikern vid tavlan: skrivlagena.
     a0, b0, a1, b1 = SKRIV_RUTA

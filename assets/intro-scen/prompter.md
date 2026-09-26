@@ -75,3 +75,10 @@ Resultat omgang 2 (19:0x): alla pixelexakta utom m-tanker-1 (1671 bred, foljde i
 (forskjuten 1 px, rattas i hitta-scen.py). Chattar: m-mitt /c/6ab7ff5b-30c4-83ed-a57f-e931d7b6aeec, m-nere /c/6ab7ff65-43b0-83eb-84a5-aba8b4e01061,
 m-nere-mitt /c/6ab7ff70-212c-83ed-990b-a30c5a4a8f3d, m-tanker /c/6ab7ff7b-3274-83eb-939f-adf434a0dc60, upp-slaggare /c/6ab80031-270c-83eb-969e-536719363b90,
 upp-matematiker /c/6ab8003d-4aa8-83eb-99ff-029690677867, upp-matare /c/6ab80044-6668-83eb-898a-d7f14619af19, matare-flyttar /c/6ab80078-1c6c-83ed-970b-77a204c339af.
+
+## Rattelse (Rickard 2026-09-26: "ansiktet forsvinner pa honom som mater")
+matare-flyttar var gjord pa intro-grund-a; hans huvud lutar ~65 px at vanster, dit dar A har den gamla matematikerns
+stol och B har tavlans vagg. Gors om som andring av grund2-b:
+- matare-flyttar-b (andring av grund2-b): samma text som matare-flyttar.
+Kunde inte goras 2026-09-26 ~20:05: bildgransen i Plus var nadd ("aterstalls i morgon kl. 10:39"). Losningen i stallet:
+matare-flyttar (A) anvands bara for handerna och stickan; huvudet och overkroppen ar grundbildens.
