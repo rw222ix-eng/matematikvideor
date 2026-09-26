@@ -634,6 +634,8 @@
   .dintur-knappar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
   .dintur-knappar [hidden] { display: none; }
   .dintur-ledtrad, .dintur-losning { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--linje2); }
+  /* Luft när sidan glider fram dem: under den klistrade toppraden, och en bit ovanför nederkanten. */
+  .dintur-ledtrad, .dintur-losning, #dintur-nasta, #losning-steg, #losning-tallinje { scroll-margin: 110px 0 40px; }
   .dintur-ledtrad[hidden], .dintur-losning[hidden] { display: none; }
   .dintur-ledtrad p { margin: 0 0 14px; max-width: 680px; color: #CFC8BA; }
   .dintur-losning h4 { margin: 0 0 12px; }
@@ -2889,6 +2891,10 @@
     // Rätt på en del: nästa olösta del får fokus.
     if (r.ok && !allt) { const nasta = [...dtEl.querySelectorAll(".del")].find((x) => !x.classList.contains("lost")); if (nasta) nasta.querySelector("input").focus(); }
   });
+  // Det som fälls ut under knapparna (ledtråden, lösningen, nästa steg) hamnade ofta under
+  // fönstrets nederkant, och då såg det ut som att knappen inte gjorde något (Rickard 2026-09-26).
+  // Sidan glider nu så långt att det nya syns helt, och inte längre än så.
+  const visaIFonstret = (el) => requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "nearest" }));
   dtEl.addEventListener("click", (e) => {
     const tecken = e.target.closest("[data-tecken]");
     if (tecken) {
@@ -2901,6 +2907,7 @@
       Newton.markera("ledtrad");
       const l = $("dintur-ledtrad"), knapp = $("dintur-ledtrad-knapp");
       l.hidden = !l.hidden; knapp.setAttribute("aria-expanded", String(!l.hidden));
+      if (!l.hidden) visaIFonstret(l);
       return;
     }
     if (e.target.closest("#dintur-losning-knapp")) {
@@ -2909,10 +2916,16 @@
       box.innerHTML = `<h4 class="etikett">Lösning</h4><ol class="losning-steg" id="losning-steg" tabindex="-1" aria-live="polite"></ol><button type="button" class="kant" id="dintur-nasta">Nästa steg</button>`;
       dt.steg = 0; nastaSteg();
       $("dintur-nasta").focus({ preventScroll: true });
+      visaIFonstret(box);
       return;
     }
     // Sista steget: knappen försvinner, så fokus går till lösningen i stället för att tappas.
-    if (e.target.closest("#dintur-nasta")) { nastaSteg(); if ($("dintur-nasta").hidden) $("losning-steg").focus({ preventScroll: true }); }
+    if (e.target.closest("#dintur-nasta")) {
+      nastaSteg();
+      if ($("dintur-nasta").hidden) $("losning-steg").focus({ preventScroll: true });
+      // Det nya steget och knappen under det; efter sista steget tallinjen eller stegen själva.
+      visaIFonstret($("dintur-nasta").hidden ? ($("losning-tallinje") || $("losning-steg")) : $("dintur-nasta"));
+    }
   });
 
   // "Visa allt som sägs" fäller ut hela texten direkt under knappen. Öppnas den glider sidan så att
