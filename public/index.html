@@ -4136,10 +4136,16 @@
           if (lista.length) { klarVid = performance.now(); vantaLiv(true); }
         } else { clearTimeout(gomTimer); gomTimer = setTimeout(gom, Math.max(7000, text.length * 70)); }
       };
+      // Snabbspolning (Rickard 2026-09-26): ett klick utanför bubblan, på Newton eller → skriver klart resten
+      // jättesnabbt (på ungefär en kvarts sekund) i stället för två tecken var 42:a ms.
+      spolas = false;
+      spola = () => { if (spolas || !skrivKlar) return; spolas = true; clearTimeout(skrivTimer); steg(); };
       if (stilla) { skrivTimer = setTimeout(skrivKlar, 300); return; }
-      const steg = () => { n = Math.min(text.length, n + 2); skrivet.textContent = text.slice(0, n); rest.textContent = text.slice(n); if (n < text.length) skrivTimer = setTimeout(steg, 42); else skrivKlar(); };
+      const steg = () => { n = Math.min(text.length, n + (spolas ? Math.max(6, Math.ceil(text.length / 15)) : 2)); skrivet.textContent = text.slice(0, n); rest.textContent = text.slice(n); if (n < text.length) skrivTimer = setTimeout(steg, spolas ? 16 : 42); else skrivKlar(); };
       skrivTimer = setTimeout(steg, 350);
     }
+    let spola = () => {}, spolas = false;
+    const spolaStartad = () => spolas;
 
     // ── Fram och undan ─────────────────────────────────────
     async function forbered(lage) {
@@ -4870,12 +4876,12 @@
       else if (e.key === "ArrowRight" && !skriver(e) && !vantar()) {
         e.preventDefault(); e.stopImmediatePropagation();
         if (e.repeat || !el.classList.contains("talar")) return;
-        if (skrivKlar) skrivKlar(); else { const b = knappar.querySelector("button.forst"); if (b) b.click(); }
+        if (skrivKlar) { if (spolaStartad()) skrivKlar(); else spola(); } else { const b = knappar.querySelector("button.forst"); if (b) b.click(); }
       }
     }, true);
     // Ett klick på Newton eller bubblan skriver klart texten direkt; när musen vilar på bubblan
     // väntar ett tips med att gå.
-    el.addEventListener("click", (e) => { if (!e.target.closest("button") && skrivKlar) skrivKlar(); });
+    el.addEventListener("click", (e) => { if (!e.target.closest("button") && skrivKlar) spola(); });
 
     // ── Klick och tryck utanför bubblan (Rickard 2026-09-26) ──
     // Första klicket utanför bubblan medan texten skrivs fram skriver klart den. När texten är klar tar nästa
@@ -4893,7 +4899,7 @@
     // (eleven trycker direkt på ett filmkort) går fram som vanligt.
     // Tiden jämförs med händelsens egen tidsstämpel (när eleven tryckte): laddas en film köas det andra klicket
     // medan sidan är upptagen, och kom förut fram först när skyddet redan släppt.
-    let skyddTill = 0, skyddVid = null, trycktNer = null, vidareFran = 0;
+    let skyddTill = 0, skyddVid = null, trycktNer = null;
     // Bara ett riktigt tryck sätter skyddet (guidens egna .click() och tangentbordets klick har ingen punkt).
     function skydda(e) { if (e && e.isTrusted && (e.detail > 0 || e.type.startsWith("pointer"))) { skyddTill = e.timeStamp + 500; skyddVid = { x: e.clientX, y: e.clientY }; } }
     const skyddat = (e) => visar === "guide" && !!skyddVid && e.timeStamp < skyddTill && Math.hypot(e.clientX - skyddVid.x, e.clientY - skyddVid.y) < 40;
@@ -4913,10 +4919,15 @@
       if (Math.hypot(e.clientX - ner.x, e.clientY - ner.y) > 8) return;   // ett drag
       const mal = e.target instanceof Element ? e.target : null;
       if (!mal || el.contains(mal)) return;
-      // Första klicket skriver klart. Ett snabbt klick till (ett dubbelklick) tar inte guiden vidare: eleven
-      // ska hinna se texten.
-      if (skrivKlar) { skrivKlar(); vidareFran = e.timeStamp + 500; return; }
-      if (mal.closest(ANVANDBART) || vantar() || bekraftar || e.timeStamp < vidareFran) return;
+      // Första klicket snabbspolar texten. Nästa klick går vidare, hur snabbt det än kommer (Rickard 2026-09-26:
+      // förut spärrades det i en halv sekund, och ett andra klick i vanlig takt gjorde ingenting). Kommer det
+      // medan snabbspolningen pågår skrivs texten klart direkt.
+      const anvandbart = !!mal.closest(ANVANDBART);
+      if (skrivKlar) {
+        if (!spolaStartad() || anvandbart || vantar()) { spola(); return; }
+        skrivKlar();
+      }
+      if (anvandbart || vantar() || bekraftar) return;
       const b = knappar.querySelector("button.forst");
       if (b && (b.textContent === "Nästa" || b.textContent === "Klar")) { skydda(e); b.click(); }
     }, true);

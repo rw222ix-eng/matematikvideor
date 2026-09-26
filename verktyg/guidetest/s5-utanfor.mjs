@@ -13,10 +13,12 @@ export default async (s) => {
   await s.starta();
   let t = await s.vantaPaKnapp(); await s.vanta(250);
   let p = await tomPunkt(); s.logg("tom punkt:", JSON.stringify(p));
-  // 1. Hej (Nästa), texten skrivs: första klicket skriver klart, samma steg.
-  await s.pek(p[0], p[1]); await s.vanta(120); s.logg("1 klick medan texten skrivs →", await las());
-  // 2. Ett klick till (efter 600 ms): nästa steg.
-  await s.vanta(600); p = await tomPunkt(); await s.pek(p[0], p[1]); await s.vanta(300); s.logg("2 klick när texten är klar →", await las());
+  // 1. Hej (Nästa), texten skrivs: första klicket snabbspolar (klar inom ~0,3 s), samma steg.
+  const langd = () => s.js(`document.querySelector("#newton-text .skrivet").textContent.length + "/" + document.querySelector("#newton-text .sr").textContent.length`);
+  await s.pek(p[0], p[1]); await s.vanta(40); const l1 = await langd(); await s.vanta(80); const l2 = await langd(); await s.vanta(250);
+  s.logg("1 klick medan texten skrivs → snabbspolning", l1, "→", l2, "→", await las());
+  // 2. Ett klick till i vanlig takt (300 ms): nästa steg.
+  p = await tomPunkt(); await s.pek(p[0], p[1]); await s.vanta(250); s.logg("2 klick 300 ms senare →", await las());
   // 3. Tidslinjen (uppgift): texten klar, klick utanför → inget.
   t = await s.vantaPaKnapp(); await vantaKlar(); p = await tomPunkt(); await s.pek(p[0], p[1]); await s.vanta(900); s.logg("3 klick utanför i en uppgift →", await las());
   // Klick i bubblans text och på Newton → inget.
@@ -31,6 +33,13 @@ export default async (s) => {
   await s.tangent("Escape"); await s.vanta(900); await s.js("scrollTo(0, 0)");
   await s.starta(); t = await s.vantaPaKnapp(/Hej/); await vantaKlar(); p = await tomPunkt();
   await s.dra(p[0], p[1], p[0] + 30, p[1] + 4); await s.vanta(500); s.logg("5 drag 30 px utanför →", await las());
+  // 6b. Dubbelklick (60 ms) medan texten skrivs: snabbspolar och går vidare, ETT steg.
+  await s.tangent("Escape"); await s.vanta(900); await s.js("scrollTo(0, 0)");
+  await s.starta(); t = await s.vantaPaKnapp(/Hej/); await s.vanta(300); p = await tomPunkt();
+  await s.pek(p[0], p[1]); await s.vanta(60); await s.pek(p[0], p[1]); await s.vanta(60); await s.pek(p[0], p[1]);
+  await s.vanta(1500); t = await s.vantaPaKnapp(); s.logg("6b trippelklick medan texten skrivs →", await las());
+  await s.tangent("Escape"); await s.vanta(900); await s.js("scrollTo(0, 0)");
+  await s.starta(); t = await s.vantaPaKnapp(/Hej/); await vantaKlar(); p = await tomPunkt();
   // 6. Snabbt dubbelklick utanför när texten är klar: ETT steg framåt.
   await s.pek(p[0], p[1]); await s.vanta(45); await s.pek(p[0], p[1]); await s.vanta(80); await s.pek(p[0], p[1]);
   await s.vanta(1500); t = await s.vantaPaKnapp(); s.logg("6 trippelklick utanför (45/80 ms) →", await las(), t.hash);
