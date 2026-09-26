@@ -550,6 +550,7 @@
   /* Om filmen och begreppen sida vid sida. Begreppen är knappar som söker på ordet
      (förut 10 px versaler i --dis, kontrast 3,9:1). */
   .film .om { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; margin: 56px 0 0; text-align: left; }
+  .film .om[hidden] { display: none; }
   .film .om h3 { margin: 0 0 12px; font-size: 12px; }
   .film .om .brod { margin: 0; color: #CFC8BA; }
   .film .begrepp { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
@@ -568,6 +569,14 @@
   .visa-allt:hover { color: var(--ben); }
   .visa-allt:active { transform: scale(.95); transition-duration: .08s; }
   .visa-allt svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--lugn); }
+  /* "Dölj texten" mitt i den klistrade toppraden (Rickard 2026-09-26): när hela texten är utfälld och
+     knappen ovanför den har rullat ur bild. Där är raden tom, så den skymmer ingenting. Osynlig är
+     den också borta för Tab (visibility). På en telefon bara pilen, för att få plats. */
+  .film .dolj-text { position: absolute; left: 50%; top: 50%; min-height: 38px; padding: 0 16px; gap: 10px; font-size: 11px; letter-spacing: .22em; background: rgba(23, 20, 20, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transform: translate(-50%, calc(-50% - 8px)); transition: opacity .4s var(--lugn), transform .4s var(--lugn), visibility 0s .4s, color .3s, border-color .3s, box-shadow .4s var(--lugn); }
+  .film .dolj-text.syns { opacity: 1; visibility: visible; transform: translate(-50%, -50%); transition: opacity .4s var(--lugn), transform .4s var(--lugn), visibility 0s, color .3s, border-color .3s, box-shadow .4s var(--lugn); }
+  .film .dolj-text:active { transform: translate(-50%, -50%) scale(.94); }
+  .film .dolj-text svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  @media (max-width: 700px) { .film .dolj-text { width: 40px; min-height: 40px; padding: 0; } .film .dolj-text span { display: none; } }
   .visa-allt .dolj, .visa-allt.oppen .visa { display: none; }
   .visa-allt.oppen .dolj { display: inline; }
   .visa-allt.oppen svg { transform: rotate(180deg); }
@@ -1054,6 +1063,8 @@
   <header class="topp">
     <!-- Från en formelbladsfilm leder den till formelbladets flik (texten blir "Formelbladet"). -->
     <a class="tillbaka" id="f-tillbaka" href="#filmer"><svg viewBox="0 0 32 12" aria-hidden="true"><path d="M31 6 H1 M6 1 L1 6 L6 11"/></svg><span id="f-tillbaka-text">Alla filmer</span></a>
+    <!-- Syns bara när hela texten är utfälld och man läst sig ner i den (se ritaDoljText). -->
+    <button class="kant dolj-text" id="dolj-text" type="button" aria-controls="allt" aria-label="Dölj texten"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 8 L6 4 L10 8"/></svg><span>Dölj texten</span></button>
     <div class="hoger">
       <button class="ikon sok-oppna tips-under" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
@@ -1101,7 +1112,9 @@
       <h3 class="etikett" id="f-nasta-rubrik">Nästa del</h3>
       <div id="f-nasta-kort"></div>
     </section>
-    <div class="om">
+    <!-- Om filmen och begreppen syns inte längre (Rickard 2026-09-26: onödigt längst ner). Datan
+         står kvar och fylls i, och begreppen används fortfarande av sökningen. -->
+    <div class="om" hidden>
       <div>
         <h3 class="etikett">Om filmen</h3>
         <p class="brod" id="f-besk"></p>
@@ -1178,20 +1191,24 @@
   // alltid, mjukt i början och slutet, och längre sträckor tar lite längre tid. Rullar eleven själv
   // under tiden (hjul, finger, tangent) släpper den direkt.
   let glidning = 0;
+  // Ger ett löfte som uppfylls när glidningen är klar (eller avbruten), för den som vill göra
+  // något efteråt, som att fälla ihop texten när sidan har glidit upp till dess början.
   function glid(mal) {
     const fran = scrollY, max = document.documentElement.scrollHeight - innerHeight;
     mal = Math.max(0, Math.min(max, mal));
     const id = ++glidning, strac = Math.abs(mal - fran);
-    if (strac < 2) return;
+    if (strac < 2) return Promise.resolve();
     const ms = Math.min(1100, 550 + strac * 0.45), start = performance.now();
     const kurva = (t) => (t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-    const steg = (nu) => {
-      if (id !== glidning) return;
-      const t = Math.min(1, (nu - start) / ms);
-      scrollTo({ top: fran + (mal - fran) * kurva(t), behavior: "instant" });
-      if (t < 1) requestAnimationFrame(steg);
-    };
-    requestAnimationFrame(steg);
+    return new Promise((klar) => {
+      const steg = (nu) => {
+        if (id !== glidning) return klar();
+        const t = Math.min(1, (nu - start) / ms);
+        scrollTo({ top: fran + (mal - fran) * kurva(t), behavior: "instant" });
+        if (t < 1) requestAnimationFrame(steg); else klar();
+      };
+      requestAnimationFrame(steg);
+    });
   }
   ["wheel", "touchstart", "keydown"].forEach((h) => addEventListener(h, () => { glidning++; }, { passive: true }));
   // Glid så att elementet syns: "start" lägger det överst (under den klistrade toppraden), "nearest"
@@ -3067,7 +3084,27 @@
     alltRuta.open = !alltRuta.open;
     if (alltRuta.open) { requestAnimationFrame(() => glidFram(visaAllt.parentElement, "start")); Newton.hande("allt"); }
   });
-  alltRuta.addEventListener("toggle", () => { visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); });
+  alltRuta.addEventListener("toggle", () => { visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); ritaDoljText(); });
+  // "Dölj texten" i toppraden (Rickard 2026-09-26): har man läst sig långt ner i texten ska man
+  // kunna fälla ihop den utan att rulla tillbaka upp till knappen. Knappen syns när texten är
+  // utfälld, knappen ovanför den är ur bild och texten fortfarande fyller en god del av fönstret.
+  // Klick: sidan glider upp till där texten börjar och fäller sedan ihop den, så man hamnar där
+  // man började läsa i stället för långt ner på sidan.
+  const doljText = $("dolj-text");
+  let doljRam = 0;
+  function ritaDoljText() {
+    doljRam = 0;
+    const syns = aktivVy === "film" && alltRuta.open && visaAllt.getBoundingClientRect().bottom < 80 && alltRuta.getBoundingClientRect().bottom > innerHeight * 0.35;
+    doljText.classList.toggle("syns", syns);
+  }
+  addEventListener("scroll", () => { if (!doljRam) doljRam = requestAnimationFrame(ritaDoljText); }, { passive: true });
+  doljText.addEventListener("click", async () => {
+    doljText.classList.remove("syns");
+    const rad = visaAllt.parentElement, topp = parseFloat(getComputedStyle(rad).scrollMarginTop) || 110;
+    await glid(scrollY + rad.getBoundingClientRect().top - topp);
+    alltRuta.open = false;
+    visaAllt.focus({ preventScroll: true });
+  });
   // Skriver eleven i ett svarsfält tillhör tangenterna fältet: "/" i 3^(1/3) öppnade sökningen
   // och Escape lämnade filmen (Rickard 2026-09-25, "Din tur fungerar inte").
   const skriver = (e) => e.target.matches && e.target.matches("input, textarea, [contenteditable]") && !e.target.closest("#sok");
@@ -3570,10 +3607,6 @@
               text: `Den här filmen är del ${aktuell.del} av ${antalDelar(s)} om formelbladet. Siffrorna här uppe är alla delarna, och du byter del genom att trycka på en siffra.${saknas ? " De streckade är inte klara än." : ""}` }] : []),
           ];
         })(),
-        // Om filmen: begreppen är knappar som söker på ordet. Sökningens steg kommer efter (sokStangd).
-        { id: "om", vy: "film", mal: () => document.querySelector("#vy-film .om"), ljus: () => [$("f-besk").parentElement, $("f-begrepp")], lage: "pekar", nar: "begrepp",
-          hoppa: async () => { const b = $("f-begrepp").querySelector("button"); if (b) { b.click(); await vila(450); } }, svar: "Där har du sökningen.",
-          text: "Här står vad filmen handlar om. Orden under Begrepp är knappar. Tryck på ett av dem, så söker du efter ordet i alla filmer." },
         // Frågetecknet är dolt medan guiden pågår; här visas det och lyser, så att eleven ser det han pratar om.
         { id: "slut", vy: "film", ljus: () => [$("hjalp")], fore: () => document.body.classList.add("visa-hjalp"), lage: "glad", rorelse: "kasta", text: "Nu vet du hur allt fungerar. Vill du gå igenom det igen trycker du på frågetecknet nere till vänster. Lycka till med matten!", knappar: [["Klar", () => slutaGuide()]] },
         // Började guiden längre ner på sidan: när den delen är klar får eleven välja om guiden ska visa resten också.
@@ -3588,7 +3621,7 @@
     // börjar den med introt, i filmvalet med tidslinjen och flikarna. På filmsidan börjar den med den
     // del av sidan eleven tittar på (filmStart) och går neråt därifrån; stegen ovanför (resten) får
     // eleven välja till sist (erbjud).
-    const FILM = ["spela", "snabb", "pausa", "spola", "linje", "fart", "cc", "dela", "ljud", "hel", "kapitel", "allt", "dintur", "nasta", "om", "sokStangd", "delar"];
+    const FILM = ["spela", "snabb", "pausa", "spola", "linje", "fart", "cc", "dela", "ljud", "hel", "kapitel", "allt", "dintur", "nasta", "delar"];
     let resten = [];
     function planera() {
       const sok = sokOppen(), sokning = sok ? ["sokt", "sokStangd"] : [];
@@ -3601,7 +3634,7 @@
     // rubrikraden. Ligger blicken mellan två delar vinner den som är närmast (vid lika den översta).
     // Spelarens steg har spelaren som sin del, och den börjar med spela.
     function filmStart() {
-      const DELAR = [["spela", [dukEl]], ["kapitel", [$("kapitel")]], ["allt", [visaAllt.parentElement, alltRuta]], ["dintur", [$("dintur")]], ["nasta", [$("f-nasta")]], ["om", [document.querySelector("#vy-film .om")]]];
+      const DELAR = [["spela", [dukEl]], ["kapitel", [$("kapitel")]], ["allt", [visaAllt.parentElement, alltRuta]], ["dintur", [$("dintur")]], ["nasta", [$("f-nasta")]]];
       const topp = document.querySelector("#vy-film .topp").getBoundingClientRect().bottom, blick = topp + (innerHeight - topp) * 0.4;
       let bast = "spela", minst = Infinity;
       for (const [id, els] of DELAR) {
