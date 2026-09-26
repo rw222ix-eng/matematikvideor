@@ -90,6 +90,7 @@ const U = {
     likformighet: ["m2-3", 50, 185, 548, 292],       // Likformighet
     satser: ["m2-3", 50, 350, 548, 504],             // Topptriangel-, bisektris- och transversalsatsen
     vinklar: ["m2-3", 50, 505, 548, 708],            // Vinklar och vinkelsumman
+    yttervinkel: ["m2-4", 50, 55, 292, 140],         // Yttervinkelsatsen (vänstra spalten; Pythagoras till höger hör till Ma 1)
     cirkelsatser: ["m2-4", 50, 147, 548, 262],       // Kordasatsen och randvinkelsatsen
     statistik: ["m2-4", 50, 505, 548, 792],          // Statistik och sannolikhet: lådagram och normalfördelning
   }).map(([namn, [sida, x0, y0, x1, y1]]) => {
@@ -160,8 +161,8 @@ const DELAR = [
     kort: async () => [await kort("likformighet", { b: 1400, x: 100, y: 90 }), await kort("satser", { b: 1320, x: 500, y: 480 })],
     omslag: async () => [await kort("likformighet", { b: 1250, x: 110, y: 320 }), await kort("satser", { b: 1300, x: 520, y: 580 })] },
   { id: "formelbladet-ma2-5-vinklar-och-cirkelsatser", titel: "Formelbladet Ma 2", under: "Del 5 · Vinklar och cirkelsatser",
-    kort: async () => [await kort("vinklar", { b: 1000, x: 130, y: 50 }), await kort("cirkelsatser", { b: 1080, x: 710, y: 650 })],
-    omslag: async () => [await kort("vinklar", { b: 1000, x: 110, y: 305 }), await kort("cirkelsatser", { b: 960, x: 900, y: 790 })] },
+    kort: async () => [await kort("vinklar", { b: 1000, x: 130, y: 50 }), await kort("yttervinkel", { b: 640, x: 1190, y: 150 }), await kort("cirkelsatser", { b: 1080, x: 710, y: 650 })],
+    omslag: async () => [await kort("vinklar", { b: 1000, x: 110, y: 305 }), await kort("yttervinkel", { b: 680, x: 1160, y: 420 }), await kort("cirkelsatser", { b: 960, x: 900, y: 790 })] },
   { id: "formelbladet-ma2-6-statistik", titel: "Formelbladet Ma 2", under: "Del 6 · Statistik",
     kort: async () => [await kort("statistik", { h: 960, x: "mitt", y: "mitt", pad: 30 })],
     omslag: async () => [await kort("statistik", { h: 740, x: 650, y: 300, pad: 30 })] },
