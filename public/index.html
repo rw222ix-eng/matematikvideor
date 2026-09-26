@@ -1655,13 +1655,20 @@
   const spar = $("spar"), tidslinje = $("tidslinje");
   // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
   // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
-  // det säger något mer än namnet. Under fliken Ma 2a står kapitlet överst, sedan berättelsen och
-  // störst momentet; Kepler och de andra som också ligger där har kapitlet i stället för året.
-  const kortOverst = (v, h) => { const kap = h === "ma2a" ? kapAv(v, h) : null; return kap ? `Kap ${kap}` : v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs); };
+  // det säger något mer än namnet. Under fliken Matematik 2a står året överst, som under Matematik 1c
+  // (Rickard 2026-09-26: "det ska stå årtal"), och kapitlet i boken först på raden under: "Kap 1 ·
+  // Carissans maskin", störst momentet. Kepler och de andra som också ligger där får "Kap 1 · Ma 1c ·
+  // momentet". En film utan år har kapitlet överst som förut.
+  const kortOverst = (v, h) => {
+    if (h === "ma2a") { const kap = kapAv(v, h); return v.ar ? arText(v.ar) : kap ? `Kap ${kap}` : kursKort(v.kurs); }
+    return v.serie ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kursKort(v.kurs);
+  };
   const kortMoment = (v, h) => {
-    if (v.serie === "ma2a") { const [berattelse, moment] = titelDelar(v); return `${kursKort(v.kurs)} · ${esc(moment ? berattelse : v.moment)}`; }
-    if (v.serie && h === "ma2a") return `${kursKort(v.kurs)} · ${esc(SERIER[v.serie].namn)} ${v.del ?? ""}`;
+    const kap = h === "ma2a" && v.ar ? kapAv(v, h) : null, fore = kap ? `Kap ${kap}` : kursKort(v.kurs);
+    if (v.serie === "ma2a") { const [berattelse, moment] = titelDelar(v); return `${fore} · ${esc(moment ? berattelse : v.moment)}`; }
+    if (v.serie && h === "ma2a") return `${fore} · ${esc(SERIER[v.serie].namn)} ${v.del ?? ""}`;
     if (v.serie) return `${kursKort(v.kurs)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`;
+    if (kap) return `${fore} · ${kursKort(v.kurs)} · ${esc(v.moment)}`;
     return `${v.ar ? `${kursKort(v.kurs)} · ` : ""}${esc(v.moment)}`;
   };
   const kortHtml = (v, i, h = "berattelser") => `
