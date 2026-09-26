@@ -1077,8 +1077,9 @@
   .hjalp.lockar::before { opacity: 1; transform: rotate(45deg); }
   .hjalp.lockar::after { opacity: 1; transform: none; }
   /* Låga fönster: tooltipen står till höger om frågetecknet. Ovanför täckte den Utforska i introt när
-     ingressen fick en mening om formelbladet (1280×610, 2026-09-25). */
-  @media (max-height: 660px) {
+     ingressen fick en mening om formelbladet (1280×610, 2026-09-25); vid 661 px nuddade den knappen, därför 690
+     sedan tipset blev "Hjälp, jag fattar ingenting!" (2026-09-26). */
+  @media (max-height: 690px) {
     .hjalp::after { left: calc(100% + 12px); bottom: 7px; transform: translateX(-5px); }
     .hjalp::before { left: calc(100% + 8px); bottom: 18px; margin-left: 0; transform: translateX(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
   }
@@ -1269,7 +1270,7 @@
   <div class="newton-figur" id="newton-figur" aria-hidden="true"><div class="newton-spegel"><div class="newton-gunga"><div class="newton-kropp"><img id="newton-bild" alt=""><img class="newton-blink" id="newton-blink" alt=""><img class="newton-uttryck" id="newton-uttryck" alt=""><div class="newton-rorelse" id="newton-rorelse"></div><div class="newton-apple" id="newton-apple"></div></div></div></div></div>
 </aside>
 <div class="guide-ljus" id="guide-ljus" aria-hidden="true"><div class="guide-dim" id="guide-dim"></div></div>
-<button class="hjalp" id="hjalp" type="button" aria-label="Så fungerar sidan: Newton visar runt" data-tips="Så fungerar sidan">?</button>
+<button class="hjalp" id="hjalp" type="button" aria-label="Hjälp, jag fattar ingenting! Newton visar runt på sidan" data-tips="Hjälp, jag fattar ingenting!">?</button>
 <script>
 (async () => {
   const $ = (id) => document.getElementById(id);
