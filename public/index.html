@@ -1337,7 +1337,11 @@
   };
   // Var en film står under en seriens flik: delen, eller platsen i registrets "ocksa" (Kepler i Ma 2a).
   const plats = (v, namn) => (v.serie === namn ? v.del : v.ocksa ? v.ocksa[namn] : undefined);
-  const hyllaFilmer = (namn) => videor.filter((v) => Number.isFinite(plats(v, namn))).sort((a, b) => plats(a, namn) - plats(b, namn));
+  // Filmerna under en seriens flik står i tidsordning, äldst till vänster, som under Matematik 1c
+  // (Rickard 2026-09-26): Delos 430 f.Kr., Al-Khwarizmi 820, Kepler 1618, Carissa 1919. En film utan
+  // år hamnar sist, i bokens ordning. (Formelbladets delar ritas för sig, i delarnas ordning.)
+  const hyllaFilmer = (namn) => videor.filter((v) => Number.isFinite(plats(v, namn)))
+    .sort((a, b) => (a.ar ?? Infinity) - (b.ar ?? Infinity) || plats(a, namn) - plats(b, namn));
   // Kapitlet i boken för en film under fliken: i Ma 2a ligger plats 13.5 (Formelbladet 2) i kapitel 3.
   const kapAv = (v, namn) => {
     const k = SERIER[namn].kapitel, p = plats(v, namn);
