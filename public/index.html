@@ -617,15 +617,15 @@
      rader som syns, så radernas egen intoning vid rullning är avstängd. Blocket är markören från en
      gammal dator: ljust mot den mörka sidan, och det blinkar. */
   .helatext.skriver li { opacity: 1; transform: none; transition: none; }
-  .markor { display: inline-block; width: .5em; height: 1.05em; margin-left: 3px; vertical-align: -.16em; background: var(--ben); box-shadow: 0 0 8px rgba(236, 230, 216, .45); animation: markor .6s steps(1, end) infinite; }
-  /* Ett blink är 0,6 s (BLINK i skriptet; 0,9 s var för långsamt, Rickard 2026-09-26). Innan skrivandet tonar blocket fram och börjar sedan
+  .markor { display: inline-block; width: .5em; height: 1.05em; margin-left: 3px; vertical-align: -.16em; background: var(--ben); box-shadow: 0 0 8px rgba(236, 230, 216, .45); animation: markor .45s steps(1, end) infinite; }
+  /* Ett blink är 0,45 s (BLINK i skriptet; 0,9 och 0,6 s var för långsamt, Rickard 2026-09-26). Innan skrivandet tonar blocket fram och börjar sedan
      blinka; när raderingen är klar tonar det bort. */
-  .markor.in { animation: markor-in .5s var(--lugn) both, markor .6s steps(1, end) .5s infinite; }
+  .markor.in { animation: markor-in .6s var(--lugn) both, markor .45s steps(1, end) .6s infinite; }
   .markor.ut { animation: markor-ut .45s var(--lugn) both; }
   @keyframes markor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   @keyframes markor-in { from { opacity: 0; } to { opacity: 1; } }
   @keyframes markor-ut { from { opacity: 1; } to { opacity: 0; } }
-  /* Första radens tid och streck (0:00 —) tonar fram först och bort sist. */
+  /* Första radens tid och streck (0:00 —) tonar fram samtidigt med blocket och bort sist. */
   .helatext .tid.tona-in { animation: ton .6s var(--lugn) both; }
   .helatext .tid.tona-ut { animation: tid-ut .7s var(--lugn) both; }
   @keyframes tid-ut { to { opacity: 0; } }
@@ -3098,8 +3098,8 @@
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
   // ── Skrivmaskinen (Rickard 2026-09-26) ──────────────
   // Hela texten dök upp på en gång och kändes abrupt bredvid sidans mjuka rörelser. Nu skrivs den
-  // fram som på en gammal dator. Först tonar första radens tid och streck (0:00 —) fram, sedan
-  // tonar blocket fram och blinkar tre gånger i vanlig takt, och sedan kommer bokstäverna rad för
+  // fram som på en gammal dator. Först tonar första radens tid och streck (0:00 —) fram samtidigt
+  // med blocket, som blinkar tre gånger, och sedan kommer bokstäverna rad för
   // rad uppifrån, lugnt i början och lite snabbare efter hand (första raden på ungefär en sekund,
   // det som syns på knappt tre, Rickard 2026-09-26: "långsammare"). Döljs texten raderas den
   // baklänges, som när man håller inne backsteg: det som ligger under fönstret försvinner direkt,
@@ -3109,7 +3109,7 @@
   const markor = document.createElement("span");
   markor.className = "markor"; markor.setAttribute("aria-hidden", "true");
   let skrivId = 0;
-  const BLINK = 600;   // ett blink: blocket syns 0,3 s och är borta 0,3 s (.markor i stilarna)
+  const BLINK = 450;   // ett blink: blocket syns 0,225 s och är borta lika länge (.markor i stilarna)
   const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
   const takt = (t) => 150 * t + 80 * t * t;   // antal tecken efter t sekunder
   const raderna = () => [...$("helatext").children].map((li) => ({ li, s: li.querySelector(".snutt") }));
@@ -3131,14 +3131,13 @@
     const texter = rader.map(({ li }) => radText(li));
     rader.forEach(({ li, s }) => { li.hidden = true; s.textContent = ""; });
     let rad = 0, i = 0, skrivna = 0, nod = document.createTextNode("");
-    // 0:00 och strecket tonar fram, sedan blocket, som blinkar tre gånger innan skrivandet börjar.
+    // 0:00, strecket och blocket tonar fram samtidigt (Rickard 2026-09-26), och blocket blinkar tre
+    // gånger innan skrivandet börjar.
     const tid0 = rader[0].li.querySelector(".tid");
     rader[0].li.hidden = false; rader[0].li.classList.add("syns");
     if (tid0) { tid0.classList.remove("tona-ut"); tid0.classList.add("tona-in"); }
-    await vanta(650);
-    if (avbrutet()) return;
     markor.className = "markor in"; rader[0].s.append(nod, markor);
-    await vanta(500 + 3 * BLINK);
+    await vanta(600 + 3 * BLINK);
     if (avbrutet()) return;
     markor.className = "markor";
     const totalt = texter.reduce((a, t) => a + t.length, 0), start = performance.now();
