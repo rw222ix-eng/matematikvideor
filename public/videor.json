@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-26T10:27:11.363Z",
+ "byggd": "2026-09-26T10:30:38.010Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -6665,6 +6665,499 @@
      "s": 454.04,
      "e": 455.78,
      "text": "Hur högt upp sitter toppen?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-02-faktorisera",
+   "titel": "Carissans maskin – Faktorisera",
+   "ar": 1919,
+   "serie": "ma2a",
+   "del": 2,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-02-faktorisera-v1/ma2a-02-faktorisera-1080p.mp4",
+   "moment": "Faktorisera: bryta ut, kvadrerings- och konjugatreglerna baklänges",
+   "begrepp": [
+    "faktorisera",
+    "produkt",
+    "faktor",
+    "bryta ut",
+    "största gemensamma faktor",
+    "multiplicera in",
+    "konjugatregeln",
+    "kvadreringsreglerna",
+    "dubbla produkten",
+    "kvadrat",
+    "formelbladet",
+    "räknemaskin",
+    "Carissan"
+   ],
+   "beskrivning": "Bröderna Carissan i Frankrike byggde 1919 en vevad maskin som letade efter kvadrater för att dela upp stora tal i faktorer. Vi faktoriserar genom att bryta ut den största gemensamma faktorn och genom att läsa konjugatregeln och kvadreringsreglerna på formelbladet baklänges.",
+   "youtube": null,
+   "langd": 467,
+   "omslag": "omslag/ma2a-02-faktorisera.jpg?v=0cf8cabe",
+   "omslagRen": "omslag/ma2a-02-faktorisera-ren.jpg?v=b9bf6e80",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 0,
+     "text": "År 1912 var Pierre Carissan mattelärare i Bretagne i Frankrike. Han ville veta vilka stora tal som går att dela upp i mindre tal, som multiplicerade med varandra blir det stora talet."
+    },
+    {
+     "t": 15,
+     "text": "För hand måste man pröva att dela talet med 2, med 3, med 5 och så vidare, och för ett stort tal kan det bli tusentals divisioner. Därför ritade Pierre en maskin, och hans lillebror Eugène, som var officer i armén, byggde den."
+    },
+    {
+     "t": 34,
+     "text": "Den första maskinen gick för långsamt, så bröderna lät en verkstad i Paris bygga en bättre i metall. Men första världskriget kom emellan, och den blev klar först 1919."
+    },
+    {
+     "t": 47,
+     "text": "Den har 14 metallringar med stålstift, och på en del av stiften sätter man ett litet lock. Man vevar på ett hjul så att ringarna snurrar, och när det står ett lock på samma rad på alla ringarna hörs ett knäpp i en telefonlur på örat."
+    },
+    {
+     "t": 67,
+     "text": "Så prövade maskinen 35 tal i sekunden. Men den kunde ta fel, så varje tal som den hittade räknade man efter för hand."
+    },
+    {
+     "t": 79,
+     "text": "Vad letade maskinen efter? Den letade efter kvadrater, alltså tal som 400, som är 20 gånger 20. Med två kvadrater kan man nämligen dela upp ett tal i faktorer utan en enda division, och det ska vi lära oss nu."
+    },
+    {
+     "t": 100,
+     "text": "Att faktorisera betyder att skriva något som en produkt. Ta talet 391. Kvadraten närmast ovanför är 400, och 400 minus 391 är 9, som är 3 i kvadrat. Alltså är 391 lika med 20 i kvadrat minus 3 i kvadrat."
+    },
+    {
+     "t": 126,
+     "text": "Konjugatregeln på formelbladet säger att parentesen a plus b gånger parentesen a minus b är lika med a i kvadrat minus b i kvadrat. Vi läser den baklänges, från höger till vänster."
+    },
+    {
+     "t": 143,
+     "text": "Då blir 391 lika med parentesen 20 plus 3 gånger parentesen 20 minus 3, alltså 23 gånger 17, och när vi räknar efter stämmer det."
+    },
+    {
+     "t": 160,
+     "text": "Knepet går fort när faktorerna ligger nära varandra, som 23 och 17. Annars får man pröva många kvadrater."
+    },
+    {
+     "t": 170,
+     "text": "Samma regel fungerar med bokstäver. a i kvadrat minus 36 är a i kvadrat minus 6 i kvadrat, alltså parentesen a plus 6 gånger parentesen a minus 6."
+    },
+    {
+     "t": 188,
+     "text": "I sexton x i kvadrat minus 25 är båda termerna kvadrater, fyra x i kvadrat och 5 i kvadrat, så det blir parentesen fyra x plus 5 gånger parentesen fyra x minus 5."
+    },
+    {
+     "t": 206,
+     "text": "Men det måste vara minus emellan. a i kvadrat plus 36 går inte att faktorisera med konjugatregeln."
+    },
+    {
+     "t": 217,
+     "text": "Ett uttryck med tre termer kan också vara en kvadrat, och det känner man igen med kvadreringsreglerna, som står ovanför konjugatregeln på formelbladet."
+    },
+    {
+     "t": 229,
+     "text": "Ta x i kvadrat plus sex x plus 9. Första termen är x i kvadrat och sista termen är 3 i kvadrat. Om uttrycket är en kvadrat ska mittentermen vara dubbla produkten, 2 gånger x gånger 3, och det är sex x. Det stämmer, så enligt första kvadreringsregeln är uttrycket hela parentesen x plus 3 i kvadrat."
+    },
+    {
+     "t": 262,
+     "text": "Med minus i mitten används andra kvadreringsregeln, så x i kvadrat minus sex x plus 9 är hela parentesen x minus 3 i kvadrat."
+    },
+    {
+     "t": 277,
+     "text": "Kolla alltid dubbla produkten. x i kvadrat plus 9 är inte hela parentesen x plus 3 i kvadrat, för då måste mittentermen sex x finnas med."
+    },
+    {
+     "t": 293,
+     "text": "Innan man letar efter en regel ska man se efter om termerna har en gemensam faktor, för den bryts ut först. I tre x plus nio x i kvadrat kan man bryta ut bara x, men den största gemensamma faktorn är tre x, så det blir tre x gånger parentesen 1 plus tre x."
+    },
+    {
+     "t": 318,
+     "text": "Man vet att faktorn är den största när termerna i parentesen inte har någon faktor gemensam. Och man kontrollerar genom att multiplicera in. tre x gånger 1 är tre x, och tre x gånger tre x är nio x i kvadrat."
+    },
+    {
+     "t": 340,
+     "text": "Ofta behövs båda stegen. I tre x i kvadrat minus 75 bryter vi först ut trean och får 3 gånger parentesen x i kvadrat minus 25. Där står två kvadrater med minus emellan, så det blir 3 gånger parentesen x plus 5 gånger parentesen x minus 5."
+    },
+    {
+     "t": 369,
+     "text": "Faktorisera två x i kvadrat plus sexton x plus 32 så långt som möjligt. Vi bryter ut tvåan och får 2 gånger parentesen x i kvadrat plus åtta x plus 16. Dubbla produkten 2 gånger x gånger 4 är åtta x, så svaret blir 2 gånger hela parentesen x plus 4 i kvadrat."
+    },
+    {
+     "t": 403,
+     "text": "Maskinen visades i Paris 1920. Men Pierre dog 1923 och Eugène 1925, och maskinen blev liggande i en låda på ett observatorium nära Bordeaux i ungefär femtio år."
+    },
+    {
+     "t": 422,
+     "text": "1989 läste en forskare i Kanada om maskinen och skrev brev till alla 85 personer i Frankrike som hette Carissan. En av Eugènes döttrar hörde av sig, och i dag står maskinen på ett teknikmuseum i Paris."
+    },
+    {
+     "t": 443,
+     "text": "Tänk dig att du sitter vid maskinen och prövar talet 899. Faktorisera 899 så långt som möjligt, med kvadraterna och konjugatregeln."
+    },
+    {
+     "t": 458,
+     "text": "Och till nästa gång kan du fundera på när en produkt blir lika med noll."
+    }
+   ],
+   "kapitel": [],
+   "dinTur": null,
+   "undertext": [
+    {
+     "s": 0.2,
+     "e": 5.82,
+     "text": "År 1912 var Pierre Carissan mattelärare i Bretagne i Frankrike."
+    },
+    {
+     "s": 6.84,
+     "e": 11,
+     "text": "Han ville veta vilka stora tal som går att dela upp i mindre tal,"
+    },
+    {
+     "s": 11.26,
+     "e": 14.3,
+     "text": "som multiplicerade med varandra blir det stora talet."
+    },
+    {
+     "s": 15.52,
+     "e": 20.92,
+     "text": "För hand måste man pröva att dela talet med 2, med 3, med 5 och så vidare,"
+    },
+    {
+     "s": 21.4,
+     "e": 24.92,
+     "text": "och för ett stort tal kan det bli tusentals divisioner."
+    },
+    {
+     "s": 26.22,
+     "e": 33.1,
+     "text": "Därför ritade Pierre en maskin, och hans lillebror Eugène, som var officer i armén, byggde den."
+    },
+    {
+     "s": 34.26,
+     "e": 41.02,
+     "text": "Den första maskinen gick för långsamt, så bröderna lät en verkstad i Paris bygga en bättre i metall."
+    },
+    {
+     "s": 42.26,
+     "e": 46.8,
+     "text": "Men första världskriget kom emellan, och den blev klar först 1919."
+    },
+    {
+     "s": 47.98,
+     "e": 54.54,
+     "text": "Den har 14 metallringar med stålstift, och på en del av stiften sätter man ett litet lock."
+    },
+    {
+     "s": 55.6,
+     "e": 61.56,
+     "text": "Man vevar på ett hjul så att ringarna snurrar, och när det står ett lock på samma rad"
+    },
+    {
+     "s": 61.6,
+     "e": 65.88,
+     "text": "på alla ringarna hörs ett knäpp i en telefonlur på örat."
+    },
+    {
+     "s": 67.24,
+     "e": 71.22,
+     "text": "Så prövade maskinen 35 tal i sekunden."
+    },
+    {
+     "s": 72.38,
+     "e": 78.14,
+     "text": "Men den kunde ta fel, så varje tal som den hittade räknade man efter för hand."
+    },
+    {
+     "s": 79.68,
+     "e": 81.22,
+     "text": "Vad letade maskinen efter?"
+    },
+    {
+     "s": 82.46,
+     "e": 89.38,
+     "text": "Den letade efter kvadrater, alltså tal som 400, som är 20 gånger 20."
+    },
+    {
+     "s": 90.64,
+     "e": 96.92,
+     "text": "Med två kvadrater kan man nämligen dela upp ett tal i faktorer utan en enda division,"
+    },
+    {
+     "s": 97.6,
+     "e": 99.34,
+     "text": "och det ska vi lära oss nu."
+    },
+    {
+     "s": 100.76,
+     "e": 104.46,
+     "text": "Att faktorisera betyder att skriva något som en produkt."
+    },
+    {
+     "s": 105.4,
+     "e": 107.42,
+     "text": "Ta talet 391."
+    },
+    {
+     "s": 108.5,
+     "e": 118.24,
+     "text": "Kvadraten närmast ovanför är 400, och 400 minus 391 är 9, som är 3 i kvadrat."
+    },
+    {
+     "s": 119.42,
+     "e": 125.2,
+     "text": "Alltså är 391 lika med 20 i kvadrat minus 3 i kvadrat."
+    },
+    {
+     "s": 126.66,
+     "e": 133.28,
+     "text": "Konjugatregeln på formelbladet säger att parentesen a plus b gånger parentesen a minus"
+    },
+    {
+     "s": 133.34,
+     "e": 137.6,
+     "text": "b är lika med a i kvadrat minus b i kvadrat."
+    },
+    {
+     "s": 138.7,
+     "e": 142.3,
+     "text": "Vi läser den baklänges, från höger till vänster."
+    },
+    {
+     "s": 143.42,
+     "e": 152.5,
+     "text": "Då blir 391 lika med parentesen 20 plus 3 gånger parentesen 20 minus 3,"
+    },
+    {
+     "s": 153.4,
+     "e": 159.14,
+     "text": "alltså 23 gånger 17, och när vi räknar efter stämmer det."
+    },
+    {
+     "s": 160.52,
+     "e": 165.88,
+     "text": "Knepet går fort när faktorerna ligger nära varandra, som 23 och 17."
+    },
+    {
+     "s": 166.84,
+     "e": 169.3,
+     "text": "Annars får man pröva många kvadrater."
+    },
+    {
+     "s": 170.72,
+     "e": 172.88,
+     "text": "Samma regel fungerar med bokstäver."
+    },
+    {
+     "s": 173.76,
+     "e": 184.74,
+     "text": "a i kvadrat minus 36 är a i kvadrat minus 6 i kvadrat, alltså parentesen a plus 6 gånger"
+    },
+    {
+     "s": 184.8,
+     "e": 187.34,
+     "text": "parentesen a minus 6."
+    },
+    {
+     "s": 188.9,
+     "e": 197.86,
+     "text": "I sexton x i kvadrat minus 25 är båda termerna kvadrater, fyra x i kvadrat och 5 i kvadrat,"
+    },
+    {
+     "s": 198.48,
+     "e": 205.98,
+     "text": "så det blir parentesen fyra x plus 5 gånger parentesen fyra x minus 5."
+    },
+    {
+     "s": 206.78,
+     "e": 209.4,
+     "text": "Men det måste vara minus emellan."
+    },
+    {
+     "s": 210.86,
+     "e": 216.26,
+     "text": "a i kvadrat plus 36 går inte att faktorisera med konjugatregeln."
+    },
+    {
+     "s": 217.78,
+     "e": 224.22,
+     "text": "Ett uttryck med tre termer kan också vara en kvadrat, och det känner man igen med kvadreringsreglerna,"
+    },
+    {
+     "s": 224.62,
+     "e": 228.04,
+     "text": "som står ovanför konjugatregeln på formelbladet."
+    },
+    {
+     "s": 229.3,
+     "e": 233.58,
+     "text": "Ta x i kvadrat plus sex x plus 9."
+    },
+    {
+     "s": 234.76,
+     "e": 240.2,
+     "text": "Första termen är x i kvadrat och sista termen är 3 i kvadrat."
+    },
+    {
+     "s": 241.46,
+     "e": 246.46,
+     "text": "Om uttrycket är en kvadrat ska mittentermen vara dubbla produkten,"
+    },
+    {
+     "s": 247.46,
+     "e": 251.8,
+     "text": "2 gånger x gånger 3, och det är sex x."
+    },
+    {
+     "s": 252.98,
+     "e": 261.42,
+     "text": "Det stämmer, så enligt första kvadreringsregeln är uttrycket hela parentesen x plus 3 i kvadrat."
+    },
+    {
+     "s": 262.78,
+     "e": 271.16,
+     "text": "Med minus i mitten används andra kvadreringsregeln, så x i kvadrat minus sex x plus 9"
+    },
+    {
+     "s": 271.72,
+     "e": 276.14,
+     "text": "är hela parentesen x minus 3 i kvadrat."
+    },
+    {
+     "s": 277.46,
+     "e": 280,
+     "text": "Kolla alltid dubbla produkten."
+    },
+    {
+     "s": 281.22,
+     "e": 287.26,
+     "text": "x i kvadrat plus 9 är inte hela parentesen x plus 3 i kvadrat,"
+    },
+    {
+     "s": 287.84,
+     "e": 291.36,
+     "text": "för då måste mittentermen sex x finnas med."
+    },
+    {
+     "s": 293.16,
+     "e": 298.16,
+     "text": "Innan man letar efter en regel ska man se efter om termerna har en gemensam faktor,"
+    },
+    {
+     "s": 298.62,
+     "e": 300.5,
+     "text": "för den bryts ut först."
+    },
+    {
+     "s": 301.7,
+     "e": 310.32,
+     "text": "I tre x plus nio x i kvadrat kan man bryta ut bara x, men den största gemensamma faktorn"
+    },
+    {
+     "s": 310.44,
+     "e": 317.42,
+     "text": "är tre x, så det blir tre x gånger parentesen 1 plus tre x."
+    },
+    {
+     "s": 318.8,
+     "e": 325.28,
+     "text": "Man vet att faktorn är den största när termerna i parentesen inte har någon faktor gemensam."
+    },
+    {
+     "s": 326.26,
+     "e": 329.26,
+     "text": "Och man kontrollerar genom att multiplicera in."
+    },
+    {
+     "s": 330.5,
+     "e": 338.78,
+     "text": "tre x gånger 1 är tre x, och tre x gånger tre x är nio x i kvadrat."
+    },
+    {
+     "s": 340.38,
+     "e": 342.42,
+     "text": "Ofta behövs båda stegen."
+    },
+    {
+     "s": 343.54,
+     "e": 354.66,
+     "text": "I tre x i kvadrat minus 75 bryter vi först ut trean och får 3 gånger parentesen x i kvadrat minus 25."
+    },
+    {
+     "s": 355.94,
+     "e": 364.74,
+     "text": "Där står två kvadrater med minus emellan, så det blir 3 gånger parentesen x plus 5 gånger"
+    },
+    {
+     "s": 364.8,
+     "e": 367.66,
+     "text": "parentesen x minus 5."
+    },
+    {
+     "s": 369.18,
+     "e": 376.6,
+     "text": "Faktorisera två x i kvadrat plus sexton x plus 32 så långt som möjligt."
+    },
+    {
+     "s": 378.08,
+     "e": 387.22,
+     "text": "Vi bryter ut tvåan och får 2 gånger parentesen x i kvadrat plus åtta x plus 16."
+    },
+    {
+     "s": 388.72,
+     "e": 398.4,
+     "text": "Dubbla produkten 2 gånger x gånger 4 är åtta x, så svaret blir 2 gånger hela parentesen"
+    },
+    {
+     "s": 398.82,
+     "e": 401.4,
+     "text": "x plus 4 i kvadrat."
+    },
+    {
+     "s": 403.08,
+     "e": 406.56,
+     "text": "Maskinen visades i Paris 1920."
+    },
+    {
+     "s": 407.5,
+     "e": 417.42,
+     "text": "Men Pierre dog 1923 och Eugène 1925, och maskinen blev liggande i en låda på ett observatorium"
+    },
+    {
+     "s": 417.52,
+     "e": 420.72,
+     "text": "nära Bordeaux i ungefär femtio år."
+    },
+    {
+     "s": 422.38,
+     "e": 431.02,
+     "text": "1989 läste en forskare i Kanada om maskinen och skrev brev till alla 85 personer i Frankrike"
+    },
+    {
+     "s": 431.08,
+     "e": 432.62,
+     "text": "som hette Carissan."
+    },
+    {
+     "s": 434.02,
+     "e": 441.38,
+     "text": "En av Eugènes döttrar hörde av sig, och i dag står maskinen på ett teknikmuseum i Paris."
+    },
+    {
+     "s": 443.18,
+     "e": 448.58,
+     "text": "Tänk dig att du sitter vid maskinen och prövar talet 899."
+    },
+    {
+     "s": 449.86,
+     "e": 457.42,
+     "text": "Faktorisera 899 så långt som möjligt, med kvadraterna och konjugatregeln."
+    },
+    {
+     "s": 458.68,
+     "e": 464.54,
+     "text": "Och till nästa gång kan du fundera på när en produkt blir lika med noll."
     }
    ]
   },
