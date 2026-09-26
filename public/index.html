@@ -210,6 +210,19 @@
   .post .kurs { font: 400 22px/1 var(--sans); letter-spacing: .12em; color: var(--ben); text-transform: uppercase; transition: color .5s var(--lugn); }
   .post .moment { font: 500 13px/1.5 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--ben); max-width: 340px; transition: color .5s var(--lugn); }
   .post .titel { font: italic 400 21px/1.3 var(--sans); color: var(--ben); letter-spacing: .02em; margin-top: 2px; transition: color .5s var(--lugn); }
+  /* Texten under alla kort har samma uppställning (Rickard 2026-09-26): överst årtalet eller delen och filmens namn
+     bredvid varandra ("1618  Kepler och planeterna", "DEL 3  Logaritmer"), så att det syns direkt vad filmen handlar
+     om, och på raden under kurserna och momentet. Samma grader och typsnitt på alla hyllor. */
+  /* Raden får bli lite bredare än kortet (korten står 90 px isär), så att "Del 2  Andragradsfunktionen" ryms på en rad;
+     ett långt namn bryts under delen. Ingen punkt mellan: den blev kvar ensam i radslutet när namnet bröts. */
+  .post .rad1 { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; column-gap: 14px; row-gap: 2px; width: max-content; max-width: 390px; }
+  .post .rad1 .titel { margin-top: 0; font-size: 23px; }
+  /* Gemenerna i en ekvation förstoras så att x-höjden möter versalernas höjd; annars såg "x² = a" mindre ut än
+     "OCH NOLLPRODUKTMETODEN" (Rickard 2026-09-26). line-height 0 så att raden inte blir högre. */
+  .post .ej-versal { text-transform: none; letter-spacing: .04em; font-size: 1.36em; line-height: 0; }
+  /* Berättelserna och Ma 2a: momentet överst och filmens namn alltid under det ("OLIKHETER" / Arkimedes och cirkeln),
+     också när båda skulle rymmas på en rad (Rickard 2026-09-26). Formelbladets "DEL 3  Logaritmer" står kvar bredvid varandra. */
+  .post .rad1.stapel { flex-direction: column; align-items: center; row-gap: 4px; }
   /* Hovring (Rickard 2026-09-13): tydlig taktil återkoppling — kortet kliver fram och
      texten under växer och ljusnar. Bara på pekdon som hovrar; mobilen har ingen hover
      och står still. Det hovrade kortet får z-index så det lägger sig över grannarna. */
@@ -240,6 +253,16 @@
   .post.kommer .moment { color: var(--dis); opacity: .6; }
   .post.kommer .lina { opacity: .5; }
   .post.kommer .lina::after { background: var(--bg2); border: 1px solid var(--linje2); }
+  /* Bron på formelbladets Ma 2-hylla: Ma 1-bladets delar som följer står också på Ma 2-bladet (Rickard 2026-09-26).
+     En skylt i kortets mått, guldkant som flikarnas valda läge, pilen mot korten till höger (nedåt på telefonen). */
+  .post.bro { pointer-events: none; }
+  .post.bro .ram { display: grid; place-items: center; background: rgba(23, 20, 20, .5); border: 1px solid rgba(242, 197, 114, .55); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(242, 197, 114, .12); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .bro-inre { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 26px; text-align: center; }
+  .bro-liten { font: 500 11px/1.4 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--ben2); }
+  .bro-stor { font: italic 400 25px/1.25 var(--skrift); color: var(--accent); text-shadow: 0 1px 10px rgba(0, 0, 0, .6); }
+  .bro-pil { width: 40px; height: 12px; fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .post.bro .kurs { color: var(--accent); }
+  .post.bro .lina::after { background: var(--accent); }
   /* Pilen lika vit som "Välj en film", med samma skugga (Rickard 2026-09-23). */
   /* Under pilen står vad man gör (Rickard 2026-09-24). Pilen vaggar, texten står still; båda
      tonar bort när tidslinjen har rullats. */
@@ -791,11 +814,18 @@
        växa utanför skärmen om en mus råkar hovra på en smal ruta. */
     .post:hover .ram, .post:focus-within .ram, .post:hover .namn, .post:focus-within .namn { transform: none; }
     .post .namn { height: auto; padding-top: 18px; text-align: left; align-items: flex-start; position: relative; }
+    /* Namnraden fyller kortets bredd, så att ett långt namn bryts i stället för att gå ut över kanten. */
+    .post .namn { align-self: stretch; }
+    .post .rad1 { justify-content: flex-start; width: auto; max-width: 100%; }
+    .post .rad1.stapel { align-items: flex-start; }
     .post .namn::before { content: ""; position: absolute; left: -26px; top: 26px; width: 7px; height: 7px; border-radius: 50%; background: var(--dis); }
     .post.kommer { display: none; }
     /* En formelbladsdel som inte är klar: bara raden med namnet, utan den streckade ramen. */
     .post.kommer.del { display: flex; margin-bottom: 40px; }
     .post.kommer.del .ram { display: none; }
+    .post.bro { margin-bottom: 40px; }
+    .post.bro .ram { min-height: 150px; }
+    .bro-pil { transform: rotate(90deg); }
     /* Flikarna följer med överst när listan rullas, så man kan byta var man än är. */
     /* Avståndet ovanför flikarna är vyns padding, inte flikarnas marginal: en marginal slogs ihop med
        vyns och sköt ner hela vyn, också förstoringsglaset. Linans förskjutning är densamma som utan flikar. */
@@ -1411,7 +1441,8 @@
   // Momentet för en seriedel, utan serien först ("Formelbladet: prefix och potenser" → "prefix och
   // potenser"), och tomt när det inte säger mer än delens namn. Serien står redan i fliken och rubriken.
   const serieMoment = (v) => {
-    const m = String(v.moment || "").replace(new RegExp(`^${SERIER[v.serie].namn}\\s*[:–-]\\s*`, "i"), "");
+    // Både seriens namn ("Formelbladet Ma 2: …") och bara "Formelbladet: …" tas bort (Ma 2-delarnas moment).
+    const m = String(v.moment || "").replace(new RegExp(`^(${SERIER[v.serie].namn}|Formelbladet)\\s*[:–-]\\s*`, "i"), "");
     return norm(m) === norm(delNamn(v)) ? "" : m;
   };
   // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · 1919".
@@ -1719,12 +1750,24 @@
   // (Rickard 2026-09-26: kapitlen i boken bort helt): året överst, sedan kursen och momentet
   // ("Ma 2a · Faktorisera"), störst berättelsen ("Carissans maskin"). Kepler och Delos har alla sina
   // kurser: "Ma 1c / Ma 2a / Ma 2c · Potensekvationer".
-  const kortOverst = (v, h) => (v.serie && v.serie !== "ma2a" ? `Del ${v.del ?? ""}` : v.ar ? arText(v.ar) : kurserKort(v));
-  const kortMoment = (v, h) => {
-    if (v.serie === "ma2a") { const [, moment] = titelDelar(v); return `${kurserKort(v)} · ${esc(moment || v.moment)}`; }
-    if (v.serie) return `${kurserKort(v)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`;
-    return `${v.ar ? `${kurserKort(v)} · ` : ""}${esc(v.moment)}`;
-  };
+  // En formelbladsdel som står på en annan kurs hylla (Ma 1-delarna under Ma 2) säger vilken serie den hör till.
+  // Överst bredvid namnet: delen (formelbladet) eller momentet (berättelserna och Ma 2a), så att det syns direkt vad
+  // filmen handlar om (Rickard 2026-09-26: "Del 3  Logaritmer", "Olikheter  Arkimedes och cirkeln").
+  const kortOverst = (v, h) => (arDelserie(v)
+    ? (h && h !== v.serie && SERIER[h] && SERIER[h].platser ? `${SERIER[v.serie].kort} · del ${v.del ?? ""}` : `Del ${v.del ?? ""}`)
+    : versalTrygg(v.serie === "ma2a" ? titelDelar(v)[1] || v.moment : v.moment));
+  // Raden står i versaler, men en ekvation får inte bli versaler ("x² = a" är inte "X² = A"): ord med en exponent,
+  // ett likhetstecken eller en ensam bokstav som variabel står kvar som de skrivs. Namn som pq-formeln blir versaler.
+  function versalTrygg(text) {
+    const t = String(text), matte = /[²³⁴=<>≤≥√π]/;
+    if (!matte.test(t)) return esc(t);   // ingen ekvation: allt i versaler (också ett "i" som i "bråk i exponenten")
+    return t.split(/(\s+)/).map((d) => (matte.test(d) || /^[a-z]$/.test(d) ? `<span class="ej-versal">${esc(d)}</span>` : esc(d))).join("");
+  }
+  // Raden under: årtalet och kurserna (berättelserna och Ma 2a; Rickard 2026-09-26 flyttade ner årtalet), eller
+  // kurserna och det som formelbladsdelen tar upp.
+  const kortMoment = (v, h) => (arDelserie(v)
+    ? `${kurserKort(v)}${serieMoment(v) ? ` · ${esc(serieMoment(v))}` : ""}`
+    : `${v.ar != null ? `${arText(v.ar)} · ` : ""}${kurserKort(v)}`);
   const kortHtml = (v, i, h = "berattelser") => `
     <div class="post" style="--i:${i}">
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
@@ -1732,9 +1775,8 @@
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina"></span>
         <span class="namn">
-          <span class="kurs">${kortOverst(v, h)}</span>
+          <span class="rad1${arDelserie(v) ? "" : " stapel"}"><span class="kurs">${kortOverst(v, h)}</span><span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span></span>
           <span class="moment">${kortMoment(v, h)}</span>
-          <span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span>
         </span>
       </button>
     </div>`;
@@ -1757,17 +1799,40 @@
   const flerKommer = (fran) => [1, 2, 3].map((n) => `
     <div class="post kommer" aria-hidden="true" style="--i:${fran + n - 1}">
       <span class="lyft"></span><span class="ram"></span><span class="lina"></span>
-      <span class="namn"><span class="kurs">· · ·</span><span class="moment">fler filmer kommer</span></span>
+      <span class="namn"><span class="rad1"><span class="kurs">· · ·</span></span><span class="moment">fler filmer kommer</span></span>
     </div>`).join("");
+  // Delar ur en annan serie som också gäller här: Ma 1-bladets delar står också på Ma 2-bladet (Rickard
+  // 2026-09-26), så registret lägger dem på Ma 2-hyllan med "ocksa": { "formelbladet-ma2": del }.
+  const ocksaDelar = (namn) => videor.filter((v) => v.serie !== namn && v.ocksa && Number.isFinite(v.ocksa[namn]))
+    .sort((a, b) => a.ocksa[namn] - b.ocksa[namn]);
+  // Bron mellan hyllans egna delar och de lånade: en skylt på linan, samma mått som ett kort.
+  const broHtml = (namn, lanade, i) => {
+    const fran = SERIER[lanade[0].serie];
+    const nr = lanade.map((v) => v.del).filter(Number.isFinite);
+    return `
+    <div class="post bro" role="note" style="--i:${i}">
+      <span class="lyft"></span>
+      <span class="ram"><span class="bro-inre">
+        <span class="bro-liten">Från formelbladet för ${esc(fran.kort)}</span>
+        <span class="bro-stor">Står också på bladet för ${esc(SERIER[namn].kort)}</span>
+        <svg class="bro-pil" viewBox="0 0 40 12" aria-hidden="true"><path d="M1 6 H38 M32 1 L38 6 L32 11"/></svg>
+      </span></span>
+      <span class="lina"></span>
+      <span class="namn"><span class="rad1"><span class="kurs">${esc(fran.kort)} · del ${nr.length ? `${Math.min(...nr)}–${Math.max(...nr)}` : ""}</span></span><span class="moment">gäller också ${esc(SERIER[namn].kort)}</span></span>
+    </div>`;
+  };
   function ritaHylla() {
     const delar = !!(SERIER[hylla] && SERIER[hylla].platser);
     const filmer = hylla === "berattelser" ? berattelser : delar ? null : hyllaFilmer(hylla);
+    const egna = delar ? delPlatser(hylla) : [];
+    const lanade = delar ? ocksaDelar(hylla) : [];
     spar.innerHTML = delar
-      ? delPlatser(hylla).map((p, i) => (p.saknas ? `
+      ? egna.map((p, i) => (p.saknas ? `
     <div class="post kommer del" style="--i:${i}">
       <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
-      <span class="namn"><span class="kurs">Del ${p.del}</span><span class="moment">kommer snart</span></span>
+      <span class="namn"><span class="rad1"><span class="kurs">Del ${p.del}</span></span><span class="moment">kommer snart</span></span>
     </div>` : kortHtml(p, i, hylla))).join("")
+        + (lanade.length ? broHtml(hylla, lanade, egna.length) + lanade.map((v, k) => kortHtml(v, egna.length + 1 + k, hylla)).join("") : "")
       : filmer.map((v, i) => kortHtml(v, i, hylla)).join("") + flerKommer(filmer.length);
     if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${flikAv(hylla)}"]`); flik.id = `flik-${flikAv(hylla)}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
   }
@@ -1801,13 +1866,15 @@
   }
   // Ett tryck på en flik byter adressen utan att lägga en ny rad i historiken (bakåt går till introt
   // som förut), och en film som öppnas härifrån leder tillbaka hit med "Alla filmer", "Formelbladet" eller "Ma 2a".
-  const bytHylla = (namn) => {
+  // Händelsen till Newton: "flik" för flikarna, "formelval" för växlaren Ma 1 · Ma 2 (annars tog guiden ett byte av
+  // kurs under Formelbladet för ett byte av flik och hoppade över steget om flikarna).
+  const bytHylla = (namn, hand = "flik") => {
     history.replaceState(null, "", namn === "berattelser" ? "#filmer" : `#${namn}`);
     valjHylla(namn);
-    Newton.hande("flik");
+    Newton.hande(hand);
   };
   $("flikar").addEventListener("click", (e) => { const b = e.target.closest("[role=tab]"); if (b) bytHylla(b.dataset.hylla === "formelbladet" ? formelVal() : b.dataset.hylla); });
-  $("formelval").addEventListener("click", (e) => { const b = e.target.closest("[role=tab]"); if (b && b.dataset.hylla !== hylla) bytHylla(b.dataset.hylla); });
+  $("formelval").addEventListener("click", (e) => { const b = e.target.closest("[role=tab]"); if (b && b.dataset.hylla !== hylla) bytHylla(b.dataset.hylla, "formelval"); });
 
   let x = 0, vx = 0, mal = 0, rullar = false, drog = false;
   const maxX = () => Math.max(0, spar.scrollWidth - tidslinje.clientWidth);
@@ -1880,7 +1947,7 @@
     if (e.target.closest && e.target.closest("#formelval")) {
       e.preventDefault();
       const annan = FORMEL[(FORMEL.indexOf(hylla) + 1) % FORMEL.length];
-      bytHylla(annan); $("formelval").querySelector(`[data-hylla="${annan}"]`).focus();
+      bytHylla(annan, "formelval"); $("formelval").querySelector(`[data-hylla="${annan}"]`).focus();
       return;
     }
     const kort = e.target.closest && e.target.closest(".post > button");
@@ -3823,13 +3890,22 @@
       valj: () => [
         { id: "hej", lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
         { id: "tidslinje", vy: "valj", mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: harFlikar ? "Just så." : "Just så. Nu ska vi leta efter något i filmerna.",
-          text: `${SERIER[hylla] && SERIER[hylla].platser ? `Här ligger filmerna om formelbladet${hylla === "formelbladet-ma2" ? " för Ma 2" : ""}, från del 1 till del ${antalDelar(hylla)}.` : hylla === "ma2a" ? "Här ligger filmerna för Matematik 2a, i den ordning som de hände." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+          text: `${SERIER[hylla] && SERIER[hylla].platser ? `Här ligger filmerna om formelbladet${hylla === "formelbladet-ma2" ? " för Ma 2" : ""}, från del 1 till del ${antalDelar(hylla)}.${ocksaDelar(hylla).length ? ` Efter dem ligger delarna från bladet för ${SERIER[ocksaDelar(hylla)[0].serie].kort}, för de står på bladet för ${SERIER[hylla].kort} också.` : ""}` : hylla === "ma2a" ? "Här ligger filmerna för Matematik 2a, i den ordning som de hände." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+        // Växlaren under Formelbladet (Rickard 2026-09-26): bladen för Ma 1 och Ma 2 ligger var för sig, och Ma 1-delarna
+        // står på bladet för Ma 2 också. Eleven byter kurs, och korten på den andra hyllan lyser.
+        { id: "formelval", vy: "valj", mal: () => $("formelval"), ljus: () => [$("formelval").querySelector('[aria-selected="false"]'), ...synligaKort("#spar .post.bro .ram")].filter(Boolean),
+          lage: "pekar", nar: "formelval", finns: () => FORMEL.length > 1 && flikAv(hylla) === "formelbladet",
+          hoppa: async () => { const annan = FORMEL.find((h) => h !== hylla); if (annan) bytHylla(annan, "formelval"); await vila(700); },
+          svar: () => (hylla === "formelbladet-ma2" ? "Här är delarna för Ma 2. Längst bort ligger Ma 1-delarna, för de står på bladet för Ma 2 också." : "Här är delarna för Ma 1. De står på bladet för Ma 2 också."),
+          get text() { return hylla === "formelbladet-ma2"
+            ? "Formelbladet för Ma 1 och för Ma 2 ligger var för sig. Nu ser du Ma 2. Tryck på Ma 1a · 1b · 1c, så ser du delarna för Ma 1."
+            : "Formelbladet för Ma 1 och för Ma 2 ligger var för sig. Läser du Ma 2 ska du trycka på Ma 2a · 2b · 2c. Där ligger också Ma 1-delarna, för de står på bladet för Ma 2 också."; } },
         // Flikarna (när det finns filmer om formelbladet): eleven byter till den andra fliken.
         ...(() => {
           // Från berättelserna visar han den första serien (formelbladet), från en serie berättelserna.
           const annan = hylla === "berattelser" ? HYLLOR[1] : "berattelser", flik = () => $("flikar").querySelector(`[data-hylla="${annan}"]`);
           // Efter bytet lyser också de nya korten, medan han säger vad det är.
-          return [{ id: "flik", vy: "valj", mal: () => $("flikar"), ljus: () => [flik(), ...(hylla === annan ? synligaKort("#spar .post:not(.kommer) .ram") : [])], lage: "pekar", nar: "flik", finns: () => harFlikar, hoppa: async () => { bytHylla(annan); await vila(700); },
+          return [{ id: "flik", vy: "valj", mal: () => $("flikar"), ljus: () => [flik(), ...(hylla === annan ? synligaKort("#spar .post:not(.kommer):not(.bro) .ram") : [])], lage: "pekar", nar: "flik", finns: () => harFlikar, hoppa: async () => { bytHylla(annan); await vila(700); },
             svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : annan === "ma2a" ? "Här är filmerna för Matematik 2a. Nu ska vi leta efter något i filmerna." : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
             text: annan === "formelbladet" ? "Det finns också filmer som går igenom formelbladet, del för del. De ligger för sig. Tryck på Formelbladet, så ser du dem."
               : annan === "ma2a" ? "Det finns också filmer för Matematik 2a. De ligger för sig. Tryck på Matematik 2a, så ser du dem."
@@ -3837,7 +3913,7 @@
         })(),
         { id: "sok", mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: sokOppen, hoppa: async () => { oppnaSok(); await vila(450); }, svar: "Där är sökrutan.",
           text: "Har du fastnat på något i matten? Tryck på förstoringsglaset, så kan vi söka i allt som sägs i filmerna." },
-        { id: "valjFilm", vy: "valj", mal: () => synligtKort("#spar .post:not(.kommer) .ram"), ljus: () => synligaKort("#spar .post:not(.kommer) .ram"), lage: "prata", nar: "film",
+        { id: "valjFilm", vy: "valj", mal: () => synligtKort("#spar .post:not(.kommer):not(.bro) .ram"), ljus: () => synligaKort("#spar .post:not(.kommer):not(.bro) .ram"), lage: "prata", nar: "film",
           hoppa: async () => { tillFilm(); await vantaPa(() => aktivVy === "film", 4000); },
           text: "Välj nu en film och tryck på den, så tittar vi på hur spelaren fungerar." },
       ],
@@ -3918,7 +3994,7 @@
       resten = [];
       if (aktivVy === "film") return [...sokning, ...filmPlan()];
       const forst = aktivVy === "intro" ? ["intro"] : sok ? [] : ["hej"];
-      return [...sokning, ...forst, "tidslinje", "flik", ...(sok ? [] : ["sok", "sokt", "sokStangd"]), "valjFilm"];
+      return [...sokning, ...forst, "tidslinje", "formelval", "flik", ...(sok ? [] : ["sok", "sokt", "sokStangd"]), "valjFilm"];
     }
     // Delen eleven tittar på är den som ligger i höjd med blicken, 40 % ner i fönstret under den fasta
     // rubrikraden. Ligger blicken mellan två delar vinner den som är närmast (vid lika den översta).
