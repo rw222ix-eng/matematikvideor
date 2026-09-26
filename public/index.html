@@ -2992,6 +2992,41 @@
         for (const f of del.fel || []) if (sammaOrd(f.svar)) return fel(f.text);
         return fel(INTE);
       }
+      // Ett tal skrivet som produkt (Matematik 2a, faktorisera 899): "31 · 29", "29 * 31" eller
+      // "(30 + 1)(30 − 1)". Varje faktor räknas ut. Produkten ska bli talet, och så långt som möjligt
+      // betyder att varje faktor är ett primtal.
+      if (del.typ === "faktorer") {
+        const du = tolka(stada(svar));
+        let tecken = 1, n = du; while (n.typ === "neg") { tecken = -tecken; n = n.a; }
+        const fs = faktorer(n).map((f) => Math.abs(rakna(f, {})));
+        if (!fs.every(Number.isFinite)) throw new Error("faktor");
+        const produkt = fs.reduce((a, b) => a * b, 1) * tecken;
+        const prim = (x) => { if (x < 2 || !Number.isInteger(x)) return false; for (let d = 2; d * d <= x; d++) if (x % d === 0) return false; return true; };
+        if (!nara(produkt, del.svar)) return fel(`Det blir ${svTal(produkt)}, inte ${svTal(del.svar)}. Räkna efter och pröva igen.`);
+        const riktiga = fs.filter((x) => x !== 1);
+        if (riktiga.length < 2) return fel(arSumma(n)
+          ? "Det är rätt tal, men skrivet som en summa eller skillnad. Använd konjugatregeln, a² − b² = (a + b)(a − b), så blir det en produkt."
+          : `Det är talet självt. Skriv ${svTal(del.svar)} som en produkt av två tal.`);
+        if (!riktiga.every(prim)) return fel("Rätt så långt, men det går att dela upp mer. Pröva att faktorisera faktorerna också.");
+        return { ok: true, text: `Rätt! ${svTal(del.svar)} = ${[...riktiga].sort((a, b) => b - a).map(svTal).join(" · ")}.` };
+      }
+      // Två eller fler tal i valfri ordning (Matematik 2a, pq-formeln): "5 och 7", "x = 5 eller x = 7",
+      // "x₁ = 7, x₂ = 5". Siffror som hör till ett namn (x1, x₂) räknas inte.
+      if (del.typ === "losningar") {
+        // Bara en ensam bokstav direkt följd av en siffra är ett namn: "x1", "x_2", "x₁". I "och 7" är 7 ett svar.
+        const text = svar.toLowerCase().replace(/[−–—]/g, "-").replace(/(?<![a-zåäö])[a-zåäö]_?[0-9₀-₉]/g, " ");
+        // "5, 7" är två tal; "5,7" utan mellanslag läses först som decimaltal och delas om antalet inte stämmer.
+        let tal = (text.match(/-?\d+(?:[.,]\d+)?/g) || []).map((x) => parseFloat(x.replace(",", ".")));
+        if (tal.length !== del.svar.length && /\d,\d/.test(text)) tal = (text.match(/-?\d+/g) || []).map(Number);
+        if (!tal.length) throw new Error("inga tal");
+        const somMangd = (a) => [...new Set(a.map((x) => Math.round(x * 100) / 100))].sort((x, y) => x - y);
+        const sammaTal = (a, b) => a.length === b.length && a.every((x, i) => Math.abs(x - b[i]) < (del.tolerans ?? 0.011));
+        const du = somMangd(tal), mal = somMangd(del.svar);
+        if (sammaTal(du, mal)) return { ok: true, text: "Rätt!" };
+        for (const f of del.fel || []) if (sammaTal(du, somMangd([].concat(f.svar)))) return fel(f.text);
+        if (du.length < mal.length && du.every((x) => mal.some((y) => Math.abs(x - y) < 0.011))) return fel("Det stämmer, men det finns fler. Skriv alla.");
+        return fel(INTE);
+      }
       if (del.typ === "tal") {
         const x = talUr(svar);
         if (!Number.isFinite(x)) throw new Error("tal");

@@ -6810,8 +6810,93 @@
      "text": "När Bethe förklarade sitt knep för Feynman tog han 47 som exempel. Räkna 47 i kvadrat i huvudet, som Bethe."
     }
    ],
-   "kapitel": [],
-   "dinTur": null,
+   "kapitel": [
+    {
+     "t": 0,
+     "rubrik": "Bethe, Feynman och 48 i kvadrat",
+     "typ": "historia"
+    },
+    {
+     "t": 113,
+     "rubrik": "48² som (50 − 2)²: dubbla produkten",
+     "typ": "matte"
+    },
+    {
+     "t": 199,
+     "rubrik": "Kvadreringsreglerna, med tal och med x",
+     "typ": "matte"
+    },
+    {
+     "t": 301,
+     "rubrik": "Konjugatregeln",
+     "typ": "matte"
+    },
+    {
+     "t": 362,
+     "rubrik": "Reglerna i en ekvation, och två övningar",
+     "typ": "matte"
+    },
+    {
+     "t": 462,
+     "rubrik": "Atombomben, och Bethe efter kriget",
+     "typ": "historia"
+    },
+    {
+     "t": 496,
+     "rubrik": "47 i kvadrat",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "fraga": "När Bethe förklarade sitt knep för Feynman tog han 47 som exempel.",
+    "delar": [
+     {
+      "fraga": "Räkna 47 i kvadrat i huvudet, som Bethe. Vad blir det?",
+      "typ": "tal",
+      "svar": 2209,
+      "exempel": "t.ex. 2304",
+      "fel": [
+       {
+        "svar": "2491",
+        "text": "Du har räknat 2500 − 9. Glöm inte dubbla produkten, 2 · 50 · 3 = 300, som ska dras bort."
+       },
+       {
+        "svar": "2509",
+        "text": "Du har räknat 2500 + 9. Dubbla produkten saknas: 2 · 50 · 3 = 300, med minus eftersom 47 är 50 minus 3."
+       },
+       {
+        "svar": "2191",
+        "text": "Nästan. 3 i kvadrat är alltid plus, för minus gånger minus är plus. Det blir 2500 − 300 + 9."
+       },
+       {
+        "svar": "2359",
+        "text": "Dubbla produkten är 2 · 50 · 3 = 300, inte 150. Glöm inte tvåan."
+       },
+       {
+        "svar": "2200",
+        "text": "Nästan. Glöm inte 3 i kvadrat, 9, som kommer sist och alltid är plus."
+       },
+       {
+        "svar": "2809",
+        "text": "Det är 53 i kvadrat. 47 ligger under 50, så dubbla produkten ska dras bort, inte läggas till."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Tänk på 47 som 50 − 3, som Bethe gjorde med 48. Först 50 i kvadrat, sedan dubbla produkten, sist 3 i kvadrat.",
+     "t": 181
+    },
+    "losning": [
+     "47 är 50 minus 3, så 47² = (50 − 3)².",
+     "Andra kvadreringsregeln: (a − b)² = a² − 2ab + b².",
+     "50² = 2500.",
+     "Dubbla produkten: 2 · 50 · 3 = 300, med minus.",
+     "3² = 9, som alltid är plus.",
+     "2500 − 300 + 9 = 2209."
+    ],
+    "notisFran": 199
+   },
    "undertext": [
     {
      "s": 0.12,
@@ -7336,7 +7421,35 @@
      "typ": "uppgift"
     }
    ],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "Tänk dig att du sitter vid maskinen och prövar talet 899.",
+    "delar": [
+     {
+      "fraga": "Faktorisera 899 så långt som möjligt, med kvadraterna och konjugatregeln.",
+      "typ": "faktorer",
+      "svar": 899,
+      "exempel": "t.ex. 23 · 17",
+      "tangenter": [
+       "·",
+       "(",
+       ")"
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med 391 i filmen. Vilken kvadrat ligger närmast ovanför 899? Hur mycket större är den, och är skillnaden också en kvadrat?",
+     "t": 100
+    },
+    "losning": [
+     "Kvadraten närmast ovanför 899 är 900 = 30².",
+     "900 − 899 = 1, och 1 = 1².",
+     "Alltså är 899 = 30² − 1².",
+     "Konjugatregeln baklänges: a² − b² = (a + b)(a − b).",
+     "899 = (30 + 1)(30 − 1) = 31 · 29.",
+     "31 och 29 är primtal, så längre än så går det inte. Kontroll: 31 · 29 = 899."
+    ],
+    "notisFran": 170
+   },
    "undertext": [
     {
      "s": 0.2,
@@ -7855,7 +7968,80 @@
      "typ": "uppgift"
     }
    ],
-   "dinTur": null,
+   "dinTur": {
+    "fraga": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar, och att produkten blev 35.",
+    "delar": [
+     {
+      "fraga": "Ställ upp en ekvation, med x för den ena delen.",
+      "typ": "ekvation",
+      "svar": "x*(12 - x) = 35",
+      "exempel": "t.ex. x(10 − x) = 21",
+      "tangenter": [
+       "(",
+       ")",
+       "^",
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "x + (12 - x) = 35",
+        "text": "Delarna ska gångras med varandra, inte läggas ihop: det är produkten som är 35."
+       },
+       {
+        "svar": "12*x = 35",
+        "text": "Den andra delen är inte 12, utan det som blir kvar när x är borttaget, alltså 12 − x."
+       },
+       {
+        "svar": "x*(12 - x) = 12",
+        "text": "Delarnas summa är 12, men det är produkten som ska bli 35."
+       }
+      ]
+     },
+     {
+      "fraga": "Lös den med pq-formeln. Hur stora är delarna?",
+      "typ": "losningar",
+      "svar": [
+       5,
+       7
+      ],
+      "exempel": "t.ex. 3 och 7",
+      "fel": [
+       {
+        "svar": [
+         6
+        ],
+        "text": "6 är halva p med ombytt tecken. Nu ska du lägga till och dra bort roten ur 36 − 35."
+       },
+       {
+        "svar": [
+         -5,
+         -7
+        ],
+        "text": "Kolla tecknet. p är −12, så halva p med ombytt tecken är +6."
+       },
+       {
+        "svar": [
+         14.43,
+         -2.43
+        ],
+        "text": "Kolla tecknet på q. Ekvationen är x² − 12x + 35 = 0, så q är +35 och det blir roten ur 36 − 35."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med tio och 21 i filmen. Kalla ena delen x, så är den andra 12 − x. Multiplicera in, flytta 35 och se till att det står plus framför x².",
+     "t": 226
+    },
+    "losning": [
+     "Kalla den ena delen x. Då är den andra 12 − x, och x(12 − x) = 35.",
+     "Multiplicera in: 12x − x² = 35. Flytta 35: −x² + 12x − 35 = 0.",
+     "Gångra med −1, så att det står plus framför x²: x² − 12x + 35 = 0. Då är p = −12 och q = 35.",
+     "pq-formeln: x = 6 ± √(36 − 35) = 6 ± √1 = 6 ± 1.",
+     "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
+    ],
+    "notisFran": 350
+   },
    "undertext": [
     {
      "s": 0.24,
