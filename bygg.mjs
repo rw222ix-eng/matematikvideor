@@ -132,10 +132,13 @@ function omslagskurva(fil) {
 // markeras med "serie"; glöms fältet känns serien igen på id:t (formelbladet-N-…, ma2a-NN-…). Delens
 // nummer är "del", annars siffran i id:t eller i titeln. "ocksa": { "ma2a": 12.4 } lägger en film som
 // hör hemma någon annanstans också under en seriens flik, på den platsen (Kepler i Ma 2a).
-const serieAv = (v) => v.serie || (/^formelbladet-/.test(v.id) ? "formelbladet" : /^ma2a-/.test(v.id) ? "ma2a" : null);
+// formelbladet-ma2-N-… är formelbladet för Ma 2 (FORMELBLADET-MA2-SERIE.md) och prövas före formelbladet-.
+const serieAv = (v) => v.serie || (/^formelbladet-ma2-/.test(v.id) ? "formelbladet-ma2" : /^formelbladet-/.test(v.id) ? "formelbladet" : /^ma2a-/.test(v.id) ? "ma2a" : null);
 const delAv = (v) => {
   if (Number.isFinite(v.del)) return v.del;
-  const m = v.id.match(/^[a-z0-9]+-(\d+)-/) || String(v.titel).match(/(\d+)\s*[–-]/);
+  // Siffran direkt efter seriens namn i id:t (formelbladet-ma2-3-… → 3), annars siffran före "–" i titeln.
+  const serie = serieAv(v);
+  const m = (serie && v.id.startsWith(`${serie}-`) ? v.id.slice(serie.length + 1).match(/^(\d+)-/) : v.id.match(/^[a-z0-9]+-(\d+)-/)) || String(v.titel).match(/(\d+)\s*[–-]/);
   return m ? Number(m[1]) : null;
 };
 // Tidslinjen är kronologisk: `ar` i registret är året berättelsen utspelar sig. Serierna kommer
