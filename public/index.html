@@ -261,6 +261,10 @@
   .valj .topp { pointer-events: none; }
   .valj .topp .hoger { pointer-events: auto; }
   .valj .flikar { z-index: 6; }
+  /* Flikraden får vara så bred som texten kräver. Med left: 50% fick den annars bara halva fönstrets
+     bredd, flikarna blev smalare än sin text, och sedan glansen gav knapparna overflow: hidden
+     klipptes texten: "FORMELBLADE" (Rickard 2026-09-26). */
+  .valj .flikar { width: max-content; }
   /* Flikarna överst, "Välj en film" under dem och sedan pilen (Rickard 2026-09-25: rubriken ska stå
      under flikarna, och pilen låg 2 px under flikarna, alldeles för nära). */
   .valj.har-flikar .rubrik { top: 134px; }
