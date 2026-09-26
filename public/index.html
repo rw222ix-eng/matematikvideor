@@ -79,6 +79,10 @@
   .logo:hover { opacity: 1; }
   .logo img { height: 64px; width: 64px; display: block; border-radius: 50%; box-shadow: 0 0 0 1px var(--linje2), 0 12px 30px -10px rgba(0, 0, 0, .9); }
   .ikon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--ben2); transition: color .4s; }
+  /* Ikonerna ovanpå målningarna (filmvalet och introt) syntes dåligt mot himlen och molnen (Rickard
+     2026-09-26): vita, med tjockare streck, en mörk glöd runt strecken och en svag mörk skiva bakom. */
+  :is(.valj, .intro) .topp .ikon { color: #FFFBF2; background: rgba(23, 20, 20, .38); filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .9)) drop-shadow(0 0 6px rgba(0, 0, 0, .55)); }
+  :is(.valj, .intro) .topp .ikon svg { stroke-width: 1.8; }
   .ikon:hover { color: var(--ben); }
   .ikon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; }
   /* Egna tooltips (Rickard 2026-09-23), inte webbläsarens title. De tonar fram ovanför ikonen
@@ -878,6 +882,7 @@
     .intro .knapp:hover > span:first-child { transform: translateX(-3px); letter-spacing: .26em; }
     .intro .knapp:hover .ring { transform: scale(1.12); box-shadow: 0 0 0 6px rgba(242, 197, 114, .12), 0 0 30px rgba(242, 197, 114, .4); }
     .ikon:hover { background: rgba(236, 230, 216, .1); color: var(--ben); transform: scale(1.08); }
+    :is(.valj, .intro) .topp .ikon:hover { background: rgba(23, 20, 20, .6); color: var(--accent); }
     .sok .forslag button:hover { transform: translateY(-2px); background: rgba(242, 197, 114, .08); }
     .basta:hover { transform: translateY(-3px); border-color: rgba(242, 197, 114, .3); background: rgba(236, 230, 216, .06); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .9); }
     .basta .spela:hover .ring { transform: scale(1.1); box-shadow: 0 0 22px rgba(242, 197, 114, .4); }
