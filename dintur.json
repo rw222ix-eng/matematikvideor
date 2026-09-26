@@ -521,6 +521,102 @@
       "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
     ]
   },
+  "formelbladet-ma2-1-algebra": {
+    "fraga": "Lös ekvationen x² − 8x + 12 = 0 med pq-formeln.",
+    "delar": [
+      {
+        "fraga": "Vad är p?",
+        "typ": "tal",
+        "svar": -8,
+        "exempel": "t.ex. −6",
+        "tangenter": [
+          "-"
+        ],
+        "fel": [
+          {
+            "svar": "8",
+            "text": "Tecknet hör till talet. Det står minus åtta x, så p är −8."
+          },
+          {
+            "svar": "12",
+            "text": "12 är talet utan x, och det är q. p är talet framför x."
+          },
+          {
+            "svar": "-4",
+            "text": "−4 är halva p. p är hela talet framför x."
+          }
+        ]
+      },
+      {
+        "fraga": "Vad är q?",
+        "typ": "tal",
+        "svar": 12,
+        "exempel": "t.ex. 8",
+        "tangenter": [
+          "-"
+        ],
+        "fel": [
+          {
+            "svar": "-8",
+            "text": "−8 är talet framför x, och det är p. q är talet utan x."
+          },
+          {
+            "svar": "-12",
+            "text": "Det står plus 12 i ekvationen, så q är +12."
+          }
+        ]
+      },
+      {
+        "fraga": "Vilka är lösningarna?",
+        "typ": "losningar",
+        "svar": [
+          2,
+          6
+        ],
+        "exempel": "t.ex. 4 och 2",
+        "fel": [
+          {
+            "svar": [
+              -2,
+              -6
+            ],
+            "text": "Kolla tecknet. p är −8, så minus halva p blir +4, inte −4."
+          },
+          {
+            "svar": [
+              4
+            ],
+            "text": "4 är minus halva p. Nu ska du lägga till och dra bort roten ur 16 − 12."
+          },
+          {
+            "svar": [
+              0,
+              8
+            ],
+            "text": "Under rottecknet står 16 − 12 = 4, och roten ur 4 är 2. Du har lagt till och dragit bort 4 i stället för 2."
+          },
+          {
+            "svar": [
+              -1.29,
+              9.29
+            ],
+            "text": "Kolla tecknet på q. q är +12, så under rottecknet står 16 − 12, inte 16 + 12."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Här är p minus 6 och q är 8",
+      "text": "Gör som med x² − 6x + 8 = 0 i filmen. Läs av p och q med sina tecken, räkna minus halva p och sätt in i pq-formeln."
+    },
+    "losning": [
+      "p = −8 och q = 12, för tecknet hör till talet.",
+      "Minus halva p är +4, och halva p i kvadrat är 16.",
+      "x = 4 ± √(16 − 12) = 4 ± √4 = 4 ± 2.",
+      "x = 6 eller x = 2. Kontroll: 6² − 8 · 6 + 12 = 36 − 48 + 12 = 0."
+    ],
+    "notisFran": "På provet står ekvationen ofta redan"
+  },
   "formelbladet-ma2-2-andragradsfunktionen": {
     "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x.",
     "delar": [
