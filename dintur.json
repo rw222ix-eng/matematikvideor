@@ -831,6 +831,71 @@
     ],
     "notisFran": "Här är en uppgift att prova"
   },
+  "formelbladet-ma2-5-vinklar-och-cirkelsatser": {
+    "fraga": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora.",
+    "delar": [
+      {
+        "fraga": "Hur stor är vinkelsumman i en bit med fem hörn?",
+        "typ": "tal",
+        "svar": 540,
+        "enhet": "grader",
+        "exempel": "t.ex. 720",
+        "fel": [
+          {
+            "svar": "720",
+            "text": "720 grader är vinkelsumman i biten med sex hörn. Här är n lika med 5: (5 − 2) · 180."
+          },
+          {
+            "svar": "900",
+            "text": "Du har räknat 5 · 180. Formeln säger n minus 2, alltså 3 · 180."
+          },
+          {
+            "svar": "360",
+            "text": "360 grader är vinkelsumman i en fyrhörning. En femhörning delas i tre trianglar: 3 · 180."
+          },
+          {
+            "svar": "180",
+            "text": "180 grader är vinklarna i en enda triangel. En femhörning delas i tre trianglar: 3 · 180."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur stor är varje vinkel i en bit med fem hörn?",
+        "typ": "tal",
+        "svar": 108,
+        "enhet": "grader",
+        "exempel": "t.ex. 120",
+        "fel": [
+          {
+            "svar": "120",
+            "text": "120 grader är vinkeln i biten med sex hörn. Här delar du vinkelsumman 540 med 5."
+          },
+          {
+            "svar": "135",
+            "text": "135 grader är vinkeln i stoppskylten med åtta hörn. Här delar du 540 med 5."
+          },
+          {
+            "svar": "180",
+            "text": "Du har delat 900 med 5. Vinkelsumman är (5 − 2) · 180 = 540, och 540 delat med 5 är 108."
+          },
+          {
+            "svar": "72",
+            "text": "72 grader är 360 delat med 5. Hörnets vinkel är vinkelsumman 540 delat med 5."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Biten har 6 hörn",
+      "text": "Sätt in n = 5 i S = (n − 2) · 180°, och dela sedan vinkelsumman med 5, för alla vinklarna är lika stora."
+    },
+    "losning": [
+      "Biten har 5 hörn, så n är 5.",
+      "5 − 2 = 3, och vinkelsumman är 3 · 180 = 540 grader.",
+      "Alla fem vinklarna är lika stora, så varje vinkel är 540 / 5 = 108 grader."
+    ],
+    "notisFran": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora. Hur stor är varje vinkel i en bit med sex"
+  },
   "formelbladet-ma2-6-statistik": {
     "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
     "delar": [
