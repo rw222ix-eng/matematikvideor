@@ -166,7 +166,9 @@
   .valj .fond { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: max(100%, 128.6vh); width: max(100%, 128.6dvh); max-width: none; height: auto; aspect-ratio: 1672 / 1300; z-index: 0; }
   /* Vinjetten är nedtonad till ungefär hälften (Rickard 2026-09-13, "lite ljusare" två gånger): fonden ska synas lite mer,
      men kanterna måste fortfarande mörkna så tidslinjens text går att läsa. */
-  .valj .vinjett { position: absolute; inset: 0; z-index: 1; background:
+  /* pointer-events: none — vinjetten är bara ljus och skugga. På telefonen (≤ 700 px) står växlaren Ma 1 · Ma 2 i
+     flödet (position: static, utan z-index) och den fasta vinjetten låg över den, så knapparna gick inte att trycka på. */
+  .valj .vinjett { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
       radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .03) 60%, rgba(23, 20, 20, .16) 100%),
       linear-gradient(rgba(23, 20, 20, .09), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, 0) 60%, rgba(23, 20, 20, .38) 88%); }
   /* Samma målning ritad i WebGL, med glimrande stjärnor och ljus och rörligt vatten (se
@@ -812,6 +814,7 @@
     .flikar .kort { display: inline; }
     .valj .flikar.tre { grid-auto-columns: auto; }
     .flikar.tre button { padding: 0 12px; letter-spacing: .1em; }
+    .formelval button { padding: 0 11px; letter-spacing: .1em; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .basta { grid-template-columns: 1fr; gap: 16px; }
@@ -1113,10 +1116,11 @@
     <button type="button" role="tab" data-hylla="ma2a" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Matematik 2a</span><span class="kort">Ma 2a</span></button>
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
   </div>
-  <!-- Under fliken Formelbladet: formelbladet för Ma 1 eller för Ma 2 (Rickard 2026-09-26). Syns när båda har filmer. -->
+  <!-- Under fliken Formelbladet: formelbladet för Ma 1 eller för Ma 2 (Rickard 2026-09-26). Syns när båda har filmer.
+       Knapparna säger att bladen gäller alla tre spåren, 1a/1b/1c och 2a/2b/2c (Rickard 2026-09-26). -->
   <div class="formelval" id="formelval" role="tablist" aria-label="Formelbladet för vilken kurs">
-    <button type="button" role="tab" data-hylla="formelbladet" aria-selected="true" aria-controls="tidslinje">Ma 1</button>
-    <button type="button" role="tab" data-hylla="formelbladet-ma2" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Ma 2</button>
+    <button type="button" role="tab" data-hylla="formelbladet" aria-selected="true" aria-controls="tidslinje" aria-label="Formelbladet för Matematik 1a, 1b och 1c">Ma 1a · 1b · 1c</button>
+    <button type="button" role="tab" data-hylla="formelbladet-ma2" aria-selected="false" aria-controls="tidslinje" tabindex="-1" aria-label="Formelbladet för Matematik 2a, 2b och 2c">Ma 2a · 2b · 2c</button>
   </div>
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
