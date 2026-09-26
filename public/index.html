@@ -65,11 +65,8 @@
      in ur en lätt oskärpa. Omslaget som flyger mellan kort och spelare tweenas för sig. */
   ::view-transition-old(root) { animation: vy-ut .55s var(--lugn) both; }
   ::view-transition-new(root) { animation: vy-in .7s var(--lugn) both; }
-  /* Under en övergång lägger webbläsaren ett lager över hela sidan som tar alla klick, så man fick
-     vänta tills tonandet var klart innan nästa knapp svarade, och sidan kändes seg (Rickard
-     2026-09-26, formelbladets siffror). Klicken går nu igenom lagret till den nya sidan under, som
-     redan ligger på plats; ett nytt byte mitt i avbryter det pågående. */
-  ::view-transition { pointer-events: none; }
+  /* Klick mitt i en övergång: se "Klick mitt i en övergång" i skriptet. (pointer-events: none på
+     ::view-transition hjälpte inte: Chrome gör hela dokumentet till en bild under övergången.) */
   @keyframes vy-ut { to { opacity: 0; transform: scale(1.04); filter: blur(6px); } }
   @keyframes vy-in { from { opacity: 0; transform: scale(.985); filter: blur(6px); } }
   ::view-transition-group(omslag) { animation-duration: .75s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); z-index: 50; }
@@ -1437,9 +1434,29 @@
     });
     // En dold flik eller ett snabbt nytt byte avbryter övergången; bytet görs ändå.
     overgang.ready.catch(() => {});
-    overgang.finished.finally(tomNamn);
+    aktivOvergang = overgang;
+    overgang.finished.finally(() => { if (aktivOvergang === overgang) aktivOvergang = null; tomNamn(); });
   }
   window.addEventListener("hashchange", ruta);
+  // Klick mitt i en övergång (Rickard 2026-09-26, "måste vänta en sekund innan man kan klicka på en
+  // annan siffra"): medan sidan tonar är hela dokumentet en bild i Chrome, och klicket landar på
+  // <html> i stället för på knappen man ser. Uppmätt: 0,73 s då inga klick gick fram. Här fångas
+  // ett sådant klick, övergången hoppar till slutet, och klicket går vidare till det som ligger
+  // under pekaren på den nya sidan. Ett fält får fokus i stället för ett klick.
+  let aktivOvergang = null;
+  addEventListener("click", (e) => {
+    if (!aktivOvergang || e.target !== document.documentElement) return;
+    e.preventDefault(); e.stopPropagation();
+    const { clientX: x, clientY: y } = e, vt = aktivOvergang;
+    aktivOvergang = null;
+    vt.skipTransition();
+    vt.finished.finally(() => requestAnimationFrame(() => {
+      const el = document.elementFromPoint(x, y);
+      if (!el || el === document.documentElement || el === document.body) return;
+      const falt = el.closest("input, textarea, select");
+      if (falt) falt.focus(); else el.click();
+    }));
+  }, true);
 
   // ── Levande målningar: introt och fonden bakom filmvalet ──
   // Ingenting läggs ovanpå målningarna. Bilden ritas som textur i en fragment-shader som
