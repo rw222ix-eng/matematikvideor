@@ -520,5 +520,60 @@
       "pq-formeln: x = 6 ± √(36 − 35) = 6 ± √1 = 6 ± 1.",
       "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
     ]
+  },
+  "formelbladet-ma2-6-statistik": {
+    "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
+    "delar": [
+      {
+        "fraga": "Hur stor andel av äggen väger mellan 52 och 60 gram?",
+        "typ": "tal",
+        "svar": 47.7,
+        "tolerans": 0.05,
+        "enhet": "%",
+        "exempel": "t.ex. 34,1",
+        "fel": [
+          {
+            "svar": "34.1",
+            "text": "34,1 % är bara biten mellan 56 och 60 gram, alltså mellan μ − σ och μ. 52 gram är μ − 2σ, så biten mellan 52 och 56 gram ska också med."
+          },
+          {
+            "svar": "13.6",
+            "text": "13,6 % är bara biten mellan 52 och 56 gram. Biten mellan 56 och 60 gram, 34,1 %, ska också med."
+          },
+          {
+            "svar": "50",
+            "text": "50 % är alla ägg som väger mindre än 60 gram. De 2,3 % som väger mindre än 52 gram ska inte med."
+          },
+          {
+            "svar": "95.4",
+            "text": "95,4 % är andelen mellan 52 och 68 gram, på båda sidor om medelvärdet. Här är det bara från 52 upp till 60."
+          },
+          {
+            "svar": "81.8",
+            "text": "81,8 % var övningstalet, mellan 56 och 68 gram. Här är det mellan 52 och 60 gram."
+          },
+          {
+            "svar": "68.2",
+            "text": "68,2 % är andelen mellan 56 och 64 gram. Här går det från 52 till 60, alltså från μ − 2σ till μ."
+          },
+          {
+            "svar": "0.477",
+            "tolerans": 0.0006,
+            "text": "Nästan. 0,477 är andelen skriven som decimaltal. Här ska svaret vara i procent, och 0,477 = 47,7 %."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "56 är 60 minus 4",
+      "text": "Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
+    },
+    "losning": [
+      "μ = 60 g och σ = 4 g, så μ − σ = 60 − 4 = 56 g och μ − 2σ = 60 − 8 = 52 g.",
+      "Mellan 52 och 56 gram (μ − 2σ till μ − σ) står 13,6 %.",
+      "Mellan 56 och 60 gram (μ − σ till μ) står 34,1 %.",
+      "13,6 + 34,1 = 47,7, så 47,7 % av äggen väger mellan 52 och 60 gram."
+    ],
+    "notisFran": "Samma figur fungerar för allt som är normalfördelat"
   }
 }

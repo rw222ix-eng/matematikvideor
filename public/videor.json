@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-26T12:04:26.514Z",
+ "byggd": "2026-09-26T12:55:42.206Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -6682,6 +6682,530 @@
      "s": 454.04,
      "e": 455.78,
      "text": "Hur högt upp sitter toppen?"
+    }
+   ]
+  },
+  {
+   "id": "formelbladet-ma2-6-statistik",
+   "titel": "Formelbladet Ma 2, del 6 – Statistik",
+   "ar": 2025,
+   "serie": "formelbladet-ma2",
+   "del": 6,
+   "ocksa": null,
+   "kurs": "Matematik 2",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-ma2-6-v1/formelbladet-ma2-6-statistik-1080p.mp4",
+   "moment": "Formelbladet: lådagram och normalfördelning",
+   "begrepp": [
+    "formelbladet",
+    "statistik",
+    "sannolikhet",
+    "lådagram",
+    "minsta värde",
+    "största värde",
+    "median",
+    "kvartil",
+    "nedre kvartil",
+    "övre kvartil",
+    "kvartilavstånd",
+    "spridningsmått",
+    "normalfördelning",
+    "medelvärde",
+    "standardavvikelse",
+    "my",
+    "sigma",
+    "andel",
+    "procent"
+   ],
+   "beskrivning": "Vi går igenom sista delen av formelbladet till nationella provet i matematik 2, lådagrammet och normalfördelningen. Vi ritar ett lådagram av elva längdhopp och räknar med procenttalen i normalfördelningen på mjölkpaket och ägg.",
+   "youtube": null,
+   "langd": 417,
+   "omslag": "omslag/formelbladet-ma2-6-statistik.jpg?v=c60755fa",
+   "omslagRen": "omslag/formelbladet-ma2-6-statistik-ren.jpg?v=f584a294",
+   "omslagStor": "omslag/formelbladet-ma2-6-statistik-stor.jpg?v=09acb861",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "På nationella provet i matematik 2 får alla ett formelblad från Skolverket. Bladet har fyra sidor, och längst ner på sista sidan står ett avsnitt som heter statistik och sannolikhet."
+    },
+    {
+     "t": 13,
+     "text": "Där finns inga formler, bara två figurer, ett lådagram och en normalfördelning. Figurerna hjälper bara om man vet vad orden och talen i dem betyder, så vi går igenom dem en i taget och börjar med lådagrammet."
+    },
+    {
+     "t": 28,
+     "text": "Ett lådagram visar hur en grupp värden är spridda. Under figuren står fem ord, från minsta värde längst till vänster till största värde längst till höger, och varje ord hör till ett lodrätt streck."
+    },
+    {
+     "t": 44,
+     "text": "Vi tar ett exempel. Elva elever hoppar längdhopp på idrotten, och vi skriver upp hoppen i meter, sorterade från det kortaste till det längsta."
+    },
+    {
+     "t": 55,
+     "text": "Det kortaste hoppet är 2,9 meter, och det är minsta värdet. Det längsta hoppet är 5,1 meter, och det är största värdet."
+    },
+    {
+     "t": 65,
+     "text": "Medianen är det hopp som står i mitten. Med elva hopp står fem hopp på var sida om det sjätte, så medianen är det sjätte hoppet, 3,8 meter."
+    },
+    {
+     "t": 78,
+     "text": "Kvartilerna hittar man på samma sätt i varje halva. De fem hoppen före medianen har 3,4 meter i mitten, och det är nedre kvartilen. De fem hoppen efter medianen har 4,3 meter i mitten, och det är övre kvartilen."
+    },
+    {
+     "t": 96,
+     "text": "Ordet kvartil hänger ihop med kvart, alltså en fjärdedel. De tre strecken i mitten delar nämligen hoppen i fyra delar, med två hopp i varje del."
+    },
+    {
+     "t": 109,
+     "text": "Lådan går från nedre kvartilen till övre kvartilen, så i lådan ligger den mittersta hälften av hoppen. Från lådan går linjer ut till minsta och största värdet."
+    },
+    {
+     "t": 122,
+     "text": "Ovanför lådan står kvartilavstånd, och det är övre kvartilen minus nedre kvartilen. Här blir det 4,3 minus 3,4, alltså 0,9 meter."
+    },
+    {
+     "t": 137,
+     "text": "Kvartilavståndet säger hur utspridda hoppen i mitten är. Om den som hoppade 5,1 meter i stället hade hoppat 6 meter hade bara linjen till höger blivit längre, men lådan och kvartilavståndet hade varit desamma."
+    },
+    {
+     "t": 154,
+     "text": "Under lådagrammet står normalfördelningen. Den visar hur värden är spridda när man mäter samma sak väldigt många gånger, till exempel mjölken i tusentals mjölkpaket som fylls av en maskin."
+    },
+    {
+     "t": 169,
+     "text": "Maskinen ska fylla 1000 milliliter i varje paket, men den träffar inte exakt varje gång. De flesta paket får nästan 1000 milliliter, och bara några få får mycket mer eller mycket mindre."
+    },
+    {
+     "t": 184,
+     "text": "Mäter man mjölken i tusen paket och ritar en stapel för hur många paket som fick varje mängd, blir staplarna höga i mitten och låga ute i kanterna. Kurvan på formelbladet följer staplarnas toppar."
+    },
+    {
+     "t": 201,
+     "text": "Under kurvan står den grekiska bokstaven my, och my är medelvärdet. För mjölkpaketen är my alltså 1000 milliliter."
+    },
+    {
+     "t": 212,
+     "text": "Bokstaven sigma är standardavvikelsen. Den säger hur långt från medelvärdet värdena brukar hamna, och den här maskinen har standardavvikelsen 5 milliliter."
+    },
+    {
+     "t": 225,
+     "text": "Nu kan vi skriva mängden mjölk under varje streck. My plus sigma är 1000 plus 5, alltså 1005, och my minus sigma är 1000 minus 5, alltså 995. Två sigma är 10 milliliter, så my plus två sigma är 1010 och my minus två sigma är 990."
+    },
+    {
+     "t": 256,
+     "text": "Procenttalen i figuren säger hur stor andel av paketen som hamnar mellan två streck. Mellan 1000 och 1005 milliliter står 34,1 procent, och lika mycket står mellan 995 och 1000."
+    },
+    {
+     "t": 274,
+     "text": "Tillsammans blir det 34,1 plus 34,1, alltså 68,2 procent. Ungefär två paket av tre innehåller alltså mellan 995 och 1005 milliliter."
+    },
+    {
+     "t": 291,
+     "text": "Längre ut står 13,6 procent på varje sida. Mellan 990 och 1010 milliliter hamnar därför 13,6 plus 68,2 plus 13,6, alltså 95,4 procent av paketen."
+    },
+    {
+     "t": 312,
+     "text": "Längst ut står 2,3 procent på varje sida. Så 2,3 procent av paketen innehåller mer än 1010 milliliter, och lika många innehåller mindre än 990."
+    },
+    {
+     "t": 328,
+     "text": "Rubriken säger också sannolikhet, för andelarna kan läsas som sannolikheter. Tar du vilket mjölkpaket som helst i affären är sannolikheten 2,3 procent att det innehåller mindre än 990 milliliter."
+    },
+    {
+     "t": 346,
+     "text": "Samma figur fungerar för allt som är normalfördelat, till exempel vikten på ägg. Äggen från en gård väger 60 gram i medel, och standardavvikelsen är 4 gram. Hur stor andel av äggen väger mellan 56 och 68 gram?"
+    },
+    {
+     "t": 367,
+     "text": "56 är 60 minus 4, alltså my minus sigma. Två sigma är 8 gram, så 68 är my plus två sigma. Mellan de strecken står 34,1, 34,1 och 13,6 procent, och tillsammans blir det 81,8 procent av äggen."
+    },
+    {
+     "t": 396,
+     "text": "På provet står båda figurerna längst ner på sista sidan, så du kan slå upp dem när du behöver. Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram. Hur stor andel av äggen väger mellan 52 och 60 gram?"
+    }
+   ],
+   "kapitel": [],
+   "dinTur": {
+    "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
+    "delar": [
+     {
+      "fraga": "Hur stor andel av äggen väger mellan 52 och 60 gram?",
+      "typ": "tal",
+      "svar": 47.7,
+      "tolerans": 0.05,
+      "enhet": "%",
+      "exempel": "t.ex. 34,1",
+      "fel": [
+       {
+        "svar": "34.1",
+        "text": "34,1 % är bara biten mellan 56 och 60 gram, alltså mellan μ − σ och μ. 52 gram är μ − 2σ, så biten mellan 52 och 56 gram ska också med."
+       },
+       {
+        "svar": "13.6",
+        "text": "13,6 % är bara biten mellan 52 och 56 gram. Biten mellan 56 och 60 gram, 34,1 %, ska också med."
+       },
+       {
+        "svar": "50",
+        "text": "50 % är alla ägg som väger mindre än 60 gram. De 2,3 % som väger mindre än 52 gram ska inte med."
+       },
+       {
+        "svar": "95.4",
+        "text": "95,4 % är andelen mellan 52 och 68 gram, på båda sidor om medelvärdet. Här är det bara från 52 upp till 60."
+       },
+       {
+        "svar": "81.8",
+        "text": "81,8 % var övningstalet, mellan 56 och 68 gram. Här är det mellan 52 och 60 gram."
+       },
+       {
+        "svar": "68.2",
+        "text": "68,2 % är andelen mellan 56 och 64 gram. Här går det från 52 till 60, alltså från μ − 2σ till μ."
+       },
+       {
+        "svar": "0.477",
+        "tolerans": 0.0006,
+        "text": "Nästan. 0,477 är andelen skriven som decimaltal. Här ska svaret vara i procent, och 0,477 = 47,7 %."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60.",
+     "t": 367
+    },
+    "losning": [
+     "μ = 60 g och σ = 4 g, så μ − σ = 60 − 4 = 56 g och μ − 2σ = 60 − 8 = 52 g.",
+     "Mellan 52 och 56 gram (μ − 2σ till μ − σ) står 13,6 %.",
+     "Mellan 56 och 60 gram (μ − σ till μ) står 34,1 %.",
+     "13,6 + 34,1 = 47,7, så 47,7 % av äggen väger mellan 52 och 60 gram."
+    ],
+    "notisFran": 346
+   },
+   "undertext": [
+    {
+     "s": 0.1,
+     "e": 4.9,
+     "text": "På nationella provet i matematik 2 får alla ett formelblad från Skolverket."
+    },
+    {
+     "s": 5.56,
+     "e": 12.52,
+     "text": "Bladet har fyra sidor, och längst ner på sista sidan står ett avsnitt som heter statistik och sannolikhet."
+    },
+    {
+     "s": 13.52,
+     "e": 18.6,
+     "text": "Där finns inga formler, bara två figurer, ett lådagram och en normalfördelning."
+    },
+    {
+     "s": 19.6,
+     "e": 23.52,
+     "text": "Figurerna hjälper bara om man vet vad orden och talen i dem betyder,"
+    },
+    {
+     "s": 23.92,
+     "e": 27.42,
+     "text": "så vi går igenom dem en i taget och börjar med lådagrammet."
+    },
+    {
+     "s": 28.64,
+     "e": 32.1,
+     "text": "Ett lådagram visar hur en grupp värden är spridda."
+    },
+    {
+     "s": 32.96,
+     "e": 38.56,
+     "text": "Under figuren står fem ord, från minsta värde längst till vänster till största värde"
+    },
+    {
+     "s": 38.64,
+     "e": 42.88,
+     "text": "längst till höger, och varje ord hör till ett lodrätt streck."
+    },
+    {
+     "s": 44.06,
+     "e": 45.06,
+     "text": "Vi tar ett exempel."
+    },
+    {
+     "s": 45.68,
+     "e": 50.94,
+     "text": "Elva elever hoppar längdhopp på idrotten, och vi skriver upp hoppen i meter,"
+    },
+    {
+     "s": 51.24,
+     "e": 54.1,
+     "text": "sorterade från det kortaste till det längsta."
+    },
+    {
+     "s": 55.22,
+     "e": 59.6,
+     "text": "Det kortaste hoppet är 2,9 meter, och det är minsta värdet."
+    },
+    {
+     "s": 60.36,
+     "e": 64.48,
+     "text": "Det längsta hoppet är 5,1 meter, och det är största värdet."
+    },
+    {
+     "s": 65.5,
+     "e": 67.86,
+     "text": "Medianen är det hopp som står i mitten."
+    },
+    {
+     "s": 68.58,
+     "e": 76.74,
+     "text": "Med elva hopp står fem hopp på var sida om det sjätte, så medianen är det sjätte hoppet, 3,8 meter."
+    },
+    {
+     "s": 78.08,
+     "e": 81.5,
+     "text": "Kvartilerna hittar man på samma sätt i varje halva."
+    },
+    {
+     "s": 82.34,
+     "e": 88.5,
+     "text": "De fem hoppen före medianen har 3,4 meter i mitten, och det är nedre kvartilen."
+    },
+    {
+     "s": 89.34,
+     "e": 95.52,
+     "text": "De fem hoppen efter medianen har 4,3 meter i mitten, och det är övre kvartilen."
+    },
+    {
+     "s": 96.96,
+     "e": 101.06,
+     "text": "Ordet kvartil hänger ihop med kvart, alltså en fjärdedel."
+    },
+    {
+     "s": 101.88,
+     "e": 105.82,
+     "text": "De tre strecken i mitten delar nämligen hoppen i fyra delar,"
+    },
+    {
+     "s": 106.26,
+     "e": 108.1,
+     "text": "med två hopp i varje del."
+    },
+    {
+     "s": 109.38,
+     "e": 116.02,
+     "text": "Lådan går från nedre kvartilen till övre kvartilen, så i lådan ligger den mittersta hälften av hoppen."
+    },
+    {
+     "s": 117.28,
+     "e": 121.34,
+     "text": "Från lådan går linjer ut till minsta och största värdet."
+    },
+    {
+     "s": 122.42,
+     "e": 128.78,
+     "text": "Ovanför lådan står kvartilavstånd, och det är övre kvartilen minus nedre kvartilen."
+    },
+    {
+     "s": 129.66,
+     "e": 135.82,
+     "text": "Här blir det 4,3 minus 3,4, alltså 0,9 meter."
+    },
+    {
+     "s": 137.08,
+     "e": 140.8,
+     "text": "Kvartilavståndet säger hur utspridda hoppen i mitten är."
+    },
+    {
+     "s": 141.66,
+     "e": 147.82,
+     "text": "Om den som hoppade 5,1 meter i stället hade hoppat 6 meter hade bara linjen till höger"
+    },
+    {
+     "s": 147.86,
+     "e": 152.46,
+     "text": "blivit längre, men lådan och kvartilavståndet hade varit desamma."
+    },
+    {
+     "s": 154.06,
+     "e": 156.62,
+     "text": "Under lådagrammet står normalfördelningen."
+    },
+    {
+     "s": 157.38,
+     "e": 162.46,
+     "text": "Den visar hur värden är spridda när man mäter samma sak väldigt många gånger,"
+    },
+    {
+     "s": 163.04,
+     "e": 168.1,
+     "text": "till exempel mjölken i tusentals mjölkpaket som fylls av en maskin."
+    },
+    {
+     "s": 169.24,
+     "e": 175.18,
+     "text": "Maskinen ska fylla 1000 milliliter i varje paket, men den träffar inte exakt varje gång."
+    },
+    {
+     "s": 176.02,
+     "e": 183.2,
+     "text": "De flesta paket får nästan 1000 milliliter, och bara några få får mycket mer eller mycket mindre."
+    },
+    {
+     "s": 184.54,
+     "e": 190.04,
+     "text": "Mäter man mjölken i tusen paket och ritar en stapel för hur många paket som fick varje"
+    },
+    {
+     "s": 190.12,
+     "e": 195.36,
+     "text": "mängd, blir staplarna höga i mitten och låga ute i kanterna."
+    },
+    {
+     "s": 196.7,
+     "e": 199.96,
+     "text": "Kurvan på formelbladet följer staplarnas toppar."
+    },
+    {
+     "s": 201.14,
+     "e": 206.6,
+     "text": "Under kurvan står den grekiska bokstaven my, och my är medelvärdet."
+    },
+    {
+     "s": 207.72,
+     "e": 211.34,
+     "text": "För mjölkpaketen är my alltså 1000 milliliter."
+    },
+    {
+     "s": 212.62,
+     "e": 215.64,
+     "text": "Bokstaven sigma är standardavvikelsen."
+    },
+    {
+     "s": 216.38,
+     "e": 224.42,
+     "text": "Den säger hur långt från medelvärdet värdena brukar hamna, och den här maskinen har standardavvikelsen 5 milliliter."
+    },
+    {
+     "s": 225.74,
+     "e": 228.82,
+     "text": "Nu kan vi skriva mängden mjölk under varje streck."
+    },
+    {
+     "s": 229.76,
+     "e": 242.24,
+     "text": "My plus sigma är 1000 plus 5, alltså 1005, och my minus sigma är 1000 minus 5, alltså 995."
+    },
+    {
+     "s": 243.72,
+     "e": 254.74,
+     "text": "Två sigma är 10 milliliter, så my plus två sigma är 1010 och my minus två sigma är 990."
+    },
+    {
+     "s": 256.22,
+     "e": 261.98,
+     "text": "Procenttalen i figuren säger hur stor andel av paketen som hamnar mellan två streck."
+    },
+    {
+     "s": 263.08,
+     "e": 272.98,
+     "text": "Mellan 1000 och 1005 milliliter står 34,1 procent, och lika mycket står mellan 995 och 1000."
+    },
+    {
+     "s": 274.16,
+     "e": 281.68,
+     "text": "Tillsammans blir det 34,1 plus 34,1, alltså 68,2 procent."
+    },
+    {
+     "s": 282.88,
+     "e": 290.16,
+     "text": "Ungefär två paket av tre innehåller alltså mellan 995 och 1005 milliliter."
+    },
+    {
+     "s": 291.72,
+     "e": 295.3,
+     "text": "Längre ut står 13,6 procent på varje sida."
+    },
+    {
+     "s": 296.24,
+     "e": 307.04,
+     "text": "Mellan 990 och 1010 milliliter hamnar därför 13,6 plus 68,2 plus 13,6,"
+    },
+    {
+     "s": 307.74,
+     "e": 310.82,
+     "text": "alltså 95,4 procent av paketen."
+    },
+    {
+     "s": 312.2,
+     "e": 315.6,
+     "text": "Längst ut står 2,3 procent på varje sida."
+    },
+    {
+     "s": 316.54,
+     "e": 321.92,
+     "text": "Så 2,3 procent av paketen innehåller mer än 1010 milliliter,"
+    },
+    {
+     "s": 322.68,
+     "e": 326.62,
+     "text": "och lika många innehåller mindre än 990."
+    },
+    {
+     "s": 328.4,
+     "e": 333.94,
+     "text": "Rubriken säger också sannolikhet, för andelarna kan läsas som sannolikheter."
+    },
+    {
+     "s": 335.36,
+     "e": 342.18,
+     "text": "Tar du vilket mjölkpaket som helst i affären är sannolikheten 2,3 procent att det innehåller"
+    },
+    {
+     "s": 342.28,
+     "e": 345.04,
+     "text": "mindre än 990 milliliter."
+    },
+    {
+     "s": 346.46,
+     "e": 351.42,
+     "text": "Samma figur fungerar för allt som är normalfördelat, till exempel vikten på ägg."
+    },
+    {
+     "s": 352.64,
+     "e": 359.46,
+     "text": "Äggen från en gård väger 60 gram i medel, och standardavvikelsen är 4 gram."
+    },
+    {
+     "s": 360.58,
+     "e": 365.52,
+     "text": "Hur stor andel av äggen väger mellan 56 och 68 gram?"
+    },
+    {
+     "s": 367.3,
+     "e": 373,
+     "text": "56 är 60 minus 4, alltså my minus sigma."
+    },
+    {
+     "s": 374.32,
+     "e": 380.66,
+     "text": "Två sigma är 8 gram, så 68 är my plus två sigma."
+    },
+    {
+     "s": 382.16,
+     "e": 395,
+     "text": "Mellan de strecken står 34,1, 34,1 och 13,6 procent, och tillsammans blir det 81,8 procent av äggen."
+    },
+    {
+     "s": 396.62,
+     "e": 402.94,
+     "text": "På provet står båda figurerna längst ner på sista sidan, så du kan slå upp dem när du behöver."
+    },
+    {
+     "s": 404.36,
+     "e": 410.2,
+     "text": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram."
+    },
+    {
+     "s": 411.22,
+     "e": 416,
+     "text": "Hur stor andel av äggen väger mellan 52 och 60 gram?"
     }
    ]
   },
