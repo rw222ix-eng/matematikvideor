@@ -197,6 +197,9 @@ const videor = [...register].sort(ordning).map((v) => {
   const omslagRen = hog ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
   const omslagStor = hog ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
   const kapitel = (kapitelFil[v.id] || []).map(([fras, rubrik, typ]) => ({ t: tidFor(fras, ord, v.id, `kapitlet "${rubrik}"`), rubrik, typ: typ || (/^din tur/i.test(rubrik) ? "uppgift" : null) })).filter((k) => k.t != null);
+  // En film utan kapitel får på sidan sex jämna bitar med första meningen som rubrik: det fungerar,
+  // men skriv kapitel (historia, matte, uppgift) i kapitel.json som för de andra filmerna.
+  if (!kapitel.length && repliker.length) console.warn(`  varning: ${v.id} har inga kapitel i kapitel.json.`);
   for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
   let dinTur = null;
   if (dinturFil[v.id]) {

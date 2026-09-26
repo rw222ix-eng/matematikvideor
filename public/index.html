@@ -2664,11 +2664,13 @@
     $("f-besk").textContent = v.beskrivning;
     // Begreppen är knappar: ett klick söker på ordet i alla filmer.
     $("f-begrepp").innerHTML = v.begrepp.map((b) => `<li><button type="button" data-sok="${esc(b).replace(/"/g, "&quot;")}">${esc(b)}</button></li>`).join("");
-    // Kapitlen ur kapitel.json; saknas de (en ny film) blir varje replik ett kapitel med sin
-    // första mening som rubrik.
+    // Kapitlen ur kapitel.json. Saknas de (en ny film) delas filmen i högst sex jämna bitar, med
+    // första meningen i varje bit som rubrik: en rad per replik (20–27 rader) blev överväldigande
+    // (Rickard 2026-09-26). bygg.mjs varnar för en film utan kapitel.
     const egnaKapitel = !!(v.kapitel && v.kapitel.length);
+    const medTid = v.repliker.filter((r) => r.t != null), bitar = Math.min(6, medTid.length);
     const kapitel = egnaKapitel ? v.kapitel
-      : v.repliker.filter((r) => r.t != null).map((r) => ({ t: r.t, rubrik: r.text.split(/(?<=[.?!])\s/)[0] }));
+      : Array.from({ length: bitar }, (_, i) => medTid[Math.floor((i * medTid.length) / bitar)]).map((r) => ({ t: r.t, rubrik: r.text.split(/(?<=[.?!])\s/)[0] }));
     kapitelAntal = kapitel.length; egnaKapitelNu = egnaKapitel;
     $("f-langd").textContent = langdRad(v.langd);
     // Varje kapitel visar sin sort (Historia, Matte, Din tur) ovanför rubriken, i sortens färg.
