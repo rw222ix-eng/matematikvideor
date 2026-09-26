@@ -1043,7 +1043,7 @@
     <h1 class="skrift fram" id="intro-rubrik" tabindex="-1"><span class="hang">“</span>Historien<br><span class="amp">&amp;</span>&nbsp;matten…”</h1>
     <!-- Kurserna skrivs ur videor.json: det stod "1c och 2c" när alla filmer var 1c. -->
     <!-- Meningen om formelbladet visas när det finns filmer i serien (Rickard 2026-09-25). -->
-    <p class="ingress fram">Korta filmer där matten i <span id="intro-kurser">Matematik 1c</span> kommer ur en verklig historia.<span id="intro-serie" hidden> Här finns också en serie som går igenom formelbladet, del för del.</span> Sök på det du tycker är svårt och hoppa till stället i filmen där det förklaras.</p>
+    <p class="ingress fram">Korta filmer där matten i <span id="intro-kurser">Matematik 1c</span> kommer ur en verklig historia.<span id="intro-serie" hidden> Här finns också en serie som går igenom formelbladet för Matematik 1, del för del.</span> Sök på det du tycker är svårt och hoppa till stället i filmen där det förklaras.</p>
     <a class="knapp fram" href="#filmer"><span>Utforska</span><span class="ring"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></span></a>
   </div>
 </section>
@@ -1240,10 +1240,13 @@
   }
 
   // Introts ingress nämner de kurser som faktiskt har filmer ("Matematik 1c", "Matematik 1c och 2c"),
-  // och serien om formelbladet när den har en film.
+  // och serien om formelbladet när den har en film. Kurserna räknas bara på berättelserna, som
+  // meningen handlar om: formelbladets filmer är Matematik 1, för formelbladet är detsamma i 1a, 1b
+  // och 1c (Rickard 2026-09-26), och står i en egen mening.
   {
-    const kurser = [...new Set(videor.map((v) => v.kurs))];
-    if (videor.some((v) => v.serie === "formelbladet" || /^formelbladet-/.test(v.id))) $("intro-serie").hidden = false;
+    const formelblad = (v) => v.serie === "formelbladet" || /^formelbladet-/.test(v.id);
+    const kurser = [...new Set(videor.filter((v) => !formelblad(v)).map((v) => v.kurs))];
+    if (videor.some(formelblad)) $("intro-serie").hidden = false;
     if (kurser.length) $("intro-kurser").textContent = kurser.length === 1 ? kurser[0]
       : `${kurser.slice(0, -1).join(", ")} och ${kurser[kurser.length - 1].replace(/^Matematik\s*/, "")}`;
   }
