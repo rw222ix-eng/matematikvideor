@@ -263,8 +263,10 @@
   .valj .flikar { z-index: 6; }
   /* Flikraden får vara så bred som texten kräver. Med left: 50% fick den annars bara halva fönstrets
      bredd, flikarna blev smalare än sin text, och sedan glansen gav knapparna overflow: hidden
-     klipptes texten: "FORMELBLADE" (Rickard 2026-09-26). */
-  .valj .flikar { width: max-content; }
+     klipptes texten: "FORMELBLADE" (Rickard 2026-09-26). Varje flik är lika bred som sin text plus
+     samma luft på båda sidor (auto i stället för 1fr), så att den gula plattan har samma avstånd
+     till grannarna vilken flik som än är vald. Plattan mäts ut i placeraPlatta. */
+  .valj .flikar { width: max-content; grid-auto-columns: auto; }
   /* Flikarna överst, "Välj en film" under dem och sedan pilen (Rickard 2026-09-25: rubriken ska stå
      under flikarna, och pilen låg 2 px under flikarna, alldeles för nära). */
   .valj.har-flikar .rubrik { top: 134px; }
@@ -283,6 +285,7 @@
   .flikar .platta { position: absolute; top: 4px; bottom: 4px; left: 4px; width: var(--platta-b, calc(50% - 4px)); transform: translateX(var(--platta-x, 0px)); border-radius: 999px; background: var(--accent); box-shadow: 0 0 20px rgba(242, 197, 114, .35); transition: transform .5s var(--fjader), width .5s var(--fjader); }
   .flikar button { position: relative; z-index: 1; min-height: 38px; padding: 0 20px; border-radius: 999px; font: 500 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); transition: color .35s, transform .4s var(--fjader); }
   .flikar button[aria-selected="true"] { color: var(--bg); }
+  .flikar .kort { display: none; }
   .flikar button:active { transform: scale(.93); transition-duration: .08s; }
   .flikar button:focus-visible { outline-offset: 1px; }
   @media (hover: hover) { .flikar button[aria-selected="false"]:hover { color: var(--accent); } }
@@ -774,7 +777,10 @@
     .valj.har-flikar .rubrik { padding-top: 22px; }
     .valj.har-flikar .tidslinje { top: 150px; }
     .flikar button { padding: 0 16px; letter-spacing: .16em; }
-    /* Tre flikar (Berättelser, Formelbladet, Ma 2a) ryms inte lika breda på en telefon. */
+    /* Tre flikar (Matematik 1c, Matematik 2a, Formelbladet) ryms inte lika breda på en telefon:
+       där står kurserna som Ma 1c och Ma 2a. */
+    .flikar .lang { display: none; }
+    .flikar .kort { display: inline; }
     .valj .flikar.tre { grid-auto-columns: auto; }
     .flikar.tre button { padding: 0 12px; letter-spacing: .1em; }
     .valj .aterstall, .valj .hint { display: none; }
@@ -1071,9 +1077,11 @@
   <!-- Flikarna överst, "Välj en film" under dem (Rickard 2026-09-25): berättelserna, formelbladets delar eller Ma 2a på linan. En flik syns när den har minst en film. -->
   <div class="flikar" id="flikar" role="tablist" aria-label="Vilka filmer" data-hylla="berattelser">
     <span class="platta" aria-hidden="true"></span>
-    <button type="button" role="tab" data-hylla="berattelser" aria-selected="true" aria-controls="tidslinje">Berättelser</button>
+    <!-- Ordningen och namnen (Rickard 2026-09-26): Matematik 1c, Matematik 2a, Formelbladet längst till
+         höger. På telefon står kurserna som Ma 1c och Ma 2a, för att raden ska få plats. -->
+    <button type="button" role="tab" data-hylla="berattelser" aria-selected="true" aria-controls="tidslinje"><span class="lang">Matematik 1c</span><span class="kort">Ma 1c</span></button>
+    <button type="button" role="tab" data-hylla="ma2a" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Matematik 2a</span><span class="kort">Ma 2a</span></button>
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
-    <button type="button" role="tab" data-hylla="ma2a" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden>Ma 2a</button>
   </div>
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
@@ -1313,7 +1321,8 @@
   const iSerie = (namn) => videor.filter((v) => v.serie === namn).sort((a, b) => (a.del ?? 99) - (b.del ?? 99));
   const formelblad = iSerie("formelbladet");
   // Flikarna: berättelserna, och en flik per serie som har minst en film.
-  const HYLLOR = ["berattelser", ...Object.keys(SERIER).filter((namn) => iSerie(namn).length)];
+  // Samma ordning som flikarna står i: Matematik 1c, Matematik 2a, Formelbladet.
+  const HYLLOR = ["berattelser", ...["ma2a", "formelbladet"].filter((namn) => SERIER[namn] && iSerie(namn).length)];
   const harFlikar = HYLLOR.length > 1;
   const antalDelar = (namn) => Math.max(SERIER[namn].delar, ...iSerie(namn).map((v) => v.del || 0));
   // Seriens filmer i ordning, för Nästa del och siffrorna. Formelbladet har en plats per del, 1 till 5
@@ -3709,8 +3718,8 @@
           return [{ id: "flik", vy: "valj", mal: () => $("flikar"), ljus: () => [flik(), ...(hylla === annan ? synligaKort("#spar .post:not(.kommer) .ram") : [])], lage: "pekar", nar: "flik", finns: () => harFlikar, hoppa: async () => { bytHylla(annan); await vila(700); },
             svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : annan === "ma2a" ? "Här är filmerna för Matematik 2a. Nu ska vi leta efter något i filmerna." : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
             text: annan === "formelbladet" ? "Det finns också filmer som går igenom formelbladet, del för del. De ligger för sig. Tryck på Formelbladet, så ser du dem."
-              : annan === "ma2a" ? "Det finns också filmer för Matematik 2a. De ligger för sig. Tryck på Ma 2a, så ser du dem."
-              : "Berättelserna, där matten kommer ur historien, ligger för sig. Tryck på Berättelser, så ser du dem." }];
+              : annan === "ma2a" ? "Det finns också filmer för Matematik 2a. De ligger för sig. Tryck på Matematik 2a, så ser du dem."
+              : "Berättelserna, där matten kommer ur historien, ligger under Matematik 1c. Tryck på Matematik 1c, så ser du dem." }];
         })(),
         { id: "sok", mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: sokOppen, hoppa: async () => { oppnaSok(); await vila(450); }, svar: "Där är sökrutan.",
           text: "Har du fastnat på något i matten? Tryck på förstoringsglaset, så kan vi söka i allt som sägs i filmerna." },
