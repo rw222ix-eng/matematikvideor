@@ -848,6 +848,35 @@
     .post:hover .ram::after { opacity: 1; }
   }
 
+  /* ── Glans (Rickard 2026-09-26) ────────────────────────
+     Knapparna man klickar på ofta får ett ljusband som sveper över dem en gång när pekaren kommer
+     in (eller när de får fokus med Tab), och de fyllda och kantade knapparna ett varmt sken. Bandet
+     ligger under texten men över knappens egen bakgrund (isolation + z-index −1). Tillbaka hoppar
+     det utan övergång, så nästa hovring sveper igen. Ikonerna har redan ::after som verktygstips
+     och är inte med. */
+  :is(.kolla, .kant, .tangenter button, .film .begrepp button, .sok .forslag button, .duk .fortsatt button,
+      .kapitel button, .flikar button, .intro .knapp .ring, .basta .spela .ring, .upp .ring, .duk .stor span) {
+    position: relative; overflow: hidden; isolation: isolate;
+  }
+  :is(.kolla, .kant, .tangenter button, .film .begrepp button, .sok .forslag button, .duk .fortsatt button,
+      .kapitel button, .flikar button, .intro .knapp .ring, .basta .spela .ring, .upp .ring, .duk .stor span)::after {
+    content: ""; position: absolute; inset: -1px; z-index: -1; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(110deg, transparent 25%, rgba(255, 248, 230, .1) 38%, rgba(255, 248, 230, .55) 50%, rgba(255, 248, 230, .1) 62%, transparent 75%);
+    transform: translateX(-125%);
+  }
+  :is(.kolla, .kant, .tangenter button, .film .begrepp button, .sok .forslag button, .duk .fortsatt button,
+      .kapitel button, .flikar button):focus-visible::after { transform: translateX(125%); transition: transform .85s cubic-bezier(.3, .6, .3, 1); }
+  .kolla, .kant { transition: background .3s, color .3s, border-color .3s, box-shadow .4s var(--lugn), transform .4s var(--fjader); }
+  @media (hover: hover) {
+    :is(.kolla, .kant, .tangenter button, .film .begrepp button, .sok .forslag button, .duk .fortsatt button,
+        .kapitel button, .flikar button):hover::after,
+    :is(.intro .knapp:hover .ring, .basta .spela:hover .ring, .upp:hover .ring, .duk .lock:hover ~ .stor span)::after {
+      transform: translateX(125%); transition: transform .85s cubic-bezier(.3, .6, .3, 1);
+    }
+    .kolla:hover { box-shadow: 0 10px 26px -10px rgba(242, 197, 114, .8), 0 0 0 1px rgba(255, 236, 190, .5) inset; }
+    .kant:hover { box-shadow: 0 0 22px -6px rgba(242, 197, 114, .45); }
+  }
+
   /* Systeminställningen "reducera rörelse" ignoreras med flit (Rickard 2026-09-06): sidan animerar alltid.
      Windows sätter den när animeringar är avslagna, och då stod allt still för Rickard. Den som
      Rickard 2026-09-25: det ska alltid vara rörelse, så knappen som stoppade den är också borttagen. */
@@ -1131,6 +1160,39 @@
   const BOCK = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9.5 L10 3"/></svg>';
   const SAJTNAMN = "Matematikvideor av Rickard";
 
+  // ── Mjuk rullning (Rickard 2026-09-26) ────────────────
+  // Webbläsarens egen mjuka rullning (behavior: "smooth") stängs av när Windows har animeringar
+  // avslagna, och så är det på Rickards dator: sidan hoppade i stället för att glida. Den här glider
+  // alltid, mjukt i början och slutet, och längre sträckor tar lite längre tid. Rullar eleven själv
+  // under tiden (hjul, finger, tangent) släpper den direkt.
+  let glidning = 0;
+  function glid(mal) {
+    const fran = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    mal = Math.max(0, Math.min(max, mal));
+    const id = ++glidning, strac = Math.abs(mal - fran);
+    if (strac < 2) return;
+    const ms = Math.min(1100, 550 + strac * 0.45), start = performance.now();
+    const kurva = (t) => (t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const steg = (nu) => {
+      if (id !== glidning) return;
+      const t = Math.min(1, (nu - start) / ms);
+      scrollTo({ top: fran + (mal - fran) * kurva(t), behavior: "instant" });
+      if (t < 1) requestAnimationFrame(steg);
+    };
+    requestAnimationFrame(steg);
+  }
+  ["wheel", "touchstart", "keydown"].forEach((h) => addEventListener(h, () => { glidning++; }, { passive: true }));
+  // Glid så att elementet syns: "start" lägger det överst (under den klistrade toppraden), "nearest"
+  // rullar bara så långt som behövs. Marginalerna är elementets scroll-margin, annars 110 och 40 px.
+  function glidFram(el, block = "nearest") {
+    const r = el.getBoundingClientRect(), s = getComputedStyle(el);
+    const topp = parseFloat(s.scrollMarginTop) || 110, botten = parseFloat(s.scrollMarginBottom) || 40;
+    let d = 0;
+    if (block === "start" || r.top < topp) d = r.top - topp;
+    else if (r.bottom > innerHeight - botten) d = Math.min(r.bottom - (innerHeight - botten), r.top - topp);
+    if (d) glid(scrollY + d);
+  }
+
   // Introts ingress nämner de kurser som faktiskt har filmer ("Matematik 1c", "Matematik 1c och 2c"),
   // och serien om formelbladet när den har en film.
   {
@@ -1256,7 +1318,7 @@
     });
     document.body.classList.toggle("last", namn === "intro" || (namn === "valj" && !smal()));
     document.body.classList.toggle("vy-film", namn === "film");
-    window.scrollTo(0, 0);
+    glidning++; window.scrollTo(0, 0);
     if (namn !== "film") stangSpelare();
     // Filmens titel sätts i laddaFilm, när filmen är känd.
     if (namn === "intro") document.title = SAJTNAMN;
@@ -1287,7 +1349,7 @@
     visa("film", mjukt);
     if (bytFilm) Newton.vybyte("film");
     laddaFilm(v, m[2] ? Number(m[2]) : undefined);
-    if (bytFilm) { window.scrollTo(0, 0); $("f-titel").focus({ preventScroll: true }); }
+    if (bytFilm) { glidning++; window.scrollTo(0, 0); $("f-titel").focus({ preventScroll: true }); }
   }
   function ruta() {
     let h = location.hash.slice(1);
@@ -2594,12 +2656,7 @@
     // Centrera spelaren i fönstret (får den inte plats: lägg överkanten strax under toppraden).
     const r = dukEl.getBoundingClientRect();
     const mal = Math.max(0, r.top + window.scrollY - (r.height < window.innerHeight - 120 ? (window.innerHeight - r.height) / 2 : 90));
-    const fran = window.scrollY;
-    if (lugnt || !("scrollBehavior" in document.documentElement.style)) { window.scrollTo(0, mal); return; }
-    window.scrollTo({ top: mal, behavior: "smooth" });
-    // Reserv: kommer den mjuka scrollen inte i gång (vissa inbäddade webbläsare) — hoppa direkt.
-    setTimeout(() => { if (Math.abs(window.scrollY - fran) < 2 && Math.abs(fran - mal) > 2) window.scrollTo(0, mal); }, 250);
-    setTimeout(() => { if (Math.abs(window.scrollY - mal) > 40) window.scrollTo(0, mal); }, 1200);
+    glid(mal);
   }
   uppKnapp.addEventListener("click", (e) => { e.preventDefault(); tillFilmen(); visaStyr(); });
   setInterval(ritaUpp, 1000);
@@ -2866,7 +2923,7 @@
   }
   function tillDinTur() {
     if (iHelskarm()) vaxlaHelskarm();
-    dtEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    requestAnimationFrame(() => glidFram(dtEl, "start"));
     const forsta = [...dtEl.querySelectorAll(".del")].find((li) => !li.classList.contains("lost"));
     setTimeout(() => { const inp = (forsta || dtEl).querySelector("input"); if (inp) inp.focus({ preventScroll: true }); }, 450);
   }
@@ -2947,7 +3004,7 @@
   // Det som fälls ut under knapparna (ledtråden, lösningen, nästa steg) hamnade ofta under
   // fönstrets nederkant, och då såg det ut som att knappen inte gjorde något (Rickard 2026-09-26).
   // Sidan glider nu så långt att det nya syns helt, och inte längre än så.
-  const visaIFonstret = (el) => requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "nearest" }));
+  const visaIFonstret = (el) => requestAnimationFrame(() => glidFram(el));
   dtEl.addEventListener("click", (e) => {
     const tecken = e.target.closest("[data-tecken]");
     if (tecken) {
@@ -2986,7 +3043,7 @@
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
   visaAllt.addEventListener("click", () => {
     alltRuta.open = !alltRuta.open;
-    if (alltRuta.open) { requestAnimationFrame(() => visaAllt.parentElement.scrollIntoView({ behavior: "smooth", block: "start" })); Newton.hande("allt"); }
+    if (alltRuta.open) { requestAnimationFrame(() => glidFram(visaAllt.parentElement, "start")); Newton.hande("allt"); }
   });
   alltRuta.addEventListener("toggle", () => { visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); });
   // Skriver eleven i ett svarsfält tillhör tangenterna fältet: "/" i 3^(1/3) öppnade sökningen
@@ -3161,7 +3218,7 @@
       if (id === "guide") {
         dukEl.classList.remove("guide-styr"); senHandelse = null; document.body.classList.remove("visa-hjalp");
         // Luften under filmsidan försvinner strax: står sidan nere i den glider den upp till sidans slut.
-        if (aktivVy === "film") { const ner = Math.max(0, document.querySelector("#vy-film .inre").getBoundingClientRect().bottom + scrollY + 120 - innerHeight); if (scrollY > ner + 2) window.scrollTo({ top: ner, behavior: "smooth" }); }
+        if (aktivVy === "film") { const ner = Math.max(0, document.querySelector("#vy-film .inre").getBoundingClientRect().bottom + scrollY + 120 - innerHeight); if (scrollY > ner + 2) glid(ner); }
       }
       if (ljusFor || malEls.length) { slack(); ljusFor = null; }
       setTimeout(() => {
