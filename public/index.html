@@ -613,6 +613,12 @@
   .allt > summary { display: none; }
   .helatext { list-style: none; margin: 32px auto 0; padding: 0; max-width: 640px; }
   .helatext li { margin: 0 0 40px; opacity: 0; transform: translateY(18px); transition: opacity 1.1s var(--lugn), transform 1.1s var(--lugn); }
+  /* Skrivmaskinen (Rickard 2026-09-26): medan texten skrivs fram eller raderas styr skriptet vilka
+     rader som syns, så radernas egen intoning vid rullning är avstängd. Blocket är markören från en
+     gammal dator: ljust mot den mörka sidan, och det blinkar. */
+  .helatext.skriver li { opacity: 1; transform: none; transition: none; }
+  .markor { display: inline-block; width: .5em; height: 1.05em; margin-left: 3px; vertical-align: -.16em; background: var(--ben); box-shadow: 0 0 8px rgba(236, 230, 216, .45); animation: markor .9s steps(1, end) infinite; }
+  @keyframes markor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .helatext li.syns { opacity: 1; transform: none; }
   .helatext button { all: unset; cursor: pointer; display: block; width: 100%; }
   .helatext button:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; border-radius: 4px; }
@@ -3080,11 +3086,105 @@
   // "Visa allt som sägs" fäller ut hela texten direkt under knappen. Öppnas den glider sidan så att
   // knappen hamnar högt upp och texten syns under den.
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
+  // ── Skrivmaskinen (Rickard 2026-09-26) ──────────────
+  // Hela texten dök upp på en gång och kändes abrupt bredvid sidans mjuka rörelser. Nu skrivs den
+  // fram som på en gammal dator: ett blinkande block står först en stund, sedan kommer bokstäverna
+  // rad för rad uppifrån, allt snabbare (det som syns är skrivet på ungefär 0,7 s, hela texten
+  // på knappt 2 s). Döljs texten raderas den baklänges, som när man håller inne backsteg: det som
+  // ligger under fönstret försvinner direkt, eftersom det ändå inte syns, och det som syns raderas
+  // bakifrån. Klickar man igen mitt i avbryts det som pågår (skrivId).
+  const markor = document.createElement("span");
+  markor.className = "markor"; markor.setAttribute("aria-hidden", "true");
+  let skrivId = 0;
+  const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
+  const takt = (t) => 700 * t + 1250 * t * t;   // antal tecken efter t sekunder
+  const raderna = () => [...$("helatext").children].map((li) => ({ li, s: li.querySelector(".snutt") }));
+  const radText = (li) => { const b = li.querySelector("[data-i]"), r = aktuell && b ? aktuell.repliker[Number(b.dataset.i)] : null; return r ? r.text : ""; };
+  // Efteråt står varje rad med hela sin text igen, synlig, utan block.
+  function aterstallText() {
+    const ol = $("helatext");
+    raderna().forEach(({ li, s }) => { li.hidden = false; li.classList.add("syns"); if (s) s.textContent = radText(li); });
+    markor.remove(); ol.classList.remove("skriver"); ol.removeAttribute("aria-busy");
+  }
+  async function skrivFram() {
+    const id = ++skrivId, ol = $("helatext"), rader = raderna().filter((r) => r.s);
+    if (!rader.length) return;
+    ol.classList.add("skriver"); ol.setAttribute("aria-busy", "true");
+    const texter = rader.map(({ li }) => radText(li));
+    rader.forEach(({ li, s }) => { li.hidden = true; s.textContent = ""; });
+    let rad = 0, i = 0, skrivna = 0, nod = document.createTextNode("");
+    rader[0].li.hidden = false; rader[0].li.classList.add("syns"); rader[0].s.append(nod, markor);
+    await vanta(420);   // blocket blinkar en stund innan skrivandet börjar
+    if (id !== skrivId || !rader[0].li.isConnected) return;
+    const totalt = texter.reduce((a, t) => a + t.length, 0), start = performance.now();
+    await new Promise((klar) => {
+      const steg = (nu) => {
+        if (id !== skrivId || !rader[0].li.isConnected) return klar();
+        const mal = Math.min(totalt, Math.floor(takt((nu - start) / 1000)));
+        while (skrivna < mal) {
+          const ta = Math.min(mal - skrivna, texter[rad].length - i);
+          i += ta; skrivna += ta; nod.nodeValue = texter[rad].slice(0, i);
+          if (i >= texter[rad].length && rad < rader.length - 1) {
+            rad++; i = 0; nod = document.createTextNode("");
+            rader[rad].li.hidden = false; rader[rad].li.classList.add("syns"); rader[rad].s.append(nod, markor);
+          }
+        }
+        if (skrivna >= totalt) klar(); else requestAnimationFrame(steg);
+      };
+      requestAnimationFrame(steg);
+    });
+    if (id !== skrivId) return;
+    await vanta(650);   // och blinkar en gång till när texten är klar
+    if (id === skrivId) aterstallText();
+  }
+  // Ger true när allt är raderat, false om något annat tog över under tiden.
+  async function raderaBort() {
+    const id = ++skrivId, ol = $("helatext");
+    ol.classList.add("skriver"); ol.setAttribute("aria-busy", "true");
+    const rader = raderna().filter((r) => r.s && !r.li.hidden);
+    const synliga = rader.filter(({ li }) => li.getBoundingClientRect().top < innerHeight);
+    rader.forEach((r) => { if (!synliga.includes(r)) r.li.hidden = true; });
+    if (!synliga.length) return true;
+    const noder = synliga.map(({ s }) => { const n = document.createTextNode(s.textContent); s.textContent = ""; s.append(n); return n; });
+    let rad = synliga.length - 1;
+    synliga[rad].s.append(markor);
+    await vanta(220);
+    if (id !== skrivId) return false;
+    const totalt = noder.reduce((a, n) => a + n.nodeValue.length, 0), start = performance.now();
+    let raderat = 0;
+    await new Promise((klar) => {
+      const steg = (nu) => {
+        if (id !== skrivId) return klar();
+        const mal = Math.min(totalt, Math.floor(takt((nu - start) / 1000) * 1.3));
+        while (raderat < mal && rad >= 0) {
+          const n = noder[rad], ta = Math.min(mal - raderat, n.nodeValue.length);
+          n.nodeValue = n.nodeValue.slice(0, n.nodeValue.length - ta); raderat += ta;
+          // Tom rad: raden försvinner och blocket hoppar upp till slutet av raden ovanför.
+          if (!n.nodeValue.length && rad > 0) { synliga[rad].li.hidden = true; rad--; synliga[rad].s.append(markor); }
+          else if (!n.nodeValue.length) break;
+        }
+        if (raderat >= totalt) klar(); else requestAnimationFrame(steg);
+      };
+      requestAnimationFrame(steg);
+    });
+    if (id !== skrivId) return false;
+    await vanta(260);   // blocket blinkar en sista gång på den tomma raden
+    return id === skrivId;
+  }
+  async function doljHelaTexten() {
+    if (await raderaBort()) { alltRuta.open = false; aterstallText(); }
+  }
   visaAllt.addEventListener("click", () => {
-    alltRuta.open = !alltRuta.open;
-    if (alltRuta.open) { requestAnimationFrame(() => glidFram(visaAllt.parentElement, "start")); Newton.hande("allt"); }
+    if (alltRuta.open) { doljHelaTexten(); return; }
+    alltRuta.open = true;
+    requestAnimationFrame(() => glidFram(visaAllt.parentElement, "start")); Newton.hande("allt");
+    skrivFram();
   });
-  alltRuta.addEventListener("toggle", () => { visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); ritaDoljText(); });
+  alltRuta.addEventListener("toggle", () => {
+    visaAllt.classList.toggle("oppen", alltRuta.open); visaAllt.setAttribute("aria-expanded", String(alltRuta.open)); ritaDoljText();
+    // Stängs texten på annat sätt (ny film, guiden) avbryts skrivmaskinen och raderna blir hela igen.
+    if (!alltRuta.open) { skrivId++; aterstallText(); }
+  });
   // "Dölj texten" i toppraden (Rickard 2026-09-26): har man läst sig långt ner i texten ska man
   // kunna fälla ihop den utan att rulla tillbaka upp till knappen. Knappen syns när texten är
   // utfälld, knappen ovanför den är ur bild och texten fortfarande fyller en god del av fönstret.
@@ -3102,8 +3202,8 @@
     doljText.classList.remove("syns");
     const rad = visaAllt.parentElement, topp = parseFloat(getComputedStyle(rad).scrollMarginTop) || 110;
     await glid(scrollY + rad.getBoundingClientRect().top - topp);
-    alltRuta.open = false;
     visaAllt.focus({ preventScroll: true });
+    await doljHelaTexten();
   });
   // Skriver eleven i ett svarsfält tillhör tangenterna fältet: "/" i 3^(1/3) öppnade sökningen
   // och Escape lämnade filmen (Rickard 2026-09-25, "Din tur fungerar inte").
