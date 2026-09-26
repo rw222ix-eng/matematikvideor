@@ -27,6 +27,10 @@ const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
 // och sekunden slås upp i rösten vid varje bygge (se tidFor), så att kapitlen följer med
 // när rösten görs om (Rickard 2026-09-25). En sekund i stället för fras går också, men då
 // varnar bygget.
+// Tredje fältet är kapitlets sort: "historia", "matte", "uppgift" (Din tur) eller "inledning".
+// Kapitlen är få och stora, 5–7 per film, så att eleven ser var historien är och var matten
+// kommer, och vad varje mattedel går igenom (Rickard 2026-09-26: 10–12 små kapitel var för
+// många, och eleverna visste inte varför de skulle hoppa till dem).
 const kapitelFil = existsSync(join(HÄR, "kapitel.json")) ? JSON.parse(readFileSync(join(HÄR, "kapitel.json"), "utf8")) : {};
 // Uppgiften "Din tur" som varje film slutar med, med svar, vanliga fel, ledtråd och lösning
 // (dintur.json, id → { fraga, delar, ledtrad, losning }). Sidan rättar svaret i webbläsaren.
@@ -67,7 +71,7 @@ function notisgrans(id, d, kapitel, langd, ord) {
     const nasta = kapitel.find((k) => k.t > lt);
     if (nasta) return { t: nasta.t, kalla: `när kapitlet med ledtråden är slut ("${nasta.rubrik}" börjar)` };
   }
-  const dinTurKapitel = kapitel.find((k) => /^din tur/i.test(k.rubrik));
+  const dinTurKapitel = kapitel.find((k) => k.typ === "uppgift" || /^din tur/i.test(k.rubrik));
   if (dinTurKapitel) return { t: dinTurKapitel.t, kalla: "Din tur-kapitlet — ledtråden gav ingen gräns", varning: true };
   return { t: Math.round((langd || 0) * 0.7), kalla: "70 % av filmen — varken ledtråd eller Din tur-kapitel", varning: true };
 }
@@ -192,7 +196,7 @@ const videor = [...register].sort(ordning).map((v) => {
   const bakaHog = (ut, bredd, kvalitet) => { bakaBild(hog, join(HÄR, "public", ut), bredd, "", kvalitet); return medVersion(ut); };
   const omslagRen = hog ? bakaHog(`omslag/${v.id}-ren.jpg`, 720, 4) : bakaOmslag(renKalla, `omslag/${v.id}-ren.jpg`);
   const omslagStor = hog ? bakaHog(`omslag/${v.id}-stor.jpg`, 1672, 3) : null;
-  const kapitel = (kapitelFil[v.id] || []).map(([fras, rubrik]) => ({ t: tidFor(fras, ord, v.id, `kapitlet "${rubrik}"`), rubrik })).filter((k) => k.t != null);
+  const kapitel = (kapitelFil[v.id] || []).map(([fras, rubrik, typ]) => ({ t: tidFor(fras, ord, v.id, `kapitlet "${rubrik}"`), rubrik, typ: typ || (/^din tur/i.test(rubrik) ? "uppgift" : null) })).filter((k) => k.t != null);
   for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
   let dinTur = null;
   if (dinturFil[v.id]) {
