@@ -2933,8 +2933,9 @@
   const lista = (xs) => xs.map(svTal).join(", ").replace(/, ([^,]*)$/, " och $1");
   const snygg = (s) => s.replace(/>=/g, "≥").replace(/<=/g, "≤").replace(/\^2(?![\d(])/g, "²").replace(/\^3(?![\d(])/g, "³").replace(/\*/g, "·").replace(/(\S)-/g, "$1 − ");
   // "x = 1,44 m" → 1,44: allt före sista = eller ≈ och en enhet sist tas bort.
-  // Gradtecknet räknas inte: "60°" är 60 (formelbladet 3, vinkeln i pizzabiten).
-  const talUr = (svar) => rakna(tolka(stada(svar).replace(/°/g, "").replace(/^.*[=≈]/, "").replace(/[a-zåäö]+\.?$/, "")), {});
+  // Gradtecknet räknas inte: "60°" är 60 (formelbladet 3, vinkeln i pizzabiten). Inte heller
+  // procenttecknet: "47,7 %" är 47,7 när posten har "enhet": "%" (formelbladet Ma 2, del 6).
+  const talUr = (svar) => rakna(tolka(stada(svar).replace(/[°%]/g, "").replace(/^.*[=≈]/, "").replace(/[a-zåäö]+\.?$/, "")), {});
   const ekvUr = (svar) => { const d = stada(svar).split("="); if (d.length !== 2) throw new Error("likhetstecken"); return { typ: "-", a: tolka(d[0]), b: tolka(d[1]) }; };
   // "a_n = n^2 + 4" och "f(n) = …": det som står före = är ett namn, inte en del av svaret.
   const uttrUr = (svar) => { let s = stada(svar); const d = s.split("="); if (d.length === 2) s = /^[a-zåäö_()0-9]*$/.test(d[0]) ? d[1] : d[0]; return tolka(s); };
