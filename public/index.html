@@ -1801,8 +1801,8 @@
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
-        <span class="lina">${visaAr(v) ? `<span class="ar">${arText(v.ar)}</span>` : ""}</span>
-        <span class="namn">${visaAr(v) ? `<span class="ar ar-lista" aria-hidden="true">${arText(v.ar)}</span>` : ""}
+        <span class="lina">${visaAr(v) ? `<span class="ar">År ${arText(v.ar)}</span>` : ""}</span>
+        <span class="namn">${visaAr(v) ? `<span class="ar ar-lista" aria-hidden="true">År ${arText(v.ar)}</span>` : ""}
           <span class="rad1${arDelserie(v) ? "" : " stapel"}"><span class="kurs">${kortOverst(v, h)}</span><span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span></span>
           <span class="moment">${kortMoment(v, h)}</span>
         </span>
