@@ -780,6 +780,57 @@
     ],
     "notisFran": "Tänk dig ett sparkonto med 10 procent"
   },
+  "formelbladet-ma2-4-likformighet": {
+    "fraga": "En lyktstolpe kastar en skugga som är 12 meter lång. Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång.",
+    "delar": [
+      {
+        "fraga": "Hur hög är lyktstolpen?",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.01,
+        "enhet": "meter",
+        "exempel": "t.ex. 5",
+        "fel": [
+          {
+            "svar": "24",
+            "text": "Du har gångrat 12 med 2. Pinnens skugga är dubbelt så lång som pinnen, så stolpen är hälften så hög som sin skugga: 12 delat med 2."
+          },
+          {
+            "svar": "12",
+            "text": "12 meter är skuggans längd, inte stolpens höjd. Stolpen är lika många gånger högre än pinnen som dess skugga är längre än pinnens skugga."
+          },
+          {
+            "svar": "10",
+            "text": "Du har räknat 12 minus 2. Likformiga trianglar handlar om gånger, inte om minus: 12 är 6 gånger 2."
+          },
+          {
+            "svar": "0.1667",
+            "tolerans": 0.01,
+            "text": "Du har räknat 2 delat med 12. Vänd på det: 12 är 6 gånger så mycket som 2, så stolpen är 6 gånger så hög som pinnen."
+          },
+          {
+            "svar": "8",
+            "text": "8 meter var trädet i videon, där pinnens skugga var 1,5 meter. Här är pinnens skugga 2 meter och stolpens skugga 12 meter."
+          },
+          {
+            "svar": "7",
+            "text": "7 meter var flaggstången i övningstalet, där skuggan var 14 meter. Här är stolpens skugga 12 meter, och 12 är 6 gånger 2."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Trianglarna är likformiga, så 1 delat med x",
+      "text": "Pinnen med sin skugga och stolpen med sin skugga är likformiga trianglar. Då är 1 delat med x lika med 2 delat med 12."
+    },
+    "losning": [
+      "Pinnen och lyktstolpen står rakt upp och solen lyser lika snett på båda, så trianglarna är likformiga.",
+      "1 / x = 2 / 12",
+      "12 är 6 gånger så mycket som 2, för 2 · 6 = 12.",
+      "Då är x också 6 gånger så mycket som 1, så lyktstolpen är 6 meter hög."
+    ],
+    "notisFran": "Här är en uppgift att prova"
+  },
   "formelbladet-ma2-6-statistik": {
     "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
     "delar": [
