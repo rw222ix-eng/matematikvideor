@@ -617,10 +617,10 @@
      rader som syns, så radernas egen intoning vid rullning är avstängd. Blocket är markören från en
      gammal dator: ljust mot den mörka sidan, och det blinkar. */
   .helatext.skriver li { opacity: 1; transform: none; transition: none; }
-  .markor { display: inline-block; width: .5em; height: 1.05em; margin-left: 3px; vertical-align: -.16em; background: var(--ben); box-shadow: 0 0 8px rgba(236, 230, 216, .45); animation: markor .9s steps(1, end) infinite; }
-  /* Ett blink är 0,9 s (BLINK i skriptet). Innan skrivandet tonar blocket fram och börjar sedan
+  .markor { display: inline-block; width: .5em; height: 1.05em; margin-left: 3px; vertical-align: -.16em; background: var(--ben); box-shadow: 0 0 8px rgba(236, 230, 216, .45); animation: markor .6s steps(1, end) infinite; }
+  /* Ett blink är 0,6 s (BLINK i skriptet; 0,9 s var för långsamt, Rickard 2026-09-26). Innan skrivandet tonar blocket fram och börjar sedan
      blinka; när raderingen är klar tonar det bort. */
-  .markor.in { animation: markor-in .5s var(--lugn) both, markor .9s steps(1, end) .5s infinite; }
+  .markor.in { animation: markor-in .5s var(--lugn) both, markor .6s steps(1, end) .5s infinite; }
   .markor.ut { animation: markor-ut .45s var(--lugn) both; }
   @keyframes markor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   @keyframes markor-in { from { opacity: 0; } to { opacity: 1; } }
@@ -3109,7 +3109,7 @@
   const markor = document.createElement("span");
   markor.className = "markor"; markor.setAttribute("aria-hidden", "true");
   let skrivId = 0;
-  const BLINK = 900;   // ett blink: blocket syns 0,45 s och är borta 0,45 s (.markor i stilarna)
+  const BLINK = 600;   // ett blink: blocket syns 0,3 s och är borta 0,3 s (.markor i stilarna)
   const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
   const takt = (t) => 150 * t + 80 * t * t;   // antal tecken efter t sekunder
   const raderna = () => [...$("helatext").children].map((li) => ({ li, s: li.querySelector(".snutt") }));
