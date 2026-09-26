@@ -627,10 +627,26 @@
   .tangenter button { min-width: 42px; height: 38px; padding: 0 10px; border: 1px solid var(--linje2); border-radius: 8px; font: 400 18px/1 var(--sans); color: var(--ben2); background: rgba(236, 230, 216, .03); transition: border-color .3s, color .3s, transform .3s var(--fjader); }
   .tangenter button:active { transform: scale(.9); transition-duration: .08s; }
   @media (hover: hover) { .tangenter button:hover { border-color: var(--accent); color: var(--ben); } }
-  .del-svarstext { margin: 12px 0 0; min-height: 1.6em; max-width: 680px; font-size: 16px; line-height: 1.6; color: var(--ben2); }
+  .del-svarstext { position: relative; margin: 12px 0 0; min-height: 1.6em; max-width: 680px; font-size: 16px; line-height: 1.6; color: var(--ben2); }
   .del-svarstext:empty { min-height: 0; margin: 0; }
-  .del-svarstext.ratt { color: var(--accent); }
-  .del-svarstext svg { width: 13px; height: 13px; margin-right: 6px; vertical-align: -1px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  /* Rätt eller fel (Rickard 2026-09-26): en liten gul rad syntes för dåligt. Nu en grön eller röd
+     cirkel med bock eller kryss, ett större Rätt! eller Fel, svarsrutan i samma färg, och ett plask
+     ur cirkeln: ringar på vattnet och droppar som stänker upp och faller tillbaka (plask() i skriptet). */
+  .del-svarstext.ratt { --dom: #6FD08C; }
+  .del-svarstext.fel { --dom: #F2766B; }
+  .del-svarstext.ratt, .del-svarstext.fel { display: grid; grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; align-items: center; margin-top: 18px; }
+  .dom-ikon { position: relative; z-index: 1; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--dom); color: #171414; box-shadow: 0 0 0 5px color-mix(in srgb, var(--dom) 18%, transparent), 0 0 24px color-mix(in srgb, var(--dom) 45%, transparent); animation: dom-pop .55s var(--fjader) both; }
+  .dom-ikon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .dom-ord { font: 500 26px/1.15 var(--sans); letter-spacing: .02em; color: var(--dom); animation: dom-in .45s .08s var(--lugn) both; }
+  .dom-text { grid-column: 2; margin-top: 4px; color: #D6CFC1; animation: dom-in .45s .16s var(--lugn) both; }
+  @keyframes dom-pop { 0% { transform: scale(0); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+  @keyframes dom-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+  .del.lost .del-svar input { border-color: #6FD08C; box-shadow: 0 0 0 3px rgba(111, 208, 140, .18); }
+  .del.fel .del-svar input { border-color: #F2766B; box-shadow: 0 0 0 3px rgba(242, 118, 107, .18); }
+  /* Plasket: lagret sitter mitt i cirkeln och syns utanför rutan. */
+  .plask { position: absolute; left: 19px; top: 19px; width: 0; height: 0; pointer-events: none; z-index: 2; }
+  .plask-ring { position: absolute; left: 0; top: 0; width: 44px; height: 18px; border: 2px solid var(--dom); border-radius: 50%; opacity: 0; }
+  .plask-droppe { position: absolute; left: 0; top: 0; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, .95) 0 18%, var(--dom) 55%); box-shadow: 0 0 6px color-mix(in srgb, var(--dom) 70%, transparent); opacity: 0; }
   .dintur-knappar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
   .dintur-knappar [hidden] { display: none; }
   .dintur-ledtrad, .dintur-losning { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--linje2); }
@@ -2864,6 +2880,35 @@
       if (del) { const w = document.createElement("div"); w.id = "losning-tallinje"; w.innerHTML = tallinje(mangdUr(del.svar)); $("dintur-losning").appendChild(w); }
     }
   }
+  const KRYSS = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 3.2 L8.8 8.8 M8.8 3.2 L3.2 8.8"/></svg>';
+  // Plasket när svaret rättas, som en sten i vattnet: två ringar vidgas på ytan och droppar
+  // stänker upp i bågar och faller tillbaka. Färgen är domens (grön eller röd, --dom).
+  function plask(ruta) {
+    const lager = document.createElement("span");
+    lager.className = "plask"; lager.setAttribute("aria-hidden", "true");
+    ruta.appendChild(lager);
+    for (let k = 0; k < 2; k++) {
+      const ring = document.createElement("span"); ring.className = "plask-ring"; lager.appendChild(ring);
+      ring.animate([
+        { transform: "translate(-50%, -50%) scale(.3)", opacity: .9 },
+        { transform: "translate(-50%, -50%) scale(2.8)", opacity: 0 },
+      ], { duration: 750 + k * 200, delay: k * 140, easing: "cubic-bezier(.2, .7, .3, 1)", fill: "both" });
+    }
+    for (let k = 0; k < 16; k++) {
+      const d = document.createElement("span"), s = 3 + Math.random() * 5;
+      d.className = "plask-droppe"; d.style.width = `${s}px`; d.style.height = `${s * 1.2}px`; d.style.margin = `${-s / 2}px 0 0 ${-s / 2}px`;
+      lager.appendChild(d);
+      // Uppåt, högst 70 grader åt sidan. Sträckan uppåt och fallet ger en båge: y = vy·t + g·t².
+      const vinkel = (-90 + (Math.random() * 2 - 1) * 70) * Math.PI / 180, fart = 90 + Math.random() * 90;
+      const vx = Math.cos(vinkel) * fart, vy = Math.sin(vinkel) * fart * 1.7, g = 150 + Math.random() * 60;
+      const bilder = Array.from({ length: 9 }, (_, i) => {
+        const t = i / 8;
+        return { transform: `translate(${(vx * t).toFixed(1)}px, ${(vy * t + g * t * t).toFixed(1)}px) scale(${(1 - t * .45).toFixed(2)})`, opacity: t < .7 ? 1 : (1 - t) / .3 };
+      });
+      d.animate(bilder, { duration: 700 + Math.random() * 350, delay: Math.random() * 70, easing: "linear", fill: "both" });
+    }
+    setTimeout(() => lager.remove(), 1500);
+  }
   dtEl.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!dt) return;
@@ -2872,9 +2917,17 @@
     if (!inp.value.trim()) { text.className = "del-svarstext"; text.textContent = "Skriv ditt svar först."; inp.focus(); return; }
     const r = ratta(del, inp.value);
     Newton.hande("dintur");
-    text.className = "del-svarstext" + (r.ok ? " ratt" : "");
-    text.innerHTML = r.ok ? `${BOCK}${esc(r.text)}` : esc(r.text);
+    // Ett svar sidan inte kunde läsa är varken rätt eller fel: då bara texten, som förut.
+    const dom = r.ok ? "ratt" : r.forstod ? "fel" : "";
+    text.className = "del-svarstext" + (dom ? ` ${dom}` : "");
+    if (dom) {
+      // "Rätt!" och "Inte riktigt." står redan i den stora raden, så de tas bort ur förklaringen.
+      const forklaring = r.text.replace(/^Rätt!\s*/, "").replace(/^Inte riktigt\.\s*/, "");
+      text.innerHTML = `<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : KRYSS}</span><span class="dom-ord">${r.ok ? "Rätt!" : "Fel"}</span>${forklaring ? `<span class="dom-text">${esc(forklaring)}</span>` : ""}`;
+      plask(text);
+    } else text.textContent = r.text;
     li.classList.toggle("lost", r.ok);
+    li.classList.toggle("fel", dom === "fel");
     if (r.ok) dt.lost.add(i); else { dt.lost.delete(i); if (r.forstod) dt.fel++; }
     const allt = dt.lost.size === dt.d.delar.length;
     if (allt) {
