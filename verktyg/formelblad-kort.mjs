@@ -25,6 +25,8 @@ const sharp = require(join(MV, "ritmotor/geometri/node_modules/sharp"));
 
 const DEL1 = join(MV, "formelbladet-1-prefix-och-potenser");
 const PDF = join(DEL1, "assets/formelblad/Formelblad_Ma_1abc_2021.pdf");
+// Formelbladet för Ma 2 (FORMELBLADET-MA2-SERIE.md): fyra sidor, sidorna heter "m2-1" … "m2-4" nedan.
+const PDF2 = join(MV, "ma2a-gemensamt/Formelblad_Ma_niva_2.pdf");
 const PAPPER = join(DEL1, "assets/formelblad/papper-bas.png");
 const CACHE = join(VIDEOTEK, "verktyg/.cache");
 const UT = join(VIDEOTEK, "assets/kort");
@@ -34,11 +36,11 @@ const W = 1920, H = 1080;
 mkdirSync(CACHE, { recursive: true });
 mkdirSync(UT, { recursive: true });
 const sidor = {};
-for (const n of [1, 2]) {
-  const fil = join(CACHE, `sida-${n}-400dpi.png`);
-  if (!existsSync(fil)) execFileSync("pdftoppm", ["-r", "400", "-f", String(n), "-l", String(n), "-png", "-singlefile", PDF, fil.replace(/\.png$/, "")]);
+for (const [nyckel, pdf, n] of [[1, PDF, 1], [2, PDF, 2], ...[1, 2, 3, 4].map((k) => [`m2-${k}`, PDF2, k])]) {
+  const fil = join(CACHE, typeof nyckel === "number" ? `sida-${n}-400dpi.png` : `ma2-sida-${n}-400dpi.png`);
+  if (!existsSync(fil)) execFileSync("pdftoppm", ["-r", "400", "-f", String(n), "-l", String(n), "-png", "-singlefile", pdf, fil.replace(/\.png$/, "")]);
   const g = await sharp(fil).greyscale().raw().toBuffer({ resolveWithObject: true });
-  sidor[n] = { fil, data: g.data, w: g.info.width, h: g.info.height };
+  sidor[nyckel] = { fil, data: g.data, w: g.info.width, h: g.info.height };
 }
 
 // Kanten får inte gå genom bläck (tecken, figurer). Ljusgrå avdelarlinjer (> 200) räknas inte.
@@ -72,6 +74,21 @@ const U = {
   rymd2: { sida: 2, left: 413, top: 1315, width: 2799 - 413, height: 2864 - 1315 },
   pythagoras: { sida: 2, ...blackRuta(2, { left: 380, top: 2870, width: 2480, height: 500 }) },
   vektorer: { sida: 2, ...blackRuta(2, { left: 260, top: 3440, width: 2600, height: 620 }) },
+  // Ma 2-bladet: områden i PDF-punkter (rubrikernas lägen ur pdftotext -bbox), bläckets ramruta mäts i dem.
+  ...Object.fromEntries(Object.entries({
+    algebra: ["m2-1", 50, 136, 548, 316],            // Algebra: reglerna och andragradsekvationerna
+    logaritmer: ["m2-1", 50, 640, 548, 712],         // Logaritmer
+    funktioner2: ["m2-2", 50, 52, 548, 254],         // Funktioner och samband: räta linjen (k₁k₂ = −1) och andragradsfunktioner
+    avstand: ["m2-4", 50, 265, 548, 336],            // Avståndsformeln och mittpunktsformeln
+    likformighet: ["m2-3", 50, 185, 548, 292],       // Likformighet
+    satser: ["m2-3", 50, 350, 548, 504],             // Topptriangel-, bisektris- och transversalsatsen
+    vinklar: ["m2-3", 50, 505, 548, 708],            // Vinklar och vinkelsumman
+    cirkelsatser: ["m2-4", 50, 147, 548, 262],       // Kordasatsen och randvinkelsatsen
+    statistik: ["m2-4", 50, 505, 548, 792],          // Statistik och sannolikhet: lådagram och normalfördelning
+  }).map(([namn, [sida, x0, y0, x1, y1]]) => {
+    const k = 400 / 72;
+    return [namn, { sida, ...blackRuta(sida, { left: Math.round(x0 * k), top: Math.round(y0 * k), width: Math.round((x1 - x0) * k), height: Math.round((y1 - y0) * k) }, 16) }];
+  })),
 };
 for (const [k, u] of Object.entries(U)) kontrollera(k, u.sida, u);
 
@@ -112,6 +129,13 @@ const DELAR = [
   { id: "formelbladet-3-plan-geometri", kort: async () => [await kort("geometri", { h: 940, x: "mitt", y: 72, pad: 30 })] },
   { id: "formelbladet-4-rymdgeometri-och-skala", kort: async () => [await kort("rymd1", { b: 870, x: 70, y: 290 }), await kort("rymd2", { b: 870, x: 980, y: 215 })] },
   { id: "formelbladet-5-pythagoras-trigonometri-vektorer", kort: async () => [await kort("pythagoras", { b: 1560, x: 110, y: 120 }), await kort("vektorer", { b: 1300, x: 470, y: 560 })] },
+  // Formelbladet Ma 2 (id = projektmappen i FORMELBLADET-MA2-SERIE.md).
+  { id: "formelbladet-ma2-1-algebra", kort: async () => [await kort("algebra", { b: 1720, x: "mitt", y: "mitt", pad: 36 })] },
+  { id: "formelbladet-ma2-2-andragradsfunktionen", kort: async () => [await kort("funktioner2", { b: 1400, x: 120, y: 60 }), await kort("avstand", { b: 1320, x: 480, y: 720 })] },
+  { id: "formelbladet-ma2-3-logaritmer", kort: async () => [await kort("logaritmer", { b: 1740, x: "mitt", y: "mitt", pad: 40 })] },
+  { id: "formelbladet-ma2-4-likformighet", kort: async () => [await kort("likformighet", { b: 1400, x: 100, y: 90 }), await kort("satser", { b: 1320, x: 500, y: 480 })] },
+  { id: "formelbladet-ma2-5-vinklar-och-cirkelsatser", kort: async () => [await kort("vinklar", { b: 1000, x: 130, y: 50 }), await kort("cirkelsatser", { b: 1080, x: 710, y: 650 })] },
+  { id: "formelbladet-ma2-6-statistik", kort: async () => [await kort("statistik", { h: 960, x: "mitt", y: "mitt", pad: 30 })] },
 ];
 
 for (const d of DELAR) {
