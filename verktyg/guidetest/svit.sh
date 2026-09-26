@@ -15,7 +15,7 @@ k bakat s2-bakat "$U/#filmer" & k s4 s4-tidig "$U/#filmer" & k utanfor s5-utanfo
 NAMN=intro k s3-intro s3-start "$U/" & NAMN=fb k s3-fb s3-start "$U/#formelbladet" & NAMN=fb2 k s3-fb2 s3-start "$U/#formelbladet-ma2" & wait
 NAMN=spelar FORE_KLICK="#duk-lock" FORE_VANTA=2500 k s3-spelar s3-start "$U/#formelbladet-3-plan-geometri" & NAMN=hel FORE_KLICK="#duk-lock||#duk-hel" FORE_VANTA=1500 START_JS='document.getElementById("hjalp").click()' k s3-hel s3-start "$U/#delos-och-altaret" & NAMN=sok FORE_KLICK=".vy.aktiv .sok-oppna" FORE_VANTA=800 k s3-sok s3-start "$U/#filmer" & wait
 NAMN=sokf FORE_KLICK=".vy.aktiv .sok-oppna" FORE_VANTA=800 k s3-sokf s3-start "$U/#delos-och-altaret" & NAMN=dintur FORE='(() => { const i = document.querySelector("#dintur-delar input"); i.scrollIntoView({ block: "center" }); i.focus(); i.value = "x^3 = "; i.dispatchEvent(new Event("input", { bubbles: true })); return document.activeElement.id; })()' FORE_VANTA=1200 k s3-dintur s3-start "$U/#delos-och-altaret" & NAMN=ma2a k s3-ma2a s3-start "$U/#ma2a" & wait
-k avbryt s8-avbryt "$U/#filmer" & wait
+k avbryt s8-avbryt "$U/#filmer" & k hel-allt s9-hel-allt "$U/#delos-och-altaret" & wait
 # Livet medan han väntar (logg över blink, putsa, kast och steg under 70 s; SERIER=n ger bildserier runt Newton):
 STEG="Här ligger" DUR=70 k liv s6-liv "$U/#filmer"
 grep -h "VAKT\|^\[.*\]    [a-zå]*:\|FASTNAT\|förgäves" $UT/r-*.txt

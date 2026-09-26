@@ -1107,6 +1107,14 @@
   .guide-ljus.folj .guide-dim, .guide-ljus.folj .guide-ram { transition: opacity .3s; }
   @keyframes ram-puls { 50% { box-shadow: 0 0 0 2px rgba(242, 197, 114, 1), 0 0 36px 5px rgba(242, 197, 114, .42); } }
   .duk.guide-styr .styr { opacity: 1 !important; pointer-events: auto; }
+  /* I helskärm (Rickard 2026-09-26, "han försvinner helt ur vyn"): webbläsarens helskärm visar bara spelaren,
+     så under guiden läggs strålkastaren och Newton i det översta lagret ovanpå den (popover, se Newton.helskarm).
+     Webbläsarens egna popover-stilar (ram, bakgrund, marginal) tas bort. I sidans egen helskärm (telefonen,
+     .duk.helskarm, z 80) ligger de över spelaren med z-index. */
+  .newton:popover-open, .guide-ljus:popover-open { margin: 0; border: 0; padding: 0; background: none; overflow: visible; color: inherit; }
+  .guide-ljus:popover-open { width: auto; height: auto; }
+  body.guide-helskarm .guide-ljus { z-index: 81; }
+  body.guide-helskarm .newton { z-index: 82; }
   @media (max-width: 700px) {
     .newton { right: 6px; width: 73px; height: 136px; }
     .newton-bubbla { bottom: 92px; max-width: min(var(--bubbla-max, 290px), calc(100vw - 96px)); padding: 12px 14px 10px; }
@@ -2534,7 +2542,7 @@
     if (pa && Newton.visar !== "guide") Newton.gom();
     Newton.hande(pa ? "helIn" : "helUt");
     dukEl.classList.toggle("helskarm", pa); document.body.classList.toggle("last", pa);
-    ritaHelKnapp(); visaStyr();
+    ritaHelKnapp(); visaStyr(); Newton.helskarm();
   }
   function vaxlaHelskarm() {
     if (iHelskarm()) {
@@ -2550,7 +2558,7 @@
   ["fullscreenchange", "webkitfullscreenchange"].forEach((h) => document.addEventListener(h, () => {
     if (aktaHelskarm()) varAkta = true;
     else if (varAkta) { varAkta = false; if (dukEl.classList.contains("helskarm")) cssHelskarm(false); }
-    ritaHelKnapp();
+    ritaHelKnapp(); Newton.helskarm();
   }));
   // Klick och drag i spelarrutan
   dukEl.addEventListener("click", (e) => {
@@ -3743,6 +3751,7 @@
       setTimeout(() => {
         if (visar) return;
         el.hidden = true; el.classList.remove("gar", "talar", "ror", "kastar", "guide", "hoger", "speglad", "gar-steg");
+        helskarm();
         el.style.transform = ""; uttryck.classList.remove("syns"); ljus.classList.remove("latt");
         document.body.classList.remove("newton-syns", "guidar");
       }, 460);
@@ -3865,6 +3874,19 @@
       const tacker = (q) => newtonRutor(q, text).some((a) => lyser.some((r) => a.left < r.right + 8 && a.right > r.left - 8 && a.top < r.bottom + 8 && a.bottom > r.top - 8));
       if (!tacker(p)) return p;
       return [{ x: 10, y: p.y, hoger: true }, { x: innerWidth - b - 10, y: p.y, hoger: false }].find((q) => !tacker(q)) || p;
+    }
+    // I helskärm står han ovanpå spelarens linje, ovanför knappen i hörnet, med bubblan åt vänster: knapparna
+    // under honom ska gå att trycka på.
+    function helskarmPlats(r) {
+      const [b, h] = figur(), vw = innerWidth, linje = $("duk-linje").getBoundingClientRect();
+      const x = Math.max(10, Math.min(vw - b - 10, (r ? r.left + r.width / 2 : vw) - b / 2 - 12));
+      return { x, y: Math.max(10, linje.top - h - 6), hoger: x + b / 2 < vw * 0.3 };
+    }
+    // Var han ställer sig i ett steg.
+    function stalle(s, mal) {
+      const iSpelaren = !!mal && dukEl.contains(mal);
+      if (iSpelaren && iHelskarm()) return helskarmPlats(synlig(mal) ? mal.getBoundingClientRect() : null);
+      return friPlats(plats(mal && synlig(mal) ? mal.getBoundingClientRect() : null, iSpelaren), s.text);
     }
     // Bubblan får aldrig gå utanför fönstret: bredden räknas från den sida där den hamnar.
     const bubbelBredd = (p) => { const [b] = figur(); el.style.setProperty("--bubbla-max", `${Math.max(180, Math.min(290, (p.hoger ? innerWidth - p.x - b : p.x) - 14))}px`); };
@@ -4030,7 +4052,9 @@
     }
     // Målet rullas upp i övre delen av fönstret; nederkanten är Newtons golv. I spelaren gäller spelarTopp.
     async function tillMal(e, text = "") {
+      hall = null;
       const r = e.getBoundingClientRect(), vh = innerHeight, [, h] = figur(), ned = document.documentElement.scrollHeight - vh;
+      const halls = dukEl.contains(e) ? dukEl : e;   // det som ska stå still: i spelaren hela spelaren
       let mal;
       if (dukEl.contains(e)) {
         if (iHelskarm()) return;   // spelaren fyller skärmen; sidan bakom ska stå kvar
@@ -4040,21 +4064,45 @@
         // han pratar om (begreppen i Om filmen, 2026-09-25). Längst ner på sidan finns luft att rulla i
         // (body.guidar).
         const fri = Math.min(vh - h - 30, bubbelTopp(text) - 12);
-        if (r.top >= 64 && r.bottom <= fri) return;
         // Ett högt mål som redan fyller fönstret (tidslinjen på mobilen, en lång kapitellista, texten
         // under Visa allt) står kvar där eleven läser: guiden rullar inte tillbaka till början av det.
-        if (r.top <= 64 && r.bottom >= fri) return;
+        if ((r.top >= 64 && r.bottom <= fri) || (r.top <= 64 && r.bottom >= fri)) return hallFast(halls);
         const onskad = Math.max(64, Math.min(vh * 0.14, fri - r.height));
         mal = Math.max(0, Math.min(ned, scrollY + r.top - onskad));
       }
-      if (Math.abs(scrollY - mal) < 2) return;
+      if (Math.abs(scrollY - mal) < 2) return hallFast(halls);
+      // Där målets överkant ska stå i fönstret när sidan rullat klart.
+      const topp = halls.getBoundingClientRect().top - (mal - scrollY);
       // Guidens egen rullning är inte eleven som scrollar (tidslinjen på mobilen räknas annars som gjord).
       rullarTill = performance.now() + (stilla ? 60 : 720) + 300;
       window.scrollTo({ top: mal, behavior: stilla ? "auto" : "smooth" });
       await vila(stilla ? 60 : 720);
-      // Kom den mjuka scrollen inte fram (t.ex. i en flik som inte ritas) hoppar sidan dit.
-      if (Math.abs(scrollY - mal) > 4) window.scrollTo({ top: mal, behavior: "instant" });
+      // Kom den mjuka scrollen inte fram (t.ex. i en flik som inte ritas), eller har sidan vuxit under tiden
+      // (texten under Visa allt skrivs fram), rättas det mot var målet står nu.
+      const fel = halls.getBoundingClientRect().top - topp;
+      if (Math.abs(fel) > 4) window.scrollTo({ top: scrollY + fel, behavior: "instant" });
+      hallFast(halls);
     }
+    // Målet står still medan texten skrivs (Rickard 2026-09-26): texten under "Visa allt som sägs" skrivs fram
+    // i flera sekunder och växer ovanför Din tur, som då gled ner ur fönstret medan Newton pratade om den.
+    // Så länge steget pågår och skrivmaskinen går flyttas sidan med, så att målet står där guiden rullade
+    // fram det. Rullar eleven själv (hjul, finger, tangent, rullningslisten), gör något i steget eller går
+    // guiden vidare släpper det.
+    // Också en stund efter att skrivmaskinen slutat: då byts raderna mot hela texten, som kan bryta om lite.
+    let hall = null, skrevVid = -1e9;
+    function hallFast(e) { hall = { el: e, topp: e.getBoundingClientRect().top, nr: guideNr, gang: guideGang }; }
+    new ResizeObserver(() => {
+      if (!hall) return;
+      if (visar !== "guide" || guideNr !== hall.nr || guideGang !== hall.gang || !hall.el.isConnected) { hall = null; return; }
+      if ($("helatext").classList.contains("skriver")) skrevVid = performance.now();
+      else if (performance.now() - skrevVid > 600) return;
+      const d = hall.el.getBoundingClientRect().top - hall.topp;
+      if (Math.abs(d) >= 1) { rullarTill = performance.now() + 300; window.scrollTo({ top: scrollY + d, behavior: "instant" }); }
+    }).observe(document.body);
+    const slappHall = () => { hall = null; };
+    ["wheel", "touchmove"].forEach((h) => addEventListener(h, slappHall, { passive: true, capture: true }));
+    addEventListener("keydown", (e) => { if (!skriver(e) && ["PageUp", "PageDown", "Home", "End", "ArrowUp", "ArrowDown", " "].includes(e.key)) slappHall(); }, true);
+    addEventListener("pointerdown", (e) => { if (e.target === document.documentElement) slappHall(); }, true);   // rullningslisten
     // "Hoppa över" gör det eleven hoppade över, som när någon snabbt tar över datorn: öppnar
     // sökningen, skriver ett ord, stänger den, öppnar en film, startar, pausar eller hoppar i filmen.
     const sokOppen = () => sokRuta.classList.contains("oppen");
@@ -4144,6 +4192,7 @@
         { id: "ljud", vy: "film", mal: () => dukEl.querySelector(".ljud"), lage: "prata", nar: "ljud", svar: "Nu låter det som du vill.",
           text: tryck() ? "För högt eller för tyst? Tryck på högtalaren och dra i reglaget." : "För högt eller för tyst? Håll musen över högtalaren och scrolla upp eller ner." },
         { id: "hel", vy: "film", mal: () => $("duk-hel"), lage: "pekar", nar: "helUt", helskarm: true, hoppa: () => { if (iHelskarm()) vaxlaHelskarm(); }, svar: "Välkommen tillbaka.",
+          under: { helIn: () => (tryck() ? "Så här stor blir filmen. Tryck på knappen i hörnet igen när du vill tillbaka." : "Så här stor blir filmen. Tryck på knappen i hörnet igen, eller på Esc, när du vill tillbaka.") },
           text: tryck() ? "Vill du se filmen större? Tryck på knappen i hörnet, och tryck igen när du vill tillbaka." : "Vill du se filmen större? Tryck på knappen i hörnet, eller dubbelklicka på bilden. Gör samma sak igen när du vill tillbaka." },
         { id: "kapitel", vy: "film", mal: () => $("kapitel"), lage: "pekar", nar: "kapitel", pausaEfter: true, svar: "Där börjar det kapitlet.",
           text: "Här är kapitlen. Varje kapitel är en del av filmen. Tryck på ett, så hoppar filmen dit." },
@@ -4232,7 +4281,7 @@
       await vantaPa(() => aktivVy === "valj", 3000);
       guideByter = false; await vila(500);
     }
-    let bekraftar = false, sjalv = false, ljusFor = null, senHandelse = null;
+    let bekraftar = false, sjalv = false, ljusFor = null, senHandelse = null, nuLista = null, nuRaknare = "";
     function slappFokus() { const a = document.activeElement; if (a && el.contains(a)) a.blur(); }
     const passar = (s) => !((s.bara === "tryck" && !tryck()) || (s.bara === "mus" && tryck()));
     // Vyn ska stå rätt innan steget börjar: sökrutan öppen bara i sökstegen, ingen helskärm utanför
@@ -4247,7 +4296,7 @@
     async function visaSteg(n) {
       if (visar !== "guide") return;
       if (n >= guideSteg.length) return slutaGuide();
-      guideNr = n; bekraftar = false;
+      guideNr = n; bekraftar = false; nuLista = null;
       const s = guideSteg[n], gang = guideGang;
       [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv();
       el.classList.remove("talar", "pratar"); knappar.innerHTML = ""; stoppaRorelse();
@@ -4268,7 +4317,7 @@
       if (!lever()) return;
       ljusFor = s.ljus || (mal ? () => [mal] : () => []);
       lys(ljusFor());
-      await gaTill(friPlats(plats(mal ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)), s.text));
+      await gaTill(stalle(s, mal));
       if (!lever()) return;
       hem = pos;   // de små stegen medan han väntar går nära hit
       // Det första steget han säger något i vinkar han, var guiden än börjar.
@@ -4282,7 +4331,8 @@
         : s.nar ? [{ text: "Hoppa över", gor: () => hoppaOver(n) }, { text: "Avsluta", gor: slutaGuide }]
         : [{ text: sista ? "Klar" : "Nästa", forst: true, gor: () => visaSteg(n + 1) }, { text: "Avsluta", gor: slutaGuide }];
       borjan = false;
-      prata(s.text, lista, `${n + 1}/${guideSteg.length}`);
+      nuLista = lista; nuRaknare = `${n + 1}/${guideSteg.length}`;
+      prata(s.text, lista, nuRaknare);
     }
     // Väntar det aktuella steget på något eleven ska göra?
     const vantar = () => !!(guideSteg[guideNr] && guideSteg[guideNr].nar);
@@ -4301,7 +4351,12 @@
       if (namn === "tidslinje" && performance.now() < rullarTill) return;
       // Medan han reagerar sparas det eleven gör, och räknas i nästa steg.
       if (bekraftar) { senHandelse = namn; return; }
+      // Halvvägs i en uppgift (under): han säger vad eleven gör nu, utan att gå vidare (i helskärm: hur man
+      // kommer tillbaka).
+      const nu = guideSteg[guideNr], under = nu && nu.under && nu.under[namn];
+      if (under && nuLista) { prata(typeof under === "function" ? under() : under, nuLista, nuRaknare); return; }
       const k = stegFor(namn); if (k < 0) return;
+      hall = null;
       bekraftar = true; nastaNr = k + 1;
       const n = guideNr, s = guideSteg[k], gang = guideGang, samma = () => visar === "guide" && guideGang === gang && guideNr === n;
       [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv(); stoppaRorelse();
@@ -4448,6 +4503,23 @@
       if (b && (b.textContent === "Nästa" || b.textContent === "Klar")) { skydda(e); b.click(); }
     }, true);
 
+    // Helskärm under guiden (se stilarna): strålkastaren och Newton i det översta lagret (webbläsarens helskärm)
+    // eller över spelaren (sidans egen), och han ställer sig ovanpå linjen. Utan helskärm eller guide: tillbaka.
+    // Anropas när helskärmen slås på eller av (cssHelskarm, fullscreenchange) och när guiden går undan.
+    function helskarm() {
+      // Bara i steg om spelaren: kapitlen, texten och Din tur syns inte i helskärm.
+      const s = guideNr >= 0 ? guideSteg[guideNr] : null, mal = s && s.mal ? s.mal() : null;
+      const pa = visar === "guide" && iHelskarm() && !!mal && dukEl.contains(mal), lager = pa && aktaHelskarm() && typeof el.showPopover === "function";
+      document.body.classList.toggle("guide-helskarm", pa);
+      for (const e of [el, ljus]) {
+        try { if (e.matches(":popover-open") && !lager) e.hidePopover(); if (!lager) e.removeAttribute("popover"); } catch (x) {}
+      }
+      if (lager && !el.matches(":popover-open")) {
+        // Strålkastaren först, Newton ovanpå den (det översta lagret ritas i den ordning de visas).
+        try { for (const e of [ljus, el]) { if (e.matches(":popover-open")) e.hidePopover(); e.popover = "manual"; e.showPopover(); } } catch (x) {}
+      }
+      stallOm();
+    }
     // Byter fönstret storlek (dator ↔ telefon, telefonen vrids) ställer han sig direkt där steget vill ha
     // honom i det nya fönstret. Förut stod han kvar på samma pixel, utanför fönstret (stresstestet 2026-09-26).
     // Direkt i resize (som webbläsaren skickar en gång per bildruta, före ritningen), så att han aldrig syns på fel ställe.
@@ -4455,8 +4527,7 @@
     function stallOm() {
       if (visar !== "guide" || guideNr < 0 || !pos) return;
       const s = guideSteg[guideNr]; if (!s) return;
-      const mal = s.mal ? s.mal() : null;
-      const p = friPlats(plats(mal && synlig(mal) ? mal.getBoundingClientRect() : null, !!mal && dukEl.contains(mal)), s.text);
+      const p = stalle(s, s.mal ? s.mal() : null);
       stoppaLiv(); gangId++;
       el.classList.remove("gar-steg", "speglad"); el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
       el.style.setProperty("--gang", "0ms"); el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`;
@@ -4466,7 +4537,7 @@
     }
     el.addEventListener("pointerenter", () => { if (visar !== "guide") clearTimeout(gomTimer); });
     el.addEventListener("pointerleave", () => { if (visar && visar !== "guide" && !skrivKlar) { clearTimeout(gomTimer); gomTimer = setTimeout(gom, 3500); } });
-    return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, harSett: (id) => av || sett.has(id), skyddar: (e) => e.isTrusted && skyddat(e), get visar() { return visar; } };
+    return { visa, gom, efter, avbryt, markera, vybyte, startaGuide, hande, helskarm, harSett: (id) => av || sett.has(id), skyddar: (e) => e.isTrusted && skyddat(e), get visar() { return visar; } };
   })();
   // Första gången någon kommer till startsidan lyser frågetecknet en stund, med sin text, så att man
   // hittar guiden (Rickard 2026-09-25). Bara en gång per webbläsare ("hjalpVisad").
