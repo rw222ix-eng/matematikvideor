@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-26T13:01:58.853Z",
+ "byggd": "2026-09-26T13:31:13.744Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -6682,6 +6682,607 @@
      "s": 454.04,
      "e": 455.78,
      "text": "Hur högt upp sitter toppen?"
+    }
+   ]
+  },
+  {
+   "id": "formelbladet-ma2-2-andragradsfunktionen",
+   "titel": "Formelbladet Ma 2, del 2 – Andragradsfunktionen",
+   "ar": 2025,
+   "serie": "formelbladet-ma2",
+   "del": 2,
+   "ocksa": null,
+   "kurs": "Matematik 2",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-ma2-2-v1/formelbladet-ma2-2-andragradsfunktionen-1080p.mp4",
+   "moment": "Formelbladet: andragradsfunktionen, vinkelräta linjer, avstånd och mittpunkt",
+   "begrepp": [
+    "formelbladet",
+    "andragradsfunktion",
+    "y = ax² + bx + c",
+    "parabel",
+    "nollställen",
+    "symmetrilinje",
+    "högsta punkt",
+    "lägsta punkt",
+    "bryta ut",
+    "vinkelräta linjer",
+    "k₁ · k₂ = −1",
+    "lutning",
+    "rät vinkel",
+    "avståndsformeln",
+    "fågelvägen",
+    "Pythagoras sats",
+    "mittpunktsformeln",
+    "mittpunkt",
+    "koordinater"
+   ],
+   "beskrivning": "Vi går igenom andragradsfunktionen, villkoret för vinkelräta linjer och formlerna för avstånd och mittpunkt på formelbladet till nationella provet i matematik 2. En boll som kastas rakt upp, två gator på en karta och vägen mellan skolan och simhallen visar vad bokstäverna betyder.",
+   "youtube": null,
+   "langd": 450,
+   "omslag": "omslag/formelbladet-ma2-2-andragradsfunktionen.jpg?v=34301e71",
+   "omslagRen": "omslag/formelbladet-ma2-2-andragradsfunktionen-ren.jpg?v=f30e71a1",
+   "omslagStor": "omslag/formelbladet-ma2-2-andragradsfunktionen-stor.jpg?v=069d1a98",
+   "repliker": [
+    {
+     "t": 0,
+     "text": "På nationella provet i matematik 2 får alla ett formelblad från Skolverket. Bladet har fyra sidor, och man får titta på det under hela provet."
+    },
+    {
+     "t": 11,
+     "text": "Mycket på bladet känner du igen från matematik 1, men en del är nytt. Vi börjar med andragradsfunktionen, som står högst upp till höger på sidan 2."
+    },
+    {
+     "t": 22,
+     "text": "Där står y är lika med a x i kvadrat plus b x plus c. Den heter andragradsfunktion för att x står i kvadrat, alltså upphöjt till 2."
+    },
+    {
+     "t": 35,
+     "text": "Talet a står framför x i kvadrat, b står framför x, och c är talet som står ensamt. Bredvid står att a inte får vara noll, för då försvinner x i kvadrat och kvar blir y är lika med b x plus c, som är en rät linje."
+    },
+    {
+     "t": 57,
+     "text": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y är lika med minus fem x i kvadrat plus tjugo x."
+    },
+    {
+     "t": 71,
+     "text": "Här är a lika med minus 5 och b lika med 20. c är noll, för när x är noll har bollen inte lämnat handen än."
+    },
+    {
+     "t": 82,
+     "text": "Ritar man bollens höjd för varje tidpunkt får man en böjd kurva som kallas parabel. Eftersom a är negativt har parabeln en högsta punkt, och med ett positivt a skulle den i stället ha en lägsta punkt."
+    },
+    {
+     "t": 99,
+     "text": "Höjden är noll två gånger, när du kastar bollen och när du fångar den. De värden på x där y är noll kallas nollställen."
+    },
+    {
+     "t": 110,
+     "text": "Bryter man ut fem x blir höjden fem x gånger parentesen 4 minus x. Det blir noll när x är noll, och när x är 4, för 4 minus 4 är noll. Du fångar alltså bollen efter 4 sekunder."
+    },
+    {
+     "t": 130,
+     "text": "Parabeln ser likadan ut på båda sidor om en lodrät linje som kallas symmetrilinjen. Den ligger mitt emellan nollställena. 0 plus 4 är 4, och 4 delat med 2 är 2, så symmetrilinjen är x lika med 2."
+    },
+    {
+     "t": 152,
+     "text": "På symmetrilinjen ligger parabelns högsta punkt. När x är 2 blir höjden minus 5 gånger 2 i kvadrat plus 20 gånger 2, alltså minus 20 plus 40, så bollen kommer 20 meter upp efter 2 sekunder."
+    },
+    {
+     "t": 172,
+     "text": "Till vänster på samma sida står räta linjen med lutningen k. Under den står villkoret för vinkelräta linjer, k ett gånger k två är lika med minus 1."
+    },
+    {
+     "t": 186,
+     "text": "Två linjer är vinkelräta när de korsar varandra i rät vinkel, som hörnet på ett papper, och k ett och k två är de två linjernas lutningar."
+    },
+    {
+     "t": 199,
+     "text": "På en stadskarta med rutnät går en gata 2 rutor uppåt för varje ruta åt höger, så dess lutning är 2. En annan gata går en halv ruta nedåt för varje ruta åt höger, så dess lutning är minus en halv."
+    },
+    {
+     "t": 218,
+     "text": "2 gånger minus en halv är minus 1, så villkoret stämmer och gatorna korsar varandra i rät vinkel."
+    },
+    {
+     "t": 227,
+     "text": "Varför det stämmer syns om man ritar en liten triangel vid den första gatan, en ruta åt höger och 2 rutor upp. Vrider man triangeln ett kvarts varv går den i stället 2 rutor åt höger och 1 ruta nedåt, och det är lutningen minus en halv."
+    },
+    {
+     "t": 248,
+     "text": "Vet man den ena lutningen får man den andra genom att dela minus 1 med den, och minus 1 delat med 2 är minus en halv."
+    },
+    {
+     "t": 259,
+     "text": "Formlerna för avstånd och mittpunkt står på sidan 4, mitt på sidan. Avståndsformeln räknar ut hur långt det är fågelvägen, alltså i en rak linje, mellan två punkter i ett koordinatsystem."
+    },
+    {
+     "t": 275,
+     "text": "På en karta med rutnät ligger skolan där x är 1 och y är 2, och simhallen där x är 7 och y är 10. Varje ruta är en kilometer, så längs rutnätet cyklar du 6 kilometer åt höger och 8 kilometer uppåt."
+    },
+    {
+     "t": 297,
+     "text": "De två sträckorna är de korta sidorna i en rätvinklig triangel, och fågelvägen är den längsta sidan. Därför bygger avståndsformeln på Pythagoras sats, som står högst upp till höger på samma sida."
+    },
+    {
+     "t": 313,
+     "text": "I formeln är x två minus x ett sträckan åt höger, 7 minus 1, alltså 6. y två minus y ett är sträckan uppåt, 10 minus 2, alltså 8."
+    },
+    {
+     "t": 331,
+     "text": "Då blir d roten ur 6 i kvadrat plus 8 i kvadrat. 36 plus 64 är 100, och roten ur 100 är 10, så fågelvägen är 10 kilometer."
+    },
+    {
+     "t": 348,
+     "text": "Till höger om avståndsformeln står mittpunktsformeln. Den hittar punkten mitt emellan två punkter på samma sätt som vi hittade bollens symmetrilinje, genom att lägga ihop och dela med 2."
+    },
+    {
+     "t": 363,
+     "text": "Du cyklar från skolan och en kompis från simhallen, och ni vill mötas halvvägs. För x blir det 1 plus 7, alltså 8, och 8 delat med 2 är 4."
+    },
+    {
+     "t": 378,
+     "text": "För y blir det 2 plus 10, alltså 12, och 12 delat med 2 är 6. Ni möts alltså där x är 4 och y är 6."
+    },
+    {
+     "t": 392,
+     "text": "Du kastar bollen igen, men inte lika hårt, så att höjden blir y är lika med minus fem x i kvadrat plus tio x. När fångar du bollen, och hur högt kommer den?"
+    },
+    {
+     "t": 409,
+     "text": "Bryter man ut fem x blir höjden fem x gånger parentesen 2 minus x, så du fångar bollen efter 2 sekunder. Symmetrilinjen ligger mitt emellan 0 och 2, vid 1, och där är höjden minus 5 plus 10, alltså 5 meter."
+    },
+    {
+     "t": 433,
+     "text": "Till sist kastar du bollen hårdare, så att höjden blir y är lika med minus fem x i kvadrat plus trettio x. När fångar du bollen, och hur högt kommer den?"
+    }
+   ],
+   "kapitel": [],
+   "dinTur": {
+    "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x.",
+    "delar": [
+     {
+      "fraga": "När fångar du bollen?",
+      "typ": "tal",
+      "svar": 6,
+      "tolerans": 0.001,
+      "enhet": "sekunder",
+      "exempel": "t.ex. 7",
+      "fel": [
+       {
+        "svar": "3",
+        "text": "3 sekunder är symmetrilinjen, när bollen är högst upp. Du fångar den när höjden är noll igen: 5x(6 − x) blir noll när x är 6."
+       },
+       {
+        "svar": "0",
+        "text": "När x är noll kastar du bollen. Det andra nollstället är när du fångar den: 5x(6 − x) blir noll när 6 − x är noll, alltså när x är 6."
+       },
+       {
+        "svar": "30",
+        "text": "30 är talet framför x. Bryt ut fem x: −5x² + 30x = 5x(6 − x), och parentesen blir noll när x är 6."
+       },
+       {
+        "svar": "5",
+        "text": "5 kommer från fem x, som blir noll när x är noll. Titta på parentesen: 6 − x blir noll när x är 6."
+       },
+       {
+        "svar": "4",
+        "text": "4 sekunder var bollen i filmen, som hade tjugo x. Här är det trettio x: 5x(6 − x) blir noll när x är 6."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur högt kommer bollen?",
+      "typ": "tal",
+      "svar": 45,
+      "tolerans": 0.001,
+      "enhet": "meter",
+      "exempel": "t.ex. 12",
+      "fel": [
+       {
+        "svar": "135",
+        "text": "Du har räknat plus 5 · 9. Det står minus fem x i kvadrat, så det blir −45 + 90 = 45."
+       },
+       {
+        "svar": "90",
+        "text": "90 är bara 30 · 3. Glöm inte −5 · 3² = −45, så höjden blir −45 + 90 = 45."
+       },
+       {
+        "svar": "3",
+        "text": "3 är tiden när bollen är högst upp, vid symmetrilinjen. Sätt in x = 3 i funktionen: −5 · 9 + 30 · 3 = −45 + 90 = 45 meter."
+       },
+       {
+        "svar": "6",
+        "text": "6 sekunder är när du fångar bollen. Högst upp är den mitt emellan 0 och 6, vid x = 3, och där är höjden −45 + 90 = 45 meter."
+       },
+       {
+        "svar": "0",
+        "text": "Noll är höjden när du kastar och fångar bollen. Högst upp är bollen vid symmetrilinjen x = 3: −5 · 9 + 30 · 3 = 45."
+       },
+       {
+        "svar": "20",
+        "text": "20 meter var bollen i filmen, som hade tjugo x. Här ligger symmetrilinjen vid x = 3, och −5 · 9 + 30 · 3 = −45 + 90 = 45 meter."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Bryt ut fem x, så ser du när höjden är noll. Symmetrilinjen ligger mitt emellan nollställena, och där är bollen högst upp.",
+     "t": 409
+    },
+    "losning": [
+     "Bryt ut fem x: y = 5x(6 − x).",
+     "Höjden är noll när x = 0 och när x = 6, så du fångar bollen efter 6 sekunder.",
+     "Symmetrilinjen ligger mitt emellan 0 och 6, vid x = 3.",
+     "y = −5 · 3² + 30 · 3 = −45 + 90 = 45, så bollen kommer 45 meter upp."
+    ],
+    "notisFran": 392
+   },
+   "undertext": [
+    {
+     "s": 0.14,
+     "e": 5.12,
+     "text": "På nationella provet i matematik 2 får alla ett formelblad från Skolverket."
+    },
+    {
+     "s": 5.92,
+     "e": 9.94,
+     "text": "Bladet har fyra sidor, och man får titta på det under hela provet."
+    },
+    {
+     "s": 11.22,
+     "e": 15.78,
+     "text": "Mycket på bladet känner du igen från matematik 1, men en del är nytt."
+    },
+    {
+     "s": 16.9,
+     "e": 21.62,
+     "text": "Vi börjar med andragradsfunktionen, som står högst upp till höger på sidan 2."
+    },
+    {
+     "s": 22.54,
+     "e": 28.46,
+     "text": "Där står y är lika med a x i kvadrat plus b x plus c."
+    },
+    {
+     "s": 29.5,
+     "e": 34.68,
+     "text": "Den heter andragradsfunktion för att x står i kvadrat, alltså upphöjt till 2."
+    },
+    {
+     "s": 35.88,
+     "e": 44.02,
+     "text": "Talet a står framför x i kvadrat, b står framför x, och c är talet som står ensamt."
+    },
+    {
+     "s": 45.2,
+     "e": 51.96,
+     "text": "Bredvid står att a inte får vara noll, för då försvinner x i kvadrat och kvar blir y"
+    },
+    {
+     "s": 52.02,
+     "e": 55.94,
+     "text": "är lika med b x plus c, som är en rät linje."
+    },
+    {
+     "s": 57.18,
+     "e": 59.1,
+     "text": "Du kastar en boll rakt upp."
+    },
+    {
+     "s": 59.78,
+     "e": 68.44,
+     "text": "Efter x sekunder är bollen y meter över din hand, och y är lika med minus fem x i kvadrat"
+    },
+    {
+     "s": 68.5,
+     "e": 70,
+     "text": "plus tjugo x."
+    },
+    {
+     "s": 71.12,
+     "e": 75.8,
+     "text": "Här är a lika med minus 5 och b lika med 20."
+    },
+    {
+     "s": 76.94,
+     "e": 81.56,
+     "text": "c är noll, för när x är noll har bollen inte lämnat handen än."
+    },
+    {
+     "s": 82.7,
+     "e": 88.38,
+     "text": "Ritar man bollens höjd för varje tidpunkt får man en böjd kurva som kallas parabel."
+    },
+    {
+     "s": 89.44,
+     "e": 95.78,
+     "text": "Eftersom a är negativt har parabeln en högsta punkt, och med ett positivt a skulle den"
+    },
+    {
+     "s": 95.82,
+     "e": 97.64,
+     "text": "i stället ha en lägsta punkt."
+    },
+    {
+     "s": 99.02,
+     "e": 104.16,
+     "text": "Höjden är noll två gånger, när du kastar bollen och när du fångar den."
+    },
+    {
+     "s": 105.2,
+     "e": 109.46,
+     "text": "De värden på x där y är noll kallas nollställen."
+    },
+    {
+     "s": 110.7,
+     "e": 117.44,
+     "text": "Bryter man ut fem x blir höjden fem x gånger parentesen 4 minus x."
+    },
+    {
+     "s": 118.48,
+     "e": 125.66,
+     "text": "Det blir noll när x är noll, och när x är 4, för 4 minus 4 är noll."
+    },
+    {
+     "s": 126.56,
+     "e": 129.4,
+     "text": "Du fångar alltså bollen efter 4 sekunder."
+    },
+    {
+     "s": 130.78,
+     "e": 137.06,
+     "text": "Parabeln ser likadan ut på båda sidor om en lodrät linje som kallas symmetrilinjen."
+    },
+    {
+     "s": 138.06,
+     "e": 140.38,
+     "text": "Den ligger mitt emellan nollställena."
+    },
+    {
+     "s": 141.94,
+     "e": 150.86,
+     "text": "0 plus 4 är 4, och 4 delat med 2 är 2, så symmetrilinjen är x lika med 2."
+    },
+    {
+     "s": 152.06,
+     "e": 155.2,
+     "text": "På symmetrilinjen ligger parabelns högsta punkt."
+    },
+    {
+     "s": 156.32,
+     "e": 163.54,
+     "text": "När x är 2 blir höjden minus 5 gånger 2 i kvadrat plus 20 gånger 2,"
+    },
+    {
+     "s": 164.04,
+     "e": 171.04,
+     "text": "alltså minus 20 plus 40, så bollen kommer 20 meter upp efter 2 sekunder."
+    },
+    {
+     "s": 172.44,
+     "e": 176.84,
+     "text": "Till vänster på samma sida står räta linjen med lutningen k."
+    },
+    {
+     "s": 178,
+     "e": 185.42,
+     "text": "Under den står villkoret för vinkelräta linjer, k ett gånger k två är lika med minus 1."
+    },
+    {
+     "s": 186.68,
+     "e": 191.3,
+     "text": "Två linjer är vinkelräta när de korsar varandra i rät vinkel,"
+    },
+    {
+     "s": 191.88,
+     "e": 198.06,
+     "text": "som hörnet på ett papper, och k ett och k två är de två linjernas lutningar."
+    },
+    {
+     "s": 199.58,
+     "e": 206.06,
+     "text": "På en stadskarta med rutnät går en gata 2 rutor uppåt för varje ruta åt höger,"
+    },
+    {
+     "s": 206.56,
+     "e": 208.24,
+     "text": "så dess lutning är 2."
+    },
+    {
+     "s": 209.32,
+     "e": 214.02,
+     "text": "En annan gata går en halv ruta nedåt för varje ruta åt höger,"
+    },
+    {
+     "s": 214.56,
+     "e": 217.16,
+     "text": "så dess lutning är minus en halv."
+    },
+    {
+     "s": 218.62,
+     "e": 226.46,
+     "text": "2 gånger minus en halv är minus 1, så villkoret stämmer och gatorna korsar varandra i rät vinkel."
+    },
+    {
+     "s": 227.56,
+     "e": 231.92,
+     "text": "Varför det stämmer syns om man ritar en liten triangel vid den första gatan,"
+    },
+    {
+     "s": 232.6,
+     "e": 235.68,
+     "text": "en ruta åt höger och 2 rutor upp."
+    },
+    {
+     "s": 236.94,
+     "e": 243.66,
+     "text": "Vrider man triangeln ett kvarts varv går den i stället 2 rutor åt höger och 1 ruta nedåt,"
+    },
+    {
+     "s": 244.2,
+     "e": 246.8,
+     "text": "och det är lutningen minus en halv."
+    },
+    {
+     "s": 248.1,
+     "e": 253.32,
+     "text": "Vet man den ena lutningen får man den andra genom att dela minus 1 med den,"
+    },
+    {
+     "s": 254.02,
+     "e": 257.78,
+     "text": "och minus 1 delat med 2 är minus en halv."
+    },
+    {
+     "s": 259.32,
+     "e": 264.58,
+     "text": "Formlerna för avstånd och mittpunkt står på sidan 4, mitt på sidan."
+    },
+    {
+     "s": 265.56,
+     "e": 271.02,
+     "text": "Avståndsformeln räknar ut hur långt det är fågelvägen, alltså i en rak linje,"
+    },
+    {
+     "s": 271.56,
+     "e": 274.26,
+     "text": "mellan två punkter i ett koordinatsystem."
+    },
+    {
+     "s": 275.58,
+     "e": 284.18,
+     "text": "På en karta med rutnät ligger skolan där x är 1 och y är 2, och simhallen där x är 7"
+    },
+    {
+     "s": 284.24,
+     "e": 285.48,
+     "text": "och y är 10."
+    },
+    {
+     "s": 286.64,
+     "e": 295.96,
+     "text": "Varje ruta är en kilometer, så längs rutnätet cyklar du 6 kilometer åt höger och 8 kilometer uppåt."
+    },
+    {
+     "s": 297.14,
+     "e": 301.28,
+     "text": "De två sträckorna är de korta sidorna i en rätvinklig triangel,"
+    },
+    {
+     "s": 301.94,
+     "e": 304.66,
+     "text": "och fågelvägen är den längsta sidan."
+    },
+    {
+     "s": 305.78,
+     "e": 312.04,
+     "text": "Därför bygger avståndsformeln på Pythagoras sats, som står högst upp till höger på samma sida."
+    },
+    {
+     "s": 313.38,
+     "e": 321.48,
+     "text": "I formeln är x två minus x ett sträckan åt höger, 7 minus 1, alltså 6."
+    },
+    {
+     "s": 322.78,
+     "e": 329.94,
+     "text": "y två minus y ett är sträckan uppåt, 10 minus 2, alltså 8."
+    },
+    {
+     "s": 331.12,
+     "e": 336.44,
+     "text": "Då blir d roten ur 6 i kvadrat plus 8 i kvadrat."
+    },
+    {
+     "s": 337.9,
+     "e": 347.18,
+     "text": "36 plus 64 är 100, och roten ur 100 är 10, så fågelvägen är 10 kilometer."
+    },
+    {
+     "s": 348.76,
+     "e": 352.18,
+     "text": "Till höger om avståndsformeln står mittpunktsformeln."
+    },
+    {
+     "s": 353.04,
+     "e": 359.34,
+     "text": "Den hittar punkten mitt emellan två punkter på samma sätt som vi hittade bollens symmetrilinje,"
+    },
+    {
+     "s": 360.02,
+     "e": 362.24,
+     "text": "genom att lägga ihop och dela med 2."
+    },
+    {
+     "s": 363.48,
+     "e": 368.88,
+     "text": "Du cyklar från skolan och en kompis från simhallen, och ni vill mötas halvvägs."
+    },
+    {
+     "s": 370,
+     "e": 377.22,
+     "text": "För x blir det 1 plus 7, alltså 8, och 8 delat med 2 är 4."
+    },
+    {
+     "s": 378.56,
+     "e": 385.96,
+     "text": "För y blir det 2 plus 10, alltså 12, och 12 delat med 2 är 6."
+    },
+    {
+     "s": 387.04,
+     "e": 391.24,
+     "text": "Ni möts alltså där x är 4 och y är 6."
+    },
+    {
+     "s": 392.8,
+     "e": 400.46,
+     "text": "Du kastar bollen igen, men inte lika hårt, så att höjden blir y är lika med minus fem"
+    },
+    {
+     "s": 400.76,
+     "e": 403.48,
+     "text": "x i kvadrat plus tio x."
+    },
+    {
+     "s": 404.82,
+     "e": 407.88,
+     "text": "När fångar du bollen, och hur högt kommer den?"
+    },
+    {
+     "s": 409.32,
+     "e": 416.16,
+     "text": "Bryter man ut fem x blir höjden fem x gånger parentesen 2 minus x,"
+    },
+    {
+     "s": 416.9,
+     "e": 419.62,
+     "text": "så du fångar bollen efter 2 sekunder."
+    },
+    {
+     "s": 420.98,
+     "e": 430.1,
+     "text": "Symmetrilinjen ligger mitt emellan 0 och 2, vid 1, och där är höjden minus 5 plus 10,"
+    },
+    {
+     "s": 430.6,
+     "e": 432.2,
+     "text": "alltså 5 meter."
+    },
+    {
+     "s": 433.7,
+     "e": 441.9,
+     "text": "Till sist kastar du bollen hårdare, så att höjden blir y är lika med minus fem x i kvadrat"
+    },
+    {
+     "s": 441.98,
+     "e": 443.6,
+     "text": "plus trettio x."
+    },
+    {
+     "s": 444.78,
+     "e": 447.66,
+     "text": "När fångar du bollen, och hur högt kommer den?"
     }
    ]
   },

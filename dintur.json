@@ -521,6 +521,86 @@
       "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
     ]
   },
+  "formelbladet-ma2-2-andragradsfunktionen": {
+    "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x.",
+    "delar": [
+      {
+        "fraga": "När fångar du bollen?",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.001,
+        "enhet": "sekunder",
+        "exempel": "t.ex. 7",
+        "fel": [
+          {
+            "svar": "3",
+            "text": "3 sekunder är symmetrilinjen, när bollen är högst upp. Du fångar den när höjden är noll igen: 5x(6 − x) blir noll när x är 6."
+          },
+          {
+            "svar": "0",
+            "text": "När x är noll kastar du bollen. Det andra nollstället är när du fångar den: 5x(6 − x) blir noll när 6 − x är noll, alltså när x är 6."
+          },
+          {
+            "svar": "30",
+            "text": "30 är talet framför x. Bryt ut fem x: −5x² + 30x = 5x(6 − x), och parentesen blir noll när x är 6."
+          },
+          {
+            "svar": "5",
+            "text": "5 kommer från fem x, som blir noll när x är noll. Titta på parentesen: 6 − x blir noll när x är 6."
+          },
+          {
+            "svar": "4",
+            "text": "4 sekunder var bollen i filmen, som hade tjugo x. Här är det trettio x: 5x(6 − x) blir noll när x är 6."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur högt kommer bollen?",
+        "typ": "tal",
+        "svar": 45,
+        "tolerans": 0.001,
+        "enhet": "meter",
+        "exempel": "t.ex. 12",
+        "fel": [
+          {
+            "svar": "135",
+            "text": "Du har räknat plus 5 · 9. Det står minus fem x i kvadrat, så det blir −45 + 90 = 45."
+          },
+          {
+            "svar": "90",
+            "text": "90 är bara 30 · 3. Glöm inte −5 · 3² = −45, så höjden blir −45 + 90 = 45."
+          },
+          {
+            "svar": "3",
+            "text": "3 är tiden när bollen är högst upp, vid symmetrilinjen. Sätt in x = 3 i funktionen: −5 · 9 + 30 · 3 = −45 + 90 = 45 meter."
+          },
+          {
+            "svar": "6",
+            "text": "6 sekunder är när du fångar bollen. Högst upp är den mitt emellan 0 och 6, vid x = 3, och där är höjden −45 + 90 = 45 meter."
+          },
+          {
+            "svar": "0",
+            "text": "Noll är höjden när du kastar och fångar bollen. Högst upp är bollen vid symmetrilinjen x = 3: −5 · 9 + 30 · 3 = 45."
+          },
+          {
+            "svar": "20",
+            "text": "20 meter var bollen i filmen, som hade tjugo x. Här ligger symmetrilinjen vid x = 3, och −5 · 9 + 30 · 3 = −45 + 90 = 45 meter."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Bryter man ut fem x blir höjden fem x gånger parentesen 2",
+      "text": "Bryt ut fem x, så ser du när höjden är noll. Symmetrilinjen ligger mitt emellan nollställena, och där är bollen högst upp."
+    },
+    "losning": [
+      "Bryt ut fem x: y = 5x(6 − x).",
+      "Höjden är noll när x = 0 och när x = 6, så du fångar bollen efter 6 sekunder.",
+      "Symmetrilinjen ligger mitt emellan 0 och 6, vid x = 3.",
+      "y = −5 · 3² + 30 · 3 = −45 + 90 = 45, så bollen kommer 45 meter upp."
+    ],
+    "notisFran": "Du kastar bollen igen, men inte lika hårt"
+  },
   "formelbladet-ma2-3-logaritmer": {
     "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?",
     "delar": [
