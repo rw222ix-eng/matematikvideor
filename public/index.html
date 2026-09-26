@@ -618,7 +618,17 @@
      gammal dator: ljust mot den mörka sidan, och det blinkar. */
   .helatext.skriver li { opacity: 1; transform: none; transition: none; }
   .markor { display: inline-block; width: .5em; height: 1.05em; margin-left: 3px; vertical-align: -.16em; background: var(--ben); box-shadow: 0 0 8px rgba(236, 230, 216, .45); animation: markor .9s steps(1, end) infinite; }
+  /* Ett blink är 0,9 s (BLINK i skriptet). Innan skrivandet tonar blocket fram och börjar sedan
+     blinka; när raderingen är klar tonar det bort. */
+  .markor.in { animation: markor-in .5s var(--lugn) both, markor .9s steps(1, end) .5s infinite; }
+  .markor.ut { animation: markor-ut .45s var(--lugn) both; }
   @keyframes markor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes markor-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes markor-ut { from { opacity: 1; } to { opacity: 0; } }
+  /* Första radens tid och streck (0:00 —) tonar fram först och bort sist. */
+  .helatext .tid.tona-in { animation: ton .6s var(--lugn) both; }
+  .helatext .tid.tona-ut { animation: tid-ut .7s var(--lugn) both; }
+  @keyframes tid-ut { to { opacity: 0; } }
   .helatext li.syns { opacity: 1; transform: none; }
   .helatext button { all: unset; cursor: pointer; display: block; width: 100%; }
   .helatext button:focus-visible { outline: 2px solid var(--accent); outline-offset: 8px; border-radius: 4px; }
@@ -3088,38 +3098,53 @@
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
   // ── Skrivmaskinen (Rickard 2026-09-26) ──────────────
   // Hela texten dök upp på en gång och kändes abrupt bredvid sidans mjuka rörelser. Nu skrivs den
-  // fram som på en gammal dator: ett blinkande block står först en stund, sedan kommer bokstäverna
-  // rad för rad uppifrån, allt snabbare (det som syns är skrivet på ungefär 0,7 s, hela texten
-  // på knappt 2 s). Döljs texten raderas den baklänges, som när man håller inne backsteg: det som
-  // ligger under fönstret försvinner direkt, eftersom det ändå inte syns, och det som syns raderas
-  // bakifrån. Klickar man igen mitt i avbryts det som pågår (skrivId).
+  // fram som på en gammal dator. Först tonar första radens tid och streck (0:00 —) fram, sedan
+  // tonar blocket fram och blinkar tre gånger i vanlig takt, och sedan kommer bokstäverna rad för
+  // rad uppifrån, lugnt i början och lite snabbare efter hand (första raden på ungefär en sekund,
+  // det som syns på knappt tre, Rickard 2026-09-26: "långsammare"). Döljs texten raderas den
+  // baklänges, som när man håller inne backsteg: det som ligger under fönstret försvinner direkt,
+  // eftersom det ändå inte syns, och det som syns raderas bakifrån. När bara den tomma första
+  // raden är kvar blinkar blocket tre gånger, tonar bort, och sist tonar tiden och strecket bort.
+  // Klickar man igen mitt i avbryts det som pågår (skrivId).
   const markor = document.createElement("span");
   markor.className = "markor"; markor.setAttribute("aria-hidden", "true");
   let skrivId = 0;
+  const BLINK = 900;   // ett blink: blocket syns 0,45 s och är borta 0,45 s (.markor i stilarna)
   const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
-  const takt = (t) => 700 * t + 1250 * t * t;   // antal tecken efter t sekunder
+  const takt = (t) => 150 * t + 80 * t * t;   // antal tecken efter t sekunder
   const raderna = () => [...$("helatext").children].map((li) => ({ li, s: li.querySelector(".snutt") }));
   const radText = (li) => { const b = li.querySelector("[data-i]"), r = aktuell && b ? aktuell.repliker[Number(b.dataset.i)] : null; return r ? r.text : ""; };
   // Efteråt står varje rad med hela sin text igen, synlig, utan block.
   function aterstallText() {
     const ol = $("helatext");
-    raderna().forEach(({ li, s }) => { li.hidden = false; li.classList.add("syns"); if (s) s.textContent = radText(li); });
-    markor.remove(); ol.classList.remove("skriver"); ol.removeAttribute("aria-busy");
+    raderna().forEach(({ li, s }) => {
+      li.hidden = false; li.classList.add("syns"); if (s) s.textContent = radText(li);
+      const t = li.querySelector(".tid"); if (t) t.classList.remove("tona-in", "tona-ut");
+    });
+    markor.remove(); markor.className = "markor"; ol.classList.remove("skriver"); ol.removeAttribute("aria-busy");
   }
   async function skrivFram() {
     const id = ++skrivId, ol = $("helatext"), rader = raderna().filter((r) => r.s);
     if (!rader.length) return;
+    const avbrutet = () => id !== skrivId || !rader[0].li.isConnected;
     ol.classList.add("skriver"); ol.setAttribute("aria-busy", "true");
     const texter = rader.map(({ li }) => radText(li));
     rader.forEach(({ li, s }) => { li.hidden = true; s.textContent = ""; });
     let rad = 0, i = 0, skrivna = 0, nod = document.createTextNode("");
-    rader[0].li.hidden = false; rader[0].li.classList.add("syns"); rader[0].s.append(nod, markor);
-    await vanta(420);   // blocket blinkar en stund innan skrivandet börjar
-    if (id !== skrivId || !rader[0].li.isConnected) return;
+    // 0:00 och strecket tonar fram, sedan blocket, som blinkar tre gånger innan skrivandet börjar.
+    const tid0 = rader[0].li.querySelector(".tid");
+    rader[0].li.hidden = false; rader[0].li.classList.add("syns");
+    if (tid0) { tid0.classList.remove("tona-ut"); tid0.classList.add("tona-in"); }
+    await vanta(650);
+    if (avbrutet()) return;
+    markor.className = "markor in"; rader[0].s.append(nod, markor);
+    await vanta(500 + 3 * BLINK);
+    if (avbrutet()) return;
+    markor.className = "markor";
     const totalt = texter.reduce((a, t) => a + t.length, 0), start = performance.now();
     await new Promise((klar) => {
       const steg = (nu) => {
-        if (id !== skrivId || !rader[0].li.isConnected) return klar();
+        if (avbrutet()) return klar();
         const mal = Math.min(totalt, Math.floor(takt((nu - start) / 1000)));
         while (skrivna < mal) {
           const ta = Math.min(mal - skrivna, texter[rad].length - i);
@@ -3134,7 +3159,7 @@
       requestAnimationFrame(steg);
     });
     if (id !== skrivId) return;
-    await vanta(650);   // och blinkar en gång till när texten är klar
+    await vanta(BLINK);   // och blinkar en gång till när texten är klar
     if (id === skrivId) aterstallText();
   }
   // Ger true när allt är raderat, false om något annat tog över under tiden.
@@ -3147,15 +3172,15 @@
     if (!synliga.length) return true;
     const noder = synliga.map(({ s }) => { const n = document.createTextNode(s.textContent); s.textContent = ""; s.append(n); return n; });
     let rad = synliga.length - 1;
-    synliga[rad].s.append(markor);
-    await vanta(220);
+    markor.className = "markor"; synliga[rad].s.append(markor);
+    await vanta(350);
     if (id !== skrivId) return false;
     const totalt = noder.reduce((a, n) => a + n.nodeValue.length, 0), start = performance.now();
     let raderat = 0;
     await new Promise((klar) => {
       const steg = (nu) => {
         if (id !== skrivId) return klar();
-        const mal = Math.min(totalt, Math.floor(takt((nu - start) / 1000) * 1.3));
+        const mal = Math.min(totalt, Math.floor(takt((nu - start) / 1000) * 1.5));
         while (raderat < mal && rad >= 0) {
           const n = noder[rad], ta = Math.min(mal - raderat, n.nodeValue.length);
           n.nodeValue = n.nodeValue.slice(0, n.nodeValue.length - ta); raderat += ta;
@@ -3168,7 +3193,18 @@
       requestAnimationFrame(steg);
     });
     if (id !== skrivId) return false;
-    await vanta(260);   // blocket blinkar en sista gång på den tomma raden
+    // Tillbaka där det började: tom första rad med tid, streck och block. Blocket sätts in på nytt så
+    // att blinkandet börjar om, blinkar tre gånger och tonar bort; sist tonar tiden och strecket bort.
+    markor.remove(); markor.className = "markor"; synliga[0].s.append(markor);
+    await vanta(3 * BLINK);
+    if (id !== skrivId) return false;
+    markor.className = "markor ut";
+    await vanta(450);
+    if (id !== skrivId) return false;
+    markor.remove();
+    const tid0 = synliga[0].li.querySelector(".tid");
+    if (tid0) { tid0.classList.remove("tona-in"); tid0.classList.add("tona-ut"); }
+    await vanta(750);
     return id === skrivId;
   }
   async function doljHelaTexten() {
