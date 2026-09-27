@@ -1713,15 +1713,15 @@
       }
       if (m.r > .004 && stad > .5) {
         // Fönster och gatljus (Rickard 2026-09-26 "syns inte riktigt", 2026-09-27 "mycket tydligare ljussken" och
-        // sedan "mer subtilt, blinkar för mycket, glimmra är bra"): varmt ljus som glimrar mjukt och långsamt, ett
-        // varmt sken runt (masken: kärnan R = 1, skenet runt), och då och då släcks ett fönster en stund: en
-        // period på 20–45 s, ungefär var fjärde gång släckt i 3–8 s, och släckning och tändning tar ~1 s.
-        float takt = 20. + fract(m.g * 13.37) * 25., n = uT / takt + m.g * 5.1, k = floor(n), sek = fract(n) * takt;
-        float morkt = 3. + h1(k + 7.3 + m.g * 31.) * 5., slackt = 1. + h1(k + m.g * 91.7) * max(takt - morkt - 3., .1);
-        float ut_ = .8 + h1(k + 2.2 + m.g * 11.) * .6;
-        float av = step(.75, h1(k + 3.1 + m.g * 57.)) * smoothstep(slackt, slackt + ut_, sek) * (1. - smoothstep(slackt + morkt, slackt + morkt + ut_, sek));
+        // sedan "mer subtilt, blinkar för mycket" och "lite för subtilt"): varmt ljus som glimrar mjukt, ett varmt
+        // sken runt (masken: kärnan R = 1, skenet runt), och då och då släcks ett fönster en stund: en period på
+        // 14–32 s, ungefär varannan gång släckt i 2,5–6 s, och släckning och tändning tar 0,4–0,75 s.
+        float takt = 14. + fract(m.g * 13.37) * 18., n = uT / takt + m.g * 5.1, k = floor(n), sek = fract(n) * takt;
+        float morkt = 2.5 + h1(k + 7.3 + m.g * 31.) * 3.5, slackt = 1. + h1(k + m.g * 91.7) * max(takt - morkt - 3., .1);
+        float ut_ = .4 + h1(k + 2.2 + m.g * 11.) * .35;
+        float av = step(.5, h1(k + 3.1 + m.g * 57.)) * smoothstep(slackt, slackt + ut_, sek) * (1. - smoothstep(slackt + morkt, slackt + morkt + ut_, sek));
         float tant = 1. - av;
-        float fl = 1. + (.08 + .1 * fract(m.g * 3.7)) * ((brus(uT * .9 + m.g * 40.) * .65 + brus(uT * 2.2 + m.g * 17.) * .35) * 2. - 1.);
+        float fl = 1. + (.15 + .15 * fract(m.g * 3.7)) * ((brus(uT * 1.3 + m.g * 40.) * .6 + brus(uT * 3.4 + m.g * 17.) * .4) * 2. - 1.);
         float karna = smoothstep(.6, .9, m.r), sken = m.r * (1. - karna) / .55;
         vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
         vec3 varm = vec3(1., .72, .36);
