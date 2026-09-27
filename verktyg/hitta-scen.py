@@ -20,7 +20,7 @@ Utdata i public/omslag/:
   intro.jpg          grundbilden B (1672x941). Syns ocksa utan WebGL.
   intro-lager.webp   lagena, packade i en karta.
   intro-lager.png    samma karta, masker: R = det som tonas (figuren), G = det som vrids eller
-                     flyttas (slaggan, huvudet, handen med kritan), B = var figuren
+                     flyttas (slaggan, huvudet, handen med kritan, matstickans man), B = var figuren
                      tacker tavlan (kritan ritas inte dar).
   intro-glimt.png    stjarnorna (R = stjarna, G = fas).
   intro-scen.json    rutorna i kartan och de uppmatta punkterna.
@@ -67,16 +67,20 @@ LAGEN = {
     "matare-titta": ("matare-tittar", "A", (1430, 540, 1600, 690), (1515, 625), 15, (0, 0)),
     "matare-upp": ("upp-matare", "A", (1430, 530, 1600, 690), (1510, 640), 22, (0, 0)),
     "matare-krita": ("kritar", "A", (1360, 560, 1600, 760), (0, 0), 0, (0, 0)),
+    "matare-flytta": ("matare-flyttar-b", "B", (1290, 520, 1650, 775), (0, 0), 0, (0, 0)),
     "matem-tanker": ("m-tanker-2", "B", (1250, 330, 1530, 690), (0, 0), 0, (0, 0)),
     "matem-upp": ("upp-matematiker", "B", (1250, 330, 1530, 690), (0, 0), 0, (0, 0)),
 }
 # Var en figur far finnas. Matematikerns lagesbilder skiljer sig lite overallt (lyktan, blocket):
 # bara kring honom, inte vid lyktan och inte pa matstickans man.
 OMRADE = {"matem": lambda x, y: (x >= 1272) & (y < 640) & ~((x > 1438) & (y > 546)),
-          "matare": lambda x, y: (x >= 1360) & (y >= 540) & ~((x < 1440) & (y < 690))}
-# matare-flyttar.png anvands inte: den ar malad fran A och hela overkroppen flyttade sig ~65 px, dit dar A har
-# den gamla matematikerns stol och B tavlans vagg. Med huvudet utanfor masken forsvann ansiktet (Rickard
-# 2026-09-26). Hans lutning gors i stallet som en liten forskjutning i shadern.
+          "matare": lambda x, y: (x >= 1360) & (y >= 540) & ~((x < 1440) & (y < 690)),
+          # Nar han lutar sig fram hamnar huvudet framfor matematikerns rock; lagesbilden ar malad fran B,
+          # sa rocken bakom honom ar densamma.
+          "matare-flytta": lambda x, y: (x >= 1300) & (y >= 530)}
+# matare-flyttar.png (fran A) anvands inte: hela overkroppen flyttade sig ~65 px, dit dar A har den gamla
+# matematikerns stol och B tavlans vagg, och med huvudet utanfor masken forsvann ansiktet (Rickard 2026-09-26).
+# Lagen gjordes om fran B 2026-09-27 (matare-flyttar-b.png).
 # Astronomen: teleskopet och stativet star still; hander och okular tonas bara.
 STILLA = {"astronom": lambda x, y: (x < 1305) | ((x < 1316) & (y > 104))}
 BARA_TONA = {"astronom": lambda x, y: np.maximum(np.clip((1372 - x) / 36, 0, 1), np.clip((y - 150) / 30, 0, 1))}
@@ -115,6 +119,19 @@ def mjuk(mask, vaxt=0, sudd=1.2):
     if vaxt:
         mask = ndimage.binary_dilation(mask, iterations=vaxt)
     return np.clip(ndimage.gaussian_filter(mask.astype(np.float32), sudd) * 1.15, 0, 1)
+
+
+def flyttning(fore, efter, ruta, sok=100):
+    """Hur langt innehallet i rutan (x0, y0, x1, y1) i fore har flyttat sig i efter, i px (dx, dy)."""
+    x0, y0, x1, y1 = ruta
+    a = fore[y0:y1, x0:x1].mean(-1)
+    basta = None
+    for dy in range(-16, 17):
+        for dx in range(-sok, 13):
+            f = np.abs(a - efter[y0 + dy:y1 + dy, x0 + dx:x1 + dx].mean(-1)).mean()
+            if basta is None or f < basta[0]:
+                basta = (f, dx, dy)
+    return (basta[1], basta[2])
 
 
 def kantton(h, w, bredd=8):
@@ -173,6 +190,18 @@ def main():
         v = m.copy() if (grader or tuple(flytt) != (0, 0)) else np.zeros_like(m)
         if figur in BARA_TONA:
             v *= 1 - BARA_TONA[figur](xx2, yy2)
+        if namn == "matare-flytta":
+            # Han lutar sig fram: huvudet flyttas langt (uppmatt med korrelation), stickan en handsbredd.
+            # G ar hur stor del av huvudets flytt varje punkt far: 1 i huvud och overkropp, stickans andel vid
+            # handerna och stickan, 0 vid knana. Da glider huvudet till sin nya plats i stallet for att tonas
+            # (tonas 65 px syns inget ansikte alls mitt i rorelsen).
+            hvud = flyttning(grund[ref], las(bild), (1455, 555, 1540, 640))
+            stick = flyttning(grund[ref], las(bild), (1400, 695, 1465, 722))
+            r = float(np.clip(stick[0] / hvud[0], 0, 1)) if abs(hvud[0]) > 2 else 0.
+            falt = np.interp(yy2, [0, 632, 690, 722, 768, 10000], [1, 1, r, r, 0, 0])
+            v = np.clip(mjuk(rensa((d > 30) & omr, 60), 14, 8.0) * 1.3, 0, 1) * falt * kantton(b1 - b0, a1 - a0, 14)   # mjukt: ett brant falt river
+            flytt = hvud
+            print(f"  matare-flytta: huvudet {hvud}, stickan {stick}, andel {r:.2f}")
         bitar.append((namn, b, m, v, np.zeros_like(m)))
         lagen[namn] = {"kalla": [a0, b0, a1 - a0, b1 - b0], "vrid": [vp[0], vp[1], grader], "flytt": [float(f) for f in flytt]}
 

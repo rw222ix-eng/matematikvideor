@@ -2280,15 +2280,19 @@
         as.nasta = t + slump(7, 13);
       }
     };
-    // Mätaren: lutar sig fram över måttstocken, drar kritstreck, tittar på slagen och upp mot stjärnfallet.
-    // Lutningen är en förskjutning av hans egen överkropp (4–7 px fram och ner), aldrig en toning.
+    // Mätaren: skjuter måttstocken längs blocket (han lutar sig fram och glider dit, läget matare-flytta),
+    // drar kritstreck, böjer sig lite över stenen (en förskjutning av hans egen överkropp, 4–7 px), tittar på
+    // slagen och upp mot stjärnfallet.
     const ma = { nasta: slump(1, 3), lut: 0, lutFran: 0, lutTill: 0, lutStart: 0, lutDur: 1, lutHall: 0 };
     const styrMatare = (t) => {
       if (!fig.matare.pose && t >= ma.nasta && t >= ma.lutHall) {
-        if (Math.random() < .5) {
+        const val = Math.random();
+        if (val < .4) slot(fig.matare, "matare-flytta", 0, slump(1.0, 1.4), slump(1.0, 2.2), slump(1.0, 1.3));
+        else if (val < .7) slot(fig.matare, "matare-krita", 0, slump(.6, .9), slump(1.0, 2.0), slump(.6, .9));
+        else {
           ma.lutFran = ma.lut; ma.lutTill = 1; ma.lutStart = t; ma.lutDur = slump(.9, 1.3);
           ma.lutHall = t + ma.lutDur + slump(1.2, 2.6);
-        } else slot(fig.matare, "matare-krita", 0, slump(.6, .9), slump(1.0, 2.0), slump(.6, .9));
+        }
         ma.nasta = t + slump(4.5, 7.5);
       }
       if (ma.lutTill === 1 && t >= ma.lutHall) { ma.lutFran = ma.lut; ma.lutTill = 0; ma.lutStart = t; ma.lutDur = slump(.9, 1.2); }
@@ -2484,8 +2488,8 @@
     };
     // Kritans handstil: Kalam (samma som i filmerna), annars datorns egen handstil.
     const typsnitt = document.fonts ? document.fonts.load('400 64px "Kalam"').catch(() => null) : Promise.resolve();
-    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=10dd680c"), ladda("omslag/intro-lager.png?v=679bc675"),
-                 ladda("omslag/intro-glimt.png?v=ee1a49f5"), fetch("omslag/intro-scen.json?v=154a2c4f").then((r) => r.json()), typsnitt])
+    Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=06293caf"), ladda("omslag/intro-lager.png?v=54845094"),
+                 ladda("omslag/intro-glimt.png?v=ee1a49f5"), fetch("omslag/intro-scen.json?v=5c2f160d").then((r) => r.json()), typsnitt])
       .then(([bild, lager, lagerM, glimt, data]) => {
         scen = data; bygg();
         prog = gl.createProgram();

@@ -82,3 +82,6 @@ stol och B har tavlans vagg. Gors om som andring av grund2-b:
 - matare-flyttar-b (andring av grund2-b): samma text som matare-flyttar.
 Kunde inte goras 2026-09-26 ~20:05: bildgransen i Plus var nadd ("aterstalls i morgon kl. 10:39"). Losningen i stallet:
 matare-flyttar (A) anvands bara for handerna och stickan; huvudet och overkroppen ar grundbildens.
+2026-09-27 10:40-10:43: matare-flyttar-b gjord fran grund2-b i tva flikar (samma prompt), vald b2 (armarna strackta,
+stickan framfor kilen; i b1 lag stickan konstigt over den forsta kilen). Chattar: b1 /c/6ab8d69d-91e0-83ed-b5d4-a178a2a35f59,
+b2 /c/6ab8d6c5-5380-83eb-bef8-7738d7644a43. Bada pixelexakta pa grund2-b.
