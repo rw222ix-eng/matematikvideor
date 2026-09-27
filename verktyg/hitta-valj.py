@@ -73,8 +73,10 @@ KÄLLA_FRI = 5            # himlen som hamtas bakom tornen ligger minst sa langt
 KOPIA_GAP = 3
 
 # Fonster och gatljus.
-L_VÄRME, L_ÖVER, L_LJUS, L_MAX, L_MIN_YTA = 25.0, 12.0, 70.0, 22, 5
-L_SKEN = 4.0             # skenets radie runt fonstret, px
+# Rickard 2026-09-27: "mycket tydligare ljussken, glimmrande och av och pa slackande fonster och ljus runt om i
+# staden": aven de svagare ljusen raknas, och skenet ar storre (radie ~20 px).
+L_VÄRME, L_ÖVER, L_LJUS, L_MAX, L_MIN_YTA = 24.0, 10.0, 62.0, 22, 4
+L_SKEN = 6.5             # skenets radie runt fonstret, px (gauss)
 
 # Molnen. Galaxen och manen ar ljusa men ar inte moln och star still. Galaxen ar en sned
 # ellips, uppmatt i 1672x1300.

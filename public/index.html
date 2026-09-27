@@ -1614,7 +1614,7 @@
   // Ingenting läggs ovanpå målningarna. Bilden ritas som textur i en fragment-shader som
   // ändrar pixlarna själva (Rickard 2026-09-23). En mask per målning, uppmätt i förväg:
   //   R = stjärna eller ljus (mjuk kant), G = dess fas, B = vatten.
-  //   filmvalet: omslag/valj-glimt.png?v=8003078f ur verktyg/hitta-valj.py (stjärnor, fönster och gatljus, floden),
+  //   filmvalet: omslag/valj-glimt.png?v=315b4c59 ur verktyg/hitta-valj.py (stjärnor, fönster och gatljus, floden),
   //              och omslag/valj-himmel.png?v=78893dc6 (staden som står still, molnen, himlen bakom tornen)
   // - Stjärnor glimrar: överskottet över omgivningen (en suddig mipnivå) skalas mellan 25 och
   //   170 procent, var och en i sin egen takt, och i toppen sprids ljuset ut i ett litet sken
@@ -1712,20 +1712,25 @@
         c *= 1. + m.b * smoothstep(.3, .65, l) * (skimmer - .5) * .6;
       }
       if (m.r > .004 && stad > .5) {
-        // Fönster och gatljus (Rickard 2026-09-26: "ljusen som glimmar i fönstren syns inte riktigt"):
-        // varmt ljus som fladdrar lite, som en låga eller en gaslykta, och ett litet varmt sken runt.
-        // Var och en i sin egen takt (var 30–60:e sekund, men bara var tredje gång ungefär) släcks det en stund,
-        // 3–8 s, och tänds igen. Kärnan (R = 1) är fönstret, ringen under .6 är skenet.
-        float takt = 30. + fract(m.g * 13.37) * 30., n = uT / takt + m.g * 5.1, k = floor(n), sek = fract(n) * takt;
-        float slackt = takt * .15 + h1(k + m.g * 91.7) * (takt * .7 - 8.), morkt = 3. + h1(k + 7.3 + m.g * 31.) * 5.;
-        float tant = 1. - step(.7, h1(k + 3.1 + m.g * 57.))
-                   * smoothstep(slackt, slackt + .5, sek) * (1. - smoothstep(slackt + morkt, slackt + morkt + .9, sek));
-        float fl = 1. + (.05 + .12 * fract(m.g * 3.7)) * ((brus(uT * 3.1 + m.g * 40.) * .65 + brus(uT * 8.3 + m.g * 17.) * .35) * 2. - 1.);
-        float karna = smoothstep(.6, .9, m.r), sken = m.r * (1. - karna);
+        // Fönster och gatljus (Rickard 2026-09-26 "syns inte riktigt", 2026-09-27 "mycket tydligare ljussken,
+        // glimmrande och av och på släckande"): varmt ljus som fladdrar som en låga eller gaslykta, ett tydligt
+        // varmt sken runt (masken: kärnan R = 1, skenet ~20 px ut), och var och en släcks och tänds i sin egen
+        // takt: en period på 10–26 s, varannan gång ungefär släckt i 1,5–6 s. Släckningen och tändningen tar
+        // 0,25–0,6 s, ibland med ett litet flimmer när det tänds.
+        float takt = 10. + fract(m.g * 13.37) * 16., n = uT / takt + m.g * 5.1, k = floor(n), sek = fract(n) * takt;
+        float morkt = 1.5 + h1(k + 7.3 + m.g * 31.) * 4.5, slackt = .5 + h1(k + m.g * 91.7) * max(takt - morkt - 1.5, .1);
+        float ut_ = .25 + h1(k + 2.2 + m.g * 11.) * .35;
+        float av = step(.48, h1(k + 3.1 + m.g * 57.)) * smoothstep(slackt, slackt + ut_, sek) * (1. - smoothstep(slackt + morkt, slackt + morkt + ut_, sek));
+        float flimmer = step(slackt + morkt, sek) * (1. - step(slackt + morkt + .5, sek)) * step(.5, brus(uT * 22. + m.g * 9.));
+        float tant = clamp(1. - av - flimmer * .6, 0., 1.);
+        float fl = 1. + (.15 + .2 * fract(m.g * 3.7)) * ((brus(uT * 2.3 + m.g * 40.) * .55 + brus(uT * 6.1 + m.g * 17.) * .3 + brus(uT * 13. + m.g * 5.) * .15) * 2. - 1.);
+        float karna = smoothstep(.6, .9, m.r), sken = m.r * (1. - karna) / .55;
         vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
-        vec3 fonster = mix(omkring * .75 + (c - omkring) * .1, omkring + (c - omkring) * 1.3 * fl + vec3(.07, .045, .01) * fl, tant);
+        vec3 varm = vec3(1., .72, .36);
+        vec3 pa = omkring + (c - omkring) * 1.6 * fl + varm * .16 * fl;
+        vec3 fonster = mix(omkring * .7, pa, tant);
         c = mix(c, fonster, karna);
-        c += vec3(1., .66, .3) * sken * tant * fl * .3;
+        c += varm * pow(sken, 1.6) * tant * fl * .28;
       } else if (m.r > .004) {
         vec3 omkring = textureLod(uBild, vUv, 4.).rgb;
         float g = .5 + .5 * sin(uT * (.7 + fract(m.g * 7.31 + .17) * 1.4) + m.g * 6.2832);
@@ -1814,7 +1819,7 @@
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
   };
-  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=8003078f", himmel: "omslag/valj-himmel.png?v=78893dc6", fastTopp: true });
+  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=315b4c59", himmel: "omslag/valj-himmel.png?v=78893dc6", fastTopp: true });
 
   // ── Startsidans levande scen (Rickard 2026-09-26) ──
   // En natt på ett observatorium som byggs: en stenhuggare klyver ett block med slägga och kilar, en annan
