@@ -58,7 +58,7 @@ RUTA = 15
 S_TRÖSKEL = 14.0         # stjarna: sa mycket ljusare an omgivningen
 S_MAX_DIAMETER = 8
 S_SUDD, S_SUDD_TRÖSKEL = 26, 96   # stora ljusa omraden (mane, galaxkarna) tas bort
-S_MAX_ANTAL = 450
+S_MAX_ANTAL = 450          # i originalets bredd; i den utvidgade malningen i proportion
 VÄXT = 2
 # De gamla ljusen i staden (fore 2026-09-26) raknas fortfarande fram, bara for att stjarnorna
 # ska fa samma nummer och fas som forut. De skrivs inte ut.
@@ -85,6 +85,13 @@ MANE = (1470, 150, 70)
 # Flodens kontur i 1672x1300, uppmatt i bilden.
 FLOD = [(0, 893), (540, 893), (590, 950), (660, 1010), (705, 1080), (705, 1135),
         (420, 1165), (300, 1160), (200, 1130), (100, 1112), (0, 1105)]
+
+
+def FLOD_UT(W, OX):
+    """Floden i utvidgningarna (uppmatt i den breda malningen): till vanster fortsatter den fran kanten, till
+    hoger borjar den efter stadens sista hus. Inom konturen raknas bara det bla, inte morka, som vatten."""
+    return [[(0, 878), (OX + 10, 890), (OX + 10, 1105), (0, 1205)],
+            [(OX + 1672 + 60, 905), (W, 905), (W, 1180), (OX + 1672 + 60, 1172)]]
 
 
 def ljuspunkter(lum, median, kand, max_diameter, max_antal, min_yta=1):
@@ -117,15 +124,18 @@ def main():
     lum = bild @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
     median = ndimage.median_filter(lum, size=RUTA)
     över = lum - median
-    linje = int(W * SKYLINE_AV_BREDD)
+    linje = int(1672 * SKYLINE_AV_BREDD)
     yy, xx = np.mgrid[0:H, 0:W]
-    sx, sy = W / 1672, H / 1300
+    # Malningen ar utvidgad at sidorna (verktyg/utvidga.py, 2026-09-27): de uppmatta punkterna ar i originalets
+    # 1672x1300 och flyttas OX at hoger.
+    sx, sy = 1, 1
+    OX = (W - 1672) // 2
 
     # Stjarnor ovanfor staden (och de gamla ljusen, bara for numreringen).
     stort = ndimage.gaussian_filter(lum, S_SUDD) > S_SUDD_TRÖSKEL
     kand = (över > S_TRÖSKEL) & ~stort
     kand[linje:, :] = False
-    stjärnor = ljuspunkter(lum, median, kand, S_MAX_DIAMETER, S_MAX_ANTAL)
+    stjärnor = ljuspunkter(lum, median, kand, S_MAX_DIAMETER, int(S_MAX_ANTAL * W / 1672))
     värme = bild[..., 0] - bild[..., 2]
     kand = (över > F_TRÖSKEL) & (värme > F_VÄRME) & (median < F_MÖRK)
     kand[:linje - 30, :] = False
@@ -140,7 +150,9 @@ def main():
 
     # Vattnet: inom konturen och bla.
     kontur = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(kontur).polygon([(x * sx, y * sy) for x, y in FLOD], fill=255)
+    ImageDraw.Draw(kontur).polygon([(x + OX, y) for x, y in FLOD], fill=255)
+    for poly in FLOD_UT(W, OX):
+        ImageDraw.Draw(kontur).polygon(poly, fill=255)
     inom = np.asarray(kontur) > 0
     # Vatten ar blatt och inte morkt: traden pa on och i kanten har ljushet runt 14,
     # vattnet 38-61 (uppmatt i medianen).
@@ -148,18 +160,23 @@ def main():
     vatten = ndimage.binary_opening(vatten, iterations=2)
     vatten = np.clip(ndimage.gaussian_filter(vatten.astype(np.float32), 5) * 1.3, 0, 1)
 
-    # Silhuetten: staden och bergen.
+    # Silhuetten: staden och bergen. I utvidgningarna ar himlen vid horisonten morkare an i originalet, och
+    # tornen ar lagre: dar borjar staden langre ner (hogsta tornet till vanster y 700, till hoger y 760).
+    överst = np.where(xx < OX, 688, np.where(xx >= OX + 1672, 748, STAD_ÖVERST))
     m5 = ndimage.median_filter(lum, size=5)
-    kärna = ((m5 < STAD_MÖRK) & (yy >= STAD_ÖVERST)) | ((m5 < BERG_MÖRK) & (yy >= BERG_Y))
+    kärna = ((m5 < STAD_MÖRK) & (yy >= överst)) | ((m5 < BERG_MÖRK) & (yy >= BERG_Y))
     et, _ = ndimage.label(kärna)
     stad = np.isin(et, np.unique(et[-1][et[-1] > 0]))
     for _ in range(3):
-        stad |= ndimage.binary_dilation(stad) & (m5 < KANT_MÖRK) & (yy >= STAD_ÖVERST)
+        stad |= ndimage.binary_dilation(stad) & (m5 < KANT_MÖRK) & (yy >= överst)
     stad = ndimage.binary_fill_holes(stad)
+    # I utvidgningarna ar himlen vid horisonten lika mork som husen: dar star allt under raden 'överst' still
+    # (tornens toppar ar strax under den; ovanfor finns de rorliga molnen).
+    stad |= (yy >= överst) & ((xx < OX) | (xx >= OX + 1672))
     # Kors, spiror och vindflojlar pa tornen ar 1-3 px breda och forsvinner i medianen: de vaxer
     # fram ur tornet dar pixeln ar klart morkare an himlen runt (15x15-medianen - 15).
     # Ett glapp pa nagra px (kulan ovanpa korset) hoppas over: ratt uppat vaxer det 5 px at gangen.
-    tunt = (lum < median - 15) & (lum < 75) & (yy >= STAD_ÖVERST - 30)
+    tunt = (lum < median - 15) & (lum < 75) & (yy >= överst - 30)
     for _ in range(40):
         stad |= ndimage.binary_dilation(stad, structure=np.ones((11, 3), bool)) & tunt
     avst_stad = ndimage.distance_transform_edt(~stad)
@@ -196,12 +213,12 @@ def main():
     fri = np.ones((H, W), np.float32)
     gx, gy, ga, gb, gv = GALAX
     v = np.radians(gv)
-    dx, dy = (xx - gx * sx), (yy - gy * sy)
+    dx, dy = (xx - gx - OX), (yy - gy)
     u = (dx * np.cos(v) + dy * np.sin(v)) / (ga * sx)
     w = (-dx * np.sin(v) + dy * np.cos(v)) / (gb * sy)
     fri = np.minimum(fri, smooth(1.0, 1.35, np.sqrt(u * u + w * w)))
     for cx, cy, r in (GALAX_LITEN, MANE):
-        fri = np.minimum(fri, smooth(r * sx, r * sx + 40, np.hypot(xx - cx * sx, yy - cy * sy)))
+        fri = np.minimum(fri, smooth(r, r + 40, np.hypot(xx - cx - OX, yy - cy)))
     moln = moln * fri
     # I staden fylls molnigheten i fran himlen ovanfor, sa att en uppslagning nara kanten ar himmel.
     _, (my, mx) = ndimage.distance_transform_edt(stilla_kärna, return_indices=True)

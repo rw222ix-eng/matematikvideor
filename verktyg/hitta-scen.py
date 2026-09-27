@@ -93,6 +93,11 @@ SKRIV = {"bas": ("grund2-b", (1361, 415)), "mitt": ("m-mitt", (1297, 411)),
 LYKTA = (1230, 521)
 
 PAD = 6
+UTV = 600
+
+
+def las_bred():
+    return np.asarray(Image.open(KÄLLA / "grund2-bred.png").convert("RGB")).astype(np.float32)
 
 
 def las(namn):
@@ -142,7 +147,10 @@ def kantton(h, w, bredd=8):
 def main():
     A, B, utan = las(A_NAMN), las(B_NAMN), las(UTAN)
     H, W, _ = B.shape
-    Image.fromarray(B.astype(np.uint8)).save(UT / "intro.jpg", quality=90, optimize=True, progressive=True)
+    # Det som visas ar B utvidgad 600 px at vanster (verktyg/utvidga.py, Rickard 2026-09-27: inga suddiga eller
+    # tomma partier pa sidorna). Allt annat har ar i B:s koordinater; shadern flyttar dem UTV px (uE).
+    bred = las_bred()
+    Image.fromarray(bred.astype(np.uint8)).save(UT / "intro.jpg", quality=90, optimize=True, progressive=True)
     bitar = []          # (namn, farg, R, G, B)
 
     # Stenhuggaren.
@@ -256,12 +264,14 @@ def main():
     Image.fromarray(np.round(karta).astype(np.uint8)).save(UT / "intro-lager.webp", quality=88, method=6)
     Image.fromarray(np.round(mask * 255).astype(np.uint8)).save(UT / "intro-lager.png", optimize=True)
 
-    # Stjarnorna i himlen (bade A och B har samma himmel).
+    # Stjarnorna i himlen, i den breda bilden (bade A och B har samma himmel; utvidgningen har egna stjarnor).
+    B = bred
+    H, W, _ = B.shape
     lum = B @ np.array([0.299, 0.587, 0.114], np.float32)
     median = ndimage.median_filter(lum, size=15)
     yy, xx = np.mgrid[0:H, 0:W]
     himmel = (median < 60) & (yy < 440)
-    for r in [(1100, 170, W, H), (1150, 0, 1480, 230), (780, 30, 1230, H)]:
+    for r in [(1100 + UTV, 170, W, H), (1150 + UTV, 0, 1480 + UTV, 230), (780 + UTV, 30, 1230 + UTV, H), (0, 560, W, H)]:
         himmel &= ~((xx >= r[0]) & (xx < r[2]) & (yy >= r[1]) & (yy < r[3]))
     himmel = ndimage.binary_erosion(himmel, iterations=4)
     kand = (lum - median > 14) & himmel
@@ -289,6 +299,7 @@ def main():
         "lagen": lagen,
         "skriv": {"ruta": [a0, b0, a1 - a0, b1 - b0], "spetsar": {k: v[1] for k, v in SKRIV.items()}, "tavla": list(TAVLA)},
         "lykta": list(LYKTA),
+        "utvidgning": UTV,
     }
     (UT / "intro-scen.json").write_text(json.dumps(scen), encoding="utf8")
     print(f"intro-lager: {KW}x{KH}, {len(bitar)} rutor, {antal} stjarnor")

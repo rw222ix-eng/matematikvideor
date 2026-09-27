@@ -15,7 +15,7 @@
 <meta property="og:title" content="Matematikvideor av Rickard">
 <meta property="og:description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och filmer som går igenom formelbladet för Matematik 1 och 2. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
 <meta property="og:url" content="https://winterhalls-matte.vercel.app/">
-<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=e3eb79e9">
+<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=c3643a64">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,13 +163,12 @@
      1,29:1; i bredare fönster kapas bara den mörka förgrunden nedtill. I ännu smalare fönster
      blir den så hög som fönstret och kapas lika mycket på båda sidor: det får aldrig bli en
      remsa under målningen (Rickard 2026-09-23). Bredden 128.6vh = 100vh · 1672/1300.
-     Ändrat 2026-09-27 (Rickard: "man ser inte fönstren knappt på byggnaderna nedtill" i ett brett Chrome-fönster
-     med flikar och bokmärken): målningen är alltid precis så hög som fönstret, så staden med sina fönster
-     (y 780–1240 av 1300) syns hela. I fönster bredare än 1,29:1 tonas målningens kanter ut i en suddig, mörkare
-     kopia av den själv (.utfyllnad), i stället för att den förstoras och staden kapas. */
-  .valj .fond { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 128.6vh; width: 128.6dvh; max-width: none; height: auto; aspect-ratio: 1672 / 1300; z-index: 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
-  .valj .utfyllnad { position: absolute; inset: -60px; z-index: 0; pointer-events: none; background-size: cover; background-position: center top; filter: blur(34px) brightness(.62) saturate(.9); }
+     Ändrat 2026-09-27 (Rickard: "man ser inte fönstren knappt på byggnaderna nedtill" i ett brett Chrome-fönster,
+     och sedan: inga suddiga partier på sidorna, "de skall vara bild där också"): målningen är utvidgad åt båda
+     sidorna i ChatGPT-projektet till 3120x1300 (2,4:1, verktyg/utvidga.py). Den är alltid precis så hög som
+     fönstret, så staden med sina fönster syns hela, och kapas lika mycket på båda sidor; bara i fönster bredare
+     än 2,4:1 fyller den bredden och kapas nedtill. Bredden 240vh = 100vh · 3120/1300. */
+  .valj .fond { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: max(100%, 240vh); width: max(100%, 240dvh); max-width: none; height: auto; aspect-ratio: 3120 / 1300; z-index: 0; }
   /* Vinjetten är nedtonad till ungefär hälften (Rickard 2026-09-13, "lite ljusare" två gånger): fonden ska synas lite mer,
      men kanterna måste fortfarande mörkna så tidslinjens text går att läsa. */
   /* pointer-events: none — vinjetten är bara ljus och skugga. På telefonen (≤ 700 px) står växlaren Ma 1 · Ma 2 i
@@ -179,8 +178,7 @@
       linear-gradient(rgba(23, 20, 20, .09), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, 0) 60%, rgba(23, 20, 20, .38) 88%); }
   /* Samma målning ritad i WebGL, med glimrande stjärnor och ljus och rörligt vatten (se
      levandeMalning i skriptet). Duken har exakt fondens ruta och syns när första bilden är ritad. */
-  .valj .levande { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 128.6vh; width: 128.6dvh; height: auto; aspect-ratio: 1672 / 1300; z-index: 0; opacity: 0; pointer-events: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+  .valj .levande { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: max(100%, 240vh); width: max(100%, 240dvh); height: auto; aspect-ratio: 3120 / 1300; z-index: 0; opacity: 0; pointer-events: none; }
   .valj .levande.klar { opacity: 1; }
   .valj .tidslinje { z-index: 2; }
   /* "Välj en film" syntes dåligt mot himlen i 11 px (Rickard 2026-09-23): större, ljusare, med skugga. */
@@ -809,8 +807,7 @@
     /* I porträtt går hela målningen inte att visa utan en tunn remsa; här fyller den skärmen som förut. */
     .valj .fond { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; object-fit: cover; object-position: center top; -webkit-mask-image: none; mask-image: none; }
     .valj .vinjett { position: fixed; height: 100vh; }
-    .valj .levande { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; -webkit-mask-image: none; mask-image: none; }
-    .valj .utfyllnad { display: none; }
+    .valj .levande { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; }
     .valj .rubrik, .valj .tidslinje { position: relative; z-index: 2; }
     /* relative, inte static: en statisk rubrik målades under den fasta målningen och syntes inte på
        mobilen (upptäckt 2026-09-25). */
@@ -1142,7 +1139,7 @@
 
 <!-- ── 1. Intro ─────────────────────────────────────────── -->
 <section class="vy intro" id="vy-intro">
-  <img class="fond" src="omslag/intro.jpg?v=e3eb79e9" alt="" fetchpriority="high">
+  <img class="fond" src="omslag/intro.jpg?v=c3643a64" alt="" fetchpriority="high">
   <canvas class="levande" id="levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
   <header class="topp fram">
@@ -1161,8 +1158,7 @@
 
 <!-- ── 2. Välj en film ──────────────────────────────────── -->
 <section class="vy valj" id="vy-valj">
-  <div class="utfyllnad" style="background-image: url(omslag/valj-fond.jpg?v=ac6100bb)" aria-hidden="true"></div>
-  <img class="fond" src="omslag/valj-fond.jpg?v=ac6100bb" alt="" loading="lazy">
+  <img class="fond" src="omslag/valj-fond.jpg?v=59297e3d" alt="" loading="lazy">
   <canvas class="levande" id="valj-levande" aria-hidden="true"></canvas>
   <div class="vinjett"></div>
   <!-- Ingen logotyp här: den ledde bara tillbaka till introt, och där finns inget att göra
@@ -1618,8 +1614,8 @@
   // Ingenting läggs ovanpå målningarna. Bilden ritas som textur i en fragment-shader som
   // ändrar pixlarna själva (Rickard 2026-09-23). En mask per målning, uppmätt i förväg:
   //   R = stjärna eller ljus (mjuk kant), G = dess fas, B = vatten.
-  //   filmvalet: omslag/valj-glimt.png?v=9e2e378b ur verktyg/hitta-valj.py (stjärnor, fönster och gatljus, floden),
-  //              och omslag/valj-himmel.png?v=f7dc4496 (staden som står still, molnen, himlen bakom tornen)
+  //   filmvalet: omslag/valj-glimt.png?v=8003078f ur verktyg/hitta-valj.py (stjärnor, fönster och gatljus, floden),
+  //              och omslag/valj-himmel.png?v=78893dc6 (staden som står still, molnen, himlen bakom tornen)
   // - Stjärnor glimrar: överskottet över omgivningen (en suddig mipnivå) skalas mellan 25 och
   //   170 procent, var och en i sin egen takt, och i toppen sprids ljuset ut i ett litet sken
   //   (Rickard ville ha det tydligare, 2026-09-23). Fönster och gatljus: se shadern.
@@ -1818,7 +1814,7 @@
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
   };
-  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=9e2e378b", himmel: "omslag/valj-himmel.png?v=f7dc4496", fastTopp: true });
+  levandeMalning({ vy: $("vy-valj"), duk: $("valj-levande"), img: $("vy-valj").querySelector(".fond"), mask: "omslag/valj-glimt.png?v=8003078f", himmel: "omslag/valj-himmel.png?v=78893dc6", fastTopp: true });
 
   // ── Startsidans levande scen (Rickard 2026-09-26) ──
   // En natt på ett observatorium som byggs: en stenhuggare klyver ett block med slägga och kilar, en annan
@@ -1836,7 +1832,7 @@
     precision highp float;
     uniform sampler2D uBild, uLager, uLagerM, uMask, uText;
     uniform vec2 uPx, uKarta;
-    uniform float uT, uKantTon;
+    uniform float uT, uKantTon, uE;   // uE: målningen är utvidgad så många px åt vänster (allt annat i originalets px)
     uniform vec4 uSlRuta;           // stenhuggarens ruta i bilden: x0, y0, bredd, höjd
     uniform vec2 uBakom;            // bakgrunden utan honom: hörnet i kartan
     uniform vec4 uSlLage;           // läge a (xy) och b (zw): hörnen i kartan
@@ -1877,7 +1873,7 @@
     // Målningen vid en flyttad eller vriden punkt, med målningens egen mipnivå. Med texture() valde
     // GPU:n en suddigare nivå i 2x2-block där vridningen ändrar sig snabbt, och det blev prickade konturer.
     vec2 GX, GY;
-    vec3 bild(vec2 q) { return textureGrad(uBild, q / uPx, GX, GY).rgb; }
+    vec3 bild(vec2 q) { return textureGrad(uBild, (q + vec2(uE, 0.)) / uPx, GX, GY).rgb; }
     vec2 vrid(vec2 p, vec2 c, float a) { float s = sin(a), k = cos(a); p -= c; return c + vec2(k * p.x - s * p.y, s * p.x + k * p.y); }
     float inom(vec2 q, vec4 k) { vec2 l = q - k.xy; return step(.5, l.x) * step(.5, l.y) * step(l.x, k.z - .5) * step(l.y, k.w - .5); }
     // En ruta i kartan: bildens pixel q i källrutan k, vars kopia börjar i h i kartan. Utanför: ingenting.
@@ -1910,7 +1906,7 @@
       return bak * (1. - A) + mix(pa, pb, u);
     }
     void main() {
-      vec2 px = vUv * uPx;
+      vec2 px = vUv * uPx - vec2(uE, 0.);
       GX = dFdx(vUv); GY = dFdy(vUv);
       // Andningen: överkroppen sträcks lite uppåt från en punkt, mjukt utåt.
       vec2 p = px;
@@ -2095,7 +2091,8 @@
       const s = bred ? h / BH : Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
       const ox = bred ? 1 - sx : (1 - sx) * fx, oy = bred ? 0 : (1 - sy) * fy;
       gl.uniform2f(U.uSkala, sx, sy); gl.uniform2f(U.uForskj, ox, oy); gl.uniform1f(U.uKantTon, bred ? 1 : 0);
-      synlig = [Math.max(0, ox * BW), oy * BH, Math.min(BW, (ox + sx) * BW), (oy + sy) * BH];
+      const E = scen.utvidgning || 0;
+      synlig = [Math.max(0, ox * BW) - E, oy * BH, Math.min(BW, (ox + sx) * BW) - E, (oy + sy) * BH];
       rita1(performance.now());
     };
 
@@ -2498,7 +2495,7 @@
     // Kritans handstil: Kalam (samma som i filmerna), annars datorns egen handstil.
     const typsnitt = document.fonts ? document.fonts.load('400 64px "Kalam"').catch(() => null) : Promise.resolve();
     Promise.all([ladda(img.currentSrc || img.src), ladda("omslag/intro-lager.webp?v=06293caf"), ladda("omslag/intro-lager.png?v=54845094"),
-                 ladda("omslag/intro-glimt.png?v=ee1a49f5"), fetch("omslag/intro-scen.json?v=5c2f160d").then((r) => r.json()), typsnitt])
+                 ladda("omslag/intro-glimt.png?v=9c9e7793"), fetch("omslag/intro-scen.json?v=c0ce57c2").then((r) => r.json()), typsnitt])
       .then(([bild, lager, lagerM, glimt, data]) => {
         scen = data; bygg();
         prog = gl.createProgram();
@@ -2518,7 +2515,7 @@
         textur(0, bild, true, false); textur(1, lager, false, false); textur(2, lagerM, false, true); textur(3, glimt, false, true);
         textTex = textur(4, null, false, true);
         [["uBild", 0], ["uLager", 1], ["uLagerM", 2], ["uMask", 3], ["uText", 4]].forEach(([nm, e]) => gl.uniform1i(U[nm], e));
-        gl.uniform2f(U.uPx, BW, BH); gl.uniform2f(U.uKarta, scen.karta[0], scen.karta[1]);
+        gl.uniform2f(U.uPx, BW, BH); gl.uniform2f(U.uKarta, scen.karta[0], scen.karta[1]); gl.uniform1f(U.uE, scen.utvidgning || 0);
         const [x0, y0, x1, y1] = scen.stenhuggare.ruta;
         gl.uniform4f(U.uSlRuta, x0, y0, x1 - x0, y1 - y0);
         gl.uniform2f(U.uBakom, scen.rutor["s-bakom"][0], scen.rutor["s-bakom"][1]);
@@ -2541,24 +2538,24 @@
     // För granskningen (bildrutor i fast takt): stoppa den egna loopen och rita en given tid.
     duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, mt, met, fig, as, ma, slot: (...x) => { tNu = x.pop(); return slot(...x); } };
   };
-  // Var målningen ligger i fönstret. På datorn: i mitten, men inte så att stenhuggaren (x 845 i målningen,
-  // 1672 bred) hamnar bakom texten; i fönster nära 4:3 flyttas den åt höger (1024x768: skjortan låg bakom
-  // ingressen). På telefonen ligger texten över hela bredden: där visas astronomen, matematikern och blocket.
-  // Är fönstret bredare än målningen (Rickards Chrome med flikar, bokmärken och felsökningsrad: astronomen och
-  // blocket klipptes av) visas hela höjden, fäst till höger, och till vänster tar sidans mörker vid.
+  // Var målningen ligger i fönstret. Målningen är 2272x941: originalet (1672 bred) med 600 px utvidgning till vänster
+  // (Rickard 2026-09-27: aldrig suddiga eller tomma partier på sidorna). På datorn: originalet i mitten, men inte så att
+  // stenhuggaren (x 845 i originalet) hamnar bakom texten; då visas mer av utvidgningen till vänster. På telefonen ligger
+  // texten över hela bredden: där visas astronomen, matematikern och blocket.
+  const INTRO_B = 2272, INTRO_H = 941, INTRO_E = 600;
   const introFokus = () => {
     const vy = $("vy-intro"), fond = vy.querySelector(".fond"), b = vy.clientWidth, h = vy.clientHeight;
-    const bred = b > 700 && b / h > 1672 / 941 * 1.02;
-    fond.style.objectFit = bred ? "contain" : "";
-    if (bred) { fond.style.objectPosition = "100% 50%"; return [1, .5, true]; }
-    let fx = .8;
+    const s = Math.max(b / INTRO_B, h / INTRO_H), syns = b / s, over = INTRO_B - syns;
+    let ox;
     if (b > 700) {
-      const s = Math.max(b / 1672, h / 941), over = 1672 * s - b;
       const hoger = Math.max(...[".skrift", ".ingress"].map((q) => vy.querySelector(q).getBoundingClientRect().right));
-      fx = over < 1 ? .5 : Math.min(.5, Math.max(0, (845 * s - hoger - 24) / over));
-    }
-    fond.style.objectPosition = `${(fx * 100).toFixed(1)}% 50%`;
-    return [fx, .5, false];
+      ox = Math.min(INTRO_E + (1672 - syns) / 2, INTRO_E + 845 - (hoger + 24) / s);
+    } else ox = INTRO_E + (1672 - syns) * .8;
+    const fx = over < 1 ? .5 : Math.max(0, Math.min(1, ox / over));
+    // Bredare än 2,4:1: målningen fyller bredden och kapas lite upptill och mer nedtill (aldrig en tonad kant).
+    const fy = .4;
+    fond.style.objectPosition = `${(fx * 100).toFixed(1)}% ${fy * 100}%`;
+    return [fx, fy, false];
   };
   introFokus();
   levandeScen({ vy: $("vy-intro"), duk: $("levande"), img: $("vy-intro").querySelector(".fond"), fokus: introFokus });
