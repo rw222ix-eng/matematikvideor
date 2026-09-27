@@ -4922,11 +4922,19 @@
         { id: "kapitel", vy: "film", mal: () => $("kapitel"), lage: "pekar", nar: "kapitel", pausaEfter: true, svar: "Där börjar det kapitlet.",
           text: "Här är kapitlen. Varje kapitel är en del av filmen. Tryck på ett, så hoppar filmen dit." },
         // Visa allt: står texten redan öppen (eleven läser i den) handlar steget om raderna i den i stället.
-        { id: "allt", vy: "film", mal: () => (alltRuta.open ? $("allt") : visaAllt), ljus: () => (alltRuta.open ? [visaAllt, ...[...$("helatext").querySelectorAll("[data-t]")].filter((r) => synsIFonster(r, 1)).slice(0, 4)] : [visaAllt]),
-          lage: "prata", nar: ["allt", "rad"], pausaEfter: true,
-          hoppa: async () => { if (!alltRuta.open) { visaAllt.click(); await vila(700); } else { const r = [...$("helatext").querySelectorAll("[data-t]")].find((x) => synsIFonster(x, 1)); if (r) r.click(); } },
-          svar: (h) => (h === "rad" ? "Där sägs det i filmen." : "Här står allt som sägs i filmen."),
-          get text() { return alltRuta.open ? "Här står allt som sägs i filmen, rad för rad. Tryck på en rad, så hoppar filmen dit." : "Vill du läsa allt i lugn och ro? Tryck på Visa allt som sägs."; } },
+        // Texten: först öppnar eleven den. Sedan väntar Newton tills hela texten är framskriven (skrivmaskinen tar
+        // ~8 s), och står kvar medan eleven läser (Rickard 2026-09-27: han hoppade vidare innan man hann se texten
+        // fällas ut). Nästa eller en rad tar guiden vidare.
+        { id: "allt", vy: "film", mal: () => visaAllt, ljus: () => [visaAllt], hoppaOm: () => alltRuta.open,
+          lage: "prata", nar: "allt", hoppa: async () => { visaAllt.click(); },
+          svar: "Titta, här kommer allt som sägs i filmen.",
+          text: "Vill du läsa allt i lugn och ro? Tryck på Visa allt som sägs." },
+        { id: "rader", vy: "film", mal: () => visaAllt, hoppaOm: () => !alltRuta.open,
+          ljus: () => [...$("helatext").querySelectorAll("[data-t]")].filter((r) => synsIFonster(r, 1)).slice(0, 3),
+          vanta: async () => { await vantaPa(() => !$("helatext").classList.contains("skriver"), 12000); await vila(600); },
+          lage: "prata", nar: "rad", pausaEfter: true, svar: "Där sägs det i filmen.",
+          knappar: [["Nästa", () => visaSteg(guideNr + 1)], ["Avsluta", () => slutaGuide()]],
+          text: "Här står allt som sägs i filmen, rad för rad. Läs i lugn och ro. Tryck på en rad, så hoppar filmen dit." },
         // Din tur: har eleven redan löst uppgiften är steget bara en påminnelse om lösningen, utan uppgift.
         { id: "dintur", vy: "film", mal: () => $("dintur"), lage: "forvanad", finns: () => !!(aktuell && aktuell.dinTur), svar: "Så gör du i varje film.",
           get nar() { return dinturLost() ? undefined : "dintur"; },
@@ -4958,7 +4966,7 @@
     // börjar den med introt, i filmvalet med tidslinjen och flikarna. På filmsidan börjar den med den
     // del av sidan eleven tittar på (filmStart) och går neråt därifrån; stegen ovanför (resten) får
     // eleven välja till sist (erbjud).
-    const FILM = ["spela", "snabb", "pausa", "spola", "linje", "fart", "cc", "dela", "ljud", "hel", "kapitel", "allt", "dintur", "nasta", "delar"];
+    const FILM = ["spela", "snabb", "pausa", "spola", "linje", "fart", "cc", "dela", "ljud", "hel", "kapitel", "allt", "rader", "dintur", "nasta", "delar"];
     let resten = [];
     function planera() {
       const sok = sokOppen(), sokning = sok ? ["sokt", "sokStangd"] : [];
@@ -5038,6 +5046,8 @@
       // Guiden lyssnar från första stund: en snabb elev kan göra uppgiften medan Newton går dit.
       const lever = () => visar === "guide" && guideGang === gang && guideNr === n && !bekraftar;
       if (s.fore) s.fore();
+      // vanta: steget börjar först när det eleven ska se är klart (texten framskriven).
+      if (s.vanta) { await s.vanta(); if (!lever()) return; }
       if (mal) await tillMal(mal, s.text);
       if (!lever()) return;
       ljusFor = s.ljus || (mal ? () => [mal] : () => []);
