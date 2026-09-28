@@ -126,7 +126,7 @@
     ]
   },
   "kepler-och-planeterna": {
-    "fraga": "Tänk dig en planet som behöver 125 år för ett varv runt solen.",
+    "fraga": "En planet behöver 125 år för ett varv runt solen.",
     "delar": [
       {
         "fraga": "Hur många jordavstånd från solen ligger den?",
@@ -145,13 +145,13 @@
         ]
       }
     ],
-    "ledtrad": { "fras": "Så här läser man ett", "text": "Avståndet är a = T^(2/3). Talet under bråkstrecket säger vilken rot du tar, och talet över vad du höjer upp till." },
+    "ledtrad": { "fras": "Så här räknar man med", "text": "Avståndet är a = T^(2/3). Talet under bråkstrecket säger vilken rot du tar, och talet över vad du höjer upp till." },
     "losning": [
       "Keplers lag ger a = T^(2/3), och här är T = 125.",
       "a = 125^(2/3)",
       "Tredje roten ur 125 är 5, för 5 · 5 · 5 = 125.",
       "5 upphöjt till 2 är 25.",
-      "Planeten ligger 25 jordavstånd från solen. Samma räkning för Neptunus, 165^(2/3), ger ungefär 30."
+      "Planeten ligger 25 jordavstånd från solen."
     ]
   },
   "harrison-och-longituden": {
