@@ -1137,5 +1137,92 @@
       "x = 10 · tan 20°",
       "Räknaren ger tan 20° ≈ 0,364, så x ≈ 10 · 0,364 ≈ 3,6 km."
     ]
+  },
+  "ma1c-k6-01-sinus-cosinus-tangens": {
+    "notisFran": "Tänk dig att en elev",
+    "fraga": "Tänk dig att en elev hos Ahmes ritar en pyramid där höjden är 12, halva bredden 5 och den sneda sidan 13. Vinkeln v ligger nere vid marken.",
+    "delar": [
+      {
+        "fraga": "Vad är sin v? Skriv som bråk.",
+        "typ": "tal",
+        "svar": 0.923077,
+        "tolerans": 0.0006,
+        "exempel": "t.ex. 8/10",
+        "tangenter": [
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "5/13",
+            "tolerans": 0.0006,
+            "text": "5/13 är cosinus. Sinus är motstående katet delat med hypotenusan, och mitt emot vinkeln vid marken står höjden, 12."
+          },
+          {
+            "svar": "13/12",
+            "tolerans": 0.0006,
+            "text": "Du har vänt på bråket. Hypotenusan, 13, står under bråkstrecket."
+          },
+          {
+            "svar": "12/5",
+            "tolerans": 0.0006,
+            "text": "12/5 är tangens. Sinus delar med hypotenusan, den sneda sidan 13."
+          }
+        ]
+      },
+      {
+        "fraga": "Vad är cos v?",
+        "typ": "tal",
+        "svar": 0.384615,
+        "tolerans": 0.0006,
+        "exempel": "t.ex. 6/10",
+        "tangenter": [
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "12/13",
+            "tolerans": 0.0006,
+            "text": "12/13 är sinus. Cosinus är närliggande katet delat med hypotenusan: halva bredden, 5, går ut från vinkeln."
+          },
+          {
+            "svar": "13/5",
+            "tolerans": 0.0006,
+            "text": "Du har vänt på bråket. Hypotenusan, 13, står under bråkstrecket."
+          }
+        ]
+      },
+      {
+        "fraga": "Vad är tan v?",
+        "typ": "tal",
+        "svar": 2.4,
+        "tolerans": 0.0006,
+        "exempel": "t.ex. 8/6",
+        "tangenter": [
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "5/12",
+            "tolerans": 0.0006,
+            "text": "5/12 är tangens för vinkeln uppe i toppen, som Ahmes seked. För vinkeln vid marken är höjden motstående katet: 12 delat med 5."
+          },
+          {
+            "svar": "12/13",
+            "tolerans": 0.0006,
+            "text": "12/13 är sinus. Tangens delar de två kateterna med varandra, motstående delat med närliggande."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu kan vi skriva de tre",
+      "text": "Börja i vinkeln v vid marken. Höjden står mitt emot den, halva bredden går ut från den, och den sneda sidan är hypotenusan."
+    },
+    "losning": [
+      "Höjden 12 står mitt emot v, så den är motstående katet.",
+      "Halva bredden 5 går ut från v, så den är närliggande katet.",
+      "Den sneda sidan 13 är hypotenusan.",
+      "sin v = 12/13 ≈ 0,92, cos v = 5/13 ≈ 0,38 och tan v = 12/5 = 2,4."
+    ]
   }
 }
