@@ -1224,5 +1224,72 @@
       "Den sneda sidan 13 är hypotenusan.",
       "sin v = 12/13 ≈ 0,92, cos v = 5/13 ≈ 0,38 och tan v = 12/5 = 2,4."
     ]
+  },
+  "ma1c-k6-04-vektorbegreppet": {
+    "fraga": "En tyngd hänger stilla i två rep. Det ena repet drar två rutor åt vänster och tre rutor uppåt, och det andra drar två rutor åt höger och tre rutor uppåt.",
+    "delar": [
+      {
+        "fraga": "Rita repens resultant. Hur många rutor uppåt går den?",
+        "typ": "tal",
+        "svar": 6,
+        "exempel": "t.ex. 4",
+        "fel": [
+          {
+            "svar": "3",
+            "text": "Det är ett av repen. Lägg den andra pilen så att den börjar där den första slutar, och läs av från början till sista spetsen."
+          },
+          {
+            "svar": "4",
+            "text": "Stegen åt sidan tar ut varandra, 2 åt vänster och 2 åt höger. Det är stegen uppåt som läggs ihop: 3 + 3."
+          },
+          {
+            "svar": "0",
+            "text": "Det är stegen åt sidan som blir 0. Stegen uppåt läggs ihop: 3 + 3."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många rutor åt sidan går resultanten?",
+        "typ": "tal",
+        "svar": 0,
+        "exempel": "t.ex. 2",
+        "fel": [
+          {
+            "svar": "4",
+            "text": "Det ena repet drar 2 åt vänster och det andra 2 åt höger. De tar ut varandra."
+          },
+          {
+            "svar": "2",
+            "text": "Titta på båda repen: 2 åt vänster och 2 åt höger blir 0 åt sidan."
+          }
+        ]
+      },
+      {
+        "fraga": "Tyngdens pil ska göra summan av alla tre till nollvektorn. Hur många rutor uppåt går den? Nedåt skrivs med minus.",
+        "typ": "tal",
+        "svar": -6,
+        "exempel": "t.ex. −2",
+        "fel": [
+          {
+            "svar": "6",
+            "text": "Då blir summan 12 rutor uppåt. Tyngdens pil ska vara resultantens motsatta vektor: lika lång men åt andra hållet."
+          },
+          {
+            "svar": "-3",
+            "text": "Tyngden ska hålla emot båda repen tillsammans, alltså hela resultanten på 6 rutor."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Ska tre krafter ta ut varandra",
+      "text": "Lägg repens pilar efter varandra och rita resultanten. Tyngdens pil är resultanten vänd åt andra hållet, och då blir summan nollvektorn."
+    },
+    "losning": [
+      "Lägg pilarna efter varandra: 2 vänster och 3 upp, sedan 2 höger och 3 upp.",
+      "Resultanten går 0 rutor åt sidan och 6 rutor rakt uppåt.",
+      "Tyngdens pil är den motsatta vektorn: 6 rutor rakt nedåt.",
+      "Kontroll: tre pilar efter varandra kommer tillbaka till början, så summan är nollvektorn."
+    ]
   }
 }
