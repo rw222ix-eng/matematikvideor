@@ -979,5 +979,56 @@
       "13,6 + 34,1 = 47,7, så 47,7 % av äggen väger mellan 52 och 60 gram."
     ],
     "notisFran": "Samma figur fungerar för allt som är normalfördelat"
+  },
+  "ma1c-k6-05-addera-vektorer": {
+    "fraga": "Tänk dig en dag då Bligh seglade åt samma håll som vektorn u = (−2, 1), men dubbelt så långt.",
+    "delar": [
+      {
+        "fraga": "Vad blir x-koordinaten för den dagens vektor?",
+        "typ": "tal",
+        "svar": -4,
+        "exempel": "t.ex. −3",
+        "fel": [
+          {
+            "svar": "4",
+            "text": "Båten seglar västerut, åt vänster. Då är steget i x-led negativt."
+          },
+          {
+            "svar": "-2",
+            "text": "Det är x-koordinaten för u. Dubbelt så långt betyder 2 gånger u, så båda stegen gångras med 2."
+          },
+          {
+            "svar": "-3",
+            "text": "Du har lagt till 1. Dubbelt så långt betyder 2 gånger u: gånga steget med 2."
+          }
+        ]
+      },
+      {
+        "fraga": "Vad blir y-koordinaten?",
+        "typ": "tal",
+        "svar": 2,
+        "exempel": "t.ex. 3",
+        "fel": [
+          {
+            "svar": "1",
+            "text": "Det är y-koordinaten för u. När vektorn gångras med 2 gångras BÅDA stegen, även y-steget."
+          },
+          {
+            "svar": "-2",
+            "text": "Båten seglar norrut, uppåt. Då är steget i y-led positivt."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Om båten seglade tre dagar",
+      "text": "Samma håll men längre betyder ett tal gånger vektorn. Dubbelt så långt är 2 gånger u, och då gångras båda stegen med 2."
+    },
+    "losning": [
+      "Samma håll, dubbelt så långt: 2 · u.",
+      "2 · (−2, 1) = (2 · (−2), 2 · 1).",
+      "= (−4, 2).",
+      "Kontroll: (−4, 2) är parallell med u, för båda stegen är 2 gånger så stora."
+    ]
   }
 }
