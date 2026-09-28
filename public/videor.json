@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-28T15:28:18.783Z",
+ "byggd": "2026-09-28T15:30:56.034Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -4285,6 +4285,594 @@
      "s": 441.04,
      "e": 444.18,
      "text": "Skriv den dagens vektor i koordinatform."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k6-02-berakna-sidor",
+   "titel": "Everest och triangeln",
+   "ar": 1852,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-02-berakna-sidor-v1/ma1c-k6-02-berakna-sidor-1080p.mp4",
+   "moment": "Beräkna sidor i rätvinkliga trianglar",
+   "begrepp": [
+    "sinus",
+    "cosinus",
+    "tangens",
+    "hypotenusa",
+    "motstående katet",
+    "närliggande katet",
+    "rätvinklig triangel",
+    "vinkel"
+   ],
+   "beskrivning": "Lantmätarna i Indien kunde inte gå fram till bergen i Nepal. Från slätten, 174 kilometer bort, mätte de bara en vinkel, och 1852 visade uträkningen att topp nummer femton var världens högsta berg. Vi räknar ut sidor i en rätvinklig triangel med sinus, cosinus och tangens, både när x står i täljaren och i nämnaren.",
+   "youtube": null,
+   "langd": 421,
+   "omslag": "omslag/ma1c-k6-02-berakna-sidor.jpg?v=4f748d86",
+   "omslagRen": "omslag/ma1c-k6-02-berakna-sidor-ren.jpg?v=07eff420",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 0,
+     "text": "I mitten av artonhundratalet styrdes Indien av britterna, och de ville ha en exakt karta över landet. Därför mätte lantmätare upp hela landet med teodoliter, alltså kikare som mäter vinklar, och räknade ut avstånden med trianglar."
+    },
+    {
+     "t": 19,
+     "text": "Längst i norr ligger bergen i Himalaya. Men bergen står i Nepal, som inte släppte in utlänningar, så lantmätarna kom aldrig närmare än slätten i Indien, mer än hundrasjuttio kilometer bort."
+    },
+    {
+     "t": 35,
+     "text": "Vintern 1849 bar tolv män en teodolit som vägde ett halvt ton ut på slätten, och lantmätaren James Nicolson ställde den på ett torn. Från sex platser siktade han på en topp som bara hade ett nummer, femton, och mätte hur många grader upp den låg."
+    },
+    {
+     "t": 57,
+     "text": "Mätningarna skickades till ett kontor i Kolkata, där män satt och räknade hela dagarna, och deras chef var matematikern Radhanath Sikdar. År 1852 stod det klart att topp nummer femton var högre än alla andra berg man kände till."
+    },
+    {
+     "t": 76,
+     "text": "Men ingen hade varit i närheten av berget. Hur kan man räkna ut hur högt ett berg är, när man bara har en vinkel och ett avstånd?"
+    },
+    {
+     "t": 88,
+     "text": "Vi ritar det som en rätvinklig triangel. Ett hörn är teodoliten, ett hörn är toppen, och det räta hörnet ligger rakt under toppen, i höjd med slätten. Avståndet dit var hundrasjuttiofyra kilometer, och vinkeln upp mot toppen var två komma två grader."
+    },
+    {
+     "t": 109,
+     "text": "Höjden ligger mitt emot vinkeln, så den är motstående katet. Avståndet ligger vid vinkeln, så det är närliggande katet."
+    },
+    {
+     "t": 120,
+     "text": "Nu väljer vi den kvot där både det vi vet och det vi söker finns med. Vi vet närliggande katet och söker motstående katet, och båda finns i tangens, som står på formelbladet."
+    },
+    {
+     "t": 135,
+     "text": "Höjden kallar vi x. Då är tangens två komma två grader lika med x delat med hundrasjuttiofyra. Vi multiplicerar båda leden med hundrasjuttiofyra, så x är hundrasjuttiofyra gånger tangens två komma två grader. Räknaren ger ungefär noll komma noll tre åtta fyra för tangens, så x blir ungefär sex komma sju kilometer."
+    },
+    {
+     "t": 164,
+     "text": "Men jorden är rund, och så långt bort gömmer sig ungefär två komma ett kilometer av berget bakom jordens rundning. Så berget är ungefär sex komma sju plus två komma ett, alltså åtta komma åtta kilometer högt."
+    },
+    {
+     "t": 183,
+     "text": "Samma triangel går att räkna åt andra hållet. Tänk dig att slätten gick ända fram till berget, och att du vill se toppen trettio grader upp. Nu vet vi motstående katet, åtta komma åtta kilometer, och söker närliggande katet, så det blir tangens igen."
+    },
+    {
+     "t": 203,
+     "text": "Tangens trettio grader är lika med åtta komma åtta delat med x. Nu står x i nämnaren, så vi multiplicerar båda leden med x och delar sedan båda leden med tangens trettio grader. Då är x lika med åtta komma åtta delat med tangens trettio grader, ungefär femton komma två kilometer."
+    },
+    {
+     "t": 229,
+     "text": "Siktlinjen är hypotenusan, och den och motstående katet finns båda i sinus. Sinus trettio grader är åtta komma åtta delat med x, så x är åtta komma åtta delat med sinus trettio grader. Sinus trettio grader är exakt noll komma fem, så siktlinjen är sjutton komma sex kilometer."
+    },
+    {
+     "t": 256,
+     "text": "Uppe vid toppen är den andra spetsiga vinkeln sextio grader, och sett därifrån är höjden närliggande katet. Därför är cosinus sextio grader också noll komma fem, precis som sinus trettio grader. Sinus för den ena spetsiga vinkeln är alltid cosinus för den andra."
+    },
+    {
+     "t": 279,
+     "text": "Ju närmare berget man står, desto brantare blir vinkeln. När vinkeln närmar sig nittio grader blir tangens hur stort som helst, för höjden delas med ett avstånd som nästan är noll. Tangens åttionio grader är ungefär femtiosju, och tangens åttionio komma nio nio nio grader är ungefär femtiosjutusen."
+    },
+    {
+     "t": 307,
+     "text": "Ibland vet man bara en kvot, till exempel att cosinus v är åtta delat med tio. Då ritar vi en triangel med närliggande katet åtta och hypotenusan tio, och Pythagoras sats ger motstående katet sex, för trettiosex plus sextiofyra är hundra. Så sinus v är sex delat med tio, och tangens v är sex delat med åtta."
+    },
+    {
+     "t": 338,
+     "text": "Ett övningstal. En klättrare går trehundra meter uppför en isbrant som lutar fyrtio grader. Hur mycket högre kommer hon? Rita figuren först. Branten är hypotenusan, och höjden ligger mitt emot vinkeln, så vi väljer sinus."
+    },
+    {
+     "t": 359,
+     "text": "Sinus fyrtio grader är lika med x delat med trehundra, så x är trehundra gånger sinus fyrtio grader, ungefär hundranittiotre meter. Sträckan framåt är närliggande katet, alltså trehundra gånger cosinus fyrtio grader, ungefär tvåhundratrettio meter."
+    },
+    {
+     "t": 383,
+     "text": "Höjden meddelades 1856, och berget döptes efter George Everest, som hade lett kartläggningen. I dag mäts Mount Everest med satelliter till åttatusen åttahundrafyrtionio meter, bara nio meter mer än de åttatusen åttahundrafyrtio som räknades fram från slätten."
+    },
+    {
+     "t": 408,
+     "text": "Tänk dig att du står tio kilometer från ett berg och ser toppen tjugo grader upp. Välj rätt kvot och räkna ut hur högt berget är."
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 0,
+     "rubrik": "Lantmätarna och topp nummer femton",
+     "typ": "historia"
+    },
+    {
+     "t": 88,
+     "rubrik": "Höjden med tangens",
+     "typ": "matte"
+    },
+    {
+     "t": 183,
+     "rubrik": "När x står i nämnaren",
+     "typ": "matte"
+    },
+    {
+     "t": 229,
+     "rubrik": "Hypotenusan med sinus",
+     "typ": "matte"
+    },
+    {
+     "t": 256,
+     "rubrik": "Sinus och cosinus för de två vinklarna",
+     "typ": "matte"
+    },
+    {
+     "t": 279,
+     "rubrik": "Tangens nära 90°",
+     "typ": "matte"
+    },
+    {
+     "t": 307,
+     "rubrik": "En kvot blir en triangel",
+     "typ": "matte"
+    },
+    {
+     "t": 338,
+     "rubrik": "Övning: klättraren på isbranten",
+     "typ": "matte"
+    },
+    {
+     "t": 383,
+     "rubrik": "Mount Everest i dag",
+     "typ": "historia"
+    },
+    {
+     "t": 408,
+     "rubrik": "Din tur",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 383,
+    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp.",
+    "delar": [
+     {
+      "fraga": "Hur högt är berget? Svara i kilometer med en decimal.",
+      "typ": "tal",
+      "svar": 3.6397,
+      "tolerans": 0.06,
+      "enhet": "kilometer",
+      "exempel": "t.ex. 6,7",
+      "fel": [
+       {
+        "svar": "3.42",
+        "tolerans": 0.03,
+        "text": "Det är 10 gånger sinus 20°. Men 10 kilometer är avståndet längs marken, närliggande katet, inte hypotenusan. Närliggande och motstående katet finns i tangens."
+       },
+       {
+        "svar": "9.4",
+        "tolerans": 0.03,
+        "text": "Det är 10 gånger cosinus 20°. Höjden ligger mitt emot vinkeln och avståndet ligger vid den, så det är tangens du behöver."
+       },
+       {
+        "svar": "27.47",
+        "tolerans": 0.05,
+        "text": "Du har delat med tangens. tan 20° = x / 10, så x är 10 gånger tan 20°."
+       },
+       {
+        "svar": "22.37",
+        "tolerans": 0.05,
+        "text": "Räknaren står i radianer. Ställ om den till grader (DEG) och räkna igen."
+       },
+       {
+        "svar": "20",
+        "text": "Vinkeln är 20 grader, men höjden är ett avstånd. Ställ upp tan 20° = x / 10."
+       }
+      ],
+      "nara": {
+       "tolerans": 0.15,
+       "text": "Nästan. Räkna 10 · tan 20° och avrunda till en decimal."
+      }
+     }
+    ],
+    "ledtrad": {
+     "text": "Välj den kvot där både det du vet och det du söker finns med. Du vet närliggande katet, 10 km, och söker motstående katet, höjden. Båda finns i tangens.",
+     "t": 120
+    },
+    "losning": [
+     "Avståndet 10 km ligger vid vinkeln, så det är närliggande katet. Höjden x ligger mitt emot, så den är motstående katet.",
+     "tan 20° = x / 10",
+     "x = 10 · tan 20°",
+     "Räknaren ger tan 20° ≈ 0,364, så x ≈ 10 · 0,364 ≈ 3,6 km."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 0.18,
+     "e": 7.5,
+     "text": "I mitten av 1800-talet styrdes Indien av britterna, och de ville ha en exakt karta över landet."
+    },
+    {
+     "s": 8.38,
+     "e": 15.12,
+     "text": "Därför mätte lantmätare upp hela landet med teodoliter, alltså kikare som mäter vinklar,"
+    },
+    {
+     "s": 15.76,
+     "e": 18.1,
+     "text": "och räknade ut avstånden med trianglar."
+    },
+    {
+     "s": 19.34,
+     "e": 22.12,
+     "text": "Längst i norr ligger bergen i Himalaya."
+    },
+    {
+     "s": 22.74,
+     "e": 29.54,
+     "text": "Men bergen står i Nepal, som inte släppte in utlänningar, så lantmätarna kom aldrig närmare"
+    },
+    {
+     "s": 29.62,
+     "e": 33.94,
+     "text": "än slätten i Indien, mer än 170 kilometer bort."
+    },
+    {
+     "s": 35.24,
+     "e": 42.28,
+     "text": "Vintern 1849 bar tolv män en teodolit som vägde ett halvt ton ut på slätten,"
+    },
+    {
+     "s": 42.84,
+     "e": 46.44,
+     "text": "och lantmätaren James Nicolson ställde den på ett torn."
+    },
+    {
+     "s": 47.52,
+     "e": 52.12,
+     "text": "Från sex platser siktade han på en topp som bara hade ett nummer,"
+    },
+    {
+     "s": 52.5,
+     "e": 56.08,
+     "text": "femton, och mätte hur många grader upp den låg."
+    },
+    {
+     "s": 57.32,
+     "e": 62.46,
+     "text": "Mätningarna skickades till ett kontor i Kolkata, där män satt och räknade hela dagarna,"
+    },
+    {
+     "s": 62.98,
+     "e": 66.62,
+     "text": "och deras chef var matematikern Radhanath Sikdar."
+    },
+    {
+     "s": 67.72,
+     "e": 76,
+     "text": "År 1852 stod det klart att topp nummer femton var högre än alla andra berg man kände till."
+    },
+    {
+     "s": 76.8,
+     "e": 79.94,
+     "text": "Men ingen hade varit i närheten av berget."
+    },
+    {
+     "s": 81.04,
+     "e": 87.08,
+     "text": "Hur kan man räkna ut hur högt ett berg är, när man bara har en vinkel och ett avstånd?"
+    },
+    {
+     "s": 88.34,
+     "e": 91.08,
+     "text": "Vi ritar det som en rätvinklig triangel."
+    },
+    {
+     "s": 91.68,
+     "e": 99.12,
+     "text": "Ett hörn är teodoliten, ett hörn är toppen, och det räta hörnet ligger rakt under toppen,"
+    },
+    {
+     "s": 99.42,
+     "e": 100.54,
+     "text": "i höjd med slätten."
+    },
+    {
+     "s": 101.64,
+     "e": 108.74,
+     "text": "Avståndet dit var 174 kilometer, och vinkeln upp mot toppen var 2,2 grader."
+    },
+    {
+     "s": 109.86,
+     "e": 114.14,
+     "text": "Höjden ligger mitt emot vinkeln, så den är motstående katet."
+    },
+    {
+     "s": 115.18,
+     "e": 119.5,
+     "text": "Avståndet ligger vid vinkeln, så det är närliggande katet."
+    },
+    {
+     "s": 120.66,
+     "e": 125.32,
+     "text": "Nu väljer vi den kvot där både det vi vet och det vi söker finns med."
+    },
+    {
+     "s": 126.14,
+     "e": 132.58,
+     "text": "Vi vet närliggande katet och söker motstående katet, och båda finns i tangens,"
+    },
+    {
+     "s": 132.94,
+     "e": 134.48,
+     "text": "som står på formelbladet."
+    },
+    {
+     "s": 135.6,
+     "e": 136.96,
+     "text": "Höjden kallar vi x."
+    },
+    {
+     "s": 137.64,
+     "e": 143.74,
+     "text": "Då är tangens 2,2 grader lika med x delat med 174."
+    },
+    {
+     "s": 144.64,
+     "e": 151.62,
+     "text": "Vi multiplicerar båda leden med 174, så x är 174 gånger tangens"
+    },
+    {
+     "s": 151.68,
+     "e": 153.18,
+     "text": "2,2 grader."
+    },
+    {
+     "s": 154.24,
+     "e": 159.24,
+     "text": "Räknaren ger ungefär 0,0384 för tangens,"
+    },
+    {
+     "s": 159.72,
+     "e": 163.38,
+     "text": "så x blir ungefär 6,7 kilometer."
+    },
+    {
+     "s": 164.48,
+     "e": 170.78,
+     "text": "Men jorden är rund, och så långt bort gömmer sig ungefär 2,1 kilometer av berget"
+    },
+    {
+     "s": 171.22,
+     "e": 173.1,
+     "text": "bakom jordens rundning."
+    },
+    {
+     "s": 173.98,
+     "e": 181.96,
+     "text": "Så berget är ungefär 6,7 plus 2,1, alltså 8,8 kilometer högt."
+    },
+    {
+     "s": 183.42,
+     "e": 186.34,
+     "text": "Samma triangel går att räkna åt andra hållet."
+    },
+    {
+     "s": 186.88,
+     "e": 192.7,
+     "text": "Tänk dig att slätten gick ända fram till berget, och att du vill se toppen 30 grader upp."
+    },
+    {
+     "s": 193.8,
+     "e": 200.24,
+     "text": "Nu vet vi motstående katet, 8,8 kilometer, och söker närliggande katet,"
+    },
+    {
+     "s": 200.5,
+     "e": 202.16,
+     "text": "så det blir tangens igen."
+    },
+    {
+     "s": 203.32,
+     "e": 208.4,
+     "text": "Tangens 30 grader är lika med 8,8 delat med x."
+    },
+    {
+     "s": 209.46,
+     "e": 215.96,
+     "text": "Nu står x i nämnaren, så vi multiplicerar båda leden med x och delar sedan båda leden"
+    },
+    {
+     "s": 216.02,
+     "e": 218.18,
+     "text": "med tangens 30 grader."
+    },
+    {
+     "s": 219.16,
+     "e": 224.4,
+     "text": "Då är x lika med 8,8 delat med tangens 30 grader,"
+    },
+    {
+     "s": 224.96,
+     "e": 227.86,
+     "text": "ungefär 15,2 kilometer."
+    },
+    {
+     "s": 229.26,
+     "e": 235.86,
+     "text": "Siktlinjen är hypotenusan, och den och motstående katet finns båda i sinus."
+    },
+    {
+     "s": 236.92,
+     "e": 244.62,
+     "text": "Sinus 30 grader är 8,8 delat med x, så x är 8,8 delat med"
+    },
+    {
+     "s": 244.76,
+     "e": 246.52,
+     "text": "sinus 30 grader."
+    },
+    {
+     "s": 247.64,
+     "e": 255.72,
+     "text": "Sinus 30 grader är exakt 0,5, så siktlinjen är 17,6 kilometer."
+    },
+    {
+     "s": 256.86,
+     "e": 261.12,
+     "text": "Uppe vid toppen är den andra spetsiga vinkeln 60 grader,"
+    },
+    {
+     "s": 261.48,
+     "e": 265.14,
+     "text": "och sett därifrån är höjden närliggande katet."
+    },
+    {
+     "s": 265.98,
+     "e": 272.52,
+     "text": "Därför är cosinus 60 grader också 0,5, precis som sinus 30 grader."
+    },
+    {
+     "s": 273.58,
+     "e": 278.58,
+     "text": "Sinus för den ena spetsiga vinkeln är alltid cosinus för den andra."
+    },
+    {
+     "s": 279.74,
+     "e": 283.6,
+     "text": "Ju närmare berget man står, desto brantare blir vinkeln."
+    },
+    {
+     "s": 284.46,
+     "e": 289.24,
+     "text": "När vinkeln närmar sig 90 grader blir tangens hur stort som helst,"
+    },
+    {
+     "s": 289.7,
+     "e": 293.56,
+     "text": "för höjden delas med ett avstånd som nästan är noll."
+    },
+    {
+     "s": 294.6,
+     "e": 302.4,
+     "text": "Tangens 89 grader är ungefär 57, och tangens 89,999"
+    },
+    {
+     "s": 302.46,
+     "e": 305.9,
+     "text": "grader är ungefär 57 000."
+    },
+    {
+     "s": 307.2,
+     "e": 313.78,
+     "text": "Ibland vet man bara en kvot, till exempel att cosinus v är 8 delat med 10."
+    },
+    {
+     "s": 314.78,
+     "e": 320.02,
+     "text": "Då ritar vi en triangel med närliggande katet 8 och hypotenusan 10,"
+    },
+    {
+     "s": 320.54,
+     "e": 328.66,
+     "text": "och Pythagoras sats ger motstående katet 6, för 36 plus 64 är 100."
+    },
+    {
+     "s": 329.64,
+     "e": 336.76,
+     "text": "Så sinus v är 6 delat med 10, och tangens v är 6 delat med 8."
+    },
+    {
+     "s": 338.02,
+     "e": 345.72,
+     "text": "Ett övningstal. En klättrare går 300 meter uppför en isbrant som lutar 40 grader."
+    },
+    {
+     "s": 346.6,
+     "e": 348.38,
+     "text": "Hur mycket högre kommer hon?"
+    },
+    {
+     "s": 349.18,
+     "e": 350.64,
+     "text": "Rita figuren först."
+    },
+    {
+     "s": 351.28,
+     "e": 356.1,
+     "text": "Branten är hypotenusan, och höjden ligger mitt emot vinkeln,"
+    },
+    {
+     "s": 356.4,
+     "e": 357.88,
+     "text": "så vi väljer sinus."
+    },
+    {
+     "s": 359.12,
+     "e": 367.28,
+     "text": "Sinus 40 grader är lika med x delat med 300, så x är 300 gånger sinus"
+    },
+    {
+     "s": 367.36,
+     "e": 371.48,
+     "text": "40 grader, ungefär 193 meter."
+    },
+    {
+     "s": 372.62,
+     "e": 379.72,
+     "text": "Sträckan framåt är närliggande katet, alltså 300 gånger cosinus 40 grader,"
+    },
+    {
+     "s": 380.26,
+     "e": 382.66,
+     "text": "ungefär 230 meter."
+    },
+    {
+     "s": 383.98,
+     "e": 390.22,
+     "text": "Höjden meddelades 1856, och berget döptes efter George Everest,"
+    },
+    {
+     "s": 390.56,
+     "e": 392.28,
+     "text": "som hade lett kartläggningen."
+    },
+    {
+     "s": 393.24,
+     "e": 399.5,
+     "text": "I dag mäts Mount Everest med satelliter till 8 849 meter,"
+    },
+    {
+     "s": 400.14,
+     "e": 407.52,
+     "text": "bara nio meter mer än de 8 840 som räknades fram från slätten."
+    },
+    {
+     "s": 408.88,
+     "e": 414.84,
+     "text": "Tänk dig att du står 10 kilometer från ett berg och ser toppen 20 grader upp."
+    },
+    {
+     "s": 415.94,
+     "e": 419.74,
+     "text": "Välj rätt kvot och räkna ut hur högt berget är."
     }
    ]
   },

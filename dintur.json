@@ -1083,5 +1083,59 @@
       "sin v = 1/20",
       "v = sin⁻¹(1/20) ≈ 2,9°. Tornet lutar ungefär 2,9 grader."
     ]
+  },
+  "ma1c-k6-02-berakna-sidor": {
+    "notisFran": "Höjden meddelades 1856, och berget",
+    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp.",
+    "delar": [
+      {
+        "fraga": "Hur högt är berget? Svara i kilometer med en decimal.",
+        "typ": "tal",
+        "svar": 3.6397,
+        "tolerans": 0.06,
+        "enhet": "kilometer",
+        "exempel": "t.ex. 6,7",
+        "fel": [
+          {
+            "svar": "3.42",
+            "tolerans": 0.03,
+            "text": "Det är 10 gånger sinus 20°. Men 10 kilometer är avståndet längs marken, närliggande katet, inte hypotenusan. Närliggande och motstående katet finns i tangens."
+          },
+          {
+            "svar": "9.4",
+            "tolerans": 0.03,
+            "text": "Det är 10 gånger cosinus 20°. Höjden ligger mitt emot vinkeln och avståndet ligger vid den, så det är tangens du behöver."
+          },
+          {
+            "svar": "27.47",
+            "tolerans": 0.05,
+            "text": "Du har delat med tangens. tan 20° = x / 10, så x är 10 gånger tan 20°."
+          },
+          {
+            "svar": "22.37",
+            "tolerans": 0.05,
+            "text": "Räknaren står i radianer. Ställ om den till grader (DEG) och räkna igen."
+          },
+          {
+            "svar": "20",
+            "text": "Vinkeln är 20 grader, men höjden är ett avstånd. Ställ upp tan 20° = x / 10."
+          }
+        ],
+        "nara": {
+          "tolerans": 0.15,
+          "text": "Nästan. Räkna 10 · tan 20° och avrunda till en decimal."
+        }
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu väljer vi den kvot",
+      "text": "Välj den kvot där både det du vet och det du söker finns med. Du vet närliggande katet, 10 km, och söker motstående katet, höjden. Båda finns i tangens."
+    },
+    "losning": [
+      "Avståndet 10 km ligger vid vinkeln, så det är närliggande katet. Höjden x ligger mitt emot, så den är motstående katet.",
+      "tan 20° = x / 10",
+      "x = 10 · tan 20°",
+      "Räknaren ger tan 20° ≈ 0,364, så x ≈ 10 · 0,364 ≈ 3,6 km."
+    ]
   }
 }
