@@ -1030,5 +1030,58 @@
       "= (−4, 2).",
       "Kontroll: (−4, 2) är parallell med u, för båda stegen är 2 gånger så stora."
     ]
+  },
+  "ma1c-k6-03-berakna-vinklar": {
+    "notisFran": "I december 2001 öppnades tornet",
+    "fraga": "Tänk dig ett annat torn, där det är 20 meter upp längs tornet till toppen och där ett snöre från toppen når marken 1 meter vid sidan av foten.",
+    "delar": [
+      {
+        "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
+        "typ": "tal",
+        "svar": 2.866,
+        "tolerans": 0.06,
+        "enhet": "grader",
+        "exempel": "t.ex. 5,4",
+        "tangenter": [
+          "/",
+          "(",
+          ")"
+        ],
+        "nara": {
+          "tolerans": 0.25,
+          "text": "Nästan. Skriv hela divisionen, 1 delat med 20, i räknaren och svara med en decimal, som 5,4 i filmen."
+        },
+        "fel": [
+          {
+            "svar": "87.1",
+            "tolerans": 0.06,
+            "text": "Det är vinkeln nere vid tornets fot. Lutningen är vinkeln uppe vid toppen, mellan tornet och snöret."
+          },
+          {
+            "svar": "0.05",
+            "tolerans": 0.002,
+            "text": "0,05 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 20 (SHIFT och sin på räknaren)."
+          },
+          {
+            "svar": "20",
+            "text": "20 meter är tornet, hypotenusan. Frågan är hur många grader tornet lutar: ta arcussinus av 1 delat med 20."
+          },
+          {
+            "svar": "1",
+            "text": "1 meter är sträckan vid sidan av foten. Dela den med tornets 20 meter och ta arcussinus av kvoten."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu känner vi kvoten men",
+      "text": "Sträckan vid sidan av foten ligger mitt emot vinkeln uppe vid toppen, och tornet är hypotenusan. Då är det sinus, och vinkeln får du med arcussinus."
+    },
+    "losning": [
+      "Tornet är hypotenusan, 20 meter.",
+      "Sträckan vid sidan av foten, 1 meter, ligger mitt emot vinkeln v uppe vid toppen. Den är motstående katet.",
+      "sin v = 1/20",
+      "v = sin⁻¹(1/20) ≈ 2,9°. Tornet lutar ungefär 2,9 grader."
+    ]
   }
 }

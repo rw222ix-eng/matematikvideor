@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-28T15:24:42.270Z",
+ "byggd": "2026-09-28T15:28:18.783Z",
  "videor": [
   {
    "id": "delos-och-altaret",
@@ -4285,6 +4285,584 @@
      "s": 441.04,
      "e": 444.18,
      "text": "Skriv den dagens vektor i koordinatform."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k6-03-berakna-vinklar",
+   "titel": "Tornet i Pisa",
+   "ar": 1990,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-03-berakna-vinklar-v1/ma1c-k6-03-berakna-vinklar-1080p.mp4",
+   "moment": "Beräkna vinklar",
+   "begrepp": [
+    "arcussinus",
+    "arcuscosinus",
+    "arcustangens",
+    "sin⁻¹",
+    "vinkel",
+    "rätvinklig triangel",
+    "hypotenusa",
+    "motstående katet",
+    "närliggande katet",
+    "exakta värden"
+   ],
+   "beskrivning": "Lutande tornet i Pisa stängdes 1990, för att det lutade lite mer för varje år. Experterna mätte hur långt toppen hänger ut och räknade lutningen i grader. Vi räknar vinklar med arcussinus, arcuscosinus och arcustangens, tar fram den andra vinkeln i triangeln, ser vad som händer nära 0 och 90 grader och får exakta värden ur en ritad triangel.",
+   "youtube": null,
+   "langd": 429,
+   "omslag": "omslag/ma1c-k6-03-berakna-vinklar.jpg?v=7af56a7a",
+   "omslagRen": "omslag/ma1c-k6-03-berakna-vinklar-ren.jpg?v=2b99a923",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 0,
+     "text": "I januari 1990 stängdes det lutande tornet i Pisa för alla besökare. Tornet hade lutat ända sedan det byggdes på elvahundratalet, eftersom marken under den södra sidan är mjukare än under den norra. För varje år lutade det lite mer."
+    },
+    {
+     "t": 20,
+     "text": "Året innan hade ett gammalt torn i staden Pavia plötsligt rasat, och fyra människor dog. Därför samlade Italiens regering en grupp experter som skulle rädda tornet i Pisa. En av dem var ingenjören John Burland från London."
+    },
+    {
+     "t": 40,
+     "text": "Först behövde de veta exakt hur mycket tornet lutade. Från foten är det fyrtiosex meter upp längs tornet till kanten under klockorna. Hänger man ett snöre med en tyngd i änden från den kanten, så hänger snöret rakt ner och når marken fyra komma tre meter vid sidan av tornets fot."
+    },
+    {
+     "t": 63,
+     "text": "Men gruppen räknade lutningen i grader, och snöret ger bara längder. Hur många grader lutar tornet?"
+    },
+    {
+     "t": 73,
+     "text": "Tornet, snöret och marken bildar en rätvinklig triangel. Den räta vinkeln är där snöret når marken, och tornet på fyrtiosex meter är hypotenusan. Lutningen är vinkeln v uppe vid toppen, mellan tornet och snöret."
+    },
+    {
+     "t": 93,
+     "text": "Mitt emot v ligger sträckan på fyra komma tre meter, alltså motstående katet. Motstående katet delat med hypotenusan är sinus, så sinus v är fyra komma tre delat med fyrtiosex."
+    },
+    {
+     "t": 111,
+     "text": "Nu känner vi kvoten men inte vinkeln, så vi måste räkna åt andra hållet. Det gör knappen som boken kallar arcussinus. Den sitter oftast ovanför sinusknappen, och man når den med SHIFT."
+    },
+    {
+     "t": 128,
+     "text": "Arcussinus svarar på frågan vilken vinkel som har den här kvoten. Skriv hela divisionen, fyra komma tre delat med fyrtiosex, med räknaren i grader, så får du att tornet lutade ungefär fem komma fyra grader."
+    },
+    {
+     "t": 147,
+     "text": "Kvoterna står på formelbladet under Trigonometri, men arcussinus står inte där. Den finns på räknaren, precis som arcuscosinus och arcustangens ovanför knapparna för cosinus och tangens."
+    },
+    {
+     "t": 164,
+     "text": "Vilken av dem man använder beror på vilka två sidor man känner. Snöret är fyrtiofem komma åtta meter och ligger intill v, så det är närliggande katet. Med snöret och de fyra komma tre metrarna blir det tangens, och arcustangens av fyra komma tre delat med fyrtiofem komma åtta ger samma fem komma fyra grader. Med snöret och tornet blir det cosinus och arcuscosinus."
+    },
+    {
+     "t": 197,
+     "text": "Triangeln har en vinkel till, nere vid tornets fot. Alla tre vinklarna är tillsammans hundraåttio grader och den räta tar nittio, så vinkeln vid foten är nittio minus fem komma fyra, alltså åttiofyra komma sex grader. Det som står mitt emot den ena vinkeln ligger intill den andra, så sinus för den ena vinkeln är cosinus för den andra."
+    },
+    {
+     "t": 228,
+     "text": "Gruppen bestämde att tornet skulle rätas upp en halv grad, men inte bli rakt. År 1993 lade de sexhundra ton bly på den norra sidan för att hålla emot."
+    },
+    {
+     "t": 243,
+     "text": "Sedan borrade de snett in under den norra sidan och drog ut lite jord i taget, sammanlagt trettiosju kubikmeter. Två gånger om dagen mätte de tornet och bestämde var nästa jord skulle tas. Den norra sidan sjönk långsamt, och toppen kom tillbaka."
+    },
+    {
+     "t": 265,
+     "text": "År 2001 hängde toppen ut ungefär tre komma nio meter. Hur många grader lutade tornet då? Sinus v är tre komma nio delat med fyrtiosex, och arcussinus ger ungefär fyra komma nio grader. Det är en halv grad mindre, precis som gruppen ville."
+    },
+    {
+     "t": 289,
+     "text": "Om de hade fortsatt tills tornet stod helt rakt, skulle toppen inte hänga ut alls. Då blir sinus v och tangens v noll, och snöret blir lika långt som tornet, så cosinus v blir ett."
+    },
+    {
+     "t": 306,
+     "text": "Åt andra hållet, om tornet föll mot marken, skulle vinkeln gå mot nittio grader. Då går sinus mot ett och cosinus mot noll, och tangens blir hur stor som helst, för snöret blir allt kortare."
+    },
+    {
+     "t": 324,
+     "text": "Räknaren ger avrundade svar, men ibland vill boken ha exakta värden. Då ritar man en triangel med kvotens tal som sidor. Om sinus v är tre femtedelar, blir motstående katet tre och hypotenusan fem."
+    },
+    {
+     "t": 343,
+     "text": "Den tredje sidan får man med Pythagoras sats, som står raden ovanför på formelbladet. fem i kvadrat minus tre i kvadrat är sexton, så närliggande katet är fyra. Då är cosinus v exakt fyra femtedelar och tangens v tre fjärdedelar."
+    },
+    {
+     "t": 367,
+     "text": "På samma sätt får man trettio grader. En liksidig triangel med sidan två har tre vinklar på sextio grader. Delar man den mitt itu, får man en rätvinklig triangel där sidan mitt emot trettio grader är ett och hypotenusan är två, så sinus trettio grader är exakt en halv."
+    },
+    {
+     "t": 393,
+     "text": "I december 2001 öppnades tornet igen. Nu lutar det ungefär lika mycket som i början av artonhundratalet, och ingenjörerna räknade med att det dröjer ungefär trehundra år innan det lutar lika mycket som 1990."
+    },
+    {
+     "t": 412,
+     "text": "Tänk dig ett annat torn, där det är tjugo meter upp längs tornet till toppen och där ett snöre från toppen når marken en meter vid sidan av foten. Hur många grader lutar tornet?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 0,
+     "rubrik": "Tornet stängs",
+     "typ": "historia"
+    },
+    {
+     "t": 40,
+     "rubrik": "Snöret och triangeln",
+     "typ": "matte"
+    },
+    {
+     "t": 111,
+     "rubrik": "Arcussinus: från kvot till vinkel",
+     "typ": "matte"
+    },
+    {
+     "t": 164,
+     "rubrik": "Arcustangens, arcuscosinus och den andra vinkeln",
+     "typ": "matte"
+    },
+    {
+     "t": 228,
+     "rubrik": "Blyet och borrhålen",
+     "typ": "historia"
+    },
+    {
+     "t": 265,
+     "rubrik": "Övning: lutningen 2001",
+     "typ": "matte"
+    },
+    {
+     "t": 289,
+     "rubrik": "När vinkeln går mot 0 och 90 grader",
+     "typ": "matte"
+    },
+    {
+     "t": 324,
+     "rubrik": "Exakta värden",
+     "typ": "matte"
+    },
+    {
+     "t": 393,
+     "rubrik": "Tornet öppnas igen",
+     "typ": "historia"
+    },
+    {
+     "t": 412,
+     "rubrik": "Ett annat torn",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 393,
+    "fraga": "Tänk dig ett annat torn, där det är 20 meter upp längs tornet till toppen och där ett snöre från toppen når marken 1 meter vid sidan av foten.",
+    "delar": [
+     {
+      "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
+      "typ": "tal",
+      "svar": 2.866,
+      "tolerans": 0.06,
+      "enhet": "grader",
+      "exempel": "t.ex. 5,4",
+      "tangenter": [
+       "/",
+       "(",
+       ")"
+      ],
+      "nara": {
+       "tolerans": 0.25,
+       "text": "Nästan. Skriv hela divisionen, 1 delat med 20, i räknaren och svara med en decimal, som 5,4 i filmen."
+      },
+      "fel": [
+       {
+        "svar": "87.1",
+        "tolerans": 0.06,
+        "text": "Det är vinkeln nere vid tornets fot. Lutningen är vinkeln uppe vid toppen, mellan tornet och snöret."
+       },
+       {
+        "svar": "0.05",
+        "tolerans": 0.002,
+        "text": "0,05 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 20 (SHIFT och sin på räknaren)."
+       },
+       {
+        "svar": "20",
+        "text": "20 meter är tornet, hypotenusan. Frågan är hur många grader tornet lutar: ta arcussinus av 1 delat med 20."
+       },
+       {
+        "svar": "1",
+        "text": "1 meter är sträckan vid sidan av foten. Dela den med tornets 20 meter och ta arcussinus av kvoten."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Sträckan vid sidan av foten ligger mitt emot vinkeln uppe vid toppen, och tornet är hypotenusan. Då är det sinus, och vinkeln får du med arcussinus.",
+     "t": 111
+    },
+    "losning": [
+     "Tornet är hypotenusan, 20 meter.",
+     "Sträckan vid sidan av foten, 1 meter, ligger mitt emot vinkeln v uppe vid toppen. Den är motstående katet.",
+     "sin v = 1/20",
+     "v = sin⁻¹(1/20) ≈ 2,9°. Tornet lutar ungefär 2,9 grader."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 0.2,
+     "e": 5.98,
+     "text": "I januari 1990 stängdes det lutande tornet i Pisa för alla besökare."
+    },
+    {
+     "s": 7.16,
+     "e": 10.68,
+     "text": "Tornet hade lutat ända sedan det byggdes på 1100-talet,"
+    },
+    {
+     "s": 11.14,
+     "e": 15.52,
+     "text": "eftersom marken under den södra sidan är mjukare än under den norra."
+    },
+    {
+     "s": 16.72,
+     "e": 19.24,
+     "text": "För varje år lutade det lite mer."
+    },
+    {
+     "s": 20.84,
+     "e": 25.74,
+     "text": "Året innan hade ett gammalt torn i staden Pavia plötsligt rasat,"
+    },
+    {
+     "s": 26.2,
+     "e": 27.66,
+     "text": "och fyra människor dog."
+    },
+    {
+     "s": 28.9,
+     "e": 34.06,
+     "text": "Därför samlade Italiens regering en grupp experter som skulle rädda tornet i Pisa."
+    },
+    {
+     "s": 35.22,
+     "e": 38.96,
+     "text": "En av dem var ingenjören John Burland från London."
+    },
+    {
+     "s": 40.52,
+     "e": 43.72,
+     "text": "Först behövde de veta exakt hur mycket tornet lutade."
+    },
+    {
+     "s": 44.8,
+     "e": 50.04,
+     "text": "Från foten är det 46 meter upp längs tornet till kanten under klockorna."
+    },
+    {
+     "s": 51.26,
+     "e": 57.26,
+     "text": "Hänger man ett snöre med en tyngd i änden från den kanten, så hänger snöret rakt ner"
+    },
+    {
+     "s": 57.32,
+     "e": 61.98,
+     "text": "och når marken 4,3 meter vid sidan av tornets fot."
+    },
+    {
+     "s": 63.26,
+     "e": 68.5,
+     "text": "Men gruppen räknade lutningen i grader, och snöret ger bara längder."
+    },
+    {
+     "s": 69.58,
+     "e": 71.74,
+     "text": "Hur många grader lutar tornet?"
+    },
+    {
+     "s": 73.36,
+     "e": 78.04,
+     "text": "Tornet, snöret och marken bildar en rätvinklig triangel."
+    },
+    {
+     "s": 78.9,
+     "e": 86.06,
+     "text": "Den räta vinkeln är där snöret når marken, och tornet på 46 meter är hypotenusan."
+    },
+    {
+     "s": 87.38,
+     "e": 92.44,
+     "text": "Lutningen är vinkeln v uppe vid toppen, mellan tornet och snöret."
+    },
+    {
+     "s": 93.82,
+     "e": 100.18,
+     "text": "Mitt emot v ligger sträckan på 4,3 meter, alltså motstående katet."
+    },
+    {
+     "s": 101.34,
+     "e": 110.44,
+     "text": "Motstående katet delat med hypotenusan är sinus, så sinus v är 4,3 delat med 46."
+    },
+    {
+     "s": 111.74,
+     "e": 116.98,
+     "text": "Nu känner vi kvoten men inte vinkeln, så vi måste räkna åt andra hållet."
+    },
+    {
+     "s": 118.04,
+     "e": 121.48,
+     "text": "Det gör knappen som boken kallar arcussinus."
+    },
+    {
+     "s": 122.52,
+     "e": 127.08,
+     "text": "Den sitter oftast ovanför sinusknappen, och man når den med SHIFT."
+    },
+    {
+     "s": 128.54,
+     "e": 133.32,
+     "text": "Arcussinus svarar på frågan vilken vinkel som har den här kvoten."
+    },
+    {
+     "s": 134.46,
+     "e": 140.7,
+     "text": "Skriv hela divisionen, 4,3 delat med 46, med räknaren i grader,"
+    },
+    {
+     "s": 141.3,
+     "e": 145.94,
+     "text": "så får du att tornet lutade ungefär 5,4 grader."
+    },
+    {
+     "s": 147.46,
+     "e": 153.24,
+     "text": "Kvoterna står på formelbladet under Trigonometri, men arcussinus står inte där."
+    },
+    {
+     "s": 154.12,
+     "e": 161.02,
+     "text": "Den finns på räknaren, precis som arcuscosinus och arcustangens ovanför knapparna för"
+    },
+    {
+     "s": 161.1,
+     "e": 162.76,
+     "text": "cosinus och tangens."
+    },
+    {
+     "s": 164.16,
+     "e": 168.26,
+     "text": "Vilken av dem man använder beror på vilka två sidor man känner."
+    },
+    {
+     "s": 169.5,
+     "e": 176.52,
+     "text": "Snöret är 45,8 meter och ligger intill v, så det är närliggande katet."
+    },
+    {
+     "s": 177.7,
+     "e": 184.8,
+     "text": "Med snöret och de 4,3 metrarna blir det tangens, och arcustangens av 4,3"
+    },
+    {
+     "s": 184.84,
+     "e": 190.42,
+     "text": "delat med 45,8 ger samma 5,4 grader."
+    },
+    {
+     "s": 191.62,
+     "e": 196.38,
+     "text": "Med snöret och tornet blir det cosinus och arcuscosinus."
+    },
+    {
+     "s": 197.74,
+     "e": 201.24,
+     "text": "Triangeln har en vinkel till, nere vid tornets fot."
+    },
+    {
+     "s": 202.32,
+     "e": 208.32,
+     "text": "Alla tre vinklarna är tillsammans 180 grader och den räta tar 90,"
+    },
+    {
+     "s": 208.96,
+     "e": 217.06,
+     "text": "så vinkeln vid foten är 90 minus 5,4, alltså 84,6 grader."
+    },
+    {
+     "s": 218.36,
+     "e": 222.48,
+     "text": "Det som står mitt emot den ena vinkeln ligger intill den andra,"
+    },
+    {
+     "s": 223.08,
+     "e": 227.34,
+     "text": "så sinus för den ena vinkeln är cosinus för den andra."
+    },
+    {
+     "s": 228.66,
+     "e": 234.34,
+     "text": "Gruppen bestämde att tornet skulle rätas upp en halv grad, men inte bli rakt."
+    },
+    {
+     "s": 235.64,
+     "e": 242.12,
+     "text": "År 1993 lade de 600 ton bly på den norra sidan för att hålla emot."
+    },
+    {
+     "s": 243.36,
+     "e": 248.88,
+     "text": "Sedan borrade de snett in under den norra sidan och drog ut lite jord i taget,"
+    },
+    {
+     "s": 249.5,
+     "e": 252.1,
+     "text": "sammanlagt 37 kubikmeter."
+    },
+    {
+     "s": 253.32,
+     "e": 258.12,
+     "text": "Två gånger om dagen mätte de tornet och bestämde var nästa jord skulle tas."
+    },
+    {
+     "s": 259.38,
+     "e": 263.74,
+     "text": "Den norra sidan sjönk långsamt, och toppen kom tillbaka."
+    },
+    {
+     "s": 265.1,
+     "e": 269.82,
+     "text": "År 2001 hängde toppen ut ungefär 3,9 meter."
+    },
+    {
+     "s": 271.06,
+     "e": 273.36,
+     "text": "Hur många grader lutade tornet då?"
+    },
+    {
+     "s": 274.78,
+     "e": 283.52,
+     "text": "Sinus v är 3,9 delat med 46, och arcussinus ger ungefär 4,9 grader."
+    },
+    {
+     "s": 284.7,
+     "e": 288.38,
+     "text": "Det är en halv grad mindre, precis som gruppen ville."
+    },
+    {
+     "s": 289.56,
+     "e": 295.3,
+     "text": "Om de hade fortsatt tills tornet stod helt rakt, skulle toppen inte hänga ut alls."
+    },
+    {
+     "s": 296.36,
+     "e": 302.4,
+     "text": "Då blir sinus v och tangens v noll, och snöret blir lika långt som tornet,"
+    },
+    {
+     "s": 302.88,
+     "e": 305.08,
+     "text": "så cosinus v blir ett."
+    },
+    {
+     "s": 306.66,
+     "e": 312.38,
+     "text": "Åt andra hållet, om tornet föll mot marken, skulle vinkeln gå mot 90 grader."
+    },
+    {
+     "s": 313.32,
+     "e": 320.18,
+     "text": "Då går sinus mot ett och cosinus mot noll, och tangens blir hur stor som helst,"
+    },
+    {
+     "s": 320.62,
+     "e": 322.68,
+     "text": "för snöret blir allt kortare."
+    },
+    {
+     "s": 324.16,
+     "e": 329.16,
+     "text": "Räknaren ger avrundade svar, men ibland vill boken ha exakta värden."
+    },
+    {
+     "s": 330.04,
+     "e": 333.58,
+     "text": "Då ritar man en triangel med kvotens tal som sidor."
+    },
+    {
+     "s": 334.72,
+     "e": 342.32,
+     "text": "Om sinus v är tre femtedelar, blir motstående katet 3 och hypotenusan 5."
+    },
+    {
+     "s": 343.7,
+     "e": 350.08,
+     "text": "Den tredje sidan får man med Pythagoras sats, som står raden ovanför på formelbladet."
+    },
+    {
+     "s": 351.34,
+     "e": 358.28,
+     "text": "5² − 3² är 16, så närliggande katet är 4."
+    },
+    {
+     "s": 359.48,
+     "e": 366.52,
+     "text": "Då är cosinus v exakt fyra femtedelar och tangens v tre fjärdedelar."
+    },
+    {
+     "s": 367.92,
+     "e": 370.48,
+     "text": "På samma sätt får man 30 grader."
+    },
+    {
+     "s": 371.64,
+     "e": 376.92,
+     "text": "En liksidig triangel med sidan 2 har tre vinklar på 60 grader."
+    },
+    {
+     "s": 377.88,
+     "e": 384.34,
+     "text": "Delar man den mitt itu, får man en rätvinklig triangel där sidan mitt emot 30 grader"
+    },
+    {
+     "s": 384.42,
+     "e": 392.24,
+     "text": "är 1 och hypotenusan är 2, så sinus 30 grader är exakt en halv."
+    },
+    {
+     "s": 393.54,
+     "e": 396.92,
+     "text": "I december 2001 öppnades tornet igen."
+    },
+    {
+     "s": 397.84,
+     "e": 401.96,
+     "text": "Nu lutar det ungefär lika mycket som i början av 1800-talet,"
+    },
+    {
+     "s": 402.62,
+     "e": 408.68,
+     "text": "och ingenjörerna räknade med att det dröjer ungefär 300 år innan det lutar lika"
+    },
+    {
+     "s": 408.74,
+     "e": 410.66,
+     "text": "mycket som 1990."
+    },
+    {
+     "s": 412.14,
+     "e": 417.96,
+     "text": "Tänk dig ett annat torn, där det är 20 meter upp längs tornet till toppen och där"
+    },
+    {
+     "s": 418,
+     "e": 423.28,
+     "text": "ett snöre från toppen når marken 1 meter vid sidan av foten."
+    },
+    {
+     "s": 424.44,
+     "e": 426.72,
+     "text": "Hur många grader lutar tornet?"
     }
    ]
   },
