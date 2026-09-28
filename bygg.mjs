@@ -151,9 +151,16 @@ const ordning = (a, b) => {
 };
 const videor = [...register].sort(ordning).map((v) => {
   const projekt = resolve(HÄR, v.projekt);
-  const tiderFil = join(projekt, "assets", "tal-tider.json");
-  const manusFil = join(projekt, "assets", "manus.txt");
-  const srtFil = join(projekt, "assets", "tal.srt");
+  // Omgörningen (OMGORNING.md, 2026-09-28): ett projekt som görs om får ny röst i assets/ långt innan den nya
+  // filmen publiceras. Då ligger det publicerade läget fryst i cache/v-publicerad/ (tal-tider.json, tal.srt,
+  // manus.txt) och bygget läser därifrån, så att den gamla filmen behåller sina kapitel, sin textning och sina
+  // sökord. Mappen tas bort i samma svep som den nya filmen publiceras.
+  const fryst = join(projekt, "cache", "v-publicerad");
+  const kalla = existsSync(join(fryst, "tal-tider.json")) ? fryst : join(projekt, "assets");
+  if (kalla === fryst) console.log(`  ${v.id}: läser det frysta publicerade läget (cache/v-publicerad/).`);
+  const tiderFil = join(kalla, "tal-tider.json");
+  const manusFil = join(kalla, "manus.txt");
+  const srtFil = join(kalla, "tal.srt");
   const undertext = existsSync(srtFil) ? lasSrt(srtFil) : null;
   let repliker = [];
   let langd = null;
