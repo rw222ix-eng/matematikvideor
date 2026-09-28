@@ -1,6 +1,6 @@
 {
   "delos-och-altaret": {
-    "fraga": "Tänk dig att oraklet i stället hade sagt att altaret skulle bli tre gånger så stort. Då måste sidan vara ett tal som upphöjt till 3 blir 3.",
+    "fraga": "Tänk dig att prästinnan i stället hade sagt att altaret skulle bli tre gånger så stort. Då måste sidan vara ett tal som upphöjt till 3 blir 3.",
     "delar": [
       {
         "fraga": "Skriv ekvationen för sidan x.",
@@ -26,15 +26,15 @@
         "fel": [
           { "svar": "1.26", "tolerans": 0.006, "text": "1,26 var sidan när altaret skulle bli dubbelt så stort. Nu står det 3 på höger sida." },
           { "svar": "1.732", "tolerans": 0.006, "text": "Det är kvadratroten ur 3. Sidan ska upphöjd till 3 bli 3, så det är tredje roten du behöver." },
-          { "svar": "1", "text": "1 upphöjt till 3 är 1, inte 3. Höj båda sidor till en tredjedel." },
+          { "svar": "1", "text": "1 upphöjt till 3 är 1, inte 3. Höj båda leden till en tredjedel." },
           { "svar": "27", "text": "Du har räknat 3 upphöjt till 3. Gå åt andra hållet och höj till en tredjedel." }
         ]
       }
     ],
-    "ledtrad": { "fras": "Men x upphöjt till 3", "text": "Gör som med x³ = 2 i filmen. Höj båda sidor till en tredjedel." },
+    "ledtrad": { "fras": "Men x upphöjt till tre", "text": "Gör som med x³ = 2 i filmen. Höj båda leden till en tredjedel." },
     "losning": [
       "Altaret ska bli 3 gånger så stort, så x³ = 3.",
-      "Höj båda sidor till en tredjedel, (x³)^(1/3) = 3^(1/3).",
+      "Höj båda leden till en tredjedel, (x³)^(1/3) = 3^(1/3).",
       "3 · 1/3 = 1, så kvar till vänster står bara x. Alltså x = 3^(1/3).",
       "Räknaren ger 3^(1/3) ≈ 1,44.",
       "Sidan blir ungefär 1,44 meter. Kontroll: 1,44 · 1,44 · 1,44 ≈ 2,99."
