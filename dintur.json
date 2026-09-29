@@ -421,31 +421,33 @@
     ]
   },
   "ma2a-02-faktorisera": {
-    "fraga": "Tänk dig att du sitter vid maskinen och prövar talet 899.",
+    "fraga": "Nu är det din tur.",
     "delar": [
       {
-        "fraga": "Faktorisera 899 så långt som möjligt, med kvadraterna och konjugatregeln.",
-        "typ": "faktorer",
-        "svar": 899,
-        "exempel": "t.ex. 23 · 17",
+        "fraga": "Faktorisera 9x² + 18x.",
+        "typ": "uttryck",
+        "svar": "9x^2 + 18x",
+        "visa": "9x² + 18x",
+        "utanfor": "9x",
+        "exempel": "t.ex. 3x(1 + 3x)",
         "tangenter": [
-          "·",
           "(",
-          ")"
+          ")",
+          "²"
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Att faktorisera betyder att skriva",
-      "text": "Gör som med 391 i filmen. Vilken kvadrat ligger närmast ovanför 899? Hur mycket större är den, och är skillnaden också en kvadrat?"
+      "fras": "Ibland kan man bryta ut både",
+      "text": "Gör som med 3x + 9x² i filmen. Vilket är det största tal som både 9 och 18 kan delas med? Finns x i båda termerna?"
     },
     "losning": [
-      "Kvadraten närmast ovanför 899 är 900 = 30².",
-      "900 − 899 = 1, och 1 = 1².",
-      "Alltså är 899 = 30² − 1².",
-      "Konjugatregeln baklänges: a² − b² = (a + b)(a − b).",
-      "899 = (30 + 1)(30 − 1) = 31 · 29.",
-      "31 och 29 är primtal, så längre än så går det inte. Kontroll: 31 · 29 = 899."
+      "9 och 18 kan båda delas med 9.",
+      "9x² betyder 9 · x · x, så x finns i båda termerna.",
+      "Den största gemensamma faktorn är alltså 9x.",
+      "9x² delat med 9x är x, och 18x delat med 9x är 2.",
+      "9x² + 18x = 9x(x + 2)",
+      "Kontroll: 9x · x = 9x² och 9x · 2 = 18x."
     ]
   },
   "ma2a-03-x2-och-nollprodukt": {
