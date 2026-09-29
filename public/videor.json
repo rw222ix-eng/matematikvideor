@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-28T21:37:44.024Z",
+ "byggd": "2026-09-29T14:54:14.420Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -16366,14 +16366,13 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-04-pq-formeln-v2/ma2a-04-pq-formeln-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-04-pq-formeln-v3/ma2a-04-pq-formeln-1080p.mp4",
    "moment": "pq-formeln i textproblem",
    "begrepp": [
     "pq-formeln",
     "andragradsekvation",
     "formelbladet",
     "p och q",
-    "normalform",
     "halva p",
     "plus eller minus",
     "roten ur",
@@ -16385,146 +16384,160 @@
     "ställa upp en ekvation",
     "rimlig lösning",
     "al-Khwarizmi",
-    "algebra",
+    "båda leden",
     "algoritm"
    ],
    "beskrivning": "I Bagdad på 820-talet skrev al-Khwarizmi en regel i ord för att lösa ekvationer som x i kvadrat plus tio x är lika med 39, och den regeln är pq-formeln på formelbladet. Vi skriver ekvationen så att det står noll på ena sidan, läser av p och q, ställer upp ekvationer ur textuppgifter och väljer det svar som är rimligt.",
    "youtube": null,
-   "langd": 460,
+   "langd": 555,
    "omslag": "omslag/ma2a-04-pq-formeln.jpg?v=52f65cd4",
    "omslagRen": "omslag/ma2a-04-pq-formeln-ren.jpg?v=14716ca5",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 0,
-     "text": "År 812 slogs två bröder om att bli kalif, alltså härskare över det muslimska riket. Den ene satt i Bagdad, och den andres armé belägrade staden i över ett år, med strider från hus till hus."
+     "t": 1,
+     "text": "Vi är i Bagdad på åttahundratjugotalet. Stadens härskare vill att Bagdad ska bli en stad full av kunskap. Därför har han samlat forskare från hela riket i ett stort bibliotek. En av dem är matematikern Muhammad al-Khwarizmi."
     },
     {
-     "t": 15,
-     "text": "Brodern som belägrade staden vann. Han hette al-Mamun, och han ville att Bagdad skulle bli en stad för kunskap, så han samlade lärda i ett stort bibliotek. En av dem var Muhammad al-Khwarizmi."
+     "t": 22,
+     "text": "Härskaren ber al-Khwarizmi att skriva en bok om räkning. Boken ska hjälpa folk när ett arv ska delas, när de handlar och när de mäter mark."
     },
     {
-     "t": 30,
-     "text": "Kalifen uppmuntrade honom att skriva en kort bok om den räkning som folk behöver när ett arv ska delas, när man handlar och när man mäter mark och gräver kanaler. Boken skrevs på 820-talet, och ordet al-jabr i titeln har gett oss ordet algebra."
+     "t": 34,
+     "text": "I boken finns uppgifter där ett tal är okänt. En av dem lyder så här. Ett tal gånger sig självt, plus tio gånger talet, blir trettionio. Vilket är talet? Man kan försöka gissa, men al-Khwarizmi vill ha en regel som alla kan följa steg för steg, och som alltid ger svaret."
     },
     {
-     "t": 50,
-     "text": "I boken står den här uppgiften. Ett tal gånger sig självt, plus tio gånger talet, blir 39. Vilket är talet? Kallar vi talet x blir det x i kvadrat plus tio x är lika med 39, och här räcker det inte att dra roten ur, för x finns också ensamt."
+     "t": 61,
+     "text": "Han skriver regeln i ord. Halvera tio, så blir det fem. Ta fem gånger fem, så blir det tjugofem. Lägg till trettionio, så blir det sextiofyra. Dra roten ur sextiofyra. Roten ur ett tal är det tal som gånger sig självt ger talet, så roten ur sextiofyra är åtta. Dra till sist bort fem, så blir det tre. Talet är tre, för tre gånger tre plus tio gånger tre är trettionio."
     },
     {
-     "t": 72,
-     "text": "Al-Khwarizmi skrev lösningen som en regel i ord. Halvera tio, det blir 5. Ta 5 gånger 5, det blir 25. Lägg till 39, så blir det 64. Dra roten ur 64, det blir 8. Dra till sist bort hälften av tio, alltså 5, och kvar blir 3."
+     "t": 99,
+     "text": "Nu skriver vi uppgiften med matematik. Vi kallar talet x. Ett tal gånger sig självt kallas talet i kvadrat, så det skrivs x i kvadrat. Tio gånger talet skrivs tio X. Uppgiften blir x i kvadrat plus tio X är lika med trettionio. En ekvation där x står i kvadrat kallas en andragradsekvation."
     },
     {
-     "t": 96,
-     "text": "En ekvation med x i kvadrat kallas andragradsekvation, och al-Khwarizmis regel står på formelbladet, där den heter pq-formeln. Den gäller när ekvationen ser ut så här, x i kvadrat plus p x plus q är lika med noll."
+     "t": 130,
+     "text": "Al-Khwarizmis regel står på formelbladet, och där heter den pq-formeln. Men den gäller bara när ekvationen har en viss form. Formen är x i kvadrat plus p X plus q är lika med noll. Talet p står framför x, och talet q står ensamt. På högra sidan ska det stå noll."
     },
     {
-     "t": 115,
-     "text": "Så vi drar bort 39 från båda leden och får x i kvadrat plus tio x minus 39 är lika med noll. Då är p 10 och q minus 39, för tecknet hör till talet."
+     "t": 158,
+     "text": "I vår ekvation står det trettionio på högra sidan. Därför drar vi bort trettionio från båda leden, alltså från båda sidorna av likhetstecknet. Då står det x i kvadrat plus tio X minus trettionio är lika med noll."
     },
     {
-     "t": 132,
-     "text": "pq-formeln säger att x är halva p med ombytt tecken, plus eller minus roten ur halva p i kvadrat minus q. Här blir det minus 5, plus eller minus roten ur 25 plus 39, för minus minus 39 är plus. Det är roten ur 64, som är 8, så x är minus 5 plus eller minus 8."
+     "t": 177,
+     "text": "Nu kan vi läsa av p och q. p är tio. q är minus trettionio, för minustecknet framför talet hör till talet."
     },
     {
-     "t": 162,
-     "text": "Plus eller minus ger två lösningar. Minus 5 plus 8 är 3, och det är al-Khwarizmis svar. Minus 5 minus 8 är minus 13, och det är också en lösning, men al-Khwarizmi räknade inte med negativa tal."
+     "t": 190,
+     "text": "Formeln säger så här. x är lika med halva p med ombytt tecken, plus eller minus roten ur halva p i kvadrat minus q. Halva p är fem, och med ombytt tecken blir det minus fem."
     },
     {
-     "t": 181,
-     "text": "Formeln kräver också ett ensamt x i kvadrat. I en annan uppgift står det två x i kvadrat plus tio x är lika med 48, och då delar vi båda leden med 2 och drar bort 24. Nu är p 5 och q minus 24, och x är minus 2,5 plus eller minus roten ur 6,25 plus 24, och den roten är 5,5. Det blir 3 och minus 8."
+     "t": 209,
+     "text": "Under rottecknet står först halva p i kvadrat. Fem i kvadrat är tjugofem. Sedan står det minus q. Minus minus trettionio är plus trettionio. Tjugofem plus trettionio är sextiofyra, och roten ur sextiofyra är åtta. Det är samma steg som i al-Khwarizmis regel."
     },
     {
-     "t": 216,
-     "text": "Går roten inte jämnt ut låter man rottecknet stå kvar i svaret, och det kallas exakt svar, eller så avrundar man med räknaren."
-    },
-    {
-     "t": 226,
-     "text": "I en tredje uppgift har någon delat tio i två delar och multiplicerat delarna med varandra, och det blev 21. Hur stora är delarna? Kalla den ena delen x, så är den andra 10 minus x, och ekvationen blir x gånger, parentes, 10 minus x, är lika med 21."
-    },
-    {
-     "t": 250,
-     "text": "Vi multiplicerar in x och flyttar 21 till vänster, så det står minus x i kvadrat plus tio x minus 21 är lika med noll. Men formeln kräver plus framför x i kvadrat, så vi delar alla termer med minus 1, och då byter varje term tecken."
+     "t": 237,
+     "text": "Alltså är x lika med minus fem plus eller minus åtta. Plus eller minus betyder att vi räknar två gånger. Minus fem plus åtta är tre, och det är al-Khwarizmis svar. Minus fem minus åtta är minus tretton. Det är också en lösning, men al-Khwarizmi räknade inte med negativa tal. En andragradsekvation kan alltså ha två lösningar."
     },
     {
      "t": 270,
-     "text": "Nu står det x i kvadrat minus tio x plus 21 är lika med noll, så p är minus 10 och q är 21. Halva p med ombytt tecken är plus 5, och x är 5 plus eller minus roten ur 25 minus 21, alltså 5 plus eller minus 2. Delarna är 7 och 3, och båda svaren duger, för båda är positiva."
+     "text": "Formeln kräver också att det inte står något tal framför x i kvadrat. I boken finns en uppgift där två X i kvadrat plus tio X är lika med fyrtioåtta. Då delar vi båda leden med två."
     },
     {
-     "t": 304,
-     "text": "Men ska produkten vara 25 blir q 25, och roten ur 25 minus 25 är noll, så x är 5 plus eller minus noll. Båda delarna är 5, och en sådan enda lösning kallas dubbelrot."
+     "t": 288,
+     "text": "Två X i kvadrat delat med två är x i kvadrat. Tio X delat med två är fem X. Fyrtioåtta delat med två är tjugofyra. Sedan drar vi bort tjugofyra från båda leden. Nu är p fem och q minus tjugofyra."
     },
     {
-     "t": 324,
-     "text": "Med produkten 30 blir det roten ur 25 minus 30, alltså roten ur minus 5, och inget tal gånger sig självt blir negativt. Då saknar ekvationen lösning, och al-Khwarizmi skrev att uppgiften är omöjlig. Det är alltså talet under rottecknet som avgör hur många lösningar det blir."
+     "t": 310,
+     "text": "Halva p är två komma fem, så vi börjar med minus två komma fem. Halva p i kvadrat är sex komma två fem. Sex komma två fem plus tjugofyra är trettio komma två fem, och roten ur det är fem komma fem. Lösningarna blir tre och minus åtta."
     },
     {
-     "t": 350,
-     "text": "Ett kretskort ska vara 4 centimeter längre än det är brett och ha arean 96 kvadratcentimeter. Hur brett blir det? Ställ upp en ekvation och lös den med pq-formeln. Med bredden x blir längden x plus 4, och ekvationen blir x gånger, parentes, x plus 4, är lika med 96."
+     "t": 334,
+     "text": "Här gick roten jämnt ut. Går den inte jämnt ut, låter man rottecknet stå kvar i svaret, och det kallas exakt svar. Man kan också räkna ut roten med räknaren och avrunda."
     },
     {
-     "t": 377,
-     "text": "Vi multiplicerar in och drar bort 96, så det blir x i kvadrat plus fyra x minus 96 är lika med noll. Då är p 4 och q minus 96, och x är minus 2 plus eller minus roten ur 4 plus 96, alltså roten ur 100, som är 10, och lösningarna blir 8 och minus 12."
+     "t": 349,
+     "text": "Ibland står det minus framför x i kvadrat. Ta minus x i kvadrat plus sex X minus nio är lika med noll. Då delar vi båda leden med minus ett, och varje tal byter tecken. Nu står det x i kvadrat minus sex X plus nio är lika med noll."
     },
     {
-     "t": 410,
-     "text": "Men ett kretskort kan inte vara minus 12 centimeter brett. Ekvationen vet inte att den handlar om ett kretskort, så vi måste själva stryka det svar som inte är rimligt. Kortet blir 8 centimeter brett och 12 centimeter långt."
+     "t": 374,
+     "text": "Här är p minus sex. Halva p är minus tre, och med ombytt tecken blir det plus tre. Halva p i kvadrat är nio, och q är nio. Nio minus nio är noll, och roten ur noll är noll. Då blir x tre plus eller minus noll, alltså bara tre. En sådan enda lösning kallas dubbelrot."
     },
     {
-     "t": 429,
-     "text": "År 1145 översattes boken till latin, och på latin skrevs hans namn Algoritmi. Därifrån kommer ordet algoritm, en regel som man följer steg för steg."
+     "t": 405,
+     "text": "Om q i stället är tio, står det nio minus tio under rottecknet, alltså minus ett. Men inget tal gånger sig självt blir negativt, så roten ur minus ett finns inte. Då saknar ekvationen lösning, och al-Khwarizmi skrev att en sådan uppgift är omöjlig. Talet under rottecknet avgör alltså om det blir två, en eller ingen lösning."
     },
     {
-     "t": 444,
-     "text": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar, och att produkten blev 35. Hur stora är delarna? Ställ upp en ekvation och lös den med pq-formeln."
+     "t": 435,
+     "text": "Nu ett övningstal. Ett kretskort ska vara fyra centimeter längre än det är brett, och arean ska vara nittiosex kvadratcentimeter. Hur brett blir kortet? Vi kallar bredden x, så längden är x plus fyra. Arean är bredden gånger längden, så ekvationen blir x gånger parentesen x plus fyra är lika med nittiosex."
+    },
+    {
+     "t": 466,
+     "text": "Vi multiplicerar in x i parentesen, och det blir x i kvadrat plus fyra X. Sedan drar vi bort nittiosex från båda leden. Nu är p fyra och q minus nittiosex. Formeln ger minus två plus eller minus roten ur fyra plus nittiosex. Roten ur hundra är tio, så lösningarna blir åtta och minus tolv."
+    },
+    {
+     "t": 498,
+     "text": "Men ett kretskort kan inte vara minus tolv centimeter brett. Ekvationen vet inte att den handlar om ett kretskort, så vi måste själva stryka det svar som inte är rimligt. Kortet blir åtta centimeter brett och tolv centimeter långt."
+    },
+    {
+     "t": 518,
+     "text": "Omkring trehundra år senare översattes al-Khwarizmis bok till latin. På latin skrevs hans namn Algoritmi. Därifrån kommer ordet algoritm, som betyder en regel som man följer steg för steg."
+    },
+    {
+     "t": 536,
+     "text": "Nu är det din tur. En åker är sex meter längre än den är bred, och arean är sjuttiotvå kvadratmeter. Hur bred är åkern? Ställ upp en ekvation och lös den med pq-formeln."
     }
    ],
    "kapitel": [
     {
-     "t": 0,
+     "t": 1,
      "rubrik": "Al-Khwarizmi i Bagdad",
      "typ": "historia"
     },
     {
-     "t": 50,
-     "rubrik": "Uppgiften i boken och regeln i ord",
+     "t": 34,
+     "rubrik": "Uppgiften och regeln i ord",
      "typ": "matte"
     },
     {
-     "t": 96,
+     "t": 130,
      "rubrik": "pq-formeln, steg för steg",
      "typ": "matte"
     },
     {
-     "t": 226,
-     "rubrik": "Två lösningar, dubbelrot eller ingen lösning",
+     "t": 270,
+     "rubrik": "Dela med talet framför x²",
      "typ": "matte"
     },
     {
-     "t": 350,
+     "t": 349,
+     "rubrik": "Dubbelrot eller ingen lösning",
+     "typ": "matte"
+    },
+    {
+     "t": 435,
      "rubrik": "Textproblem: kretskortet",
      "typ": "matte"
     },
     {
-     "t": 429,
+     "t": 518,
      "rubrik": "Algoritmi blir algoritm",
      "typ": "historia"
     },
     {
-     "t": 444,
-     "rubrik": "Tolv i två delar",
+     "t": 536,
+     "rubrik": "Åkern",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar, och att produkten blev 35.",
+    "notisFran": 518,
+    "fraga": "En åker är 6 meter längre än den är bred, och arean är 72 kvadratmeter.",
     "delar": [
      {
-      "fraga": "Ställ upp en ekvation, med x för den ena delen.",
+      "fraga": "Ställ upp en ekvation, med x för bredden.",
       "typ": "ekvation",
-      "svar": "x*(12 - x) = 35",
-      "exempel": "t.ex. x(10 − x) = 21",
+      "svar": "x*(x + 6) = 72",
+      "exempel": "t.ex. x(x + 4) = 96",
       "tangenter": [
        "(",
        ")",
@@ -16533,473 +16546,587 @@
       ],
       "fel": [
        {
-        "svar": "x + (12 - x) = 35",
-        "text": "Delarna ska gångras med varandra, inte läggas ihop: det är produkten som är 35."
+        "svar": "x + (x + 6) = 72",
+        "text": "Arean är bredden GÅNGER längden, inte plus."
        },
        {
-        "svar": "12*x = 35",
-        "text": "Den andra delen är inte 12, utan det som blir kvar när x är borttaget, alltså 12 − x."
+        "svar": "2*x + 2*(x + 6) = 72",
+        "text": "Det är omkretsen. Här är det arean som är 72, alltså bredden gånger längden."
        },
        {
-        "svar": "x*(12 - x) = 12",
-        "text": "Delarnas summa är 12, men det är produkten som ska bli 35."
+        "svar": "6*x = 72",
+        "text": "Längden är inte 6, utan 6 meter mer än bredden, alltså x + 6."
        }
       ]
      },
      {
-      "fraga": "Lös den med pq-formeln. Hur stora är delarna?",
-      "typ": "losningar",
-      "svar": [
-       5,
-       7
-      ],
-      "exempel": "t.ex. 3 och 7",
+      "fraga": "Lös den med pq-formeln. Hur bred är åkern?",
+      "typ": "tal",
+      "svar": 6,
+      "tolerans": 0.001,
+      "enhet": "meter",
+      "exempel": "t.ex. 8",
       "fel": [
        {
-        "svar": [
-         6
-        ],
-        "text": "6 är halva p med ombytt tecken. Nu ska du lägga till och dra bort roten ur 36 − 35."
+        "svar": "-12",
+        "text": "−12 är också en lösning till ekvationen, men en bredd kan inte vara negativ. Stryk den."
        },
        {
-        "svar": [
-         -5,
-         -7
-        ],
-        "text": "Kolla tecknet. p är −12, så halva p med ombytt tecken är +6."
+        "svar": "12",
+        "text": "12 meter är längden. Bredden är 6 meter mindre."
        },
        {
-        "svar": [
-         14.43,
-         -2.43
-        ],
-        "text": "Kolla tecknet på q. Ekvationen är x² − 12x + 35 = 0, så q är +35 och det blir roten ur 36 − 35."
+        "svar": "-3",
+        "text": "−3 är halva p med ombytt tecken. Lägg till och dra bort roten ur 9 + 72."
        }
       ]
      }
     ],
     "ledtrad": {
-     "text": "Gör som med tio och 21 i filmen. Kalla ena delen x, så är den andra 12 − x. Multiplicera in, flytta 35 och se till att det står plus framför x².",
-     "t": 226
+     "text": "Gör som med kretskortet i filmen. Kalla bredden x, så är längden x + 6. Multiplicera in och flytta 72, så att det står noll på högra sidan.",
+     "t": 435
     },
     "losning": [
-     "Kalla den ena delen x. Då är den andra 12 − x, och x(12 − x) = 35.",
-     "Multiplicera in: 12x − x² = 35. Flytta 35: −x² + 12x − 35 = 0.",
-     "Gångra med −1, så att det står plus framför x²: x² − 12x + 35 = 0. Då är p = −12 och q = 35.",
-     "pq-formeln: x = 6 ± √(36 − 35) = 6 ± √1 = 6 ± 1.",
-     "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
-    ],
-    "notisFran": 350
+     "Kalla bredden x. Då är längden x + 6, och x(x + 6) = 72.",
+     "Multiplicera in: x² + 6x = 72. Dra bort 72 från båda leden: x² + 6x − 72 = 0. Då är p = 6 och q = −72.",
+     "pq-formeln: x = −3 ± √(9 + 72) = −3 ± √81 = −3 ± 9.",
+     "x = 6 eller x = −12. En bredd kan inte vara negativ, så åkern är 6 meter bred (och 12 meter lång). Kontroll: 6 · 12 = 72."
+    ]
    },
    "undertext": [
     {
-     "s": 0.24,
-     "e": 6.78,
-     "text": "År 812 slogs två bröder om att bli kalif, alltså härskare över det muslimska riket."
+     "s": 1.5,
+     "e": 4.76,
+     "text": "Vi är i Bagdad på 820-talet."
     },
     {
-     "s": 7.52,
-     "e": 12.54,
-     "text": "Den ene satt i Bagdad, och den andres armé belägrade staden i över ett år,"
+     "s": 5.76,
+     "e": 10.4,
+     "text": "Stadens härskare vill att Bagdad ska bli en stad full av kunskap."
     },
     {
-     "s": 12.96,
-     "e": 14.84,
-     "text": "med strider från hus till hus."
+     "s": 11.4,
+     "e": 16.3,
+     "text": "Därför har han samlat forskare från hela riket i ett stort bibliotek."
     },
     {
-     "s": 15.86,
-     "e": 17.94,
-     "text": "Brodern som belägrade staden vann."
+     "s": 17.3,
+     "e": 20.76,
+     "text": "En av dem är matematikern Muhammad al-Khwarizmi."
     },
     {
-     "s": 18.32,
-     "e": 23.14,
-     "text": "Han hette al-Mamun, och han ville att Bagdad skulle bli en stad för kunskap,"
+     "s": 22.06,
+     "e": 25.94,
+     "text": "Härskaren ber al-Khwarizmi att skriva en bok om räkning."
     },
     {
-     "s": 23.44,
-     "e": 26.22,
-     "text": "så han samlade lärda i ett stort bibliotek."
+     "s": 26.94,
+     "e": 33.06,
+     "text": "Boken ska hjälpa folk när ett arv ska delas, när de handlar och när de mäter mark."
     },
     {
-     "s": 27.16,
-     "e": 29.62,
-     "text": "En av dem var Muhammad al-Khwarizmi."
+     "s": 34.36,
+     "e": 37.92,
+     "text": "I boken finns uppgifter där ett tal är okänt."
     },
     {
-     "s": 30.6,
-     "e": 35.84,
-     "text": "Kalifen uppmuntrade honom att skriva en kort bok om den räkning som folk behöver när"
+     "s": 38.92,
+     "e": 40.46,
+     "text": "En av dem lyder så här."
     },
     {
-     "s": 35.88,
-     "e": 40.84,
-     "text": "ett arv ska delas, när man handlar och när man mäter mark och gräver kanaler."
+     "s": 41.46,
+     "e": 47.04,
+     "text": "Ett tal gånger sig självt, plus 10 gånger talet, blir 39."
     },
     {
-     "s": 41.74,
-     "e": 48.72,
-     "text": "Boken skrevs på 820-talet, och ordet al-jabr i titeln har gett oss ordet algebra."
-    },
-    {
-     "s": 50.14,
-     "e": 51.84,
-     "text": "I boken står den här uppgiften."
-    },
-    {
-     "s": 52.62,
-     "e": 58.08,
-     "text": "Ett tal gånger sig självt, plus tio gånger talet, blir 39."
-    },
-    {
-     "s": 58.82,
-     "e": 60.02,
+     "s": 48.04,
+     "e": 49.46,
      "text": "Vilket är talet?"
     },
     {
-     "s": 61.18,
-     "e": 66.7,
-     "text": "Kallar vi talet x blir det x i kvadrat plus tio x är lika med 39,"
+     "s": 50.46,
+     "e": 57.02,
+     "text": "Man kan försöka gissa, men al-Khwarizmi vill ha en regel som alla kan följa steg för"
     },
     {
-     "s": 67.36,
-     "e": 71.28,
-     "text": "och här räcker det inte att dra roten ur, för x finns också ensamt."
+     "s": 57.12,
+     "e": 59.7,
+     "text": "steg, och som alltid ger svaret."
     },
     {
-     "s": 72.58,
-     "e": 75.72,
-     "text": "Al-Khwarizmi skrev lösningen som en regel i ord."
+     "s": 61,
+     "e": 62.94,
+     "text": "Han skriver regeln i ord."
     },
     {
-     "s": 76.78,
-     "e": 78.72,
-     "text": "Halvera tio, det blir 5."
+     "s": 63.94,
+     "e": 66.32,
+     "text": "Halvera 10, så blir det 5."
     },
     {
-     "s": 79.48,
-     "e": 81.84,
-     "text": "Ta 5 gånger 5, det blir 25."
+     "s": 67.32,
+     "e": 70.6,
+     "text": "Ta 5 gånger 5, så blir det 25."
     },
     {
-     "s": 82.78,
-     "e": 85.48,
+     "s": 71.6,
+     "e": 75.06,
      "text": "Lägg till 39, så blir det 64."
     },
     {
-     "s": 86.46,
-     "e": 89.26,
-     "text": "Dra roten ur 64, det blir 8."
+     "s": 76.06,
+     "e": 78.38,
+     "text": "Dra roten ur 64."
     },
     {
-     "s": 90.18,
-     "e": 95.2,
-     "text": "Dra till sist bort hälften av tio, alltså 5, och kvar blir 3."
+     "s": 79.38,
+     "e": 83.92,
+     "text": "Roten ur ett tal är det tal som gånger sig självt ger talet,"
     },
     {
-     "s": 96.56,
-     "e": 102.94,
-     "text": "En ekvation med x i kvadrat kallas andragradsekvation, och al-Khwarizmis regel står på"
+     "s": 84.3,
+     "e": 87.32,
+     "text": "så roten ur 64 är 8."
     },
     {
-     "s": 103,
-     "e": 106.26,
-     "text": "formelbladet, där den heter pq-formeln."
+     "s": 88.32,
+     "e": 91.16,
+     "text": "Dra till sist bort 5, så blir det 3."
     },
     {
-     "s": 107.3,
-     "e": 114.68,
-     "text": "Den gäller när ekvationen ser ut så här, x i kvadrat plus p x plus q är lika med noll."
+     "s": 92.16,
+     "e": 98.38,
+     "text": "Talet är 3, för 3 gånger 3 plus 10 gånger 3 är 39."
     },
     {
-     "s": 115.66,
-     "e": 124.46,
-     "text": "Så vi drar bort 39 från båda leden och får x i kvadrat plus tio x minus 39 är lika med noll."
+     "s": 99.68,
+     "e": 102.2,
+     "text": "Nu skriver vi uppgiften med matematik."
     },
     {
-     "s": 125.44,
-     "e": 131.04,
-     "text": "Då är p 10 och q minus 39, för tecknet hör till talet."
+     "s": 103.2,
+     "e": 104.8,
+     "text": "Vi kallar talet x."
     },
     {
-     "s": 132.76,
-     "e": 140.08,
-     "text": "pq-formeln säger att x är halva p med ombytt tecken, plus eller minus roten ur halva"
+     "s": 105.8,
+     "e": 112.08,
+     "text": "Ett tal gånger sig självt kallas talet i kvadrat, så det skrivs x i kvadrat."
     },
     {
-     "s": 140.16,
-     "e": 142.34,
-     "text": "p i kvadrat minus q."
+     "s": 113.08,
+     "e": 116.28,
+     "text": "10 gånger talet skrivs 10x."
     },
     {
-     "s": 143.34,
-     "e": 152.68,
-     "text": "Här blir det minus 5, plus eller minus roten ur 25 plus 39, för minus minus 39 är plus."
+     "s": 117.28,
+     "e": 122.98,
+     "text": "Uppgiften blir x i kvadrat plus 10x är lika med 39."
     },
     {
-     "s": 153.8,
-     "e": 161.06,
-     "text": "Det är roten ur 64, som är 8, så x är minus 5 plus eller minus 8."
+     "s": 123.98,
+     "e": 129.38,
+     "text": "En ekvation där x står i kvadrat kallas en andragradsekvation."
     },
     {
-     "s": 162.34,
-     "e": 164.8,
-     "text": "Plus eller minus ger två lösningar."
+     "s": 130.68,
+     "e": 136.4,
+     "text": "Al-Khwarizmis regel står på formelbladet, och där heter den pq-formeln."
     },
     {
-     "s": 165.52,
-     "e": 170.82,
+     "s": 137.4,
+     "e": 140.88,
+     "text": "Men den gäller bara när ekvationen har en viss form."
+    },
+    {
+     "s": 141.88,
+     "e": 147.74,
+     "text": "Formen är x i kvadrat plus p x plus q är lika med 0."
+    },
+    {
+     "s": 148.74,
+     "e": 153.52,
+     "text": "Talet p står framför x, och talet q står ensamt."
+    },
+    {
+     "s": 154.52,
+     "e": 156.84,
+     "text": "På högra sidan ska det stå 0."
+    },
+    {
+     "s": 158.14,
+     "e": 161.46,
+     "text": "I vår ekvation står det 39 på högra sidan."
+    },
+    {
+     "s": 162.46,
+     "e": 169.14,
+     "text": "Därför drar vi bort 39 från båda leden, alltså från båda sidorna av likhetstecknet."
+    },
+    {
+     "s": 170.14,
+     "e": 176.66,
+     "text": "Då står det x i kvadrat plus 10x minus 39 är lika med 0."
+    },
+    {
+     "s": 177.96,
+     "e": 180.18,
+     "text": "Nu kan vi läsa av p och q."
+    },
+    {
+     "s": 181.18,
+     "e": 182.48,
+     "text": "p är 10."
+    },
+    {
+     "s": 183.48,
+     "e": 189.46,
+     "text": "q är minus 39, för minustecknet framför talet hör till talet."
+    },
+    {
+     "s": 190.76,
+     "e": 192.16,
+     "text": "Formeln säger så här."
+    },
+    {
+     "s": 193.16,
+     "e": 202.34,
+     "text": "x är lika med halva p med ombytt tecken, plus eller minus roten ur halva p i kvadrat minus q."
+    },
+    {
+     "s": 203.34,
+     "e": 208.18,
+     "text": "Halva p är 5, och med ombytt tecken blir det minus 5."
+    },
+    {
+     "s": 209.48,
+     "e": 213.44,
+     "text": "Under rottecknet står först halva p i kvadrat."
+    },
+    {
+     "s": 214.44,
+     "e": 216.6,
+     "text": "5 i kvadrat är 25."
+    },
+    {
+     "s": 217.6,
+     "e": 219.66,
+     "text": "Sedan står det minus q."
+    },
+    {
+     "s": 220.66,
+     "e": 224.26,
+     "text": "Minus minus 39 är plus 39."
+    },
+    {
+     "s": 225.26,
+     "e": 231.82,
+     "text": "25 plus 39 är 64, och roten ur 64 är 8."
+    },
+    {
+     "s": 232.82,
+     "e": 235.82,
+     "text": "Det är samma steg som i al-Khwarizmis regel."
+    },
+    {
+     "s": 237.12,
+     "e": 242.4,
+     "text": "Alltså är x lika med minus 5 plus eller minus 8."
+    },
+    {
+     "s": 243.4,
+     "e": 247.12,
+     "text": "Plus eller minus betyder att vi räknar två gånger."
+    },
+    {
+     "s": 248.12,
+     "e": 253.86,
      "text": "Minus 5 plus 8 är 3, och det är al-Khwarizmis svar."
     },
     {
-     "s": 171.96,
-     "e": 178.98,
-     "text": "Minus 5 minus 8 är minus 13, och det är också en lösning, men al-Khwarizmi räknade inte"
+     "s": 254.86,
+     "e": 258.56,
+     "text": "Minus 5 minus 8 är minus 13."
     },
     {
-     "s": 179.02,
-     "e": 180.04,
-     "text": "med negativa tal."
+     "s": 259.56,
+     "e": 264.92,
+     "text": "Det är också en lösning, men al-Khwarizmi räknade inte med negativa tal."
     },
     {
-     "s": 181.46,
-     "e": 184.76,
-     "text": "Formeln kräver också ett ensamt x i kvadrat."
+     "s": 265.92,
+     "e": 269.68,
+     "text": "En andragradsekvation kan alltså ha två lösningar."
     },
     {
-     "s": 185.4,
-     "e": 191.3,
-     "text": "I en annan uppgift står det två x i kvadrat plus tio x är lika med 48,"
+     "s": 270.98,
+     "e": 276.3,
+     "text": "Formeln kräver också att det inte står något tal framför x i kvadrat."
     },
     {
-     "s": 192.1,
-     "e": 195.56,
-     "text": "och då delar vi båda leden med 2 och drar bort 24."
+     "s": 277.3,
+     "e": 283.92,
+     "text": "I boken finns en uppgift där 2x i kvadrat plus 10x är lika med 48."
     },
     {
-     "s": 196.54,
-     "e": 208.52,
-     "text": "Nu är p 5 och q minus 24, och x är minus 2,5 plus eller minus roten ur 6,25 plus 24,"
+     "s": 284.92,
+     "e": 286.88,
+     "text": "Då delar vi båda leden med 2."
     },
     {
-     "s": 209.22,
-     "e": 211.46,
-     "text": "och den roten är 5,5."
+     "s": 288.18,
+     "e": 292.36,
+     "text": "2x i kvadrat delat med 2 är x i kvadrat."
     },
     {
-     "s": 212.16,
-     "e": 214.88,
-     "text": "Det blir 3 och minus 8."
+     "s": 293.36,
+     "e": 296.44,
+     "text": "10x delat med 2 är 5x."
     },
     {
-     "s": 216.08,
-     "e": 220.12,
-     "text": "Går roten inte jämnt ut låter man rottecknet stå kvar i svaret,"
+     "s": 297.44,
+     "e": 300.4,
+     "text": "48 delat med 2 är 24."
     },
     {
-     "s": 220.52,
-     "e": 224.98,
-     "text": "och det kallas exakt svar, eller så avrundar man med räknaren."
+     "s": 301.4,
+     "e": 304.28,
+     "text": "Sedan drar vi bort 24 från båda leden."
     },
     {
-     "s": 226.48,
-     "e": 232.2,
-     "text": "I en tredje uppgift har någon delat tio i två delar och multiplicerat delarna med varandra,"
+     "s": 305.28,
+     "e": 309.06,
+     "text": "Nu är p 5 och q minus 24."
     },
     {
-     "s": 232.62,
-     "e": 233.72,
-     "text": "och det blev 21."
+     "s": 310.36,
+     "e": 315.74,
+     "text": "Halva p är 2,5, så vi börjar med minus 2,5."
     },
     {
-     "s": 234.46,
-     "e": 235.8,
-     "text": "Hur stora är delarna?"
+     "s": 316.74,
+     "e": 320.32,
+     "text": "Halva p i kvadrat är 6,25."
     },
     {
-     "s": 236.84,
-     "e": 244.34,
-     "text": "Kalla den ena delen x, så är den andra 10 minus x, och ekvationen blir x gånger,"
+     "s": 321.32,
+     "e": 329.02,
+     "text": "6,25 plus 24 är 30,25, och roten ur det är 5,5."
     },
     {
-     "s": 244.78,
-     "e": 248.8,
-     "text": "parentes, 10 minus x, är lika med 21."
+     "s": 330.02,
+     "e": 333.14,
+     "text": "Lösningarna blir 3 och minus 8."
     },
     {
-     "s": 250.1,
-     "e": 257.22,
-     "text": "Vi multiplicerar in x och flyttar 21 till vänster, så det står minus x i kvadrat plus"
+     "s": 334.44,
+     "e": 336.42,
+     "text": "Här gick roten jämnt ut."
     },
     {
-     "s": 257.3,
-     "e": 260.78,
-     "text": "tio x minus 21 är lika med noll."
+     "s": 337.42,
+     "e": 341.7,
+     "text": "Går den inte jämnt ut, låter man rottecknet stå kvar i svaret,"
     },
     {
-     "s": 261.68,
-     "e": 267.72,
-     "text": "Men formeln kräver plus framför x i kvadrat, så vi delar alla termer med minus 1,"
+     "s": 342,
+     "e": 344.02,
+     "text": "och det kallas exakt svar."
     },
     {
-     "s": 268.3,
-     "e": 270.26,
-     "text": "och då byter varje term tecken."
+     "s": 345.02,
+     "e": 348.58,
+     "text": "Man kan också räkna ut roten med räknaren och avrunda."
     },
     {
-     "s": 270.94,
-     "e": 277.36,
-     "text": "Nu står det x i kvadrat minus tio x plus 21 är lika med noll,"
+     "s": 349.88,
+     "e": 353.02,
+     "text": "Ibland står det minus framför x i kvadrat."
     },
     {
-     "s": 278.04,
-     "e": 281.58,
-     "text": "så p är minus 10 och q är 21."
+     "s": 354.02,
+     "e": 360.24,
+     "text": "Ta minus x i kvadrat plus 6x minus 9 är lika med 0."
     },
     {
-     "s": 282.76,
-     "e": 292.96,
-     "text": "Halva p med ombytt tecken är plus 5, och x är 5 plus eller minus roten ur 25 minus 21,"
+     "s": 361.24,
+     "e": 366.14,
+     "text": "Då delar vi båda leden med minus 1, och varje tal byter tecken."
     },
     {
-     "s": 293.64,
-     "e": 296.6,
-     "text": "alltså 5 plus eller minus 2."
+     "s": 367.14,
+     "e": 373,
+     "text": "Nu står det x i kvadrat minus 6x plus 9 är lika med 0."
     },
     {
-     "s": 297.8,
-     "e": 303.46,
-     "text": "Delarna är 7 och 3, och båda svaren duger, för båda är positiva."
+     "s": 374.3,
+     "e": 376.54,
+     "text": "Här är p minus 6."
     },
     {
-     "s": 304.58,
-     "e": 312.94,
-     "text": "Men ska produkten vara 25 blir q 25, och roten ur 25 minus 25 är noll,"
+     "s": 377.54,
+     "e": 382.58,
+     "text": "Halva p är minus 3, och med ombytt tecken blir det plus 3."
     },
     {
-     "s": 313.66,
-     "e": 317.26,
-     "text": "så x är 5 plus eller minus noll."
+     "s": 383.58,
+     "e": 387.74,
+     "text": "Halva p i kvadrat är 9, och q är 9."
     },
     {
-     "s": 318.36,
-     "e": 323.56,
-     "text": "Båda delarna är 5, och en sådan enda lösning kallas dubbelrot."
+     "s": 388.74,
+     "e": 393.14,
+     "text": "9 minus 9 är 0, och roten ur 0 är 0."
     },
     {
-     "s": 324.92,
-     "e": 332.4,
-     "text": "Med produkten 30 blir det roten ur 25 minus 30, alltså roten ur minus 5,"
+     "s": 394.14,
+     "e": 399.44,
+     "text": "Då blir x 3 plus eller minus 0, alltså bara 3."
     },
     {
-     "s": 333.1,
-     "e": 336,
-     "text": "och inget tal gånger sig självt blir negativt."
+     "s": 400.44,
+     "e": 403.92,
+     "text": "En sådan enda lösning kallas dubbelrot."
     },
     {
-     "s": 337.04,
-     "e": 342.98,
-     "text": "Då saknar ekvationen lösning, och al-Khwarizmi skrev att uppgiften är omöjlig."
+     "s": 405.22,
+     "e": 410.78,
+     "text": "Om q i stället är 10, står det 9 minus 10 under rottecknet,"
     },
     {
-     "s": 344.1,
-     "e": 348.9,
-     "text": "Det är alltså talet under rottecknet som avgör hur många lösningar det blir."
+     "s": 411.12,
+     "e": 412.74,
+     "text": "alltså minus 1."
     },
     {
-     "s": 350.52,
-     "e": 357.52,
-     "text": "Ett kretskort ska vara 4 centimeter längre än det är brett och ha arean 96 kvadratcentimeter."
+     "s": 413.74,
+     "e": 419.94,
+     "text": "Men inget tal gånger sig självt blir negativt, så roten ur minus 1 finns inte."
     },
     {
-     "s": 358.3,
-     "e": 359.52,
-     "text": "Hur brett blir det?"
+     "s": 420.94,
+     "e": 427.36,
+     "text": "Då saknar ekvationen lösning, och al-Khwarizmi skrev att en sådan uppgift är omöjlig."
     },
     {
-     "s": 360.78,
-     "e": 363.82,
-     "text": "Ställ upp en ekvation och lös den med pq-formeln."
+     "s": 428.36,
+     "e": 434.58,
+     "text": "Talet under rottecknet avgör alltså om det blir två, en eller ingen lösning."
     },
     {
-     "s": 364.88,
-     "e": 371.92,
-     "text": "Med bredden x blir längden x plus 4, och ekvationen blir x gånger,"
+     "s": 435.88,
+     "e": 437.46,
+     "text": "Nu ett övningstal."
     },
     {
-     "s": 372.36,
-     "e": 376.08,
-     "text": "parentes, x plus 4, är lika med 96."
+     "s": 438.46,
+     "e": 442.82,
+     "text": "Ett kretskort ska vara 4 centimeter längre än det är brett,"
     },
     {
-     "s": 377.3,
-     "e": 386.22,
-     "text": "Vi multiplicerar in och drar bort 96, så det blir x i kvadrat plus fyra x minus 96 är"
+     "s": 443.14,
+     "e": 446.68,
+     "text": "och arean ska vara 96 kvadratcentimeter."
     },
     {
-     "s": 386.26,
-     "e": 387.26,
-     "text": "lika med noll."
+     "s": 447.68,
+     "e": 449.38,
+     "text": "Hur brett blir kortet?"
     },
     {
-     "s": 388.28,
-     "e": 399.96,
-     "text": "Då är p 4 och q minus 96, och x är minus 2 plus eller minus roten ur 4 plus 96,"
+     "s": 450.38,
+     "e": 454.7,
+     "text": "Vi kallar bredden x, så längden är x plus 4."
     },
     {
-     "s": 400.7,
-     "e": 408.72,
-     "text": "alltså roten ur 100, som är 10, och lösningarna blir 8 och minus 12."
+     "s": 455.7,
+     "e": 463.88,
+     "text": "Arean är bredden gånger längden, så ekvationen blir x gånger parentesen x plus 4 är"
     },
     {
-     "s": 410.16,
-     "e": 413.98,
+     "s": 463.94,
+     "e": 465.34,
+     "text": "lika med 96."
+    },
+    {
+     "s": 466.64,
+     "e": 473.26,
+     "text": "Vi multiplicerar in x i parentesen, och det blir x i kvadrat plus 4x."
+    },
+    {
+     "s": 474.26,
+     "e": 477.22,
+     "text": "Sedan drar vi bort 96 från båda leden."
+    },
+    {
+     "s": 478.22,
+     "e": 482.06,
+     "text": "Nu är p 4 och q minus 96."
+    },
+    {
+     "s": 483.06,
+     "e": 489.58,
+     "text": "Formeln ger minus 2 plus eller minus roten ur 4 plus 96."
+    },
+    {
+     "s": 490.58,
+     "e": 496.74,
+     "text": "Roten ur 100 är 10, så lösningarna blir 8 och minus 12."
+    },
+    {
+     "s": 498.04,
+     "e": 502.7,
      "text": "Men ett kretskort kan inte vara minus 12 centimeter brett."
     },
     {
-     "s": 415.06,
-     "e": 420.6,
+     "s": 503.7,
+     "e": 509.76,
      "text": "Ekvationen vet inte att den handlar om ett kretskort, så vi måste själva stryka det svar"
     },
     {
-     "s": 420.66,
-     "e": 421.84,
+     "s": 509.82,
+     "e": 511.34,
      "text": "som inte är rimligt."
     },
     {
-     "s": 422.86,
-     "e": 427.28,
+     "s": 512.34,
+     "e": 516.8,
      "text": "Kortet blir 8 centimeter brett och 12 centimeter långt."
     },
     {
-     "s": 429.3,
-     "e": 436.62,
-     "text": "År 1145 översattes boken till latin, och på latin skrevs hans namn Algoritmi."
+     "s": 518.1,
+     "e": 523.5,
+     "text": "Omkring 300 år senare översattes al-Khwarizmis bok till latin."
     },
     {
-     "s": 437.58,
-     "e": 443.32,
-     "text": "Därifrån kommer ordet algoritm, en regel som man följer steg för steg."
+     "s": 524.5,
+     "e": 527.52,
+     "text": "På latin skrevs hans namn Algoritmi."
     },
     {
-     "s": 444.72,
-     "e": 449.02,
-     "text": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar,"
+     "s": 528.52,
+     "e": 535.4,
+     "text": "Därifrån kommer ordet algoritm, som betyder en regel som man följer steg för steg."
     },
     {
-     "s": 449.54,
-     "e": 451.78,
-     "text": "och att produkten blev 35."
+     "s": 536.7,
+     "e": 538.24,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 452.9,
-     "e": 454.4,
-     "text": "Hur stora är delarna?"
+     "s": 539.24,
+     "e": 546.36,
+     "text": "En åker är 6 meter längre än den är bred, och arean är 72 kvadratmeter."
     },
     {
-     "s": 455.54,
-     "e": 458.52,
+     "s": 547.36,
+     "e": 549.12,
+     "text": "Hur bred är åkern?"
+    },
+    {
+     "s": 550.12,
+     "e": 553.54,
      "text": "Ställ upp en ekvation och lös den med pq-formeln."
     }
    ]

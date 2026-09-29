@@ -478,13 +478,14 @@
     ]
   },
   "ma2a-04-pq-formeln": {
-    "fraga": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar, och att produkten blev 35.",
+    "notisFran": "Omkring trehundra år senare",
+    "fraga": "En åker är 6 meter längre än den är bred, och arean är 72 kvadratmeter.",
     "delar": [
       {
-        "fraga": "Ställ upp en ekvation, med x för den ena delen.",
+        "fraga": "Ställ upp en ekvation, med x för bredden.",
         "typ": "ekvation",
-        "svar": "x*(12 - x) = 35",
-        "exempel": "t.ex. x(10 − x) = 21",
+        "svar": "x*(x + 6) = 72",
+        "exempel": "t.ex. x(x + 4) = 96",
         "tangenter": [
           "(",
           ")",
@@ -493,61 +494,51 @@
         ],
         "fel": [
           {
-            "svar": "x + (12 - x) = 35",
-            "text": "Delarna ska gångras med varandra, inte läggas ihop: det är produkten som är 35."
+            "svar": "x + (x + 6) = 72",
+            "text": "Arean är bredden GÅNGER längden, inte plus."
           },
           {
-            "svar": "12*x = 35",
-            "text": "Den andra delen är inte 12, utan det som blir kvar när x är borttaget, alltså 12 − x."
+            "svar": "2*x + 2*(x + 6) = 72",
+            "text": "Det är omkretsen. Här är det arean som är 72, alltså bredden gånger längden."
           },
           {
-            "svar": "x*(12 - x) = 12",
-            "text": "Delarnas summa är 12, men det är produkten som ska bli 35."
+            "svar": "6*x = 72",
+            "text": "Längden är inte 6, utan 6 meter mer än bredden, alltså x + 6."
           }
         ]
       },
       {
-        "fraga": "Lös den med pq-formeln. Hur stora är delarna?",
-        "typ": "losningar",
-        "svar": [
-          5,
-          7
-        ],
-        "exempel": "t.ex. 3 och 7",
+        "fraga": "Lös den med pq-formeln. Hur bred är åkern?",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.001,
+        "enhet": "meter",
+        "exempel": "t.ex. 8",
         "fel": [
           {
-            "svar": [
-              6
-            ],
-            "text": "6 är halva p med ombytt tecken. Nu ska du lägga till och dra bort roten ur 36 − 35."
+            "svar": "-12",
+            "text": "−12 är också en lösning till ekvationen, men en bredd kan inte vara negativ. Stryk den."
           },
           {
-            "svar": [
-              -5,
-              -7
-            ],
-            "text": "Kolla tecknet. p är −12, så halva p med ombytt tecken är +6."
+            "svar": "12",
+            "text": "12 meter är längden. Bredden är 6 meter mindre."
           },
           {
-            "svar": [
-              14.43,
-              -2.43
-            ],
-            "text": "Kolla tecknet på q. Ekvationen är x² − 12x + 35 = 0, så q är +35 och det blir roten ur 36 − 35."
+            "svar": "-3",
+            "text": "−3 är halva p med ombytt tecken. Lägg till och dra bort roten ur 9 + 72."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "I en tredje uppgift har",
-      "text": "Gör som med tio och 21 i filmen. Kalla ena delen x, så är den andra 12 − x. Multiplicera in, flytta 35 och se till att det står plus framför x²."
+      "fras": "Nu ett övningstal. Ett",
+      "text": "Gör som med kretskortet i filmen. Kalla bredden x, så är längden x + 6. Multiplicera in och flytta 72, så att det står noll på högra sidan."
     },
     "losning": [
-      "Kalla den ena delen x. Då är den andra 12 − x, och x(12 − x) = 35.",
-      "Multiplicera in: 12x − x² = 35. Flytta 35: −x² + 12x − 35 = 0.",
-      "Gångra med −1, så att det står plus framför x²: x² − 12x + 35 = 0. Då är p = −12 och q = 35.",
-      "pq-formeln: x = 6 ± √(36 − 35) = 6 ± √1 = 6 ± 1.",
-      "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
+      "Kalla bredden x. Då är längden x + 6, och x(x + 6) = 72.",
+      "Multiplicera in: x² + 6x = 72. Dra bort 72 från båda leden: x² + 6x − 72 = 0. Då är p = 6 och q = −72.",
+      "pq-formeln: x = −3 ± √(9 + 72) = −3 ± √81 = −3 ± 9.",
+      "x = 6 eller x = −12. En bredd kan inte vara negativ, så åkern är 6 meter bred (och 12 meter lång). Kontroll: 6 · 12 = 72."
     ]
   },
   "formelbladet-ma2-1-algebra": {
