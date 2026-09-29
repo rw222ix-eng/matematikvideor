@@ -449,32 +449,45 @@
     ]
   },
   "ma2a-03-x2-och-nollprodukt": {
-    "fraga": "Tänk dig en kanonkula som slår ner 8 sekunder efter skottet.",
+    "fraga": "En kula skjuts rakt upp, och efter t sekunder är höjden 30t − 5t².",
     "delar": [
       {
-        "fraga": "Skriv en andragradsekvation med lösningarna 0 och 8, med t för tiden.",
-        "typ": "ekvation",
-        "svar": "t*(t - 8) = 0",
-        "exempel": "t.ex. (t − 5)(t − 2) = 0",
-        "tangenter": ["(", ")", "^", "="],
+        "fraga": "Använd nollproduktmetoden och räkna ut när kulan är nere igen. Svara i sekunder.",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.001,
+        "enhet": "sekunder",
+        "exempel": "t.ex. 10",
         "fel": [
-          { "svar": "t*(t + 8) = 0", "text": "Den ekvationen har lösningarna 0 och −8. För att faktorn ska bli 0 när t är 8 ska det stå t − 8." },
-          { "svar": "(t - 8)^2 = 0", "text": "Den har bara lösningen 8. Den ena faktorn ska i stället bli 0 när t är 0." },
-          { "svar": "t - 8 = 0", "text": "Den har bara lösningen 8, och det är ingen andragradsekvation. Det behövs en faktor till, som blir 0 när t är 0." },
-          { "svar": "t^2 = 64", "text": "Den har lösningarna 8 och −8. Gör som med 5 och 2 i filmen: en faktor för varje lösning, och produkten lika med 0." }
+          {
+            "svar": "0",
+            "text": "t = 0 är när kulan skjuts iväg, precis som i filmen. Den andra faktorn, 30 − 5t, ger när den är nere igen."
+          },
+          {
+            "svar": "30",
+            "text": "30 − 5t = 0 betyder att 5t = 30. Dela båda leden med 5."
+          },
+          {
+            "svar": "10",
+            "text": "10 sekunder var svaret i filmen, där höjden var 50t − 5t². Här står det 30t."
+          },
+          {
+            "svar": "3",
+            "text": "Efter 3 sekunder är kulan högst upp. Den är nere igen när 30 − 5t = 0."
+          }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Man kan också gå baklänges",
-      "text": "Gör som med lösningarna 5 och 2 i filmen. Vilken faktor blir 0 när t är 0, och vilken blir 0 när t är 8?"
+      "fras": "Så antingen är t lika med noll",
+      "text": "Gör som med 50t − 5t² i filmen: sätt höjden lika med 0, bryt ut t och sätt varje faktor lika med 0."
     },
     "losning": [
-      "Varje lösning ger en faktor som blir 0 för just den lösningen.",
-      "Lösningen t = 0 ger faktorn t. Lösningen t = 8 ger faktorn t − 8, för 8 − 8 = 0.",
-      "Produkten ska vara 0: t(t − 8) = 0.",
-      "Kontroll med nollproduktmetoden: t = 0 eller t − 8 = 0, alltså t = 0 eller t = 8.",
-      "Multiplicerar man in t blir det t² − 8t = 0, och det är samma ekvation."
+      "Kulan är nere när höjden är 0: 30t − 5t² = 0.",
+      "t finns i båda termerna, så vi bryter ut t: t(30 − 5t) = 0.",
+      "En produkt är 0 bara om en faktor är 0: t = 0 eller 30 − 5t = 0.",
+      "t = 0 är när kulan skjuts iväg. 30 − 5t = 0 ger 5t = 30, alltså t = 6.",
+      "Kulan är nere igen efter 6 sekunder."
     ]
   },
   "ma2a-04-pq-formeln": {
