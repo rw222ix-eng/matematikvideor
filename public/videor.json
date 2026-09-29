@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-29T18:44:18.368Z",
+ "byggd": "2026-09-29T18:56:26.058Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -1395,156 +1395,160 @@
   },
   {
    "id": "arkimedes-och-cirkeln",
-   "titel": "Arkimedes och cirkeln",
-   "ar": -212,
+   "titel": "Arkimedes och muren",
+   "ar": -213,
    "serie": null,
    "del": null,
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/arkimedes-v5/arkimedes-och-cirkeln-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/arkimedes-v6/arkimedes-och-cirkeln-1080p.mp4",
    "moment": "Olikheter",
    "begrepp": [
     "olikhet",
     "olikhetstecken",
     "större än",
     "mindre än",
-    "intervall",
     "tallinjen",
     "lösa olikheter",
-    "vända tecknet",
-    "pi"
+    "vända tecknet"
    ],
-   "beskrivning": "Arkimedes i Syrakusa fångar pi mellan två tal, 3 10/71 < π < 3 1/7, och belägringen 212 f.Kr. ger olikheten med ett okänt tal. Olikhetstecken, intervall på tallinjen och att lösa en olikhet som en ekvation, med regeln att tecknet vänder vid minustal.",
+   "beskrivning": "Syrakusa 213 f.Kr.: Arkimedes kastmaskiner på muren och ett romerskt skepp som ror in. Olikhetstecken, olikheten 300 − 4t ≤ 200, att lösa en olikhet som en ekvation och varför tecknet vänder när man delar med ett negativt tal, med svaret på tallinjen.",
    "youtube": "ItJfteam56s",
-   "langd": 512,
+   "langd": 438,
    "omslag": "omslag/arkimedes-och-cirkeln.jpg?v=1dcbf4af",
    "omslagRen": "omslag/arkimedes-och-cirkeln-ren.jpg?v=112aa1a1",
    "omslagStor": "omslag/arkimedes-och-cirkeln-stor.jpg?v=f47c765f",
    "repliker": [
     {
-     "t": 0,
-     "text": "För ungefär två tusen tre hundra år sedan låg den grekiska staden Syrakusa på ön Sicilien, med en hög mur runt hela staden. Kungen hette Hieron, och när han behövde räkna ut något skickade han efter en man som hette Arkimedes."
+     "t": 1,
+     "text": "År tvåhundratretton före Kristus ligger staden Syrakusa på ön Sicilien. Staden har en hög mur ut mot havet. Rom är i krig med Syrakusa, och nu ror romerska krigsskepp mot staden för att erövra den."
     },
     {
-     "t": 19,
-     "text": "Arkimedes ritade sina figurer i sand på ett bord. Han ritade mest cirklar, för det fanns en fråga om cirkeln som ingen kunde svara på."
+     "t": 20,
+     "text": "I Syrakusa bor Arkimedes. Han är den skickligaste matematikern i staden, och stadens kung har bett honom försvara muren. Därför har Arkimedes byggt kastmaskiner. De står uppe på muren och slungar tunga stenar ut över vattnet."
     },
     {
-     "t": 31,
-     "text": "Sträckan runt om en cirkel kallas omkrets, och sträckan tvärs över kallas diameter. Omkretsen är lite mer än tre gånger så lång som diametern. Men hur mycket mer? Det talet kallar vi i dag pi, och ingen visste exakt vad det var."
+     "t": 41,
+     "text": "Säg att en av kastmaskinerna når tvåhundra meter ut från muren. Ett skepp som ligger längre bort än så kan den inte träffa."
     },
     {
-     "t": 55,
-     "text": "Så Arkimedes tänkte tvärtom. Han letade efter ett tal som pi är större än, och ett tal som pi är mindre än. Då vet man mellan vilka tal pi ligger, och det ska vi lära oss skriva och räkna med."
+     "t": 52,
+     "text": "Nu ligger ett romerskt skepp trehundra meter från muren. Det ror rakt mot muren, och varje sekund kommer det fyra meter närmare. Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     },
     {
-     "t": 73,
-     "text": "Nu kommer det Arkimedes själv gjorde i sanden, och det är det svåraste vi gör i dag. Så här bestämdes pi. Häng med så gott det går, och det är helt okej om du inte fattar varje steg. Han ritade en sexhörning inuti cirkeln, med hörnen på cirkeln. Varje sida är lika lång som halva diametern, och sex halva diametrar är tre hela, så sträckan runt sexhörningen är tre diametrar. Men cirkeln går utanför sexhörningen, så omkretsen är längre än tre diametrar. Pi är alltså större än 3."
+     "t": 68,
+     "text": "Först tar vi reda på hur långt bort skeppet är. Efter en sekund har skeppet rott fyra meter. Efter två sekunder har det rott två gånger fyra, alltså åtta meter. Vi vet inte hur många sekunder det tar, så vi kallar antalet sekunder t."
     },
     {
-     "t": 120,
-     "text": "Sedan ritar vi en fyrkant utanför cirkeln, så att cirkeln nuddar alla sidorna. Varje sida är lika lång som diametern, så sträckan runt fyrkanten är fyra diametrar, och cirkeln går innanför, så omkretsen är kortare än så. Pi är mindre än 4."
+     "t": 89,
+     "text": "Efter t sekunder har skeppet rott fyra gånger t meter. Det skriver vi kort som fyra t. Från början låg skeppet trehundra meter bort. Så efter t sekunder är det trehundra minus fyra t meter kvar till muren."
     },
     {
-     "t": 146,
-     "text": "Det var det svåra. Kvar står två saker, att pi är större än 3 och mindre än 4. Större än och mindre än skriver man med olikhetstecken, och den breda öppningen är vänd mot det största talet. Båda kan vi skriva på en rad: 3 mindre än pi mindre än 4. På tallinjen är det sträckan mellan 3 och 4, och en sådan sträcka kallas ett intervall. Vid 3 och 4 ritar vi ringar, för pi är inte 3 och inte 4."
+     "t": 110,
+     "text": "Kastmaskinen träffar när det är tvåhundra meter kvar eller mindre. Avståndet ska alltså inte vara lika med ett visst tal. Det ska vara mindre än eller lika med tvåhundra. För det finns ett eget tecken, som ser ut som en spets med ett streck under. Spetsen pekar mot den mindre sidan, och den öppna sidan är vänd mot den större. Strecket betyder \"eller lika med\"."
     },
     {
-     "t": 189,
-     "text": "Mellan 3 och 4 är brett, och Arkimedes ville ha det smalare. Så han ritade en tolvhörning, sedan 24, 48 och till sist 96 hörn, inuti och utanför cirkeln, och räknade ut sträckan runt båda."
+     "t": 141,
+     "text": "Nu kan vi skriva frågan med matematik. Trehundra minus fyra t är mindre än eller lika med tvåhundra. Ett påstående med ett sådant tecken i stället för ett likhetstecken kallas en olikhet. Tecknet kallas olikhetstecken."
     },
     {
-     "t": 210,
-     "text": "Då fick han att pi är större än 3 och 10 sjuttioförstedelar, men mindre än 3 och en sjundedel. Skriver man bråken som decimaltal börjar båda på 3,14."
+     "t": 163,
+     "text": "En olikhet löser man nästan som en ekvation. Man gör samma sak på båda sidor om tecknet, tills t står ensamt. Först vill vi få bort trehundra från vänster sida. Därför drar vi bort trehundra på båda sidor. Då står det minus fyra t, mindre än eller lika med minus hundra."
     },
     {
-     "t": 228,
-     "text": "Kung Hieron dog år 215 före Kristus, och Syrakusa bytte sida till Kartago, som låg i krig med Rom. Därför seglade en romersk flotta mot staden år 213 före Kristus, under generalen Marcellus."
+     "t": 190,
+     "text": "Nu vill vi dela båda sidor med minus fyra. Men här skiljer sig olikheter från ekvationer. Vi tittar först på två vanliga tal. Två är mindre än fem. Om vi gångar båda med minus ett får vi minus två och minus fem."
     },
     {
-     "t": 249,
-     "text": "Men Hieron hade bett Arkimedes bygga maskiner som kunde försvara muren. Så när skeppen kom stod där kastmaskiner som slungade stenar ut över vattnet, och kranar som kunde gripa ett skepp som kom nära, lyfta det och släppa det. Romarna lärde sig att hålla sig på avstånd."
+     "t": 211,
+     "text": "På tallinjen ligger minus fem längre till vänster än minus två. Alltså är minus två större än minus fem. Gånger minus ett flyttar talen till andra sidan av nollan. Där byter de ordning. Därför måste tecknet vända. Så är det alltid. Gångar eller delar man båda sidor med ett negativt tal, alltså ett tal under noll, så vänder olikhetstecknet."
     },
     {
-     "t": 274,
-     "text": "Tänk dig ett romerskt skepp som ligger 300 meter från muren och ror in mot den, 4 meter varje sekund. Efter t sekunder är det 300 minus 4 t meter kvar. Kastmaskinerna når 200 meter ut. Efter hur många sekunder är skeppet inom räckhåll?"
+     "t": 245,
+     "text": "Nu delar vi båda sidor med minus fyra, och vi vänder tecknet. Minus fyra t delat med minus fyra är t. Minus hundra delat med minus fyra är tjugofem. Tecknet har vänt, så nu står det att t är större än eller lika med tjugofem."
     },
     {
-     "t": 300,
-     "text": "Skeppet är inom räckhåll när avståndet är högst 200 meter, alltså när 300 minus 4 t är mindre än eller lika med 200. Tecknet har ett streck under sig, för avståndet får vara precis 200 också. Det är en olikhet med ett okänt tal, och vi löser den som en ekvation: ta bort 300 från båda sidor, så står det minus 4 t mindre än eller lika med minus 100."
+     "t": 268,
+     "text": "Kom ihåg att t är antalet sekunder. Kastmaskinen kan alltså träffa skeppet efter tjugofem sekunder och hela tiden därefter. Vi kontrollerar svaret. Efter tjugofem sekunder har skeppet rott fyra gånger tjugofem, alltså hundra meter. Då är det tvåhundra meter kvar, precis så långt som kastmaskinen når."
     },
     {
-     "t": 339,
-     "text": "Nu ska vi dela med minus 4, och här skiljer sig olikheter från ekvationer. 2 är mindre än 5, men gångar man båda med minus 1 får man minus 2 och minus 5, och minus 2 är större än minus 5. Därför vänder man tecknet varje gång man gångar eller delar med ett minustal."
+     "t": 296,
+     "text": "På tallinjen ritar vi svaret som en fylld prick vid tjugofem, eftersom tjugofem räknas med. Från pricken drar vi en linje åt höger, för alla större tal räknas också. Om strecket under tecknet hade saknats, hade tjugofem inte räknats med. Då hade vi ritat en ring i stället för en prick."
     },
     {
-     "t": 367,
-     "text": "Så när vi delar med minus 4 vänder tecknet, och t är större än eller lika med 25. Skeppet är inom räckhåll efter 25 sekunder. På tallinjen blir det en fylld prick vid 25, för 25 räknas med, och allt till höger."
+     "t": 321,
+     "text": "Nu en olikhet utan skepp. Lös olikheten tre x plus fem är mindre än tjugo. Här står x för ett okänt tal. Först drar vi bort fem på båda sidor. Då är tre x mindre än femton."
     },
     {
-     "t": 392,
-     "text": "Två olikheter att lösa. Lös olikheten tre x plus 5 mindre än 20. Ta bort 5, tre x mindre än 15, dela med 3, x mindre än 5. Ring vid 5 och allt till vänster."
+     "t": 342,
+     "text": "Sedan delar vi båda sidor med tre. Tre är ett positivt tal, alltså större än noll, så tecknet står kvar. Då är x mindre än fem. Här saknas strecket, så fem räknas inte med. På tallinjen blir det en ring vid fem och en linje åt vänster."
     },
     {
-     "t": 414,
-     "text": "Lös olikheten 15 minus två x större än eller lika med 7. Ta bort 15, minus två x större än eller lika med minus 8. Dela med minus 2 och vänd tecknet, x mindre än eller lika med 4. Fylld prick vid 4 och allt till vänster."
+     "t": 366,
+     "text": "Arkimedes kastmaskiner höll de romerska skeppen borta från muren. Romarna fick vänta utanför staden i två år. En natt år tvåhundratolv före Kristus firade staden en fest. Vakterna var få, och romerska soldater klättrade över muren och tog staden."
     },
     {
-     "t": 444,
-     "text": "Belägringen varade i två år. Hösten 212 före Kristus firade staden en fest, vakterna var få, och på natten klättrade romerska soldater över muren och tog staden."
+     "t": 390,
+     "text": "En romersk soldat hittade Arkimedes i hans hus. Han satt böjd över en figur som han hade ritat i sand på ett bord. Arkimedes bad att få räkna klart, men soldaten dödade honom."
     },
     {
-     "t": 462,
-     "text": "Marcellus hade befallt att Arkimedes inte fick skadas, men en soldat hittade honom böjd över en figur i sanden. Arkimedes bad att få räkna klart först, och soldaten dödade honom. Han var 75 år."
-    },
-    {
-     "t": 482,
-     "text": "Tänk dig ett skepp till, som ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter. Lös olikheten 400 minus 5 t mindre än eller lika med 200. Efter hur många sekunder är skeppet inom räckhåll?"
+     "t": 406,
+     "text": "Nu är det din tur. Ett annat romerskt skepp ligger fyrahundra meter från muren. Det ror rakt mot muren, och varje sekund kommer det fem meter närmare. Kastmaskinen når tvåhundra meter. Lös olikheten fyrahundra minus fem t är mindre än eller lika med tvåhundra. Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
-     "rubrik": "Arkimedes i Syrakusa",
+     "t": 1,
+     "rubrik": "Arkimedes och kastmaskinerna på muren",
      "typ": "historia"
     },
     {
-     "t": 31,
-     "rubrik": "Pi, och hur Arkimedes ringade in det",
+     "t": 68,
+     "rubrik": "Avståndet 300 − 4t",
      "typ": "matte"
     },
     {
-     "t": 146,
-     "rubrik": "Olikhetstecken: pi ligger mellan 3 och 4",
+     "t": 110,
+     "rubrik": "Olikhetstecknet ≤ och olikheten",
      "typ": "matte"
     },
     {
-     "t": 228,
-     "rubrik": "Romarna anfaller Syrakusa",
-     "typ": "historia"
-    },
-    {
-     "t": 274,
-     "rubrik": "Så löser du en olikhet, och när tecknet vänder",
+     "t": 163,
+     "rubrik": "Lös olikheten som en ekvation",
      "typ": "matte"
     },
     {
-     "t": 444,
+     "t": 190,
+     "rubrik": "Därför vänder tecknet",
+     "typ": "matte"
+    },
+    {
+     "t": 245,
+     "rubrik": "t ≥ 25, kontroll och tallinjen",
+     "typ": "matte"
+    },
+    {
+     "t": 321,
+     "rubrik": "Övning: 3x + 5 < 20",
+     "typ": "matte"
+    },
+    {
+     "t": 366,
      "rubrik": "Syrakusa faller",
      "typ": "historia"
     },
     {
-     "t": 482,
-     "rubrik": "Ett skepp till",
+     "t": 406,
+     "rubrik": "Din tur",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "Ett skepp till ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter.",
+    "fraga": "Ett annat romerskt skepp ligger 400 meter från muren. Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare. Kastmaskinen når 200 meter.",
     "delar": [
      {
-      "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder är skeppet inom räckhåll?",
+      "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
       "typ": "olikhet",
       "variabel": "t",
       "svar": "t >= 40",
@@ -1560,11 +1564,11 @@
       "fel": [
        {
         "svar": "t <= 40",
-        "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett minustal?"
+        "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett negativt tal?"
        },
        {
         "svar": "t > 40",
-        "text": "Nästan. Kastmaskinerna når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med."
+        "text": "Nästan. Kastmaskinen når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med."
        },
        {
         "svar": "t >= -40",
@@ -1591,432 +1595,447 @@
     ],
     "ledtrad": {
      "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet.",
-     "t": 339
+     "t": 190
     },
     "losning": [
      "400 − 5t ≤ 200",
      "Dra 400 från båda sidor. Då blir det −5t ≤ −200.",
-     "Dela med −5. Det är ett minustal, så tecknet vänder, och t ≥ 40.",
-     "Skeppet är inom räckhåll efter 40 sekunder.",
-     "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinerna når."
+     "Dela med −5. Det är ett negativt tal, så tecknet vänder, och t ≥ 40.",
+     "Kastmaskinen kan träffa skeppet efter 40 sekunder.",
+     "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinen når."
     ],
-    "notisFran": 444
+    "notisFran": 245
    },
    "undertext": [
     {
-     "s": 0.14,
-     "e": 7.38,
-     "text": "För ungefär två tusen tre hundra år sedan låg den grekiska staden Syrakusa på ön Sicilien,"
+     "s": 1.5,
+     "e": 7.78,
+     "text": "År 213 före Kristus ligger staden Syrakusa på ön Sicilien."
     },
     {
-     "s": 8.02,
-     "e": 10.68,
-     "text": "med en hög mur runt hela staden."
+     "s": 8.78,
+     "e": 11.62,
+     "text": "Staden har en hög mur ut mot havet."
     },
     {
-     "s": 11.7,
-     "e": 18.78,
-     "text": "Kungen hette Hieron, och när han behövde räkna ut något skickade han efter en man som hette Arkimedes."
+     "s": 12.62,
+     "e": 19.48,
+     "text": "Rom är i krig med Syrakusa, och nu ror romerska krigsskepp mot staden för att erövra den."
     },
     {
-     "s": 19.9,
-     "e": 23.4,
-     "text": "Arkimedes ritade sina figurer i sand på ett bord."
+     "s": 20.78,
+     "e": 23.14,
+     "text": "I Syrakusa bor Arkimedes."
     },
     {
-     "s": 24.16,
-     "e": 30.46,
-     "text": "Han ritade mest cirklar, för det fanns en fråga om cirkeln som ingen kunde svara på."
+     "s": 24.14,
+     "e": 30.36,
+     "text": "Han är den skickligaste matematikern i staden, och stadens kung har bett honom försvara muren."
     },
     {
-     "s": 31.51,
-     "e": 39.74,
-     "text": "Sträckan runt om en cirkel kallas omkrets, och sträckan tvärs över kallas diameter."
+     "s": 31.36,
+     "e": 34.48,
+     "text": "Därför har Arkimedes byggt kastmaskiner."
     },
     {
-     "s": 40.94,
-     "e": 45.94,
-     "text": "Omkretsen är lite mer än tre gånger så lång som diametern."
+     "s": 35.48,
+     "e": 40.36,
+     "text": "De står uppe på muren och slungar tunga stenar ut över vattnet."
     },
     {
-     "s": 46.42,
-     "e": 48.14,
-     "text": "Men hur mycket mer?"
+     "s": 41.66,
+     "e": 46.24,
+     "text": "Säg att en av kastmaskinerna når 200 meter ut från muren."
     },
     {
-     "s": 49.42,
-     "e": 54.42,
-     "text": "Det talet kallar vi i dag pi, och ingen visste exakt vad det var."
+     "s": 47.24,
+     "e": 50.76,
+     "text": "Ett skepp som ligger längre bort än så kan den inte träffa."
     },
     {
-     "s": 55.48,
-     "e": 58,
-     "text": "Så Arkimedes tänkte tvärtom."
+     "s": 52.06,
+     "e": 55.76,
+     "text": "Nu ligger ett romerskt skepp 300 meter från muren."
     },
     {
-     "s": 58.62,
-     "e": 65.44,
-     "text": "Han letade efter ett tal som pi är större än, och ett tal som pi är mindre än."
+     "s": 56.76,
+     "e": 62.32,
+     "text": "Det ror rakt mot muren, och varje sekund kommer det 4 meter närmare."
     },
     {
-     "s": 66.32,
-     "e": 72.54,
-     "text": "Då vet man mellan vilka tal pi ligger, och det ska vi lära oss skriva och räkna med."
+     "s": 63.32,
+     "e": 67.06,
+     "text": "Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     },
     {
-     "s": 73.76,
-     "e": 79.76,
-     "text": "Nu kommer det Arkimedes själv gjorde i sanden, och det är det svåraste vi gör i dag."
+     "s": 68.36,
+     "e": 71.52,
+     "text": "Först tar vi reda på hur långt bort skeppet är."
     },
     {
-     "s": 80.89,
-     "e": 82.28,
-     "text": "Så här bestämdes pi."
+     "s": 72.52,
+     "e": 75.9,
+     "text": "Efter en sekund har skeppet rott 4 meter."
     },
     {
-     "s": 83.06,
-     "e": 87.78,
-     "text": "Häng med så gott det går, och det är helt okej om du inte fattar varje steg."
+     "s": 76.9,
+     "e": 81.88,
+     "text": "Efter två sekunder har det rott 2 gånger 4, alltså 8 meter."
     },
     {
-     "s": 88.94,
-     "e": 94.48,
-     "text": "Han ritade en sexhörning inuti cirkeln, med hörnen på cirkeln."
+     "s": 82.88,
+     "e": 87.82,
+     "text": "Vi vet inte hur många sekunder det tar, så vi kallar antalet sekunder t."
     },
     {
-     "s": 95.52,
-     "e": 103.04,
-     "text": "Varje sida är lika lång som halva diametern, och sex halva diametrar är tre hela,"
+     "s": 89.12,
+     "e": 93.84,
+     "text": "Efter t sekunder har skeppet rott 4 gånger t meter."
     },
     {
-     "s": 103.66,
-     "e": 107.84,
-     "text": "så sträckan runt sexhörningen är tre diametrar."
+     "s": 94.84,
+     "e": 97.52,
+     "text": "Det skriver vi kort som 4t."
     },
     {
-     "s": 108.79,
-     "e": 115.96,
-     "text": "Men cirkeln går utanför sexhörningen, så omkretsen är längre än tre diametrar."
+     "s": 98.52,
+     "e": 101.68,
+     "text": "Från början låg skeppet 300 meter bort."
     },
     {
-     "s": 116.8,
-     "e": 119.2,
-     "text": "Pi är alltså större än 3."
+     "s": 102.68,
+     "e": 109.12,
+     "text": "Så efter t sekunder är det 300 − 4t meter kvar till muren."
     },
     {
-     "s": 120.52,
-     "e": 126.88,
-     "text": "Sedan ritar vi en fyrkant utanför cirkeln, så att cirkeln nuddar alla sidorna."
+     "s": 110.42,
+     "e": 115.12,
+     "text": "Kastmaskinen träffar när det är 200 meter kvar eller mindre."
     },
     {
-     "s": 127.96,
-     "e": 135.8,
-     "text": "Varje sida är lika lång som diametern, så sträckan runt fyrkanten är fyra diametrar,"
+     "s": 116.12,
+     "e": 120,
+     "text": "Avståndet ska alltså inte vara lika med ett visst tal."
     },
     {
-     "s": 136.5,
-     "e": 141.9,
-     "text": "och cirkeln går innanför, så omkretsen är kortare än så."
+     "s": 121,
+     "e": 124.86,
+     "text": "Det ska vara mindre än eller lika med 200."
     },
     {
-     "s": 142.82,
-     "e": 145,
-     "text": "Pi är mindre än 4."
+     "s": 125.86,
+     "e": 130.5,
+     "text": "För det finns ett eget tecken, som ser ut som en spets med ett streck under."
     },
     {
-     "s": 146.02,
-     "e": 147.02,
-     "text": "Det var det svåra."
+     "s": 131.5,
+     "e": 136.96,
+     "text": "Spetsen pekar mot den mindre sidan, och den öppna sidan är vänd mot den större."
     },
     {
-     "s": 147.74,
-     "e": 154.46,
-     "text": "Kvar står två saker, att pi är större än 3 och mindre än 4."
+     "s": 137.96,
+     "e": 140.54,
+     "text": "Strecket betyder \"eller lika med\"."
     },
     {
-     "s": 155.62,
-     "e": 162.94,
-     "text": "Större än och mindre än skriver man med olikhetstecken, och den breda öppningen är vänd"
+     "s": 141.84,
+     "e": 144.3,
+     "text": "Nu kan vi skriva frågan med matematik."
     },
     {
-     "s": 163,
-     "e": 164.46,
-     "text": "mot det största talet."
+     "s": 145.3,
+     "e": 151.42,
+     "text": "300 − 4t är mindre än eller lika med 200."
     },
     {
-     "s": 165.42,
-     "e": 172.08,
-     "text": "Båda kan vi skriva på en rad: 3 mindre än pi mindre än 4."
+     "s": 152.42,
+     "e": 158.58,
+     "text": "Ett påstående med ett sådant tecken i stället för ett likhetstecken kallas en olikhet."
     },
     {
-     "s": 173.32,
-     "e": 180.84,
-     "text": "På tallinjen är det sträckan mellan 3 och 4, och en sådan sträcka kallas ett intervall."
+     "s": 159.58,
+     "e": 162.2,
+     "text": "Tecknet kallas olikhetstecken."
     },
     {
-     "s": 181.88,
-     "e": 188.76,
-     "text": "Vid 3 och 4 ritar vi ringar, för pi är inte 3 och inte 4."
+     "s": 163.5,
+     "e": 166.8,
+     "text": "En olikhet löser man nästan som en ekvation."
     },
     {
-     "s": 189.9,
-     "e": 194.78,
-     "text": "Mellan 3 och 4 är brett, och Arkimedes ville ha det smalare."
+     "s": 167.8,
+     "e": 173.12,
+     "text": "Man gör samma sak på båda sidor om tecknet, tills t står ensamt."
     },
     {
-     "s": 195.64,
-     "e": 203.5,
-     "text": "Så han ritade en tolvhörning, sedan 24, 48 och till sist 96 hörn,"
+     "s": 174.12,
+     "e": 177.46,
+     "text": "Först vill vi få bort 300 från vänster sida."
     },
     {
-     "s": 204,
-     "e": 209.5,
-     "text": "inuti och utanför cirkeln, och räknade ut sträckan runt båda."
+     "s": 178.46,
+     "e": 181.72,
+     "text": "Därför drar vi bort 300 på båda sidor."
     },
     {
-     "s": 210.58,
-     "e": 216.34,
-     "text": "Då fick han att pi är större än 3 och 10 sjuttioförstedelar,"
+     "s": 182.72,
+     "e": 188.9,
+     "text": "Då står det −4t, mindre än eller lika med −100."
     },
     {
-     "s": 216.96,
-     "e": 220.24,
-     "text": "men mindre än 3 och en sjundedel."
+     "s": 190.2,
+     "e": 193.42,
+     "text": "Nu vill vi dela båda sidor med −4."
     },
     {
-     "s": 221.32,
-     "e": 227.54,
-     "text": "Skriver man bråken som decimaltal börjar båda på 3,14."
+     "s": 194.42,
+     "e": 197.74,
+     "text": "Men här skiljer sig olikheter från ekvationer."
     },
     {
-     "s": 228.68,
-     "e": 236.46,
-     "text": "Kung Hieron dog år 215 före Kristus, och Syrakusa bytte sida till Kartago,"
+     "s": 198.74,
+     "e": 201.22,
+     "text": "Vi tittar först på två vanliga tal."
     },
     {
-     "s": 236.92,
-     "e": 238.46,
-     "text": "som låg i krig med Rom."
+     "s": 202.22,
+     "e": 204.1,
+     "text": "2 är mindre än 5."
     },
     {
-     "s": 239.48,
-     "e": 245.42,
-     "text": "Därför seglade en romersk flotta mot staden år 213 före Kristus,"
+     "s": 205.1,
+     "e": 210.4,
+     "text": "Om vi gångar båda med −1 får vi −2 och −5."
     },
     {
-     "s": 245.94,
-     "e": 248.02,
-     "text": "under generalen Marcellus."
+     "s": 211.7,
+     "e": 216.58,
+     "text": "På tallinjen ligger −5 längre till vänster än −2."
     },
     {
-     "s": 249.14,
-     "e": 254.86,
-     "text": "Men Hieron hade bett Arkimedes bygga maskiner som kunde försvara muren."
+     "s": 217.58,
+     "e": 221.12,
+     "text": "Alltså är −2 större än −5."
     },
     {
-     "s": 255.74,
-     "e": 262.52,
-     "text": "Så när skeppen kom stod där kastmaskiner som slungade stenar ut över vattnet,"
+     "s": 222.12,
+     "e": 226.82,
+     "text": "Gånger −1 flyttar talen till andra sidan av nollan."
     },
     {
-     "s": 263.08,
-     "e": 269.94,
-     "text": "och kranar som kunde gripa ett skepp som kom nära, lyfta det och släppa det."
+     "s": 227.82,
+     "e": 229.3,
+     "text": "Där byter de ordning."
     },
     {
-     "s": 270.54,
-     "e": 273.3,
-     "text": "Romarna lärde sig att hålla sig på avstånd."
+     "s": 230.3,
+     "e": 232.42,
+     "text": "Därför måste tecknet vända."
     },
     {
-     "s": 274.42,
-     "e": 280.94,
-     "text": "Tänk dig ett romerskt skepp som ligger 300 meter från muren och ror in mot den,"
+     "s": 233.42,
+     "e": 234.64,
+     "text": "Så är det alltid."
     },
     {
-     "s": 281.52,
-     "e": 283.66,
-     "text": "4 meter varje sekund."
+     "s": 235.64,
+     "e": 241.74,
+     "text": "Gångar eller delar man båda sidor med ett negativt tal, alltså ett tal under noll,"
     },
     {
-     "s": 284.76,
-     "e": 290.66,
-     "text": "Efter t sekunder är det 300 minus 4 t meter kvar."
+     "s": 242.22,
+     "e": 244.26,
+     "text": "så vänder olikhetstecknet."
     },
     {
-     "s": 291.82,
-     "e": 295.02,
-     "text": "Kastmaskinerna når 200 meter ut."
+     "s": 245.56,
+     "e": 250.64,
+     "text": "Nu delar vi båda sidor med −4, och vi vänder tecknet."
     },
     {
-     "s": 296.06,
-     "e": 299.62,
-     "text": "Efter hur många sekunder är skeppet inom räckhåll?"
+     "s": 251.64,
+     "e": 255.66,
+     "text": "−4t delat med −4 är t."
     },
     {
-     "s": 300.8,
-     "e": 310.64,
-     "text": "Skeppet är inom räckhåll när avståndet är högst 200 meter, alltså när 300 minus 4 t är"
+     "s": 256.66,
+     "e": 260.38,
+     "text": "−100 delat med −4 är 25."
     },
     {
-     "s": 310.72,
-     "e": 313.88,
-     "text": "mindre än eller lika med 200."
+     "s": 261.38,
+     "e": 267.28,
+     "text": "Tecknet har vänt, så nu står det att t är större än eller lika med 25."
     },
     {
-     "s": 315.06,
-     "e": 321.14,
-     "text": "Tecknet har ett streck under sig, för avståndet får vara precis 200 också."
+     "s": 268.58,
+     "e": 271.5,
+     "text": "Kom ihåg att t är antalet sekunder."
     },
     {
-     "s": 322.22,
-     "e": 330.16,
-     "text": "Det är en olikhet med ett okänt tal, och vi löser den som en ekvation: ta bort 300 från"
+     "s": 272.5,
+     "e": 278.8,
+     "text": "Kastmaskinen kan alltså träffa skeppet efter 25 sekunder och hela tiden därefter."
     },
     {
-     "s": 330.2,
-     "e": 338.3,
-     "text": "båda sidor, så står det minus 4 t mindre än eller lika med minus 100."
+     "s": 279.8,
+     "e": 281.28,
+     "text": "Vi kontrollerar svaret."
     },
     {
-     "s": 339.58,
-     "e": 345.78,
-     "text": "Nu ska vi dela med minus 4, och här skiljer sig olikheter från ekvationer."
+     "s": 282.28,
+     "e": 286.8,
+     "text": "Efter 25 sekunder har skeppet rott 4 gånger 25,"
     },
     {
-     "s": 347.18,
-     "e": 355.72,
-     "text": "2 är mindre än 5, men gångar man båda med minus 1 får man minus 2 och minus 5,"
+     "s": 287.24,
+     "e": 288.84,
+     "text": "alltså 100 meter."
     },
     {
-     "s": 356.48,
-     "e": 360.12,
-     "text": "och minus 2 är större än minus 5."
+     "s": 289.84,
+     "e": 295.06,
+     "text": "Då är det 200 meter kvar, precis så långt som kastmaskinen når."
     },
     {
-     "s": 361.2,
-     "e": 366.78,
-     "text": "Därför vänder man tecknet varje gång man gångar eller delar med ett minustal."
+     "s": 296.36,
+     "e": 300.62,
+     "text": "På tallinjen ritar vi svaret som en fylld prick vid 25,"
     },
     {
-     "s": 367.8,
-     "e": 376.64,
-     "text": "Så när vi delar med minus 4 vänder tecknet, och t är större än eller lika med 25."
+     "s": 300.94,
+     "e": 302.94,
+     "text": "eftersom 25 räknas med."
     },
     {
-     "s": 377.8,
-     "e": 381.44,
-     "text": "Skeppet är inom räckhåll efter 25 sekunder."
+     "s": 303.94,
+     "e": 309.76,
+     "text": "Från pricken drar vi en linje åt höger, för alla större tal räknas också."
     },
     {
-     "s": 382.56,
-     "e": 388.72,
-     "text": "På tallinjen blir det en fylld prick vid 25, för 25 räknas med,"
+     "s": 310.76,
+     "e": 316.22,
+     "text": "Om strecket under tecknet hade saknats, hade 25 inte räknats med."
     },
     {
-     "s": 389.16,
-     "e": 390.82,
-     "text": "och allt till höger."
+     "s": 317.22,
+     "e": 320.1,
+     "text": "Då hade vi ritat en ring i stället för en prick."
     },
     {
-     "s": 392.08,
-     "e": 393.88,
-     "text": "Två olikheter att lösa."
+     "s": 321.4,
+     "e": 323.74,
+     "text": "Nu en olikhet utan skepp."
     },
     {
-     "s": 394.8,
-     "e": 399.68,
-     "text": "Lös olikheten tre x plus 5 mindre än 20."
+     "s": 324.74,
+     "e": 329.62,
+     "text": "Lös olikheten 3x + 5 är mindre än 20."
     },
     {
-     "s": 400.7,
-     "e": 408.96,
-     "text": "Ta bort 5, tre x mindre än 15, dela med 3, x mindre än 5."
+     "s": 330.62,
+     "e": 333.22,
+     "text": "Här står x för ett okänt tal."
     },
     {
-     "s": 410.2,
-     "e": 413.4,
-     "text": "Ring vid 5 och allt till vänster."
+     "s": 334.22,
+     "e": 336.92,
+     "text": "Först drar vi bort 5 på båda sidor."
     },
     {
-     "s": 414.7,
-     "e": 421.3,
-     "text": "Lös olikheten 15 minus två x större än eller lika med 7."
+     "s": 337.92,
+     "e": 340.92,
+     "text": "Då är 3x mindre än 15."
     },
     {
-     "s": 422.58,
-     "e": 429.48,
-     "text": "Ta bort 15, minus två x större än eller lika med minus 8."
+     "s": 342.22,
+     "e": 344.64,
+     "text": "Sedan delar vi båda sidor med 3."
     },
     {
-     "s": 430.68,
-     "e": 438.26,
-     "text": "Dela med minus 2 och vänd tecknet, x mindre än eller lika med 4."
+     "s": 345.64,
+     "e": 351.32,
+     "text": "3 är ett positivt tal, alltså större än noll, så tecknet står kvar."
     },
     {
-     "s": 439.54,
-     "e": 443.14,
-     "text": "Fylld prick vid 4 och allt till vänster."
+     "s": 352.32,
+     "e": 354.62,
+     "text": "Då är x mindre än 5."
     },
     {
-     "s": 444.66,
-     "e": 447.14,
-     "text": "Belägringen varade i två år."
+     "s": 355.62,
+     "e": 359.58,
+     "text": "Här saknas strecket, så 5 räknas inte med."
     },
     {
-     "s": 448.04,
-     "e": 454.88,
-     "text": "Hösten 212 före Kristus firade staden en fest, vakterna var få,"
+     "s": 360.58,
+     "e": 364.86,
+     "text": "På tallinjen blir det en ring vid 5 och en linje åt vänster."
     },
     {
-     "s": 455.64,
-     "e": 461.22,
-     "text": "och på natten klättrade romerska soldater över muren och tog staden."
+     "s": 366.16,
+     "e": 371.04,
+     "text": "Arkimedes kastmaskiner höll de romerska skeppen borta från muren."
     },
     {
-     "s": 462.46,
-     "e": 469.58,
-     "text": "Marcellus hade befallt att Arkimedes inte fick skadas, men en soldat hittade honom böjd"
+     "s": 372.04,
+     "e": 375.56,
+     "text": "Romarna fick vänta utanför staden i två år."
     },
     {
-     "s": 469.68,
-     "e": 471.44,
-     "text": "över en figur i sanden."
+     "s": 376.56,
+     "e": 381.92,
+     "text": "En natt år 212 före Kristus firade staden en fest."
     },
     {
-     "s": 472.52,
-     "e": 477.66,
-     "text": "Arkimedes bad att få räkna klart först, och soldaten dödade honom."
+     "s": 382.92,
+     "e": 388.9,
+     "text": "Vakterna var få, och romerska soldater klättrade över muren och tog staden."
     },
     {
-     "s": 478.62,
-     "e": 480.48,
-     "text": "Han var 75 år."
+     "s": 390.2,
+     "e": 393.7,
+     "text": "En romersk soldat hittade Arkimedes i hans hus."
     },
     {
-     "s": 482.06,
-     "e": 488.62,
-     "text": "Tänk dig ett skepp till, som ligger 400 meter från muren och ror in mot den,"
+     "s": 394.7,
+     "e": 399.04,
+     "text": "Han satt böjd över en figur som han hade ritat i sand på ett bord."
     },
     {
-     "s": 489.28,
-     "e": 491.28,
-     "text": "5 meter varje sekund."
+     "s": 400.04,
+     "e": 404.96,
+     "text": "Arkimedes bad att få räkna klart, men soldaten dödade honom."
     },
     {
-     "s": 492.4,
-     "e": 495.52,
-     "text": "Kastmaskinerna når 200 meter."
+     "s": 406.26,
+     "e": 408,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 496.72,
-     "e": 504.54,
-     "text": "Lös olikheten 400 minus 5 t mindre än eller lika med 200."
+     "s": 409,
+     "e": 413.22,
+     "text": "Ett annat romerskt skepp ligger 400 meter från muren."
     },
     {
-     "s": 505.82,
-     "e": 509.32,
-     "text": "Efter hur många sekunder är skeppet inom räckhåll?"
+     "s": 414.22,
+     "e": 419.9,
+     "text": "Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare."
+    },
+    {
+     "s": 420.9,
+     "e": 423.76,
+     "text": "Kastmaskinen når 200 meter."
+    },
+    {
+     "s": 424.76,
+     "e": 431.98,
+     "text": "Lös olikheten 400 − 5t är mindre än eller lika med 200."
+    },
+    {
+     "s": 432.98,
+     "e": 436.98,
+     "text": "Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     }
    ]
   },

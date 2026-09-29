@@ -41,10 +41,10 @@
     ]
   },
   "arkimedes-och-cirkeln": {
-    "fraga": "Ett skepp till ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter.",
+    "fraga": "Ett annat romerskt skepp ligger 400 meter från muren. Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare. Kastmaskinen når 200 meter.",
     "delar": [
       {
-        "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder är skeppet inom räckhåll?",
+        "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
         "typ": "olikhet",
         "variabel": "t",
         "svar": "t >= 40",
@@ -53,8 +53,8 @@
         "exempel": "t.ex. t ≥ 10",
         "tangenter": ["≤", "≥", "<", ">"],
         "fel": [
-          { "svar": "t <= 40", "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett minustal?" },
-          { "svar": "t > 40", "text": "Nästan. Kastmaskinerna når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med." },
+          { "svar": "t <= 40", "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett negativt tal?" },
+          { "svar": "t > 40", "text": "Nästan. Kastmaskinen når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med." },
           { "svar": "t >= -40", "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal." },
           { "svar": "t <= -40", "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal." },
           { "svar": "-40", "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal." },
@@ -63,13 +63,13 @@
         ]
       }
     ],
-    "ledtrad": { "fras": "Nu ska vi dela med", "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet." },
+    "ledtrad": { "fras": "Nu vill vi dela båda sidor med minus fyra", "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet." },
     "losning": [
       "400 − 5t ≤ 200",
       "Dra 400 från båda sidor. Då blir det −5t ≤ −200.",
-      "Dela med −5. Det är ett minustal, så tecknet vänder, och t ≥ 40.",
-      "Skeppet är inom räckhåll efter 40 sekunder.",
-      "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinerna når."
+      "Dela med −5. Det är ett negativt tal, så tecknet vänder, och t ≥ 40.",
+      "Kastmaskinen kan träffa skeppet efter 40 sekunder.",
+      "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinen når."
     ]
   },
   "viete-och-chiffret": {
