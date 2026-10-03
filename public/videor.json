@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T10:23:52.266Z",
+ "byggd": "2026-10-03T10:26:27.858Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -4966,13 +4966,13 @@
   {
    "id": "harrison-och-longituden",
    "titel": "Harrison och longituden",
-   "ar": 1714,
+   "ar": 1761,
    "serie": null,
    "del": null,
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/harrison-v6/harrison-och-longituden-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/harrison-v7/harrison-och-longituden-1080p.mp4",
    "moment": "Intervall",
    "begrepp": [
     "intervall",
@@ -4986,119 +4986,148 @@
     "fylld prick",
     "ring"
    ],
-   "beskrivning": "Skeppsbrottet vid Scillyöarna 1707 och lagen 1714 som lovade 20 000 pund till den som kunde säga var ett skepp var. Lagens gränser blir intervall på tallinjen — slutna, halvöppna, öppna och utan slut — skrivna med hakparenteser och som olikheter. John Harrisons klocka och resan till Jamaica 1761.",
+   "beskrivning": "November 1761: William Harrison seglar mot Jamaica med klockan som hans pappa John har byggt. Parlamentets lag lovar 20 000 pund om skeppets läge blir högst 55 kilometer fel. Lagens gränser blir intervall på tallinjen — slutna, halvöppna, öppna och utan slut — skrivna med hakparenteser och som olikheter.",
    "youtube": "QmuyCe9gBOM",
-   "langd": 450,
+   "langd": 496,
    "omslag": "omslag/harrison-och-longituden.jpg?v=628c9a5b",
    "omslagRen": "omslag/harrison-och-longituden-ren.jpg?v=ad004e6c",
    "omslagStor": "omslag/harrison-och-longituden-stor.jpg?v=6751c349",
    "repliker": [
     {
-     "t": 0,
-     "text": "Natten den 22 oktober 1707 var en brittisk flotta på väg hem från Medelhavet till England. Det var storm och dimma, och amiralen Cloudesley Shovell trodde att skeppen låg långt ute på öppet hav. Men de var mycket närmare land, så fyra skepp gick på klipporna vid Scillyöarna, och över tusen sjömän drunknade."
+     "t": 1,
+     "text": "I november sjuttonhundrasextioett seglar ett engelskt krigsskepp över Atlanten, mot ön Jamaica. Ute på havet syns inget land, så ingen ombord vet exakt var skeppet är. Många skepp har gått på klippor, för att de trodde att de var någon annanstans."
     },
     {
-     "t": 26,
-     "text": "Ingen till sjöss kunde veta hur långt västerut man var. Hur långt norrut man var kunde man mäta på solen mitt på dagen, men för att veta hur långt västerut man kommit måste man veta vad klockan var hemma i England när solen stod som högst över skeppet. Så det behövdes en klocka som höll tiden hela resan, och tidens klockor hade en pendel som gick fel så fort skeppet gungade."
+     "t": 23,
+     "text": "Ombord finns en man som heter William Harrison. Han har med sig en klocka i en låda. Klockan har hans pappa John byggt, och William ska pröva den under resan."
     },
     {
-     "t": 53,
-     "text": "År 1714 lovade därför parlamentet i London ett pris till den som kunde lösa det. Den som kunde säga var ett skepp var med ett fel på högst 55 kilometer skulle få 20 000 pund. Var felet större än 55 men högst 75 kilometer blev priset 15 000 pund, och upp till 110 kilometer 10 000 pund. Ett större fel gav inget alls."
+     "t": 37,
+     "text": "En klocka kan visa hur långt västerut skeppet har kommit. Solen står högst på himlen mitt på dagen. Men ju längre västerut man är, desto senare står solen högst. Det är därför klockan i New York ligger sex timmar efter klockan i Sverige."
     },
     {
-     "t": 84,
-     "text": "20 000 pund var mer pengar än en sjöman tjänade under hela sitt liv, så gränserna måste vara helt tydliga. Vad gäller om felet är precis 55 kilometer? Matematiken har ett tydligt sätt att skriva sådana gränser, och det ska vi lära oss nu."
+     "t": 57,
+     "text": "Om William vet vad klockan är hemma i England, när solen står högst över skeppet, kan han räkna ut hur långt västerut skeppet har kommit. Därför måste klockan visa Englands tid under hela resan. Vanliga klockor går fel så fort skeppet gungar. Men Johns klocka är byggd för att gå rätt på ett skepp."
     },
     {
-     "t": 103,
-     "text": "Vi ritar en tallinje som visar hur många kilometer fel skeppets läge är, från 0 till 120. Det stora priset gäller när felet är minst 0 och högst 55, så vi ritar ett tjockt streck från 0 till 55, och eftersom både 0 och 55 räknas med sätter vi en fylld prick vid båda ändarna."
+     "t": 82,
+     "text": "Parlamentet i London har skrivit en lag, som lovar ett stort pris till den som kan visa var ett skepp är. Priset beror på hur många kilometer fel skeppets läge blir. Om Johns klocka är tillräckligt bra, vinner han priset."
     },
     {
-     "t": 129,
-     "text": "Det skriver man med hakparenteser: hakparentes, 0, komma, 55, hakparentes. Parenteserna är vända inåt, mot talen, och det betyder att ändpunkterna räknas med. Ett sådant intervall kallas slutet. Kallar vi felet x kan vi skriva samma sak som en olikhet: 0 mindre än eller lika med x mindre än eller lika med 55."
+     "t": 101,
+     "text": "Blir felet högst femtiofem kilometer, får man tjugotusen pund. Blir felet större än femtiofem, men högst sjuttiofem kilometer, får man femtontusen pund. Blir felet större än sjuttiofem, men högst hundratio kilometer, får man tiotusen pund. Blir felet ännu större, får man inget. Tjugotusen pund är mer än en sjöman tjänar under hela sitt liv."
     },
     {
-     "t": 162,
-     "text": "Nästa pris gäller när felet är större än 55 men högst 75. Talet 55 ska inte räknas med, för då gäller det stora priset, så vid 55 ritar vi en ring i stället för en prick och vänder parentesen utåt, bort från talet. Vid 75 räknas talet med, så där blir det en fylld prick och parentesen vänd inåt."
+     "t": 133,
+     "text": "När skeppet kommer fram till Jamaica, ska William ta reda på hur fel klockan har gått. Vilket pris vinner klockan? För att svara måste vi veta exakt var lagens gränser går. Matematiken har ett tydligt sätt att skriva sådana gränser."
     },
     {
-     "t": 188,
-     "text": "Ett intervall med ring i den ena änden och fylld prick i den andra kallas halvöppet, och olikheten blir 55 mindre än x mindre än eller lika med 75. Det tredje priset blir på samma sätt intervallet från 75 till 110, med ring vid 75 och fylld prick vid 110."
+     "t": 153,
+     "text": "Vi ritar en tallinje. Den visar hur många kilometer fel skeppets läge är, från noll till hundrafemtio. Det stora priset gäller när felet är minst noll och högst femtiofem. Så vi ritar ett tjockt streck från noll till femtiofem."
     },
     {
-     "t": 216,
-     "text": "Kvar är alla fel som är större än 110, och det intervallet har inget slut. Då skriver man tecknet för oändligheten, en liggande åtta, och vid oändligheten är parentesen alltid vänd utåt, för oändligheten är inget tal man kan komma fram till. På tallinjen blir det en ring vid 110 och ett tjockt streck med pilspets åt höger. Ett fel på precis 55 kilometer ger alltså 20 000 pund."
+     "t": 176,
+     "text": "Talen i ändarna kallas ändpunkter. Här räknas båda ändpunkterna med, så vi sätter en fylld prick vid noll och en vid femtiofem. Ett fel på precis femtiofem kilometer ger alltså det stora priset."
     },
     {
-     "t": 251,
-     "text": "Skriv som intervall och rita på tallinjen: alla tal som är större än 1 men mindre än 4. Varken 1 eller 4 räknas med, så båda parenteserna är vända utåt, och på tallinjen blir det ringar vid 1 och 4. Ett intervall med ringar i båda ändarna kallas öppet."
+     "t": 194,
+     "text": "Ett sådant intervall skriver man med hakparenteser. Först en hakparentes, sedan noll, komma, femtiofem, och sist en hakparentes. Parenteserna är vända inåt, mot talen. Det betyder att båda ändpunkterna räknas med. Ett sådant intervall kallas slutet."
     },
     {
-     "t": 275,
-     "text": "Alla tal som är minst 2. Talet 2 räknas med, så parentesen vid 2 är vänd inåt, och den andra änden är oändligheten: hakparentes 2, oändligheten, hakparentes vänd utåt. Fylld prick vid 2 och ett tjockt streck med pilspets åt höger."
+     "t": 220,
+     "text": "Samma sak kan skrivas som en olikhet. Vi kallar felet x. Tecknet mindre än, med ett streck under, betyder mindre än eller lika med. Olikheten blir noll är mindre än eller lika med x, och x är mindre än eller lika med femtiofem."
     },
     {
-     "t": 300,
-     "text": "Många år gick utan att någon fick priset, för ingen kunde bygga en klocka som gick rätt på ett skepp. Men i byn Barrow i norra England bodde en snickare som hette John Harrison, som hade lärt sig själv att bygga klockor av trä. Han tänkte att en klocka till sjöss inte kan ha någon pendel, så han byggde en med fjädrar i stället, som gick lika fort i värme som i kyla."
+     "t": 244,
+     "text": "Nästa pris gäller när felet är större än femtiofem, men högst sjuttiofem. Femtiofem räknas inte med, för där gäller det stora priset. Därför ritar vi en ring vid femtiofem, i stället för en prick. Och parentesen vid femtiofem vänds utåt, bort från talet."
     },
     {
-     "t": 328,
-     "text": "År 1735 var hans första sjöklocka färdig. Den var stor som en byrålåda och vägde över trettio kilo, men på en provresa till Lissabon höll den tiden."
+     "t": 267,
+     "text": "Sjuttiofem räknas med. Så där blir det en fylld prick, och parentesen vänds inåt. Ett intervall där bara den ena ändpunkten räknas med kallas halvöppet."
     },
     {
-     "t": 342,
-     "text": "Sedan byggde han vidare i 24 år, och 1759 var hans fjärde klocka klar. Den var inte större än en stor fickklocka, tretton centimeter tvärs över."
+     "t": 282,
+     "text": "Som olikhet blir det femtiofem är mindre än x, och x är mindre än eller lika med sjuttiofem. Vid femtiofem står bara mindre än, utan streck, eftersom femtiofem inte räknas med."
     },
     {
-     "t": 357,
-     "text": "I november 1761 seglade Harrisons son William med klockan till Jamaica. När de kom fram jämförde man klockan med solen, och den hade gått fem sekunder fel. Går klockan en sekund fel hamnar skeppet ungefär en halv kilometer fel på kartan. Fem sekunder är 5 gånger 0,5, det är 2,5 kilometer, och det ligger i intervallet från 0 till 55. Klockan hade vunnit det stora priset."
+     "t": 299,
+     "text": "Det tredje priset skrivs på samma sätt. Felet är större än sjuttiofem, men högst hundratio. Så det blir en ring vid sjuttiofem och en fylld prick vid hundratio. Som olikhet blir det sjuttiofem är mindre än x, och x är mindre än eller lika med hundratio."
     },
     {
-     "t": 394,
-     "text": "Men kommittén som skulle dela ut priset sa att det kunde ha varit tur. Så klockan fick göra om resan, till Barbados 1764, och året efter fick Harrison hälften av pengarna, sedan han visat hur klockan var byggd. Resten fick han först 1773, sedan kung Georg den tredje själv provat en av hans klockor i tio veckor och sagt att Harrison skulle ha sina pengar. Då var Harrison 80 år."
+     "t": 323,
+     "text": "Kvar är alla fel som är större än hundratio. Det intervallet har inget slut, för felet kan bli hur stort som helst. Därför skriver man tecknet för oändligheten, som ser ut som en liggande åtta."
     },
     {
-     "t": 429,
-     "text": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer men högst 150. Skriv det intervallet med hakparenteser, och rita det på tallinjen."
+     "t": 341,
+     "text": "Vid oändligheten vänds parentesen alltid utåt. Det beror på att oändligheten inte är ett tal, och man kan aldrig komma fram till den. På tallinjen blir det en ring vid hundratio och ett tjockt streck med en pil åt höger. Som olikhet blir det x är större än hundratio."
+    },
+    {
+     "t": 364,
+     "text": "Nu ett intervall utan skepp. Vi tar alla tal som är större än ett, men mindre än fyra. Varken ett eller fyra räknas med. Så det blir en ring vid båda ändarna, och båda parenteserna vänds utåt. Ett intervall där ingen ändpunkt räknas med kallas öppet."
+    },
+    {
+     "t": 388,
+     "text": "Som olikhet blir det ett är mindre än x, och x är mindre än fyra. Hör talet två till intervallet? Ja, för två är större än ett och mindre än fyra. Hör talet fyra till intervallet? Nej, för fyra är inte mindre än fyra."
+    },
+    {
+     "t": 412,
+     "text": "Efter sextiotvå dagar till sjöss kommer skeppet fram till Jamaica. William jämför klockan med solen. Klockan har bara gått fem sekunder fel."
+    },
+    {
+     "t": 424,
+     "text": "Går klockan en sekund fel, blir skeppets läge ungefär en halv kilometer fel. Fem sekunder blir då fem gånger en halv, alltså ungefär två och en halv kilometer. Två och en halv ligger i intervallet från noll till femtiofem. Så klockan har vunnit det stora priset."
+    },
+    {
+     "t": 449,
+     "text": "Men de som skulle dela ut priset trodde att det var tur. Så klockan fick göra om resan, den här gången till ön Barbados. Den gick lika bra igen. Ändå fick John bara en del av pengarna, och resten fick han först sjuttonhundrasjuttiotre. Då var han åttio år gammal."
+    },
+    {
+     "t": 474,
+     "text": "Nu är det din tur. Tänk dig att parlamentet hade lagt till ett fjärde pris, femtusen pund, för ett fel som är större än hundratio kilometer, men högst hundrafemtio. Skriv intervallet med hakparenteser, och rita det på tallinjen."
     }
    ],
    "kapitel": [
     {
-     "t": 0,
-     "rubrik": "Flottan som gick på grund, och priset",
+     "t": 1,
+     "rubrik": "Klockan ombord och lagens pris",
      "typ": "historia"
     },
     {
-     "t": 84,
-     "rubrik": "Slutna intervall och hakparenteser",
+     "t": 153,
+     "rubrik": "Slutet intervall: hakparenteser och olikhet",
      "typ": "matte"
     },
     {
-     "t": 162,
-     "rubrik": "Halvöppna intervall och intervall utan slut",
+     "t": 244,
+     "rubrik": "Halvöppna intervall",
      "typ": "matte"
     },
     {
-     "t": 251,
-     "rubrik": "Övning: två intervall",
+     "t": 323,
+     "rubrik": "Intervall utan slut: oändligheten",
      "typ": "matte"
     },
     {
-     "t": 300,
-     "rubrik": "Harrisons klockor och provresan",
+     "t": 364,
+     "rubrik": "Öppet intervall",
+     "typ": "matte"
+    },
+    {
+     "t": 412,
+     "rubrik": "Framme vid Jamaica: vilket pris?",
      "typ": "historia"
     },
     {
-     "t": 429,
+     "t": 474,
      "rubrik": "Ett fjärde pris",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer men högst 150.",
+    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer, men högst 150.",
     "delar": [
      {
-      "fraga": "Skriv intervallet med hakparenteser.",
+      "fraga": "Skriv intervallet med hakparenteser, och rita det på tallinjen.",
       "typ": "intervall",
       "svar": "]110, 150]",
       "exempel": "t.ex. [0, 55]",
@@ -5122,14 +5151,14 @@
        },
        {
         "svar": "]110, ∞[",
-        "text": "Det var det tredje priset utan slut. Nu finns ett slut, högst 150 kilometer."
+        "text": "Det är intervallet för fel som inte gav något pris alls. Nu finns ett slut: högst 150 kilometer, så 150 räknas med."
        }
       ]
      }
     ],
     "ledtrad": {
      "text": "Räknas talet med vänds parentesen inåt, mot talet. Räknas det inte med vänds den utåt.",
-     "t": 162
+     "t": 244
     },
     "losning": [
      "Större än 110 betyder att 110 inte räknas med, så parentesen vid 110 vänds utåt.",
@@ -5138,393 +5167,473 @@
      "Som olikhet blir det 110 < x ≤ 150.",
      "På tallinjen blir det en ring vid 110 och en fylld prick vid 150."
     ],
-    "notisFran": 251
+    "notisFran": 323
    },
    "undertext": [
     {
-     "s": 0.1,
-     "e": 7.7,
-     "text": "Natten den 22 oktober 1707 var en brittisk flotta på väg hem från Medelhavet till England."
+     "s": 1.5,
+     "e": 7.52,
+     "text": "I november 1761 seglar ett engelskt krigsskepp över Atlanten,"
     },
     {
-     "s": 8.74,
-     "e": 14.42,
-     "text": "Det var storm och dimma, och amiralen Cloudesley Shovell trodde att skeppen låg långt"
+     "s": 7.96,
+     "e": 9.3,
+     "text": "mot ön Jamaica."
     },
     {
-     "s": 14.56,
-     "e": 15.88,
-     "text": "ute på öppet hav."
+     "s": 10.58,
+     "e": 16.72,
+     "text": "Ute på havet syns inget land, så ingen ombord vet exakt var skeppet är."
     },
     {
-     "s": 16.74,
-     "e": 21.8,
-     "text": "Men de var mycket närmare land, så fyra skepp gick på klipporna vid Scillyöarna,"
+     "s": 17.72,
+     "e": 21.94,
+     "text": "Många skepp har gått på klippor, för att de trodde att de var någon annanstans."
     },
     {
-     "s": 22.56,
-     "e": 25.2,
-     "text": "och över tusen sjömän drunknade."
+     "s": 23.24,
+     "e": 26.52,
+     "text": "Ombord finns en man som heter William Harrison."
     },
     {
-     "s": 26.58,
-     "e": 29.52,
-     "text": "Ingen till sjöss kunde veta hur långt västerut man var."
+     "s": 27.52,
+     "e": 29.66,
+     "text": "Han har med sig en klocka i en låda."
     },
     {
-     "s": 30.16,
-     "e": 33.84,
-     "text": "Hur långt norrut man var kunde man mäta på solen mitt på dagen,"
+     "s": 30.66,
+     "e": 35.88,
+     "text": "Klockan har hans pappa John byggt, och William ska pröva den under resan."
     },
     {
-     "s": 34.38,
-     "e": 38.98,
-     "text": "men för att veta hur långt västerut man kommit måste man veta vad klockan var hemma i"
+     "s": 37.18,
+     "e": 40.92,
+     "text": "En klocka kan visa hur långt västerut skeppet har kommit."
     },
     {
-     "s": 39.06,
-     "e": 42.52,
-     "text": "England när solen stod som högst över skeppet."
+     "s": 41.92,
+     "e": 44.66,
+     "text": "Solen står högst på himlen mitt på dagen."
     },
     {
-     "s": 43.54,
-     "e": 49.98,
-     "text": "Så det behövdes en klocka som höll tiden hela resan, och tidens klockor hade en pendel"
+     "s": 45.66,
+     "e": 50.46,
+     "text": "Men ju längre västerut man är, desto senare står solen högst."
     },
     {
-     "s": 50.04,
-     "e": 52.5,
-     "text": "som gick fel så fort skeppet gungade."
+     "s": 51.46,
+     "e": 56.5,
+     "text": "Det är därför klockan i New York ligger 6 timmar efter klockan i Sverige."
     },
     {
-     "s": 53.58,
-     "e": 59.82,
-     "text": "År 1714 lovade därför parlamentet i London ett pris till den som kunde lösa det."
+     "s": 57.8,
+     "e": 62.86,
+     "text": "Om William vet vad klockan är hemma i England, när solen står högst över skeppet,"
     },
     {
-     "s": 60.68,
-     "e": 67.98,
-     "text": "Den som kunde säga var ett skepp var med ett fel på högst 55 kilometer skulle få 20 000 pund."
+     "s": 63.3,
+     "e": 66.74,
+     "text": "kan han räkna ut hur långt västerut skeppet har kommit."
     },
     {
-     "s": 68.92,
-     "e": 75.4,
-     "text": "Var felet större än 55 men högst 75 kilometer blev priset 15 000 pund,"
+     "s": 67.74,
+     "e": 72.12,
+     "text": "Därför måste klockan visa Englands tid under hela resan."
     },
     {
-     "s": 76.06,
-     "e": 79.56,
-     "text": "och upp till 110 kilometer 10 000 pund."
+     "s": 73.12,
+     "e": 76.32,
+     "text": "Vanliga klockor går fel så fort skeppet gungar."
     },
     {
-     "s": 80.4,
-     "e": 82.36,
-     "text": "Ett större fel gav inget alls."
+     "s": 77.32,
+     "e": 80.98,
+     "text": "Men Johns klocka är byggd för att gå rätt på ett skepp."
     },
     {
-     "s": 84.1,
-     "e": 88.76,
-     "text": "20 000 pund var mer pengar än en sjöman tjänade under hela sitt liv,"
+     "s": 82.28,
+     "e": 88.28,
+     "text": "Parlamentet i London har skrivit en lag, som lovar ett stort pris till den som kan visa"
     },
     {
-     "s": 89.3,
-     "e": 91.68,
-     "text": "så gränserna måste vara helt tydliga."
+     "s": 88.36,
+     "e": 89.62,
+     "text": "var ett skepp är."
     },
     {
-     "s": 92.78,
-     "e": 96.22,
-     "text": "Vad gäller om felet är precis 55 kilometer?"
+     "s": 90.62,
+     "e": 95.18,
+     "text": "Priset beror på hur många kilometer fel skeppets läge blir."
     },
     {
-     "s": 97.32,
-     "e": 102.48,
-     "text": "Matematiken har ett tydligt sätt att skriva sådana gränser, och det ska vi lära oss nu."
+     "s": 96.18,
+     "e": 99.96,
+     "text": "Om Johns klocka är tillräckligt bra, vinner han priset."
     },
     {
-     "s": 103.74,
-     "e": 109.14,
-     "text": "Vi ritar en tallinje som visar hur många kilometer fel skeppets läge är,"
+     "s": 101.26,
+     "e": 106.42,
+     "text": "Blir felet högst 55 kilometer, får man 20 000 pund."
     },
     {
-     "s": 109.76,
-     "e": 111.82,
-     "text": "från 0 till 120."
+     "s": 107.42,
+     "e": 111.88,
+     "text": "Blir felet större än 55, men högst 75 kilometer,"
     },
     {
-     "s": 113,
-     "e": 120.02,
-     "text": "Det stora priset gäller när felet är minst 0 och högst 55, så vi ritar ett tjockt streck"
+     "s": 112.18,
+     "e": 114.12,
+     "text": "får man 15 000 pund."
     },
     {
-     "s": 120.08,
-     "e": 128.76,
-     "text": "från 0 till 55, och eftersom både 0 och 55 räknas med sätter vi en fylld prick vid båda ändarna."
+     "s": 115.12,
+     "e": 119.72,
+     "text": "Blir felet större än 75, men högst 110 kilometer,"
     },
     {
-     "s": 129.88,
-     "e": 138.12,
-     "text": "Det skriver man med hakparenteser: hakparentes, 0, komma, 55, hakparentes."
+     "s": 120.12,
+     "e": 121.96,
+     "text": "får man 10 000 pund."
     },
     {
-     "s": 139.36,
-     "e": 145.52,
-     "text": "Parenteserna är vända inåt, mot talen, och det betyder att ändpunkterna räknas med."
+     "s": 122.96,
+     "e": 126.2,
+     "text": "Blir felet ännu större, får man inget."
     },
     {
-     "s": 146.48,
-     "e": 148.86,
+     "s": 127.2,
+     "e": 132.4,
+     "text": "20 000 pund är mer än en sjöman tjänar under hela sitt liv."
+    },
+    {
+     "s": 133.7,
+     "e": 139.04,
+     "text": "När skeppet kommer fram till Jamaica, ska William ta reda på hur fel klockan har gått."
+    },
+    {
+     "s": 140.04,
+     "e": 141.92,
+     "text": "Vilket pris vinner klockan?"
+    },
+    {
+     "s": 142.92,
+     "e": 147.46,
+     "text": "För att svara måste vi veta exakt var lagens gränser går."
+    },
+    {
+     "s": 148.46,
+     "e": 152.22,
+     "text": "Matematiken har ett tydligt sätt att skriva sådana gränser."
+    },
+    {
+     "s": 153.52,
+     "e": 155.48,
+     "text": "Vi ritar en tallinje."
+    },
+    {
+     "s": 156.48,
+     "e": 163.1,
+     "text": "Den visar hur många kilometer fel skeppets läge är, från 0 till 150."
+    },
+    {
+     "s": 164.1,
+     "e": 169.46,
+     "text": "Det stora priset gäller när felet är minst 0 och högst 55."
+    },
+    {
+     "s": 170.46,
+     "e": 174.72,
+     "text": "Så vi ritar ett tjockt streck från 0 till 55."
+    },
+    {
+     "s": 176.02,
+     "e": 178.9,
+     "text": "Talen i ändarna kallas ändpunkter."
+    },
+    {
+     "s": 179.9,
+     "e": 186.86,
+     "text": "Här räknas båda ändpunkterna med, så vi sätter en fylld prick vid 0 och en vid 55."
+    },
+    {
+     "s": 187.86,
+     "e": 193.22,
+     "text": "Ett fel på precis 55 kilometer ger alltså det stora priset."
+    },
+    {
+     "s": 194.52,
+     "e": 197.9,
+     "text": "Ett sådant intervall skriver man med hakparenteser."
+    },
+    {
+     "s": 198.9,
+     "e": 206.3,
+     "text": "Först en hakparentes, sedan 0, komma, 55, och sist en hakparentes."
+    },
+    {
+     "s": 207.3,
+     "e": 210.72,
+     "text": "Parenteserna är vända inåt, mot talen."
+    },
+    {
+     "s": 211.72,
+     "e": 214.96,
+     "text": "Det betyder att båda ändpunkterna räknas med."
+    },
+    {
+     "s": 215.96,
+     "e": 218.8,
      "text": "Ett sådant intervall kallas slutet."
     },
     {
-     "s": 149.76,
-     "e": 157.24,
-     "text": "Kallar vi felet x kan vi skriva samma sak som en olikhet: 0 mindre än eller lika med"
+     "s": 220.1,
+     "e": 223.22,
+     "text": "Samma sak kan skrivas som en olikhet."
     },
     {
-     "s": 158.2,
-     "e": 161.34,
-     "text": "x mindre än eller lika med 55."
+     "s": 224.22,
+     "e": 225.92,
+     "text": "Vi kallar felet x."
     },
     {
-     "s": 162.74,
-     "e": 167.58,
-     "text": "Nästa pris gäller när felet är större än 55 men högst 75."
+     "s": 226.92,
+     "e": 233.36,
+     "text": "Tecknet mindre än, med ett streck under, betyder mindre än eller lika med."
     },
     {
-     "s": 168.6,
-     "e": 172.76,
-     "text": "Talet 55 ska inte räknas med, för då gäller det stora priset,"
+     "s": 234.36,
+     "e": 243.6,
+     "text": "Olikheten blir 0 är mindre än eller lika med x, och x är mindre än eller lika med 55."
     },
     {
-     "s": 173.4,
-     "e": 179.12,
-     "text": "så vid 55 ritar vi en ring i stället för en prick och vänder parentesen utåt,"
+     "s": 244.9,
+     "e": 250.4,
+     "text": "Nästa pris gäller när felet är större än 55, men högst 75."
     },
     {
-     "s": 179.42,
-     "e": 180.52,
-     "text": "bort från talet."
+     "s": 251.4,
+     "e": 255.66,
+     "text": "55 räknas inte med, för där gäller det stora priset."
     },
     {
-     "s": 181.48,
-     "e": 187.52,
-     "text": "Vid 75 räknas talet med, så där blir det en fylld prick och parentesen vänd inåt."
+     "s": 256.66,
+     "e": 260.72,
+     "text": "Därför ritar vi en ring vid 55, i stället för en prick."
     },
     {
-     "s": 188.72,
-     "e": 195.04,
-     "text": "Ett intervall med ring i den ena änden och fylld prick i den andra kallas halvöppet,"
+     "s": 261.72,
+     "e": 266.26,
+     "text": "Och parentesen vid 55 vänds utåt, bort från talet."
     },
     {
-     "s": 195.82,
-     "e": 203.92,
-     "text": "och olikheten blir 55 mindre än x mindre än eller lika med 75."
+     "s": 267.56,
+     "e": 269.32,
+     "text": "75 räknas med."
     },
     {
-     "s": 205.26,
-     "e": 210.74,
-     "text": "Det tredje priset blir på samma sätt intervallet från 75 till 110,"
+     "s": 270.32,
+     "e": 274.62,
+     "text": "Så där blir det en fylld prick, och parentesen vänds inåt."
     },
     {
-     "s": 211.52,
-     "e": 215.5,
-     "text": "med ring vid 75 och fylld prick vid 110."
+     "s": 275.62,
+     "e": 281.04,
+     "text": "Ett intervall där bara den ena ändpunkten räknas med kallas halvöppet."
     },
     {
-     "s": 216.78,
-     "e": 222.74,
-     "text": "Kvar är alla fel som är större än 110, och det intervallet har inget slut."
+     "s": 282.34,
+     "e": 290.96,
+     "text": "Som olikhet blir det 55 är mindre än x, och x är mindre än eller lika med 75."
     },
     {
-     "s": 223.58,
-     "e": 230.68,
-     "text": "Då skriver man tecknet för oändligheten, en liggande åtta, och vid oändligheten är parentesen"
+     "s": 291.96,
+     "e": 298.58,
+     "text": "Vid 55 står bara mindre än, utan streck, eftersom 55 inte räknas med."
     },
     {
-     "s": 230.8,
-     "e": 236.18,
-     "text": "alltid vänd utåt, för oändligheten är inget tal man kan komma fram till."
+     "s": 299.88,
+     "e": 302.52,
+     "text": "Det tredje priset skrivs på samma sätt."
     },
     {
-     "s": 237.34,
-     "e": 243.68,
-     "text": "På tallinjen blir det en ring vid 110 och ett tjockt streck med pilspets åt höger."
+     "s": 303.52,
+     "e": 307.5,
+     "text": "Felet är större än 75, men högst 110."
     },
     {
-     "s": 245.04,
-     "e": 249.9,
-     "text": "Ett fel på precis 55 kilometer ger alltså 20 000 pund."
+     "s": 308.5,
+     "e": 313.02,
+     "text": "Så det blir en ring vid 75 och en fylld prick vid 110."
     },
     {
-     "s": 251.06,
-     "e": 258.9,
-     "text": "Skriv som intervall och rita på tallinjen: alla tal som är större än 1 men mindre än 4."
+     "s": 314.02,
+     "e": 322.62,
+     "text": "Som olikhet blir det 75 är mindre än x, och x är mindre än eller lika med 110."
     },
     {
-     "s": 260.14,
-     "e": 265.34,
-     "text": "Varken 1 eller 4 räknas med, så båda parenteserna är vända utåt,"
+     "s": 323.92,
+     "e": 327.5,
+     "text": "Kvar är alla fel som är större än 110."
     },
     {
-     "s": 265.98,
-     "e": 269.52,
-     "text": "och på tallinjen blir det ringar vid 1 och 4."
+     "s": 328.5,
+     "e": 333.38,
+     "text": "Det intervallet har inget slut, för felet kan bli hur stort som helst."
     },
     {
-     "s": 270.78,
-     "e": 274.58,
-     "text": "Ett intervall med ringar i båda ändarna kallas öppet."
+     "s": 334.38,
+     "e": 339.74,
+     "text": "Därför skriver man tecknet för oändligheten, som ser ut som en liggande åtta."
     },
     {
-     "s": 275.4,
-     "e": 277.6,
-     "text": "Alla tal som är minst 2."
+     "s": 341.04,
+     "e": 344.88,
+     "text": "Vid oändligheten vänds parentesen alltid utåt."
     },
     {
-     "s": 278.78,
-     "e": 286.7,
-     "text": "Talet 2 räknas med, så parentesen vid 2 är vänd inåt, och den andra änden är oändligheten:"
+     "s": 345.88,
+     "e": 351.26,
+     "text": "Det beror på att oändligheten inte är ett tal, och man kan aldrig komma fram till den."
     },
     {
-     "s": 287.52,
-     "e": 293.18,
-     "text": "hakparentes 2, oändligheten, hakparentes vänd utåt."
+     "s": 352.26,
+     "e": 358.1,
+     "text": "På tallinjen blir det en ring vid 110 och ett tjockt streck med en pil åt höger."
     },
     {
-     "s": 294.36,
-     "e": 298.7,
-     "text": "Fylld prick vid 2 och ett tjockt streck med pilspets åt höger."
+     "s": 359.1,
+     "e": 363.34,
+     "text": "Som olikhet blir det x är större än 110."
     },
     {
-     "s": 300.06,
-     "e": 305.92,
-     "text": "Många år gick utan att någon fick priset, för ingen kunde bygga en klocka som gick rätt"
+     "s": 364.64,
+     "e": 366.9,
+     "text": "Nu ett intervall utan skepp."
     },
     {
-     "s": 305.96,
-     "e": 306.96,
-     "text": "på ett skepp."
+     "s": 367.9,
+     "e": 372.38,
+     "text": "Vi tar alla tal som är större än 1, men mindre än 4."
     },
     {
-     "s": 307.74,
-     "e": 312.92,
-     "text": "Men i byn Barrow i norra England bodde en snickare som hette John Harrison,"
+     "s": 373.38,
+     "e": 375.9,
+     "text": "Varken 1 eller 4 räknas med."
     },
     {
-     "s": 313.54,
-     "e": 316.52,
-     "text": "som hade lärt sig själv att bygga klockor av trä."
+     "s": 376.9,
+     "e": 382.22,
+     "text": "Så det blir en ring vid båda ändarna, och båda parenteserna vänds utåt."
     },
     {
-     "s": 317.72,
-     "e": 321.44,
-     "text": "Han tänkte att en klocka till sjöss inte kan ha någon pendel,"
+     "s": 383.22,
+     "e": 387.64,
+     "text": "Ett intervall där ingen ändpunkt räknas med kallas öppet."
     },
     {
-     "s": 321.98,
-     "e": 327.6,
-     "text": "så han byggde en med fjädrar i stället, som gick lika fort i värme som i kyla."
+     "s": 388.94,
+     "e": 395.28,
+     "text": "Som olikhet blir det 1 är mindre än x, och x är mindre än 4."
     },
     {
-     "s": 328.8,
-     "e": 332.6,
-     "text": "År 1735 var hans första sjöklocka färdig."
+     "s": 396.28,
+     "e": 398.46,
+     "text": "Hör talet 2 till intervallet?"
     },
     {
-     "s": 333.62,
-     "e": 340.48,
-     "text": "Den var stor som en byrålåda och vägde över trettio kilo, men på en provresa till Lissabon"
+     "s": 399.46,
+     "e": 403.44,
+     "text": "Ja, för 2 är större än 1 och mindre än 4."
     },
     {
-     "s": 340.56,
-     "e": 341.58,
-     "text": "höll den tiden."
+     "s": 404.44,
+     "e": 406.6,
+     "text": "Hör talet 4 till intervallet?"
     },
     {
-     "s": 342.86,
-     "e": 349.54,
-     "text": "Sedan byggde han vidare i 24 år, och 1759 var hans fjärde klocka klar."
+     "s": 407.6,
+     "e": 410.78,
+     "text": "Nej, för 4 är inte mindre än 4."
     },
     {
-     "s": 350.56,
-     "e": 355.84,
-     "text": "Den var inte större än en stor fickklocka, tretton centimeter tvärs över."
+     "s": 412.08,
+     "e": 416.4,
+     "text": "Efter 62 dagar till sjöss kommer skeppet fram till Jamaica."
     },
     {
-     "s": 357.12,
-     "e": 363.6,
-     "text": "I november 1761 seglade Harrisons son William med klockan till Jamaica."
+     "s": 417.4,
+     "e": 419.8,
+     "text": "William jämför klockan med solen."
     },
     {
-     "s": 364.7,
-     "e": 370.6,
-     "text": "När de kom fram jämförde man klockan med solen, och den hade gått fem sekunder fel."
+     "s": 420.8,
+     "e": 423.58,
+     "text": "Klockan har bara gått 5 sekunder fel."
     },
     {
-     "s": 371.62,
-     "e": 378.3,
-     "text": "Går klockan en sekund fel hamnar skeppet ungefär en halv kilometer fel på kartan."
+     "s": 424.88,
+     "e": 430.78,
+     "text": "Går klockan en sekund fel, blir skeppets läge ungefär en halv kilometer fel."
     },
     {
-     "s": 379.44,
-     "e": 388.22,
-     "text": "Fem sekunder är 5 gånger 0,5, det är 2,5 kilometer, och det ligger i intervallet från"
+     "s": 431.78,
+     "e": 438.3,
+     "text": "5 sekunder blir då 5 gånger en halv, alltså ungefär 2,5 kilometer."
     },
     {
-     "s": 388.76,
-     "e": 390.02,
-     "text": "0 till 55."
+     "s": 439.3,
+     "e": 443.66,
+     "text": "2,5 ligger i intervallet från 0 till 55."
     },
     {
-     "s": 391.2,
-     "e": 393.78,
-     "text": "Klockan hade vunnit det stora priset."
+     "s": 444.66,
+     "e": 447.86,
+     "text": "Så klockan har vunnit det stora priset."
     },
     {
-     "s": 394.94,
-     "e": 399.48,
-     "text": "Men kommittén som skulle dela ut priset sa att det kunde ha varit tur."
+     "s": 449.16,
+     "e": 453.3,
+     "text": "Men de som skulle dela ut priset trodde att det var tur."
     },
     {
-     "s": 400.42,
-     "e": 408.86,
-     "text": "Så klockan fick göra om resan, till Barbados 1764, och året efter fick Harrison hälften"
+     "s": 454.3,
+     "e": 459.14,
+     "text": "Så klockan fick göra om resan, den här gången till ön Barbados."
     },
     {
-     "s": 408.9,
-     "e": 411.92,
-     "text": "av pengarna, sedan han visat hur klockan var byggd."
+     "s": 460.14,
+     "e": 462.04,
+     "text": "Den gick lika bra igen."
     },
     {
-     "s": 413.18,
-     "e": 420.66,
-     "text": "Resten fick han först 1773, sedan kung Georg den tredje själv provat en av hans klockor"
+     "s": 463.04,
+     "e": 469.64,
+     "text": "Ändå fick John bara en del av pengarna, och resten fick han först 1773."
     },
     {
-     "s": 420.72,
-     "e": 425.26,
-     "text": "i tio veckor och sagt att Harrison skulle ha sina pengar."
+     "s": 470.64,
+     "e": 472.98,
+     "text": "Då var han 80 år gammal."
     },
     {
-     "s": 426.24,
-     "e": 428.44,
-     "text": "Då var Harrison 80 år."
+     "s": 474.28,
+     "e": 476.18,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 429.88,
-     "e": 434.96,
+     "s": 477.36,
+     "e": 482.62,
      "text": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund,"
     },
     {
-     "s": 435.36,
-     "e": 441.2,
-     "text": "för ett fel som är större än 110 kilometer men högst 150."
+     "s": 483.12,
+     "e": 488.76,
+     "text": "för ett fel som är större än 110 kilometer, men högst 150."
     },
     {
-     "s": 442.46,
-     "e": 447.38,
-     "text": "Skriv det intervallet med hakparenteser, och rita det på tallinjen."
+     "s": 489.76,
+     "e": 494.42,
+     "text": "Skriv intervallet med hakparenteser, och rita det på tallinjen."
     }
    ]
   },

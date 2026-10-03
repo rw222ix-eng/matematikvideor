@@ -155,10 +155,10 @@
     ]
   },
   "harrison-och-longituden": {
-    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer men högst 150.",
+    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer, men högst 150.",
     "delar": [
       {
-        "fraga": "Skriv intervallet med hakparenteser.",
+        "fraga": "Skriv intervallet med hakparenteser, och rita det på tallinjen.",
         "typ": "intervall",
         "svar": "]110, 150]",
         "exempel": "t.ex. [0, 55]",
@@ -167,7 +167,7 @@
           { "svar": "[110, 150]", "text": "110 ska inte räknas med, för felet ska vara större än 110. Vänd parentesen vid 110 utåt." },
           { "svar": "]110, 150[", "text": "150 ska räknas med, för felet får vara högst 150. Vänd parentesen vid 150 inåt." },
           { "svar": "[110, 150[", "text": "Båda parenteserna är vända åt fel håll. 110 räknas inte med, men 150 gör det." },
-          { "svar": "]110, ∞[", "text": "Det var det tredje priset utan slut. Nu finns ett slut, högst 150 kilometer." }
+          { "svar": "]110, ∞[", "text": "Det är intervallet för fel som inte gav något pris alls. Nu finns ett slut: högst 150 kilometer, så 150 räknas med." }
         ]
       }
     ],
