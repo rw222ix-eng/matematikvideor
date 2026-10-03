@@ -47,7 +47,9 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
-  förstoringsglaset (eller tangenten `/`). Adresser: `#filmer` (berättelserna), `#formelbladet` (serien), `#<id>`, `#<id>&t=<sekund>`, och
+  förstoringsglaset (eller tangenten `/`). Sökningen har kursknappar (Alla kurser, Ma 1c, Ma 2a; kursen
+  eleven kom från är vald) och rättar stavfel mot orden i filmerna ("pytagoras" söks som Pythagoras,
+  med "Sök ändå på …" bredvid). Adresser: `#filmer` (berättelserna), `#formelbladet` (serien), `#<id>`, `#<id>&t=<sekund>`, och
   `film/<id>/?t=<sekund>` för länkar som delas. Typsnitt från Google Fonts (Jost + Cormorant
   Garamond); en accentfärg (`--accent`).
 - Framsteg sparas i elevens webbläsare (`localStorage`, nyckeln `framsteg`): var eleven slutade,
