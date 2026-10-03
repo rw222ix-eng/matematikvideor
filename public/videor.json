@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T18:44:14.696Z",
+ "byggd": "2026-10-03T18:45:35.548Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -10940,7 +10940,7 @@
     "Matematik 1",
     "Matematik 2"
    ],
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-4-v3/formelbladet-4-rymdgeometri-och-skala-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-4-v4/formelbladet-4-rymdgeometri-och-skala-1080p.mp4",
    "moment": "Formelbladet: rymdgeometri och skala",
    "begrepp": [
     "formelbladet",
@@ -10952,6 +10952,7 @@
     "kon",
     "klot",
     "bottenyta",
+    "basyta",
     "höjd",
     "radie",
     "mantelarea",
@@ -10962,141 +10963,186 @@
     "areaskala",
     "volymskala"
    ],
-   "beskrivning": "Vi går igenom formlerna för kroppar överst på formelbladets andra sida: rätblock, prisma, cylinder, pyramid, kon och klot, och sist skala. Varje formel räknas med ett vardagligt föremål, som ett mjölkpaket, en konservburk, en glasstrut och en fotboll.",
+   "beskrivning": "Vi går igenom formlerna för kroppar överst på formelbladets andra sida: rätblock, prisma, cylinder, pyramid, kon och klot, och sist skala. Varje formel räknas med ett vardagligt föremål, som ett mjölkpaket, en konservburk, en glasstrut och en tennisboll.",
    "youtube": null,
-   "langd": 446,
+   "langd": 597,
    "omslag": "omslag/formelbladet-4-rymdgeometri-och-skala.jpg?v=7e38159a",
    "omslagRen": "omslag/formelbladet-4-rymdgeometri-och-skala-ren.jpg?v=25746200",
    "omslagStor": "omslag/formelbladet-4-rymdgeometri-och-skala-stor.jpg?v=ed735a9b",
    "repliker": [
     {
-     "t": 0,
-     "text": "På nationella provet i matematik 1 får du ett formelblad från Skolverket. Överst på andra sidan står formler för saker som har längd, bredd och höjd, som ett mjölkpaket, en burk eller en boll."
+     "t": 1,
+     "text": "På nationella provet i matematik ett har alla formelbladet från Skolverket på bänken. Överst på den andra sidan står formler för saker som har längd, bredd och höjd. Det kan vara ett mjölkpaket, en burk eller en boll."
     },
     {
-     "t": 15,
-     "text": "Med formlerna räknar man ut volymen, alltså hur mycket som får plats inuti, och ibland arean av ytan runt om. Vi går igenom raderna uppifrån, och varje rad har en bild med bokstäverna utritade."
+     "t": 20,
+     "text": "Med formlerna räknar man ut volymen. Volymen är hur mycket som får plats inuti. Avsnittet har sju rader, och varje rad har ett namn, en formel och en liten bild som visar vad bokstäverna betyder."
     },
     {
-     "t": 30,
-     "text": "Den första raden heter rätblock, och det har formen av en låda, som ett mjölkpaket. Formeln är V lika med B gånger h, där V är volymen och h är höjden."
+     "t": 38,
+     "text": "Den första raden heter rätblock. Ett rätblock har formen av en låda, som ett mjölkpaket. Formeln är V lika med B gånger h, och V står för volymen."
     },
     {
-     "t": 44,
-     "text": "B är bottenytan, alltså arean av den yta som paketet står på. Ett mjölkpaket är 7 centimeter brett och 7 centimeter djupt, så bottenytan är 7 gånger 7, alltså 49 kvadratcentimeter."
+     "t": 54,
+     "text": "B står för basytan. Det är arean av botten, alltså den yta som paketet står på. h står för höjden, och det är avståndet rakt upp från botten till toppen."
     },
     {
-     "t": 61,
-     "text": "I botten får det därför plats 49 små kuber som är en centimeter åt varje håll, och en sådan kub kallas en kubikcentimeter. Paketet är 20 centimeter högt, så det får plats 20 lager med kuber, och 49 gånger 20 är 980 kubikcentimeter."
+     "t": 70,
+     "text": "Först räknar vi ut basytan. Ett mjölkpaket är sju centimeter brett och sju centimeter djupt. Sju gånger sju är fyrtionio, så på botten får det plats fyrtionio små rutor. Varje ruta är en centimeter lång och en centimeter bred, och den kallas en kvadratcentimeter."
     },
     {
-     "t": 84,
-     "text": "På nästa rad står prisma, med samma formel. Ett prisma har samma form hela vägen upp, som en lång chokladkartong där varje skiva man skär blir en likadan triangel."
+     "t": 96,
+     "text": "Nu ställer vi en liten kub på varje ruta. Kuben är en centimeter åt varje håll, och den kallas en kubikcentimeter. Det blir ett lager med fyrtionio kuber."
     },
     {
-     "t": 98,
-     "text": "Ställ kartongen på ena änden, så är triangeln bottenytan och kartongens längd är höjden. Triangeln är 4 centimeter bred och 3 centimeter hög, så bottenytan är 4 gånger 3 delat med 2, alltså 6 kvadratcentimeter."
+     "t": 111,
+     "text": "Paketet är tjugo centimeter högt, så det får plats tjugo sådana lager. Fyrtionio gånger tjugo är niohundraåttio. Volymen är alltså niohundraåttio kubikcentimeter, och det är precis vad formeln gör. Den tar basytan gånger höjden."
     },
     {
-     "t": 118,
-     "text": "Kartongen är 20 centimeter lång, så volymen är 6 gånger 20, alltså 120 kubikcentimeter."
+     "t": 133,
+     "text": "Nästa rad är prisma, och formeln är densamma. Ett prisma har samma form hela vägen från den ena änden till den andra, som en lång chokladkartong. Skär man en skiva var som helst, blir skivan en likadan triangel."
     },
     {
-     "t": 128,
-     "text": "Sedan kommer cylindern, som har formen av en konservburk. Rak cirkulär betyder att botten är en cirkel och att burken står rakt upp."
+     "t": 153,
+     "text": "Ställ kartongen på ena änden. Då är triangeln basytan, och kartongens längd blir höjden. Triangelns area är basen gånger höjden delat med två, och den formeln står på första sidan."
     },
     {
-     "t": 139,
-     "text": "Volymen är B gånger h även här, och botten är en cirkel med arean pi gånger r upphöjt till 2. Där är r radien, alltså avståndet från mitten till kanten."
+     "t": 170,
+     "text": "Triangeln är fyra centimeter bred och tre centimeter hög. Fyra gånger tre är tolv. Tolv delat med två är sex, så basytan är sex kvadratcentimeter. Kartongen är tjugo centimeter lång. Sex gånger tjugo är hundratjugo, så volymen är hundratjugo kubikcentimeter."
     },
     {
-     "t": 154,
-     "text": "En burk med radien 4 centimeter har bottenytan pi gånger 16, ungefär 50 kvadratcentimeter. Burken är 10 centimeter hög, så volymen blir ungefär 500 kubikcentimeter."
+     "t": 198,
+     "text": "Den tredje raden är cylindern, som har formen av en konservburk. Rak cirkulär betyder att botten är en cirkel och att burken står rakt upp. Volymen är B gånger h även här."
     },
     {
-     "t": 172,
-     "text": "Under volymen står mantelarean, och manteln är etiketten runt burken. Klipper man upp etiketten och lägger den platt blir den en rektangel, som är lika lång som ett varv runt burken och lika hög som burken."
+     "t": 215,
+     "text": "Botten är en cirkel, och cirkelns area är pi gånger r i kvadrat. r är radien, alltså avståndet från mitten ut till kanten. Pi är ett tal som är ungefär tre komma ett fyra."
     },
     {
-     "t": 189,
-     "text": "Ett varv runt en cirkel är 2 pi r, så etikettens area är 2 pi r gånger h. För burken blir det 2 gånger pi gånger 4 gånger 10, ungefär 250 kvadratcentimeter."
+     "t": 233,
+     "text": "En burk har radien fyra centimeter. Radien i kvadrat är fyra gånger fyra, alltså sexton. Sexton gånger pi är ungefär femtio, så basytan är ungefär femtio kvadratcentimeter. Burken är tio centimeter hög. Femtio gånger tio är femhundra, så burken rymmer ungefär femhundra kubikcentimeter."
     },
     {
-     "t": 207,
-     "text": "På raden under står pyramiden. Den har också en bottenyta B och en höjd h, men här delas B gånger h med 3."
+     "t": 263,
+     "text": "Under volymen står mantelarean. Manteln är ytan runt om, som etiketten på burken. Klipper man upp etiketten och lägger den platt, blir den en rektangel."
     },
     {
-     "t": 217,
-     "text": "Det syns om man fyller en pyramid med sand och häller sanden i ett rätblock med samma botten och höjd. Det behövs tre fulla pyramider för att fylla rätblocket, därför delar man med 3."
+     "t": 277,
+     "text": "Rektangeln är lika hög som burken, alltså h. Den är lika lång som ett varv runt burken. Ett varv runt en cirkel är omkretsen, och den är två pi r. Därför är mantelarean två pi r gånger h."
     },
     {
-     "t": 231,
-     "text": "Om botten är en kvadrat med sidan 6 centimeter är bottenytan 36 kvadratcentimeter. Med höjden 10 centimeter blir det 36 gånger 10, alltså 360, och delat med 3 blir volymen 120 kubikcentimeter."
+     "t": 298,
+     "text": "För burken blir det två gånger fyra gånger tio, alltså åttio. Åttio gånger pi är ungefär tvåhundrafemtioett, så etiketten är ungefär tvåhundrafemtioett kvadratcentimeter."
     },
     {
-     "t": 252,
-     "text": "Under pyramiden står konen, som har formen av en glasstrut. Den har samma formel som pyramiden, fast botten är en cirkel. Vänd struten med spetsen uppåt, så är den runda öppningen botten."
+     "t": 314,
+     "text": "Den fjärde raden är pyramiden. En pyramid har en botten och sidor som möts i en spets högst upp. Den har också en basyta B och en höjd h, men här delas B gånger h med tre."
     },
     {
-     "t": 269,
-     "text": "En strut med radien 5 centimeter har bottenytan pi gånger 25, ungefär 78,5 kvadratcentimeter. Struten är 12 centimeter hög, så volymen blir 78,5 gånger 12 delat med 3, ungefär 314 kubikcentimeter."
+     "t": 331,
+     "text": "Det syns om man fyller en pyramid med sand och häller sanden i en låda med samma botten och samma höjd. Det behövs tre fulla pyramider för att fylla lådan. Pyramiden rymmer alltså en tredjedel av lådan, och därför delar man med tre."
     },
     {
-     "t": 292,
-     "text": "Konens mantel är själva våffeln, och mantelarean är pi r s, där s är den sneda sidan från spetsen ner till kanten. På struten är s 13 centimeter, så våffelns area är pi gånger 5 gånger 13, ungefär 204 kvadratcentimeter."
+     "t": 351,
+     "text": "En pyramid har en kvadrat som botten, med sidan sex centimeter. Sex gånger sex är trettiosex, så basytan är trettiosex kvadratcentimeter. Höjden är tio centimeter. Trettiosex gånger tio är trehundrasextio. Trehundrasextio delat med tre är hundratjugo, så volymen är hundratjugo kubikcentimeter."
     },
     {
-     "t": 317,
-     "text": "Näst sist står klotet, som har formen av en boll. V är volymen, och A är arean av hela ytan, alltså hur mycket material som täcker bollen."
+     "t": 380,
+     "text": "Den femte raden är konen, som har formen av en glasstrut. Formeln är densamma som för pyramiden, men botten är en cirkel. Vänd struten med spetsen uppåt, så är den runda öppningen botten."
     },
     {
-     "t": 330,
-     "text": "En fotboll har radien 11 centimeter. Volymen blir 4 gånger pi gånger 11 upphöjt till 3, delat med 3, ungefär 5575 kubikcentimeter, och arean blir 4 gånger pi gånger 11 upphöjt till 2, ungefär 1521 kvadratcentimeter."
+     "t": 397,
+     "text": "En strut har radien fem centimeter. Fem gånger fem är tjugofem. Tjugofem gånger pi är ungefär sjuttioåtta komma fem, så basytan är ungefär sjuttioåtta komma fem kvadratcentimeter."
     },
     {
-     "t": 355,
-     "text": "Längst ner står skala. En leksaksbil i skala 1 till 20 är 20 gånger kortare, smalare och lägre än den riktiga bilen, så längdskalan är 1 till 20."
+     "t": 415,
+     "text": "Struten är tolv centimeter hög. Sjuttioåtta komma fem gånger tolv är niohundrafyrtiotvå. Niohundrafyrtiotvå delat med tre är trehundrafjorton, så struten rymmer ungefär trehundrafjorton kubikcentimeter."
     },
     {
-     "t": 370,
-     "text": "En yta har längd och bredd, så areaskalan är längdskalan upphöjt till 2, alltså 1 till 20 gånger 20, och det är 1 till 400. En volym har också höjd, så volymskalan är längdskalan upphöjt till 3, alltså 1 till 8000."
+     "t": 434,
+     "text": "Konen har också en mantelarea, och det är själva våffeln. I formeln pi r s är s den sneda sidan, från spetsen ner till kanten."
     },
     {
-     "t": 395,
-     "text": "Här är en uppgift att prova. Ett dockhus är byggt i skala 1 till 10. Hur många gånger större är golvytan, och hur många gånger större är volymen i ett riktigt hus?"
+     "t": 447,
+     "text": "Den sjätte raden är klotet, som har formen av en boll. V är volymen, och A är arean av hela ytan runt bollen. I båda formlerna behöver man bara veta radien r."
     },
     {
-     "t": 410,
-     "text": "Areaskalan är 1 till 10 gånger 10 och volymskalan 1 till 10 gånger 10 gånger 10, så golvytan är 100 gånger större och volymen 1000 gånger större."
+     "t": 464,
+     "text": "En tennisboll har radien ungefär tre centimeter. Först tar vi radien upphöjt till tre. Tre gånger tre gånger tre är tjugosju."
     },
     {
-     "t": 427,
-     "text": "På provet kan du slå upp alla de här formlerna överst på andra sidan. Tänk dig att du bygger en modell av ert klassrum i skala 1 till 5. Hur många gånger större är golvytan, och hur många gånger större är volymen i det riktiga klassrummet?"
+     "t": 477,
+     "text": "Formeln säger fyra gånger pi gånger tjugosju, delat med tre. Vi börjar med att dela tjugosju med tre, och det är nio. Fyra gånger nio är trettiosex. Trettiosex gånger pi är ungefär hundratretton, så bollen rymmer ungefär hundratretton kubikcentimeter."
+    },
+    {
+     "t": 502,
+     "text": "Den sista raden är skala. Ett dockhus i skala ett till tio är byggt så att allt är tio gånger kortare, smalare och lägre än i ett riktigt hus. Det talet kallas längdskalan."
+    },
+    {
+     "t": 519,
+     "text": "Golvet är en yta, och en yta har både längd och bredd. I det riktiga huset är golvet tio gånger längre och tio gånger bredare. Golvytan blir därför tio gånger tio, alltså hundra gånger större. Det är därför areaskalan är längdskalan i kvadrat."
+    },
+    {
+     "t": 544,
+     "text": "Ett rum har dessutom en höjd. Det riktiga rummet är tio gånger längre, bredare och högre. Volymen blir tio gånger tio gånger tio, alltså tusen gånger större. Det är därför volymskalan är längdskalan upphöjt till tre."
+    },
+    {
+     "t": 565,
+     "text": "På provet står de här formlerna överst på den andra sidan av formelbladet. Du behöver inte kunna dem utantill, men du behöver veta vad bokstäverna betyder."
+    },
+    {
+     "t": 578,
+     "text": "Nu är det din tur. Tänk dig att du bygger en modell av ert klassrum i skala ett till fem. Hur många gånger större är golvytan i det riktiga klassrummet? Och hur många gånger större är volymen?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
+     "t": 1,
      "rubrik": "Rymdgeometrin på formelbladet",
      "typ": "inledning"
     },
     {
-     "t": 30,
-     "rubrik": "Rätblock, prisma och cylinder",
+     "t": 38,
+     "rubrik": "Rätblocket: basytan gånger höjden",
      "typ": "matte"
     },
     {
-     "t": 207,
-     "rubrik": "Pyramid, kon och klot",
+     "t": 133,
+     "rubrik": "Prismat",
      "typ": "matte"
     },
     {
-     "t": 355,
-     "rubrik": "Skala: längd, area och volym",
+     "t": 198,
+     "rubrik": "Cylinderns volym",
      "typ": "matte"
     },
     {
-     "t": 432,
+     "t": 263,
+     "rubrik": "Cylinderns mantelarea",
+     "typ": "matte"
+    },
+    {
+     "t": 314,
+     "rubrik": "Pyramiden: delat med tre",
+     "typ": "matte"
+    },
+    {
+     "t": 380,
+     "rubrik": "Konen",
+     "typ": "matte"
+    },
+    {
+     "t": 447,
+     "rubrik": "Klotet",
+     "typ": "matte"
+    },
+    {
+     "t": 502,
+     "rubrik": "Areaskala och volymskala",
+     "typ": "matte"
+    },
+    {
+     "t": 578,
      "rubrik": "Klassrummet i skala 1:5",
      "typ": "uppgift"
     }
@@ -11155,385 +11201,560 @@
     ],
     "ledtrad": {
      "text": "Areaskalan är längdskalan upphöjt till 2, och volymskalan är längdskalan upphöjt till 3.",
-     "t": 410
+     "t": 519
     },
     "losning": [
      "Längdskalan är 1 till 5, så varje längd är 5 gånger större i verkligheten.",
      "Areaskalan är 5² = 5 · 5 = 25, så golvytan är 25 gånger större.",
      "Volymskalan är 5³ = 5 · 5 · 5 = 125, så volymen är 125 gånger större."
     ],
-    "notisFran": 395
+    "notisFran": 578
    },
    "undertext": [
     {
-     "s": 0.08,
-     "e": 4.78,
-     "text": "På nationella provet i matematik 1 får du ett formelblad från Skolverket."
+     "s": 1.5,
+     "e": 8.1,
+     "text": "På nationella provet i matematik 1 har alla formelbladet från Skolverket på bänken."
     },
     {
-     "s": 5.68,
-     "e": 10.36,
-     "text": "Överst på andra sidan står formler för saker som har längd, bredd och höjd,"
+     "s": 9.1,
+     "e": 13.42,
+     "text": "Överst på den andra sidan står formler för saker som har längd,"
     },
     {
-     "s": 10.98,
-     "e": 13.84,
-     "text": "som ett mjölkpaket, en burk eller en boll."
+     "s": 13.72,
+     "e": 14.92,
+     "text": "bredd och höjd."
     },
     {
-     "s": 15.08,
-     "e": 19.6,
-     "text": "Med formlerna räknar man ut volymen, alltså hur mycket som får plats inuti,"
+     "s": 15.92,
+     "e": 19.64,
+     "text": "Det kan vara ett mjölkpaket, en burk eller en boll."
     },
     {
-     "s": 20.28,
-     "e": 22.78,
-     "text": "och ibland arean av ytan runt om."
+     "s": 20.94,
+     "e": 23.64,
+     "text": "Med formlerna räknar man ut volymen."
     },
     {
-     "s": 24.04,
-     "e": 28.74,
-     "text": "Vi går igenom raderna uppifrån, och varje rad har en bild med bokstäverna utritade."
+     "s": 24.64,
+     "e": 27.68,
+     "text": "Volymen är hur mycket som får plats inuti."
     },
     {
-     "s": 30,
-     "e": 34.06,
-     "text": "Den första raden heter rätblock, och det har formen av en låda,"
+     "s": 28.68,
+     "e": 35.24,
+     "text": "Avsnittet har sju rader, och varje rad har ett namn, en formel och en liten bild som"
     },
     {
-     "s": 34.36,
-     "e": 35.44,
-     "text": "som ett mjölkpaket."
+     "s": 35.28,
+     "e": 37.16,
+     "text": "visar vad bokstäverna betyder."
     },
     {
-     "s": 36.5,
-     "e": 43.42,
-     "text": "Formeln är V lika med B gånger h, där V är volymen och h är höjden."
+     "s": 38.46,
+     "e": 41.28,
+     "text": "Den första raden heter rätblock."
     },
     {
-     "s": 44.58,
-     "e": 49.28,
-     "text": "B är bottenytan, alltså arean av den yta som paketet står på."
+     "s": 42.28,
+     "e": 46.46,
+     "text": "ett rätblock har formen av en låda, som ett mjölkpaket."
     },
     {
-     "s": 50.46,
-     "e": 54.7,
-     "text": "Ett mjölkpaket är 7 centimeter brett och 7 centimeter djupt,"
+     "s": 47.46,
+     "e": 53.66,
+     "text": "Formeln är V lika med B gånger h, och V står för volymen."
     },
     {
-     "s": 55.2,
-     "e": 60.1,
-     "text": "så bottenytan är 7 gånger 7, alltså 49 kvadratcentimeter."
+     "s": 54.96,
+     "e": 56.9,
+     "text": "B står för basytan."
     },
     {
-     "s": 61.5,
-     "e": 67.26,
-     "text": "I botten får det därför plats 49 små kuber som är en centimeter åt varje håll,"
+     "s": 57.9,
+     "e": 62.84,
+     "text": "Det är arean av botten, alltså den yta som paketet står på."
     },
     {
-     "s": 67.94,
-     "e": 70.96,
-     "text": "och en sådan kub kallas en kubikcentimeter."
+     "s": 63.84,
+     "e": 69.6,
+     "text": "h står för höjden, och det är avståndet rakt upp från botten till toppen."
     },
     {
-     "s": 72.46,
-     "e": 77.22,
-     "text": "Paketet är 20 centimeter högt, så det får plats 20 lager med kuber,"
+     "s": 70.9,
+     "e": 73.24,
+     "text": "Först räknar vi ut basytan."
     },
     {
-     "s": 77.84,
-     "e": 82.62,
-     "text": "och 49 gånger 20 är 980 kubikcentimeter."
+     "s": 74.24,
+     "e": 79.08,
+     "text": "ett mjölkpaket är 7 centimeter brett och 7 centimeter djupt."
     },
     {
-     "s": 84.2,
-     "e": 87.14,
-     "text": "På nästa rad står prisma, med samma formel."
+     "s": 80.08,
+     "e": 86.32,
+     "text": "7 gånger 7 är 49, så på botten får det plats 49 små rutor."
     },
     {
-     "s": 88.1,
-     "e": 94.4,
-     "text": "Ett prisma har samma form hela vägen upp, som en lång chokladkartong där varje skiva"
+     "s": 87.32,
+     "e": 94.8,
+     "text": "Varje ruta är en centimeter lång och en centimeter bred, och den kallas en kvadratcentimeter."
     },
     {
-     "s": 94.44,
-     "e": 96.8,
-     "text": "man skär blir en likadan triangel."
+     "s": 96.1,
+     "e": 99.14,
+     "text": "Nu ställer vi en liten kub på varje ruta."
     },
     {
-     "s": 98.02,
-     "e": 104.26,
-     "text": "Ställ kartongen på ena änden, så är triangeln bottenytan och kartongens längd är höjden."
+     "s": 100.14,
+     "e": 105.84,
+     "text": "Kuben är en centimeter åt varje håll, och den kallas en kubikcentimeter."
     },
     {
-     "s": 105.5,
-     "e": 113.48,
-     "text": "Triangeln är 4 centimeter bred och 3 centimeter hög, så bottenytan är 4 gånger 3 delat"
+     "s": 106.84,
+     "e": 110,
+     "text": "Det blir ett lager med 49 kuber."
     },
     {
-     "s": 113.52,
-     "e": 116.68,
-     "text": "med 2, alltså 6 kvadratcentimeter."
+     "s": 111.3,
+     "e": 116.92,
+     "text": "Paketet är 20 centimeter högt, så det får plats 20 sådana lager."
     },
     {
-     "s": 118.06,
-     "e": 126.56,
-     "text": "Kartongen är 20 centimeter lång, så volymen är 6 gånger 20, alltså 120 kubikcentimeter."
+     "s": 117.92,
+     "e": 121.32,
+     "text": "49 gånger 20 är 980."
     },
     {
-     "s": 128.24,
-     "e": 131.82,
-     "text": "Sedan kommer cylindern, som har formen av en konservburk."
+     "s": 122.32,
+     "e": 129,
+     "text": "Volymen är alltså 980 kubikcentimeter, och det är precis vad formeln gör."
     },
     {
-     "s": 132.78,
-     "e": 138.48,
+     "s": 130,
+     "e": 132.62,
+     "text": "Den tar basytan gånger höjden."
+    },
+    {
+     "s": 133.92,
+     "e": 137.66,
+     "text": "Nästa rad är prisma, och formeln är densamma."
+    },
+    {
+     "s": 138.66,
+     "e": 144.1,
+     "text": "ett prisma har samma form hela vägen från den ena änden till den andra,"
+    },
+    {
+     "s": 144.48,
+     "e": 146.36,
+     "text": "som en lång chokladkartong."
+    },
+    {
+     "s": 147.36,
+     "e": 152.18,
+     "text": "Skär man en skiva var som helst, blir skivan en likadan triangel."
+    },
+    {
+     "s": 153.48,
+     "e": 155.54,
+     "text": "Ställ kartongen på ena änden."
+    },
+    {
+     "s": 156.54,
+     "e": 161.42,
+     "text": "Då är triangeln basytan, och kartongens längd blir höjden."
+    },
+    {
+     "s": 162.42,
+     "e": 169.68,
+     "text": "Triangelns area är basen gånger höjden delat med 2, och den formeln står på första sidan."
+    },
+    {
+     "s": 170.98,
+     "e": 175.7,
+     "text": "Triangeln är 4 centimeter bred och 3 centimeter hög."
+    },
+    {
+     "s": 176.7,
+     "e": 178.82,
+     "text": "4 gånger 3 är 12."
+    },
+    {
+     "s": 179.82,
+     "e": 185.86,
+     "text": "12 delat med 2 är 6, så basytan är 6 kvadratcentimeter."
+    },
+    {
+     "s": 186.86,
+     "e": 189.6,
+     "text": "Kartongen är 20 centimeter lång."
+    },
+    {
+     "s": 190.6,
+     "e": 197.18,
+     "text": "6 gånger 20 är 120, så volymen är 120 kubikcentimeter."
+    },
+    {
+     "s": 198.48,
+     "e": 203.4,
+     "text": "Den tredje raden är cylindern, som har formen av en konservburk."
+    },
+    {
+     "s": 204.4,
+     "e": 210.16,
      "text": "Rak cirkulär betyder att botten är en cirkel och att burken står rakt upp."
     },
     {
-     "s": 139.62,
-     "e": 147.7,
-     "text": "Volymen är B gånger h även här, och botten är en cirkel med arean pi gånger r upphöjt till 2."
+     "s": 211.16,
+     "e": 214.26,
+     "text": "Volymen är B gånger h även här."
     },
     {
-     "s": 148.68,
-     "e": 153.26,
-     "text": "Där är r radien, alltså avståndet från mitten till kanten."
+     "s": 215.56,
+     "e": 221.12,
+     "text": "Botten är en cirkel, och cirkelns area är pi gånger r i kvadrat."
     },
     {
-     "s": 154.46,
-     "e": 159.76,
-     "text": "En burk med radien 4 centimeter har bottenytan pi gånger 16,"
+     "s": 222.12,
+     "e": 226.64,
+     "text": "r är radien, alltså avståndet från mitten ut till kanten."
     },
     {
-     "s": 160.36,
-     "e": 162.6,
-     "text": "ungefär 50 kvadratcentimeter."
+     "s": 227.64,
+     "e": 231.8,
+     "text": "Pi är ett tal som är ungefär 3,14."
     },
     {
-     "s": 163.9,
-     "e": 170.28,
-     "text": "Burken är 10 centimeter hög, så volymen blir ungefär 500 kubikcentimeter."
+     "s": 233.1,
+     "e": 236.22,
+     "text": "en burk har radien 4 centimeter."
     },
     {
-     "s": 172.08,
-     "e": 177.66,
-     "text": "Under volymen står mantelarean, och manteln är etiketten runt burken."
+     "s": 237.22,
+     "e": 241.8,
+     "text": "Radien i kvadrat är 4 gånger 4, alltså 16."
     },
     {
-     "s": 178.82,
-     "e": 182.64,
-     "text": "Klipper man upp etiketten och lägger den platt blir den en rektangel,"
+     "s": 242.8,
+     "e": 250.4,
+     "text": "16 gånger pi är ungefär 50, så basytan är ungefär 50 kvadratcentimeter."
     },
     {
-     "s": 183.14,
-     "e": 187.92,
-     "text": "som är lika lång som ett varv runt burken och lika hög som burken."
+     "s": 251.4,
+     "e": 253.78,
+     "text": "Burken är 10 centimeter hög."
     },
     {
-     "s": 189.32,
-     "e": 196.88,
-     "text": "Ett varv runt en cirkel är 2 pi r, så etikettens area är 2 pi r gånger h."
+     "s": 254.78,
+     "e": 262.08,
+     "text": "50 gånger 10 är 500, så burken rymmer ungefär 500 kubikcentimeter."
     },
     {
-     "s": 197.94,
-     "e": 205.32,
-     "text": "För burken blir det 2 gånger pi gånger 4 gånger 10, ungefär 250 kvadratcentimeter."
+     "s": 263.38,
+     "e": 266,
+     "text": "Under volymen står mantelarean."
     },
     {
-     "s": 207.1,
-     "e": 209.36,
-     "text": "På raden under står pyramiden."
+     "s": 267,
+     "e": 271.22,
+     "text": "Manteln är ytan runt om, som etiketten på burken."
     },
     {
-     "s": 210.16,
-     "e": 216.56,
-     "text": "Den har också en bottenyta B och en höjd h, men här delas B gånger h med 3."
+     "s": 272.22,
+     "e": 276.66,
+     "text": "Klipper man upp etiketten och lägger den platt, blir den en rektangel."
     },
     {
-     "s": 217.72,
-     "e": 222.84,
-     "text": "Det syns om man fyller en pyramid med sand och häller sanden i ett rätblock med samma"
+     "s": 277.96,
+     "e": 281.88,
+     "text": "Rektangeln är lika hög som burken, alltså h."
     },
     {
-     "s": 222.9,
-     "e": 223.94,
-     "text": "botten och höjd."
+     "s": 282.88,
+     "e": 286.06,
+     "text": "Den är lika lång som ett varv runt burken."
     },
     {
-     "s": 224.88,
-     "e": 230.22,
-     "text": "Det behövs tre fulla pyramider för att fylla rätblocket, därför delar man med 3."
+     "s": 287.06,
+     "e": 292.44,
+     "text": "ett varv runt en cirkel är omkretsen, och den är 2 pi r."
     },
     {
-     "s": 231.6,
-     "e": 238.3,
-     "text": "Om botten är en kvadrat med sidan 6 centimeter är bottenytan 36 kvadratcentimeter."
+     "s": 293.44,
+     "e": 297.24,
+     "text": "Därför är mantelarean 2 pi r gånger h."
     },
     {
-     "s": 239.46,
-     "e": 251.08,
-     "text": "Med höjden 10 centimeter blir det 36 gånger 10, alltså 360, och delat med 3 blir volymen 120 kubikcentimeter."
+     "s": 298.54,
+     "e": 303.56,
+     "text": "För burken blir det 2 gånger 4 gånger 10, alltså 80."
     },
     {
-     "s": 252.96,
-     "e": 256.9,
-     "text": "Under pyramiden står konen, som har formen av en glasstrut."
+     "s": 304.56,
+     "e": 313.04,
+     "text": "80 gånger pi är ungefär 251, så etiketten är ungefär 251 kvadratcentimeter."
     },
     {
-     "s": 257.88,
-     "e": 262.06,
-     "text": "Den har samma formel som pyramiden, fast botten är en cirkel."
+     "s": 314.34,
+     "e": 316.68,
+     "text": "Den fjärde raden är pyramiden."
     },
     {
-     "s": 263.3,
-     "e": 267.78,
+     "s": 317.68,
+     "e": 322.88,
+     "text": "en pyramid har en botten och sidor som möts i en spets högst upp."
+    },
+    {
+     "s": 323.88,
+     "e": 330.58,
+     "text": "Den har också en basyta B och en höjd h, men här delas B gånger h med 3."
+    },
+    {
+     "s": 331.88,
+     "e": 338.02,
+     "text": "Det syns om man fyller en pyramid med sand och häller sanden i en låda med samma botten"
+    },
+    {
+     "s": 338.14,
+     "e": 339.14,
+     "text": "och samma höjd."
+    },
+    {
+     "s": 340.06,
+     "e": 343.7,
+     "text": "Det behövs tre fulla pyramider för att fylla lådan."
+    },
+    {
+     "s": 344.7,
+     "e": 349.94,
+     "text": "Pyramiden rymmer alltså en tredjedel av lådan, och därför delar man med 3."
+    },
+    {
+     "s": 351.24,
+     "e": 356.32,
+     "text": "en pyramid har en kvadrat som botten, med sidan 6 centimeter."
+    },
+    {
+     "s": 357.32,
+     "e": 363.7,
+     "text": "6 gånger 6 är 36, så basytan är 36 kvadratcentimeter."
+    },
+    {
+     "s": 364.7,
+     "e": 366.76,
+     "text": "Höjden är 10 centimeter."
+    },
+    {
+     "s": 367.76,
+     "e": 370.86,
+     "text": "36 gånger 10 är 360."
+    },
+    {
+     "s": 371.86,
+     "e": 379.18,
+     "text": "360 delat med 3 är 120, så volymen är 120 kubikcentimeter."
+    },
+    {
+     "s": 380.48,
+     "e": 384.94,
+     "text": "Den femte raden är konen, som har formen av en glasstrut."
+    },
+    {
+     "s": 385.94,
+     "e": 390.52,
+     "text": "Formeln är densamma som för pyramiden, men botten är en cirkel."
+    },
+    {
+     "s": 391.52,
+     "e": 396.12,
      "text": "Vänd struten med spetsen uppåt, så är den runda öppningen botten."
     },
     {
-     "s": 269.12,
-     "e": 274.32,
-     "text": "En strut med radien 5 centimeter har bottenytan pi gånger 25,"
+     "s": 397.42,
+     "e": 400.14,
+     "text": "en strut har radien 5 centimeter."
     },
     {
-     "s": 274.92,
-     "e": 278,
-     "text": "ungefär 78,5 kvadratcentimeter."
+     "s": 401.14,
+     "e": 403.3,
+     "text": "5 gånger 5 är 25."
     },
     {
-     "s": 279.22,
-     "e": 286.7,
-     "text": "Struten är 12 centimeter hög, så volymen blir 78,5 gånger 12 delat med 3,"
+     "s": 404.3,
+     "e": 411.68,
+     "text": "25 gånger pi är ungefär 78,5, så basytan är ungefär 78,5"
     },
     {
-     "s": 287.4,
-     "e": 290.42,
-     "text": "ungefär 314 kubikcentimeter."
+     "s": 411.74,
+     "e": 413.7,
+     "text": "kvadratcentimeter."
     },
     {
-     "s": 292.28,
-     "e": 301.48,
-     "text": "Konens mantel är själva våffeln, och mantelarean är pi r s, där s är den sneda sidan"
+     "s": 415,
+     "e": 417.54,
+     "text": "Struten är 12 centimeter hög."
     },
     {
-     "s": 301.54,
-     "e": 303.56,
-     "text": "från spetsen ner till kanten."
+     "s": 418.54,
+     "e": 422.78,
+     "text": "78,5 gånger 12 är 942."
     },
     {
-     "s": 304.82,
-     "e": 312.36,
-     "text": "På struten är s 13 centimeter, så våffelns area är pi gånger 5 gånger 13,"
+     "s": 423.78,
+     "e": 433.16,
+     "text": "942 delat med 3 är 314, så struten rymmer ungefär 314 kubikcentimeter."
     },
     {
-     "s": 312.92,
-     "e": 315.72,
-     "text": "ungefär 204 kvadratcentimeter."
+     "s": 434.46,
+     "e": 438.58,
+     "text": "Konen har också en mantelarea, och det är själva våffeln."
     },
     {
-     "s": 317.54,
-     "e": 320.94,
-     "text": "Näst sist står klotet, som har formen av en boll."
+     "s": 439.58,
+     "e": 446.2,
+     "text": "I formeln pi r s är s den sneda sidan, från spetsen ner till kanten."
     },
     {
-     "s": 322.06,
-     "e": 329.34,
-     "text": "V är volymen, och A är arean av hela ytan, alltså hur mycket material som täcker bollen."
+     "s": 447.5,
+     "e": 451.48,
+     "text": "Den sjätte raden är klotet, som har formen av en boll."
     },
     {
-     "s": 330.56,
-     "e": 333.28,
-     "text": "En fotboll har radien 11 centimeter."
+     "s": 452.48,
+     "e": 457.76,
+     "text": "V är volymen, och A är arean av hela ytan runt bollen."
     },
     {
-     "s": 334.28,
-     "e": 339.7,
-     "text": "Volymen blir 4 gånger pi gånger 11 upphöjt till 3, delat med 3,"
+     "s": 458.76,
+     "e": 462.76,
+     "text": "I båda formlerna behöver man bara veta radien r."
     },
     {
-     "s": 340.36,
-     "e": 349.5,
-     "text": "ungefär 5575 kubikcentimeter, och arean blir 4 gånger pi gånger 11 upphöjt till 2,"
+     "s": 464.06,
+     "e": 468.06,
+     "text": "en tennisboll har radien ungefär 3 centimeter."
     },
     {
-     "s": 350.18,
-     "e": 353.52,
-     "text": "ungefär 1521 kvadratcentimeter."
+     "s": 469.06,
+     "e": 471.74,
+     "text": "Först tar vi radien upphöjt till 3."
     },
     {
-     "s": 355.32,
-     "e": 357.02,
-     "text": "Längst ner står skala."
+     "s": 472.74,
+     "e": 475.78,
+     "text": "3 gånger 3 gånger 3 är 27."
     },
     {
-     "s": 358.06,
-     "e": 365.66,
-     "text": "En leksaksbil i skala 1 till 20 är 20 gånger kortare, smalare och lägre än den riktiga"
+     "s": 477.08,
+     "e": 482.34,
+     "text": "Formeln säger 4 gånger pi gånger 27, delat med 3."
     },
     {
-     "s": 365.7,
-     "e": 369.64,
-     "text": "bilen, så längdskalan är 1 till 20."
+     "s": 483.34,
+     "e": 487.6,
+     "text": "Vi börjar med att dela 27 med 3, och det är 9."
     },
     {
-     "s": 370.96,
-     "e": 377.26,
-     "text": "En yta har längd och bredd, så areaskalan är längdskalan upphöjt till 2,"
+     "s": 488.6,
+     "e": 491.2,
+     "text": "4 gånger 9 är 36."
     },
     {
-     "s": 377.9,
-     "e": 383.28,
-     "text": "alltså 1 till 20 gånger 20, och det är 1 till 400."
+     "s": 492.2,
+     "e": 500.96,
+     "text": "36 gånger pi är ungefär 113, så bollen rymmer ungefär 113 kubikcentimeter."
     },
     {
-     "s": 384.74,
-     "e": 390.76,
-     "text": "En volym har också höjd, så volymskalan är längdskalan upphöjt till 3,"
+     "s": 502.26,
+     "e": 504.48,
+     "text": "Den sista raden är skala."
     },
     {
-     "s": 391.36,
-     "e": 393.72,
-     "text": "alltså 1 till 8000."
+     "s": 505.48,
+     "e": 511.6,
+     "text": "ett dockhus i skala 1 till 10 är byggt så att allt är 10 gånger kortare,"
     },
     {
-     "s": 395.46,
-     "e": 396.82,
-     "text": "Här är en uppgift att prova."
+     "s": 512,
+     "e": 514.94,
+     "text": "smalare och lägre än i ett riktigt hus."
     },
     {
-     "s": 398,
-     "e": 401.16,
-     "text": "Ett dockhus är byggt i skala 1 till 10."
+     "s": 515.94,
+     "e": 518.38,
+     "text": "Det talet kallas längdskalan."
     },
     {
-     "s": 402.12,
-     "e": 408.66,
-     "text": "Hur många gånger större är golvytan, och hur många gånger större är volymen i ett riktigt hus?"
+     "s": 519.68,
+     "e": 524.44,
+     "text": "Golvet är en yta, och en yta har både längd och bredd."
     },
     {
-     "s": 410.34,
-     "e": 418.56,
-     "text": "Areaskalan är 1 till 10 gånger 10 och volymskalan 1 till 10 gånger 10 gånger 10,"
+     "s": 525.44,
+     "e": 530.82,
+     "text": "I det riktiga huset är golvet 10 gånger längre och 10 gånger bredare."
     },
     {
-     "s": 419.5,
-     "e": 425.62,
-     "text": "så golvytan är 100 gånger större och volymen 1000 gånger större."
+     "s": 531.82,
+     "e": 537.36,
+     "text": "Golvytan blir därför 10 gånger 10, alltså 100 gånger större."
     },
     {
-     "s": 427.14,
-     "e": 431.34,
-     "text": "På provet kan du slå upp alla de här formlerna överst på andra sidan."
+     "s": 538.36,
+     "e": 542.7,
+     "text": "Det är därför areaskalan är längdskalan i kvadrat."
     },
     {
-     "s": 432.32,
-     "e": 436.84,
+     "s": 544,
+     "e": 546.34,
+     "text": "ett rum har dessutom en höjd."
+    },
+    {
+     "s": 547.34,
+     "e": 551.9,
+     "text": "Det riktiga rummet är 10 gånger längre, bredare och högre."
+    },
+    {
+     "s": 552.9,
+     "e": 559.06,
+     "text": "Volymen blir 10 gånger 10 gånger 10, alltså 1000 gånger större."
+    },
+    {
+     "s": 560.06,
+     "e": 564.6,
+     "text": "Det är därför volymskalan är längdskalan upphöjt till 3."
+    },
+    {
+     "s": 565.9,
+     "e": 571.1,
+     "text": "På provet står de här formlerna överst på den andra sidan av formelbladet."
+    },
+    {
+     "s": 572.1,
+     "e": 577.54,
+     "text": "Du behöver inte kunna dem utantill, men du behöver veta vad bokstäverna betyder."
+    },
+    {
+     "s": 578.84,
+     "e": 580.24,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 581.24,
+     "e": 586.28,
      "text": "Tänk dig att du bygger en modell av ert klassrum i skala 1 till 5."
     },
     {
-     "s": 437.82,
-     "e": 444.9,
-     "text": "Hur många gånger större är golvytan, och hur många gånger större är volymen i det riktiga klassrummet?"
+     "s": 587.28,
+     "e": 591.98,
+     "text": "Hur många gånger större är golvytan i det riktiga klassrummet?"
+    },
+    {
+     "s": 592.98,
+     "e": 595.78,
+     "text": "Och hur många gånger större är volymen?"
     }
    ]
   },
