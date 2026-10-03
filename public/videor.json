@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T16:32:58.480Z",
+ "byggd": "2026-10-03T16:44:13.152Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -11190,12 +11190,13 @@
     "Matematik 1",
     "Matematik 2"
    ],
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-5-v3/formelbladet-5-pythagoras-trigonometri-vektorer-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-5-v4/formelbladet-5-pythagoras-trigonometri-vektorer-1080p.mp4",
    "moment": "Formelbladet: Pythagoras sats, trigonometri och vektorer",
    "begrepp": [
     "formelbladet",
     "Pythagoras sats",
     "rätvinklig triangel",
+    "rät vinkel",
     "hypotenusa",
     "katet",
     "motstående katet",
@@ -11203,6 +11204,7 @@
     "sinus",
     "cosinus",
     "tangens",
+    "kvot",
     "vinkel",
     "vektor",
     "skalär",
@@ -11212,571 +11214,982 @@
    ],
    "beskrivning": "Vi går igenom nedersta delen av formelbladet till nationella provet i matematik 1: Pythagoras sats, sinus, cosinus och tangens, och vektorerna. Varje formel förklaras med enkel svenska och ett enkelt exempel, som en stege mot en vägg och en promenad på en karta.",
    "youtube": null,
-   "langd": 457,
+   "langd": 520,
    "omslag": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer.jpg?v=725444ec",
    "omslagRen": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer-ren.jpg?v=76d5170b",
    "omslagStor": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer-stor.jpg?v=58a7df07",
    "repliker": [
     {
-     "t": 0,
-     "text": "På nationella provet i matematik 1 har alla formelbladet från Skolverket på bänken. Längst ner på den andra sidan står Pythagoras sats, trigonometri och vektorer, och det är dem vi går igenom nu."
+     "t": 1,
+     "text": "På nationella provet i matematik ett har alla formelbladet från Skolverket på bänken. Längst ner på den andra sidan står Pythagoras sats, trigonometri och vektorer. Det är de raderna vi går igenom nu."
     },
     {
-     "t": 16,
-     "text": "Pythagoras sats och trigonometrin gäller bara för en viss sorts triangel. Därför står det en mening ovanför dem, och den säger att formlerna gäller för sidorna a, b och c i en rätvinklig triangel."
+     "t": 19,
+     "text": "Överst står en mening. Den säger att formlerna gäller för sidorna a, b och c i en rätvinklig triangel. Pythagoras sats och trigonometrin gäller alltså bara i en sådan triangel."
     },
     {
-     "t": 32,
-     "text": "En rätvinklig triangel har ett hörn som är precis 90 grader, som hörnet på ett papper. På bladets bild är det hörnet markerat med en liten fyrkant."
+     "t": 35,
+     "text": "En rätvinklig triangel har ett hörn som är precis nittio grader, som hörnet på ett papper. Ett sådant hörn kallas en rät vinkel. På bladets bild är den markerad med en liten fyrkant."
     },
     {
-     "t": 44,
-     "text": "Den längsta sidan ligger mitt emot det räta hörnet och kallas hypotenusa, och på bladet heter den c. De två kortare sidorna, a och b, kallas kateter."
+     "t": 50,
+     "text": "Den längsta sidan ligger mitt emot den räta vinkeln. Den kallas hypotenusa, och på bladet heter den c. De två kortare sidorna möts i den räta vinkeln. De kallas kateter, och på bladet heter de a och b."
     },
     {
-     "t": 58,
-     "text": "Direkt under meningen står Pythagoras sats. Den säger att a i kvadrat plus b i kvadrat är lika med c i kvadrat, och i kvadrat betyder att talet gångras med sig självt."
+     "t": 70,
+     "text": "Under meningen står Pythagoras sats. Den säger att a i kvadrat plus b i kvadrat är lika med c i kvadrat. I kvadrat betyder att talet gångras med sig självt."
     },
     {
-     "t": 73,
-     "text": "Tänk dig en stege som ska nå ett fönster 4 meter upp på en vägg, och stegen ska stå med foten 3 meter från väggen. Då bildar väggen, marken och stegen en rätvinklig triangel, och stegen är hypotenusan."
+     "t": 86,
+     "text": "Tänk dig en stege som lutar mot en vägg. Foten står tre meter från väggen, och toppen når fyra meter upp. Väggen och marken möts i en rät vinkel, så väggen, marken och stegen bildar en rätvinklig triangel."
     },
     {
-     "t": 92,
-     "text": "3 i kvadrat är 9 och 4 i kvadrat är 16, och 9 plus 16 är 25. Alltså är c i kvadrat 25, och eftersom 5 gånger 5 är 25 måste stegen vara 5 meter lång."
+     "t": 105,
+     "text": "Stegen ligger mitt emot den räta vinkeln, så stegen är hypotenusan c. Kateterna är tre och fyra meter. Hur lång är stegen?"
     },
     {
-     "t": 111,
-     "text": "På raden under står trigonometrin, och den är det svåraste vi går igenom i dag. Så häng med så gott det går, det är helt okej om inte allt sitter direkt."
+     "t": 118,
+     "text": "Först tar vi kateterna i kvadrat. Tre i kvadrat är nio. Fyra i kvadrat är sexton. Sedan lägger vi ihop dem. Nio plus sexton är tjugofem, så c i kvadrat är tjugofem."
     },
     {
-     "t": 123,
-     "text": "Trigonometrin handlar om vinkeln v, och vilken sida som är a och vilken som är b beror på var vinkeln sitter. Sidan a ligger mitt emot vinkeln och kallas motstående katet, och sidan b ligger vid vinkeln och kallas närliggande katet."
+     "t": 136,
+     "text": "Nu söker vi talet som gånger sig självt blir tjugofem. Det är fem, för fem gånger fem är tjugofem. Stegen är alltså fem meter lång."
     },
     {
-     "t": 145,
-     "text": "Hos stegen är v vinkeln mellan stegen och marken. Då är höjden på väggen, 4 meter, motstående katet, och avståndet på marken, 3 meter, är närliggande katet."
+     "t": 149,
+     "text": "På raden under står trigonometrin. Den är det svåraste vi går igenom i dag, så det är helt okej om inte allt sitter direkt."
     },
     {
-     "t": 161,
-     "text": "Sinus v är a delat med c, alltså motstående katet delat med hypotenusan. För stegen blir det 4 delat med 5, och det är 0,8."
+     "t": 159,
+     "text": "Trigonometrin handlar om vinkeln v, som sitter i ett av de andra hörnen. Kateterna får namn efter var de ligger, sett från v. Sidan a ligger mitt emot v, så den kallas motstående katet. Sidan b går ut från v, så den kallas närliggande katet."
     },
     {
-     "t": 175,
-     "text": "Cosinus v är b delat med c, alltså närliggande katet delat med hypotenusan. För stegen blir det 3 delat med 5, och det är 0,6."
+     "t": 182,
+     "text": "Hos stegen är v vinkeln nere vid marken, mellan stegen och marken. Väggen ligger mitt emot v, så fyra meter är motstående katet. Marken går ut från v, så tre meter är närliggande katet."
     },
     {
-     "t": 189,
-     "text": "Tangens v är a delat med b, alltså motstående katet delat med närliggande katet. För stegen blir det 4 delat med 3, och det är ungefär 1,33."
-    },
-    {
-     "t": 205,
-     "text": "En längre stege som lutar lika mycket ger samma tal, för talen beror bara på vinkeln. Därför kan räknaren räkna ut vinkeln från 0,8, och för stegen blir v ungefär 53 grader."
+     "t": 202,
+     "text": "Bladet har tre kvoter, och en kvot är ett tal delat med ett annat. Sinus v är a delat med c, alltså motstående katet delat med hypotenusan. För stegen är det fyra delat med fem, och det är noll komma åtta."
     },
     {
      "t": 223,
-     "text": "Det var det svåra. Det viktigaste att ta med sig är vilken sida som är vilken, sett från vinkeln v."
+     "text": "Cosinus v är b delat med c, alltså närliggande katet delat med hypotenusan. För stegen är det tre delat med fem, och det är noll komma sex."
     },
     {
-     "t": 231,
-     "text": "Längst ner på bladet står vektorerna, och de ingår bara i kursen matematik 1c. En vektor beskriver en förflyttning, alltså hur långt och åt vilket håll man går."
+     "t": 238,
+     "text": "Tangens v är a delat med b, alltså motstående katet delat med närliggande katet. För stegen är det fyra delat med tre, och det är ungefär ett komma trettiotre."
     },
     {
-     "t": 245,
-     "text": "På bladet har en vektor en liten pil över bokstaven, och vektorn u skrivs med två tal inom en parentes. Det första talet är steget i x-led, åt höger, och det andra är steget i y-led, uppåt."
+     "t": 254,
+     "text": "Kvoterna hör ihop med vinkeln. Stegen lutar ungefär femtiotre grader mot marken. Skriver man sinus femtiotre på räknaren, får man ungefär noll komma åtta. Det är samma tal som fyra delat med fem."
     },
     {
-     "t": 264,
-     "text": "Tänk dig en promenad på en karta, där höger är öster och uppåt är norr. Vektorn u med talen 3 och 4 betyder att du går 3 kilometer österut och 4 kilometer norrut."
+     "t": 273,
+     "text": "Det var det svåra. Det viktigaste är att veta vilken sida som är vilken, sett från vinkeln v."
     },
     {
      "t": 282,
-     "text": "Efter det går du promenaden v, som har talen 1 och 2. Den första regeln säger att man får u plus v genom att lägga ihop de första talen för sig och de andra talen för sig."
+     "text": "Längst ner på bladet står vektorerna. En vektor beskriver en förflyttning. Den säger hur långt man går och åt vilket håll."
     },
     {
-     "t": 297,
-     "text": "3 plus 1 är 4 och 4 plus 2 är 6, så u plus v har talen 4 och 6. Du har alltså kommit 4 kilometer österut och 6 kilometer norrut."
+     "t": 293,
+     "text": "På bladet har en vektor en liten pil över bokstaven. Vektorn u skrivs med två tal inom en parentes. Det första talet är steget i x-led, alltså åt höger. Det andra talet är steget i y-led, alltså uppåt."
     },
     {
-     "t": 315,
-     "text": "Regeln bredvid drar bort talen i stället, för minus v betyder att man går promenaden v baklänges. Då får u minus v talen 2 och 2, för 3 minus 1 är 2 och 4 minus 2 är 2."
+     "t": 313,
+     "text": "Bladet skriver talen i u som a med ett litet x och a med ett litet y. Talen i vektorn v skrivs på samma sätt med b. Här är v en vektor, och inte vinkeln från trigonometrin."
     },
     {
-     "t": 335,
-     "text": "På raden under står skalären s, och det är ett vanligt tal framför vektorn. 2 gånger u betyder att man går promenaden u två gånger, så båda talen gångras med 2, och det blir 6 och 8."
+     "t": 331,
+     "text": "Tänk dig en promenad på en karta, där höger är öster och uppåt är norr. Vektorn u har talen tre och fyra. Den betyder att du går tre kilometer österut och fyra kilometer norrut."
     },
     {
-     "t": 354,
-     "text": "Den sista regeln ger vektorns längd, alltså hur långt det är fågelvägen, rakt från start till mål. 3 kilometer österut och 4 kilometer norrut bildar en rätvinklig triangel, och fågelvägen är hypotenusan."
+     "t": 348,
+     "text": "Sedan går du promenaden v, som har talen ett och två. Den första regeln är u plus v. Där lägger man ihop de första talen för sig och de andra talen för sig."
     },
     {
-     "t": 374,
-     "text": "Därför räknas längden med Pythagoras sats, och talen är samma som för stegen. 3 i kvadrat plus 4 i kvadrat är 25, och rottecknet frågar vilket tal som gånger sig självt blir 25. Det är 5, så fågelvägen är 5 kilometer."
+     "t": 363,
+     "text": "Tre plus ett är fyra. Fyra plus två är sex. Så u plus v har talen fyra och sex, och du har kommit fyra kilometer österut och sex kilometer norrut."
     },
     {
-     "t": 398,
-     "text": "Ofta vet man en vinkel och en sida, och vill räkna ut en annan sida. En rutschkana är 4 meter lång och lutar 30 grader mot marken. Hur högt upp sitter toppen?"
+     "t": 379,
+     "text": "Bredvid står u minus v. Minus v betyder att man går promenaden v baklänges, så man drar bort talen i stället. Tre minus ett är två. Fyra minus två är två. Så u minus v har talen två och två."
     },
     {
-     "t": 415,
-     "text": "Höjden ligger mitt emot vinkeln och rutschkanan är hypotenusan, så sinus 30 grader är höjden delat med 4. Räknaren ger att sinus 30 grader är 0,5, och därför är höjden 4 gånger 0,5, alltså 2 meter."
+     "t": 402,
+     "text": "På raden under står s gånger u. Bladet kallar s en skalär, och det är ett vanligt tal. Två gånger u betyder att man går promenaden u två gånger, så båda talen gångras med två. Tre gånger två är sex. Fyra gånger två är åtta. Så två gånger u har talen sex och åtta."
     },
     {
-     "t": 441,
-     "text": "På provet kan du slå upp alla de här formlerna längst ner på andra sidan. En rutschkana är 6 meter lång och lutar 40 grader mot marken. Hur högt upp sitter toppen?"
+     "t": 430,
+     "text": "Den sista regeln ger vektorns längd, alltså hur långt det är fågelvägen, rakt från start till mål. De raka strecken på var sida om u betyder längden av u."
+    },
+    {
+     "t": 445,
+     "text": "Tre kilometer österut och fyra kilometer norrut möts i en rät vinkel. Därför bildar de en rätvinklig triangel, och fågelvägen är hypotenusan. Så längden räknas med Pythagoras sats."
+    },
+    {
+     "t": 463,
+     "text": "Under rottecknet står tre i kvadrat plus fyra i kvadrat. Det blir tjugofem, precis som för stegen. Rottecknet frågar vilket tal som gånger sig självt blir tjugofem. Det är fem, så fågelvägen är fem kilometer."
+    },
+    {
+     "t": 484,
+     "text": "På provet står alla de här formlerna längst ner på den andra sidan av formelbladet. Du behöver inte kunna dem utantill, men du behöver veta vad bokstäverna betyder."
+    },
+    {
+     "t": 498,
+     "text": "Nu är det din tur. En stege lutar mot en vägg. Foten står sex meter från väggen, och toppen når åtta meter upp. Hur lång är stegen? Och vad är sinus v, där v är vinkeln mellan stegen och marken?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
-     "rubrik": "Den rätvinkliga triangeln",
+     "t": 1,
+     "rubrik": "Formelbladets andra sida",
      "typ": "inledning"
     },
     {
-     "t": 58,
+     "t": 19,
+     "rubrik": "Den rätvinkliga triangeln",
+     "typ": "matte"
+    },
+    {
+     "t": 70,
      "rubrik": "Pythagoras sats",
      "typ": "matte"
     },
     {
-     "t": 111,
+     "t": 86,
+     "rubrik": "Stegen: Pythagoras med tal",
+     "typ": "matte"
+    },
+    {
+     "t": 149,
      "rubrik": "Sinus, cosinus och tangens",
      "typ": "matte"
     },
     {
-     "t": 231,
+     "t": 282,
      "rubrik": "Vektorer",
      "typ": "matte"
     },
     {
-     "t": 398,
-     "rubrik": "Trigonometri: räkna ut en sida",
+     "t": 331,
+     "rubrik": "Plus, minus och gånger",
      "typ": "matte"
     },
     {
-     "t": 447,
-     "rubrik": "Rutschkanan",
+     "t": 430,
+     "rubrik": "Vektorns längd",
+     "typ": "matte"
+    },
+    {
+     "t": 498,
+     "rubrik": "Stegen",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "En rutschkana är 6 meter lång och lutar 40 grader mot marken.",
+    "fraga": "En stege lutar mot en vägg. Foten står 6 meter från väggen, och toppen når 8 meter upp.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "b01-stegen",
+     "tema": "papper",
+     "text": "En stege lutar mot en vägg. Foten står 6 m från väggen och toppen når 8 m upp. Vinkeln v ligger vid foten, mellan stegen och marken. Stegens längd är okänd.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         150,
+         880
+        ],
+        [
+         700,
+         880
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         880
+        ],
+        [
+         560,
+         390
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         230,
+         880
+        ],
+        [
+         560,
+         440
+        ]
+       ],
+       "tjock": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         260.1,
+         816.6
+        ],
+        [
+         282.4,
+         833.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         301.3,
+         761.6
+        ],
+        [
+         323.7,
+         778.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         342.6,
+         706.6
+        ],
+        [
+         364.9,
+         723.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         383.8,
+         651.6
+        ],
+        [
+         406.2,
+         668.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         425.1,
+         596.6
+        ],
+        [
+         447.4,
+         613.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         466.3,
+         541.6
+        ],
+        [
+         488.7,
+         558.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         507.6,
+         486.6
+        ],
+        [
+         530,
+         503.4
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "ratvinkel",
+       "vid": [
+        560,
+        880
+       ],
+       "mot": [
+        [
+         560,
+         440
+        ],
+        [
+         230,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        230,
+        880
+       ],
+       "mot": [
+        [
+         560,
+         880
+        ],
+        [
+         560,
+         440
+        ]
+       ],
+       "r": 90,
+       "text": "v",
+       "avstand": 50
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         230,
+         880
+        ],
+        [
+         560,
+         880
+        ]
+       ],
+       "text": "6 m",
+       "sida": 1,
+       "avstand": 64
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         560,
+         880
+        ],
+        [
+         560,
+         440
+        ]
+       ],
+       "text": "8 m",
+       "sida": 1,
+       "avstand": 64
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         230,
+         880
+        ],
+        [
+         560,
+         440
+        ]
+       ],
+       "text": "?",
+       "sida": -1,
+       "avstand": 60,
+       "accent": true
+      }
+     ]
+    },
     "delar": [
      {
-      "fraga": "Hur högt upp sitter toppen? Svara med två decimaler.",
+      "fraga": "Hur lång är stegen?",
       "typ": "tal",
-      "svar": 3.8567,
-      "tolerans": 0.006,
+      "svar": 10,
       "enhet": "meter",
-      "exempel": "t.ex. 2,00",
+      "exempel": "t.ex. 5",
       "fel": [
        {
-        "svar": "4.596",
-        "tolerans": 0.01,
-        "text": "Det är 6 gånger cosinus 40°, sträckan längs marken. Höjden ligger mitt emot vinkeln, och då är det sinus."
+        "svar": "14",
+        "text": "Du har lagt ihop 6 och 8. Ta kateterna i kvadrat först: 6 i kvadrat är 36 och 8 i kvadrat är 64."
        },
        {
-        "svar": "5.035",
-        "tolerans": 0.01,
-        "text": "Tangens hör ihop med de två kateterna. Här vet du hypotenusan, rutschkanan, och höjden ligger mitt emot vinkeln, så det är sinus."
+        "svar": "100",
+        "text": "100 är stegens längd i kvadrat. Vilket tal gånger sig självt blir 100?"
        },
        {
-        "svar": "9.334",
-        "tolerans": 0.01,
-        "text": "Du har delat med sinus. sin 40° = höjden / 6, så höjden är 6 gånger sin 40°."
-       },
-       {
-        "svar": "4.471",
-        "tolerans": 0.01,
-        "text": "Räknaren står i radianer. Ställ om den till grader (DEG) och räkna igen."
-       },
-       {
-        "svar": "3",
-        "text": "3 meter blir det om rutschkanan lutar 30 grader. Här lutar den 40 grader."
+        "svar": "2",
+        "text": "Du har dragit 6 från 8. Stegen är hypotenusan, så räkna 6 i kvadrat plus 8 i kvadrat."
        }
-      ],
-      "nara": {
-       "tolerans": 0.06,
-       "text": "Nästan. Räkna 6 · sin 40° och avrunda till två decimaler."
-      }
+      ]
+     },
+     {
+      "fraga": "Vad är sinus v, där v är vinkeln mellan stegen och marken?",
+      "typ": "tal",
+      "svar": 0.8,
+      "tolerans": 0.001,
+      "exempel": "t.ex. 0,5",
+      "fel": [
+       {
+        "svar": "0.6",
+        "text": "Det är cosinus v: närliggande katet, 6, delat med hypotenusan. Sinus är motstående katet delat med hypotenusan."
+       },
+       {
+        "svar": "1.333",
+        "tolerans": 0.01,
+        "text": "Det är tangens v: 8 delat med 6. Sinus är motstående katet delat med hypotenusan, stegen."
+       },
+       {
+        "svar": "0.75",
+        "tolerans": 0.001,
+        "text": "Du har delat 6 med 8. Sinus är motstående katet delat med hypotenusan."
+       },
+       {
+        "svar": "1.25",
+        "tolerans": 0.001,
+        "text": "Du har delat 10 med 8. Sinus är motstående katet delat med hypotenusan, alltså 8 delat med 10."
+       }
+      ]
      }
     ],
     "ledtrad": {
-     "text": "Höjden ligger mitt emot vinkeln och rutschkanan är hypotenusan. Då är sinus 40° lika med höjden delat med 6.",
-     "t": 415
+     "text": "Stegen ligger mitt emot den räta vinkeln, så den är hypotenusan. Väggen ligger mitt emot v, så 8 m är motstående katet.",
+     "t": 118
     },
     "losning": [
-     "Höjden ligger mitt emot vinkeln, och rutschkanan är hypotenusan.",
-     "sin 40° = h / 6",
-     "h = 6 · sin 40°",
-     "Räknaren ger sin 40° ≈ 0,643, så h ≈ 6 · 0,643 ≈ 3,86 meter."
+     "Stegen ligger mitt emot den räta vinkeln, så stegen är hypotenusan c.",
+     "6² = 36 och 8² = 64.",
+     "36 + 64 = 100, så c² = 100.",
+     "10 · 10 = 100, så stegen är 10 meter.",
+     "Väggen ligger mitt emot v, så 8 m är motstående katet.",
+     "sin v = 8 / 10 = 0,8."
     ],
-    "notisFran": 398
+    "notisFran": 498
    },
    "undertext": [
     {
-     "s": 0.08,
-     "e": 6.52,
+     "s": 1.5,
+     "e": 7.76,
      "text": "På nationella provet i matematik 1 har alla formelbladet från Skolverket på bänken."
     },
     {
-     "s": 7.42,
-     "e": 12.92,
-     "text": "Längst ner på den andra sidan står Pythagoras sats, trigonometri och vektorer,"
+     "s": 8.76,
+     "e": 14.66,
+     "text": "Längst ner på den andra sidan står Pythagoras sats, trigonometri och vektorer."
     },
     {
-     "s": 13.56,
-     "e": 15.34,
-     "text": "och det är dem vi går igenom nu."
+     "s": 15.66,
+     "e": 17.78,
+     "text": "Det är de raderna vi går igenom nu."
     },
     {
-     "s": 16.46,
-     "e": 20.92,
-     "text": "Pythagoras sats och trigonometrin gäller bara för en viss sorts triangel."
+     "s": 19.08,
+     "e": 20.66,
+     "text": "Överst står en mening."
     },
     {
-     "s": 21.78,
-     "e": 26.68,
-     "text": "Därför står det en mening ovanför dem, och den säger att formlerna gäller för sidorna"
+     "s": 21.66,
+     "e": 27.86,
+     "text": "Den säger att formlerna gäller för sidorna a, b och c i en rätvinklig triangel."
     },
     {
-     "s": 27,
-     "e": 30.92,
-     "text": "a, b och c i en rätvinklig triangel."
+     "s": 28.86,
+     "e": 33.82,
+     "text": "Pythagoras sats och trigonometrin gäller alltså bara i en sådan triangel."
     },
     {
-     "s": 32.16,
-     "e": 36.38,
+     "s": 35.12,
+     "e": 39.58,
      "text": "En rätvinklig triangel har ett hörn som är precis 90 grader,"
     },
     {
-     "s": 36.88,
-     "e": 38.2,
+     "s": 39.96,
+     "e": 41.24,
      "text": "som hörnet på ett papper."
     },
     {
-     "s": 39.2,
-     "e": 42.98,
-     "text": "På bladets bild är det hörnet markerat med en liten fyrkant."
+     "s": 42.24,
+     "e": 44.94,
+     "text": "Ett sådant hörn kallas en rät vinkel."
     },
     {
-     "s": 44.06,
-     "e": 49.68,
-     "text": "Den längsta sidan ligger mitt emot det räta hörnet och kallas hypotenusa,"
+     "s": 45.94,
+     "e": 49.34,
+     "text": "På bladets bild är den markerad med en liten fyrkant."
     },
     {
-     "s": 50.32,
-     "e": 52.2,
-     "text": "och på bladet heter den c."
+     "s": 50.64,
+     "e": 54.2,
+     "text": "Den längsta sidan ligger mitt emot den räta vinkeln."
     },
     {
-     "s": 53.38,
-     "e": 57.54,
-     "text": "De två kortare sidorna, a och b, kallas kateter."
+     "s": 55.2,
+     "e": 59.3,
+     "text": "Den kallas hypotenusa, och på bladet heter den c."
     },
     {
-     "s": 58.52,
-     "e": 61.48,
-     "text": "Direkt under meningen står Pythagoras sats."
+     "s": 60.3,
+     "e": 63.84,
+     "text": "De två kortare sidorna möts i den räta vinkeln."
     },
     {
-     "s": 62.22,
-     "e": 68.1,
-     "text": "Den säger att a i kvadrat plus b i kvadrat är lika med c i kvadrat,"
+     "s": 64.84,
+     "e": 69.12,
+     "text": "De kallas kateter, och på bladet heter de a och b."
     },
     {
-     "s": 68.92,
-     "e": 72.76,
-     "text": "och i kvadrat betyder att talet gångras med sig självt."
+     "s": 70.42,
+     "e": 73.34,
+     "text": "Under meningen står Pythagoras sats."
     },
     {
-     "s": 73.7,
-     "e": 78.14,
-     "text": "Tänk dig en stege som ska nå ett fönster 4 meter upp på en vägg,"
+     "s": 74.34,
+     "e": 80.26,
+     "text": "Den säger att a i kvadrat plus b i kvadrat är lika med c i kvadrat."
     },
     {
-     "s": 78.92,
-     "e": 82.72,
-     "text": "och stegen ska stå med foten 3 meter från väggen."
+     "s": 81.26,
+     "e": 84.9,
+     "text": "I kvadrat betyder att talet gångras med sig självt."
     },
     {
-     "s": 83.76,
-     "e": 91.1,
-     "text": "Då bildar väggen, marken och stegen en rätvinklig triangel, och stegen är hypotenusan."
+     "s": 86.2,
+     "e": 88.82,
+     "text": "Tänk dig en stege som lutar mot en vägg."
     },
     {
-     "s": 92.46,
-     "e": 100.34,
-     "text": "3 i kvadrat är 9 och 4 i kvadrat är 16, och 9 plus 16 är 25."
+     "s": 89.82,
+     "e": 94.84,
+     "text": "Foten står 3 meter från väggen, och toppen når 4 meter upp."
     },
     {
-     "s": 101.32,
-     "e": 110.02,
-     "text": "Alltså är c i kvadrat 25, och eftersom 5 gånger 5 är 25 måste stegen vara 5 meter lång."
+     "s": 95.84,
+     "e": 103.9,
+     "text": "Väggen och marken möts i en rät vinkel, så väggen, marken och stegen bildar en rätvinklig triangel."
     },
     {
-     "s": 111.52,
-     "e": 116.7,
-     "text": "På raden under står trigonometrin, och den är det svåraste vi går igenom i dag."
+     "s": 105.2,
+     "e": 110.92,
+     "text": "Stegen ligger mitt emot den räta vinkeln, så stegen är hypotenusan c."
     },
     {
-     "s": 117.24,
-     "e": 122,
-     "text": "Så häng med så gott det går, det är helt okej om inte allt sitter direkt."
+     "s": 111.92,
+     "e": 114.66,
+     "text": "Kateterna är 3 och 4 meter."
     },
     {
-     "s": 123.32,
-     "e": 130.6,
-     "text": "Trigonometrin handlar om vinkeln v, och vilken sida som är a och vilken som är b beror"
+     "s": 115.66,
+     "e": 117.1,
+     "text": "Hur lång är stegen?"
     },
     {
-     "s": 130.66,
-     "e": 132.18,
-     "text": "på var vinkeln sitter."
+     "s": 118.4,
+     "e": 120.8,
+     "text": "Först tar vi kateterna i kvadrat."
     },
     {
-     "s": 133.34,
-     "e": 138.46,
-     "text": "Sidan a ligger mitt emot vinkeln och kallas motstående katet,"
+     "s": 121.8,
+     "e": 123.8,
+     "text": "3 i kvadrat är 9."
     },
     {
-     "s": 139.24,
-     "e": 144.14,
-     "text": "och sidan b ligger vid vinkeln och kallas närliggande katet."
+     "s": 124.8,
+     "e": 126.84,
+     "text": "4 i kvadrat är 16."
     },
     {
-     "s": 145.24,
-     "e": 149.36,
-     "text": "Hos stegen är v vinkeln mellan stegen och marken."
+     "s": 127.84,
+     "e": 129,
+     "text": "Sedan lägger vi ihop dem."
     },
     {
-     "s": 150.3,
-     "e": 156.8,
-     "text": "Då är höjden på väggen, 4 meter, motstående katet, och avståndet på marken,"
+     "s": 130,
+     "e": 134.86,
+     "text": "9 plus 16 är 25, så c i kvadrat är 25."
     },
     {
-     "s": 157.36,
-     "e": 159.94,
-     "text": "3 meter, är närliggande katet."
+     "s": 136.16,
+     "e": 139.8,
+     "text": "Nu söker vi talet som gånger sig självt blir 25."
     },
     {
-     "s": 161.22,
-     "e": 168.4,
+     "s": 140.8,
+     "e": 144.3,
+     "text": "Det är 5, för 5 gånger 5 är 25."
+    },
+    {
+     "s": 145.3,
+     "e": 147.7,
+     "text": "Stegen är alltså 5 meter lång."
+    },
+    {
+     "s": 149,
+     "e": 151.82,
+     "text": "På raden under står trigonometrin."
+    },
+    {
+     "s": 152.82,
+     "e": 158.28,
+     "text": "Den är det svåraste vi går igenom i dag, så det är helt okej om inte allt sitter direkt."
+    },
+    {
+     "s": 159.58,
+     "e": 164.64,
+     "text": "Trigonometrin handlar om vinkeln v, som sitter i ett av de andra hörnen."
+    },
+    {
+     "s": 165.64,
+     "e": 169.52,
+     "text": "Kateterna får namn efter var de ligger, sett från v."
+    },
+    {
+     "s": 170.52,
+     "e": 175.74,
+     "text": "Sidan a ligger mitt emot v, så den kallas motstående katet."
+    },
+    {
+     "s": 176.74,
+     "e": 181.6,
+     "text": "Sidan b går ut från v, så den kallas närliggande katet."
+    },
+    {
+     "s": 182.9,
+     "e": 188.44,
+     "text": "Hos stegen är v vinkeln nere vid marken, mellan stegen och marken."
+    },
+    {
+     "s": 189.44,
+     "e": 194.72,
+     "text": "Väggen ligger mitt emot v, så 4 meter är motstående katet."
+    },
+    {
+     "s": 195.72,
+     "e": 200.76,
+     "text": "Marken går ut från v, så 3 meter är närliggande katet."
+    },
+    {
+     "s": 202.06,
+     "e": 207.88,
+     "text": "Bladet har tre kvoter, och en kvot är ett tal delat med ett annat."
+    },
+    {
+     "s": 208.88,
+     "e": 216.04,
      "text": "Sinus v är a delat med c, alltså motstående katet delat med hypotenusan."
     },
     {
-     "s": 169.42,
-     "e": 174.5,
-     "text": "För stegen blir det 4 delat med 5, och det är 0,8."
+     "s": 217.04,
+     "e": 222.06,
+     "text": "För stegen är det 4 delat med 5, och det är 0,8."
     },
     {
-     "s": 175.62,
-     "e": 182.52,
+     "s": 223.36,
+     "e": 231.16,
      "text": "Cosinus v är b delat med c, alltså närliggande katet delat med hypotenusan."
     },
     {
-     "s": 183.5,
-     "e": 188.22,
-     "text": "För stegen blir det 3 delat med 5, och det är 0,6."
+     "s": 232.16,
+     "e": 237.24,
+     "text": "För stegen är det 3 delat med 5, och det är 0,6."
     },
     {
-     "s": 189.52,
-     "e": 196.92,
+     "s": 238.54,
+     "e": 246.04,
      "text": "Tangens v är a delat med b, alltså motstående katet delat med närliggande katet."
     },
     {
-     "s": 197.92,
-     "e": 204,
-     "text": "För stegen blir det 4 delat med 3, och det är ungefär 1,33."
+     "s": 247.04,
+     "e": 253.02,
+     "text": "För stegen är det 4 delat med 3, och det är ungefär 1,33."
     },
     {
-     "s": 205.34,
-     "e": 212.38,
-     "text": "En längre stege som lutar lika mycket ger samma tal, för talen beror bara på vinkeln."
+     "s": 254.32,
+     "e": 256.66,
+     "text": "Kvoterna hör ihop med vinkeln."
     },
     {
-     "s": 213.4,
-     "e": 221.86,
-     "text": "Därför kan räknaren räkna ut vinkeln från 0,8, och för stegen blir v ungefär 53 grader."
+     "s": 257.66,
+     "e": 261.36,
+     "text": "Stegen lutar ungefär 53 grader mot marken."
     },
     {
-     "s": 223.24,
-     "e": 224.24,
+     "s": 262.36,
+     "e": 268.06,
+     "text": "Skriver man sinus 53 på räknaren, får man ungefär 0,8."
+    },
+    {
+     "s": 269.06,
+     "e": 272.18,
+     "text": "Det är samma tal som 4 delat med 5."
+    },
+    {
+     "s": 273.48,
+     "e": 274.58,
      "text": "Det var det svåra."
     },
     {
-     "s": 224.72,
-     "e": 230.04,
-     "text": "Det viktigaste att ta med sig är vilken sida som är vilken, sett från vinkeln v."
+     "s": 275.58,
+     "e": 280.94,
+     "text": "Det viktigaste är att veta vilken sida som är vilken, sett från vinkeln v."
     },
     {
-     "s": 231.36,
-     "e": 237.36,
-     "text": "Längst ner på bladet står vektorerna, och de ingår bara i kursen matematik 1c."
+     "s": 282.24,
+     "e": 284.8,
+     "text": "Längst ner på bladet står vektorerna."
     },
     {
-     "s": 238.44,
-     "e": 244.28,
-     "text": "En vektor beskriver en förflyttning, alltså hur långt och åt vilket håll man går."
+     "s": 285.8,
+     "e": 288.12,
+     "text": "En vektor beskriver en förflyttning."
     },
     {
-     "s": 245.34,
-     "e": 252.34,
-     "text": "På bladet har en vektor en liten pil över bokstaven, och vektorn u skrivs med två tal"
+     "s": 289.12,
+     "e": 292.22,
+     "text": "Den säger hur långt man går och åt vilket håll."
     },
     {
-     "s": 252.42,
-     "e": 253.62,
-     "text": "inom en parentes."
+     "s": 293.52,
+     "e": 297.02,
+     "text": "På bladet har en vektor en liten pil över bokstaven."
     },
     {
-     "s": 254.66,
-     "e": 262.94,
-     "text": "Det första talet är steget i x-led, åt höger, och det andra är steget i y-led, uppåt."
+     "s": 298.02,
+     "e": 302.1,
+     "text": "Vektorn u skrivs med två tal inom en parentes."
     },
     {
-     "s": 264.2,
-     "e": 270.3,
+     "s": 303.1,
+     "e": 307.36,
+     "text": "Det första talet är steget i x-led, alltså åt höger."
+    },
+    {
+     "s": 308.36,
+     "e": 312.42,
+     "text": "Det andra talet är steget i y-led, alltså uppåt."
+    },
+    {
+     "s": 313.72,
+     "e": 319.5,
+     "text": "Bladet skriver talen i u som a med ett litet x och a med ett litet y."
+    },
+    {
+     "s": 320.5,
+     "e": 324.34,
+     "text": "Talen i vektorn v skrivs på samma sätt med b."
+    },
+    {
+     "s": 325.34,
+     "e": 329.8,
+     "text": "Här är v en vektor, och inte vinkeln från trigonometrin."
+    },
+    {
+     "s": 331.1,
+     "e": 336.68,
      "text": "Tänk dig en promenad på en karta, där höger är öster och uppåt är norr."
     },
     {
-     "s": 271.58,
-     "e": 280.66,
-     "text": "Vektorn u med talen 3 och 4 betyder att du går 3 kilometer österut och 4 kilometer norrut."
+     "s": 337.68,
+     "e": 340.74,
+     "text": "Vektorn u har talen 3 och 4."
     },
     {
-     "s": 282.06,
-     "e": 286.7,
-     "text": "Efter det går du promenaden v, som har talen 1 och 2."
+     "s": 341.74,
+     "e": 347.24,
+     "text": "Den betyder att du går 3 kilometer österut och 4 kilometer norrut."
     },
     {
-     "s": 287.78,
-     "e": 294.1,
-     "text": "Den första regeln säger att man får u plus v genom att lägga ihop de första talen för"
+     "s": 348.54,
+     "e": 352.84,
+     "text": "Sedan går du promenaden v, som har talen 1 och 2."
     },
     {
-     "s": 294.16,
-     "e": 296.46,
-     "text": "sig och de andra talen för sig."
+     "s": 353.84,
+     "e": 356.74,
+     "text": "Den första regeln är u plus v."
     },
     {
-     "s": 297.94,
-     "e": 307.08,
-     "text": "3 plus 1 är 4 och 4 plus 2 är 6, så u plus v har talen 4 och 6."
+     "s": 357.74,
+     "e": 362.38,
+     "text": "Där lägger man ihop de första talen för sig och de andra talen för sig."
     },
     {
-     "s": 308.24,
-     "e": 313.8,
-     "text": "Du har alltså kommit 4 kilometer österut och 6 kilometer norrut."
+     "s": 363.68,
+     "e": 365.68,
+     "text": "3 plus 1 är 4."
     },
     {
-     "s": 315.22,
-     "e": 323.3,
-     "text": "Regeln bredvid drar bort talen i stället, för minus v betyder att man går promenaden v baklänges."
+     "s": 366.68,
+     "e": 368.76,
+     "text": "4 plus 2 är 6."
     },
     {
-     "s": 324.26,
-     "e": 334.22,
-     "text": "Då får u minus v talen 2 och 2, för 3 minus 1 är 2 och 4 minus 2 är 2."
+     "s": 369.76,
+     "e": 378.46,
+     "text": "Så u plus v har talen 4 och 6, och du har kommit 4 kilometer österut och 6 kilometer norrut."
     },
     {
-     "s": 335.7,
-     "e": 341.52,
-     "text": "På raden under står skalären s, och det är ett vanligt tal framför vektorn."
+     "s": 379.76,
+     "e": 382.26,
+     "text": "Bredvid står u minus v."
     },
     {
-     "s": 342.98,
-     "e": 350.64,
-     "text": "2 gånger u betyder att man går promenaden u två gånger, så båda talen gångras med 2,"
+     "s": 383.26,
+     "e": 389.76,
+     "text": "Minus v betyder att man går promenaden v baklänges, så man drar bort talen i stället."
     },
     {
-     "s": 351.06,
-     "e": 353.32,
-     "text": "och det blir 6 och 8."
+     "s": 390.76,
+     "e": 392.92,
+     "text": "3 minus 1 är 2."
     },
     {
-     "s": 354.62,
-     "e": 360.32,
+     "s": 393.92,
+     "e": 396.06,
+     "text": "4 minus 2 är 2."
+    },
+    {
+     "s": 397.06,
+     "e": 400.74,
+     "text": "Så u minus v har talen 2 och 2."
+    },
+    {
+     "s": 402.04,
+     "e": 405,
+     "text": "På raden under står s gånger u."
+    },
+    {
+     "s": 406,
+     "e": 410.34,
+     "text": "Bladet kallar s en skalär, och det är ett vanligt tal."
+    },
+    {
+     "s": 411.34,
+     "e": 418.68,
+     "text": "2 gånger u betyder att man går promenaden u två gånger, så båda talen gångras med 2."
+    },
+    {
+     "s": 419.68,
+     "e": 421.8,
+     "text": "3 gånger 2 är 6."
+    },
+    {
+     "s": 422.8,
+     "e": 424.8,
+     "text": "4 gånger 2 är 8."
+    },
+    {
+     "s": 425.8,
+     "e": 429.54,
+     "text": "Så 2 gånger u har talen 6 och 8."
+    },
+    {
+     "s": 430.84,
+     "e": 436.64,
      "text": "Den sista regeln ger vektorns längd, alltså hur långt det är fågelvägen,"
     },
     {
-     "s": 360.66,
-     "e": 362.48,
+     "s": 437,
+     "e": 438.64,
      "text": "rakt från start till mål."
     },
     {
-     "s": 363.8,
-     "e": 370.12,
-     "text": "3 kilometer österut och 4 kilometer norrut bildar en rätvinklig triangel,"
+     "s": 439.64,
+     "e": 444.26,
+     "text": "De raka strecken på var sida om u betyder längden av u."
     },
     {
-     "s": 370.56,
-     "e": 373.4,
-     "text": "och fågelvägen är hypotenusan."
+     "s": 445.56,
+     "e": 451.42,
+     "text": "3 kilometer österut och 4 kilometer norrut möts i en rät vinkel."
     },
     {
-     "s": 374.58,
-     "e": 380.86,
-     "text": "Därför räknas längden med Pythagoras sats, och talen är samma som för stegen."
+     "s": 452.42,
+     "e": 458.02,
+     "text": "Därför bildar de en rätvinklig triangel, och fågelvägen är hypotenusan."
     },
     {
-     "s": 382.22,
-     "e": 391.68,
-     "text": "3 i kvadrat plus 4 i kvadrat är 25, och rottecknet frågar vilket tal som gånger sig självt blir 25."
+     "s": 459.02,
+     "e": 461.86,
+     "text": "Så längden räknas med Pythagoras sats."
     },
     {
-     "s": 392.54,
-     "e": 397.06,
+     "s": 463.16,
+     "e": 468.24,
+     "text": "Under rottecknet står 3 i kvadrat plus 4 i kvadrat."
+    },
+    {
+     "s": 469.24,
+     "e": 472.32,
+     "text": "Det blir 25, precis som för stegen."
+    },
+    {
+     "s": 473.32,
+     "e": 478.18,
+     "text": "Rottecknet frågar vilket tal som gånger sig självt blir 25."
+    },
+    {
+     "s": 479.18,
+     "e": 483.18,
      "text": "Det är 5, så fågelvägen är 5 kilometer."
     },
     {
-     "s": 398.58,
-     "e": 404.18,
-     "text": "Ofta vet man en vinkel och en sida, och vill räkna ut en annan sida."
+     "s": 484.48,
+     "e": 490.46,
+     "text": "På provet står alla de här formlerna längst ner på den andra sidan av formelbladet."
     },
     {
-     "s": 405.38,
-     "e": 411.42,
-     "text": "En rutschkana är 4 meter lång och lutar 30 grader mot marken."
+     "s": 491.46,
+     "e": 497.08,
+     "text": "Du behöver inte kunna dem utantill, men du behöver veta vad bokstäverna betyder."
     },
     {
-     "s": 412.36,
-     "e": 414.26,
-     "text": "Hur högt upp sitter toppen?"
+     "s": 498.38,
+     "e": 499.96,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 415.66,
-     "e": 421.52,
-     "text": "Höjden ligger mitt emot vinkeln och rutschkanan är hypotenusan,"
+     "s": 500.96,
+     "e": 503.28,
+     "text": "En stege lutar mot en vägg."
     },
     {
-     "s": 422.44,
-     "e": 427,
-     "text": "så sinus 30 grader är höjden delat med 4."
+     "s": 504.28,
+     "e": 509.76,
+     "text": "Foten står 6 meter från väggen, och toppen når 8 meter upp."
     },
     {
-     "s": 428.4,
-     "e": 437.38,
-     "text": "Räknaren ger att sinus 30 grader är 0,5, och därför är höjden 4 gånger 0,5,"
+     "s": 510.76,
+     "e": 512.46,
+     "text": "Hur lång är stegen?"
     },
     {
-     "s": 437.84,
-     "e": 439.7,
-     "text": "alltså 2 meter."
-    },
-    {
-     "s": 441.16,
-     "e": 445.88,
-     "text": "På provet kan du slå upp alla de här formlerna längst ner på andra sidan."
-    },
-    {
-     "s": 447.04,
-     "e": 453.16,
-     "text": "En rutschkana är 6 meter lång och lutar 40 grader mot marken."
-    },
-    {
-     "s": 454.04,
-     "e": 455.78,
-     "text": "Hur högt upp sitter toppen?"
+     "s": 513.46,
+     "e": 519.12,
+     "text": "Och vad är sinus v, där v är vinkeln mellan stegen och marken?"
     }
    ]
   },

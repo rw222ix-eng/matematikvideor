@@ -340,36 +340,70 @@
     "notisFran": "Här är en uppgift att prova"
   },
   "formelbladet-5-pythagoras-trigonometri-vektorer": {
-    "fraga": "En rutschkana är 6 meter lång och lutar 40 grader mot marken.",
+    "fraga": "En stege lutar mot en vägg. Foten står 6 meter från väggen, och toppen når 8 meter upp.",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "b01-stegen",
+      "tema": "papper",
+      "text": "En stege lutar mot en vägg. Foten står 6 m från väggen och toppen når 8 m upp. Vinkeln v ligger vid foten, mellan stegen och marken. Stegens längd är okänd.",
+      "delar": [
+        { "typ": "linje", "p": [[150, 880], [700, 880]], "svag": true },
+        { "typ": "linje", "p": [[560, 880], [560, 390]] },
+        { "typ": "linje", "p": [[230, 880], [560, 440]], "tjock": true },
+        { "typ": "linje", "p": [[260.1, 816.6], [282.4, 833.4]], "svag": true },
+        { "typ": "linje", "p": [[301.3, 761.6], [323.7, 778.4]], "svag": true },
+        { "typ": "linje", "p": [[342.6, 706.6], [364.9, 723.4]], "svag": true },
+        { "typ": "linje", "p": [[383.8, 651.6], [406.2, 668.4]], "svag": true },
+        { "typ": "linje", "p": [[425.1, 596.6], [447.4, 613.4]], "svag": true },
+        { "typ": "linje", "p": [[466.3, 541.6], [488.7, 558.4]], "svag": true },
+        { "typ": "linje", "p": [[507.6, 486.6], [530.0, 503.4]], "svag": true },
+        { "typ": "ratvinkel", "vid": [560, 880], "mot": [[560, 440], [230, 880]] },
+        { "typ": "vinkel", "vid": [230, 880], "mot": [[560, 880], [560, 440]], "r": 90, "text": "v", "avstand": 50 },
+        { "typ": "sida", "p": [[230, 880], [560, 880]], "text": "6 m", "sida": 1, "avstand": 64 },
+        { "typ": "sida", "p": [[560, 880], [560, 440]], "text": "8 m", "sida": 1, "avstand": 64 },
+        { "typ": "sida", "p": [[230, 880], [560, 440]], "text": "?", "sida": -1, "avstand": 60, "accent": true }
+      ]
+    },
     "delar": [
       {
-        "fraga": "Hur högt upp sitter toppen? Svara med två decimaler.",
+        "fraga": "Hur lång är stegen?",
         "typ": "tal",
-        "svar": 3.8567,
-        "tolerans": 0.006,
+        "svar": 10,
         "enhet": "meter",
-        "exempel": "t.ex. 2,00",
+        "exempel": "t.ex. 5",
         "fel": [
-          { "svar": "4.596", "tolerans": 0.01, "text": "Det är 6 gånger cosinus 40°, sträckan längs marken. Höjden ligger mitt emot vinkeln, och då är det sinus." },
-          { "svar": "5.035", "tolerans": 0.01, "text": "Tangens hör ihop med de två kateterna. Här vet du hypotenusan, rutschkanan, och höjden ligger mitt emot vinkeln, så det är sinus." },
-          { "svar": "9.334", "tolerans": 0.01, "text": "Du har delat med sinus. sin 40° = höjden / 6, så höjden är 6 gånger sin 40°." },
-          { "svar": "4.471", "tolerans": 0.01, "text": "Räknaren står i radianer. Ställ om den till grader (DEG) och räkna igen." },
-          { "svar": "3", "text": "3 meter blir det om rutschkanan lutar 30 grader. Här lutar den 40 grader." }
-        ],
-        "nara": { "tolerans": 0.06, "text": "Nästan. Räkna 6 · sin 40° och avrunda till två decimaler." }
+          { "svar": "14", "text": "Du har lagt ihop 6 och 8. Ta kateterna i kvadrat först: 6 i kvadrat är 36 och 8 i kvadrat är 64." },
+          { "svar": "100", "text": "100 är stegens längd i kvadrat. Vilket tal gånger sig självt blir 100?" },
+          { "svar": "2", "text": "Du har dragit 6 från 8. Stegen är hypotenusan, så räkna 6 i kvadrat plus 8 i kvadrat." }
+        ]
+      },
+      {
+        "fraga": "Vad är sinus v, där v är vinkeln mellan stegen och marken?",
+        "typ": "tal",
+        "svar": 0.8,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 0,5",
+        "fel": [
+          { "svar": "0.6", "text": "Det är cosinus v: närliggande katet, 6, delat med hypotenusan. Sinus är motstående katet delat med hypotenusan." },
+          { "svar": "1.333", "tolerans": 0.01, "text": "Det är tangens v: 8 delat med 6. Sinus är motstående katet delat med hypotenusan, stegen." },
+          { "svar": "0.75", "tolerans": 0.001, "text": "Du har delat 6 med 8. Sinus är motstående katet delat med hypotenusan." },
+          { "svar": "1.25", "tolerans": 0.001, "text": "Du har delat 10 med 8. Sinus är motstående katet delat med hypotenusan, alltså 8 delat med 10." }
+        ]
       }
     ],
     "ledtrad": {
-      "fras": "Höjden ligger mitt emot vinkeln och rutschkanan",
-      "text": "Höjden ligger mitt emot vinkeln och rutschkanan är hypotenusan. Då är sinus 40° lika med höjden delat med 6."
+      "fras": "Först tar vi kateterna i kvadrat",
+      "text": "Stegen ligger mitt emot den räta vinkeln, så den är hypotenusan. Väggen ligger mitt emot v, så 8 m är motstående katet."
     },
     "losning": [
-      "Höjden ligger mitt emot vinkeln, och rutschkanan är hypotenusan.",
-      "sin 40° = h / 6",
-      "h = 6 · sin 40°",
-      "Räknaren ger sin 40° ≈ 0,643, så h ≈ 6 · 0,643 ≈ 3,86 meter."
+      "Stegen ligger mitt emot den räta vinkeln, så stegen är hypotenusan c.",
+      "6² = 36 och 8² = 64.",
+      "36 + 64 = 100, så c² = 100.",
+      "10 · 10 = 100, så stegen är 10 meter.",
+      "Väggen ligger mitt emot v, så 8 m är motstående katet.",
+      "sin v = 8 / 10 = 0,8."
     ],
-    "notisFran": "Ofta vet man en vinkel och en sida"
+    "notisFran": "Nu är det din tur"
   },
   "ma2a-01-kvadreringsreglerna": {
     "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel.",
