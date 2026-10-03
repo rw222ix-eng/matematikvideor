@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T20:07:28.166Z",
+ "byggd": "2026-10-03T20:08:32.601Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -15008,8 +15008,8 @@
    "ocksa": null,
    "kurs": "Matematik 2",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-ma2-4-v1/formelbladet-ma2-4-likformighet-1080p.mp4",
-   "moment": "Formelbladet: likformighet, topptriangelsatsen, transversalsatsen och bisektrissatsen",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-ma2-4-v2/formelbladet-ma2-4-likformighet-1080p.mp4",
+   "moment": "Formelbladet: likformighet, skala, topptriangelsatsen och transversalsatsen",
    "begrepp": [
     "formelbladet",
     "likformighet",
@@ -15018,160 +15018,183 @@
     "förstoring",
     "skugga",
     "skala",
+    "längdskala",
+    "areaskala",
+    "volymskala",
     "topptriangelsatsen",
     "transversalsatsen",
     "parallell",
-    "bisektris",
-    "bisektrissatsen",
     "bråk",
     "kvot"
    ],
-   "beskrivning": "Vi går igenom likformigheten och de tre satserna om trianglar mitt på tredje sidan av formelbladet till nationella provet i matematik 2. Med dem räknar vi ut hur högt ett träd är med hjälp av skuggan, hur lång en bjälke under ett tak ska vara och var en gång delar en gräsmatta.",
+   "beskrivning": "Vi går igenom likformigheten, skalan och två satser om trianglar mitt på tredje sidan av formelbladet till nationella provet i matematik 2. Med dem räknar vi ut hur högt ett träd är med hjälp av skuggan och hur lång en bjälke under ett tak ska vara.",
    "youtube": null,
-   "langd": 447,
+   "langd": 500,
    "omslag": "omslag/formelbladet-ma2-4-likformighet.jpg?v=7f487174",
    "omslagRen": "omslag/formelbladet-ma2-4-likformighet-ren.jpg?v=0c05a685",
    "omslagStor": "omslag/formelbladet-ma2-4-likformighet-stor.jpg?v=ef74d4be",
    "repliker": [
     {
-     "t": 0,
-     "text": "På nationella provet i matematik 2 har du Skolverkets formelblad på bänken. Mitt på den tredje sidan står rubriken likformighet, och längre ner står tre satser om trianglar."
+     "t": 1,
+     "text": "På provet i matematik två har du Skolverkets formelblad framför dig hela tiden. I dag läser vi fyra rader på sidan tre, och till varje rad räknar vi ett exempel."
     },
     {
-     "t": 14,
-     "text": "Med likformighet kan man räkna ut längder som är svåra att mäta, till exempel hur högt ett träd är. Därför börjar vi med vad likformig betyder."
+     "t": 15,
+     "text": "Mitt på sidan tre står rubriken likformighet. Bredvid står två trianglar, en liten och en stor."
     },
     {
      "t": 25,
-     "text": "Två trianglar är likformiga när den ena är en förstoring av den andra, alltså när de har samma form men olika storlek. Då är vinklarna lika stora, och på bladets bild visar bågarna i hörnen vilka vinklar som är lika."
+     "text": "Två trianglar är likformiga när den ena är en förstoring av den andra. De har samma form men olika storlek. Därför är vinklarna i den lilla triangeln lika stora som vinklarna i den stora."
     },
     {
      "t": 42,
-     "text": "Den lilla triangeln heter ABC och den stora DEF. Sidorna har små bokstäver, och varje sida har samma bokstav som hörnet mitt emot, så sidan a ligger mitt emot hörnet A."
+     "text": "På bladet visar bågarna i hörnen vilka vinklar som är lika stora. Vinkel A är lika stor som vinkel D. Vinkel B är lika stor som E, och C är lika stor som F."
     },
     {
-     "t": 59,
-     "text": "Sidan a i den lilla triangeln hör ihop med sidan d i den stora, för båda ligger mitt emot lika stora vinklar. På samma sätt hör b ihop med e, och c med f."
+     "t": 58,
+     "text": "Hörnen har stora bokstäver och sidorna har små. Varje sida har samma bokstav som hörnet mitt emot. Sidan a ligger alltså mitt emot hörnet A."
     },
     {
-     "t": 75,
-     "text": "Formeln säger att trianglarna är likformiga om a delat med d, b delat med e och c delat med f blir samma tal. Alla sidor i den stora triangeln är alltså lika många gånger längre än sidorna i den lilla."
+     "t": 72,
+     "text": "Sidan d ligger mitt emot vinkel D, och vinkel D är lika stor som vinkel A. Därför kallas a och d motsvarande sidor. På samma sätt motsvarar b sidan e, och c motsvarar f."
     },
     {
-     "t": 92,
-     "text": "Nu kan vi räkna ut hur högt trädet är. En solig dag kastar en pinne som är 1 meter hög en skugga som är 1,5 meter lång, och samtidigt är trädets skugga 12 meter lång."
+     "t": 91,
+     "text": "Formeln säger att a delat med d är lika med b delat med e, och lika med c delat med f. Ett tal delat med ett annat kallas en kvot. Alla tre kvoterna är alltså samma tal."
     },
     {
-     "t": 107,
-     "text": "Pinnen och trädet står rakt upp, och solen lyser lika snett på båda. Därför bildar pinnen med sin skugga och trädet med sin skugga två trianglar med samma vinklar, och de är alltså likformiga."
+     "t": 109,
+     "text": "Det betyder att varje sida i den stora triangeln är lika många gånger längre än sin motsvarande sida i den lilla. Om d är dubbelt så lång som a, så är också e dubbelt så lång som b, och f dubbelt så lång som c."
     },
     {
-     "t": 123,
-     "text": "Kalla trädets höjd för x. Då säger formeln att pinnen delat med trädet är lika med pinnens skugga delat med trädets skugga, alltså att 1 delat med x är lika med 1,5 delat med 12."
+     "t": 128,
+     "text": "Nu ett exempel. Du vill veta hur högt ett träd är, men du kan inte klättra upp och mäta. En solig dag sätter du en pinne rakt upp i marken. Pinnen är en meter hög, och dess skugga är en och en halv meter lång. Samtidigt är trädets skugga tolv meter lång."
     },
     {
-     "t": 140,
-     "text": "12 är 8 gånger så mycket som 1,5, för 1,5 gånger 8 är 12. Därför är x också 8 gånger så mycket som 1, och trädet är 8 meter högt."
+     "t": 151,
+     "text": "Pinnen och trädet står rakt upp, och solen lyser lika snett på båda. Därför bildar pinnen och dess skugga en liten triangel, och trädet och dess skugga en stor triangel med samma vinklar. Trianglarna är alltså likformiga."
     },
     {
-     "t": 156,
-     "text": "Raden under handlar om skala, och den fanns redan på formelbladet i matematik 1. Under skalan, till vänster, står topptriangelsatsen."
+     "t": 171,
+     "text": "Pinnen i den lilla triangeln motsvarar trädet i den stora. Pinnens skugga motsvarar trädets skugga. Vi kallar trädets höjd för x. Då säger formeln att ett delat med x är lika med en och en halv delat med tolv."
     },
     {
-     "t": 167,
-     "text": "På bilden bredvid betyder bokstäverna något nytt, för D och E är nu punkter på sidorna i triangeln ABC. Under bilden står att DE är parallell med AB, och det betyder att linjerna går bredvid varandra utan att någonsin mötas."
+     "t": 191,
+     "text": "Trädets skugga är åtta gånger så lång som pinnens skugga, för en och en halv gånger åtta är tolv. Därför är trädet också åtta gånger så högt som pinnen. Åtta gånger en meter är åtta meter. Trädet, alltså x, är åtta meter högt."
     },
     {
-     "t": 187,
-     "text": "Linjen DE skär av en liten triangel högst upp som kallas topptriangeln, och den har samma vinklar som hela triangeln. De två är alltså likformiga, och satsen säger att DE delat med AB är lika med CD delat med AC och CE delat med BC."
+     "t": 213,
+     "text": "Raden under likformigheten handlar om skala. Talet åtta som vi just räknade ut kallas längdskalan. Det säger hur många gånger längre varje sida blir när en figur förstoras."
     },
     {
-     "t": 211,
-     "text": "Tänk dig ett hus där taket har en kort och en lång sida. Framifrån ser taket ut som en triangel med toppen C, och golvet på vinden är sidan AB."
+     "t": 230,
+     "text": "Bladet säger att areaskalan är längdskalan i kvadrat. Areaskalan säger hur många gånger större arean blir. I kvadrat betyder att talet gångras med sig självt."
     },
     {
-     "t": 223,
-     "text": "En snickare ska sätta en tvärbjälke DE mellan taksidorna, parallell med golvet. Golvet är 12 meter brett, den korta taksidan är 6 meter, och bjälken ska sitta 2 meter ner på den. Hur lång ska bjälken vara?"
+     "t": 246,
+     "text": "Ta en kakelplatta som är en kvadrat. En större platta har dubbelt så långa sidor, så längdskalan är två. Två i kvadrat är fyra. Det får alltså plats fyra små plattor på den stora."
     },
     {
-     "t": 243,
-     "text": "Satsen ger att DE delat med 12 är lika med 2 delat med 6. 2 delat med 6 är en tredjedel, så bjälken är en tredjedel av 12, alltså 4 meter."
+     "t": 264,
+     "text": "Bredvid står att volymskalan är längdskalan upphöjt till tre. Volymskalan säger hur många gånger större volymen blir. Ta en tärning, och en större tärning med dubbelt så långa kanter. Två upphöjt till tre är två gånger två gånger två, alltså åtta. Det får plats åtta små tärningar i den stora."
     },
     {
-     "t": 259,
-     "text": "Under topptriangelsatsen står transversalsatsen. Den jämför bara bitarna av sidorna, alltså biten ovanför bjälken med biten under, och säger att CD delat med AD är lika med CE delat med BE."
+     "t": 291,
+     "text": "Längre ner till vänster står topptriangelsatsen. Bredvid finns en ny bild, och där betyder bokstäverna något nytt. D och E är nu punkter på två av sidorna i triangeln ABC."
     },
     {
-     "t": 277,
-     "text": "På den korta taksidan är biten ovanför bjälken 2 meter, och biten under är 4 meter, för 6 minus 2 är 4. På den långa taksidan sitter bjälken 3 meter från toppen, så hur långt är det därifrån ner till golvet?"
+     "t": 308,
+     "text": "Under bilden står att DE är parallell med AB. Parallella linjer går bredvid varandra och möts aldrig, som skenorna på en järnväg."
     },
     {
-     "t": 297,
-     "text": "Satsen ger att 2 delat med 4 är lika med 3 delat med BE. 2 är hälften av 4, så 3 är hälften av BE, och det är 6 meter längs taket från bjälken ner till golvet."
+     "t": 321,
+     "text": "Linjen DE skär av en liten triangel högst upp, och den kallas topptriangeln. DE och AB är parallella, så de möter sidorna med lika stora vinklar. Därför har topptriangeln samma vinklar som hela triangeln, och de två är likformiga."
     },
     {
-     "t": 316,
-     "text": "Till höger om de två satserna står bisektrissatsen. En bisektris är en linje som delar en vinkel mitt itu, och på bilden går den från hörnet C ner till en ny punkt D på sidan AB."
+     "t": 343,
+     "text": "Satsen jämför topptriangeln med hela triangeln. DE delat med AB är lika med CD delat med AC, och lika med CE delat med BC."
     },
     {
-     "t": 332,
-     "text": "Satsen säger att AD delat med BD är lika med AC delat med BC. Bitarna av sidan AB jämförs alltså med sidorna som möts i hörnet C."
+     "t": 358,
+     "text": "Nu ett exempel. Ett hus har ett tak där den ena taksidan är kort och den andra är lång. Framifrån ser taket ut som en triangel. Toppen är C, och golvet på vinden är AB."
     },
     {
-     "t": 347,
-     "text": "Tänk dig en trekantig gräsmatta, där en gång går från hörnet C och delar hörnet mitt itu. Kanten från C till A är 4 meter, kanten från C till B är 8 meter, och gången når andra kanten 3 meter från hörnet A."
+     "t": 375,
+     "text": "Golvet är tolv meter brett, och den korta taksidan är sex meter. En bjälke DE ska sitta mellan taksidorna, parallell med golvet, två meter ner från toppen. Hur lång ska bjälken vara?"
     },
     {
-     "t": 370,
-     "text": "Då är 3 delat med BD lika med 4 delat med 8, och 4 delat med 8 är en halv. Alltså är 3 hälften av BD, och från gången till hörnet B är det 6 meter."
+     "t": 393,
+     "text": "Vi använder de två första kvoterna i satsen. DE delat med tolv är lika med två delat med sex. Sex är tre gånger två, så två delat med sex är en tredjedel."
     },
     {
-     "t": 389,
-     "text": "Här är en uppgift att prova. En flaggstång kastar en skugga som är 14 meter lång, och samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång. Hur hög är flaggstången?"
+     "t": 409,
+     "text": "Bjälken är alltså en tredjedel av golvet. Tolv delat med tre är fyra, så bjälken ska vara fyra meter."
     },
     {
-     "t": 407,
-     "text": "Trianglarna är likformiga, så 1 delat med x är lika med 2 delat med 14. 14 är 7 gånger så mycket som 2, och därför är flaggstången 7 meter hög."
+     "t": 419,
+     "text": "Under topptriangelsatsen står transversalsatsen. Den jämför bara bitarna av sidorna, alltså biten ovanför bjälken med biten under. CD delat med AD är lika med CE delat med BE."
     },
     {
-     "t": 424,
-     "text": "På provet står likformigheten och de tre satserna mitt på den tredje sidan. En lyktstolpe kastar en skugga som är 12 meter lång, och samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång. Hur hög är lyktstolpen?"
+     "t": 438,
+     "text": "På den korta taksidan är biten ovanför bjälken två meter. Biten under är fyra meter, för sex minus två är fyra."
+    },
+    {
+     "t": 449,
+     "text": "På den långa taksidan sitter bjälken tre meter från toppen. Hur långt är det därifrån ner till golvet?"
+    },
+    {
+     "t": 459,
+     "text": "Satsen ger att två delat med fyra är lika med tre delat med BE. Två är hälften av fyra, så tre är hälften av BE. BE är alltså sex meter."
+    },
+    {
+     "t": 476,
+     "text": "Allt det här står på sidan tre, så du kan slå upp det på provet. Nu är det din tur. En lyktstolpe kastar en skugga som är tolv meter lång. Samtidigt kastar en pinne som är en meter hög en skugga som är två meter lång. Hur hög är lyktstolpen?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
-     "rubrik": "Likformigheten på formelbladet",
+     "t": 1,
+     "rubrik": "Fyra rader på sidan 3",
      "typ": "inledning"
     },
     {
      "t": 25,
-     "rubrik": "Likformiga trianglar: a/d = b/e = c/f",
+     "rubrik": "Likformiga trianglar",
      "typ": "matte"
     },
     {
-     "t": 92,
-     "rubrik": "Trädets skugga",
+     "t": 58,
+     "rubrik": "Motsvarande sidor: a/d = b/e = c/f",
      "typ": "matte"
     },
     {
-     "t": 156,
-     "rubrik": "Topptriangelsatsen: bjälken i taket",
+     "t": 128,
+     "rubrik": "Trädets höjd med skuggor",
      "typ": "matte"
     },
     {
-     "t": 259,
+     "t": 213,
+     "rubrik": "Längdskala, areaskala och volymskala",
+     "typ": "matte"
+    },
+    {
+     "t": 291,
+     "rubrik": "Topptriangelsatsen",
+     "typ": "matte"
+    },
+    {
+     "t": 358,
+     "rubrik": "Bjälken i taket",
+     "typ": "matte"
+    },
+    {
+     "t": 419,
      "rubrik": "Transversalsatsen",
      "typ": "matte"
     },
     {
-     "t": 316,
-     "rubrik": "Bisektrissatsen: gräsmattan",
-     "typ": "matte"
-    },
-    {
-     "t": 389,
-     "rubrik": "Flaggstången och lyktstolpen",
+     "t": 476,
+     "rubrik": "Din tur: lyktstolpen",
      "typ": "uppgift"
     }
    ],
@@ -15208,15 +15231,15 @@
         "text": "8 meter var trädet i videon, där pinnens skugga var 1,5 meter. Här är pinnens skugga 2 meter och stolpens skugga 12 meter."
        },
        {
-        "svar": "7",
-        "text": "7 meter var flaggstången i övningstalet, där skuggan var 14 meter. Här är stolpens skugga 12 meter, och 12 är 6 gånger 2."
+        "svar": "14",
+        "text": "Du har räknat 12 plus 2. Likformiga trianglar handlar om gånger, inte om plus: 12 är 6 gånger 2, så stolpen är 6 gånger så hög som pinnen."
        }
       ]
      }
     ],
     "ledtrad": {
      "text": "Pinnen med sin skugga och stolpen med sin skugga är likformiga trianglar. Då är 1 delat med x lika med 2 delat med 12.",
-     "t": 407
+     "t": 171
     },
     "losning": [
      "Pinnen och lyktstolpen står rakt upp och solen lyser lika snett på båda, så trianglarna är likformiga.",
@@ -15224,397 +15247,472 @@
      "12 är 6 gånger så mycket som 2, för 2 · 6 = 12.",
      "Då är x också 6 gånger så mycket som 1, så lyktstolpen är 6 meter hög."
     ],
-    "notisFran": 389
+    "notisFran": 476
    },
    "undertext": [
     {
-     "s": 0.14,
-     "e": 4.8,
-     "text": "På nationella provet i matematik 2 har du Skolverkets formelblad på bänken."
+     "s": 1.5,
+     "e": 7.42,
+     "text": "På provet i matematik 2 har du Skolverkets formelblad framför dig hela tiden."
     },
     {
-     "s": 5.82,
-     "e": 12.7,
-     "text": "Mitt på den tredje sidan står rubriken likformighet, och längre ner står tre satser om trianglar."
+     "s": 8.42,
+     "e": 14.4,
+     "text": "I dag läser vi fyra rader på sidan 3, och till varje rad räknar vi ett exempel."
     },
     {
-     "s": 14.2,
-     "e": 17.86,
-     "text": "Med likformighet kan man räkna ut längder som är svåra att mäta,"
+     "s": 15.7,
+     "e": 19.44,
+     "text": "Mitt på sidan 3 står rubriken likformighet."
     },
     {
-     "s": 18.46,
-     "e": 20.52,
-     "text": "till exempel hur högt ett träd är."
+     "s": 20.44,
+     "e": 24.46,
+     "text": "Bredvid står två trianglar, en liten och en stor."
     },
     {
-     "s": 21.62,
-     "e": 24.2,
-     "text": "Därför börjar vi med vad likformig betyder."
+     "s": 25.76,
+     "e": 30.72,
+     "text": "Två trianglar är likformiga när den ena är en förstoring av den andra."
     },
     {
-     "s": 25.5,
-     "e": 29.98,
-     "text": "Två trianglar är likformiga när den ena är en förstoring av den andra,"
+     "s": 31.72,
+     "e": 34.54,
+     "text": "De har samma form men olika storlek."
     },
     {
-     "s": 30.58,
-     "e": 34.02,
-     "text": "alltså när de har samma form men olika storlek."
+     "s": 35.54,
+     "e": 41.12,
+     "text": "Därför är vinklarna i den lilla triangeln lika stora som vinklarna i den stora."
     },
     {
-     "s": 34.82,
-     "e": 40.74,
-     "text": "Då är vinklarna lika stora, och på bladets bild visar bågarna i hörnen vilka vinklar"
+     "s": 42.42,
+     "e": 47.4,
+     "text": "På bladet visar bågarna i hörnen vilka vinklar som är lika stora."
     },
     {
-     "s": 40.82,
-     "e": 41.82,
-     "text": "som är lika."
+     "s": 48.4,
+     "e": 51.22,
+     "text": "Vinkel A är lika stor som vinkel D."
     },
     {
-     "s": 42.78,
-     "e": 47.98,
-     "text": "Den lilla triangeln heter ABC och den stora DEF."
+     "s": 52.22,
+     "e": 57.36,
+     "text": "Vinkel B är lika stor som E, och C är lika stor som F."
     },
     {
-     "s": 49.14,
-     "e": 54.62,
-     "text": "Sidorna har små bokstäver, och varje sida har samma bokstav som hörnet mitt emot,"
+     "s": 58.66,
+     "e": 62.34,
+     "text": "Hörnen har stora bokstäver och sidorna har små."
     },
     {
-     "s": 55.26,
-     "e": 58.48,
-     "text": "så sidan a ligger mitt emot hörnet A."
+     "s": 63.34,
+     "e": 67.06,
+     "text": "Varje sida har samma bokstav som hörnet mitt emot."
     },
     {
-     "s": 59.7,
-     "e": 64,
-     "text": "Sidan a i den lilla triangeln hör ihop med sidan d i den stora,"
+     "s": 68.06,
+     "e": 71.48,
+     "text": "Sidan a ligger alltså mitt emot hörnet A."
     },
     {
-     "s": 64.64,
-     "e": 67.8,
-     "text": "för båda ligger mitt emot lika stora vinklar."
+     "s": 72.78,
+     "e": 79.44,
+     "text": "Sidan d ligger mitt emot vinkel D, och vinkel D är lika stor som vinkel A."
     },
     {
-     "s": 69.06,
-     "e": 73.58,
-     "text": "På samma sätt hör b ihop med e, och c med f."
+     "s": 80.44,
+     "e": 84.2,
+     "text": "Därför kallas a och d motsvarande sidor."
     },
     {
-     "s": 75.04,
-     "e": 79.26,
-     "text": "Formeln säger att trianglarna är likformiga om a delat med d,"
+     "s": 85.2,
+     "e": 90.6,
+     "text": "På samma sätt motsvarar b sidan e, och c motsvarar f."
     },
     {
-     "s": 79.88,
-     "e": 84.86,
-     "text": "b delat med e och c delat med f blir samma tal."
+     "s": 91.9,
+     "e": 99.96,
+     "text": "Formeln säger att a delat med d är lika med b delat med e, och lika med c delat med f."
     },
     {
-     "s": 85.98,
-     "e": 91.54,
-     "text": "Alla sidor i den stora triangeln är alltså lika många gånger längre än sidorna i den lilla."
+     "s": 100.96,
+     "e": 104.36,
+     "text": "Ett tal delat med ett annat kallas en kvot."
     },
     {
-     "s": 92.86,
-     "e": 94.92,
-     "text": "Nu kan vi räkna ut hur högt trädet är."
+     "s": 105.36,
+     "e": 108.24,
+     "text": "Alla tre kvoterna är alltså samma tal."
     },
     {
-     "s": 96.22,
-     "e": 102.14,
-     "text": "En solig dag kastar en pinne som är 1 meter hög en skugga som är 1,5 meter lång,"
+     "s": 109.54,
+     "e": 116.26,
+     "text": "Det betyder att varje sida i den stora triangeln är lika många gånger längre än sin motsvarande"
     },
     {
-     "s": 102.88,
-     "e": 106.34,
-     "text": "och samtidigt är trädets skugga 12 meter lång."
+     "s": 116.34,
+     "e": 117.56,
+     "text": "sida i den lilla."
     },
     {
-     "s": 107.56,
-     "e": 112.36,
-     "text": "Pinnen och trädet står rakt upp, och solen lyser lika snett på båda."
+     "s": 118.56,
+     "e": 124.26,
+     "text": "Om d är dubbelt så lång som a, så är också e dubbelt så lång som b,"
     },
     {
-     "s": 113.34,
-     "e": 119.02,
-     "text": "Därför bildar pinnen med sin skugga och trädet med sin skugga två trianglar med samma"
+     "s": 124.66,
+     "e": 126.82,
+     "text": "och f dubbelt så lång som c."
     },
     {
-     "s": 119.06,
-     "e": 122.06,
-     "text": "vinklar, och de är alltså likformiga."
+     "s": 128.12,
+     "e": 129.3,
+     "text": "Nu ett exempel."
     },
     {
-     "s": 123.16,
-     "e": 125.24,
-     "text": "Kalla trädets höjd för x."
+     "s": 130.3,
+     "e": 134.98,
+     "text": "Du vill veta hur högt ett träd är, men du kan inte klättra upp och mäta."
     },
     {
-     "s": 126.28,
-     "e": 132.6,
-     "text": "Då säger formeln att pinnen delat med trädet är lika med pinnens skugga delat med trädets"
-    },
-    {
-     "s": 132.64,
-     "e": 139.26,
-     "text": "skugga, alltså att 1 delat med x är lika med 1,5 delat med 12."
+     "s": 135.98,
+     "e": 139.6,
+     "text": "En solig dag sätter du en pinne rakt upp i marken."
     },
     {
      "s": 140.6,
-     "e": 146.94,
-     "text": "12 är 8 gånger så mycket som 1,5, för 1,5 gånger 8 är 12."
+     "e": 145.84,
+     "text": "Pinnen är 1 meter hög, och dess skugga är 1,5 meter lång."
     },
     {
-     "s": 147.88,
-     "e": 154.52,
-     "text": "Därför är x också 8 gånger så mycket som 1, och trädet är 8 meter högt."
+     "s": 146.84,
+     "e": 150.32,
+     "text": "Samtidigt är trädets skugga 12 meter lång."
     },
     {
-     "s": 156.14,
-     "e": 161.3,
-     "text": "Raden under handlar om skala, och den fanns redan på formelbladet i matematik 1."
+     "s": 151.62,
+     "e": 156.9,
+     "text": "Pinnen och trädet står rakt upp, och solen lyser lika snett på båda."
     },
     {
-     "s": 162.4,
-     "e": 165.86,
-     "text": "Under skalan, till vänster, står topptriangelsatsen."
+     "s": 157.9,
+     "e": 163.96,
+     "text": "Därför bildar pinnen och dess skugga en liten triangel, och trädet och dess skugga en"
     },
     {
-     "s": 167.04,
-     "e": 173.42,
-     "text": "På bilden bredvid betyder bokstäverna något nytt, för D och E är nu punkter på sidorna"
+     "s": 164.12,
+     "e": 166.54,
+     "text": "stor triangel med samma vinklar."
     },
     {
-     "s": 173.46,
-     "e": 174.96,
-     "text": "i triangeln ABC."
+     "s": 167.54,
+     "e": 169.9,
+     "text": "Trianglarna är alltså likformiga."
     },
     {
-     "s": 176.24,
-     "e": 183.24,
-     "text": "Under bilden står att DE är parallell med AB, och det betyder att linjerna går bredvid"
+     "s": 171.2,
+     "e": 175.5,
+     "text": "Pinnen i den lilla triangeln motsvarar trädet i den stora."
     },
     {
-     "s": 183.28,
-     "e": 185.98,
-     "text": "varandra utan att någonsin mötas."
+     "s": 176.5,
+     "e": 179.6,
+     "text": "Pinnens skugga motsvarar trädets skugga."
     },
     {
-     "s": 187.06,
-     "e": 192.38,
-     "text": "Linjen DE skär av en liten triangel högst upp som kallas topptriangeln,"
+     "s": 180.6,
+     "e": 182.98,
+     "text": "Vi kallar trädets höjd för x."
     },
     {
-     "s": 193.14,
-     "e": 196.02,
-     "text": "och den har samma vinklar som hela triangeln."
+     "s": 183.98,
+     "e": 190.1,
+     "text": "Då säger formeln att 1 delat med x är lika med 1,5 delat med 12."
     },
     {
-     "s": 197.08,
-     "e": 205.6,
-     "text": "De två är alltså likformiga, och satsen säger att DE delat med AB är lika med CD delat"
+     "s": 191.4,
+     "e": 198.54,
+     "text": "Trädets skugga är 8 gånger så lång som pinnens skugga, för 1,5 gånger 8 är 12."
     },
     {
-     "s": 205.64,
-     "e": 209.44,
-     "text": "med AC och CE delat med BC."
+     "s": 199.54,
+     "e": 203.42,
+     "text": "Därför är trädet också 8 gånger så högt som pinnen."
     },
     {
-     "s": 211.12,
-     "e": 215,
-     "text": "Tänk dig ett hus där taket har en kort och en lång sida."
+     "s": 204.42,
+     "e": 207.5,
+     "text": "8 gånger 1 meter är 8 meter."
     },
     {
-     "s": 216.02,
-     "e": 222.2,
-     "text": "Framifrån ser taket ut som en triangel med toppen C, och golvet på vinden är sidan AB."
+     "s": 208.5,
+     "e": 212,
+     "text": "Trädet, alltså x, är 8 meter högt."
     },
     {
-     "s": 223.6,
-     "e": 229.74,
-     "text": "En snickare ska sätta en tvärbjälke DE mellan taksidorna, parallell med golvet."
+     "s": 213.3,
+     "e": 217.04,
+     "text": "Raden under likformigheten handlar om skala."
     },
     {
-     "s": 230.86,
-     "e": 238.54,
-     "text": "Golvet är 12 meter brett, den korta taksidan är 6 meter, och bjälken ska sitta 2 meter"
+     "s": 218.04,
+     "e": 222.16,
+     "text": "Talet 8 som vi just räknade ut kallas längdskalan."
     },
     {
-     "s": 238.6,
-     "e": 239.6,
-     "text": "ner på den."
+     "s": 223.16,
+     "e": 228.78,
+     "text": "Det säger hur många gånger längre varje sida blir när en figur förstoras."
     },
     {
-     "s": 240.32,
-     "e": 241.9,
+     "s": 230.08,
+     "e": 234.88,
+     "text": "Bladet säger att areaskalan är längdskalan i kvadrat."
+    },
+    {
+     "s": 235.88,
+     "e": 240.06,
+     "text": "Areaskalan säger hur många gånger större arean blir."
+    },
+    {
+     "s": 241.06,
+     "e": 244.72,
+     "text": "I kvadrat betyder att talet gångras med sig självt."
+    },
+    {
+     "s": 246.02,
+     "e": 248.62,
+     "text": "Ta en kakelplatta som är en kvadrat."
+    },
+    {
+     "s": 249.62,
+     "e": 254.96,
+     "text": "En större platta har dubbelt så långa sidor, så längdskalan är 2."
+    },
+    {
+     "s": 255.96,
+     "e": 258.06,
+     "text": "2 i kvadrat är 4."
+    },
+    {
+     "s": 259.06,
+     "e": 262.7,
+     "text": "Det får alltså plats 4 små plattor på den stora."
+    },
+    {
+     "s": 264,
+     "e": 268.98,
+     "text": "Bredvid står att volymskalan är längdskalan upphöjt till tre."
+    },
+    {
+     "s": 269.98,
+     "e": 274.16,
+     "text": "Volymskalan säger hur många gånger större volymen blir."
+    },
+    {
+     "s": 275.16,
+     "e": 279.78,
+     "text": "Ta en tärning, och en större tärning med dubbelt så långa kanter."
+    },
+    {
+     "s": 280.78,
+     "e": 286.24,
+     "text": "2 upphöjt till 3 är 2 gånger 2 gånger 2, alltså 8."
+    },
+    {
+     "s": 287.24,
+     "e": 290.5,
+     "text": "Det får plats 8 små tärningar i den stora."
+    },
+    {
+     "s": 291.8,
+     "e": 295.68,
+     "text": "Längre ner till vänster står topptriangelsatsen."
+    },
+    {
+     "s": 296.68,
+     "e": 301.18,
+     "text": "Bredvid finns en ny bild, och där betyder bokstäverna något nytt."
+    },
+    {
+     "s": 302.18,
+     "e": 307.46,
+     "text": "D och E är nu punkter på två av sidorna i triangeln ABC."
+    },
+    {
+     "s": 308.76,
+     "e": 313.34,
+     "text": "Under bilden står att DE är parallell med AB."
+    },
+    {
+     "s": 314.34,
+     "e": 320.4,
+     "text": "Parallella linjer går bredvid varandra och möts aldrig, som skenorna på en järnväg."
+    },
+    {
+     "s": 321.7,
+     "e": 327.96,
+     "text": "Linjen DE skär av en liten triangel högst upp, och den kallas topptriangeln."
+    },
+    {
+     "s": 328.96,
+     "e": 335.02,
+     "text": "DE och AB är parallella, så de möter sidorna med lika stora vinklar."
+    },
+    {
+     "s": 336.02,
+     "e": 342.3,
+     "text": "Därför har topptriangeln samma vinklar som hela triangeln, och de två är likformiga."
+    },
+    {
+     "s": 343.6,
+     "e": 347.32,
+     "text": "Satsen jämför topptriangeln med hela triangeln."
+    },
+    {
+     "s": 348.32,
+     "e": 357.14,
+     "text": "DE delat med AB är lika med CD delat med AC, och lika med CE delat med BC."
+    },
+    {
+     "s": 358.44,
+     "e": 359.58,
+     "text": "Nu ett exempel."
+    },
+    {
+     "s": 360.58,
+     "e": 365.72,
+     "text": "Ett hus har ett tak där den ena taksidan är kort och den andra är lång."
+    },
+    {
+     "s": 366.72,
+     "e": 369.22,
+     "text": "Framifrån ser taket ut som en triangel."
+    },
+    {
+     "s": 370.22,
+     "e": 374.04,
+     "text": "Toppen är C, och golvet på vinden är AB."
+    },
+    {
+     "s": 375.34,
+     "e": 380.34,
+     "text": "Golvet är 12 meter brett, och den korta taksidan är 6 meter."
+    },
+    {
+     "s": 381.34,
+     "e": 386.82,
+     "text": "En bjälke DE ska sitta mellan taksidorna, parallell med golvet,"
+    },
+    {
+     "s": 387.08,
+     "e": 388.94,
+     "text": "2 meter ner från toppen."
+    },
+    {
+     "s": 389.94,
+     "e": 391.8,
      "text": "Hur lång ska bjälken vara?"
     },
     {
-     "s": 243.06,
-     "e": 248.64,
-     "text": "Satsen ger att DE delat med 12 är lika med 2 delat med 6."
+     "s": 393.1,
+     "e": 396.26,
+     "text": "Vi använder de två första kvoterna i satsen."
     },
     {
-     "s": 250.08,
-     "e": 255.24,
-     "text": "2 delat med 6 är en tredjedel, så bjälken är en tredjedel av 12,"
+     "s": 397.26,
+     "e": 401.72,
+     "text": "DE delat med 12 är lika med 2 delat med 6."
     },
     {
-     "s": 255.76,
-     "e": 257.64,
-     "text": "alltså 4 meter."
+     "s": 402.72,
+     "e": 407.9,
+     "text": "6 är 3 gånger 2, så 2 delat med 6 är en tredjedel."
     },
     {
-     "s": 259.02,
-     "e": 262.04,
+     "s": 409.2,
+     "e": 412.44,
+     "text": "Bjälken är alltså en tredjedel av golvet."
+    },
+    {
+     "s": 413.44,
+     "e": 418.34,
+     "text": "12 delat med 3 är 4, så bjälken ska vara 4 meter."
+    },
+    {
+     "s": 419.64,
+     "e": 423.78,
      "text": "Under topptriangelsatsen står transversalsatsen."
     },
     {
-     "s": 262.68,
-     "e": 268.78,
-     "text": "Den jämför bara bitarna av sidorna, alltså biten ovanför bjälken med biten under,"
+     "s": 424.78,
+     "e": 431.04,
+     "text": "Den jämför bara bitarna av sidorna, alltså biten ovanför bjälken med biten under."
     },
     {
-     "s": 269.46,
-     "e": 275.64,
-     "text": "och säger att CD delat med AD är lika med CE delat med BE."
+     "s": 432.04,
+     "e": 437.06,
+     "text": "CD delat med AD är lika med CE delat med BE."
     },
     {
-     "s": 277.26,
-     "e": 284.44,
-     "text": "På den korta taksidan är biten ovanför bjälken 2 meter, och biten under är 4 meter,"
+     "s": 438.36,
+     "e": 442.8,
+     "text": "På den korta taksidan är biten ovanför bjälken 2 meter."
     },
     {
-     "s": 285.06,
-     "e": 288.58,
-     "text": "för 6 minus 2 är 4."
+     "s": 443.8,
+     "e": 448.46,
+     "text": "Biten under är 4 meter, för 6 minus 2 är 4."
     },
     {
-     "s": 288.66,
-     "e": 294.82,
-     "text": "På den långa taksidan sitter bjälken 3 meter från toppen, så hur långt är det därifrån"
+     "s": 449.76,
+     "e": 454.14,
+     "text": "På den långa taksidan sitter bjälken 3 meter från toppen."
     },
     {
-     "s": 294.9,
-     "e": 295.9,
-     "text": "ner till golvet?"
+     "s": 455.14,
+     "e": 458.04,
+     "text": "Hur långt är det därifrån ner till golvet?"
     },
     {
-     "s": 297.26,
-     "e": 303.1,
+     "s": 459.34,
+     "e": 465.54,
      "text": "Satsen ger att 2 delat med 4 är lika med 3 delat med BE."
     },
     {
-     "s": 304.56,
-     "e": 313.46,
-     "text": "2 är hälften av 4, så 3 är hälften av BE, och det är 6 meter längs taket från bjälken"
+     "s": 466.54,
+     "e": 471.58,
+     "text": "2 är hälften av 4, så 3 är hälften av BE."
     },
     {
-     "s": 313.54,
-     "e": 314.54,
-     "text": "ner till golvet."
+     "s": 472.58,
+     "e": 475,
+     "text": "BE är alltså 6 meter."
     },
     {
-     "s": 316,
-     "e": 319.46,
-     "text": "Till höger om de två satserna står bisektrissatsen."
+     "s": 476.3,
+     "e": 480.7,
+     "text": "Allt det här står på sidan 3, så du kan slå upp det på provet."
     },
     {
-     "s": 320.4,
-     "e": 327.3,
-     "text": "En bisektris är en linje som delar en vinkel mitt itu, och på bilden går den från hörnet"
+     "s": 481.92,
+     "e": 483.22,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 327.4,
-     "e": 331.56,
-     "text": "C ner till en ny punkt D på sidan AB."
+     "s": 484.22,
+     "e": 488.44,
+     "text": "En lyktstolpe kastar en skugga som är 12 meter lång."
     },
     {
-     "s": 332.84,
-     "e": 339.66,
-     "text": "Satsen säger att AD delat med BD är lika med AC delat med BC."
+     "s": 489.44,
+     "e": 495.26,
+     "text": "Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång."
     },
     {
-     "s": 341.02,
-     "e": 346.1,
-     "text": "Bitarna av sidan AB jämförs alltså med sidorna som möts i hörnet C."
-    },
-    {
-     "s": 347.78,
-     "e": 355.26,
-     "text": "Tänk dig en trekantig gräsmatta, där en gång går från hörnet C och delar hörnet mitt itu."
-    },
-    {
-     "s": 356.5,
-     "e": 364.26,
-     "text": "Kanten från C till A är 4 meter, kanten från C till B är 8 meter,"
-    },
-    {
-     "s": 365.04,
-     "e": 369.16,
-     "text": "och gången når andra kanten 3 meter från hörnet A."
-    },
-    {
-     "s": 370.46,
-     "e": 379.84,
-     "text": "Då är 3 delat med BD lika med 4 delat med 8, och 4 delat med 8 är en halv."
-    },
-    {
-     "s": 380.96,
-     "e": 388.42,
-     "text": "Alltså är 3 hälften av BD, och från gången till hörnet B är det 6 meter."
-    },
-    {
-     "s": 389.82,
-     "e": 391.34,
-     "text": "Här är en uppgift att prova."
-    },
-    {
-     "s": 392.34,
-     "e": 399.12,
-     "text": "En flaggstång kastar en skugga som är 14 meter lång, och samtidigt kastar en pinne som"
-    },
-    {
-     "s": 399.18,
-     "e": 403.3,
-     "text": "är 1 meter hög en skugga som är 2 meter lång."
-    },
-    {
-     "s": 404.34,
-     "e": 406.24,
-     "text": "Hur hög är flaggstången?"
-    },
-    {
-     "s": 407.82,
-     "e": 414.8,
-     "text": "Trianglarna är likformiga, så 1 delat med x är lika med 2 delat med 14."
-    },
-    {
-     "s": 416.1,
-     "e": 423.12,
-     "text": "14 är 7 gånger så mycket som 2, och därför är flaggstången 7 meter hög."
-    },
-    {
-     "s": 424.68,
-     "e": 429.92,
-     "text": "På provet står likformigheten och de tre satserna mitt på den tredje sidan."
-    },
-    {
-     "s": 431.26,
-     "e": 437.62,
-     "text": "En lyktstolpe kastar en skugga som är 12 meter lång, och samtidigt kastar en pinne som"
-    },
-    {
-     "s": 437.68,
-     "e": 442.02,
-     "text": "är 1 meter hög en skugga som är 2 meter lång."
-    },
-    {
-     "s": 443.1,
-     "e": 445.02,
+     "s": 496.26,
+     "e": 498.14,
      "text": "Hur hög är lyktstolpen?"
     }
    ]
