@@ -258,46 +258,46 @@
     "notisFran": "På provet gäller det att känna igen"
   },
   "formelbladet-3-plan-geometri": {
-    "fraga": "Pizzan från filmen har omkretsen 62,8 centimeter. Nu delas den i sex lika stora bitar.",
+    "fraga": "En pizza har omkretsen 62,8 centimeter. Den delas i åtta lika stora bitar.",
     "delar": [
       {
         "fraga": "Hur stor blir vinkeln i spetsen?",
         "typ": "tal",
-        "svar": 60,
+        "svar": 45,
         "enhet": "grader",
-        "exempel": "t.ex. 45",
+        "exempel": "t.ex. 90",
         "fel": [
-          { "svar": "45", "text": "45 grader är vinkeln när pizzan delas i åtta bitar. Här är det sex: 360 delat med 6." },
-          { "svar": "6", "text": "6 är antalet bitar. Hela varvet är 360 grader, och det delas i 6 lika stora bitar." },
-          { "svar": "2160", "text": "Du har gångrat med 6. Hela varvet, 360 grader, ska delas i 6 bitar." }
+          { "svar": "90", "text": "90 grader är vinkeln när pizzan delas i fyra bitar. Här är det åtta: 360 delat med 8." },
+          { "svar": "8", "text": "8 är antalet bitar. Hela varvet är 360 grader, och det delas i 8 lika stora bitar." },
+          { "svar": "2880", "text": "Du har gångrat med 8. Hela varvet, 360 grader, ska delas i 8 bitar." }
         ]
       },
       {
-        "fraga": "Hur lång blir kanten på en bit?",
+        "fraga": "Hur lång blir den böjda kanten på en bit?",
         "typ": "tal",
-        "svar": 10.4667,
+        "svar": 7.85,
         "tolerans": 0.06,
         "enhet": "cm",
-        "exempel": "t.ex. 7,85",
+        "exempel": "t.ex. 15,7",
         "fel": [
-          { "svar": "7.85", "tolerans": 0.01, "text": "7,85 centimeter är kanten när pizzan delas i åtta bitar. Här tar du en sjättedel av 62,8." },
-          { "svar": "52.33", "tolerans": 0.05, "text": "Det är bitens area, 314 delat med 6. Kanten är en sjättedel av omkretsen, 62,8." },
-          { "svar": "376.8", "tolerans": 0.05, "text": "Du har gångrat med 6. En bit har en sjättedel av kanten, så dela 62,8 med 6." },
-          { "svar": "10", "text": "10 centimeter är radien, den raka sidan på biten. Kanten är den böjda bågen, en sjättedel av 62,8." }
+          { "svar": "15.7", "tolerans": 0.01, "text": "15,7 centimeter är kanten när pizzan delas i fyra bitar. Här tar du en åttondel av 62,8." },
+          { "svar": "39.25", "tolerans": 0.05, "text": "Det är bitens area, 314 delat med 8. Den böjda kanten är en åttondel av omkretsen, 62,8." },
+          { "svar": "502.4", "tolerans": 0.05, "text": "Du har gångrat med 8. En bit har en åttondel av kanten, så dela 62,8 med 8." },
+          { "svar": "10", "text": "10 centimeter är radien, den raka sidan på biten. Den böjda kanten är en åttondel av 62,8." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "360 delat med 8 är 45",
-      "text": "Vinkeln är 360 grader delat på antalet bitar. Kanten är samma andel av omkretsen 62,8."
+      "fras": "Vi delar pizzan i fyra lika stora bitar",
+      "text": "Vinkeln är 360 grader delat med antalet bitar. Den böjda kanten är samma andel av omkretsen 62,8."
     },
     "losning": [
-      "Hela varvet är 360 grader, och det delas i 6 lika stora bitar.",
-      "360 / 6 = 60, så vinkeln blir 60 grader.",
-      "60 delat med 360 är en sjättedel.",
-      "Kanten är en sjättedel av omkretsen: 62,8 / 6 ≈ 10,5 centimeter."
+      "Hela varvet är 360 grader, och det delas i 8 lika stora bitar.",
+      "360 / 8 = 45, så vinkeln blir 45 grader.",
+      "45 delat med 360 är en åttondel.",
+      "Den böjda kanten är en åttondel av omkretsen: 62,8 / 8 = 7,85 centimeter."
     ],
-    "notisFran": "Pizzan kan också delas i åtta"
+    "notisFran": "Nu är det din tur"
   },
   "formelbladet-4-rymdgeometri-och-skala": {
     "fraga": "Tänk dig att du bygger en modell av ert klassrum i skala 1 till 5.",
