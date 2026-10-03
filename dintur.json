@@ -220,42 +220,46 @@
     "notisFran": "Prefixen och potenserna hänger ihop"
   },
   "formelbladet-2-funktioner": {
-    "fraga": "En mobil kostar 6000 kronor när den är ny och tappar 20 procent av sitt värde varje år.",
+    "fraga": "En taxi kostar en startavgift och ett pris per kilometer. En resa på 2 kilometer kostar 80 kronor. En resa på 6 kilometer kostar 180 kronor.",
     "delar": [
       {
-        "fraga": "Vilken sorts funktion är värdet?",
-        "typ": "ord",
-        "svar": ["exponentialfunktion", "exponentialfunktionen", "en exponentialfunktion", "exponentiell", "exponentiell funktion", "en exponentiell funktion"],
-        "exempel": "t.ex. räta linjen",
+        "fraga": "Vad är k, alltså priset per kilometer?",
+        "typ": "tal",
+        "svar": 25,
+        "enhet": "kr per km",
+        "exempel": "t.ex. 15",
         "fel": [
-          { "svar": ["räta linjen", "rät linje", "en rät linje", "linje", "linjen", "linjär", "linjär funktion", "en linjär funktion"], "text": "Värdet minskar inte med lika många kronor varje år, utan med lika många procent. Då gångras värdet med samma tal varje år." },
-          { "svar": ["potensfunktion", "potensfunktionen", "en potensfunktion"], "text": "I en potensfunktion står x nere i basen. Här gångras värdet med samma tal varje år, och då står x uppe i exponenten." }
+          { "svar": "100", "text": "100 kr är hur mycket mer den andra resan kostade. Dela med hur många kilometer längre den var: 6 − 2 = 4." },
+          { "svar": "40", "text": "Du har delat 80 med 2. Men de 80 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km." },
+          { "svar": "30", "text": "Du har delat 180 med 6. Men de 180 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km." },
+          { "svar": "4", "text": "4 är hur många kilometer längre den andra resan var. Dela skillnaden i pris, 180 − 80 = 100, med 4." }
         ]
       },
       {
-        "fraga": "Skriv funktionen, med x för antalet år.",
-        "typ": "ekvation",
-        "svar": "y = 6000*0.8^x",
-        "exempel": "t.ex. y = 1000 · 1,05^x",
-        "tangenter": ["^", "·", "="],
+        "fraga": "Vad är m, alltså startavgiften?",
+        "typ": "tal",
+        "svar": 30,
+        "enhet": "kr",
+        "exempel": "t.ex. 40",
         "fel": [
-          { "svar": "y = 6000*0.2^x", "text": "0,2 är det som försvinner varje år. Kvar blir 100 − 20 = 80 procent, så värdet gångras med 0,8." },
-          { "svar": "y = 6000*1.2^x", "text": "1,2 betyder att värdet ökar med 20 procent. Här minskar det, så värdet gångras med 0,8." },
-          { "svar": "y = -1200*x + 6000", "text": "Det är räta linjen, som drar bort 1200 kronor varje år. Men 20 procent av ett mindre värde är färre kronor, så värdet gångras med 0,8 varje år i stället." }
+          { "svar": "50", "text": "50 kr är vad 2 kilometer kostar: 2 · 25. Startavgiften är det som är kvar av resans 80 kronor." },
+          { "svar": "80", "text": "80 kr är hela resan. Dra bort vad de 2 kilometerna kostar: 2 · 25 = 50." },
+          { "svar": "130", "text": "Du har lagt till 50 i stället för att dra bort. Resan kostade 80 kr, och 50 av dem är kilometerna." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Är a mellan noll och 1 minskar",
-      "text": "Värdet gångras med samma tal varje år, så det är y = C · aˣ. C är värdet när mobilen är ny, och a är det som blir kvar av 100 procent."
+      "fras": "Ovanför bråkstrecket räknar vi",
+      "text": "Räkna hur mycket mer den andra resan kostade och hur många kilometer längre den var. Dela sedan priset med kilometerna."
     },
     "losning": [
-      "Värdet minskar med lika många procent varje år, inte med lika många kronor. Då är det en exponentialfunktion, y = C · aˣ.",
-      "C är startvärdet, 6000 kronor.",
-      "Kvar varje år är 100 − 20 = 80 procent, så förändringsfaktorn är a = 0,8.",
-      "y = 6000 · 0,8ˣ, där x är antalet år."
+      "Den andra resan kostade 180 − 80 = 100 kr mer.",
+      "Den var 6 − 2 = 4 km längre.",
+      "k = 100 / 4 = 25, så varje kilometer kostar 25 kr.",
+      "2 kilometer kostar 2 · 25 = 50 kr.",
+      "m = 80 − 50 = 30, så startavgiften är 30 kr."
     ],
-    "notisFran": "På provet gäller det att känna igen"
+    "notisFran": "Nu är det din tur"
   },
   "formelbladet-3-plan-geometri": {
     "fraga": "En pizza har omkretsen 62,8 centimeter. Den delas i åtta lika stora bitar.",

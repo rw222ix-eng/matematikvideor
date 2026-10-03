@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T17:31:30.747Z",
+ "byggd": "2026-10-03T17:40:43.327Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -9364,7 +9364,7 @@
     "Matematik 1",
     "Matematik 2"
    ],
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-2-v3/formelbladet-2-funktioner-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/formelbladet-2-v4/formelbladet-2-funktioner-1080p.mp4",
    "moment": "Formelbladet: funktioner",
    "begrepp": [
     "formelbladet",
@@ -9377,6 +9377,7 @@
     "skär y-axeln",
     "två punkter",
     "k-formeln",
+    "kvitton",
     "ax + by + c = 0",
     "exponentialfunktion",
     "förändringsfaktor",
@@ -9387,586 +9388,763 @@
     "exponent",
     "bas"
    ],
-   "beskrivning": "Vi går igenom funktionerna på första sidan av formelbladet till nationella provet i matematik 1: räta linjen, exponentialfunktionen och potensfunktionen. En taxiresa, ett sparkonto och en kvadratisk matta visar vad varje bokstav i formlerna betyder.",
+   "beskrivning": "Vi går igenom funktionerna på första sidan av formelbladet till nationella provet i matematik 1: räta linjen, exponentialfunktionen och potensfunktionen. En taxiresa och två taxikvitton, ett sparkonto och en kvadratisk matta visar vad varje bokstav i formlerna betyder, ett räknesteg i taget.",
    "youtube": null,
-   "langd": 451,
+   "langd": 577,
    "omslag": "omslag/formelbladet-2-funktioner.jpg?v=9e32576a",
    "omslagRen": "omslag/formelbladet-2-funktioner-ren.jpg?v=46961d77",
    "omslagStor": "omslag/formelbladet-2-funktioner-stor.jpg?v=ae220fb6",
    "repliker": [
     {
-     "t": 0,
-     "text": "På nationella provet i matematik 1 får alla ett formelblad från Skolverket. Under potenserna på första sidan står rubriken funktioner."
+     "t": 1,
+     "text": "På nationella provet i matematik ett har alla formelbladet från Skolverket på bänken. På den första sidan, under potenserna, står rubriken funktioner. Det är de raderna vi går igenom nu."
     },
     {
-     "t": 10,
-     "text": "En funktion är en regel som ger ett värde på y för varje värde på x. På bladet står tre sorters funktioner, räta linjen, exponentialfunktionen och potensfunktionen, och vi börjar med räta linjen."
+     "t": 18,
+     "text": "En funktion är en regel som ger ett värde på y för varje värde på x. Under rubriken står tre sorters funktioner. De heter räta linjen, exponentialfunktion och potensfunktion. Vi börjar med räta linjen."
     },
     {
-     "t": 27,
-     "text": "En taxi kostar 50 kronor så fort du sätter dig i bilen, och sedan 20 kronor för varje kilometer du åker. En resa på 3 kilometer kostar därför 3 gånger 20 plus 50, alltså 110 kronor."
+     "t": 38,
+     "text": "En taxi kostar femtio kronor så fort du sätter dig i bilen, och det är startavgiften. Sedan kostar varje kilometer tjugo kronor. Vad kostar en resa på tre kilometer?"
     },
     {
-     "t": 43,
-     "text": "Skriver vi x för antalet kilometer och y för priset i kronor blir regeln y är lika med tjugo x plus 50. I ett koordinatsystem hamnar punkterna på en rak linje, eftersom varje kilometer lägger till samma 20 kronor."
+     "t": 53,
+     "text": "Först räknar vi kilometerna. Tre gånger tjugo är sextio. Sedan lägger vi till startavgiften. Sextio plus femtio är hundratio, så resan kostar hundratio kronor."
     },
     {
-     "t": 62,
-     "text": "På formelbladet står räta linjen som y är lika med k x plus m. Talet k säger hur mycket y ökar när x ökar med 1, här 20 kronor per kilometer, och k kallas linjens lutning."
+     "t": 70,
+     "text": "Nu skriver vi x för antalet kilometer och y för priset i kronor. Då blir regeln y är lika med tjugo x plus femtio. Tjugo x betyder tjugo gånger x."
     },
     {
-     "t": 80,
-     "text": "Talet m är värdet på y när x är noll, alltså startavgiften 50 kronor. Det är där linjen skär y-axeln."
+     "t": 87,
+     "text": "Vi ritar resorna i ett koordinatsystem, med kilometer åt höger och kronor uppåt. Punkterna hamnar på en rak linje. Det beror på att varje kilometer lägger till samma tjugo kronor."
     },
     {
-     "t": 91,
-     "text": "Hos ett annat taxibolag vet du inte priserna, men du har sparat två kvitton. En resa på 2 kilometer kostade 70 kronor, och en resa på 6 kilometer kostade 130 kronor."
+     "t": 103,
+     "text": "På formelbladet står räta linjen som y är lika med k x plus m. Talet k säger hur mycket y ökar när x ökar med ett. För taxin är k tjugo, för varje kilometer kostar tjugo kronor till. Talet k kallas linjens lutning, för det säger hur brant linjen går uppåt."
     },
     {
-     "t": 105,
-     "text": "Den andra resan var 4 kilometer längre och kostade 60 kronor mer. Varje kilometer kostar alltså 60 delat med 4, och det är 15 kronor."
+     "t": 131,
+     "text": "Talet m är värdet på y när x är noll. För taxin är m femtio, alltså startavgiften. Det är där linjen skär y-axeln, den lodräta axeln."
     },
     {
-     "t": 118,
-     "text": "Formeln under räta linjen gör precis samma uträkning. k är lika med y två minus y ett, delat med x två minus x ett."
+     "t": 146,
+     "text": "Hos ett annat taxibolag vet du inte priserna, men du har sparat två kvitton. En resa på två kilometer kostade sjuttio kronor. En resa på sex kilometer kostade hundratrettio kronor. Vad kostar en kilometer?"
     },
     {
-     "t": 130,
-     "text": "Ettan och tvåan nere vid bokstäverna är inga exponenter, de säger bara vilken punkt det gäller. x ett och y ett är den första resan, och x två och y två är den andra."
-    },
-    {
-     "t": 145,
-     "text": "Sedan får man m ur ett av kvittona. 2 kilometer kostar 2 gånger 15, alltså 30 kronor, men resan kostade 70, så startavgiften är 40 kronor och den nya taxin har funktionen y är lika med femton x plus 40."
-    },
-    {
-     "t": 166,
-     "text": "På den tredje raden står samma sorts linje skriven på ett annat sätt, som a x plus b y plus c är lika med noll. Drar man bort y från båda sidor kan den nya taxin skrivas som femton x minus y plus 40 är lika med noll."
+     "t": 165,
+     "text": "Formeln under räta linjen räknar ut k ur två punkter. Den säger att k är lika med y två minus y ett, delat med x två minus x ett. Ettan och tvåan nere vid bokstäverna är inga exponenter. De säger bara vilket kvitto det gäller."
     },
     {
      "t": 188,
-     "text": "Alltså är a lika med 15, b lika med minus 1 och c lika med 40. Kvittot stämmer fortfarande, för 15 gånger 2 minus 70 plus 40 är noll."
+     "text": "Det första kvittot ger x ett och y ett, alltså två kilometer och sjuttio kronor. Det andra kvittot ger x två och y två, alltså sex kilometer och hundratrettio kronor."
     },
     {
      "t": 204,
-     "text": "Bredvid står att a och b inte båda får vara noll. Då skulle både x och y försvinna ur formeln, och då finns ingen linje kvar att rita."
+     "text": "Ovanför bråkstrecket räknar vi y två minus y ett. Hundratrettio minus sjuttio är sextio. Den andra resan kostade alltså sextio kronor mer."
     },
     {
-     "t": 216,
-     "text": "Exponentialfunktionen växer på ett annat sätt. Sätter du in 1000 kronor på ett sparkonto med 5 procent ränta har du 1050 kronor efter ett år, för 5 procent av 1000 är 50. Det är samma sak som 1000 gånger 1,05."
+     "t": 218,
+     "text": "Under bråkstrecket räknar vi x två minus x ett. Sex minus två är fyra. Den andra resan var alltså fyra kilometer längre."
     },
     {
-     "t": 237,
-     "text": "Året efter får du ränta på hela 1050 kronor, så pengarna gångras med 1,05 igen. Efter 2 år har du alltså 1000 gånger 1,05 gånger 1,05, och det blir 1102 kronor och 50 öre."
+     "t": 231,
+     "text": "Fyra kilometer till kostade alltså sextio kronor till. Sextio delat med fyra är femton, så k är femton. Varje kilometer kostar femton kronor."
     },
     {
-     "t": 258,
-     "text": "Efter x år har du därför 1000 gånger 1,05 upphöjt till x kronor. Räta linjen lägger till lika mycket för varje steg, men exponentialfunktionen gångrar med lika mycket för varje steg."
+     "t": 247,
+     "text": "Sedan tar vi fram m ur det första kvittot. Två kilometer kostar två gånger femton, alltså trettio kronor. Men resan kostade sjuttio kronor."
+    },
+    {
+     "t": 261,
+     "text": "Sjuttio minus trettio är fyrtio, så startavgiften m är fyrtio kronor. Den nya taxin har alltså funktionen y är lika med femton x plus fyrtio."
     },
     {
      "t": 275,
-     "text": "På formelbladet står exponentialfunktionen som y är lika med C gånger a upphöjt till x. C är startvärdet, här 1000 kronor, och a är talet man gångrar med varje år, här 1,05, som kallas förändringsfaktorn."
+     "text": "På den tredje raden står räta linjen skriven på ett annat sätt, som a x plus b y plus c är lika med noll. Allt står på ena sidan av likhetstecknet, och noll står på den andra. Den nya taxin skrivs då som femton x minus y plus fyrtio är lika med noll."
     },
     {
-     "t": 296,
-     "text": "Bredvid står att a ska vara större än noll och inte lika med 1. Med a lika med 1 skulle kontot ha 1000 kronor varje år, och då förändras ingenting."
+     "t": 300,
+     "text": "Talet a står framför x, så a är femton. Framför y står bara ett minus, och minus y är minus ett gånger y. Så b är minus ett. Talet c står ensamt, så c är fyrtio."
     },
     {
-     "t": 310,
-     "text": "Är a mellan noll och 1 minskar värdet i stället. En cykel som tappar 10 procent av sitt värde varje år har förändringsfaktorn 0,9, för 100 procent minus 10 procent är 90 procent."
+     "t": 320,
+     "text": "Att det är samma linje ser vi om vi lägger till y på båda sidor av likhetstecknet. Då står det femton x plus fyrtio är lika med y, och det är taxins funktion igen."
     },
     {
-     "t": 327,
-     "text": "Den sista funktionen är potensfunktionen. En kvadratisk matta med sidan 3 meter har arean 3 gånger 3, alltså 9 kvadratmeter, och med sidan x meter blir arean x upphöjt till 2."
+     "t": 335,
+     "text": "Nu kommer exponentialfunktionen. Du sätter in tusen kronor på ett sparkonto med fem procent ränta. Fem procent av tusen är femtio, så efter ett år har du tusenfemtio kronor."
     },
     {
-     "t": 346,
-     "text": "Kostar mattan 100 kronor per kvadratmeter blir priset 100 gånger x upphöjt till 2 kronor. Mattan med sidan 3 meter kostar alltså 100 gånger 9, och det är 900 kronor."
+     "t": 352,
+     "text": "Att lägga till fem procent är samma sak som att gångra med ett komma noll fem. För hundra procent plus fem procent är hundrafem procent. Varje år gångras alltså pengarna med ett komma noll fem."
     },
     {
-     "t": 364,
-     "text": "På formelbladet står potensfunktionen som y är lika med C gånger x upphöjt till a. C är talet framför, här 100 kronor, och a är exponenten, här 2."
-    },
-    {
-     "t": 381,
-     "text": "Skillnaden mot exponentialfunktionen är var x står. I exponentialfunktionen står x uppe i exponenten, men i potensfunktionen står x nere i basen och exponenten är ett fast tal."
+     "t": 370,
+     "text": "Året efter får du ränta på hela tusenfemtio kronor, så pengarna gångras med ett komma noll fem igen. Efter två år har du alltså tusen gånger ett komma noll fem gånger ett komma noll fem. Efter x år har du gångrat med ett komma noll fem x gånger. Det skrivs tusen gånger ett komma noll fem upphöjt till x."
     },
     {
      "t": 398,
-     "text": "På provet gäller det att känna igen vilken sorts funktion det är. Ett gym kostar 300 kronor att gå med i och sedan 200 kronor i månaden. Vilken sorts funktion är priset, och hur ser den ut?"
+     "text": "Exponenten är det lilla talet uppe till höger, här x. Den räknar hur många gånger vi gångrar. Räta linjen lägger till lika mycket för varje steg. Men exponentialfunktionen gångrar med lika mycket för varje steg."
     },
     {
-     "t": 415,
-     "text": "Priset ökar med lika mycket varje månad, så det är räta linjen. k är 200 kronor per månad och m är 300 kronor, så y är lika med tvåhundra x plus 300, där x är antalet månader."
+     "t": 418,
+     "text": "På formelbladet står exponentialfunktionen som y är lika med C gånger a upphöjt till x. C är startvärdet, här tusen kronor. a är talet man gångrar med varje år, här ett komma noll fem, och a kallas förändringsfaktorn."
     },
     {
-     "t": 437,
-     "text": "En mobil kostar 6000 kronor när den är ny och tappar 20 procent av sitt värde varje år. Vilken sorts funktion är värdet, och hur ser den ut?"
+     "t": 441,
+     "text": "En förändringsfaktor kan också göra värdet mindre. En cykel tappar tio procent av sitt värde varje år. Hundra procent minus tio procent är nittio procent, så förändringsfaktorn är noll komma nio."
+    },
+    {
+     "t": 459,
+     "text": "Den sista raden är potensfunktionen. En matta har formen av en kvadrat, så alla fyra sidorna är lika långa. Är sidan tre meter, är arean tre gånger tre, alltså nio kvadratmeter."
+    },
+    {
+     "t": 478,
+     "text": "Är sidan x meter, är arean x gånger x. Det skrivs x upphöjt till två. Mattan kostar hundra kronor per kvadratmeter, så priset blir hundra gånger x upphöjt till två."
+    },
+    {
+     "t": 496,
+     "text": "På formelbladet står potensfunktionen som y är lika med C gånger x upphöjt till a. C är talet framför, här hundra kronor. a är exponenten, här två."
+    },
+    {
+     "t": 512,
+     "text": "Exponentialfunktionen och potensfunktionen ser lika ut, men x står på olika ställen. I exponentialfunktionen står x uppe i exponenten. I potensfunktionen står x nere i basen, alltså talet som gångras, och exponenten är ett fast tal."
+    },
+    {
+     "t": 536,
+     "text": "På provet står alla tre funktionerna under potenserna på första sidan av formelbladet. Du behöver inte kunna dem utantill, men du behöver veta vad bokstäverna betyder."
+    },
+    {
+     "t": 550,
+     "text": "Nu är det din tur. En taxi kostar en startavgift och ett pris per kilometer. En resa på två kilometer kostar åttio kronor. En resa på sex kilometer kostar hundraåttio kronor. Vad är k, alltså priset per kilometer? Och vad är m, alltså startavgiften?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
+     "t": 1,
      "rubrik": "Tre sorters funktioner",
      "typ": "inledning"
     },
     {
-     "t": 27,
+     "t": 38,
      "rubrik": "Räta linjen: y = kx + m",
      "typ": "matte"
     },
     {
-     "t": 216,
+     "t": 146,
+     "rubrik": "Två kvitton ger k",
+     "typ": "matte"
+    },
+    {
+     "t": 247,
+     "rubrik": "m ur kvittot",
+     "typ": "matte"
+    },
+    {
+     "t": 275,
+     "rubrik": "ax + by + c = 0",
+     "typ": "matte"
+    },
+    {
+     "t": 335,
      "rubrik": "Exponentialfunktionen: y = C · aˣ",
      "typ": "matte"
     },
     {
-     "t": 327,
+     "t": 441,
+     "rubrik": "Förändringsfaktor under 1",
+     "typ": "matte"
+    },
+    {
+     "t": 459,
      "rubrik": "Potensfunktionen: y = C · xᵃ",
      "typ": "matte"
     },
     {
-     "t": 398,
-     "rubrik": "Vilken sorts funktion är det?",
-     "typ": "matte"
-    },
-    {
-     "t": 437,
-     "rubrik": "Mobilens värde",
+     "t": 550,
+     "rubrik": "Två kvitton",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "En mobil kostar 6000 kronor när den är ny och tappar 20 procent av sitt värde varje år.",
+    "fraga": "En taxi kostar en startavgift och ett pris per kilometer. En resa på 2 kilometer kostar 80 kronor. En resa på 6 kilometer kostar 180 kronor.",
     "delar": [
      {
-      "fraga": "Vilken sorts funktion är värdet?",
-      "typ": "ord",
-      "svar": [
-       "exponentialfunktion",
-       "exponentialfunktionen",
-       "en exponentialfunktion",
-       "exponentiell",
-       "exponentiell funktion",
-       "en exponentiell funktion"
-      ],
-      "exempel": "t.ex. räta linjen",
+      "fraga": "Vad är k, alltså priset per kilometer?",
+      "typ": "tal",
+      "svar": 25,
+      "enhet": "kr per km",
+      "exempel": "t.ex. 15",
       "fel": [
        {
-        "svar": [
-         "räta linjen",
-         "rät linje",
-         "en rät linje",
-         "linje",
-         "linjen",
-         "linjär",
-         "linjär funktion",
-         "en linjär funktion"
-        ],
-        "text": "Värdet minskar inte med lika många kronor varje år, utan med lika många procent. Då gångras värdet med samma tal varje år."
+        "svar": "100",
+        "text": "100 kr är hur mycket mer den andra resan kostade. Dela med hur många kilometer längre den var: 6 − 2 = 4."
        },
        {
-        "svar": [
-         "potensfunktion",
-         "potensfunktionen",
-         "en potensfunktion"
-        ],
-        "text": "I en potensfunktion står x nere i basen. Här gångras värdet med samma tal varje år, och då står x uppe i exponenten."
+        "svar": "40",
+        "text": "Du har delat 80 med 2. Men de 80 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km."
+       },
+       {
+        "svar": "30",
+        "text": "Du har delat 180 med 6. Men de 180 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km."
+       },
+       {
+        "svar": "4",
+        "text": "4 är hur många kilometer längre den andra resan var. Dela skillnaden i pris, 180 − 80 = 100, med 4."
        }
       ]
      },
      {
-      "fraga": "Skriv funktionen, med x för antalet år.",
-      "typ": "ekvation",
-      "svar": "y = 6000*0.8^x",
-      "exempel": "t.ex. y = 1000 · 1,05^x",
-      "tangenter": [
-       "^",
-       "·",
-       "="
-      ],
+      "fraga": "Vad är m, alltså startavgiften?",
+      "typ": "tal",
+      "svar": 30,
+      "enhet": "kr",
+      "exempel": "t.ex. 40",
       "fel": [
        {
-        "svar": "y = 6000*0.2^x",
-        "text": "0,2 är det som försvinner varje år. Kvar blir 100 − 20 = 80 procent, så värdet gångras med 0,8."
+        "svar": "50",
+        "text": "50 kr är vad 2 kilometer kostar: 2 · 25. Startavgiften är det som är kvar av resans 80 kronor."
        },
        {
-        "svar": "y = 6000*1.2^x",
-        "text": "1,2 betyder att värdet ökar med 20 procent. Här minskar det, så värdet gångras med 0,8."
+        "svar": "80",
+        "text": "80 kr är hela resan. Dra bort vad de 2 kilometerna kostar: 2 · 25 = 50."
        },
        {
-        "svar": "y = -1200*x + 6000",
-        "text": "Det är räta linjen, som drar bort 1200 kronor varje år. Men 20 procent av ett mindre värde är färre kronor, så värdet gångras med 0,8 varje år i stället."
+        "svar": "130",
+        "text": "Du har lagt till 50 i stället för att dra bort. Resan kostade 80 kr, och 50 av dem är kilometerna."
        }
       ]
      }
     ],
     "ledtrad": {
-     "text": "Värdet gångras med samma tal varje år, så det är y = C · aˣ. C är värdet när mobilen är ny, och a är det som blir kvar av 100 procent.",
-     "t": 310
+     "text": "Räkna hur mycket mer den andra resan kostade och hur många kilometer längre den var. Dela sedan priset med kilometerna.",
+     "t": 204
     },
     "losning": [
-     "Värdet minskar med lika många procent varje år, inte med lika många kronor. Då är det en exponentialfunktion, y = C · aˣ.",
-     "C är startvärdet, 6000 kronor.",
-     "Kvar varje år är 100 − 20 = 80 procent, så förändringsfaktorn är a = 0,8.",
-     "y = 6000 · 0,8ˣ, där x är antalet år."
+     "Den andra resan kostade 180 − 80 = 100 kr mer.",
+     "Den var 6 − 2 = 4 km längre.",
+     "k = 100 / 4 = 25, så varje kilometer kostar 25 kr.",
+     "2 kilometer kostar 2 · 25 = 50 kr.",
+     "m = 80 − 50 = 30, så startavgiften är 30 kr."
     ],
-    "notisFran": 398
+    "notisFran": 550
    },
    "undertext": [
     {
-     "s": 0.14,
-     "e": 4.94,
-     "text": "På nationella provet i matematik 1 får alla ett formelblad från Skolverket."
+     "s": 1.5,
+     "e": 7.82,
+     "text": "På nationella provet i matematik ett har alla formelbladet från Skolverket på bänken."
     },
     {
-     "s": 5.9,
-     "e": 9.38,
-     "text": "Under potenserna på första sidan står rubriken funktioner."
+     "s": 8.82,
+     "e": 13.84,
+     "text": "På den första sidan, under potenserna, står rubriken funktioner."
     },
     {
-     "s": 10.62,
-     "e": 15.52,
+     "s": 14.84,
+     "e": 17,
+     "text": "Det är de raderna vi går igenom nu."
+    },
+    {
+     "s": 18.3,
+     "e": 23.7,
      "text": "En funktion är en regel som ger ett värde på y för varje värde på x."
     },
     {
-     "s": 16.84,
-     "e": 23.76,
-     "text": "På bladet står tre sorters funktioner, räta linjen, exponentialfunktionen och potensfunktionen,"
+     "s": 24.7,
+     "e": 27.92,
+     "text": "Under rubriken står tre sorters funktioner."
     },
     {
-     "s": 24.44,
-     "e": 26.04,
-     "text": "och vi börjar med räta linjen."
+     "s": 28.92,
+     "e": 34.56,
+     "text": "De heter räta linjen, exponentialfunktion och potensfunktion."
     },
     {
-     "s": 27.58,
-     "e": 33.1,
-     "text": "En taxi kostar 50 kronor så fort du sätter dig i bilen, och sedan 20 kronor för varje"
+     "s": 35.56,
+     "e": 37.36,
+     "text": "Vi börjar med räta linjen."
     },
     {
-     "s": 33.16,
-     "e": 34.2,
-     "text": "kilometer du åker."
+     "s": 38.66,
+     "e": 44.74,
+     "text": "En taxi kostar 50 kronor så fort du sätter dig i bilen, och det är startavgiften."
     },
     {
-     "s": 35.24,
-     "e": 42.28,
-     "text": "En resa på 3 kilometer kostar därför 3 gånger 20 plus 50, alltså 110 kronor."
+     "s": 45.74,
+     "e": 48.9,
+     "text": "Sedan kostar varje kilometer 20 kronor."
     },
     {
-     "s": 43.64,
-     "e": 50.36,
-     "text": "Skriver vi x för antalet kilometer och y för priset i kronor blir regeln y är lika med"
+     "s": 49.9,
+     "e": 52.54,
+     "text": "Vad kostar en resa på 3 kilometer?"
     },
     {
-     "s": 50.44,
-     "e": 52.24,
-     "text": "tjugo x plus 50."
+     "s": 53.84,
+     "e": 55.74,
+     "text": "Först räknar vi kilometerna."
     },
     {
-     "s": 54.04,
-     "e": 59.44,
-     "text": "I ett koordinatsystem hamnar punkterna på en rak linje, eftersom varje kilometer lägger"
+     "s": 56.74,
+     "e": 59,
+     "text": "3 gånger 20 är 60."
     },
     {
-     "s": 59.5,
-     "e": 61.16,
-     "text": "till samma 20 kronor."
+     "s": 60,
+     "e": 62.24,
+     "text": "Sedan lägger vi till startavgiften."
     },
     {
-     "s": 62.76,
-     "e": 68.52,
+     "s": 63.24,
+     "e": 69.24,
+     "text": "60 plus 50 är 110, så resan kostar 110 kronor."
+    },
+    {
+     "s": 70.54,
+     "e": 75.96,
+     "text": "Nu skriver vi x för antalet kilometer och y för priset i kronor."
+    },
+    {
+     "s": 76.96,
+     "e": 81.68,
+     "text": "Då blir regeln y är lika med 20x plus 50."
+    },
+    {
+     "s": 82.68,
+     "e": 86.16,
+     "text": "20x betyder 20 gånger x."
+    },
+    {
+     "s": 87.46,
+     "e": 93.62,
+     "text": "Vi ritar resorna i ett koordinatsystem, med kilometer åt höger och kronor uppåt."
+    },
+    {
+     "s": 94.62,
+     "e": 96.84,
+     "text": "Punkterna hamnar på en rak linje."
+    },
+    {
+     "s": 97.84,
+     "e": 102.46,
+     "text": "Det beror på att varje kilometer lägger till samma 20 kronor."
+    },
+    {
+     "s": 103.76,
+     "e": 110.24,
      "text": "På formelbladet står räta linjen som y är lika med k x plus m."
     },
     {
-     "s": 69.76,
-     "e": 76.4,
-     "text": "Talet k säger hur mycket y ökar när x ökar med 1, här 20 kronor per kilometer,"
+     "s": 111.24,
+     "e": 116.28,
+     "text": "Talet k säger hur mycket y ökar när x ökar med 1."
     },
     {
-     "s": 77.26,
-     "e": 79.46,
-     "text": "och k kallas linjens lutning."
+     "s": 117.28,
+     "e": 123.12,
+     "text": "För taxin är k 20, för varje kilometer kostar 20 kronor till."
     },
     {
-     "s": 80.74,
-     "e": 86.9,
-     "text": "Talet m är värdet på y när x är noll, alltså startavgiften 50 kronor."
+     "s": 124.12,
+     "e": 130,
+     "text": "Talet k kallas linjens lutning, för det säger hur brant linjen går uppåt."
     },
     {
-     "s": 87.84,
-     "e": 90,
-     "text": "Det är där linjen skär y-axeln."
+     "s": 131.3,
+     "e": 135.06,
+     "text": "Talet m är värdet på y när x är 0."
     },
     {
-     "s": 91.54,
-     "e": 95.98,
+     "s": 136.06,
+     "e": 140.06,
+     "text": "För taxin är m 50, alltså startavgiften."
+    },
+    {
+     "s": 141.06,
+     "e": 145.32,
+     "text": "Det är där linjen skär y-axeln, den lodräta axeln."
+    },
+    {
+     "s": 146.62,
+     "e": 152.3,
      "text": "Hos ett annat taxibolag vet du inte priserna, men du har sparat två kvitton."
     },
     {
-     "s": 96.92,
-     "e": 104.3,
-     "text": "En resa på 2 kilometer kostade 70 kronor, och en resa på 6 kilometer kostade 130 kronor."
+     "s": 153.3,
+     "e": 156.84,
+     "text": "En resa på 2 kilometer kostade 70 kronor."
     },
     {
-     "s": 105.5,
-     "e": 110.18,
-     "text": "Den andra resan var 4 kilometer längre och kostade 60 kronor mer."
+     "s": 157.84,
+     "e": 161.6,
+     "text": "En resa på 6 kilometer kostade 130 kronor."
     },
     {
-     "s": 111.42,
-     "e": 116.78,
-     "text": "Varje kilometer kostar alltså 60 delat med 4, och det är 15 kronor."
+     "s": 162.6,
+     "e": 164.44,
+     "text": "Vad kostar en kilometer?"
     },
     {
-     "s": 118.34,
-     "e": 121.62,
-     "text": "Formeln under räta linjen gör precis samma uträkning."
+     "s": 165.74,
+     "e": 170.34,
+     "text": "Formeln under räta linjen räknar ut k ur två punkter."
     },
     {
-     "s": 122.54,
-     "e": 129.24,
-     "text": "k är lika med y två minus y ett, delat med x två minus x ett."
+     "s": 171.34,
+     "e": 178.46,
+     "text": "Den säger att k är lika med y₂ minus y₁, delat med x₂ minus x₁."
     },
     {
-     "s": 130.74,
-     "e": 136.72,
-     "text": "Ettan och tvåan nere vid bokstäverna är inga exponenter, de säger bara vilken punkt det gäller."
+     "s": 179.46,
+     "e": 183.46,
+     "text": "Ettan och tvåan nere vid bokstäverna är inga exponenter."
     },
     {
-     "s": 138.22,
-     "e": 144.44,
-     "text": "x ett och y ett är den första resan, och x två och y två är den andra."
-    },
-    {
-     "s": 145.74,
-     "e": 148.1,
-     "text": "Sedan får man m ur ett av kvittona."
-    },
-    {
-     "s": 149.38,
-     "e": 156.24,
-     "text": "2 kilometer kostar 2 gånger 15, alltså 30 kronor, men resan kostade 70,"
-    },
-    {
-     "s": 156.78,
-     "e": 165.24,
-     "text": "så startavgiften är 40 kronor och den nya taxin har funktionen y är lika med femton x plus 40."
-    },
-    {
-     "s": 166.94,
-     "e": 170.8,
-     "text": "På den tredje raden står samma sorts linje skriven på ett annat sätt,"
-    },
-    {
-     "s": 171.48,
-     "e": 176.22,
-     "text": "som a x plus b y plus c är lika med noll."
-    },
-    {
-     "s": 177.36,
-     "e": 185.74,
-     "text": "Drar man bort y från båda sidor kan den nya taxin skrivas som femton x minus y plus 40"
-    },
-    {
-     "s": 185.8,
-     "e": 186.84,
-     "text": "är lika med noll."
+     "s": 184.46,
+     "e": 186.82,
+     "text": "De säger bara vilket kvitto det gäller."
     },
     {
      "s": 188.12,
-     "e": 194.96,
-     "text": "Alltså är a lika med 15, b lika med minus 1 och c lika med 40."
+     "e": 194.9,
+     "text": "Det första kvittot ger x₁ och y₁, alltså 2 kilometer och 70 kronor."
     },
     {
-     "s": 196.44,
-     "e": 203.28,
-     "text": "Kvittot stämmer fortfarande, för 15 gånger 2 minus 70 plus 40 är noll."
+     "s": 195.9,
+     "e": 202.96,
+     "text": "Det andra kvittot ger x₂ och y₂, alltså 6 kilometer och 130 kronor."
     },
     {
-     "s": 204.78,
-     "e": 208.24,
-     "text": "Bredvid står att a och b inte båda får vara noll."
+     "s": 204.26,
+     "e": 208.58,
+     "text": "Ovanför bråkstrecket räknar vi y₂ minus y₁."
     },
     {
-     "s": 209.04,
-     "e": 214.28,
-     "text": "Då skulle både x och y försvinna ur formeln, och då finns ingen linje kvar att rita."
+     "s": 209.58,
+     "e": 212.58,
+     "text": "130 minus 70 är 60."
     },
     {
-     "s": 216.38,
-     "e": 219,
-     "text": "Exponentialfunktionen växer på ett annat sätt."
+     "s": 213.58,
+     "e": 217.3,
+     "text": "Den andra resan kostade alltså 60 kronor mer."
     },
     {
-     "s": 220.06,
-     "e": 227.16,
-     "text": "Sätter du in 1000 kronor på ett sparkonto med 5 procent ränta har du 1050 kronor efter"
+     "s": 218.6,
+     "e": 222.78,
+     "text": "Under bråkstrecket räknar vi x₂ minus x₁."
     },
     {
-     "s": 227.24,
-     "e": 231.24,
-     "text": "ett år, för 5 procent av 1000 är 50."
+     "s": 223.78,
+     "e": 226.12,
+     "text": "6 minus 2 är 4."
     },
     {
-     "s": 232.34,
-     "e": 235.72,
-     "text": "Det är samma sak som 1000 gånger 1,05."
+     "s": 227.12,
+     "e": 230.68,
+     "text": "Den andra resan var alltså 4 kilometer längre."
+    },
+    {
+     "s": 231.98,
+     "e": 236.16,
+     "text": "4 kilometer till kostade alltså 60 kronor till."
     },
     {
      "s": 237.16,
-     "e": 244.46,
+     "e": 242.08,
+     "text": "60 delat med 4 är 15, så k är 15."
+    },
+    {
+     "s": 243.08,
+     "e": 246.08,
+     "text": "Varje kilometer kostar 15 kronor."
+    },
+    {
+     "s": 247.38,
+     "e": 250.32,
+     "text": "Sedan tar vi fram m ur det första kvittot."
+    },
+    {
+     "s": 251.32,
+     "e": 256.6,
+     "text": "2 kilometer kostar 2 gånger 15, alltså 30 kronor."
+    },
+    {
+     "s": 257.6,
+     "e": 259.94,
+     "text": "Men resan kostade 70 kronor."
+    },
+    {
+     "s": 261.24,
+     "e": 267.38,
+     "text": "70 minus 30 är 40, så startavgiften m är 40 kronor."
+    },
+    {
+     "s": 268.38,
+     "e": 274.5,
+     "text": "Den nya taxin har alltså funktionen y är lika med 15x plus 40."
+    },
+    {
+     "s": 275.8,
+     "e": 279.98,
+     "text": "På den tredje raden står räta linjen skriven på ett annat sätt,"
+    },
+    {
+     "s": 280.38,
+     "e": 284.94,
+     "text": "som a x plus b y plus c är lika med 0."
+    },
+    {
+     "s": 285.94,
+     "e": 290.84,
+     "text": "Allt står på ena sidan av likhetstecknet, och noll står på den andra."
+    },
+    {
+     "s": 291.84,
+     "e": 298.72,
+     "text": "Den nya taxin skrivs då som 15x minus y plus 40 är lika med 0."
+    },
+    {
+     "s": 300.02,
+     "e": 304.5,
+     "text": "Talet a står framför x, så a är 15."
+    },
+    {
+     "s": 305.5,
+     "e": 311.58,
+     "text": "Framför y står bara ett minus, och minus y är minus 1 gånger y."
+    },
+    {
+     "s": 312.58,
+     "e": 314.52,
+     "text": "Så b är minus 1."
+    },
+    {
+     "s": 315.52,
+     "e": 319.48,
+     "text": "Talet c står ensamt, så c är 40."
+    },
+    {
+     "s": 320.78,
+     "e": 326.3,
+     "text": "Att det är samma linje ser vi om vi lägger till y på båda sidor av likhetstecknet."
+    },
+    {
+     "s": 327.3,
+     "e": 334.22,
+     "text": "Då står det 15x plus 40 är lika med y, och det är taxins funktion igen."
+    },
+    {
+     "s": 335.52,
+     "e": 338,
+     "text": "Nu kommer exponentialfunktionen."
+    },
+    {
+     "s": 339,
+     "e": 343.88,
+     "text": "Du sätter in 1000 kronor på ett sparkonto med 5 procent ränta."
+    },
+    {
+     "s": 344.88,
+     "e": 351.36,
+     "text": "5 procent av 1000 är 50, så efter ett år har du 1050 kronor."
+    },
+    {
+     "s": 352.66,
+     "e": 358.44,
+     "text": "Att lägga till 5 procent är samma sak som att gångra med 1,05."
+    },
+    {
+     "s": 359.44,
+     "e": 364.02,
+     "text": "För 100 procent plus 5 procent är 105 procent."
+    },
+    {
+     "s": 365.02,
+     "e": 369.14,
+     "text": "Varje år gångras alltså pengarna med 1,05."
+    },
+    {
+     "s": 370.44,
+     "e": 378.06,
      "text": "Året efter får du ränta på hela 1050 kronor, så pengarna gångras med 1,05 igen."
     },
     {
-     "s": 245.62,
-     "e": 257,
-     "text": "Efter 2 år har du alltså 1000 gånger 1,05 gånger 1,05, och det blir 1102 kronor och 50 öre."
+     "s": 379.06,
+     "e": 385.66,
+     "text": "Efter två år har du alltså 1000 gånger 1,05 gånger 1,05."
     },
     {
-     "s": 258.44,
-     "e": 264.58,
-     "text": "Efter x år har du därför 1000 gånger 1,05 upphöjt till x kronor."
+     "s": 386.66,
+     "e": 391.42,
+     "text": "Efter x år har du gångrat med 1,05 x gånger."
     },
     {
-     "s": 266.06,
-     "e": 272.02,
-     "text": "Räta linjen lägger till lika mycket för varje steg, men exponentialfunktionen gångrar"
+     "s": 392.42,
+     "e": 397.28,
+     "text": "Det skrivs 1000 gånger 1,05 upphöjt till x."
     },
     {
-     "s": 272.06,
-     "e": 273.68,
-     "text": "med lika mycket för varje steg."
+     "s": 398.58,
+     "e": 403.12,
+     "text": "Exponenten är det lilla talet uppe till höger, här x."
     },
     {
-     "s": 275.46,
-     "e": 282.68,
+     "s": 404.12,
+     "e": 406.96,
+     "text": "Den räknar hur många gånger vi gångrar."
+    },
+    {
+     "s": 407.96,
+     "e": 411.84,
+     "text": "Räta linjen lägger till lika mycket för varje steg."
+    },
+    {
+     "s": 412.84,
+     "e": 417.68,
+     "text": "Men exponentialfunktionen gångrar med lika mycket för varje steg."
+    },
+    {
+     "s": 418.98,
+     "e": 426.88,
      "text": "På formelbladet står exponentialfunktionen som y är lika med C gånger a upphöjt till x."
     },
     {
-     "s": 283.98,
-     "e": 290.4,
-     "text": "C är startvärdet, här 1000 kronor, och a är talet man gångrar med varje år,"
+     "s": 427.88,
+     "e": 431.38,
+     "text": "C är startvärdet, här 1000 kronor."
     },
     {
-     "s": 290.98,
-     "e": 295.1,
-     "text": "här 1,05, som kallas förändringsfaktorn."
+     "s": 432.38,
+     "e": 437.26,
+     "text": "a är talet man gångrar med varje år, här 1,05,"
     },
     {
-     "s": 296.56,
-     "e": 301.1,
-     "text": "Bredvid står att a ska vara större än noll och inte lika med 1."
+     "s": 437.7,
+     "e": 440.14,
+     "text": "och a kallas förändringsfaktorn."
     },
     {
-     "s": 302.4,
-     "e": 308.6,
-     "text": "Med a lika med 1 skulle kontot ha 1000 kronor varje år, och då förändras ingenting."
+     "s": 441.44,
+     "e": 444.7,
+     "text": "En förändringsfaktor kan också göra värdet mindre."
     },
     {
-     "s": 310.02,
-     "e": 313.38,
-     "text": "Är a mellan noll och 1 minskar värdet i stället."
+     "s": 445.7,
+     "e": 449.9,
+     "text": "En cykel tappar 10 procent av sitt värde varje år."
     },
     {
-     "s": 314.48,
-     "e": 320.68,
-     "text": "En cykel som tappar 10 procent av sitt värde varje år har förändringsfaktorn 0,9,"
+     "s": 450.9,
+     "e": 458.24,
+     "text": "100 procent minus 10 procent är 90 procent, så förändringsfaktorn är 0,9."
     },
     {
-     "s": 321.54,
-     "e": 326.12,
-     "text": "för 100 procent minus 10 procent är 90 procent."
+     "s": 459.54,
+     "e": 462.54,
+     "text": "Den sista raden är potensfunktionen."
     },
     {
-     "s": 327.82,
-     "e": 330.28,
-     "text": "Den sista funktionen är potensfunktionen."
+     "s": 463.54,
+     "e": 469.2,
+     "text": "En matta har formen av en kvadrat, så alla fyra sidorna är lika långa."
     },
     {
-     "s": 331.5,
-     "e": 339.58,
-     "text": "En kvadratisk matta med sidan 3 meter har arean 3 gånger 3, alltså 9 kvadratmeter,"
+     "s": 470.2,
+     "e": 477.2,
+     "text": "Är sidan 3 meter, är arean 3 gånger 3, alltså 9 kvadratmeter."
     },
     {
-     "s": 340.52,
-     "e": 345.06,
-     "text": "och med sidan x meter blir arean x upphöjt till 2."
+     "s": 478.5,
+     "e": 482.88,
+     "text": "Är sidan x meter, är arean x gånger x."
     },
     {
-     "s": 346.5,
-     "e": 354.22,
-     "text": "Kostar mattan 100 kronor per kvadratmeter blir priset 100 gånger x upphöjt till 2 kronor."
+     "s": 483.88,
+     "e": 486.22,
+     "text": "Det skrivs x upphöjt till 2."
     },
     {
-     "s": 355.7,
-     "e": 362.78,
-     "text": "Mattan med sidan 3 meter kostar alltså 100 gånger 9, och det är 900 kronor."
+     "s": 487.22,
+     "e": 494.74,
+     "text": "Mattan kostar 100 kronor per kvadratmeter, så priset blir 100 gånger x upphöjt till 2."
     },
     {
-     "s": 364.3,
-     "e": 371.8,
+     "s": 496.04,
+     "e": 502.88,
      "text": "På formelbladet står potensfunktionen som y är lika med C gånger x upphöjt till a."
     },
     {
-     "s": 373.12,
-     "e": 380.42,
-     "text": "C är talet framför, här 100 kronor, och a är exponenten, här 2."
+     "s": 503.88,
+     "e": 507.54,
+     "text": "C är talet framför, här 100 kronor."
     },
     {
-     "s": 381.86,
-     "e": 385.34,
-     "text": "Skillnaden mot exponentialfunktionen är var x står."
+     "s": 508.54,
+     "e": 511.4,
+     "text": "a är exponenten, här 2."
     },
     {
-     "s": 386.62,
-     "e": 393.5,
-     "text": "I exponentialfunktionen står x uppe i exponenten, men i potensfunktionen står x nere"
+     "s": 512.7,
+     "e": 519.6,
+     "text": "Exponentialfunktionen och potensfunktionen ser lika ut, men x står på olika ställen."
     },
     {
-     "s": 393.54,
-     "e": 397.34,
-     "text": "i basen och exponenten är ett fast tal."
+     "s": 520.6,
+     "e": 524.96,
+     "text": "I exponentialfunktionen står x uppe i exponenten."
     },
     {
-     "s": 398.88,
-     "e": 402.6,
-     "text": "På provet gäller det att känna igen vilken sorts funktion det är."
+     "s": 525.96,
+     "e": 532,
+     "text": "I potensfunktionen står x nere i basen, alltså talet som gångras,"
     },
     {
-     "s": 403.98,
-     "e": 409.52,
-     "text": "Ett gym kostar 300 kronor att gå med i och sedan 200 kronor i månaden."
+     "s": 532.42,
+     "e": 534.74,
+     "text": "och exponenten är ett fast tal."
     },
     {
-     "s": 410.78,
-     "e": 414.22,
-     "text": "Vilken sorts funktion är priset, och hur ser den ut?"
+     "s": 536.04,
+     "e": 542.42,
+     "text": "På provet står alla tre funktionerna under potenserna på första sidan av formelbladet."
     },
     {
-     "s": 415.68,
-     "e": 420.52,
-     "text": "Priset ökar med lika mycket varje månad, så det är räta linjen."
+     "s": 543.42,
+     "e": 548.84,
+     "text": "Du behöver inte kunna dem utantill, men du behöver veta vad bokstäverna betyder."
     },
     {
-     "s": 421.78,
-     "e": 432.18,
-     "text": "k är 200 kronor per månad och m är 300 kronor, så y är lika med tvåhundra x plus 300,"
+     "s": 550.14,
+     "e": 551.6,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 433.1,
-     "e": 435.22,
-     "text": "där x är antalet månader."
+     "s": 552.6,
+     "e": 557.38,
+     "text": "En taxi kostar en startavgift och ett pris per kilometer."
     },
     {
-     "s": 437.06,
-     "e": 444.12,
-     "text": "En mobil kostar 6000 kronor när den är ny och tappar 20 procent av sitt värde varje år."
+     "s": 558.38,
+     "e": 562.2,
+     "text": "En resa på 2 kilometer kostar 80 kronor."
     },
     {
-     "s": 445.38,
-     "e": 448.76,
-     "text": "Vilken sorts funktion är värdet, och hur ser den ut?"
+     "s": 563.2,
+     "e": 567.14,
+     "text": "En resa på 6 kilometer kostar 180 kronor."
+    },
+    {
+     "s": 568.14,
+     "e": 571.78,
+     "text": "Vad är k, alltså priset per kilometer?"
+    },
+    {
+     "s": 572.78,
+     "e": 575.92,
+     "text": "Och vad är m, alltså startavgiften?"
     }
    ]
   },
