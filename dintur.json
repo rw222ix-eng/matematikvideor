@@ -181,42 +181,41 @@
     ]
   },
   "formelbladet-1-prefix-och-potenser": {
-    "fraga": "Skriv 10⁶ · 10⁻³ som en enda potens, och säg vilket prefix det blir.",
+    "fraga": "Skriv 10⁴ · 10⁵ som en enda potens, och säg vilket prefix det blir.",
     "delar": [
       {
         "fraga": "Vilken potens blir det?",
         "typ": "tal",
-        "svar": 1000,
+        "svar": 1000000000,
         "exempel": "t.ex. 10^6",
         "tangenter": ["^", "-", "(", ")"],
         "fel": [
-          { "svar": "10^(-18)", "text": "Du har gångrat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 6 + (−3)." },
-          { "svar": "10^9", "text": "Exponenten −3 är negativ. 6 plus minus 3 är detsamma som 6 minus 3." },
-          { "svar": "10^(-2)", "text": "Du har delat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 6 + (−3)." }
+          { "svar": "10^20", "text": "Du har gångrat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 4 + 5." },
+          { "svar": "10^1", "text": "Du har dragit bort exponenterna. Det gör man när man delar. När man gångrar läggs de ihop: 4 + 5." },
+          { "svar": "100^9", "text": "Basen ska stå kvar som 10. Det är bara exponenterna som läggs ihop: 4 + 5." }
         ]
       },
       {
         "fraga": "Vilket prefix står för den tiopotensen?",
         "typ": "ord",
-        "svar": ["kilo", "k"],
+        "svar": ["giga", "G"],
         "exempel": "t.ex. mega",
         "fel": [
-          { "svar": ["mega", "M"], "text": "Mega är 10⁶, det tal du började med. Efter gånger 10⁻³ blir det en annan tiopotens." },
-          { "svar": ["milli", "m"], "text": "Milli är 10⁻³, det andra talet. Leta upp tiopotensen du fick i a) i tabellen." },
-          { "svar": ["giga", "G"], "text": "Giga är 10⁹. Exponenterna ska läggas ihop, och 6 + (−3) är 3." },
-          { "svar": ["K"], "text": "Nästan. Kilo skrivs med litet k, stort K är inget prefix." }
+          { "svar": ["mega", "M"], "text": "Mega är 10⁶. Leta upp tiopotensen du fick i a) i tabellen." },
+          { "svar": ["tera", "T"], "text": "Tera är 10¹². Exponenterna ska läggas ihop, och 4 + 5 är 9." },
+          { "svar": ["g"], "text": "Nästan. Giga skrivs med stort G, litet g betyder gram." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Exponenterna läggs ihop, och 2 plus 4",
+      "fras": "Baserna är lika, så vi lägger ihop",
       "text": "När två tiopotenser gångras läggs exponenterna ihop. Sedan letar du upp tiopotensen i prefixtabellen."
     },
     "losning": [
       "När två tiopotenser gångras läggs exponenterna ihop.",
-      "10⁶ · 10⁻³ = 10^(6 + (−3))",
-      "6 + (−3) = 3, så det blir 10³.",
-      "I tabellen står 10³ under bokstaven k, och det är kilo."
+      "10⁴ · 10⁵ = 10^(4 + 5)",
+      "4 + 5 = 9, så det blir 10⁹.",
+      "I tabellen står 10⁹ under bokstaven G, och det är giga."
     ],
     "notisFran": "Prefixen och potenserna hänger ihop"
   },
