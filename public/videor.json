@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T15:47:55.153Z",
+ "byggd": "2026-10-03T16:32:58.480Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -5712,12 +5712,13 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-05-addera-vektorer-v1/ma1c-k6-05-addera-vektorer-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-05-addera-vektorer-v2/ma1c-k6-05-addera-vektorer-1080p.mp4",
    "moment": "Vektorer i koordinatform",
    "begrepp": [
     "vektor",
     "koordinatform",
     "koordinater",
+    "origo",
     "basvektor",
     "komposant",
     "x-komposant",
@@ -5727,587 +5728,807 @@
     "längd",
     "Pythagoras sats",
     "ett tal gånger en vektor",
-    "parallella vektorer",
     "slutpunkt minus startpunkt"
    ],
-   "beskrivning": "Myteriet på Bounty 1789: William Bligh och arton man sätts i en öppen båt utan karta och seglar 6 700 kilometer till Timor. Varje dag lägger Bligh ihop hur långt båten seglat västerut och norrut. Så räknar vi med vektorer i koordinatform: koordinater, basvektorer och komposanter, addition och subtraktion, längden med Pythagoras sats, ett tal gånger en vektor och parallella vektorer.",
+   "beskrivning": "Maj 1789: William Bligh och sjutton män sitter i en öppen båt mitt på Stilla havet, utan karta, och måste hitta till Timor. Varje dag lägger Bligh ihop hur långt båten har seglat västerut och norrut. Så räknar vi med vektorer i koordinatform: koordinater, basvektorer och komposanter, addition och subtraktion, längden med Pythagoras sats och ett tal gånger en vektor.",
    "youtube": null,
-   "langd": 445,
+   "langd": 499,
    "omslag": "omslag/ma1c-k6-05-addera-vektorer.jpg?v=ddb64340",
    "omslagRen": "omslag/ma1c-k6-05-addera-vektorer-ren.jpg?v=4c71e76f",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 0,
-     "text": "Våren 1789 lämnade det brittiska skeppet Bounty ön Tahiti i Stilla havet, lastat med över tusen brödfruktsplantor. Kaptenen hette William Bligh, och många av männen ville hellre stanna kvar på Tahiti än segla hem med honom."
+     "t": 1,
+     "text": "Det är maj 1789. William Bligh sitter i en öppen båt mitt på Stilla havet, tillsammans med sjutton män. Båten är bara sju meter lång."
     },
     {
-     "t": 20,
-     "text": "Bligh skällde ofta ut besättningen, och den 28 april gjorde en del av männen myteri. De tvingade ner Bligh och arton man i en öppen båt som bara var sju meter lång."
+     "t": 15,
+     "text": "Bligh var kapten på det brittiska skeppet Bounty. Men en del av besättningen tog skeppet ifrån honom. De satte Bligh och männen som stod på hans sida i skeppets lilla båt, och sedan seglade de iväg med Bounty."
     },
     {
-     "t": 34,
-     "text": "I båten fick de bröd och vatten för några dagar och en kompass, men ingen karta och ingen klocka. När de gick i land på ön Tofua för att hämta mat blev de anfallna, och en av männen dödades."
+     "t": 32,
+     "text": "I båten har de lite bröd, lite vatten och en kompass, men ingen karta. Den närmaste platsen där de kan få hjälp är en holländsk stad på ön Timor. Den ligger mer än sextusen kilometer västerut."
     },
     {
      "t": 50,
-     "text": "Den närmaste platsen där de kunde få hjälp var en holländsk stad på ön Timor, sextusen sjuhundra kilometer västerut. Frågan var hur Bligh skulle hitta dit, när han bara såg hav åt alla håll."
+     "text": "Bligh måste hela tiden veta var båten är, annars kan de segla förbi Timor. Men runt omkring dem finns bara hav, åt alla håll. Hur ska han kunna veta var de är?"
     },
     {
-     "t": 66,
-     "text": "Med kompassen höll Bligh riktningen, och farten mätte han med ett rep med knutar som de släppte ut i vattnet. Varje dag mitt på dagen räknade han ut hur långt båten hade seglat västerut och hur långt norrut, och det lade han ihop med alla dagar före."
+     "t": 65,
+     "text": "Med kompassen ser Bligh åt vilket håll båten seglar. Farten mäter han med ett rep med knutar, som de släpper ut i vattnet. Mitt på dagen räknar han ut hur långt båten har seglat västerut och hur långt norrut. Sedan lägger han ihop det med alla dagarna före."
     },
     {
-     "t": 85,
-     "text": "Det Bligh räknade med kallas vektorer, och vi ska göra samma sak som han, en dag i taget."
+     "t": 86,
+     "text": "Det som Bligh räknar med kallas i dag vektorer. Vi ska göra som han, en dag i taget."
     },
     {
      "t": 94,
-     "text": "En vektor är en pil med en längd och en riktning, och varje dag i båten är en sådan pil. Nästa dags pil börjar där den förra dagens pil slutade."
+     "text": "En vektor är en pil som har en längd och en riktning. Varje dags resa blir en sådan pil. Nästa dags pil börjar där förra dagens pil slutade."
     },
     {
-     "t": 107,
-     "text": "Vi lägger ett rutnät över havet med Tofua i origo. x-axeln pekar österut och y-axeln norrut, och en ruta är hundra kilometer. Båten seglar västerut, alltså åt vänster, och därför blir stegen i x-led negativa."
+     "t": 108,
+     "text": "Vi lägger ett rutnät över havet, med en x-axel och en y-axel. Axlarna korsar varandra i origo, och där lägger vi platsen där båtresan började. x-axeln pekar österut och y-axeln norrut. En ruta är femtio kilometer."
     },
     {
-     "t": 128,
-     "text": "En dag seglade de ungefär två rutor västerut och en ruta norrut. Den dagens vektor kallar vi u, och i koordinatform skrivs den med stegen i x-led först och stegen i y-led sedan. Alltså är u lika med minus två och ett."
+     "t": 129,
+     "text": "Båten seglar västerut, alltså åt vänster. Åt vänster går x-axeln mot de negativa talen. Därför får stegen västerut ett minustecken."
     },
     {
-     "t": 149,
-     "text": "Boken kallar ett steg på en ruta österut för basvektorn e med ett litet x, och ett steg norrut för e med ett litet y. Då är u lika med minus två gånger e x plus ett gånger e y, och de två delarna kallas vektorns x-komposant och y-komposant."
+     "t": 143,
+     "text": "Första dagen seglar båten tre rutor västerut och en ruta norrut. Den dagens pil kallar vi vektorn u. I koordinatform skriver man stegen i x-led först och stegen i y-led sedan, inom en parentes. Alltså är u lika med minus tre och ett."
     },
     {
-     "t": 174,
-     "text": "Dagen efter seglade de två rutor västerut och två norrut, så vektorn v är minus två och två. För att få båda dagarna tillsammans lägger man ihop stegen i x-led för sig och stegen i y-led för sig."
+     "t": 166,
+     "text": "I boken kallas en pil som går en ruta åt höger för basvektorn e x. En pil som går en ruta uppåt kallas e y. Vektorn u är alltså minus tre gånger e x plus ett gånger e y. De två delarna kallas vektorns x-komposant och y-komposant."
     },
     {
-     "t": 193,
-     "text": "Minus två plus minus två är minus fyra, och ett plus två är tre. Alltså är u plus v lika med minus fyra och tre, och efter två dagar låg båten fyra rutor väster och tre rutor norr om Tofua."
+     "t": 191,
+     "text": "Andra dagen seglar båten en ruta västerut och två rutor norrut. Den vektorn kallar vi v, och den är minus ett och två. Var ligger båten efter två dagar? Det får vi veta om vi lägger ihop u och v."
     },
     {
-     "t": 215,
-     "text": "Den regeln står på formelbladet under rubriken vektorer, tillsammans med reglerna för minus, för ett tal gånger en vektor och för längden."
+     "t": 210,
+     "text": "Med pilar lägger vi v efter u, så att v börjar där u slutar. Med koordinater lägger vi ihop stegen i x-led för sig och stegen i y-led för sig. I x-led blir det minus tre plus minus ett, alltså minus fyra. I y-led blir det ett plus två, alltså tre."
     },
     {
-     "t": 227,
-     "text": "Hur långt från Tofua var båten, rakt fågelvägen? De fyra stegen västerut och de tre norrut bildar en rätvinklig triangel, och vägen rakt från Tofua är hypotenusan. Därför räknas vektorns längd med Pythagoras sats."
+     "t": 237,
+     "text": "Alltså är u plus v lika med minus fyra och tre. Efter två dagar ligger båten fyra rutor väster och tre rutor norr om starten."
     },
     {
-     "t": 247,
-     "text": "Minus fyra i kvadrat är sexton, för minus gånger minus blir plus, och tre i kvadrat är nio. Sexton plus nio är tjugofem, och roten ur tjugofem är fem. Båten var alltså fem rutor, eller femhundra kilometer, från Tofua."
+     "t": 251,
+     "text": "Regeln för plus står på formelbladet, längst ner under rubriken vektorer. Där står också regeln för minus, regeln för ett tal gånger en vektor och regeln för längden."
     },
     {
-     "t": 271,
-     "text": "Timor ligger ungefär sextiosex rutor väster och elva rutor norr om Tofua. Vilken vektor tar båten dit från platsen där den låg? Den okända vektorn kallar vi x och y."
+     "t": 265,
+     "text": "Hur långt från starten ligger båten nu, om man mäter rakt? De fyra stegen västerut och de tre stegen norrut bildar en rätvinklig triangel. Den raka vägen är triangelns längsta sida, och den kallas hypotenusan."
     },
     {
-     "t": 288,
-     "text": "Två vektorer är lika bara om stegen i x-led är lika och stegen i y-led är lika. Därför blir en ekvation med vektorer två vanliga ekvationer: minus fyra plus x är minus sextiosex, och tre plus y är elva."
+     "t": 284,
+     "text": "Pythagoras sats säger att hypotenusan i kvadrat är lika med de två kortare sidorna i kvadrat, ihoplagda. Därför räknar man en vektors längd så här: x-steget i kvadrat plus y-steget i kvadrat, och sedan roten ur."
     },
     {
-     "t": 311,
-     "text": "Då är x minus sextiotvå och y åtta. Det är samma sak som Timor minus båten, för minus sextiosex minus minus fyra är minus sextiotvå. En vektor från en punkt till en annan får man alltid så, slutpunkten minus startpunkten."
+     "t": 303,
+     "text": "Minus fyra i kvadrat är sexton, för minus gånger minus blir plus. Tre i kvadrat är nio. Sexton plus nio är tjugofem. Roten ur tjugofem är fem."
     },
     {
-     "t": 336,
-     "text": "Om båten seglade tre dagar i rad åt samma håll som i vektorn v blir det tre gånger v, och då gångras båda stegen med tre, så det blir minus sex och sex. I boken heter talet framför vektorn k, och på formelbladet heter det s."
+     "t": 320,
+     "text": "Längden av u plus v är alltså fem rutor. En ruta är femtio kilometer, så båten ligger tvåhundrafemtio kilometer från starten. Längden skrivs med ett lodrätt streck på var sida om vektorn."
     },
     {
-     "t": 358,
-     "text": "Vektorer som man får på det sättet, med ett tal gånger en annan vektor, är parallella. Är talet negativt pekar de rakt åt motsatt håll. Minus fyra och tre är inte parallell med v, för x-steget kräver gånger två men y-steget gånger en och en halv."
+     "t": 338,
+     "text": "Hur långt är det då kvar till Timor? Timor ligger ungefär hundratrettio rutor väster och tjugo rutor norr om starten. Timors punkt är alltså minus hundratrettio och tjugo."
     },
     {
-     "t": 382,
-     "text": "Nu ett övningstal. En vektor har koordinaterna a och tre, och längden fem. Bestäm talet a."
+     "t": 353,
+     "text": "Vägen som är kvar är en pil från båten till Timor. En pil mellan två punkter får man genom att ta slutpunkten minus startpunkten. Det beror på att båtens pil plus pilen som är kvar ska bli pilen till Timor. Här blir det alltså Timor minus båten."
     },
     {
-     "t": 393,
-     "text": "Enligt Pythagoras ska a i kvadrat plus nio vara tjugofem, så a i kvadrat är sexton. Talet a kan alltså vara fyra eller minus fyra, för båda blir sexton i kvadrat."
+     "t": 377,
+     "text": "Med koordinater drar vi ifrån stegen i x-led för sig och stegen i y-led för sig. I x-led blir det minus hundratrettio minus minus fyra. Minus och minus blir plus, så det är minus hundratrettio plus fyra. Det blir minus hundratjugosex."
     },
     {
-     "t": 412,
-     "text": "Den 14 juni 1789, efter fyrtiosju dagar i båten, kom de fram till staden Kupang på Timor. Alla arton som var kvar i båten levde, och i sin bok om resan skrev Bligh för varje dag hur långt de hade seglat och åt vilket håll."
+     "t": 401,
+     "text": "I y-led blir det tjugo minus tre, alltså sjutton. Vägen som är kvar är minus hundratjugosex och sjutton. Båten har alltså hundratjugosex rutor kvar västerut och sjutton rutor kvar norrut."
     },
     {
-     "t": 433,
-     "text": "Tänk dig en dag då Bligh seglade åt samma håll som i vektorn u, men längre. Skriv den dagens vektor i koordinatform."
+     "t": 419,
+     "text": "Om båten seglar tre dagar i rad som vektorn v, blir det tre gånger v. Ett tal gånger en vektor gångrar båda stegen med talet. Tre gånger minus ett är minus tre. Tre gånger två är sex. Alltså är tre v lika med minus tre och sex. På formelbladet heter talet framför vektorn s, och i boken heter det k."
+    },
+    {
+     "t": 451,
+     "text": "Den fjortonde juni 1789, efter fyrtiosju dagar i båten, kom de fram till Timor. Ingen av dem hade dött under seglingen. Bligh skrev sedan en bok om resan, och i den står varje dags väg västerut och norrut."
+    },
+    {
+     "t": 472,
+     "text": "Nu är det din tur. En dag seglar båten enligt vektorn u, som är minus fyra och ett. Dagen efter seglar den enligt vektorn v, som är minus två och sju. Skriv u plus v i koordinatform. Hur många rutor från starten ligger båten då, om man mäter rakt?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
-     "rubrik": "Myteriet på Bounty",
+     "t": 1,
+     "rubrik": "Bligh i båten",
      "typ": "historia"
     },
     {
-     "t": 66,
+     "t": 65,
      "rubrik": "Bligh räknar dag för dag",
      "typ": "historia"
     },
     {
      "t": 94,
-     "rubrik": "Koordinatform och basvektorer",
+     "rubrik": "Rutnät och koordinatform",
      "typ": "matte"
     },
     {
-     "t": 174,
+     "t": 166,
+     "rubrik": "Basvektorer och komposanter",
+     "typ": "matte"
+    },
+    {
+     "t": 191,
      "rubrik": "Addition: två dagar i båten",
      "typ": "matte"
     },
     {
-     "t": 227,
+     "t": 265,
      "rubrik": "Längden med Pythagoras sats",
      "typ": "matte"
     },
     {
-     "t": 271,
-     "rubrik": "Subtraktion: vägen till Timor",
+     "t": 338,
+     "rubrik": "Subtraktion: vägen kvar till Timor",
      "typ": "matte"
     },
     {
-     "t": 336,
-     "rubrik": "Ett tal gånger en vektor och parallella vektorer",
+     "t": 419,
+     "rubrik": "Ett tal gånger en vektor",
      "typ": "matte"
     },
     {
-     "t": 382,
-     "rubrik": "Övningstal: bestäm talet a",
-     "typ": "matte"
-    },
-    {
-     "t": 415,
-     "rubrik": "Framme i Kupang",
+     "t": 451,
+     "rubrik": "Framme vid Timor",
      "typ": "historia"
     },
     {
-     "t": 433,
-     "rubrik": "En längre dag",
+     "t": 472,
+     "rubrik": "Din tur: u plus v och längden",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "Tänk dig en dag då Bligh seglade åt samma håll som vektorn u = (−2, 1), men dubbelt så långt.",
+    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7).",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "b01-uppslag-kompass",
+     "tema": "papper",
+     "utsnitt": [
+      180,
+      120,
+      1120,
+      630
+     ],
+     "text": "Rutat papper med start i origo nere till höger. Vektorn u går från start fyra rutor åt vänster och en ruta uppåt. Vektorn v börjar där u slutar och går två rutor åt vänster och sju rutor uppåt.",
+     "delar": [
+      {
+       "typ": "rutnat",
+       "fran": [
+        500,
+        180
+       ],
+       "till": [
+        920,
+        660
+       ],
+       "steg": 60
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        920,
+        660
+       ],
+       "r": 7
+      },
+      {
+       "typ": "text",
+       "vid": [
+        935,
+        710
+       ],
+       "text": "start",
+       "ankare": "start"
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        920,
+        660
+       ],
+       "till": [
+        680,
+        600
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        800,
+        670
+       ],
+       "text": "u"
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        680,
+        600
+       ],
+       "till": [
+        560,
+        180
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        575,
+        430
+       ],
+       "text": "v",
+       "ankare": "end"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        230,
+        300
+       ],
+       "text": "u = (−4, 1)",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        230,
+        380
+       ],
+       "text": "v = (−2, 7)",
+       "ankare": "start"
+      }
+     ]
+    },
     "delar": [
      {
-      "fraga": "Vad blir x-koordinaten för den dagens vektor?",
+      "fraga": "Skriv u + v i koordinatform. Vad blir x-koordinaten?",
       "typ": "tal",
-      "svar": -4,
+      "svar": -6,
       "exempel": "t.ex. −3",
       "fel": [
        {
-        "svar": "4",
-        "text": "Båten seglar västerut, åt vänster. Då är steget i x-led negativt."
+        "svar": "6",
+        "text": "Båda dagarna går västerut, åt vänster. Då blir x-koordinaten negativ."
        },
        {
         "svar": "-2",
-        "text": "Det är x-koordinaten för u. Dubbelt så långt betyder 2 gånger u, så båda stegen gångras med 2."
+        "text": "Det är bara v:s steg i x-led. Lägg ihop stegen i x-led: −4 + (−2)."
        },
        {
-        "svar": "-3",
-        "text": "Du har lagt till 1. Dubbelt så långt betyder 2 gånger u: gånga steget med 2."
+        "svar": "8",
+        "text": "8 är stegen i y-led. x-led är öster–väster: −4 + (−2)."
        }
       ]
      },
      {
-      "fraga": "Vad blir y-koordinaten?",
+      "fraga": "Vad blir y-koordinaten för u + v?",
       "typ": "tal",
-      "svar": 2,
-      "exempel": "t.ex. 3",
+      "svar": 8,
+      "exempel": "t.ex. 5",
       "fel": [
        {
-        "svar": "1",
-        "text": "Det är y-koordinaten för u. När vektorn gångras med 2 gångras BÅDA stegen, även y-steget."
+        "svar": "-8",
+        "text": "Norrut är uppåt. Då blir y-koordinaten positiv: 1 + 7."
        },
        {
-        "svar": "-2",
-        "text": "Båten seglar norrut, uppåt. Då är steget i y-led positivt."
+        "svar": "7",
+        "text": "Det är bara v:s steg i y-led. Lägg ihop stegen i y-led: 1 + 7."
+       },
+       {
+        "svar": "-6",
+        "text": "−6 är stegen i x-led. y-led är norrut: 1 + 7."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur många rutor från starten ligger båten då, om man mäter rakt?",
+      "typ": "tal",
+      "svar": 10,
+      "enhet": "rutor",
+      "exempel": "t.ex. 7",
+      "fel": [
+       {
+        "svar": "14",
+        "text": "Du har lagt ihop stegen, 6 + 8. Den raka vägen är hypotenusan: roten ur 6² + 8²."
+       },
+       {
+        "svar": "100",
+        "text": "Det är 6² + 8². Längden är roten ur det talet."
+       },
+       {
+        "svar": "2",
+        "text": "Det är 8 − 6. Den raka vägen räknas med Pythagoras sats: roten ur 6² + 8²."
        }
       ]
      }
     ],
     "ledtrad": {
-     "text": "Samma håll men längre betyder ett tal gånger vektorn. Dubbelt så långt är 2 gånger u, och då gångras båda stegen med 2.",
-     "t": 336
+     "text": "Lägg ihop stegen i x-led för sig och stegen i y-led för sig. Räkna sedan längden med Pythagoras sats: x-steget i kvadrat plus y-steget i kvadrat, och sedan roten ur.",
+     "t": 217
     },
     "losning": [
-     "Samma håll, dubbelt så långt: 2 · u.",
-     "2 · (−2, 1) = (2 · (−2), 2 · 1).",
-     "= (−4, 2).",
-     "Kontroll: (−4, 2) är parallell med u, för båda stegen är 2 gånger så stora."
+     "u + v = (−4 + (−2), 1 + 7).",
+     "= (−6, 8).",
+     "Längden: (−6)² + 8² = 36 + 64 = 100.",
+     "Roten ur 100 är 10, så båten ligger 10 rutor från starten."
     ],
-    "notisFran": 382
+    "notisFran": 265
    },
    "undertext": [
     {
-     "s": 0.16,
-     "e": 6.86,
-     "text": "Våren 1789 lämnade det brittiska skeppet Bounty ön Tahiti i Stilla havet,"
+     "s": 1.5,
+     "e": 3.84,
+     "text": "Det är maj 1789."
     },
     {
-     "s": 7.34,
-     "e": 10.54,
-     "text": "lastat med över tusen brödfruktsplantor."
+     "s": 4.84,
+     "e": 10.96,
+     "text": "William Bligh sitter i en öppen båt mitt på Stilla havet, tillsammans med sjutton män."
     },
     {
-     "s": 11.32,
-     "e": 16.84,
-     "text": "Kaptenen hette William Bligh, och många av männen ville hellre stanna kvar på Tahiti"
+     "s": 11.96,
+     "e": 14.2,
+     "text": "Båten är bara 7 meter lång."
     },
     {
-     "s": 17.3,
-     "e": 19.08,
-     "text": "än segla hem med honom."
+     "s": 15.5,
+     "e": 18.8,
+     "text": "Bligh var kapten på det brittiska skeppet Bounty."
     },
     {
-     "s": 20.34,
-     "e": 26.96,
-     "text": "Bligh skällde ofta ut besättningen, och den 28 april gjorde en del av männen myteri."
+     "s": 19.8,
+     "e": 22.78,
+     "text": "Men en del av besättningen tog skeppet ifrån honom."
     },
     {
-     "s": 27.74,
-     "e": 33.6,
-     "text": "De tvingade ner Bligh och arton man i en öppen båt som bara var sju meter lång."
+     "s": 23.78,
+     "e": 28.3,
+     "text": "De satte Bligh och männen som stod på hans sida i skeppets lilla båt,"
     },
     {
-     "s": 34.8,
-     "e": 38.92,
-     "text": "I båten fick de bröd och vatten för några dagar och en kompass,"
+     "s": 28.84,
+     "e": 31.36,
+     "text": "och sedan seglade de iväg med Bounty."
     },
     {
-     "s": 39.38,
-     "e": 41.88,
-     "text": "men ingen karta och ingen klocka."
+     "s": 32.66,
+     "e": 38.56,
+     "text": "I båten har de lite bröd, lite vatten och en kompass, men ingen karta."
     },
     {
-     "s": 42.96,
-     "e": 47.32,
-     "text": "När de gick i land på ön Tofua för att hämta mat blev de anfallna,"
+     "s": 39.56,
+     "e": 44.6,
+     "text": "Den närmaste platsen där de kan få hjälp är en holländsk stad på ön Timor."
     },
     {
-     "s": 47.86,
-     "e": 49.56,
-     "text": "och en av männen dödades."
+     "s": 45.6,
+     "e": 49.04,
+     "text": "Den ligger mer än 6 000 kilometer västerut."
     },
     {
-     "s": 50.74,
-     "e": 55.52,
-     "text": "Den närmaste platsen där de kunde få hjälp var en holländsk stad på ön Timor,"
+     "s": 50.34,
+     "e": 56.12,
+     "text": "Bligh måste hela tiden veta var båten är, annars kan de segla förbi Timor."
     },
     {
-     "s": 56.1,
-     "e": 59.04,
-     "text": "6 700 kilometer västerut."
+     "s": 57.12,
+     "e": 61.16,
+     "text": "Men runt omkring dem finns bara hav, åt alla håll."
     },
     {
-     "s": 59.86,
-     "e": 64.74,
-     "text": "Frågan var hur Bligh skulle hitta dit, när han bara såg hav åt alla håll."
+     "s": 62.16,
+     "e": 64.08,
+     "text": "Hur ska han kunna veta var de är?"
     },
     {
-     "s": 66.12,
-     "e": 72.44,
-     "text": "Med kompassen höll Bligh riktningen, och farten mätte han med ett rep med knutar som"
+     "s": 65.38,
+     "e": 68.96,
+     "text": "Med kompassen ser Bligh åt vilket håll båten seglar."
     },
     {
-     "s": 72.48,
-     "e": 73.84,
-     "text": "de släppte ut i vattnet."
+     "s": 69.96,
+     "e": 74.3,
+     "text": "Farten mäter han med ett rep med knutar, som de släpper ut i vattnet."
     },
     {
-     "s": 74.72,
-     "e": 80.78,
-     "text": "Varje dag mitt på dagen räknade han ut hur långt båten hade seglat västerut och hur långt"
+     "s": 75.3,
+     "e": 80.9,
+     "text": "Mitt på dagen räknar han ut hur långt båten har seglat västerut och hur långt norrut."
     },
     {
-     "s": 80.9,
-     "e": 84.52,
-     "text": "norrut, och det lade han ihop med alla dagar före."
+     "s": 81.9,
+     "e": 85.02,
+     "text": "Sedan lägger han ihop det med alla dagarna före."
     },
     {
-     "s": 85.64,
-     "e": 91.26,
-     "text": "Det Bligh räknade med kallas vektorer, och vi ska göra samma sak som han,"
+     "s": 86.32,
+     "e": 89.38,
+     "text": "Det som Bligh räknar med kallas i dag vektorer."
     },
     {
-     "s": 91.74,
-     "e": 93.18,
-     "text": "en dag i taget."
+     "s": 90.38,
+     "e": 93.1,
+     "text": "Vi ska göra som han, en dag i taget."
     },
     {
-     "s": 94.74,
-     "e": 101.68,
-     "text": "En vektor är en pil med en längd och en riktning, och varje dag i båten är en sådan pil."
+     "s": 94.4,
+     "e": 98.04,
+     "text": "En vektor är en pil som har en längd och en riktning."
+    },
+    {
+     "s": 99.04,
+     "e": 101.78,
+     "text": "Varje dags resa blir en sådan pil."
     },
     {
      "s": 102.78,
-     "e": 106.66,
-     "text": "Nästa dags pil börjar där den förra dagens pil slutade."
+     "e": 106.74,
+     "text": "Nästa dags pil börjar där förra dagens pil slutade."
     },
     {
-     "s": 107.72,
-     "e": 111.5,
-     "text": "Vi lägger ett rutnät över havet med Tofua i origo."
+     "s": 108.04,
+     "e": 113.06,
+     "text": "Vi lägger ett rutnät över havet, med en x-axel och en y-axel."
     },
     {
-     "s": 112.72,
-     "e": 119.14,
-     "text": "x-axeln pekar österut och y-axeln norrut, och en ruta är hundra kilometer."
+     "s": 114.06,
+     "e": 120,
+     "text": "Axlarna korsar varandra i origo, och där lägger vi platsen där båtresan började."
     },
     {
-     "s": 120.18,
-     "e": 126.84,
-     "text": "Båten seglar västerut, alltså åt vänster, och därför blir stegen i x-led negativa."
+     "s": 121,
+     "e": 124.72,
+     "text": "x-axeln pekar österut och y-axeln norrut."
     },
     {
-     "s": 128.14,
-     "e": 133.36,
-     "text": "En dag seglade de ungefär två rutor västerut och en ruta norrut."
+     "s": 125.72,
+     "e": 128.08,
+     "text": "En ruta är 50 kilometer."
     },
     {
-     "s": 134.22,
-     "e": 141.36,
-     "text": "Den dagens vektor kallar vi u, och i koordinatform skrivs den med stegen i x-led först"
+     "s": 129.38,
+     "e": 133,
+     "text": "Båten seglar västerut, alltså åt vänster."
     },
     {
-     "s": 141.42,
-     "e": 143.7,
-     "text": "och stegen i y-led sedan."
+     "s": 134,
+     "e": 137.72,
+     "text": "Åt vänster går x-axeln mot de negativa talen."
     },
     {
-     "s": 144.54,
-     "e": 148.7,
-     "text": "Alltså är u lika med minus två och ett."
+     "s": 138.72,
+     "e": 141.96,
+     "text": "Därför får stegen västerut ett minustecken."
     },
     {
-     "s": 149.84,
-     "e": 155.84,
-     "text": "Boken kallar ett steg på en ruta österut för basvektorn e med ett litet x,"
+     "s": 143.26,
+     "e": 148.6,
+     "text": "Första dagen seglar båten tre rutor västerut och en ruta norrut."
     },
     {
-     "s": 156.5,
-     "e": 159.52,
-     "text": "och ett steg norrut för e med ett litet y."
+     "s": 149.6,
+     "e": 152.34,
+     "text": "Den dagens pil kallar vi vektorn u."
     },
     {
-     "s": 160.56,
-     "e": 169.92,
-     "text": "Då är u lika med minus två gånger e x plus ett gånger e y, och de två delarna kallas"
+     "s": 153.34,
+     "e": 158.98,
+     "text": "I koordinatform skriver man stegen i x-led först och stegen i y-led sedan,"
     },
     {
-     "s": 169.98,
-     "e": 173.48,
-     "text": "vektorns x-komposant och y-komposant."
+     "s": 159.24,
+     "e": 160.34,
+     "text": "inom en parentes."
     },
     {
-     "s": 174.98,
-     "e": 183.84,
-     "text": "Dagen efter seglade de två rutor västerut och två norrut, så vektorn v är minus två och två."
+     "s": 161.34,
+     "e": 165.02,
+     "text": "Alltså är u lika med (−3, 1)."
     },
     {
-     "s": 185.06,
-     "e": 191,
-     "text": "För att få båda dagarna tillsammans lägger man ihop stegen i x-led för sig och stegen"
+     "s": 166.32,
+     "e": 172.34,
+     "text": "I boken kallas en pil som går en ruta åt höger för basvektorn eₓ."
     },
     {
-     "s": 191.1,
-     "e": 192.44,
-     "text": "i y-led för sig."
+     "s": 173.34,
+     "e": 177,
+     "text": "En pil som går en ruta uppåt kallas eᵧ."
     },
     {
-     "s": 193.58,
-     "e": 200.2,
-     "text": "Minus två plus minus två är minus fyra, och ett plus två är tre."
+     "s": 178,
+     "e": 184.3,
+     "text": "Vektorn u är alltså −3 · eₓ + 1 · eᵧ."
     },
     {
-     "s": 201.1,
-     "e": 210.4,
-     "text": "Alltså är u plus v lika med minus fyra och tre, och efter två dagar låg båten fyra rutor"
+     "s": 185.3,
+     "e": 190.18,
+     "text": "De två delarna kallas vektorns x-komposant och y-komposant."
     },
     {
-     "s": 210.46,
-     "e": 214.06,
-     "text": "väster och tre rutor norr om Tofua."
+     "s": 191.48,
+     "e": 196.76,
+     "text": "Andra dagen seglar båten en ruta västerut och två rutor norrut."
     },
     {
-     "s": 215.6,
-     "e": 221.32,
-     "text": "Den regeln står på formelbladet under rubriken vektorer, tillsammans med reglerna för"
+     "s": 197.76,
+     "e": 202.2,
+     "text": "Den vektorn kallar vi v, och den är (−1, 2)."
     },
     {
-     "s": 221.42,
-     "e": 225.64,
-     "text": "minus, för ett tal gånger en vektor och för längden."
+     "s": 203.2,
+     "e": 205.72,
+     "text": "Var ligger båten efter två dagar?"
     },
     {
-     "s": 227.08,
-     "e": 230.86,
-     "text": "Hur långt från Tofua var båten, rakt fågelvägen?"
+     "s": 206.72,
+     "e": 209.52,
+     "text": "Det får vi veta om vi lägger ihop u och v."
     },
     {
-     "s": 232.04,
-     "e": 237.78,
-     "text": "De fyra stegen västerut och de tre norrut bildar en rätvinklig triangel,"
+     "s": 210.82,
+     "e": 216.6,
+     "text": "Med pilar lägger vi v efter u, så att v börjar där u slutar."
     },
     {
-     "s": 238.28,
-     "e": 241.84,
-     "text": "och vägen rakt från Tofua är hypotenusan."
+     "s": 217.6,
+     "e": 223.52,
+     "text": "Med koordinater lägger vi ihop stegen i x-led för sig och stegen i y-led för sig."
     },
     {
-     "s": 242.74,
-     "e": 246.2,
-     "text": "Därför räknas vektorns längd med Pythagoras sats."
+     "s": 224.52,
+     "e": 230.92,
+     "text": "I x-led blir det −3 + (−1), alltså −4."
     },
     {
-     "s": 247.42,
-     "e": 253.3,
-     "text": "Minus fyra i kvadrat är sexton, för minus gånger minus blir plus,"
+     "s": 231.92,
+     "e": 236.18,
+     "text": "I y-led blir det 1 + 2, alltså 3."
     },
     {
-     "s": 254.1,
-     "e": 256.34,
-     "text": "och tre i kvadrat är nio."
+     "s": 237.48,
+     "e": 242.24,
+     "text": "Alltså är u plus v lika med (−4, 3)."
     },
     {
-     "s": 257.56,
-     "e": 263.38,
-     "text": "Sexton plus nio är tjugofem, och roten ur tjugofem är fem."
+     "s": 243.24,
+     "e": 250,
+     "text": "Efter två dagar ligger båten fyra rutor väster och tre rutor norr om starten."
     },
     {
-     "s": 264.46,
-     "e": 270.24,
-     "text": "Båten var alltså fem rutor, eller femhundra kilometer, från Tofua."
+     "s": 251.3,
+     "e": 256.6,
+     "text": "Regeln för plus står på formelbladet, längst ner under rubriken vektorer."
     },
     {
-     "s": 271.94,
-     "e": 278.26,
-     "text": "Timor ligger ungefär sextiosex rutor väster och elva rutor norr om Tofua."
+     "s": 257.6,
+     "e": 264.12,
+     "text": "Där står också regeln för minus, regeln för ett tal gånger en vektor och regeln för längden."
     },
     {
-     "s": 279.4,
-     "e": 283.12,
-     "text": "Vilken vektor tar båten dit från platsen där den låg?"
+     "s": 265.42,
+     "e": 269.38,
+     "text": "Hur långt från starten ligger båten nu, om man mäter rakt?"
     },
     {
-     "s": 284.32,
-     "e": 287.5,
-     "text": "Den okända vektorn kallar vi x och y."
+     "s": 270.38,
+     "e": 276.6,
+     "text": "De fyra stegen västerut och de tre stegen norrut bildar en rätvinklig triangel."
     },
     {
-     "s": 288.78,
-     "e": 295.8,
-     "text": "Två vektorer är lika bara om stegen i x-led är lika och stegen i y-led är lika."
+     "s": 277.6,
+     "e": 283.04,
+     "text": "Den raka vägen är triangelns längsta sida, och den kallas hypotenusan."
     },
     {
-     "s": 296.86,
-     "e": 305.5,
-     "text": "Därför blir en ekvation med vektorer två vanliga ekvationer: minus fyra plus x är minus"
+     "s": 284.34,
+     "e": 292.54,
+     "text": "Pythagoras sats säger att hypotenusan i kvadrat är lika med de två kortare sidorna i kvadrat, ihoplagda."
     },
     {
-     "s": 305.58,
-     "e": 309.9,
-     "text": "sextiosex, och tre plus y är elva."
+     "s": 293.54,
+     "e": 300.7,
+     "text": "Därför räknar man en vektors längd så här: x-steget i kvadrat plus y-steget i kvadrat,"
     },
     {
-     "s": 311.16,
-     "e": 315.6,
-     "text": "Då är x minus sextiotvå och y åtta."
+     "s": 301.04,
+     "e": 302.38,
+     "text": "och sedan roten ur."
     },
     {
-     "s": 316.78,
-     "e": 326.2,
-     "text": "Det är samma sak som Timor minus båten, för minus sextiosex minus minus fyra är minus sextiotvå."
+     "s": 303.68,
+     "e": 309.28,
+     "text": "(−4)² = 16, för minus gånger minus blir plus."
     },
     {
-     "s": 327.86,
-     "e": 335.38,
-     "text": "En vektor från en punkt till en annan får man alltid så, slutpunkten minus startpunkten."
+     "s": 310.28,
+     "e": 312.24,
+     "text": "3² = 9."
     },
     {
-     "s": 336.52,
-     "e": 343.5,
-     "text": "Om båten seglade tre dagar i rad åt samma håll som i vektorn v blir det tre gånger v,"
+     "s": 313.24,
+     "e": 315.76,
+     "text": "16 + 9 = 25."
     },
     {
-     "s": 344.06,
-     "e": 349.9,
-     "text": "och då gångras båda stegen med tre, så det blir minus sex och sex."
+     "s": 316.76,
+     "e": 318.8,
+     "text": "√25 = 5."
     },
     {
-     "s": 351.32,
-     "e": 357.38,
-     "text": "I boken heter talet framför vektorn k, och på formelbladet heter det s."
+     "s": 320.1,
+     "e": 323.78,
+     "text": "Längden av u plus v är alltså 5 rutor."
     },
     {
-     "s": 358.82,
-     "e": 364.88,
-     "text": "Vektorer som man får på det sättet, med ett tal gånger en annan vektor, är parallella."
+     "s": 324.78,
+     "e": 331.5,
+     "text": "En ruta är 50 kilometer, så båten ligger 250 kilometer från starten."
     },
     {
-     "s": 365.92,
-     "e": 369.72,
-     "text": "Är talet negativt pekar de rakt åt motsatt håll."
+     "s": 332.5,
+     "e": 336.74,
+     "text": "Längden skrivs med ett lodrätt streck på var sida om vektorn."
     },
     {
-     "s": 370.84,
-     "e": 379.04,
-     "text": "Minus fyra och tre är inte parallell med v, för x-steget kräver gånger två men y-steget"
+     "s": 338.04,
+     "e": 340.12,
+     "text": "Hur långt är det då kvar till Timor?"
     },
     {
-     "s": 379.4,
-     "e": 380.8,
-     "text": "gånger en och en halv."
+     "s": 341.12,
+     "e": 347.48,
+     "text": "Timor ligger ungefär 130 rutor väster och 20 rutor norr om starten."
     },
     {
-     "s": 382.24,
-     "e": 383.52,
-     "text": "Nu ett övningstal."
+     "s": 348.48,
+     "e": 352.52,
+     "text": "Timors punkt är alltså (−130, 20)."
     },
     {
-     "s": 384.56,
-     "e": 389.36,
-     "text": "En vektor har koordinaterna a och tre, och längden fem."
+     "s": 353.82,
+     "e": 358.06,
+     "text": "Vägen som är kvar är en pil från båten till Timor."
     },
     {
-     "s": 390.26,
-     "e": 391.72,
-     "text": "Bestäm talet a."
+     "s": 359.06,
+     "e": 365.14,
+     "text": "En pil mellan två punkter får man genom att ta slutpunkten minus startpunkten."
     },
     {
-     "s": 393.14,
-     "e": 401.58,
-     "text": "Enligt Pythagoras ska a i kvadrat plus nio vara tjugofem, så a i kvadrat är sexton."
+     "s": 366.14,
+     "e": 371.94,
+     "text": "Det beror på att båtens pil plus pilen som är kvar ska bli pilen till Timor."
     },
     {
-     "s": 402.72,
+     "s": 372.94,
+     "e": 376.4,
+     "text": "Här blir det alltså Timor minus båten."
+    },
+    {
+     "s": 377.7,
+     "e": 383.96,
+     "text": "Med koordinater drar vi ifrån stegen i x-led för sig och stegen i y-led för sig."
+    },
+    {
+     "s": 384.96,
+     "e": 390.06,
+     "text": "I x-led blir det −130 − (−4)."
+    },
+    {
+     "s": 391.06,
+     "e": 396.52,
+     "text": "Minus och minus blir plus, så det är −130 + 4."
+    },
+    {
+     "s": 397.52,
+     "e": 399.82,
+     "text": "Det blir −126."
+    },
+    {
+     "s": 401.12,
+     "e": 405.48,
+     "text": "I y-led blir det 20 − 3, alltså 17."
+    },
+    {
+     "s": 406.48,
      "e": 410.54,
-     "text": "Talet a kan alltså vara fyra eller minus fyra, för båda blir sexton i kvadrat."
+     "text": "Vägen som är kvar är (−126, 17)."
     },
     {
-     "s": 412.02,
-     "e": 421.16,
-     "text": "Den 14 juni 1789, efter fyrtiosju dagar i båten, kom de fram till staden Kupang på Timor."
+     "s": 411.54,
+     "e": 418.16,
+     "text": "Båten har alltså 126 rutor kvar västerut och 17 rutor kvar norrut."
     },
     {
-     "s": 422.18,
-     "e": 429.12,
-     "text": "Alla arton som var kvar i båten levde, och i sin bok om resan skrev Bligh för varje dag"
+     "s": 419.46,
+     "e": 425.38,
+     "text": "Om båten seglar tre dagar i rad som vektorn v, blir det 3v."
     },
     {
-     "s": 429.18,
-     "e": 432.3,
-     "text": "hur långt de hade seglat och åt vilket håll."
+     "s": 426.38,
+     "e": 430.78,
+     "text": "Ett tal gånger en vektor gångrar båda stegen med talet."
     },
     {
-     "s": 433.76,
-     "e": 439.96,
-     "text": "Tänk dig en dag då Bligh seglade åt samma håll som i vektorn u, men längre."
+     "s": 431.78,
+     "e": 435.06,
+     "text": "3 · (−1) = −3."
     },
     {
-     "s": 441.04,
-     "e": 444.18,
-     "text": "Skriv den dagens vektor i koordinatform."
+     "s": 436.06,
+     "e": 438.22,
+     "text": "3 · 2 = 6."
+    },
+    {
+     "s": 439.22,
+     "e": 443.58,
+     "text": "Alltså är 3v lika med (−3, 6)."
+    },
+    {
+     "s": 444.58,
+     "e": 450.34,
+     "text": "På formelbladet heter talet framför vektorn s, och i boken heter det k."
+    },
+    {
+     "s": 451.64,
+     "e": 459.68,
+     "text": "Den 14 juni 1789, efter 47 dagar i båten, kom de fram till Timor."
+    },
+    {
+     "s": 460.68,
+     "e": 463.04,
+     "text": "Ingen av dem hade dött under seglingen."
+    },
+    {
+     "s": 464.04,
+     "e": 471.14,
+     "text": "Bligh skrev sedan en bok om resan, och i den står varje dags väg västerut och norrut."
+    },
+    {
+     "s": 472.44,
+     "e": 474.32,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 475.32,
+     "e": 481.14,
+     "text": "En dag seglar båten enligt vektorn u, som är (−4, 1)."
+    },
+    {
+     "s": 482.14,
+     "e": 487.92,
+     "text": "Dagen efter seglar den enligt vektorn v, som är (−2, 7)."
+    },
+    {
+     "s": 488.92,
+     "e": 492.02,
+     "text": "Skriv u plus v i koordinatform."
+    },
+    {
+     "s": 493.02,
+     "e": 497.78,
+     "text": "Hur många rutor från starten ligger båten då, om man mäter rakt?"
     }
    ]
   },

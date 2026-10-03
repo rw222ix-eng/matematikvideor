@@ -958,54 +958,70 @@
     "notisFran": "Samma figur fungerar för allt som är normalfördelat"
   },
   "ma1c-k6-05-addera-vektorer": {
-    "fraga": "Tänk dig en dag då Bligh seglade åt samma håll som vektorn u = (−2, 1), men dubbelt så långt.",
+    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7).",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "b01-uppslag-kompass",
+      "tema": "papper",
+      "utsnitt": [180, 120, 1120, 630],
+      "text": "Rutat papper med start i origo nere till höger. Vektorn u går från start fyra rutor åt vänster och en ruta uppåt. Vektorn v börjar där u slutar och går två rutor åt vänster och sju rutor uppåt.",
+      "delar": [
+        { "typ": "rutnat", "fran": [500, 180], "till": [920, 660], "steg": 60 },
+        { "typ": "prick", "vid": [920, 660], "r": 7 },
+        { "typ": "text", "vid": [935, 710], "text": "start", "ankare": "start" },
+        { "typ": "pil", "fran": [920, 660], "till": [680, 600] },
+        { "typ": "text", "vid": [800, 670], "text": "u" },
+        { "typ": "pil", "fran": [680, 600], "till": [560, 180] },
+        { "typ": "text", "vid": [575, 430], "text": "v", "ankare": "end" },
+        { "typ": "text", "vid": [230, 300], "text": "u = (−4, 1)", "ankare": "start" },
+        { "typ": "text", "vid": [230, 380], "text": "v = (−2, 7)", "ankare": "start" }
+      ]
+    },
     "delar": [
       {
-        "fraga": "Vad blir x-koordinaten för den dagens vektor?",
+        "fraga": "Skriv u + v i koordinatform. Vad blir x-koordinaten?",
         "typ": "tal",
-        "svar": -4,
+        "svar": -6,
         "exempel": "t.ex. −3",
         "fel": [
-          {
-            "svar": "4",
-            "text": "Båten seglar västerut, åt vänster. Då är steget i x-led negativt."
-          },
-          {
-            "svar": "-2",
-            "text": "Det är x-koordinaten för u. Dubbelt så långt betyder 2 gånger u, så båda stegen gångras med 2."
-          },
-          {
-            "svar": "-3",
-            "text": "Du har lagt till 1. Dubbelt så långt betyder 2 gånger u: gånga steget med 2."
-          }
+          { "svar": "6", "text": "Båda dagarna går västerut, åt vänster. Då blir x-koordinaten negativ." },
+          { "svar": "-2", "text": "Det är bara v:s steg i x-led. Lägg ihop stegen i x-led: −4 + (−2)." },
+          { "svar": "8", "text": "8 är stegen i y-led. x-led är öster–väster: −4 + (−2)." }
         ]
       },
       {
-        "fraga": "Vad blir y-koordinaten?",
+        "fraga": "Vad blir y-koordinaten för u + v?",
         "typ": "tal",
-        "svar": 2,
-        "exempel": "t.ex. 3",
+        "svar": 8,
+        "exempel": "t.ex. 5",
         "fel": [
-          {
-            "svar": "1",
-            "text": "Det är y-koordinaten för u. När vektorn gångras med 2 gångras BÅDA stegen, även y-steget."
-          },
-          {
-            "svar": "-2",
-            "text": "Båten seglar norrut, uppåt. Då är steget i y-led positivt."
-          }
+          { "svar": "-8", "text": "Norrut är uppåt. Då blir y-koordinaten positiv: 1 + 7." },
+          { "svar": "7", "text": "Det är bara v:s steg i y-led. Lägg ihop stegen i y-led: 1 + 7." },
+          { "svar": "-6", "text": "−6 är stegen i x-led. y-led är norrut: 1 + 7." }
+        ]
+      },
+      {
+        "fraga": "Hur många rutor från starten ligger båten då, om man mäter rakt?",
+        "typ": "tal",
+        "svar": 10,
+        "enhet": "rutor",
+        "exempel": "t.ex. 7",
+        "fel": [
+          { "svar": "14", "text": "Du har lagt ihop stegen, 6 + 8. Den raka vägen är hypotenusan: roten ur 6² + 8²." },
+          { "svar": "100", "text": "Det är 6² + 8². Längden är roten ur det talet." },
+          { "svar": "2", "text": "Det är 8 − 6. Den raka vägen räknas med Pythagoras sats: roten ur 6² + 8²." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Om båten seglade tre dagar",
-      "text": "Samma håll men längre betyder ett tal gånger vektorn. Dubbelt så långt är 2 gånger u, och då gångras båda stegen med 2."
+      "fras": "Med koordinater lägger vi ihop",
+      "text": "Lägg ihop stegen i x-led för sig och stegen i y-led för sig. Räkna sedan längden med Pythagoras sats: x-steget i kvadrat plus y-steget i kvadrat, och sedan roten ur."
     },
     "losning": [
-      "Samma håll, dubbelt så långt: 2 · u.",
-      "2 · (−2, 1) = (2 · (−2), 2 · 1).",
-      "= (−4, 2).",
-      "Kontroll: (−4, 2) är parallell med u, för båda stegen är 2 gånger så stora."
+      "u + v = (−4 + (−2), 1 + 7).",
+      "= (−6, 8).",
+      "Längden: (−6)² + 8² = 36 + 64 = 100.",
+      "Roten ur 100 är 10, så båten ligger 10 rutor från starten."
     ]
   },
   "ma1c-k6-03-berakna-vinklar": {
