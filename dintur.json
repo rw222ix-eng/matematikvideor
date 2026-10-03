@@ -1009,13 +1009,13 @@
     ]
   },
   "ma1c-k6-03-berakna-vinklar": {
-    "notisFran": "I december 2001 öppnades tornet",
-    "fraga": "Tänk dig ett annat torn, där det är 20 meter upp längs tornet till toppen och där ett snöre från toppen når marken 1 meter vid sidan av foten.",
+    "notisFran": "Nu är det din tur",
+    "fraga": "En stege är 4 meter lång och står lutad mot en vägg. Stegens fot står 1 meter från väggen.",
     "delar": [
       {
-        "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
+        "fraga": "Hur stor är vinkeln mellan stegen och väggen? Svara med en decimal.",
         "typ": "tal",
-        "svar": 2.866,
+        "svar": 14.4775,
         "tolerans": 0.06,
         "enhet": "grader",
         "exempel": "t.ex. 5,4",
@@ -1024,41 +1024,59 @@
           "(",
           ")"
         ],
-        "nara": {
-          "tolerans": 0.25,
-          "text": "Nästan. Skriv hela divisionen, 1 delat med 20, i räknaren och svara med en decimal, som 5,4 i filmen."
-        },
         "fel": [
           {
-            "svar": "87.1",
-            "tolerans": 0.06,
-            "text": "Det är vinkeln nere vid tornets fot. Lutningen är vinkeln uppe vid toppen, mellan tornet och snöret."
-          },
-          {
-            "svar": "0.05",
+            "svar": "0.25",
             "tolerans": 0.002,
-            "text": "0,05 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 20 (SHIFT och sin på räknaren)."
+            "text": "0,25 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 4 (SHIFT och sin på räknaren)."
           },
           {
-            "svar": "20",
-            "text": "20 meter är tornet, hypotenusan. Frågan är hur många grader tornet lutar: ta arcussinus av 1 delat med 20."
+            "svar": "75.5",
+            "tolerans": 0.06,
+            "text": "Det är vinkeln nere vid marken. Vinkeln mot väggen ligger uppe vid stegens topp, och där står metern på marken mitt emot."
           },
           {
-            "svar": "1",
-            "text": "1 meter är sträckan vid sidan av foten. Dela den med tornets 20 meter och ta arcussinus av kvoten."
+            "svar": "14.04",
+            "tolerans": 0.03,
+            "text": "Du har använt tangens. Stegen är hypotenusan, och sinus är motstående katet delat med hypotenusan: 1 delat med 4."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur stor är vinkeln mellan stegen och marken? Svara med en decimal.",
+        "typ": "tal",
+        "svar": 75.5225,
+        "tolerans": 0.06,
+        "enhet": "grader",
+        "exempel": "t.ex. 84,6",
+        "tangenter": [
+          "/",
+          "(",
+          ")"
+        ],
+        "fel": [
+          {
+            "svar": "14.5",
+            "tolerans": 0.06,
+            "text": "Det är vinkeln mot väggen. Vinkeln mot marken ligger nere vid stegens fot."
+          },
+          {
+            "svar": "165.5",
+            "tolerans": 0.06,
+            "text": "Den räta vinkeln tar 90 av de 180 graderna, så de två andra vinklarna är tillsammans 90. Räkna 90 minus vinkeln mot väggen."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Nu känner vi kvoten men",
-      "text": "Sträckan vid sidan av foten ligger mitt emot vinkeln uppe vid toppen, och tornet är hypotenusan. Då är det sinus, och vinkeln får du med arcussinus."
+      "fras": "Vilken kvot ska vi välja",
+      "text": "Stegen, väggen och marken bildar en rätvinklig triangel. Börja i vinkeln uppe vid väggen: metern på marken står mitt emot den, och stegen är hypotenusan."
     },
     "losning": [
-      "Tornet är hypotenusan, 20 meter.",
-      "Sträckan vid sidan av foten, 1 meter, ligger mitt emot vinkeln v uppe vid toppen. Den är motstående katet.",
-      "sin v = 1/20",
-      "v = sin⁻¹(1/20) ≈ 2,9°. Tornet lutar ungefär 2,9 grader."
+      "Stegen är hypotenusan, 4 meter.",
+      "Metern på marken står mitt emot vinkeln v uppe vid väggen. Den är motstående katet.",
+      "sin v = 1/4, så v = sin⁻¹(1/4) ≈ 14,5°.",
+      "Vinkeln mot marken är 90 − 14,5 = 75,5°."
     ]
   },
   "ma1c-k6-02-berakna-sidor": {
