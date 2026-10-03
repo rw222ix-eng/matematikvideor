@@ -940,10 +940,10 @@
     "notisFran": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora. Hur stor är varje vinkel i en bit med sex"
   },
   "formelbladet-ma2-6-statistik": {
-    "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
+    "fraga": "Äggen från en gård väger 60 gram i medel, och standardavvikelsen är 4 gram. Vikten är normalfördelad.",
     "delar": [
       {
-        "fraga": "Hur stor andel av äggen väger mellan 52 och 60 gram?",
+        "fraga": "Hur många procent av äggen väger mellan 52 och 60 gram?",
         "typ": "tal",
         "svar": 47.7,
         "tolerans": 0.05,
@@ -968,7 +968,7 @@
           },
           {
             "svar": "81.8",
-            "text": "81,8 % var övningstalet, mellan 56 och 68 gram. Här är det mellan 52 och 60 gram."
+            "text": "81,8 % är andelen mellan 56 och 68 gram, från μ − σ till μ + 2σ. Här är det mellan 52 och 60 gram."
           },
           {
             "svar": "68.2",
@@ -983,8 +983,8 @@
       }
     ],
     "ledtrad": {
-      "fras": "56 är 60 minus 4",
-      "text": "Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
+      "fras": "Vi lägger ihop bitarna",
+      "text": "Gör som med mjölkpaketen. Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
     },
     "losning": [
       "μ = 60 g och σ = 4 g, så μ − σ = 60 − 4 = 56 g och μ − 2σ = 60 − 8 = 52 g.",
@@ -992,7 +992,7 @@
       "Mellan 56 och 60 gram (μ − σ till μ) står 34,1 %.",
       "13,6 + 34,1 = 47,7, så 47,7 % av äggen väger mellan 52 och 60 gram."
     ],
-    "notisFran": "Samma figur fungerar för allt som är normalfördelat"
+    "notisFran": "Nu tar vi tre bitar"
   },
   "ma1c-k6-05-addera-vektorer": {
     "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7).",
