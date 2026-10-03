@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T13:30:07.956Z",
+ "byggd": "2026-10-03T14:05:53.045Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -2195,7 +2195,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-04-vektorbegreppet-v1/ma1c-k6-04-vektorbegreppet-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-04-vektorbegreppet-v2/ma1c-k6-04-vektorbegreppet-1080p.mp4",
    "moment": "Vektorbegreppet",
    "begrepp": [
     "vektor",
@@ -2203,628 +2203,694 @@
     "storlek och riktning",
     "lika vektorer",
     "motsatt vektor",
-    "nollvektor",
     "ett tal gånger en vektor",
     "addition av vektorer",
     "resultant",
-    "parallellogrammetoden",
-    "polygonmetoden",
     "subtraktion av vektorer",
-    "kraft",
-    "skala"
+    "kraft"
    ],
-   "beskrivning": "Simon Stevin i Holland på 1580-talet: en krans av lika tunga kulor hänger runt en trekant, fyra kulor på den långa sidan och två på den korta, och ändå står den still. Vi ritar krafter som pilar och lär oss vektorbegreppet: storlek och riktning, lika och motsatta vektorer, ett tal gånger en vektor, addition med resultant och subtraktion.",
+   "beskrivning": "Simon Stevin i Leiden år 1586: en krans av lika tunga kulor ligger runt en trekant, fyra kulor på den långa sidan och två på den korta, och ändå står den still. Vi ritar krafter som pilar och lär oss vektorbegreppet: storlek och riktning, lika och motsatta vektorer, ett tal gånger en vektor, addition med resultant och subtraktion på rutat papper.",
    "youtube": null,
-   "langd": 451,
+   "langd": 432,
    "omslag": "omslag/ma1c-k6-04-vektorbegreppet.jpg?v=3e64bfe2",
    "omslagRen": "omslag/ma1c-k6-04-vektorbegreppet-ren.jpg?v=8ffe1577",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 0,
-     "text": "På 1580-talet låg Nederländerna i krig med Spanien. Ingenjören Simon Stevin i Leiden räknade på slussar och väderkvarnar. För att de skulle hålla behövde han veta hur hårt vattnet och vinden tryckte, och åt vilket håll."
+     "t": 1,
+     "text": "Simon Stevin är ingenjör i staden Leiden, i Nederländerna. Han bygger slussar och väderkvarnar. För att de ska hålla måste han veta hur hårt vattnet och vinden trycker, och åt vilket håll."
     },
     {
      "t": 18,
-     "text": "Samtidigt påstod uppfinnare att de byggt maskiner som snurrar av sig själva för alltid. Stevin trodde inte på dem, och han prövade tanken med en krans av kulor."
+     "text": "År 1586 skriver Stevin en bok om krafter. I boken ritar han en trekant. Båda sluttningarna når lika högt, men den ena sluttningen är dubbelt så lång som den andra."
     },
     {
-     "t": 31,
-     "text": "Han trädde lika tunga kulor på ett snöre och hängde det runt en trekant, där ena sluttningen var dubbelt så lång som den andra. Fyra kulor låg på den långa sluttningen, två på den korta, och resten hängde under."
+     "t": 34,
+     "text": "Runt trekanten lägger han ett snöre med lika tunga kulor, som en krans. Fyra kulor ligger på den långa sluttningen, och två ligger på den korta. Resten av kulorna hänger fritt under trekanten."
     },
     {
-     "t": 48,
-     "text": "Borde inte de fyra dra ner de två, så att kransen snurrar och aldrig stannar? Stevin gav svaret i en bok 1586, skriven på holländska i stället för latin så att hantverkare kunde läsa den. Kransen står still. För att förstå hur två kulor kan hålla emot fyra behöver vi ett sätt att rita en kraft."
+     "t": 51,
+     "text": "Fyra kulor är tyngre än två. Borde inte de fyra dra ner de två, så att kransen börjar snurra? Stevin säger nej. Om kransen snurrade, skulle den hela tiden se likadan ut, och då skulle den aldrig stanna. Men ingenting kan snurra för alltid av sig självt. Alltså står kransen still."
     },
     {
-     "t": 76,
-     "text": "Vissa storheter har bara en storlek, som massa, tid, area och volym, och de kallas skalärer. En kraft har också en riktning, för det spelar roll åt vilket håll den drar, och en sådan storhet kallas en vektor. Hastighet är också en vektor."
+     "t": 78,
+     "text": "Men hur kan två kulor hålla emot fyra? För att svara på det behöver vi ett sätt att rita en kraft."
     },
     {
-     "t": 97,
-     "text": "Vi ritar en vektor som en pil, där längden visar storleken. Pilen från punkten P till punkten Q skrivs P Q med en liten pil ovanför, eller så får vektorn en egen bokstav, som vektorn a. Längden skrivs med ett lodrätt streck på var sida."
+     "t": 87,
+     "text": "En storhet är något som man kan mäta. Vissa storheter har bara en storlek, som massa, tid, area och volym. De kallas skalärer."
     },
     {
-     "t": 119,
-     "text": "Längst ner på formelbladet står vektorerna, med samma lilla pil över bokstaven och samma streck runt längden."
+     "t": 102,
+     "text": "En kraft har också en riktning, för det spelar roll åt vilket håll den drar. En storhet med både storlek och riktning kallas en vektor. Hastighet är också en vektor."
     },
     {
-     "t": 129,
-     "text": "Varje kula i kransen dras nedåt av sin tyngd, lika hårt och åt samma håll. Deras pilar är därför lika vektorer, med samma längd och samma riktning, fast de sitter på olika ställen. En vektor får alltså flyttas."
+     "t": 117,
+     "text": "Vi ritar en vektor som en pil. Pilens längd visar storleken, och spetsen visar riktningen. Vektorn får en bokstav med en liten pil ovanför, till exempel vektorn a."
     },
     {
-     "t": 148,
-     "text": "Två kulor drar dubbelt så hårt som en, och det skrivs två gånger vektorn a. Ett positivt tal gånger en vektor ger en pil åt samma håll, längre eller kortare. Är a sex rutor lång, blir en komma fem gånger a nio rutor och en halv gånger a tre rutor."
+     "t": 133,
+     "text": "Längst ner på formelbladet står vektorerna. Där har bokstäverna samma lilla pil ovanför."
     },
     {
-     "t": 172,
-     "text": "Är talet negativt vänder pilen, så minus två gånger a pekar åt andra hållet och är tolv rutor lång. Minus a är lika lång som a, och a och minus a kallas motsatta vektorer. Gånger noll blir pilen noll rutor lång, och den kallas nollvektorn."
+     "t": 142,
+     "text": "Nu tillbaka till kransen. På den långa sluttningen drar varje kula lika hårt nedför backen. Pilarna är lika långa och pekar åt samma håll, och då kallas de lika vektorer. Vi kallar en sådan pil för vektorn a."
     },
     {
-     "t": 197,
-     "text": "Nu kan vi följa Stevin. Delen som hänger under trekanten är likadan på båda sidor, så den kan vi tänka bort. Kvar är fyra kulor på den långa, flacka sluttningen mot två på den korta, branta, och på den branta drar varje kula dubbelt så hårt längs sluttningen."
+     "t": 161,
+     "text": "Att lägga ihop vektorer kallas att addera dem. Vi flyttar pilarna så att de ligger efter varandra, och nästa pil börjar där den förra slutar. Det får vi göra, för en vektor får flyttas så länge längden och riktningen är desamma."
     },
     {
-     "t": 220,
-     "text": "Kallar vi draget från en kula på den flacka sidan för a, drar de fyra där med a plus a plus a plus a, alltså fyra a. På den branta sidan är varje kulas pil dubbelt så lång som a, så de två kulorna där ger lika lång pil som fyra a. Sidorna drar lika hårt, och därför står kransen still."
+     "t": 180,
+     "text": "Summan är pilen från den första pilens början till den sista pilens spets, och den kallas resultanten. För de fyra kulorna blir det a plus a plus a plus a. Resultanten är fyra gånger så lång som a, och den skrivs fyra a."
     },
     {
-     "t": 250,
-     "text": "I samma bok ritade Stevin krafter som sträckor, och när en tyngd hålls stilla av sneda drag passar sträckorna ihop till en triangel. Tänk dig en tyngd som hänger i två rep. Vi lägger repens pilar efter varandra, så att den andra börjar där den första slutar."
+     "t": 203,
+     "text": "Ett tal gånger en vektor ger alltså en pil åt samma håll, fast längre eller kortare. Vektorn två a är dubbelt så lång som a, och en halv a är hälften så lång."
     },
     {
-     "t": 271,
-     "text": "Det kallas att addera vektorer, och pilen från början till den sista spetsen är resultanten. Man kan också låta båda pilarna börja i knuten, som repen gör, och rita klart en parallellogram. Diagonalen från knuten är samma resultant."
+     "t": 218,
+     "text": "Nu den korta sluttningen. Den är brantare, och ju brantare en backe är, desto hårdare drar en kula nedför den. Det märks när man drar en kälke uppför en backe. Ju brantare backen är, desto tyngre blir det."
     },
     {
-     "t": 291,
-     "text": "Resultanten pekar rakt uppåt och är lika lång som tyngdens pil, som pekar rakt nedåt. De är motsatta vektorer, så tyngden hänger stilla. Lägger vi alla tre pilarna efter varandra kommer vi tillbaka till början, och summan är nollvektorn."
+     "t": 237,
+     "text": "Stevin visade att varje kula på den korta sidan drar dubbelt så hårt, eftersom sluttningen är hälften så lång. Varje kulas pil är därför dubbelt så lång som a. Två sådana pilar efter varandra blir lika långa som fyra a."
     },
     {
-     "t": 313,
-     "text": "Att subtrahera en vektor är att addera den motsatta vektorn. Vektorn u minus vektorn v ritas som u plus minus v, så man vänder v och lägger den efter u."
+     "t": 258,
+     "text": "Kransen dras alltså lika hårt åt båda hållen längs snöret. De två dragen är lika långa men pekar åt motsatt håll, och sådana vektorer kallas motsatta vektorer. Lägger vi dem efter varandra, kommer vi tillbaka dit vi började, så kransen rör sig inte. Två kulor kan alltså hålla emot fyra, eftersom de ligger i en brantare backe."
     },
     {
-     "t": 330,
-     "text": "Nu på rutat papper. Kraften F ett går tre rutor uppåt, och kraften F två går fyra rutor åt höger. För att rita F ett plus två F två dubblar vi först F två till åtta rutor åt höger och lägger sedan F ett efter. Resultanten går från början till slutet."
+     "t": 287,
+     "text": "Den motsatta vektorn till a skrivs minus a. Den är lika lång som a, men den pekar åt andra hållet. Med den kan vi subtrahera vektorer. Att subtrahera v är samma sak som att addera minus v."
     },
     {
-     "t": 358,
-     "text": "F ett minus F två blir F ett plus minus F två, alltså tre rutor uppåt och sedan fyra åt vänster. Ska tre krafter ta ut varandra, som tyngden och repen, ritar vi summan av två av dem och vänder den. Den vända pilen är den tredje kraften."
+     "t": 307,
+     "text": "Nu ritar vi på rutat papper. Vektorn u går fyra rutor åt höger. Vektorn v går två rutor åt höger och tre rutor uppåt."
     },
     {
-     "t": 383,
-     "text": "Krafter mäts i newton, och pilarna har ofta en skala. Betyder en millimeter fem newton och resultanten mäter fyrtio millimeter, är kraften fyrtio gånger fem, alltså tvåhundra newton."
+     "t": 321,
+     "text": "Först u plus v. Vi ritar u, och sedan lägger vi v så att den börjar vid spetsen av u. Resultanten går från början av u till spetsen av v. Den går sex rutor åt höger och tre rutor uppåt."
     },
     {
-     "t": 401,
-     "text": "Stevin satte kransen på bokens titelsida. Ordet vektor kom först på 1800-talet, men han ritade redan 1586 krafter som sträckor med rätt längd och rätt riktning."
+     "t": 341,
+     "text": "Sedan u minus v, alltså u plus minus v. Vi vänder v, så minus v går två rutor åt vänster och tre rutor nedåt. Vi lägger minus v efter u. Resultanten går två rutor åt höger och tre rutor nedåt."
     },
     {
-     "t": 419,
-     "text": "Här är en uppgift till dig. En tyngd hänger stilla i två rep. Det ena repet drar två rutor åt vänster och tre rutor uppåt, och det andra drar två rutor åt höger och tre rutor uppåt. Rita repens resultant, och rita sedan pilen för tyngden, så att summan av alla tre blir nollvektorn."
+     "t": 365,
+     "text": "Ibland står ett tal framför vektorn, som i u plus två v. Då dubblar vi först v, så två v går fyra rutor åt höger och sex rutor uppåt. Sedan lägger vi två v efter u, precis som förut. Resultanten går åtta rutor åt höger och sex rutor uppåt."
+    },
+    {
+     "t": 391,
+     "text": "Stevin satte kransen på titelsidan i sin bok. Ordet vektor kom först på 1800-talet. Men redan 1586 ritade Stevin krafter som sträckor, med rätt längd och åt rätt håll."
+    },
+    {
+     "t": 409,
+     "text": "Nu är det din tur. Vektorn u går tre rutor åt höger. Vektorn v går en ruta åt höger och två rutor uppåt. Rita u minus v. Hur många rutor åt höger går resultanten, och hur många rutor nedåt?"
     }
    ],
    "kapitel": [
     {
-     "t": 0,
-     "rubrik": "Stevin och krafterna",
+     "t": 1,
+     "rubrik": "Stevin i Leiden",
      "typ": "historia"
     },
     {
-     "t": 31,
+     "t": 18,
      "rubrik": "Kulkransen",
      "typ": "historia"
     },
     {
-     "t": 76,
+     "t": 87,
      "rubrik": "Skalär och vektor",
      "typ": "matte"
     },
     {
-     "t": 129,
-     "rubrik": "Lika vektorer och ett tal gånger en vektor",
+     "t": 142,
+     "rubrik": "Lika vektorer",
      "typ": "matte"
     },
     {
-     "t": 197,
-     "rubrik": "Varför kransen står still",
-     "typ": "matte"
-    },
-    {
-     "t": 250,
+     "t": 161,
      "rubrik": "Addition och resultant",
      "typ": "matte"
     },
     {
-     "t": 313,
-     "rubrik": "Subtraktion",
+     "t": 203,
+     "rubrik": "Ett tal gånger en vektor",
      "typ": "matte"
     },
     {
-     "t": 330,
+     "t": 218,
+     "rubrik": "Varför kransen står still",
+     "typ": "matte"
+    },
+    {
+     "t": 287,
+     "rubrik": "Motsatt vektor och subtraktion",
+     "typ": "matte"
+    },
+    {
+     "t": 307,
      "rubrik": "Övningstal på rutat papper",
      "typ": "matte"
     },
     {
-     "t": 383,
-     "rubrik": "Skala: millimeter och newton",
-     "typ": "matte"
-    },
-    {
-     "t": 401,
+     "t": 391,
      "rubrik": "Titelsidan 1586",
      "typ": "historia"
     },
     {
-     "t": 419,
-     "rubrik": "Din tur: tyngden i repen",
+     "t": 409,
+     "rubrik": "Din tur: u minus v",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "En tyngd hänger stilla i två rep. Det ena repet drar två rutor åt vänster och tre rutor uppåt, och det andra drar två rutor åt höger och tre rutor uppåt.",
+    "fraga": "Vektorn u går tre rutor åt höger. Vektorn v går en ruta åt höger och två rutor uppåt. Rita u − v.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "b04-uppslag-linjal",
+     "tema": "papper",
+     "utsnitt": [
+      200,
+      300,
+      1000,
+      562.5
+     ],
+     "text": "Rutat papper. Vektorn u är en pil tre rutor åt höger. Vektorn v är en pil en ruta åt höger och två rutor uppåt.",
+     "delar": [
+      {
+       "typ": "rutnat",
+       "fran": [
+        240,
+        360
+       ],
+       "till": [
+        1140,
+        810
+       ],
+       "steg": 90
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        330,
+        720
+       ],
+       "till": [
+        600,
+        720
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        465,
+        690
+       ],
+       "text": "u"
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        780,
+        720
+       ],
+       "till": [
+        870,
+        540
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        790,
+        615
+       ],
+       "text": "v"
+      }
+     ]
+    },
     "delar": [
      {
-      "fraga": "Rita repens resultant. Hur många rutor uppåt går den?",
+      "fraga": "Hur många rutor åt höger går resultanten?",
       "typ": "tal",
-      "svar": 6,
-      "exempel": "t.ex. 4",
+      "svar": 2,
+      "exempel": "t.ex. 5",
       "fel": [
+       {
+        "svar": "4",
+        "text": "Det är u + v. Vid minus vänder du v, så minus v går en ruta åt VÄNSTER: 3 − 1."
+       },
        {
         "svar": "3",
-        "text": "Det är ett av repen. Lägg den andra pilen så att den börjar där den första slutar, och läs av från början till sista spetsen."
-       },
-       {
-        "svar": "4",
-        "text": "Stegen åt sidan tar ut varandra, 2 åt vänster och 2 åt höger. Det är stegen uppåt som läggs ihop: 3 + 3."
-       },
+        "text": "Det är bara u. Lägg minus v efter u. Minus v går en ruta åt vänster."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur många rutor nedåt går resultanten?",
+      "typ": "tal",
+      "svar": 2,
+      "exempel": "t.ex. 1",
+      "fel": [
        {
         "svar": "0",
-        "text": "Det är stegen åt sidan som blir 0. Stegen uppåt läggs ihop: 3 + 3."
-       }
-      ]
-     },
-     {
-      "fraga": "Hur många rutor åt sidan går resultanten?",
-      "typ": "tal",
-      "svar": 0,
-      "exempel": "t.ex. 2",
-      "fel": [
-       {
-        "svar": "4",
-        "text": "Det ena repet drar 2 åt vänster och det andra 2 åt höger. De tar ut varandra."
+        "text": "u går inte uppåt eller nedåt, men minus v gör det. Vänd v: två rutor uppåt blir två rutor nedåt."
        },
        {
-        "svar": "2",
-        "text": "Titta på båda repen: 2 åt vänster och 2 åt höger blir 0 åt sidan."
-       }
-      ]
-     },
-     {
-      "fraga": "Tyngdens pil ska göra summan av alla tre till nollvektorn. Hur många rutor uppåt går den? Nedåt skrivs med minus.",
-      "typ": "tal",
-      "svar": -6,
-      "exempel": "t.ex. −2",
-      "fel": [
-       {
-        "svar": "6",
-        "text": "Då blir summan 12 rutor uppåt. Tyngdens pil ska vara resultantens motsatta vektor: lika lång men åt andra hållet."
-       },
-       {
-        "svar": "-3",
-        "text": "Tyngden ska hålla emot båda repen tillsammans, alltså hela resultanten på 6 rutor."
+        "svar": "-2",
+        "text": "Frågan gäller hur många rutor NEDÅT, så svaret är ett positivt tal."
        }
       ]
      }
     ],
     "ledtrad": {
-     "text": "Lägg repens pilar efter varandra och rita resultanten. Tyngdens pil är resultanten vänd åt andra hållet, och då blir summan nollvektorn.",
-     "t": 369
+     "text": "Att subtrahera v är att addera minus v. Vänd v så att den pekar åt andra hållet, lägg den efter u och läs av från början till sista spetsen.",
+     "t": 341
     },
     "losning": [
-     "Lägg pilarna efter varandra: 2 vänster och 3 upp, sedan 2 höger och 3 upp.",
-     "Resultanten går 0 rutor åt sidan och 6 rutor rakt uppåt.",
-     "Tyngdens pil är den motsatta vektorn: 6 rutor rakt nedåt.",
-     "Kontroll: tre pilar efter varandra kommer tillbaka till början, så summan är nollvektorn."
+     "u − v = u + (−v).",
+     "Minus v går en ruta åt vänster och två rutor nedåt.",
+     "Lägg minus v efter u: tre rutor åt höger, sedan en åt vänster och två nedåt.",
+     "Resultanten går 2 rutor åt höger och 2 rutor nedåt."
     ],
-    "notisFran": 383
+    "notisFran": 391
    },
    "undertext": [
     {
-     "s": 0.16,
-     "e": 4.26,
-     "text": "På 1580-talet låg Nederländerna i krig med Spanien."
+     "s": 1.5,
+     "e": 6.28,
+     "text": "Simon Stevin är ingenjör i staden Leiden, i Nederländerna."
     },
     {
-     "s": 5.1,
-     "e": 10.62,
-     "text": "Ingenjören Simon Stevin i Leiden räknade på slussar och väderkvarnar."
+     "s": 7.28,
+     "e": 9.72,
+     "text": "Han bygger slussar och väderkvarnar."
     },
     {
-     "s": 11.56,
-     "e": 16.02,
-     "text": "För att de skulle hålla behövde han veta hur hårt vattnet och vinden tryckte,"
+     "s": 10.72,
+     "e": 15.4,
+     "text": "För att de ska hålla måste han veta hur hårt vattnet och vinden trycker,"
     },
     {
-     "s": 16.54,
-     "e": 17.56,
+     "s": 15.88,
+     "e": 16.98,
      "text": "och åt vilket håll."
     },
     {
-     "s": 18.78,
-     "e": 25,
-     "text": "Samtidigt påstod uppfinnare att de byggt maskiner som snurrar av sig själva för alltid."
+     "s": 18.28,
+     "e": 22.78,
+     "text": "År 1586 skriver Stevin en bok om krafter."
     },
     {
-     "s": 25.96,
-     "e": 30.68,
-     "text": "Stevin trodde inte på dem, och han prövade tanken med en krans av kulor."
+     "s": 23.78,
+     "e": 26.02,
+     "text": "I boken ritar han en trekant."
     },
     {
-     "s": 31.6,
-     "e": 36.64,
-     "text": "Han trädde lika tunga kulor på ett snöre och hängde det runt en trekant,"
+     "s": 27.02,
+     "e": 33.42,
+     "text": "Båda sluttningarna når lika högt, men den ena sluttningen är dubbelt så lång som den andra."
     },
     {
-     "s": 37.16,
-     "e": 40.06,
-     "text": "där ena sluttningen var dubbelt så lång som den andra."
+     "s": 34.72,
+     "e": 40.12,
+     "text": "Runt trekanten lägger han ett snöre med lika tunga kulor, som en krans."
     },
     {
-     "s": 41.4,
-     "e": 47.44,
-     "text": "Fyra kulor låg på den långa sluttningen, två på den korta, och resten hängde under."
+     "s": 41.12,
+     "e": 46.1,
+     "text": "Fyra kulor ligger på den långa sluttningen, och två ligger på den korta."
     },
     {
-     "s": 48.68,
-     "e": 55,
-     "text": "Borde inte de fyra dra ner de två, så att kransen snurrar och aldrig stannar?"
+     "s": 47.1,
+     "e": 50.42,
+     "text": "Resten av kulorna hänger fritt under trekanten."
     },
     {
-     "s": 56.76,
-     "e": 64.68,
-     "text": "Stevin gav svaret i en bok 1586, skriven på holländska i stället för latin så att hantverkare"
+     "s": 51.72,
+     "e": 54.14,
+     "text": "Fyra kulor är tyngre än två."
     },
     {
-     "s": 64.74,
-     "e": 65.74,
-     "text": "kunde läsa den."
+     "s": 55.14,
+     "e": 59.62,
+     "text": "Borde inte de fyra dra ner de två, så att kransen börjar snurra?"
     },
     {
-     "s": 66.74,
-     "e": 68.28,
-     "text": "Kransen står still."
+     "s": 60.62,
+     "e": 62.16,
+     "text": "Stevin säger nej."
     },
     {
-     "s": 69.62,
-     "e": 75.2,
-     "text": "För att förstå hur två kulor kan hålla emot fyra behöver vi ett sätt att rita en kraft."
+     "s": 63.16,
+     "e": 69.64,
+     "text": "Om kransen snurrade, skulle den hela tiden se likadan ut, och då skulle den aldrig stanna."
     },
     {
-     "s": 76.6,
-     "e": 82.56,
-     "text": "Vissa storheter har bara en storlek, som massa, tid, area och volym,"
+     "s": 70.64,
+     "e": 74.04,
+     "text": "Men ingenting kan snurra för alltid av sig självt."
     },
     {
-     "s": 83.2,
-     "e": 84.96,
-     "text": "och de kallas skalärer."
+     "s": 75.04,
+     "e": 76.96,
+     "text": "Alltså står kransen still."
     },
     {
-     "s": 85.92,
-     "e": 90.4,
-     "text": "En kraft har också en riktning, för det spelar roll åt vilket håll den drar,"
+     "s": 78.26,
+     "e": 81.64,
+     "text": "Men hur kan två kulor hålla emot fyra?"
     },
     {
-     "s": 90.78,
-     "e": 93.46,
-     "text": "och en sådan storhet kallas en vektor."
+     "s": 82.64,
+     "e": 86.54,
+     "text": "För att svara på det behöver vi ett sätt att rita en kraft."
     },
     {
-     "s": 94.42,
-     "e": 96.4,
+     "s": 87.84,
+     "e": 90.72,
+     "text": "En storhet är något som man kan mäta."
+    },
+    {
+     "s": 91.72,
+     "e": 98.38,
+     "text": "Vissa storheter har bara en storlek, som massa, tid, area och volym."
+    },
+    {
+     "s": 99.38,
+     "e": 101.24,
+     "text": "De kallas skalärer."
+    },
+    {
+     "s": 102.54,
+     "e": 107.48,
+     "text": "En kraft har också en riktning, för det spelar roll åt vilket håll den drar."
+    },
+    {
+     "s": 108.48,
+     "e": 113.18,
+     "text": "En storhet med både storlek och riktning kallas en vektor."
+    },
+    {
+     "s": 114.18,
+     "e": 116.4,
      "text": "Hastighet är också en vektor."
     },
     {
-     "s": 97.34,
-     "e": 101.3,
-     "text": "Vi ritar en vektor som en pil, där längden visar storleken."
+     "s": 117.7,
+     "e": 119.9,
+     "text": "Vi ritar en vektor som en pil."
     },
     {
-     "s": 102.36,
-     "e": 109.28,
-     "text": "Pilen från punkten P till punkten Q skrivs P Q med en liten pil ovanför,"
+     "s": 120.9,
+     "e": 125.64,
+     "text": "Pilens längd visar storleken, och spetsen visar riktningen."
     },
     {
-     "s": 109.96,
-     "e": 114.1,
-     "text": "eller så får vektorn en egen bokstav, som vektorn a."
+     "s": 126.64,
+     "e": 132.16,
+     "text": "Vektorn får en bokstav med en liten pil ovanför, till exempel vektorn a."
     },
     {
-     "s": 115.42,
-     "e": 118.64,
-     "text": "Längden skrivs med ett lodrätt streck på var sida."
+     "s": 133.46,
+     "e": 136.6,
+     "text": "Längst ner på formelbladet står vektorerna."
     },
     {
-     "s": 119.9,
-     "e": 126.02,
-     "text": "Längst ner på formelbladet står vektorerna, med samma lilla pil över bokstaven och samma"
+     "s": 137.6,
+     "e": 140.74,
+     "text": "Där har bokstäverna samma lilla pil ovanför."
     },
     {
-     "s": 126.12,
-     "e": 127.7,
-     "text": "streck runt längden."
+     "s": 142.04,
+     "e": 143.76,
+     "text": "Nu tillbaka till kransen."
     },
     {
-     "s": 129.22,
-     "e": 135.4,
-     "text": "Varje kula i kransen dras nedåt av sin tyngd, lika hårt och åt samma håll."
+     "s": 144.76,
+     "e": 149.66,
+     "text": "På den långa sluttningen drar varje kula lika hårt nedför backen."
     },
     {
-     "s": 136.32,
-     "e": 141.54,
-     "text": "Deras pilar är därför lika vektorer, med samma längd och samma riktning,"
+     "s": 150.66,
+     "e": 156.8,
+     "text": "Pilarna är lika långa och pekar åt samma håll, och då kallas de lika vektorer."
     },
     {
-     "s": 142.14,
-     "e": 144.02,
-     "text": "fast de sitter på olika ställen."
+     "s": 157.8,
+     "e": 160.44,
+     "text": "Vi kallar en sådan pil för vektorn a."
     },
     {
-     "s": 145.28,
-     "e": 147.38,
-     "text": "En vektor får alltså flyttas."
+     "s": 161.74,
+     "e": 165.14,
+     "text": "Att lägga ihop vektorer kallas att addera dem."
     },
     {
-     "s": 148.26,
-     "e": 154.68,
-     "text": "Två kulor drar dubbelt så hårt som en, och det skrivs två gånger vektorn a."
+     "s": 166.14,
+     "e": 172.66,
+     "text": "Vi flyttar pilarna så att de ligger efter varandra, och nästa pil börjar där den förra slutar."
     },
     {
-     "s": 155.94,
-     "e": 162.14,
-     "text": "Ett positivt tal gånger en vektor ger en pil åt samma håll, längre eller kortare."
+     "s": 173.66,
+     "e": 179.44,
+     "text": "Det får vi göra, för en vektor får flyttas så länge längden och riktningen är desamma."
     },
     {
-     "s": 163.18,
-     "e": 171.9,
-     "text": "Är a sex rutor lång, blir en komma fem gånger a nio rutor och en halv gånger a tre rutor."
+     "s": 180.74,
+     "e": 186.4,
+     "text": "Summan är pilen från den första pilens början till den sista pilens spets,"
     },
     {
-     "s": 172.92,
-     "e": 181.16,
-     "text": "Är talet negativt vänder pilen, så minus två gånger a pekar åt andra hållet och är tolv rutor lång."
+     "s": 186.78,
+     "e": 188.94,
+     "text": "och den kallas resultanten."
     },
     {
-     "s": 182.3,
-     "e": 189.38,
-     "text": "Minus a är lika lång som a, och a och minus a kallas motsatta vektorer."
+     "s": 189.94,
+     "e": 195.26,
+     "text": "För de fyra kulorna blir det a plus a plus a plus a."
     },
     {
-     "s": 190.66,
-     "e": 196.12,
-     "text": "Gånger noll blir pilen noll rutor lång, och den kallas nollvektorn."
+     "s": 196.26,
+     "e": 202,
+     "text": "Resultanten är fyra gånger så lång som a, och den skrivs fyra a."
     },
     {
-     "s": 197.26,
-     "e": 198.7,
-     "text": "Nu kan vi följa Stevin."
+     "s": 203.3,
+     "e": 209.9,
+     "text": "Ett tal gånger en vektor ger alltså en pil åt samma håll, fast längre eller kortare."
     },
     {
-     "s": 199.7,
-     "e": 205.56,
-     "text": "Delen som hänger under trekanten är likadan på båda sidor, så den kan vi tänka bort."
+     "s": 210.9,
+     "e": 217.12,
+     "text": "Vektorn två a är dubbelt så lång som a, och en halv a är hälften så lång."
     },
     {
-     "s": 206.74,
-     "e": 212.84,
-     "text": "Kvar är fyra kulor på den långa, flacka sluttningen mot två på den korta,"
+     "s": 218.42,
+     "e": 220.12,
+     "text": "Nu den korta sluttningen."
     },
     {
-     "s": 212.92,
-     "e": 218.86,
-     "text": "branta, och på den branta drar varje kula dubbelt så hårt längs sluttningen."
+     "s": 221.12,
+     "e": 228.1,
+     "text": "Den är brantare, och ju brantare en backe är, desto hårdare drar en kula nedför den."
     },
     {
-     "s": 220.02,
-     "e": 227.02,
-     "text": "Kallar vi draget från en kula på den flacka sidan för a, drar de fyra där med a plus"
+     "s": 229.1,
+     "e": 232.18,
+     "text": "Det märks när man drar en kälke uppför en backe."
     },
     {
-     "s": 227.18,
-     "e": 231.64,
-     "text": "a plus a plus a, alltså fyra a."
+     "s": 233.18,
+     "e": 236.56,
+     "text": "Ju brantare backen är, desto tyngre blir det."
     },
     {
-     "s": 232.96,
-     "e": 237.74,
-     "text": "På den branta sidan är varje kulas pil dubbelt så lång som a,"
+     "s": 237.86,
+     "e": 243.56,
+     "text": "Stevin visade att varje kula på den korta sidan drar dubbelt så hårt,"
     },
     {
-     "s": 238.52,
-     "e": 243.06,
-     "text": "så de två kulorna där ger lika lång pil som fyra a."
+     "s": 244,
+     "e": 246.5,
+     "text": "eftersom sluttningen är hälften så lång."
     },
     {
-     "s": 244.28,
-     "e": 248.72,
-     "text": "Sidorna drar lika hårt, och därför står kransen still."
+     "s": 247.5,
+     "e": 251.44,
+     "text": "Varje kulas pil är därför dubbelt så lång som a."
     },
     {
-     "s": 250.14,
-     "e": 256.34,
-     "text": "I samma bok ritade Stevin krafter som sträckor, och när en tyngd hålls stilla av sneda"
+     "s": 252.44,
+     "e": 257.38,
+     "text": "Två sådana pilar efter varandra blir lika långa som fyra a."
     },
     {
-     "s": 256.4,
-     "e": 259.62,
-     "text": "drag passar sträckorna ihop till en triangel."
+     "s": 258.68,
+     "e": 263.16,
+     "text": "Kransen dras alltså lika hårt åt båda hållen längs snöret."
     },
     {
-     "s": 260.68,
-     "e": 263.2,
-     "text": "Tänk dig en tyngd som hänger i två rep."
+     "s": 264.16,
+     "e": 272.68,
+     "text": "De två dragen är lika långa men pekar åt motsatt håll, och sådana vektorer kallas motsatta vektorer."
     },
     {
-     "s": 264.04,
-     "e": 270.14,
-     "text": "Vi lägger repens pilar efter varandra, så att den andra börjar där den första slutar."
+     "s": 273.68,
+     "e": 277.64,
+     "text": "Lägger vi dem efter varandra, kommer vi tillbaka dit vi började,"
     },
     {
-     "s": 271.2,
-     "e": 278.24,
-     "text": "Det kallas att addera vektorer, och pilen från början till den sista spetsen är resultanten."
+     "s": 278.02,
+     "e": 279.58,
+     "text": "så kransen rör sig inte."
     },
     {
-     "s": 279.6,
-     "e": 283.72,
-     "text": "Man kan också låta båda pilarna börja i knuten, som repen gör,"
+     "s": 280.58,
+     "e": 286.4,
+     "text": "Två kulor kan alltså hålla emot fyra, eftersom de ligger i en brantare backe."
     },
     {
-     "s": 284.28,
-     "e": 286.26,
-     "text": "och rita klart en parallellogram."
+     "s": 287.7,
+     "e": 291.84,
+     "text": "Den motsatta vektorn till a skrivs minus a."
     },
     {
-     "s": 287.3,
-     "e": 290.48,
-     "text": "Diagonalen från knuten är samma resultant."
+     "s": 292.84,
+     "e": 296.92,
+     "text": "Den är lika lång som a, men den pekar åt andra hållet."
     },
     {
-     "s": 291.58,
-     "e": 296.4,
-     "text": "Resultanten pekar rakt uppåt och är lika lång som tyngdens pil,"
+     "s": 297.92,
+     "e": 300.54,
+     "text": "Med den kan vi subtrahera vektorer."
     },
     {
-     "s": 296.86,
-     "e": 298.66,
-     "text": "som pekar rakt nedåt."
+     "s": 301.54,
+     "e": 306.4,
+     "text": "Att subtrahera v är samma sak som att addera minus v."
     },
     {
-     "s": 299.6,
-     "e": 303.66,
-     "text": "De är motsatta vektorer, så tyngden hänger stilla."
+     "s": 307.7,
+     "e": 309.84,
+     "text": "Nu ritar vi på rutat papper."
     },
     {
-     "s": 304.86,
-     "e": 309.62,
-     "text": "Lägger vi alla tre pilarna efter varandra kommer vi tillbaka till början,"
+     "s": 310.84,
+     "e": 314.38,
+     "text": "Vektorn u går fyra rutor åt höger."
     },
     {
-     "s": 310.2,
-     "e": 312.38,
-     "text": "och summan är nollvektorn."
+     "s": 315.38,
+     "e": 320.4,
+     "text": "Vektorn v går två rutor åt höger och tre rutor uppåt."
     },
     {
-     "s": 313.76,
-     "e": 318.02,
-     "text": "Att subtrahera en vektor är att addera den motsatta vektorn."
+     "s": 321.7,
+     "e": 323.82,
+     "text": "Först u plus v."
     },
     {
-     "s": 319.04,
-     "e": 328.9,
-     "text": "Vektorn u minus vektorn v ritas som u plus minus v, så man vänder v och lägger den efter u."
+     "s": 324.82,
+     "e": 329.9,
+     "text": "Vi ritar u, och sedan lägger vi v så att den börjar vid spetsen av u."
     },
     {
-     "s": 330.2,
-     "e": 331.5,
-     "text": "Nu på rutat papper."
+     "s": 330.9,
+     "e": 335.36,
+     "text": "Resultanten går från början av u till spetsen av v."
     },
     {
-     "s": 332.52,
-     "e": 340.46,
-     "text": "Kraften F ett går tre rutor uppåt, och kraften F två går fyra rutor åt höger."
+     "s": 336.36,
+     "e": 340.48,
+     "text": "Den går sex rutor åt höger och tre rutor uppåt."
     },
     {
-     "s": 341.68,
-     "e": 350.34,
-     "text": "För att rita F ett plus två F två dubblar vi först F två till åtta rutor åt höger och"
+     "s": 341.78,
+     "e": 347.02,
+     "text": "Sedan u minus v, alltså u plus minus v."
     },
     {
-     "s": 350.4,
-     "e": 352.6,
-     "text": "lägger sedan F ett efter."
+     "s": 348.02,
+     "e": 354.72,
+     "text": "Vi vänder v, så minus v går två rutor åt vänster och tre rutor nedåt."
     },
     {
-     "s": 353.76,
-     "e": 356.72,
-     "text": "Resultanten går från början till slutet."
+     "s": 355.72,
+     "e": 358.4,
+     "text": "Vi lägger minus v efter u."
     },
     {
-     "s": 358.24,
-     "e": 368.62,
-     "text": "F ett minus F två blir F ett plus minus F två, alltså tre rutor uppåt och sedan fyra åt vänster."
+     "s": 359.4,
+     "e": 364.2,
+     "text": "Resultanten går två rutor åt höger och tre rutor nedåt."
     },
     {
-     "s": 369.88,
-     "e": 377.08,
-     "text": "Ska tre krafter ta ut varandra, som tyngden och repen, ritar vi summan av två av dem"
+     "s": 365.5,
+     "e": 370.66,
+     "text": "Ibland står ett tal framför vektorn, som i u plus två v."
     },
     {
-     "s": 377.16,
-     "e": 378.16,
-     "text": "och vänder den."
+     "s": 371.66,
+     "e": 378.9,
+     "text": "Då dubblar vi först v, så två v går fyra rutor åt höger och sex rutor uppåt."
     },
     {
-     "s": 379.16,
-     "e": 382.1,
-     "text": "Den vända pilen är den tredje kraften."
+     "s": 379.9,
+     "e": 384.02,
+     "text": "Sedan lägger vi två v efter u, precis som förut."
     },
     {
-     "s": 383.24,
-     "e": 387.3,
-     "text": "Krafter mäts i newton, och pilarna har ofta en skala."
+     "s": 385.02,
+     "e": 389.9,
+     "text": "Resultanten går åtta rutor åt höger och sex rutor uppåt."
     },
     {
-     "s": 388.3,
-     "e": 394.46,
-     "text": "Betyder en millimeter fem newton och resultanten mäter fyrtio millimeter,"
+     "s": 391.2,
+     "e": 394.92,
+     "text": "Stevin satte kransen på titelsidan i sin bok."
     },
     {
-     "s": 395.16,
-     "e": 400.12,
-     "text": "är kraften fyrtio gånger fem, alltså tvåhundra newton."
+     "s": 395.92,
+     "e": 399.24,
+     "text": "Ordet vektor kom först på 1800-talet."
     },
     {
-     "s": 401.7,
-     "e": 404.78,
-     "text": "Stevin satte kransen på bokens titelsida."
+     "s": 400.24,
+     "e": 408.48,
+     "text": "Men redan 1586 ritade Stevin krafter som sträckor, med rätt längd och åt rätt håll."
     },
     {
-     "s": 405.7,
-     "e": 415.16,
-     "text": "Ordet vektor kom först på 1800-talet, men han ritade redan 1586 krafter som sträckor"
+     "s": 409.78,
+     "e": 411.32,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 415.6,
-     "e": 418.38,
-     "text": "med rätt längd och rätt riktning."
+     "s": 412.32,
+     "e": 415.58,
+     "text": "Vektorn u går tre rutor åt höger."
     },
     {
-     "s": 419.8,
-     "e": 421.3,
-     "text": "Här är en uppgift till dig."
+     "s": 416.58,
+     "e": 421.46,
+     "text": "Vektorn v går en ruta åt höger och två rutor uppåt."
     },
     {
-     "s": 422.2,
-     "e": 424.86,
-     "text": "En tyngd hänger stilla i två rep."
+     "s": 422.46,
+     "e": 424.64,
+     "text": "Rita u minus v."
     },
     {
-     "s": 425.76,
-     "e": 431.08,
-     "text": "Det ena repet drar två rutor åt vänster och tre rutor uppåt,"
-    },
-    {
-     "s": 431.94,
-     "e": 437.58,
-     "text": "och det andra drar två rutor åt höger och tre rutor uppåt."
-    },
-    {
-     "s": 438.66,
-     "e": 447.64,
-     "text": "Rita repens resultant, och rita sedan pilen för tyngden, så att summan av alla tre blir nollvektorn."
+     "s": 425.64,
+     "e": 430.7,
+     "text": "Hur många rutor åt höger går resultanten, och hur många rutor nedåt?"
     }
    ]
   },
