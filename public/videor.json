@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T15:16:27.019Z",
+ "byggd": "2026-10-03T15:41:13.886Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -7028,663 +7028,815 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-06-vektorer-i-koordinatform-v1/ma1c-k6-06-vektorer-i-koordinatform-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-06-vektorer-i-koordinatform-v2/ma1c-k6-06-vektorer-i-koordinatform-1080p.mp4",
    "moment": "Längd och vinklar i koordinatsystemet",
    "begrepp": [
     "vektor",
     "koordinatform",
     "katetvektorer",
+    "katet",
+    "hypotenusa",
     "längd",
     "Pythagoras sats",
     "tangens",
-    "arcustangens",
     "tan⁻¹",
-    "vektor med längden 1",
+    "enhetsvektor",
     "ett tal gånger en vektor",
-    "vinkeln mellan två vektorer",
+    "sinus",
+    "cosinus",
     "exakta värden"
    ],
-   "beskrivning": "Natten då Titanic sjönk 1912 fick kapten Rostron på Carpathia ett nödanrop med Titanics plats. Han räknade ut att han skulle styra 52 grader väster om norr, 107 kilometer bort. Vi tar fram katetvektorerna, längden med Pythagoras sats, vinkeln med tangens invers, en vektor med längden 1 och vinkeln mellan två vektorer.",
+   "beskrivning": "Natten i april 1912 får kapten Rostron på Carpathia ett nödanrop från Titanic. Åt vilket håll ska han styra, och hur långt är det? Vi skriver vektorn med koordinater, delar upp den i katetvektorer, räknar längden med Pythagoras sats och vinkeln från norr med tangens invers. Sedan en enhetsvektor och exakta värden för sinus, cosinus och tangens.",
    "youtube": null,
-   "langd": 437,
+   "langd": 457,
    "omslag": "omslag/ma1c-k6-06-vektorer-i-koordinatform.jpg?v=dd152207",
    "omslagRen": "omslag/ma1c-k6-06-vektorer-i-koordinatform-ren.jpg?v=6c2addf9",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 0,
-     "text": "I april 1912 var passagerarfartyget Carpathia på väg från New York till Medelhavet. Kaptenen hette Arthur Rostron, och strax efter midnatt hade han precis gått och lagt sig."
+     "t": 1,
+     "text": "Det är strax efter midnatt, en natt i april 1912. Passagerarfartyget Carpathia är på väg över Atlanten, från New York till Medelhavet. Kaptenen heter Arthur Rostron, och han har precis gått och lagt sig."
     },
     {
-     "t": 16,
-     "text": "Telegrafisten ombord skulle också gå och lägga sig, men han hade fortfarande hörlurarna på. Då kom ett meddelande från Titanic, det största fartyget i världen. Meddelandet sa \"Kom genast, vi har kört på ett isberg.\""
+     "t": 21,
+     "text": "Ombord finns en man som sköter fartygets radio. Han har fortfarande hörlurarna på, när ett meddelande kommer från Titanic, det största fartyget i världen. Titanic har kört på ett isberg, och de ber om hjälp genast."
     },
     {
-     "t": 35,
-     "text": "I meddelandet stod också Titanics plats på jordklotet, och telegrafisten sprang upp med det till bryggan. Styrmannen väckte kaptenen, och Rostron gav order om att vända fartyget direkt."
+     "t": 39,
+     "text": "I meddelandet står också var Titanic ligger. Radiomannen springer med meddelandet till kaptenen. Rostron ger order om att vända fartyget direkt."
     },
     {
-     "t": 50,
-     "text": "Medan han klädde på sig lade han in Titanics plats på sjökortet, bredvid Carpathias egen plats. Titanic låg någonstans ute i mörkret åt nordväst."
+     "t": 52,
+     "text": "Medan han klär på sig, ritar han in Titanics plats på kartan, bredvid Carpathias egen plats. Titanic ligger någonstans ute i mörkret, åt nordväst."
     },
     {
-     "t": 63,
-     "text": "Men exakt åt vilket håll skulle Carpathia styra, och hur långt var det dit?"
+     "t": 65,
+     "text": "Men exakt åt vilket håll ska Carpathia styra? Och hur långt är det dit?"
     },
     {
-     "t": 69,
-     "text": "Vi lägger Carpathia i origo i ett koordinatsystem. x-axeln pekar mot öster och y-axeln mot norr, och vi räknar i kilometer."
+     "t": 72,
+     "text": "Vi ritar kartan som ett koordinatsystem. Carpathia ligger i origo, alltså där axlarna korsar varandra. x-axeln pekar mot öster, y-axeln pekar mot norr, och vi räknar i kilometer."
     },
     {
-     "t": 81,
-     "text": "Titanic låg åttiofyra kilometer västerut och sextiosex kilometer norrut. Västerut är minus i x-led, så vektorn från Carpathia till Titanic har koordinaterna minus åttiofyra och sextiosex."
+     "t": 89,
+     "text": "Titanic ligger åttiofyra kilometer västerut och sextiosex kilometer norrut. Västerut är åt vänster, så det blir minus i x-led."
     },
     {
-     "t": 100,
-     "text": "Vektorn kan delas upp i två vektorer längs axlarna, minus åttiofyra och noll rakt västerut, och noll och sextiosex rakt norrut. De kallas katetvektorer, för tillsammans bildar de en rätvinklig triangel, och vektorn till Titanic är hypotenusan."
+     "t": 101,
+     "text": "En pil som har både en längd och en riktning kallas en vektor. Pilen från Carpathia till Titanic är alltså en vektor. Vi skriver den med sina koordinater, minus åttiofyra och sextiosex."
     },
     {
-     "t": 123,
-     "text": "Längden av en vektor står längst ner på formelbladet. Man tar roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat, och det är Pythagoras sats."
+     "t": 118,
+     "text": "Vi kan dela upp vektorn i två pilar längs axlarna. Först går vi sextiosex kilometer rakt norrut, och det är vektorn noll och sextiosex. Sedan går vi åttiofyra kilometer rakt västerut, och det är vektorn minus åttiofyra och noll."
     },
     {
-     "t": 137,
-     "text": "åttiofyra i kvadrat plus sextiosex i kvadrat är elva tusen fyrahundratolv, och roten ur det är ungefär hundrasju. Det är alltså hundrasju kilometer till Titanic."
+     "t": 139,
+     "text": "De två pilarna bildar en rätvinklig triangel tillsammans med vektorn till Titanic. Kateterna är de två kortare sidorna, som möts i det räta hörnet. Därför kallas pilarna katetvektorer. Vektorn till Titanic är den längsta sidan, hypotenusan."
     },
     {
-     "t": 152,
-     "text": "Men Rostron behövde också veta åt vilket håll. På fartyg anger man kursen som en vinkel från norr, så vi söker vinkeln v mellan y-axeln och vektorn."
+     "t": 161,
+     "text": "Hur lång en vektor är står längst ner på formelbladet. Vi tar x-koordinaten i kvadrat plus y-koordinaten i kvadrat, och sedan roten ur summan. Det är Pythagoras sats, för kateterna i kvadrat är tillsammans lika mycket som hypotenusan i kvadrat."
     },
     {
-     "t": 166,
-     "text": "Från vinkeln v sett ligger sidan åttiofyra mitt emot, och sidan sextiosex ligger intill. Tangens är motstående delat med närliggande, så tangens v är åttiofyra delat med sextiosex, alltså ungefär ett komma två sju."
+     "t": 183,
+     "text": "Åttiofyra i kvadrat är sjutusen femtiosex. Sextiosex i kvadrat är fyratusen trehundrafemtiosex. Tillsammans blir det elvatusen fyrahundratolv. Roten ur elvatusen fyrahundratolv är ungefär hundrasju. Det är alltså ungefär hundrasju kilometer till Titanic."
     },
     {
-     "t": 188,
-     "text": "Nu är det vinkeln vi söker, så vi använder tangens invers på räknaren. Den ger att v är ungefär femtiotvå grader. Det är samma kurs som Rostron satte, norr femtiotvå grader väst."
+     "t": 208,
+     "text": "Nu den andra frågan, åt vilket håll. På fartyg anger man riktningen som en vinkel från norr. Vi kallar vinkeln mellan y-axeln och vektorn för v."
     },
     {
-     "t": 204,
-     "text": "Sedan väckte han maskinchefen och lät kalla in fler eldare till ångpannorna. Carpathia brukade gå tjugosex kilometer i timmen, men den natten gick hon ungefär trettio."
+     "t": 222,
+     "text": "Sidan åttiofyra ligger mitt emot vinkeln v, och den kallas motstående katet. Sidan sextiosex ligger intill vinkeln, och den kallas närliggande katet."
     },
     {
-     "t": 218,
-     "text": "Var är fartyget efter en timme? Det har gått trettio kilometer mot Titanic, och för att skriva den vektorn behöver vi först en vektor som bara visar riktningen, alltså med längden ett."
+     "t": 237,
+     "text": "Tangens v är motstående katet delat med närliggande katet. Det står också på formelbladet. Så tangens v är åttiofyra delat med sextiosex."
     },
     {
-     "t": 234,
-     "text": "Ett tal framför en vektor gångrar båda koordinaterna, och då blir längden lika många gånger större. Vektorn är hundrasju lång, så vi gångrar den med ett delat med hundrasju. Det ger ungefär koordinaterna minus noll komma sju nio och noll komma sex två, och den vektorn har längden ett."
+     "t": 251,
+     "text": "Men vi söker vinkeln, inte tangens. Då använder vi tangens invers på räknaren, för den ger vinkeln när man vet tangens. Tangens invers av åttiofyra delat med sextiosex är ungefär femtiotvå grader."
     },
     {
-     "t": 260,
-     "text": "Gånger trettio blir det ungefär minus tjugofyra och nitton. Så långt västerut och norrut kommer Carpathia varje timme."
+     "t": 270,
+     "text": "Carpathia ska alltså styra femtiotvå grader från norr, åt väster. Det är precis den riktning som Rostron räknade fram den natten."
     },
     {
-     "t": 271,
-     "text": "Hur många timmar tar då hela vägen? Vi söker talet k så att k gånger vektorn med minus tjugofyra och nitton blir vektorn med minus åttiofyra och sextiosex. Två vektorer är lika när både x-koordinaterna och y-koordinaterna är lika, så x-led ger ekvationen minus tjugofyra gånger k är minus åttiofyra."
+     "t": 282,
+     "text": "Riktningen kan också skrivas som en vektor. Då gör man en vektor som pekar åt samma håll, men som är exakt ett lång. Den kallas en enhetsvektor."
     },
     {
-     "t": 299,
-     "text": "Den ger att k är tre komma fem, och i y-led stämmer det, för nitton gånger tre komma fem är ungefär sextiosex. Resan tar alltså ungefär tre och en halv timme."
+     "t": 295,
+     "text": "Ett tal framför en vektor gångrar båda koordinaterna, och då blir också längden lika många gånger större. Vektorn till Titanic är hundrasju lång, så vi gångrar den med ett delat med hundrasju."
     },
     {
-     "t": 315,
-     "text": "Nu en uppgift som i boken. Vektorn u har koordinaterna två och sex, och vektorn v har koordinaterna åtta och tre, och båda börjar i origo. Hur stor är vinkeln mellan dem?"
+     "t": 311,
+     "text": "x-koordinaten blir minus åttiofyra delat med hundrasju, alltså ungefär minus noll komma sju nio. y-koordinaten blir sextiosex delat med hundrasju, alltså ungefär noll komma sex två. Det är den första kilometern av resan mot Titanic."
     },
     {
      "t": 333,
-     "text": "Vi tar vinkeln mot x-axeln för var och en. För u är tangens sex delat med två, alltså tre, och tangens invers ger ungefär sjuttioett komma sex grader. För v är tangens tre delat med åtta, och det ger ungefär tjugo komma sex grader."
+     "text": "Nu en uppgift som i boken. Vektorn c har koordinaterna fem och tolv, och den börjar i origo. Vi söker vinkeln v mellan vektorn och x-axeln."
     },
     {
-     "t": 356,
-     "text": "Vinkeln mellan vektorerna är skillnaden, sjuttioett komma sex minus tjugo komma sex, alltså ungefär femtioett grader. Frågar boken efter ett exakt värde låter man roten stå, så sinus för u:s vinkel är sex delat med roten ur fyrtio."
+     "t": 348,
+     "text": "Katetvektorerna är fem och noll längs x-axeln, och noll och tolv rakt uppåt. Fem i kvadrat plus tolv i kvadrat är hundrasextionio. Roten ur hundrasextionio är tretton, så vektorn är tretton lång."
     },
     {
-     "t": 379,
-     "text": "Carpathia kom fram strax före fyra, men Titanic hade redan sjunkit. De fick styra runt isberg på alla sidor, och klockan tio över fyra tog de upp den första livbåten. Vid halv nio var alla ombord, drygt sjuhundra människor."
+     "t": 367,
+     "text": "Sidan tolv ligger mitt emot vinkeln v, och sidan fem ligger intill. Sinus är motstående katet delat med hypotenusan, så sinus v är tolv delat med tretton. Cosinus är närliggande katet delat med hypotenusan, så cosinus v är fem delat med tretton. Tangens v är tolv delat med fem."
     },
     {
-     "t": 401,
-     "text": "Rostron hade räknat rätt från den plats han fick. Men när vraket hittades på havets botten 1985, låg det ungefär tjugofyra kilometer från platsen i meddelandet."
+     "t": 396,
+     "text": "Bråken är de exakta värdena. Vinkeln får vi med tangens invers av tolv delat med fem, och den är ungefär sextiosju komma fyra grader."
     },
     {
-     "t": 416,
-     "text": "Tänk dig att meddelandet i stället hade sagt sextio kilometer västerut och åttio kilometer norrut om Carpathia. Skriv vektorn och katetvektorerna, räkna ut hur långt det är, och skriv tangens för vinkeln från norr."
+     "t": 409,
+     "text": "Carpathia kör så fort hon kan hela natten. Efter tre och en halv timme kommer hon fram, men då har Titanic redan sjunkit. Klockan tio över fyra tar de upp den första livbåten. Vid halv nio på morgonen är alla ombord, drygt sjuhundra människor."
+    },
+    {
+     "t": 432,
+     "text": "Nu är det din tur. Tänk dig att meddelandet i stället hade sagt att Titanic låg fyrtio kilometer västerut och trettio kilometer norrut om Carpathia. Hur långt är det till Titanic? Och hur många grader från norr ska Carpathia styra? Avrunda till hela grader."
     }
    ],
    "kapitel": [
     {
-     "t": 0,
+     "t": 1,
      "rubrik": "Nödanropet från Titanic",
      "typ": "historia"
     },
     {
-     "t": 50,
-     "rubrik": "Rostron vid sjökortet",
+     "t": 65,
+     "rubrik": "Frågan: åt vilket håll och hur långt?",
      "typ": "historia"
     },
     {
-     "t": 69,
+     "t": 72,
      "rubrik": "Vektorn och katetvektorerna",
      "typ": "matte"
     },
     {
-     "t": 123,
+     "t": 161,
      "rubrik": "Längden med Pythagoras sats",
      "typ": "matte"
     },
     {
-     "t": 152,
-     "rubrik": "Kursen med tangens invers",
+     "t": 208,
+     "rubrik": "Vinkeln från norr med tangens",
      "typ": "matte"
     },
     {
-     "t": 218,
+     "t": 282,
      "rubrik": "En vektor med längden 1",
      "typ": "matte"
     },
     {
-     "t": 271,
-     "rubrik": "En ekvation för varje koordinat",
+     "t": 333,
+     "rubrik": "Övningstal: sin, cos och tan för en vektor",
      "typ": "matte"
     },
     {
-     "t": 315,
-     "rubrik": "Övningstal: vinkeln mellan två vektorer",
-     "typ": "matte"
-    },
-    {
-     "t": 379,
-     "rubrik": "Livbåtarna i gryningen",
+     "t": 409,
+     "rubrik": "Framme i gryningen",
      "typ": "historia"
     },
     {
-     "t": 416,
+     "t": 432,
      "rubrik": "Din tur",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 416,
-    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 60 kilometer västerut och 80 kilometer norrut om Carpathia.",
+    "notisFran": 432,
+    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "b01-uppslag-koordinater",
+     "tema": "papper",
+     "utsnitt": [
+      470,
+      50,
+      1440,
+      810
+     ],
+     "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 40 km västerut och 30 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
+     "delar": [
+      {
+       "typ": "pil",
+       "svag": true,
+       "fran": [
+        734,
+        710
+       ],
+       "till": [
+        1497,
+        710
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1549,
+        710
+       ],
+       "text": "Ö"
+      },
+      {
+       "typ": "pil",
+       "svag": true,
+       "fran": [
+        1350,
+        759
+       ],
+       "till": [
+        1350,
+        213
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1350,
+        157
+       ],
+       "text": "N"
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1350,
+         750
+        ],
+        [
+         990,
+         750
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1170,
+        796
+       ],
+       "text": "40 km"
+      },
+      {
+       "typ": "linje",
+       "streckad": true,
+       "p": [
+        [
+         990,
+         710
+        ],
+        [
+         990,
+         440
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        880,
+        575
+       ],
+       "text": "30 km"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        990,
+        440
+       ],
+       "r": 8
+      },
+      {
+       "typ": "text",
+       "vid": [
+        960,
+        432
+       ],
+       "text": "Titanic",
+       "ankare": "end"
+      },
+      {
+       "typ": "linje",
+       "streckad": true,
+       "accent": true,
+       "p": [
+        [
+         1350,
+         710
+        ],
+        [
+         990,
+         440
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1200,
+        540
+       ],
+       "text": "? km",
+       "accent": true
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        1350,
+        710
+       ],
+       "mot": [
+        [
+         1350,
+         510
+        ],
+        [
+         990,
+         440
+        ]
+       ],
+       "r": 150,
+       "text": "v",
+       "avstand": 65
+      }
+     ]
+    },
     "delar": [
-     {
-      "fraga": "Vad är vektorns x-koordinat?",
-      "typ": "tal",
-      "svar": -60,
-      "exempel": "t.ex. −40",
-      "fel": [
-       {
-        "svar": "60",
-        "text": "Titanic ligger västerut, åt vänster. Då är x-koordinaten negativ."
-       },
-       {
-        "svar": "80",
-        "text": "80 kilometer är steget norrut, alltså y-led. x-led är öster–väster."
-       },
-       {
-        "svar": "-80",
-        "text": "80 kilometer är steget norrut, alltså y-led. x-led är öster–väster: 60 kilometer västerut."
-       }
-      ]
-     },
-     {
-      "fraga": "Vad är vektorns y-koordinat?",
-      "typ": "tal",
-      "svar": 80,
-      "exempel": "t.ex. 50",
-      "fel": [
-       {
-        "svar": "-80",
-        "text": "Norrut är uppåt. Då är y-koordinaten positiv."
-       },
-       {
-        "svar": "60",
-        "text": "60 kilometer är steget västerut, alltså x-led."
-       },
-       {
-        "svar": "-60",
-        "text": "60 kilometer är steget västerut, alltså x-led. y-led är norrut: 80 kilometer."
-       }
-      ]
-     },
      {
       "fraga": "Hur långt är det till Titanic? Svara i kilometer.",
       "typ": "tal",
-      "svar": 100,
-      "enhet": "kilometer",
-      "exempel": "t.ex. 90",
+      "svar": 50,
+      "exempel": "t.ex. 80",
       "fel": [
        {
-        "svar": "140",
-        "text": "Du har lagt ihop kateterna. Längden är hypotenusan: roten ur 60² + 80²."
+        "svar": "70",
+        "text": "Du har lagt ihop 40 och 30. Men vägen går snett, som hypotenusan. Ta roten ur 40² + 30²."
        },
        {
-        "svar": "10000",
-        "text": "Det är 60² + 80². Längden är roten ur det talet."
+        "svar": "2500",
+        "text": "Det är 40² + 30². Glöm inte att ta roten ur summan."
        },
        {
-        "svar": "20",
-        "text": "Det är 80 − 60. Längden räknas med Pythagoras sats: roten ur 60² + 80²."
+        "svar": "10",
+        "text": "Kvadrera först: 40² + 30² = 1 600 + 900. Ta sedan roten ur."
        }
       ]
      },
      {
-      "fraga": "Vad är tangens för vinkeln från norr? Svara med ett bråk eller ett decimaltal.",
+      "fraga": "Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.",
       "typ": "tal",
-      "svar": 0.75,
-      "tolerans": 0.006,
-      "exempel": "t.ex. 3/4 eller 0,75",
+      "svar": 53,
+      "tolerans": 0.6,
+      "exempel": "t.ex. 45",
       "fel": [
        {
-        "svar": "1.3333",
+        "svar": "37",
+        "tolerans": 0.6,
+        "text": "Det är vinkeln från x-axeln. Vinkeln från norr har 40 mitt emot sig och 30 intill: tangens v = 40/30."
+       },
+       {
+        "svar": "1.33",
         "tolerans": 0.01,
-        "text": "Det är 80 delat med 60. Från norr sett ligger 60 (västerut) mitt emot vinkeln och 80 (norrut) intill den. Tangens är motstående delat med närliggande."
-       },
-       {
-        "svar": "0.6",
-        "tolerans": 0.006,
-        "text": "Det är 60 delat med 100, alltså sinus. Tangens är motstående delat med närliggande: 60 delat med 80."
-       },
-       {
-        "svar": "0.8",
-        "tolerans": 0.006,
-        "text": "Det är 80 delat med 100, alltså cosinus. Tangens är motstående delat med närliggande: 60 delat med 80."
+        "text": "Det är tangens v. Använd tangens invers på räknaren för att få vinkeln."
        }
       ]
      }
     ],
     "ledtrad": {
-     "text": "Carpathia står i origo, x-axeln pekar mot öster och y-axeln mot norr. Västerut är minus i x-led. Längden får du med Pythagoras sats och vinkeln från norr med tangens, som för Titanic.",
-     "t": 69
+     "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30.",
+     "t": 161
     },
     "losning": [
-     "Västerut är minus i x-led och norrut plus i y-led, så vektorn är (−60, 80).",
-     "Katetvektorerna är (−60, 0) och (0, 80).",
-     "Längden: √(60² + 80²) = √(3600 + 6400) = √10 000 = 100 km.",
-     "Från norr sett ligger 60 mitt emot vinkeln och 80 intill, så tan v = 60/80 = 0,75."
+     "Vektorn från Carpathia till Titanic är (−40, 30).",
+     "Längden: 40² + 30² = 1 600 + 900 = 2 500, och √2 500 = 50. Det är 50 km.",
+     "Vinkeln från norr: motstående katet 40, närliggande katet 30, så tan v = 40/30.",
+     "v = tan⁻¹(40/30) ≈ 53,1°, alltså ungefär 53° från norr åt väster."
     ]
    },
    "undertext": [
     {
-     "s": 0.18,
-     "e": 7.5,
-     "text": "I april 1912 var passagerarfartyget Carpathia på väg från New York till Medelhavet."
+     "s": 1.5,
+     "e": 6.48,
+     "text": "Det är strax efter midnatt, en natt i april 1912."
     },
     {
-     "s": 8.46,
-     "e": 14.58,
-     "text": "Kaptenen hette Arthur Rostron, och strax efter midnatt hade han precis gått och lagt sig."
+     "s": 7.48,
+     "e": 14,
+     "text": "Passagerarfartyget Carpathia är på väg över Atlanten, från New York till Medelhavet."
     },
     {
-     "s": 16.2,
-     "e": 21.66,
-     "text": "Telegrafisten ombord skulle också gå och lägga sig, men han hade fortfarande hörlurarna på."
+     "s": 15,
+     "e": 19.86,
+     "text": "Kaptenen heter Arthur Rostron, och han har precis gått och lagt sig."
     },
     {
-     "s": 22.96,
-     "e": 28.64,
-     "text": "Då kom ett meddelande från Titanic, det största fartyget i världen."
+     "s": 21.16,
+     "e": 24.46,
+     "text": "Ombord finns en man som sköter fartygets radio."
     },
     {
-     "s": 29.6,
-     "e": 34.26,
-     "text": "Meddelandet sa \"Kom genast, vi har kört på ett isberg.\""
+     "s": 25.46,
+     "e": 30.44,
+     "text": "Han har fortfarande hörlurarna på, när ett meddelande kommer från Titanic,"
     },
     {
-     "s": 35.66,
-     "e": 41.86,
-     "text": "I meddelandet stod också Titanics plats på jordklotet, och telegrafisten sprang upp med"
+     "s": 30.86,
+     "e": 32.94,
+     "text": "det största fartyget i världen."
     },
     {
-     "s": 41.9,
-     "e": 43.06,
-     "text": "det till bryggan."
+     "s": 33.94,
+     "e": 38.44,
+     "text": "Titanic har kört på ett isberg, och de ber om hjälp genast."
     },
     {
-     "s": 44.04,
-     "e": 49.6,
-     "text": "Styrmannen väckte kaptenen, och Rostron gav order om att vända fartyget direkt."
+     "s": 39.74,
+     "e": 42.9,
+     "text": "I meddelandet står också var Titanic ligger."
     },
     {
-     "s": 50.8,
-     "e": 54.84,
-     "text": "Medan han klädde på sig lade han in Titanics plats på sjökortet,"
+     "s": 43.9,
+     "e": 46.88,
+     "text": "Radiomannen springer med meddelandet till kaptenen."
     },
     {
-     "s": 55.18,
-     "e": 57.66,
+     "s": 47.88,
+     "e": 51.26,
+     "text": "Rostron ger order om att vända fartyget direkt."
+    },
+    {
+     "s": 52.56,
+     "e": 56.84,
+     "text": "Medan han klär på sig, ritar han in Titanics plats på kartan,"
+    },
+    {
+     "s": 57.24,
+     "e": 59.42,
      "text": "bredvid Carpathias egen plats."
     },
     {
-     "s": 58.62,
-     "e": 62.5,
-     "text": "Titanic låg någonstans ute i mörkret åt nordväst."
+     "s": 60.42,
+     "e": 64.42,
+     "text": "Titanic ligger någonstans ute i mörkret, åt nordväst."
     },
     {
-     "s": 63.16,
-     "e": 68.26,
-     "text": "Men exakt åt vilket håll skulle Carpathia styra, och hur långt var det dit?"
+     "s": 65.72,
+     "e": 69.22,
+     "text": "Men exakt åt vilket håll ska Carpathia styra?"
     },
     {
-     "s": 69.62,
-     "e": 73.34,
-     "text": "Vi lägger Carpathia i origo i ett koordinatsystem."
+     "s": 70.22,
+     "e": 71.6,
+     "text": "Och hur långt är det dit?"
     },
     {
-     "s": 74.18,
-     "e": 80.28,
-     "text": "x-axeln pekar mot öster och y-axeln mot norr, och vi räknar i kilometer."
+     "s": 72.9,
+     "e": 75.5,
+     "text": "Vi ritar kartan som ett koordinatsystem."
     },
     {
-     "s": 81.48,
-     "e": 87.92,
-     "text": "Titanic låg 84 kilometer västerut och 66 kilometer norrut."
+     "s": 76.5,
+     "e": 81.2,
+     "text": "Carpathia ligger i origo, alltså där axlarna korsar varandra."
     },
     {
-     "s": 88.86,
-     "e": 97.22,
-     "text": "Västerut är minus i x-led, så vektorn från Carpathia till Titanic har koordinaterna"
+     "s": 82.2,
+     "e": 88.22,
+     "text": "x-axeln pekar mot öster, y-axeln pekar mot norr, och vi räknar i kilometer."
     },
     {
-     "s": 97.28,
-     "e": 99.26,
-     "text": "−84 och 66."
+     "s": 89.52,
+     "e": 95.56,
+     "text": "Titanic ligger 84 kilometer västerut och 66 kilometer norrut."
     },
     {
-     "s": 100.62,
-     "e": 108.32,
-     "text": "Vektorn kan delas upp i två vektorer längs axlarna, −84 och 0 rakt västerut,"
+     "s": 96.56,
+     "e": 100.68,
+     "text": "Västerut är åt vänster, så det blir minus i x-led."
     },
     {
-     "s": 108.84,
-     "e": 112.26,
-     "text": "och 0 och 66 rakt norrut."
+     "s": 101.98,
+     "e": 106.44,
+     "text": "En pil som har både en längd och en riktning kallas en vektor."
     },
     {
-     "s": 113.1,
-     "e": 118.66,
-     "text": "De kallas katetvektorer, för tillsammans bildar de en rätvinklig triangel,"
+     "s": 107.44,
+     "e": 111.48,
+     "text": "Pilen från Carpathia till Titanic är alltså en vektor."
     },
     {
-     "s": 119.24,
-     "e": 122.48,
-     "text": "och vektorn till Titanic är hypotenusan."
+     "s": 112.48,
+     "e": 117.28,
+     "text": "Vi skriver den med sina koordinater, (−84, 66)."
     },
     {
-     "s": 123.64,
-     "e": 127.22,
-     "text": "Längden av en vektor står längst ner på formelbladet."
+     "s": 118.58,
+     "e": 122.22,
+     "text": "Vi kan dela upp vektorn i två pilar längs axlarna."
     },
     {
-     "s": 127.62,
-     "e": 133.68,
-     "text": "Man tar roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat,"
+     "s": 123.22,
+     "e": 129.84,
+     "text": "Först går vi 66 kilometer rakt norrut, och det är vektorn (0, 66)."
     },
     {
-     "s": 134.02,
-     "e": 136.16,
-     "text": "och det är Pythagoras sats."
+     "s": 130.84,
+     "e": 137.98,
+     "text": "Sedan går vi 84 kilometer rakt västerut, och det är vektorn (−84, 0)."
     },
     {
-     "s": 137.44,
-     "e": 143.58,
-     "text": "84 i kvadrat plus 66 i kvadrat är 11 412,"
+     "s": 139.28,
+     "e": 144.92,
+     "text": "De två pilarna bildar en rätvinklig triangel tillsammans med vektorn till Titanic."
     },
     {
-     "s": 144.14,
-     "e": 146.94,
-     "text": "och roten ur det är ungefär 107."
+     "s": 145.92,
+     "e": 150.78,
+     "text": "Kateterna är de två kortare sidorna, som möts i det räta hörnet."
     },
     {
-     "s": 147.84,
-     "e": 151.32,
-     "text": "Det är alltså 107 kilometer till Titanic."
+     "s": 151.78,
+     "e": 154.64,
+     "text": "Därför kallas pilarna katetvektorer."
     },
     {
-     "s": 152.48,
-     "e": 155.4,
-     "text": "Men Rostron behövde också veta åt vilket håll."
+     "s": 155.64,
+     "e": 159.88,
+     "text": "Vektorn till Titanic är den längsta sidan, hypotenusan."
     },
     {
-     "s": 155.96,
-     "e": 164.92,
-     "text": "På fartyg anger man kursen som en vinkel från norr, så vi söker vinkeln v mellan y-axeln och vektorn."
+     "s": 161.18,
+     "e": 165,
+     "text": "Hur lång en vektor är står längst ner på formelbladet."
     },
     {
-     "s": 166.12,
-     "e": 174.02,
-     "text": "Från vinkeln v sett ligger sidan 84 mitt emot, och sidan 66 ligger intill."
+     "s": 166,
+     "e": 170.88,
+     "text": "Vi tar x-koordinaten i kvadrat plus y-koordinaten i kvadrat,"
     },
     {
-     "s": 175.02,
-     "e": 183.54,
-     "text": "Tangens är motstående delat med närliggande, så tangens v är 84 delat med 66,"
+     "s": 171.16,
+     "e": 173.26,
+     "text": "och sedan roten ur summan."
     },
     {
-     "s": 184.12,
-     "e": 186.94,
-     "text": "alltså ungefär 1,27."
+     "s": 174.26,
+     "e": 181.72,
+     "text": "Det är Pythagoras sats, för kateterna i kvadrat är tillsammans lika mycket som hypotenusan i kvadrat."
     },
     {
-     "s": 188.28,
-     "e": 193.18,
-     "text": "Nu är det vinkeln vi söker, så vi använder tangens invers på räknaren."
+     "s": 183.02,
+     "e": 186.66,
+     "text": "84 i kvadrat är 7 056."
     },
     {
-     "s": 193.92,
-     "e": 197.34,
-     "text": "Den ger att v är ungefär 52 grader."
+     "s": 187.66,
+     "e": 191.92,
+     "text": "66 i kvadrat är 4 356."
     },
     {
-     "s": 198.22,
-     "e": 203.3,
-     "text": "Det är samma kurs som Rostron satte, norr 52 grader väst."
+     "s": 192.92,
+     "e": 196.44,
+     "text": "Tillsammans blir det 11 412."
     },
     {
-     "s": 204.64,
-     "e": 209.88,
-     "text": "Sedan väckte han maskinchefen och lät kalla in fler eldare till ångpannorna."
+     "s": 197.44,
+     "e": 202.34,
+     "text": "Roten ur 11 412 är ungefär 107."
     },
     {
-     "s": 210.84,
-     "e": 217.48,
-     "text": "Carpathia brukade gå 26 kilometer i timmen, men den natten gick hon ungefär 30."
+     "s": 203.34,
+     "e": 207.62,
+     "text": "Det är alltså ungefär 107 kilometer till Titanic."
     },
     {
-     "s": 218.9,
-     "e": 221.32,
-     "text": "Var är fartyget efter en timme?"
+     "s": 208.92,
+     "e": 211.52,
+     "text": "Nu den andra frågan, åt vilket håll."
     },
     {
-     "s": 222.1,
-     "e": 227.96,
-     "text": "Det har gått 30 kilometer mot Titanic, och för att skriva den vektorn behöver vi"
+     "s": 212.52,
+     "e": 216.7,
+     "text": "På fartyg anger man riktningen som en vinkel från norr."
     },
     {
-     "s": 228.02,
-     "e": 232.96,
-     "text": "först en vektor som bara visar riktningen, alltså med längden 1."
+     "s": 217.7,
+     "e": 221.56,
+     "text": "Vi kallar vinkeln mellan y-axeln och vektorn för v."
     },
     {
-     "s": 234.2,
-     "e": 241.9,
-     "text": "Ett tal framför en vektor gångrar båda koordinaterna, och då blir längden lika många gånger större."
+     "s": 222.86,
+     "e": 229.14,
+     "text": "Sidan 84 ligger mitt emot vinkeln v, och den kallas motstående katet."
     },
     {
-     "s": 242.98,
-     "e": 248.64,
-     "text": "Vektorn är 107 lång, så vi gångrar den med 1 delat med 107."
+     "s": 230.14,
+     "e": 235.82,
+     "text": "Sidan 66 ligger intill vinkeln, och den kallas närliggande katet."
     },
     {
-     "s": 249.6,
-     "e": 256.2,
-     "text": "Det ger ungefär koordinaterna −0,79 och 0,62,"
+     "s": 237.12,
+     "e": 242.14,
+     "text": "Tangens v är motstående katet delat med närliggande katet."
     },
     {
-     "s": 256.98,
-     "e": 259.24,
-     "text": "och den vektorn har längden 1."
+     "s": 243.14,
+     "e": 244.88,
+     "text": "Det står också på formelbladet."
     },
     {
-     "s": 260.48,
-     "e": 265.16,
-     "text": "Gånger 30 blir det ungefär −24 och 19."
+     "s": 245.88,
+     "e": 250.02,
+     "text": "Så tangens v är 84 delat med 66."
     },
     {
-     "s": 266.12,
-     "e": 270.34,
-     "text": "Så långt västerut och norrut kommer Carpathia varje timme."
+     "s": 251.32,
+     "e": 254.6,
+     "text": "Men vi söker vinkeln, inte tangens."
     },
     {
-     "s": 271.64,
-     "e": 273.94,
-     "text": "Hur många timmar tar då hela vägen?"
+     "s": 255.6,
+     "e": 261.74,
+     "text": "Då använder vi tangens invers på räknaren, för den ger vinkeln när man vet tangens."
     },
     {
-     "s": 274.66,
-     "e": 281.74,
-     "text": "Vi söker talet k så att k gånger vektorn med −24 och 19 blir vektorn"
+     "s": 262.74,
+     "e": 269,
+     "text": "Tangens invers av 84 delat med 66 är ungefär 52 grader."
     },
     {
-     "s": 281.8,
-     "e": 284.48,
-     "text": "med −84 och 66."
+     "s": 270.3,
+     "e": 275.54,
+     "text": "Carpathia ska alltså styra 52 grader från norr, åt väster."
     },
     {
-     "s": 285.6,
-     "e": 290.98,
-     "text": "Två vektorer är lika när både x-koordinaterna och y-koordinaterna är lika,"
+     "s": 276.54,
+     "e": 280.74,
+     "text": "Det är precis den riktning som Rostron räknade fram den natten."
     },
     {
-     "s": 291.7,
-     "e": 298.5,
-     "text": "så x-led ger ekvationen −24 gånger k är −84."
+     "s": 282.04,
+     "e": 284.82,
+     "text": "Riktningen kan också skrivas som en vektor."
     },
     {
-     "s": 299.76,
-     "e": 307.12,
-     "text": "Den ger att k är 3,5, och i y-led stämmer det, för 19 gånger"
+     "s": 285.82,
+     "e": 290.96,
+     "text": "Då gör man en vektor som pekar åt samma håll, men som är exakt ett lång."
     },
     {
-     "s": 307.2,
-     "e": 309.46,
-     "text": "3,5 är ungefär 66."
+     "s": 291.96,
+     "e": 294.12,
+     "text": "Den kallas en enhetsvektor."
     },
     {
-     "s": 310.58,
-     "e": 314.14,
-     "text": "Resan tar alltså ungefär tre och en halv timme."
+     "s": 295.42,
+     "e": 301.82,
+     "text": "Ett tal framför en vektor gångrar båda koordinaterna, och då blir också längden lika"
     },
     {
-     "s": 315.7,
-     "e": 317.46,
+     "s": 301.88,
+     "e": 303,
+     "text": "många gånger större."
+    },
+    {
+     "s": 304,
+     "e": 310.5,
+     "text": "Vektorn till Titanic är 107 lång, så vi gångrar den med 1 delat med 107."
+    },
+    {
+     "s": 311.8,
+     "e": 319.86,
+     "text": "x-koordinaten blir −84 delat med 107, alltså ungefär −0,79."
+    },
+    {
+     "s": 320.86,
+     "e": 327.56,
+     "text": "y-koordinaten blir 66 delat med 107, alltså ungefär 0,62."
+    },
+    {
+     "s": 328.56,
+     "e": 332.16,
+     "text": "Det är den första kilometern av resan mot Titanic."
+    },
+    {
+     "s": 333.46,
+     "e": 335.32,
      "text": "Nu en uppgift som i boken."
     },
     {
-     "s": 318.22,
-     "e": 326.34,
-     "text": "Vektorn u har koordinaterna 2 och 6, och vektorn v har koordinaterna 8 och 3,"
+     "s": 336.32,
+     "e": 341.82,
+     "text": "Vektorn c har koordinaterna (5, 12), och den börjar i origo."
     },
     {
-     "s": 326.92,
-     "e": 329.04,
-     "text": "och båda börjar i origo."
+     "s": 342.82,
+     "e": 346.74,
+     "text": "Vi söker vinkeln v mellan vektorn och x-axeln."
     },
     {
-     "s": 329.92,
-     "e": 332.3,
-     "text": "Hur stor är vinkeln mellan dem?"
+     "s": 348.04,
+     "e": 354.74,
+     "text": "Katetvektorerna är (5, 0) längs x-axeln, och (0, 12) rakt uppåt."
     },
     {
-     "s": 333.58,
-     "e": 336.66,
-     "text": "Vi tar vinkeln mot x-axeln för var och en."
+     "s": 355.74,
+     "e": 360.08,
+     "text": "5 i kvadrat plus 12 i kvadrat är 169."
     },
     {
-     "s": 337.18,
-     "e": 345.42,
-     "text": "För u är tangens 6 delat med 2, alltså 3, och tangens invers ger ungefär"
+     "s": 361.08,
+     "e": 366.34,
+     "text": "Roten ur 169 är 13, så vektorn är 13 lång."
     },
     {
-     "s": 345.48,
-     "e": 346.76,
-     "text": "71,6 grader."
+     "s": 367.64,
+     "e": 373.1,
+     "text": "Sidan 12 ligger mitt emot vinkeln v, och sidan 5 ligger intill."
     },
     {
-     "s": 347.8,
-     "e": 354.92,
-     "text": "För v är tangens 3 delat med 8, och det ger ungefär 20,6 grader."
+     "s": 374.1,
+     "e": 382.02,
+     "text": "Sinus är motstående katet delat med hypotenusan, så sinus v är 12 delat med 13."
     },
     {
-     "s": 356.14,
-     "e": 363.16,
-     "text": "Vinkeln mellan vektorerna är skillnaden, 71,6 minus 20,6,"
+     "s": 383.02,
+     "e": 391.16,
+     "text": "Cosinus är närliggande katet delat med hypotenusan, så cosinus v är 5 delat med 13."
     },
     {
-     "s": 363.9,
-     "e": 366.3,
-     "text": "alltså ungefär 51 grader."
+     "s": 392.16,
+     "e": 395.14,
+     "text": "Tangens v är 12 delat med 5."
     },
     {
-     "s": 367.44,
-     "e": 375.58,
-     "text": "Frågar boken efter ett exakt värde låter man roten stå, så sinus för u:s vinkel är"
+     "s": 396.44,
+     "e": 398.74,
+     "text": "Bråken är de exakta värdena."
     },
     {
-     "s": 375.64,
-     "e": 377.78,
-     "text": "6 delat med roten ur 40."
+     "s": 399.74,
+     "e": 407.88,
+     "text": "Vinkeln får vi med tangens invers av 12 delat med 5, och den är ungefär 67,4 grader."
     },
     {
-     "s": 379.34,
-     "e": 385.08,
-     "text": "Carpathia kom fram strax före fyra, men Titanic hade redan sjunkit."
+     "s": 409.18,
+     "e": 412.74,
+     "text": "Carpathia kör så fort hon kan hela natten."
     },
     {
-     "s": 386.18,
-     "e": 393.9,
-     "text": "De fick styra runt isberg på alla sidor, och klockan tio över fyra tog de upp den första livbåten."
+     "s": 413.74,
+     "e": 419.48,
+     "text": "Efter tre och en halv timme kommer hon fram, men då har Titanic redan sjunkit."
     },
     {
-     "s": 395.02,
-     "e": 400.18,
-     "text": "Vid halv nio var alla ombord, drygt 700 människor."
+     "s": 420.48,
+     "e": 424.32,
+     "text": "Klockan tio över fyra tar de upp den första livbåten."
     },
     {
-     "s": 401.56,
-     "e": 404.7,
-     "text": "Rostron hade räknat rätt från den plats han fick."
+     "s": 425.32,
+     "e": 430.86,
+     "text": "Vid halv nio på morgonen är alla ombord, drygt 700 människor."
     },
     {
-     "s": 405.42,
-     "e": 413.4,
-     "text": "Men när vraket hittades på havets botten 1985, låg det ungefär 24 kilometer från"
+     "s": 432.16,
+     "e": 433.86,
+     "text": "Nu är det din tur."
     },
     {
-     "s": 413.44,
-     "e": 415.16,
-     "text": "platsen i meddelandet."
+     "s": 434.86,
+     "e": 441.68,
+     "text": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut"
     },
     {
-     "s": 416.64,
-     "e": 423.8,
-     "text": "Tänk dig att meddelandet i stället hade sagt 60 kilometer västerut och 80 kilometer"
+     "s": 441.88,
+     "e": 445.04,
+     "text": "och 30 kilometer norrut om Carpathia."
     },
     {
-     "s": 423.9,
-     "e": 425.6,
-     "text": "norrut om Carpathia."
+     "s": 446.04,
+     "e": 448,
+     "text": "Hur långt är det till Titanic?"
     },
     {
-     "s": 426.9,
-     "e": 431.48,
-     "text": "Skriv vektorn och katetvektorerna, räkna ut hur långt det är,"
+     "s": 449,
+     "e": 453.02,
+     "text": "Och hur många grader från norr ska Carpathia styra?"
     },
     {
-     "s": 432,
-     "e": 434.92,
-     "text": "och skriv tangens för vinkeln från norr."
+     "s": 454.02,
+     "e": 455.86,
+     "text": "Avrunda till hela grader."
     }
    ]
   },

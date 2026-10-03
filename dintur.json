@@ -1248,104 +1248,47 @@
     ]
   },
   "ma1c-k6-06-vektorer-i-koordinatform": {
-    "notisFran": "Tänk dig att meddelandet",
-    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 60 kilometer västerut och 80 kilometer norrut om Carpathia.",
-    "delar": [
-      {
-        "fraga": "Vad är vektorns x-koordinat?",
-        "typ": "tal",
-        "svar": -60,
-        "exempel": "t.ex. −40",
-        "fel": [
-          {
-            "svar": "60",
-            "text": "Titanic ligger västerut, åt vänster. Då är x-koordinaten negativ."
-          },
-          {
-            "svar": "80",
-            "text": "80 kilometer är steget norrut, alltså y-led. x-led är öster–väster."
-          },
-          {
-            "svar": "-80",
-            "text": "80 kilometer är steget norrut, alltså y-led. x-led är öster–väster: 60 kilometer västerut."
-          }
-        ]
-      },
-      {
-        "fraga": "Vad är vektorns y-koordinat?",
-        "typ": "tal",
-        "svar": 80,
-        "exempel": "t.ex. 50",
-        "fel": [
-          {
-            "svar": "-80",
-            "text": "Norrut är uppåt. Då är y-koordinaten positiv."
-          },
-          {
-            "svar": "60",
-            "text": "60 kilometer är steget västerut, alltså x-led."
-          },
-          {
-            "svar": "-60",
-            "text": "60 kilometer är steget västerut, alltså x-led. y-led är norrut: 80 kilometer."
-          }
-        ]
-      },
-      {
-        "fraga": "Hur långt är det till Titanic? Svara i kilometer.",
-        "typ": "tal",
-        "svar": 100,
-        "enhet": "kilometer",
-        "exempel": "t.ex. 90",
-        "fel": [
-          {
-            "svar": "140",
-            "text": "Du har lagt ihop kateterna. Längden är hypotenusan: roten ur 60² + 80²."
-          },
-          {
-            "svar": "10000",
-            "text": "Det är 60² + 80². Längden är roten ur det talet."
-          },
-          {
-            "svar": "20",
-            "text": "Det är 80 − 60. Längden räknas med Pythagoras sats: roten ur 60² + 80²."
-          }
-        ]
-      },
-      {
-        "fraga": "Vad är tangens för vinkeln från norr? Svara med ett bråk eller ett decimaltal.",
-        "typ": "tal",
-        "svar": 0.75,
-        "tolerans": 0.006,
-        "exempel": "t.ex. 3/4 eller 0,75",
-        "fel": [
-          {
-            "svar": "1.3333",
-            "tolerans": 0.01,
-            "text": "Det är 80 delat med 60. Från norr sett ligger 60 (västerut) mitt emot vinkeln och 80 (norrut) intill den. Tangens är motstående delat med närliggande."
-          },
-          {
-            "svar": "0.6",
-            "tolerans": 0.006,
-            "text": "Det är 60 delat med 100, alltså sinus. Tangens är motstående delat med närliggande: 60 delat med 80."
-          },
-          {
-            "svar": "0.8",
-            "tolerans": 0.006,
-            "text": "Det är 80 delat med 100, alltså cosinus. Tangens är motstående delat med närliggande: 60 delat med 80."
-          }
-        ]
-      }
-    ],
-    "ledtrad": {
-      "fras": "Vi lägger Carpathia i origo",
-      "text": "Carpathia står i origo, x-axeln pekar mot öster och y-axeln mot norr. Västerut är minus i x-led. Längden får du med Pythagoras sats och vinkeln från norr med tangens, som för Titanic."
+    "notisFran": "Nu är det din tur",
+    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia.",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "b01-uppslag-koordinater",
+      "tema": "papper",
+      "utsnitt": [470, 50, 1440, 810],
+      "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 40 km västerut och 30 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
+      "delar": [
+        { "typ": "pil", "svag": true, "fran": [734, 710], "till": [1497, 710] },
+        { "typ": "text", "vid": [1549, 710], "text": "Ö" },
+        { "typ": "pil", "svag": true, "fran": [1350, 759], "till": [1350, 213] },
+        { "typ": "text", "vid": [1350, 157], "text": "N" },
+        { "typ": "linje", "svag": true, "p": [[1350, 750], [990, 750]] },
+        { "typ": "text", "vid": [1170, 796], "text": "40 km" },
+        { "typ": "linje", "streckad": true, "p": [[990, 710], [990, 440]] },
+        { "typ": "text", "vid": [880, 575], "text": "30 km" },
+        { "typ": "prick", "vid": [990, 440], "r": 8 },
+        { "typ": "text", "vid": [960, 432], "text": "Titanic", "ankare": "end" },
+        { "typ": "linje", "streckad": true, "accent": true, "p": [[1350, 710], [990, 440]] },
+        { "typ": "text", "vid": [1200, 540], "text": "? km", "accent": true },
+        { "typ": "vinkel", "vid": [1350, 710], "mot": [[1350, 510], [990, 440]], "r": 150, "text": "v", "avstand": 65 }
+      ]
     },
+    "delar": [
+      { "fraga": "Hur långt är det till Titanic? Svara i kilometer.", "typ": "tal", "svar": 50, "exempel": "t.ex. 80",
+        "fel": [
+          { "svar": "70", "text": "Du har lagt ihop 40 och 30. Men vägen går snett, som hypotenusan. Ta roten ur 40² + 30²." },
+          { "svar": "2500", "text": "Det är 40² + 30². Glöm inte att ta roten ur summan." },
+          { "svar": "10", "text": "Kvadrera först: 40² + 30² = 1 600 + 900. Ta sedan roten ur." } ] },
+      { "fraga": "Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.", "typ": "tal", "svar": 53, "tolerans": 0.6, "exempel": "t.ex. 45",
+        "fel": [
+          { "svar": "37", "tolerans": 0.6, "text": "Det är vinkeln från x-axeln. Vinkeln från norr har 40 mitt emot sig och 30 intill: tangens v = 40/30." },
+          { "svar": "1.33", "tolerans": 0.01, "text": "Det är tangens v. Använd tangens invers på räknaren för att få vinkeln." } ] }
+    ],
+    "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30." },
     "losning": [
-      "Västerut är minus i x-led och norrut plus i y-led, så vektorn är (−60, 80).",
-      "Katetvektorerna är (−60, 0) och (0, 80).",
-      "Längden: √(60² + 80²) = √(3600 + 6400) = √10 000 = 100 km.",
-      "Från norr sett ligger 60 mitt emot vinkeln och 80 intill, så tan v = 60/80 = 0,75."
+      "Vektorn från Carpathia till Titanic är (−40, 30).",
+      "Längden: 40² + 30² = 1 600 + 900 = 2 500, och √2 500 = 50. Det är 50 km.",
+      "Vinkeln från norr: motstående katet 40, närliggande katet 30, så tan v = 40/30.",
+      "v = tan⁻¹(40/30) ≈ 53,1°, alltså ungefär 53° från norr åt väster."
     ]
   }
 }
