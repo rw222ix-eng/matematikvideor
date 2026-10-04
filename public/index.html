@@ -747,6 +747,13 @@
   .dintur-lost[hidden] { display: none; }
   .dintur-lost svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .dintur-fraga { margin: 0 0 24px; max-width: 760px; font: 500 clamp(22px, 2.4vw, 28px)/1.35 var(--skrift); color: var(--ben); }
+  /* GeoGebra i Din tur (Rickard 2026-10-04): uppgifter som ska lösas grafiskt får GeoGebras grafräknare här,
+     samma verktyg som filmen visar. Laddas först när eleven trycker (deployggb.js är stort). dintur.json: "geogebra". */
+  .dintur-ggb { margin: 0 0 28px; }
+  .dintur-ggb[hidden], #dintur-ggb-knapp[hidden] { display: none; }
+  .ggb-text { margin: 0 0 12px; font-size: 17px; color: #CFC8BA; max-width: 760px; }
+  .ggb-yta { margin-top: 14px; border-radius: 10px; overflow: hidden; background: #fff; }
+  .ggb-yta:empty { display: none; }
   .dintur-delar { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; counter-reset: del; }
   .del-fraga { margin: 0 0 12px; font-size: 18px; color: #CFC8BA; }
   .dintur-delar.flera .del-fraga::before { counter-increment: del; content: counter(del, lower-alpha) ")  "; color: var(--accent); font-weight: 400; }
@@ -1262,6 +1269,7 @@
         <span class="dintur-lost" id="dintur-lost" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9.5 L10 3"/></svg>Löst</span>
       </div>
       <p class="dintur-fraga" id="dintur-fraga"></p>
+      <div class="dintur-ggb" id="dintur-ggb" hidden><p class="ggb-text" id="dintur-ggb-text"></p><button type="button" class="kant" id="dintur-ggb-knapp">Öppna GeoGebra</button><div class="ggb-yta" id="dintur-ggb-yta"></div></div>
       <ol class="dintur-delar" id="dintur-delar"></ol>
       <div class="dintur-knappar">
         <button type="button" class="kant" id="dintur-ledtrad-knapp" aria-expanded="false" aria-controls="dintur-ledtrad">Ledtråd</button>
@@ -4140,6 +4148,12 @@
         ${del.tangenter ? `<div class="tangenter">${del.tangenter.map((t) => `<button type="button" data-tecken="${attr(t)}" aria-label="Skriv ${attr(TECKENNAMN[t] || t)}">${esc(t)}</button>`).join("")}</div>` : ""}
         <p class="del-svarstext" id="del-text-${i}" role="status" aria-live="polite"></p>
       </li>`).join("");
+    // GeoGebra-rutan: ny för varje film, laddas först på knappen.
+    const ggb = d.geogebra;
+    $("dintur-ggb").hidden = !ggb;
+    $("dintur-ggb-yta").innerHTML = "";
+    $("dintur-ggb-knapp").hidden = false;
+    $("dintur-ggb-text").textContent = (ggb && ggb.text) || "Lös uppgiften grafiskt i GeoGebra här, med samma steg som i filmen.";
     const ledtrad = $("dintur-ledtrad");
     ledtrad.hidden = true;
     ledtrad.innerHTML = d.ledtrad ? `<p>${esc(d.ledtrad.text)}</p>${Number.isFinite(d.ledtrad.t) ? `<button type="button" class="kant" data-t="${d.ledtrad.t}">Se det i filmen, ${tid(d.ledtrad.t)}</button>` : ""}` : "";
@@ -4149,6 +4163,25 @@
     $("dintur-losning-knapp").hidden = !tidigare;
     $("dintur-losning").hidden = true; $("dintur-losning").innerHTML = "";
   }
+  // GeoGebras grafräknare i Din tur. deployggb.js hämtas en gång från geogebra.org; appleten byggs om
+  // för varje film. Tangenterna i GeoGebra stannar i rutan, annars spolar siffrorna filmen och "/" öppnar sökningen.
+  let ggbLaddad = null;
+  const laddaGgb = () => ggbLaddad || (ggbLaddad = new Promise((ja, nej) => { const sc = document.createElement("script"); sc.src = "https://www.geogebra.org/apps/deployggb.js"; sc.onload = ja; sc.onerror = () => { ggbLaddad = null; nej(new Error("GeoGebra kunde inte laddas")); }; document.head.appendChild(sc); }));
+  $("dintur-ggb-knapp").addEventListener("click", async () => {
+    const knapp = $("dintur-ggb-knapp"), yta = $("dintur-ggb-yta"), g = dt && dt.d.geogebra;
+    if (!g) return;
+    knapp.disabled = true; knapp.textContent = "Laddar GeoGebra …";
+    try {
+      await laddaGgb();
+      const b = Math.max(300, yta.parentElement.clientWidth), h = b < 520 ? 600 : Math.round(Math.min(560, Math.max(380, b * 0.62))); // smal skärm: grafen hamnar ovanför algebrafältet och behöver höjden
+      yta.innerHTML = '<div id="dintur-ggb-applet"></div>';
+      new window.GGBApplet({ appName: g.app || "graphing", language: "sv", width: b, height: h, showToolBar: true, showAlgebraInput: true, showMenuBar: false, enableShiftDragZoom: true, showResetIcon: true, showFullscreenButton: true, showKeyboardOnFocus: false, useBrowserForJS: false }, true).inject("dintur-ggb-applet");
+      knapp.hidden = true;
+    } catch (e) { knapp.textContent = "Försök igen"; }
+    knapp.disabled = false;
+    if (knapp.hidden) knapp.textContent = "Öppna GeoGebra";
+  });
+  for (const typ of ["keydown", "keyup", "keypress"]) $("dintur-ggb-yta").addEventListener(typ, (e) => e.stopPropagation());
   function tillDinTur() {
     if (iHelskarm()) vaxlaHelskarm();
     requestAnimationFrame(() => glidFram(dtEl, "start"));
