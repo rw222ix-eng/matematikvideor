@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-04T12:39:47.302Z",
+ "byggd": "2026-10-04T13:00:39.748Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -7965,6 +7965,810 @@
      "s": 492.82,
      "e": 496.78,
      "text": "Välj rätt kvot och räkna ut hur högt berget är."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k4-01-funktioner",
+   "titel": "Glaisher och ballongen",
+   "ar": 1862,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-01-funktioner-v1/ma1c-k4-01-funktioner-1080p.mp4",
+   "moment": "Funktioner, definitions- och värdemängd",
+   "begrepp": [
+    "koordinatsystem",
+    "x-axel",
+    "y-axel",
+    "origo",
+    "funktion",
+    "variabel",
+    "oberoende variabel",
+    "beroende variabel",
+    "f(x)",
+    "värdetabell",
+    "graf",
+    "definitionsmängd",
+    "värdemängd"
+   ],
+   "beskrivning": "Den 5 september 1862 stiger James Glaisher upp i en ballong från Wolverhampton för att mäta hur kallt det är högt uppe i luften. Han skriver ner höjden i en anteckningsbok, tills han svimmar. Vi ritar resan i ett koordinatsystem och ser att höjden är en funktion av tiden: varje tid ger exakt en höjd. Vi skriver f(t), räknar med formeln f(t) = 170t och tar fram definitionsmängden och värdemängden.",
+   "youtube": null,
+   "langd": 570,
+   "omslag": "omslag/ma1c-k4-01-funktioner.jpg?v=b81ee83b",
+   "omslagRen": "omslag/ma1c-k4-01-funktioner-ren.jpg?v=c8d40cb1",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 1,
+     "text": "Det är den femte september 1862, i staden Wolverhampton i England. James Glaisher är forskare och studerar vädret. Han vill veta hur kallt det är högt uppe i luften. Därför ska han åka upp med en ballong."
+    },
+    {
+     "t": 21,
+     "text": "Ballongen fylls med gas vid stadens gasverk, och under den hänger en öppen korg. Ballongen styrs av Henry Coxwell, som har flugit ballong i många år. Strax efter klockan ett på eftermiddagen lättar de från marken."
+    },
+    {
+     "t": 38,
+     "text": "I korgen har Glaisher sina instrument och en anteckningsbok. Han läser av hur högt de är och skriver ner det, tillsammans med klockslaget. Efter nitton minuter är de tre tusen tvåhundra meter upp."
+    },
+    {
+     "t": 55,
+     "text": "Ballongen stiger snabbt. Efter femtio minuter är de över åtta tusen meter upp, och luften är så tunn att det är svårt att andas. Glaisher kan inte längre se siffrorna på sina instrument. Hans sista anteckning visar nästan åtta tusen niohundra meter. Sedan svimmar han."
+    },
+    {
+     "t": 78,
+     "text": "Coxwell vill få ner ballongen. Då måste han dra i en lina som släpper ut gas genom ett hål i ballongens topp. Men linan har trasslat in sig, så han klättrar upp i ringen ovanför korgen. Där fryser hans händer så att han inte kan använda dem. Till slut tar han linan med tänderna, och ballongen börjar sjunka."
+    },
+    {
+     "t": 103,
+     "text": "Efter ungefär sju minuter vaknar Glaisher och börjar skriva igen. Men i anteckningsboken saknas minuterna då han låg svimmad. Hur högt var ballongen när ingen kunde skriva?"
+    },
+    {
+     "t": 119,
+     "text": "Det kan vi ta reda på, om vi ritar resan som en bild. En sådan bild kallas en graf, och den ritas i ett koordinatsystem."
+    },
+    {
+     "t": 130,
+     "text": "Ett koordinatsystem har två axlar som möts i rät vinkel. Den vågräta axeln heter x-axeln, och den lodräta heter y-axeln. Där axlarna möts ligger origo, och där är båda talen noll."
+    },
+    {
+     "t": 148,
+     "text": "Vi lägger tiden längs x-axeln, i minuter från starten. Höjden lägger vi längs y-axeln, i meter. Efter nitton minuter var ballongen tre tusen tvåhundra meter upp, och det blir punkten nitton, tre tusen tvåhundra. Det första talet är alltid x, och det andra talet är alltid y."
+    },
+    {
+     "t": 174,
+     "text": "Axlarna fortsätter också åt vänster och nedåt, med negativa tal. Punkten där x är minus två och y är minus ett ligger två steg till vänster om origo och ett steg nedåt. Men tiden och höjden är aldrig negativa här, så ballongens graf hamnar uppe till höger."
+    },
+    {
+     "t": 198,
+     "text": "Ballongen kan inte vara på två höjder samtidigt. Varje tidpunkt ger alltså exakt en höjd. Ett sådant samband kallas en funktion. I en funktion hör det exakt ett y till varje x."
+    },
+    {
+     "t": 216,
+     "text": "Därför kan en värdetabell för en funktion aldrig ha samma x två gånger med olika y. Och i grafen kan två punkter aldrig ligga rakt ovanför varandra."
+    },
+    {
+     "t": 230,
+     "text": "Ett tal som kan ändras kallas en variabel. Tiden kallas den oberoende variabeln, för den går framåt vad som än händer. Höjden kallas den beroende variabeln, för den beror på tiden."
+    },
+    {
+     "t": 247,
+     "text": "Vi skriver tiden med bokstaven t och ger funktionen namnet f. Höjden vid tiden t skrivs då f av t. Höjden efter nitton minuter skrivs f av nitton, och f av nitton är lika med tre tusen tvåhundra. Ofta heter variabeln x, och då skriver man f av x."
+    },
+    {
+     "t": 274,
+     "text": "Under de första femtio minuterna steg ballongen nästan lika mycket varje minut, ungefär hundrasjuttio meter. Efter t minuter var den alltså hundrasjuttio gånger t meter upp. Funktionen blir f av t är lika med hundrasjuttio t, där hundrasjuttio t betyder hundrasjuttio gånger t."
+    },
+    {
+     "t": 300,
+     "text": "Nu har vi samma funktion på tre sätt. Anteckningsboken är en värdetabell. Kurvan genom punkterna är en graf. Och f av t lika med hundrasjuttio t är en formel."
+    },
+    {
+     "t": 316,
+     "text": "Hur högt var ballongen efter trettio minuter? Det står inte i anteckningsboken, men formeln kan räkna ut det. Vi byter t mot trettio. Då blir f av trettio lika med hundrasjuttio gånger trettio, och det är fem tusen etthundra. Efter trettio minuter var ballongen alltså ungefär fem tusen etthundra meter upp."
+    },
+    {
+     "t": 345,
+     "text": "Nu frågar vi åt andra hållet. När var ballongen sex tusen åttahundra meter upp? Då ska f av t vara sex tusen åttahundra, så vi skriver ekvationen hundrasjuttio t är lika med sex tusen åttahundra."
+    },
+    {
+     "t": 364,
+     "text": "Vi vill ha t ensamt, så vi delar båda leden med hundrasjuttio. Båda leden betyder båda sidorna av likhetstecknet. Sex tusen åttahundra delat med hundrasjuttio är fyrtio. Ballongen var alltså sex tusen åttahundra meter upp efter fyrtio minuter. I grafen går vi från sex tusen åttahundra på y-axeln bort till linjen, och rakt ner till fyrtio på x-axeln."
+    },
+    {
+     "t": 397,
+     "text": "Formeln gäller bara medan ballongen steg jämnt, alltså från noll till femtio minuter. De värden på t där funktionen gäller kallas definitionsmängden. Vi skriver den noll, mindre än eller lika med t, mindre än eller lika med femtio. Tecknet betyder mindre än eller lika med, så t får vara noll, femtio och alla tal däremellan."
+    },
+    {
+     "t": 429,
+     "text": "De värden som funktionen kan ge kallas värdemängden. Den lägsta höjden får vi vid noll minuter, för f av noll är lika med noll. Den högsta får vi vid femtio minuter, för f av femtio är lika med hundrasjuttio gånger femtio, och det är åtta tusen femhundra. Värdemängden är alltså noll, mindre än eller lika med f av t, mindre än eller lika med åtta tusen femhundra."
+    },
+    {
+     "t": 465,
+     "text": "Efter femtio minuter steg ballongen fortare, så där slutar formeln att gälla. Men ballongen hade en höjd i varje minut, också när ingen skrev. Glaisher visste hur fort ballongen steg när han svimmade, och hur fort den sjönk när han vaknade. Med de två farterna kunde han räkna ut ungefär var grafen vänder, alltså var toppen ligger."
+    },
+    {
+     "t": 494,
+     "text": "Toppen låg ungefär elva tusen meter upp. För hela resan går värdemängden alltså från noll till ungefär elva tusen meter. Ingen människa hade varit så högt upp förut."
+    },
+    {
+     "t": 511,
+     "text": "Ballongen sjönk snabbt, så Coxwell kastade ut sand för att bromsa. De landade på en äng ute på landet. Där fanns ingen vagn, så de fick gå ungefär tolv kilometer."
+    },
+    {
+     "t": 526,
+     "text": "Nästa morgon skrev Glaisher ner hela resan. Hans mätningar visade att luften inte blir kallare i samma takt hela vägen upp."
+    },
+    {
+     "t": 538,
+     "text": "Nu är det din tur. En annan ballong stiger hundrafemtio meter varje minut, så höjden är f av t lika med hundrafemtio t. Funktionen gäller de första fyrtio minuterna, alltså noll, mindre än eller lika med t, mindre än eller lika med fyrtio. Vad är f av tjugo? Och vilken är funktionens värdemängd?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 1,
+     "rubrik": "Ballongen i Wolverhampton",
+     "typ": "historia"
+    },
+    {
+     "t": 38,
+     "rubrik": "Anteckningsboken",
+     "typ": "historia"
+    },
+    {
+     "t": 78,
+     "rubrik": "Linan och tänderna",
+     "typ": "historia"
+    },
+    {
+     "t": 103,
+     "rubrik": "Hur högt var ballongen?",
+     "typ": "historia"
+    },
+    {
+     "t": 119,
+     "rubrik": "Koordinatsystemet",
+     "typ": "matte"
+    },
+    {
+     "t": 174,
+     "rubrik": "Negativa koordinater",
+     "typ": "matte"
+    },
+    {
+     "t": 198,
+     "rubrik": "Funktion: ett y till varje x",
+     "typ": "matte"
+    },
+    {
+     "t": 230,
+     "rubrik": "Variabler och f(t)",
+     "typ": "matte"
+    },
+    {
+     "t": 274,
+     "rubrik": "Formeln f(t) = 170t",
+     "typ": "matte"
+    },
+    {
+     "t": 316,
+     "rubrik": "Räkna ut f(30)",
+     "typ": "matte"
+    },
+    {
+     "t": 345,
+     "rubrik": "Lös f(t) = 6 800",
+     "typ": "matte"
+    },
+    {
+     "t": 397,
+     "rubrik": "Definitionsmängd",
+     "typ": "matte"
+    },
+    {
+     "t": 429,
+     "rubrik": "Värdemängd",
+     "typ": "matte"
+    },
+    {
+     "t": 465,
+     "rubrik": "Toppen",
+     "typ": "matte"
+    },
+    {
+     "t": 511,
+     "rubrik": "Landningen",
+     "typ": "historia"
+    },
+    {
+     "t": 538,
+     "rubrik": "En annan ballong",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 538,
+    "fraga": "En annan ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40.",
+    "delar": [
+     {
+      "fraga": "Vad är f(20)?",
+      "typ": "tal",
+      "svar": 3000,
+      "tolerans": 0.5,
+      "enhet": "meter",
+      "exempel": "t.ex. 5 100",
+      "fel": [
+       {
+        "svar": "170",
+        "tolerans": 0.5,
+        "text": "f(20) betyder att t byts mot 20. Räkna 150 · 20."
+       },
+       {
+        "svar": "6000",
+        "tolerans": 0.5,
+        "text": "Det är f(40), den högsta höjden. Här ska t vara 20."
+       },
+       {
+        "svar": "3400",
+        "tolerans": 0.5,
+        "text": "Den här ballongen stiger 150 meter varje minut, inte 170. Räkna 150 · 20."
+       }
+      ]
+     },
+     {
+      "fraga": "Vilken är funktionens värdemängd? Skriv den som en olikhet.",
+      "typ": "olikhet",
+      "svar": "0 <= f(t) <= 6000",
+      "exempel": "t.ex. 0 ≤ f(t) ≤ 8 500",
+      "tangenter": [
+       "≤",
+       "f(t)"
+      ],
+      "fel": [
+       {
+        "svar": "0 <= t <= 40",
+        "text": "Det är definitionsmängden, de tider som funktionen gäller för. Värdemängden är höjderna: räkna f(0) och f(40)."
+       },
+       {
+        "svar": "0 <= f(t) <= 3000",
+        "text": "3 000 är höjden efter 20 minuter. Den högsta höjden får du vid t = 40: räkna 150 · 40."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Byt t mot 20 och räkna. Värdemängden går från den lägsta höjden, f(0), till den högsta, f(40).",
+     "t": 429
+    },
+    "losning": [
+     "f(20) = 150 · 20 = 3 000. Efter 20 minuter är ballongen 3 000 meter upp.",
+     "Den lägsta höjden får vi vid t = 0: f(0) = 150 · 0 = 0.",
+     "Den högsta höjden får vi vid t = 40: f(40) = 150 · 40 = 6 000.",
+     "Värdemängden är 0 ≤ f(t) ≤ 6 000."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 1.5,
+     "e": 8.06,
+     "text": "Det är den femte september 1862, i staden Wolverhampton i England."
+    },
+    {
+     "s": 9.1,
+     "e": 12.58,
+     "text": "James Glaisher är forskare och studerar vädret."
+    },
+    {
+     "s": 13.58,
+     "e": 16.5,
+     "text": "Han vill veta hur kallt det är högt uppe i luften."
+    },
+    {
+     "s": 17.5,
+     "e": 19.72,
+     "text": "Därför ska han åka upp med en ballong."
+    },
+    {
+     "s": 21.02,
+     "e": 26.9,
+     "text": "Ballongen fylls med gas vid stadens gasverk, och under den hänger en öppen korg."
+    },
+    {
+     "s": 27.9,
+     "e": 32.54,
+     "text": "Ballongen styrs av Henry Coxwell, som har flugit ballong i många år."
+    },
+    {
+     "s": 33.54,
+     "e": 37.54,
+     "text": "Strax efter klockan ett på eftermiddagen lättar de från marken."
+    },
+    {
+     "s": 38.84,
+     "e": 42.7,
+     "text": "I korgen har Glaisher sina instrument och en anteckningsbok."
+    },
+    {
+     "s": 43.7,
+     "e": 48.36,
+     "text": "Han läser av hur högt de är och skriver ner det, tillsammans med klockslaget."
+    },
+    {
+     "s": 49.36,
+     "e": 53.82,
+     "text": "Efter 19 minuter är de 3 200 meter upp."
+    },
+    {
+     "s": 55.12,
+     "e": 56.86,
+     "text": "Ballongen stiger snabbt."
+    },
+    {
+     "s": 57.86,
+     "e": 63.86,
+     "text": "Efter 50 minuter är de över 8 000 meter upp, och luften är så tunn att det är"
+    },
+    {
+     "s": 63.96,
+     "e": 65.08,
+     "text": "svårt att andas."
+    },
+    {
+     "s": 66.08,
+     "e": 69.46,
+     "text": "Glaisher kan inte längre se siffrorna på sina instrument."
+    },
+    {
+     "s": 70.46,
+     "e": 75.24,
+     "text": "Hans sista anteckning visar nästan 8 900 meter."
+    },
+    {
+     "s": 76.24,
+     "e": 77.54,
+     "text": "Sedan svimmar han."
+    },
+    {
+     "s": 78.84,
+     "e": 80.76,
+     "text": "Coxwell vill få ner ballongen."
+    },
+    {
+     "s": 81.76,
+     "e": 86.84,
+     "text": "Då måste han dra i en lina som släpper ut gas genom ett hål i ballongens topp."
+    },
+    {
+     "s": 87.84,
+     "e": 92.68,
+     "text": "Men linan har trasslat in sig, så han klättrar upp i ringen ovanför korgen."
+    },
+    {
+     "s": 93.68,
+     "e": 97.1,
+     "text": "Där fryser hans händer så att han inte kan använda dem."
+    },
+    {
+     "s": 98.1,
+     "e": 102.6,
+     "text": "Till slut tar han linan med tänderna, och ballongen börjar sjunka."
+    },
+    {
+     "s": 103.9,
+     "e": 108.22,
+     "text": "Efter ungefär sju minuter vaknar Glaisher och börjar skriva igen."
+    },
+    {
+     "s": 109.22,
+     "e": 113.56,
+     "text": "Men i anteckningsboken saknas minuterna då han låg svimmad."
+    },
+    {
+     "s": 114.56,
+     "e": 117.78,
+     "text": "Hur högt var ballongen när ingen kunde skriva?"
+    },
+    {
+     "s": 119.08,
+     "e": 122.84,
+     "text": "Det kan vi ta reda på, om vi ritar resan som en bild."
+    },
+    {
+     "s": 123.84,
+     "e": 128.72,
+     "text": "En sådan bild kallas en graf, och den ritas i ett koordinatsystem."
+    },
+    {
+     "s": 130.02,
+     "e": 134.6,
+     "text": "Ett koordinatsystem har två axlar som möts i rät vinkel."
+    },
+    {
+     "s": 135.6,
+     "e": 141.42,
+     "text": "Den vågräta axeln heter x-axeln, och den lodräta heter y-axeln."
+    },
+    {
+     "s": 142.42,
+     "e": 147.32,
+     "text": "Där axlarna möts ligger origo, och där är båda talen noll."
+    },
+    {
+     "s": 148.62,
+     "e": 153.02,
+     "text": "Vi lägger tiden längs x-axeln, i minuter från starten."
+    },
+    {
+     "s": 154.02,
+     "e": 157.22,
+     "text": "Höjden lägger vi längs y-axeln, i meter."
+    },
+    {
+     "s": 158.22,
+     "e": 162.96,
+     "text": "Efter 19 minuter var ballongen 3 200 meter upp,"
+    },
+    {
+     "s": 163.3,
+     "e": 167.34,
+     "text": "och det blir punkten 19, 3 200."
+    },
+    {
+     "s": 168.34,
+     "e": 173.38,
+     "text": "Det första talet är alltid x, och det andra talet är alltid y."
+    },
+    {
+     "s": 174.68,
+     "e": 179.48,
+     "text": "Axlarna fortsätter också åt vänster och nedåt, med negativa tal."
+    },
+    {
+     "s": 180.48,
+     "e": 188.14,
+     "text": "Punkten där x är minus två och y är minus ett ligger två steg till vänster om origo och"
+    },
+    {
+     "s": 188.24,
+     "e": 189.48,
+     "text": "ett steg nedåt."
+    },
+    {
+     "s": 190.48,
+     "e": 196.78,
+     "text": "Men tiden och höjden är aldrig negativa här, så ballongens graf hamnar uppe till höger."
+    },
+    {
+     "s": 198.08,
+     "e": 201.44,
+     "text": "Ballongen kan inte vara på två höjder samtidigt."
+    },
+    {
+     "s": 202.44,
+     "e": 205.96,
+     "text": "Varje tidpunkt ger alltså exakt en höjd."
+    },
+    {
+     "s": 206.96,
+     "e": 209.62,
+     "text": "Ett sådant samband kallas en funktion."
+    },
+    {
+     "s": 210.62,
+     "e": 215.28,
+     "text": "I en funktion hör det exakt ett y till varje x."
+    },
+    {
+     "s": 216.58,
+     "e": 223.3,
+     "text": "Därför kan en värdetabell för en funktion aldrig ha samma x två gånger med olika y."
+    },
+    {
+     "s": 224.3,
+     "e": 229.18,
+     "text": "Och i grafen kan två punkter aldrig ligga rakt ovanför varandra."
+    },
+    {
+     "s": 230.48,
+     "e": 233.96,
+     "text": "Ett tal som kan ändras kallas en variabel."
+    },
+    {
+     "s": 234.96,
+     "e": 240.66,
+     "text": "Tiden kallas den oberoende variabeln, för den går framåt vad som än händer."
+    },
+    {
+     "s": 241.66,
+     "e": 246.46,
+     "text": "Höjden kallas den beroende variabeln, för den beror på tiden."
+    },
+    {
+     "s": 247.76,
+     "e": 252.76,
+     "text": "Vi skriver tiden med bokstaven t och ger funktionen namnet f."
+    },
+    {
+     "s": 253.76,
+     "e": 257.74,
+     "text": "Höjden vid tiden t skrivs då f av t."
+    },
+    {
+     "s": 258.74,
+     "e": 267.76,
+     "text": "Höjden efter 19 minuter skrivs f av 19, och f av 19 är lika med 3 200."
+    },
+    {
+     "s": 268.76,
+     "e": 273.44,
+     "text": "Ofta heter variabeln x, och då skriver man f av x."
+    },
+    {
+     "s": 274.74,
+     "e": 280.18,
+     "text": "Under de första 50 minuterna steg ballongen nästan lika mycket varje minut,"
+    },
+    {
+     "s": 280.62,
+     "e": 282.52,
+     "text": "ungefär 170 meter."
+    },
+    {
+     "s": 283.52,
+     "e": 288.92,
+     "text": "Efter t minuter var den alltså 170 gånger t meter upp."
+    },
+    {
+     "s": 289.92,
+     "e": 299.16,
+     "text": "Funktionen blir f av t är lika med 170 t, där 170 t betyder 170 gånger t."
+    },
+    {
+     "s": 300.46,
+     "e": 303.1,
+     "text": "Nu har vi samma funktion på tre sätt."
+    },
+    {
+     "s": 304.1,
+     "e": 306.54,
+     "text": "Anteckningsboken är en värdetabell."
+    },
+    {
+     "s": 307.54,
+     "e": 310.12,
+     "text": "Kurvan genom punkterna är en graf."
+    },
+    {
+     "s": 311.12,
+     "e": 315.66,
+     "text": "Och f av t lika med 170 t är en formel."
+    },
+    {
+     "s": 316.96,
+     "e": 320.02,
+     "text": "Hur högt var ballongen efter 30 minuter?"
+    },
+    {
+     "s": 321.02,
+     "e": 325.16,
+     "text": "Det står inte i anteckningsboken, men formeln kan räkna ut det."
+    },
+    {
+     "s": 326.16,
+     "e": 328.28,
+     "text": "Vi byter t mot 30."
+    },
+    {
+     "s": 329.28,
+     "e": 337.04,
+     "text": "Då blir f av 30 lika med 170 gånger 30, och det är 5 100."
+    },
+    {
+     "s": 338.04,
+     "e": 343.92,
+     "text": "Efter 30 minuter var ballongen alltså ungefär 5 100 meter upp."
+    },
+    {
+     "s": 345.22,
+     "e": 346.94,
+     "text": "Nu frågar vi åt andra hållet."
+    },
+    {
+     "s": 347.94,
+     "e": 351.56,
+     "text": "När var ballongen 6 800 meter upp?"
+    },
+    {
+     "s": 352.56,
+     "e": 360.38,
+     "text": "Då ska f av t vara 6 800, så vi skriver ekvationen 170 t är"
+    },
+    {
+     "s": 360.42,
+     "e": 362.82,
+     "text": "lika med 6 800."
+    },
+    {
+     "s": 364.12,
+     "e": 368.96,
+     "text": "Vi vill ha t ensamt, så vi delar båda leden med 170."
+    },
+    {
+     "s": 369.96,
+     "e": 374.12,
+     "text": "Båda leden betyder båda sidorna av likhetstecknet."
+    },
+    {
+     "s": 375.12,
+     "e": 379.58,
+     "text": "6 800 delat med 170 är 40."
+    },
+    {
+     "s": 380.58,
+     "e": 386.08,
+     "text": "Ballongen var alltså 6 800 meter upp efter 40 minuter."
+    },
+    {
+     "s": 387.08,
+     "e": 392.82,
+     "text": "I grafen går vi från 6 800 på y-axeln bort till linjen,"
+    },
+    {
+     "s": 393.16,
+     "e": 396.2,
+     "text": "och rakt ner till 40 på x-axeln."
+    },
+    {
+     "s": 397.5,
+     "e": 404.02,
+     "text": "Formeln gäller bara medan ballongen steg jämnt, alltså från noll till 50 minuter."
+    },
+    {
+     "s": 405.02,
+     "e": 410.1,
+     "text": "De värden på t där funktionen gäller kallas definitionsmängden."
+    },
+    {
+     "s": 411.1,
+     "e": 418.42,
+     "text": "Vi skriver den 0 ≤ t ≤ 50."
+    },
+    {
+     "s": 419.42,
+     "e": 424.94,
+     "text": "Tecknet betyder mindre än eller lika med, så t får vara noll,"
+    },
+    {
+     "s": 425.38,
+     "e": 428.04,
+     "text": "50 och alla tal däremellan."
+    },
+    {
+     "s": 429.34,
+     "e": 433.64,
+     "text": "De värden som funktionen kan ge kallas värdemängden."
+    },
+    {
+     "s": 434.64,
+     "e": 440.92,
+     "text": "Den lägsta höjden får vi vid noll minuter, för f av noll är lika med noll."
+    },
+    {
+     "s": 441.92,
+     "e": 449.04,
+     "text": "Den högsta får vi vid 50 minuter, för f av 50 är lika med 170 gånger"
+    },
+    {
+     "s": 449.14,
+     "e": 452.82,
+     "text": "50, och det är 8 500."
+    },
+    {
+     "s": 453.82,
+     "e": 459.5,
+     "text": "Värdemängden är alltså 0 ≤ f(t)"
+    },
+    {
+     "s": 460.12,
+     "e": 463.8,
+     "text": "≤ 8 500."
+    },
+    {
+     "s": 465.1,
+     "e": 471.1,
+     "text": "Efter 50 minuter steg ballongen fortare, så där slutar formeln att gälla."
+    },
+    {
+     "s": 472.1,
+     "e": 477.38,
+     "text": "Men ballongen hade en höjd i varje minut, också när ingen skrev."
+    },
+    {
+     "s": 478.38,
+     "e": 484.8,
+     "text": "Glaisher visste hur fort ballongen steg när han svimmade, och hur fort den sjönk när han vaknade."
+    },
+    {
+     "s": 485.8,
+     "e": 490.88,
+     "text": "Med de två farterna kunde han räkna ut ungefär var grafen vänder,"
+    },
+    {
+     "s": 491.4,
+     "e": 493.34,
+     "text": "alltså var toppen ligger."
+    },
+    {
+     "s": 494.64,
+     "e": 498.4,
+     "text": "Toppen låg ungefär 11 000 meter upp."
+    },
+    {
+     "s": 499.4,
+     "e": 505.66,
+     "text": "För hela resan går värdemängden alltså från noll till ungefär 11 000 meter."
+    },
+    {
+     "s": 506.66,
+     "e": 509.92,
+     "text": "Ingen människa hade varit så högt upp förut."
+    },
+    {
+     "s": 511.22,
+     "e": 516.3,
+     "text": "Ballongen sjönk snabbt, så Coxwell kastade ut sand för att bromsa."
+    },
+    {
+     "s": 517.3,
+     "e": 519.78,
+     "text": "De landade på en äng ute på landet."
+    },
+    {
+     "s": 520.78,
+     "e": 525.56,
+     "text": "Där fanns ingen vagn, så de fick gå ungefär 12 kilometer."
+    },
+    {
+     "s": 526.86,
+     "e": 530.18,
+     "text": "Nästa morgon skrev Glaisher ner hela resan."
+    },
+    {
+     "s": 531.18,
+     "e": 537.08,
+     "text": "Hans mätningar visade att luften inte blir kallare i samma takt hela vägen upp."
+    },
+    {
+     "s": 538.38,
+     "e": 539.88,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 540.88,
+     "e": 550.34,
+     "text": "En annan ballong stiger 150 meter varje minut, så höjden är f av t lika med 150 t."
+    },
+    {
+     "s": 551.34,
+     "e": 559.04,
+     "text": "Funktionen gäller de första 40 minuterna, alltså 0 ≤ t"
+    },
+    {
+     "s": 559.58,
+     "e": 561.96,
+     "text": "≤ 40."
+    },
+    {
+     "s": 562.96,
+     "e": 564.96,
+     "text": "Vad är f av 20?"
+    },
+    {
+     "s": 565.96,
+     "e": 568.6,
+     "text": "Och vilken är funktionens värdemängd?"
     }
    ]
   },

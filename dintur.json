@@ -1344,6 +1344,67 @@
       "v = tan⁻¹(40/30) ≈ 53,1°, alltså ungefär 53° från norr åt väster."
     ]
   },
+  "ma1c-k4-01-funktioner": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En annan ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40.",
+    "delar": [
+      {
+        "fraga": "Vad är f(20)?",
+        "typ": "tal",
+        "svar": 3000,
+        "tolerans": 0.5,
+        "enhet": "meter",
+        "exempel": "t.ex. 5 100",
+        "fel": [
+          {
+            "svar": "170",
+            "tolerans": 0.5,
+            "text": "f(20) betyder att t byts mot 20. Räkna 150 · 20."
+          },
+          {
+            "svar": "6000",
+            "tolerans": 0.5,
+            "text": "Det är f(40), den högsta höjden. Här ska t vara 20."
+          },
+          {
+            "svar": "3400",
+            "tolerans": 0.5,
+            "text": "Den här ballongen stiger 150 meter varje minut, inte 170. Räkna 150 · 20."
+          }
+        ]
+      },
+      {
+        "fraga": "Vilken är funktionens värdemängd? Skriv den som en olikhet.",
+        "typ": "olikhet",
+        "svar": "0 <= f(t) <= 6000",
+        "exempel": "t.ex. 0 ≤ f(t) ≤ 8 500",
+        "tangenter": [
+          "≤",
+          "f(t)"
+        ],
+        "fel": [
+          {
+            "svar": "0 <= t <= 40",
+            "text": "Det är definitionsmängden, de tider som funktionen gäller för. Värdemängden är höjderna: räkna f(0) och f(40)."
+          },
+          {
+            "svar": "0 <= f(t) <= 3000",
+            "text": "3 000 är höjden efter 20 minuter. Den högsta höjden får du vid t = 40: räkna 150 · 40."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "De värden som funktionen kan",
+      "text": "Byt t mot 20 och räkna. Värdemängden går från den lägsta höjden, f(0), till den högsta, f(40)."
+    },
+    "losning": [
+      "f(20) = 150 · 20 = 3 000. Efter 20 minuter är ballongen 3 000 meter upp.",
+      "Den lägsta höjden får vi vid t = 0: f(0) = 150 · 0 = 0.",
+      "Den högsta höjden får vi vid t = 40: f(40) = 150 · 40 = 6 000.",
+      "Värdemängden är 0 ≤ f(t) ≤ 6 000."
+    ]
+  },
   "ma1c-k4-02-linjara-samband": {
     "notisFran": "Nu är det din tur",
     "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre.",
