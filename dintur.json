@@ -1913,5 +1913,76 @@
       "Dela båda leden med 6: x = 6.",
       "Kontroll: 6 · 6 + 9 = 36 + 9 = 45. Vänster led är lika med höger led."
     ]
+  },
+  "ma1c-k2-02-formler-och-modeller": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Ett ljus har 10 streck, och det brinner ner 2 streck varje timme.",
+    "delar": [
+      {
+        "fraga": "Skriv en formel för hur många streck L som är kvar efter t timmar.",
+        "typ": "ekvation",
+        "svar": "L = 10 − 2t",
+        "exempel": "t.ex. L = 8 − 3t",
+        "tangenter": [
+          "=",
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "L = 10 + 2t",
+            "text": "Ljuset blir kortare för varje timme, så de 2 strecken ska dras bort: L = 10 − 2t."
+          },
+          {
+            "svar": "L = 2 − 10t",
+            "text": "Talen har bytt plats. Ljuset börjar med 10 streck, och 2 streck brinner ner varje timme."
+          },
+          {
+            "svar": "L = 10t − 2",
+            "text": "Talen har bytt plats. Startvärdet 10 står ensamt, och 2 streck dras bort för varje timme: L = 10 − 2t."
+          },
+          {
+            "svar": "L = 8t",
+            "text": "Börja med de 10 strecken när ljuset tänds och dra bort 2 för varje timme."
+          },
+          {
+            "svar": "L = 12 − 3t",
+            "text": "Det är formeln för Alfreds ljus. Det här ljuset har 10 streck och brinner ner 2 streck varje timme."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur länge har ljuset brunnit när 4 streck är kvar?",
+        "typ": "tal",
+        "svar": 3,
+        "enhet": "timmar",
+        "exempel": "t.ex. 5",
+        "fel": [
+          {
+            "svar": "2",
+            "text": "Det är 4 delat med 2. Sätt in L = 4 i formeln: 4 = 10 − 2t, och lös ekvationen."
+          },
+          {
+            "svar": "6",
+            "text": "6 är antalet streck som har brunnit ner. Varje timme brinner 2 streck, så dela med 2."
+          },
+          {
+            "svar": "7",
+            "text": "Sätt in L = 4: 4 = 10 − 2t. Lägg till 2t och dra bort 4 på båda sidor: 2t = 6."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Då blir regeln L",
+      "text": "Börja på strecken när ljuset tänds och dra bort 2 för varje timme. Sätt sedan in L = 4 och lös ekvationen med balansmetoden."
+    },
+    "losning": [
+      "När ljuset tänds är 10 streck kvar, och varje timme brinner 2 streck ner.",
+      "L = 10 − 2t",
+      "Sätt in L = 4: 4 = 10 − 2t.",
+      "Lägg till 2t på båda sidor: 4 + 2t = 10.",
+      "Dra bort 4 från båda sidor: 2t = 6.",
+      "Dela båda sidor med 2: t = 3. Ljuset har brunnit i 3 timmar."
+    ]
   }
 }
