@@ -1861,5 +1861,57 @@
       "Graferna skär varandra där x = 3.",
       "3 perioder · 25 år = 75 år."
     ]
+  },
+  "ma1c-k2-01-linjara-ekvationer": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Lös ekvationen 6x + 9 = 45.",
+    "delar": [
+      {
+        "fraga": "Vad är x?",
+        "typ": "tal",
+        "svar": 6,
+        "exempel": "t.ex. 3",
+        "fel": [
+          {
+            "svar": "36",
+            "text": "Det är 6x, inte x. Dela båda leden med 6."
+          },
+          {
+            "svar": "9",
+            "text": "Ta först bort 9 från båda leden: 6x = 36. Dela sedan med 6."
+          },
+          {
+            "svar": "5",
+            "text": "Kontrollera: 6 · 5 + 9 = 39, inte 45. Ta bort 9 från båda leden: 45 − 9 = 36."
+          }
+        ]
+      },
+      {
+        "fraga": "Kontrollera svaret: sätt in det i vänster led. Vad blir 6x + 9?",
+        "typ": "tal",
+        "svar": 45,
+        "exempel": "t.ex. 30",
+        "fel": [
+          {
+            "svar": "36",
+            "text": "Du har räknat 6 · 6. Lägg till 9 också."
+          },
+          {
+            "svar": "15",
+            "text": "6x betyder 6 gånger x. Räkna 6 · 6 + 9."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Därför tar Recorde bort femton",
+      "text": "Gör samma sak med båda leden tills x står ensamt: ta först bort 9 från båda leden, dela sedan båda leden med 6."
+    },
+    "losning": [
+      "6x + 9 = 45",
+      "Ta bort 9 från båda leden: 6x = 36.",
+      "Dela båda leden med 6: x = 6.",
+      "Kontroll: 6 · 6 + 9 = 36 + 9 = 45. Vänster led är lika med höger led."
+    ]
   }
 }
