@@ -3975,7 +3975,7 @@
       const lo = talV(d[0]), hi = talV(d[1]);
       return { form: "hak", lo, hi, loIn: hak[1] === "[" && lo !== -Infinity, hiIn: hak[3] === "]" && hi !== Infinity };
     }
-    const d = r.split(/(≤|≥|<|>)/).filter(Boolean), arVar = (x) => /^[a-zåäö]$/.test(x);
+    const d = r.split(/(≤|≥|<|>)/).filter(Boolean), arVar = (x) => /^[a-zåäö](\([a-zåäö]\))?$/.test(x);
     if (d.length === 3) {
       let [A, op, B] = d;
       if (arVar(B) && !arVar(A)) { [A, B] = [B, A]; op = { "<": ">", ">": "<", "≤": "≥", "≥": "≤" }[op]; }
