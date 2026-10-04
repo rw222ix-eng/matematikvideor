@@ -1343,5 +1343,65 @@
       "Vinkeln från norr: motstående katet 40, närliggande katet 30, så tan v = 40/30.",
       "v = tan⁻¹(40/30) ≈ 53,1°, alltså ungefär 53° från norr åt väster."
     ]
+  },
+  "ma1c-k4-02-linjara-samband": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre.",
+    "delar": [
+      {
+        "fraga": "Skriv sambandet på formen y = kx + m, med x för antalet vikter och y för fjäderns längd i cm.",
+        "typ": "ekvation",
+        "svar": "y = 2x + 8",
+        "exempel": "t.ex. y = 4x + 6",
+        "tangenter": [
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "y = 8x + 2",
+            "text": "k och m har bytt plats. k är hur mycket längre fjädern blir för varje vikt, och m är längden utan vikter."
+          },
+          {
+            "svar": "y = 2x",
+            "text": "Då vore fjädern 0 cm utan vikter. Lägg till längden utan vikter, m."
+          },
+          {
+            "svar": "y = 8x",
+            "text": "8 cm är längden utan vikter, alltså m. k är hur mycket längre den blir för varje vikt."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur lång är fjädern med fem vikter?",
+        "typ": "tal",
+        "svar": 18,
+        "enhet": "cm",
+        "exempel": "t.ex. 12",
+        "fel": [
+          {
+            "svar": "10",
+            "text": "Det är bara det fjädern blir längre. Lägg till de 8 cm den är utan vikter."
+          },
+          {
+            "svar": "40",
+            "text": "Du har räknat 8 · 5. Varje vikt ger 2 cm: 2 · 5 + 8."
+          },
+          {
+            "svar": "15",
+            "text": "Sätt in x = 5 i y = 2x + 8: 2 · 5 är 10, och 10 + 8 är 18."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Då blir sambandet",
+      "text": "m är längden utan vikter, och k är hur många cm längre fjädern blir för varje vikt. Sätt sedan in antalet vikter som x."
+    },
+    "losning": [
+      "Utan vikter är fjädern 8 cm, så m = 8.",
+      "Varje vikt gör den 2 cm längre, så k = 2.",
+      "y = 2x + 8",
+      "Med fem vikter: y = 2 · 5 + 8 = 10 + 8 = 18 cm."
+    ]
   }
 }

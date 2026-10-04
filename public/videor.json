@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-03T20:09:33.466Z",
+ "byggd": "2026-10-04T12:03:27.289Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -5026,6 +5026,734 @@
      "s": 526.36,
      "e": 529.5,
      "text": "Hur många jordavstånd från solen ligger den?"
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k4-02-linjara-samband",
+   "titel": "Hooke och fjädern",
+   "ar": 1678,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-02-linjara-samband-v1/ma1c-k4-02-linjara-samband-1080p.mp4",
+   "moment": "Linjära samband, k-värdet och m-värdet",
+   "begrepp": [
+    "linjärt samband",
+    "direkt proportionalitet",
+    "proportionalitetskonstant",
+    "räta linjens ekvation",
+    "k-värde",
+    "lutning",
+    "m-värde",
+    "koordinatsystem",
+    "origo",
+    "delta",
+    "värdetabell"
+   ],
+   "beskrivning": "Robert Hooke i London år 1678: han gömde sin upptäckt om fjädrar i en rad bokstäver i fel ordning, och nu visar han den med en fjäder, en vågskål och lika tunga vikter. Vi ritar försöket i ett koordinatsystem och lär oss direkt proportionalitet, linjära samband y = kx + m, k som lutningen (Δy/Δx) och m som där linjen skär y-axeln, också med negativt k.",
+   "youtube": null,
+   "langd": 501,
+   "omslag": "omslag/ma1c-k4-02-linjara-samband.jpg?v=f6cb9324",
+   "omslagRen": "omslag/ma1c-k4-02-linjara-samband-ren.jpg?v=602940a7",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 1,
+     "text": "Robert Hooke är forskare i London, och han bygger instrument. I många år har han gjort små fjädrar till fickur, och han har mätt hur mycket längre en fjäder blir när man drar i den."
+    },
+    {
+     "t": 15,
+     "text": "För två år sedan skrev Hooke en rad bokstäver sist i en av sina böcker. I raden gömde han det han hade upptäckt om fjädrar. Bokstäverna stod i fel ordning, så ingen kunde läsa den. Då kunde ingen annan ta upptäckten innan Hooke själv var färdig."
+    },
+    {
+     "t": 36,
+     "text": "Nu, år 1678, visar Hooke vad raden betyder. Han lindar en ståltråd till en fjäder och hänger upp den på en krok. Under fjädern hänger han en liten vågskål. Sedan lägger han i lika tunga vikter, en i taget, och mäter fjädern efter varje vikt."
+    },
+    {
+     "t": 60,
+     "text": "Raden betyder att om en vikt gör fjädern ett steg längre, så gör två vikter den två steg längre och tre vikter tre steg längre. Hooke skriver också att man nu kan bygga en våg som väger saker utan vikter. Men hur kan en fjäder tala om hur tung en sak är?"
+    },
+    {
+     "t": 83,
+     "text": "Vi gör samma försök med en egen fjäder. För varje vikt blir fjädern tre centimeter längre. Med en vikt blir den alltså tre centimeter längre, med två vikter sex centimeter och med tre vikter nio centimeter."
+    },
+    {
+     "t": 102,
+     "text": "För att se mönstret ritar vi ett koordinatsystem. Det har två tallinjer som möts i rät vinkel. Den vågräta kallas x-axeln, och där sätter vi antalet vikter. Den lodräta kallas y-axeln, och där sätter vi hur många centimeter längre fjädern blir."
+    },
+    {
+     "t": 125,
+     "text": "Varje försök blir en punkt. En vikt och tre centimeter blir punkten ett, tre, alltså ett steg åt höger och tre steg uppåt. Där axlarna möts ligger punkten origo, och där är både x och y noll. Utan vikter blir fjädern inte längre alls."
+    },
+    {
+     "t": 148,
+     "text": "Alla punkterna hamnar på en rak linje genom origo. Det beror på att varje vikt lägger till samma tre centimeter. Hur mycket längre fjädern blir är alltså alltid tre gånger antalet vikter. Det skrivs y är lika med tre x."
+    },
+    {
+     "t": 170,
+     "text": "När y alltid är samma tal gånger x, säger vi att y är direkt proportionell mot x. Talet kallas proportionalitetskonstanten, och vi kallar det k. Vi får k genom att dela y med x. Sex delat med två är tre, så k är tre centimeter per vikt."
+    },
+    {
+     "t": 195,
+     "text": "Nu kan vi svara på Hookes fråga. Vi lägger en sten i vågskålen, och fjädern blir tolv centimeter längre. Varje vikt ger tre centimeter, så vi delar tolv med tre. Det blir fyra, så stenen väger lika mycket som fyra vikter."
+    },
+    {
+     "t": 216,
+     "text": "Men oftast mäter man hela fjädern med en linjal. Vår fjäder är tio centimeter lång redan utan vikter. Med tre vikter är den alltså tre gånger tre plus tio centimeter. Det blir nitton centimeter."
+    },
+    {
+     "t": 235,
+     "text": "Nu får y stå för fjäderns hela längd, och x är fortfarande antalet vikter. Då blir sambandet y är lika med tre x plus tio. Linjen lutar lika mycket som förut, men den börjar tio steg upp på y-axeln. Den går alltså inte genom origo."
+    },
+    {
+     "t": 259,
+     "text": "Ett samband som ger en rak linje kallas ett linjärt samband. Det skrivs y är lika med k x plus m, och det kallas räta linjens ekvation. Den står på formelbladet, under rubriken funktioner."
+    },
+    {
+     "t": 278,
+     "text": "Talet m är värdet på y när x är noll. För fjädern är m tio, alltså längden utan vikter. Det är där linjen skär y-axeln. Är m ett negativt tal, skär linjen y-axeln under origo."
+    },
+    {
+     "t": 298,
+     "text": "Talet k är linjens lutning. Det säger hur mycket y ändras när x ökar med ett. För fjädern är k tre, för varje vikt blir fjädern tre centimeter längre."
+    },
+    {
+     "t": 314,
+     "text": "I en graf läser vi av k som en trappa. Vi går från en punkt på linjen ett steg åt höger. Sedan räknar vi hur många steg uppåt vi måste gå för att komma tillbaka till linjen."
+    },
+    {
+     "t": 328,
+     "text": "Stegen åt höger kallas delta x, och stegen uppåt kallas delta y. Delta är en grekisk bokstav, och den betyder ändring. Lutningen k är delta y delat med delta x. Här är det tre delat med ett, alltså tre."
+    },
+    {
+     "t": 351,
+     "text": "Hooke provade tråd av stål, järn och mässing, och en grövre tråd ger en styvare fjäder. Tänk dig en styv fjäder som också är tio centimeter lång utan vikter. Den blir bara en centimeter längre för varje två vikter."
+    },
+    {
+     "t": 371,
+     "text": "Då går trappan två steg åt höger och ett steg uppåt. Lutningen k är ett delat med två, alltså noll komma fem. Sambandet blir y är lika med noll komma fem x plus tio. Båda linjerna skär y-axeln i tio, men den styva fjäderns linje lutar mindre."
+    },
+    {
+     "t": 396,
+     "text": "Hooke skrev också att regeln gäller när man trycker ihop en fjäder. Vi ställer en fjäder på bordet, och den är tio centimeter hög. Varje vikt som vi lägger ovanpå trycker ihop den två centimeter. Fjädern blir alltså kortare för varje vikt."
+    },
+    {
+     "t": 417,
+     "text": "Nu minskar y när x ökar. Ett steg åt höger ger två steg nedåt, så k är minus två. Sambandet blir y är lika med minus två x plus tio. En linje med negativt k lutar nedåt."
+    },
+    {
+     "t": 438,
+     "text": "Den här linjen ritar vi utan värdetabell, alltså utan att räkna ut punkterna först. Vi börjar i m, vid tio på y-axeln. Sedan går vi ett steg åt höger och två steg nedåt, och där sätter vi en punkt. Till sist drar vi linjen genom de två punkterna."
+    },
+    {
+     "t": 461,
+     "text": "Hooke skrev ner försöket i en liten bok om fjädrar, som trycktes i London 1678. Regeln kallas i dag Hookes lag. En fjädervåg, som den man hänger en väska i, bygger fortfarande på den."
+    },
+    {
+     "t": 479,
+     "text": "Nu är det din tur. En fjäder är åtta centimeter lång utan vikter. Varje vikt gör den två centimeter längre. Skriv sambandet på formen y är lika med k x plus m. Hur lång är fjädern med fem vikter?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 1,
+     "rubrik": "Hooke och fjädrarna",
+     "typ": "historia"
+    },
+    {
+     "t": 15,
+     "rubrik": "Den hemliga raden",
+     "typ": "historia"
+    },
+    {
+     "t": 36,
+     "rubrik": "Försöket med vikterna",
+     "typ": "historia"
+    },
+    {
+     "t": 83,
+     "rubrik": "Tre centimeter per vikt",
+     "typ": "matte"
+    },
+    {
+     "t": 102,
+     "rubrik": "Koordinatsystemet",
+     "typ": "matte"
+    },
+    {
+     "t": 148,
+     "rubrik": "Direkt proportionalitet, y = 3x",
+     "typ": "matte"
+    },
+    {
+     "t": 195,
+     "rubrik": "Vågen utan vikter",
+     "typ": "matte"
+    },
+    {
+     "t": 216,
+     "rubrik": "Hela längden, y = 3x + 10",
+     "typ": "matte"
+    },
+    {
+     "t": 259,
+     "rubrik": "Räta linjens ekvation",
+     "typ": "matte"
+    },
+    {
+     "t": 278,
+     "rubrik": "m: där linjen skär y-axeln",
+     "typ": "matte"
+    },
+    {
+     "t": 314,
+     "rubrik": "k: trappan, Δy/Δx",
+     "typ": "matte"
+    },
+    {
+     "t": 351,
+     "rubrik": "Styv fjäder, k = 0,5",
+     "typ": "matte"
+    },
+    {
+     "t": 396,
+     "rubrik": "Negativt k",
+     "typ": "matte"
+    },
+    {
+     "t": 438,
+     "rubrik": "Rita linjen utan värdetabell",
+     "typ": "matte"
+    },
+    {
+     "t": 461,
+     "rubrik": "Hookes lag",
+     "typ": "historia"
+    },
+    {
+     "t": 479,
+     "rubrik": "Din tur: fjädern",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 479,
+    "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre.",
+    "delar": [
+     {
+      "fraga": "Skriv sambandet på formen y = kx + m, med x för antalet vikter och y för fjäderns längd i cm.",
+      "typ": "ekvation",
+      "svar": "y = 2x + 8",
+      "exempel": "t.ex. y = 4x + 6",
+      "tangenter": [
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "y = 8x + 2",
+        "text": "k och m har bytt plats. k är hur mycket längre fjädern blir för varje vikt, och m är längden utan vikter."
+       },
+       {
+        "svar": "y = 2x",
+        "text": "Då vore fjädern 0 cm utan vikter. Lägg till längden utan vikter, m."
+       },
+       {
+        "svar": "y = 8x",
+        "text": "8 cm är längden utan vikter, alltså m. k är hur mycket längre den blir för varje vikt."
+       }
+      ]
+     },
+     {
+      "fraga": "Hur lång är fjädern med fem vikter?",
+      "typ": "tal",
+      "svar": 18,
+      "enhet": "cm",
+      "exempel": "t.ex. 12",
+      "fel": [
+       {
+        "svar": "10",
+        "text": "Det är bara det fjädern blir längre. Lägg till de 8 cm den är utan vikter."
+       },
+       {
+        "svar": "40",
+        "text": "Du har räknat 8 · 5. Varje vikt ger 2 cm: 2 · 5 + 8."
+       },
+       {
+        "svar": "15",
+        "text": "Sätt in x = 5 i y = 2x + 8: 2 · 5 är 10, och 10 + 8 är 18."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "m är längden utan vikter, och k är hur många cm längre fjädern blir för varje vikt. Sätt sedan in antalet vikter som x.",
+     "t": 242
+    },
+    "losning": [
+     "Utan vikter är fjädern 8 cm, så m = 8.",
+     "Varje vikt gör den 2 cm längre, så k = 2.",
+     "y = 2x + 8",
+     "Med fem vikter: y = 2 · 5 + 8 = 10 + 8 = 18 cm."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 1.5,
+     "e": 5.72,
+     "text": "Robert Hooke är forskare i London, och han bygger instrument."
+    },
+    {
+     "s": 6.72,
+     "e": 12.3,
+     "text": "I många år har han gjort små fjädrar till fickur, och han har mätt hur mycket längre"
+    },
+    {
+     "s": 12.38,
+     "e": 14.56,
+     "text": "en fjäder blir när man drar i den."
+    },
+    {
+     "s": 15.86,
+     "e": 20.84,
+     "text": "För två år sedan skrev Hooke en rad bokstäver sist i en av sina böcker."
+    },
+    {
+     "s": 21.84,
+     "e": 25.36,
+     "text": "I raden gömde han det han hade upptäckt om fjädrar."
+    },
+    {
+     "s": 26.36,
+     "e": 30.52,
+     "text": "Bokstäverna stod i fel ordning, så ingen kunde läsa den."
+    },
+    {
+     "s": 31.52,
+     "e": 35.62,
+     "text": "Då kunde ingen annan ta upptäckten innan Hooke själv var färdig."
+    },
+    {
+     "s": 36.92,
+     "e": 42.12,
+     "text": "Nu, år 1678, visar Hooke vad raden betyder."
+    },
+    {
+     "s": 43.12,
+     "e": 47.48,
+     "text": "Han lindar en ståltråd till en fjäder och hänger upp den på en krok."
+    },
+    {
+     "s": 48.48,
+     "e": 51.46,
+     "text": "Under fjädern hänger han en liten vågskål."
+    },
+    {
+     "s": 52.46,
+     "e": 59.42,
+     "text": "Sedan lägger han i lika tunga vikter, en i taget, och mäter fjädern efter varje vikt."
+    },
+    {
+     "s": 60.72,
+     "e": 67.7,
+     "text": "Raden betyder att om en vikt gör fjädern ett steg längre, så gör två vikter den två steg"
+    },
+    {
+     "s": 67.76,
+     "e": 71.08,
+     "text": "längre och tre vikter tre steg längre."
+    },
+    {
+     "s": 72.08,
+     "e": 77.66,
+     "text": "Hooke skriver också att man nu kan bygga en våg som väger saker utan vikter."
+    },
+    {
+     "s": 78.66,
+     "e": 82.24,
+     "text": "Men hur kan en fjäder tala om hur tung en sak är?"
+    },
+    {
+     "s": 83.54,
+     "e": 86.24,
+     "text": "Vi gör samma försök med en egen fjäder."
+    },
+    {
+     "s": 87.24,
+     "e": 90.88,
+     "text": "För varje vikt blir fjädern 3 centimeter längre."
+    },
+    {
+     "s": 91.88,
+     "e": 98.24,
+     "text": "Med en vikt blir den alltså 3 centimeter längre, med två vikter 6 centimeter och"
+    },
+    {
+     "s": 98.28,
+     "e": 100.78,
+     "text": "med tre vikter 9 centimeter."
+    },
+    {
+     "s": 102.08,
+     "e": 105.34,
+     "text": "För att se mönstret ritar vi ett koordinatsystem."
+    },
+    {
+     "s": 106.34,
+     "e": 109.94,
+     "text": "Det har två tallinjer som möts i rät vinkel."
+    },
+    {
+     "s": 110.94,
+     "e": 116.04,
+     "text": "Den vågräta kallas x-axeln, och där sätter vi antalet vikter."
+    },
+    {
+     "s": 117.04,
+     "e": 123.92,
+     "text": "Den lodräta kallas y-axeln, och där sätter vi hur många centimeter längre fjädern blir."
+    },
+    {
+     "s": 125.22,
+     "e": 127.26,
+     "text": "Varje försök blir en punkt."
+    },
+    {
+     "s": 128.26,
+     "e": 136.56,
+     "text": "En vikt och 3 centimeter blir punkten (1, 3), alltså ett steg åt höger och tre steg uppåt."
+    },
+    {
+     "s": 137.56,
+     "e": 143.76,
+     "text": "Där axlarna möts ligger punkten origo, och där är både x och y noll."
+    },
+    {
+     "s": 144.76,
+     "e": 147.6,
+     "text": "Utan vikter blir fjädern inte längre alls."
+    },
+    {
+     "s": 148.9,
+     "e": 152.76,
+     "text": "Alla punkterna hamnar på en rak linje genom origo."
+    },
+    {
+     "s": 153.76,
+     "e": 158.2,
+     "text": "Det beror på att varje vikt lägger till samma 3 centimeter."
+    },
+    {
+     "s": 159.2,
+     "e": 164.72,
+     "text": "Hur mycket längre fjädern blir är alltså alltid tre gånger antalet vikter."
+    },
+    {
+     "s": 165.72,
+     "e": 168.98,
+     "text": "Det skrivs y = 3x."
+    },
+    {
+     "s": 170.28,
+     "e": 177.26,
+     "text": "När y alltid är samma tal gånger x, säger vi att y är direkt proportionell mot x."
+    },
+    {
+     "s": 178.26,
+     "e": 182.9,
+     "text": "Talet kallas proportionalitetskonstanten, och vi kallar det k."
+    },
+    {
+     "s": 183.9,
+     "e": 187.06,
+     "text": "Vi får k genom att dela y med x."
+    },
+    {
+     "s": 188.06,
+     "e": 193.72,
+     "text": "6 delat med 2 är 3, så k är 3 centimeter per vikt."
+    },
+    {
+     "s": 195.02,
+     "e": 197.1,
+     "text": "Nu kan vi svara på Hookes fråga."
+    },
+    {
+     "s": 198.1,
+     "e": 203.38,
+     "text": "Vi lägger en sten i vågskålen, och fjädern blir 12 centimeter längre."
+    },
+    {
+     "s": 204.38,
+     "e": 209.18,
+     "text": "Varje vikt ger 3 centimeter, så vi delar 12 med 3."
+    },
+    {
+     "s": 210.18,
+     "e": 214.98,
+     "text": "Det blir fyra, så stenen väger lika mycket som fyra vikter."
+    },
+    {
+     "s": 216.28,
+     "e": 219.96,
+     "text": "Men oftast mäter man hela fjädern med en linjal."
+    },
+    {
+     "s": 220.96,
+     "e": 225.28,
+     "text": "Vår fjäder är 10 centimeter lång redan utan vikter."
+    },
+    {
+     "s": 226.28,
+     "e": 231.6,
+     "text": "Med tre vikter är den alltså 3 · 3 + 10 centimeter."
+    },
+    {
+     "s": 232.6,
+     "e": 234.56,
+     "text": "Det blir 19 centimeter."
+    },
+    {
+     "s": 235.86,
+     "e": 241.88,
+     "text": "Nu får y stå för fjäderns hela längd, och x är fortfarande antalet vikter."
+    },
+    {
+     "s": 242.88,
+     "e": 247.38,
+     "text": "Då blir sambandet y = 3x + 10."
+    },
+    {
+     "s": 248.38,
+     "e": 254.4,
+     "text": "Linjen lutar lika mycket som förut, men den börjar tio steg upp på y-axeln."
+    },
+    {
+     "s": 255.4,
+     "e": 257.96,
+     "text": "Den går alltså inte genom origo."
+    },
+    {
+     "s": 259.26,
+     "e": 263.92,
+     "text": "Ett samband som ger en rak linje kallas ett linjärt samband."
+    },
+    {
+     "s": 264.92,
+     "e": 272.22,
+     "text": "Det skrivs y = kx + m, och det kallas räta linjens ekvation."
+    },
+    {
+     "s": 273.22,
+     "e": 276.86,
+     "text": "Den står på formelbladet, under rubriken funktioner."
+    },
+    {
+     "s": 278.16,
+     "e": 282,
+     "text": "Talet m är värdet på y när x är noll."
+    },
+    {
+     "s": 283,
+     "e": 287.26,
+     "text": "För fjädern är m tio, alltså längden utan vikter."
+    },
+    {
+     "s": 288.26,
+     "e": 290.7,
+     "text": "Det är där linjen skär y-axeln."
+    },
+    {
+     "s": 291.7,
+     "e": 296.72,
+     "text": "Är m ett negativt tal, skär linjen y-axeln under origo."
+    },
+    {
+     "s": 298.02,
+     "e": 300.62,
+     "text": "Talet k är linjens lutning."
+    },
+    {
+     "s": 301.62,
+     "e": 305.86,
+     "text": "Det säger hur mycket y ändras när x ökar med ett."
+    },
+    {
+     "s": 306.86,
+     "e": 312.8,
+     "text": "För fjädern är k tre, för varje vikt blir fjädern 3 centimeter längre."
+    },
+    {
+     "s": 314.1,
+     "e": 317.14,
+     "text": "I en graf läser vi av k som en trappa."
+    },
+    {
+     "s": 318.14,
+     "e": 321.58,
+     "text": "Vi går från en punkt på linjen ett steg åt höger."
+    },
+    {
+     "s": 322.58,
+     "e": 327.64,
+     "text": "Sedan räknar vi hur många steg uppåt vi måste gå för att komma tillbaka till linjen."
+    },
+    {
+     "s": 328.94,
+     "e": 335.12,
+     "text": "Stegen åt höger kallas Δx, och stegen uppåt kallas Δy."
+    },
+    {
+     "s": 336.12,
+     "e": 340.32,
+     "text": "Delta är en grekisk bokstav, och den betyder ändring."
+    },
+    {
+     "s": 341.32,
+     "e": 345.72,
+     "text": "Lutningen k är Δy delat med Δx."
+    },
+    {
+     "s": 346.72,
+     "e": 350.36,
+     "text": "Här är det 3 delat med 1, alltså tre."
+    },
+    {
+     "s": 351.66,
+     "e": 358.82,
+     "text": "Hooke provade tråd av stål, järn och mässing, och en grövre tråd ger en styvare fjäder."
+    },
+    {
+     "s": 359.82,
+     "e": 365.02,
+     "text": "Tänk dig en styv fjäder som också är 10 centimeter lång utan vikter."
+    },
+    {
+     "s": 366.02,
+     "e": 370.28,
+     "text": "Den blir bara en centimeter längre för varje två vikter."
+    },
+    {
+     "s": 371.58,
+     "e": 375.78,
+     "text": "Då går trappan två steg åt höger och ett steg uppåt."
+    },
+    {
+     "s": 376.78,
+     "e": 381.76,
+     "text": "Lutningen k är 1 delat med 2, alltså 0,5."
+    },
+    {
+     "s": 382.76,
+     "e": 388,
+     "text": "Sambandet blir y = 0,5x + 10."
+    },
+    {
+     "s": 389,
+     "e": 395.4,
+     "text": "Båda linjerna skär y-axeln i tio, men den styva fjäderns linje lutar mindre."
+    },
+    {
+     "s": 396.7,
+     "e": 400.94,
+     "text": "Hooke skrev också att regeln gäller när man trycker ihop en fjäder."
+    },
+    {
+     "s": 401.94,
+     "e": 406.16,
+     "text": "Vi ställer en fjäder på bordet, och den är 10 centimeter hög."
+    },
+    {
+     "s": 407.16,
+     "e": 412,
+     "text": "Varje vikt som vi lägger ovanpå trycker ihop den 2 centimeter."
+    },
+    {
+     "s": 413,
+     "e": 416.2,
+     "text": "Fjädern blir alltså kortare för varje vikt."
+    },
+    {
+     "s": 417.5,
+     "e": 420.14,
+     "text": "Nu minskar y när x ökar."
+    },
+    {
+     "s": 421.14,
+     "e": 426.6,
+     "text": "Ett steg åt höger ger två steg nedåt, så k är −2."
+    },
+    {
+     "s": 427.6,
+     "e": 432.54,
+     "text": "Sambandet blir y = −2x + 10."
+    },
+    {
+     "s": 433.54,
+     "e": 436.9,
+     "text": "En linje med negativt k lutar nedåt."
+    },
+    {
+     "s": 438.2,
+     "e": 444.24,
+     "text": "Den här linjen ritar vi utan värdetabell, alltså utan att räkna ut punkterna först."
+    },
+    {
+     "s": 445.24,
+     "e": 448.58,
+     "text": "Vi börjar i m, vid tio på y-axeln."
+    },
+    {
+     "s": 449.58,
+     "e": 455.24,
+     "text": "Sedan går vi ett steg åt höger och två steg nedåt, och där sätter vi en punkt."
+    },
+    {
+     "s": 456.24,
+     "e": 459.78,
+     "text": "Till sist drar vi linjen genom de två punkterna."
+    },
+    {
+     "s": 461.08,
+     "e": 468.02,
+     "text": "Hooke skrev ner försöket i en liten bok om fjädrar, som trycktes i London 1678."
+    },
+    {
+     "s": 469.02,
+     "e": 471.58,
+     "text": "Regeln kallas i dag Hookes lag."
+    },
+    {
+     "s": 472.58,
+     "e": 477.84,
+     "text": "En fjädervåg, som den man hänger en väska i, bygger fortfarande på den."
+    },
+    {
+     "s": 479.14,
+     "e": 480.98,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 481.98,
+     "e": 485.9,
+     "text": "En fjäder är 8 centimeter lång utan vikter."
+    },
+    {
+     "s": 486.9,
+     "e": 490,
+     "text": "Varje vikt gör den 2 centimeter längre."
+    },
+    {
+     "s": 491,
+     "e": 496.32,
+     "text": "Skriv sambandet på formen y = kx + m."
+    },
+    {
+     "s": 497.32,
+     "e": 500.06,
+     "text": "Hur lång är fjädern med fem vikter?"
     }
    ]
   },
