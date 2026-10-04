@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-04T12:03:27.289Z",
+ "byggd": "2026-10-04T12:39:47.302Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -8786,6 +8786,931 @@
      "s": 454.02,
      "e": 455.86,
      "text": "Avrunda till hela grader."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k4-03-rata-linjens-ekvation",
+   "titel": "Earhart och linjen",
+   "ar": 1937,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-03-rata-linjens-ekvation-v1/ma1c-k4-03-rata-linjens-ekvation-1080p.mp4",
+   "moment": "Räta linjens ekvation",
+   "begrepp": [
+    "räta linjen",
+    "y = kx + m",
+    "k-värde",
+    "m-värde",
+    "lutning",
+    "koordinater",
+    "linjen genom två punkter",
+    "punkt på linjen",
+    "vinkelräta linjer",
+    "parallella linjer",
+    "allmän form"
+   ],
+   "beskrivning": "Den 2 juli 1937 flög Amelia Earhart och Fred Noonan mot den lilla ön Howland mitt i Stilla havet. Vi tar fram kurslinjens ekvation ur två punkter och prövar om en punkt ligger på linjen. Sedan följer vi Noonans solens linje, som är vinkelrät mot riktningen till solen och flyttas parallellt genom ön. Till sist skriver vi om en linje från allmän form till y = kx + m.",
+   "youtube": null,
+   "langd": 573,
+   "omslag": "omslag/ma1c-k4-03-rata-linjens-ekvation.jpg?v=a0002a5c",
+   "omslagRen": "omslag/ma1c-k4-03-rata-linjens-ekvation-ren.jpg?v=968d2dba",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 1,
+     "text": "Den andra juli 1937 lyfter ett silverfärgat flygplan från staden Lae på Nya Guinea. Piloten heter Amelia Earhart. Hon försöker flyga runt hela jorden nära ekvatorn, och det mesta av vägen är redan klar."
+    },
+    {
+     "t": 21,
+     "text": "Med i planet sitter Fred Noonan. Han har varit kapten på fartyg, och hans jobb är att hitta vägen åt henne. Nu ska de flyga över Stilla havet till ön Howland, drygt fyratusen kilometer bort."
+    },
+    {
+     "t": 38,
+     "text": "Howland är bara ungefär två kilometer lång. På ön finns en landningsbana, och vid ön väntar ett fartyg med bensin. Planet måste landa där för att tanka."
+    },
+    {
+     "t": 51,
+     "text": "Men ön är så liten att man ser den först när man är nära, och runt den finns bara hav. Hur hittar man en ö som är två kilometer lång, mitt i ett hav som är flera tusen kilometer brett?"
+    },
+    {
+     "t": 67,
+     "text": "Noonan räknar på en karta. Vi gör som han och lägger ett rutnät över kartan, där varje ruta är tvåhundra kilometer. Rutnätet börjar i en nollpunkt mitt i Stilla havet, på ekvatorn. Där korsar två axlar varandra. X-axeln går åt öster och Y-axeln åt norr. Varje punkt får två tal, som kallas koordinater. Det första talet, X, säger hur många rutor åt öster punkten ligger. Det andra talet, Y, säger hur många rutor åt norr. Ett minus betyder åt väster eller åt söder."
+    },
+    {
+     "t": 113,
+     "text": "Lae ligger arton rutor väster om nollpunkten och fyra rutor söder om den. Där är X minus arton och Y minus fyra. Howland ligger två rutor åt öster och nästan ingenting åt norr. Där är X två och Y noll."
+    },
+    {
+     "t": 135,
+     "text": "Planet ska flyga rakt från Lae till Howland. En rak linje har en ekvation: Y är lika med K X plus M. Ekvationen står på formelbladet, under rubriken Funktioner. Talet K säger hur mycket linjen lutar. Talet M säger var linjen korsar Y-axeln."
+    },
+    {
+     "t": 161,
+     "text": "K-värdet är hur mycket Y ändras när X ökar med ett. Vi räknar ut det som ändringen i Y delat med ändringen i X. Formelbladet skriver det som Y två minus Y ett, delat med X två minus X ett. Ettan är den första punkten och tvåan den andra."
+    },
+    {
+     "t": 185,
+     "text": "Från Lae till Howland går X från minus arton till två. Ändringen i X är två minus minus arton. Det blir två plus arton, alltså tjugo. Samtidigt går Y från minus fyra till noll. Ändringen i Y är noll minus minus fyra, alltså fyra."
+    },
+    {
+     "t": 211,
+     "text": "K-värdet är alltså fyra delat med tjugo, och det är noll komma två. Linjen går noll komma två rutor åt norr för varje ruta åt öster."
+    },
+    {
+     "t": 224,
+     "text": "Nu söker vi M. Vi vet att Howland ligger på linjen, så vi sätter in öns X och Y i ekvationen. Då står det noll är lika med noll komma två gånger två plus M. noll komma två gånger två är noll komma fyra. Så M måste vara minus noll komma fyra, för noll komma fyra minus noll komma fyra är noll. Linjen korsar alltså Y-axeln noll komma fyra rutor under nollpunkten."
+    },
+    {
+     "t": 260,
+     "text": "Kurslinjen är alltså Y är lika med noll komma två X minus noll komma fyra. Vi kan pröva den med Lae, där X är minus arton. noll komma två gånger minus arton är minus tre komma sex. Minus noll komma fyra till ger minus fyra. Det är Laes Y, så Lae ligger också på linjen."
+    },
+    {
+     "t": 288,
+     "text": "Men över havet syns ingen linje, och Noonan kan inte vara säker på att planet följer den. När solen går upp tittar han på klockan. Tiden säger honom hur långt planet har kommit i riktning mot solen. Men det säger ingenting om hur långt åt sidan planet är."
+    },
+    {
+     "t": 310,
+     "text": "Därför vet Noonan bara att planet är någonstans på en linje som är vinkelrät mot riktningen till solen. Vinkelrät betyder att linjerna möts i en rät vinkel, alltså nittio grader. Vi kallar den linjen solens linje."
+    },
+    {
+     "t": 330,
+     "text": "Solen går upp lite norr om öster. Riktningen mot solen har ett k-värde på ungefär noll komma fyra. Den går alltså noll komma fyra rutor åt norr för varje ruta åt öster."
+    },
+    {
+     "t": 346,
+     "text": "För två linjer som är vinkelräta finns en regel. Multiplicerar man deras K-värden blir svaret minus ett. Den regeln står inte på formelbladet. Solens linje har alltså ett k-värde som gånger noll komma fyra blir minus ett. Det är minus ett delat med noll komma fyra, och det blir minus två komma fem."
+    },
+    {
+     "t": 376,
+     "text": "Noonan har förberett sig redan i Lae. Han ritar en linje genom Howland som går åt samma håll som solens linje. Två linjer som går åt samma håll kallas parallella. De möts aldrig, och de har samma k-värde. Linjen genom ön har alltså också K-värdet minus två komma fem."
+    },
+    {
+     "t": 400,
+     "text": "Nu söker vi M för linjen genom ön. Vi sätter in Howland, där X är två och Y är noll. Då står det noll är lika med minus två komma fem gånger två plus M. Minus två komma fem gånger två är minus fem. Så M måste vara fem, för minus fem plus fem är noll. Linjen genom ön är Y är lika med minus två komma fem X plus fem."
+    },
+    {
+     "t": 435,
+     "text": "Planen är enkel. Planet flyger längs kurslinjen tills det når linjen genom ön. Där svänger det och flyger längs den nya linjen, åt norr eller åt söder, tills ön syns. Ön ligger ju på den linjen."
+    },
+    {
+     "t": 453,
+     "text": "En linje kan också skrivas på allmän form. Då står X, Y och ett tal på ena sidan av likhetstecknet, och noll på den andra. Den formen står också på formelbladet. Linjen genom ön kan skrivas fem X plus två Y minus tio är lika med noll."
+    },
+    {
+     "t": 478,
+     "text": "För att se K och M löser vi ut Y. Först drar vi bort fem X på båda sidor av likhetstecknet. Sedan lägger vi till tio på båda sidor. Då står det två Y är lika med minus fem X plus tio. Till sist delar vi båda sidor med två. Då står det Y är lika med minus två komma fem X plus fem, och det är samma linje som förut."
+    },
+    {
+     "t": 511,
+     "text": "Klockan sju och fyrtiotvå på morgonen hör fartyget vid Howland Earharts röst i radion. Hon säger att de borde vara precis över ön, men att de inte ser den. Bensinen börjar ta slut."
+    },
+    {
+     "t": 527,
+     "text": "En timme senare kommer hennes sista meddelande. Hon säger att de flyger på linjen, fram och tillbaka mot norr och söder. Sedan hörs ingenting mer."
+    },
+    {
+     "t": 541,
+     "text": "Den amerikanska flottan letar efter planet i mer än två veckor, men det hittas aldrig. Ingen vet var planet var när bensinen tog slut."
+    },
+    {
+     "t": 553,
+     "text": "Nu är det din tur. På samma karta flyger ett annat plan rakt från punkten där X är två och Y är ett, till punkten där X är fem och Y är sju. Vilken ekvation har linjen som planet flyger på?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 1,
+     "rubrik": "Earhart lyfter från Lae",
+     "typ": "historia"
+    },
+    {
+     "t": 38,
+     "rubrik": "Ön mitt i Stilla havet",
+     "typ": "historia"
+    },
+    {
+     "t": 67,
+     "rubrik": "Kartan som koordinatsystem",
+     "typ": "matte"
+    },
+    {
+     "t": 135,
+     "rubrik": "Räta linjens ekvation y = kx + m",
+     "typ": "matte"
+    },
+    {
+     "t": 185,
+     "rubrik": "k-värdet ur två punkter",
+     "typ": "matte"
+    },
+    {
+     "t": 224,
+     "rubrik": "m-värdet: sätt in en punkt",
+     "typ": "matte"
+    },
+    {
+     "t": 260,
+     "rubrik": "Ligger punkten på linjen?",
+     "typ": "matte"
+    },
+    {
+     "t": 288,
+     "rubrik": "Solens linje",
+     "typ": "matte"
+    },
+    {
+     "t": 346,
+     "rubrik": "Vinkelräta linjer",
+     "typ": "matte"
+    },
+    {
+     "t": 376,
+     "rubrik": "Parallella linjer",
+     "typ": "matte"
+    },
+    {
+     "t": 453,
+     "rubrik": "Allmän form",
+     "typ": "matte"
+    },
+    {
+     "t": 511,
+     "rubrik": "De sista meddelandena",
+     "typ": "historia"
+    },
+    {
+     "t": 553,
+     "rubrik": "Din tur",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 553,
+    "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Vilken ekvation har linjen som planet flyger på?",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "b02-din-tur",
+     "tema": "papper",
+     "utsnitt": [
+      280,
+      180,
+      1000,
+      820
+     ],
+     "text": "Ett rutnät med x-axel och y-axel. Punkten (2, 1) och punkten (5, 7) är utsatta, och ett plan flyger rakt mellan dem. Bredvid står y = ?.",
+     "delar": [
+      {
+       "typ": "pil",
+       "svag": true,
+       "fran": [
+        380,
+        920
+       ],
+       "till": [
+        1055,
+        920
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1085,
+        960
+       ],
+       "text": "x"
+      },
+      {
+       "typ": "pil",
+       "svag": true,
+       "fran": [
+        380,
+        920
+       ],
+       "till": [
+        380,
+        155
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        344,
+        165
+       ],
+       "text": "y"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        560,
+        830
+       ],
+       "r": 8
+      },
+      {
+       "typ": "text",
+       "vid": [
+        620,
+        808
+       ],
+       "text": "(2, 1)",
+       "ankare": "start"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        830,
+        290
+       ],
+       "r": 8
+      },
+      {
+       "typ": "text",
+       "vid": [
+        890,
+        308
+       ],
+       "text": "(5, 7)",
+       "ankare": "start"
+      },
+      {
+       "typ": "linje",
+       "streckad": true,
+       "accent": true,
+       "p": [
+        [
+         560,
+         830
+        ],
+        [
+         830,
+         290
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1150,
+        640
+       ],
+       "text": "y = ?",
+       "accent": true
+      }
+     ]
+    },
+    "delar": [
+     {
+      "fraga": "Vad är k-värdet?",
+      "typ": "tal",
+      "svar": 2,
+      "exempel": "t.ex. 3",
+      "fel": [
+       {
+        "svar": "0.5",
+        "text": "Du har delat ändringen i x med ändringen i y. k är ändringen i y delat med ändringen i x: (7 − 1)/(5 − 2)."
+       },
+       {
+        "svar": "6",
+        "text": "6 är ändringen i y. Dela med ändringen i x, 5 − 2 = 3."
+       },
+       {
+        "svar": "3",
+        "text": "3 är ändringen i x. k är ändringen i y delat med ändringen i x: 6/3."
+       },
+       {
+        "svar": "-2",
+        "text": "Både x och y växer från den första punkten till den andra, så linjen lutar uppåt och k är positivt."
+       }
+      ]
+     },
+     {
+      "fraga": "Vad är m-värdet?",
+      "typ": "tal",
+      "svar": -3,
+      "exempel": "t.ex. 4",
+      "fel": [
+       {
+        "svar": "3",
+        "text": "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m. Då måste m vara 1 − 4."
+       },
+       {
+        "svar": "5",
+        "text": "Du har lagt ihop 1 och 4. Sätt in (2, 1): 1 = 4 + m, så m = 1 − 4."
+       },
+       {
+        "svar": "1",
+        "text": "1 är punktens y. Sätt in hela punkten (2, 1) i y = 2x + m och lös ut m."
+       }
+      ]
+     },
+     {
+      "fraga": "Skriv linjens ekvation.",
+      "typ": "ekvation",
+      "svar": "y = 2x - 3",
+      "exempel": "t.ex. y = 3x + 1",
+      "tangenter": [
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "y = 2x + 3",
+        "text": "Kolla tecknet på m: 1 = 4 + m ger m = −3."
+       },
+       {
+        "svar": "y = 0.5x - 3",
+        "text": "k ska vara ändringen i y delat med ändringen i x, 6/3 = 2."
+       },
+       {
+        "svar": "y = 3x - 3",
+        "text": "k är 6 delat med 3, alltså 2."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Räkna k som ändringen i y delat med ändringen i x. Sätt sedan in en av punkterna i y = kx + m för att få m, som med Lae och Howland.",
+     "t": 185
+    },
+    "losning": [
+     "Ändringen i x är 5 − 2 = 3 och ändringen i y är 7 − 1 = 6.",
+     "k = 6/3 = 2.",
+     "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m och m = −3.",
+     "Linjen är y = 2x − 3. Kontroll med (5, 7): 2 · 5 − 3 = 7."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 1.5,
+     "e": 9.36,
+     "text": "Den 2 juli 1937 lyfter ett silverfärgat flygplan från staden Lae på Nya Guinea."
+    },
+    {
+     "s": 10.36,
+     "e": 12.9,
+     "text": "Piloten heter Amelia Earhart."
+    },
+    {
+     "s": 13.9,
+     "e": 20.18,
+     "text": "Hon försöker flyga runt hela jorden nära ekvatorn, och det mesta av vägen är redan klar."
+    },
+    {
+     "s": 21.48,
+     "e": 23.9,
+     "text": "Med i planet sitter Fred Noonan."
+    },
+    {
+     "s": 24.9,
+     "e": 29.62,
+     "text": "Han har varit kapten på fartyg, och hans jobb är att hitta vägen åt henne."
+    },
+    {
+     "s": 30.62,
+     "e": 36.78,
+     "text": "Nu ska de flyga över Stilla havet till ön Howland, drygt 4 000 kilometer bort."
+    },
+    {
+     "s": 38.08,
+     "e": 41.14,
+     "text": "Howland är bara ungefär 2 kilometer lång."
+    },
+    {
+     "s": 42.14,
+     "e": 47.26,
+     "text": "På ön finns en landningsbana, och vid ön väntar ett fartyg med bensin."
+    },
+    {
+     "s": 48.26,
+     "e": 50.68,
+     "text": "Planet måste landa där för att tanka."
+    },
+    {
+     "s": 51.98,
+     "e": 58.28,
+     "text": "Men ön är så liten att man ser den först när man är nära, och runt den finns bara hav."
+    },
+    {
+     "s": 59.28,
+     "e": 66.44,
+     "text": "Hur hittar man en ö som är 2 kilometer lång, mitt i ett hav som är flera tusen kilometer brett?"
+    },
+    {
+     "s": 67.74,
+     "e": 69.76,
+     "text": "Noonan räknar på en karta."
+    },
+    {
+     "s": 70.76,
+     "e": 77.1,
+     "text": "Vi gör som han och lägger ett rutnät över kartan, där varje ruta är 200 kilometer."
+    },
+    {
+     "s": 78.1,
+     "e": 83,
+     "text": "Rutnätet börjar i en nollpunkt mitt i Stilla havet, på ekvatorn."
+    },
+    {
+     "s": 84,
+     "e": 86.4,
+     "text": "Där korsar två axlar varandra."
+    },
+    {
+     "s": 87.4,
+     "e": 91.08,
+     "text": "x-axeln går åt öster och y-axeln åt norr."
+    },
+    {
+     "s": 92.08,
+     "e": 95.84,
+     "text": "Varje punkt får två tal, som kallas koordinater."
+    },
+    {
+     "s": 96.84,
+     "e": 102.18,
+     "text": "Det första talet, x, säger hur många rutor åt öster punkten ligger."
+    },
+    {
+     "s": 103.18,
+     "e": 107.36,
+     "text": "Det andra talet, y, säger hur många rutor åt norr."
+    },
+    {
+     "s": 108.36,
+     "e": 112.16,
+     "text": "Ett minus betyder åt väster eller åt söder."
+    },
+    {
+     "s": 113.46,
+     "e": 119.3,
+     "text": "Lae ligger 18 rutor väster om nollpunkten och 4 rutor söder om den."
+    },
+    {
+     "s": 120.3,
+     "e": 124.54,
+     "text": "Där är x minus 18 och y minus 4."
+    },
+    {
+     "s": 125.54,
+     "e": 130.28,
+     "text": "Howland ligger 2 rutor åt öster och nästan ingenting åt norr."
+    },
+    {
+     "s": 131.28,
+     "e": 134.3,
+     "text": "Där är x 2 och y 0."
+    },
+    {
+     "s": 135.6,
+     "e": 139.06,
+     "text": "Planet ska flyga rakt från Lae till Howland."
+    },
+    {
+     "s": 140.06,
+     "e": 145.78,
+     "text": "En rak linje har en ekvation: y är lika med kx plus m."
+    },
+    {
+     "s": 146.78,
+     "e": 150.88,
+     "text": "Ekvationen står på formelbladet, under rubriken Funktioner."
+    },
+    {
+     "s": 151.88,
+     "e": 155.18,
+     "text": "Talet k säger hur mycket linjen lutar."
+    },
+    {
+     "s": 156.18,
+     "e": 160,
+     "text": "Talet m säger var linjen korsar y-axeln."
+    },
+    {
+     "s": 161.3,
+     "e": 166.14,
+     "text": "k-värdet är hur mycket y ändras när x ökar med 1."
+    },
+    {
+     "s": 167.14,
+     "e": 171.68,
+     "text": "Vi räknar ut det som ändringen i y delat med ändringen i x."
+    },
+    {
+     "s": 172.68,
+     "e": 180.12,
+     "text": "Formelbladet skriver det som y₂ minus y₁, delat med x₂ minus x₁."
+    },
+    {
+     "s": 181.12,
+     "e": 184.6,
+     "text": "Ettan är den första punkten och tvåan den andra."
+    },
+    {
+     "s": 185.9,
+     "e": 190.48,
+     "text": "Från Lae till Howland går x från minus 18 till 2."
+    },
+    {
+     "s": 191.48,
+     "e": 195.48,
+     "text": "Ändringen i x är 2 minus minus 18."
+    },
+    {
+     "s": 196.48,
+     "e": 199.92,
+     "text": "Det blir 2 plus 18, alltså 20."
+    },
+    {
+     "s": 200.92,
+     "e": 204.46,
+     "text": "Samtidigt går y från minus 4 till 0."
+    },
+    {
+     "s": 205.46,
+     "e": 210.54,
+     "text": "Ändringen i y är 0 minus minus 4, alltså 4."
+    },
+    {
+     "s": 211.84,
+     "e": 217.3,
+     "text": "k-värdet är alltså 4 delat med 20, och det är 0,2."
+    },
+    {
+     "s": 218.3,
+     "e": 223.5,
+     "text": "Linjen går 0,2 rutor åt norr för varje ruta åt öster."
+    },
+    {
+     "s": 224.8,
+     "e": 226.12,
+     "text": "Nu söker vi m."
+    },
+    {
+     "s": 227.12,
+     "e": 233.04,
+     "text": "Vi vet att Howland ligger på linjen, så vi sätter in öns x och y i ekvationen."
+    },
+    {
+     "s": 234.04,
+     "e": 239.5,
+     "text": "Då står det 0 är lika med 0,2 gånger 2 plus m."
+    },
+    {
+     "s": 240.5,
+     "e": 244.06,
+     "text": "0,2 gånger 2 är 0,4."
+    },
+    {
+     "s": 245.06,
+     "e": 252.86,
+     "text": "Så m måste vara minus 0,4, för 0,4 minus 0,4 är 0."
+    },
+    {
+     "s": 253.86,
+     "e": 259.44,
+     "text": "Linjen korsar alltså y-axeln 0,4 rutor under nollpunkten."
+    },
+    {
+     "s": 260.74,
+     "e": 267.32,
+     "text": "Kurslinjen är alltså y är lika med 0,2x minus 0,4."
+    },
+    {
+     "s": 268.32,
+     "e": 272.08,
+     "text": "Vi kan pröva den med Lae, där x är minus 18."
+    },
+    {
+     "s": 273.08,
+     "e": 277.96,
+     "text": "0,2 gånger minus 18 är minus 3,6."
+    },
+    {
+     "s": 278.96,
+     "e": 282.54,
+     "text": "Minus 0,4 till ger minus 4."
+    },
+    {
+     "s": 283.54,
+     "e": 287.54,
+     "text": "Det är Laes y, så Lae ligger också på linjen."
+    },
+    {
+     "s": 288.84,
+     "e": 295.48,
+     "text": "Men över havet syns ingen linje, och Noonan kan inte vara säker på att planet följer den."
+    },
+    {
+     "s": 296.48,
+     "e": 299.02,
+     "text": "När solen går upp tittar han på klockan."
+    },
+    {
+     "s": 300.02,
+     "e": 304.64,
+     "text": "Tiden säger honom hur långt planet har kommit i riktning mot solen."
+    },
+    {
+     "s": 305.64,
+     "e": 309.4,
+     "text": "Men det säger ingenting om hur långt åt sidan planet är."
+    },
+    {
+     "s": 310.7,
+     "e": 318.4,
+     "text": "Därför vet Noonan bara att planet är någonstans på en linje som är vinkelrät mot riktningen till solen."
+    },
+    {
+     "s": 319.4,
+     "e": 325.5,
+     "text": "Vinkelrät betyder att linjerna möts i en rät vinkel, alltså 90 grader."
+    },
+    {
+     "s": 326.5,
+     "e": 329.18,
+     "text": "Vi kallar den linjen solens linje."
+    },
+    {
+     "s": 330.48,
+     "e": 333.26,
+     "text": "Solen går upp lite norr om öster."
+    },
+    {
+     "s": 334.26,
+     "e": 338.94,
+     "text": "Riktningen mot solen har ett k-värde på ungefär 0,4."
+    },
+    {
+     "s": 339.94,
+     "e": 345.48,
+     "text": "Den går alltså 0,4 rutor åt norr för varje ruta åt öster."
+    },
+    {
+     "s": 346.78,
+     "e": 350.52,
+     "text": "För två linjer som är vinkelräta finns en regel."
+    },
+    {
+     "s": 351.52,
+     "e": 356.08,
+     "text": "Multiplicerar man deras k-värden blir svaret minus 1."
+    },
+    {
+     "s": 357.08,
+     "e": 359.8,
+     "text": "Den regeln står inte på formelbladet."
+    },
+    {
+     "s": 360.8,
+     "e": 367.46,
+     "text": "Solens linje har alltså ett k-värde som gånger 0,4 blir minus 1."
+    },
+    {
+     "s": 368.46,
+     "e": 374.84,
+     "text": "Det är minus 1 delat med 0,4, och det blir minus 2,5."
+    },
+    {
+     "s": 376.14,
+     "e": 378.7,
+     "text": "Noonan har förberett sig redan i Lae."
+    },
+    {
+     "s": 379.7,
+     "e": 384.84,
+     "text": "Han ritar en linje genom Howland som går åt samma håll som solens linje."
+    },
+    {
+     "s": 385.84,
+     "e": 389.58,
+     "text": "Två linjer som går åt samma håll kallas parallella."
+    },
+    {
+     "s": 390.58,
+     "e": 393.86,
+     "text": "De möts aldrig, och de har samma k-värde."
+    },
+    {
+     "s": 394.86,
+     "e": 399.64,
+     "text": "Linjen genom ön har alltså också k-värdet minus 2,5."
+    },
+    {
+     "s": 400.94,
+     "e": 403.7,
+     "text": "Nu söker vi m för linjen genom ön."
+    },
+    {
+     "s": 404.7,
+     "e": 408.86,
+     "text": "Vi sätter in Howland, där x är 2 och y är 0."
+    },
+    {
+     "s": 409.86,
+     "e": 415.88,
+     "text": "Då står det 0 är lika med minus 2,5 gånger 2 plus m."
+    },
+    {
+     "s": 416.88,
+     "e": 420.5,
+     "text": "Minus 2,5 gånger 2 är minus 5."
+    },
+    {
+     "s": 421.5,
+     "e": 426.86,
+     "text": "Så m måste vara 5, för minus 5 plus 5 är 0."
+    },
+    {
+     "s": 427.86,
+     "e": 434.16,
+     "text": "Linjen genom ön är y är lika med minus 2,5x plus 5."
+    },
+    {
+     "s": 435.46,
+     "e": 436.82,
+     "text": "Planen är enkel."
+    },
+    {
+     "s": 437.82,
+     "e": 442.18,
+     "text": "Planet flyger längs kurslinjen tills det når linjen genom ön."
+    },
+    {
+     "s": 443.18,
+     "e": 448.24,
+     "text": "Där svänger det och flyger längs den nya linjen, åt norr eller åt söder,"
+    },
+    {
+     "s": 448.52,
+     "e": 449.72,
+     "text": "tills ön syns."
+    },
+    {
+     "s": 450.72,
+     "e": 452.52,
+     "text": "Ön ligger ju på den linjen."
+    },
+    {
+     "s": 453.82,
+     "e": 456.82,
+     "text": "En linje kan också skrivas på allmän form."
+    },
+    {
+     "s": 457.82,
+     "e": 464.66,
+     "text": "Då står x, y och ett tal på ena sidan av likhetstecknet, och 0 på den andra."
+    },
+    {
+     "s": 465.66,
+     "e": 468.22,
+     "text": "Den formen står också på formelbladet."
+    },
+    {
+     "s": 469.22,
+     "e": 476.7,
+     "text": "Linjen genom ön kan skrivas 5x plus 2y minus 10 är lika med 0."
+    },
+    {
+     "s": 478,
+     "e": 481.44,
+     "text": "För att se k och m löser vi ut y."
+    },
+    {
+     "s": 482.44,
+     "e": 486.76,
+     "text": "Först drar vi bort 5x på båda sidor av likhetstecknet."
+    },
+    {
+     "s": 487.76,
+     "e": 490.7,
+     "text": "Sedan lägger vi till 10 på båda sidor."
+    },
+    {
+     "s": 491.7,
+     "e": 497.02,
+     "text": "Då står det 2y är lika med minus 5x plus 10."
+    },
+    {
+     "s": 498.02,
+     "e": 500.72,
+     "text": "Till sist delar vi båda sidor med 2."
+    },
+    {
+     "s": 501.72,
+     "e": 510.18,
+     "text": "Då står det y är lika med minus 2,5x plus 5, och det är samma linje som förut."
+    },
+    {
+     "s": 511.48,
+     "e": 517.9,
+     "text": "Klockan 7.42 på morgonen hör fartyget vid Howland Earharts röst i radion."
+    },
+    {
+     "s": 518.9,
+     "e": 523.62,
+     "text": "Hon säger att de borde vara precis över ön, men att de inte ser den."
+    },
+    {
+     "s": 524.62,
+     "e": 526.42,
+     "text": "Bensinen börjar ta slut."
+    },
+    {
+     "s": 527.72,
+     "e": 530.72,
+     "text": "En timme senare kommer hennes sista meddelande."
+    },
+    {
+     "s": 531.72,
+     "e": 537.14,
+     "text": "Hon säger att de flyger på linjen, fram och tillbaka mot norr och söder."
+    },
+    {
+     "s": 538.14,
+     "e": 540.3,
+     "text": "Sedan hörs ingenting mer."
+    },
+    {
+     "s": 541.6,
+     "e": 546.1,
+     "text": "Den amerikanska flottan letar efter planet i mer än två veckor,"
+    },
+    {
+     "s": 546.58,
+     "e": 547.82,
+     "text": "men det hittas aldrig."
+    },
+    {
+     "s": 548.82,
+     "e": 552.3,
+     "text": "Ingen vet var planet var när bensinen tog slut."
+    },
+    {
+     "s": 553.6,
+     "e": 555.24,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 556.24,
+     "e": 563.08,
+     "text": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1,"
+    },
+    {
+     "s": 563.56,
+     "e": 566.88,
+     "text": "till punkten där x är 5 och y är 7."
+    },
+    {
+     "s": 567.88,
+     "e": 571.54,
+     "text": "Vilken ekvation har linjen som planet flyger på?"
     }
    ]
   },

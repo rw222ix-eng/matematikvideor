@@ -1403,5 +1403,203 @@
       "y = 2x + 8",
       "Med fem vikter: y = 2 · 5 + 8 = 10 + 8 = 18 cm."
     ]
+  },
+  "ma1c-k4-03-rata-linjens-ekvation": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Vilken ekvation har linjen som planet flyger på?",
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "b02-din-tur",
+      "tema": "papper",
+      "utsnitt": [
+        280,
+        180,
+        1000,
+        820
+      ],
+      "text": "Ett rutnät med x-axel och y-axel. Punkten (2, 1) och punkten (5, 7) är utsatta, och ett plan flyger rakt mellan dem. Bredvid står y = ?.",
+      "delar": [
+        {
+          "typ": "pil",
+          "svag": true,
+          "fran": [
+            380,
+            920
+          ],
+          "till": [
+            1055.0,
+            920
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            1085.0,
+            960
+          ],
+          "text": "x"
+        },
+        {
+          "typ": "pil",
+          "svag": true,
+          "fran": [
+            380,
+            920
+          ],
+          "till": [
+            380,
+            155.0
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            344,
+            165.0
+          ],
+          "text": "y"
+        },
+        {
+          "typ": "prick",
+          "vid": [
+            560,
+            830
+          ],
+          "r": 8
+        },
+        {
+          "typ": "text",
+          "vid": [
+            620,
+            808
+          ],
+          "text": "(2, 1)",
+          "ankare": "start"
+        },
+        {
+          "typ": "prick",
+          "vid": [
+            830,
+            290
+          ],
+          "r": 8
+        },
+        {
+          "typ": "text",
+          "vid": [
+            890,
+            308
+          ],
+          "text": "(5, 7)",
+          "ankare": "start"
+        },
+        {
+          "typ": "linje",
+          "streckad": true,
+          "accent": true,
+          "p": [
+            [
+              560,
+              830
+            ],
+            [
+              830,
+              290
+            ]
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            1150,
+            640
+          ],
+          "text": "y = ?",
+          "accent": true
+        }
+      ]
+    },
+    "delar": [
+      {
+        "fraga": "Vad är k-värdet?",
+        "typ": "tal",
+        "svar": 2,
+        "exempel": "t.ex. 3",
+        "fel": [
+          {
+            "svar": "0.5",
+            "text": "Du har delat ändringen i x med ändringen i y. k är ändringen i y delat med ändringen i x: (7 − 1)/(5 − 2)."
+          },
+          {
+            "svar": "6",
+            "text": "6 är ändringen i y. Dela med ändringen i x, 5 − 2 = 3."
+          },
+          {
+            "svar": "3",
+            "text": "3 är ändringen i x. k är ändringen i y delat med ändringen i x: 6/3."
+          },
+          {
+            "svar": "-2",
+            "text": "Både x och y växer från den första punkten till den andra, så linjen lutar uppåt och k är positivt."
+          }
+        ]
+      },
+      {
+        "fraga": "Vad är m-värdet?",
+        "typ": "tal",
+        "svar": -3,
+        "exempel": "t.ex. 4",
+        "fel": [
+          {
+            "svar": "3",
+            "text": "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m. Då måste m vara 1 − 4."
+          },
+          {
+            "svar": "5",
+            "text": "Du har lagt ihop 1 och 4. Sätt in (2, 1): 1 = 4 + m, så m = 1 − 4."
+          },
+          {
+            "svar": "1",
+            "text": "1 är punktens y. Sätt in hela punkten (2, 1) i y = 2x + m och lös ut m."
+          }
+        ]
+      },
+      {
+        "fraga": "Skriv linjens ekvation.",
+        "typ": "ekvation",
+        "svar": "y = 2x - 3",
+        "exempel": "t.ex. y = 3x + 1",
+        "tangenter": [
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "y = 2x + 3",
+            "text": "Kolla tecknet på m: 1 = 4 + m ger m = −3."
+          },
+          {
+            "svar": "y = 0.5x - 3",
+            "text": "k ska vara ändringen i y delat med ändringen i x, 6/3 = 2."
+          },
+          {
+            "svar": "y = 3x - 3",
+            "text": "k är 6 delat med 3, alltså 2."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Från Lae till Howland går",
+      "text": "Räkna k som ändringen i y delat med ändringen i x. Sätt sedan in en av punkterna i y = kx + m för att få m, som med Lae och Howland."
+    },
+    "losning": [
+      "Ändringen i x är 5 − 2 = 3 och ändringen i y är 7 − 1 = 6.",
+      "k = 6/3 = 2.",
+      "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m och m = −3.",
+      "Linjen är y = 2x − 3. Kontroll med (5, 7): 2 · 5 − 3 = 7."
+    ]
   }
 }
