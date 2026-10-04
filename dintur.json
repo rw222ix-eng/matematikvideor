@@ -1984,5 +1984,48 @@
       "Dra bort 4 från båda sidor: 2t = 6.",
       "Dela båda sidor med 2: t = 3. Ljuset har brunnit i 3 timmar."
     ]
+  },
+  "ma2a-07-ekvationssystem-grafiskt": {
+    "geogebra": { "text": "Skriv y=2x+40 och y=3x+10. Klicka på en av linjerna och sedan på den grå punkten där de möts." },
+    "notisFran": "Nu är det din tur",
+    "fraga": "På en annan järnväg kostar repen 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Allt räknas i tusen pund och tusen ton. Rita båda linjerna i samma koordinatsystem.",
+    "delar": [
+      {
+        "fraga": "Hur mycket varor måste järnvägen frakta innan repen blir billigare? Svara i tusen ton.",
+        "typ": "tal",
+        "svar": 30,
+        "tolerans": 0.001,
+        "enhet": "tusen ton",
+        "exempel": "t.ex. 40",
+        "fel": [
+          {
+            "svar": "100",
+            "text": "100 är kostnaden i tusen pund där linjerna möts, alltså y-värdet. Frågan gäller mängden varor, x-värdet i skärningspunkten."
+          },
+          {
+            "svar": "30000",
+            "text": "Rätt mängd, men svara i tusen ton: 30."
+          },
+          {
+            "svar": "50",
+            "text": "Du har lagt ihop startkostnaderna. Rita linjerna y = 2x + 40 och y = 3x + 10 och läs av x där de skär varandra."
+          },
+          {
+            "svar": "10",
+            "text": "10 är lokens startkostnad. Läs av x där repens linje y = 2x + 40 och lokens linje y = 3x + 10 skär varandra."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu ritar vi båda",
+      "text": "Repens linje börjar på 40 och går upp 2 för varje tusen ton. Lokens linje börjar på 10 och går upp 3. Läs av x i skärningspunkten, som med 40 000 ton i filmen."
+    },
+    "losning": [
+      "Repen: y = 2x + 40. Loken: y = 3x + 10.",
+      "Rita båda linjerna. De skär varandra i punkten (30, 100).",
+      "Kontroll: 2 · 30 + 40 = 100 och 3 · 30 + 10 = 100. Båda stämmer.",
+      "Till vänster om 30 är loken billigast, och efter 30 000 ton är repen billigare."
+    ]
   }
 }
