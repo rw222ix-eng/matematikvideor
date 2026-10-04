@@ -1662,5 +1662,79 @@
       "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m och m = −3.",
       "Linjen är y = 2x − 3. Kontroll med (5, 7): 2 · 5 − 3 = 7."
     ]
+  },
+  "ma1c-k4-05-exponentialfunktioner": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år.",
+    "delar": [
+      {
+        "fraga": "Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund.",
+        "typ": "ekvation",
+        "svar": "y = 1000 · 1,04^x",
+        "exempel": "t.ex. y = 500 · 1,03^x",
+        "tangenter": [
+          "=",
+          "·",
+          "^"
+        ],
+        "fel": [
+          {
+            "svar": "y = 1000 · 0,04^x",
+            "text": "0,04 är bara räntan. Pengarna från början är 100 %, och 4 % kommer till: 100 % + 4 % = 104 % = 1,04."
+          },
+          {
+            "svar": "y = 1000 · 1,4^x",
+            "text": "4 % är 0,04, inte 0,4. Förändringsfaktorn blir 1 + 0,04 = 1,04."
+          },
+          {
+            "svar": "y = 1000 · 4^x",
+            "text": "Det vore att fyrdubbla pengarna varje år. 4 % mer är gånger 1,04."
+          },
+          {
+            "svar": "y = 40x + 1000",
+            "text": "Det är ett linjärt samband: 40 pund varje år. Räntan ges på hela summan varje år, så pengarna gångras med samma förändringsfaktor."
+          },
+          {
+            "svar": "y = 1,04 · 1000^x",
+            "text": "C och a har bytt plats. C är startvärdet, 1000 pund, och a är förändringsfaktorn, 1,04."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många pund blir det efter tio år? Avrunda till hela pund.",
+        "typ": "tal",
+        "svar": 1480,
+        "tolerans": 0.5,
+        "enhet": "pund",
+        "exempel": "t.ex. 1250",
+        "fel": [
+          {
+            "svar": "1400",
+            "text": "Det är 40 pund om året i tio år, alltså linjärt. Räntan ger ränta: räkna 1000 · 1,04^10 på räknaren."
+          },
+          {
+            "svar": "1629",
+            "text": "Det är med 5 %. Nu är räntan 4 %, alltså 1000 · 1,04^10."
+          },
+          {
+            "svar": "1040",
+            "text": "Det är efter ett år. Exponenten ska vara 10, en gång för varje år."
+          }
+        ],
+        "nara": {
+          "tolerans": 3,
+          "text": "Nästan. Kontrollera att du skrev 1,04 upphöjt till 10 på räknaren."
+        }
+      }
+    ],
+    "ledtrad": {
+      "fras": "Talet ett komma noll fem kallas",
+      "text": "100 % + 4 % = 104 %, så förändringsfaktorn är 1,04. Startvärdet C är 1000. Räkna sedan 1000 · 1,04^10 på räknaren, med knappen för upphöjt till."
+    },
+    "losning": [
+      "100 % + 4 % = 104 % = 1,04, så förändringsfaktorn är a = 1,04 och startvärdet C = 1000.",
+      "y = 1000 · 1,04^x",
+      "Efter tio år: 1000 · 1,04^10 ≈ 1480,24, alltså ungefär 1480 pund."
+    ]
   }
 }
