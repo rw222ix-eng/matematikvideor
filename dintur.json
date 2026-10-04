@@ -1736,5 +1736,68 @@
       "y = 1000 · 1,04^x",
       "Efter tio år: 1000 · 1,04^10 ≈ 1480,24, alltså ungefär 1480 pund."
     ]
+  },
+  "ma1c-k4-04-potensfunktioner": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2.",
+    "delar": [
+      {
+        "fraga": "Skriv funktionen på formen y = C · x^(−1), med x för trycket och y för antalet streck.",
+        "typ": "ekvation",
+        "svar": "y = 60x^(-1)",
+        "exempel": "t.ex. y = 24x^(-1)",
+        "tangenter": [
+          "=",
+          "^",
+          "(",
+          ")",
+          "-"
+        ],
+        "fel": [
+          {
+            "svar": "y = 30x^(-1)",
+            "text": "30 är antalet streck, inte C. C är x gånger y: 2 · 30."
+          },
+          {
+            "svar": "y = 15x^(-1)",
+            "text": "Du har delat 30 med 2. C är x gånger y, alltså 2 · 30 = 60."
+          },
+          {
+            "svar": "y = 60x",
+            "text": "Exponenten ska vara −1, så att luften blir mindre när trycket blir större: y = 60 · x^(−1)."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många streck fyller luften vid tryck 3?",
+        "typ": "tal",
+        "svar": 20,
+        "enhet": "streck",
+        "exempel": "t.ex. 12",
+        "fel": [
+          {
+            "svar": "10",
+            "text": "Du har räknat 30 / 3. Använd funktionen: 60 · 3^(−1) = 60/3."
+          },
+          {
+            "svar": "45",
+            "text": "Luften blir mindre när trycket ökar, inte större. Sätt in x = 3: 60/3."
+          },
+          {
+            "svar": "180",
+            "text": "x upphöjt till minus ett betyder ett delat med x. Dela 60 med 3."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Om x gånger y alltid",
+      "text": "x gånger y är samma tal hela tiden, och det talet är C. Räkna 2 · 30. Sätt sedan in x = 3 och kom ihåg att x upphöjt till minus ett är ett delat med x."
+    },
+    "losning": [
+      "x gånger y är samma tal hela tiden: C = 2 · 30 = 60.",
+      "y = 60 · x⁻¹, alltså y = 60/x.",
+      "Vid tryck 3: y = 60 · 3⁻¹ = 60/3 = 20 streck."
+    ]
   }
 }
