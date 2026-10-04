@@ -1799,5 +1799,66 @@
       "y = 60 · x⁻¹, alltså y = 60/x.",
       "Vid tryck 3: y = 60 · 3⁻¹ = 60/3 = 20 streck."
     ]
+  },
+  "ma1c-k4-06-grafisk-ekvationslosning": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En ö har 3 miljoner invånare, och folket blir dubbelt så många var 25:e år.",
+    "delar": [
+      {
+        "fraga": "Skriv en modell för antalet miljoner invånare y efter x perioder om 25 år.",
+        "typ": "ekvation",
+        "svar": "y = 3 · 2^x",
+        "exempel": "t.ex. y = 5 · 3^x",
+        "tangenter": [
+          "=",
+          "^"
+        ],
+        "fel": [
+          {
+            "svar": "y = 2 · 3^x",
+            "text": "Startvärdet och förändringsfaktorn har bytt plats. Startvärdet C är 3 miljoner, och förändringsfaktorn a är 2, eftersom folket blir dubbelt så många."
+          },
+          {
+            "svar": "y = 3x + 3",
+            "text": "Det är en linjär modell, som lägger till lika mycket varje period. Folket blir dubbelt så många, alltså gångras med 2: y = C · aˣ."
+          },
+          {
+            "svar": "y = 2x + 3",
+            "text": "Det är en linjär modell. När folket gångras med 2 varje period blir modellen exponentiell: y = C · aˣ."
+          }
+        ]
+      },
+      {
+        "fraga": "Lös grafiskt: efter hur många år har ön 24 miljoner invånare?",
+        "typ": "tal",
+        "svar": 75,
+        "enhet": "år",
+        "exempel": "t.ex. 50",
+        "fel": [
+          {
+            "svar": "3",
+            "text": "x = 3 är antalet perioder. Varje period är 25 år, så räkna 3 · 25."
+          },
+          {
+            "svar": "8",
+            "text": "Graferna y = 3 · 2ˣ och y = 24 skär varandra där x = 3. Det är 3 perioder om 25 år."
+          },
+          {
+            "svar": "200",
+            "text": "Du har räknat 8 · 25. Läs av x där graferna skär varandra: x = 3, och 3 · 25 = 75."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu är ekvationen sju",
+      "text": "Rita kurvan y = 3 · 2ˣ och den vågräta linjen y = 24. Läs av x där graferna skär varandra, och gör om perioderna till år."
+    },
+    "losning": [
+      "Startvärdet är 3 och förändringsfaktorn 2, så y = 3 · 2ˣ.",
+      "Ekvationen är 3 · 2ˣ = 24. Rita y = 3 · 2ˣ och y = 24.",
+      "Graferna skär varandra där x = 3.",
+      "3 perioder · 25 år = 75 år."
+    ]
   }
 }

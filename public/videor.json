@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-04T14:31:14.728Z",
+ "byggd": "2026-10-04T14:45:09.809Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -8813,6 +8813,721 @@
      "s": 496.88,
      "e": 498.74,
      "text": "Avrunda till hela pund."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k4-06-grafisk-ekvationslosning",
+   "titel": "Malthus och maten",
+   "ar": 1798,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-06-grafisk-ekvationslosning-v1/ma1c-k4-06-grafisk-ekvationslosning-1080p.mp4",
+   "moment": "Grafisk ekvationslösning och matematiska modeller",
+   "begrepp": [
+    "grafisk ekvationslösning",
+    "skärningspunkt",
+    "matematisk modell",
+    "linjär modell",
+    "exponentiell modell",
+    "startvärde",
+    "förändringsfaktor",
+    "rimlighet",
+    "GeoGebra",
+    "koordinatsystem",
+    "vänster led",
+    "höger led"
+   ],
+   "beskrivning": "Thomas Malthus i England år 1798: maten på åkrarna kan öka med lika mycket varje 25-årsperiod, men folket kan bli dubbelt så många. Vi ställer upp en linjär och en exponentiell modell, löser 7 · 2ˣ = 7x + 7 grafiskt med skärningspunkterna, löser 7 · 2ˣ = 50 i GeoGebra med Skärning och prövar om modellen är rimlig.",
+   "youtube": null,
+   "langd": 516,
+   "omslag": "omslag/ma1c-k4-06-grafisk-ekvationslosning.jpg?v=66accd5f",
+   "omslagRen": "omslag/ma1c-k4-06-grafisk-ekvationslosning-ren.jpg?v=944cf7fa",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 1,
+     "text": "Thomas Malthus är präst i en liten kyrka i England, söder om London. Det är år 1798, och hans pappa Daniel bor några kilometer därifrån."
+    },
+    {
+     "t": 15,
+     "text": "Pappan har läst nya böcker som säger att ingen i framtiden behöver vara fattig eller hungrig. Men sonen tror inte på det, och de diskuterar det gång på gång."
+    },
+    {
+     "t": 27,
+     "text": "Malthus tänker på maten, som växer på åkrarna. Till slut ber pappan honom att skriva ner sina skäl, så Malthus sätter sig vid skrivbordet och räknar."
+    },
+    {
+     "t": 40,
+     "text": "Han räknar med att ön Storbritannien har sju miljoner invånare, och att maten räcker till precis så många. I Amerika har folket blivit dubbelt så många på tjugofem år. Men på tjugofem år kan bönderna bara odla mat till sju miljoner människor till, tror han. Malthus fråga är: när räcker maten inte längre till alla?"
+    },
+    {
+     "t": 66,
+     "text": "Vi skriver Malthus tal i en tabell. Talet x står för antalet perioder på tjugofem år efter 1798. Maten räcker till sju, fjorton, tjugoett och tjugoåtta miljoner människor. Folket blir sju, fjorton, tjugoåtta och femtiosex miljoner."
+    },
+    {
+     "t": 90,
+     "text": "En formel som beskriver något i verkligheten kallas en matematisk modell. Maten ökar med lika mycket varje period, sju miljoner, så punkterna hamnar på en rak linje. Den modellen kallas linjär. Om y står för antalet miljoner, är matens modell y är lika med sju x plus sju."
+    },
+    {
+     "t": 115,
+     "text": "Folket blir i stället dubbelt så många varje period. När något gångras med samma tal i varje steg, kallas modellen exponentiell. Folkets modell är y är lika med sju gånger två upphöjt till x. Sju är startvärdet, och två är förändringsfaktorn, alltså talet som folket gångras med varje period."
+    },
+    {
+     "t": 141,
+     "text": "Båda modellerna står på formelbladet, under rubriken funktioner. Den linjära har formen y är lika med k x plus m. Den exponentiella har formen y är lika med C gånger a upphöjt till x. För maten är k sju och m sju, och för folket är C sju och a två."
+    },
+    {
+     "t": 168,
+     "text": "Nu tillbaka till Malthus fråga. Maten räcker precis när folket är lika många som maten räcker till. Då är sju gånger två upphöjt till x lika med sju x plus sju. Men den ekvationen kan vi inte lösa med vanliga räknesteg, för x finns både i exponenten och i termen sju x."
+    },
+    {
+     "t": 193,
+     "text": "Därför löser vi den grafiskt, alltså med hjälp av grafer. Vänster led, det som står till vänster om likhetstecknet, blir funktionen f av x. Höger led blir funktionen g av x. Vi ritar båda graferna i samma koordinatsystem, med x åt höger och antalet miljoner uppåt."
+    },
+    {
+     "t": 218,
+     "text": "Kurvan och linjen korsar varandra i två punkter, som kallas skärningspunkter. Där har båda funktionerna samma värde, så där är vänster led lika med höger led. Därför är skärningspunkternas x-värden ekvationens lösningar, x är lika med noll och x är lika med ett."
+    },
+    {
+     "t": 242,
+     "text": "Vi kontrollerar x är lika med ett. Vänster led blir sju gånger två, alltså fjorton. Höger led blir sju plus sju, alltså också fjorton. Båda leden är lika, så x är lika med ett är en lösning."
+    },
+    {
+     "t": 263,
+     "text": "Nu kan vi svara Malthus. Lösningen noll är år 1798, när maten räcker precis. Lösningen ett är en period senare, alltså år 1823. Mellan de två punkterna ligger linjen ovanför kurvan, så då räcker maten till fler än det finns människor. Men efter 1823 ligger kurvan ovanför linjen, och då räcker maten inte längre."
+    },
+    {
+     "t": 295,
+     "text": "Två skärningspunkter ger alltså två lösningar. Hade kurvan och linjen aldrig mötts, hade ekvationen saknat lösning."
+    },
+    {
+     "t": 305,
+     "text": "Nu en fråga som tabellen inte kan svara på. När är folket femtio miljoner? Efter två perioder är folket tjugoåtta miljoner, och efter tre är det femtiosex miljoner. Svaret ligger alltså mellan två och tre perioder."
+    },
+    {
+     "t": 325,
+     "text": "Nu är ekvationen sju gånger två upphöjt till x är lika med femtio. Höger led är femtio för alla x, så den grafen är en vågrät linje. Linjen möter kurvan strax före x är lika med tre, men det är svårt att se exakt var. Därför tar vi hjälp av GeoGebra."
+    },
+    {
+     "t": 349,
+     "text": "Öppna GeoGebras grafräknare och klicka i inmatningsfältet längst upp till vänster. Skriv f av x är lika med sju gånger två upphöjt till x, och tryck på Enter. För gånger skriver man en stjärna, och för upphöjt till ett litet tak. Då ritar GeoGebra kurvan."
+    },
+    {
+     "t": 373,
+     "text": "Skriv sedan g av x är lika med femtio på nästa rad, och tryck på Enter. Då ritar GeoGebra den vågräta linjen."
+    },
+    {
+     "t": 384,
+     "text": "Till sist skriver vi Skärning, och inom parentes f, g, noll och fem. De två sista talen säger mellan vilka x-värden GeoGebra ska leta. När vi trycker på Enter sätter GeoGebra en punkt där graferna möts. Punkten har x-värdet två komma åtta fyra, och GeoGebra skriver en punkt i stället för komma."
+    },
+    {
+     "t": 413,
+     "text": "Två komma åtta fyra perioder är två komma åtta fyra gånger tjugofem år. Det blir ungefär sjuttioett år. Enligt modellen är folket alltså femtio miljoner ungefär år 1869."
+    },
+    {
+     "t": 431,
+     "text": "Men stämmer modellen? Den säger att ön har hundratolv miljoner invånare hundra år efter 1798. I verkligheten bodde ungefär trettiosju miljoner människor där år 1901. Maten ökade mer än Malthus trodde, och folket blev inte dubbelt så många var tjugofemte år."
+    },
+    {
+     "t": 458,
+     "text": "Därför prövar man alltid om ett svar är rimligt. En modell stämmer bara under en viss tid, så svaret ska jämföras med verkligheten. Och en negativ tid kan aldrig vara ett rimligt svar."
+    },
+    {
+     "t": 474,
+     "text": "Malthus bok trycktes i London år 1798, utan hans namn. I dag lever över åtta miljarder människor på jorden, och frågan om maten räcker till alla ställs fortfarande."
+    },
+    {
+     "t": 491,
+     "text": "Nu är det din tur. En ö har tre miljoner invånare, och folket blir dubbelt så många var tjugofemte år. Skriv en modell för antalet miljoner invånare efter x perioder. Lös sedan grafiskt: efter hur många år har ön tjugofyra miljoner invånare?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 1,
+     "rubrik": "Malthus i England 1798",
+     "typ": "historia"
+    },
+    {
+     "t": 15,
+     "rubrik": "Pappan och sonen",
+     "typ": "historia"
+    },
+    {
+     "t": 40,
+     "rubrik": "Maten och folket",
+     "typ": "historia"
+    },
+    {
+     "t": 66,
+     "rubrik": "Tabellen",
+     "typ": "matte"
+    },
+    {
+     "t": 90,
+     "rubrik": "Linjär modell, y = 7x + 7",
+     "typ": "matte"
+    },
+    {
+     "t": 115,
+     "rubrik": "Exponentiell modell, y = 7 · 2ˣ",
+     "typ": "matte"
+    },
+    {
+     "t": 141,
+     "rubrik": "Formelbladet",
+     "typ": "matte"
+    },
+    {
+     "t": 168,
+     "rubrik": "Ekvationen 7 · 2ˣ = 7x + 7",
+     "typ": "matte"
+    },
+    {
+     "t": 193,
+     "rubrik": "Grafisk lösning: f och g",
+     "typ": "matte"
+    },
+    {
+     "t": 218,
+     "rubrik": "Skärningspunkterna",
+     "typ": "matte"
+    },
+    {
+     "t": 263,
+     "rubrik": "Svaret: 1823",
+     "typ": "matte"
+    },
+    {
+     "t": 305,
+     "rubrik": "Folket 50 miljoner",
+     "typ": "matte"
+    },
+    {
+     "t": 349,
+     "rubrik": "GeoGebra: skriv f och g",
+     "typ": "matte"
+    },
+    {
+     "t": 384,
+     "rubrik": "GeoGebra: Skärning",
+     "typ": "matte"
+    },
+    {
+     "t": 431,
+     "rubrik": "Rimlighet",
+     "typ": "historia"
+    },
+    {
+     "t": 474,
+     "rubrik": "Boken 1798",
+     "typ": "historia"
+    },
+    {
+     "t": 491,
+     "rubrik": "Din tur: ön",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 491,
+    "fraga": "En ö har 3 miljoner invånare, och folket blir dubbelt så många var 25:e år.",
+    "delar": [
+     {
+      "fraga": "Skriv en modell för antalet miljoner invånare y efter x perioder om 25 år.",
+      "typ": "ekvation",
+      "svar": "y = 3 · 2^x",
+      "exempel": "t.ex. y = 5 · 3^x",
+      "tangenter": [
+       "=",
+       "^"
+      ],
+      "fel": [
+       {
+        "svar": "y = 2 · 3^x",
+        "text": "Startvärdet och förändringsfaktorn har bytt plats. Startvärdet C är 3 miljoner, och förändringsfaktorn a är 2, eftersom folket blir dubbelt så många."
+       },
+       {
+        "svar": "y = 3x + 3",
+        "text": "Det är en linjär modell, som lägger till lika mycket varje period. Folket blir dubbelt så många, alltså gångras med 2: y = C · aˣ."
+       },
+       {
+        "svar": "y = 2x + 3",
+        "text": "Det är en linjär modell. När folket gångras med 2 varje period blir modellen exponentiell: y = C · aˣ."
+       }
+      ]
+     },
+     {
+      "fraga": "Lös grafiskt: efter hur många år har ön 24 miljoner invånare?",
+      "typ": "tal",
+      "svar": 75,
+      "enhet": "år",
+      "exempel": "t.ex. 50",
+      "fel": [
+       {
+        "svar": "3",
+        "text": "x = 3 är antalet perioder. Varje period är 25 år, så räkna 3 · 25."
+       },
+       {
+        "svar": "8",
+        "text": "Graferna y = 3 · 2ˣ och y = 24 skär varandra där x = 3. Det är 3 perioder om 25 år."
+       },
+       {
+        "svar": "200",
+        "text": "Du har räknat 8 · 25. Läs av x där graferna skär varandra: x = 3, och 3 · 25 = 75."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Rita kurvan y = 3 · 2ˣ och den vågräta linjen y = 24. Läs av x där graferna skär varandra, och gör om perioderna till år.",
+     "t": 325
+    },
+    "losning": [
+     "Startvärdet är 3 och förändringsfaktorn 2, så y = 3 · 2ˣ.",
+     "Ekvationen är 3 · 2ˣ = 24. Rita y = 3 · 2ˣ och y = 24.",
+     "Graferna skär varandra där x = 3.",
+     "3 perioder · 25 år = 75 år."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 1.5,
+     "e": 6.86,
+     "text": "Thomas Malthus är präst i en liten kyrka i England, söder om London."
+    },
+    {
+     "s": 7.86,
+     "e": 13.8,
+     "text": "Det är år 1798, och hans pappa Daniel bor några kilometer därifrån."
+    },
+    {
+     "s": 15.1,
+     "e": 21,
+     "text": "Pappan har läst nya böcker som säger att ingen i framtiden behöver vara fattig eller hungrig."
+    },
+    {
+     "s": 22,
+     "e": 26.32,
+     "text": "Men sonen tror inte på det, och de diskuterar det gång på gång."
+    },
+    {
+     "s": 27.62,
+     "e": 31.42,
+     "text": "Malthus tänker på maten, som växer på åkrarna."
+    },
+    {
+     "s": 32.42,
+     "e": 39.26,
+     "text": "Till slut ber pappan honom att skriva ner sina skäl, så Malthus sätter sig vid skrivbordet och räknar."
+    },
+    {
+     "s": 40.56,
+     "e": 45,
+     "text": "Han räknar med att ön Storbritannien har 7 miljoner invånare,"
+    },
+    {
+     "s": 45.34,
+     "e": 47.88,
+     "text": "och att maten räcker till precis så många."
+    },
+    {
+     "s": 48.88,
+     "e": 53,
+     "text": "I Amerika har folket blivit dubbelt så många på 25 år."
+    },
+    {
+     "s": 54,
+     "e": 59.74,
+     "text": "Men på 25 år kan bönderna bara odla mat till 7 miljoner människor till, tror han."
+    },
+    {
+     "s": 60.74,
+     "e": 65.46,
+     "text": "Malthus fråga är: när räcker maten inte längre till alla?"
+    },
+    {
+     "s": 66.76,
+     "e": 69.12,
+     "text": "Vi skriver Malthus tal i en tabell."
+    },
+    {
+     "s": 70.12,
+     "e": 76.02,
+     "text": "Talet x står för antalet perioder på 25 år efter 1798."
+    },
+    {
+     "s": 77.02,
+     "e": 82.78,
+     "text": "Maten räcker till 7, 14, 21 och 28 miljoner människor."
+    },
+    {
+     "s": 83.78,
+     "e": 88.92,
+     "text": "Folket blir 7, 14, 28 och 56 miljoner."
+    },
+    {
+     "s": 90.22,
+     "e": 95.14,
+     "text": "En formel som beskriver något i verkligheten kallas en matematisk modell."
+    },
+    {
+     "s": 96.14,
+     "e": 103.4,
+     "text": "Maten ökar med lika mycket varje period, 7 miljoner, så punkterna hamnar på en rak linje."
+    },
+    {
+     "s": 104.4,
+     "e": 106.48,
+     "text": "Den modellen kallas linjär."
+    },
+    {
+     "s": 107.48,
+     "e": 114.58,
+     "text": "Om y står för antalet miljoner, är matens modell y = 7x + 7."
+    },
+    {
+     "s": 115.88,
+     "e": 119.48,
+     "text": "Folket blir i stället dubbelt så många varje period."
+    },
+    {
+     "s": 120.48,
+     "e": 125.94,
+     "text": "När något gångras med samma tal i varje steg, kallas modellen exponentiell."
+    },
+    {
+     "s": 126.94,
+     "e": 132.2,
+     "text": "Folkets modell är y = 7 · 2ˣ."
+    },
+    {
+     "s": 133.2,
+     "e": 140.58,
+     "text": "7 är startvärdet, och 2 är förändringsfaktorn, alltså talet som folket gångras med varje period."
+    },
+    {
+     "s": 141.88,
+     "e": 146.36,
+     "text": "Båda modellerna står på formelbladet, under rubriken funktioner."
+    },
+    {
+     "s": 147.36,
+     "e": 152.08,
+     "text": "Den linjära har formen y = kx + m."
+    },
+    {
+     "s": 153.08,
+     "e": 158.96,
+     "text": "Den exponentiella har formen y = C · aˣ."
+    },
+    {
+     "s": 159.96,
+     "e": 167.18,
+     "text": "För maten är k = 7 och m = 7, och för folket är C = 7 och a = 2."
+    },
+    {
+     "s": 168.48,
+     "e": 170.32,
+     "text": "Nu tillbaka till Malthus fråga."
+    },
+    {
+     "s": 171.32,
+     "e": 176.06,
+     "text": "Maten räcker precis när folket är lika många som maten räcker till."
+    },
+    {
+     "s": 177.06,
+     "e": 182.4,
+     "text": "Då är 7 · 2ˣ lika med 7x + 7."
+    },
+    {
+     "s": 183.4,
+     "e": 190.28,
+     "text": "Men den ekvationen kan vi inte lösa med vanliga räknesteg, för x finns både i exponenten"
+    },
+    {
+     "s": 190.38,
+     "e": 192.28,
+     "text": "och i termen 7x."
+    },
+    {
+     "s": 193.58,
+     "e": 197.6,
+     "text": "Därför löser vi den grafiskt, alltså med hjälp av grafer."
+    },
+    {
+     "s": 198.6,
+     "e": 204.72,
+     "text": "Vänster led, det som står till vänster om likhetstecknet, blir funktionen f(x)."
+    },
+    {
+     "s": 205.72,
+     "e": 208.8,
+     "text": "Höger led blir funktionen g(x)."
+    },
+    {
+     "s": 209.8,
+     "e": 217.38,
+     "text": "Vi ritar båda graferna i samma koordinatsystem, med x åt höger och antalet miljoner uppåt."
+    },
+    {
+     "s": 218.68,
+     "e": 224.46,
+     "text": "Kurvan och linjen korsar varandra i två punkter, som kallas skärningspunkter."
+    },
+    {
+     "s": 225.46,
+     "e": 232.34,
+     "text": "Där har båda funktionerna samma värde, så där är vänster led lika med höger led."
+    },
+    {
+     "s": 233.34,
+     "e": 237.72,
+     "text": "Därför är skärningspunkternas x-värden ekvationens lösningar,"
+    },
+    {
+     "s": 238.5,
+     "e": 241.62,
+     "text": "x = 0 och x = 1."
+    },
+    {
+     "s": 242.92,
+     "e": 245.56,
+     "text": "Vi kontrollerar x = 1."
+    },
+    {
+     "s": 246.56,
+     "e": 250.58,
+     "text": "Vänster led blir 7 · 2, alltså 14."
+    },
+    {
+     "s": 251.58,
+     "e": 255.78,
+     "text": "Höger led blir 7 + 7, alltså också 14."
+    },
+    {
+     "s": 256.78,
+     "e": 261.72,
+     "text": "Båda leden är lika, så x = 1 är en lösning."
+    },
+    {
+     "s": 263.02,
+     "e": 264.66,
+     "text": "Nu kan vi svara Malthus."
+    },
+    {
+     "s": 265.66,
+     "e": 271.44,
+     "text": "Lösningen 0 är år 1798, när maten räcker precis."
+    },
+    {
+     "s": 272.44,
+     "e": 277.68,
+     "text": "Lösningen 1 är en period senare, alltså år 1823."
+    },
+    {
+     "s": 278.68,
+     "e": 285.06,
+     "text": "Mellan de två punkterna ligger linjen ovanför kurvan, så då räcker maten till fler än"
+    },
+    {
+     "s": 285.1,
+     "e": 286.1,
+     "text": "det finns människor."
+    },
+    {
+     "s": 287.08,
+     "e": 293.72,
+     "text": "Men efter 1823 ligger kurvan ovanför linjen, och då räcker maten inte längre."
+    },
+    {
+     "s": 295.02,
+     "e": 298.38,
+     "text": "Två skärningspunkter ger alltså två lösningar."
+    },
+    {
+     "s": 299.38,
+     "e": 304.42,
+     "text": "Hade kurvan och linjen aldrig mötts, hade ekvationen saknat lösning."
+    },
+    {
+     "s": 305.72,
+     "e": 308.8,
+     "text": "Nu en fråga som tabellen inte kan svara på."
+    },
+    {
+     "s": 309.8,
+     "e": 312.28,
+     "text": "När är folket 50 miljoner?"
+    },
+    {
+     "s": 313.28,
+     "e": 319.72,
+     "text": "Efter 2 perioder är folket 28 miljoner, och efter 3 är det 56 miljoner."
+    },
+    {
+     "s": 320.72,
+     "e": 324.24,
+     "text": "Svaret ligger alltså mellan 2 och 3 perioder."
+    },
+    {
+     "s": 325.54,
+     "e": 330.82,
+     "text": "Nu är ekvationen 7 · 2ˣ = 50."
+    },
+    {
+     "s": 331.82,
+     "e": 337.52,
+     "text": "Höger led är 50 för alla x, så den grafen är en vågrät linje."
+    },
+    {
+     "s": 338.52,
+     "e": 345.06,
+     "text": "Linjen möter kurvan strax före x = 3, men det är svårt att se exakt var."
+    },
+    {
+     "s": 346.06,
+     "e": 348.28,
+     "text": "Därför tar vi hjälp av GeoGebra."
+    },
+    {
+     "s": 349.58,
+     "e": 355.68,
+     "text": "Öppna GeoGebras grafräknare och klicka i inmatningsfältet längst upp till vänster."
+    },
+    {
+     "s": 356.68,
+     "e": 363.24,
+     "text": "Skriv f(x) = 7 · 2ˣ, och tryck på Enter."
+    },
+    {
+     "s": 364.24,
+     "e": 369.36,
+     "text": "För gånger skriver man en stjärna, och för upphöjt till ett litet tak."
+    },
+    {
+     "s": 370.36,
+     "e": 372.48,
+     "text": "Då ritar GeoGebra kurvan."
+    },
+    {
+     "s": 373.78,
+     "e": 379.6,
+     "text": "Skriv sedan g(x) = 50 på nästa rad, och tryck på Enter."
+    },
+    {
+     "s": 380.6,
+     "e": 383.6,
+     "text": "Då ritar GeoGebra den vågräta linjen."
+    },
+    {
+     "s": 384.9,
+     "e": 391.82,
+     "text": "Till sist skriver vi Skärning, och inom parentes f, g, 0 och 5."
+    },
+    {
+     "s": 392.82,
+     "e": 398.22,
+     "text": "De två sista talen säger mellan vilka x-värden GeoGebra ska leta."
+    },
+    {
+     "s": 399.22,
+     "e": 403.88,
+     "text": "När vi trycker på Enter sätter GeoGebra en punkt där graferna möts."
+    },
+    {
+     "s": 404.88,
+     "e": 411.9,
+     "text": "Punkten har x-värdet 2,84, och GeoGebra skriver en punkt i stället för komma."
+    },
+    {
+     "s": 413.2,
+     "e": 419.3,
+     "text": "2,84 perioder är 2,84 gånger 25 år."
+    },
+    {
+     "s": 420.3,
+     "e": 422.7,
+     "text": "Det blir ungefär 71 år."
+    },
+    {
+     "s": 423.7,
+     "e": 430.14,
+     "text": "Enligt modellen är folket alltså 50 miljoner ungefär år 1869."
+    },
+    {
+     "s": 431.44,
+     "e": 433.12,
+     "text": "Men stämmer modellen?"
+    },
+    {
+     "s": 434.12,
+     "e": 441.34,
+     "text": "Den säger att ön har 112 miljoner invånare 100 år efter 1798."
+    },
+    {
+     "s": 442.38,
+     "e": 448.06,
+     "text": "I verkligheten bodde ungefär 37 miljoner människor där år 1901."
+    },
+    {
+     "s": 449.06,
+     "e": 456.8,
+     "text": "Maten ökade mer än Malthus trodde, och folket blev inte dubbelt så många var 25:e år."
+    },
+    {
+     "s": 458.1,
+     "e": 461.38,
+     "text": "Därför prövar man alltid om ett svar är rimligt."
+    },
+    {
+     "s": 462.38,
+     "e": 468.18,
+     "text": "En modell stämmer bara under en viss tid, så svaret ska jämföras med verkligheten."
+    },
+    {
+     "s": 469.18,
+     "e": 473,
+     "text": "Och en negativ tid kan aldrig vara ett rimligt svar."
+    },
+    {
+     "s": 474.3,
+     "e": 480.64,
+     "text": "Malthus bok trycktes i London år 1798, utan hans namn."
+    },
+    {
+     "s": 481.64,
+     "e": 487.92,
+     "text": "I dag lever över 8 miljarder människor på jorden, och frågan om maten räcker till"
+    },
+    {
+     "s": 488,
+     "e": 489.98,
+     "text": "alla ställs fortfarande."
+    },
+    {
+     "s": 491.28,
+     "e": 493.1,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 494.1,
+     "e": 501.2,
+     "text": "En ö har 3 miljoner invånare, och folket blir dubbelt så många var 25:e år."
+    },
+    {
+     "s": 502.2,
+     "e": 507.38,
+     "text": "Skriv en modell för antalet miljoner invånare efter x perioder."
+    },
+    {
+     "s": 508.38,
+     "e": 514.98,
+     "text": "Lös sedan grafiskt: efter hur många år har ön 24 miljoner invånare?"
     }
    ]
   },
