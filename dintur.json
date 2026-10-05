@@ -1554,9 +1554,9 @@
       { "fraga": "Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.", "typ": "tal", "svar": 53, "tolerans": 0.6, "exempel": "t.ex. 45",
         "fel": [
           { "svar": "37", "tolerans": 0.6, "text": "Det är vinkeln från x-axeln. Vinkeln från norr har 40 mitt emot sig och 30 intill: tangens v = 40/30." },
-          { "svar": "1.33", "tolerans": 0.01, "text": "Det är tangens v. Använd tangens invers på räknaren för att få vinkeln." } ] }
+          { "svar": "1.33", "tolerans": 0.01, "text": "Det är tangens v. Använd tangens invers på räknaren (tryck två gånger på tan) för att få vinkeln." } ] }
     ],
-    "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30." },
+    "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30. Vinkeln får du med tangens invers: tryck två gånger på tan." },
     "losning": [
       "Vektorn från Carpathia till Titanic är (−40, 30).",
       "Längden: 40² + 30² = 1 600 + 900 = 2 500, och √2 500 = 50. Det är 50 km.",
