@@ -360,15 +360,38 @@
   .post.kommer .ram .nr { display: grid; place-items: center; height: 100%; font: 500 76px/1 var(--skrift); font-variant-numeric: lining-nums; color: rgba(236, 230, 216, .3); text-shadow: 0 2px 12px rgba(0, 0, 0, .6); }
 
   /* ── Sök ──────────────────────────────────────────────── */
-  .sok { position: fixed; inset: 0; z-index: 40; background: rgba(23, 20, 20, .97); display: none; overflow-y: auto; }
+  /* Sökningen enklare (Rickard 2026-10-03): helt täckande bakgrund, så att filmvalet inte syns
+     igenom och läses som träffar; en rubrik i stället för två; ?-knappen göms medan man söker. */
+  .sok { position: fixed; inset: 0; z-index: 40; background: var(--bg); display: none; overflow-y: auto; }
   .sok.oppen { display: block; animation: ton .7s var(--lugn) both; }
+  .sok .topp { justify-content: flex-end; }
   .sok .inre { max-width: 760px; margin: 0 auto; padding: 150px 24px 120px; }
   .sok label { display: block; margin-bottom: 26px; }
   .sok input { width: 100%; font: 300 clamp(26px, 4vw, 40px)/1.3 var(--sans); color: var(--ben); background: none; border: 0; border-bottom: 1px solid var(--linje); padding: 6px 0 14px; outline: none; letter-spacing: .01em; }
   .sok input::placeholder { color: var(--dis); }
   .sok input::-webkit-search-cancel-button { display: none; }
   .sok input:focus { border-color: var(--ben2); }
-  .sok .status { margin: 22px 0 0; font: 300 10px/1.6 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--dis); }
+  .sok .status { margin: 22px 0 0; font: 300 16px/1.5 var(--sans); color: var(--ben2); }
+  .sok .status:empty { display: none; }
+  /* Stavfel: "pytagoras" söks som Pythagoras, och det står vilket ord som söktes. */
+  .rattning { margin: 22px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 14px; font: 300 18px/1.5 var(--sans); color: var(--ben2); }
+  .rattning strong { font-weight: 500; color: var(--accent); }
+  .rattning button { min-height: 44px; font: 400 14px/1.5 var(--sans); color: var(--dis); text-decoration: underline; text-underline-offset: 3px; transition: color .3s; }
+  .rattning button:hover { color: var(--ben); }
+  /* Kursknapparna: Alla kurser, Ma 1c, Ma 2a, med antalet filmer. Kursen eleven kom från är vald. */
+  .kursval { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .kursval button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 1px solid var(--linje); border-radius: 999px; font: 500 15px/1 var(--sans); color: var(--ben); transition: border-color .3s, color .3s, background .3s; }
+  .kursval .antal { font-weight: 400; color: var(--dis); }
+  .kursval button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .kursval button[aria-pressed="true"] .antal { color: rgba(23, 20, 20, .7); }
+  .kursval button:disabled { opacity: .4; cursor: default; }
+  .kursval button:not(:disabled):not([aria-pressed="true"]):hover { border-color: var(--accent); color: var(--accent); }
+  .kursval-not { margin: 14px 0 0; font: 300 15px/1.5 var(--sans); color: var(--ben2); }
+  /* Kurs och moment på träffarna: en liten bricka och vanlig text, inte spärrade versaler. */
+  .sok .meta { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+  .bricka { display: inline-block; padding: 3px 10px; border: 1px solid var(--linje); border-radius: 999px; font: 500 12px/1.4 var(--sans); letter-spacing: .04em; color: var(--ben); white-space: nowrap; }
+  .bricka.serie { color: var(--accent); border-color: rgba(242, 197, 114, .5); }
+  .sok .meta .moment { font: 400 14px/1.4 var(--sans); color: var(--ben2); }
   .tid { font: 500 11px/1.8 var(--sans); letter-spacing: .3em; color: var(--accent); font-variant-numeric: tabular-nums; }
   .snutt { color: var(--ben2); font-weight: 300; transition: color .4s; }
   mark { background: none; color: var(--ben); font-weight: 400; border-bottom: 1px solid var(--accent); }
@@ -398,15 +421,17 @@
   .fler-stallen button { display: grid; grid-template-columns: 58px 1fr; gap: 14px; align-items: baseline; width: 100%; padding: 12px 0; text-align: left; }
   .fler-stallen .rad { color: var(--ben2); font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .3s; }
   .fler-stallen button:hover .rad { color: var(--ben); }
-  .andra button { display: flex; align-items: center; gap: 16px; width: 100%; padding: 10px 0; text-align: left; }
-  .andra img, .andra .tom { width: 96px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; flex: none; background: var(--bg2); }
-  .andra .namn { display: flex; flex-direction: column; gap: 3px; }
-  .andra .titel { font: 500 21px/1.2 var(--skrift); color: var(--ben); transition: color .3s; }
+  .andra button { display: flex; align-items: flex-start; gap: 18px; width: 100%; padding: 14px 0; text-align: left; }
+  .andra img, .andra .tom { width: 120px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; flex: none; background: var(--bg2); }
+  .andra .namn { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .andra .titel { font: 500 22px/1.2 var(--skrift); color: var(--ben); transition: color .3s; }
   .andra button:hover .titel { color: var(--accent); }
-  .andra .antal { font: 400 11px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dis); }
-  /* Vilken sort träffen är: "Berättelse · 1618" eller "Formelbladet · del 2" (i guld). */
-  .andra .sort { font: 500 10px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--dis); }
-  .sok .sort.serie { color: var(--accent); }
+  /* Var i filmen ordet sägs, med tidkod, så att man ser om filmen svarar på frågan innan man klickar. */
+  .andra .stalle { display: flex; gap: 12px; align-items: baseline; }
+  .andra .stalle .tid { flex: none; }
+  .andra .stalle .utdrag { font: 300 15px/1.5 var(--sans); color: var(--ben2); }
+  .andra .antal { font: 400 13px/1.4 var(--sans); color: var(--dis); }
+  .andra .antal:empty { display: none; }
 
   /* ── 3. Filmens sida ──────────────────────────────────── */
   .film { display: block; position: relative; min-height: 100vh; background: var(--bg); padding-bottom: 120px; }
@@ -722,6 +747,13 @@
   .dintur-lost[hidden] { display: none; }
   .dintur-lost svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .dintur-fraga { margin: 0 0 24px; max-width: 760px; font: 500 clamp(22px, 2.4vw, 28px)/1.35 var(--skrift); color: var(--ben); }
+  /* GeoGebra i Din tur (Rickard 2026-10-04): uppgifter som ska lösas grafiskt får GeoGebras grafräknare här,
+     samma verktyg som filmen visar. Laddas först när eleven trycker (deployggb.js är stort). dintur.json: "geogebra". */
+  .dintur-ggb { margin: 0 0 28px; }
+  .dintur-ggb[hidden], #dintur-ggb-knapp[hidden] { display: none; }
+  .ggb-text { margin: 0 0 12px; font-size: 17px; color: #CFC8BA; max-width: 760px; }
+  .ggb-yta { margin-top: 14px; border-radius: 10px; overflow: hidden; background: #fff; }
+  .ggb-yta:empty { display: none; }
   .dintur-delar { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; counter-reset: del; }
   .del-fraga { margin: 0 0 12px; font-size: 18px; color: #CFC8BA; }
   .dintur-delar.flera .del-fraga::before { counter-increment: del; content: counter(del, lower-alpha) ")  "; color: var(--accent); font-weight: 400; }
@@ -930,6 +962,8 @@
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .basta { grid-template-columns: 1fr; gap: 16px; }
+    .andra img, .andra .tom { width: 96px; }
+    .andra button { gap: 14px; }
     .basta .titel { font-size: 28px; }
     .film .topp { padding: 18px 20px; }
     .film .inre { padding-top: 24px; }
@@ -1155,8 +1189,10 @@
   .hjalp.lockar { animation: hjalp-puls 1.6s ease-in-out infinite; }
   @keyframes hjalp-puls { 0%, 100% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 0 rgba(242, 197, 114, 0); border-color: rgba(242, 197, 114, .5); } 50% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 7px rgba(242, 197, 114, .2), 0 0 26px 4px rgba(242, 197, 114, .45); border-color: rgba(242, 197, 114, 1); } }
   @media (hover: hover) { .hjalp:hover { background: var(--accent); color: var(--bg); transform: scale(1.08); } }
-  /* Frågetecknet syns också i sökrutan (z 40), så att guiden kan börja där, med sökningen. */
+  /* Under guiden syns frågetecknet också i sökrutan (z 40), där guiden visar sökningen. Annars göms
+     det medan man söker, eftersom det låg över träfflistan (Rickard 2026-10-03). */
   .sok.oppen ~ .hjalp { z-index: 42; }
+  body:not(.guidar) .sok.oppen ~ .hjalp { opacity: 0; visibility: hidden; }
   /* Under guiden får filmsidan luft nedtill, så att det som står sist (Din tur, Nästa del, Om filmen)
      kan rullas upp ovanför Newton och hans bubbla. */
   body.guidar .vy.film { padding-bottom: 80vh; }
@@ -1298,6 +1334,7 @@
       </div>
       <p class="dintur-fraga" id="dintur-fraga"></p>
       <div class="dintur-figur-ram" id="dintur-figur" hidden></div>
+      <div class="dintur-ggb" id="dintur-ggb" hidden><p class="ggb-text" id="dintur-ggb-text"></p><button type="button" class="kant" id="dintur-ggb-knapp">Öppna GeoGebra</button><div class="ggb-yta" id="dintur-ggb-yta"></div></div>
       <ol class="dintur-delar" id="dintur-delar"></ol>
       <div class="dintur-knappar">
         <button type="button" class="kant" id="dintur-ledtrad-knapp" aria-expanded="false" aria-controls="dintur-ledtrad">Ledtråd</button>
@@ -1329,7 +1366,6 @@
 <!-- ── Sök ──────────────────────────────────────────────── -->
 <div class="sok" id="sok" role="dialog" aria-modal="true" aria-label="Sök">
   <header class="topp">
-    <span class="etikett">Sök</span>
     <button class="ikon tips-under" id="sok-stang" aria-label="Stäng sökningen" data-tips="Stäng"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
   </header>
   <div class="inre">
@@ -1558,7 +1594,11 @@
   // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · 1919".
   const sortText = (v) => (v.serie === "ma2a" ? `Ma 2a${v.ar != null ? ` · ${arText(v.ar)}` : ""}`
     : v.serie ? `${serieNamn(v.serie)} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
-  const sortEtikett = (v) => `<span class="sort${v.serie ? " serie" : ""}">${esc(sortText(v))}</span>`;
+  // Kurs och moment på sökträffarna (Rickard 2026-10-03): en bricka med kursen och momentet i vanlig
+  // text. Formelbladet får en guldbricka med delen och kurserna bredvid. Årtalet behövs inte i sökningen.
+  const metaRad = (v) => (v.serie && v.serie !== "ma2a"
+    ? `<span class="bricka serie">${esc(sortText(v))}</span><span class="moment">${kurserKort(v)}</span>`
+    : `<span class="bricka">${kurserKort(v)}</span><span class="moment">${esc(v.moment)}</span>`);
   // Nästa film i serien: en film, en plats som inte är klar ({ saknas }), eller null efter sista delen.
   const nastaDel = (v) => { if (!v.serie) return null; const p = delPlatser(v.serie), i = p.findIndex((x) => x.id === v.id); return i >= 0 ? p[i + 1] || null : null; };
   // I formelbladet heter nästa film "Nästa del", och delen har sitt nummer.
@@ -2929,12 +2969,13 @@
   // bort, och e:et i -el faller som i svenskan, så vinkel, vinkeln och vinklar får samma stam vinkl.
   // Samma funktion körs på sökordet och på filmernas text, så stammarna möts även när de är fel ord.
   const ANDELSER = ["ingarnas", "ingarna", "ingens", "ingen", "ingar", "arnas", "ernas", "ornas", "arna", "erna", "orna",
-    "ande", "ende", "ens", "ets", "ing", "ar", "er", "or", "en", "et", "na", "ad", "at", "as", "es", "a", "e", "n", "s", "t"];
+    "ande", "ende", "ens", "ets", "ing", "ar", "er", "or", "en", "et", "na", "ad", "at", "as", "es", "a", "e", "ln", "rn", "s", "t"];
   const synkope = (o) => o.replace(/([^aeiouyåäö])el$/, "$1l");
   function stam(ord) {
     const o = synkope(ord);
     if (/[\d^]/.test(o) || o.length < 4) return o;
-    for (const a of ANDELSER) if (o.endsWith(a) && o.length - a.length >= 3) return synkope(o.slice(0, -a.length));
+    // -ln och -rn tar bara bort n:et (vinkeln, mönstern), så ekvation behåller sitt n.
+    for (const a of ANDELSER) if (o.endsWith(a) && o.length - a.length >= 3) return synkope(o.slice(0, a.length === 2 && a.endsWith("n") && a !== "en" && a !== "na" ? -1 : -a.length));
     return o;
   }
   // Ord i en text: små bokstäver, utan prickar, bindestreck bort ("pq-formeln" blir pqformeln) men
@@ -2957,7 +2998,7 @@
     if (q === w) return 1;
     if (q.length < 4 || /[\d^]/.test(q)) return w.startsWith(q) && w.length - q.length <= 1 && !/[\d^]/.test(w.slice(q.length)) ? 0.9 : 0;
     if (w.startsWith(q)) return w.length - q.length <= 2 ? 1 : 0.85;
-    if (q.startsWith(w) && w.length >= 4 && q.length - w.length <= 2) return 0.9;
+    if (q.startsWith(w) && w.length >= 4 && q.length - w.length <= 1) return 0.9;
     if (q.length >= 5 && w.endsWith(q)) return 0.5;
     if (q.length >= 6 && w.includes(q)) return 0.3;
     return 0;
@@ -2981,9 +3022,9 @@
     [/^manghorning/, ["n-hörning", "hörning"]],
     [/^lutning/, ["lutning", "k-värde"]],
     [/^pythagoras/, ["pythagoras"]],
-    [/^sinus$/, ["sinus", "sin"]],
-    [/^cosinus$/, ["cosinus", "cos"]],
-    [/^tangens$/, ["tangens", "tan"]],
+    [/^(sinus|sin)$/, ["sinus", "sin"]],
+    [/^(cosinus|cos)$/, ["cosinus", "cos"]],
+    [/^(tangens|tan)$/, ["tangens", "tan"]],
   ];
   // Matematik skriven med tecken blir ord som filmerna säger: (a + b)² är kvadreringsregeln,
   // sin⁻¹ är arcussinus.
@@ -3061,12 +3102,12 @@
   // ett ovanligt mycket (idf). En film måste ha alla orden; har ingen det visas de som har flest.
   // Ord i moment, titlar och rubriker som inte säger något om ämnet (formelbladsfilmernas moment
   // börjar alla med "Formelbladet:").
-  const FYLLE = new Set(["formelbladet", "motiverade", "baklanges", "textproblem", "del", "ma"].map(stam));
+  const FYLLE = new Set(["motiverade", "baklanges", "textproblem"].map(stam));
   // Hur mycket av en rubrik frågan täcker, 0–1: "vektor" täcker hela Vektorbegreppet men halva
   // Vektorer i koordinatform, och "konjugatregeln" hela kapitlet Konjugatregeln men halva
   // Konjugatregeln med bokstäver. En rubrik om bara det man söker väger mer än en som nämner det.
   function tackning(b, q) {
-    const ord = b.innehall || (b.innehall = b.stammar.filter((w) => !SMAORD.has(w) && !FYLLE.has(w) && !/^\d+$/.test(w)));
+    const ord = b.innehall || (b.innehall = b.stammar.filter((w) => w.length > 1 && !SMAORD.has(w) && !FYLLE.has(w) && !/^\d+$/.test(w)));
     return ord.length ? ord.filter((w) => q.termer.some((t) => t.ord.some((o) => likhet(o, w) >= 0.5))).length / ord.length : 0;
   }
   function poangFor(x, q) {
@@ -3096,6 +3137,9 @@
       // Huvudordet är det eleven letar efter. Hör det inte till filmens ämne (moment,
       // titel, de första begreppen) är filmen bara sammanhanget: "en vinkel i en rätvinklig triangel"
       // ska till Beräkna vinklar, inte till Beräkna sidor i rätvinkliga trianglar.
+      // Formelbladsfilmerna går igenom bladet rad för rad. Handlar en egen film om samma sak är den
+      // mer relevant; finns saken bara på formelbladet vinner formelbladsfilmen ändå.
+      if (r.x.v.serie) r.poang *= 0.85;
       if (huvud >= 0 && ![r.x.moment, r.x.titel, ...r.x.begrepp.slice(0, 3)].some((b) => passar(q.termer[huvud], b) >= 0.8)) r.poang *= 0.8;
       for (const t of q.valfria) r.poang += t.vikt * (t.amne ? Math.max(passar(t, r.x.moment), passar(t, r.x.titel)) : Math.min(1, r.x.repliker.reduce((s, y) => s + passar(t, y), 0)));
       // Hela frasen ("likformiga trianglar") där filmen säger vad den handlar om, eller i rösten.
@@ -3148,11 +3192,99 @@
   // först när det finns filmer om det (begreppen där är formlerna, som berättelserna redan tar upp).
   const FORSLAG = [...new Set([...(harFlikar ? ["formelbladet"] : []), ...berattelser.flatMap((v) => v.begrepp.slice(0, 2))])].slice(0, 10);
   const SPELA = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg>';
-  const filmRad = (a, t, under) => {
+  // En film i en lista: omslag, kurs och moment, titel, och för sökträffar stället där ordet sägs.
+  const filmRad = (a, t, under, stalle, re) => {
     const b = a.omslagRen || a.omslag;
+    const rad = stalle ? `<span class="stalle"><span class="tid">${tid(stalle.t)}</span><span class="utdrag">${stalleText(stalle, re, 90)}</span></span>` : "";
     return `
-        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${b}" alt="">` : '<span class="tom"></span>'}<span class="namn">${sortEtikett(a)}<span class="titel">${esc(a.titel)}</span><span class="antal">${under}</span></span></button></li>`;
+        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${b}" alt="">` : '<span class="tom"></span>'}<span class="namn"><span class="meta">${metaRad(a)}</span><span class="titel">${esc(a.titel)}</span>${rad}<span class="antal">${under}</span></span></button></li>`;
   };
+
+  // Kursknapparna (Rickard 2026-10-03). Formelbladet Ma 1 räknas till Ma 1c och Formelbladet Ma 2
+  // till Ma 2a. Vald från början är kursen eleven kom från: fliken på filmvalet eller filmen man
+  // tittar på. Väljer eleven själv gäller det tills sidan laddas om.
+  const KURSVAL = [
+    { id: "1c", namn: "Ma 1c", re: /^Matematik 1c?$/i },
+    { id: "2a", namn: "Ma 2a", re: /^Matematik 2a?$/i },
+  ];
+  const kurserAv = (v) => (v.kurser && v.kurser.length ? v.kurser : [v.kurs]);
+  const iKurs = (v, id) => id === "alla" || kurserAv(v).some((k) => KURSVAL.find((x) => x.id === id).re.test(k));
+  let kursVal = null, sokKurs = "alla";
+  function kursFranLaget() {
+    if (aktivVy === "film" && aktuell) { const k = KURSVAL.filter((x) => iKurs(aktuell, x.id)); return k.length === 1 ? k[0].id : "alla"; }
+    if (aktivVy === "valj") return ["ma2a", "formelbladet-ma2"].includes(hylla) ? "2a" : "1c";
+    return "alla";
+  }
+
+  // Stavfel (Rickard 2026-10-03): "pytagoras", "ekvaton" och "cosinuss" gav "Ingen film tar upp det
+  // än". Ett sökord som inte finns någonstans i filmerna byts mot det närmaste ordet som finns (ett
+  // fel för ord på fyra–fem bokstäver, två för längre), och det står vilket ord som söktes. Ordlistan
+  // byggs första gången den behövs, ur samma text som sökningen.
+  let ORDLISTA = null;
+  function ordlista() {
+    if (ORDLISTA) return ORDLISTA;
+    ORDLISTA = new Map();
+    // Ord som filmerna HANDLAR om (titel, moment, begrepp, kapitelrubriker) väger som 30 ord ur
+    // talet: "mönter" är ett fel ett steg från både mönster och möter, och eleven söker på mönster.
+    const lagg = (text, vikt = 1) => {
+      for (const w of String(text || "").match(/\p{L}{4,}/gu) || []) {
+        const k = fold(w.toLowerCase()), e = ORDLISTA.get(k);
+        // Formen som visas: gemener om ordet någon gång står med gemener (cosinus), annars som det
+        // står (Pythagoras).
+        if (!e) ORDLISTA.set(k, { n: vikt, form: w });
+        else { e.n += vikt; if (w === w.toLowerCase()) e.form = w; }
+      }
+    };
+    INDEX.forEach((x) => {
+      lagg(x.v.titel, 30); lagg(x.v.moment, 30); x.v.begrepp.forEach((b) => lagg(b, 30)); x.kapitel.forEach((k) => lagg(k.text, 30));
+      lagg(x.v.beskrivning); x.repliker.forEach((r) => lagg(r.text));
+    });
+    return ORDLISTA;
+  }
+  // Antal ändringar (byte, borttaget, tillagt, två grannar som bytt plats) mellan a och b, högst max+1.
+  function avstand(a, b, max) {
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    let f2 = null, f = Array.from({ length: b.length + 1 }, (_, j) => j);
+    for (let i = 1; i <= a.length; i++) {
+      const r = [i]; let minst = i;
+      for (let j = 1; j <= b.length; j++) {
+        r[j] = Math.min(f[j] + 1, r[j - 1] + 1, f[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        if (f2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) r[j] = Math.min(r[j], f2[j - 2] + 1);
+        minst = Math.min(minst, r[j]);
+      }
+      if (minst > max) return max + 1;
+      f2 = f; f = r;
+    }
+    return f[b.length];
+  }
+  // Finns ordet i filmerna så som sökningen letar (början av ett ord, eller mitt i för långa ord, med
+  // böjningen bortkortad), eller är det en synonym sökningen redan känner till? Då är det inget stavfel.
+  function finnsOrd(o) {
+    if (SYNONYMER.some(([re]) => re.test(o))) return true;
+    const st = stam(o);
+    for (const k of ordlista().keys()) {
+      if (k.startsWith(o) || (o.length >= 5 && k.includes(o)) || (st && k.includes(st))) return true;
+    }
+    return false;
+  }
+  function rattaStavning(fraga) {
+    const byten = new Map();
+    for (const w of fraga.match(/\p{L}+/gu) || []) {
+      const o = fold(w.toLowerCase());
+      if (o.length < 4 || SMAORD.has(o) || byten.has(w) || finnsOrd(o)) continue;
+      const max = o.length >= 6 ? 2 : 1;
+      let bast = null;
+      for (const [k, e] of ordlista()) {
+        const d = avstand(o, k, max);
+        if (d <= max && (!bast || d < bast.d || (d === bast.d && e.n > bast.e.n))) bast = { d, e };
+      }
+      if (bast) byten.set(w, bast.e.form);
+    }
+    return byten.size ? fraga.replace(/\p{L}+/gu, (w) => byten.get(w) ?? w) : null;
+  }
+  // "Sök ändå på …": eleven vill ha det som stod, inte rättningen.
+  let ordagrant = null;
+
   function ritaSok() {
     const lista = $("sok-lista"), status = $("sok-status");
     if (!norm(falt.value)) {
@@ -3160,22 +3292,38 @@
       lista.innerHTML = `<div class="forslag"><p class="etikett">Prova att söka på</p>${FORSLAG.map((f) => `<button type="button" data-forslag="${attr(f)}">${esc(f)}</button>`).join("")}</div>`;
       return;
     }
-    const { q, res, narmast } = sok(falt.value);
+    // Stavfel rättas alltid (Rickard 2026-10-05: "det borde finnas automatiska rättningar om eleverna
+    // råkar skriva fel"), inte bara när inget hittas: "olikhter" hittade förut en film nästan på måfå.
+    // Bara ord som inte finns i filmerna byts, så ett rätt stavat ord rörs aldrig.
+    let { q, res, narmast } = sok(falt.value), rattat = null;
+    if (ordagrant !== falt.value) {
+      const ratt = rattaStavning(falt.value);
+      const r2 = ratt && sok(ratt);
+      if (r2 && r2.res.length && (!res.length || narmast || !r2.narmast)) { ({ q, res, narmast } = r2); rattat = ratt; }
+    }
     if (!res.length) {
       status.textContent = "Ingen film tar upp det än.";
-      lista.innerHTML = `<section class="andra"><h4 class="etikett">Det här finns</h4><ul>${videor.map((a) => filmRad(a, "", esc(a.moment))).join("")}</ul></section>`;
+      lista.innerHTML = `<section class="andra"><h4 class="etikett">Det här finns</h4><ul>${videor.map((a) => filmRad(a, "", "")).join("")}</ul></section>`;
       return;
     }
     status.textContent = narmast ? "Inget ställe har alla orden. Här är det som ligger närmast." : "";
-    const [forst, ...ovriga] = res, v = forst.v, s0 = forst.stallen[0];
+    const rattning = rattat ? `<p class="rattning"><span>Visar träffar för <strong>${esc(rattat)}</strong></span><button type="button" data-ordagrant>Sök ändå på ”${esc(falt.value.trim())}”</button></p>` : "";
+    // Kursknapparna. Har den valda kursen inga träffar visas alla kurser, och det står varför.
+    const antal = { alla: res.length };
+    KURSVAL.forEach((k) => { antal[k.id] = res.filter((r) => iKurs(r.v, k.id)).length; });
+    let galler = sokKurs, kursNot = "";
+    if (galler !== "alla" && !antal[galler]) { kursNot = `<p class="kursval-not">Inget i ${KURSVAL.find((k) => k.id === galler).namn} än. Här är alla kurser.</p>`; galler = "alla"; }
+    const kursknapp = (id, namn) => `<button type="button" data-kurs="${id}" aria-pressed="${id === galler}"${antal[id] ? "" : " disabled"}>${namn}<span class="antal">${antal[id]}</span></button>`;
+    const kursval = `<div class="kursval" role="group" aria-label="Visa filmer för kurs">${kursknapp("alla", "Alla kurser")}${KURSVAL.map((k) => kursknapp(k.id, k.namn)).join("")}</div>${kursNot}`;
+    const [forst, ...ovriga] = res.filter((r) => iKurs(r.v, galler)), v = forst.v, s0 = forst.stallen[0];
     const t0 = s0 ? s0.t : "";
     const bild = v.omslagRen || v.omslag, snart = !v.youtube && !v.fil;
     const knapp = snart ? "Läs vad som sägs" : s0 ? `Spela från ${tid(s0.t)}` : "Spela filmen";
-    lista.innerHTML = `
+    lista.innerHTML = `${rattning}${kursval}
       <article class="basta">
         <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${bild}" alt="">` : ""}</button>
         <div class="text">
-          <p class="etikett">${sortEtikett(v)} · ${kurserKort(v)} · ${esc(v.moment)}</p>
+          <p class="meta">${metaRad(v)}</p>
           <h3 class="titel"><button data-film="${v.id}" data-t="${t0}">${esc(v.titel)}</button></h3>
           <p class="forklaring">${s0 ? stalleText(s0, q.markRe) : esc(v.beskrivning.split(". ")[0]) + "."}</p>
           <button class="spela" data-film="${v.id}" data-t="${t0}"><span class="ring">${SPELA}</span>${knapp}</button>
@@ -3184,9 +3332,9 @@
       ${forst.stallen.length > 1 ? `<section class="fler-stallen"><h4 class="etikett">Fler ställen i filmen</h4><ul>${forst.stallen.slice(1, 4).map((s) => `
         <li><button data-film="${v.id}" data-t="${s.t}"><span class="tid">${tid(s.t)}</span><span class="rad">${stalleText(s, q.markRe, 90)}</span></button></li>`).join("")}</ul></section>` : ""}
       ${ovriga.length ? `<section class="andra"><h4 class="etikett">Andra filmer</h4><ul>${ovriga.map(({ v: a, stallen }) => {
-        const rep = stallen.filter((s) => !s.kap).length, kap = stallen.find((s) => s.kap);
-        const under = rep ? `Sägs ${rep === 1 ? "på ett ställe" : `på ${rep} ställen`}` : kap ? `Kapitel · ${esc(kap.text)}` : esc(a.moment);
-        return filmRad(a, stallen[0] ? stallen[0].t : "", under);
+        // Första stället visas med tidkod och utdrag; fler än ett ställe där ordet sägs står under.
+        const rep = stallen.filter((s) => !s.kap).length;
+        return filmRad(a, stallen[0] ? stallen[0].t : "", rep > 1 ? `Sägs på ${rep} ställen` : "", stallen[0], q.markRe);
       }).join("")}</ul></section>` : ""}`;
   }
   // Sökningen är en modal dialog: bakom den går inget att nå med Tab (inert), och när den stängs
@@ -3196,7 +3344,7 @@
     if (Newton.visar !== "guide") Newton.gom();
     Newton.markera("sok");   // den som hittat sökningen behöver inte tipset om den
     Newton.hande("sok");
-    if (!sokRuta.classList.contains("oppen")) fokusForeSok = document.activeElement;
+    if (!sokRuta.classList.contains("oppen")) { fokusForeSok = document.activeElement; sokKurs = kursVal ?? kursFranLaget(); }
     sokRuta.classList.add("oppen"); document.body.classList.add("last");
     document.querySelectorAll(".vy").forEach((el) => { el.inert = true; });
     ritaSok(); setTimeout(() => falt.focus(), 50);
@@ -3216,6 +3364,9 @@
   $("sok-lista").addEventListener("click", (e) => {
     const f = e.target.closest("[data-forslag]");
     if (f) { falt.value = f.dataset.forslag; ritaSok(); falt.focus(); Newton.hande("sokt"); }
+    const k = e.target.closest("[data-kurs]");
+    if (k && !k.disabled) { kursVal = sokKurs = k.dataset.kurs; ritaSok(); $("sok-lista").querySelector(`[data-kurs="${k.dataset.kurs}"]`).focus(); }
+    if (e.target.closest("[data-ordagrant]")) { ordagrant = falt.value; ritaSok(); falt.focus(); }
   });
 
   // ── Spelaren: egen styrning ovanpå YouTube (controls=0) eller <video> ──
@@ -4037,7 +4188,7 @@
       const lo = talV(d[0]), hi = talV(d[1]);
       return { form: "hak", lo, hi, loIn: hak[1] === "[" && lo !== -Infinity, hiIn: hak[3] === "]" && hi !== Infinity };
     }
-    const d = r.split(/(≤|≥|<|>)/).filter(Boolean), arVar = (x) => /^[a-zåäö]$/.test(x);
+    const d = r.split(/(≤|≥|<|>)/).filter(Boolean), arVar = (x) => /^[a-zåäö](\([a-zåäö]\))?$/.test(x);
     if (d.length === 3) {
       let [A, op, B] = d;
       if (arVar(B) && !arVar(A)) { [A, B] = [B, A]; op = { "<": ">", ">": "<", "≤": "≥", "≥": "≤" }[op]; }
@@ -4281,6 +4432,12 @@
         ${del.tangenter ? `<div class="tangenter">${del.tangenter.map((t) => `<button type="button" data-tecken="${attr(t)}" aria-label="Skriv ${attr(TECKENNAMN[t] || t)}">${esc(t)}</button>`).join("")}</div>` : ""}
         <p class="del-svarstext" id="del-text-${i}" role="status" aria-live="polite"></p>
       </li>`).join("");
+    // GeoGebra-rutan: ny för varje film, laddas först på knappen.
+    const ggb = d.geogebra;
+    $("dintur-ggb").hidden = !ggb;
+    $("dintur-ggb-yta").innerHTML = "";
+    $("dintur-ggb-knapp").hidden = false;
+    $("dintur-ggb-text").textContent = (ggb && ggb.text) || "Lös uppgiften grafiskt i GeoGebra här, med samma steg som i filmen.";
     const ledtrad = $("dintur-ledtrad");
     ledtrad.hidden = true;
     ledtrad.innerHTML = d.ledtrad ? `<p>${esc(d.ledtrad.text)}</p>${Number.isFinite(d.ledtrad.t) ? `<button type="button" class="kant" data-t="${d.ledtrad.t}">Se det i filmen, ${tid(d.ledtrad.t)}</button>` : ""}` : "";
@@ -4290,6 +4447,25 @@
     $("dintur-losning-knapp").hidden = !tidigare;
     $("dintur-losning").hidden = true; $("dintur-losning").innerHTML = "";
   }
+  // GeoGebras grafräknare i Din tur. deployggb.js hämtas en gång från geogebra.org; appleten byggs om
+  // för varje film. Tangenterna i GeoGebra stannar i rutan, annars spolar siffrorna filmen och "/" öppnar sökningen.
+  let ggbLaddad = null;
+  const laddaGgb = () => ggbLaddad || (ggbLaddad = new Promise((ja, nej) => { const sc = document.createElement("script"); sc.src = "https://www.geogebra.org/apps/deployggb.js"; sc.onload = ja; sc.onerror = () => { ggbLaddad = null; nej(new Error("GeoGebra kunde inte laddas")); }; document.head.appendChild(sc); }));
+  $("dintur-ggb-knapp").addEventListener("click", async () => {
+    const knapp = $("dintur-ggb-knapp"), yta = $("dintur-ggb-yta"), g = dt && dt.d.geogebra;
+    if (!g) return;
+    knapp.disabled = true; knapp.textContent = "Laddar GeoGebra …";
+    try {
+      await laddaGgb();
+      const b = Math.max(300, yta.parentElement.clientWidth), h = b < 520 ? 600 : Math.round(Math.min(560, Math.max(380, b * 0.62))); // smal skärm: grafen hamnar ovanför algebrafältet och behöver höjden
+      yta.innerHTML = '<div id="dintur-ggb-applet"></div>';
+      new window.GGBApplet({ appName: g.app || "graphing", language: "sv", width: b, height: h, showToolBar: true, showAlgebraInput: true, showMenuBar: false, enableShiftDragZoom: true, showResetIcon: true, showFullscreenButton: true, showKeyboardOnFocus: false, useBrowserForJS: false }, true).inject("dintur-ggb-applet");
+      knapp.hidden = true;
+    } catch (e) { knapp.textContent = "Försök igen"; }
+    knapp.disabled = false;
+    if (knapp.hidden) knapp.textContent = "Öppna GeoGebra";
+  });
+  for (const typ of ["keydown", "keyup", "keypress"]) $("dintur-ggb-yta").addEventListener(typ, (e) => e.stopPropagation());
   function tillDinTur() {
     if (iHelskarm()) vaxlaHelskarm();
     requestAnimationFrame(() => glidFram(dtEl, "start"));

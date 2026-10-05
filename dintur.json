@@ -63,7 +63,7 @@
     ]
   },
   "arkimedes-och-cirkeln": {
-    "fraga": "Ett skepp till ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter.",
+    "fraga": "Ett annat romerskt skepp ligger 400 meter från muren. Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare. Kastmaskinen når 200 meter.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "p10-skeppet-i-skymningen",
@@ -86,7 +86,7 @@
     },
     "delar": [
       {
-        "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder är skeppet inom räckhåll?",
+        "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
         "typ": "olikhet",
         "variabel": "t",
         "svar": "t >= 40",
@@ -95,8 +95,8 @@
         "exempel": "t.ex. t ≥ 10",
         "tangenter": ["≤", "≥", "<", ">"],
         "fel": [
-          { "svar": "t <= 40", "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett minustal?" },
-          { "svar": "t > 40", "text": "Nästan. Kastmaskinerna når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med." },
+          { "svar": "t <= 40", "text": "Du delar med −5 på slutet. Vad händer med olikhetstecknet när man delar med ett negativt tal?" },
+          { "svar": "t > 40", "text": "Nästan. Kastmaskinen når precis 200 meter, och olikheten har tecknet ≤. Då ska 40 räknas med." },
           { "svar": "t >= -40", "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal." },
           { "svar": "t <= -40", "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal." },
           { "svar": "-40", "text": "Kolla tecknet på talet. −200 delat med −5 blir ett positivt tal." },
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "ledtrad": { "fras": "Nu ska vi dela med", "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet." },
+    "ledtrad": { "fras": "Nu vill vi dela båda sidor med minus fyra", "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet." },
     "losning": [
       "400 − 5t ≤ 200",
       "Dra 400 från båda sidor. Då blir det −5t ≤ −200.",
-      "Dela med −5. Det är ett minustal, så tecknet vänder, och t ≥ 40.",
-      "Skeppet är inom räckhåll efter 40 sekunder.",
-      "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinerna når."
+      "Dela med −5. Det är ett negativt tal, så tecknet vänder, och t ≥ 40.",
+      "Kastmaskinen kan träffa skeppet efter 40 sekunder.",
+      "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinen når."
     ]
   },
   "viete-och-chiffret": {
@@ -158,7 +158,7 @@
         ]
       }
     ],
-    "ledtrad": { "fras": "Oftast stämmer det inte precis,", "text": "Skriv kvadrattalen 1, 4, 9 och 16 under märkena och räkna ut skillnaden." },
+    "ledtrad": { "fras": "Ofta är talen nästan kvadrattal.", "text": "Skriv kvadrattalen 1, 4, 9 och 16 under märkena och räkna ut skillnaden." },
     "losning": [
       "Märkena: 5, 8, 13, 20.",
       "Kvadrattalen: 1, 4, 9, 16.",
@@ -197,10 +197,10 @@
     ]
   },
   "harrison-och-longituden": {
-    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer men högst 150.",
+    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer, men högst 150.",
     "delar": [
       {
-        "fraga": "Skriv intervallet med hakparenteser.",
+        "fraga": "Skriv intervallet med hakparenteser, och rita det på tallinjen.",
         "typ": "intervall",
         "svar": "]110, 150]",
         "exempel": "t.ex. [0, 55]",
@@ -209,7 +209,7 @@
           { "svar": "[110, 150]", "text": "110 ska inte räknas med, för felet ska vara större än 110. Vänd parentesen vid 110 utåt." },
           { "svar": "]110, 150[", "text": "150 ska räknas med, för felet får vara högst 150. Vänd parentesen vid 150 inåt." },
           { "svar": "[110, 150[", "text": "Båda parenteserna är vända åt fel håll. 110 räknas inte med, men 150 gör det." },
-          { "svar": "]110, ∞[", "text": "Det var det tredje priset utan slut. Nu finns ett slut, högst 150 kilometer." }
+          { "svar": "]110, ∞[", "text": "Det är intervallet för fel som inte gav något pris alls. Nu finns ett slut: högst 150 kilometer, så 150 räknas med." }
         ]
       }
     ],
@@ -223,102 +223,107 @@
     ]
   },
   "formelbladet-1-prefix-och-potenser": {
-    "fraga": "Skriv 10⁶ · 10⁻³ som en enda potens, och säg vilket prefix det blir.",
+    "fraga": "Skriv 10⁴ · 10⁵ som en enda potens, och säg vilket prefix det blir.",
     "delar": [
       {
         "fraga": "Vilken potens blir det?",
         "typ": "tal",
-        "svar": 1000,
+        "svar": 1000000000,
         "exempel": "t.ex. 10^6",
         "tangenter": ["^", "-", "(", ")"],
         "fel": [
-          { "svar": "10^(-18)", "text": "Du har gångrat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 6 + (−3)." },
-          { "svar": "10^9", "text": "Exponenten −3 är negativ. 6 plus minus 3 är detsamma som 6 minus 3." },
-          { "svar": "10^(-2)", "text": "Du har delat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 6 + (−3)." }
+          { "svar": "10^20", "text": "Du har gångrat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 4 + 5." },
+          { "svar": "10^1", "text": "Du har dragit bort exponenterna. Det gör man när man delar. När man gångrar läggs de ihop: 4 + 5." },
+          { "svar": "100^9", "text": "Basen ska stå kvar som 10. Det är bara exponenterna som läggs ihop: 4 + 5." }
         ]
       },
       {
         "fraga": "Vilket prefix står för den tiopotensen?",
         "typ": "ord",
-        "svar": ["kilo", "k"],
+        "svar": ["giga", "G"],
         "exempel": "t.ex. mega",
         "fel": [
-          { "svar": ["mega", "M"], "text": "Mega är 10⁶, det tal du började med. Efter gånger 10⁻³ blir det en annan tiopotens." },
-          { "svar": ["milli", "m"], "text": "Milli är 10⁻³, det andra talet. Leta upp tiopotensen du fick i a) i tabellen." },
-          { "svar": ["giga", "G"], "text": "Giga är 10⁹. Exponenterna ska läggas ihop, och 6 + (−3) är 3." },
-          { "svar": ["K"], "text": "Nästan. Kilo skrivs med litet k, stort K är inget prefix." }
+          { "svar": ["mega", "M"], "text": "Mega är 10⁶. Leta upp tiopotensen du fick i a) i tabellen." },
+          { "svar": ["tera", "T"], "text": "Tera är 10¹². Exponenterna ska läggas ihop, och 4 + 5 är 9." },
+          { "svar": ["g"], "text": "Nästan. Giga skrivs med stort G, litet g betyder gram." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Exponenterna läggs ihop, och 2 plus 4",
+      "fras": "Baserna är lika, så vi lägger ihop",
       "text": "När två tiopotenser gångras läggs exponenterna ihop. Sedan letar du upp tiopotensen i prefixtabellen."
     },
     "losning": [
       "När två tiopotenser gångras läggs exponenterna ihop.",
-      "10⁶ · 10⁻³ = 10^(6 + (−3))",
-      "6 + (−3) = 3, så det blir 10³.",
-      "I tabellen står 10³ under bokstaven k, och det är kilo."
+      "10⁴ · 10⁵ = 10^(4 + 5)",
+      "4 + 5 = 9, så det blir 10⁹.",
+      "I tabellen står 10⁹ under bokstaven G, och det är giga."
     ],
     "notisFran": "Prefixen och potenserna hänger ihop"
   },
   "formelbladet-2-funktioner": {
-    "fraga": "En mobil kostar 6000 kronor när den är ny och tappar 20 procent av sitt värde varje år.",
+    "fraga": "En taxi kostar en startavgift och ett pris per kilometer. En resa på 2 kilometer kostar 80 kronor. En resa på 6 kilometer kostar 180 kronor.",
     "delar": [
       {
-        "fraga": "Vilken sorts funktion är värdet?",
-        "typ": "ord",
-        "svar": ["exponentialfunktion", "exponentialfunktionen", "en exponentialfunktion", "exponentiell", "exponentiell funktion", "en exponentiell funktion"],
-        "exempel": "t.ex. räta linjen",
+        "fraga": "Vad är k, alltså priset per kilometer?",
+        "typ": "tal",
+        "svar": 25,
+        "enhet": "kr per km",
+        "exempel": "t.ex. 15",
         "fel": [
-          { "svar": ["räta linjen", "rät linje", "en rät linje", "linje", "linjen", "linjär", "linjär funktion", "en linjär funktion"], "text": "Värdet minskar inte med lika många kronor varje år, utan med lika många procent. Då gångras värdet med samma tal varje år." },
-          { "svar": ["potensfunktion", "potensfunktionen", "en potensfunktion"], "text": "I en potensfunktion står x nere i basen. Här gångras värdet med samma tal varje år, och då står x uppe i exponenten." }
+          { "svar": "100", "text": "100 kr är hur mycket mer den andra resan kostade. Dela med hur många kilometer längre den var: 6 − 2 = 4." },
+          { "svar": "40", "text": "Du har delat 80 med 2. Men de 80 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km." },
+          { "svar": "30", "text": "Du har delat 180 med 6. Men de 180 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km." },
+          { "svar": "4", "text": "4 är hur många kilometer längre den andra resan var. Dela skillnaden i pris, 180 − 80 = 100, med 4." }
         ]
       },
       {
-        "fraga": "Skriv funktionen, med x för antalet år.",
-        "typ": "ekvation",
-        "svar": "y = 6000*0.8^x",
-        "exempel": "t.ex. y = 1000 · 1,05^x",
-        "tangenter": ["^", "·", "="],
+        "fraga": "Vad är m, alltså startavgiften?",
+        "typ": "tal",
+        "svar": 30,
+        "enhet": "kr",
+        "exempel": "t.ex. 40",
         "fel": [
-          { "svar": "y = 6000*0.2^x", "text": "0,2 är det som försvinner varje år. Kvar blir 100 − 20 = 80 procent, så värdet gångras med 0,8." },
-          { "svar": "y = 6000*1.2^x", "text": "1,2 betyder att värdet ökar med 20 procent. Här minskar det, så värdet gångras med 0,8." },
-          { "svar": "y = -1200*x + 6000", "text": "Det är räta linjen, som drar bort 1200 kronor varje år. Men 20 procent av ett mindre värde är färre kronor, så värdet gångras med 0,8 varje år i stället." }
+          { "svar": "50", "text": "50 kr är vad 2 kilometer kostar: 2 · 25. Startavgiften är det som är kvar av resans 80 kronor." },
+          { "svar": "80", "text": "80 kr är hela resan. Dra bort vad de 2 kilometerna kostar: 2 · 25 = 50." },
+          { "svar": "130", "text": "Du har lagt till 50 i stället för att dra bort. Resan kostade 80 kr, och 50 av dem är kilometerna." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Är a mellan noll och 1 minskar",
-      "text": "Värdet gångras med samma tal varje år, så det är y = C · aˣ. C är värdet när mobilen är ny, och a är det som blir kvar av 100 procent."
+      "fras": "Ovanför bråkstrecket räknar vi",
+      "text": "Räkna hur mycket mer den andra resan kostade och hur många kilometer längre den var. Dela sedan priset med kilometerna."
     },
     "losning": [
-      "Värdet minskar med lika många procent varje år, inte med lika många kronor. Då är det en exponentialfunktion, y = C · aˣ.",
-      "C är startvärdet, 6000 kronor.",
-      "Kvar varje år är 100 − 20 = 80 procent, så förändringsfaktorn är a = 0,8.",
-      "y = 6000 · 0,8ˣ, där x är antalet år."
+      "Den andra resan kostade 180 − 80 = 100 kr mer.",
+      "Den var 6 − 2 = 4 km längre.",
+      "k = 100 / 4 = 25, så varje kilometer kostar 25 kr.",
+      "2 kilometer kostar 2 · 25 = 50 kr.",
+      "m = 80 − 50 = 30, så startavgiften är 30 kr."
     ],
-    "notisFran": "På provet gäller det att känna igen"
+    "notisFran": "Nu är det din tur"
   },
   "formelbladet-3-plan-geometri": {
-    "fraga": "Pizzan från filmen har omkretsen 62,8 centimeter. Nu delas den i sex lika stora bitar.",
+    "fraga": "En pizza har omkretsen 62,8 centimeter. Den delas i åtta lika stora bitar.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "d01-pizza",
       "tema": "papper",
-      "text": "En rund pizza med omkretsen 62,8 centimeter, delad i sex lika stora bitar. Vinkeln i spetsen och kanten på en bit är okända.",
+      "text": "En rund pizza med omkretsen 62,8 centimeter, delad i åtta lika stora bitar. Vinkeln i spetsen och den böjda kanten på en bit är okända.",
       "delar": [
-        { "typ": "yta", "d": "M560 540 L560 160 A380 380 0 0 1 889.1 350 Z", "accent": true },
+        { "typ": "yta", "d": "M560 540 L560 160 A380 380 0 0 1 828.7 271.3 Z", "accent": true },
         { "typ": "cirkel", "mitt": [560, 540], "r": 380 },
         { "typ": "linje", "p": [[560, 540], [560, 160]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [889.1, 350]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [889.1, 730]], "svag": true },
+        { "typ": "linje", "p": [[560, 540], [828.7, 271.3]], "svag": true },
+        { "typ": "linje", "p": [[560, 540], [940, 540]], "svag": true },
+        { "typ": "linje", "p": [[560, 540], [828.7, 808.7]], "svag": true },
         { "typ": "linje", "p": [[560, 540], [560, 920]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [230.9, 730]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [230.9, 350]], "svag": true },
-        { "typ": "bana", "d": "M560 160 A380 380 0 0 1 889.1 350", "accent": true, "tjock": true },
-        { "typ": "vinkel", "vid": [560, 540], "mot": [[560, 160], [889.1, 350]], "r": 100, "text": "?", "accent": true, "avstand": 50 },
-        { "typ": "text", "vid": [780, 158.9], "text": "?", "accent": true },
+        { "typ": "linje", "p": [[560, 540], [291.3, 808.7]], "svag": true },
+        { "typ": "linje", "p": [[560, 540], [180, 540]], "svag": true },
+        { "typ": "linje", "p": [[560, 540], [291.3, 271.3]], "svag": true },
+        { "typ": "bana", "d": "M560 160 A380 380 0 0 1 828.7 271.3", "accent": true, "tjock": true },
+        { "typ": "vinkel", "vid": [560, 540], "mot": [[560, 160], [828.7, 271.3]], "r": 110, "text": "?", "accent": true, "avstand": 50 },
+        { "typ": "text", "vid": [728.4, 133.5], "text": "?", "accent": true },
         { "typ": "text", "vid": [990, 900], "text": "omkrets 62,8 cm", "ankare": "start" }
       ]
     },
@@ -326,41 +331,41 @@
       {
         "fraga": "Hur stor blir vinkeln i spetsen?",
         "typ": "tal",
-        "svar": 60,
+        "svar": 45,
         "enhet": "grader",
-        "exempel": "t.ex. 45",
+        "exempel": "t.ex. 90",
         "fel": [
-          { "svar": "45", "text": "45 grader är vinkeln när pizzan delas i åtta bitar. Här är det sex: 360 delat med 6." },
-          { "svar": "6", "text": "6 är antalet bitar. Hela varvet är 360 grader, och det delas i 6 lika stora bitar." },
-          { "svar": "2160", "text": "Du har gångrat med 6. Hela varvet, 360 grader, ska delas i 6 bitar." }
+          { "svar": "90", "text": "90 grader är vinkeln när pizzan delas i fyra bitar. Här är det åtta: 360 delat med 8." },
+          { "svar": "8", "text": "8 är antalet bitar. Hela varvet är 360 grader, och det delas i 8 lika stora bitar." },
+          { "svar": "2880", "text": "Du har gångrat med 8. Hela varvet, 360 grader, ska delas i 8 bitar." }
         ]
       },
       {
-        "fraga": "Hur lång blir kanten på en bit?",
+        "fraga": "Hur lång blir den böjda kanten på en bit?",
         "typ": "tal",
-        "svar": 10.4667,
+        "svar": 7.85,
         "tolerans": 0.06,
         "enhet": "cm",
-        "exempel": "t.ex. 7,85",
+        "exempel": "t.ex. 15,7",
         "fel": [
-          { "svar": "7.85", "tolerans": 0.01, "text": "7,85 centimeter är kanten när pizzan delas i åtta bitar. Här tar du en sjättedel av 62,8." },
-          { "svar": "52.33", "tolerans": 0.05, "text": "Det är bitens area, 314 delat med 6. Kanten är en sjättedel av omkretsen, 62,8." },
-          { "svar": "376.8", "tolerans": 0.05, "text": "Du har gångrat med 6. En bit har en sjättedel av kanten, så dela 62,8 med 6." },
-          { "svar": "10", "text": "10 centimeter är radien, den raka sidan på biten. Kanten är den böjda bågen, en sjättedel av 62,8." }
+          { "svar": "15.7", "tolerans": 0.01, "text": "15,7 centimeter är kanten när pizzan delas i fyra bitar. Här tar du en åttondel av 62,8." },
+          { "svar": "39.25", "tolerans": 0.05, "text": "Det är bitens area, 314 delat med 8. Den böjda kanten är en åttondel av omkretsen, 62,8." },
+          { "svar": "502.4", "tolerans": 0.05, "text": "Du har gångrat med 8. En bit har en åttondel av kanten, så dela 62,8 med 8." },
+          { "svar": "10", "text": "10 centimeter är radien, den raka sidan på biten. Den böjda kanten är en åttondel av 62,8." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "360 delat med 8 är 45",
-      "text": "Vinkeln är 360 grader delat på antalet bitar. Kanten är samma andel av omkretsen 62,8."
+      "fras": "Vi delar pizzan i fyra lika stora bitar",
+      "text": "Vinkeln är 360 grader delat med antalet bitar. Den böjda kanten är samma andel av omkretsen 62,8."
     },
     "losning": [
-      "Hela varvet är 360 grader, och det delas i 6 lika stora bitar.",
-      "360 / 6 = 60, så vinkeln blir 60 grader.",
-      "60 delat med 360 är en sjättedel.",
-      "Kanten är en sjättedel av omkretsen: 62,8 / 6 ≈ 10,5 centimeter."
+      "Hela varvet är 360 grader, och det delas i 8 lika stora bitar.",
+      "360 / 8 = 45, så vinkeln blir 45 grader.",
+      "45 delat med 360 är en åttondel.",
+      "Den böjda kanten är en åttondel av omkretsen: 62,8 / 8 = 7,85 centimeter."
     ],
-    "notisFran": "Pizzan kan också delas i åtta"
+    "notisFran": "Nu är det din tur"
   },
   "formelbladet-4-rymdgeometri-och-skala": {
     "fraga": "Tänk dig att du bygger en modell av ert klassrum i skala 1 till 5.",
@@ -413,7 +418,7 @@
       }
     ],
     "ledtrad": {
-      "fras": "Areaskalan är 1 till 10 gånger 10",
+      "fras": "Golvet är en yta",
       "text": "Areaskalan är längdskalan upphöjt till 2, och volymskalan är längdskalan upphöjt till 3."
     },
     "losning": [
@@ -421,70 +426,79 @@
       "Areaskalan är 5² = 5 · 5 = 25, så golvytan är 25 gånger större.",
       "Volymskalan är 5³ = 5 · 5 · 5 = 125, så volymen är 125 gånger större."
     ],
-    "notisFran": "Här är en uppgift att prova"
+    "notisFran": "Nu är det din tur"
   },
   "formelbladet-5-pythagoras-trigonometri-vektorer": {
-    "fraga": "En rutschkana är 6 meter lång och lutar 40 grader mot marken.",
+    "fraga": "En stege lutar mot en vägg. Foten står 6 meter från väggen, och toppen når 8 meter upp.",
     "figur": {
       "vy": [1920, 1080],
-      "bild": "b02-rutschkanan",
+      "bild": "b01-stegen",
       "tema": "papper",
-      "text": "En rutschkana som är 6 meter lång och lutar 40 grader mot marken. Höjden upp till toppen är okänd.",
+      "text": "En stege lutar mot en vägg. Foten står 6 m från väggen och toppen når 8 m upp. Vinkeln v ligger vid foten, mellan stegen och marken. Stegens längd är okänd.",
       "delar": [
-        { "typ": "linje", "p": [[100, 930], [1176, 930]], "svag": true },
-        { "typ": "linje", "p": [[150, 930], [916, 287.2]], "tjock": true },
-        { "typ": "linje", "p": [[916, 930], [916, 287.2]] },
-        { "typ": "linje", "p": [[916, 287.2], [1001, 287.2]] },
-        { "typ": "linje", "p": [[961, 287.2], [1066, 930]], "svag": true },
-        { "typ": "linje", "p": [[1001, 287.2], [1106, 930]], "svag": true },
-        { "typ": "linje", "p": [[973.6, 364.3], [1013.6, 364.3]], "svag": true },
-        { "typ": "linje", "p": [[988.3, 454.3], [1028.3, 454.3]], "svag": true },
-        { "typ": "linje", "p": [[1003, 544.3], [1043, 544.3]], "svag": true },
-        { "typ": "linje", "p": [[1017.7, 634.3], [1057.7, 634.3]], "svag": true },
-        { "typ": "linje", "p": [[1032.4, 724.3], [1072.4, 724.3]], "svag": true },
-        { "typ": "linje", "p": [[1047.1, 814.3], [1087.1, 814.3]], "svag": true },
-        { "typ": "linje", "p": [[1061.8, 904.3], [1101.8, 904.3]], "svag": true },
-        { "typ": "ratvinkel", "vid": [916, 930], "mot": [[916, 287.2], [150, 930]] },
-        { "typ": "vinkel", "vid": [150, 930], "mot": [[916, 930], [916, 287.2]], "r": 110, "text": "40°", "avstand": 105 },
-        { "typ": "sida", "p": [[150, 930], [916, 287.2]], "text": "6 m", "sida": -1, "avstand": 70 },
-        { "typ": "sida", "p": [[916, 930], [916, 287.2]], "text": "?", "sida": -1, "avstand": 48, "accent": true }
+        { "typ": "linje", "p": [[120, 960], [880, 960]], "svag": true },
+        { "typ": "linje", "p": [[740, 960], [740, 180]] },
+        { "typ": "linje", "p": [[200, 960], [740, 240]], "tjock": true },
+        { "typ": "linje", "p": [[253.1, 859.2], [281.9, 880.8]], "svag": true },
+        { "typ": "linje", "p": [[320.6, 769.2], [349.4, 790.8]], "svag": true },
+        { "typ": "linje", "p": [[388.1, 679.2], [416.9, 700.8]], "svag": true },
+        { "typ": "linje", "p": [[455.6, 589.2], [484.4, 610.8]], "svag": true },
+        { "typ": "linje", "p": [[523.1, 499.2], [551.9, 520.8]], "svag": true },
+        { "typ": "linje", "p": [[590.6, 409.2], [619.4, 430.8]], "svag": true },
+        { "typ": "linje", "p": [[658.1, 319.2], [686.9, 340.8]], "svag": true },
+        { "typ": "ratvinkel", "vid": [740, 960], "mot": [[740, 240], [200, 960]] },
+        { "typ": "vinkel", "vid": [200, 960], "mot": [[740, 960], [740, 240]], "r": 110, "text": "v", "avstand": 50 },
+        { "typ": "sida", "p": [[200, 960], [740, 960]], "text": "6 m", "sida": 1, "avstand": 64 },
+        { "typ": "sida", "p": [[740, 960], [740, 240]], "text": "8 m", "sida": 1, "avstand": 90 },
+        { "typ": "sida", "p": [[200, 960], [740, 240]], "text": "?", "sida": -1, "avstand": 70, "accent": true }
       ]
     },
     "delar": [
       {
-        "fraga": "Hur högt upp sitter toppen? Svara med två decimaler.",
+        "fraga": "Hur lång är stegen?",
         "typ": "tal",
-        "svar": 3.8567,
-        "tolerans": 0.006,
+        "svar": 10,
         "enhet": "meter",
-        "exempel": "t.ex. 2,00",
+        "exempel": "t.ex. 5",
         "fel": [
-          { "svar": "4.596", "tolerans": 0.01, "text": "Det är 6 gånger cosinus 40°, sträckan längs marken. Höjden ligger mitt emot vinkeln, och då är det sinus." },
-          { "svar": "5.035", "tolerans": 0.01, "text": "Tangens hör ihop med de två kateterna. Här vet du hypotenusan, rutschkanan, och höjden ligger mitt emot vinkeln, så det är sinus." },
-          { "svar": "9.334", "tolerans": 0.01, "text": "Du har delat med sinus. sin 40° = höjden / 6, så höjden är 6 gånger sin 40°." },
-          { "svar": "4.471", "tolerans": 0.01, "text": "Räknaren står i radianer. Ställ om den till grader (DEG) och räkna igen." },
-          { "svar": "3", "text": "3 meter blir det om rutschkanan lutar 30 grader. Här lutar den 40 grader." }
-        ],
-        "nara": { "tolerans": 0.06, "text": "Nästan. Räkna 6 · sin 40° och avrunda till två decimaler." }
+          { "svar": "14", "text": "Du har lagt ihop 6 och 8. Ta kateterna i kvadrat först: 6 i kvadrat är 36 och 8 i kvadrat är 64." },
+          { "svar": "100", "text": "100 är stegens längd i kvadrat. Vilket tal gånger sig självt blir 100?" },
+          { "svar": "2", "text": "Du har dragit 6 från 8. Stegen är hypotenusan, så räkna 6 i kvadrat plus 8 i kvadrat." }
+        ]
+      },
+      {
+        "fraga": "Vad är sinus v, där v är vinkeln mellan stegen och marken?",
+        "typ": "tal",
+        "svar": 0.8,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 0,5",
+        "fel": [
+          { "svar": "0.6", "text": "Det är cosinus v: närliggande katet, 6, delat med hypotenusan. Sinus är motstående katet delat med hypotenusan." },
+          { "svar": "1.333", "tolerans": 0.01, "text": "Det är tangens v: 8 delat med 6. Sinus är motstående katet delat med hypotenusan, stegen." },
+          { "svar": "0.75", "tolerans": 0.001, "text": "Du har delat 6 med 8. Sinus är motstående katet delat med hypotenusan." },
+          { "svar": "1.25", "tolerans": 0.001, "text": "Du har delat 10 med 8. Sinus är motstående katet delat med hypotenusan, alltså 8 delat med 10." }
+        ]
       }
     ],
     "ledtrad": {
-      "fras": "Höjden ligger mitt emot vinkeln och rutschkanan",
-      "text": "Höjden ligger mitt emot vinkeln och rutschkanan är hypotenusan. Då är sinus 40° lika med höjden delat med 6."
+      "fras": "Först tar vi kateterna i kvadrat",
+      "text": "Stegen ligger mitt emot den räta vinkeln, så den är hypotenusan. Väggen ligger mitt emot v, så 8 m är motstående katet."
     },
     "losning": [
-      "Höjden ligger mitt emot vinkeln, och rutschkanan är hypotenusan.",
-      "sin 40° = h / 6",
-      "h = 6 · sin 40°",
-      "Räknaren ger sin 40° ≈ 0,643, så h ≈ 6 · 0,643 ≈ 3,86 meter."
+      "Stegen ligger mitt emot den räta vinkeln, så stegen är hypotenusan c.",
+      "6² = 36 och 8² = 64.",
+      "36 + 64 = 100, så c² = 100.",
+      "10 · 10 = 100, så stegen är 10 meter.",
+      "Väggen ligger mitt emot v, så 8 m är motstående katet.",
+      "sin v = 8 / 10 = 0,8."
     ],
-    "notisFran": "Ofta vet man en vinkel och en sida"
+    "notisFran": "Nu är det din tur"
   },
   "ma2a-01-kvadreringsreglerna": {
-    "fraga": "När Bethe förklarade sitt knep för Feynman tog han 47 som exempel.",
+    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel.",
     "delar": [
       {
-        "fraga": "Räkna 47 i kvadrat i huvudet, som Bethe. Vad blir det?",
+        "fraga": "Räkna 47 i kvadrat i huvudet, som Bethe.",
         "typ": "tal",
         "svar": 2209,
         "exempel": "t.ex. 2304",
@@ -517,7 +531,7 @@
       }
     ],
     "ledtrad": {
-      "fras": "Först kommer alltså 50 i",
+      "fras": "Titta på svarets tre delar",
       "text": "Tänk på 47 som 50 − 3, som Bethe gjorde med 48. Först 50 i kvadrat, sedan dubbla produkten, sist 3 i kvadrat."
     },
     "losning": [
@@ -530,70 +544,86 @@
     ]
   },
   "ma2a-02-faktorisera": {
-    "fraga": "Tänk dig att du sitter vid maskinen och prövar talet 899.",
+    "fraga": "Nu är det din tur.",
     "delar": [
       {
-        "fraga": "Faktorisera 899 så långt som möjligt, med kvadraterna och konjugatregeln.",
-        "typ": "faktorer",
-        "svar": 899,
-        "exempel": "t.ex. 23 · 17",
+        "fraga": "Faktorisera 9x² + 18x.",
+        "typ": "uttryck",
+        "svar": "9x^2 + 18x",
+        "visa": "9x² + 18x",
+        "utanfor": "9x",
+        "exempel": "t.ex. 3x(1 + 3x)",
         "tangenter": [
-          "·",
           "(",
-          ")"
+          ")",
+          "²"
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Att faktorisera betyder att skriva",
-      "text": "Gör som med 391 i filmen. Vilken kvadrat ligger närmast ovanför 899? Hur mycket större är den, och är skillnaden också en kvadrat?"
+      "fras": "Ibland kan man bryta ut både",
+      "text": "Gör som med 3x + 9x² i filmen. Vilket är det största tal som både 9 och 18 kan delas med? Finns x i båda termerna?"
     },
     "losning": [
-      "Kvadraten närmast ovanför 899 är 900 = 30².",
-      "900 − 899 = 1, och 1 = 1².",
-      "Alltså är 899 = 30² − 1².",
-      "Konjugatregeln baklänges: a² − b² = (a + b)(a − b).",
-      "899 = (30 + 1)(30 − 1) = 31 · 29.",
-      "31 och 29 är primtal, så längre än så går det inte. Kontroll: 31 · 29 = 899."
+      "9 och 18 kan båda delas med 9.",
+      "9x² betyder 9 · x · x, så x finns i båda termerna.",
+      "Den största gemensamma faktorn är alltså 9x.",
+      "9x² delat med 9x är x, och 18x delat med 9x är 2.",
+      "9x² + 18x = 9x(x + 2)",
+      "Kontroll: 9x · x = 9x² och 9x · 2 = 18x."
     ]
   },
   "ma2a-03-x2-och-nollprodukt": {
-    "fraga": "Tänk dig en kanonkula som slår ner 8 sekunder efter skottet.",
+    "fraga": "En kula skjuts rakt upp, och efter t sekunder är höjden 30t − 5t².",
     "delar": [
       {
-        "fraga": "Skriv en andragradsekvation med lösningarna 0 och 8, med t för tiden.",
-        "typ": "ekvation",
-        "svar": "t*(t - 8) = 0",
-        "exempel": "t.ex. (t − 5)(t − 2) = 0",
-        "tangenter": ["(", ")", "^", "="],
+        "fraga": "Använd nollproduktmetoden och räkna ut när kulan är nere igen. Svara i sekunder.",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.001,
+        "enhet": "sekunder",
+        "exempel": "t.ex. 10",
         "fel": [
-          { "svar": "t*(t + 8) = 0", "text": "Den ekvationen har lösningarna 0 och −8. För att faktorn ska bli 0 när t är 8 ska det stå t − 8." },
-          { "svar": "(t - 8)^2 = 0", "text": "Den har bara lösningen 8. Den ena faktorn ska i stället bli 0 när t är 0." },
-          { "svar": "t - 8 = 0", "text": "Den har bara lösningen 8, och det är ingen andragradsekvation. Det behövs en faktor till, som blir 0 när t är 0." },
-          { "svar": "t^2 = 64", "text": "Den har lösningarna 8 och −8. Gör som med 5 och 2 i filmen: en faktor för varje lösning, och produkten lika med 0." }
+          {
+            "svar": "0",
+            "text": "t = 0 är när kulan skjuts iväg, precis som i filmen. Den andra faktorn, 30 − 5t, ger när den är nere igen."
+          },
+          {
+            "svar": "30",
+            "text": "30 − 5t = 0 betyder att 5t = 30. Dela båda leden med 5."
+          },
+          {
+            "svar": "10",
+            "text": "10 sekunder var svaret i filmen, där höjden var 50t − 5t². Här står det 30t."
+          },
+          {
+            "svar": "3",
+            "text": "Efter 3 sekunder är kulan högst upp. Den är nere igen när 30 − 5t = 0."
+          }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Man kan också gå baklänges",
-      "text": "Gör som med lösningarna 5 och 2 i filmen. Vilken faktor blir 0 när t är 0, och vilken blir 0 när t är 8?"
+      "fras": "Så antingen är t lika med noll",
+      "text": "Gör som med 50t − 5t² i filmen: sätt höjden lika med 0, bryt ut t och sätt varje faktor lika med 0."
     },
     "losning": [
-      "Varje lösning ger en faktor som blir 0 för just den lösningen.",
-      "Lösningen t = 0 ger faktorn t. Lösningen t = 8 ger faktorn t − 8, för 8 − 8 = 0.",
-      "Produkten ska vara 0: t(t − 8) = 0.",
-      "Kontroll med nollproduktmetoden: t = 0 eller t − 8 = 0, alltså t = 0 eller t = 8.",
-      "Multiplicerar man in t blir det t² − 8t = 0, och det är samma ekvation."
+      "Kulan är nere när höjden är 0: 30t − 5t² = 0.",
+      "t finns i båda termerna, så vi bryter ut t: t(30 − 5t) = 0.",
+      "En produkt är 0 bara om en faktor är 0: t = 0 eller 30 − 5t = 0.",
+      "t = 0 är när kulan skjuts iväg. 30 − 5t = 0 ger 5t = 30, alltså t = 6.",
+      "Kulan är nere igen efter 6 sekunder."
     ]
   },
   "ma2a-04-pq-formeln": {
-    "fraga": "Tänk dig att al-Khwarizmi i stället hade delat tolv i två delar, och att produkten blev 35.",
+    "notisFran": "Omkring trehundra år senare",
+    "fraga": "En åker är 6 meter längre än den är bred, och arean är 72 kvadratmeter.",
     "delar": [
       {
-        "fraga": "Ställ upp en ekvation, med x för den ena delen.",
+        "fraga": "Ställ upp en ekvation, med x för bredden.",
         "typ": "ekvation",
-        "svar": "x*(12 - x) = 35",
-        "exempel": "t.ex. x(10 − x) = 21",
+        "svar": "x*(x + 6) = 72",
+        "exempel": "t.ex. x(x + 4) = 96",
         "tangenter": [
           "(",
           ")",
@@ -602,61 +632,51 @@
         ],
         "fel": [
           {
-            "svar": "x + (12 - x) = 35",
-            "text": "Delarna ska gångras med varandra, inte läggas ihop: det är produkten som är 35."
+            "svar": "x + (x + 6) = 72",
+            "text": "Arean är bredden GÅNGER längden, inte plus."
           },
           {
-            "svar": "12*x = 35",
-            "text": "Den andra delen är inte 12, utan det som blir kvar när x är borttaget, alltså 12 − x."
+            "svar": "2*x + 2*(x + 6) = 72",
+            "text": "Det är omkretsen. Här är det arean som är 72, alltså bredden gånger längden."
           },
           {
-            "svar": "x*(12 - x) = 12",
-            "text": "Delarnas summa är 12, men det är produkten som ska bli 35."
+            "svar": "6*x = 72",
+            "text": "Längden är inte 6, utan 6 meter mer än bredden, alltså x + 6."
           }
         ]
       },
       {
-        "fraga": "Lös den med pq-formeln. Hur stora är delarna?",
-        "typ": "losningar",
-        "svar": [
-          5,
-          7
-        ],
-        "exempel": "t.ex. 3 och 7",
+        "fraga": "Lös den med pq-formeln. Hur bred är åkern?",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.001,
+        "enhet": "meter",
+        "exempel": "t.ex. 8",
         "fel": [
           {
-            "svar": [
-              6
-            ],
-            "text": "6 är halva p med ombytt tecken. Nu ska du lägga till och dra bort roten ur 36 − 35."
+            "svar": "-12",
+            "text": "−12 är också en lösning till ekvationen, men en bredd kan inte vara negativ. Stryk den."
           },
           {
-            "svar": [
-              -5,
-              -7
-            ],
-            "text": "Kolla tecknet. p är −12, så halva p med ombytt tecken är +6."
+            "svar": "12",
+            "text": "12 meter är längden. Bredden är 6 meter mindre."
           },
           {
-            "svar": [
-              14.43,
-              -2.43
-            ],
-            "text": "Kolla tecknet på q. Ekvationen är x² − 12x + 35 = 0, så q är +35 och det blir roten ur 36 − 35."
+            "svar": "-3",
+            "text": "−3 är halva p med ombytt tecken. Lägg till och dra bort roten ur 9 + 72."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "I en tredje uppgift har",
-      "text": "Gör som med tio och 21 i filmen. Kalla ena delen x, så är den andra 12 − x. Multiplicera in, flytta 35 och se till att det står plus framför x²."
+      "fras": "Nu ett övningstal. Ett",
+      "text": "Gör som med kretskortet i filmen. Kalla bredden x, så är längden x + 6. Multiplicera in och flytta 72, så att det står noll på högra sidan. Stryk sedan lösningen som inte kan vara en bredd."
     },
     "losning": [
-      "Kalla den ena delen x. Då är den andra 12 − x, och x(12 − x) = 35.",
-      "Multiplicera in: 12x − x² = 35. Flytta 35: −x² + 12x − 35 = 0.",
-      "Gångra med −1, så att det står plus framför x²: x² − 12x + 35 = 0. Då är p = −12 och q = 35.",
-      "pq-formeln: x = 6 ± √(36 − 35) = 6 ± √1 = 6 ± 1.",
-      "x = 7 eller x = 5. Delarna är 7 och 5. Kontroll: 7 + 5 = 12 och 7 · 5 = 35."
+      "Kalla bredden x. Då är längden x + 6, och x(x + 6) = 72.",
+      "Multiplicera in: x² + 6x = 72. Dra bort 72 från båda leden: x² + 6x − 72 = 0. Då är p = 6 och q = −72.",
+      "pq-formeln: x = −3 ± √(9 + 72) = −3 ± √81 = −3 ± 9.",
+      "x = 6 eller x = −12. En bredd kan inte vara negativ, så åkern är 6 meter bred (och 12 meter lång). Kontroll: 6 · 12 = 72."
     ]
   },
   "formelbladet-ma2-1-algebra": {
@@ -744,7 +764,7 @@
       }
     ],
     "ledtrad": {
-      "fras": "Här är p minus 6 och q är 8",
+      "fras": "Här är p minus sex och q är åtta",
       "text": "Gör som med x² − 6x + 8 = 0 i filmen. Läs av p och q med sina tecken, räkna minus halva p och sätt in i pq-formeln."
     },
     "losning": [
@@ -753,7 +773,7 @@
       "x = 4 ± √(16 − 12) = 4 ± √4 = 4 ± 2.",
       "x = 6 eller x = 2. Kontroll: 6² − 8 · 6 + 12 = 36 − 48 + 12 = 0."
     ],
-    "notisFran": "På provet står ekvationen ofta redan"
+    "notisFran": "Nu ett övningstal"
   },
   "formelbladet-ma2-2-andragradsfunktionen": {
     "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x.",
@@ -801,7 +821,7 @@
           },
           {
             "svar": "4",
-            "text": "4 sekunder var bollen i filmen, som hade tjugo x. Här är det trettio x: 5x(6 − x) blir noll när x är 6."
+            "text": "4 sekunder var bollen i filmens exempel, som hade tjugo x. Här är det trettio x: 5x(6 − x) blir noll när x är 6."
           }
         ]
       },
@@ -835,13 +855,13 @@
           },
           {
             "svar": "20",
-            "text": "20 meter var bollen i filmen, som hade tjugo x. Här ligger symmetrilinjen vid x = 3, och −5 · 9 + 30 · 3 = −45 + 90 = 45 meter."
+            "text": "20 meter var bollen i filmens exempel, som hade tjugo x. Här ligger symmetrilinjen vid x = 3, och −5 · 9 + 30 · 3 = −45 + 90 = 45 meter."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Bryter man ut fem x blir höjden fem x gånger parentesen 2",
+      "fras": "För att hitta nollställena sätter vi",
       "text": "Bryt ut fem x, så ser du när höjden är noll. Symmetrilinjen ligger mitt emellan nollställena, och där är bollen högst upp."
     },
     "losning": [
@@ -850,40 +870,11 @@
       "Symmetrilinjen ligger mitt emellan 0 och 6, vid x = 3.",
       "y = −5 · 3² + 30 · 3 = −45 + 90 = 45, så bollen kommer 45 meter upp."
     ],
-    "notisFran": "Du kastar bollen igen, men inte lika hårt"
+    "notisFran": "Allt det här står på sidan två"
   },
   "formelbladet-ma2-3-logaritmer": {
     "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?",
     "delar": [
-      {
-        "fraga": "Skriv ekvationen, med x för antalet år.",
-        "typ": "ekvation",
-        "svar": "1000*1.02^x = 2000",
-        "exempel": "t.ex. 1000 · 1,1^x = 2000",
-        "tangenter": [
-          "^",
-          "·",
-          "="
-        ],
-        "fel": [
-          {
-            "svar": "1000*1.2^x = 2000",
-            "text": "2 procent är 0,02, inte 0,2. Pengarna blir 102 procent av vad de var, så de gångras med 1,02 varje år."
-          },
-          {
-            "svar": "1000*0.02^x = 2000",
-            "text": "0,02 är räntan, alltså det som läggs till. Pengarna blir 100 + 2 = 102 procent av vad de var, så de gångras med 1,02."
-          },
-          {
-            "svar": "1000*1.02*x = 2000",
-            "text": "Pengarna gångras med 1,02 en gång för varje år, så x ska stå uppe i exponenten: 1,02ˣ."
-          },
-          {
-            "svar": "1000 + 20*x = 2000",
-            "text": "Då får du 20 kronor varje år. Men räntan räknas på allt som finns på kontot, så pengarna gångras med 1,02 varje år."
-          }
-        ]
-      },
       {
         "fraga": "Hur många år tar det? Svara med en decimal.",
         "typ": "tal",
@@ -923,17 +914,17 @@
       }
     ],
     "ledtrad": {
-      "fras": "Nu blir pengarna 110 procent",
-      "text": "Pengarna gångras med samma tal varje år, så ekvationen blir 1000 · 1,02ˣ = 2000. Dela med 1000, ta lg av båda sidorna och låt regeln lg xᵖ = p · lg x flytta ner x."
+      "fras": "Nu blir pengarna hundratio procent",
+      "text": "Gör som med 10 procent i filmen. Med 2 procent ränta gångras pengarna med 1,02 varje år, så ekvationen blir 1,02ˣ = 2. Då är x = lg 2 / lg 1,02, och det räknar du på räknaren."
     },
     "losning": [
       "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år, så de gångras med 1,02.",
-      "Efter x år finns det 1000 · 1,02ˣ kronor, så ekvationen blir 1000 · 1,02ˣ = 2000.",
+      "Efter x år finns det 1000 · 1,02ˣ kronor, så 1000 · 1,02ˣ = 2000.",
       "Dela båda sidorna med 1000: 1,02ˣ = 2.",
-      "Ta lg av båda sidorna: lg 1,02ˣ = lg 2, och regeln flyttar ner x: x · lg 1,02 = lg 2.",
+      "Ta lg av båda sidorna, och regeln lg xᵖ = p · lg x flyttar ner x: x · lg 1,02 = lg 2.",
       "x = lg 2 / lg 1,02 ≈ 35,0. Det tar ungefär 35 år."
     ],
-    "notisFran": "Tänk dig ett sparkonto med 10 procent"
+    "notisFran": "Nu ett övningstal"
   },
   "formelbladet-ma2-4-likformighet": {
     "fraga": "En lyktstolpe kastar en skugga som är 12 meter lång. Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång.",
@@ -989,14 +980,14 @@
             "text": "8 meter var trädet i videon, där pinnens skugga var 1,5 meter. Här är pinnens skugga 2 meter och stolpens skugga 12 meter."
           },
           {
-            "svar": "7",
-            "text": "7 meter var flaggstången i övningstalet, där skuggan var 14 meter. Här är stolpens skugga 12 meter, och 12 är 6 gånger 2."
+            "svar": "14",
+            "text": "Du har räknat 12 plus 2. Likformiga trianglar handlar om gånger, inte om plus: 12 är 6 gånger 2, så stolpen är 6 gånger så hög som pinnen."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Trianglarna är likformiga, så 1 delat med x",
+      "fras": "Pinnen i den lilla triangeln motsvarar",
       "text": "Pinnen med sin skugga och stolpen med sin skugga är likformiga trianglar. Då är 1 delat med x lika med 2 delat med 12."
     },
     "losning": [
@@ -1005,7 +996,7 @@
       "12 är 6 gånger så mycket som 2, för 2 · 6 = 12.",
       "Då är x också 6 gånger så mycket som 1, så lyktstolpen är 6 meter hög."
     ],
-    "notisFran": "Här är en uppgift att prova"
+    "notisFran": "Allt det här står på sidan tre"
   },
   "formelbladet-ma2-5-vinklar-och-cirkelsatser": {
     "fraga": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora.",
@@ -1034,7 +1025,7 @@
         "fel": [
           {
             "svar": "720",
-            "text": "720 grader är vinkelsumman i biten med sex hörn. Här är n lika med 5: (5 − 2) · 180."
+            "text": "720 grader är vinkelsumman i en bit med sex hörn. Här är n lika med 5: (5 − 2) · 180."
           },
           {
             "svar": "900",
@@ -1059,7 +1050,7 @@
         "fel": [
           {
             "svar": "120",
-            "text": "120 grader är vinkeln i biten med sex hörn. Här delar du vinkelsumman 540 med 5."
+            "text": "120 grader är vinkeln i en bit med sex hörn. Här delar du vinkelsumman 540 med 5."
           },
           {
             "svar": "135",
@@ -1077,7 +1068,7 @@
       }
     ],
     "ledtrad": {
-      "fras": "Biten har 6 hörn",
+      "fras": "En stoppskylt har åtta hörn",
       "text": "Sätt in n = 5 i S = (n − 2) · 180°, och dela sedan vinkelsumman med 5, för alla vinklarna är lika stora."
     },
     "losning": [
@@ -1085,10 +1076,10 @@
       "5 − 2 = 3, och vinkelsumman är 3 · 180 = 540 grader.",
       "Alla fem vinklarna är lika stora, så varje vinkel är 540 / 5 = 108 grader."
     ],
-    "notisFran": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora. Hur stor är varje vinkel i en bit med sex"
+    "notisFran": "Nu är det din tur"
   },
   "formelbladet-ma2-6-statistik": {
-    "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
+    "fraga": "Äggen från en gård väger 60 gram i medel, och standardavvikelsen är 4 gram. Vikten är normalfördelad.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "d05-aggen",
@@ -1118,7 +1109,7 @@
     },
     "delar": [
       {
-        "fraga": "Hur stor andel av äggen väger mellan 52 och 60 gram?",
+        "fraga": "Hur många procent av äggen väger mellan 52 och 60 gram?",
         "typ": "tal",
         "svar": 47.7,
         "tolerans": 0.05,
@@ -1143,7 +1134,7 @@
           },
           {
             "svar": "81.8",
-            "text": "81,8 % var övningstalet, mellan 56 och 68 gram. Här är det mellan 52 och 60 gram."
+            "text": "81,8 % är andelen mellan 56 och 68 gram, från μ − σ till μ + 2σ. Här är det mellan 52 och 60 gram."
           },
           {
             "svar": "68.2",
@@ -1158,8 +1149,8 @@
       }
     ],
     "ledtrad": {
-      "fras": "56 är 60 minus 4",
-      "text": "Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
+      "fras": "Vi lägger ihop bitarna",
+      "text": "Gör som med mjölkpaketen. Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
     },
     "losning": [
       "μ = 60 g och σ = 4 g, så μ − σ = 60 − 4 = 56 g och μ − 2σ = 60 − 8 = 52 g.",
@@ -1167,100 +1158,102 @@
       "Mellan 56 och 60 gram (μ − σ till μ) står 34,1 %.",
       "13,6 + 34,1 = 47,7, så 47,7 % av äggen väger mellan 52 och 60 gram."
     ],
-    "notisFran": "Samma figur fungerar för allt som är normalfördelat"
+    "notisFran": "Nu tar vi tre bitar"
   },
   "ma1c-k6-05-addera-vektorer": {
-    "fraga": "Tänk dig en dag då Bligh seglade åt samma håll som vektorn u = (−2, 1), men dubbelt så långt.",
+    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7).",
     "figur": {
       "vy": [1920, 1080],
-      "bild": "p07-bligh-skriver",
+      "bild": "b01-uppslag-kompass",
       "tema": "papper",
-      "utsnitt": [120, 160, 1360, 765],
-      "text": "Ett rutat koordinatsystem på väggen bredvid Bligh. Vektorn u går från origo två rutor åt vänster och en ruta uppåt. Under rutnätet står u = (−2, 1).",
+      "utsnitt": [200, 100, 1300, 731.3],
+      "text": "Rutat papper med start i origo nere till höger. Vektorn u går från start fyra rutor åt vänster och en ruta uppåt. Vektorn v börjar där u slutar och går två rutor åt vänster och sju rutor uppåt.",
       "delar": [
-        { "typ": "rutnat", "fran": [188, 304], "till": [692, 592], "steg": 72 },
-        { "typ": "linje", "svag": true, "p": [[188, 520], [692, 520]] },
-        { "typ": "linje", "svag": true, "p": [[620, 592], [620, 304]] },
-        { "typ": "prick", "vid": [620, 520], "r": 7 },
-        { "typ": "pil", "fran": [620, 520], "till": [476, 448] },
-        { "typ": "text", "vid": [188, 682], "text": "u = (−2, 1)", "ankare": "start" }
+        { "typ": "rutnat", "fran": [830, 180], "till": [1250, 660], "steg": 60 },
+        { "typ": "prick", "vid": [1250, 660], "r": 7 },
+        { "typ": "text", "vid": [1265, 710], "text": "start", "ankare": "start" },
+        { "typ": "pil", "fran": [1250, 660], "till": [1010, 600] },
+        { "typ": "text", "vid": [1130, 670], "text": "u" },
+        { "typ": "pil", "fran": [1010, 600], "till": [890, 180] },
+        { "typ": "text", "vid": [905, 430], "text": "v", "ankare": "end" },
+        { "typ": "text", "vid": [780, 330], "text": "u = (−4, 1)", "ankare": "end" },
+        { "typ": "text", "vid": [780, 420], "text": "v = (−2, 7)", "ankare": "end" }
       ]
     },
     "delar": [
       {
-        "fraga": "Vad blir x-koordinaten för den dagens vektor?",
+        "fraga": "Skriv u + v i koordinatform. Vad blir x-koordinaten?",
         "typ": "tal",
-        "svar": -4,
+        "svar": -6,
         "exempel": "t.ex. −3",
         "fel": [
-          {
-            "svar": "4",
-            "text": "Båten seglar västerut, åt vänster. Då är steget i x-led negativt."
-          },
-          {
-            "svar": "-2",
-            "text": "Det är x-koordinaten för u. Dubbelt så långt betyder 2 gånger u, så båda stegen gångras med 2."
-          },
-          {
-            "svar": "-3",
-            "text": "Du har lagt till 1. Dubbelt så långt betyder 2 gånger u: gånga steget med 2."
-          }
+          { "svar": "6", "text": "Båda dagarna går västerut, åt vänster. Då blir x-koordinaten negativ." },
+          { "svar": "-2", "text": "Det är bara v:s steg i x-led. Lägg ihop stegen i x-led: −4 + (−2)." },
+          { "svar": "8", "text": "8 är stegen i y-led. x-led är öster–väster: −4 + (−2)." }
         ]
       },
       {
-        "fraga": "Vad blir y-koordinaten?",
+        "fraga": "Vad blir y-koordinaten för u + v?",
         "typ": "tal",
-        "svar": 2,
-        "exempel": "t.ex. 3",
+        "svar": 8,
+        "exempel": "t.ex. 5",
         "fel": [
-          {
-            "svar": "1",
-            "text": "Det är y-koordinaten för u. När vektorn gångras med 2 gångras BÅDA stegen, även y-steget."
-          },
-          {
-            "svar": "-2",
-            "text": "Båten seglar norrut, uppåt. Då är steget i y-led positivt."
-          }
+          { "svar": "-8", "text": "Norrut är uppåt. Då blir y-koordinaten positiv: 1 + 7." },
+          { "svar": "7", "text": "Det är bara v:s steg i y-led. Lägg ihop stegen i y-led: 1 + 7." },
+          { "svar": "-6", "text": "−6 är stegen i x-led. y-led är norrut: 1 + 7." }
+        ]
+      },
+      {
+        "fraga": "Hur många rutor från starten ligger båten då, om man mäter rakt?",
+        "typ": "tal",
+        "svar": 10,
+        "enhet": "rutor",
+        "exempel": "t.ex. 7",
+        "fel": [
+          { "svar": "14", "text": "Du har lagt ihop stegen, 6 + 8. Den raka vägen är hypotenusan: roten ur 6² + 8²." },
+          { "svar": "100", "text": "Det är 6² + 8². Längden är roten ur det talet." },
+          { "svar": "2", "text": "Det är 8 − 6. Den raka vägen räknas med Pythagoras sats: roten ur 6² + 8²." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Om båten seglade tre dagar",
-      "text": "Samma håll men längre betyder ett tal gånger vektorn. Dubbelt så långt är 2 gånger u, och då gångras båda stegen med 2."
+      "fras": "Med koordinater lägger vi ihop",
+      "text": "Lägg ihop stegen i x-led för sig och stegen i y-led för sig. Räkna sedan längden med Pythagoras sats: x-steget i kvadrat plus y-steget i kvadrat, och sedan roten ur."
     },
     "losning": [
-      "Samma håll, dubbelt så långt: 2 · u.",
-      "2 · (−2, 1) = (2 · (−2), 2 · 1).",
-      "= (−4, 2).",
-      "Kontroll: (−4, 2) är parallell med u, för båda stegen är 2 gånger så stora."
+      "u + v = (−4 + (−2), 1 + 7).",
+      "= (−6, 8).",
+      "Längden: (−6)² + 8² = 36 + 64 = 100.",
+      "Roten ur 100 är 10, så båten ligger 10 rutor från starten."
     ]
   },
   "ma1c-k6-03-berakna-vinklar": {
-    "notisFran": "I december 2001 öppnades tornet",
-    "fraga": "Tänk dig ett annat torn, där det är 20 meter upp längs tornet till toppen och där ett snöre från toppen når marken 1 meter vid sidan av foten.",
+    "notisFran": "Nu är det din tur",
+    "fraga": "En stege är 4 meter lång och står lutad mot en vägg. Stegens fot står 1 meter från väggen.",
     "figur": {
       "vy": [1920, 1080],
-      "bild": "p07-annat-torn",
+      "bild": "p09-stegen",
       "tema": "scen",
-      "blak": { "skugga": "rgba(6,14,26,.92)" },
-      "text": "Ett lutande torn på ett fält. Det är 20 m längs tornet upp till toppen. Ett snöre hänger rakt ner från toppen och når marken 1 m vid sidan av tornets fot. Vinkeln v uppe vid toppen, mellan tornet och snöret, efterfrågas.",
+      "blak": { "skugga": "rgba(6, 14, 26, .92)" },
+      "text": "En stege som är 4 meter lång står lutad mot en vägg. Foten står 1 meter från väggen. Vinkeln mellan stegen och väggen och vinkeln mellan stegen och marken är okända.",
       "delar": [
-        { "typ": "yta", "d": "M660.3 192.6 L633.4 491.4 A300 300 0 0 0 660.3 492.6 Z", "accent": true },
-        { "typ": "linje", "p": [[591.4, 957.4], [660.3, 192.6]] },
-        { "typ": "text", "vid": [586.6, 700], "text": "20 m", "ankare": "end" },
-        { "typ": "linje", "p": [[660.3, 192.6], [660.3, 957.4]] },
-        { "typ": "linje", "p": [[660.3, 957.4], [591.4, 957.4]] },
-        { "typ": "text", "vid": [625.8499999999999, 1019.4], "text": "1 m" },
-        { "typ": "ratvinkel", "vid": [660.3, 957.4], "mot": [[591.4, 957.4], [660.3, 192.6]], "storlek": 26 },
-        { "typ": "vinkel", "vid": [660.3, 192.6], "mot": [[660.3, 957.4], [591.4, 957.4]], "r": 300, "accent": true, "tjock": true },
-        { "typ": "text", "vid": [712, 440], "text": "v", "accent": true }
+        { "typ": "linje", "p": [[650, 985], [455, 105]] },
+        { "typ": "text", "vid": [640, 540], "text": "4 m", "ankare": "start" },
+        { "typ": "linje", "p": [[455, 105], [455, 985]] },
+        { "typ": "linje", "p": [[455, 985], [650, 985]] },
+        { "typ": "text", "vid": [552, 1040], "text": "1 m" },
+        { "typ": "ratvinkel", "vid": [455, 985], "mot": [[455, 105], [650, 985]], "storlek": 30 },
+        { "typ": "vinkel", "vid": [455, 105], "mot": [[650, 985], [455, 985]], "r": 150, "accent": true },
+        { "typ": "linje", "p": [[560, 262], [478, 214]], "svag": true },
+        { "typ": "text", "vid": [585, 285], "text": "?", "accent": true },
+        { "typ": "vinkel", "vid": [650, 985], "mot": [[455, 985], [455, 105]], "r": 110, "text": "?", "accent": true, "avstand": 46 }
       ]
     },
     "delar": [
       {
-        "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
+        "fraga": "Hur stor är vinkeln mellan stegen och väggen? Svara med en decimal.",
         "typ": "tal",
-        "svar": 2.866,
+        "svar": 14.4775,
         "tolerans": 0.06,
         "enhet": "grader",
         "exempel": "t.ex. 5,4",
@@ -1269,41 +1262,59 @@
           "(",
           ")"
         ],
-        "nara": {
-          "tolerans": 0.25,
-          "text": "Nästan. Skriv hela divisionen, 1 delat med 20, i räknaren och svara med en decimal, som 5,4 i filmen."
-        },
         "fel": [
           {
-            "svar": "87.1",
-            "tolerans": 0.06,
-            "text": "Det är vinkeln nere vid tornets fot. Lutningen är vinkeln uppe vid toppen, mellan tornet och snöret."
-          },
-          {
-            "svar": "0.05",
+            "svar": "0.25",
             "tolerans": 0.002,
-            "text": "0,05 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 20 (SHIFT och sin på räknaren)."
+            "text": "0,25 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 4 (tryck två gånger på sin på räknaren)."
           },
           {
-            "svar": "20",
-            "text": "20 meter är tornet, hypotenusan. Frågan är hur många grader tornet lutar: ta arcussinus av 1 delat med 20."
+            "svar": "75.5",
+            "tolerans": 0.06,
+            "text": "Det är vinkeln nere vid marken. Vinkeln mot väggen ligger uppe vid stegens topp, och där står metern på marken mitt emot."
           },
           {
-            "svar": "1",
-            "text": "1 meter är sträckan vid sidan av foten. Dela den med tornets 20 meter och ta arcussinus av kvoten."
+            "svar": "14.04",
+            "tolerans": 0.03,
+            "text": "Du har använt tangens. Stegen är hypotenusan, och sinus är motstående katet delat med hypotenusan: 1 delat med 4."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur stor är vinkeln mellan stegen och marken? Svara med en decimal.",
+        "typ": "tal",
+        "svar": 75.5225,
+        "tolerans": 0.06,
+        "enhet": "grader",
+        "exempel": "t.ex. 84,6",
+        "tangenter": [
+          "/",
+          "(",
+          ")"
+        ],
+        "fel": [
+          {
+            "svar": "14.5",
+            "tolerans": 0.06,
+            "text": "Det är vinkeln mot väggen. Vinkeln mot marken ligger nere vid stegens fot."
+          },
+          {
+            "svar": "165.5",
+            "tolerans": 0.06,
+            "text": "Den räta vinkeln tar 90 av de 180 graderna, så de två andra vinklarna är tillsammans 90. Räkna 90 minus vinkeln mot väggen."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Nu känner vi kvoten men",
-      "text": "Sträckan vid sidan av foten ligger mitt emot vinkeln uppe vid toppen, och tornet är hypotenusan. Då är det sinus, och vinkeln får du med arcussinus."
+      "fras": "Vilken kvot ska vi välja",
+      "text": "Stegen, väggen och marken bildar en rätvinklig triangel. Börja i vinkeln uppe vid väggen: metern på marken står mitt emot den, och stegen är hypotenusan."
     },
     "losning": [
-      "Tornet är hypotenusan, 20 meter.",
-      "Sträckan vid sidan av foten, 1 meter, ligger mitt emot vinkeln v uppe vid toppen. Den är motstående katet.",
-      "sin v = 1/20",
-      "v = sin⁻¹(1/20) ≈ 2,9°. Tornet lutar ungefär 2,9 grader."
+      "Stegen är hypotenusan, 4 meter.",
+      "Metern på marken står mitt emot vinkeln v uppe vid väggen. Den är motstående katet.",
+      "sin v = 1/4, så v = sin⁻¹(1/4) ≈ 14,5°.",
+      "Vinkeln mot marken är 90 − 14,5 = 75,5°."
     ]
   },
   "ma1c-k6-02-berakna-sidor": {
@@ -1377,32 +1388,32 @@
     ]
   },
   "ma1c-k6-01-sinus-cosinus-tangens": {
-    "notisFran": "Tänk dig att en elev",
-    "fraga": "Tänk dig att en elev hos Ahmes ritar en pyramid där höjden är 12, halva bredden 5 och den sneda sidan 13. Vinkeln v ligger nere vid marken.",
+    "notisFran": "Nu är det din tur",
+    "fraga": "En pyramid är 3 hög, och halva bredden är 4. Den sneda sidan är 5. Räkna ut sin v och tan v för vinkeln nere vid marken.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "p06-elevens-pyramid",
       "tema": "scen",
       "blak": { "farg": "#3A2314", "skugga": "rgba(255,228,184,.6)", "accent": "#3A2314", "svag": "rgba(58,35,20,.8)" },
       "utsnitt": [787, 600, 853, 480],
-      "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 12, halva bredden 5 och den sneda sidan 13. Vinkeln v ligger nere vid marken.",
+      "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 3, halva bredden 4 och den sneda sidan 5. Vinkeln v ligger nere vid marken.",
       "delar": [
-        { "typ": "linje", "p": [[1259, 758], [1259, 1008]] },
-        { "typ": "sida", "p": [[1259, 758], [1259, 1008]], "text": "12", "sida": -1, "avstand": 50 },
-        { "typ": "linje", "p": [[1259, 1008], [1154.8, 1008]] },
-        { "typ": "sida", "p": [[1259, 1008], [1154.8, 1008]], "text": "5", "sida": -1, "avstand": 48 },
-        { "typ": "linje", "p": [[1154.8, 1008], [1259, 758]] },
-        { "typ": "sida", "p": [[1154.8, 1008], [1259, 758]], "text": "13", "sida": -1, "avstand": 56 },
-        { "typ": "ratvinkel", "vid": [1259, 1008], "mot": [[1154.8, 1008], [1259, 758]], "storlek": 24 },
-        { "typ": "vinkel", "vid": [1154.8, 1008], "mot": [[1259, 1008], [1259, 758]], "r": 44 },
-        { "typ": "text", "vid": [1114.8, 1000], "text": "v" }
+        { "typ": "linje", "p": [[1259, 758], [1259, 968]] },
+        { "typ": "sida", "p": [[1259, 758], [1259, 968]], "text": "3", "sida": -1, "avstand": 44 },
+        { "typ": "linje", "p": [[1259, 968], [979, 968]] },
+        { "typ": "sida", "p": [[1259, 968], [979, 968]], "text": "4", "sida": -1, "avstand": 44 },
+        { "typ": "linje", "p": [[979, 968], [1259, 758]] },
+        { "typ": "sida", "p": [[979, 968], [1259, 758]], "text": "5", "sida": -1, "avstand": 50 },
+        { "typ": "ratvinkel", "vid": [1259, 968], "mot": [[979, 968], [1259, 758]], "storlek": 24 },
+        { "typ": "vinkel", "vid": [979, 968], "mot": [[1259, 968], [1259, 758]], "r": 60 },
+        { "typ": "text", "vid": [939, 960], "text": "v" }
       ]
     },
     "delar": [
       {
-        "fraga": "Vad är sin v? Svara med ett bråk eller två decimaler.",
+        "fraga": "Vad är sin v?",
         "typ": "tal",
-        "svar": 0.923077,
+        "svar": 0.6,
         "tolerans": 0.006,
         "exempel": "t.ex. 8/10",
         "tangenter": [
@@ -1410,48 +1421,26 @@
         ],
         "fel": [
           {
-            "svar": "5/13",
+            "svar": "4/5",
             "tolerans": 0.0006,
-            "text": "5/13 är cosinus. Sinus är motstående katet delat med hypotenusan, och mitt emot vinkeln vid marken står höjden, 12."
+            "text": "4/5 är cosinus. Sinus är motstående katet delat med hypotenusan, och mitt emot vinkeln vid marken står höjden, 3."
           },
           {
-            "svar": "13/12",
+            "svar": "5/3",
             "tolerans": 0.0006,
-            "text": "Du har vänt på bråket. Hypotenusan, 13, står under bråkstrecket."
+            "text": "Du har vänt på bråket. Hypotenusan, 5, står under bråkstrecket."
           },
           {
-            "svar": "12/5",
+            "svar": "3/4",
             "tolerans": 0.0006,
-            "text": "12/5 är tangens. Sinus delar med hypotenusan, den sneda sidan 13."
-          }
-        ]
-      },
-      {
-        "fraga": "Vad är cos v?",
-        "typ": "tal",
-        "svar": 0.384615,
-        "tolerans": 0.006,
-        "exempel": "t.ex. 6/10",
-        "tangenter": [
-          "/"
-        ],
-        "fel": [
-          {
-            "svar": "12/13",
-            "tolerans": 0.0006,
-            "text": "12/13 är sinus. Cosinus är närliggande katet delat med hypotenusan: halva bredden, 5, går ut från vinkeln."
-          },
-          {
-            "svar": "13/5",
-            "tolerans": 0.0006,
-            "text": "Du har vänt på bråket. Hypotenusan, 13, står under bråkstrecket."
+            "text": "3/4 är tangens. Sinus delar med hypotenusan, den sneda sidan 5."
           }
         ]
       },
       {
         "fraga": "Vad är tan v?",
         "typ": "tal",
-        "svar": 2.4,
+        "svar": 0.75,
         "tolerans": 0.006,
         "exempel": "t.ex. 8/6",
         "tangenter": [
@@ -1459,242 +1448,708 @@
         ],
         "fel": [
           {
-            "svar": "5/12",
+            "svar": "4/3",
             "tolerans": 0.0006,
-            "text": "5/12 är tangens för vinkeln uppe i toppen, som Ahmes seked. För vinkeln vid marken är höjden motstående katet: 12 delat med 5."
+            "text": "4/3 är tangens för vinkeln uppe i toppen. För vinkeln vid marken är höjden motstående katet: 3 delat med 4."
           },
           {
-            "svar": "12/13",
+            "svar": "3/5",
             "tolerans": 0.0006,
-            "text": "12/13 är sinus. Tangens delar de två kateterna med varandra, motstående delat med närliggande."
+            "text": "3/5 är sinus. Tangens delar de två kateterna med varandra, motstående delat med närliggande."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Nu kan vi skriva de tre",
+      "fras": "Nu kommer de tre kvoterna",
       "text": "Börja i vinkeln v vid marken. Höjden står mitt emot den, halva bredden går ut från den, och den sneda sidan är hypotenusan."
     },
     "losning": [
-      "Höjden 12 står mitt emot v, så den är motstående katet.",
-      "Halva bredden 5 går ut från v, så den är närliggande katet.",
-      "Den sneda sidan 13 är hypotenusan.",
-      "sin v = 12/13 ≈ 0,92, cos v = 5/13 ≈ 0,38 och tan v = 12/5 = 2,4."
+      "Höjden 3 står mitt emot v, så den är motstående katet.",
+      "Halva bredden 4 går ut från v, så den är närliggande katet.",
+      "Den sneda sidan 5 är hypotenusan.",
+      "sin v = 3/5 = 0,6 och tan v = 3/4 = 0,75."
     ]
   },
   "ma1c-k6-04-vektorbegreppet": {
-    "fraga": "En tyngd hänger stilla i två rep. Det ena repet drar två rutor åt vänster och tre rutor uppåt, och det andra drar två rutor åt höger och tre rutor uppåt.",
+    "fraga": "Vektorn u går tre rutor åt höger. Vektorn v går en ruta åt höger och två rutor uppåt. Rita u − v.",
     "figur": {
       "vy": [1920, 1080],
-      "bild": "b05-uppslag-tyngd",
+      "bild": "b04-uppslag-linjal",
       "tema": "papper",
-      "utsnitt": [460, 0, 1440, 810],
-      "text": "Rutat papper. En tyngd hänger i en knut. Från knuten går två rep som pilar: den ena två rutor åt vänster och tre rutor uppåt, den andra två rutor åt höger och tre rutor uppåt. Ett frågetecken står vid tyngden.",
+      "utsnitt": [200, 300, 1000, 562.5],
+      "text": "Rutat papper. Vektorn u är en pil tre rutor åt höger. Vektorn v är en pil en ruta åt höger och två rutor uppåt.",
       "delar": [
-        { "typ": "rutnat", "fran": [520, 260], "till": [1240, 620], "steg": 90 },
-        { "typ": "cirkel", "mitt": [880, 620], "r": 10 },
-        { "typ": "linje", "svag": true, "p": [[880, 630], [880, 660]] },
-        { "typ": "linje", "p": [[840, 660], [920, 660], [920, 724], [840, 724], [840, 660]] },
-        { "typ": "pil", "fran": [880, 620], "till": [700, 350] },
-        { "typ": "pil", "fran": [880, 620], "till": [1060, 350] },
-        { "typ": "text", "vid": [964, 694], "text": "?", "accent": true }
+        { "typ": "rutnat", "fran": [240, 360], "till": [1140, 810], "steg": 90 },
+        { "typ": "pil", "fran": [330, 720], "till": [600, 720] },
+        { "typ": "text", "vid": [465, 690], "text": "u" },
+        { "typ": "pil", "fran": [780, 720], "till": [870, 540] },
+        { "typ": "text", "vid": [790, 615], "text": "v" }
       ]
     },
     "delar": [
       {
-        "fraga": "Rita repens resultant. Hur många rutor uppåt går den?",
+        "fraga": "Hur många rutor åt höger går resultanten?",
         "typ": "tal",
-        "svar": 6,
-        "exempel": "t.ex. 4",
+        "svar": 2,
+        "exempel": "t.ex. 5",
         "fel": [
-          {
-            "svar": "3",
-            "text": "Det är ett av repen. Lägg den andra pilen så att den börjar där den första slutar, och läs av från början till sista spetsen."
-          },
-          {
-            "svar": "4",
-            "text": "Stegen åt sidan tar ut varandra, 2 åt vänster och 2 åt höger. Det är stegen uppåt som läggs ihop: 3 + 3."
-          },
-          {
-            "svar": "0",
-            "text": "Det är stegen åt sidan som blir 0. Stegen uppåt läggs ihop: 3 + 3."
-          }
+          { "svar": "4", "text": "Det är u + v. Vid minus vänder du v, så minus v går en ruta åt VÄNSTER: 3 − 1." },
+          { "svar": "3", "text": "Det är bara u. Lägg minus v efter u. Minus v går en ruta åt vänster." }
         ]
       },
       {
-        "fraga": "Hur många rutor åt sidan går resultanten?",
+        "fraga": "Hur många rutor nedåt går resultanten?",
         "typ": "tal",
-        "svar": 0,
-        "exempel": "t.ex. 2",
+        "svar": 2,
+        "exempel": "t.ex. 1",
         "fel": [
-          {
-            "svar": "4",
-            "text": "Det ena repet drar 2 åt vänster och det andra 2 åt höger. De tar ut varandra."
-          },
-          {
-            "svar": "2",
-            "text": "Titta på båda repen: 2 åt vänster och 2 åt höger blir 0 åt sidan."
-          }
-        ]
-      },
-      {
-        "fraga": "Tyngdens pil ska göra summan av alla tre till nollvektorn. Hur många rutor uppåt går den? Nedåt skrivs med minus.",
-        "typ": "tal",
-        "svar": -6,
-        "exempel": "t.ex. −2",
-        "fel": [
-          {
-            "svar": "6",
-            "text": "Då blir summan 12 rutor uppåt. Tyngdens pil ska vara resultantens motsatta vektor: lika lång men åt andra hållet."
-          },
-          {
-            "svar": "-3",
-            "text": "Tyngden ska hålla emot båda repen tillsammans, alltså hela resultanten på 6 rutor."
-          }
+          { "svar": "0", "text": "u går inte uppåt eller nedåt, men minus v gör det. Vänd v: två rutor uppåt blir två rutor nedåt." },
+          { "svar": "-2", "text": "Frågan gäller hur många rutor NEDÅT, så svaret är ett positivt tal." }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Ska tre krafter ta ut varandra",
-      "text": "Lägg repens pilar efter varandra och rita resultanten. Tyngdens pil är resultanten vänd åt andra hållet, och då blir summan nollvektorn."
+      "fras": "Sedan u minus v, alltså",
+      "text": "Att subtrahera v är att addera minus v. Vänd v så att den pekar åt andra hållet, lägg den efter u och läs av från början till sista spetsen."
     },
     "losning": [
-      "Lägg pilarna efter varandra: 2 vänster och 3 upp, sedan 2 höger och 3 upp.",
-      "Resultanten går 0 rutor åt sidan och 6 rutor rakt uppåt.",
-      "Tyngdens pil är den motsatta vektorn: 6 rutor rakt nedåt.",
-      "Kontroll: tre pilar efter varandra kommer tillbaka till början, så summan är nollvektorn."
+      "u − v = u + (−v).",
+      "Minus v går en ruta åt vänster och två rutor nedåt.",
+      "Lägg minus v efter u: tre rutor åt höger, sedan en åt vänster och två nedåt.",
+      "Resultanten går 2 rutor åt höger och 2 rutor nedåt."
     ]
   },
   "ma1c-k6-06-vektorer-i-koordinatform": {
-    "notisFran": "Tänk dig att meddelandet",
-    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 60 kilometer västerut och 80 kilometer norrut om Carpathia.",
+    "notisFran": "Nu är det din tur",
+    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "b01-uppslag-koordinater",
       "tema": "papper",
       "utsnitt": [470, 50, 1440, 810],
-      "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 60 km västerut och 80 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
+      "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 40 km västerut och 30 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
       "delar": [
         { "typ": "pil", "svag": true, "fran": [734, 710], "till": [1497, 710] },
         { "typ": "text", "vid": [1549, 710], "text": "Ö" },
         { "typ": "pil", "svag": true, "fran": [1350, 759], "till": [1350, 213] },
         { "typ": "text", "vid": [1350, 157], "text": "N" },
-        { "typ": "linje", "p": [[1278, 687.5], [1296, 696.5], [1395, 696.5], [1416, 692]] },
-        { "typ": "linje", "p": [[1278, 687.5], [1293, 707], [1401, 707], [1416, 692]] },
-        { "typ": "linje", "svag": true, "p": [[1317, 696.5], [1317, 681.5], [1383, 681.5], [1383, 696.5]] },
-        { "typ": "linje", "svag": true, "p": [[1360.5, 681.5], [1365, 653], [1380, 653], [1377, 681.5]] },
-        { "typ": "linje", "svag": true, "p": [[1363.5, 662], [1378.5, 662]] },
-        { "typ": "linje", "svag": true, "p": [[1299, 696.5], [1299, 644]] },
-        { "typ": "linje", "svag": true, "p": [[1401, 696.5], [1401, 650]] },
-        { "typ": "linje", "svag": true, "p": [[1350, 738], [1350, 762]] },
-        { "typ": "linje", "svag": true, "p": [[1350, 750], [1020, 750]] },
-        { "typ": "linje", "svag": true, "p": [[1020, 738], [1020, 762]] },
-        { "typ": "text", "vid": [1185, 796], "text": "60 km" },
-        { "typ": "linje", "streckad": true, "p": [[1020, 710], [1020, 270]] },
-        { "typ": "text", "vid": [885, 490], "text": "80 km" },
-        { "typ": "prick", "vid": [1020, 270], "r": 8 },
-        { "typ": "text", "vid": [990, 262], "text": "Titanic", "ankare": "end" },
-        { "typ": "linje", "streckad": true, "accent": true, "p": [[1350, 710], [1020, 270]] },
-        { "typ": "text", "vid": [1212, 318], "text": "? km", "accent": true },
-        { "typ": "vinkel", "vid": [1350, 710], "mot": [[1350, 510], [1020, 270]], "r": 150, "text": "v", "avstand": 65 }
+        { "typ": "linje", "svag": true, "p": [[1350, 750], [990, 750]] },
+        { "typ": "text", "vid": [1170, 796], "text": "40 km" },
+        { "typ": "linje", "streckad": true, "p": [[990, 710], [990, 440]] },
+        { "typ": "text", "vid": [880, 575], "text": "30 km" },
+        { "typ": "prick", "vid": [990, 440], "r": 8 },
+        { "typ": "text", "vid": [960, 432], "text": "Titanic", "ankare": "end" },
+        { "typ": "linje", "streckad": true, "accent": true, "p": [[1350, 710], [990, 440]] },
+        { "typ": "text", "vid": [1095, 668], "text": "? km", "accent": true },
+        { "typ": "vinkel", "vid": [1350, 710], "mot": [[1350, 510], [990, 440]], "r": 150, "text": "v", "avstand": 65 }
       ]
     },
     "delar": [
+      { "fraga": "Hur långt är det till Titanic? Svara i kilometer.", "typ": "tal", "svar": 50, "exempel": "t.ex. 80",
+        "fel": [
+          { "svar": "70", "text": "Du har lagt ihop 40 och 30. Men vägen går snett, som hypotenusan. Ta roten ur 40² + 30²." },
+          { "svar": "2500", "text": "Det är 40² + 30². Glöm inte att ta roten ur summan." },
+          { "svar": "10", "text": "Kvadrera först: 40² + 30² = 1 600 + 900. Ta sedan roten ur." } ] },
+      { "fraga": "Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.", "typ": "tal", "svar": 53, "tolerans": 0.6, "exempel": "t.ex. 45",
+        "fel": [
+          { "svar": "37", "tolerans": 0.6, "text": "Det är vinkeln från x-axeln. Vinkeln från norr har 40 mitt emot sig och 30 intill: tangens v = 40/30." },
+          { "svar": "1.33", "tolerans": 0.01, "text": "Det är tangens v. Använd tangens invers på räknaren för att få vinkeln." } ] }
+    ],
+    "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30." },
+    "losning": [
+      "Vektorn från Carpathia till Titanic är (−40, 30).",
+      "Längden: 40² + 30² = 1 600 + 900 = 2 500, och √2 500 = 50. Det är 50 km.",
+      "Vinkeln från norr: motstående katet 40, närliggande katet 30, så tan v = 40/30.",
+      "v = tan⁻¹(40/30) ≈ 53,1°, alltså ungefär 53° från norr åt väster."
+    ]
+  },
+  "ma1c-k4-01-funktioner": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En annan ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40.",
+    "delar": [
       {
-        "fraga": "Vad är vektorns x-koordinat?",
+        "fraga": "Vad är f(20)?",
         "typ": "tal",
-        "svar": -60,
-        "exempel": "t.ex. −40",
+        "svar": 3000,
+        "tolerans": 0.5,
+        "enhet": "meter",
+        "exempel": "t.ex. 5 100",
         "fel": [
           {
-            "svar": "60",
-            "text": "Titanic ligger västerut, åt vänster. Då är x-koordinaten negativ."
+            "svar": "170",
+            "tolerans": 0.5,
+            "text": "f(20) betyder att t byts mot 20. Räkna 150 · 20."
           },
           {
-            "svar": "80",
-            "text": "80 kilometer är steget norrut, alltså y-led. x-led är öster–väster."
+            "svar": "6000",
+            "tolerans": 0.5,
+            "text": "Det är f(40), den högsta höjden. Här ska t vara 20."
           },
           {
-            "svar": "-80",
-            "text": "80 kilometer är steget norrut, alltså y-led. x-led är öster–väster: 60 kilometer västerut."
+            "svar": "3400",
+            "tolerans": 0.5,
+            "text": "Den här ballongen stiger 150 meter varje minut, inte 170. Räkna 150 · 20."
           }
         ]
       },
       {
-        "fraga": "Vad är vektorns y-koordinat?",
-        "typ": "tal",
-        "svar": 80,
-        "exempel": "t.ex. 50",
+        "fraga": "Vilken är funktionens värdemängd? Skriv den som en olikhet.",
+        "typ": "olikhet",
+        "svar": "0 <= f(t) <= 6000",
+        "exempel": "t.ex. 0 ≤ f(t) ≤ 8 500",
+        "tangenter": [
+          "≤",
+          "f(t)"
+        ],
         "fel": [
           {
-            "svar": "-80",
-            "text": "Norrut är uppåt. Då är y-koordinaten positiv."
+            "svar": "0 <= t <= 40",
+            "text": "Det är definitionsmängden, de tider som funktionen gäller för. Värdemängden är höjderna: räkna f(0) och f(40)."
           },
           {
-            "svar": "60",
-            "text": "60 kilometer är steget västerut, alltså x-led."
-          },
-          {
-            "svar": "-60",
-            "text": "60 kilometer är steget västerut, alltså x-led. y-led är norrut: 80 kilometer."
-          }
-        ]
-      },
-      {
-        "fraga": "Hur långt är det till Titanic? Svara i kilometer.",
-        "typ": "tal",
-        "svar": 100,
-        "enhet": "kilometer",
-        "exempel": "t.ex. 90",
-        "fel": [
-          {
-            "svar": "140",
-            "text": "Du har lagt ihop kateterna. Längden är hypotenusan: roten ur 60² + 80²."
-          },
-          {
-            "svar": "10000",
-            "text": "Det är 60² + 80². Längden är roten ur det talet."
-          },
-          {
-            "svar": "20",
-            "text": "Det är 80 − 60. Längden räknas med Pythagoras sats: roten ur 60² + 80²."
-          }
-        ]
-      },
-      {
-        "fraga": "Vad är tangens för vinkeln från norr? Svara med ett bråk eller ett decimaltal.",
-        "typ": "tal",
-        "svar": 0.75,
-        "tolerans": 0.006,
-        "exempel": "t.ex. 3/4 eller 0,75",
-        "fel": [
-          {
-            "svar": "1.3333",
-            "tolerans": 0.01,
-            "text": "Det är 80 delat med 60. Från norr sett ligger 60 (västerut) mitt emot vinkeln och 80 (norrut) intill den. Tangens är motstående delat med närliggande."
-          },
-          {
-            "svar": "0.6",
-            "tolerans": 0.006,
-            "text": "Det är 60 delat med 100, alltså sinus. Tangens är motstående delat med närliggande: 60 delat med 80."
-          },
-          {
-            "svar": "0.8",
-            "tolerans": 0.006,
-            "text": "Det är 80 delat med 100, alltså cosinus. Tangens är motstående delat med närliggande: 60 delat med 80."
+            "svar": "0 <= f(t) <= 3000",
+            "text": "3 000 är höjden efter 20 minuter. Den högsta höjden får du vid t = 40: räkna 150 · 40."
           }
         ]
       }
     ],
     "ledtrad": {
-      "fras": "Vi lägger Carpathia i origo",
-      "text": "Carpathia står i origo, x-axeln pekar mot öster och y-axeln mot norr. Västerut är minus i x-led. Längden får du med Pythagoras sats och vinkeln från norr med tangens, som för Titanic."
+      "fras": "De värden som funktionen kan",
+      "text": "Byt t mot 20 och räkna. Värdemängden går från den lägsta höjden, f(0), till den högsta, f(40)."
     },
     "losning": [
-      "Västerut är minus i x-led och norrut plus i y-led, så vektorn är (−60, 80).",
-      "Katetvektorerna är (−60, 0) och (0, 80).",
-      "Längden: √(60² + 80²) = √(3600 + 6400) = √10 000 = 100 km.",
-      "Från norr sett ligger 60 mitt emot vinkeln och 80 intill, så tan v = 60/80 = 0,75."
+      "f(20) = 150 · 20 = 3 000. Efter 20 minuter är ballongen 3 000 meter upp.",
+      "Den lägsta höjden får vi vid t = 0: f(0) = 150 · 0 = 0.",
+      "Den högsta höjden får vi vid t = 40: f(40) = 150 · 40 = 6 000.",
+      "Värdemängden är 0 ≤ f(t) ≤ 6 000."
+    ]
+  },
+  "ma1c-k4-02-linjara-samband": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre.",
+    "delar": [
+      {
+        "fraga": "Skriv sambandet på formen y = kx + m, med x för antalet vikter och y för fjäderns längd i cm.",
+        "typ": "ekvation",
+        "svar": "y = 2x + 8",
+        "exempel": "t.ex. y = 4x + 6",
+        "tangenter": [
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "y = 8x + 2",
+            "text": "k och m har bytt plats. k är hur mycket längre fjädern blir för varje vikt, och m är längden utan vikter."
+          },
+          {
+            "svar": "y = 2x",
+            "text": "Då vore fjädern 0 cm utan vikter. Lägg till längden utan vikter, m."
+          },
+          {
+            "svar": "y = 8x",
+            "text": "8 cm är längden utan vikter, alltså m. k är hur mycket längre den blir för varje vikt."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur lång är fjädern med fem vikter?",
+        "typ": "tal",
+        "svar": 18,
+        "enhet": "cm",
+        "exempel": "t.ex. 12",
+        "fel": [
+          {
+            "svar": "10",
+            "text": "Det är bara det fjädern blir längre. Lägg till de 8 cm den är utan vikter."
+          },
+          {
+            "svar": "40",
+            "text": "Du har räknat 8 · 5. Varje vikt ger 2 cm: 2 · 5 + 8."
+          },
+          {
+            "svar": "15",
+            "text": "Sätt in x = 5 i y = 2x + 8: 2 · 5 är 10, och 10 + 8 är 18."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Då blir sambandet",
+      "text": "m är längden utan vikter, och k är hur många cm längre fjädern blir för varje vikt. Sätt sedan in antalet vikter som x."
+    },
+    "losning": [
+      "Utan vikter är fjädern 8 cm, så m = 8.",
+      "Varje vikt gör den 2 cm längre, så k = 2.",
+      "y = 2x + 8",
+      "Med fem vikter: y = 2 · 5 + 8 = 10 + 8 = 18 cm."
+    ]
+  },
+  "ma1c-k4-03-rata-linjens-ekvation": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Vilken ekvation har linjen som planet flyger på?",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "b02-din-tur",
+      "tema": "papper",
+      "utsnitt": [280, 100, 1000, 920],
+      "text": "Ett rutnät med x-axel och y-axel. Punkten (2, 1) och punkten (5, 7) är utsatta, och ett plan flyger rakt mellan dem. Bredvid står y = ?.",
+      "delar": [
+        { "typ": "pil", "svag": true, "fran": [380, 920], "till": [1055, 920] },
+        { "typ": "text", "vid": [1085, 960], "text": "x" },
+        { "typ": "pil", "svag": true, "fran": [380, 920], "till": [380, 155] },
+        { "typ": "text", "vid": [344, 165], "text": "y" },
+        { "typ": "prick", "vid": [560, 830], "r": 8 },
+        { "typ": "text", "vid": [620, 808], "text": "(2, 1)", "ankare": "start" },
+        { "typ": "prick", "vid": [830, 290], "r": 8 },
+        { "typ": "text", "vid": [890, 308], "text": "(5, 7)", "ankare": "start" },
+        { "typ": "linje", "streckad": true, "accent": true, "p": [[560, 830], [830, 290]] },
+        { "typ": "text", "vid": [1150, 640], "text": "y = ?", "accent": true }
+      ]
+    },
+    "delar": [
+      {
+        "fraga": "Vad är k-värdet?",
+        "typ": "tal",
+        "svar": 2,
+        "exempel": "t.ex. 3",
+        "fel": [
+          {
+            "svar": "0.5",
+            "text": "Du har delat ändringen i x med ändringen i y. k är ändringen i y delat med ändringen i x: (7 − 1)/(5 − 2)."
+          },
+          {
+            "svar": "6",
+            "text": "6 är ändringen i y. Dela med ändringen i x, 5 − 2 = 3."
+          },
+          {
+            "svar": "3",
+            "text": "3 är ändringen i x. k är ändringen i y delat med ändringen i x: 6/3."
+          },
+          {
+            "svar": "-2",
+            "text": "Både x och y växer från den första punkten till den andra, så linjen lutar uppåt och k är positivt."
+          }
+        ]
+      },
+      {
+        "fraga": "Vad är m-värdet?",
+        "typ": "tal",
+        "svar": -3,
+        "exempel": "t.ex. 4",
+        "fel": [
+          {
+            "svar": "3",
+            "text": "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m. Då måste m vara 1 − 4."
+          },
+          {
+            "svar": "5",
+            "text": "Du har lagt ihop 1 och 4. Sätt in (2, 1): 1 = 4 + m, så m = 1 − 4."
+          },
+          {
+            "svar": "1",
+            "text": "1 är punktens y. Sätt in hela punkten (2, 1) i y = 2x + m och lös ut m."
+          }
+        ]
+      },
+      {
+        "fraga": "Skriv linjens ekvation.",
+        "typ": "ekvation",
+        "svar": "y = 2x - 3",
+        "exempel": "t.ex. y = 3x + 1",
+        "tangenter": [
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "y = 2x + 3",
+            "text": "Kolla tecknet på m: 1 = 4 + m ger m = −3."
+          },
+          {
+            "svar": "y = 0.5x - 3",
+            "text": "k ska vara ändringen i y delat med ändringen i x, 6/3 = 2."
+          },
+          {
+            "svar": "y = 3x - 3",
+            "text": "k är 6 delat med 3, alltså 2."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Från Lae till Howland går",
+      "text": "Räkna k som ändringen i y delat med ändringen i x. Sätt sedan in en av punkterna i y = kx + m för att få m, som med Lae och Howland."
+    },
+    "losning": [
+      "Ändringen i x är 5 − 2 = 3 och ändringen i y är 7 − 1 = 6.",
+      "k = 6/3 = 2.",
+      "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m och m = −3.",
+      "Linjen är y = 2x − 3. Kontroll med (5, 7): 2 · 5 − 3 = 7."
+    ]
+  },
+  "ma1c-k4-05-exponentialfunktioner": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år.",
+    "delar": [
+      {
+        "fraga": "Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund.",
+        "typ": "ekvation",
+        "svar": "y = 1000 · 1,04^x",
+        "exempel": "t.ex. y = 500 · 1,03^x",
+        "tangenter": [
+          "=",
+          "·",
+          "^"
+        ],
+        "fel": [
+          {
+            "svar": "y = 1000 · 0,04^x",
+            "text": "0,04 är bara räntan. Pengarna från början är 100 %, och 4 % kommer till: 100 % + 4 % = 104 % = 1,04."
+          },
+          {
+            "svar": "y = 1000 · 1,4^x",
+            "text": "4 % är 0,04, inte 0,4. Förändringsfaktorn blir 1 + 0,04 = 1,04."
+          },
+          {
+            "svar": "y = 1000 · 4^x",
+            "text": "Det vore att fyrdubbla pengarna varje år. 4 % mer är gånger 1,04."
+          },
+          {
+            "svar": "y = 40x + 1000",
+            "text": "Det är ett linjärt samband: 40 pund varje år. Räntan ges på hela summan varje år, så pengarna gångras med samma förändringsfaktor."
+          },
+          {
+            "svar": "y = 1,04 · 1000^x",
+            "text": "C och a har bytt plats. C är startvärdet, 1000 pund, och a är förändringsfaktorn, 1,04."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många pund blir det efter tio år? Avrunda till hela pund.",
+        "typ": "tal",
+        "svar": 1480,
+        "tolerans": 0.5,
+        "enhet": "pund",
+        "exempel": "t.ex. 1250",
+        "fel": [
+          {
+            "svar": "1400",
+            "text": "Det är 40 pund om året i tio år, alltså linjärt. Räntan ger ränta: räkna 1000 · 1,04^10 på räknaren."
+          },
+          {
+            "svar": "1629",
+            "text": "Det är med 5 %. Nu är räntan 4 %, alltså 1000 · 1,04^10."
+          },
+          {
+            "svar": "1040",
+            "text": "Det är efter ett år. Exponenten ska vara 10, en gång för varje år."
+          }
+        ],
+        "nara": {
+          "tolerans": 3,
+          "text": "Nästan. Kontrollera att du skrev 1,04 upphöjt till 10 på räknaren."
+        }
+      }
+    ],
+    "ledtrad": {
+      "fras": "Talet ett komma noll fem kallas",
+      "text": "100 % + 4 % = 104 %, så förändringsfaktorn är 1,04. Startvärdet C är 1000. Räkna sedan 1000 · 1,04^10 på räknaren, med knappen för upphöjt till."
+    },
+    "losning": [
+      "100 % + 4 % = 104 % = 1,04, så förändringsfaktorn är a = 1,04 och startvärdet C = 1000.",
+      "y = 1000 · 1,04^x",
+      "Efter tio år: 1000 · 1,04^10 ≈ 1480,24, alltså ungefär 1480 pund."
+    ]
+  },
+  "ma1c-k4-04-potensfunktioner": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2.",
+    "delar": [
+      {
+        "fraga": "Skriv funktionen på formen y = C · x^(−1), med x för trycket och y för antalet streck.",
+        "typ": "ekvation",
+        "svar": "y = 60x^(-1)",
+        "exempel": "t.ex. y = 24x^(-1)",
+        "tangenter": [
+          "=",
+          "^",
+          "(",
+          ")",
+          "-"
+        ],
+        "fel": [
+          {
+            "svar": "y = 30x^(-1)",
+            "text": "30 är antalet streck, inte C. C är x gånger y: 2 · 30."
+          },
+          {
+            "svar": "y = 15x^(-1)",
+            "text": "Du har delat 30 med 2. C är x gånger y, alltså 2 · 30 = 60."
+          },
+          {
+            "svar": "y = 60x",
+            "text": "Exponenten ska vara −1, så att luften blir mindre när trycket blir större: y = 60 · x^(−1)."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många streck fyller luften vid tryck 3?",
+        "typ": "tal",
+        "svar": 20,
+        "enhet": "streck",
+        "exempel": "t.ex. 12",
+        "fel": [
+          {
+            "svar": "10",
+            "text": "Du har räknat 30 / 3. Använd funktionen: 60 · 3^(−1) = 60/3."
+          },
+          {
+            "svar": "45",
+            "text": "Luften blir mindre när trycket ökar, inte större. Sätt in x = 3: 60/3."
+          },
+          {
+            "svar": "180",
+            "text": "x upphöjt till minus ett betyder ett delat med x. Dela 60 med 3."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Om x gånger y alltid",
+      "text": "x gånger y är samma tal hela tiden, och det talet är C. Räkna 2 · 30. Sätt sedan in x = 3 och kom ihåg att x upphöjt till minus ett är ett delat med x."
+    },
+    "losning": [
+      "x gånger y är samma tal hela tiden: C = 2 · 30 = 60.",
+      "y = 60 · x⁻¹, alltså y = 60/x.",
+      "Vid tryck 3: y = 60 · 3⁻¹ = 60/3 = 20 streck."
+    ]
+  },
+  "ma1c-k4-06-grafisk-ekvationslosning": {
+    "geogebra": { "text": "Lös uppgiften grafiskt här i GeoGebra, med samma steg som i filmen: skriv modellen och linjen, klicka på kurvan och sedan på den grå skärningspunkten." },
+    "notisFran": "Nu är det din tur",
+    "fraga": "En ö har 3 miljoner invånare, och folket blir dubbelt så många var 25:e år.",
+    "delar": [
+      {
+        "fraga": "Skriv en modell för antalet miljoner invånare y efter x perioder om 25 år.",
+        "typ": "ekvation",
+        "svar": "y = 3 · 2^x",
+        "exempel": "t.ex. y = 5 · 3^x",
+        "tangenter": [
+          "=",
+          "^"
+        ],
+        "fel": [
+          {
+            "svar": "y = 2 · 3^x",
+            "text": "Startvärdet och förändringsfaktorn har bytt plats. Startvärdet C är 3 miljoner, och förändringsfaktorn a är 2, eftersom folket blir dubbelt så många."
+          },
+          {
+            "svar": "y = 3x + 3",
+            "text": "Det är en linjär modell, som lägger till lika mycket varje period. Folket blir dubbelt så många, alltså gångras med 2: y = C · aˣ."
+          },
+          {
+            "svar": "y = 2x + 3",
+            "text": "Det är en linjär modell. När folket gångras med 2 varje period blir modellen exponentiell: y = C · aˣ."
+          }
+        ]
+      },
+      {
+        "fraga": "Lös grafiskt: efter hur många år har ön 24 miljoner invånare?",
+        "typ": "tal",
+        "svar": 75,
+        "enhet": "år",
+        "exempel": "t.ex. 50",
+        "fel": [
+          {
+            "svar": "3",
+            "text": "x = 3 är antalet perioder. Varje period är 25 år, så räkna 3 · 25."
+          },
+          {
+            "svar": "8",
+            "text": "Graferna y = 3 · 2ˣ och y = 24 skär varandra där x = 3. Det är 3 perioder om 25 år."
+          },
+          {
+            "svar": "200",
+            "text": "Du har räknat 8 · 25. Läs av x där graferna skär varandra: x = 3, och 3 · 25 = 75."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu är ekvationen sju",
+      "text": "Rita kurvan y = 3 · 2ˣ och den vågräta linjen y = 24. Läs av x där graferna skär varandra, och gör om perioderna till år."
+    },
+    "losning": [
+      "Startvärdet är 3 och förändringsfaktorn 2, så y = 3 · 2ˣ.",
+      "Ekvationen är 3 · 2ˣ = 24. Rita y = 3 · 2ˣ och y = 24.",
+      "Graferna skär varandra där x = 3.",
+      "3 perioder · 25 år = 75 år."
+    ]
+  },
+  "ma1c-k2-01-linjara-ekvationer": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Lös ekvationen 6x + 9 = 45.",
+    "delar": [
+      {
+        "fraga": "Vad är x?",
+        "typ": "tal",
+        "svar": 6,
+        "exempel": "t.ex. 3",
+        "fel": [
+          {
+            "svar": "36",
+            "text": "Det är 6x, inte x. Dela båda leden med 6."
+          },
+          {
+            "svar": "9",
+            "text": "Ta först bort 9 från båda leden: 6x = 36. Dela sedan med 6."
+          },
+          {
+            "svar": "5",
+            "text": "Kontrollera: 6 · 5 + 9 = 39, inte 45. Ta bort 9 från båda leden: 45 − 9 = 36."
+          }
+        ]
+      },
+      {
+        "fraga": "Kontrollera svaret: sätt in det i vänster led. Vad blir 6x + 9?",
+        "typ": "tal",
+        "svar": 45,
+        "exempel": "t.ex. 30",
+        "fel": [
+          {
+            "svar": "36",
+            "text": "Du har räknat 6 · 6. Lägg till 9 också."
+          },
+          {
+            "svar": "15",
+            "text": "6x betyder 6 gånger x. Räkna 6 · 6 + 9."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Därför tar Recorde bort femton",
+      "text": "Gör samma sak med båda leden tills x står ensamt: ta först bort 9 från båda leden, dela sedan båda leden med 6."
+    },
+    "losning": [
+      "6x + 9 = 45",
+      "Ta bort 9 från båda leden: 6x = 36.",
+      "Dela båda leden med 6: x = 6.",
+      "Kontroll: 6 · 6 + 9 = 36 + 9 = 45. Vänster led är lika med höger led."
+    ]
+  },
+  "ma1c-k2-02-formler-och-modeller": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Ett ljus har 10 streck, och det brinner ner 2 streck varje timme.",
+    "delar": [
+      {
+        "fraga": "Skriv en formel för hur många streck L som är kvar efter t timmar.",
+        "typ": "ekvation",
+        "svar": "L = 10 − 2t",
+        "exempel": "t.ex. L = 8 − 3t",
+        "tangenter": [
+          "=",
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "L = 10 + 2t",
+            "text": "Ljuset blir kortare för varje timme, så de 2 strecken ska dras bort: L = 10 − 2t."
+          },
+          {
+            "svar": "L = 2 − 10t",
+            "text": "Talen har bytt plats. Ljuset börjar med 10 streck, och 2 streck brinner ner varje timme."
+          },
+          {
+            "svar": "L = 10t − 2",
+            "text": "Talen har bytt plats. Startvärdet 10 står ensamt, och 2 streck dras bort för varje timme: L = 10 − 2t."
+          },
+          {
+            "svar": "L = 8t",
+            "text": "Börja med de 10 strecken när ljuset tänds och dra bort 2 för varje timme."
+          },
+          {
+            "svar": "L = 12 − 3t",
+            "text": "Det är formeln för Alfreds ljus. Det här ljuset har 10 streck och brinner ner 2 streck varje timme."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur länge har ljuset brunnit när 4 streck är kvar?",
+        "typ": "tal",
+        "svar": 3,
+        "enhet": "timmar",
+        "exempel": "t.ex. 5",
+        "fel": [
+          {
+            "svar": "2",
+            "text": "Det är 4 delat med 2. Sätt in L = 4 i formeln: 4 = 10 − 2t, och lös ekvationen."
+          },
+          {
+            "svar": "6",
+            "text": "6 är antalet streck som har brunnit ner. Varje timme brinner 2 streck, så dela med 2."
+          },
+          {
+            "svar": "7",
+            "text": "Sätt in L = 4: 4 = 10 − 2t. Lägg till 2t och dra bort 4 på båda sidor: 2t = 6."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Då blir regeln L",
+      "text": "Börja på strecken när ljuset tänds och dra bort 2 för varje timme. Sätt sedan in L = 4 och lös ekvationen med balansmetoden."
+    },
+    "losning": [
+      "När ljuset tänds är 10 streck kvar, och varje timme brinner 2 streck ner.",
+      "L = 10 − 2t",
+      "Sätt in L = 4: 4 = 10 − 2t.",
+      "Lägg till 2t på båda sidor: 4 + 2t = 10.",
+      "Dra bort 4 från båda sidor: 2t = 6.",
+      "Dela båda sidor med 2: t = 3. Ljuset har brunnit i 3 timmar."
+    ]
+  },
+  "ma2a-07-ekvationssystem-grafiskt": {
+    "geogebra": { "text": "Skriv y=2x+40 och y=3x+10. Klicka på en av linjerna och sedan på den grå punkten där de möts." },
+    "notisFran": "Nu är det din tur",
+    "fraga": "På en annan järnväg kostar repen 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Allt räknas i tusen pund och tusen ton. Rita båda linjerna i samma koordinatsystem.",
+    "delar": [
+      {
+        "fraga": "Hur mycket varor måste järnvägen frakta innan repen blir billigare? Svara i tusen ton.",
+        "typ": "tal",
+        "svar": 30,
+        "tolerans": 0.001,
+        "enhet": "tusen ton",
+        "exempel": "t.ex. 40",
+        "fel": [
+          {
+            "svar": "100",
+            "text": "100 är kostnaden i tusen pund där linjerna möts, alltså y-värdet. Frågan gäller mängden varor, x-värdet i skärningspunkten."
+          },
+          {
+            "svar": "30000",
+            "text": "Rätt mängd, men svara i tusen ton: 30."
+          },
+          {
+            "svar": "50",
+            "text": "Du har lagt ihop startkostnaderna. Rita linjerna y = 2x + 40 och y = 3x + 10 och läs av x där de skär varandra."
+          },
+          {
+            "svar": "10",
+            "text": "10 är lokens startkostnad. Läs av x där repens linje y = 2x + 40 och lokens linje y = 3x + 10 skär varandra."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu ritar vi båda",
+      "text": "Repens linje börjar på 40 och går upp 2 för varje tusen ton. Lokens linje börjar på 10 och går upp 3. Läs av x i skärningspunkten, som med 40 000 ton i filmen."
+    },
+    "losning": [
+      "Repen: y = 2x + 40. Loken: y = 3x + 10.",
+      "Rita båda linjerna. De skär varandra i punkten (30, 100).",
+      "Kontroll: 2 · 30 + 40 = 100 och 3 · 30 + 10 = 100. Båda stämmer.",
+      "Till vänster om 30 är loken billigast, och efter 30 000 ton är repen billigare."
     ]
   }
 }
