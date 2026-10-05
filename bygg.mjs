@@ -41,6 +41,7 @@ const dinturFil = existsSync(join(HÄR, "dintur.json")) ? JSON.parse(readFileSyn
 // finns på flera ställen. Samlas ihop så att alla syns på en gång.
 const byggfel = [];
 mkdirSync(join(HÄR, "public", "omslag"), { recursive: true });
+mkdirSync(join(HÄR, "public", "dintur"), { recursive: true });
 
 const taggfri = (s) => s.replace(/\[[^\]]+\]/g, "").replace(/\s+/g, " ").trim();
 
@@ -219,6 +220,17 @@ const videor = [...register].sort(ordning).map((v) => {
     const { fras, ...ledtrad } = dinturFil[v.id].ledtrad || {};
     dinTur = { ...dinturFil[v.id] };
     if (dinturFil[v.id].ledtrad) dinTur.ledtrad = { ...ledtrad, t: fras != null ? tidFor(fras, ord, v.id, "ledtråden") : ledtrad.t };
+    // Figurens plåt (Rickard 2026-09-29, bildstöd i Din tur): `bild` i dintur.json är ett plåtnamn.
+    // Den hämtas ur filmens egen assets/platar/ eller, för plåtar målade bara till Din tur, ur
+    // videotek/assets/dintur/ (bildprompter.md här), och bakas till public/dintur/<id>.jpg.
+    // Saknas källan behålls jpeg:en som redan ligger där; finns ingen alls ritas figuren utan plåt.
+    if (dinTur.figur && dinTur.figur.bild) {
+      const namn = dinTur.figur.bild, ut = `dintur/${v.id}.jpg`;
+      const kallaBild = [join(projekt, "assets", "platar", `${namn}.png`), join(HÄR, "assets", "dintur", `${namn}.png`)].find(existsSync);
+      if (kallaBild) bakaBild(kallaBild, join(HÄR, "public", ut), 1280, null, 4);
+      if (existsSync(join(HÄR, "public", ut))) dinTur.figur = { ...dinTur.figur, bild: medVersion(ut) };
+      else { console.warn(`  varning: plåten ${namn} till Din tur i ${v.id} finns inte — figuren ritas utan plåt.`); const { bild, ...utan } = dinTur.figur; dinTur.figur = utan; }
+    }
     const g = notisgrans(v.id, dinTur, kapitel, langd, ord);
     dinTur.notisFran = g.t;
     notisRader.push(`  ${g.varning ? "varning: " : ""}${v.id.padEnd(24)} ${tidText(g.t)}${langd ? ` (${Math.round(g.t / langd * 100)} %)` : ""}  ${g.kalla}`);

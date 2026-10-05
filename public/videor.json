@@ -1,5 +1,5 @@
 {
- "byggd": "2026-09-28T21:37:44.024Z",
+ "byggd": "2026-09-29T12:37:49.547Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -149,6 +149,160 @@
    "dinTur": {
     "notisFran": 410,
     "fraga": "Tänk dig att en elev hos Ahmes ritar en pyramid där höjden är 12, halva bredden 5 och den sneda sidan 13. Vinkeln v ligger nere vid marken.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma1c-k6-01-sinus-cosinus-tangens.jpg?v=732c0db3",
+     "tema": "scen",
+     "blak": {
+      "farg": "#3A2314",
+      "skugga": "rgba(255,228,184,.6)",
+      "accent": "#3A2314",
+      "svag": "rgba(58,35,20,.8)"
+     },
+     "utsnitt": [
+      787,
+      600,
+      853,
+      480
+     ],
+     "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 12, halva bredden 5 och den sneda sidan 13. Vinkeln v ligger nere vid marken.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1259,
+         758
+        ],
+        [
+         1259,
+         1008
+        ]
+       ]
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         1259,
+         758
+        ],
+        [
+         1259,
+         1008
+        ]
+       ],
+       "text": "12",
+       "sida": -1,
+       "avstand": 50
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1259,
+         1008
+        ],
+        [
+         1154.8,
+         1008
+        ]
+       ]
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         1259,
+         1008
+        ],
+        [
+         1154.8,
+         1008
+        ]
+       ],
+       "text": "5",
+       "sida": -1,
+       "avstand": 48
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1154.8,
+         1008
+        ],
+        [
+         1259,
+         758
+        ]
+       ]
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         1154.8,
+         1008
+        ],
+        [
+         1259,
+         758
+        ]
+       ],
+       "text": "13",
+       "sida": -1,
+       "avstand": 56
+      },
+      {
+       "typ": "ratvinkel",
+       "vid": [
+        1259,
+        1008
+       ],
+       "mot": [
+        [
+         1154.8,
+         1008
+        ],
+        [
+         1259,
+         758
+        ]
+       ],
+       "storlek": 24
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        1154.8,
+        1008
+       ],
+       "mot": [
+        [
+         1259,
+         1008
+        ],
+        [
+         1259,
+         758
+        ]
+       ],
+       "r": 44
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1114.8,
+        1000
+       ],
+       "text": "v"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Vad är sin v? Svara med ett bråk eller två decimaler.",
@@ -807,6 +961,173 @@
    ],
    "dinTur": {
     "fraga": "Tänk dig att prästinnan i stället hade sagt att altaret skulle bli tre gånger så stort. Då måste sidan vara ett tal som upphöjt till 3 blir 3.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/delos-och-altaret.jpg?v=45d7b14b",
+     "tema": "scen",
+     "blak": {
+      "farg": "#FFFDF5",
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "utsnitt": [
+      720,
+      260,
+      1000,
+      562.5
+     ],
+     "text": "Apollons altare på Delos, en kub med sidan x. Altaret ska bli tre gånger så stort.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1143.4,
+         594
+        ],
+        [
+         1143,
+         734
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1143.4,
+         594
+        ],
+        [
+         1323.5,
+         605
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1323.5,
+         605
+        ],
+        [
+         1460,
+         595.5
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1460,
+         595.5
+        ],
+        [
+         1460,
+         732
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1460,
+         732
+        ],
+        [
+         1323,
+         756
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1323,
+         756
+        ],
+        [
+         1143,
+         734
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1323.5,
+         605
+        ],
+        [
+         1323,
+         756
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1113,
+         594
+        ],
+        [
+         1113,
+         734
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1097,
+         594
+        ],
+        [
+         1129,
+         594
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1097,
+         734
+        ],
+        [
+         1129,
+         734
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1066,
+        664
+       ],
+       "text": "x"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1040,
+        530
+       ],
+       "text": "×3"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Skriv ekvationen för sidan x.",
@@ -1542,6 +1863,144 @@
    ],
    "dinTur": {
     "fraga": "Ett skepp till ligger 400 meter från muren och ror in mot den, 5 meter varje sekund. Kastmaskinerna når 200 meter.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/arkimedes-och-cirkeln.jpg?v=358783c4",
+     "tema": "scen",
+     "blak": {
+      "farg": "#FFFDF5",
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "utsnitt": [
+      860,
+      470,
+      1060,
+      596.25
+     ],
+     "text": "Muren nere till höger och skeppet ute på havet. Skeppet ligger 400 meter från muren och ror in mot den med 5 meter i sekunden. Kastmaskinerna når 200 meter ut från muren.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1446,
+         923.4
+        ],
+        [
+         1446,
+         657.8
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1424,
+         923.4
+        ],
+        [
+         1468,
+         923.4
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1424,
+         657.8
+        ],
+        [
+         1468,
+         657.8
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1478,
+        790.6
+       ],
+       "text": "400 m",
+       "ankare": "start"
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        1350,
+        600
+       ],
+       "till": [
+        1350,
+        715
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1318,
+        655
+       ],
+       "text": "5 m/s",
+       "ankare": "end"
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1370,
+         923.4
+        ],
+        [
+         1370,
+         790.6
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1348,
+         923.4
+        ],
+        [
+         1392,
+         923.4
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1290,
+         790.6
+        ],
+        [
+         1446,
+         790.6
+        ]
+       ],
+       "streckad": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1340,
+        857
+       ],
+       "text": "200 m",
+       "ankare": "end"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder är skeppet inom räckhåll?",
@@ -2198,6 +2657,113 @@
    ],
    "dinTur": {
     "fraga": "En tyngd hänger stilla i två rep. Det ena repet drar två rutor åt vänster och tre rutor uppåt, och det andra drar två rutor åt höger och tre rutor uppåt.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma1c-k6-04-vektorbegreppet.jpg?v=8488a0a6",
+     "tema": "papper",
+     "utsnitt": [
+      460,
+      0,
+      1440,
+      810
+     ],
+     "text": "Rutat papper. En tyngd hänger i en knut. Från knuten går två rep som pilar: den ena två rutor åt vänster och tre rutor uppåt, den andra två rutor åt höger och tre rutor uppåt. Ett frågetecken står vid tyngden.",
+     "delar": [
+      {
+       "typ": "rutnat",
+       "fran": [
+        520,
+        260
+       ],
+       "till": [
+        1240,
+        620
+       ],
+       "steg": 90
+      },
+      {
+       "typ": "cirkel",
+       "mitt": [
+        880,
+        620
+       ],
+       "r": 10
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         880,
+         630
+        ],
+        [
+         880,
+         660
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         840,
+         660
+        ],
+        [
+         920,
+         660
+        ],
+        [
+         920,
+         724
+        ],
+        [
+         840,
+         724
+        ],
+        [
+         840,
+         660
+        ]
+       ]
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        880,
+        620
+       ],
+       "till": [
+        700,
+        350
+       ]
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        880,
+        620
+       ],
+       "till": [
+        1060,
+        350
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        964,
+        694
+       ],
+       "text": "?",
+       "accent": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Rita repens resultant. Hur många rutor uppåt går den?",
@@ -5523,6 +6089,91 @@
    ],
    "dinTur": {
     "fraga": "Tänk dig en dag då Bligh seglade åt samma håll som vektorn u = (−2, 1), men dubbelt så långt.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma1c-k6-05-addera-vektorer.jpg?v=540f9344",
+     "tema": "papper",
+     "utsnitt": [
+      120,
+      160,
+      1360,
+      765
+     ],
+     "text": "Ett rutat koordinatsystem på väggen bredvid Bligh. Vektorn u går från origo två rutor åt vänster och en ruta uppåt. Under rutnätet står u = (−2, 1).",
+     "delar": [
+      {
+       "typ": "rutnat",
+       "fran": [
+        188,
+        304
+       ],
+       "till": [
+        692,
+        592
+       ],
+       "steg": 72
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         188,
+         520
+        ],
+        [
+         692,
+         520
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         620,
+         592
+        ],
+        [
+         620,
+         304
+        ]
+       ]
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        620,
+        520
+       ],
+       "r": 7
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        620,
+        520
+       ],
+       "till": [
+        476,
+        448
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        188,
+        682
+       ],
+       "text": "u = (−2, 1)",
+       "ankare": "start"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Vad blir x-koordinaten för den dagens vektor?",
@@ -6125,6 +6776,123 @@
    "dinTur": {
     "notisFran": 455,
     "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma1c-k6-02-berakna-sidor.jpg?v=a0dafba4",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "Ett berg i en dal. Avståndet längs marken till punkten rakt under toppen är 10 km, och toppen syns 20 grader upp. Bergets höjd är okänd.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         100,
+         960
+        ],
+        [
+         1468,
+         778
+        ]
+       ]
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         100,
+         960
+        ],
+        [
+         1468,
+         778
+        ]
+       ],
+       "text": "10 km",
+       "sida": 1,
+       "avstand": 74
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         100,
+         960
+        ],
+        [
+         1460.9,
+         234.8
+        ]
+       ]
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        100,
+        960
+       ],
+       "mot": [
+        [
+         1468,
+         778
+        ],
+        [
+         1468,
+         231
+        ]
+       ],
+       "r": 170,
+       "text": "20°",
+       "avstand": 120
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1468,
+         239
+        ],
+        [
+         1468,
+         778
+        ]
+       ],
+       "streckad": true,
+       "accent": true
+      },
+      {
+       "typ": "ratvinkel",
+       "vid": [
+        1468,
+        778
+       ],
+       "mot": [
+        [
+         100,
+         960
+        ],
+        [
+         1468,
+         231
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1522,
+        620
+       ],
+       "text": "?",
+       "accent": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur högt är berget? Svara i kilometer med en decimal.",
@@ -6842,6 +7610,324 @@
    "dinTur": {
     "notisFran": 416,
     "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 60 kilometer västerut och 80 kilometer norrut om Carpathia.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma1c-k6-06-vektorer-i-koordinatform.jpg?v=defdbcd2",
+     "tema": "papper",
+     "utsnitt": [
+      470,
+      50,
+      1440,
+      810
+     ],
+     "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 60 km västerut och 80 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
+     "delar": [
+      {
+       "typ": "pil",
+       "svag": true,
+       "fran": [
+        734,
+        710
+       ],
+       "till": [
+        1497,
+        710
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1549,
+        710
+       ],
+       "text": "Ö"
+      },
+      {
+       "typ": "pil",
+       "svag": true,
+       "fran": [
+        1350,
+        759
+       ],
+       "till": [
+        1350,
+        213
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1350,
+        157
+       ],
+       "text": "N"
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1278,
+         687.5
+        ],
+        [
+         1296,
+         696.5
+        ],
+        [
+         1395,
+         696.5
+        ],
+        [
+         1416,
+         692
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1278,
+         687.5
+        ],
+        [
+         1293,
+         707
+        ],
+        [
+         1401,
+         707
+        ],
+        [
+         1416,
+         692
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1317,
+         696.5
+        ],
+        [
+         1317,
+         681.5
+        ],
+        [
+         1383,
+         681.5
+        ],
+        [
+         1383,
+         696.5
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1360.5,
+         681.5
+        ],
+        [
+         1365,
+         653
+        ],
+        [
+         1380,
+         653
+        ],
+        [
+         1377,
+         681.5
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1363.5,
+         662
+        ],
+        [
+         1378.5,
+         662
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1299,
+         696.5
+        ],
+        [
+         1299,
+         644
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1401,
+         696.5
+        ],
+        [
+         1401,
+         650
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1350,
+         738
+        ],
+        [
+         1350,
+         762
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1350,
+         750
+        ],
+        [
+         1020,
+         750
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "svag": true,
+       "p": [
+        [
+         1020,
+         738
+        ],
+        [
+         1020,
+         762
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1185,
+        796
+       ],
+       "text": "60 km"
+      },
+      {
+       "typ": "linje",
+       "streckad": true,
+       "p": [
+        [
+         1020,
+         710
+        ],
+        [
+         1020,
+         270
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        885,
+        490
+       ],
+       "text": "80 km"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        1020,
+        270
+       ],
+       "r": 8
+      },
+      {
+       "typ": "text",
+       "vid": [
+        990,
+        262
+       ],
+       "text": "Titanic",
+       "ankare": "end"
+      },
+      {
+       "typ": "linje",
+       "streckad": true,
+       "accent": true,
+       "p": [
+        [
+         1350,
+         710
+        ],
+        [
+         1020,
+         270
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1212,
+        318
+       ],
+       "text": "? km",
+       "accent": true
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        1350,
+        710
+       ],
+       "mot": [
+        [
+         1350,
+         510
+        ],
+        [
+         1020,
+         270
+        ]
+       ],
+       "r": 150,
+       "text": "v",
+       "avstand": 65
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Vad är vektorns x-koordinat?",
@@ -7493,6 +8579,128 @@
    "dinTur": {
     "notisFran": 393,
     "fraga": "Tänk dig ett annat torn, där det är 20 meter upp längs tornet till toppen och där ett snöre från toppen når marken 1 meter vid sidan av foten.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma1c-k6-03-berakna-vinklar.jpg?v=3cff522a",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "Ett lutande torn på ett fält. Det är 20 m längs tornet upp till toppen. Ett snöre hänger rakt ner från toppen och når marken 1 m vid sidan av tornets fot. Vinkeln v uppe vid toppen, mellan tornet och snöret, efterfrågas.",
+     "delar": [
+      {
+       "typ": "yta",
+       "d": "M660.3 192.6 L633.4 491.4 A300 300 0 0 0 660.3 492.6 Z",
+       "accent": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         591.4,
+         957.4
+        ],
+        [
+         660.3,
+         192.6
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        586.6,
+        700
+       ],
+       "text": "20 m",
+       "ankare": "end"
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         660.3,
+         192.6
+        ],
+        [
+         660.3,
+         957.4
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         660.3,
+         957.4
+        ],
+        [
+         591.4,
+         957.4
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        625.8499999999999,
+        1019.4
+       ],
+       "text": "1 m"
+      },
+      {
+       "typ": "ratvinkel",
+       "vid": [
+        660.3,
+        957.4
+       ],
+       "mot": [
+        [
+         591.4,
+         957.4
+        ],
+        [
+         660.3,
+         192.6
+        ]
+       ],
+       "storlek": 26
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        660.3,
+        192.6
+       ],
+       "mot": [
+        [
+         660.3,
+         957.4
+        ],
+        [
+         591.4,
+         957.4
+        ]
+       ],
+       "r": 300,
+       "accent": true,
+       "tjock": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        712,
+        440
+       ],
+       "text": "v",
+       "accent": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
@@ -9299,6 +10507,159 @@
    ],
    "dinTur": {
     "fraga": "Pizzan från filmen har omkretsen 62,8 centimeter. Nu delas den i sex lika stora bitar.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-3-plan-geometri.jpg?v=84a11c9e",
+     "tema": "papper",
+     "text": "En rund pizza med omkretsen 62,8 centimeter, delad i sex lika stora bitar. Vinkeln i spetsen och kanten på en bit är okända.",
+     "delar": [
+      {
+       "typ": "yta",
+       "d": "M560 540 L560 160 A380 380 0 0 1 889.1 350 Z",
+       "accent": true
+      },
+      {
+       "typ": "cirkel",
+       "mitt": [
+        560,
+        540
+       ],
+       "r": 380
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         540
+        ],
+        [
+         560,
+         160
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         540
+        ],
+        [
+         889.1,
+         350
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         540
+        ],
+        [
+         889.1,
+         730
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         540
+        ],
+        [
+         560,
+         920
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         540
+        ],
+        [
+         230.9,
+         730
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         560,
+         540
+        ],
+        [
+         230.9,
+         350
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "bana",
+       "d": "M560 160 A380 380 0 0 1 889.1 350",
+       "accent": true,
+       "tjock": true
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        560,
+        540
+       ],
+       "mot": [
+        [
+         560,
+         160
+        ],
+        [
+         889.1,
+         350
+        ]
+       ],
+       "r": 100,
+       "text": "?",
+       "accent": true,
+       "avstand": 50
+      },
+      {
+       "typ": "text",
+       "vid": [
+        780,
+        158.9
+       ],
+       "text": "?",
+       "accent": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        990,
+        900
+       ],
+       "text": "omkrets 62,8 cm",
+       "ankare": "start"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur stor blir vinkeln i spetsen?",
@@ -9893,6 +11254,275 @@
    ],
    "dinTur": {
     "fraga": "Tänk dig att du bygger en modell av ert klassrum i skala 1 till 5.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-4-rymdgeometri-och-skala.jpg?v=1faf2429",
+     "tema": "papper",
+     "text": "En liten modell av klassrummet bredvid det riktiga klassrummet, som är 5 gånger så långt åt alla håll.",
+     "delar": [
+      {
+       "typ": "yta",
+       "p": [
+        [
+         140,
+         824
+        ],
+        [
+         172,
+         800
+        ],
+        [
+         268,
+         800
+        ],
+        [
+         236,
+         824
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "yta",
+       "p": [
+        [
+         236,
+         824
+        ],
+        [
+         268,
+         800
+        ],
+        [
+         268,
+         856
+        ],
+        [
+         236,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         140,
+         880
+        ],
+        [
+         236,
+         880
+        ],
+        [
+         236,
+         824
+        ],
+        [
+         140,
+         824
+        ],
+        [
+         140,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         140,
+         824
+        ],
+        [
+         172,
+         800
+        ],
+        [
+         268,
+         800
+        ],
+        [
+         236,
+         824
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         268,
+         800
+        ],
+        [
+         268,
+         856
+        ],
+        [
+         236,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "yta",
+       "p": [
+        [
+         460,
+         600
+        ],
+        [
+         620,
+         480
+        ],
+        [
+         1100,
+         480
+        ],
+        [
+         940,
+         600
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "yta",
+       "p": [
+        [
+         940,
+         600
+        ],
+        [
+         1100,
+         480
+        ],
+        [
+         1100,
+         760
+        ],
+        [
+         940,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         460,
+         880
+        ],
+        [
+         940,
+         880
+        ],
+        [
+         940,
+         600
+        ],
+        [
+         460,
+         600
+        ],
+        [
+         460,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         460,
+         600
+        ],
+        [
+         620,
+         480
+        ],
+        [
+         1100,
+         480
+        ],
+        [
+         940,
+         600
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1100,
+         480
+        ],
+        [
+         1100,
+         760
+        ],
+        [
+         940,
+         880
+        ]
+       ]
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         140,
+         880
+        ],
+        [
+         236,
+         880
+        ]
+       ],
+       "text": "1"
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         460,
+         880
+        ],
+        [
+         940,
+         880
+        ]
+       ],
+       "text": "5"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        188,
+        1010
+       ],
+       "text": "modell",
+       "liten": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        700,
+        1010
+       ],
+       "text": "klassrum",
+       "liten": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur många gånger större är golvytan i det riktiga klassrummet?",
@@ -10511,6 +12141,267 @@
    ],
    "dinTur": {
     "fraga": "En rutschkana är 6 meter lång och lutar 40 grader mot marken.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-5-pythagoras-trigonometri-vektorer.jpg?v=f28ffc33",
+     "tema": "papper",
+     "text": "En rutschkana som är 6 meter lång och lutar 40 grader mot marken. Höjden upp till toppen är okänd.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         100,
+         930
+        ],
+        [
+         1176,
+         930
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         150,
+         930
+        ],
+        [
+         916,
+         287.2
+        ]
+       ],
+       "tjock": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         916,
+         930
+        ],
+        [
+         916,
+         287.2
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         916,
+         287.2
+        ],
+        [
+         1001,
+         287.2
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         961,
+         287.2
+        ],
+        [
+         1066,
+         930
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1001,
+         287.2
+        ],
+        [
+         1106,
+         930
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         973.6,
+         364.3
+        ],
+        [
+         1013.6,
+         364.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         988.3,
+         454.3
+        ],
+        [
+         1028.3,
+         454.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1003,
+         544.3
+        ],
+        [
+         1043,
+         544.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1017.7,
+         634.3
+        ],
+        [
+         1057.7,
+         634.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1032.4,
+         724.3
+        ],
+        [
+         1072.4,
+         724.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1047.1,
+         814.3
+        ],
+        [
+         1087.1,
+         814.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1061.8,
+         904.3
+        ],
+        [
+         1101.8,
+         904.3
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "ratvinkel",
+       "vid": [
+        916,
+        930
+       ],
+       "mot": [
+        [
+         916,
+         287.2
+        ],
+        [
+         150,
+         930
+        ]
+       ]
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        150,
+        930
+       ],
+       "mot": [
+        [
+         916,
+         930
+        ],
+        [
+         916,
+         287.2
+        ]
+       ],
+       "r": 110,
+       "text": "40°",
+       "avstand": 105
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         150,
+         930
+        ],
+        [
+         916,
+         287.2
+        ]
+       ],
+       "text": "6 m",
+       "sida": -1,
+       "avstand": 70
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         916,
+         930
+        ],
+        [
+         916,
+         287.2
+        ]
+       ],
+       "text": "?",
+       "sida": -1,
+       "avstand": 48,
+       "accent": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur högt upp sitter toppen? Svara med två decimaler.",
@@ -11777,6 +13668,105 @@
    ],
    "dinTur": {
     "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-ma2-2-andragradsfunktionen.jpg?v=984082e4",
+     "tema": "papper",
+     "text": "Bollens höjd y över handen mot tiden x. Kurvan går upp från handen och ner igen. Den högsta höjden och tiden när bollen är tillbaka i handen är okända.",
+     "delar": [
+      {
+       "typ": "pil",
+       "fran": [
+        230,
+        950
+       ],
+       "till": [
+        1480,
+        950
+       ],
+       "svag": true
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        258,
+        978
+       ],
+       "till": [
+        258,
+        190
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1508,
+        950
+       ],
+       "text": "x",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        292,
+        200
+       ],
+       "text": "y",
+       "ankare": "start"
+      },
+      {
+       "typ": "bana",
+       "d": "M258 950 Q783 -350 1308 950"
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         783,
+         300
+        ],
+        [
+         783,
+         950
+        ]
+       ],
+       "streckad": true,
+       "accent": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        818,
+        625
+       ],
+       "text": "?",
+       "accent": true,
+       "ankare": "start"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        1308,
+        950
+       ],
+       "accent": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1308,
+        1028
+       ],
+       "text": "?",
+       "accent": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "När fångar du bollen?",
@@ -13002,6 +14992,189 @@
    ],
    "dinTur": {
     "fraga": "En lyktstolpe kastar en skugga som är 12 meter lång. Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-ma2-4-likformighet.jpg?v=ef1a75b3",
+     "tema": "papper",
+     "text": "En lyktstolpe med en skugga som är 12 meter lång, och en pinne som är 1 meter hög med en skugga som är 2 meter lång. Solens strålar kommer in lika snett mot båda. Lyktstolpens höjd är okänd.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         90,
+         880
+        ],
+        [
+         1420,
+         880
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         240,
+         880
+        ],
+        [
+         912,
+         880
+        ]
+       ],
+       "skugga": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1060,
+         880
+        ],
+        [
+         1380,
+         880
+        ]
+       ],
+       "skugga": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         240,
+         880
+        ],
+        [
+         240,
+         544
+        ]
+       ],
+       "tjock": true
+      },
+      {
+       "typ": "bana",
+       "d": "M240 544 Q240 504 280 504 L304 504"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        304,
+        522
+       ],
+       "r": 12
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         240,
+         544
+        ],
+        [
+         912,
+         880
+        ]
+       ],
+       "streckad": true,
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1060,
+         880
+        ],
+        [
+         1060,
+         720
+        ]
+       ],
+       "tjock": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1060,
+         720
+        ],
+        [
+         1380,
+         880
+        ]
+       ],
+       "streckad": true,
+       "svag": true
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         240,
+         880
+        ],
+        [
+         240,
+         544
+        ]
+       ],
+       "text": "?",
+       "sida": -1,
+       "accent": true
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         240,
+         880
+        ],
+        [
+         912,
+         880
+        ]
+       ],
+       "text": "12 m"
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         1060,
+         880
+        ],
+        [
+         1060,
+         720
+        ]
+       ],
+       "text": "1 m",
+       "sida": -1,
+       "avstand": 80
+      },
+      {
+       "typ": "sida",
+       "p": [
+        [
+         1060,
+         880
+        ],
+        [
+         1380,
+         880
+        ]
+       ],
+       "text": "2 m"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur hög är lyktstolpen?",
@@ -13629,6 +15802,169 @@
    ],
    "dinTur": {
     "fraga": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-ma2-5-vinklar-och-cirkelsatser.jpg?v=320b5c3d",
+     "tema": "papper",
+     "text": "En bit med fem hörn, där alla vinklar är lika stora. Vinklarnas storlek är okänd.",
+     "delar": [
+      {
+       "typ": "yta",
+       "p": [
+        [
+         640,
+         190
+        ],
+        [
+         1001.4,
+         452.6
+        ],
+        [
+         863.4,
+         877.4
+        ],
+        [
+         416.6,
+         877.4
+        ],
+        [
+         278.6,
+         452.6
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         640,
+         190
+        ],
+        [
+         1001.4,
+         452.6
+        ],
+        [
+         863.4,
+         877.4
+        ],
+        [
+         416.6,
+         877.4
+        ],
+        [
+         278.6,
+         452.6
+        ],
+        [
+         640,
+         190
+        ]
+       ]
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        640,
+        190
+       ],
+       "mot": [
+        [
+         278.6,
+         452.6
+        ],
+        [
+         1001.4,
+         452.6
+        ]
+       ],
+       "r": 64,
+       "svag": true,
+       "text": "?",
+       "accent": true,
+       "avstand": 50
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        1001.4,
+        452.6
+       ],
+       "mot": [
+        [
+         640,
+         190
+        ],
+        [
+         863.4,
+         877.4
+        ]
+       ],
+       "r": 64,
+       "svag": true
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        863.4,
+        877.4
+       ],
+       "mot": [
+        [
+         1001.4,
+         452.6
+        ],
+        [
+         416.6,
+         877.4
+        ]
+       ],
+       "r": 64,
+       "svag": true
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        416.6,
+        877.4
+       ],
+       "mot": [
+        [
+         863.4,
+         877.4
+        ],
+        [
+         278.6,
+         452.6
+        ]
+       ],
+       "r": 64,
+       "svag": true
+      },
+      {
+       "typ": "vinkel",
+       "vid": [
+        278.6,
+        452.6
+       ],
+       "mot": [
+        [
+         416.6,
+         877.4
+        ],
+        [
+         640,
+         190
+        ]
+       ],
+       "r": 64,
+       "svag": true
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur stor är vinkelsumman i en bit med fem hörn?",
@@ -14244,6 +16580,878 @@
    ],
    "dinTur": {
     "fraga": "Äggen från gården väger 60 gram i medel, med standardavvikelsen 4 gram.",
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/formelbladet-ma2-6-statistik.jpg?v=9141d959",
+     "tema": "papper",
+     "text": "En normalfördelningskurva för äggens vikt, med medelvärdet 60 gram och standardavvikelsen 4 gram. Andelen mellan 52 och 60 gram är skuggad och okänd.",
+     "delar": [
+      {
+       "typ": "yta",
+       "p": [
+        [
+         434,
+         850
+        ],
+        [
+         434,
+         774.2
+        ],
+        [
+         443.5,
+         764.3
+        ],
+        [
+         453,
+         753.4
+        ],
+        [
+         462.5,
+         741.7
+        ],
+        [
+         472,
+         728.9
+        ],
+        [
+         481.5,
+         715.2
+        ],
+        [
+         491,
+         700.5
+        ],
+        [
+         500.5,
+         684.8
+        ],
+        [
+         510,
+         668.2
+        ],
+        [
+         519.5,
+         650.7
+        ],
+        [
+         529,
+         632.4
+        ],
+        [
+         538.5,
+         613.3
+        ],
+        [
+         548,
+         593.6
+        ],
+        [
+         557.5,
+         573.3
+        ],
+        [
+         567,
+         552.6
+        ],
+        [
+         576.5,
+         531.5
+        ],
+        [
+         586,
+         510.3
+        ],
+        [
+         595.5,
+         489.1
+        ],
+        [
+         605,
+         468.1
+        ],
+        [
+         614.5,
+         447.4
+        ],
+        [
+         624,
+         427.3
+        ],
+        [
+         633.5,
+         407.9
+        ],
+        [
+         643,
+         389.4
+        ],
+        [
+         652.5,
+         371.9
+        ],
+        [
+         662,
+         355.8
+        ],
+        [
+         671.5,
+         341.1
+        ],
+        [
+         681,
+         328
+        ],
+        [
+         690.5,
+         316.7
+        ],
+        [
+         700,
+         307.2
+        ],
+        [
+         709.5,
+         299.8
+        ],
+        [
+         719,
+         294.4
+        ],
+        [
+         728.5,
+         291.1
+        ],
+        [
+         738,
+         290
+        ],
+        [
+         738,
+         850
+        ]
+       ],
+       "accent": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         90,
+         850
+        ],
+        [
+         1420,
+         850
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         130,
+         849.8
+        ],
+        [
+         139.5,
+         849.8
+        ],
+        [
+         149,
+         849.7
+        ],
+        [
+         158.5,
+         849.6
+        ],
+        [
+         168,
+         849.5
+        ],
+        [
+         177.5,
+         849.4
+        ],
+        [
+         187,
+         849.2
+        ],
+        [
+         196.5,
+         849
+        ],
+        [
+         206,
+         848.8
+        ],
+        [
+         215.5,
+         848.5
+        ],
+        [
+         225,
+         848.1
+        ],
+        [
+         234.5,
+         847.7
+        ],
+        [
+         244,
+         847.2
+        ],
+        [
+         253.5,
+         846.5
+        ],
+        [
+         263,
+         845.8
+        ],
+        [
+         272.5,
+         844.9
+        ],
+        [
+         282,
+         843.8
+        ],
+        [
+         291.5,
+         842.5
+        ],
+        [
+         301,
+         841
+        ],
+        [
+         310.5,
+         839.3
+        ],
+        [
+         320,
+         837.2
+        ],
+        [
+         329.5,
+         834.9
+        ],
+        [
+         339,
+         832.1
+        ],
+        [
+         348.5,
+         829
+        ],
+        [
+         358,
+         825.4
+        ],
+        [
+         367.5,
+         821.3
+        ],
+        [
+         377,
+         816.6
+        ],
+        [
+         386.5,
+         811.4
+        ],
+        [
+         396,
+         805.4
+        ],
+        [
+         405.5,
+         798.8
+        ],
+        [
+         415,
+         791.4
+        ],
+        [
+         424.5,
+         783.2
+        ],
+        [
+         434,
+         774.2
+        ],
+        [
+         443.5,
+         764.3
+        ],
+        [
+         453,
+         753.4
+        ],
+        [
+         462.5,
+         741.7
+        ],
+        [
+         472,
+         728.9
+        ],
+        [
+         481.5,
+         715.2
+        ],
+        [
+         491,
+         700.5
+        ],
+        [
+         500.5,
+         684.8
+        ],
+        [
+         510,
+         668.2
+        ],
+        [
+         519.5,
+         650.7
+        ],
+        [
+         529,
+         632.4
+        ],
+        [
+         538.5,
+         613.3
+        ],
+        [
+         548,
+         593.6
+        ],
+        [
+         557.5,
+         573.3
+        ],
+        [
+         567,
+         552.6
+        ],
+        [
+         576.5,
+         531.5
+        ],
+        [
+         586,
+         510.3
+        ],
+        [
+         595.5,
+         489.1
+        ],
+        [
+         605,
+         468.1
+        ],
+        [
+         614.5,
+         447.4
+        ],
+        [
+         624,
+         427.3
+        ],
+        [
+         633.5,
+         407.9
+        ],
+        [
+         643,
+         389.4
+        ],
+        [
+         652.5,
+         371.9
+        ],
+        [
+         662,
+         355.8
+        ],
+        [
+         671.5,
+         341.1
+        ],
+        [
+         681,
+         328
+        ],
+        [
+         690.5,
+         316.7
+        ],
+        [
+         700,
+         307.2
+        ],
+        [
+         709.5,
+         299.8
+        ],
+        [
+         719,
+         294.4
+        ],
+        [
+         728.5,
+         291.1
+        ],
+        [
+         738,
+         290
+        ],
+        [
+         747.5,
+         291.1
+        ],
+        [
+         757,
+         294.4
+        ],
+        [
+         766.5,
+         299.8
+        ],
+        [
+         776,
+         307.2
+        ],
+        [
+         785.5,
+         316.7
+        ],
+        [
+         795,
+         328
+        ],
+        [
+         804.5,
+         341.1
+        ],
+        [
+         814,
+         355.8
+        ],
+        [
+         823.5,
+         371.9
+        ],
+        [
+         833,
+         389.4
+        ],
+        [
+         842.5,
+         407.9
+        ],
+        [
+         852,
+         427.3
+        ],
+        [
+         861.5,
+         447.4
+        ],
+        [
+         871,
+         468.1
+        ],
+        [
+         880.5,
+         489.1
+        ],
+        [
+         890,
+         510.3
+        ],
+        [
+         899.5,
+         531.5
+        ],
+        [
+         909,
+         552.6
+        ],
+        [
+         918.5,
+         573.3
+        ],
+        [
+         928,
+         593.6
+        ],
+        [
+         937.5,
+         613.3
+        ],
+        [
+         947,
+         632.4
+        ],
+        [
+         956.5,
+         650.7
+        ],
+        [
+         966,
+         668.2
+        ],
+        [
+         975.5,
+         684.8
+        ],
+        [
+         985,
+         700.5
+        ],
+        [
+         994.5,
+         715.2
+        ],
+        [
+         1004,
+         728.9
+        ],
+        [
+         1013.5,
+         741.7
+        ],
+        [
+         1023,
+         753.4
+        ],
+        [
+         1032.5,
+         764.3
+        ],
+        [
+         1042,
+         774.2
+        ],
+        [
+         1051.5,
+         783.2
+        ],
+        [
+         1061,
+         791.4
+        ],
+        [
+         1070.5,
+         798.8
+        ],
+        [
+         1080,
+         805.4
+        ],
+        [
+         1089.5,
+         811.4
+        ],
+        [
+         1099,
+         816.6
+        ],
+        [
+         1108.5,
+         821.3
+        ],
+        [
+         1118,
+         825.4
+        ],
+        [
+         1127.5,
+         829
+        ],
+        [
+         1137,
+         832.1
+        ],
+        [
+         1146.5,
+         834.9
+        ],
+        [
+         1156,
+         837.2
+        ],
+        [
+         1165.5,
+         839.3
+        ],
+        [
+         1175,
+         841
+        ],
+        [
+         1184.5,
+         842.5
+        ],
+        [
+         1194,
+         843.8
+        ],
+        [
+         1203.5,
+         844.9
+        ],
+        [
+         1213,
+         845.8
+        ],
+        [
+         1222.5,
+         846.5
+        ],
+        [
+         1232,
+         847.2
+        ],
+        [
+         1241.5,
+         847.7
+        ],
+        [
+         1251,
+         848.1
+        ],
+        [
+         1260.5,
+         848.5
+        ],
+        [
+         1270,
+         848.8
+        ],
+        [
+         1279.5,
+         849
+        ],
+        [
+         1289,
+         849.2
+        ],
+        [
+         1298.5,
+         849.4
+        ],
+        [
+         1308,
+         849.5
+        ],
+        [
+         1317.5,
+         849.6
+        ],
+        [
+         1327,
+         849.7
+        ],
+        [
+         1336.5,
+         849.8
+        ],
+        [
+         1346,
+         849.8
+        ]
+       ]
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         282,
+         850
+        ],
+        [
+         282,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        282,
+        920
+       ],
+       "text": "48",
+       "liten": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         434,
+         850
+        ],
+        [
+         434,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        434,
+        920
+       ],
+       "text": "52",
+       "liten": false
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         586,
+         850
+        ],
+        [
+         586,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        586,
+        920
+       ],
+       "text": "56",
+       "liten": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         738,
+         850
+        ],
+        [
+         738,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        738,
+        920
+       ],
+       "text": "60",
+       "liten": false
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         890,
+         850
+        ],
+        [
+         890,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        890,
+        920
+       ],
+       "text": "64",
+       "liten": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1042,
+         850
+        ],
+        [
+         1042,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1042,
+        920
+       ],
+       "text": "68",
+       "liten": true
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         1194,
+         850
+        ],
+        [
+         1194,
+         876
+        ]
+       ],
+       "svag": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1194,
+        920
+       ],
+       "text": "72",
+       "liten": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        608.8000000000001,
+        770
+       ],
+       "text": "?",
+       "accent": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1376,
+        920
+       ],
+       "text": "gram",
+       "liten": true,
+       "ankare": "start"
+      }
+     ]
+    },
     "delar": [
      {
       "fraga": "Hur stor andel av äggen väger mellan 52 och 60 gram?",

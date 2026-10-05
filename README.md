@@ -28,6 +28,14 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   `ledtrad` (`fras` = var i filmen metoden visas, slås upp som kapitlen) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
   jämförs genom att räknas ut i några punkter, så 5ab(3b + 2a) räknas som rätt. `utanfor` kräver
   att så mycket som möjligt är utbrutet, `prova` visar elevens formel för n = 1, 2, 3 …
+  `figur` (Rickard 2026-09-29: bildstöd, framför allt i geometrin) är en plåt som i videorna med
+  strecken, talen och vinklarna ritade ovanpå i kod, i rutans koordinater 1920 × 1080: `bild` (plåtens
+  namn: ur filmens `assets/platar/`, eller ur `assets/dintur/` för plåtar målade bara till Din tur —
+  prompterna i `bildprompter.md`), `tema` (`scen` vitt bläck på målningar, `papper` svart på
+  pappersuppslag), valfritt `blak` (eget bläck), `utsnitt` (en del av plåten) och `delar` (linje, pil,
+  vinkel, ratvinkel, sida, text …, se `figur()` i `index.html`). Bara det som står i uppgiften ritas,
+  och det som efterfrågas i accentfärgen. Bygget bakar plåten till `public/dintur/<id>.jpg`.
+  Prova en figur på sin plåt: `node verktyg/figurprov.mjs <id>` (skärmbild med Chrome utan fönster).
   Notisen om Din tur (när eleven pausar) visas från slutet av kapitlet där ledtråden ligger;
   `notisFran` (fras eller sekund) sätter gränsen för hand. Bygget skriver ut gränsen för varje film
   och varnar om den faller tillbaka på Din tur-kapitlet eller 70 %.
@@ -50,6 +58,15 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   förstoringsglaset (eller tangenten `/`). Adresser: `#filmer` (berättelserna), `#formelbladet` (serien), `#<id>`, `#<id>&t=<sekund>`, och
   `film/<id>/?t=<sekund>` för länkar som delas. Typsnitt från Google Fonts (Jost + Cormorant
   Garamond); en accentfärg (`--accent`).
+- Sökningen (Rickard 2026-10-05: "den absolut mest relevanta filmen") rangordnar efter filmens
+  ÄMNE: momentet väger mest, sedan titeln, de första begreppen och kapitelrubrikerna, och sist hur
+  ofta ordet sägs (med avtagande vikt). En rubrik som handlar om bara det man söker väger mer än en
+  som nämner det; ovanliga ord väger mer än vanliga; ett ord i ett annat ord (sinus i cosinus) räknas
+  mindre än ordet självt; vinkel, vinkeln och vinklar har samma stam. Huvudordet (ett namn som bara
+  finns i en film, annars det första ämnesordet) ska höra till filmens ämne. Prov:
+  `node verktyg/soktest.mjs` (130 elevfrågor med facit, varav 40 kontrollfrågor) och
+  `node verktyg/soktest.mjs "fråga"` för poängen. Kör provet efter ändringar i sökningen eller nya
+  filmer, och lägg till frågor för nya filmer.
 - Framsteg sparas i elevens webbläsare (`localStorage`, nyckeln `framsteg`): var eleven slutade,
   om filmen är sedd och om Din tur är löst. Korten i filmvalet visar det, och filmen fortsätter där
   eleven slutade.

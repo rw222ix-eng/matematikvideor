@@ -776,6 +776,70 @@
   .tallinje .fylld { fill: var(--accent); }
   .tallinje .ring { fill: var(--bg); stroke: var(--accent); stroke-width: 2.5; }
   .tallinje text { fill: var(--ben); font: 400 14px var(--sans); text-anchor: middle; }
+  /* Figuren till Din tur (Rickard 2026-09-29: bildstöd, framför allt i geometrin). Ritas ur
+     `figur` i dintur.json av figur() i skriptet. Det som efterfrågas står i accentfärgen.
+     Strecken ritas fram som av en hand när figuren kommer in i bild. */
+  .dintur-figur { display: block; width: 100%; height: auto; margin: -4px 0 30px; overflow: visible; }
+  .dintur-figur .rutnat { stroke: rgba(236, 230, 216, .13); stroke-width: 1; fill: none; }
+  .dintur-figur .streck { stroke: var(--ben); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .dintur-figur .streck.tjock { stroke-width: 4; }
+  .dintur-figur .streck.svag { stroke: var(--ben2); stroke-width: 1.3; }
+  .dintur-figur .streck.skugga { stroke: rgba(236, 230, 216, .3); stroke-width: 7; stroke-linecap: butt; }
+  .dintur-figur .streck.streckad { stroke-dasharray: 5 6; }
+  .dintur-figur .streck.accent { stroke: var(--accent); }
+  .dintur-figur .yta { fill: rgba(236, 230, 216, .06); stroke: none; }
+  .dintur-figur .yta.svag { fill: rgba(236, 230, 216, .03); }
+  .dintur-figur .yta.accent { fill: rgba(242, 197, 114, .16); }
+  .dintur-figur .prick { fill: var(--ben); }
+  .dintur-figur .prick.accent { fill: var(--accent); }
+  .dintur-figur text { fill: var(--ben); font: 400 16px var(--sans); dominant-baseline: central; }
+  .dintur-figur text.var { font: italic 500 22px var(--skrift); }
+  .dintur-figur text.liten { font-size: 13px; letter-spacing: .04em; fill: var(--ben2); }
+  .dintur-figur text.accent { fill: var(--accent); font-weight: 500; }
+  .dintur-figur.vantar .rita { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .dintur-figur.vantar .tona { opacity: 0; }
+  .dintur-figur.ritas .rita { stroke-dasharray: 1; animation: rita-fram .7s var(--lugn) both; }
+  .dintur-figur.ritas .tona { animation: tona-in .5s var(--lugn) both; }
+  @keyframes rita-fram { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes tona-in { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .dintur-figur.vantar .rita, .dintur-figur.ritas .rita { stroke-dasharray: none; animation: none; } .dintur-figur.vantar .tona, .dintur-figur.ritas .tona { opacity: 1; animation: none; } }
+  /* Med plåt (Rickard 2026-09-29: "generera en bild och rita ovanpå, som på plåtarna i videorna").
+     Vyn är rutan 1920 × 1080 och måtten är videons: streck 5 och 3, etiketter i Kalam 56 (stil.ts). */
+  .dintur-figur.plat { overflow: hidden; max-width: 860px; border-radius: 10px; box-shadow: 0 18px 50px rgba(0, 0, 0, .45); margin-bottom: 32px; }
+  .dintur-figur.plat .blak { --blak: #FFFDF5; --blak-svag: rgba(255, 253, 245, .7); --blak-accent: #FACF60; filter: drop-shadow(0 3px 10px rgba(8, 20, 34, .63)); }
+  .dintur-figur.plat.tema-papper .blak { --blak: #1A1A18; --blak-svag: rgba(26, 26, 24, .6); --blak-accent: #1B3A8F; filter: none; }
+  .dintur-figur.plat .streck { stroke: var(--blak); stroke-width: 5; }
+  .dintur-figur.plat .streck.tjock { stroke-width: 8; }
+  .dintur-figur.plat .streck.svag { stroke: var(--blak-svag); stroke-width: 3; }
+  .dintur-figur.plat .streck.streckad { stroke-dasharray: 20 15; }
+  .dintur-figur.plat .streck.skugga { stroke: color-mix(in srgb, var(--blak) 26%, transparent); stroke-width: 18; }
+  .dintur-figur.plat .streck.accent { stroke: var(--blak-accent); }
+  .dintur-figur.plat .rutnat { stroke: var(--blak-svag); stroke-width: 2; opacity: .45; }
+  .dintur-figur.plat .yta { fill: color-mix(in srgb, var(--blak) 10%, transparent); }
+  .dintur-figur.plat .yta.svag { fill: color-mix(in srgb, var(--blak) 5%, transparent); }
+  .dintur-figur.plat .yta.accent { fill: color-mix(in srgb, var(--blak-accent) 24%, transparent); }
+  .dintur-figur.plat .prick { fill: var(--blak); }
+  .dintur-figur.plat .prick.accent { fill: var(--blak-accent); }
+  .dintur-figur.plat text, .dintur-figur.plat text.var { fill: var(--blak); font: 400 60px Kalam, "Bradley Hand", "Segoe Print", cursive; }
+  .dintur-figur.plat text.liten { font-size: 46px; fill: var(--blak); letter-spacing: 0; }
+  .dintur-figur.plat text.accent { fill: var(--blak-accent); font-size: 72px; }
+  /* Telefon: plåten är ~360 px bred, alltså under en femtedel av rutan. Talen och strecken växer
+     så att de går att läsa (videons 56 px blev ~11 px). */
+  @media (max-width: 600px) {
+    .dintur-figur.plat text, .dintur-figur.plat text.var { font-size: 80px; }
+    .dintur-figur.plat text.liten { font-size: 62px; }
+    .dintur-figur.plat text.accent { font-size: 96px; }
+    .dintur-figur.plat .streck { stroke-width: 7; }
+    .dintur-figur.plat .streck.svag { stroke-width: 4.5; }
+    .dintur-figur.plat .streck.tjock { stroke-width: 11; }
+  }
+  /* Bred skärm: figuren står till höger om frågorna och följer med när eleven skrollar. */
+  @media (min-width: 900px) {
+    .dintur.med-figur:not([hidden]) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 40%); column-gap: 44px; align-items: start; }
+    .dintur.med-figur > * { grid-column: 1; }
+    .dintur.med-figur > .dintur-figur-ram { grid-column: 2; grid-row: 2 / span 3; position: sticky; top: 120px; }
+    .dintur.med-figur .dintur-figur { margin: 6px 0 0; }
+  }
 
   /* Om videor.json inte går att hämta, eller JavaScript är avstängt: ett besked i stället för en tom sida. */
   .laddfel { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 24px; text-align: center; background: var(--bg); }
@@ -1233,6 +1297,7 @@
         <span class="dintur-lost" id="dintur-lost" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9.5 L10 3"/></svg>Löst</span>
       </div>
       <p class="dintur-fraga" id="dintur-fraga"></p>
+      <div class="dintur-figur-ram" id="dintur-figur" hidden></div>
       <ol class="dintur-delar" id="dintur-delar"></ol>
       <div class="dintur-knappar">
         <button type="button" class="kant" id="dintur-ledtrad-knapp" aria-expanded="false" aria-controls="dintur-ledtrad">Ledtråd</button>
@@ -2841,41 +2906,96 @@
   // - Böjningar kortas av: faktorisering hittar faktorisera, olikheterna olikhet.
   // - Synonymer och matematik som den sägs i filmerna: kvadratrot → roten ur, negativ → minus,
   //   x³ → x upphöjt till 3.
-  // - Kapitelrubrik, moment och titel väger tyngst, och hela frasen före lösa ord. Träffar
-  //   ett kapitel hoppar sökningen till kapitlets början, annars till undertextraden där ordet
-  //   sägs (en replik är i snitt 22 s lång).
+  // - Den mest relevanta filmen först (2026-10-05): filmens ämne (moment, titel, begrepp,
+  //   kapitelrubriker) väger tyngst, se poangFor() och sok(). Prov: node verktyg/soktest.mjs.
+  //   Träffar ett kapitel hoppar sökningen till kapitlets början, annars till undertextraden där
+  //   ordet sägs (en replik är i snitt 22 s lång).
   // - Har inget ställe alla orden visas de ställen som har flest. Finns inget alls står det
   //   vilka filmer som finns.
   const fold = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
   const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const BOKSTAV = { a: "[aåäàáâ]", o: "[oöòóô]", e: "[eéèêë]", u: "[uüúù]", i: "[iíìî]", c: "[cç]", n: "[nñ]" };
   const TALORD = { 2: "två", 3: "tre", 4: "fyra" };
-  // Ett sökord som reguljärt uttryck. Korta ord (under fem tecken) måste börja ett ord i
-  // texten, annars hittar "pi" spionerna. Längre ord får sitta mitt i ett: ekvation → potensekvation.
-  function ordRe(alt) {
-    const utanPrickar = fold(alt) === alt;
-    const kropp = [...alt].map((c) => (c === " " ? "\\s+" : utanPrickar && BOKSTAV[c] ? BOKSTAV[c] : reEsc(c))).join("");
-    return new RegExp((alt.length < 5 && !alt.includes(" ") ? "(?<![\\p{L}\\p{N}^])" : "") + kropp, "iu");
+  // Ett ord eller en fras som reguljärt uttryck, för hela fraser och för att markera träffarna.
+  // Utan prickar i sökordet matchar det ändå med prickar: "rannan" markerar rännan.
+  function ordRe(alt, prefix = false) {
+    const kropp = [...fold(alt)].map((c) => (c === " " ? "\\s+" : BOKSTAV[c] || reEsc(c))).join("");
+    return new RegExp("(?<![\\p{L}\\p{N}^])" + kropp + (prefix ? "[\\p{L}\\p{N}^]*" : "(?![\\p{L}\\p{N}])"), "iu");
   }
   const SMAORD = new Set(("hur vad var när varför vilken vilket vilka man en ett av och i på att det den de som är med till för från " +
-    "jag du vi ni kan ska vill gör göra blir om så sen hitta förklara förklaring betyder fungerar funkar löser lösa löses räkna räknar räknas").split(" "));
-  const ANDELSER = ["ingarna", "ingen", "ing", "erna", "arna", "orna", "er", "ar", "or", "na", "en", "et", "a"];
-  const stam = (o) => { for (const a of ANDELSER) if (o.endsWith(a) && o.length - a.length >= 5) return o.slice(0, -a.length); return null; };
+    "jag du vi ni kan ska vill gör göra blir om så sen hitta förklara förklaring betyder fungerar funkar löser lösa löses räkna räknar räknas " +
+    "ut fram tar ta få får visa visar hjälp video videon film filmen lång långt stor stort stora mycket många").split(" ").map(fold));
+  // Ordstammen (Rickard 2026-10-05, sökningen ska ge den mest relevanta filmen): en böjningsändelse
+  // bort, och e:et i -el faller som i svenskan, så vinkel, vinkeln och vinklar får samma stam vinkl.
+  // Samma funktion körs på sökordet och på filmernas text, så stammarna möts även när de är fel ord.
+  const ANDELSER = ["ingarnas", "ingarna", "ingens", "ingen", "ingar", "arnas", "ernas", "ornas", "arna", "erna", "orna",
+    "ande", "ende", "ens", "ets", "ing", "ar", "er", "or", "en", "et", "na", "ad", "at", "as", "es", "a", "e", "n", "s", "t"];
+  const synkope = (o) => o.replace(/([^aeiouyåäö])el$/, "$1l");
+  function stam(ord) {
+    const o = synkope(ord);
+    if (/[\d^]/.test(o) || o.length < 4) return o;
+    for (const a of ANDELSER) if (o.endsWith(a) && o.length - a.length >= 3) return synkope(o.slice(0, -a.length));
+    return o;
+  }
+  // Ord i en text: små bokstäver, utan prickar, bindestreck bort ("pq-formeln" blir pqformeln) men
+  // delarna finns också med ("pq", "formeln"), så både "pq formeln" och "pq-formeln" hittar den.
+  function ordI(s) {
+    const ut = [];
+    for (const o of fold(norm(s)).split(/[^\p{L}\p{N}^-]+/u)) {
+      const hel = o.replace(/^-+|-+$/g, "");
+      if (!hel) continue;
+      if (hel.includes("-")) { ut.push(hel.replace(/-/g, "")); hel.split("-").filter(Boolean).forEach((d) => ut.push(d)); }
+      else ut.push(hel);
+    }
+    return ut;
+  }
+  // Hur väl ett sökord (stam q) passar ett ord i texten (stam w), 0–1: samma stam 1; texten har en
+  // längre form av ordet (vektor → vektorbegreppet) 0,8; ordet sitter sist i ett sammansatt ord
+  // (ekvation → potensekvation) 0,5; inne i ett ord 0,3. Ett ord i ett annat räknas alltså mindre än
+  // ordet självt, så "sinus" går till filmen om sinus och inte till den som säger cosinus.
+  function likhet(q, w) {
+    if (q === w) return 1;
+    if (q.length < 4 || /[\d^]/.test(q)) return w.startsWith(q) && w.length - q.length <= 1 && !/[\d^]/.test(w.slice(q.length)) ? 0.9 : 0;
+    if (w.startsWith(q)) return w.length - q.length <= 2 ? 1 : 0.85;
+    if (q.startsWith(w) && w.length >= 4 && q.length - w.length <= 2) return 0.9;
+    if (q.length >= 5 && w.endsWith(q)) return 0.5;
+    if (q.length >= 6 && w.includes(q)) return 0.3;
+    return 0;
+  }
   const SYNONYMER = [
     [/^kvadratrot/, ["roten ur", "kvadratrot"]],
     [/^(kubikrot|tredjerot)/, ["tredje roten"]],
     [/^negativ/, ["minus", "negativ"]],
     [/^minustal/, ["minus"]],
     [/^ojamlik/, ["olikhet"]],
-    [/^multiplic/, ["gånger", "gångar", "multiplic"]],
+    [/^multiplic/, ["gånger", "multiplicera"]],
     [/^(dividera|division)/, ["dela", "dividera"]],
     [/^kvadrat$/, ["i kvadrat", "upphöjt till 2", "upphöjt till två", "kvadrat"]],
     [/^kub$/, ["upphöjt till 3", "upphöjt till tre", "kub"]],
     [/^oandlig/, ["oändlig"]],
     [/^talfoljd/, ["talföljd", "mönster"]],
+    [/^(arcsin|arcussin|sininvers)/, ["arcussinus"]],
+    [/^(arccos|arcuscos|cosinvers)/, ["arcuscosinus"]],
+    [/^(arctan|arcustan|taninvers)/, ["arcustangens"]],
+    [/^(lg|log|logaritm)$/, ["logaritm", "lg"]],
+    [/^manghorning/, ["n-hörning", "hörning"]],
+    [/^lutning/, ["lutning", "k-värde"]],
+    [/^pythagoras/, ["pythagoras"]],
+    [/^sinus$/, ["sinus", "sin"]],
+    [/^cosinus$/, ["cosinus", "cos"]],
+    [/^tangens$/, ["tangens", "tan"]],
+  ];
+  // Matematik skriven med tecken blir ord som filmerna säger: (a + b)² är kvadreringsregeln,
+  // sin⁻¹ är arcussinus.
+  const SKRIVSATT = [
+    [/\(\s*[a-z0-9]+\s*[+-]\s*[a-z0-9]+\s*\)\s*\^\s*2/g, " kvadreringsreglerna "],
+    [/\(\s*[a-z0-9]+\s*\+\s*[a-z0-9]+\s*\)\s*\(\s*[a-z0-9]+\s*-\s*[a-z0-9]+\s*\)/g, " konjugatregeln "],
+    [/(?:räta\s+)?linjens\s+ekvation/g, " räta linjen "],
+    [/\b(sin|cos|tan)\s*(?:\^\s*\(?\s*[-−]\s*1\s*\)?|⁻¹|[-−]\s*1)/g, (_, f) => ` arcus${{ sin: "sinus", cos: "cosinus", tan: "tangens" }[f]} `],
   ];
   function tolkaFraga(fraga) {
-    let s = fraga.toLowerCase().replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => "^" + UPPH[c]).replace(/\*\*/g, "^");
+    let s = fraga.toLowerCase().replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => "^" + UPPH[c]).replace(/\*\*/g, "^").replace(/−/g, "-");
+    for (const [re, ny] of SKRIVSATT) s = s.replace(re, ny);
     const termer = [];
     s = s.replace(/([a-zåäö])\s*\^\s*(\d+)/g, (_, b, e) => {
       termer.push({ alt: [`${b}^${e}`, `${b} upphöjt till ${e}`, ...(TALORD[e] ? [`${b} upphöjt till ${TALORD[e]}`] : []), ...(e === "2" ? [`${b} i kvadrat`] : [])] });
@@ -2883,58 +3003,131 @@
     });
     s = s.replace(/∛/g, " tredje roten ur ").replace(/√/g, " roten ur ").replace(/π/g, " pi ").replace(/∞/g, " oändlig ")
       .replace(/≤|<=/g, " mindre än eller lika med ").replace(/≥|>=/g, " större än eller lika med ").replace(/</g, " mindre än ").replace(/>/g, " större än ");
-    const ord = norm(s).split(" ").filter(Boolean);
-    const viktiga = ord.filter((o) => !SMAORD.has(o));
-    for (const o of new Set(viktiga.length || termer.length ? viktiga : ord)) {
-      const alt = new Set([o]), st = stam(o);
-      if (st) alt.add(st);
-      for (const [re, syn] of SYNONYMER) if (re.test(fold(o))) syn.forEach((x) => alt.add(x));
+    const ord = ordI(s).filter((o) => !/^[-+=*/]+$/.test(o));
+    const hela = fold(norm(s)).split(/[^\p{L}\p{N}^-]+/u).filter(Boolean);
+    const viktiga = hela.filter((o) => !SMAORD.has(o));
+    for (const o of new Set(viktiga.length || termer.length ? viktiga : hela)) {
+      const alt = new Set([o]);
+      for (const [re, syn] of SYNONYMER) if (re.test(o)) syn.forEach((x) => alt.add(fold(x)));
       termer.push({ alt: [...alt] });
     }
-    termer.forEach((t) => { t.re = t.alt.map(ordRe); });
-    const alla = termer.flatMap((t) => t.alt).sort((a, b) => b.length - a.length);
-    return {
-      termer,
-      fras: ord.length > 1 ? ordRe(ord.join(" ")) : null,
-      markRe: alla.length ? new RegExp(alla.map((a) => ordRe(a).source).join("|"), "giu") : null,
-    };
+    // Varje alternativ är ett ord (jämförs med stammen) eller en fras (jämförs som text).
+    for (const t of termer) {
+      t.ord = []; t.fraser = [];
+      for (const a of t.alt) {
+        const delar = ordI(a);
+        if (delar.length > 1 && /\s/.test(a.trim())) t.fraser.push(ordRe(a));
+        else t.ord.push(stam(delar[0] || a));
+      }
+    }
+    // "Räkna ut" och "beräkna" krävs inte (alla filmer räknar), men ger poäng till en film vars
+    // titel eller moment börjar med Beräkna: "räkna ut vinkeln" går till Beräkna vinklar.
+    const valfria = hela.some((o) => /^(be)?rakna/.test(o)) ? [{ alt: ["beräkna"], ord: ["berakn"], fraser: [], vikt: 8, amne: true }] : [];
+    // Tal i en fråga med matematik ("x² = 25") krävs inte heller: filmen om x² = a säger inte just 25.
+    // Ett tal som filmen säger ger ändå några poäng.
+    if (termer.length > 1 && termer.some((t) => t.alt.some((a) => /\D/.test(a)))) {
+      for (const t of termer.filter((t) => t.alt.every((a) => /^\d+([.,]\d+)?$/.test(a)))) { termer.splice(termer.indexOf(t), 1); valfria.push({ ...t, vikt: 3 }); }
+    }
+    // Hela frasen från första till sista viktiga ordet, med småorden emellan: "potenser med bråk".
+    const forstaV = hela.findIndex((o) => !SMAORD.has(o)), sistaV = hela.length - 1 - [...hela].reverse().findIndex((o) => !SMAORD.has(o));
+    const fras = viktiga.length > 1 ? ordRe(hela.slice(forstaV, sistaV + 1).join(" "), true) : null;
+    const mark = termer.flatMap((t) => [...t.alt.map((a) => ordRe(a, !/\s/.test(a))), ...t.ord.filter((o) => o.length >= 3).map((o) => ordRe(o, true))]);
+    return { termer, valfria, fras, markRe: mark.length ? new RegExp(mark.map((r) => r.source).join("|"), "giu") : null, ord };
   }
+  // En textbit i indexet: texten (för fraser), dess stammar och den vikade texten.
+  const bit = (text) => ({ text, f: fold(norm(text)), stammar: [...new Set(ordI(text).map(stam))] });
   // Sökindexet byggs en gång: titel, moment, begrepp, beskrivning, kapitel, repliker och undertextrader.
   const INDEX = videor.map((v) => ({
-    v, titel: norm(v.titel), moment: norm(v.moment), begrepp: v.begrepp.map(norm), besk: norm(v.beskrivning),
-    kapitel: (v.kapitel || []).map((k) => ({ t: k.t, text: k.rubrik, n: norm(`${k.typ === "uppgift" ? "din tur " : ""}${k.rubrik}`), kap: true })),
-    repliker: v.repliker.map((r, i) => ({ t: r.t, text: r.text, n: norm(r.text), slut: v.repliker[i + 1] && v.repliker[i + 1].t != null ? v.repliker[i + 1].t : Infinity })),
-    rader: (v.undertext || []).map((u) => ({ t: u.s, n: norm(u.text) })),
+    v, titel: bit(v.titel), moment: bit(v.moment), begrepp: v.begrepp.map(bit), besk: bit(v.beskrivning),
+    kapitel: (v.kapitel || []).map((k) => ({ t: k.t, text: k.rubrik, kap: true, ...bit(`${k.typ === "uppgift" ? "din tur " : ""}${k.rubrik}`), text: k.rubrik })),
+    repliker: v.repliker.map((r, i) => ({ t: r.t, slut: v.repliker[i + 1] && v.repliker[i + 1].t != null ? v.repliker[i + 1].t : Infinity, ...bit(r.text) })),
+    rader: (v.undertext || []).map((u) => ({ t: u.s, ...bit(u.text) })),
   }));
-  const har = (term, n) => term.re.some((re) => re.test(n));
+  // Hur väl ett sökord passar en textbit, 0–1. Likheten per stam sparas, för samma stammar kommer igen.
+  function passar(term, b) {
+    let basta = 0;
+    for (const re of term.fraser) if (re.test(b.f)) return 1;
+    const minne = term.minne || (term.minne = new Map());
+    for (const w of b.stammar) {
+      let l = minne.get(w);
+      if (l === undefined) { l = Math.max(0, ...term.ord.map((q) => likhet(q, w))); minne.set(w, l); }
+      if (l > basta) { basta = l; if (l === 1) return 1; }
+    }
+    return basta;
+  }
+  // Poängen. En film är mest relevant när ordet är dess ÄMNE: i momentet, titeln eller de första
+  // begreppen. Kapitelrubriker väger sedan mest, och sist hur ofta ordet sägs, med avtagande vikt
+  // (tionde gången säger mindre än den första). Ett ord som finns i nästan alla filmer väger lite,
+  // ett ovanligt mycket (idf). En film måste ha alla orden; har ingen det visas de som har flest.
+  // Ord i moment, titlar och rubriker som inte säger något om ämnet (formelbladsfilmernas moment
+  // börjar alla med "Formelbladet:").
+  const FYLLE = new Set(["formelbladet", "motiverade", "baklanges", "textproblem", "del", "ma"].map(stam));
+  // Hur mycket av en rubrik frågan täcker, 0–1: "vektor" täcker hela Vektorbegreppet men halva
+  // Vektorer i koordinatform, och "konjugatregeln" hela kapitlet Konjugatregeln men halva
+  // Konjugatregeln med bokstäver. En rubrik om bara det man söker väger mer än en som nämner det.
+  function tackning(b, q) {
+    const ord = b.innehall || (b.innehall = b.stammar.filter((w) => !SMAORD.has(w) && !FYLLE.has(w) && !/^\d+$/.test(w)));
+    return ord.length ? ord.filter((w) => q.termer.some((t) => t.ord.some((o) => likhet(o, w) >= 0.5))).length / ord.length : 0;
+  }
+  function poangFor(x, q) {
+    const vagt = (t, b, vikt) => { const p = passar(t, b); return p ? vikt * p * (0.5 + 0.5 * tackning(b, q)) : 0; };
+    const per = q.termer.map((t, i) => {
+      const amne = Math.max(vagt(t, x.moment, 20), vagt(t, x.titel, 12), ...x.begrepp.map((b, i) => vagt(t, b, i < 3 ? 8 : 5)));
+      const kap = Math.max(0, ...x.kapitel.map((k) => vagt(t, k, 6))) + Math.min(1, x.kapitel.filter((k) => passar(t, k)).length - 1) * 2;
+      const ggr = x.repliker.reduce((s, r) => s + passar(t, r), 0);
+      return amne + kap + 2 * passar(t, x.besk) + 6 * ggr / (ggr + 2);
+    });
+    return per;
+  }
   function sok(fraga) {
     const q = tolkaFraga(fraga);
     if (!q.termer.length) return { q, res: [], narmast: false };
-    const frasI = (n) => !!q.fras && q.fras.test(n);
-    const res = hitta(q, (n) => q.termer.every((t) => har(t, n)), frasI);
-    if (res.length || q.termer.length < 2) return { q, res, narmast: false };
-    const krav = Math.ceil(q.termer.length / 2);
-    return { q, res: hitta(q, (n) => q.termer.filter((t) => har(t, n)).length >= krav, frasI), narmast: true };
+    const rader = INDEX.map((x) => ({ x, per: poangFor(x, q) }));
+    const df = q.termer.map((_, i) => rader.filter((r) => r.per[i] > 0).length);
+    const idf = df.map((d) => Math.log(1 + INDEX.length / Math.max(1, d)));
+    // Huvudordet, det eleven letar efter: ett namn eller ord som bara finns i en eller två filmer
+    // ("avstånd till Titanic"), annars det första ämnesordet ("en vinkel i en rätvinklig triangel").
+    const sallsynt = df.findIndex((d) => d > 0 && d <= 2);
+    const huvud = q.termer.length > 1 ? (sallsynt >= 0 ? sallsynt : 0) : -1;
+    const helFras = (b) => !!q.fras && q.fras.test(b.f);
+    for (const r of rader) {
+      r.antal = r.per.filter((p) => p > 0).length;
+      r.poang = r.per.reduce((s, p, i) => s + p * idf[i] * (i === huvud ? 1.6 : 1), 0);
+      // Huvudordet är det eleven letar efter. Hör det inte till filmens ämne (moment,
+      // titel, de första begreppen) är filmen bara sammanhanget: "en vinkel i en rätvinklig triangel"
+      // ska till Beräkna vinklar, inte till Beräkna sidor i rätvinkliga trianglar.
+      if (huvud >= 0 && ![r.x.moment, r.x.titel, ...r.x.begrepp.slice(0, 3)].some((b) => passar(q.termer[huvud], b) >= 0.8)) r.poang *= 0.8;
+      for (const t of q.valfria) r.poang += t.vikt * (t.amne ? Math.max(passar(t, r.x.moment), passar(t, r.x.titel)) : Math.min(1, r.x.repliker.reduce((s, y) => s + passar(t, y), 0)));
+      // Hela frasen ("likformiga trianglar") där filmen säger vad den handlar om, eller i rösten.
+      if (q.fras) {
+        if ([r.x.moment, r.x.titel, ...r.x.begrepp, ...r.x.kapitel].some(helFras)) r.poang += 25;
+        else if (r.x.repliker.some(helFras)) r.poang += 8;
+      }
+    }
+    const n = q.termer.length;
+    let narmast = false, urval = rader.filter((r) => r.antal === n);
+    if (!urval.length && n > 1) { narmast = true; urval = rader.filter((r) => r.antal >= Math.ceil(n / 2)); }
+    const res = urval.filter((r) => r.poang > 0)
+      .map((r) => ({ v: r.x.v, poang: r.poang * (r.antal / n) ** 2, stallen: stallenI(r.x, q, helFras) }))
+      .sort((a, b) => b.poang - a.poang);
+    return { q, res, narmast };
   }
-  function hitta(q, traff, frasI) {
-    return INDEX.map((x) => {
-      const kap = x.kapitel.filter((k) => traff(k.n) || frasI(k.n));
-      const rep = x.repliker.filter((r) => r.t != null && (traff(r.n) || frasI(r.n)));
-      let poang = kap.length * 12 + kap.filter((k) => frasI(k.n)).length * 10 + rep.length * 2 + rep.filter((r) => frasI(r.n)).length * 3;
-      if (traff(x.titel)) poang += 20;
-      if (traff(x.moment)) poang += 15;
-      if (x.begrepp.some(traff)) poang += 8;
-      if (traff(x.besk)) poang += 3;
-      // Ställena i filmen: kapitel och repliker med hela frasen först, och varje replik på
-      // sekunden där ordet sägs. Två ställen inom två sekunder är samma ställe.
-      const stallen = [...kap.filter((k) => frasI(k.n)), ...rep.filter((r) => frasI(r.n)), ...kap.filter((k) => !frasI(k.n)), ...rep.filter((r) => !frasI(r.n))]
-        .map((s) => (s.kap ? s : { ...s, t: sekund(x, s, q) }))
-        .filter((s, i, a) => a.findIndex((y) => Math.abs(y.t - s.t) < 2) === i);
-      return { v: x.v, poang, stallen };
-    }).filter((r) => r.poang > 0).sort((a, b) => b.poang - a.poang);
+  // Ställena i filmen där det sägs: kapitel och repliker med hela frasen först, sedan de som har
+  // flest av orden (bäst först), och varje replik på sekunden där ordet sägs. Två ställen inom två
+  // sekunder är samma ställe.
+  function stallenI(x, q, helFras) {
+    const vardera = (b) => { const p = q.termer.map((t) => passar(t, b)); return { antal: p.filter((v) => v >= 0.5).length, summa: p.reduce((s, v) => s + v, 0), fras: helFras(b) }; };
+    const kap = x.kapitel.map((k) => ({ s: k, ...vardera(k) })), rep = x.repliker.filter((r) => r.t != null).map((r) => ({ s: r, ...vardera(r) }));
+    const flest = Math.max(0, ...kap.map((k) => k.antal), ...rep.map((r) => r.antal));
+    if (!flest) return [];
+    const med = (a) => a.filter((y) => y.fras || y.antal === flest);
+    const ordning = (a, b) => b.fras - a.fras || b.summa - a.summa || a.s.t - b.s.t;
+    return [...med(kap).sort(ordning), ...med(rep).sort(ordning)]
+      .map((y) => (y.s.kap ? y.s : { ...y.s, t: sekund(x, y.s, q) }))
+      .filter((s, i, a) => a.findIndex((y) => Math.abs(y.t - s.t) < 2) === i);
   }
   function sekund(x, r, q) {
-    const rad = x.rader.find((u) => u.t >= r.t - 0.5 && u.t < r.slut && q.termer.some((t) => har(t, u.n)));
+    const rad = x.rader.find((u) => u.t >= r.t - 0.5 && u.t < r.slut && q.termer.some((t) => passar(t, u) >= 0.5));
     return rad ? Math.floor(rad.t) : r.t;
   }
   // Ett kort utdrag runt första stället där ordet sägs: från meningens början om den börjar
@@ -3983,6 +4176,80 @@
       ${prick(m.lo, m.loIn)}${prick(m.hi, m.hiIn)}</svg>`;
   }
 
+  // ── Din tur: figuren ──────────────────────────────────
+  // `figur` i dintur.json: { vy: [bredd, höjd], text: vad figuren visar (för skärmläsare), delar: [...] }.
+  // Koordinaterna är i vy-enheter med y nedåt, och delarna ritas i ordning:
+  //   rutnat {fran, till, steg}    yta {p} eller {d}    linje {p}    bana {d}    pil {fran, till}
+  //   ratvinkel {vid, mot: [a, b]}    vinkel {vid, mot: [a, b], r, text}    prick {vid}    cirkel {mitt, r}
+  //   sida {p: [a, b], text, sida: 1 | -1, avstand}: text vid mitten av sträckan, ut åt sidan
+  //   text {vid, text, ankare: "start" | "end"}
+  // Val: accent (det som efterfrågas), streckad, tjock, svag, skugga, liten (text).
+  // En ensam bokstav (v, x, u) skrivs kursivt som i formlerna.
+  function figur(f) {
+    // På en plåt (vy 1920 × 1080, som rutan i videorna) är standardmåtten fyra gånger större.
+    const k = f.bild || f.vy[0] >= 1000 ? 4 : 1;
+    const n = (x) => +x.toFixed(1), pt = (p) => `${n(p[0])} ${n(p[1])}`;
+    const enhet = (a, b) => { const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1; return [dx / l, dy / l]; };
+    const kl = (e, bas) => [bas, ...["accent", "streckad", "tjock", "svag", "skugga", "liten"].filter((k) => e[k])].join(" ");
+    let ordning = 0;
+    // Hela streck ritas fram (pathLength 1), streckade och ytor tonas in. Ordningen ger fördröjningen.
+    const fordrojning = () => `style="animation-delay:${(0.12 * ordning++).toFixed(2)}s"`;
+    const streck = (e, d) => e.streckad ? `<path class="${kl(e, "streck")} tona" ${fordrojning()} d="${d}"/>` : `<path class="${kl(e, "streck")} rita" pathLength="1" ${fordrojning()} d="${d}"/>`;
+    const text = (p, t, e, ankare = "middle") => `<text class="${[kl(e, "tona"), /^[a-zA-Z]$/.test(t) ? "var" : ""].join(" ").trim()}" ${fordrojning()} x="${n(p[0])}" y="${n(p[1])}" text-anchor="${ankare}">${esc(t)}</text>`;
+    const delar = f.delar.map((e) => {
+      switch (e.typ) {
+        case "rutnat": {
+          const [x0, y0] = e.fran, [x1, y1] = e.till;
+          let d = "";
+          for (let x = x0; x <= x1 + 0.01; x += e.steg) d += `M${n(x)} ${y0}V${y1}`;
+          for (let y = y0; y <= y1 + 0.01; y += e.steg) d += `M${x0} ${n(y)}H${x1}`;
+          return `<path class="rutnat" d="${d}"/>`;
+        }
+        case "yta": return `<path class="${kl(e, "yta")} tona" ${fordrojning()} d="${e.d || `M${e.p.map(pt).join(" L")} Z`}"/>`;
+        case "linje": return streck(e, `M${e.p.map(pt).join(" L")}`);
+        case "bana": return streck(e, e.d);
+        case "cirkel": { const [cx, cy] = e.mitt, r = e.r; return streck(e, `M${n(cx + r)} ${cy} A${r} ${r} 0 1 1 ${n(cx - r)} ${cy} A${r} ${r} 0 1 1 ${n(cx + r)} ${cy}`); }
+        case "pil": {
+          const [ux, uy] = enhet(e.fran, e.till), [bx, by] = e.till, s = 9 * k;
+          return streck(e, `M${pt(e.fran)} L${pt(e.till)} M${n(bx - s * ux - s * 0.55 * uy)} ${n(by - s * uy + s * 0.55 * ux)} L${pt(e.till)} L${n(bx - s * ux + s * 0.55 * uy)} ${n(by - s * uy - s * 0.55 * ux)}`);
+        }
+        case "ratvinkel": {
+          const v = e.vid, s = e.storlek || 11 * k, a = enhet(v, e.mot[0]), b = enhet(v, e.mot[1]);
+          return streck({ ...e, svag: true }, `M${pt([v[0] + s * a[0], v[1] + s * a[1]])} L${pt([v[0] + s * (a[0] + b[0]), v[1] + s * (a[1] + b[1])])} L${pt([v[0] + s * b[0], v[1] + s * b[1]])}`);
+        }
+        case "vinkel": {
+          const v = e.vid, r = e.r || 28 * k, a = enhet(v, e.mot[0]), b = enhet(v, e.mot[1]);
+          const svep = a[0] * b[1] - a[1] * b[0] > 0 ? 1 : 0, m = enhet([0, 0], [a[0] + b[0], a[1] + b[1]]), t = r + (e.avstand || 14 * k);
+          return streck({ ...e, svag: !e.accent }, `M${pt([v[0] + r * a[0], v[1] + r * a[1]])} A${r} ${r} 0 0 ${svep} ${pt([v[0] + r * b[0], v[1] + r * b[1]])}`)
+            + (e.text ? text([v[0] + t * m[0], v[1] + t * m[1]], e.text, e) : "");
+        }
+        case "sida": {
+          const [a, b] = e.p, [ux, uy] = enhet(a, b), s = (e.sida || 1) * (e.avstand || 16 * k);
+          return text([(a[0] + b[0]) / 2 - uy * s, (a[1] + b[1]) / 2 + ux * s], e.text, e);
+        }
+        case "text": return text(e.vid, e.text, e, e.ankare);
+        case "prick": return `<circle class="${kl(e, "prick")} tona" ${fordrojning()} cx="${n(e.vid[0])}" cy="${n(e.vid[1])}" r="${e.r || 4 * k}"/>`;
+        default: return "";
+      }
+    }).join("");
+    const etikett = attr(f.text || "Figur till uppgiften");
+    // Eget bläck för en plåt, som i videon: `blak: { farg, skugga, accent }` (t.ex. ristat i sanden).
+    const b = f.blak || {};
+    const eget = f.blak ? ` style="${attr([b.farg && `--blak:${b.farg}`, b.svag && `--blak-svag:${b.svag}`, b.accent && `--blak-accent:${b.accent}`, b.skugga && `filter:${b.skugga === "ingen" ? "none" : `drop-shadow(0 2px 6px ${b.skugga})`}`].filter(Boolean).join(";"))}"` : "";
+    // Med plåt: bläcket som i videorna, vitt med skugga på en målning (tema "scen") och svart på
+    // ett pappersuppslag (tema "papper"). Plåten fyller rutan som i filmen.
+    // `utsnitt: [x, y, bredd, höjd]` visar bara en del av plåten (i 16:9), där ritningen ligger.
+    if (f.bild) return `<svg class="dintur-figur plat tema-${f.tema || "scen"} vantar" viewBox="${(f.utsnitt || [0, 0, ...f.vy]).join(" ")}" role="img" aria-label="${etikett}">`
+      + `<image href="${attr(f.bild)}" width="${f.vy[0]}" height="${f.vy[1]}" preserveAspectRatio="xMidYMid slice"/><g class="blak"${eget}>${delar}</g></svg>`;
+    // Utan plåt: talen i figuren lika stora som i texten, så vyn visas högst 1,2 gånger sin bredd.
+    return `<svg class="dintur-figur vantar" viewBox="0 0 ${f.vy[0]} ${f.vy[1]}" style="max-width:${Math.round(f.vy[0] * 1.2)}px" role="img" aria-label="${etikett}">${delar}</svg>`;
+  }
+  const figurIakttagare = new IntersectionObserver((poster) => poster.forEach((p) => {
+    if (!p.isIntersecting) return;
+    p.target.classList.replace("vantar", "ritas");
+    figurIakttagare.unobserve(p.target);
+  }), { threshold: 0.4 });
+
   // ── Din tur: kortet under kapitlen ────────────────────
   const dtEl = $("dintur");
   let dt = null;   // { v, d, lost: Set av delar, fel: antal fel svar, steg: visade lösningssteg }
@@ -3995,6 +4262,11 @@
     dt = { v, d, lost: new Set(), fel: 0, steg: 0 };
     const tidigare = !!(framsteg[v.id] && framsteg[v.id].lost);
     $("dintur-fraga").textContent = d.fraga;
+    const fig = $("dintur-figur");
+    fig.hidden = !d.figur;
+    fig.innerHTML = d.figur ? figur(d.figur) : "";
+    dtEl.classList.toggle("med-figur", !!d.figur && !d.figur.bild);
+    if (d.figur) figurIakttagare.observe(fig.firstElementChild);
     $("dintur-lost").hidden = !tidigare;
     const delar = $("dintur-delar");
     delar.classList.toggle("flera", d.delar.length > 1);
