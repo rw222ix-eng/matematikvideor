@@ -179,7 +179,7 @@
         "exempel": "t.ex. 4",
         "tangenter": ["^", "(", ")", "/"],
         "fel": [
-          { "svar": "5", "text": "5 är tredje roten ur 125. Talet över bråkstrecket säger att du också ska höja upp till 2." },
+          { "svar": "5", "text": "5 är tredje roten ur 125. Två tredjedelar är en tredjedel gånger två, så du ska också höja upp till 2." },
           { "svar": "125^(3/2)", "tolerans": 1, "text": "Du har vänt på bråket. Avståndet är T upphöjt till två tredjedelar, inte tre halva." },
           { "svar": "125*2/3", "tolerans": 0.05, "text": "Två tredjedelar i exponenten betyder inte att du ska gånga med 2/3. Ta tredje roten ur 125 och höj sedan upp till 2." },
           { "svar": "125^2", "text": "Du har höjt upp till 2 men glömt roten. Talet under bråkstrecket säger att du också ska ta tredje roten." },
@@ -187,7 +187,7 @@
         ]
       }
     ],
-    "ledtrad": { "fras": "Så här räknar man med", "text": "Avståndet är a = T^(2/3). Talet under bråkstrecket säger vilken rot du tar, och talet över vad du höjer upp till." },
+    "ledtrad": { "fras": "Okej, nu provar vi på", "text": "Avståndet är a = T^(2/3). Två tredjedelar är en tredjedel gånger två, så 125^(2/3) = (125^(1/3))². Ta tredje roten först och höj sedan upp till två." },
     "losning": [
       "Keplers lag ger a = T^(2/3), och här är T = 125.",
       "a = 125^(2/3)",
