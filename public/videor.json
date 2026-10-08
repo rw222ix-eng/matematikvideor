@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-08T15:54:36.438Z",
+ "byggd": "2026-10-08T21:32:25.260Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -2859,7 +2859,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k2-02-formler-och-modeller-v1/ma1c-k2-02-formler-och-modeller-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k2-02-formler-och-modeller-v2/ma1c-k2-02-formler-och-modeller-1080p.mp4",
    "moment": "Formler och modeller, sätta in, lösa ut en variabel, rimlighet",
    "begrepp": [
     "formel",
@@ -2877,213 +2877,226 @@
    ],
    "beskrivning": "Kung Alfred i södra England på 880-talet hade inga klockor. Han lät göra sex ljus med tolv streck på varje, och de räckte ett helt dygn. Ur hans tal ställer vi upp formeln L = 12 − 3t och förklarar beroende och oberoende variabel och fast och rörlig del. Vi sätter in i formeln, löser ekvationen 3 = 12 − 3t med balansmetoden och löser ut t ur formeln. Sedan jämför vi två modeller, ett ljus i stilla luft och ett i blåst, och ser varför modellen bara gäller när 0 ≤ t ≤ 4.",
    "youtube": null,
-   "langd": 516,
+   "langd": 601,
    "omslag": "omslag/ma1c-k2-02-formler-och-modeller.jpg?v=5ec9bc95",
    "omslagRen": "omslag/ma1c-k2-02-formler-och-modeller-ren.jpg?v=07f4512f",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 1,
-     "text": "Alfred är kung i södra England på åttahundraåttiotalet. Han har lovat Gud att ge halva sin tid till bön och studier, både dag och natt. Men det finns inga klockor i hans kungarike."
+     "t": 4,
+     "text": "Alfred är kung i södra England på åttahundraåttiotalet. Han har lovat Gud att ge halva sin tid till bön och studier, både dag och natt. Men det finns inga klockor i hans kungarike. Hur ska han då veta hur mycket tid som har gått?"
     },
     {
-     "t": 18,
+     "t": 21,
      "text": "På dagen kan man se på solen ungefär hur mycket tiden är. Men ofta är det molnigt, och på natten är det mörkt. Därför kan Alfred inte veta hur många timmar som har gått."
     },
     {
-     "t": 32,
+     "t": 34,
      "text": "Alfred har präster som reser med honom och håller i bönerna. Han låter dem väga upp vax och göra sex ljus av det. Ljusen blir lika långa och lika tjocka, och på varje ljus ritar prästerna tolv streck med lika långt mellanrum."
     },
     {
-     "t": 52,
+     "t": 51,
      "text": "Prästerna tänder ljusen ett efter ett, och de sex ljusen räcker precis ett helt dygn, alltså tjugofyra timmar. Så kan Alfred följa tiden på ljusen."
     },
     {
-     "t": 65,
-     "text": "En präst vakar vid ljuset och ser att tre streck är kvar. Hur länge har ljuset brunnit då?"
+     "t": 64,
+     "text": "En präst vakar vid ljuset och ser att tre streck är kvar. Hur länge har ljuset brunnit då? Mm, ja... det kan vi räkna ut."
     },
     {
-     "t": 74,
-     "text": "Vi börjar med det Alfred vet. Sex ljus räcker i tjugofyra timmar. Tjugofyra delat med sex är fyra, så ett ljus räcker i fyra timmar."
+     "t": 75,
+     "text": "Vi börjar med det Alfred vet. Sex ljus räcker i tjugofyra timmar. Hur länge räcker då ett ljus? Tjugofyra delat med sex är fyra, så ett ljus räcker i fyra timmar."
     },
     {
-     "t": 87,
-     "text": "Ett ljus har tolv streck, och det brinner ner på fyra timmar. Tolv delat med fyra är tre. Ljuset brinner alltså ner tre streck varje timme."
+     "t": 90,
+     "text": "Ett ljus har tolv streck, och det brinner ner på fyra timmar. Tolv delat med fyra är tre. Ljuset brinner alltså ner tre streck varje timme. Och vi kan kolla åt andra hållet. Tre streck i timmen i fyra timmar, det blir tolv streck. Det stämmer."
     },
     {
-     "t": 101,
+     "t": 111,
      "text": "Vi gör en tabell. När ljuset tänds är tolv streck kvar. Efter en timme är tolv minus tre kvar, alltså nio. Efter två timmar är tolv minus tre gånger två kvar, alltså sex."
     },
     {
-     "t": 120,
-     "text": "Varje rad följer samma mönster. Vi börjar på tolv och drar bort tre för varje timme. Vi kallar antalet timmar för t och antalet streck som är kvar för L. Då blir regeln L är lika med tolv minus tre t."
-    },
-    {
-     "t": 140,
-     "text": "En sådan regel kallas en formel. En formel visar hur två eller flera variabler hänger ihop. En variabel är en bokstav som kan stå för olika tal."
+     "t": 128,
+     "text": "Varje rad följer samma mönster, ser du? Vi börjar på tolv och drar bort tre för varje timme. Vi kallar antalet timmar för t och antalet streck som är kvar för L. Då blir regeln L är lika med tolv minus tre t. Tre t betyder tre gånger t, alltså tre streck för varje timme."
     },
     {
      "t": 154,
-     "text": "Antalet streck som är kvar beror på hur länge ljuset har brunnit. Därför kallas L den beroende variabeln. Tiden t kan vi välja fritt, så t kallas den oberoende variabeln."
+     "text": "En sådan regel kallas en formel. En formel visar hur två eller flera variabler hänger ihop. En variabel är en bokstav som kan stå för olika tal. Formeln är alltså en räkneregel. Man stoppar in en tid och får ut hur många streck som är kvar."
     },
     {
-     "t": 170,
-     "text": "Talet tolv ändras inte. Det är antalet streck när ljuset tänds. Delen minus tre t ändras, för varje timme drar den bort tre streck till. I en formel för en kostnad, till exempel för ett mobilabonnemang, kallas de två delarna den fasta kostnaden och den rörliga kostnaden."
+     "t": 174,
+     "text": "Antalet streck som är kvar beror på hur länge ljuset har brunnit. Därför kallas L den beroende variabeln. Tiden t kan vi välja fritt, så t kallas den oberoende variabeln. Vi väljer tiden, och sen ger formeln oss strecken."
     },
     {
-     "t": 195,
-     "text": "Nu använder vi formeln. Att sätta in betyder att vi byter en bokstav mot ett tal. Vi sätter in t är lika med fyra. Tolv minus tre gånger fyra är tolv minus tolv, alltså noll. Efter fyra timmar är inga streck kvar, och prästen tänder nästa ljus."
+     "t": 192,
+     "text": "Talet tolv ändras inte. Det är antalet streck när ljuset tänds. Delen minus tre t ändras, för varje timme drar den bort tre streck till. Formler för kostnader är byggda på samma sätt. I en formel för ett mobilabonnemang kallas de två delarna den fasta kostnaden och den rörliga kostnaden. Den fasta betalar man varje månad, och den rörliga växer ju mer man använder telefonen."
     },
     {
-     "t": 219,
-     "text": "Nu till prästens fråga. Tre streck är kvar, så L är tre. Vi sätter in det och får tre är lika med tolv minus tre t. Nu är t det okända talet, så vi har en ekvation."
+     "t": 223,
+     "text": "Nu använder vi formeln. Att sätta in betyder att vi byter ut en bokstav mot ett tal. Hur många streck är kvar efter fyra timmar? Vi sätter in t är lika med fyra. Tolv minus tre gånger fyra är tolv minus tolv, alltså noll. Efter fyra timmar är inga streck kvar, och prästen tänder nästa ljus. Det stämmer med det vi visste, för ett ljus räcker ju i fyra timmar."
     },
     {
-     "t": 238,
-     "text": "Vi löser den med balansmetoden. En ekvation är som en våg i jämvikt. Gör vi samma sak med båda leden, alltså båda sidorna av likhetstecknet, så är vågen fortfarande i jämvikt."
+     "t": 255,
+     "text": "Nu till prästens fråga. Tre streck är kvar, så L är tre. Vi sätter in det och får tre är lika med tolv minus tre t. Nu är t det okända talet, så vi har en ekvation. En ekvation är alltså en likhet där ett tal är okänt."
     },
     {
-     "t": 256,
-     "text": "Vi vill ha t ensamt. Först lägger vi till tre t på båda sidor. Då står det tre plus tre t är lika med tolv."
+     "t": 276,
+     "text": "Vi löser den med balansmetoden. En ekvation är som en våg i jämvikt. Lägger man något i ena skålen, måste man lägga lika mycket i den andra. Gör vi samma sak med båda leden, alltså båda sidorna av likhetstecknet, så är vågen fortfarande i jämvikt."
     },
     {
-     "t": 269,
-     "text": "Sedan drar vi bort tre från båda sidor. Då står det tre t är lika med nio. Till sist delar vi båda sidor med tre, och vi får t är lika med tre. Ljuset har alltså brunnit i tre timmar."
+     "t": 296,
+     "text": "Vi vill ha t ensamt. Först lägger vi till tre t på båda sidor. Varför just tre t? Jo, till höger står minus tre t, och minus tre t plus tre t blir noll. Då står det tre plus tre t är lika med tolv."
     },
     {
-     "t": 289,
+     "t": 318,
+     "text": "Sedan drar vi bort tre från båda sidor. Då står det tre t är lika med nio. Till sist delar vi båda sidor med tre, för tre t delat med tre är bara t. Och vi får t är lika med tre. Ljuset har alltså brunnit i tre timmar."
+    },
+    {
+     "t": 339,
+     "text": "Vi kollar svaret genom att sätta in tre i formeln. Tolv minus tre gånger tre är tolv minus nio, alltså tre. Tre streck kvar, precis som prästen såg. Och man kan tänka på ett annat sätt också. Nio streck har brunnit ner, och varje timme brinner tre. Nio delat med tre är tre timmar. Samma svar."
+    },
+    {
+     "t": 367,
      "text": "Men prästen vill inte lösa en ny ekvation varje gång han tittar på ljuset. Därför löser vi ut t ur formeln. Det betyder att vi skriver om formeln så att t står ensamt. Vi gör samma steg som nyss, men med L i stället för tre."
     },
     {
-     "t": 310,
+     "t": 385,
      "text": "Först lägger vi till tre t på båda sidor. Då står det L plus tre t är lika med tolv. Sedan drar vi bort L från båda sidor. Då står det tre t är lika med tolv minus L."
     },
     {
-     "t": 329,
-     "text": "Till sist delar vi båda sidor med tre. Då står det t är lika med tolv minus L, delat med tre. Med den formeln räknar prästen ut tiden direkt. Är nio streck kvar, blir det tolv minus nio delat med tre, alltså en timme."
+     "t": 402,
+     "text": "Till sist delar vi båda sidor med tre. Då står det t är lika med tolv minus L, delat med tre. Och det är samma sak som vi tänkte nyss. Tolv minus L är strecken som har brunnit ner, och delat med tre blir det timmar."
     },
     {
-     "t": 352,
-     "text": "Men ljusen brann inte alltid lika fort. Vinden blåste in genom kyrkornas dörrar och fönster och genom tältduken när Alfred reste. I blåsten brann ljusen ut för tidigt."
-    },
-    {
-     "t": 368,
-     "text": "Säg att ett ljus i blåsten brinner ner fyra streck varje timme. Då blir formeln L är lika med tolv minus fyra t. Nu har vi två modeller. En modell är en formel som beskriver något i verkligheten, här ett ljus i stilla luft och ett ljus i blåst."
-    },
-    {
-     "t": 392,
-     "text": "Vi jämför modellerna efter två timmar. I stilla luft är tolv minus tre gånger två kvar, alltså sex streck. I blåsten är tolv minus fyra gånger två kvar, alltså fyra streck. Ljuset i blåsten visar alltså fel tid."
-    },
-    {
-     "t": 414,
-     "text": "En modell gäller inte heller för alla tal. Vi sätter in t är lika med fem i Alfreds formel. Tolv minus tre gånger fem är tolv minus femton, alltså minus tre. Men ett ljus kan inte ha minus tre streck kvar, så svaret är orimligt."
+     "t": 421,
+     "text": "Med den formeln räknar prästen ut tiden direkt. Är nio streck kvar, blir det tolv minus nio delat med tre, alltså en timme. Och i tabellen var det nio streck kvar efter en timme, så det stämmer."
     },
     {
      "t": 437,
-     "text": "Formeln gäller bara från det att ljuset tänds tills det har brunnit ner, alltså när t ligger mellan noll och fyra. Med tecken skriver vi noll är mindre än eller lika med t, som är mindre än eller lika med fyra."
+     "text": "Men ljusen brann inte alltid lika fort. Vinden blåste in genom kyrkornas dörrar och fönster och genom tältduken när Alfred reste. I blåsten brann ljusen ut för tidigt."
     },
     {
-     "t": 456,
+     "t": 451,
+     "text": "Säg att ett ljus i blåsten brinner ner fyra streck varje timme. Då blir formeln L är lika med tolv minus fyra t. Nu har vi två modeller. En modell är en formel som beskriver något i verkligheten, här ett ljus i stilla luft och ett ljus i blåst."
+    },
+    {
+     "t": 471,
+     "text": "Vi jämför modellerna efter två timmar. Vi sätter in t är lika med två i båda. I stilla luft är tolv minus tre gånger två kvar, alltså sex streck. I blåsten är tolv minus fyra gånger två kvar, alltså fyra streck. Ljuset i blåsten visar alltså fel tid. Prästen tror att det har gått mer tid än det har."
+    },
+    {
+     "t": 498,
+     "text": "En modell gäller inte heller för alla tal. Vi sätter in t är lika med fem i Alfreds formel. Tolv minus tre gånger fem är tolv minus femton, alltså minus tre. Femton är tre mer än tolv, så vi hamnar tre under noll. Men ett ljus kan inte ha minus tre streck kvar, så svaret är orimligt. Orimligt betyder att svaret inte kan stämma i verkligheten."
+    },
+    {
+     "t": 527,
+     "text": "Formeln gäller bara från det att ljuset tänds tills det har brunnit ner, alltså när t ligger mellan noll och fyra. Med tecken skriver vi noll är mindre än eller lika med t, som är mindre än eller lika med fyra. Det betyder att t är alla tider mellan noll och fyra timmar, och noll och fyra får också vara med."
+    },
+    {
+     "t": 552,
      "text": "Alfred ville att ljusen skulle följa modellen. Därför lät han bygga en lykta av trä och oxhorn. Hornet slipades så tunt att ljuset lyste igenom nästan som genom glas. Inne i lyktan brann ljusen i jämn takt, även när det blåste."
     },
     {
-     "t": 479,
+     "t": 570,
      "text": "Vi vet det här från en munk som hette Asser. Han levde hos Alfred och skrev en bok om kungens liv år åttahundranittiotre. I dag kallas kungen Alfred den store."
     },
     {
-     "t": 494,
+     "t": 583,
      "text": "Nu är det din tur. Ett ljus har tio streck, och det brinner ner två streck varje timme. Skriv en formel för hur många streck L som är kvar efter t timmar. Hur länge har ljuset brunnit när fyra streck är kvar?"
     }
    ],
    "kapitel": [
     {
-     "t": 1,
+     "t": 4,
      "rubrik": "Kungens löfte",
      "typ": "historia"
     },
     {
-     "t": 32,
+     "t": 34,
      "rubrik": "Sex ljus med tolv streck",
      "typ": "historia"
     },
     {
-     "t": 65,
+     "t": 64,
      "rubrik": "Frågan: tre streck kvar",
      "typ": "historia"
     },
     {
-     "t": 74,
+     "t": 75,
      "rubrik": "Tre streck i timmen",
      "typ": "matte"
     },
     {
-     "t": 101,
+     "t": 111,
      "rubrik": "Tabellen",
      "typ": "matte"
     },
     {
-     "t": 120,
+     "t": 128,
      "rubrik": "Formeln L = 12 − 3t",
      "typ": "matte"
     },
     {
-     "t": 154,
+     "t": 174,
      "rubrik": "Beroende och oberoende variabel",
      "typ": "matte"
     },
     {
-     "t": 170,
+     "t": 192,
      "rubrik": "Fast och rörlig del",
      "typ": "matte"
     },
     {
-     "t": 195,
+     "t": 223,
      "rubrik": "Sätta in i formeln",
      "typ": "matte"
     },
     {
-     "t": 219,
+     "t": 255,
      "rubrik": "Ekvationen 3 = 12 − 3t",
      "typ": "matte"
     },
     {
-     "t": 238,
+     "t": 276,
      "rubrik": "Balansmetoden",
      "typ": "matte"
     },
     {
-     "t": 289,
+     "t": 339,
+     "rubrik": "Kolla svaret på två sätt",
+     "typ": "matte"
+    },
+    {
+     "t": 367,
      "rubrik": "Lösa ut t",
      "typ": "matte"
     },
     {
-     "t": 352,
+     "t": 437,
      "rubrik": "Blåsten",
      "typ": "historia"
     },
     {
-     "t": 368,
+     "t": 451,
      "rubrik": "Två modeller",
      "typ": "matte"
     },
     {
-     "t": 414,
+     "t": 498,
      "rubrik": "Rimlighet: 0 ≤ t ≤ 4",
      "typ": "matte"
     },
     {
-     "t": 456,
+     "t": 552,
      "rubrik": "Lyktan av horn",
      "typ": "historia"
     },
     {
-     "t": 494,
+     "t": 583,
      "rubrik": "Din tur: tio streck",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 494,
+    "notisFran": 583,
     "fraga": "Ett ljus har 10 streck, och det brinner ner 2 streck varje timme.",
     "delar": [
      {
@@ -3142,7 +3155,7 @@
     ],
     "ledtrad": {
      "text": "Börja på strecken när ljuset tänds och dra bort 2 för varje timme. Sätt sedan in L = 4 och lös ekvationen med balansmetoden.",
-     "t": 134
+     "t": 142
     },
     "losning": [
      "När ljuset tänds är 10 streck kvar, och varje timme brinner 2 streck ner.",
@@ -3155,518 +3168,678 @@
    },
    "undertext": [
     {
-     "s": 1.5,
-     "e": 5.96,
+     "s": 4,
+     "e": 7.74,
      "text": "Alfred är kung i södra England på 880-talet."
     },
     {
-     "s": 6.96,
-     "e": 11.28,
+     "s": 8.74,
+     "e": 12.56,
      "text": "Han har lovat Gud att ge halva sin tid till bön och studier,"
     },
     {
-     "s": 11.7,
-     "e": 13.04,
+     "s": 12.82,
+     "e": 13.96,
      "text": "både dag och natt."
     },
     {
-     "s": 14.04,
-     "e": 16.86,
+     "s": 14.96,
+     "e": 17.16,
      "text": "Men det finns inga klockor i hans kungarike."
     },
     {
      "s": 18.16,
-     "e": 21.7,
+     "e": 20.3,
+     "text": "Hur ska han då veta hur mycket tid som har gått?"
+    },
+    {
+     "s": 21.6,
+     "e": 24.84,
      "text": "På dagen kan man se på solen ungefär hur mycket tiden är."
     },
     {
-     "s": 22.7,
-     "e": 26.54,
+     "s": 25.84,
+     "e": 28.8,
      "text": "Men ofta är det molnigt, och på natten är det mörkt."
     },
     {
-     "s": 27.54,
-     "e": 30.88,
+     "s": 29.8,
+     "e": 32.78,
      "text": "Därför kan Alfred inte veta hur många timmar som har gått."
     },
     {
-     "s": 32.18,
-     "e": 36.38,
+     "s": 34.08,
+     "e": 37.4,
      "text": "Alfred har präster som reser med honom och håller i bönerna."
     },
     {
-     "s": 37.38,
-     "e": 41.06,
+     "s": 38.4,
+     "e": 41.6,
      "text": "Han låter dem väga upp vax och göra 6 ljus av det."
     },
     {
-     "s": 42.06,
-     "e": 48.94,
+     "s": 42.6,
+     "e": 48.56,
      "text": "Ljusen blir lika långa och lika tjocka, och på varje ljus ritar prästerna 12 streck"
     },
     {
-     "s": 49,
-     "e": 50.78,
+     "s": 48.62,
+     "e": 50.12,
      "text": "med lika långt mellanrum."
     },
     {
-     "s": 52.08,
-     "e": 58.82,
+     "s": 51.42,
+     "e": 57.28,
      "text": "Prästerna tänder ljusen ett efter ett, och de 6 ljusen räcker precis ett helt dygn,"
     },
     {
-     "s": 59.26,
-     "e": 60.92,
+     "s": 57.72,
+     "e": 59.42,
      "text": "alltså 24 timmar."
     },
     {
-     "s": 61.92,
-     "e": 64.66,
+     "s": 60.42,
+     "e": 62.92,
      "text": "Så kan Alfred följa tiden på ljusen."
     },
     {
-     "s": 65.96,
-     "e": 70.2,
+     "s": 64.22,
+     "e": 67.88,
      "text": "En präst vakar vid ljuset och ser att 3 streck är kvar."
     },
     {
-     "s": 71.2,
-     "e": 73.1,
-     "text": "Hur länge har ljuset brunnit då?"
+     "s": 68.88,
+     "e": 72.34,
+     "text": "Hur länge har ljuset brunnit då? Mm, ja..."
     },
     {
-     "s": 74.4,
-     "e": 76.42,
+     "s": 73.34,
+     "e": 74.34,
+     "text": "det kan vi räkna ut."
+    },
+    {
+     "s": 75.6,
+     "e": 77.18,
      "text": "Vi börjar med det Alfred vet."
     },
     {
-     "s": 77.42,
-     "e": 80.02,
+     "s": 78.18,
+     "e": 80.64,
      "text": "6 ljus räcker i 24 timmar."
     },
     {
-     "s": 81.02,
-     "e": 86.52,
+     "s": 81.64,
+     "e": 83.08,
+     "text": "Hur länge räcker då ett ljus?"
+    },
+    {
+     "s": 84.08,
+     "e": 89.18,
      "text": "24 delat med 6 är 4, så ett ljus räcker i 4 timmar."
     },
     {
-     "s": 87.82,
-     "e": 92.18,
+     "s": 90.48,
+     "e": 94.36,
      "text": "Ett ljus har 12 streck, och det brinner ner på 4 timmar."
     },
     {
-     "s": 93.18,
-     "e": 95.56,
+     "s": 95.36,
+     "e": 97.4,
      "text": "12 delat med 4 är 3."
     },
     {
-     "s": 96.56,
-     "e": 100.4,
+     "s": 98.4,
+     "e": 101.6,
      "text": "Ljuset brinner alltså ner 3 streck varje timme."
     },
     {
-     "s": 101.7,
-     "e": 102.7,
+     "s": 102.6,
+     "e": 103.94,
+     "text": "Och vi kan kolla åt andra hållet."
+    },
+    {
+     "s": 104.94,
+     "e": 110.36,
+     "text": "3 streck i timmen i 4 timmar, det blir 12 streck. Det stämmer."
+    },
+    {
+     "s": 111.66,
+     "e": 112.66,
      "text": "Vi gör en tabell."
     },
     {
-     "s": 103.62,
-     "e": 106.48,
+     "s": 113.54,
+     "e": 116.1,
      "text": "När ljuset tänds är 12 streck kvar."
     },
     {
-     "s": 107.48,
-     "e": 112.16,
+     "s": 117.1,
+     "e": 121.32,
      "text": "Efter en timme är 12 minus 3 kvar, alltså 9."
     },
     {
-     "s": 113.16,
-     "e": 118.82,
-     "text": "Efter två timmar är 12 minus 3 gånger 2 kvar, alltså 6."
+     "s": 122.32,
+     "e": 127.32,
+     "text": "Efter 2 timmar är 12 minus 3 gånger 2 kvar, alltså 6."
     },
     {
-     "s": 120.12,
-     "e": 122.56,
-     "text": "Varje rad följer samma mönster."
+     "s": 128.62,
+     "e": 131.14,
+     "text": "Varje rad följer samma mönster, ser du?"
     },
     {
-     "s": 123.56,
-     "e": 127.34,
+     "s": 132.14,
+     "e": 135.54,
      "text": "Vi börjar på 12 och drar bort 3 för varje timme."
     },
     {
-     "s": 128.34,
-     "e": 133.58,
+     "s": 136.54,
+     "e": 141.22,
      "text": "Vi kallar antalet timmar för t och antalet streck som är kvar för L."
     },
     {
-     "s": 134.58,
-     "e": 139.12,
+     "s": 142.22,
+     "e": 146.42,
      "text": "Då blir regeln L = 12 − 3t."
     },
     {
-     "s": 140.42,
-     "e": 142.76,
-     "text": "En sådan regel kallas en formel."
-    },
-    {
-     "s": 143.76,
-     "e": 148,
-     "text": "En formel visar hur två eller flera variabler hänger ihop."
-    },
-    {
-     "s": 149,
+     "s": 147.42,
      "e": 152.8,
-     "text": "En variabel är en bokstav som kan stå för olika tal."
+     "text": "3t betyder 3 · t, alltså 3 streck för varje timme."
     },
     {
      "s": 154.1,
-     "e": 158.4,
+     "e": 156.22,
+     "text": "En sådan regel kallas en formel."
+    },
+    {
+     "s": 157.22,
+     "e": 160.9,
+     "text": "En formel visar hur två eller flera variabler hänger ihop."
+    },
+    {
+     "s": 161.9,
+     "e": 165.24,
+     "text": "En variabel är en bokstav som kan stå för olika tal."
+    },
+    {
+     "s": 166.24,
+     "e": 168.5,
+     "text": "Formeln är alltså en räkneregel."
+    },
+    {
+     "s": 169.5,
+     "e": 172.76,
+     "text": "Man stoppar in en tid och får ut hur många streck som är kvar."
+    },
+    {
+     "s": 174.06,
+     "e": 177.82,
      "text": "Antalet streck som är kvar beror på hur länge ljuset har brunnit."
     },
     {
-     "s": 159.4,
-     "e": 162.42,
+     "s": 178.82,
+     "e": 181.48,
      "text": "Därför kallas L den beroende variabeln."
     },
     {
-     "s": 163.42,
-     "e": 168.8,
+     "s": 182.48,
+     "e": 187.1,
      "text": "Tiden t kan vi välja fritt, så t kallas den oberoende variabeln."
     },
     {
-     "s": 170.1,
-     "e": 172.22,
+     "s": 188.1,
+     "e": 191.44,
+     "text": "Vi väljer tiden, och sen ger formeln oss strecken."
+    },
+    {
+     "s": 192.74,
+     "e": 194.38,
      "text": "Talet 12 ändras inte."
     },
     {
-     "s": 173.22,
-     "e": 175.86,
+     "s": 195.38,
+     "e": 197.66,
      "text": "Det är antalet streck när ljuset tänds."
     },
     {
-     "s": 176.86,
-     "e": 183.4,
+     "s": 198.66,
+     "e": 204.3,
      "text": "Delen − 3t ändras, för varje timme drar den bort 3 streck till."
     },
     {
-     "s": 184.4,
-     "e": 188.6,
-     "text": "I en formel för en kostnad, till exempel för ett mobilabonnemang,"
+     "s": 205.3,
+     "e": 207.92,
+     "text": "Formler för kostnader är byggda på samma sätt."
     },
     {
-     "s": 188.92,
-     "e": 193.86,
-     "text": "kallas de två delarna den fasta kostnaden och den rörliga kostnaden."
+     "s": 208.92,
+     "e": 215.44,
+     "text": "I en formel för ett mobilabonnemang kallas de två delarna den fasta kostnaden och den rörliga kostnaden."
     },
     {
-     "s": 195.16,
-     "e": 196.6,
+     "s": 216.44,
+     "e": 221.88,
+     "text": "Den fasta betalar man varje månad, och den rörliga växer ju mer man använder telefonen."
+    },
+    {
+     "s": 223.18,
+     "e": 224.46,
      "text": "Nu använder vi formeln."
     },
     {
-     "s": 197.6,
-     "e": 202.22,
-     "text": "Att sätta in betyder att vi byter en bokstav mot ett tal."
+     "s": 225.46,
+     "e": 229.7,
+     "text": "Att sätta in betyder att vi byter ut en bokstav mot ett tal."
     },
     {
-     "s": 203.22,
-     "e": 206.04,
+     "s": 230.7,
+     "e": 233.3,
+     "text": "Hur många streck är kvar efter 4 timmar?"
+    },
+    {
+     "s": 234.3,
+     "e": 236.78,
      "text": "Vi sätter in t = 4."
     },
     {
-     "s": 207.04,
-     "e": 212.64,
+     "s": 237.78,
+     "e": 242.98,
      "text": "12 minus 3 gånger 4 är 12 minus 12, alltså 0."
     },
     {
-     "s": 213.64,
-     "e": 218.64,
+     "s": 243.98,
+     "e": 248.64,
      "text": "Efter 4 timmar är inga streck kvar, och prästen tänder nästa ljus."
     },
     {
-     "s": 219.94,
-     "e": 221.46,
+     "s": 249.64,
+     "e": 253.76,
+     "text": "Det stämmer med det vi visste, för ett ljus räcker ju i 4 timmar."
+    },
+    {
+     "s": 255.06,
+     "e": 256.42,
      "text": "Nu till prästens fråga."
     },
     {
-     "s": 222.46,
-     "e": 225.52,
+     "s": 257.42,
+     "e": 260.1,
      "text": "3 streck är kvar, så L = 3."
     },
     {
-     "s": 226.52,
-     "e": 232.42,
+     "s": 261.1,
+     "e": 265.8,
      "text": "Vi sätter in det och får 3 = 12 − 3t."
     },
     {
-     "s": 233.42,
-     "e": 237.5,
+     "s": 266.8,
+     "e": 270.36,
      "text": "Nu är t det okända talet, så vi har en ekvation."
     },
     {
-     "s": 238.8,
-     "e": 241.34,
+     "s": 271.36,
+     "e": 275.24,
+     "text": "En ekvation är alltså en likhet där ett tal är okänt."
+    },
+    {
+     "s": 276.54,
+     "e": 278.54,
      "text": "Vi löser den med balansmetoden."
     },
     {
-     "s": 242.34,
-     "e": 245.5,
+     "s": 279.54,
+     "e": 282.14,
      "text": "En ekvation är som en våg i jämvikt."
     },
     {
-     "s": 246.5,
-     "e": 252.18,
+     "s": 283.14,
+     "e": 287.16,
+     "text": "Lägger man något i ena skålen, måste man lägga lika mycket i den andra."
+    },
+    {
+     "s": 288.16,
+     "e": 292.96,
      "text": "Gör vi samma sak med båda leden, alltså båda sidorna av likhetstecknet,"
     },
     {
-     "s": 252.64,
-     "e": 255.22,
+     "s": 293.32,
+     "e": 295.52,
      "text": "så är vågen fortfarande i jämvikt."
     },
     {
-     "s": 256.52,
-     "e": 258.62,
+     "s": 296.82,
+     "e": 298.52,
      "text": "Vi vill ha t ensamt."
     },
     {
-     "s": 259.62,
-     "e": 263.08,
+     "s": 299.52,
+     "e": 302.5,
      "text": "Först lägger vi till 3t på båda sidor."
     },
     {
-     "s": 264.08,
-     "e": 268.52,
+     "s": 303.5,
+     "e": 304.9,
+     "text": "Varför just 3t?"
+    },
+    {
+     "s": 305.9,
+     "e": 312.22,
+     "text": "Jo, till höger står −3t, och −3t + 3t blir 0."
+    },
+    {
+     "s": 313.22,
+     "e": 316.74,
      "text": "Då står det 3 + 3t = 12."
     },
     {
-     "s": 269.82,
-     "e": 272.72,
+     "s": 318.04,
+     "e": 320.42,
      "text": "Sedan drar vi bort 3 från båda sidor."
     },
     {
-     "s": 273.72,
-     "e": 277.02,
+     "s": 321.42,
+     "e": 324.2,
      "text": "Då står det 3t = 9."
     },
     {
-     "s": 278.02,
-     "e": 283.84,
-     "text": "Till sist delar vi båda sidor med 3, och vi får t = 3."
+     "s": 325.2,
+     "e": 330.92,
+     "text": "Till sist delar vi båda sidor med 3, för 3t/3 är bara t."
     },
     {
-     "s": 284.84,
-     "e": 287.78,
+     "s": 331.92,
+     "e": 334.38,
+     "text": "Och vi får t = 3."
+    },
+    {
+     "s": 335.38,
+     "e": 337.9,
      "text": "Ljuset har alltså brunnit i 3 timmar."
     },
     {
-     "s": 289.08,
-     "e": 294.52,
+     "s": 339.2,
+     "e": 342.24,
+     "text": "Vi kollar svaret genom att sätta in 3 i formeln."
+    },
+    {
+     "s": 343.24,
+     "e": 348.44,
+     "text": "12 minus 3 gånger 3 är 12 minus 9, alltså 3."
+    },
+    {
+     "s": 349.44,
+     "e": 352.38,
+     "text": "3 streck kvar, precis som prästen såg."
+    },
+    {
+     "s": 353.38,
+     "e": 355.24,
+     "text": "Och man kan tänka på ett annat sätt också."
+    },
+    {
+     "s": 356.24,
+     "e": 360.2,
+     "text": "9 streck har brunnit ner, och varje timme brinner 3."
+    },
+    {
+     "s": 361.2,
+     "e": 365.7,
+     "text": "9 delat med 3 är 3 timmar. Samma svar."
+    },
+    {
+     "s": 367,
+     "e": 371.4,
      "text": "Men prästen vill inte lösa en ny ekvation varje gång han tittar på ljuset."
     },
     {
-     "s": 295.52,
-     "e": 298.46,
+     "s": 372.4,
+     "e": 374.76,
      "text": "Därför löser vi ut t ur formeln."
     },
     {
-     "s": 299.46,
-     "e": 303.9,
+     "s": 375.76,
+     "e": 379.74,
      "text": "Det betyder att vi skriver om formeln så att t står ensamt."
     },
     {
-     "s": 304.9,
-     "e": 309.12,
+     "s": 380.74,
+     "e": 384.46,
      "text": "Vi gör samma steg som nyss, men med L i stället för 3."
     },
     {
-     "s": 310.42,
-     "e": 313.84,
+     "s": 385.76,
+     "e": 388.72,
      "text": "Först lägger vi till 3t på båda sidor."
     },
     {
-     "s": 314.84,
-     "e": 319.16,
+     "s": 389.72,
+     "e": 393.2,
      "text": "Då står det L + 3t = 12."
     },
     {
-     "s": 320.16,
-     "e": 323.04,
+     "s": 394.2,
+     "e": 396.52,
      "text": "Sedan drar vi bort L från båda sidor."
     },
     {
-     "s": 324.04,
-     "e": 328.38,
+     "s": 397.52,
+     "e": 401.18,
      "text": "Då står det 3t = 12 − L."
     },
     {
-     "s": 329.68,
-     "e": 332.42,
+     "s": 402.48,
+     "e": 404.9,
      "text": "Till sist delar vi båda sidor med 3."
     },
     {
-     "s": 333.42,
-     "e": 338.7,
+     "s": 405.9,
+     "e": 410.32,
      "text": "Då står det t = (12 − L)/3."
     },
     {
-     "s": 339.7,
-     "e": 343.24,
+     "s": 411.32,
+     "e": 413.34,
+     "text": "Och det är samma sak som vi tänkte nyss."
+    },
+    {
+     "s": 414.34,
+     "e": 419.84,
+     "text": "12 minus L är strecken som har brunnit ner, och delat med 3 blir det timmar."
+    },
+    {
+     "s": 421.14,
+     "e": 424.3,
      "text": "Med den formeln räknar prästen ut tiden direkt."
     },
     {
-     "s": 344.24,
-     "e": 351.02,
-     "text": "Är 9 streck kvar, blir det 12 minus 9 delat med 3, alltså en timme."
+     "s": 425.3,
+     "e": 431.22,
+     "text": "Är 9 streck kvar, blir det (12 − 9)/3, alltså en timme."
     },
     {
-     "s": 352.32,
-     "e": 355.4,
+     "s": 432.22,
+     "e": 436.26,
+     "text": "Och i tabellen var det 9 streck kvar efter en timme, så det stämmer."
+    },
+    {
+     "s": 437.56,
+     "e": 439.98,
      "text": "Men ljusen brann inte alltid lika fort."
     },
     {
-     "s": 356.4,
-     "e": 363.38,
+     "s": 440.98,
+     "e": 446.66,
      "text": "Vinden blåste in genom kyrkornas dörrar och fönster och genom tältduken när Alfred reste."
     },
     {
-     "s": 364.38,
-     "e": 367.26,
+     "s": 447.66,
+     "e": 449.82,
      "text": "I blåsten brann ljusen ut för tidigt."
     },
     {
-     "s": 368.56,
-     "e": 373.24,
+     "s": 451.12,
+     "e": 455,
      "text": "Säg att ett ljus i blåsten brinner ner 4 streck varje timme."
     },
     {
-     "s": 374.24,
-     "e": 379.22,
+     "s": 456,
+     "e": 460.14,
      "text": "Då blir formeln L = 12 − 4t."
     },
     {
-     "s": 380.22,
-     "e": 381.84,
+     "s": 461.14,
+     "e": 462.4,
      "text": "Nu har vi två modeller."
     },
     {
-     "s": 382.84,
-     "e": 389.42,
+     "s": 463.4,
+     "e": 468.78,
      "text": "En modell är en formel som beskriver något i verkligheten, här ett ljus i stilla luft"
     },
     {
-     "s": 389.48,
-     "e": 390.96,
+     "s": 468.84,
+     "e": 470.18,
      "text": "och ett ljus i blåst."
     },
     {
-     "s": 392.26,
-     "e": 395.12,
+     "s": 471.48,
+     "e": 473.78,
      "text": "Vi jämför modellerna efter 2 timmar."
     },
     {
-     "s": 396.12,
-     "e": 402.16,
+     "s": 474.78,
+     "e": 477.4,
+     "text": "Vi sätter in t = 2 i båda."
+    },
+    {
+     "s": 478.4,
+     "e": 483.54,
      "text": "I stilla luft är 12 minus 3 gånger 2 kvar, alltså 6 streck."
     },
     {
-     "s": 403.16,
-     "e": 408.94,
+     "s": 484.54,
+     "e": 489.42,
      "text": "I blåsten är 12 minus 4 gånger 2 kvar, alltså 4 streck."
     },
     {
-     "s": 409.94,
-     "e": 413.38,
+     "s": 490.42,
+     "e": 493.1,
      "text": "Ljuset i blåsten visar alltså fel tid."
     },
     {
-     "s": 414.68,
-     "e": 417.56,
+     "s": 494.1,
+     "e": 496.84,
+     "text": "Prästen tror att det har gått mer tid än det har."
+    },
+    {
+     "s": 498.14,
+     "e": 500.48,
      "text": "En modell gäller inte heller för alla tal."
     },
     {
-     "s": 418.56,
-     "e": 422.48,
+     "s": 501.48,
+     "e": 504.7,
      "text": "Vi sätter in t = 5 i Alfreds formel."
     },
     {
-     "s": 423.48,
-     "e": 429.96,
+     "s": 505.7,
+     "e": 511.04,
      "text": "12 minus 3 gånger 5 är 12 minus 15, alltså −3."
     },
     {
-     "s": 430.96,
-     "e": 436.36,
+     "s": 512.04,
+     "e": 516.16,
+     "text": "15 är 3 mer än 12, så vi hamnar 3 under 0."
+    },
+    {
+     "s": 517.16,
+     "e": 521.82,
      "text": "Men ett ljus kan inte ha −3 streck kvar, så svaret är orimligt."
     },
     {
-     "s": 437.66,
-     "e": 442.36,
+     "s": 522.82,
+     "e": 526.5,
+     "text": "Orimligt betyder att svaret inte kan stämma i verkligheten."
+    },
+    {
+     "s": 527.8,
+     "e": 531.78,
      "text": "Formeln gäller bara från det att ljuset tänds tills det har brunnit ner,"
     },
     {
-     "s": 442.88,
-     "e": 446.3,
+     "s": 532.1,
+     "e": 534.98,
      "text": "alltså när t ligger mellan 0 och 4."
     },
     {
-     "s": 447.3,
-     "e": 455.52,
+     "s": 535.98,
+     "e": 543.22,
      "text": "Med tecken skriver vi 0 ≤ t ≤ 4."
     },
     {
-     "s": 456.82,
-     "e": 459.94,
+     "s": 544.22,
+     "e": 548.38,
+     "text": "Det betyder att t är alla tider mellan 0 och 4 timmar,"
+    },
+    {
+     "s": 548.68,
+     "e": 550.7,
+     "text": "och 0 och 4 får också vara med."
+    },
+    {
+     "s": 552,
+     "e": 554.58,
      "text": "Alfred ville att ljusen skulle följa modellen."
     },
     {
-     "s": 460.94,
-     "e": 464.82,
+     "s": 555.58,
+     "e": 558.66,
      "text": "Därför lät han bygga en lykta av trä och oxhorn."
     },
     {
-     "s": 465.82,
-     "e": 472.02,
+     "s": 559.66,
+     "e": 564.58,
      "text": "Hornet slipades så tunt att ljuset lyste igenom nästan som genom glas."
     },
     {
-     "s": 473.04,
-     "e": 477.98,
+     "s": 565.58,
+     "e": 569.6,
      "text": "Inne i lyktan brann ljusen i jämn takt, även när det blåste."
     },
     {
-     "s": 479.28,
-     "e": 482.08,
+     "s": 570.9,
+     "e": 573.28,
      "text": "Vi vet det här från en munk som hette Asser."
     },
     {
-     "s": 483.08,
-     "e": 488.62,
+     "s": 574.28,
+     "e": 578.88,
      "text": "Han levde hos Alfred och skrev en bok om kungens liv år 893."
     },
     {
-     "s": 489.62,
-     "e": 492.96,
+     "s": 579.88,
+     "e": 582.62,
      "text": "I dag kallas kungen Alfred den store."
     },
     {
-     "s": 494.26,
-     "e": 496.04,
+     "s": 583.92,
+     "e": 584.96,
      "text": "Nu är det din tur."
     },
     {
-     "s": 497.04,
-     "e": 503,
+     "s": 585.96,
+     "e": 590.36,
      "text": "Ett ljus har 10 streck, och det brinner ner 2 streck varje timme."
     },
     {
-     "s": 504,
-     "e": 509.88,
+     "s": 591.36,
+     "e": 595.88,
      "text": "Skriv en formel för hur många streck L som är kvar efter t timmar."
     },
     {
-     "s": 510.88,
-     "e": 514.86,
+     "s": 596.88,
+     "e": 599.98,
      "text": "Hur länge har ljuset brunnit när 4 streck är kvar?"
     }
    ]
