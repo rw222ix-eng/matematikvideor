@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-10T16:18:14.076Z",
+ "byggd": "2026-10-10T18:28:39.665Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -13110,7 +13110,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-05-exponentialfunktioner-v1/ma1c-k4-05-exponentialfunktioner-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-05-exponentialfunktioner-v2/ma1c-k4-05-exponentialfunktioner-1080p.mp4",
    "moment": "Exponentialfunktioner",
    "begrepp": [
     "exponentialfunktion",
@@ -13124,183 +13124,240 @@
     "linjärt samband",
     "y = C · a^x"
    ],
-   "beskrivning": "Sommaren 1789 skrev Benjamin Franklin i sitt testamente att 1000 pund, utlånade mot 5 % ränta, skulle bli 131 000 pund på hundra år. Vi förklarar förändringsfaktorn (5 % mer är gånger 1,05), bygger exponentialfunktionen y = C · aˣ år för år och kontrollerar Franklins svar på räknaren. Sedan jämför vi med ett linjärt samband, ser hur en förändringsfaktor under 1 gör en funktion avtagande och läser av startvärde och procent direkt ur funktionen.",
+   "beskrivning": "Sommaren 1789 skrev Benjamin Franklin i sitt testamente att 1000 pund, utlånade mot 5 % ränta, skulle bli 131 000 pund på hundra år. Vi följer pengarna ett år i taget och ser hur räntan ger ränta. Fem procent till är samma sak som gånger 1,05, exponenten räknar hur många år vi tar gånger, och vi kollar Franklins svar på räknaren. Formeln y = C · aˣ kommer sist. Sedan jämför vi med ett linjärt samband, ser hur en bil som tappar i värde ger en avtagande funktion och läser av startvärde och procent direkt ur funktionen.",
    "youtube": null,
-   "langd": 500,
+   "langd": 705,
    "omslag": "omslag/ma1c-k4-05-exponentialfunktioner.jpg?v=39ef72f6",
    "omslagRen": "omslag/ma1c-k4-05-exponentialfunktioner-ren.jpg?v=e162dbcf",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 1,
-     "text": "Det är sommaren 1789 i staden Philadelphia i USA. Benjamin Franklin är åttiotre år gammal och ofta sjuk. Hans ansikte finns i dag på den amerikanska hundradollarsedeln. Nu skriver han ner vad som ska hända med hans pengar när han har dött."
+     "t": 9,
+     "text": "Det är sommaren 1789 i staden Philadelphia i USA. Benjamin Franklin är åttiotre år gammal och ofta sjuk. Hans ansikte finns i dag på den amerikanska hundradollarsedeln. Nu sitter han vid sitt skrivbord och skriver ner vad som ska hända med hans pengar, när han har dött."
     },
     {
-     "t": 24,
-     "text": "När Franklin var ung arbetade han som boktryckare. Två vänner lånade honom pengar, så att han kunde starta ett eget tryckeri. Franklin skriver att de lånen blev grunden till allt han äger."
+     "t": 30,
+     "text": "När Franklin var ung, jobbade han som boktryckare. Han ville starta ett eget tryckeri, men han hade inga pengar. Då lånade två vänner honom pengar. Franklin skriver att de lånen blev grunden till allt han äger."
     },
     {
-     "t": 40,
+     "t": 47,
      "text": "Nu vill han hjälpa unga hantverkare på samma sätt, till exempel smeder och snickare som vill starta en egen verkstad. Därför ger han tusen pund till Philadelphia och tusen pund till Boston, staden där han föddes. Pengarna ska lånas ut till hantverkarna."
     },
     {
-     "t": 60,
-     "text": "Varje år betalar hantverkarna tillbaka en del av lånet och fem procent i ränta. Räntan är en avgift för att få låna pengarna. Sedan lånas allt ut igen, också räntan. Så växer pengarna år för år."
+     "t": 66,
+     "text": "Men lånet är inte gratis. Varje år betalar hantverkarna tillbaka en del av lånet, och fem procent i ränta. Räntan är en avgift för att få låna pengarna. Fem procent betyder fem av varje hundra. Lånar man hundra pund, betalar man alltså fem pund i ränta varje år. Sen lånas allt ut igen, också räntan. Så växer pengarna år för år."
     },
     {
-     "t": 79,
-     "text": "Franklin räknar ut hur mycket tusen pund blir efter hundra år. Han skriver att det blir hundratrettioettusen pund. Men fem procent av tusen pund är bara femtio pund om året. Och femtio pund om året i hundra år är femtusen pund. Hur kan tusen pund då bli hundratrettioettusen?"
-    },
-    {
-     "t": 106,
-     "text": "Vi följer pengarna år för år. Alla pengarna från början är hundra procent, och varje år kommer fem procent till. Hundra procent plus fem procent är hundrafem procent. Det är samma sak som talet ett komma noll fem."
+     "t": 96,
+     "text": "Franklin räknar ut hur mycket tusen pund blir efter hundra år. Han skriver att det blir hundratrettioettusen pund. Men fem procent av tusen pund är bara femtio pund om året. Och femtio pund om året i hundra år är femtusen pund. Hur kan tusen pund då bli hundratrettioettusen? Hmm... har Franklin räknat fel? Det tar vi reda på nu."
     },
     {
      "t": 126,
-     "text": "Att lägga till fem procent är alltså samma sak som att gångra med ett komma noll fem. Talet ett komma noll fem kallas förändringsfaktorn. Efter ett år har pengarna blivit tusen gånger ett komma noll fem. Det är tusenfemtio pund."
+     "text": "Vi följer pengarna, ett år i taget. Från början finns det tusen pund. Hur mycket ränta blir det första året? Fem procent av tusen pund. Det är femtio pund, som vi räknade nyss. Efter ett år finns det alltså tusenfemtio pund."
     },
     {
-     "t": 147,
-     "text": "Andra året får Franklins pengar ränta på hela tusenfemtio pund. Fem procent av tusenfemtio är femtiotvå och ett halvt pund. Pengarna växer alltså lite mer än första året. Det beror på att räntan från första året också ger ränta."
+     "t": 146,
+     "text": "Nu kommer det viktiga. De femtio pundet lånas också ut. Så andra året ger både de tusen pundet och de femtio pundet ränta. Tusen pund ger femtio pund, precis som förut. Men hur mycket ger de femtio pundet? Femtio är hälften av hundra. Så räntan blir hälften av fem, alltså två och ett halvt pund."
     },
     {
-     "t": 168,
-     "text": "Andra året gångrar vi med ett komma noll fem igen. Efter två år har vi alltså gångrat tusen med ett komma noll fem två gånger. Det skrivs tusen gånger ett komma noll fem upphöjt till två. Exponenten är det lilla talet uppe till höger. Den räknar hur många gånger vi gångrar med förändringsfaktorn."
+     "t": 174,
+     "text": "Andra året blir räntan alltså femtio plus två och ett halvt. Det är femtiotvå och ett halvt pund. Det är lite mer än första året, ser du? Räntan ger också ränta. Det kallas ränta på ränta. Och för varje år blir räntan lite större."
     },
     {
      "t": 196,
-     "text": "Efter tre år är exponenten tre, och efter tio år är den tio. Efter x år är den x. Pengarna efter x år är alltså y är lika med tusen gånger ett komma noll fem upphöjt till x. Här står x för antalet år, och y står för pengarna i pund."
+     "text": "Men att räkna så här i hundra år tar alldeles för lång tid. Vi behöver ett snabbare sätt. Tänk på alla pengarna som hundra procent. Varje år kommer fem procent till. Hur mycket har vi då? Hundra plus fem, alltså hundrafem procent."
     },
     {
-     "t": 222,
-     "text": "När x står i exponenten kallas funktionen en exponentialfunktion. På formelbladet står den som y är lika med C gånger a upphöjt till x. C är startvärdet, alltså pengarna från början. Här är C tusen pund. Och a är förändringsfaktorn, här ett komma noll fem."
+     "t": 217,
+     "text": "Procent betyder hundradelar. Hundra procent är hundra hundradelar, alltså ett helt. Hundrafem procent är ett helt, och fem hundradelar till. Det skrivs ett komma noll fem. Så när fem procent kommer till, tar vi gånger ett komma noll fem. Talet ett komma noll fem kallas förändringsfaktorn. Det visar hur pengarna förändras på ett år."
     },
     {
-     "t": 250,
-     "text": "Nu kan vi kontrollera Franklins svar. Efter hundra år är x lika med hundra. Vi skriver tusen gånger ett komma noll fem upphöjt till hundra på räknaren, med knappen för upphöjt till. Svaret blir ungefär hundratrettioettusen femhundra pund. Franklin hade alltså räknat rätt."
+     "t": 246,
+     "text": "Vi kollar att det stämmer. Tusen gånger ett komma noll fem är tusenfemtio pund. Samma som förut. Andra året tar vi gånger ett komma noll fem igen. Tusenfemtio gånger ett komma noll fem är tusenetthundratvå och ett halvt pund. Det är tusenfemtio plus femtiotvå och ett halvt. Det blev samma svar som när vi räknade räntan för sig."
     },
     {
-     "t": 276,
-     "text": "Men varför blev det så mycket mer än femtusen pund? Om pengarna bara fick femtio pund varje år, skulle de växa lika mycket varje år. Det är ett linjärt samband, y är lika med femtio x plus tusen. Här är k femtio pund per år, och m är tusen pund från början. Femtio gånger hundra är femtusen. Plus tusen blir det sextusen pund efter hundra år."
+     "t": 274,
+     "text": "Okej, då har vi regeln. Varje år tar vi gånger förändringsfaktorn en gång till. Efter ett år har vi tagit gånger en gång. Efter två år två gånger, och efter tre år tre gånger. Men efter hundra år skulle vi behöva skriva ett komma noll fem hundra gånger. Det får inte plats."
     },
     {
-     "t": 310,
-     "text": "Vi ritar båda i samma koordinatsystem. Båda börjar i tusen på y-axeln, alltså i startvärdet. De första åren ligger linjen och kurvan nästan ihop. Linjen lägger till lika mycket varje år, så den är rak. Exponentialfunktionen gångrar med lika mycket varje år. Därför böjer den uppåt och blir brantare och brantare."
+     "t": 298,
+     "text": "Därför skriver vi det kortare. Vi skriver ett komma noll fem en gång, och sätter ett litet tal uppe till höger. Det lilla talet säger hur många gånger vi tar gånger. Det kallas exponent. Ett komma noll fem med en liten trea läses ett komma noll fem upphöjt till tre. Det betyder ett komma noll fem gånger ett komma noll fem gånger ett komma noll fem."
     },
     {
-     "t": 340,
-     "text": "En förändringsfaktor kan också göra något mindre. Det gäller till exempel värdet på en bil. En bil kostar tvåhundratusen kronor, och varje år tappar den tjugo procent av sitt värde. Hundra procent minus tjugo procent är åttio procent, så förändringsfaktorn är noll komma åtta."
+     "t": 326,
+     "text": "Vad är exponenten efter tio år? Tio, för då har vi tagit gånger tio gånger. Exponenten är alltså antalet år. Vi kallar antalet år för x, och pengarna kallar vi y. Nu kan vi skriva pengarna efter x år. y är lika med tusen gånger ett komma noll fem upphöjt till x. Vi stoppar in antalet år och får ut pengarna."
     },
     {
-     "t": 365,
-     "text": "Bilens värde efter x år är alltså y är lika med tvåhundratusen gånger noll komma åtta upphöjt till x. Efter ett år är värdet tvåhundratusen gånger noll komma åtta. Det är hundrasextiotusen kronor. Efter två år gångrar vi med noll komma åtta igen, och då är värdet hundratjugoåttatusen kronor."
+     "t": 355,
+     "text": "Nu kan vi kolla Franklins svar. Efter hundra år är x hundra. Vi tar räknaren och trycker tusen, gånger, ett komma noll fem. Sen trycker vi på knappen för upphöjt till. Den ser ut som ett x med en liten ruta uppe till höger. Vi skriver hundra och trycker enter. Svaret blir ungefär hundratrettioettusen femhundra pund. Aha... Franklin hade alltså räknat rätt."
     },
     {
-     "t": 393,
-     "text": "Nu ser vi vad a betyder. När a är större än ett, växer y när x ökar. Funktionen är växande, som Franklins pengar. När a är mellan noll och ett, minskar y. Funktionen är avtagande, som bilens värde. Är a exakt ett händer ingenting, och därför står det på formelbladet att a inte får vara ett."
+     "t": 388,
+     "text": "Den här sortens funktion finns på formelbladet. Där står den som y är lika med C gånger a upphöjt till x. Det är samma sak som Franklins pengar, skrivet med bokstäver. C är startvärdet, alltså det vi har från början. Hos Franklin är C tusen pund. Och a är förändringsfaktorn. Hos Franklin är a ett komma noll fem. Funktionen kallas en exponentialfunktion, för x står i exponenten."
     },
     {
-     "t": 424,
-     "text": "Vi kan också läsa av en funktion direkt. Ta y är lika med åttiofem gånger noll komma sjuttionio upphöjt till x. Startvärdet C är åttiofem. Förändringsfaktorn noll komma sjuttionio är sjuttionio procent. Hundra minus sjuttionio är tjugoett, så värdet minskar med tjugoett procent för varje steg."
+     "t": 423,
+     "text": "Men varför blev det så mycket? Vi jämför med något enklare. Tänk dig att räntan bara gavs på de första tusen pundet. Då kommer det femtio pund till varje år, aldrig mer. Efter hundra år är det femtusen pund i ränta. Plus de tusen pundet från början blir det sextusen pund."
     },
     {
-     "t": 452,
+     "t": 447,
+     "text": "När det kommer lika mycket till varje år, blir grafen en rak linje. Med bokstäver blir den y är lika med femtio x plus tusen. Femtio x betyder femtio pund gånger antalet år. Och plus tusen är pengarna från början."
+    },
+    {
+     "t": 465,
+     "text": "Nu ritar vi båda i samma koordinatsystem. Antalet år går åt höger, och pengarna går uppåt. Båda börjar i tusen. Linjen går upp lika mycket varje år, femtio pund. Kurvan går upp lite mer för varje år. Den tar ju gånger ett komma noll fem. I början ligger de nästan ihop. Men sen böjer kurvan uppåt och blir brantare och brantare. Det är därför Franklins pengar blev så många."
+    },
+    {
+     "t": 497,
+     "text": "En förändringsfaktor kan också göra något mindre. Tänk dig en bil som kostar tvåhundratusen kronor. Varje år tappar den tjugo procent av sitt värde. Hur mycket är kvar efter ett år? Hela värdet är hundra procent. Hundra minus tjugo är åttio. Så åttio procent är kvar."
+    },
+    {
+     "t": 521,
+     "text": "Åttio procent är åttio hundradelar. Det skrivs noll komma åtta. Förändringsfaktorn är alltså noll komma åtta. Vad sa regeln? Varje år tar vi gånger förändringsfaktorn en gång till. Så varje år tar vi bilens värde gånger noll komma åtta."
+    },
+    {
+     "t": 542,
+     "text": "Efter ett år är värdet tvåhundratusen gånger noll komma åtta. Det är hundrasextiotusen kronor. Stämmer det? Tio procent är en tiondel. En tiondel av tvåhundratusen är tjugotusen. Tjugo procent är dubbelt så mycket, alltså fyrtiotusen. Och tvåhundratusen minus fyrtiotusen är hundrasextiotusen. Det stämmer."
+    },
+    {
+     "t": 570,
+     "text": "Efter två år tar vi gånger noll komma åtta igen. Då är värdet hundratjugoåttatusen kronor. Och efter x år? Då är y lika med tvåhundratusen gånger noll komma åtta upphöjt till x. Exponenten räknar gångerna, precis som förut."
+    },
+    {
+     "t": 590,
+     "text": "Nu ser vi vad a gör. Är a större än ett, blir det mer och mer. Funktionen är växande, som Franklins pengar. Är a mindre än ett, blir det mindre och mindre. Funktionen är avtagande, som bilens värde. Och om a är exakt ett? Gånger ett ändrar ingenting. Därför står det på formelbladet att a inte får vara ett."
+    },
+    {
+     "t": 619,
+     "text": "Ibland får man funktionen och ska läsa av den. En annan bil har värdet y är lika med hundrafemtiotusen gånger noll komma åttiofem upphöjt till x. Vad kostade bilen från början? Det är C, talet före gånger. Bilen kostade hundrafemtiotusen kronor."
+    },
+    {
+     "t": 640,
+     "text": "Hur mycket av värdet är kvar varje år? Det är a, alltså noll komma åttiofem. Det är åttiofem hundradelar, alltså åttiofem procent. Hur mycket tappar bilen då? Hundra minus åttiofem är femton. Bilen tappar femton procent av sitt värde varje år."
+    },
+    {
+     "t": 662,
      "text": "Franklin dog våren efter, år 1790. Pengarna i Boston växte inte lika fort som han hade räknat med, för alla lån betalades inte tillbaka. Men efter hundra år räckte pengarna till en skola för unga hantverkare i Boston. Skolan öppnade 1908, och den finns kvar i dag."
     },
     {
-     "t": 478,
-     "text": "Nu är det din tur. Tänk dig att räntan hade varit fyra procent i stället för fem. Skriv exponentialfunktionen för tusen pund med fyra procent ränta. Hur många pund blir det efter tio år? Avrunda till hela pund."
+     "t": 684,
+     "text": "Nu är det din tur. Tänk dig att Franklins tusen pund i stället hade fått fyra procent ränta varje år. Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund. Hur många pund blir det efter tio år? Avrunda till hela pund."
     }
    ],
    "kapitel": [
     {
-     "t": 1,
+     "t": 9,
      "rubrik": "Franklins testamente",
      "typ": "historia"
     },
     {
-     "t": 24,
+     "t": 30,
      "rubrik": "Lånen från två vänner",
      "typ": "historia"
     },
     {
-     "t": 40,
+     "t": 47,
      "rubrik": "Lån till unga hantverkare",
      "typ": "historia"
     },
     {
-     "t": 79,
+     "t": 66,
+     "rubrik": "Räntan: fem av varje hundra",
+     "typ": "historia"
+    },
+    {
+     "t": 96,
      "rubrik": "Frågan: 131 000 pund",
      "typ": "historia"
     },
     {
-     "t": 106,
-     "rubrik": "Förändringsfaktorn 1,05",
+     "t": 126,
+     "rubrik": "Ett år i taget",
      "typ": "matte"
     },
     {
-     "t": 147,
-     "rubrik": "Ränta på räntan",
-     "typ": "matte"
-    },
-    {
-     "t": 168,
-     "rubrik": "Exponenten räknar gångerna",
+     "t": 146,
+     "rubrik": "Ränta på ränta",
      "typ": "matte"
     },
     {
      "t": 196,
+     "rubrik": "Förändringsfaktorn 1,05",
+     "typ": "matte"
+    },
+    {
+     "t": 246,
+     "rubrik": "Kontroll: 1050 och 1102,5 pund",
+     "typ": "matte"
+    },
+    {
+     "t": 274,
+     "rubrik": "Regeln: gånger 1,05 varje år",
+     "typ": "matte"
+    },
+    {
+     "t": 298,
+     "rubrik": "Exponenten",
+     "typ": "matte"
+    },
+    {
+     "t": 326,
      "rubrik": "y = 1000 · 1,05ˣ",
      "typ": "matte"
     },
     {
-     "t": 222,
-     "rubrik": "Exponentialfunktionen y = C · aˣ",
-     "typ": "matte"
-    },
-    {
-     "t": 250,
+     "t": 355,
      "rubrik": "Franklins svar på räknaren",
      "typ": "matte"
     },
     {
-     "t": 276,
+     "t": 388,
+     "rubrik": "Exponentialfunktionen y = C · aˣ",
+     "typ": "matte"
+    },
+    {
+     "t": 423,
      "rubrik": "Jämfört med linjärt",
      "typ": "matte"
     },
     {
-     "t": 310,
+     "t": 465,
      "rubrik": "Linjen och kurvan",
      "typ": "matte"
     },
     {
-     "t": 340,
+     "t": 497,
      "rubrik": "Avtagande: bilen, 0,8",
      "typ": "matte"
     },
     {
-     "t": 393,
+     "t": 542,
+     "rubrik": "Kontroll: 160 000 kr",
+     "typ": "matte"
+    },
+    {
+     "t": 590,
      "rubrik": "Växande och avtagande",
      "typ": "matte"
     },
     {
-     "t": 424,
+     "t": 619,
      "rubrik": "Startvärde och procent ur funktionen",
      "typ": "matte"
     },
     {
-     "t": 452,
+     "t": 662,
      "rubrik": "Skolan i Boston",
      "typ": "historia"
     },
     {
-     "t": 478,
+     "t": 684,
      "rubrik": "Din tur: 4 % ränta",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 478,
+    "notisFran": 684,
     "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år.",
     "delar": [
      {
@@ -13365,7 +13422,7 @@
     ],
     "ledtrad": {
      "text": "100 % + 4 % = 104 %, så förändringsfaktorn är 1,04. Startvärdet C är 1000. Räkna sedan 1000 · 1,04^10 på räknaren, med knappen för upphöjt till.",
-     "t": 133
+     "t": 238
     },
     "losning": [
      "100 % + 4 % = 104 % = 1,04, så förändringsfaktorn är a = 1,04 och startvärdet C = 1000.",
@@ -13375,478 +13432,873 @@
    },
    "undertext": [
     {
-     "s": 1.5,
-     "e": 6.9,
+     "s": 9.5,
+     "e": 14.26,
      "text": "Det är sommaren 1789 i staden Philadelphia i USA."
     },
     {
-     "s": 8,
-     "e": 12.48,
+     "s": 15.26,
+     "e": 18.94,
      "text": "Benjamin Franklin är 83 år gammal och ofta sjuk."
     },
     {
-     "s": 13.48,
-     "e": 17.74,
+     "s": 19.94,
+     "e": 23.6,
      "text": "Hans ansikte finns i dag på den amerikanska hundradollarsedeln."
     },
     {
-     "s": 18.74,
-     "e": 22.92,
-     "text": "Nu skriver han ner vad som ska hända med hans pengar när han har dött."
+     "s": 24.6,
+     "e": 28.52,
+     "text": "Nu sitter han vid sitt skrivbord och skriver ner vad som ska hända med hans pengar,"
     },
     {
-     "s": 24.22,
-     "e": 27.46,
-     "text": "När Franklin var ung arbetade han som boktryckare."
+     "s": 28.74,
+     "e": 29.74,
+     "text": "när han har dött."
     },
     {
-     "s": 28.46,
-     "e": 33.02,
-     "text": "Två vänner lånade honom pengar, så att han kunde starta ett eget tryckeri."
+     "s": 30.8,
+     "e": 33.72,
+     "text": "När Franklin var ung, jobbade han som boktryckare."
     },
     {
-     "s": 34.02,
-     "e": 38.78,
+     "s": 34.72,
+     "e": 37.96,
+     "text": "Han ville starta ett eget tryckeri, men han hade inga pengar."
+    },
+    {
+     "s": 38.96,
+     "e": 40.92,
+     "text": "Då lånade två vänner honom pengar."
+    },
+    {
+     "s": 41.92,
+     "e": 46.12,
      "text": "Franklin skriver att de lånen blev grunden till allt han äger."
     },
     {
-     "s": 40.08,
-     "e": 46.24,
+     "s": 47.42,
+     "e": 52.9,
      "text": "Nu vill han hjälpa unga hantverkare på samma sätt, till exempel smeder och snickare som"
     },
     {
-     "s": 46.28,
-     "e": 48,
+     "s": 52.94,
+     "e": 54.38,
      "text": "vill starta en egen verkstad."
     },
     {
-     "s": 49,
-     "e": 54.24,
+     "s": 55.38,
+     "e": 60.04,
      "text": "Därför ger han 1000 pund till Philadelphia och 1000 pund till Boston,"
     },
     {
-     "s": 54.58,
-     "e": 55.92,
+     "s": 60.38,
+     "e": 61.54,
      "text": "staden där han föddes."
     },
     {
-     "s": 56.92,
-     "e": 59.6,
+     "s": 62.54,
+     "e": 64.78,
      "text": "Pengarna ska lånas ut till hantverkarna."
     },
     {
-     "s": 60.9,
-     "e": 67.18,
-     "text": "Varje år betalar hantverkarna tillbaka en del av lånet och 5 procent i ränta."
+     "s": 66.08,
+     "e": 67.98,
+     "text": "Men lånet är inte gratis."
     },
     {
-     "s": 68.18,
-     "e": 71.08,
+     "s": 68.98,
+     "e": 74.4,
+     "text": "Varje år betalar hantverkarna tillbaka en del av lånet, och 5 procent i ränta."
+    },
+    {
+     "s": 75.4,
+     "e": 78.2,
      "text": "Räntan är en avgift för att få låna pengarna."
     },
     {
-     "s": 72.08,
-     "e": 75.2,
-     "text": "Sedan lånas allt ut igen, också räntan."
+     "s": 79.2,
+     "e": 82.28,
+     "text": "Fem procent betyder fem av varje hundra."
     },
     {
-     "s": 76.2,
-     "e": 78.66,
+     "s": 83.28,
+     "e": 88.04,
+     "text": "Lånar man 100 pund, betalar man alltså 5 pund i ränta varje år."
+    },
+    {
+     "s": 89.04,
+     "e": 91.7,
+     "text": "Sen lånas allt ut igen, också räntan."
+    },
+    {
+     "s": 92.7,
+     "e": 94.9,
      "text": "Så växer pengarna år för år."
     },
     {
-     "s": 79.96,
-     "e": 84.42,
-     "text": "Franklin räknar ut hur mycket 1000 pund blir efter hundra år."
+     "s": 96.2,
+     "e": 100.08,
+     "text": "Franklin räknar ut hur mycket 1000 pund blir efter 100 år."
     },
     {
-     "s": 85.42,
-     "e": 89.14,
+     "s": 101.08,
+     "e": 104.24,
      "text": "Han skriver att det blir 131 000 pund."
     },
     {
-     "s": 90.14,
-     "e": 94.96,
+     "s": 105.24,
+     "e": 109.46,
      "text": "Men 5 procent av 1000 pund är bara 50 pund om året."
     },
     {
-     "s": 95.96,
-     "e": 100.56,
-     "text": "Och 50 pund om året i hundra år är 5000 pund."
+     "s": 110.46,
+     "e": 114.7,
+     "text": "Och 50 pund om året i 100 år är 5000 pund."
     },
     {
-     "s": 101.56,
-     "e": 105.36,
-     "text": "Hur kan 1000 pund då bli 131 000?"
+     "s": 115.7,
+     "e": 120.46,
+     "text": "Hur kan 1000 pund då bli 131 000? Hmm..."
     },
     {
-     "s": 106.66,
-     "e": 108.98,
-     "text": "Vi följer pengarna år för år."
+     "s": 121.46,
+     "e": 122.94,
+     "text": "har Franklin räknat fel?"
     },
     {
-     "s": 109.98,
-     "e": 115.9,
-     "text": "Alla pengarna från början är 100 procent, och varje år kommer 5 procent till."
+     "s": 123.94,
+     "e": 125.12,
+     "text": "Det tar vi reda på nu."
     },
     {
-     "s": 116.9,
-     "e": 121.18,
-     "text": "100 procent plus 5 procent är 105 procent."
+     "s": 126.42,
+     "e": 128.98,
+     "text": "Vi följer pengarna, ett år i taget."
     },
     {
-     "s": 122.18,
-     "e": 125.48,
-     "text": "Det är samma sak som talet 1,05."
+     "s": 129.98,
+     "e": 132.04,
+     "text": "Från början finns det 1000 pund."
     },
     {
-     "s": 126.78,
-     "e": 132.82,
-     "text": "Att lägga till 5 procent är alltså samma sak som att gångra med 1,05."
+     "s": 133.04,
+     "e": 135.02,
+     "text": "Hur mycket ränta blir det första året?"
     },
     {
-     "s": 133.82,
-     "e": 137.82,
+     "s": 136.02,
+     "e": 137.88,
+     "text": "Fem procent av 1000 pund."
+    },
+    {
+     "s": 138.88,
+     "e": 141.28,
+     "text": "Det är 50 pund, som vi räknade nyss."
+    },
+    {
+     "s": 142.28,
+     "e": 145.4,
+     "text": "Efter ett år finns det alltså 1050 pund."
+    },
+    {
+     "s": 146.7,
+     "e": 147.7,
+     "text": "Nu kommer det viktiga."
+    },
+    {
+     "s": 148.62,
+     "e": 151.2,
+     "text": "De femtio pundet lånas också ut."
+    },
+    {
+     "s": 152.2,
+     "e": 157.3,
+     "text": "Så andra året ger både de tusen pundet och de femtio pundet ränta."
+    },
+    {
+     "s": 158.3,
+     "e": 161.44,
+     "text": "Tusen pund ger 50 pund, precis som förut."
+    },
+    {
+     "s": 162.44,
+     "e": 164.66,
+     "text": "Men hur mycket ger de femtio pundet?"
+    },
+    {
+     "s": 165.66,
+     "e": 167.7,
+     "text": "Femtio är hälften av hundra."
+    },
+    {
+     "s": 168.7,
+     "e": 173.44,
+     "text": "Så räntan blir hälften av fem, alltså 2,5 pund."
+    },
+    {
+     "s": 174.74,
+     "e": 178.88,
+     "text": "Andra året blir räntan alltså femtio plus 2,5."
+    },
+    {
+     "s": 179.88,
+     "e": 182.3,
+     "text": "Det är 52,5 pund."
+    },
+    {
+     "s": 183.3,
+     "e": 185.54,
+     "text": "Det är lite mer än första året, ser du?"
+    },
+    {
+     "s": 186.54,
+     "e": 188.44,
+     "text": "Räntan ger också ränta."
+    },
+    {
+     "s": 189.44,
+     "e": 191.34,
+     "text": "Det kallas ränta på ränta."
+    },
+    {
+     "s": 192.34,
+     "e": 195.1,
+     "text": "Och för varje år blir räntan lite större."
+    },
+    {
+     "s": 196.4,
+     "e": 200.08,
+     "text": "Men att räkna så här i 100 år tar alldeles för lång tid."
+    },
+    {
+     "s": 201.08,
+     "e": 202.6,
+     "text": "Vi behöver ett snabbare sätt."
+    },
+    {
+     "s": 203.6,
+     "e": 206.2,
+     "text": "Tänk på alla pengarna som 100 procent."
+    },
+    {
+     "s": 207.2,
+     "e": 209.46,
+     "text": "Varje år kommer 5 procent till."
+    },
+    {
+     "s": 210.46,
+     "e": 211.46,
+     "text": "Hur mycket har vi då?"
+    },
+    {
+     "s": 212.26,
+     "e": 215.88,
+     "text": "Hundra plus fem, alltså 105 procent."
+    },
+    {
+     "s": 217.18,
+     "e": 219.36,
+     "text": "Procent betyder hundradelar."
+    },
+    {
+     "s": 220.36,
+     "e": 224.46,
+     "text": "Hundra procent är hundra hundradelar, alltså ett helt."
+    },
+    {
+     "s": 225.46,
+     "e": 229.18,
+     "text": "Hundrafem procent är ett helt, och fem hundradelar till."
+    },
+    {
+     "s": 230.18,
+     "e": 232.34,
+     "text": "Det skrivs 1,05."
+    },
+    {
+     "s": 233.34,
+     "e": 237.32,
+     "text": "Så när 5 procent kommer till, tar vi gånger 1,05."
+    },
+    {
+     "s": 238.32,
+     "e": 241.78,
      "text": "Talet 1,05 kallas förändringsfaktorn."
     },
     {
-     "s": 138.82,
-     "e": 143.52,
-     "text": "Efter ett år har pengarna blivit 1000 gånger 1,05."
+     "s": 242.78,
+     "e": 245.18,
+     "text": "Det visar hur pengarna förändras på ett år."
     },
     {
-     "s": 144.52,
-     "e": 146.6,
-     "text": "Det är 1050 pund."
+     "s": 246.48,
+     "e": 247.48,
+     "text": "Vi kollar att det stämmer."
     },
     {
-     "s": 147.9,
-     "e": 152.78,
-     "text": "Andra året får Franklins pengar ränta på hela 1050 pund."
+     "s": 248.46,
+     "e": 252.34,
+     "text": "Tusen gånger 1,05 är 1050 pund."
     },
     {
-     "s": 153.78,
-     "e": 158.28,
-     "text": "5 procent av 1050 är 52,5 pund."
+     "s": 253.34,
+     "e": 254.34,
+     "text": "Samma som förut."
     },
     {
-     "s": 159.28,
-     "e": 162.48,
-     "text": "Pengarna växer alltså lite mer än första året."
+     "s": 255.22,
+     "e": 258.3,
+     "text": "Andra året tar vi gånger 1,05 igen."
     },
     {
-     "s": 163.48,
-     "e": 167.54,
-     "text": "Det beror på att räntan från första året också ger ränta."
+     "s": 259.3,
+     "e": 264.68,
+     "text": "Tusenfemtio gånger 1,05 är 1102,5 pund."
     },
     {
-     "s": 168.84,
-     "e": 172.38,
-     "text": "Andra året gångrar vi med 1,05 igen."
+     "s": 265.68,
+     "e": 268.88,
+     "text": "Det är 1050 plus 52,5."
     },
     {
-     "s": 173.38,
-     "e": 179.24,
-     "text": "Efter två år har vi alltså gångrat 1000 med 1,05 två gånger."
+     "s": 269.88,
+     "e": 272.78,
+     "text": "Det blev samma svar som när vi räknade räntan för sig."
     },
     {
-     "s": 180.24,
-     "e": 185.22,
-     "text": "Det skrivs 1000 gånger 1,05 upphöjt till två."
+     "s": 274.08,
+     "e": 275.48,
+     "text": "Okej, då har vi regeln."
     },
     {
-     "s": 186.22,
-     "e": 189.48,
-     "text": "Exponenten är det lilla talet uppe till höger."
+     "s": 276.48,
+     "e": 280.16,
+     "text": "Varje år tar vi gånger förändringsfaktorn en gång till."
     },
     {
-     "s": 190.48,
-     "e": 194.72,
-     "text": "Den räknar hur många gånger vi gångrar med förändringsfaktorn."
+     "s": 281.16,
+     "e": 284.04,
+     "text": "Efter ett år har vi tagit gånger en gång."
     },
     {
-     "s": 196.02,
-     "e": 201.34,
-     "text": "Efter tre år är exponenten tre, och efter tio år är den tio."
+     "s": 285.04,
+     "e": 288.84,
+     "text": "Efter två år två gånger, och efter tre år tre gånger."
     },
     {
-     "s": 202.34,
-     "e": 204.74,
-     "text": "Efter x år är den x."
+     "s": 289.84,
+     "e": 294.8,
+     "text": "Men efter 100 år skulle vi behöva skriva 1,05 hundra gånger."
     },
     {
-     "s": 205.74,
-     "e": 214.06,
-     "text": "Pengarna efter x år är alltså y är lika med 1000 gånger 1,05 upphöjt till x."
+     "s": 295.8,
+     "e": 296.8,
+     "text": "Det får inte plats."
     },
     {
-     "s": 215.06,
-     "e": 220.7,
-     "text": "Här står x för antalet år, och y står för pengarna i pund."
+     "s": 298.06,
+     "e": 299.74,
+     "text": "Därför skriver vi det kortare."
     },
     {
-     "s": 222,
-     "e": 228.08,
-     "text": "När x står i exponenten kallas funktionen en exponentialfunktion."
+     "s": 300.74,
+     "e": 305.72,
+     "text": "Vi skriver 1,05 en gång, och sätter ett litet tal uppe till höger."
     },
     {
-     "s": 229.08,
-     "e": 235.44,
-     "text": "På formelbladet står den som y är lika med C gånger a upphöjt till x."
+     "s": 306.72,
+     "e": 310.14,
+     "text": "Det lilla talet säger hur många gånger vi tar gånger."
     },
     {
-     "s": 236.44,
-     "e": 240.34,
-     "text": "C är startvärdet, alltså pengarna från början."
+     "s": 311.14,
+     "e": 312.62,
+     "text": "Det kallas exponent."
     },
     {
-     "s": 241.34,
-     "e": 243.46,
-     "text": "Här är C 1000 pund."
+     "s": 313.62,
+     "e": 319,
+     "text": "Ett komma noll fem med en liten trea läses 1,05 upphöjt till tre."
     },
     {
-     "s": 244.46,
-     "e": 249.08,
-     "text": "Och a är förändringsfaktorn, här 1,05."
+     "s": 320,
+     "e": 325.16,
+     "text": "Det betyder 1,05 gånger 1,05 gånger 1,05."
     },
     {
-     "s": 250.38,
-     "e": 252.7,
-     "text": "Nu kan vi kontrollera Franklins svar."
+     "s": 326.46,
+     "e": 328.64,
+     "text": "Vad är exponenten efter 10 år?"
     },
     {
-     "s": 253.7,
-     "e": 256.7,
-     "text": "Efter hundra år är x lika med 100."
+     "s": 329.64,
+     "e": 332.54,
+     "text": "Tio, för då har vi tagit gånger tio gånger."
     },
     {
-     "s": 257.7,
-     "e": 263.52,
-     "text": "Vi skriver 1000 gånger 1,05 upphöjt till 100 på räknaren,"
+     "s": 333.54,
+     "e": 336.12,
+     "text": "Exponenten är alltså antalet år."
     },
     {
-     "s": 263.92,
-     "e": 265.86,
-     "text": "med knappen för upphöjt till."
+     "s": 337.12,
+     "e": 340.98,
+     "text": "Vi kallar antalet år för x, och pengarna kallar vi y."
     },
     {
-     "s": 266.86,
-     "e": 271.72,
-     "text": "Svaret blir ungefär 131 500 pund."
+     "s": 341.98,
+     "e": 344.68,
+     "text": "Nu kan vi skriva pengarna efter x år."
     },
     {
-     "s": 272.72,
-     "e": 274.86,
+     "s": 345.68,
+     "e": 350.22,
+     "text": "y är lika med tusen gånger 1,05 upphöjt till x."
+    },
+    {
+     "s": 351.22,
+     "e": 353.92,
+     "text": "Vi stoppar in antalet år och får ut pengarna."
+    },
+    {
+     "s": 355.22,
+     "e": 356.86,
+     "text": "Nu kan vi kolla Franklins svar."
+    },
+    {
+     "s": 357.86,
+     "e": 360.26,
+     "text": "Efter 100 år är x hundra."
+    },
+    {
+     "s": 361.26,
+     "e": 366.14,
+     "text": "Vi tar räknaren och trycker tusen, gånger, 1,05."
+    },
+    {
+     "s": 367.14,
+     "e": 369.66,
+     "text": "Sen trycker vi på knappen för upphöjt till."
+    },
+    {
+     "s": 370.66,
+     "e": 373.72,
+     "text": "Den ser ut som ett x med en liten ruta uppe till höger."
+    },
+    {
+     "s": 374.72,
+     "e": 377.14,
+     "text": "Vi skriver hundra och trycker enter."
+    },
+    {
+     "s": 378.14,
+     "e": 384.66,
+     "text": "Svaret blir ungefär 131 500 pund. Aha..."
+    },
+    {
+     "s": 385.66,
+     "e": 387.66,
      "text": "Franklin hade alltså räknat rätt."
     },
     {
-     "s": 276.16,
-     "e": 279.98,
-     "text": "Men varför blev det så mycket mer än 5000 pund?"
+     "s": 388.96,
+     "e": 391.58,
+     "text": "Den här sortens funktion finns på formelbladet."
     },
     {
-     "s": 280.98,
-     "e": 287.26,
-     "text": "Om pengarna bara fick 50 pund varje år, skulle de växa lika mycket varje år."
+     "s": 392.58,
+     "e": 397.26,
+     "text": "Där står den som y är lika med C gånger a upphöjt till x."
     },
     {
-     "s": 288.26,
-     "e": 293.9,
-     "text": "Det är ett linjärt samband, y är lika med 50x plus 1000."
+     "s": 398.26,
+     "e": 401.72,
+     "text": "Det är samma sak som Franklins pengar, skrivet med bokstäver."
     },
     {
-     "s": 294.9,
-     "e": 300.62,
-     "text": "Här är k 50 pund per år, och m är 1000 pund från början."
+     "s": 402.72,
+     "e": 406,
+     "text": "C är startvärdet, alltså det vi har från början."
     },
     {
-     "s": 301.62,
-     "e": 304.48,
-     "text": "50 gånger 100 är 5000."
+     "s": 407,
+     "e": 409.58,
+     "text": "Hos Franklin är C 1000 pund."
     },
     {
-     "s": 305.48,
-     "e": 309.58,
-     "text": "Plus 1000 blir det 6000 pund efter hundra år."
+     "s": 410.58,
+     "e": 412.58,
+     "text": "Och a är förändringsfaktorn."
     },
     {
-     "s": 310.88,
-     "e": 313.78,
-     "text": "Vi ritar båda i samma koordinatsystem."
+     "s": 413.58,
+     "e": 416.32,
+     "text": "Hos Franklin är a 1,05."
     },
     {
-     "s": 314.78,
-     "e": 319.36,
-     "text": "Båda börjar i 1000 på y-axeln, alltså i startvärdet."
+     "s": 417.32,
+     "e": 422.58,
+     "text": "Funktionen kallas en exponentialfunktion, för x står i exponenten."
     },
     {
-     "s": 320.36,
-     "e": 324.02,
-     "text": "De första åren ligger linjen och kurvan nästan ihop."
+     "s": 423.88,
+     "e": 425.9,
+     "text": "Men varför blev det så mycket?"
     },
     {
-     "s": 325.02,
-     "e": 329.12,
-     "text": "Linjen lägger till lika mycket varje år, så den är rak."
+     "s": 426.9,
+     "e": 428.34,
+     "text": "Vi jämför med något enklare."
     },
     {
-     "s": 330.12,
-     "e": 334.18,
-     "text": "Exponentialfunktionen gångrar med lika mycket varje år."
+     "s": 429.34,
+     "e": 432.8,
+     "text": "Tänk dig att räntan bara gavs på de första tusen pundet."
     },
     {
-     "s": 335.18,
-     "e": 339.3,
-     "text": "Därför böjer den uppåt och blir brantare och brantare."
+     "s": 433.8,
+     "e": 437.36,
+     "text": "Då kommer det 50 pund till varje år, aldrig mer."
     },
     {
-     "s": 340.6,
-     "e": 343.78,
+     "s": 438.36,
+     "e": 441.4,
+     "text": "Efter 100 år är det 5000 pund i ränta."
+    },
+    {
+     "s": 442.4,
+     "e": 446.08,
+     "text": "Plus de tusen pundet från början blir det 6000 pund."
+    },
+    {
+     "s": 447.38,
+     "e": 451.14,
+     "text": "När det kommer lika mycket till varje år, blir grafen en rak linje."
+    },
+    {
+     "s": 452.14,
+     "e": 456.44,
+     "text": "Med bokstäver blir den y är lika med 50x plus tusen."
+    },
+    {
+     "s": 457.44,
+     "e": 461.02,
+     "text": "50x betyder 50 pund gånger antalet år."
+    },
+    {
+     "s": 462.02,
+     "e": 464.38,
+     "text": "Och plus tusen är pengarna från början."
+    },
+    {
+     "s": 465.68,
+     "e": 468.18,
+     "text": "Nu ritar vi båda i samma koordinatsystem."
+    },
+    {
+     "s": 469.18,
+     "e": 472.64,
+     "text": "Antalet år går åt höger, och pengarna går uppåt."
+    },
+    {
+     "s": 473.64,
+     "e": 475.1,
+     "text": "Båda börjar i tusen."
+    },
+    {
+     "s": 476.1,
+     "e": 479.4,
+     "text": "Linjen går upp lika mycket varje år, 50 pund."
+    },
+    {
+     "s": 480.4,
+     "e": 482.38,
+     "text": "Kurvan går upp lite mer för varje år."
+    },
+    {
+     "s": 483.38,
+     "e": 485.38,
+     "text": "Den tar ju gånger 1,05."
+    },
+    {
+     "s": 486.38,
+     "e": 488.08,
+     "text": "I början ligger de nästan ihop."
+    },
+    {
+     "s": 489.08,
+     "e": 492.92,
+     "text": "Men sen böjer kurvan uppåt och blir brantare och brantare."
+    },
+    {
+     "s": 493.92,
+     "e": 496.52,
+     "text": "Det är därför Franklins pengar blev så många."
+    },
+    {
+     "s": 497.82,
+     "e": 500.44,
      "text": "En förändringsfaktor kan också göra något mindre."
     },
     {
-     "s": 344.78,
-     "e": 347.24,
-     "text": "Det gäller till exempel värdet på en bil."
+     "s": 501.44,
+     "e": 504.42,
+     "text": "Tänk dig en bil som kostar 200 000 kronor."
     },
     {
-     "s": 348.24,
-     "e": 355.36,
-     "text": "En bil kostar 200 000 kronor, och varje år tappar den 20 procent av sitt värde."
+     "s": 505.42,
+     "e": 508.34,
+     "text": "Varje år tappar den 20 procent av sitt värde."
     },
     {
-     "s": 356.36,
-     "e": 363.78,
-     "text": "100 procent minus 20 procent är 80 procent, så förändringsfaktorn är 0,8."
+     "s": 509.34,
+     "e": 511.06,
+     "text": "Hur mycket är kvar efter ett år?"
     },
     {
-     "s": 365.08,
-     "e": 373.1,
-     "text": "Bilens värde efter x år är alltså y är lika med 200 000 gånger 0,8"
+     "s": 512.06,
+     "e": 513.94,
+     "text": "Hela värdet är 100 procent."
     },
     {
-     "s": 373.2,
-     "e": 374.4,
-     "text": "upphöjt till x."
+     "s": 514.94,
+     "e": 517.34,
+     "text": "Hundra minus tjugo är åttio."
     },
     {
-     "s": 375.4,
-     "e": 380.1,
+     "s": 518.34,
+     "e": 519.86,
+     "text": "Så 80 procent är kvar."
+    },
+    {
+     "s": 521.16,
+     "e": 523.52,
+     "text": "Åttio procent är åttio hundradelar."
+    },
+    {
+     "s": 524.52,
+     "e": 526.34,
+     "text": "Det skrivs 0,8."
+    },
+    {
+     "s": 527.34,
+     "e": 530.1,
+     "text": "Förändringsfaktorn är alltså 0,8."
+    },
+    {
+     "s": 531.1,
+     "e": 532.1,
+     "text": "Vad sa regeln?"
+    },
+    {
+     "s": 532.88,
+     "e": 536.3,
+     "text": "Varje år tar vi gånger förändringsfaktorn en gång till."
+    },
+    {
+     "s": 537.3,
+     "e": 540.98,
+     "text": "Så varje år tar vi bilens värde gånger 0,8."
+    },
+    {
+     "s": 542.28,
+     "e": 546.36,
      "text": "Efter ett år är värdet 200 000 gånger 0,8."
     },
     {
-     "s": 381.1,
-     "e": 383.56,
-     "text": "Det är 160 000 kronor."
+     "s": 547.36,
+     "e": 550.76,
+     "text": "Det är 160 000 kronor. Stämmer det?"
     },
     {
-     "s": 384.56,
-     "e": 391.7,
-     "text": "Efter två år gångrar vi med 0,8 igen, och då är värdet 128 000 kronor."
+     "s": 551.76,
+     "e": 553.82,
+     "text": "Tio procent är en tiondel."
     },
     {
-     "s": 393,
-     "e": 394.8,
-     "text": "Nu ser vi vad a betyder."
+     "s": 554.82,
+     "e": 558.12,
+     "text": "En tiondel av 200 000 är 20 000."
     },
     {
-     "s": 395.8,
-     "e": 400.48,
-     "text": "När a är större än ett, växer y när x ökar."
+     "s": 559.12,
+     "e": 562.64,
+     "text": "Tjugo procent är dubbelt så mycket, alltså 40 000."
     },
     {
-     "s": 401.48,
-     "e": 404.96,
+     "s": 563.64,
+     "e": 569.54,
+     "text": "Och 200 000 minus 40 000 är 160 000. Det stämmer."
+    },
+    {
+     "s": 570.84,
+     "e": 573.9,
+     "text": "Efter två år tar vi gånger 0,8 igen."
+    },
+    {
+     "s": 574.9,
+     "e": 577.48,
+     "text": "Då är värdet 128 000 kronor."
+    },
+    {
+     "s": 578.48,
+     "e": 579.56,
+     "text": "Och efter x år?"
+    },
+    {
+     "s": 580.56,
+     "e": 585.62,
+     "text": "Då är y lika med 200 000 gånger 0,8 upphöjt till x."
+    },
+    {
+     "s": 586.62,
+     "e": 589.54,
+     "text": "Exponenten räknar gångerna, precis som förut."
+    },
+    {
+     "s": 590.84,
+     "e": 592.16,
+     "text": "Nu ser vi vad a gör."
+    },
+    {
+     "s": 593.16,
+     "e": 595.9,
+     "text": "Är a större än ett, blir det mer och mer."
+    },
+    {
+     "s": 596.9,
+     "e": 599.7,
      "text": "Funktionen är växande, som Franklins pengar."
     },
     {
-     "s": 405.96,
-     "e": 409.6,
-     "text": "När a är mellan noll och ett, minskar y."
+     "s": 600.7,
+     "e": 603.7,
+     "text": "Är a mindre än ett, blir det mindre och mindre."
     },
     {
-     "s": 410.6,
-     "e": 414.2,
+     "s": 604.7,
+     "e": 607.62,
      "text": "Funktionen är avtagande, som bilens värde."
     },
     {
-     "s": 415.2,
-     "e": 423.28,
-     "text": "Är a exakt ett händer ingenting, och därför står det på formelbladet att a inte får vara ett."
+     "s": 608.62,
+     "e": 610.42,
+     "text": "Och om a är exakt ett?"
     },
     {
-     "s": 424.58,
-     "e": 427.1,
-     "text": "Vi kan också läsa av en funktion direkt."
+     "s": 611.42,
+     "e": 613.18,
+     "text": "Gånger ett ändrar ingenting."
     },
     {
-     "s": 428.1,
-     "e": 434.14,
-     "text": "Ta y är lika med 85 gånger 0,79 upphöjt till x."
+     "s": 614.18,
+     "e": 617.82,
+     "text": "Därför står det på formelbladet att a inte får vara ett."
     },
     {
-     "s": 435.14,
-     "e": 437.44,
-     "text": "Startvärdet C är 85."
+     "s": 619.12,
+     "e": 621.58,
+     "text": "Ibland får man funktionen och ska läsa av den."
     },
     {
-     "s": 438.44,
-     "e": 442.98,
-     "text": "Förändringsfaktorn 0,79 är 79 procent."
+     "s": 622.58,
+     "e": 629.38,
+     "text": "En annan bil har värdet y är lika med 150 000 gånger 0,85 upphöjt till x."
     },
     {
-     "s": 443.98,
-     "e": 451.3,
-     "text": "100 minus 79 är 21, så värdet minskar med 21 procent för varje steg."
+     "s": 630.38,
+     "e": 631.94,
+     "text": "Vad kostade bilen från början?"
     },
     {
-     "s": 452.6,
-     "e": 456.62,
+     "s": 632.94,
+     "e": 635.22,
+     "text": "Det är C, talet före gånger."
+    },
+    {
+     "s": 636.22,
+     "e": 638.86,
+     "text": "Bilen kostade 150 000 kronor."
+    },
+    {
+     "s": 640.16,
+     "e": 642.22,
+     "text": "Hur mycket av värdet är kvar varje år?"
+    },
+    {
+     "s": 643.22,
+     "e": 645.76,
+     "text": "Det är a, alltså 0,85."
+    },
+    {
+     "s": 646.76,
+     "e": 650.58,
+     "text": "Det är åttiofem hundradelar, alltså 85 procent."
+    },
+    {
+     "s": 651.58,
+     "e": 652.92,
+     "text": "Hur mycket tappar bilen då?"
+    },
+    {
+     "s": 653.92,
+     "e": 656.48,
+     "text": "Hundra minus åttiofem är femton."
+    },
+    {
+     "s": 657.48,
+     "e": 660.96,
+     "text": "Bilen tappar 15 procent av sitt värde varje år."
+    },
+    {
+     "s": 662.26,
+     "e": 665.8,
      "text": "Franklin dog våren efter, år 1790."
     },
     {
-     "s": 457.62,
-     "e": 461.48,
+     "s": 666.8,
+     "e": 670.18,
      "text": "Pengarna i Boston växte inte lika fort som han hade räknat med,"
     },
     {
-     "s": 461.96,
-     "e": 464.7,
+     "s": 670.62,
+     "e": 672.74,
      "text": "för alla lån betalades inte tillbaka."
     },
     {
-     "s": 465.7,
-     "e": 471.9,
-     "text": "Men efter hundra år räckte pengarna till en skola för unga hantverkare i Boston."
+     "s": 673.74,
+     "e": 679.02,
+     "text": "Men efter 100 år räckte pengarna till en skola för unga hantverkare i Boston."
     },
     {
-     "s": 472.9,
-     "e": 476.98,
+     "s": 680.02,
+     "e": 683.32,
      "text": "Skolan öppnade 1908, och den finns kvar i dag."
     },
     {
-     "s": 478.28,
-     "e": 480.06,
+     "s": 684.62,
+     "e": 685.66,
      "text": "Nu är det din tur."
     },
     {
-     "s": 481.06,
-     "e": 485.5,
-     "text": "Tänk dig att räntan hade varit 4 procent i stället för fem."
+     "s": 686.66,
+     "e": 691.98,
+     "text": "Tänk dig att Franklins 1000 pund i stället hade fått 4 procent ränta varje år."
     },
     {
-     "s": 486.5,
-     "e": 491.94,
-     "text": "Skriv exponentialfunktionen för 1000 pund med 4 procent ränta."
+     "s": 692.98,
+     "e": 698.42,
+     "text": "Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund."
     },
     {
-     "s": 492.94,
-     "e": 495.88,
-     "text": "Hur många pund blir det efter tio år?"
+     "s": 699.42,
+     "e": 701.64,
+     "text": "Hur många pund blir det efter 10 år?"
     },
     {
-     "s": 496.88,
-     "e": 498.74,
+     "s": 702.64,
+     "e": 704.2,
      "text": "Avrunda till hela pund."
     }
    ]
