@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-10T21:26:07.360Z",
+ "byggd": "2026-10-10T23:02:29.024Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -4110,7 +4110,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k2-01-linjara-ekvationer-v3/ma1c-k2-01-linjara-ekvationer-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k2-01-linjara-ekvationer-v4/ma1c-k2-01-linjara-ekvationer-1080p.mp4",
    "moment": "Linjära ekvationer, balansmetoden, parenteser och bråk",
    "begrepp": [
     "ekvation",
@@ -4129,188 +4129,221 @@
    ],
    "beskrivning": "Robert Recorde i London år 1557: han tröttnade på att skriva \"är lika med\" och ritade två lika långa streck, det första likhetstecknet. Med hans egen första ekvation, 14x + 15 = 71, lär vi oss balansmetoden: gör samma sak med båda leden tills x står ensamt. Sedan x i båda leden, ekvationer med parentes och ekvationer med bråk, och hur man kontrollerar svaret.",
    "youtube": null,
-   "langd": 615,
+   "langd": 674,
    "omslag": "omslag/ma1c-k2-01-linjara-ekvationer.jpg?v=57831714",
    "omslagRen": "omslag/ma1c-k2-01-linjara-ekvationer-ren.jpg?v=684c643e",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 4,
+     "t": 9,
      "text": "Det är år femtonhundrafemtiosju, och läkaren Robert Recorde bor i London. Han skriver också böcker om matematik. På den tiden skrevs nästan alla sådana böcker på latin. Men Recorde skriver på engelska, så att de som inte kan latin också ska kunna lära sig räkna. Och böckerna är skrivna som samtal mellan en lärare och en elev."
     },
     {
-     "t": 29,
+     "t": 35,
      "text": "I sin nya bok vill Recorde visa hur man hittar ett tal som man inte känner till. Ett sånt tal kallas ett obekant tal. Obekant betyder helt enkelt okänt. Men då måste han skriva orden \"är lika med\" om och om igen, och det tröttnar han på. Därför ritar han två lika långa streck. Han skriver att inga två saker kan vara mer lika än de två strecken."
     },
     {
-     "t": 58,
-     "text": "Så blir det första likhetstecknet till. Två saker med ett likhetstecken emellan kallas en ekvation. En ekvation säger alltså att två saker är lika mycket värda. Recorde skriver det obekanta talet med ett eget tecken, men i dag skriver vi x. Hans första ekvation är fjorton x plus femton är lika med sjuttioett. Fjorton x betyder fjorton gånger x. Men vilket tal är x? Att ta reda på det kallas att lösa ekvationen."
+     "t": 63,
+     "text": "Så blir det första likhetstecknet till. Recorde skriver det obekanta talet med ett eget tecken, men i dag skriver vi x. Sen skriver han fjorton x plus femton är lika med sjuttioett. Fjorton x betyder fjorton gånger x. Två saker med ett likhetstecken emellan kallas en ekvation. Det här är hans första ekvation. Men vilket tal är x?"
     },
     {
-     "t": 95,
-     "text": "Det som står till vänster om likhetstecknet kallas vänster led. Det som står till höger kallas höger led. Och likhetstecknet säger att båda leden är lika mycket värda. Det är som en våg som väger jämnt, med vänster led i den ena skålen och höger led i den andra."
+     "t": 93,
+     "text": "Vi tänker oss en våg med två skålar. Den väger jämnt, alltså är skålarna lika tunga. I den vänstra skålen ligger fjorton påsar. I varje påse finns lika många kulor. Men hur många? Det vet vi inte. Det är x. Fjorton påsar är alltså fjorton x."
     },
     {
-     "t": 116,
-     "text": "Vi vill få x ensamt på ena sidan, för då kan vi se vilket tal det är. Men nu står det plus femton bredvid. Hur blir vi av med femton? Jo, vi tar bort femton, för femton minus femton är noll. Men tar man bara bort något från den ena skålen, så blir vågen sned. Därför tar Recorde bort femton från båda leden. Då står det fjorton x i vänster led. I höger led står det sjuttioett minus femton, alltså femtiosex."
+     "t": 119,
+     "text": "Bredvid påsarna ligger femton lösa kulor. Så i den vänstra skålen ligger fjorton x plus femton. I den högra skålen ligger sjuttioett kulor. Och vågen väger jämnt. Det är precis vad ekvationen säger."
     },
     {
-     "t": 151,
-     "text": "I boken frågar eleven varför man får göra så. Läraren svarar med en regel. Tar man bort lika mycket från två saker som är lika stora, så är det som blir kvar också lika stort. Vågen väger alltså fortfarande jämnt. Att göra samma sak med båda leden kallas i dag balansmetoden. Balans betyder just att vågen väger jämnt."
+     "t": 138,
+     "text": "Det som står till vänster om likhetstecknet kallas vänster led. Det som står till höger kallas höger led. Likhetstecknet säger att båda leden väger lika mycket."
     },
     {
-     "t": 179,
-     "text": "Nu står det fjorton x är lika med femtiosex. Fjorton x är ju fjorton gånger x. För att få x ensamt gör vi tvärtom, alltså delar vi med fjorton. Och vad sa regeln? Samma sak med båda leden. Så vi delar båda leden med fjorton. Fjorton gånger x, delat med fjorton, är bara x, för gånger fjorton och delat med fjorton tar ut varandra. Och femtiosex delat med fjorton är fyra. Det obekanta talet i Recordes första ekvation är alltså fyra."
+     "t": 152,
+     "text": "Vi vill få påsarna ensamma i skålen. Vad står i vägen? Femton lösa kulor. Så vi tar bort dem. Femton minus femton är noll. Men vad händer med vågen då? Den vänstra skålen blir lättare, och vågen blir sned."
     },
     {
-     "t": 219,
-     "text": "Vi kan kontrollera svaret. Det betyder att vi kollar att talet verkligen passar i ekvationen. Vi sätter in fyra i stället för x i vänster led. Fjorton gånger fyra är femtiosex, och femtiosex plus femton är sjuttioett. Vänster led är alltså lika mycket som höger led, så svaret stämmer."
+     "t": 172,
+     "text": "Därför tar Recorde bort femton från båda leden. Vi tar femton kulor ur den högra skålen också. Hur många är kvar där? Sjuttioett minus femton. Det är femtiosex. Nu väger vågen jämnt igen. Det står fjorton x i vänster led och femtiosex i höger led."
     },
     {
-     "t": 242,
-     "text": "Okej... så det är hela knepet. Vi gör tvärtom mot det som står runt x, och vi gör det med båda leden. Nu använder vi samma regel om och om igen."
+     "t": 197,
+     "text": "I boken frågar eleven varför man får göra så. Läraren svarar med en regel. Tar man bort lika mycket från två lika stora saker, så är resten också lika stort. Vågen väger alltså fortfarande jämnt. Det kallas i dag balansmetoden. Balans betyder just att vågen väger jämnt."
     },
     {
-     "t": 256,
-     "text": "Recordes andra ekvation är tjugo x minus arton är lika med hundratvå. Här står det minus arton i vänster led. Tvärtom mot att ta bort arton är att lägga till arton. Så nu lägger vi till arton på båda sidor. Recorde skriver att om man lägger till lika mycket till saker som är lika, så är de lika också efteråt."
+     "t": 221,
+     "text": "Nu står det fjorton x är lika med femtiosex. Fjorton påsar väger lika mycket som femtiosex kulor. Hur många kulor finns det då i en påse? Vi delar femtiosex kulor i fjorton lika högar. Det blir fyra kulor i varje hög. Så x är fyra."
     },
     {
-     "t": 281,
-     "text": "Minus arton plus arton är noll. Det är som att vara skyldig arton kronor och sen få arton kronor, då har man noll kvar. Så vänster led blir tjugo x. I höger led blir hundratvå plus arton hundratjugo. Sen gör vi tvärtom mot gånger tjugo, så vi delar båda leden med tjugo. Hundratjugo delat med tjugo är sex, så x är sex."
+     "t": 244,
+     "text": "Med ekvationen gör vi samma sak. Vi delar båda leden med fjorton. Fjorton x delat med fjorton är x. Och femtiosex delat med fjorton är fyra. Nu har vi löst ekvationen. Att lösa betyder att hitta x."
     },
     {
-     "t": 310,
-     "text": "Vi kollar. Tjugo gånger sex är hundratjugo, och hundratjugo minus arton är hundratvå. Det stämmer."
+     "t": 263,
+     "text": "Vi kan kontrollera svaret. Stämmer det verkligen? Vi sätter in fyra i stället för x. Fjorton gånger fyra är femtiosex. Femtiosex plus femton är sjuttioett. Vänster led är lika mycket som höger led. Så svaret stämmer."
     },
     {
-     "t": 320,
-     "text": "Ibland står x i båda leden. Ta ekvationen två x minus fyra är lika med x plus fem. Vi vill fortfarande ha x ensamt på ena sidan. Så först samlar vi alla x i vänster led. Det x som står till höger vill vi bli av med, och vad sa regeln? Samma sak med båda leden. Därför tar vi bort ett x från båda leden. Två x minus x är x, precis som två äpplen minus ett äpple är ett äpple. Så nu står det x minus fyra är lika med fem."
+     "t": 283,
+     "text": "Okej... så vad gjorde vi? Det stod plus femton, och då tog vi bort femton. Det stod gånger fjorton, och då delade vi med fjorton. Vi gör alltså tvärtom mot det som står runt x. Och vi gör det med båda leden. Den regeln använder vi om och om igen."
     },
     {
-     "t": 359,
-     "text": "Sen lägger vi till fyra på båda sidor, och då står x ensamt. Fem plus fyra är nio, så x är nio. Mm, ja... och vi kollar i båda leden. Två gånger nio minus fyra är fjorton. Nio plus fem är också fjorton. Det stämmer."
+     "t": 306,
+     "text": "Recordes andra ekvation är tjugo x minus arton är lika med hundratvå. Vad står runt x nu? Minus arton. Vad är tvärtom mot att ta bort arton? Att lägga till arton. Så nu lägger vi till arton i båda leden. Recorde skriver samma regel. Lägger man till lika mycket i båda leden, så väger de fortfarande lika."
     },
     {
-     "t": 382,
-     "text": "En ekvation kan också ha en parentes. Ta ekvationen fyra gånger parentesen tre x plus ett, och sedan minus ett, är lika med tjugosju. Fyra gånger parentesen betyder att allt inuti parentesen ska tas fyra gånger. Så innan vi kan använda regeln, behöver vi bli av med parentesen. Därför börjar vi med att multiplicera in fyran. Det betyder att fyran gångar både tre x och ettan."
+     "t": 334,
+     "text": "Vad blir minus arton plus arton? Tänk dig att du är skyldig arton kronor. Sen får du arton kronor. Då har du noll kvar. Så vänster led blir tjugo x. Och höger led? Hundratvå plus arton är hundratjugo."
     },
     {
-     "t": 415,
-     "text": "Fyra gånger tre x är tolv x, och fyra gånger ett är fyra. Vi kan se det på ett annat sätt också. Fyra gånger parentesen är samma sak som parentesen fyra gånger. Då har vi fyra stycken tre x, alltså tolv x. Och fyra stycken ettor, alltså fyra. Då står det tolv x plus fyra minus ett i vänster led. Fyra minus ett är tre, så ekvationen blir tolv x plus tre är lika med tjugosju."
+     "t": 354,
+     "text": "Nu står det tjugo x är lika med hundratjugo. Vad står runt x? Gånger tjugo. Tvärtom är att dela med tjugo. Så vi delar båda leden med tjugo. Hundratjugo delat med tjugo är sex. Så x är sex."
     },
     {
-     "t": 449,
-     "text": "Nu löser vi den som Recordes första ekvation, med samma regel. Vi tar bort tre från båda leden, och då är tolv x lika med tjugofyra. Sen delar vi båda leden med tolv, och x är två."
+     "t": 375,
+     "text": "Vi kollar. Tjugo gånger sex är hundratjugo. Hundratjugo minus arton är hundratvå. Det stämmer."
     },
     {
-     "t": 465,
-     "text": "Till sist en ekvation med ett bråk. Ett bråkstreck betyder delat med. I ekvationen x delat med tre är lika med nio delas x med tre. För att få x ensamt gör vi tvärtom, precis som förut. Tvärtom mot att dela med tre är att gånga med tre, alltså multiplicera. Så vi multiplicerar båda leden med tre. Då tar delat med tre och gånger tre ut varandra, och x står ensamt. Tre gånger nio är tjugosju, så x är tjugosju."
+     "t": 385,
+     "text": "Ibland står x i båda leden. Ta ekvationen två x minus fyra är lika med x plus fem. Tänk på påsarna igen. Till vänster finns två påsar, och till höger en påse. Vi vill bara ha påsar på ena sidan. Vad sa regeln? Samma sak med båda leden. Därför tar vi bort en påse från båda leden. Två påsar minus en påse är en påse. Så två x minus x är x. Nu står det x minus fyra är lika med fem."
     },
     {
-     "t": 502,
-     "text": "Det kan vi tänka på ett annat sätt också. Vilket tal blir nio, om man delar det i tre lika delar? Tre nior, alltså nio plus nio plus nio. Det är tjugosju, samma svar."
+     "t": 424,
+     "text": "Vad står runt x nu? Minus fyra. Tvärtom är att lägga till fyra. Så vi lägger till fyra i båda leden. Fem plus fyra är nio. Så x är nio. Vi kollar i båda leden. Två gånger nio minus fyra är fjorton. Nio plus fem är också fjorton. Det stämmer."
     },
     {
-     "t": 517,
-     "text": "Nu en lite klurigare ekvation. Tre x delat med fyra, minus två, är lika med fyra. Här sitter det två saker runt x, ett bråk och ett minus två. Vi tar dem en i taget, och vi börjar med minus två, för det står utanför bråket. Så först lägger vi till två på båda sidor, så att bråket står ensamt. Då står det tre x delat med fyra är lika med sex."
+     "t": 451,
+     "text": "En ekvation kan också ha en parentes. Ta ekvationen fyra gånger parentesen tre x plus ett, och sedan minus ett, är lika med tjugosju. Vad betyder fyra gånger parentesen? Att parentesen finns fyra gånger. Vi skriver den fyra gånger i rad."
     },
     {
-     "t": 547,
-     "text": "Sen är det bråket. Delat med fyra gör vi tvärtom, så vi multiplicerar båda leden med fyra. Då försvinner fyran under bråkstrecket. Då blir tre x lika med tjugofyra. Till sist delar vi båda leden med tre, och x är åtta. Vi kollar. Tre gånger åtta är tjugofyra, tjugofyra delat med fyra är sex, och sex minus två är fyra. Det stämmer."
+     "t": 473,
+     "text": "Hur många tre x ser vi? Fyra stycken. Fyra gånger tre x är tolv x. Hur många ettor ser vi? Fyra stycken. Det blir fyra. Det här kallas att multiplicera in fyran. Fyran tas gånger allt inuti parentesen."
     },
     {
-     "t": 578,
+     "t": 495,
+     "text": "Nu står det tolv x plus fyra minus ett i vänster led. Fyra minus ett är tre. Så ekvationen blir tolv x plus tre är lika med tjugosju."
+    },
+    {
+     "t": 507,
+     "text": "Nu använder vi regeln igen. Vad står runt x? Plus tre. Så vi tar bort tre från båda leden. Då är tolv x lika med tjugofyra. Sen står det gånger tolv. Så vi delar båda leden med tolv. Tjugofyra delat med tolv är två. Så x är två."
+    },
+    {
+     "t": 531,
+     "text": "Till sist en ekvation med ett bråk. Ett bråkstreck betyder delat med. Ta ekvationen x delat med tre är lika med nio. Tänk dig att x är en hög med kulor. Vi delar högen i tre lika delar. Varje del blir nio kulor. Hur stor var högen? Nio plus nio plus nio. Det är tjugosju. Så x är tjugosju."
+    },
+    {
+     "t": 561,
+     "text": "Med regeln går det lika bra. Runt x står delat med tre. Tvärtom är gånger tre. Så vi tar båda leden gånger tre. Tre gånger nio är tjugosju. Samma svar, ser du?"
+    },
+    {
+     "t": 577,
+     "text": "Nu en lite klurigare ekvation. Tre x delat med fyra, minus två, är lika med fyra. Vad står runt x? Två saker, ett bråk och ett minus två. Vi tar dem en i taget. Vi börjar med det som står längst ut, alltså minus två. Så vi lägger till två i båda leden. Då står det tre x delat med fyra är lika med sex."
+    },
+    {
+     "t": 606,
+     "text": "Sen är det bråket. Runt tre x står delat med fyra. Tvärtom är gånger fyra. Så vi tar båda leden gånger fyra. Då står det tre x är lika med tjugofyra. Till sist står det gånger tre. Så vi delar båda leden med tre, och x är åtta."
+    },
+    {
+     "t": 629,
+     "text": "Vi kollar. Tre gånger åtta är tjugofyra. Tjugofyra delat med fyra är sex. Och sex minus två är fyra. Det stämmer."
+    },
+    {
+     "t": 642,
      "text": "Recordes bok trycktes i London femtonhundrafemtiosju. Men året efter dog Recorde i ett fängelse i London. Han hade förlorat en rättegång mot en mäktig adelsman, och han kunde inte betala det han dömdes att betala. Hans två streck trycktes inte igen förrän sextio år senare. Men i dag används de i hela världen."
     },
     {
-     "t": 602,
-     "text": "Nu är det din tur. Lös ekvationen sex x plus nio är lika med fyrtiofem. Kontrollera sedan ditt svar genom att sätta in det i ekvationen."
+     "t": 666,
+     "text": "Nu är det din tur. Lös ekvationen sex x plus nio är lika med fyrtiofem."
     }
    ],
    "kapitel": [
     {
-     "t": 4,
+     "t": 9,
      "rubrik": "Recorde i London",
      "typ": "historia"
     },
     {
-     "t": 29,
+     "t": 35,
      "rubrik": "Det första likhetstecknet",
      "typ": "historia"
     },
     {
-     "t": 58,
+     "t": 63,
      "rubrik": "Ekvationen 14x + 15 = 71",
      "typ": "historia"
     },
     {
-     "t": 95,
+     "t": 93,
+     "rubrik": "Vågen med påsar och kulor",
+     "typ": "matte"
+    },
+    {
+     "t": 138,
      "rubrik": "Vänster led, höger led",
      "typ": "matte"
     },
     {
-     "t": 116,
+     "t": 152,
      "rubrik": "Ta bort 15 från båda leden",
      "typ": "matte"
     },
     {
-     "t": 151,
+     "t": 197,
      "rubrik": "Balansmetoden",
      "typ": "matte"
     },
     {
-     "t": 179,
+     "t": 221,
      "rubrik": "Dela med 14, x = 4",
      "typ": "matte"
     },
     {
-     "t": 219,
+     "t": 263,
      "rubrik": "Kontrollera svaret",
      "typ": "matte"
     },
     {
-     "t": 242,
+     "t": 283,
      "rubrik": "Regeln: gör tvärtom, med båda leden",
      "typ": "matte"
     },
     {
-     "t": 256,
-     "rubrik": "Lägg till 18 på båda sidor",
+     "t": 306,
+     "rubrik": "Lägg till 18 i båda leden",
      "typ": "matte"
     },
     {
-     "t": 320,
+     "t": 385,
      "rubrik": "x i båda leden",
      "typ": "matte"
     },
     {
-     "t": 382,
+     "t": 451,
      "rubrik": "Ekvation med parentes",
      "typ": "matte"
     },
     {
-     "t": 465,
+     "t": 531,
      "rubrik": "Ekvation med bråk",
      "typ": "matte"
     },
     {
-     "t": 517,
+     "t": 577,
      "rubrik": "Bråk i flera steg",
      "typ": "matte"
     },
     {
-     "t": 578,
+     "t": 642,
      "rubrik": "Recorde och likhetstecknet i dag",
      "typ": "historia"
     },
     {
-     "t": 602,
+     "t": 666,
      "rubrik": "Din tur: 6x + 9 = 45",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 602,
+    "notisFran": 666,
     "fraga": "Lös ekvationen 6x + 9 = 45.",
     "delar": [
      {
@@ -4352,7 +4385,7 @@
     ],
     "ledtrad": {
      "text": "Gör samma sak med båda leden tills x står ensamt: ta först bort 9 från båda leden, dela sedan båda leden med 6.",
-     "t": 138
+     "t": 172
     },
     "losning": [
      "6x + 9 = 45",
@@ -4363,674 +4396,929 @@
    },
    "undertext": [
     {
-     "s": 4,
-     "e": 9.26,
+     "s": 9.5,
+     "e": 15,
      "text": "Det är år femtonhundrafemtiosju, och läkaren Robert Recorde bor i London."
     },
     {
-     "s": 10.26,
-     "e": 12.56,
+     "s": 16,
+     "e": 18.16,
      "text": "Han skriver också böcker om matematik."
     },
     {
-     "s": 13.56,
-     "e": 16.88,
+     "s": 19.16,
+     "e": 22.42,
      "text": "På den tiden skrevs nästan alla sådana böcker på latin."
     },
     {
-     "s": 17.88,
-     "e": 23.58,
+     "s": 23.42,
+     "e": 29.04,
      "text": "Men Recorde skriver på engelska, så att de som inte kan latin också ska kunna lära sig räkna."
     },
     {
-     "s": 24.58,
-     "e": 28.46,
+     "s": 30.04,
+     "e": 33.9,
      "text": "Och böckerna är skrivna som samtal mellan en lärare och en elev."
     },
     {
-     "s": 29.76,
-     "e": 34.08,
+     "s": 35.2,
+     "e": 39.64,
      "text": "I sin nya bok vill Recorde visa hur man hittar ett tal som man inte känner till."
     },
     {
-     "s": 35.08,
-     "e": 37.62,
+     "s": 40.64,
+     "e": 43.1,
      "text": "Ett sånt tal kallas ett obekant tal."
     },
     {
-     "s": 38.62,
-     "e": 41.16,
+     "s": 44.1,
+     "e": 46.64,
      "text": "Obekant betyder helt enkelt okänt."
     },
     {
-     "s": 42.16,
-     "e": 47.82,
+     "s": 47.64,
+     "e": 52.76,
      "text": "Men då måste han skriva orden \"är lika med\" om och om igen, och det tröttnar han på."
     },
     {
-     "s": 48.82,
-     "e": 51.62,
+     "s": 53.76,
+     "e": 56.64,
      "text": "Därför ritar han två lika långa streck."
     },
     {
-     "s": 52.62,
-     "e": 57.28,
+     "s": 57.64,
+     "e": 62.5,
      "text": "Han skriver att inga två saker kan vara mer lika än de två strecken."
     },
     {
-     "s": 58.58,
-     "e": 60.74,
+     "s": 63.8,
+     "e": 65.86,
      "text": "Så blir det första likhetstecknet till."
     },
     {
-     "s": 61.74,
-     "e": 65.58,
-     "text": "Två saker med ett likhetstecken emellan kallas en ekvation."
-    },
-    {
-     "s": 66.58,
-     "e": 70.64,
-     "text": "En ekvation säger alltså att två saker är lika mycket värda."
-    },
-    {
-     "s": 71.64,
-     "e": 77.04,
+     "s": 66.86,
+     "e": 72.04,
      "text": "Recorde skriver det obekanta talet med ett eget tecken, men i dag skriver vi x."
     },
     {
-     "s": 78.04,
-     "e": 83.08,
-     "text": "Hans första ekvation är fjorton x plus femton är lika med sjuttioett."
+     "s": 73.04,
+     "e": 77.52,
+     "text": "Sen skriver han fjorton x plus femton är lika med sjuttioett."
     },
     {
-     "s": 84.08,
-     "e": 87.34,
+     "s": 78.52,
+     "e": 81.94,
      "text": "Fjorton x betyder fjorton gånger x."
     },
     {
-     "s": 88.34,
-     "e": 90.06,
+     "s": 82.94,
+     "e": 86.64,
+     "text": "Två saker med ett likhetstecken emellan kallas en ekvation."
+    },
+    {
+     "s": 87.64,
+     "e": 89.58,
+     "text": "Det här är hans första ekvation."
+    },
+    {
+     "s": 90.58,
+     "e": 92.66,
      "text": "Men vilket tal är x?"
     },
     {
-     "s": 91.06,
-     "e": 94.08,
-     "text": "Att ta reda på det kallas att lösa ekvationen."
+     "s": 93.96,
+     "e": 96.44,
+     "text": "Vi tänker oss en våg med två skålar."
     },
     {
-     "s": 95.38,
-     "e": 99.2,
+     "s": 97.44,
+     "e": 100.94,
+     "text": "Den väger jämnt, alltså är skålarna lika tunga."
+    },
+    {
+     "s": 101.94,
+     "e": 104.92,
+     "text": "I den vänstra skålen ligger fjorton påsar."
+    },
+    {
+     "s": 105.92,
+     "e": 108.6,
+     "text": "I varje påse finns lika många kulor."
+    },
+    {
+     "s": 109.6,
+     "e": 110.6,
+     "text": "Men hur många?"
+    },
+    {
+     "s": 111.46,
+     "e": 112.46,
+     "text": "Det vet vi inte."
+    },
+    {
+     "s": 113.3,
+     "e": 114.32,
+     "text": "Det är x."
+    },
+    {
+     "s": 115.32,
+     "e": 118.26,
+     "text": "Fjorton påsar är alltså fjorton x."
+    },
+    {
+     "s": 119.56,
+     "e": 122.68,
+     "text": "Bredvid påsarna ligger femton lösa kulor."
+    },
+    {
+     "s": 123.68,
+     "e": 127.88,
+     "text": "Så i den vänstra skålen ligger fjorton x plus femton."
+    },
+    {
+     "s": 128.88,
+     "e": 131.54,
+     "text": "I den högra skålen ligger sjuttioett kulor."
+    },
+    {
+     "s": 132.54,
+     "e": 134.26,
+     "text": "Och vågen väger jämnt."
+    },
+    {
+     "s": 135.26,
+     "e": 137.26,
+     "text": "Det är precis vad ekvationen säger."
+    },
+    {
+     "s": 138.56,
+     "e": 142.46,
      "text": "Det som står till vänster om likhetstecknet kallas vänster led."
     },
     {
-     "s": 100.2,
-     "e": 102.64,
+     "s": 143.46,
+     "e": 145.9,
      "text": "Det som står till höger kallas höger led."
     },
     {
-     "s": 103.64,
-     "e": 107.66,
-     "text": "Och likhetstecknet säger att båda leden är lika mycket värda."
+     "s": 146.9,
+     "e": 150.74,
+     "text": "Likhetstecknet säger att båda leden väger lika mycket."
     },
     {
-     "s": 108.66,
-     "e": 114.72,
-     "text": "Det är som en våg som väger jämnt, med vänster led i den ena skålen och höger led i den andra."
+     "s": 152.04,
+     "e": 154.52,
+     "text": "Vi vill få påsarna ensamma i skålen."
     },
     {
-     "s": 116.02,
-     "e": 120.62,
-     "text": "Vi vill få x ensamt på ena sidan, för då kan vi se vilket tal det är."
+     "s": 155.52,
+     "e": 156.52,
+     "text": "Vad står i vägen?"
     },
     {
-     "s": 121.62,
-     "e": 124.14,
-     "text": "Men nu står det plus femton bredvid."
+     "s": 157.34,
+     "e": 159.04,
+     "text": "Femton lösa kulor."
     },
     {
-     "s": 125.14,
-     "e": 126.48,
-     "text": "Hur blir vi av med femton?"
+     "s": 160.04,
+     "e": 161.04,
+     "text": "Så vi tar bort dem."
     },
     {
-     "s": 127.48,
-     "e": 132,
-     "text": "Jo, vi tar bort femton, för femton minus femton är noll."
+     "s": 161.92,
+     "e": 164.06,
+     "text": "Femton minus femton är noll."
     },
     {
-     "s": 133,
-     "e": 137.04,
-     "text": "Men tar man bara bort något från den ena skålen, så blir vågen sned."
+     "s": 165.06,
+     "e": 166.72,
+     "text": "Men vad händer med vågen då?"
     },
     {
-     "s": 138.04,
-     "e": 141.16,
+     "s": 167.72,
+     "e": 171.36,
+     "text": "Den vänstra skålen blir lättare, och vågen blir sned."
+    },
+    {
+     "s": 172.66,
+     "e": 175.94,
      "text": "Därför tar Recorde bort femton från båda leden."
     },
     {
-     "s": 142.16,
-     "e": 144.68,
-     "text": "Då står det fjorton x i vänster led."
+     "s": 176.94,
+     "e": 180.08,
+     "text": "Vi tar femton kulor ur den högra skålen också."
     },
     {
-     "s": 145.68,
-     "e": 150.44,
-     "text": "I höger led står det sjuttioett minus femton, alltså femtiosex."
+     "s": 181.08,
+     "e": 182.08,
+     "text": "Hur många är kvar där?"
     },
     {
-     "s": 151.74,
-     "e": 154.7,
+     "s": 183.04,
+     "e": 185.04,
+     "text": "Sjuttioett minus femton."
+    },
+    {
+     "s": 186.04,
+     "e": 187.44,
+     "text": "Det är femtiosex."
+    },
+    {
+     "s": 188.44,
+     "e": 190.28,
+     "text": "Nu väger vågen jämnt igen."
+    },
+    {
+     "s": 191.28,
+     "e": 195.72,
+     "text": "Det står fjorton x i vänster led och femtiosex i höger led."
+    },
+    {
+     "s": 197.02,
+     "e": 200.02,
      "text": "I boken frågar eleven varför man får göra så."
     },
     {
-     "s": 155.7,
-     "e": 157.52,
+     "s": 201.02,
+     "e": 202.8,
      "text": "Läraren svarar med en regel."
     },
     {
-     "s": 158.52,
-     "e": 165.1,
-     "text": "Tar man bort lika mycket från två saker som är lika stora, så är det som blir kvar också lika stort."
+     "s": 203.8,
+     "e": 209.78,
+     "text": "Tar man bort lika mycket från två lika stora saker, så är resten också lika stort."
     },
     {
-     "s": 166.1,
-     "e": 168.58,
+     "s": 210.78,
+     "e": 213.2,
      "text": "Vågen väger alltså fortfarande jämnt."
     },
     {
-     "s": 169.58,
-     "e": 173.94,
-     "text": "Att göra samma sak med båda leden kallas i dag balansmetoden."
+     "s": 214.2,
+     "e": 216.28,
+     "text": "Det kallas i dag balansmetoden."
     },
     {
-     "s": 174.94,
-     "e": 178.06,
+     "s": 217.28,
+     "e": 220.3,
      "text": "Balans betyder just att vågen väger jämnt."
     },
     {
-     "s": 179.36,
-     "e": 182.64,
+     "s": 221.6,
+     "e": 225.02,
      "text": "Nu står det fjorton x är lika med femtiosex."
     },
     {
-     "s": 183.64,
-     "e": 186.54,
-     "text": "Fjorton x är ju fjorton gånger x."
+     "s": 226.02,
+     "e": 229.9,
+     "text": "Fjorton påsar väger lika mycket som femtiosex kulor."
     },
     {
-     "s": 187.54,
-     "e": 192.24,
-     "text": "För att få x ensamt gör vi tvärtom, alltså delar vi med fjorton."
+     "s": 230.9,
+     "e": 233.12,
+     "text": "Hur många kulor finns det då i en påse?"
     },
     {
-     "s": 193.24,
-     "e": 194.24,
-     "text": "Och vad sa regeln?"
+     "s": 234.12,
+     "e": 237.64,
+     "text": "Vi delar femtiosex kulor i fjorton lika högar."
     },
     {
-     "s": 195.14,
-     "e": 197.12,
-     "text": "Samma sak med båda leden."
+     "s": 238.64,
+     "e": 240.62,
+     "text": "Det blir fyra kulor i varje hög."
     },
     {
-     "s": 198.12,
-     "e": 200.54,
-     "text": "Så vi delar båda leden med fjorton."
+     "s": 241.62,
+     "e": 242.88,
+     "text": "Så x är fyra."
     },
     {
-     "s": 201.54,
-     "e": 207.96,
-     "text": "Fjorton gånger x, delat med fjorton, är bara x, för gånger fjorton och delat med fjorton"
+     "s": 244.18,
+     "e": 246.12,
+     "text": "Med ekvationen gör vi samma sak."
     },
     {
-     "s": 208.04,
-     "e": 209.04,
-     "text": "tar ut varandra."
+     "s": 247.12,
+     "e": 249.14,
+     "text": "Vi delar båda leden med fjorton."
     },
     {
-     "s": 209.82,
-     "e": 212.52,
+     "s": 250.14,
+     "e": 252.78,
+     "text": "Fjorton x delat med fjorton är x."
+    },
+    {
+     "s": 253.78,
+     "e": 256.36,
      "text": "Och femtiosex delat med fjorton är fyra."
     },
     {
-     "s": 213.52,
-     "e": 217.92,
-     "text": "Det obekanta talet i Recordes första ekvation är alltså fyra."
+     "s": 257.36,
+     "e": 258.7,
+     "text": "Nu har vi löst ekvationen."
     },
     {
-     "s": 219.22,
-     "e": 220.62,
+     "s": 259.7,
+     "e": 262.12,
+     "text": "Att lösa betyder att hitta x."
+    },
+    {
+     "s": 263.42,
+     "e": 264.78,
      "text": "Vi kan kontrollera svaret."
     },
     {
-     "s": 221.62,
-     "e": 225.34,
-     "text": "Det betyder att vi kollar att talet verkligen passar i ekvationen."
+     "s": 265.78,
+     "e": 266.78,
+     "text": "Stämmer det verkligen?"
     },
     {
-     "s": 226.34,
-     "e": 229.38,
-     "text": "Vi sätter in fyra i stället för x i vänster led."
+     "s": 267.6,
+     "e": 269.7,
+     "text": "Vi sätter in fyra i stället för x."
     },
     {
-     "s": 230.38,
-     "e": 235.72,
-     "text": "Fjorton gånger fyra är femtiosex, och femtiosex plus femton är sjuttioett."
+     "s": 270.7,
+     "e": 272.9,
+     "text": "Fjorton gånger fyra är femtiosex."
     },
     {
-     "s": 236.72,
-     "e": 240.76,
-     "text": "Vänster led är alltså lika mycket som höger led, så svaret stämmer."
+     "s": 273.9,
+     "e": 276.56,
+     "text": "Femtiosex plus femton är sjuttioett."
     },
     {
-     "s": 242.06,
-     "e": 245.62,
-     "text": "Okej... så det är hela knepet."
+     "s": 277.56,
+     "e": 280.04,
+     "text": "Vänster led är lika mycket som höger led."
     },
     {
-     "s": 246.62,
-     "e": 251.32,
-     "text": "Vi gör tvärtom mot det som står runt x, och vi gör det med båda leden."
+     "s": 281.04,
+     "e": 282.04,
+     "text": "Så svaret stämmer."
     },
     {
-     "s": 252.32,
-     "e": 255.26,
-     "text": "Nu använder vi samma regel om och om igen."
+     "s": 283.34,
+     "e": 286.52,
+     "text": "Okej... så vad gjorde vi?"
     },
     {
-     "s": 256.56,
-     "e": 262,
+     "s": 287.52,
+     "e": 290.8,
+     "text": "Det stod plus femton, och då tog vi bort femton."
+    },
+    {
+     "s": 291.8,
+     "e": 295.08,
+     "text": "Det stod gånger fjorton, och då delade vi med fjorton."
+    },
+    {
+     "s": 296.08,
+     "e": 299,
+     "text": "Vi gör alltså tvärtom mot det som står runt x."
+    },
+    {
+     "s": 300,
+     "e": 301.56,
+     "text": "Och vi gör det med båda leden."
+    },
+    {
+     "s": 302.56,
+     "e": 304.92,
+     "text": "Den regeln använder vi om och om igen."
+    },
+    {
+     "s": 306.22,
+     "e": 311.6,
      "text": "Recordes andra ekvation är tjugo x minus arton är lika med hundratvå."
     },
     {
-     "s": 263,
-     "e": 265.52,
-     "text": "Här står det minus arton i vänster led."
+     "s": 312.6,
+     "e": 315.86,
+     "text": "Vad står runt x nu? Minus arton."
     },
     {
-     "s": 266.52,
-     "e": 269.98,
-     "text": "Tvärtom mot att ta bort arton är att lägga till arton."
+     "s": 316.86,
+     "e": 319.22,
+     "text": "Vad är tvärtom mot att ta bort arton?"
     },
     {
-     "s": 270.98,
-     "e": 273.38,
-     "text": "Så nu lägger vi till arton på båda sidor."
+     "s": 320.22,
+     "e": 321.54,
+     "text": "Att lägga till arton."
     },
     {
-     "s": 274.38,
-     "e": 278.56,
-     "text": "Recorde skriver att om man lägger till lika mycket till saker som är lika,"
+     "s": 322.54,
+     "e": 325.06,
+     "text": "Så nu lägger vi till arton i båda leden."
     },
     {
-     "s": 278.9,
-     "e": 280.64,
-     "text": "så är de lika också efteråt."
+     "s": 326.06,
+     "e": 327.88,
+     "text": "Recorde skriver samma regel."
     },
     {
-     "s": 281.94,
-     "e": 284.68,
-     "text": "Minus arton plus arton är noll."
+     "s": 328.88,
+     "e": 333.14,
+     "text": "Lägger man till lika mycket i båda leden, så väger de fortfarande lika."
     },
     {
-     "s": 285.68,
-     "e": 289.18,
-     "text": "Det är som att vara skyldig arton kronor och sen få arton kronor,"
+     "s": 334.44,
+     "e": 337.06,
+     "text": "Vad blir minus arton plus arton?"
     },
     {
-     "s": 289.5,
-     "e": 290.52,
-     "text": "då har man noll kvar."
+     "s": 338.06,
+     "e": 340.14,
+     "text": "Tänk dig att du är skyldig arton kronor."
     },
     {
-     "s": 291.52,
-     "e": 293.7,
+     "s": 341.14,
+     "e": 342.52,
+     "text": "Sen får du arton kronor."
+    },
+    {
+     "s": 343.52,
+     "e": 344.6,
+     "text": "Då har du noll kvar."
+    },
+    {
+     "s": 345.6,
+     "e": 347.94,
      "text": "Så vänster led blir tjugo x."
     },
     {
-     "s": 294.7,
-     "e": 298.42,
-     "text": "I höger led blir hundratvå plus arton hundratjugo."
+     "s": 348.94,
+     "e": 349.94,
+     "text": "Och höger led?"
     },
     {
-     "s": 299.42,
-     "e": 304.14,
-     "text": "Sen gör vi tvärtom mot gånger tjugo, så vi delar båda leden med tjugo."
+     "s": 350.66,
+     "e": 353.38,
+     "text": "Hundratvå plus arton är hundratjugo."
     },
     {
-     "s": 305.14,
-     "e": 309.4,
-     "text": "Hundratjugo delat med tjugo är sex, så x är sex."
+     "s": 354.68,
+     "e": 357.72,
+     "text": "Nu står det tjugo x är lika med hundratjugo."
     },
     {
-     "s": 310.7,
-     "e": 319.04,
-     "text": "Vi kollar. Tjugo gånger sex är hundratjugo, och hundratjugo minus arton är hundratvå. Det stämmer."
+     "s": 358.72,
+     "e": 361.74,
+     "text": "Vad står runt x? Gånger tjugo."
     },
     {
-     "s": 320.34,
-     "e": 322.38,
+     "s": 362.74,
+     "e": 364.74,
+     "text": "Tvärtom är att dela med tjugo."
+    },
+    {
+     "s": 365.74,
+     "e": 367.82,
+     "text": "Så vi delar båda leden med tjugo."
+    },
+    {
+     "s": 368.82,
+     "e": 371.46,
+     "text": "Hundratjugo delat med tjugo är sex."
+    },
+    {
+     "s": 372.46,
+     "e": 373.86,
+     "text": "Så x är sex."
+    },
+    {
+     "s": 375.16,
+     "e": 378.88,
+     "text": "Vi kollar. Tjugo gånger sex är hundratjugo."
+    },
+    {
+     "s": 379.88,
+     "e": 384.24,
+     "text": "Hundratjugo minus arton är hundratvå. Det stämmer."
+    },
+    {
+     "s": 385.54,
+     "e": 387.58,
      "text": "Ibland står x i båda leden."
     },
     {
-     "s": 323.38,
-     "e": 327.92,
+     "s": 388.58,
+     "e": 392.94,
      "text": "Ta ekvationen två x minus fyra är lika med x plus fem."
     },
     {
-     "s": 328.92,
-     "e": 332,
-     "text": "Vi vill fortfarande ha x ensamt på ena sidan."
+     "s": 393.94,
+     "e": 395.16,
+     "text": "Tänk på påsarna igen."
     },
     {
-     "s": 333,
-     "e": 335.72,
-     "text": "Så först samlar vi alla x i vänster led."
+     "s": 396.16,
+     "e": 399.6,
+     "text": "Till vänster finns två påsar, och till höger en påse."
     },
     {
-     "s": 336.72,
-     "e": 340.4,
-     "text": "Det x som står till höger vill vi bli av med, och vad sa regeln?"
+     "s": 400.6,
+     "e": 402.68,
+     "text": "Vi vill bara ha påsar på ena sidan."
     },
     {
-     "s": 341.4,
-     "e": 343.1,
+     "s": 403.68,
+     "e": 404.68,
+     "text": "Vad sa regeln?"
+    },
+    {
+     "s": 405.52,
+     "e": 407.38,
      "text": "Samma sak med båda leden."
     },
     {
-     "s": 344.1,
-     "e": 346.76,
-     "text": "Därför tar vi bort ett x från båda leden."
+     "s": 408.38,
+     "e": 410.94,
+     "text": "Därför tar vi bort en påse från båda leden."
     },
     {
-     "s": 347.76,
-     "e": 354,
-     "text": "Två x minus x är x, precis som två äpplen minus ett äpple är ett äpple."
+     "s": 411.94,
+     "e": 415.14,
+     "text": "Två påsar minus en påse är en påse."
     },
     {
-     "s": 355,
-     "e": 358.24,
-     "text": "Så nu står det x minus fyra är lika med fem."
+     "s": 416.14,
+     "e": 418.68,
+     "text": "Så två x minus x är x."
     },
     {
-     "s": 359.54,
-     "e": 363.58,
-     "text": "Sen lägger vi till fyra på båda sidor, och då står x ensamt."
+     "s": 419.68,
+     "e": 422.74,
+     "text": "Nu står det x minus fyra är lika med fem."
     },
     {
-     "s": 364.58,
-     "e": 369.86,
-     "text": "Fem plus fyra är nio, så x är nio. Mm, ja..."
+     "s": 424.04,
+     "e": 427.32,
+     "text": "Vad står runt x nu? Minus fyra."
     },
     {
-     "s": 370.86,
-     "e": 372.26,
-     "text": "och vi kollar i båda leden."
+     "s": 428.32,
+     "e": 430.34,
+     "text": "Tvärtom är att lägga till fyra."
     },
     {
-     "s": 373.26,
-     "e": 376.28,
+     "s": 431.34,
+     "e": 433.68,
+     "text": "Så vi lägger till fyra i båda leden."
+    },
+    {
+     "s": 434.68,
+     "e": 436.64,
+     "text": "Fem plus fyra är nio."
+    },
+    {
+     "s": 437.64,
+     "e": 439,
+     "text": "Så x är nio."
+    },
+    {
+     "s": 440,
+     "e": 441.3,
+     "text": "Vi kollar i båda leden."
+    },
+    {
+     "s": 442.3,
+     "e": 445.32,
      "text": "Två gånger nio minus fyra är fjorton."
     },
     {
-     "s": 377.28,
-     "e": 380.88,
+     "s": 446.32,
+     "e": 450.12,
      "text": "Nio plus fem är också fjorton. Det stämmer."
     },
     {
-     "s": 382.18,
-     "e": 384.52,
+     "s": 451.42,
+     "e": 453.76,
      "text": "En ekvation kan också ha en parentes."
     },
     {
-     "s": 385.52,
-     "e": 391.64,
+     "s": 454.76,
+     "e": 460.72,
      "text": "Ta ekvationen fyra gånger parentesen tre x plus ett, och sedan minus ett,"
     },
     {
-     "s": 391.94,
-     "e": 393.12,
+     "s": 460.96,
+     "e": 462.06,
      "text": "är lika med tjugosju."
     },
     {
-     "s": 394.12,
-     "e": 399.82,
-     "text": "Fyra gånger parentesen betyder att allt inuti parentesen ska tas fyra gånger."
+     "s": 463.06,
+     "e": 465.36,
+     "text": "Vad betyder fyra gånger parentesen?"
     },
     {
-     "s": 400.82,
-     "e": 404.62,
-     "text": "Så innan vi kan använda regeln, behöver vi bli av med parentesen."
+     "s": 466.36,
+     "e": 468.58,
+     "text": "Att parentesen finns fyra gånger."
     },
     {
-     "s": 405.62,
-     "e": 408.68,
-     "text": "Därför börjar vi med att multiplicera in fyran."
+     "s": 469.58,
+     "e": 471.7,
+     "text": "Vi skriver den fyra gånger i rad."
     },
     {
-     "s": 409.68,
-     "e": 413.7,
-     "text": "Det betyder att fyran gångar både tre x och ettan."
+     "s": 473,
+     "e": 476.46,
+     "text": "Hur många tre x ser vi? Fyra stycken."
     },
     {
-     "s": 415,
-     "e": 419.62,
-     "text": "Fyra gånger tre x är tolv x, och fyra gånger ett är fyra."
+     "s": 477.46,
+     "e": 480.1,
+     "text": "Fyra gånger tre x är tolv x."
     },
     {
-     "s": 420.62,
-     "e": 422.32,
-     "text": "Vi kan se det på ett annat sätt också."
+     "s": 481.1,
+     "e": 484.3,
+     "text": "Hur många ettor ser vi? Fyra stycken."
     },
     {
-     "s": 423.32,
-     "e": 427.98,
-     "text": "Fyra gånger parentesen är samma sak som parentesen fyra gånger."
+     "s": 485.3,
+     "e": 486.3,
+     "text": "Det blir fyra."
     },
     {
-     "s": 428.98,
-     "e": 432.8,
-     "text": "Då har vi fyra stycken tre x, alltså tolv x."
+     "s": 487.14,
+     "e": 489.78,
+     "text": "Det här kallas att multiplicera in fyran."
     },
     {
-     "s": 433.8,
-     "e": 436.36,
-     "text": "Och fyra stycken ettor, alltså fyra."
+     "s": 490.78,
+     "e": 493.74,
+     "text": "Fyran tas gånger allt inuti parentesen."
     },
     {
-     "s": 437.36,
-     "e": 441.54,
-     "text": "Då står det tolv x plus fyra minus ett i vänster led."
+     "s": 495.04,
+     "e": 498.62,
+     "text": "Nu står det tolv x plus fyra minus ett i vänster led."
     },
     {
-     "s": 442.54,
-     "e": 448.66,
-     "text": "Fyra minus ett är tre, så ekvationen blir tolv x plus tre är lika med tjugosju."
+     "s": 499.62,
+     "e": 501.26,
+     "text": "Fyra minus ett är tre."
     },
     {
-     "s": 449.96,
-     "e": 453.62,
-     "text": "Nu löser vi den som Recordes första ekvation, med samma regel."
+     "s": 502.26,
+     "e": 506.08,
+     "text": "Så ekvationen blir tolv x plus tre är lika med tjugosju."
     },
     {
-     "s": 454.62,
-     "e": 459.26,
-     "text": "Vi tar bort tre från båda leden, och då är tolv x lika med tjugofyra."
+     "s": 507.38,
+     "e": 508.74,
+     "text": "Nu använder vi regeln igen."
     },
     {
-     "s": 460.26,
-     "e": 463.82,
-     "text": "Sen delar vi båda leden med tolv, och x är två."
+     "s": 509.74,
+     "e": 512.62,
+     "text": "Vad står runt x? Plus tre."
     },
     {
-     "s": 465.12,
-     "e": 467.36,
+     "s": 513.62,
+     "e": 515.5,
+     "text": "Så vi tar bort tre från båda leden."
+    },
+    {
+     "s": 516.5,
+     "e": 518.78,
+     "text": "Då är tolv x lika med tjugofyra."
+    },
+    {
+     "s": 519.78,
+     "e": 521.54,
+     "text": "Sen står det gånger tolv."
+    },
+    {
+     "s": 522.54,
+     "e": 524.46,
+     "text": "Så vi delar båda leden med tolv."
+    },
+    {
+     "s": 525.46,
+     "e": 527.66,
+     "text": "Tjugofyra delat med tolv är två."
+    },
+    {
+     "s": 528.66,
+     "e": 529.92,
+     "text": "Så x är två."
+    },
+    {
+     "s": 531.22,
+     "e": 533.44,
      "text": "Till sist en ekvation med ett bråk."
     },
     {
-     "s": 468.36,
-     "e": 470.7,
+     "s": 534.44,
+     "e": 536.68,
      "text": "Ett bråkstreck betyder delat med."
     },
     {
-     "s": 471.7,
-     "e": 476.64,
-     "text": "I ekvationen x delat med tre är lika med nio delas x med tre."
+     "s": 537.68,
+     "e": 541.08,
+     "text": "Ta ekvationen x delat med tre är lika med nio."
     },
     {
-     "s": 477.64,
-     "e": 481.28,
-     "text": "För att få x ensamt gör vi tvärtom, precis som förut."
+     "s": 542.08,
+     "e": 544.28,
+     "text": "Tänk dig att x är en hög med kulor."
     },
     {
-     "s": 482.28,
-     "e": 487.02,
-     "text": "Tvärtom mot att dela med tre är att gånga med tre, alltså multiplicera."
+     "s": 545.28,
+     "e": 547.56,
+     "text": "Vi delar högen i tre lika delar."
     },
     {
-     "s": 488.02,
-     "e": 490.54,
-     "text": "Så vi multiplicerar båda leden med tre."
+     "s": 548.56,
+     "e": 550.4,
+     "text": "Varje del blir nio kulor."
     },
     {
-     "s": 491.54,
-     "e": 496.44,
-     "text": "Då tar delat med tre och gånger tre ut varandra, och x står ensamt."
+     "s": 551.4,
+     "e": 552.58,
+     "text": "Hur stor var högen?"
     },
     {
-     "s": 497.44,
-     "e": 500.78,
-     "text": "Tre gånger nio är tjugosju, så x är tjugosju."
+     "s": 553.58,
+     "e": 555.58,
+     "text": "Nio plus nio plus nio."
     },
     {
-     "s": 502.08,
-     "e": 503.9,
-     "text": "Det kan vi tänka på ett annat sätt också."
+     "s": 556.58,
+     "e": 557.58,
+     "text": "Det är tjugosju."
     },
     {
-     "s": 504.9,
-     "e": 508.82,
-     "text": "Vilket tal blir nio, om man delar det i tre lika delar?"
+     "s": 558.3,
+     "e": 559.74,
+     "text": "Så x är tjugosju."
     },
     {
-     "s": 509.82,
-     "e": 513.56,
-     "text": "Tre nior, alltså nio plus nio plus nio."
+     "s": 561.04,
+     "e": 562.5,
+     "text": "Med regeln går det lika bra."
     },
     {
-     "s": 514.56,
-     "e": 516.48,
-     "text": "Det är tjugosju, samma svar."
+     "s": 563.5,
+     "e": 565.64,
+     "text": "Runt x står delat med tre."
     },
     {
-     "s": 517.78,
-     "e": 519.72,
+     "s": 566.64,
+     "e": 568.24,
+     "text": "Tvärtom är gånger tre."
+    },
+    {
+     "s": 569.24,
+     "e": 571.36,
+     "text": "Så vi tar båda leden gånger tre."
+    },
+    {
+     "s": 572.36,
+     "e": 574,
+     "text": "Tre gånger nio är tjugosju."
+    },
+    {
+     "s": 575,
+     "e": 576.18,
+     "text": "Samma svar, ser du?"
+    },
+    {
+     "s": 577.48,
+     "e": 579.52,
      "text": "Nu en lite klurigare ekvation."
     },
     {
-     "s": 520.72,
-     "e": 524.82,
+     "s": 580.52,
+     "e": 584.48,
      "text": "Tre x delat med fyra, minus två, är lika med fyra."
     },
     {
-     "s": 525.82,
-     "e": 530.1,
-     "text": "Här sitter det två saker runt x, ett bråk och ett minus två."
+     "s": 585.48,
+     "e": 586.66,
+     "text": "Vad står runt x?"
     },
     {
-     "s": 531.1,
-     "e": 536.06,
-     "text": "Vi tar dem en i taget, och vi börjar med minus två, för det står utanför bråket."
+     "s": 587.66,
+     "e": 590.48,
+     "text": "Två saker, ett bråk och ett minus två."
     },
     {
-     "s": 537.06,
-     "e": 541.44,
-     "text": "Så först lägger vi till två på båda sidor, så att bråket står ensamt."
+     "s": 591.48,
+     "e": 592.8,
+     "text": "Vi tar dem en i taget."
     },
     {
-     "s": 542.44,
-     "e": 546.2,
+     "s": 593.8,
+     "e": 597.32,
+     "text": "Vi börjar med det som står längst ut, alltså minus två."
+    },
+    {
+     "s": 598.32,
+     "e": 600.38,
+     "text": "Så vi lägger till två i båda leden."
+    },
+    {
+     "s": 601.38,
+     "e": 605.04,
      "text": "Då står det tre x delat med fyra är lika med sex."
     },
     {
-     "s": 547.5,
-     "e": 548.62,
+     "s": 606.34,
+     "e": 607.42,
      "text": "Sen är det bråket."
     },
     {
-     "s": 549.62,
-     "e": 554.38,
-     "text": "Delat med fyra gör vi tvärtom, så vi multiplicerar båda leden med fyra."
+     "s": 608.42,
+     "e": 610.98,
+     "text": "Runt tre x står delat med fyra."
     },
     {
-     "s": 555.38,
-     "e": 557.8,
-     "text": "Då försvinner fyran under bråkstrecket."
+     "s": 611.98,
+     "e": 613.7,
+     "text": "Tvärtom är gånger fyra."
     },
     {
-     "s": 558.8,
-     "e": 561.16,
-     "text": "Då blir tre x lika med tjugofyra."
+     "s": 614.7,
+     "e": 616.94,
+     "text": "Så vi tar båda leden gånger fyra."
     },
     {
-     "s": 562.16,
-     "e": 567.56,
-     "text": "Till sist delar vi båda leden med tre, och x är åtta. Vi kollar."
+     "s": 617.94,
+     "e": 620.7,
+     "text": "Då står det tre x är lika med tjugofyra."
     },
     {
-     "s": 568.56,
-     "e": 572.96,
-     "text": "Tre gånger åtta är tjugofyra, tjugofyra delat med fyra är sex,"
+     "s": 621.7,
+     "e": 623.6,
+     "text": "Till sist står det gånger tre."
     },
     {
-     "s": 573.28,
-     "e": 576.8,
-     "text": "och sex minus två är fyra. Det stämmer."
+     "s": 624.6,
+     "e": 628.16,
+     "text": "Så vi delar båda leden med tre, och x är åtta."
     },
     {
-     "s": 578.1,
-     "e": 581.84,
+     "s": 629.46,
+     "e": 632.74,
+     "text": "Vi kollar. Tre gånger åtta är tjugofyra."
+    },
+    {
+     "s": 633.74,
+     "e": 636.02,
+     "text": "Tjugofyra delat med fyra är sex."
+    },
+    {
+     "s": 637.02,
+     "e": 640.74,
+     "text": "Och sex minus två är fyra. Det stämmer."
+    },
+    {
+     "s": 642.04,
+     "e": 645.72,
      "text": "Recordes bok trycktes i London femtonhundrafemtiosju."
     },
     {
-     "s": 582.84,
-     "e": 586.32,
+     "s": 646.72,
+     "e": 650.22,
      "text": "Men året efter dog Recorde i ett fängelse i London."
     },
     {
-     "s": 587.32,
-     "e": 591.96,
+     "s": 651.22,
+     "e": 655.86,
      "text": "Han hade förlorat en rättegång mot en mäktig adelsman, och han kunde inte betala det"
     },
     {
-     "s": 592,
-     "e": 593.18,
+     "s": 655.9,
+     "e": 657.1,
      "text": "han dömdes att betala."
     },
     {
-     "s": 594.18,
-     "e": 598.12,
+     "s": 658.1,
+     "e": 661.86,
      "text": "Hans två streck trycktes inte igen förrän sextio år senare."
     },
     {
-     "s": 599.12,
-     "e": 601.48,
+     "s": 662.86,
+     "e": 665.12,
      "text": "Men i dag används de i hela världen."
     },
     {
-     "s": 602.78,
-     "e": 603.88,
+     "s": 666.42,
+     "e": 667.42,
      "text": "Nu är det din tur."
     },
     {
-     "s": 604.88,
-     "e": 609.08,
+     "s": 668.22,
+     "e": 672.34,
      "text": "Lös ekvationen sex x plus nio är lika med fyrtiofem."
-    },
-    {
-     "s": 610.08,
-     "e": 613.46,
-     "text": "Kontrollera sedan ditt svar genom att sätta in det i ekvationen."
     }
    ]
   },
@@ -13126,7 +13414,7 @@
    ],
    "beskrivning": "Sommaren 1789 skrev Benjamin Franklin i sitt testamente att 1000 pund, utlånade mot 5 % ränta, skulle bli 131 000 pund på hundra år. Vi följer pengarna ett år i taget och ser hur räntan ger ränta. Fem procent till är samma sak som gånger 1,05, exponenten räknar hur många år vi tar gånger, och vi kollar Franklins svar på räknaren. Formeln y = C · aˣ kommer sist. Sedan jämför vi med ett linjärt samband, ser hur en bil som tappar i värde ger en avtagande funktion och läser av startvärde och procent direkt ur funktionen.",
    "youtube": null,
-   "langd": 705,
+   "langd": 710,
    "omslag": "omslag/ma1c-k4-05-exponentialfunktioner.jpg?v=39ef72f6",
    "omslagRen": "omslag/ma1c-k4-05-exponentialfunktioner-ren.jpg?v=e162dbcf",
    "omslagStor": null,
@@ -13144,7 +13432,7 @@
      "text": "Nu vill han hjälpa unga hantverkare på samma sätt, till exempel smeder och snickare som vill starta en egen verkstad. Därför ger han tusen pund till Philadelphia och tusen pund till Boston, staden där han föddes. Pengarna ska lånas ut till hantverkarna."
     },
     {
-     "t": 66,
+     "t": 65,
      "text": "Men lånet är inte gratis. Varje år betalar hantverkarna tillbaka en del av lånet, och fem procent i ränta. Räntan är en avgift för att få låna pengarna. Fem procent betyder fem av varje hundra. Lånar man hundra pund, betalar man alltså fem pund i ränta varje år. Sen lånas allt ut igen, också räntan. Så växer pengarna år för år."
     },
     {
@@ -13152,27 +13440,27 @@
      "text": "Franklin räknar ut hur mycket tusen pund blir efter hundra år. Han skriver att det blir hundratrettioettusen pund. Men fem procent av tusen pund är bara femtio pund om året. Och femtio pund om året i hundra år är femtusen pund. Hur kan tusen pund då bli hundratrettioettusen? Hmm... har Franklin räknat fel? Det tar vi reda på nu."
     },
     {
-     "t": 126,
+     "t": 127,
      "text": "Vi följer pengarna, ett år i taget. Från början finns det tusen pund. Hur mycket ränta blir det första året? Fem procent av tusen pund. Det är femtio pund, som vi räknade nyss. Efter ett år finns det alltså tusenfemtio pund."
     },
     {
-     "t": 146,
+     "t": 147,
      "text": "Nu kommer det viktiga. De femtio pundet lånas också ut. Så andra året ger både de tusen pundet och de femtio pundet ränta. Tusen pund ger femtio pund, precis som förut. Men hur mycket ger de femtio pundet? Femtio är hälften av hundra. Så räntan blir hälften av fem, alltså två och ett halvt pund."
     },
     {
-     "t": 174,
+     "t": 175,
      "text": "Andra året blir räntan alltså femtio plus två och ett halvt. Det är femtiotvå och ett halvt pund. Det är lite mer än första året, ser du? Räntan ger också ränta. Det kallas ränta på ränta. Och för varje år blir räntan lite större."
     },
     {
-     "t": 196,
+     "t": 197,
      "text": "Men att räkna så här i hundra år tar alldeles för lång tid. Vi behöver ett snabbare sätt. Tänk på alla pengarna som hundra procent. Varje år kommer fem procent till. Hur mycket har vi då? Hundra plus fem, alltså hundrafem procent."
     },
     {
-     "t": 217,
+     "t": 218,
      "text": "Procent betyder hundradelar. Hundra procent är hundra hundradelar, alltså ett helt. Hundrafem procent är ett helt, och fem hundradelar till. Det skrivs ett komma noll fem. Så när fem procent kommer till, tar vi gånger ett komma noll fem. Talet ett komma noll fem kallas förändringsfaktorn. Det visar hur pengarna förändras på ett år."
     },
     {
-     "t": 246,
+     "t": 247,
      "text": "Vi kollar att det stämmer. Tusen gånger ett komma noll fem är tusenfemtio pund. Samma som förut. Andra året tar vi gånger ett komma noll fem igen. Tusenfemtio gånger ett komma noll fem är tusenetthundratvå och ett halvt pund. Det är tusenfemtio plus femtiotvå och ett halvt. Det blev samma svar som när vi räknade räntan för sig."
     },
     {
@@ -13184,63 +13472,63 @@
      "text": "Därför skriver vi det kortare. Vi skriver ett komma noll fem en gång, och sätter ett litet tal uppe till höger. Det lilla talet säger hur många gånger vi tar gånger. Det kallas exponent. Ett komma noll fem med en liten trea läses ett komma noll fem upphöjt till tre. Det betyder ett komma noll fem gånger ett komma noll fem gånger ett komma noll fem."
     },
     {
-     "t": 326,
+     "t": 325,
      "text": "Vad är exponenten efter tio år? Tio, för då har vi tagit gånger tio gånger. Exponenten är alltså antalet år. Vi kallar antalet år för x, och pengarna kallar vi y. Nu kan vi skriva pengarna efter x år. y är lika med tusen gånger ett komma noll fem upphöjt till x. Vi stoppar in antalet år och får ut pengarna."
     },
     {
-     "t": 355,
+     "t": 354,
      "text": "Nu kan vi kolla Franklins svar. Efter hundra år är x hundra. Vi tar räknaren och trycker tusen, gånger, ett komma noll fem. Sen trycker vi på knappen för upphöjt till. Den ser ut som ett x med en liten ruta uppe till höger. Vi skriver hundra och trycker enter. Svaret blir ungefär hundratrettioettusen femhundra pund. Aha... Franklin hade alltså räknat rätt."
     },
     {
-     "t": 388,
+     "t": 386,
      "text": "Den här sortens funktion finns på formelbladet. Där står den som y är lika med C gånger a upphöjt till x. Det är samma sak som Franklins pengar, skrivet med bokstäver. C är startvärdet, alltså det vi har från början. Hos Franklin är C tusen pund. Och a är förändringsfaktorn. Hos Franklin är a ett komma noll fem. Funktionen kallas en exponentialfunktion, för x står i exponenten."
     },
     {
-     "t": 423,
+     "t": 421,
      "text": "Men varför blev det så mycket? Vi jämför med något enklare. Tänk dig att räntan bara gavs på de första tusen pundet. Då kommer det femtio pund till varje år, aldrig mer. Efter hundra år är det femtusen pund i ränta. Plus de tusen pundet från början blir det sextusen pund."
     },
     {
-     "t": 447,
+     "t": 444,
      "text": "När det kommer lika mycket till varje år, blir grafen en rak linje. Med bokstäver blir den y är lika med femtio x plus tusen. Femtio x betyder femtio pund gånger antalet år. Och plus tusen är pengarna från början."
     },
     {
-     "t": 465,
+     "t": 462,
      "text": "Nu ritar vi båda i samma koordinatsystem. Antalet år går åt höger, och pengarna går uppåt. Båda börjar i tusen. Linjen går upp lika mycket varje år, femtio pund. Kurvan går upp lite mer för varje år. Den tar ju gånger ett komma noll fem. I början ligger de nästan ihop. Men sen böjer kurvan uppåt och blir brantare och brantare. Det är därför Franklins pengar blev så många."
     },
     {
-     "t": 497,
-     "text": "En förändringsfaktor kan också göra något mindre. Tänk dig en bil som kostar tvåhundratusen kronor. Varje år tappar den tjugo procent av sitt värde. Hur mycket är kvar efter ett år? Hela värdet är hundra procent. Hundra minus tjugo är åttio. Så åttio procent är kvar."
+     "t": 495,
+     "text": "En förändringsfaktor kan också göra något mindre. Tänk dig en ung hantverkare i Boston. Han lånar Franklins pengar och köper en tryckpress för tvåhundra pund. Men pressen slits. Varje år tappar den tjugo procent av sitt värde. Hur mycket är kvar efter ett år? Hela värdet är hundra procent. Hundra minus tjugo är åttio. Så åttio procent är kvar."
     },
     {
-     "t": 521,
-     "text": "Åttio procent är åttio hundradelar. Det skrivs noll komma åtta. Förändringsfaktorn är alltså noll komma åtta. Vad sa regeln? Varje år tar vi gånger förändringsfaktorn en gång till. Så varje år tar vi bilens värde gånger noll komma åtta."
+     "t": 525,
+     "text": "Åttio procent är åttio hundradelar. Det skrivs noll komma åtta. Förändringsfaktorn är alltså noll komma åtta. Vad sa regeln? Varje år tar vi gånger förändringsfaktorn en gång till. Så varje år tar vi pressens värde gånger noll komma åtta."
     },
     {
-     "t": 542,
-     "text": "Efter ett år är värdet tvåhundratusen gånger noll komma åtta. Det är hundrasextiotusen kronor. Stämmer det? Tio procent är en tiondel. En tiondel av tvåhundratusen är tjugotusen. Tjugo procent är dubbelt så mycket, alltså fyrtiotusen. Och tvåhundratusen minus fyrtiotusen är hundrasextiotusen. Det stämmer."
+     "t": 546,
+     "text": "Efter ett år är värdet tvåhundra gånger noll komma åtta. Det är hundrasextio pund. Stämmer det? Tio procent är en tiondel. En tiondel av tvåhundra är tjugo. Tjugo procent är dubbelt så mycket, alltså fyrtio. Och tvåhundra minus fyrtio är hundrasextio. Det stämmer."
     },
     {
-     "t": 570,
-     "text": "Efter två år tar vi gånger noll komma åtta igen. Då är värdet hundratjugoåttatusen kronor. Och efter x år? Då är y lika med tvåhundratusen gånger noll komma åtta upphöjt till x. Exponenten räknar gångerna, precis som förut."
+     "t": 572,
+     "text": "Efter två år tar vi gånger noll komma åtta igen. Då är värdet hundratjugoåtta pund. Och efter x år? Då är y lika med tvåhundra gånger noll komma åtta upphöjt till x. Exponenten räknar gångerna, precis som förut."
     },
     {
-     "t": 590,
-     "text": "Nu ser vi vad a gör. Är a större än ett, blir det mer och mer. Funktionen är växande, som Franklins pengar. Är a mindre än ett, blir det mindre och mindre. Funktionen är avtagande, som bilens värde. Och om a är exakt ett? Gånger ett ändrar ingenting. Därför står det på formelbladet att a inte får vara ett."
+     "t": 591,
+     "text": "Nu ser vi vad a gör. Är a större än ett, blir det mer och mer. Funktionen är växande, som Franklins pengar. Är a mindre än ett, blir det mindre och mindre. Funktionen är avtagande, som pressens värde. Och om a är exakt ett? Gånger ett ändrar ingenting. Därför står det på formelbladet att a inte får vara ett."
     },
     {
      "t": 619,
-     "text": "Ibland får man funktionen och ska läsa av den. En annan bil har värdet y är lika med hundrafemtiotusen gånger noll komma åttiofem upphöjt till x. Vad kostade bilen från början? Det är C, talet före gånger. Bilen kostade hundrafemtiotusen kronor."
+     "text": "Ibland får man funktionen och ska läsa av den. En annan hantverkare i Boston köper också en press. Hans press har värdet y är lika med hundrafemtio gånger noll komma åttiofem upphöjt till x. Vad kostade pressen från början? Det är C, talet före gånger. Pressen kostade hundrafemtio pund."
     },
     {
-     "t": 640,
-     "text": "Hur mycket av värdet är kvar varje år? Det är a, alltså noll komma åttiofem. Det är åttiofem hundradelar, alltså åttiofem procent. Hur mycket tappar bilen då? Hundra minus åttiofem är femton. Bilen tappar femton procent av sitt värde varje år."
+     "t": 643,
+     "text": "Hur mycket av värdet är kvar varje år? Det är a, alltså noll komma åttiofem. Det är åttiofem hundradelar, alltså åttiofem procent. Hur mycket tappar pressen då? Hundra minus åttiofem är femton. Pressen tappar femton procent av sitt värde varje år."
     },
     {
-     "t": 662,
+     "t": 666,
      "text": "Franklin dog våren efter, år 1790. Pengarna i Boston växte inte lika fort som han hade räknat med, för alla lån betalades inte tillbaka. Men efter hundra år räckte pengarna till en skola för unga hantverkare i Boston. Skolan öppnade 1908, och den finns kvar i dag."
     },
     {
-     "t": 684,
+     "t": 688,
      "text": "Nu är det din tur. Tänk dig att Franklins tusen pund i stället hade fått fyra procent ränta varje år. Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund. Hur många pund blir det efter tio år? Avrunda till hela pund."
     }
    ],
@@ -13261,7 +13549,7 @@
      "typ": "historia"
     },
     {
-     "t": 66,
+     "t": 65,
      "rubrik": "Räntan: fem av varje hundra",
      "typ": "historia"
     },
@@ -13271,22 +13559,22 @@
      "typ": "historia"
     },
     {
-     "t": 126,
+     "t": 127,
      "rubrik": "Ett år i taget",
      "typ": "matte"
     },
     {
-     "t": 146,
+     "t": 147,
      "rubrik": "Ränta på ränta",
      "typ": "matte"
     },
     {
-     "t": 196,
+     "t": 197,
      "rubrik": "Förändringsfaktorn 1,05",
      "typ": "matte"
     },
     {
-     "t": 246,
+     "t": 247,
      "rubrik": "Kontroll: 1050 och 1102,5 pund",
      "typ": "matte"
     },
@@ -13301,42 +13589,42 @@
      "typ": "matte"
     },
     {
-     "t": 326,
+     "t": 325,
      "rubrik": "y = 1000 · 1,05ˣ",
      "typ": "matte"
     },
     {
-     "t": 355,
+     "t": 354,
      "rubrik": "Franklins svar på räknaren",
      "typ": "matte"
     },
     {
-     "t": 388,
+     "t": 386,
      "rubrik": "Exponentialfunktionen y = C · aˣ",
      "typ": "matte"
     },
     {
-     "t": 423,
+     "t": 421,
      "rubrik": "Jämfört med linjärt",
      "typ": "matte"
     },
     {
-     "t": 465,
+     "t": 462,
      "rubrik": "Linjen och kurvan",
      "typ": "matte"
     },
     {
-     "t": 497,
+     "t": 495,
      "rubrik": "Avtagande: bilen, 0,8",
      "typ": "matte"
     },
     {
-     "t": 542,
+     "t": 546,
      "rubrik": "Kontroll: 160 000 kr",
      "typ": "matte"
     },
     {
-     "t": 590,
+     "t": 591,
      "rubrik": "Växande och avtagande",
      "typ": "matte"
     },
@@ -13346,18 +13634,18 @@
      "typ": "matte"
     },
     {
-     "t": 662,
+     "t": 666,
      "rubrik": "Skolan i Boston",
      "typ": "historia"
     },
     {
-     "t": 684,
+     "t": 688,
      "rubrik": "Din tur: 4 % ränta",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 684,
+    "notisFran": 688,
     "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år.",
     "delar": [
      {
@@ -13422,7 +13710,7 @@
     ],
     "ledtrad": {
      "text": "100 % + 4 % = 104 %, så förändringsfaktorn är 1,04. Startvärdet C är 1000. Räkna sedan 1000 · 1,04^10 på räknaren, med knappen för upphöjt till.",
-     "t": 238
+     "t": 239
     },
     "losning": [
      "100 % + 4 % = 104 % = 1,04, så förändringsfaktorn är a = 1,04 och startvärdet C = 1000.",
@@ -13433,872 +13721,887 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 14.26,
+     "e": 14.22,
      "text": "Det är sommaren 1789 i staden Philadelphia i USA."
     },
     {
-     "s": 15.26,
-     "e": 18.94,
-     "text": "Benjamin Franklin är 83 år gammal och ofta sjuk."
+     "s": 15.22,
+     "e": 18.82,
+     "text": "Benjamin Franklin är åttiotre år gammal och ofta sjuk."
     },
     {
-     "s": 19.94,
-     "e": 23.6,
+     "s": 19.82,
+     "e": 23.32,
      "text": "Hans ansikte finns i dag på den amerikanska hundradollarsedeln."
     },
     {
-     "s": 24.6,
-     "e": 28.52,
+     "s": 24.32,
+     "e": 28.24,
      "text": "Nu sitter han vid sitt skrivbord och skriver ner vad som ska hända med hans pengar,"
     },
     {
-     "s": 28.74,
-     "e": 29.74,
+     "s": 28.46,
+     "e": 29.46,
      "text": "när han har dött."
     },
     {
-     "s": 30.8,
-     "e": 33.72,
+     "s": 30.56,
+     "e": 33.32,
      "text": "När Franklin var ung, jobbade han som boktryckare."
     },
     {
-     "s": 34.72,
-     "e": 37.96,
+     "s": 34.32,
+     "e": 37.72,
      "text": "Han ville starta ett eget tryckeri, men han hade inga pengar."
     },
     {
-     "s": 38.96,
-     "e": 40.92,
+     "s": 38.72,
+     "e": 40.78,
      "text": "Då lånade två vänner honom pengar."
     },
     {
-     "s": 41.92,
-     "e": 46.12,
+     "s": 41.78,
+     "e": 45.82,
      "text": "Franklin skriver att de lånen blev grunden till allt han äger."
     },
     {
-     "s": 47.42,
-     "e": 52.9,
+     "s": 47.12,
+     "e": 52.56,
      "text": "Nu vill han hjälpa unga hantverkare på samma sätt, till exempel smeder och snickare som"
     },
     {
-     "s": 52.94,
-     "e": 54.38,
+     "s": 52.6,
+     "e": 54.02,
      "text": "vill starta en egen verkstad."
     },
     {
-     "s": 55.38,
-     "e": 60.04,
-     "text": "Därför ger han 1000 pund till Philadelphia och 1000 pund till Boston,"
+     "s": 55.02,
+     "e": 59.64,
+     "text": "Därför ger han tusen pund till Philadelphia och tusen pund till Boston,"
     },
     {
-     "s": 60.38,
-     "e": 61.54,
+     "s": 60,
+     "e": 61.24,
      "text": "staden där han föddes."
     },
     {
-     "s": 62.54,
-     "e": 64.78,
+     "s": 62.24,
+     "e": 64.46,
      "text": "Pengarna ska lånas ut till hantverkarna."
     },
     {
-     "s": 66.08,
-     "e": 67.98,
+     "s": 65.76,
+     "e": 67.84,
      "text": "Men lånet är inte gratis."
     },
     {
-     "s": 68.98,
-     "e": 74.4,
-     "text": "Varje år betalar hantverkarna tillbaka en del av lånet, och 5 procent i ränta."
+     "s": 68.84,
+     "e": 74.32,
+     "text": "Varje år betalar hantverkarna tillbaka en del av lånet, och fem procent i ränta."
     },
     {
-     "s": 75.4,
-     "e": 78.2,
+     "s": 75.32,
+     "e": 78.26,
      "text": "Räntan är en avgift för att få låna pengarna."
     },
     {
-     "s": 79.2,
-     "e": 82.28,
+     "s": 79.26,
+     "e": 82.14,
      "text": "Fem procent betyder fem av varje hundra."
     },
     {
-     "s": 83.28,
-     "e": 88.04,
-     "text": "Lånar man 100 pund, betalar man alltså 5 pund i ränta varje år."
+     "s": 83.14,
+     "e": 88.1,
+     "text": "Lånar man hundra pund, betalar man alltså fem pund i ränta varje år."
     },
     {
-     "s": 89.04,
-     "e": 91.7,
+     "s": 89.1,
+     "e": 91.86,
      "text": "Sen lånas allt ut igen, också räntan."
     },
     {
-     "s": 92.7,
-     "e": 94.9,
+     "s": 92.86,
+     "e": 95.02,
      "text": "Så växer pengarna år för år."
     },
     {
-     "s": 96.2,
-     "e": 100.08,
-     "text": "Franklin räknar ut hur mycket 1000 pund blir efter 100 år."
+     "s": 96.32,
+     "e": 100.26,
+     "text": "Franklin räknar ut hur mycket tusen pund blir efter hundra år."
     },
     {
-     "s": 101.08,
-     "e": 104.24,
-     "text": "Han skriver att det blir 131 000 pund."
+     "s": 101.26,
+     "e": 104.8,
+     "text": "Han skriver att det blir hundratrettioettusen pund."
     },
     {
-     "s": 105.24,
-     "e": 109.46,
-     "text": "Men 5 procent av 1000 pund är bara 50 pund om året."
+     "s": 105.8,
+     "e": 110.5,
+     "text": "Men fem procent av tusen pund är bara femtio pund om året."
     },
     {
-     "s": 110.46,
-     "e": 114.7,
-     "text": "Och 50 pund om året i 100 år är 5000 pund."
+     "s": 111.5,
+     "e": 115.82,
+     "text": "Och femtio pund om året i hundra år är femtusen pund."
     },
     {
-     "s": 115.7,
-     "e": 120.46,
-     "text": "Hur kan 1000 pund då bli 131 000? Hmm..."
+     "s": 116.82,
+     "e": 121.2,
+     "text": "Hur kan tusen pund då bli hundratrettioettusen? Hmm..."
     },
     {
-     "s": 121.46,
-     "e": 122.94,
+     "s": 122.2,
+     "e": 123.66,
      "text": "har Franklin räknat fel?"
     },
     {
-     "s": 123.94,
-     "e": 125.12,
+     "s": 124.66,
+     "e": 125.84,
      "text": "Det tar vi reda på nu."
     },
     {
-     "s": 126.42,
-     "e": 128.98,
+     "s": 127.14,
+     "e": 129.7,
      "text": "Vi följer pengarna, ett år i taget."
     },
     {
-     "s": 129.98,
-     "e": 132.04,
-     "text": "Från början finns det 1000 pund."
+     "s": 130.7,
+     "e": 132.84,
+     "text": "Från början finns det tusen pund."
     },
     {
-     "s": 133.04,
-     "e": 135.02,
+     "s": 133.84,
+     "e": 135.88,
      "text": "Hur mycket ränta blir det första året?"
     },
     {
-     "s": 136.02,
-     "e": 137.88,
-     "text": "Fem procent av 1000 pund."
+     "s": 136.88,
+     "e": 138.86,
+     "text": "Fem procent av tusen pund."
     },
     {
-     "s": 138.88,
-     "e": 141.28,
-     "text": "Det är 50 pund, som vi räknade nyss."
+     "s": 139.86,
+     "e": 142.34,
+     "text": "Det är femtio pund, som vi räknade nyss."
     },
     {
-     "s": 142.28,
-     "e": 145.4,
-     "text": "Efter ett år finns det alltså 1050 pund."
+     "s": 143.34,
+     "e": 146.42,
+     "text": "Efter ett år finns det alltså tusenfemtio pund."
     },
     {
-     "s": 146.7,
-     "e": 147.7,
+     "s": 147.72,
+     "e": 148.72,
      "text": "Nu kommer det viktiga."
     },
     {
-     "s": 148.62,
-     "e": 151.2,
+     "s": 149.7,
+     "e": 152.06,
      "text": "De femtio pundet lånas också ut."
     },
     {
-     "s": 152.2,
-     "e": 157.3,
+     "s": 153.06,
+     "e": 158.24,
      "text": "Så andra året ger både de tusen pundet och de femtio pundet ränta."
     },
     {
-     "s": 158.3,
-     "e": 161.44,
-     "text": "Tusen pund ger 50 pund, precis som förut."
+     "s": 159.24,
+     "e": 162.44,
+     "text": "Tusen pund ger femtio pund, precis som förut."
     },
     {
-     "s": 162.44,
-     "e": 164.66,
+     "s": 163.44,
+     "e": 165.74,
      "text": "Men hur mycket ger de femtio pundet?"
     },
     {
-     "s": 165.66,
-     "e": 167.7,
+     "s": 166.74,
+     "e": 168.82,
      "text": "Femtio är hälften av hundra."
     },
     {
-     "s": 168.7,
-     "e": 173.44,
-     "text": "Så räntan blir hälften av fem, alltså 2,5 pund."
+     "s": 169.82,
+     "e": 174.4,
+     "text": "Så räntan blir hälften av fem, alltså två och ett halvt pund."
     },
     {
-     "s": 174.74,
-     "e": 178.88,
-     "text": "Andra året blir räntan alltså femtio plus 2,5."
+     "s": 175.7,
+     "e": 179.9,
+     "text": "Andra året blir räntan alltså femtio plus två och ett halvt."
     },
     {
-     "s": 179.88,
-     "e": 182.3,
-     "text": "Det är 52,5 pund."
+     "s": 180.9,
+     "e": 183.24,
+     "text": "Det är femtiotvå och ett halvt pund."
     },
     {
-     "s": 183.3,
-     "e": 185.54,
+     "s": 184.24,
+     "e": 186.54,
      "text": "Det är lite mer än första året, ser du?"
     },
     {
-     "s": 186.54,
-     "e": 188.44,
+     "s": 187.54,
+     "e": 189.44,
      "text": "Räntan ger också ränta."
     },
     {
-     "s": 189.44,
-     "e": 191.34,
+     "s": 190.44,
+     "e": 192.4,
      "text": "Det kallas ränta på ränta."
     },
     {
-     "s": 192.34,
-     "e": 195.1,
+     "s": 193.4,
+     "e": 196.02,
      "text": "Och för varje år blir räntan lite större."
     },
     {
-     "s": 196.4,
-     "e": 200.08,
-     "text": "Men att räkna så här i 100 år tar alldeles för lång tid."
+     "s": 197.32,
+     "e": 201.24,
+     "text": "Men att räkna så här i hundra år tar alldeles för lång tid."
     },
     {
-     "s": 201.08,
-     "e": 202.6,
+     "s": 202.24,
+     "e": 203.8,
      "text": "Vi behöver ett snabbare sätt."
     },
     {
-     "s": 203.6,
-     "e": 206.2,
-     "text": "Tänk på alla pengarna som 100 procent."
+     "s": 204.8,
+     "e": 207.32,
+     "text": "Tänk på alla pengarna som hundra procent."
     },
     {
-     "s": 207.2,
-     "e": 209.46,
-     "text": "Varje år kommer 5 procent till."
+     "s": 208.32,
+     "e": 210.64,
+     "text": "Varje år kommer fem procent till."
     },
     {
-     "s": 210.46,
-     "e": 211.46,
+     "s": 211.64,
+     "e": 212.64,
      "text": "Hur mycket har vi då?"
     },
     {
-     "s": 212.26,
-     "e": 215.88,
-     "text": "Hundra plus fem, alltså 105 procent."
+     "s": 213.48,
+     "e": 217.04,
+     "text": "Hundra plus fem, alltså hundrafem procent."
     },
     {
-     "s": 217.18,
-     "e": 219.36,
+     "s": 218.34,
+     "e": 220.5,
      "text": "Procent betyder hundradelar."
     },
     {
-     "s": 220.36,
-     "e": 224.46,
+     "s": 221.5,
+     "e": 225.6,
      "text": "Hundra procent är hundra hundradelar, alltså ett helt."
     },
     {
-     "s": 225.46,
-     "e": 229.18,
+     "s": 226.6,
+     "e": 230.5,
      "text": "Hundrafem procent är ett helt, och fem hundradelar till."
     },
     {
-     "s": 230.18,
-     "e": 232.34,
-     "text": "Det skrivs 1,05."
+     "s": 231.5,
+     "e": 233.72,
+     "text": "Det skrivs ett komma noll fem."
     },
     {
-     "s": 233.34,
-     "e": 237.32,
-     "text": "Så när 5 procent kommer till, tar vi gånger 1,05."
+     "s": 234.72,
+     "e": 238.68,
+     "text": "Så när fem procent kommer till, tar vi gånger ett komma noll fem."
     },
     {
-     "s": 238.32,
-     "e": 241.78,
-     "text": "Talet 1,05 kallas förändringsfaktorn."
+     "s": 239.68,
+     "e": 243.16,
+     "text": "Talet ett komma noll fem kallas förändringsfaktorn."
     },
     {
-     "s": 242.78,
-     "e": 245.18,
+     "s": 244.16,
+     "e": 246.48,
      "text": "Det visar hur pengarna förändras på ett år."
     },
     {
-     "s": 246.48,
-     "e": 247.48,
+     "s": 247.78,
+     "e": 248.78,
      "text": "Vi kollar att det stämmer."
     },
     {
-     "s": 248.46,
-     "e": 252.34,
-     "text": "Tusen gånger 1,05 är 1050 pund."
+     "s": 249.78,
+     "e": 253.66,
+     "text": "Tusen gånger ett komma noll fem är tusenfemtio pund."
     },
     {
-     "s": 253.34,
-     "e": 254.34,
+     "s": 254.66,
+     "e": 255.66,
      "text": "Samma som förut."
     },
     {
-     "s": 255.22,
-     "e": 258.3,
-     "text": "Andra året tar vi gånger 1,05 igen."
+     "s": 256.48,
+     "e": 259.6,
+     "text": "Andra året tar vi gånger ett komma noll fem igen."
     },
     {
-     "s": 259.3,
-     "e": 264.68,
-     "text": "Tusenfemtio gånger 1,05 är 1102,5 pund."
+     "s": 260.6,
+     "e": 265.58,
+     "text": "Tusenfemtio gånger ett komma noll fem är tusenetthundratvå och ett halvt pund."
     },
     {
-     "s": 265.68,
-     "e": 268.88,
-     "text": "Det är 1050 plus 52,5."
+     "s": 266.58,
+     "e": 269.52,
+     "text": "Det är tusenfemtio plus femtiotvå och ett halvt."
     },
     {
-     "s": 269.88,
-     "e": 272.78,
+     "s": 270.52,
+     "e": 273.42,
      "text": "Det blev samma svar som när vi räknade räntan för sig."
     },
     {
-     "s": 274.08,
-     "e": 275.48,
+     "s": 274.72,
+     "e": 276.14,
      "text": "Okej, då har vi regeln."
     },
     {
-     "s": 276.48,
-     "e": 280.16,
+     "s": 277.14,
+     "e": 280.66,
      "text": "Varje år tar vi gånger förändringsfaktorn en gång till."
     },
     {
-     "s": 281.16,
-     "e": 284.04,
+     "s": 281.66,
+     "e": 284.38,
      "text": "Efter ett år har vi tagit gånger en gång."
     },
     {
-     "s": 285.04,
-     "e": 288.84,
+     "s": 285.38,
+     "e": 289.14,
      "text": "Efter två år två gånger, och efter tre år tre gånger."
     },
     {
-     "s": 289.84,
-     "e": 294.8,
-     "text": "Men efter 100 år skulle vi behöva skriva 1,05 hundra gånger."
+     "s": 290.14,
+     "e": 294.78,
+     "text": "Men efter hundra år skulle vi behöva skriva ett komma noll fem hundra gånger."
     },
     {
-     "s": 295.8,
-     "e": 296.8,
+     "s": 295.78,
+     "e": 296.78,
      "text": "Det får inte plats."
     },
     {
-     "s": 298.06,
-     "e": 299.74,
+     "s": 298.02,
+     "e": 299.52,
      "text": "Därför skriver vi det kortare."
     },
     {
-     "s": 300.74,
-     "e": 305.72,
-     "text": "Vi skriver 1,05 en gång, och sätter ett litet tal uppe till höger."
+     "s": 300.52,
+     "e": 305.42,
+     "text": "Vi skriver ett komma noll fem en gång, och sätter ett litet tal uppe till höger."
     },
     {
-     "s": 306.72,
-     "e": 310.14,
+     "s": 306.42,
+     "e": 309.72,
      "text": "Det lilla talet säger hur många gånger vi tar gånger."
     },
     {
-     "s": 311.14,
-     "e": 312.62,
+     "s": 310.72,
+     "e": 312.16,
      "text": "Det kallas exponent."
     },
     {
-     "s": 313.62,
-     "e": 319,
-     "text": "Ett komma noll fem med en liten trea läses 1,05 upphöjt till tre."
+     "s": 313.16,
+     "e": 318.66,
+     "text": "Ett komma noll fem med en liten trea läses ett komma noll fem upphöjt till tre."
     },
     {
-     "s": 320,
-     "e": 325.16,
-     "text": "Det betyder 1,05 gånger 1,05 gånger 1,05."
+     "s": 319.66,
+     "e": 324.68,
+     "text": "Det betyder ett komma noll fem gånger ett komma noll fem gånger ett komma noll fem."
     },
     {
-     "s": 326.46,
-     "e": 328.64,
-     "text": "Vad är exponenten efter 10 år?"
+     "s": 325.98,
+     "e": 328.1,
+     "text": "Vad är exponenten efter tio år?"
     },
     {
-     "s": 329.64,
-     "e": 332.54,
+     "s": 329.1,
+     "e": 332,
      "text": "Tio, för då har vi tagit gånger tio gånger."
     },
     {
-     "s": 333.54,
-     "e": 336.12,
+     "s": 333,
+     "e": 335.4,
      "text": "Exponenten är alltså antalet år."
     },
     {
-     "s": 337.12,
-     "e": 340.98,
+     "s": 336.4,
+     "e": 340.18,
      "text": "Vi kallar antalet år för x, och pengarna kallar vi y."
     },
     {
-     "s": 341.98,
-     "e": 344.68,
+     "s": 341.18,
+     "e": 343.66,
      "text": "Nu kan vi skriva pengarna efter x år."
     },
     {
-     "s": 345.68,
-     "e": 350.22,
-     "text": "y är lika med tusen gånger 1,05 upphöjt till x."
+     "s": 344.66,
+     "e": 349.08,
+     "text": "y är lika med tusen gånger ett komma noll fem upphöjt till x."
     },
     {
-     "s": 351.22,
-     "e": 353.92,
+     "s": 350.08,
+     "e": 352.78,
      "text": "Vi stoppar in antalet år och får ut pengarna."
     },
     {
-     "s": 355.22,
-     "e": 356.86,
+     "s": 354.08,
+     "e": 355.72,
      "text": "Nu kan vi kolla Franklins svar."
     },
     {
-     "s": 357.86,
-     "e": 360.26,
-     "text": "Efter 100 år är x hundra."
+     "s": 356.72,
+     "e": 359.08,
+     "text": "Efter hundra år är x hundra."
     },
     {
-     "s": 361.26,
-     "e": 366.14,
-     "text": "Vi tar räknaren och trycker tusen, gånger, 1,05."
+     "s": 360.08,
+     "e": 364.88,
+     "text": "Vi tar räknaren och trycker tusen, gånger, ett komma noll fem."
     },
     {
-     "s": 367.14,
-     "e": 369.66,
+     "s": 365.88,
+     "e": 368.16,
      "text": "Sen trycker vi på knappen för upphöjt till."
     },
     {
-     "s": 370.66,
-     "e": 373.72,
+     "s": 369.16,
+     "e": 372.1,
      "text": "Den ser ut som ett x med en liten ruta uppe till höger."
     },
     {
-     "s": 374.72,
-     "e": 377.14,
+     "s": 373.1,
+     "e": 375.42,
      "text": "Vi skriver hundra och trycker enter."
     },
     {
-     "s": 378.14,
-     "e": 384.66,
-     "text": "Svaret blir ungefär 131 500 pund. Aha..."
+     "s": 376.42,
+     "e": 382.1,
+     "text": "Svaret blir ungefär hundratrettioettusen femhundra pund. Aha..."
     },
     {
-     "s": 385.66,
-     "e": 387.66,
+     "s": 383.16,
+     "e": 385.08,
      "text": "Franklin hade alltså räknat rätt."
     },
     {
-     "s": 388.96,
-     "e": 391.58,
+     "s": 386.38,
+     "e": 389.04,
      "text": "Den här sortens funktion finns på formelbladet."
     },
     {
-     "s": 392.58,
-     "e": 397.26,
+     "s": 390.04,
+     "e": 394.72,
      "text": "Där står den som y är lika med C gånger a upphöjt till x."
     },
     {
-     "s": 398.26,
-     "e": 401.72,
+     "s": 395.72,
+     "e": 399.14,
      "text": "Det är samma sak som Franklins pengar, skrivet med bokstäver."
     },
     {
-     "s": 402.72,
-     "e": 406,
+     "s": 400.14,
+     "e": 403.66,
      "text": "C är startvärdet, alltså det vi har från början."
     },
     {
-     "s": 407,
-     "e": 409.58,
-     "text": "Hos Franklin är C 1000 pund."
+     "s": 404.66,
+     "e": 407.14,
+     "text": "Hos Franklin är C tusen pund."
     },
     {
-     "s": 410.58,
-     "e": 412.58,
+     "s": 408.14,
+     "e": 410.16,
      "text": "Och a är förändringsfaktorn."
     },
     {
-     "s": 413.58,
-     "e": 416.32,
-     "text": "Hos Franklin är a 1,05."
+     "s": 411.16,
+     "e": 413.76,
+     "text": "Hos Franklin är a ett komma noll fem."
     },
     {
-     "s": 417.32,
-     "e": 422.58,
+     "s": 414.76,
+     "e": 419.74,
      "text": "Funktionen kallas en exponentialfunktion, för x står i exponenten."
     },
     {
-     "s": 423.88,
-     "e": 425.9,
+     "s": 421.04,
+     "e": 422.68,
      "text": "Men varför blev det så mycket?"
     },
     {
-     "s": 426.9,
-     "e": 428.34,
+     "s": 423.68,
+     "e": 425.06,
      "text": "Vi jämför med något enklare."
     },
     {
-     "s": 429.34,
-     "e": 432.8,
+     "s": 426.06,
+     "e": 429.42,
      "text": "Tänk dig att räntan bara gavs på de första tusen pundet."
     },
     {
-     "s": 433.8,
-     "e": 437.36,
-     "text": "Då kommer det 50 pund till varje år, aldrig mer."
+     "s": 430.42,
+     "e": 433.94,
+     "text": "Då kommer det femtio pund till varje år, aldrig mer."
     },
     {
-     "s": 438.36,
-     "e": 441.4,
-     "text": "Efter 100 år är det 5000 pund i ränta."
+     "s": 434.94,
+     "e": 438.12,
+     "text": "Efter hundra år är det femtusen pund i ränta."
     },
     {
-     "s": 442.4,
-     "e": 446.08,
-     "text": "Plus de tusen pundet från början blir det 6000 pund."
+     "s": 439.12,
+     "e": 442.78,
+     "text": "Plus de tusen pundet från början blir det sextusen pund."
     },
     {
-     "s": 447.38,
-     "e": 451.14,
+     "s": 444.08,
+     "e": 447.84,
      "text": "När det kommer lika mycket till varje år, blir grafen en rak linje."
     },
     {
-     "s": 452.14,
-     "e": 456.44,
-     "text": "Med bokstäver blir den y är lika med 50x plus tusen."
+     "s": 448.84,
+     "e": 453.34,
+     "text": "Med bokstäver blir den y är lika med femtio x plus tusen."
     },
     {
-     "s": 457.44,
-     "e": 461.02,
-     "text": "50x betyder 50 pund gånger antalet år."
+     "s": 454.34,
+     "e": 457.94,
+     "text": "Femtio x betyder femtio pund gånger antalet år."
     },
     {
-     "s": 462.02,
-     "e": 464.38,
+     "s": 458.94,
+     "e": 461.2,
      "text": "Och plus tusen är pengarna från början."
     },
     {
-     "s": 465.68,
-     "e": 468.18,
+     "s": 462.5,
+     "e": 465.04,
      "text": "Nu ritar vi båda i samma koordinatsystem."
     },
     {
-     "s": 469.18,
-     "e": 472.64,
+     "s": 466.04,
+     "e": 469.4,
      "text": "Antalet år går åt höger, och pengarna går uppåt."
     },
     {
-     "s": 473.64,
-     "e": 475.1,
+     "s": 470.4,
+     "e": 471.92,
      "text": "Båda börjar i tusen."
     },
     {
-     "s": 476.1,
-     "e": 479.4,
-     "text": "Linjen går upp lika mycket varje år, 50 pund."
+     "s": 472.92,
+     "e": 476.28,
+     "text": "Linjen går upp lika mycket varje år, femtio pund."
     },
     {
-     "s": 480.4,
-     "e": 482.38,
+     "s": 477.28,
+     "e": 479.64,
      "text": "Kurvan går upp lite mer för varje år."
     },
     {
-     "s": 483.38,
-     "e": 485.38,
-     "text": "Den tar ju gånger 1,05."
+     "s": 480.64,
+     "e": 482.62,
+     "text": "Den tar ju gånger ett komma noll fem."
     },
     {
-     "s": 486.38,
-     "e": 488.08,
+     "s": 483.62,
+     "e": 485.44,
      "text": "I början ligger de nästan ihop."
     },
     {
-     "s": 489.08,
-     "e": 492.92,
+     "s": 486.44,
+     "e": 490.3,
      "text": "Men sen böjer kurvan uppåt och blir brantare och brantare."
     },
     {
-     "s": 493.92,
-     "e": 496.52,
+     "s": 491.3,
+     "e": 493.94,
      "text": "Det är därför Franklins pengar blev så många."
     },
     {
-     "s": 497.82,
-     "e": 500.44,
+     "s": 495.24,
+     "e": 497.86,
      "text": "En förändringsfaktor kan också göra något mindre."
     },
     {
-     "s": 501.44,
-     "e": 504.42,
-     "text": "Tänk dig en bil som kostar 200 000 kronor."
+     "s": 498.86,
+     "e": 501.1,
+     "text": "Tänk dig en ung hantverkare i Boston."
     },
     {
-     "s": 505.42,
-     "e": 508.34,
-     "text": "Varje år tappar den 20 procent av sitt värde."
+     "s": 502.1,
+     "e": 506.32,
+     "text": "Han lånar Franklins pengar och köper en tryckpress för tvåhundra pund."
     },
     {
-     "s": 509.34,
-     "e": 511.06,
+     "s": 507.32,
+     "e": 508.62,
+     "text": "Men pressen slits."
+    },
+    {
+     "s": 509.62,
+     "e": 512.52,
+     "text": "Varje år tappar den tjugo procent av sitt värde."
+    },
+    {
+     "s": 513.52,
+     "e": 515.2,
      "text": "Hur mycket är kvar efter ett år?"
     },
     {
-     "s": 512.06,
-     "e": 513.94,
-     "text": "Hela värdet är 100 procent."
+     "s": 516.2,
+     "e": 518.16,
+     "text": "Hela värdet är hundra procent."
     },
     {
-     "s": 514.94,
-     "e": 517.34,
+     "s": 519.16,
+     "e": 521.42,
      "text": "Hundra minus tjugo är åttio."
     },
     {
-     "s": 518.34,
-     "e": 519.86,
-     "text": "Så 80 procent är kvar."
+     "s": 522.42,
+     "e": 523.94,
+     "text": "Så åttio procent är kvar."
     },
     {
-     "s": 521.16,
-     "e": 523.52,
+     "s": 525.24,
+     "e": 527.72,
      "text": "Åttio procent är åttio hundradelar."
     },
     {
-     "s": 524.52,
-     "e": 526.34,
-     "text": "Det skrivs 0,8."
+     "s": 528.72,
+     "e": 530.54,
+     "text": "Det skrivs noll komma åtta."
     },
     {
-     "s": 527.34,
-     "e": 530.1,
-     "text": "Förändringsfaktorn är alltså 0,8."
+     "s": 531.54,
+     "e": 534.4,
+     "text": "Förändringsfaktorn är alltså noll komma åtta."
     },
     {
-     "s": 531.1,
-     "e": 532.1,
+     "s": 535.4,
+     "e": 536.4,
      "text": "Vad sa regeln?"
     },
     {
-     "s": 532.88,
-     "e": 536.3,
+     "s": 537.12,
+     "e": 540.72,
      "text": "Varje år tar vi gånger förändringsfaktorn en gång till."
     },
     {
-     "s": 537.3,
-     "e": 540.98,
-     "text": "Så varje år tar vi bilens värde gånger 0,8."
+     "s": 541.72,
+     "e": 545.56,
+     "text": "Så varje år tar vi pressens värde gånger noll komma åtta."
     },
     {
-     "s": 542.28,
-     "e": 546.36,
-     "text": "Efter ett år är värdet 200 000 gånger 0,8."
+     "s": 546.86,
+     "e": 550.6,
+     "text": "Efter ett år är värdet tvåhundra gånger noll komma åtta."
     },
     {
-     "s": 547.36,
-     "e": 550.76,
-     "text": "Det är 160 000 kronor. Stämmer det?"
+     "s": 551.6,
+     "e": 554.56,
+     "text": "Det är hundrasextio pund. Stämmer det?"
     },
     {
-     "s": 551.76,
-     "e": 553.82,
+     "s": 555.56,
+     "e": 557.74,
      "text": "Tio procent är en tiondel."
     },
     {
-     "s": 554.82,
-     "e": 558.12,
-     "text": "En tiondel av 200 000 är 20 000."
+     "s": 558.74,
+     "e": 561.3,
+     "text": "En tiondel av tvåhundra är tjugo."
     },
     {
-     "s": 559.12,
-     "e": 562.64,
-     "text": "Tjugo procent är dubbelt så mycket, alltså 40 000."
+     "s": 562.3,
+     "e": 565.5,
+     "text": "Tjugo procent är dubbelt så mycket, alltså fyrtio."
     },
     {
-     "s": 563.64,
-     "e": 569.54,
-     "text": "Och 200 000 minus 40 000 är 160 000. Det stämmer."
+     "s": 566.5,
+     "e": 571.06,
+     "text": "Och tvåhundra minus fyrtio är hundrasextio. Det stämmer."
     },
     {
-     "s": 570.84,
-     "e": 573.9,
-     "text": "Efter två år tar vi gånger 0,8 igen."
+     "s": 572.36,
+     "e": 575.44,
+     "text": "Efter två år tar vi gånger noll komma åtta igen."
     },
     {
-     "s": 574.9,
-     "e": 577.48,
-     "text": "Då är värdet 128 000 kronor."
+     "s": 576.44,
+     "e": 578.42,
+     "text": "Då är värdet hundratjugoåtta pund."
     },
     {
-     "s": 578.48,
-     "e": 579.56,
+     "s": 579.42,
+     "e": 580.48,
      "text": "Och efter x år?"
     },
     {
-     "s": 580.56,
-     "e": 585.62,
-     "text": "Då är y lika med 200 000 gånger 0,8 upphöjt till x."
+     "s": 581.48,
+     "e": 586.18,
+     "text": "Då är y lika med tvåhundra gånger noll komma åtta upphöjt till x."
     },
     {
-     "s": 586.62,
-     "e": 589.54,
+     "s": 587.18,
+     "e": 590.04,
      "text": "Exponenten räknar gångerna, precis som förut."
     },
     {
-     "s": 590.84,
-     "e": 592.16,
+     "s": 591.34,
+     "e": 592.72,
      "text": "Nu ser vi vad a gör."
     },
     {
-     "s": 593.16,
-     "e": 595.9,
+     "s": 593.72,
+     "e": 596.48,
      "text": "Är a större än ett, blir det mer och mer."
     },
     {
-     "s": 596.9,
-     "e": 599.7,
+     "s": 597.48,
+     "e": 600.3,
      "text": "Funktionen är växande, som Franklins pengar."
     },
     {
-     "s": 600.7,
-     "e": 603.7,
+     "s": 601.3,
+     "e": 604.3,
      "text": "Är a mindre än ett, blir det mindre och mindre."
     },
     {
-     "s": 604.7,
-     "e": 607.62,
-     "text": "Funktionen är avtagande, som bilens värde."
+     "s": 605.3,
+     "e": 608.28,
+     "text": "Funktionen är avtagande, som pressens värde."
     },
     {
-     "s": 608.62,
-     "e": 610.42,
+     "s": 609.28,
+     "e": 611.1,
      "text": "Och om a är exakt ett?"
     },
     {
-     "s": 611.42,
-     "e": 613.18,
+     "s": 612.1,
+     "e": 614.06,
      "text": "Gånger ett ändrar ingenting."
     },
     {
-     "s": 614.18,
-     "e": 617.82,
+     "s": 615.06,
+     "e": 618.68,
      "text": "Därför står det på formelbladet att a inte får vara ett."
     },
     {
-     "s": 619.12,
-     "e": 621.58,
+     "s": 619.98,
+     "e": 622.43,
      "text": "Ibland får man funktionen och ska läsa av den."
     },
     {
-     "s": 622.58,
-     "e": 629.38,
-     "text": "En annan bil har värdet y är lika med 150 000 gånger 0,85 upphöjt till x."
+     "s": 623.43,
+     "e": 626.37,
+     "text": "En annan hantverkare i Boston köper också en press."
     },
     {
-     "s": 630.38,
-     "e": 631.94,
-     "text": "Vad kostade bilen från början?"
+     "s": 627.37,
+     "e": 633.59,
+     "text": "Hans press har värdet y är lika med hundrafemtio gånger noll komma åttiofem upphöjt till x."
     },
     {
-     "s": 632.94,
-     "e": 635.22,
+     "s": 634.59,
+     "e": 636.23,
+     "text": "Vad kostade pressen från början?"
+    },
+    {
+     "s": 637.23,
+     "e": 639.51,
      "text": "Det är C, talet före gånger."
     },
     {
-     "s": 636.22,
-     "e": 638.86,
-     "text": "Bilen kostade 150 000 kronor."
+     "s": 640.51,
+     "e": 642.65,
+     "text": "Pressen kostade hundrafemtio pund."
     },
     {
-     "s": 640.16,
-     "e": 642.22,
+     "s": 643.95,
+     "e": 646.19,
      "text": "Hur mycket av värdet är kvar varje år?"
     },
     {
-     "s": 643.22,
-     "e": 645.76,
-     "text": "Det är a, alltså 0,85."
+     "s": 647.19,
+     "e": 649.69,
+     "text": "Det är a, alltså noll komma åttiofem."
     },
     {
-     "s": 646.76,
-     "e": 650.58,
-     "text": "Det är åttiofem hundradelar, alltså 85 procent."
+     "s": 650.69,
+     "e": 654.43,
+     "text": "Det är åttiofem hundradelar, alltså åttiofem procent."
     },
     {
-     "s": 651.58,
-     "e": 652.92,
-     "text": "Hur mycket tappar bilen då?"
+     "s": 655.43,
+     "e": 656.83,
+     "text": "Hur mycket tappar pressen då?"
     },
     {
-     "s": 653.92,
-     "e": 656.48,
+     "s": 657.83,
+     "e": 660.33,
      "text": "Hundra minus åttiofem är femton."
     },
     {
-     "s": 657.48,
-     "e": 660.96,
-     "text": "Bilen tappar 15 procent av sitt värde varje år."
+     "s": 661.33,
+     "e": 665.15,
+     "text": "Pressen tappar femton procent av sitt värde varje år."
     },
     {
-     "s": 662.26,
-     "e": 665.8,
+     "s": 666.45,
+     "e": 669.83,
      "text": "Franklin dog våren efter, år 1790."
     },
     {
-     "s": 666.8,
-     "e": 670.18,
+     "s": 670.83,
+     "e": 674.25,
      "text": "Pengarna i Boston växte inte lika fort som han hade räknat med,"
     },
     {
-     "s": 670.62,
-     "e": 672.74,
+     "s": 674.61,
+     "e": 676.77,
      "text": "för alla lån betalades inte tillbaka."
     },
     {
-     "s": 673.74,
-     "e": 679.02,
-     "text": "Men efter 100 år räckte pengarna till en skola för unga hantverkare i Boston."
+     "s": 677.77,
+     "e": 683.01,
+     "text": "Men efter hundra år räckte pengarna till en skola för unga hantverkare i Boston."
     },
     {
-     "s": 680.02,
-     "e": 683.32,
+     "s": 684.01,
+     "e": 687.39,
      "text": "Skolan öppnade 1908, och den finns kvar i dag."
     },
     {
-     "s": 684.62,
-     "e": 685.66,
+     "s": 688.69,
+     "e": 689.93,
      "text": "Nu är det din tur."
     },
     {
-     "s": 686.66,
-     "e": 691.98,
-     "text": "Tänk dig att Franklins 1000 pund i stället hade fått 4 procent ränta varje år."
+     "s": 690.93,
+     "e": 696.27,
+     "text": "Tänk dig att Franklins tusen pund i stället hade fått fyra procent ränta varje år."
     },
     {
-     "s": 692.98,
-     "e": 698.42,
+     "s": 697.27,
+     "e": 702.93,
      "text": "Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund."
     },
     {
-     "s": 699.42,
-     "e": 701.64,
-     "text": "Hur många pund blir det efter 10 år?"
+     "s": 703.93,
+     "e": 706.13,
+     "text": "Hur många pund blir det efter tio år?"
     },
     {
-     "s": 702.64,
-     "e": 704.2,
+     "s": 707.13,
+     "e": 708.73,
      "text": "Avrunda till hela pund."
     }
    ]
