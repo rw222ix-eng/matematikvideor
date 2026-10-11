@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-11T17:40:55.287Z",
+ "byggd": "2026-10-11T18:45:55.493Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -9390,7 +9390,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/galilei-v11/galilei-och-rannan-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/galilei-v12/galilei-och-rannan-1080p.mp4",
    "moment": "Mönster och formler",
    "begrepp": [
     "talföljd",
@@ -9406,121 +9406,150 @@
    ],
    "beskrivning": "Galileo i Padua 1604 låter en bronskula rulla nerför en ränna, mäter tiden med vatten och sätter märken: 1, 4, 9 och 16 steg. Med tabell och prickfigurer: kvadrattalen n², nästan kvadrattal som n² + 1, och n² + 3n som en rektangel n · (n + 3), med kontroll och tal nummer 5. Boken trycks i Holland 1638.",
    "youtube": "9ccMT-T597I",
-   "langd": 387,
+   "langd": 507,
    "omslag": "omslag/galilei-och-rannan.jpg?v=d4feb621",
    "omslagRen": "omslag/galilei-och-rannan-ren.jpg?v=05ec6aeb",
    "omslagStor": "omslag/galilei-och-rannan-stor.jpg?v=0bcf6fc1",
    "repliker": [
     {
-     "t": 4,
+     "t": 9,
      "text": "År sextonhundrafyra är Galileo Galilei lärare i matematik i staden Padua i Italien. Och han går och funderar på en sak som låter ganska enkel... Han vill veta hur en sten faller. Hur långt har den fallit efter en viss tid?"
     },
     {
-     "t": 22,
+     "t": 27,
      "text": "Men det är inte så lätt, för en sten faller för fort för att man ska hinna mäta. Släpper man den från ett hustak är den nere på ungefär en och en halv sekund. Därför gör Galileo fallet långsammare. Han ställer en lång ränna av trä lite på lut, och så låter han en kula av brons rulla nerför den."
     },
     {
-     "t": 42,
+     "t": 48,
      "text": "Men sen finns det ett problem till. Det finns inga klockor som mäter sekunder. Hur ska han då mäta tiden? Så Galileo mäter tiden med vatten, som rinner ur ett kärl ner i en kopp. Varje gång koppen är full har det gått lika lång tid. Då sätter han ett märke på rännan där kulan är just då."
     },
     {
-     "t": 65,
-     "text": "Vi räknar den första sträckan som ett steg. Då står märkena vid ett, fyra, nio och sexton steg. Galileo vill kunna räkna ut var nästa märke hamnar, och märket efter det, utan att behöva mäta. Finns det en formel för märke nummer n? Hmm... ja, kanske. Det tar vi reda på nu."
+     "t": 71,
+     "text": "Vi räknar den första sträckan som ett steg. Då står märkena vid ett, fyra, nio och sexton steg. Galileo vill kunna räkna ut var nästa märke hamnar, och märket efter det, utan att behöva mäta. Var hamnar till exempel märke nummer tio? Går det att räkna ut? Hmm... ja, kanske. Det tar vi reda på nu."
     },
     {
-     "t": 89,
-     "text": "Tal som kommer i en bestämd ordning kallas en talföljd. Ett, fyra, nio, sexton är en talföljd. Vi letar efter en formel för tal nummer n. Bokstaven n står för numret. Med formeln kan vi alltså stoppa in vilket nummer som helst och få ut talet."
+     "t": 97,
+     "text": "Okej. Vi börjar med en tabell. I den övre raden skriver vi numret på märket. Ett, två, tre och fyra. I den nedre raden skriver vi var märket står. Ett, fyra, nio och sexton steg."
     },
     {
-     "t": 109,
-     "text": "Okej. Vi börjar med en tabell. I den övre raden står numret, ett, två, tre och fyra. Och i den nedre raden står talen, ett, fyra, nio och sexton."
+     "t": 115,
+     "text": "Hur långt är det mellan märkena? Från ett till fyra är det tre steg. Från fyra till nio är det fem steg. Och från nio till sexton är det sju steg. Avståndet växer hela tiden, ser du? Kulan rullar ju fortare och fortare. Då brukar det hjälpa att rita talen som prickar."
     },
     {
-     "t": 123,
-     "text": "Först kollar vi skillnaden mellan talen. Från ett till fyra är det tre. Från fyra till nio är det fem, och från nio till sexton är det sju. Skillnaden växer hela tiden, ser du? Då brukar det hjälpa att rita talen som prickar."
+     "t": 137,
+     "text": "Ett är en prick. Fyra prickar kan vi lägga i två rader, med två prickar i varje rad. Nio prickar blir tre rader med tre. Och sexton prickar blir fyra rader med fyra. Alla sidor är lika långa. En sån figur kallas en kvadrat."
     },
     {
-     "t": 141,
-     "text": "Ett är en prick. Fyra prickar bildar en kvadrat med två prickar på varje sida. Nio prickar bildar en kvadrat med tre prickar på varje sida, och sexton prickar blir en kvadrat med fyra. Aha... sidan är alltså lika lång som numret."
+     "t": 157,
+     "text": "Ta märke nummer tre. Där är det nio prickar. Hur många rader är det? Tre. Och hur många prickar finns i varje rad? Också tre. Det är samma tal som numret. Så märke nummer tre står vid tre gånger tre steg. Aha... det är därför det blir nio."
     },
     {
-     "t": 161,
-     "text": "En kvadrat med sidan n har n rader med n prickar i varje rad. Det blir n gånger n prickar. Och n gånger n skrivs n i kvadrat, med en liten tvåa uppe till höger. Tal nummer n är alltså n i kvadrat, och de här talen kallas kvadrattal."
-    },
-    {
-     "t": 182,
-     "text": "Vi kontrollerar formeln med nummer tre. Tre i kvadrat är nio, och det stämmer med tabellen. Och nu kan vi svara Galileo. Märke nummer fem hamnar vid fem i kvadrat, alltså tjugofem steg."
+     "t": 181,
+     "text": "Det gäller alla märken. Märke nummer fyra står vid fyra gånger fyra. Det är sexton steg. Så var hamnar märke nummer tio? Vid tio gånger tio steg. Det är hundra steg."
     },
     {
      "t": 198,
-     "text": "Ofta är talen nästan kvadrattal, men inte riktigt. Ta talföljden två, fem, tio, sjutton. Vi skriver kvadrattalen ett, fyra, nio och sexton under i tabellen. Sedan räknar vi hur mycket större varje tal är än kvadrattalet under."
+     "text": "Nu vill vi kunna ta vilket nummer som helst. Därför kallar vi numret för n. Bokstaven n står alltså för numret på märket. Då står märke nummer n vid n gånger n steg."
     },
     {
-     "t": 218,
-     "text": "Två minus ett är ett. Fem minus fyra är ett. Tio minus nio är ett, och sjutton minus sexton är ett. Ser du mönstret? Varje tal är alltså ett större än sitt kvadrattal. Så formeln blir n i kvadrat plus ett. Som figur är det en kvadrat med en extra prick."
+     "t": 213,
+     "text": "n gånger n kan skrivas kortare. Vi skriver ett n, och en liten tvåa uppe till höger. Det läser vi som n i kvadrat. Tvåan säger hur många n vi tar gånger varandra. Två stycken."
     },
     {
-     "t": 243,
-     "text": "Nu talföljden fyra, tio, arton, tjugoåtta. Den här är lite klurigare. Vi skriver kvadrattalen under igen och räknar skillnaden. Fyra minus ett är tre. Tio minus fyra är sex. Arton minus nio är nio, och tjugoåtta minus sexton är tolv."
+     "t": 230,
+     "text": "Så märke nummer n står vid n i kvadrat steg. Det är vår formel. Vi stoppar in ett nummer och får ut var märket står. Talen ett, fyra, nio och sexton kallas kvadrattal, för de blir kvadrater av prickar. Och tal som kommer i en bestämd ordning kallas en talföljd."
     },
     {
-     "t": 266,
-     "text": "Tre, sex, nio och tolv är inte lika. Hmm... Men varje tal är tre gånger numret. Tre är tre gånger ett, sex är tre gånger två, och så vidare. Så vi lägger till tre gånger n, och det skrivs tre n. Formeln blir n i kvadrat plus tre n."
+     "t": 253,
+     "text": "Nu tar vi en annan ränna. Där står märkena vid två, fem, tio och sjutton steg. Vi skriver dem i en tabell. Talen är nästan kvadrattal, men inte riktigt. Därför skriver vi kvadrattalen under. Ett, fyra, nio och sexton."
     },
     {
-     "t": 291,
-     "text": "Vi kontrollerar med nummer fyra. Fyra i kvadrat är sexton. Tre gånger fyra är tolv. Sexton plus tolv är tjugoåtta, och det stämmer med tabellen. Nu kan vi räkna ut tal nummer fem. Fem i kvadrat är tjugofem, och tre gånger fem är femton. Tjugofem plus femton är fyrtio."
+     "t": 274,
+     "text": "Hur mycket längre bort står varje märke? Vi tar talet minus kvadrattalet under. Två minus ett är ett. Fem minus fyra är ett. Tio minus nio är ett. Och sjutton minus sexton är ett. Varje märke står alltså ett steg längre bort än i Galileos ränna."
     },
     {
-     "t": 315,
-     "text": "Ibland vill man rita talen som figurer. De här talen blir rektanglar. Figur nummer n har n rader, och varje rad har n plus tre prickar. Antalet prickar är då n gånger parentesen n plus tre."
+     "t": 298,
+     "text": "Som prickar är det en kvadrat, och en prick till. Kvadraten är n i kvadrat. Den extra pricken är plus ett. Så formeln blir n i kvadrat plus ett."
     },
     {
-     "t": 333,
-     "text": "Vi multiplicerar in n i parentesen. n gånger n är n i kvadrat, och n gånger tre är tre n. Det blir n i kvadrat plus tre n, alltså samma formel som i tabellen."
+     "t": 313,
+     "text": "Nu en tredje ränna, och den är lite klurigare. Märkena står vid fyra, tio, arton och tjugoåtta steg. Vi gör som förut. Vi skriver kvadrattalen under och tar minus. Fyra minus ett är tre. Tio minus fyra är sex. Arton minus nio är nio. Och tjugoåtta minus sexton är tolv."
     },
     {
-     "t": 348,
+     "t": 341,
+     "text": "Tre, sex, nio och tolv. Här blir det inte samma tal varje gång. Men ser du mönstret? Tre är tre gånger ett. Sex är tre gånger två. Nio är tre gånger tre. Och tolv är tre gånger fyra. Det är alltid tre gånger numret."
+    },
+    {
+     "t": 364,
+     "text": "Tre gånger numret är tre gånger n. Det skriver vi kort som tre n. Så formeln blir n i kvadrat plus tre n."
+    },
+    {
+     "t": 376,
+     "text": "Vi kollar med märke nummer fyra. Fyra i kvadrat är sexton. Tre gånger fyra är tolv. Sexton plus tolv är tjugoåtta. Det stämmer med tabellen."
+    },
+    {
+     "t": 390,
+     "text": "Var står då märke nummer fem? Fem i kvadrat är tjugofem. Tre gånger fem är femton. Tjugofem plus femton är fyrtio. Märke nummer fem står vid fyrtio steg."
+    },
+    {
+     "t": 406,
+     "text": "De här talen kan också ritas som prickar. Fyra prickar blir en rad med fyra. Tio prickar blir två rader med fem. Arton prickar blir tre rader med sex. Figur nummer tre har alltså tre rader. Så figur nummer n har n rader."
+    },
+    {
+     "t": 427,
+     "text": "Och hur många prickar finns i varje rad? Räkna dem. Fyra, fem, sex. Det är alltid tre fler än numret. Alltså n plus tre. Hur många prickar blir det då? Raderna gånger prickarna i varje rad. Det blir n gånger parentesen n plus tre."
+    },
+    {
+     "t": 451,
+     "text": "Är det samma formel som förut? Vi tar n gånger varje del i parentesen. n gånger n är n i kvadrat. n gånger tre är tre n. Det blir n i kvadrat plus tre n. Samma formel, alltså."
+    },
+    {
+     "t": 470,
      "text": "Galileo skrev om rännan i en bok som kom ut först sextonhundratrettioåtta. Då var han blind och fick inte lämna sitt hus, för kyrkan hade dömt honom. Han hade skrivit att jorden rör sig runt solen. Boken fick inte tryckas i Italien, så den trycktes i Holland i stället. Och i dag finns den på bibliotek över hela världen."
     },
     {
-     "t": 374,
+     "t": 494,
      "text": "Nu är det din tur. Tänk dig en annan ränna, där märkena står vid fem, åtta, tretton och tjugo steg. Skriv formeln för märke nummer n."
     }
    ],
    "kapitel": [
     {
-     "t": 4,
+     "t": 9,
      "rubrik": "Galileo och rännan",
      "typ": "historia"
     },
     {
-     "t": 89,
-     "rubrik": "Talföljd och tabell",
+     "t": 98,
+     "rubrik": "Tabell och avstånd",
      "typ": "matte"
     },
     {
-     "t": 141,
+     "t": 137,
      "rubrik": "Kvadrattalen n²",
      "typ": "matte"
     },
     {
-     "t": 198,
+     "t": 253,
      "rubrik": "Nästan kvadrattal: n² + 1",
      "typ": "matte"
     },
     {
-     "t": 243,
-     "rubrik": "n² + 3n och rektanglar",
+     "t": 313,
+     "rubrik": "n² + 3n",
      "typ": "matte"
     },
     {
-     "t": 348,
+     "t": 406,
+     "rubrik": "Rektanglar: n · (n + 3)",
+     "typ": "matte"
+    },
+    {
+     "t": 470,
      "rubrik": "Galileos bok",
      "typ": "historia"
     },
     {
-     "t": 374,
+     "t": 494,
      "rubrik": "En ny ränna",
      "typ": "uppgift"
     }
@@ -9566,7 +9595,7 @@
     ],
     "ledtrad": {
      "text": "Skriv kvadrattalen 1, 4, 9 och 16 under märkena och räkna ut skillnaden.",
-     "t": 198
+     "t": 262
     },
     "losning": [
      "Märkena: 5, 8, 13, 20.",
@@ -9575,457 +9604,697 @@
      "Formeln blir n² + 4.",
      "Kontroll med nummer 4: 4² + 4 = 16 + 4 = 20."
     ],
-    "notisFran": 243
+    "notisFran": 313
    },
    "undertext": [
     {
-     "s": 4,
-     "e": 10.42,
+     "s": 9.5,
+     "e": 16.1,
      "text": "År sextonhundrafyra är Galileo Galilei lärare i matematik i staden Padua i Italien."
     },
     {
-     "s": 11.42,
-     "e": 14.58,
+     "s": 17.1,
+     "e": 20.14,
      "text": "Och han går och funderar på en sak som låter ganska enkel..."
     },
     {
-     "s": 15.58,
-     "e": 17.52,
+     "s": 21.14,
+     "e": 23.12,
      "text": "Han vill veta hur en sten faller."
     },
     {
-     "s": 18.52,
-     "e": 20.74,
+     "s": 24.12,
+     "e": 26.34,
      "text": "Hur långt har den fallit efter en viss tid?"
     },
     {
-     "s": 22.04,
-     "e": 26.48,
+     "s": 27.64,
+     "e": 32.08,
      "text": "Men det är inte så lätt, för en sten faller för fort för att man ska hinna mäta."
     },
     {
-     "s": 27.48,
-     "e": 31.46,
+     "s": 33.08,
+     "e": 37.18,
      "text": "Släpper man den från ett hustak är den nere på ungefär en och en halv sekund."
     },
     {
-     "s": 32.46,
-     "e": 34.92,
+     "s": 38.18,
+     "e": 40.7,
      "text": "Därför gör Galileo fallet långsammare."
     },
     {
-     "s": 35.92,
-     "e": 41.64,
+     "s": 41.7,
+     "e": 47.36,
      "text": "Han ställer en lång ränna av trä lite på lut, och så låter han en kula av brons rulla nerför den."
     },
     {
-     "s": 42.94,
-     "e": 44.82,
+     "s": 48.66,
+     "e": 50.6,
      "text": "Men sen finns det ett problem till."
     },
     {
-     "s": 45.82,
-     "e": 48.32,
+     "s": 51.6,
+     "e": 53.98,
      "text": "Det finns inga klockor som mäter sekunder."
     },
     {
-     "s": 49.32,
-     "e": 50.74,
+     "s": 54.98,
+     "e": 56.36,
      "text": "Hur ska han då mäta tiden?"
     },
     {
-     "s": 51.74,
-     "e": 56.42,
+     "s": 57.36,
+     "e": 61.98,
      "text": "Så Galileo mäter tiden med vatten, som rinner ur ett kärl ner i en kopp."
     },
     {
-     "s": 57.42,
-     "e": 60.12,
+     "s": 62.98,
+     "e": 65.84,
      "text": "Varje gång koppen är full har det gått lika lång tid."
     },
     {
-     "s": 61.12,
-     "e": 64.1,
+     "s": 66.84,
+     "e": 69.9,
      "text": "Då sätter han ett märke på rännan där kulan är just då."
     },
     {
-     "s": 65.4,
-     "e": 67.8,
+     "s": 71.2,
+     "e": 73.68,
      "text": "Vi räknar den första sträckan som ett steg."
     },
     {
-     "s": 68.8,
-     "e": 72.52,
+     "s": 74.68,
+     "e": 78.6,
      "text": "Då står märkena vid ett, fyra, nio och sexton steg."
     },
     {
-     "s": 73.52,
-     "e": 77.42,
+     "s": 79.6,
+     "e": 83.62,
      "text": "Galileo vill kunna räkna ut var nästa märke hamnar, och märket efter det,"
     },
     {
-     "s": 77.8,
-     "e": 79.1,
+     "s": 83.94,
+     "e": 85.3,
      "text": "utan att behöva mäta."
     },
     {
-     "s": 80.1,
-     "e": 85.9,
-     "text": "Finns det en formel för märke nummer n? Hmm... ja, kanske."
+     "s": 86.3,
+     "e": 88.52,
+     "text": "Var hamnar till exempel märke nummer tio?"
     },
     {
-     "s": 86.9,
-     "e": 88,
+     "s": 89.52,
+     "e": 94.08,
+     "text": "Går det att räkna ut? Hmm... ja, kanske."
+    },
+    {
+     "s": 95.08,
+     "e": 96.08,
      "text": "Det tar vi reda på nu."
     },
     {
-     "s": 89.3,
-     "e": 92.86,
-     "text": "Tal som kommer i en bestämd ordning kallas en talföljd."
-    },
-    {
-     "s": 93.86,
-     "e": 97.16,
-     "text": "Ett, fyra, nio, sexton är en talföljd."
-    },
-    {
-     "s": 98.16,
-     "e": 100.6,
-     "text": "Vi letar efter en formel för tal nummer n."
-    },
-    {
-     "s": 101.6,
-     "e": 103.62,
-     "text": "Bokstaven n står för numret."
-    },
-    {
-     "s": 104.62,
-     "e": 108.52,
-     "text": "Med formeln kan vi alltså stoppa in vilket nummer som helst och få ut talet."
-    },
-    {
-     "s": 109.82,
-     "e": 112.2,
+     "s": 97.34,
+     "e": 99.74,
      "text": "Okej. Vi börjar med en tabell."
     },
     {
-     "s": 113.2,
-     "e": 117.14,
-     "text": "I den övre raden står numret, ett, två, tre och fyra."
+     "s": 100.74,
+     "e": 103.42,
+     "text": "I den övre raden skriver vi numret på märket."
     },
     {
-     "s": 118.14,
-     "e": 122.46,
-     "text": "Och i den nedre raden står talen, ett, fyra, nio och sexton."
+     "s": 104.42,
+     "e": 106.46,
+     "text": "Ett, två, tre och fyra."
     },
     {
-     "s": 123.76,
-     "e": 125.76,
-     "text": "Först kollar vi skillnaden mellan talen."
+     "s": 107.46,
+     "e": 110.26,
+     "text": "I den nedre raden skriver vi var märket står."
     },
     {
-     "s": 126.76,
-     "e": 128.64,
-     "text": "Från ett till fyra är det tre."
+     "s": 111.26,
+     "e": 113.9,
+     "text": "Ett, fyra, nio och sexton steg."
     },
     {
-     "s": 129.64,
-     "e": 133.84,
-     "text": "Från fyra till nio är det fem, och från nio till sexton är det sju."
+     "s": 115.2,
+     "e": 116.64,
+     "text": "Hur långt är det mellan märkena?"
     },
     {
-     "s": 134.84,
-     "e": 136.72,
-     "text": "Skillnaden växer hela tiden, ser du?"
+     "s": 117.64,
+     "e": 119.82,
+     "text": "Från ett till fyra är det tre steg."
     },
     {
-     "s": 137.72,
-     "e": 140.28,
+     "s": 120.82,
+     "e": 122.98,
+     "text": "Från fyra till nio är det fem steg."
+    },
+    {
+     "s": 123.98,
+     "e": 126.44,
+     "text": "Och från nio till sexton är det sju steg."
+    },
+    {
+     "s": 127.44,
+     "e": 129.42,
+     "text": "Avståndet växer hela tiden, ser du?"
+    },
+    {
+     "s": 130.42,
+     "e": 132.36,
+     "text": "Kulan rullar ju fortare och fortare."
+    },
+    {
+     "s": 133.36,
+     "e": 135.94,
      "text": "Då brukar det hjälpa att rita talen som prickar."
     },
     {
-     "s": 141.58,
-     "e": 142.64,
+     "s": 137.24,
+     "e": 138.36,
      "text": "Ett är en prick."
     },
     {
-     "s": 143.64,
-     "e": 147.4,
-     "text": "Fyra prickar bildar en kvadrat med två prickar på varje sida."
+     "s": 139.36,
+     "e": 143.44,
+     "text": "Fyra prickar kan vi lägga i två rader, med två prickar i varje rad."
     },
     {
-     "s": 148.4,
-     "e": 151.92,
-     "text": "Nio prickar bildar en kvadrat med tre prickar på varje sida,"
+     "s": 144.44,
+     "e": 146.9,
+     "text": "Nio prickar blir tre rader med tre."
     },
     {
-     "s": 152.2,
-     "e": 156.64,
-     "text": "och sexton prickar blir en kvadrat med fyra. Aha..."
+     "s": 147.9,
+     "e": 150.86,
+     "text": "Och sexton prickar blir fyra rader med fyra."
+    },
+    {
+     "s": 151.86,
+     "e": 153.38,
+     "text": "Alla sidor är lika långa."
+    },
+    {
+     "s": 154.38,
+     "e": 156.34,
+     "text": "En sån figur kallas en kvadrat."
     },
     {
      "s": 157.64,
-     "e": 160.12,
-     "text": "sidan är alltså lika lång som numret."
+     "e": 158.7,
+     "text": "Ta märke nummer tre."
     },
     {
-     "s": 161.42,
-     "e": 166.2,
-     "text": "En kvadrat med sidan n har n rader med n prickar i varje rad."
+     "s": 159.7,
+     "e": 161.16,
+     "text": "Där är det nio prickar."
     },
     {
-     "s": 167.2,
-     "e": 169.24,
-     "text": "Det blir n gånger n prickar."
+     "s": 162.16,
+     "e": 164.52,
+     "text": "Hur många rader är det? Tre."
     },
     {
-     "s": 170.24,
-     "e": 174.96,
-     "text": "Och n gånger n skrivs n i kvadrat, med en liten tvåa uppe till höger."
+     "s": 165.52,
+     "e": 169.2,
+     "text": "Och hur många prickar finns i varje rad? Också tre."
     },
     {
-     "s": 175.96,
-     "e": 181.18,
-     "text": "Tal nummer n är alltså n i kvadrat, och de här talen kallas kvadrattal."
+     "s": 170.2,
+     "e": 171.92,
+     "text": "Det är samma tal som numret."
     },
     {
-     "s": 182.48,
-     "e": 184.54,
-     "text": "Vi kontrollerar formeln med nummer tre."
+     "s": 172.92,
+     "e": 177.78,
+     "text": "Så märke nummer tre står vid tre gånger tre steg. Aha..."
     },
     {
-     "s": 185.54,
-     "e": 188.96,
-     "text": "Tre i kvadrat är nio, och det stämmer med tabellen."
+     "s": 178.78,
+     "e": 180.3,
+     "text": "det är därför det blir nio."
     },
     {
-     "s": 189.96,
-     "e": 191.76,
-     "text": "Och nu kan vi svara Galileo."
+     "s": 181.6,
+     "e": 182.92,
+     "text": "Det gäller alla märken."
     },
     {
-     "s": 192.76,
-     "e": 197.38,
-     "text": "Märke nummer fem hamnar vid fem i kvadrat, alltså tjugofem steg."
+     "s": 183.92,
+     "e": 186.64,
+     "text": "Märke nummer fyra står vid fyra gånger fyra."
     },
     {
-     "s": 198.68,
-     "e": 202.24,
-     "text": "Ofta är talen nästan kvadrattal, men inte riktigt."
+     "s": 187.64,
+     "e": 188.84,
+     "text": "Det är sexton steg."
     },
     {
-     "s": 203.24,
-     "e": 206.48,
-     "text": "Ta talföljden två, fem, tio, sjutton."
+     "s": 189.84,
+     "e": 191.78,
+     "text": "Så var hamnar märke nummer tio?"
     },
     {
-     "s": 207.48,
-     "e": 212.46,
-     "text": "Vi skriver kvadrattalen ett, fyra, nio och sexton under i tabellen."
+     "s": 192.78,
+     "e": 194.58,
+     "text": "Vid tio gånger tio steg."
     },
     {
-     "s": 213.46,
-     "e": 217.56,
-     "text": "Sedan räknar vi hur mycket större varje tal är än kvadrattalet under."
+     "s": 195.58,
+     "e": 196.8,
+     "text": "Det är hundra steg."
     },
     {
-     "s": 218.86,
-     "e": 220.6,
+     "s": 198.1,
+     "e": 200.58,
+     "text": "Nu vill vi kunna ta vilket nummer som helst."
+    },
+    {
+     "s": 201.58,
+     "e": 203.34,
+     "text": "Därför kallar vi numret för n."
+    },
+    {
+     "s": 204.34,
+     "e": 207.52,
+     "text": "Bokstaven n står alltså för numret på märket."
+    },
+    {
+     "s": 208.52,
+     "e": 212.28,
+     "text": "Då står märke nummer n vid n gånger n steg."
+    },
+    {
+     "s": 213.58,
+     "e": 215.4,
+     "text": "n gånger n kan skrivas kortare."
+    },
+    {
+     "s": 216.4,
+     "e": 219.74,
+     "text": "Vi skriver ett n, och en liten tvåa uppe till höger."
+    },
+    {
+     "s": 220.74,
+     "e": 222.88,
+     "text": "Det läser vi som n i kvadrat."
+    },
+    {
+     "s": 223.88,
+     "e": 228.9,
+     "text": "Tvåan säger hur många n vi tar gånger varandra. Två stycken."
+    },
+    {
+     "s": 230.2,
+     "e": 233.88,
+     "text": "Så märke nummer n står vid n i kvadrat steg."
+    },
+    {
+     "s": 234.88,
+     "e": 235.96,
+     "text": "Det är vår formel."
+    },
+    {
+     "s": 236.96,
+     "e": 239.88,
+     "text": "Vi stoppar in ett nummer och får ut var märket står."
+    },
+    {
+     "s": 240.88,
+     "e": 247.5,
+     "text": "Talen ett, fyra, nio och sexton kallas kvadrattal, för de blir kvadrater av prickar."
+    },
+    {
+     "s": 248.5,
+     "e": 252.16,
+     "text": "Och tal som kommer i en bestämd ordning kallas en talföljd."
+    },
+    {
+     "s": 253.46,
+     "e": 254.62,
+     "text": "Nu tar vi en annan ränna."
+    },
+    {
+     "s": 255.62,
+     "e": 259.6,
+     "text": "Där står märkena vid två, fem, tio och sjutton steg."
+    },
+    {
+     "s": 260.6,
+     "e": 261.88,
+     "text": "Vi skriver dem i en tabell."
+    },
+    {
+     "s": 262.88,
+     "e": 265.88,
+     "text": "Talen är nästan kvadrattal, men inte riktigt."
+    },
+    {
+     "s": 266.88,
+     "e": 269.18,
+     "text": "Därför skriver vi kvadrattalen under."
+    },
+    {
+     "s": 270.18,
+     "e": 272.8,
+     "text": "Ett, fyra, nio och sexton."
+    },
+    {
+     "s": 274.1,
+     "e": 276.28,
+     "text": "Hur mycket längre bort står varje märke?"
+    },
+    {
+     "s": 277.28,
+     "e": 280.12,
+     "text": "Vi tar talet minus kvadrattalet under."
+    },
+    {
+     "s": 281.12,
+     "e": 282.94,
      "text": "Två minus ett är ett."
     },
     {
-     "s": 221.6,
-     "e": 223.34,
+     "s": 283.94,
+     "e": 285.78,
      "text": "Fem minus fyra är ett."
     },
     {
-     "s": 224.34,
-     "e": 228.54,
-     "text": "Tio minus nio är ett, och sjutton minus sexton är ett."
+     "s": 286.78,
+     "e": 288.72,
+     "text": "Tio minus nio är ett."
     },
     {
-     "s": 229.54,
-     "e": 230.54,
-     "text": "Ser du mönstret?"
+     "s": 289.72,
+     "e": 292.08,
+     "text": "Och sjutton minus sexton är ett."
     },
     {
-     "s": 231.34,
-     "e": 234.66,
-     "text": "Varje tal är alltså ett större än sitt kvadrattal."
+     "s": 293.08,
+     "e": 297.2,
+     "text": "Varje märke står alltså ett steg längre bort än i Galileos ränna."
     },
     {
-     "s": 235.66,
-     "e": 238.7,
+     "s": 298.5,
+     "e": 301.68,
+     "text": "Som prickar är det en kvadrat, och en prick till."
+    },
+    {
+     "s": 302.68,
+     "e": 304.72,
+     "text": "Kvadraten är n i kvadrat."
+    },
+    {
+     "s": 305.72,
+     "e": 307.92,
+     "text": "Den extra pricken är plus ett."
+    },
+    {
+     "s": 308.92,
+     "e": 312.14,
      "text": "Så formeln blir n i kvadrat plus ett."
     },
     {
-     "s": 239.7,
-     "e": 242.6,
-     "text": "Som figur är det en kvadrat med en extra prick."
+     "s": 313.44,
+     "e": 316.54,
+     "text": "Nu en tredje ränna, och den är lite klurigare."
     },
     {
-     "s": 243.9,
-     "e": 247.44,
-     "text": "Nu talföljden fyra, tio, arton, tjugoåtta."
+     "s": 317.54,
+     "e": 321.68,
+     "text": "Märkena står vid fyra, tio, arton och tjugoåtta steg."
     },
     {
-     "s": 248.44,
-     "e": 250.14,
-     "text": "Den här är lite klurigare."
+     "s": 322.68,
+     "e": 323.68,
+     "text": "Vi gör som förut."
     },
     {
-     "s": 251.14,
-     "e": 254.3,
-     "text": "Vi skriver kvadrattalen under igen och räknar skillnaden."
+     "s": 324.58,
+     "e": 327.54,
+     "text": "Vi skriver kvadrattalen under och tar minus."
     },
     {
-     "s": 255.3,
-     "e": 257.04,
+     "s": 328.54,
+     "e": 330.44,
      "text": "Fyra minus ett är tre."
     },
     {
-     "s": 258.04,
-     "e": 259.98,
+     "s": 331.44,
+     "e": 333.4,
      "text": "Tio minus fyra är sex."
     },
     {
-     "s": 260.98,
-     "e": 265.46,
-     "text": "Arton minus nio är nio, och tjugoåtta minus sexton är tolv."
+     "s": 334.4,
+     "e": 336.4,
+     "text": "Arton minus nio är nio."
     },
     {
-     "s": 266.76,
-     "e": 272.2,
-     "text": "Tre, sex, nio och tolv är inte lika. Hmm..."
+     "s": 337.4,
+     "e": 339.84,
+     "text": "Och tjugoåtta minus sexton är tolv."
     },
     {
-     "s": 273.2,
-     "e": 275.56,
-     "text": "Men varje tal är tre gånger numret."
+     "s": 341.14,
+     "e": 343.7,
+     "text": "Tre, sex, nio och tolv."
     },
     {
-     "s": 276.56,
-     "e": 280.92,
-     "text": "Tre är tre gånger ett, sex är tre gånger två, och så vidare."
+     "s": 344.7,
+     "e": 347.1,
+     "text": "Här blir det inte samma tal varje gång."
     },
     {
-     "s": 281.92,
-     "e": 285.78,
-     "text": "Så vi lägger till tre gånger n, och det skrivs tre n."
+     "s": 348.1,
+     "e": 349.18,
+     "text": "Men ser du mönstret?"
     },
     {
-     "s": 286.78,
-     "e": 289.94,
-     "text": "Formeln blir n i kvadrat plus tre n."
+     "s": 350.18,
+     "e": 351.88,
+     "text": "Tre är tre gånger ett."
     },
     {
-     "s": 291.24,
-     "e": 292.8,
-     "text": "Vi kontrollerar med nummer fyra."
+     "s": 352.88,
+     "e": 354.46,
+     "text": "Sex är tre gånger två."
     },
     {
-     "s": 293.8,
-     "e": 295.64,
+     "s": 355.46,
+     "e": 357.12,
+     "text": "Nio är tre gånger tre."
+    },
+    {
+     "s": 358.12,
+     "e": 360.18,
+     "text": "Och tolv är tre gånger fyra."
+    },
+    {
+     "s": 361.18,
+     "e": 363.44,
+     "text": "Det är alltid tre gånger numret."
+    },
+    {
+     "s": 364.74,
+     "e": 367.2,
+     "text": "Tre gånger numret är tre gånger n."
+    },
+    {
+     "s": 368.2,
+     "e": 370.42,
+     "text": "Det skriver vi kort som tre n."
+    },
+    {
+     "s": 371.42,
+     "e": 375.22,
+     "text": "Så formeln blir n i kvadrat plus tre n."
+    },
+    {
+     "s": 376.52,
+     "e": 378.12,
+     "text": "Vi kollar med märke nummer fyra."
+    },
+    {
+     "s": 379.12,
+     "e": 380.9,
      "text": "Fyra i kvadrat är sexton."
     },
     {
-     "s": 296.64,
-     "e": 298.42,
+     "s": 381.9,
+     "e": 383.7,
      "text": "Tre gånger fyra är tolv."
     },
     {
-     "s": 299.42,
-     "e": 303.08,
-     "text": "Sexton plus tolv är tjugoåtta, och det stämmer med tabellen."
+     "s": 384.7,
+     "e": 387,
+     "text": "Sexton plus tolv är tjugoåtta."
     },
     {
-     "s": 304.08,
-     "e": 305.9,
-     "text": "Nu kan vi räkna ut tal nummer fem."
+     "s": 388,
+     "e": 389.26,
+     "text": "Det stämmer med tabellen."
     },
     {
-     "s": 306.9,
-     "e": 310.86,
-     "text": "Fem i kvadrat är tjugofem, och tre gånger fem är femton."
+     "s": 390.56,
+     "e": 392.36,
+     "text": "Var står då märke nummer fem?"
     },
     {
-     "s": 311.86,
-     "e": 314.08,
+     "s": 393.36,
+     "e": 395.04,
+     "text": "Fem i kvadrat är tjugofem."
+    },
+    {
+     "s": 396.04,
+     "e": 397.86,
+     "text": "Tre gånger fem är femton."
+    },
+    {
+     "s": 398.86,
+     "e": 401.24,
      "text": "Tjugofem plus femton är fyrtio."
     },
     {
-     "s": 315.38,
-     "e": 317.58,
-     "text": "Ibland vill man rita talen som figurer."
+     "s": 402.24,
+     "e": 404.74,
+     "text": "Märke nummer fem står vid fyrtio steg."
     },
     {
-     "s": 318.58,
-     "e": 320.38,
-     "text": "De här talen blir rektanglar."
+     "s": 406.04,
+     "e": 408.5,
+     "text": "De här talen kan också ritas som prickar."
     },
     {
-     "s": 321.38,
-     "e": 326.72,
-     "text": "Figur nummer n har n rader, och varje rad har n plus tre prickar."
+     "s": 409.5,
+     "e": 411.7,
+     "text": "Fyra prickar blir en rad med fyra."
     },
     {
-     "s": 327.72,
-     "e": 331.8,
-     "text": "Antalet prickar är då n gånger parentesen n plus tre."
+     "s": 412.7,
+     "e": 415.24,
+     "text": "Tio prickar blir två rader med fem."
     },
     {
-     "s": 333.1,
-     "e": 335.52,
-     "text": "Vi multiplicerar in n i parentesen."
+     "s": 416.24,
+     "e": 418.96,
+     "text": "Arton prickar blir tre rader med sex."
     },
     {
-     "s": 336.52,
-     "e": 341.1,
-     "text": "n gånger n är n i kvadrat, och n gånger tre är tre n."
+     "s": 419.96,
+     "e": 422.64,
+     "text": "Figur nummer tre har alltså tre rader."
     },
     {
-     "s": 342.1,
-     "e": 346.96,
-     "text": "Det blir n i kvadrat plus tre n, alltså samma formel som i tabellen."
+     "s": 423.64,
+     "e": 426.28,
+     "text": "Så figur nummer n har n rader."
     },
     {
-     "s": 348.21,
-     "e": 353.7,
+     "s": 427.58,
+     "e": 431.32,
+     "text": "Och hur många prickar finns i varje rad? Räkna dem."
+    },
+    {
+     "s": 432.32,
+     "e": 434.12,
+     "text": "Fyra, fem, sex."
+    },
+    {
+     "s": 435.12,
+     "e": 437.54,
+     "text": "Det är alltid tre fler än numret."
+    },
+    {
+     "s": 438.54,
+     "e": 440.44,
+     "text": "Alltså n plus tre."
+    },
+    {
+     "s": 441.44,
+     "e": 442.78,
+     "text": "Hur många prickar blir det då?"
+    },
+    {
+     "s": 443.78,
+     "e": 446.22,
+     "text": "Raderna gånger prickarna i varje rad."
+    },
+    {
+     "s": 447.22,
+     "e": 450.66,
+     "text": "Det blir n gånger parentesen n plus tre."
+    },
+    {
+     "s": 451.96,
+     "e": 453.6,
+     "text": "Är det samma formel som förut?"
+    },
+    {
+     "s": 454.6,
+     "e": 457.34,
+     "text": "Vi tar n gånger varje del i parentesen."
+    },
+    {
+     "s": 458.34,
+     "e": 460.44,
+     "text": "n gånger n är n i kvadrat."
+    },
+    {
+     "s": 461.44,
+     "e": 463.4,
+     "text": "n gånger tre är tre n."
+    },
+    {
+     "s": 464.4,
+     "e": 467.14,
+     "text": "Det blir n i kvadrat plus tre n."
+    },
+    {
+     "s": 468.14,
+     "e": 469.2,
+     "text": "Samma formel, alltså."
+    },
+    {
+     "s": 470.5,
+     "e": 475.08,
      "text": "Galileo skrev om rännan i en bok som kom ut först sextonhundratrettioåtta."
     },
     {
-     "s": 354.7,
-     "e": 359.6,
+     "s": 476.08,
+     "e": 480.66,
      "text": "Då var han blind och fick inte lämna sitt hus, för kyrkan hade dömt honom."
     },
     {
-     "s": 360.6,
-     "e": 363.89,
+     "s": 481.66,
+     "e": 484.56,
      "text": "Han hade skrivit att jorden rör sig runt solen."
     },
     {
-     "s": 364.89,
-     "e": 369.21,
+     "s": 485.56,
+     "e": 489.26,
      "text": "Boken fick inte tryckas i Italien, så den trycktes i Holland i stället."
     },
     {
-     "s": 370.21,
-     "e": 373.85,
+     "s": 490.26,
+     "e": 493.28,
      "text": "Och i dag finns den på bibliotek över hela världen."
     },
     {
-     "s": 374.93,
-     "e": 375.93,
+     "s": 494.58,
+     "e": 495.58,
      "text": "Nu är det din tur."
     },
     {
-     "s": 376.77,
-     "e": 382.29,
+     "s": 496.56,
+     "e": 502.3,
      "text": "Tänk dig en annan ränna, där märkena står vid fem, åtta, tretton och tjugo steg."
     },
     {
-     "s": 383.29,
-     "e": 385.35,
+     "s": 503.3,
+     "e": 505.48,
      "text": "Skriv formeln för märke nummer n."
     }
    ]
