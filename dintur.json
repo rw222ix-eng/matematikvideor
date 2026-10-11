@@ -1229,34 +1229,34 @@
   },
   "ma1c-k6-03-berakna-vinklar": {
     "notisFran": "Nu är det din tur",
-    "fraga": "En stege är 4 meter lång och står lutad mot en vägg. Stegens fot står 1 meter från väggen.",
+    "fraga": "Tänk dig ett annat torn som också lutar. Det är lägre än tornet i Pisa. Från foten och upp längs tornet till kanten är det 10 meter. Ett snöre från kanten når marken 1 meter från tornets fot.",
     "figur": {
       "vy": [1920, 1080],
-      "bild": "p09-stegen",
+      "bild": "p07-annat-torn",
       "tema": "scen",
       "blak": { "skugga": "rgba(6, 14, 26, .92)" },
-      "text": "En stege som är 4 meter lång står lutad mot en vägg. Foten står 1 meter från väggen. Vinkeln mellan stegen och väggen och vinkeln mellan stegen och marken är okända.",
+      "text": "Ett torn som lutar. Från foten upp längs tornet till kanten är det 10 meter. Ett snöre från kanten når marken 1 meter från tornets fot. Vinkeln uppe vid kanten och vinkeln vid tornets fot är okända.",
       "delar": [
-        { "typ": "linje", "p": [[650, 985], [455, 105]] },
-        { "typ": "text", "vid": [640, 540], "text": "4 m", "ankare": "start" },
-        { "typ": "linje", "p": [[455, 105], [455, 985]] },
-        { "typ": "linje", "p": [[455, 985], [650, 985]] },
-        { "typ": "text", "vid": [552, 1040], "text": "1 m" },
-        { "typ": "ratvinkel", "vid": [455, 985], "mot": [[455, 105], [650, 985]], "storlek": 30 },
-        { "typ": "vinkel", "vid": [455, 105], "mot": [[650, 985], [455, 985]], "r": 150, "accent": true },
-        { "typ": "linje", "p": [[560, 262], [478, 214]], "svag": true },
-        { "typ": "text", "vid": [585, 285], "text": "?", "accent": true },
-        { "typ": "vinkel", "vid": [650, 985], "mot": [[455, 985], [455, 105]], "r": 110, "text": "?", "accent": true, "avstand": 46 }
+        { "typ": "linje", "p": [[591, 957], [660, 193]] },
+        { "typ": "text", "vid": [598, 575], "text": "10 m", "ankare": "end" },
+        { "typ": "linje", "p": [[660, 193], [660, 957]] },
+        { "typ": "linje", "p": [[591, 957], [660, 957]] },
+        { "typ": "text", "vid": [626, 1040], "text": "1 m" },
+        { "typ": "ratvinkel", "vid": [660, 957], "mot": [[660, 193], [591, 957]], "storlek": 22 },
+        { "typ": "vinkel", "vid": [660, 193], "mot": [[591, 957], [660, 957]], "r": 150, "accent": true },
+        { "typ": "text", "vid": [688, 362], "text": "?", "accent": true },
+        { "typ": "vinkel", "vid": [591, 957], "mot": [[660, 957], [660, 193]], "r": 40, "accent": true },
+        { "typ": "text", "vid": [628, 905], "text": "?", "accent": true }
       ]
     },
     "delar": [
       {
-        "fraga": "Hur stor är vinkeln mellan stegen och väggen? Svara med en decimal.",
+        "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
         "typ": "tal",
-        "svar": 14.4775,
+        "svar": 5.7392,
         "tolerans": 0.06,
         "enhet": "grader",
-        "exempel": "t.ex. 5,4",
+        "exempel": "t.ex. 12,3",
         "tangenter": [
           "/",
           "(",
@@ -1264,29 +1264,24 @@
         ],
         "fel": [
           {
-            "svar": "0.25",
+            "svar": "0.1",
             "tolerans": 0.002,
-            "text": "0,25 är kvoten, sinus v. Nu behöver du vinkeln: ta arcussinus av 1 delat med 4 (tryck två gånger på sin på räknaren)."
+            "text": "0,1 är kvoten, sinus v. Nu behöver du vinkeln: tryck två gånger på sin och skriv 1 delat med 10. Kolla också att det står DEG högst upp på skärmen."
           },
           {
-            "svar": "75.5",
+            "svar": "84.3",
             "tolerans": 0.06,
-            "text": "Det är vinkeln nere vid marken. Vinkeln mot väggen ligger uppe vid stegens topp, och där står metern på marken mitt emot."
-          },
-          {
-            "svar": "14.04",
-            "tolerans": 0.03,
-            "text": "Du har använt tangens. Stegen är hypotenusan, och sinus är motstående katet delat med hypotenusan: 1 delat med 4."
+            "text": "Det är vinkeln nere vid tornets fot. Lutningen är vinkeln uppe vid kanten, mellan tornet och snöret."
           }
         ]
       },
       {
-        "fraga": "Hur stor är vinkeln mellan stegen och marken? Svara med en decimal.",
+        "fraga": "Hur stor är vinkeln nere vid tornets fot? Svara med en decimal.",
         "typ": "tal",
-        "svar": 75.5225,
+        "svar": 84.2608,
         "tolerans": 0.06,
         "enhet": "grader",
-        "exempel": "t.ex. 84,6",
+        "exempel": "t.ex. 60,5",
         "tangenter": [
           "/",
           "(",
@@ -1294,27 +1289,27 @@
         ],
         "fel": [
           {
-            "svar": "14.5",
+            "svar": "5.7",
             "tolerans": 0.06,
-            "text": "Det är vinkeln mot väggen. Vinkeln mot marken ligger nere vid stegens fot."
+            "text": "Det är lutningen, vinkeln uppe vid kanten. Vinkeln vid foten ligger nere vid marken."
           },
           {
-            "svar": "165.5",
+            "svar": "174.3",
             "tolerans": 0.06,
-            "text": "Den räta vinkeln tar 90 av de 180 graderna, så de två andra vinklarna är tillsammans 90. Räkna 90 minus vinkeln mot väggen."
+            "text": "Den räta vinkeln tar 90 av de 180 graderna, så de två andra vinklarna är tillsammans 90. Räkna 90 minus lutningen."
           }
         ]
       }
     ],
     "ledtrad": {
       "fras": "Vilken kvot ska vi välja",
-      "text": "Stegen, väggen och marken bildar en rätvinklig triangel. Börja i vinkeln uppe vid väggen: metern på marken står mitt emot den, och stegen är hypotenusan."
+      "text": "Tornet, snöret och marken bildar en rätvinklig triangel. Tornet är hypotenusan, 10 meter. Metern på marken ligger mitt emot vinkeln uppe vid kanten."
     },
     "losning": [
-      "Stegen är hypotenusan, 4 meter.",
-      "Metern på marken står mitt emot vinkeln v uppe vid väggen. Den är motstående katet.",
-      "sin v = 1/4, så v = sin⁻¹(1/4) ≈ 14,5°.",
-      "Vinkeln mot marken är 90 − 14,5 = 75,5°."
+      "Tornet är hypotenusan, 10 m.",
+      "Metern på marken ligger mitt emot vinkeln v uppe vid kanten. Den är motstående katet.",
+      "Båda finns i sinus: sin v = 1/10, så v = sin⁻¹(1/10) ≈ 5,7°.",
+      "Vinkeln vid foten är 90 − 5,7 = 84,3°."
     ]
   },
   "ma1c-k6-02-berakna-sidor": {
