@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-12T13:18:28.952Z",
+ "byggd": "2026-10-12T14:28:35.424Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -36331,7 +36331,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-01-kvadreringsreglerna-v6/ma2a-01-kvadreringsreglerna-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-01-kvadreringsreglerna-v7/ma2a-01-kvadreringsreglerna-1080p.mp4",
    "moment": "Kvadreringsreglerna och konjugatregeln, motiverade",
    "begrepp": [
     "kvadreringsreglerna",
@@ -36350,150 +36350,178 @@
    ],
    "beskrivning": "I Los Alamos 1943 räknade fysikern Hans Bethe ut 48 i kvadrat i huvudet snabbare än räknemaskinen, för att han tänkte på 48 som 50 minus 2. Vi visar med vanlig räkning varför kvadreringsreglerna och konjugatregeln på formelbladet stämmer, använder dem med x och visar det vanligaste felet, och räknar i huvudet som Bethe.",
    "youtube": null,
-   "langd": 557,
+   "langd": 751,
    "omslag": "omslag/ma2a-01-kvadreringsreglerna.jpg?v=cde60473",
    "omslagRen": "omslag/ma2a-01-kvadreringsreglerna-ren.jpg?v=38e05ba7",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 1,
-     "text": "Det är år nittonhundrafyrtiotre, mitt under andra världskriget. Vi är i Los Alamos, en hemlig stad uppe på ett berg i USA. USA är rädda att Hitlers Tyskland ska bygga en atombomb. Därför har de samlat forskare här, som ska hinna bygga en bomb först."
+     "t": 9,
+     "text": "Det är år nittonhundrafyrtiotre, mitt under andra världskriget. Vi är i Los Alamos, en hemlig stad uppe på ett berg i USA. USA är rädda för en sak. De är rädda att Hitlers Tyskland ska bygga en atombomb. Därför har de samlat forskare här. Forskarna ska hinna bygga en bomb först."
     },
     {
-     "t": 25,
-     "text": "En av forskarna heter Hans Bethe. Han är chef för de forskare som ska räkna ut hur bomben ska fungera. De räknar hela dagarna, och till hjälp har de räknemaskiner."
+     "t": 33,
+     "text": "En av forskarna heter Hans Bethe. Han är chef för de forskare som ska räkna ut hur bomben ska fungera. Och det blir mycket räknande. De håller på hela dagarna, och till hjälp har de räknemaskiner."
     },
     {
-     "t": 40,
-     "text": "En av de yngsta i Bethes grupp heter Richard Feynman, och han är tjugofyra år. En dag kommer Bethe in till Feynman med en formel. I formeln ska trycket multipliceras med sig självt, och trycket är fyrtioåtta. Feynman sträcker sig efter räknemaskinen."
+     "t": 49,
+     "text": "En av de yngsta i Bethes grupp heter Richard Feynman, och han är tjugofyra år. En dag kommer Bethe in till Feynman med en formel. I formeln finns ett tal som ska tas gånger sig självt. Talet är fyrtioåtta. Så de behöver fyrtioåtta gånger fyrtioåtta. Feynman sträcker sig efter räknemaskinen."
     },
     {
-     "t": 61,
-     "text": "Men Bethe säger att det är ungefär tvåtusen trehundra. Sedan säger han att det är exakt tvåtusen trehundrafyra. Feynman räknar på maskinen, och den visar tvåtusen trehundrafyra."
-    },
-    {
-     "t": 78,
-     "text": "Hur kunde Bethe räkna så snabbt i huvudet? Feynman frågar honom. Bethe svarar att han tänker på femtio, för femtio gånger femtio är lätt att räkna."
+     "t": 73,
+     "text": "Men Bethe säger att det är ungefär tvåtusen trehundra. Feynman börjar trycka på knapparna. Då säger Bethe att det är exakt tvåtusen trehundrafyra. Feynman räknar klart på maskinen. Och den visar tvåtusen trehundrafyra."
     },
     {
      "t": 92,
-     "text": "Ett tal gånger sig självt kallas talet i kvadrat. Fyrtioåtta gånger fyrtioåtta är alltså fyrtioåtta i kvadrat. Bethe ser fyrtioåtta som femtio minus två. Så fyrtioåtta i kvadrat är parentesen femtio minus två, gånger parentesen femtio minus två."
+     "text": "Hur kunde Bethe räkna så snabbt i huvudet? Det undrar Feynman också, så han frågar honom. Bethe svarar att han tänker på femtio. För femtio gånger femtio är lätt. Fem gånger fem är tjugofem, och så sätter man på två nollor. Det blir tvåtusen femhundra. Hmm... men hur kommer han från femtio till fyrtioåtta? Det tar vi reda på nu."
     },
     {
-     "t": 117,
-     "text": "Nu ska vi multiplicera två parenteser. Då multiplicerar vi varje term i den första parentesen med varje term i den andra. Termer är de delar som har plus eller minus mellan sig. Här är termerna femtio och minus två."
+     "t": 122,
+     "text": "Ett tal gånger sig självt kallas talet i kvadrat. Fyrtioåtta gånger fyrtioåtta är alltså fyrtioåtta i kvadrat. Vi skriver det med en liten tvåa uppe till höger om talet."
     },
     {
-     "t": 138,
-     "text": "Femtio gånger femtio är tvåtusen femhundra. Femtio gånger minus två är minus hundra. Minus två gånger femtio är också minus hundra. Minus två gånger minus två är plus fyra, för minus gånger minus blir plus."
+     "t": 137,
+     "text": "Tänk dig en tallinje. Var ligger fyrtioåtta? Två steg före femtio. Så fyrtioåtta är femtio minus två. Då kan vi skriva fyrtioåtta i kvadrat som parentesen femtio minus två, gånger parentesen femtio minus två. Parentesen håller ihop femtio minus två, så att det blir ett enda tal."
     },
     {
-     "t": 159,
-     "text": "Nu lägger vi ihop. Tvåtusen femhundra minus hundra minus hundra är tvåtusen trehundra. Det var Bethes första svar, ungefär tvåtusen trehundra. Plus fyra blir det exakt tvåtusen trehundrafyra."
+     "t": 164,
+     "text": "Hur tar man gånger med två parenteser? Varje del i den första parentesen ska tas gånger varje del i den andra. Delarna kallas termer. Det är de bitar som har plus eller minus mellan sig. Här är termerna femtio och minus två."
     },
     {
-     "t": 180,
-     "text": "Titta på svarets tre delar. Först kommer femtio i kvadrat. Sist kommer två i kvadrat, och den delen är alltid plus. I mitten kommer femtio gånger två, och den kommer två gånger. En produkt är svaret på en multiplikation, så mitten kallas dubbla produkten. Den är minus, eftersom det var minus två i parentesen."
+     "t": 184,
+     "text": "Vi drar en pil för varje par. Femtio och femtio. Femtio och minus två. Minus två och femtio. Och minus två och minus två. Hur många pilar blev det? Fyra stycken. Så vi får fyra tal att räkna ut."
     },
     {
-     "t": 211,
-     "text": "Det här gäller för alla tal. Därför skriver vi det med bokstäver, som kan stå för vilka tal som helst. Parentesen a minus b i kvadrat är lika med a i kvadrat, minus två a b, plus b i kvadrat. Hos Bethe är a femtio och b två. Det här är andra kvadreringsregeln, och den står på formelbladet."
+     "t": 205,
+     "text": "Vi tar dem en i taget. Femtio gånger femtio vet vi redan. Det är tvåtusen femhundra. Femtio gånger minus två är minus hundra. Minus två gånger femtio är också minus hundra."
     },
     {
-     "t": 241,
-     "text": "Första kvadreringsregeln gäller när det är plus i parentesen. Ta femtiotre i kvadrat, alltså parentesen femtio plus tre i kvadrat. Femtio i kvadrat är tvåtusen femhundra. Dubbla produkten är två gånger femtio gånger tre, alltså trehundra, och nu är den plus. Tre i kvadrat är nio."
+     "t": 222,
+     "text": "Och den sista pilen? Minus två gånger minus två. Två gånger två är fyra. Men vad blir tecknet? Tänk på minus som att vända sig om. Vänder man sig om två gånger, står man åt samma håll som förut. Så minus gånger minus blir plus. Det blir plus fyra."
     },
     {
-     "t": 270,
-     "text": "Tvåtusen femhundra plus trehundra plus nio är tvåtusen åttahundranio. Med bokstäver är parentesen a plus b i kvadrat lika med a i kvadrat, plus två a b, plus b i kvadrat. Det är första kvadreringsregeln, och den står också på formelbladet."
+     "t": 247,
+     "text": "Nu lägger vi ihop de fyra talen. Först de två minus hundra. Tillsammans blir de minus tvåhundra. Tvåtusen femhundra minus tvåhundra är tvåtusen trehundra. Aha... det var Bethes första svar, ungefär tvåtusen trehundra. Sen plus fyra. Då blir det exakt tvåtusen trehundrafyra, precis som på maskinen."
     },
     {
-     "t": 296,
-     "text": "Reglerna gäller alla tal, så de gäller också när ett tal är okänt. Det okända talet kallar vi x. Ta parentesen x plus fem i kvadrat. Här är a lika med x, och b lika med fem."
+     "t": 276,
+     "text": "Det här gäller för alla tal, inte bara för femtio och två. Därför står det med bokstäver på formelbladet. Det är bladet med formler som du får ha med dig på provet. Kolla på andra raden. Där står parentesen a minus b i kvadrat. En bokstav kan stå för vilket tal som helst. Hos Bethe är a femtio och b två."
     },
     {
-     "t": 315,
-     "text": "Först kommer x i kvadrat. Dubbla produkten är två gånger x gånger fem, alltså tio x. Sist kommer fem i kvadrat, som är tjugofem. Svaret är x i kvadrat plus tio x plus tjugofem. Men x i kvadrat och tio x kan inte läggas ihop. x i kvadrat är x gånger x, så det är en annan sorts term än tio x."
+     "t": 303,
+     "text": "Vi tar delarna en i taget. Först står a i kvadrat. Hos Bethe är det femtio i kvadrat. Det är tvåtusen femhundra. Sist står b i kvadrat. Det är två i kvadrat, alltså fyra. Den delen är alltid plus."
     },
     {
-     "t": 348,
-     "text": "Nu ett exempel där många gör fel. Ta parentesen tre x minus fyra i kvadrat. Här är a lika med tre x, och b lika med fyra. Hela tre x ska i kvadrat, alltså tre x gånger tre x. Det blir nio x i kvadrat."
+     "t": 324,
+     "text": "I mitten står minus två a b. Det betyder två gånger a gånger b. Hos Bethe blir det två gånger femtio gånger två. Det är tvåhundra, med minus framför. Svaret när man tar gånger kallas en produkt. Femtio gånger två kommer två gånger, så mitten kallas dubbla produkten. Att ta ett tal i kvadrat kallas att kvadrera. Därför heter den här raden andra kvadreringsregeln."
     },
     {
-     "t": 372,
-     "text": "Dubbla produkten är två gånger tre x gånger fyra, alltså tjugofyra x. Den är minus, för det är minus i parentesen. Fyra i kvadrat är sexton. Svaret är nio x i kvadrat minus tjugofyra x plus sexton."
+     "t": 358,
+     "text": "Men om det står plus i parentesen då? Vi provar med femtiotre i kvadrat. Var ligger femtiotre på tallinjen? Tre steg efter femtio. Så femtiotre är femtio plus tre. Nu är a femtio och b tre."
     },
     {
-     "t": 394,
-     "text": "Det vanligaste felet är att bara ta varje term i kvadrat och skriva nio x i kvadrat plus sexton. Då har man glömt dubbla produkten. Tänk på Bethe, där mitten var minus tvåhundra."
+     "t": 378,
+     "text": "Då tar vi första raden. Parentesen a plus b i kvadrat är lika med a i kvadrat, plus två a b, plus b i kvadrat. Vi sätter in talen på samma ställen. Femtio där det står a, och tre där det står b."
     },
     {
-     "t": 411,
-     "text": "Nu en tredje regel. Ta femtiotvå gånger fyrtioåtta. Båda talen ligger två från femtio, det ena över och det andra under. Så det är parentesen femtio plus två, gånger parentesen femtio minus två."
+     "t": 396,
+     "text": "Så det blir femtio i kvadrat, plus två gånger femtio gånger tre, plus tre i kvadrat. Nu räknar vi del för del. Femtio i kvadrat är tvåtusen femhundra. Två gånger femtio är hundra, och hundra gånger tre är trehundra. Tre i kvadrat är nio."
     },
     {
-     "t": 432,
-     "text": "Vi multiplicerar varje term med varje term. Femtio gånger femtio är tvåtusen femhundra. Femtio gånger minus två är minus hundra. Två gånger femtio är plus hundra. Två gånger minus två är minus fyra."
+     "t": 419,
+     "text": "Nu lägger vi ihop. Tvåtusen femhundra plus trehundra är tvåtusen åttahundra. Plus nio blir det tvåtusen åttahundranio. Så femtiotre i kvadrat är tvåtusen åttahundranio."
     },
     {
-     "t": 454,
-     "text": "Minus hundra och plus hundra tar ut varandra, så mitten försvinner. Kvar blir tvåtusen femhundra minus fyra, alltså tvåtusen fyrahundranittiosex."
+     "t": 436,
+     "text": "Första raden heter första kvadreringsregeln. Ser du skillnaden mot den andra regeln? Det är bara tecknet framför dubbla produkten."
     },
     {
-     "t": 468,
-     "text": "Med bokstäver är parentesen a plus b, gånger parentesen a minus b, lika med a i kvadrat minus b i kvadrat. Två parenteser där bara tecknet i mitten skiljer kallas konjugat. Därför heter det här konjugatregeln, och den står också på formelbladet."
+     "t": 447,
+     "text": "Reglerna gäller alla tal, så de gäller också när vi inte vet vilket tal det är. Ett okänt tal brukar vi kalla x. Ta parentesen x plus fem i kvadrat. Vad är a nu? Det är x. Och b är fem."
     },
     {
-     "t": 494,
-     "text": "Med x fungerar det likadant. Parentesen x plus sex, gånger parentesen x minus sex, är x i kvadrat minus trettiosex. Det spelar ingen roll vilken parentes som står först."
+     "t": 466,
+     "text": "Det står plus, så vi tar första regeln. Vi sätter in x där det står a, och fem där det står b. Det blir x i kvadrat, plus två gånger x gånger fem, plus fem i kvadrat. Nu del för del. x i kvadrat får stå som det är. Två gånger fem är tio, så mitten blir tio x. Fem i kvadrat är tjugofem. Svaret är x i kvadrat plus tio x plus tjugofem."
     },
     {
-     "t": 511,
-     "text": "Bethe och Feynman räknade tillsammans i två år till. I juli nittonhundrafyrtiofem provsprängdes den första atombomben i öknen i New Mexico. Tyskland hade redan gett upp. Men några veckor senare släppte USA två atombomber över Japan, och över hundratusen människor dog. Efter kriget arbetade Bethe resten av sitt liv för att minska antalet kärnvapen."
+     "t": 499,
+     "text": "Kan man lägga ihop x i kvadrat och tio x? Nej. x i kvadrat är x gånger x. Tio x är tio stycken x. Det är två olika sorters termer, så de får stå kvar var för sig."
     },
     {
-     "t": 543,
+     "t": 514,
+     "text": "Nu ett exempel där många gör fel. Ta parentesen tre x minus fyra i kvadrat. Det står minus, så vi tar andra regeln. Vad är a? Hela tre x. Och b är fyra. Vi sätter in dem. Det blir parentesen tre x i kvadrat, minus två gånger tre x gånger fyra, plus fyra i kvadrat. Parentesen visar att hela tre x ska i kvadrat."
+    },
+    {
+     "t": 547,
+     "text": "Nu del för del. Parentesen tre x i kvadrat är tre x gånger tre x. Tre gånger tre är nio, och x gånger x är x i kvadrat. Det blir nio x i kvadrat. Sen mitten. Två gånger tre gånger fyra är tjugofyra. Så det blir minus tjugofyra x. Sist fyra i kvadrat. Det är sexton. Svaret är nio x i kvadrat minus tjugofyra x plus sexton."
+    },
+    {
+     "t": 583,
+     "text": "Vad är det då många gör fel? De tar bara den första och den sista delen i kvadrat. Så de skriver nio x i kvadrat plus sexton. Men då fattas mitten. Man har glömt dubbla produkten. Tänk på Bethe. Utan mitten hade han fått tvåtusen femhundrafyra, och det är fel."
+    },
+    {
+     "t": 607,
+     "text": "Nu en tredje regel. Ta femtiotvå gånger fyrtioåtta. Var ligger talen på tallinjen? Femtiotvå ligger två steg efter femtio. Fyrtioåtta ligger två steg före. Så det är parentesen femtio plus två, gånger parentesen femtio minus två."
+    },
+    {
+     "t": 630,
+     "text": "Vi drar fyra pilar igen, en för varje par. Femtio gånger femtio är tvåtusen femhundra. Femtio gånger minus två är minus hundra. Två gånger femtio är plus hundra. Två gånger minus två är minus fyra, för plus gånger minus blir minus."
+    },
+    {
+     "t": 651,
+     "text": "Kolla på mitten nu. Där står minus hundra och plus hundra. Tar man bort hundra och sen lägger tillbaka hundra, har man lika mycket som förut. Så mitten försvinner. Kvar blir tvåtusen femhundra minus fyra. Det är tvåtusen fyrahundranittiosex."
+    },
+    {
+     "t": 672,
+     "text": "Den här regeln står på tredje raden på formelbladet. Parentesen a plus b, gånger parentesen a minus b, är lika med a i kvadrat minus b i kvadrat. Kolla på parenteserna. De är likadana, bara tecknet i mitten skiljer. Två sådana parenteser kallas konjugat. Därför heter det här konjugatregeln. Hos Bethe är a femtio och b två. Så det blir femtio i kvadrat minus två i kvadrat. Det är tvåtusen femhundra minus fyra, precis som förut."
+    },
+    {
+     "t": 713,
+     "text": "I juli nittonhundrafyrtiofem provsprängdes den första atombomben, i öknen i New Mexico. Då hade Tyskland redan gett upp. Men tre veckor senare släppte USA två atombomber över Japan. Över hundratusen människor dog. Efter kriget arbetade Bethe i många år för att det skulle finnas färre atombomber i världen."
+    },
+    {
+     "t": 738,
      "text": "Nu är det din tur. När Bethe förklarade sitt knep för Feynman, tog han fyrtiosju som exempel. Räkna fyrtiosju i kvadrat i huvudet, som Bethe."
     }
    ],
    "kapitel": [
     {
-     "t": 1,
+     "t": 9,
      "rubrik": "Bethe, Feynman och 48 i kvadrat",
      "typ": "historia"
     },
     {
-     "t": 92,
+     "t": 122,
      "rubrik": "48² som (50 − 2)²: dubbla produkten",
      "typ": "matte"
     },
     {
-     "t": 211,
+     "t": 276,
      "rubrik": "Andra och första kvadreringsregeln",
      "typ": "matte"
     },
     {
-     "t": 296,
+     "t": 447,
      "rubrik": "Kvadreringsreglerna med x",
      "typ": "matte"
     },
     {
-     "t": 348,
+     "t": 514,
      "rubrik": "(3x − 4)² och det vanligaste felet",
      "typ": "matte"
     },
     {
-     "t": 411,
+     "t": 607,
      "rubrik": "Konjugatregeln",
      "typ": "matte"
     },
     {
-     "t": 511,
+     "t": 713,
      "rubrik": "Atombomben, och Bethe efter kriget",
      "typ": "historia"
     },
     {
-     "t": 543,
+     "t": 738,
      "rubrik": "47 i kvadrat",
      "typ": "uppgift"
     }
@@ -36536,7 +36564,7 @@
     ],
     "ledtrad": {
      "text": "Tänk på 47 som 50 − 3, som Bethe gjorde med 48. Först 50 i kvadrat, sedan dubbla produkten, sist 3 i kvadrat.",
-     "t": 180
+     "t": 303
     },
     "losning": [
      "47 är 50 minus 3, så 47² = (50 − 3)².",
@@ -36546,528 +36574,988 @@
      "3² = 9, som alltid är plus.",
      "2500 − 300 + 9 = 2209."
     ],
-    "notisFran": 211
+    "notisFran": 447
    },
    "undertext": [
     {
-     "s": 1.5,
-     "e": 6.5,
-     "text": "Det är år 1943, mitt under andra världskriget."
+     "s": 9.5,
+     "e": 13.68,
+     "text": "Det är år nittonhundrafyrtiotre, mitt under andra världskriget."
     },
     {
-     "s": 7.5,
-     "e": 12.76,
+     "s": 14.68,
+     "e": 19.08,
      "text": "Vi är i Los Alamos, en hemlig stad uppe på ett berg i USA."
     },
     {
-     "s": 13.92,
-     "e": 18.34,
-     "text": "USA är rädda att Hitlers Tyskland ska bygga en atombomb."
+     "s": 20.08,
+     "e": 22,
+     "text": "USA är rädda för en sak."
     },
     {
-     "s": 19.34,
-     "e": 24.22,
-     "text": "Därför har de samlat forskare här, som ska hinna bygga en bomb först."
+     "s": 23,
+     "e": 26.42,
+     "text": "De är rädda att Hitlers Tyskland ska bygga en atombomb."
     },
     {
-     "s": 25.52,
-     "e": 28.1,
+     "s": 27.42,
+     "e": 29.32,
+     "text": "Därför har de samlat forskare här."
+    },
+    {
+     "s": 30.32,
+     "e": 32.54,
+     "text": "Forskarna ska hinna bygga en bomb först."
+    },
+    {
+     "s": 33.84,
+     "e": 35.9,
      "text": "En av forskarna heter Hans Bethe."
     },
     {
-     "s": 29.1,
-     "e": 33.24,
+     "s": 36.9,
+     "e": 40.64,
      "text": "Han är chef för de forskare som ska räkna ut hur bomben ska fungera."
     },
     {
-     "s": 34.24,
-     "e": 38.8,
-     "text": "De räknar hela dagarna, och till hjälp har de räknemaskiner."
+     "s": 41.64,
+     "e": 43.3,
+     "text": "Och det blir mycket räknande."
     },
     {
-     "s": 40.1,
-     "e": 45.74,
-     "text": "En av de yngsta i Bethes grupp heter Richard Feynman, och han är 24 år."
+     "s": 44.3,
+     "e": 48.28,
+     "text": "De håller på hela dagarna, och till hjälp har de räknemaskiner."
     },
     {
-     "s": 46.74,
-     "e": 49.98,
+     "s": 49.58,
+     "e": 54.46,
+     "text": "En av de yngsta i Bethes grupp heter Richard Feynman, och han är tjugofyra år."
+    },
+    {
+     "s": 55.46,
+     "e": 58.26,
      "text": "En dag kommer Bethe in till Feynman med en formel."
     },
     {
-     "s": 50.98,
-     "e": 57.3,
-     "text": "I formeln ska trycket multipliceras med sig självt, och trycket är 48."
+     "s": 59.26,
+     "e": 62.64,
+     "text": "I formeln finns ett tal som ska tas gånger sig självt."
     },
     {
-     "s": 58.3,
-     "e": 60.64,
+     "s": 63.64,
+     "e": 65.18,
+     "text": "Talet är fyrtioåtta."
+    },
+    {
+     "s": 66.18,
+     "e": 68.96,
+     "text": "Så de behöver fyrtioåtta gånger fyrtioåtta."
+    },
+    {
+     "s": 69.96,
+     "e": 72.16,
      "text": "Feynman sträcker sig efter räknemaskinen."
     },
     {
-     "s": 61.94,
-     "e": 65.92,
-     "text": "Men Bethe säger att det är ungefär 2300."
+     "s": 73.46,
+     "e": 77.24,
+     "text": "Men Bethe säger att det är ungefär tvåtusen trehundra."
     },
     {
-     "s": 66.92,
-     "e": 71.24,
-     "text": "Sedan säger han att det är exakt 2304."
+     "s": 78.24,
+     "e": 79.94,
+     "text": "Feynman börjar trycka på knapparna."
     },
     {
-     "s": 72.24,
-     "e": 77.36,
-     "text": "Feynman räknar på maskinen, och den visar 2304."
+     "s": 80.94,
+     "e": 84.96,
+     "text": "Då säger Bethe att det är exakt tvåtusen trehundrafyra."
     },
     {
-     "s": 78.66,
-     "e": 81.58,
+     "s": 85.96,
+     "e": 87.64,
+     "text": "Feynman räknar klart på maskinen."
+    },
+    {
+     "s": 88.64,
+     "e": 91.68,
+     "text": "Och den visar tvåtusen trehundrafyra."
+    },
+    {
+     "s": 92.98,
+     "e": 95.66,
      "text": "Hur kunde Bethe räkna så snabbt i huvudet?"
     },
     {
-     "s": 82.58,
-     "e": 83.74,
-     "text": "Feynman frågar honom."
+     "s": 96.66,
+     "e": 99.24,
+     "text": "Det undrar Feynman också, så han frågar honom."
     },
     {
-     "s": 84.74,
-     "e": 91.12,
-     "text": "Bethe svarar att han tänker på 50, för 50 gånger 50 är lätt att räkna."
+     "s": 100.24,
+     "e": 102.76,
+     "text": "Bethe svarar att han tänker på femtio."
     },
     {
-     "s": 92.42,
-     "e": 96.48,
+     "s": 103.76,
+     "e": 105.98,
+     "text": "För femtio gånger femtio är lätt."
+    },
+    {
+     "s": 106.98,
+     "e": 110.58,
+     "text": "Fem gånger fem är tjugofem, och så sätter man på två nollor."
+    },
+    {
+     "s": 111.58,
+     "e": 115.32,
+     "text": "Det blir tvåtusen femhundra. Hmm..."
+    },
+    {
+     "s": 116.32,
+     "e": 119.26,
+     "text": "men hur kommer han från femtio till fyrtioåtta?"
+    },
+    {
+     "s": 120.26,
+     "e": 121.64,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 122.94,
+     "e": 126.4,
      "text": "Ett tal gånger sig självt kallas talet i kvadrat."
     },
     {
-     "s": 97.48,
-     "e": 101.86,
-     "text": "48 gånger 48 är alltså 48 i kvadrat."
+     "s": 127.4,
+     "e": 131.6,
+     "text": "Fyrtioåtta gånger fyrtioåtta är alltså fyrtioåtta i kvadrat."
     },
     {
-     "s": 102.86,
-     "e": 106.6,
-     "text": "Bethe ser 48 som 50 minus 2."
+     "s": 132.6,
+     "e": 135.8,
+     "text": "Vi skriver det med en liten tvåa uppe till höger om talet."
     },
     {
-     "s": 107.6,
-     "e": 116.4,
-     "text": "Så 48 i kvadrat är parentesen 50 minus 2, gånger parentesen 50 minus 2."
+     "s": 137.1,
+     "e": 138.46,
+     "text": "Tänk dig en tallinje."
     },
     {
-     "s": 117.7,
-     "e": 120.54,
-     "text": "Nu ska vi multiplicera två parenteser."
+     "s": 139.46,
+     "e": 140.72,
+     "text": "Var ligger fyrtioåtta?"
     },
     {
-     "s": 121.54,
-     "e": 127.66,
-     "text": "Då multiplicerar vi varje term i den första parentesen med varje term i den andra."
+     "s": 141.72,
+     "e": 143.68,
+     "text": "Två steg före femtio."
     },
     {
-     "s": 128.66,
-     "e": 132.7,
-     "text": "Termer är de delar som har plus eller minus mellan sig."
+     "s": 144.68,
+     "e": 147.68,
+     "text": "Så fyrtioåtta är femtio minus två."
     },
     {
-     "s": 133.7,
-     "e": 137,
-     "text": "Här är termerna 50 och minus 2."
+     "s": 148.68,
+     "e": 154.04,
+     "text": "Då kan vi skriva fyrtioåtta i kvadrat som parentesen femtio minus två,"
     },
     {
-     "s": 138.3,
-     "e": 141.84,
-     "text": "50 gånger 50 är 2500."
+     "s": 154.5,
+     "e": 157.22,
+     "text": "gånger parentesen femtio minus två."
     },
     {
-     "s": 142.84,
-     "e": 146.18,
-     "text": "50 gånger minus 2 är minus 100."
+     "s": 158.22,
+     "e": 162.9,
+     "text": "Parentesen håller ihop femtio minus två, så att det blir ett enda tal."
     },
     {
-     "s": 147.18,
-     "e": 150.94,
-     "text": "Minus 2 gånger 50 är också minus 100."
+     "s": 164.2,
+     "e": 166.74,
+     "text": "Hur tar man gånger med två parenteser?"
     },
     {
-     "s": 151.94,
-     "e": 158.58,
-     "text": "Minus 2 gånger minus 2 är plus 4, för minus gånger minus blir plus."
+     "s": 167.74,
+     "e": 172.64,
+     "text": "Varje del i den första parentesen ska tas gånger varje del i den andra."
     },
     {
-     "s": 159.88,
-     "e": 160.92,
-     "text": "Nu lägger vi ihop."
+     "s": 173.64,
+     "e": 175.26,
+     "text": "Delarna kallas termer."
     },
     {
-     "s": 161.92,
-     "e": 168.5,
-     "text": "2500 minus 100 minus 100 är 2300."
+     "s": 176.26,
+     "e": 179.2,
+     "text": "Det är de bitar som har plus eller minus mellan sig."
     },
     {
-     "s": 169.5,
-     "e": 173.9,
-     "text": "Det var Bethes första svar, ungefär 2300."
+     "s": 180.2,
+     "e": 183.04,
+     "text": "Här är termerna femtio och minus två."
     },
     {
-     "s": 174.9,
-     "e": 179.26,
-     "text": "Plus 4 blir det exakt 2304."
+     "s": 184.34,
+     "e": 186.24,
+     "text": "Vi drar en pil för varje par."
     },
     {
-     "s": 180.56,
-     "e": 182.8,
-     "text": "Titta på svarets tre delar."
+     "s": 187.24,
+     "e": 188.72,
+     "text": "Femtio och femtio."
     },
     {
-     "s": 183.8,
-     "e": 186.22,
-     "text": "Först kommer 50 i kvadrat."
+     "s": 189.72,
+     "e": 191.32,
+     "text": "Femtio och minus två."
     },
     {
-     "s": 187.22,
-     "e": 191.74,
-     "text": "Sist kommer 2 i kvadrat, och den delen är alltid plus."
+     "s": 192.32,
+     "e": 194.06,
+     "text": "Minus två och femtio."
     },
     {
-     "s": 192.74,
-     "e": 197.72,
-     "text": "I mitten kommer 50 gånger 2, och den kommer två gånger."
+     "s": 195.06,
+     "e": 197.12,
+     "text": "Och minus två och minus två."
     },
     {
-     "s": 198.72,
-     "e": 204.92,
-     "text": "En produkt är svaret på en multiplikation, så mitten kallas dubbla produkten."
+     "s": 198.12,
+     "e": 201.2,
+     "text": "Hur många pilar blev det? Fyra stycken."
     },
     {
-     "s": 205.92,
-     "e": 209.96,
-     "text": "Den är minus, eftersom det var minus 2 i parentesen."
+     "s": 202.2,
+     "e": 204.4,
+     "text": "Så vi får fyra tal att räkna ut."
     },
     {
-     "s": 211.26,
-     "e": 213.24,
-     "text": "Det här gäller för alla tal."
+     "s": 205.7,
+     "e": 207.08,
+     "text": "Vi tar dem en i taget."
     },
     {
-     "s": 214.24,
-     "e": 219.12,
-     "text": "Därför skriver vi det med bokstäver, som kan stå för vilka tal som helst."
+     "s": 208.08,
+     "e": 210.24,
+     "text": "Femtio gånger femtio vet vi redan."
     },
     {
-     "s": 220.12,
-     "e": 227.54,
-     "text": "Parentesen a minus b i kvadrat är lika med a i kvadrat, minus 2ab,"
+     "s": 211.24,
+     "e": 213.14,
+     "text": "Det är tvåtusen femhundra."
     },
     {
-     "s": 227.92,
-     "e": 229.72,
+     "s": 214.14,
+     "e": 217.1,
+     "text": "Femtio gånger minus två är minus hundra."
+    },
+    {
+     "s": 218.1,
+     "e": 221.26,
+     "text": "Minus två gånger femtio är också minus hundra."
+    },
+    {
+     "s": 222.56,
+     "e": 223.6,
+     "text": "Och den sista pilen?"
+    },
+    {
+     "s": 224.6,
+     "e": 226.78,
+     "text": "Minus två gånger minus två."
+    },
+    {
+     "s": 227.78,
+     "e": 229.48,
+     "text": "Två gånger två är fyra."
+    },
+    {
+     "s": 230.48,
+     "e": 232.02,
+     "text": "Men vad blir tecknet?"
+    },
+    {
+     "s": 233.02,
+     "e": 235.24,
+     "text": "Tänk på minus som att vända sig om."
+    },
+    {
+     "s": 236.24,
+     "e": 240.04,
+     "text": "Vänder man sig om två gånger, står man åt samma håll som förut."
+    },
+    {
+     "s": 241.04,
+     "e": 243.5,
+     "text": "Så minus gånger minus blir plus."
+    },
+    {
+     "s": 244.5,
+     "e": 245.8,
+     "text": "Det blir plus fyra."
+    },
+    {
+     "s": 247.1,
+     "e": 248.76,
+     "text": "Nu lägger vi ihop de fyra talen."
+    },
+    {
+     "s": 249.76,
+     "e": 251.78,
+     "text": "Först de två minus hundra."
+    },
+    {
+     "s": 252.78,
+     "e": 255.16,
+     "text": "Tillsammans blir de minus tvåhundra."
+    },
+    {
+     "s": 256.16,
+     "e": 263.12,
+     "text": "Tvåtusen femhundra minus tvåhundra är tvåtusen trehundra. Aha..."
+    },
+    {
+     "s": 264.12,
+     "e": 267.86,
+     "text": "det var Bethes första svar, ungefär tvåtusen trehundra."
+    },
+    {
+     "s": 268.86,
+     "e": 270.3,
+     "text": "Sen plus fyra."
+    },
+    {
+     "s": 271.3,
+     "e": 275.64,
+     "text": "Då blir det exakt tvåtusen trehundrafyra, precis som på maskinen."
+    },
+    {
+     "s": 276.94,
+     "e": 280.32,
+     "text": "Det här gäller för alla tal, inte bara för femtio och två."
+    },
+    {
+     "s": 281.32,
+     "e": 283.92,
+     "text": "Därför står det med bokstäver på formelbladet."
+    },
+    {
+     "s": 284.92,
+     "e": 287.6,
+     "text": "Det är bladet med formler som du får ha med dig på provet."
+    },
+    {
+     "s": 288.6,
+     "e": 289.84,
+     "text": "Kolla på andra raden."
+    },
+    {
+     "s": 290.84,
+     "e": 294.34,
+     "text": "Där står parentesen a minus b i kvadrat."
+    },
+    {
+     "s": 295.34,
+     "e": 297.94,
+     "text": "En bokstav kan stå för vilket tal som helst."
+    },
+    {
+     "s": 298.94,
+     "e": 302.06,
+     "text": "Hos Bethe är a femtio och b två."
+    },
+    {
+     "s": 303.36,
+     "e": 305.02,
+     "text": "Vi tar delarna en i taget."
+    },
+    {
+     "s": 306.02,
+     "e": 307.92,
+     "text": "Först står a i kvadrat."
+    },
+    {
+     "s": 308.92,
+     "e": 311.26,
+     "text": "Hos Bethe är det femtio i kvadrat."
+    },
+    {
+     "s": 312.26,
+     "e": 314,
+     "text": "Det är tvåtusen femhundra."
+    },
+    {
+     "s": 315,
+     "e": 316.88,
+     "text": "Sist står b i kvadrat."
+    },
+    {
+     "s": 317.88,
+     "e": 320.5,
+     "text": "Det är två i kvadrat, alltså fyra."
+    },
+    {
+     "s": 321.5,
+     "e": 323.34,
+     "text": "Den delen är alltid plus."
+    },
+    {
+     "s": 324.64,
+     "e": 327.26,
+     "text": "I mitten står minus två a b."
+    },
+    {
+     "s": 328.26,
+     "e": 331.16,
+     "text": "Det betyder två gånger a gånger b."
+    },
+    {
+     "s": 332.16,
+     "e": 335.44,
+     "text": "Hos Bethe blir det två gånger femtio gånger två."
+    },
+    {
+     "s": 336.44,
+     "e": 338.86,
+     "text": "Det är tvåhundra, med minus framför."
+    },
+    {
+     "s": 339.86,
+     "e": 342.74,
+     "text": "Svaret när man tar gånger kallas en produkt."
+    },
+    {
+     "s": 343.74,
+     "e": 348.76,
+     "text": "Femtio gånger två kommer två gånger, så mitten kallas dubbla produkten."
+    },
+    {
+     "s": 349.76,
+     "e": 352.82,
+     "text": "Att ta ett tal i kvadrat kallas att kvadrera."
+    },
+    {
+     "s": 353.82,
+     "e": 357.04,
+     "text": "Därför heter den här raden andra kvadreringsregeln."
+    },
+    {
+     "s": 358.34,
+     "e": 360.5,
+     "text": "Men om det står plus i parentesen då?"
+    },
+    {
+     "s": 361.5,
+     "e": 363.78,
+     "text": "Vi provar med femtiotre i kvadrat."
+    },
+    {
+     "s": 364.78,
+     "e": 366.88,
+     "text": "Var ligger femtiotre på tallinjen?"
+    },
+    {
+     "s": 367.88,
+     "e": 369.58,
+     "text": "Tre steg efter femtio."
+    },
+    {
+     "s": 370.58,
+     "e": 373.34,
+     "text": "Så femtiotre är femtio plus tre."
+    },
+    {
+     "s": 374.34,
+     "e": 376.9,
+     "text": "Nu är a femtio och b tre."
+    },
+    {
+     "s": 378.2,
+     "e": 379.44,
+     "text": "Då tar vi första raden."
+    },
+    {
+     "s": 380.44,
+     "e": 386.9,
+     "text": "Parentesen a plus b i kvadrat är lika med a i kvadrat, plus två a b,"
+    },
+    {
+     "s": 387.22,
+     "e": 388.74,
      "text": "plus b i kvadrat."
     },
     {
-     "s": 230.72,
-     "e": 234.36,
-     "text": "Hos Bethe är a 50 och b 2."
+     "s": 389.74,
+     "e": 391.74,
+     "text": "Vi sätter in talen på samma ställen."
     },
     {
-     "s": 235.36,
-     "e": 240.24,
-     "text": "Det här är andra kvadreringsregeln, och den står på formelbladet."
+     "s": 392.74,
+     "e": 395.56,
+     "text": "Femtio där det står a, och tre där det står b."
     },
     {
-     "s": 241.54,
-     "e": 245.78,
-     "text": "Första kvadreringsregeln gäller när det är plus i parentesen."
+     "s": 396.86,
+     "e": 401.72,
+     "text": "Så det blir femtio i kvadrat, plus två gånger femtio gånger tre,"
     },
     {
-     "s": 246.78,
-     "e": 253.44,
-     "text": "Ta 53 i kvadrat, alltså parentesen 50 plus 3 i kvadrat."
+     "s": 402.02,
+     "e": 403.56,
+     "text": "plus tre i kvadrat."
     },
     {
-     "s": 254.44,
-     "e": 257.86,
-     "text": "50 i kvadrat är 2500."
+     "s": 404.56,
+     "e": 406.1,
+     "text": "Nu räknar vi del för del."
     },
     {
-     "s": 258.86,
-     "e": 264.68,
-     "text": "Dubbla produkten är 2 gånger 50 gånger 3, alltså 300,"
+     "s": 407.1,
+     "e": 409.88,
+     "text": "Femtio i kvadrat är tvåtusen femhundra."
     },
     {
-     "s": 265.2,
-     "e": 266.54,
-     "text": "och nu är den plus."
+     "s": 410.88,
+     "e": 415.3,
+     "text": "Två gånger femtio är hundra, och hundra gånger tre är trehundra."
     },
     {
-     "s": 267.54,
-     "e": 269.58,
-     "text": "3 i kvadrat är 9."
+     "s": 416.3,
+     "e": 418.16,
+     "text": "Tre i kvadrat är nio."
     },
     {
-     "s": 270.88,
-     "e": 277.84,
-     "text": "2500 plus 300 plus 9 är 2809."
+     "s": 419.46,
+     "e": 420.46,
+     "text": "Nu lägger vi ihop."
     },
     {
-     "s": 278.84,
-     "e": 285.32,
-     "text": "Med bokstäver är parentesen a plus b i kvadrat lika med a i kvadrat,"
+     "s": 421.32,
+     "e": 426,
+     "text": "Tvåtusen femhundra plus trehundra är tvåtusen åttahundra."
     },
     {
-     "s": 285.62,
-     "e": 289.14,
-     "text": "plus 2ab, plus b i kvadrat."
+     "s": 427,
+     "e": 430.32,
+     "text": "Plus nio blir det tvåtusen åttahundranio."
     },
     {
-     "s": 290.14,
-     "e": 294.92,
-     "text": "Det är första kvadreringsregeln, och den står också på formelbladet."
+     "s": 431.32,
+     "e": 435.34,
+     "text": "Så femtiotre i kvadrat är tvåtusen åttahundranio."
     },
     {
-     "s": 296.22,
-     "e": 301.28,
-     "text": "Reglerna gäller alla tal, så de gäller också när ett tal är okänt."
+     "s": 436.64,
+     "e": 439.52,
+     "text": "Första raden heter första kvadreringsregeln."
     },
     {
-     "s": 302.28,
-     "e": 304.64,
-     "text": "Det okända talet kallar vi x."
+     "s": 440.52,
+     "e": 442.4,
+     "text": "Ser du skillnaden mot den andra regeln?"
     },
     {
-     "s": 305.64,
-     "e": 309.16,
-     "text": "Ta parentesen x plus 5 i kvadrat."
+     "s": 443.4,
+     "e": 445.82,
+     "text": "Det är bara tecknet framför dubbla produkten."
     },
     {
-     "s": 310.16,
-     "e": 314.1,
-     "text": "Här är a lika med x, och b lika med 5."
+     "s": 447.12,
+     "e": 451.82,
+     "text": "Reglerna gäller alla tal, så de gäller också när vi inte vet vilket tal det är."
     },
     {
-     "s": 315.4,
-     "e": 317.48,
-     "text": "Först kommer x i kvadrat."
+     "s": 452.82,
+     "e": 455.16,
+     "text": "Ett okänt tal brukar vi kalla x."
     },
     {
-     "s": 318.48,
-     "e": 324.12,
-     "text": "Dubbla produkten är 2 gånger x gånger 5, alltså 10x."
+     "s": 456.16,
+     "e": 459.08,
+     "text": "Ta parentesen x plus fem i kvadrat."
     },
     {
-     "s": 325.12,
-     "e": 328.72,
-     "text": "Sist kommer 5 i kvadrat, som är 25."
+     "s": 460.08,
+     "e": 461.08,
+     "text": "Vad är a nu?"
     },
     {
-     "s": 329.72,
-     "e": 334.66,
-     "text": "Svaret är x i kvadrat plus 10x plus 25."
+     "s": 461.88,
+     "e": 462.88,
+     "text": "Det är x."
     },
     {
-     "s": 335.66,
-     "e": 339.96,
-     "text": "Men x i kvadrat och 10x kan inte läggas ihop."
+     "s": 463.54,
+     "e": 464.82,
+     "text": "Och b är fem."
     },
     {
-     "s": 340.96,
-     "e": 346.78,
-     "text": "x i kvadrat är x gånger x, så det är en annan sorts term än 10x."
+     "s": 466.12,
+     "e": 468.54,
+     "text": "Det står plus, så vi tar första regeln."
     },
     {
-     "s": 348.08,
-     "e": 350.64,
+     "s": 469.54,
+     "e": 473.12,
+     "text": "Vi sätter in x där det står a, och fem där det står b."
+    },
+    {
+     "s": 474.12,
+     "e": 480.16,
+     "text": "Det blir x i kvadrat, plus två gånger x gånger fem, plus fem i kvadrat."
+    },
+    {
+     "s": 481.16,
+     "e": 482.44,
+     "text": "Nu del för del."
+    },
+    {
+     "s": 483.44,
+     "e": 485.04,
+     "text": "x i kvadrat får stå som det är."
+    },
+    {
+     "s": 486.04,
+     "e": 489.76,
+     "text": "Två gånger fem är tio, så mitten blir tio x."
+    },
+    {
+     "s": 490.76,
+     "e": 492.52,
+     "text": "Fem i kvadrat är tjugofem."
+    },
+    {
+     "s": 493.52,
+     "e": 497.76,
+     "text": "Svaret är x i kvadrat plus tio x plus tjugofem."
+    },
+    {
+     "s": 499.06,
+     "e": 503.08,
+     "text": "Kan man lägga ihop x i kvadrat och tio x? Nej."
+    },
+    {
+     "s": 504.08,
+     "e": 506.02,
+     "text": "x i kvadrat är x gånger x."
+    },
+    {
+     "s": 507.02,
+     "e": 509,
+     "text": "Tio x är tio stycken x."
+    },
+    {
+     "s": 510,
+     "e": 513.62,
+     "text": "Det är två olika sorters termer, så de får stå kvar var för sig."
+    },
+    {
+     "s": 514.92,
+     "e": 517.02,
      "text": "Nu ett exempel där många gör fel."
     },
     {
-     "s": 351.64,
-     "e": 355.86,
-     "text": "Ta parentesen 3x minus 4 i kvadrat."
+     "s": 518.02,
+     "e": 521.3,
+     "text": "Ta parentesen tre x minus fyra i kvadrat."
     },
     {
-     "s": 356.86,
-     "e": 361.16,
-     "text": "Här är a lika med 3x, och b lika med 4."
+     "s": 522.3,
+     "e": 524.76,
+     "text": "Det står minus, så vi tar andra regeln."
     },
     {
-     "s": 362.16,
-     "e": 368.02,
-     "text": "Hela 3x ska i kvadrat, alltså 3x gånger 3x."
+     "s": 525.76,
+     "e": 526.76,
+     "text": "Vad är a?"
     },
     {
-     "s": 369.02,
-     "e": 371.28,
-     "text": "Det blir 9x i kvadrat."
+     "s": 527.6,
+     "e": 528.72,
+     "text": "Hela tre x."
     },
     {
-     "s": 372.58,
-     "e": 379.14,
-     "text": "Dubbla produkten är 2 gånger 3x gånger 4, alltså 24x."
+     "s": 529.72,
+     "e": 531.02,
+     "text": "Och b är fyra."
     },
     {
-     "s": 380.14,
-     "e": 383.46,
-     "text": "Den är minus, för det är minus i parentesen."
+     "s": 532.02,
+     "e": 533.02,
+     "text": "Vi sätter in dem."
     },
     {
-     "s": 384.46,
-     "e": 386.6,
-     "text": "4 i kvadrat är 16."
+     "s": 533.84,
+     "e": 539.96,
+     "text": "Det blir parentesen tre x i kvadrat, minus två gånger tre x gånger fyra,"
     },
     {
-     "s": 387.6,
-     "e": 393.52,
-     "text": "Svaret är 9x i kvadrat minus 24x plus 16."
+     "s": 540.36,
+     "e": 542.06,
+     "text": "plus fyra i kvadrat."
     },
     {
-     "s": 394.82,
-     "e": 402.76,
-     "text": "Det vanligaste felet är att bara ta varje term i kvadrat och skriva 9x i kvadrat plus 16."
+     "s": 543.06,
+     "e": 546.34,
+     "text": "Parentesen visar att hela tre x ska i kvadrat."
     },
     {
-     "s": 403.76,
-     "e": 405.96,
-     "text": "Då har man glömt dubbla produkten."
+     "s": 547.64,
+     "e": 548.92,
+     "text": "Nu del för del."
     },
     {
-     "s": 406.96,
-     "e": 410.52,
-     "text": "Tänk på Bethe, där mitten var minus 200."
+     "s": 549.92,
+     "e": 554.16,
+     "text": "Parentesen tre x i kvadrat är tre x gånger tre x."
     },
     {
-     "s": 411.82,
-     "e": 413.42,
+     "s": 555.16,
+     "e": 559.26,
+     "text": "Tre gånger tre är nio, och x gånger x är x i kvadrat."
+    },
+    {
+     "s": 560.26,
+     "e": 564.04,
+     "text": "Det blir nio x i kvadrat. Sen mitten."
+    },
+    {
+     "s": 565.04,
+     "e": 567.86,
+     "text": "Två gånger tre gånger fyra är tjugofyra."
+    },
+    {
+     "s": 568.86,
+     "e": 571.26,
+     "text": "Så det blir minus tjugofyra x."
+    },
+    {
+     "s": 572.26,
+     "e": 573.96,
+     "text": "Sist fyra i kvadrat."
+    },
+    {
+     "s": 574.96,
+     "e": 575.96,
+     "text": "Det är sexton."
+    },
+    {
+     "s": 576.82,
+     "e": 582.02,
+     "text": "Svaret är nio x i kvadrat minus tjugofyra x plus sexton."
+    },
+    {
+     "s": 583.32,
+     "e": 584.96,
+     "text": "Vad är det då många gör fel?"
+    },
+    {
+     "s": 585.96,
+     "e": 589.06,
+     "text": "De tar bara den första och den sista delen i kvadrat."
+    },
+    {
+     "s": 590.06,
+     "e": 593.56,
+     "text": "Så de skriver nio x i kvadrat plus sexton."
+    },
+    {
+     "s": 594.56,
+     "e": 595.92,
+     "text": "Men då fattas mitten."
+    },
+    {
+     "s": 596.92,
+     "e": 598.72,
+     "text": "Man har glömt dubbla produkten."
+    },
+    {
+     "s": 599.72,
+     "e": 600.72,
+     "text": "Tänk på Bethe."
+    },
+    {
+     "s": 601.68,
+     "e": 606.38,
+     "text": "Utan mitten hade han fått tvåtusen femhundrafyra, och det är fel."
+    },
+    {
+     "s": 607.68,
+     "e": 609.04,
      "text": "Nu en tredje regel."
     },
     {
-     "s": 414.42,
-     "e": 417.04,
-     "text": "Ta 52 gånger 48."
+     "s": 610.04,
+     "e": 612.14,
+     "text": "Ta femtiotvå gånger fyrtioåtta."
     },
     {
-     "s": 418.04,
-     "e": 423.54,
-     "text": "Båda talen ligger 2 från 50, det ena över och det andra under."
+     "s": 613.14,
+     "e": 614.94,
+     "text": "Var ligger talen på tallinjen?"
     },
     {
-     "s": 424.54,
-     "e": 431.44,
-     "text": "Så det är parentesen 50 plus 2, gånger parentesen 50 minus 2."
+     "s": 615.94,
+     "e": 618.84,
+     "text": "Femtiotvå ligger två steg efter femtio."
     },
     {
-     "s": 432.74,
-     "e": 436.22,
-     "text": "Vi multiplicerar varje term med varje term."
+     "s": 619.84,
+     "e": 622.1,
+     "text": "Fyrtioåtta ligger två steg före."
     },
     {
-     "s": 437.22,
-     "e": 440.8,
-     "text": "50 gånger 50 är 2500."
+     "s": 623.1,
+     "e": 629.04,
+     "text": "Så det är parentesen femtio plus två, gånger parentesen femtio minus två."
     },
     {
-     "s": 441.8,
-     "e": 445.2,
-     "text": "50 gånger minus 2 är minus 100."
+     "s": 630.34,
+     "e": 633.28,
+     "text": "Vi drar fyra pilar igen, en för varje par."
     },
     {
-     "s": 446.2,
-     "e": 448.86,
-     "text": "2 gånger 50 är plus 100."
+     "s": 634.28,
+     "e": 637.28,
+     "text": "Femtio gånger femtio är tvåtusen femhundra."
     },
     {
-     "s": 449.86,
-     "e": 453.1,
-     "text": "2 gånger minus 2 är minus 4."
+     "s": 638.28,
+     "e": 640.96,
+     "text": "Femtio gånger minus två är minus hundra."
     },
     {
-     "s": 454.4,
-     "e": 459.18,
-     "text": "Minus 100 och plus 100 tar ut varandra, så mitten försvinner."
+     "s": 641.96,
+     "e": 644.08,
+     "text": "Två gånger femtio är plus hundra."
     },
     {
-     "s": 460.18,
-     "e": 467.62,
-     "text": "Kvar blir 2500 minus 4, alltså 2496."
+     "s": 645.08,
+     "e": 650.06,
+     "text": "Två gånger minus två är minus fyra, för plus gånger minus blir minus."
     },
     {
-     "s": 468.92,
-     "e": 475.58,
-     "text": "Med bokstäver är parentesen a plus b, gånger parentesen a minus b,"
+     "s": 651.36,
+     "e": 652.38,
+     "text": "Kolla på mitten nu."
     },
     {
-     "s": 476.04,
-     "e": 480.02,
-     "text": "lika med a i kvadrat minus b i kvadrat."
+     "s": 653.38,
+     "e": 655.9,
+     "text": "Där står minus hundra och plus hundra."
     },
     {
-     "s": 481.02,
-     "e": 486.54,
-     "text": "Två parenteser där bara tecknet i mitten skiljer kallas konjugat."
+     "s": 656.9,
+     "e": 661.48,
+     "text": "Tar man bort hundra och sen lägger tillbaka hundra, har man lika mycket som förut."
     },
     {
-     "s": 487.54,
-     "e": 492.82,
-     "text": "Därför heter det här konjugatregeln, och den står också på formelbladet."
+     "s": 662.48,
+     "e": 663.68,
+     "text": "Så mitten försvinner."
     },
     {
-     "s": 494.12,
-     "e": 496.26,
-     "text": "Med x fungerar det likadant."
+     "s": 664.68,
+     "e": 667.86,
+     "text": "Kvar blir tvåtusen femhundra minus fyra."
     },
     {
-     "s": 497.26,
-     "e": 505.66,
-     "text": "Parentesen x plus 6, gånger parentesen x minus 6, är x i kvadrat minus 36."
+     "s": 668.86,
+     "e": 671.5,
+     "text": "Det är tvåtusen fyrahundranittiosex."
     },
     {
-     "s": 506.66,
-     "e": 509.94,
-     "text": "Det spelar ingen roll vilken parentes som står först."
+     "s": 672.8,
+     "e": 675.84,
+     "text": "Den här regeln står på tredje raden på formelbladet."
     },
     {
-     "s": 511.24,
-     "e": 515.28,
-     "text": "Bethe och Feynman räknade tillsammans i två år till."
+     "s": 676.84,
+     "e": 685.06,
+     "text": "Parentesen a plus b, gånger parentesen a minus b, är lika med a i kvadrat minus b i kvadrat."
     },
     {
-     "s": 516.44,
-     "e": 523.06,
-     "text": "I juli 1945 provsprängdes den första atombomben i öknen i New Mexico."
+     "s": 686.06,
+     "e": 687.34,
+     "text": "Kolla på parenteserna."
     },
     {
-     "s": 524.06,
-     "e": 525.86,
-     "text": "Tyskland hade redan gett upp."
+     "s": 688.34,
+     "e": 691.4,
+     "text": "De är likadana, bara tecknet i mitten skiljer."
     },
     {
-     "s": 526.86,
-     "e": 531.7,
-     "text": "Men några veckor senare släppte USA två atombomber över Japan,"
+     "s": 692.4,
+     "e": 695.1,
+     "text": "Två sådana parenteser kallas konjugat."
     },
     {
-     "s": 532.16,
-     "e": 534.92,
-     "text": "och över 100 000 människor dog."
+     "s": 696.1,
+     "e": 698.36,
+     "text": "Därför heter det här konjugatregeln."
     },
     {
-     "s": 535.92,
-     "e": 541.72,
-     "text": "Efter kriget arbetade Bethe resten av sitt liv för att minska antalet kärnvapen."
+     "s": 699.36,
+     "e": 702.44,
+     "text": "Hos Bethe är a femtio och b två."
     },
     {
-     "s": 543.02,
-     "e": 544.84,
+     "s": 703.44,
+     "e": 706.98,
+     "text": "Så det blir femtio i kvadrat minus två i kvadrat."
+    },
+    {
+     "s": 707.98,
+     "e": 712.08,
+     "text": "Det är tvåtusen femhundra minus fyra, precis som förut."
+    },
+    {
+     "s": 713.38,
+     "e": 717.6,
+     "text": "I juli nittonhundrafyrtiofem provsprängdes den första atombomben,"
+    },
+    {
+     "s": 717.96,
+     "e": 719.6,
+     "text": "i öknen i New Mexico."
+    },
+    {
+     "s": 720.6,
+     "e": 722.36,
+     "text": "Då hade Tyskland redan gett upp."
+    },
+    {
+     "s": 723.36,
+     "e": 727.78,
+     "text": "Men tre veckor senare släppte USA två atombomber över Japan."
+    },
+    {
+     "s": 728.78,
+     "e": 731,
+     "text": "Över hundratusen människor dog."
+    },
+    {
+     "s": 732,
+     "e": 737.38,
+     "text": "Efter kriget arbetade Bethe i många år för att det skulle finnas färre atombomber i världen."
+    },
+    {
+     "s": 738.68,
+     "e": 739.82,
      "text": "Nu är det din tur."
     },
     {
-     "s": 545.96,
-     "e": 551,
-     "text": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel."
+     "s": 740.82,
+     "e": 745.28,
+     "text": "När Bethe förklarade sitt knep för Feynman, tog han fyrtiosju som exempel."
     },
     {
-     "s": 552,
-     "e": 555.76,
-     "text": "Räkna 47 i kvadrat i huvudet, som Bethe."
+     "s": 746.28,
+     "e": 749.58,
+     "text": "Räkna fyrtiosju i kvadrat i huvudet, som Bethe."
     }
    ]
   },
