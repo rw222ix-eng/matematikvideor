@@ -232,8 +232,8 @@
         "exempel": "t.ex. 10^6",
         "tangenter": ["^", "-", "(", ")"],
         "fel": [
-          { "svar": "10^20", "text": "Du har gångrat exponenterna. När två tiopotenser gångras läggs exponenterna ihop: 4 + 5." },
-          { "svar": "10^1", "text": "Du har dragit bort exponenterna. Det gör man när man delar. När man gångrar läggs de ihop: 4 + 5." },
+          { "svar": "10^20", "text": "Du har tagit exponenterna gånger varandra. När potenserna tas gånger varandra läggs exponenterna ihop: 4 + 5." },
+          { "svar": "10^1", "text": "Du har dragit bort exponenterna. Det gör man när man delar. När potenserna tas gånger varandra läggs exponenterna ihop: 4 + 5." },
           { "svar": "100^9", "text": "Basen ska stå kvar som 10. Det är bara exponenterna som läggs ihop: 4 + 5." }
         ]
       },
@@ -251,10 +251,10 @@
     ],
     "ledtrad": {
       "fras": "Baserna är lika, så vi lägger ihop",
-      "text": "När två tiopotenser gångras läggs exponenterna ihop. Sedan letar du upp tiopotensen i prefixtabellen."
+      "text": "När två tiopotenser tas gånger varandra läggs exponenterna ihop. Sedan letar du upp tiopotensen i prefixtabellen."
     },
     "losning": [
-      "När två tiopotenser gångras läggs exponenterna ihop.",
+      "När två tiopotenser tas gånger varandra läggs exponenterna ihop.",
       "10⁴ · 10⁵ = 10^(4 + 5)",
       "4 + 5 = 9, så det blir 10⁹.",
       "I tabellen står 10⁹ under bokstaven G, och det är giga."
