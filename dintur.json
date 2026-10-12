@@ -1032,7 +1032,7 @@
           },
           {
             "svar": "900",
-            "text": "Du har räknat 5 · 180. Formeln säger n minus 2, alltså 3 · 180."
+            "text": "Du har räknat 5 · 180. Regeln på bladet säger n minus 2, alltså (5 − 2) · 180 = 3 · 180."
           },
           {
             "svar": "360",
@@ -1072,12 +1072,14 @@
     ],
     "ledtrad": {
       "fras": "En stoppskylt har åtta hörn",
-      "text": "Sätt in n = 5 i S = (n − 2) · 180°, och dela sedan vinkelsumman med 5, för alla vinklarna är lika stora."
+      "text": "Skriv regeln på bladet, S = (n − 2) · 180°. Biten har fem hörn, så sätt in 5 där n står. Dela sedan vinkelsumman med 5, för alla vinklarna är lika stora."
     },
     "losning": [
-      "Biten har 5 hörn, så n är 5.",
-      "5 − 2 = 3, och vinkelsumman är 3 · 180 = 540 grader.",
-      "Alla fem vinklarna är lika stora, så varje vinkel är 540 / 5 = 108 grader."
+      "Regeln på bladet: S = (n − 2) · 180°",
+      "Biten har 5 hörn, så n = 5: S = (5 − 2) · 180°",
+      "Först parentesen: 5 − 2 = 3. Det är tre trianglar.",
+      "S = 3 · 180° = 540°. Vinkelsumman är 540 grader.",
+      "Alla fem vinklarna är lika stora, så varje vinkel är 540° / 5 = 108°."
     ],
     "notisFran": "Nu är det din tur"
   },
