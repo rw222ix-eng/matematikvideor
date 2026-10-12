@@ -2681,7 +2681,7 @@
   // filmen handlar om (Rickard 2026-09-26: "Del 3  Logaritmer", "Olikheter  Arkimedes och cirkeln").
   const kortOverst = (v, h) => (arDelserie(v)
     ? `Del ${v.del ?? ""}`   // också Ma 1-delarna på Ma 2-hyllan: "Ma 1 / Ma 2" står på raden under, och rubriken ryms på en rad
-    : versalTrygg(v.serie === "ma2a" ? titelDelar(v)[1] || v.moment : v.moment));
+    : versalTrygg(v.moment));   // Ma 2a också (Rickard 2026-10-12: rubriken visar vad man gör)
   // Raden står i versaler, men en ekvation får inte bli versaler ("x² = a" är inte "X² = A"): ord med en exponent,
   // ett likhetstecken eller en ensam bokstav som variabel står kvar som de skrivs. Namn som pq-formeln blir versaler.
   function versalTrygg(text) {
