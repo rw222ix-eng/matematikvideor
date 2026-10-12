@@ -890,7 +890,7 @@
           {
             "svar": "3.802",
             "tolerans": 0.06,
-            "text": "Det är svaret med 20 procent ränta. 2 procent ger förändringsfaktorn 1,02, så x = lg 2 / lg 1,02."
+            "text": "Det är svaret med 20 procent ränta. 2 procent ränta ger 102 procent, alltså 1,02, så x = lg 2 / lg 1,02."
           },
           {
             "svar": "0.0286",
@@ -900,7 +900,7 @@
           {
             "svar": "-0.1772",
             "tolerans": 0.01,
-            "text": "Ett antal år kan inte vara negativt. Förändringsfaktorn är 1,02, inte 0,02."
+            "text": "Ett antal år kan inte vara negativt. Pengarna blir 102 procent varje år, så talet nere är 1,02, inte 0,02."
           },
           {
             "svar": "50",
@@ -919,14 +919,16 @@
     ],
     "ledtrad": {
       "fras": "Nu blir pengarna hundratio procent",
-      "text": "Gör som med 10 procent i filmen. Med 2 procent ränta gångras pengarna med 1,02 varje år, så ekvationen blir 1,02ˣ = 2. Då är x = lg 2 / lg 1,02, och det räknar du på räknaren."
+      "text": "Gör som med 10 procent i filmen. Med 2 procent ränta tar vi pengarna gånger 1,02 varje år, så ekvationen blir 1,02ˣ = 2. Ta lg av båda sidorna och använd regeln lg xᵖ = p · lg x från bladet. Då är x = lg 2 / lg 1,02, och det räknar du på räknaren."
     },
     "losning": [
-      "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år, så de gångras med 1,02.",
+      "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år, så vi tar dem gånger 1,02.",
       "Efter x år finns det 1000 · 1,02ˣ kronor, så 1000 · 1,02ˣ = 2000.",
       "Dela båda sidorna med 1000: 1,02ˣ = 2.",
-      "Ta lg av båda sidorna, och regeln lg xᵖ = p · lg x flyttar ner x: x · lg 1,02 = lg 2.",
-      "x = lg 2 / lg 1,02 ≈ 35,0. Det tar ungefär 35 år."
+      "Ta lg av båda sidorna: lg 1,02ˣ = lg 2.",
+      "Regeln på bladet: lg xᵖ = p · lg x. Här står 1,02 där x står och x där p står. Så vi skriver x · lg 1,02 = lg 2.",
+      "Dela båda sidorna med lg 1,02: x = lg 2 / lg 1,02.",
+      "På räknaren: två tryck på ln log, 2, ), ÷, två tryck på ln log, 1.02, enter. x ≈ 35,0. Det tar ungefär 35 år."
     ],
     "notisFran": "Nu ett övningstal"
   },
