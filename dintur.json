@@ -340,7 +340,7 @@
         "fel": [
           { "svar": "90", "text": "90 grader är vinkeln när pizzan delas i fyra bitar. Här är det åtta: 360 delat med 8." },
           { "svar": "8", "text": "8 är antalet bitar. Hela varvet är 360 grader, och det delas i 8 lika stora bitar." },
-          { "svar": "2880", "text": "Du har gångrat med 8. Hela varvet, 360 grader, ska delas i 8 bitar." }
+          { "svar": "2880", "text": "Du har tagit 360 gånger 8. Hela varvet, 360 grader, ska delas i 8 lika stora bitar." }
         ]
       },
       {
@@ -353,20 +353,21 @@
         "fel": [
           { "svar": "15.7", "tolerans": 0.01, "text": "15,7 centimeter är kanten när pizzan delas i fyra bitar. Här tar du en åttondel av 62,8." },
           { "svar": "39.25", "tolerans": 0.05, "text": "Det är bitens area, 314 delat med 8. Den böjda kanten är en åttondel av omkretsen, 62,8." },
-          { "svar": "502.4", "tolerans": 0.05, "text": "Du har gångrat med 8. En bit har en åttondel av kanten, så dela 62,8 med 8." },
+          { "svar": "502.4", "tolerans": 0.05, "text": "Du har tagit 62,8 gånger 8. En bit har en åttondel av kanten, så dela 62,8 med 8." },
           { "svar": "10", "text": "10 centimeter är radien, den raka sidan på biten. Den böjda kanten är en åttondel av 62,8." }
         ]
       }
     ],
     "ledtrad": {
       "fras": "Vi delar pizzan i fyra lika stora bitar",
-      "text": "Vinkeln är 360 grader delat med antalet bitar. Den böjda kanten är samma andel av omkretsen 62,8."
+      "text": "Vinkeln är 360 grader delat med antalet bitar. Sätt sedan in v i formeln för bågen på bladet, b_l = v/360° · 2πr. 2πr är hela omkretsen, 62,8 cm."
     },
     "losning": [
-      "Hela varvet är 360 grader, och det delas i 8 lika stora bitar.",
-      "360 / 8 = 45, så vinkeln blir 45 grader.",
-      "45 delat med 360 är en åttondel.",
-      "Den böjda kanten är en åttondel av omkretsen: 62,8 / 8 = 7,85 centimeter."
+      "Hela varvet är 360 grader, och det delas i 8 lika stora bitar. 360 / 8 = 45, så v = 45°.",
+      "Formeln för bågen på bladet: b_l = v/360° · 2πr.",
+      "2πr är hela omkretsen, 62,8 cm. Så vi skriver b_l = 45/360° · 62,8.",
+      "45/360 är en åttondel, för 8 · 45 = 360.",
+      "62,8 / 8 = 7,85, så den böjda kanten är ungefär 7,85 cm."
     ],
     "notisFran": "Nu är det din tur"
   },
