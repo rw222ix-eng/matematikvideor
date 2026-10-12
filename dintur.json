@@ -963,7 +963,7 @@
         "fel": [
           {
             "svar": "24",
-            "text": "Du har gångrat 12 med 2. Pinnens skugga är dubbelt så lång som pinnen, så stolpen är hälften så hög som sin skugga: 12 delat med 2."
+            "text": "Du har tagit 12 gånger 2. Skriv regeln: 1/x = 2/12. I högra bråket är talet nere 6 gånger talet uppe, så x är 6 gånger 1."
           },
           {
             "svar": "12",
@@ -976,7 +976,7 @@
           {
             "svar": "0.1667",
             "tolerans": 0.01,
-            "text": "Du har räknat 2 delat med 12. Vänd på det: 12 är 6 gånger så mycket som 2, så stolpen är 6 gånger så hög som pinnen."
+            "text": "Du har räknat 2 delat med 12. x står nere i vänstra bråket. I högra bråket är talet nere 6 gånger talet uppe, så x = 6 · 1."
           },
           {
             "svar": "8",
@@ -991,13 +991,14 @@
     ],
     "ledtrad": {
       "fras": "Pinnen i den lilla triangeln motsvarar",
-      "text": "Pinnen med sin skugga och stolpen med sin skugga är likformiga trianglar. Då är 1 delat med x lika med 2 delat med 12."
+      "text": "Gör som med trädet i filmen. Skriv regeln från bladet, a/d = b/e. a är pinnen, d är lyktstolpen, b är pinnens skugga och e är stolpens skugga. Då står det 1/x = 2/12."
     },
     "losning": [
       "Pinnen och lyktstolpen står rakt upp och solen lyser lika snett på båda, så trianglarna är likformiga.",
-      "1 / x = 2 / 12",
-      "12 är 6 gånger så mycket som 2, för 2 · 6 = 12.",
-      "Då är x också 6 gånger så mycket som 1, så lyktstolpen är 6 meter hög."
+      "Regeln på bladet: a/d = b/e. Här är a = 1 (pinnen), d = x (stolpen), b = 2 (pinnens skugga) och e = 12 (stolpens skugga).",
+      "1/x = 2/12",
+      "I högra bråket är talet nere 6 gånger talet uppe, för 2 · 6 = 12.",
+      "Då är det likadant i vänstra bråket: x = 6 · 1 = 6. Lyktstolpen är 6 meter hög."
     ],
     "notisFran": "Allt det här står på sidan tre"
   },
