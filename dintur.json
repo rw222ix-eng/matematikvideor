@@ -1160,13 +1160,15 @@
     ],
     "ledtrad": {
       "fras": "Vi lägger ihop bitarna",
-      "text": "Gör som med mjölkpaketen. Skriv vad strecken betyder i gram: μ = 60, μ − σ = 56 och μ − 2σ = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
+      "text": "Gör som med mjölkpaketen. Skriv talen under strecken i figuren. I figuren står μ − σ, så vi skriver 60 − 4 = 56. I figuren står μ − 2σ. Två sigma är 2 · 4 = 8, så vi skriver 60 − 8 = 52. Lägg sedan ihop procenttalen mellan 52 och 60."
     },
     "losning": [
-      "μ = 60 g och σ = 4 g, så μ − σ = 60 − 4 = 56 g och μ − 2σ = 60 − 8 = 52 g.",
-      "Mellan 52 och 56 gram (μ − 2σ till μ − σ) står 13,6 %.",
-      "Mellan 56 och 60 gram (μ − σ till μ) står 34,1 %.",
-      "13,6 + 34,1 = 47,7, så 47,7 % av äggen väger mellan 52 och 60 gram."
+      "Här är μ = 60 g och σ = 4 g.",
+      "I figuren står μ − σ. Så vi skriver 60 − 4 = 56 g.",
+      "I figuren står μ − 2σ. Två sigma är 2 · 4 = 8, så vi skriver 60 − 8 = 52 g.",
+      "Mellan μ − 2σ och μ − σ, alltså mellan 52 och 56 gram, står 13,6 %.",
+      "Mellan μ − σ och μ, alltså mellan 56 och 60 gram, står 34,1 %.",
+      "Vi lägger ihop bitarna: 13,6 + 34,1 = 47,7. Så 47,7 % av äggen väger mellan 52 och 60 gram."
     ],
     "notisFran": "Nu tar vi tre bitar"
   },
