@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-12T17:21:42.763Z",
+ "byggd": "2026-10-12T18:53:53.903Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -25570,7 +25570,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-03-berakna-vinklar-v4/ma1c-k6-03-berakna-vinklar-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-03-berakna-vinklar-v5/ma1c-k6-03-berakna-vinklar-1080p.mp4",
    "moment": "Beräkna vinklar",
    "begrepp": [
     "arcussinus",
@@ -25585,7 +25585,7 @@
    ],
    "beskrivning": "Lutande tornet i Pisa stängdes 1990, för att det lutade lite mer för varje år. Gruppen som skulle rädda det ville veta lutningen i grader, men ett snöre från tornets kant gav bara två längder. Vi ritar triangeln, väljer kvot och räknar baklänges från kvoten till vinkeln med arcussinus och arcustangens, och tar fram den andra vinkeln i triangeln.",
    "youtube": null,
-   "langd": 594,
+   "langd": 752,
    "omslag": "omslag/ma1c-k6-03-berakna-vinklar.jpg?v=7de30a09",
    "omslagRen": "omslag/ma1c-k6-03-berakna-vinklar-ren.jpg?v=6b249dbc",
    "omslagStor": null,
@@ -25595,11 +25595,11 @@
      "text": "Det är år nittonhundranittio, och vi är i staden Pisa i Italien. Där står ett torn av vit marmor. Det är över åttahundra år gammalt, och det lutar. Marken under den södra sidan är mjukare än under den norra. Så tornet har lutat ända sedan det byggdes. Och för varje år lutar det lite mer."
     },
     {
-     "t": 35,
+     "t": 34,
      "text": "I januari nittonhundranittio stängs tornet för alla besökare. Italiens regering är rädd att det ska rasa. Därför samlar regeringen en grupp experter som ska rädda tornet. En av dem är John Burland. Han är ingenjör i London. Han forskar om mark som sjunker under tunga byggnader."
     },
     {
-     "t": 58,
+     "t": 57,
      "text": "Gruppen bestämmer att tornet ska luta en halv grad mindre. Det ska inte bli rakt, bara luta lite mindre. Men först måste Burland veta hur många grader tornet lutar nu."
     },
     {
@@ -25611,91 +25611,115 @@
      "text": "Snöret ger alltså två längder. Men gruppen vill veta lutningen i grader. Hur många grader lutar tornet?"
     },
     {
-     "t": 106,
+     "t": 105,
      "text": "Det kan vi räkna ut. Vi börjar med tornet, snöret och marken. Tillsammans bildar de en triangel. Snöret hänger rakt ner. Så där det möter marken blir hörnet helt rakt, som hörnet på ett papper. Ett sånt hörn kallas en rät vinkel. Den är nittio grader."
     },
     {
-     "t": 130,
+     "t": 129,
      "text": "Var syns lutningen i triangeln? Uppe vid kanten, mellan tornet och snöret. Där är det en smal vinkel. Lutar tornet mer, blir vinkeln större. Det är den vinkeln vi vill veta. Vi kallar den v."
     },
     {
-     "t": 149,
+     "t": 147,
      "text": "Nu ger vi triangelns sidor namn. Vilken sida är längst? Det är tornet, fyrtiosex meter. Den ligger mitt emot den räta vinkeln. Den längsta sidan kallas hypotenusa. De två andra sidorna kallas kateter."
     },
     {
-     "t": 169,
+     "t": 167,
      "text": "Kateterna får namn efter vinkeln v. Tänk dig att du står uppe i hörnet där v är. Vilken sida ligger mitt emot dig? Det är sträckan på marken, fyra komma tre meter. Den kallas motstående katet. Snöret går ut från ditt hörn. Det ligger intill v, så det kallas närliggande katet."
     },
     {
-     "t": 195,
+     "t": 192,
      "text": "Men hur kan två längder säga något om en vinkel? Tänk dig att tornet lutar mer. Då hamnar snöret längre bort från foten. Sträckan på marken blir längre, ser du? Och lutar tornet mindre, blir sträckan kortare."
     },
     {
-     "t": 213,
-     "text": "Fast ett högre torn ger också en längre sträcka, även om det lutar lika mycket. Därför jämför vi sträckan med tornet. Vi delar fyra komma tre med fyrtiosex. Ett tal delat med ett annat kallas en kvot. Och varje lutning har sin egen kvot."
+     "t": 211,
+     "text": "Fast ett högre torn ger också en längre sträcka, även om det lutar lika mycket. Därför jämför vi sträckan med tornet. Vi delar sträckan på marken med tornet. Ett tal delat med ett annat kallas en kvot. Och varje lutning har sin egen kvot."
     },
     {
-     "t": 235,
-     "text": "Den här kvoten har ett namn. Den kallas sinus för vinkeln v. Sinus v är alltså fyra komma tre delat med fyrtiosex. Formelbladet skriver samma sak med bokstäver, under rubriken Trigonometri. Där är a motstående katet, och c är hypotenusan. Sinus v är a delat med c."
+     "t": 231,
+     "text": "Den här kvoten har ett namn. Den kallas sinus för vinkeln v. Sinus står på formelbladet, under rubriken Trigonometri. Titta på triangeln på bladet. Där har sidorna bokstäver. Vinkeln heter v, precis som hos oss. Sidan a står mitt emot v. Den är motstående katet. Sidan b går ut från v. Den är närliggande katet. Sidan c är den längsta sidan. Den är hypotenusan."
     },
     {
-     "t": 260,
-     "text": "Där står två kvoter till. Cosinus v är b delat med c. Det är närliggande katet delat med hypotenusan. Tangens v är a delat med b. Det är motstående katet delat med närliggande katet. Tangens använder vi snart."
+     "t": 268,
+     "text": "Bredvid triangeln står tre formler. Den första är sinus v. Den är a delat med c. Det betyder motstående katet delat med hypotenusan. Den andra är cosinus v. Den är b delat med c. Det betyder närliggande katet delat med hypotenusan. Den tredje är tangens v. Den är a delat med b. Det betyder motstående katet delat med närliggande katet."
     },
     {
-     "t": 280,
+     "t": 303,
+     "text": "Nu läser vi av vår triangel på samma sätt. Vi börjar i vinkeln v, uppe vid kanten. Sträckan på marken står mitt emot v. Så a är fyra komma tre. Tornet är den längsta sidan. Så c är fyrtiosex. Vilken formel har både a och c? Sinus v är a delat med c. Där finns båda."
+    },
+    {
+     "t": 331,
+     "text": "Vi skriver formeln först. Sinus v är lika med a delat med c. Sen skriver vi den igen med talen. I formeln står a. Här är a fyra komma tre. Under bråkstrecket står c. Här är c fyrtiosex. Vinkeln v vet vi inte än, så v står kvar. Så sinus v är lika med fyra komma tre delat med fyrtiosex."
+    },
+    {
+     "t": 360,
      "text": "Nu vet vi kvoten. Men vi söker vinkeln. Vi måste alltså gå baklänges, från kvoten till vinkeln. Hur gör vi det? Varje vinkel har sin egen kvot, och räknaren vet vilken. Skriver du in en vinkel, kan den ge dig kvoten. Skriver du in kvoten, kan den ge dig vinkeln. Det andra hållet kallas arcussinus."
     },
     {
-     "t": 307,
+     "t": 388,
      "text": "Arcussinus står på räknarens sinusknapp. Den skrivs sin med en liten minus etta uppe till höger. Man når den genom att trycka två gånger på sinusknappen. Men först kollar vi att räknaren räknar i grader. Då står det DEG högst upp på skärmen. Står det något annat, tryck på mode, välj DEGREE och tryck enter."
     },
     {
-     "t": 332,
-     "text": "Nu trycker vi två gånger på sin. Sen skriver vi hela divisionen, fyra komma tre delat med fyrtiosex. Avrunda inte kvoten först, för då kan svaret bli fel. Vi stänger parentesen och trycker enter. Räknaren ger ungefär fem komma fyra. Tornet lutar alltså ungefär fem komma fyra grader. Det låter lite. Men vid kanten hänger tornet ut över fyra meter, ser du?"
+     "t": 414,
+     "text": "Så v är lika med arcussinus av fyra komma tre delat med fyrtiosex. På räknaren trycker vi två gånger på sin. Sen skriver vi hela divisionen, fyra komma tre delat med fyrtiosex. Avrunda inte kvoten först, för då kan svaret bli fel. Vi stänger parentesen och trycker enter. Räknaren ger ungefär fem komma fyra. Tornet lutar alltså ungefär fem komma fyra grader. Det låter lite. Men vid kanten hänger tornet ut över fyra meter, ser du?"
     },
     {
-     "t": 363,
+     "t": 452,
      "text": "Vi kan också välja en annan kvot. Tänk om vi inte visste hur långt tornet är. Då kan vi mäta snöret i stället. Det är fyrtiofem komma åtta meter långt. Snöret är närliggande katet. Nu känner vi de två kateterna. Vilken kvot ska vi välja?"
     },
     {
-     "t": 383,
-     "text": "Regeln är den här. Vi väljer kvoten där båda sidorna vi känner finns med. Det var därför vi valde sinus nyss. Där fanns sträckan på marken och tornet. Nu känner vi motstående katet och närliggande katet. Båda finns i tangens. Så tangens v är fyra komma tre delat med fyrtiofem komma åtta."
+     "t": 473,
+     "text": "Regeln är den här. Vi väljer formeln där båda sidorna vi känner finns med. Det var därför vi valde sinus nyss. Där fanns a och c. Nu läser vi av igen, från vinkeln v. Sträckan på marken står mitt emot v. Så a är fyra komma tre. Snöret går ut från v. Så b är fyrtiofem komma åtta. Vilken formel har både a och b?"
     },
     {
-     "t": 409,
-     "text": "Vi går baklänges igen, med arcustangens. Den når man genom att trycka två gånger på tangensknappen. Räknaren ger ungefär fem komma fyra igen. Det är ju samma triangel, så det blir samma vinkel. Känner man snöret och tornet, blir det på samma sätt cosinus och arcuscosinus."
+     "t": 504,
+     "text": "Titta på formelbladet. Tangens v är a delat med b. Där finns båda."
     },
     {
-     "t": 431,
+     "t": 512,
+     "text": "Vi skriver formeln först. Tangens v är lika med a delat med b. Sen sätter vi in talen. Här är a fyra komma tre, och b är fyrtiofem komma åtta. Så tangens v är lika med fyra komma tre delat med fyrtiofem komma åtta."
+    },
+    {
+     "t": 531,
+     "text": "Vi går baklänges igen, med arcustangens. Den når man genom att trycka två gånger på tangensknappen. Så v är lika med arcustangens av fyra komma tre delat med fyrtiofem komma åtta. Räknaren ger ungefär fem komma fyra igen. Det är ju samma triangel, så det blir samma vinkel. Känner man snöret och tornet, är det b och c. Då blir det cosinus och arcuscosinus."
+    },
+    {
+     "t": 561,
      "text": "Triangeln har en vinkel till, nere vid tornets fot. Hur stor är den? Tänk dig att du klipper av triangelns tre hörn. Sen lägger du dem bredvid varandra. Då bildar de alltid en rak linje. Och en rak linje är hundraåttio grader."
     },
     {
-     "t": 451,
+     "t": 580,
      "text": "Alla tre vinklarna blir alltså hundraåttio grader tillsammans. Den räta vinkeln tar nittio. Då blir det nittio kvar till de två andra. Vinkeln uppe är fem komma fyra. Vad blir kvar? Nittio minus fem komma fyra. Det är åttiofyra komma sex grader. Tornet står alltså nästan rakt upp, ser du?"
     },
     {
-     "t": 477,
+     "t": 605,
      "text": "Nu vet gruppen att tornet lutar fem komma fyra grader. År nittonhundranittiotre lägger de sexhundra ton bly vid tornets norra sida. Blyet trycker ner den norra sidan och håller emot lutningen."
     },
     {
-     "t": 493,
+     "t": 621,
      "text": "Sen borrar de snett in under den norra sidan. Genom borrhålen drar de ut lite jord i taget. Två gånger om dagen mäter de tornet. Långsamt sjunker den norra sidan, och toppen kommer tillbaka."
     },
     {
-     "t": 510,
-     "text": "År tvåtusenett når snöret marken bara tre komma nio meter från foten. Hur många grader lutar tornet nu? Vad sa regeln? Vi känner sträckan på marken och tornet. Båda finns i sinus. Så sinus v är tre komma nio delat med fyrtiosex."
+     "t": 637,
+     "text": "År tvåtusenett når snöret marken bara tre komma nio meter från foten. Hur många grader lutar tornet nu? Vad sa regeln? Vi läser av från vinkeln v. Sträckan på marken står mitt emot v. Så a är tre komma nio. Tornet är den längsta sidan. Så c är fyrtiosex. Vilken formel har både a och c?"
     },
     {
-     "t": 532,
+     "t": 666,
+     "text": "Titta på formelbladet. Sinus v är a delat med c. Där finns båda."
+    },
+    {
+     "t": 674,
+     "text": "Vi skriver formeln. Sinus v är lika med a delat med c. Sen sätter vi in talen. Här är a tre komma nio, och c är fyrtiosex. Så sinus v är lika med tre komma nio delat med fyrtiosex."
+    },
+    {
+     "t": 691,
      "text": "Vi går baklänges med arcussinus. Två tryck på sinusknappen, och sen hela divisionen. Räknaren ger ungefär fyra komma nio grader. Förut var det fem komma fyra. Det är en halv grad mindre, precis som gruppen ville."
     },
     {
-     "t": 551,
+     "t": 710,
      "text": "I december tvåtusenett öppnas tornet igen för besökare. Nu lutar det ungefär lika mycket som för tvåhundra år sedan. Gruppen räknar med att det dröjer ungefär trehundra år innan det lutar lika mycket som nittonhundranittio."
     },
     {
-     "t": 568,
+     "t": 727,
      "text": "Nu är det din tur. Tänk dig ett annat torn som också lutar. Det är lägre än tornet i Pisa. Från foten och upp längs tornet till kanten är det tio meter. Ett snöre från kanten når marken en meter från tornets fot. Hur många grader lutar tornet? Och hur stor är vinkeln nere vid tornets fot?"
     }
    ],
@@ -25706,63 +25730,63 @@
      "typ": "historia"
     },
     {
-     "t": 58,
+     "t": 57,
      "rubrik": "Hur många grader lutar tornet?",
      "typ": "historia"
     },
     {
-     "t": 106,
+     "t": 105,
      "rubrik": "Triangeln och sidornas namn",
      "typ": "matte"
     },
     {
-     "t": 195,
+     "t": 192,
      "rubrik": "Kvoten",
      "typ": "matte"
     },
     {
-     "t": 235,
+     "t": 231,
      "rubrik": "Sinus, cosinus och tangens",
      "typ": "matte"
     },
     {
-     "t": 280,
+     "t": 360,
      "rubrik": "Arcussinus: från kvot till vinkel",
      "typ": "matte"
     },
     {
-     "t": 363,
+     "t": 452,
      "rubrik": "Välj kvot: tangens",
      "typ": "matte"
     },
     {
-     "t": 431,
+     "t": 561,
      "rubrik": "Den andra vinkeln",
      "typ": "matte"
     },
     {
-     "t": 477,
+     "t": 605,
      "rubrik": "Blyet och borrhålen",
      "typ": "historia"
     },
     {
-     "t": 510,
+     "t": 637,
      "rubrik": "Övning: lutningen 2001",
      "typ": "matte"
     },
     {
-     "t": 551,
+     "t": 710,
      "rubrik": "Tornet öppnas igen",
      "typ": "historia"
     },
     {
-     "t": 568,
+     "t": 727,
      "rubrik": "Ett annat torn",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 568,
+    "notisFran": 727,
     "fraga": "Tänk dig ett annat torn som också lutar. Det är lägre än tornet i Pisa. Från foten och upp längs tornet till kanten är det 10 meter. Ett snöre från kanten når marken 1 meter från tornets fot.",
     "figur": {
      "vy": [
@@ -25962,789 +25986,1050 @@
     ],
     "ledtrad": {
      "text": "Tornet, snöret och marken bildar en rätvinklig triangel. Tornet är hypotenusan, 10 meter. Metern på marken ligger mitt emot vinkeln uppe vid kanten.",
-     "t": 381
+     "t": 470
     },
     "losning": [
-     "Tornet är hypotenusan, 10 m.",
-     "Metern på marken ligger mitt emot vinkeln v uppe vid kanten. Den är motstående katet.",
-     "Båda finns i sinus: sin v = 1/10, så v = sin⁻¹(1/10) ≈ 5,7°.",
+     "Läs av sidorna från vinkeln v uppe vid kanten. Metern på marken står mitt emot v, så a = 1. Tornet är den längsta sidan, så c = 10.",
+     "Formeln med både a och c är sin v = a/c.",
+     "Sätt in talen: sin v = 1/10.",
+     "Gå baklänges med två tryck på sin: v = sin⁻¹(1/10) ≈ 5,7°.",
      "Vinkeln vid foten är 90 − 5,7 = 84,3°."
     ]
    },
    "undertext": [
     {
      "s": 9.5,
-     "e": 14.18,
+     "e": 14.2,
      "text": "Det är år nittonhundranittio, och vi är i staden Pisa i Italien."
     },
     {
-     "s": 15.18,
-     "e": 17.38,
+     "s": 15.2,
+     "e": 17.44,
      "text": "Där står ett torn av vit marmor."
     },
     {
-     "s": 18.38,
-     "e": 21.92,
+     "s": 18.44,
+     "e": 21.94,
      "text": "Det är över åttahundra år gammalt, och det lutar."
     },
     {
-     "s": 22.92,
-     "e": 26.7,
+     "s": 22.94,
+     "e": 26.62,
      "text": "Marken under den södra sidan är mjukare än under den norra."
     },
     {
-     "s": 27.7,
-     "e": 30.22,
+     "s": 27.62,
+     "e": 30.12,
      "text": "Så tornet har lutat ända sedan det byggdes."
     },
     {
-     "s": 31.22,
-     "e": 33.7,
+     "s": 31.12,
+     "e": 33.58,
      "text": "Och för varje år lutar det lite mer."
     },
     {
-     "s": 35,
-     "e": 38.9,
+     "s": 34.88,
+     "e": 38.68,
      "text": "I januari nittonhundranittio stängs tornet för alla besökare."
     },
     {
-     "s": 39.9,
-     "e": 42.34,
+     "s": 39.68,
+     "e": 42.06,
      "text": "Italiens regering är rädd att det ska rasa."
     },
     {
-     "s": 43.34,
-     "e": 47.16,
+     "s": 43.06,
+     "e": 46.86,
      "text": "Därför samlar regeringen en grupp experter som ska rädda tornet."
     },
     {
-     "s": 48.16,
-     "e": 50.06,
+     "s": 47.86,
+     "e": 49.66,
      "text": "En av dem är John Burland."
     },
     {
-     "s": 51.06,
-     "e": 52.68,
+     "s": 50.66,
+     "e": 52.12,
      "text": "Han är ingenjör i London."
     },
     {
-     "s": 53.68,
-     "e": 56.86,
+     "s": 53.12,
+     "e": 56.4,
      "text": "Han forskar om mark som sjunker under tunga byggnader."
     },
     {
-     "s": 58.16,
-     "e": 61.9,
+     "s": 57.7,
+     "e": 61.58,
      "text": "Gruppen bestämmer att tornet ska luta en halv grad mindre."
     },
     {
-     "s": 62.9,
-     "e": 65.94,
+     "s": 62.58,
+     "e": 65.72,
      "text": "Det ska inte bli rakt, bara luta lite mindre."
     },
     {
-     "s": 66.94,
-     "e": 71.02,
+     "s": 66.72,
+     "e": 70.74,
      "text": "Men först måste Burland veta hur många grader tornet lutar nu."
     },
     {
-     "s": 72.32,
-     "e": 73.32,
+     "s": 72.04,
+     "e": 73.04,
      "text": "Hur mäter man det?"
     },
     {
-     "s": 74.2,
-     "e": 76.72,
+     "s": 73.84,
+     "e": 76.28,
      "text": "Man tar ett snöre med en tyngd i änden."
     },
     {
-     "s": 77.72,
-     "e": 80.4,
+     "s": 77.28,
+     "e": 80.02,
      "text": "Tyngden drar snöret rakt ner mot marken."
     },
     {
-     "s": 81.4,
-     "e": 84.24,
+     "s": 81.02,
+     "e": 83.84,
      "text": "Snöret hänger från en kant högt uppe på tornet."
     },
     {
-     "s": 85.24,
-     "e": 89.62,
+     "s": 84.84,
+     "e": 89.26,
      "text": "Det når marken fyra komma tre meter vid sidan av tornets fot."
     },
     {
-     "s": 90.62,
-     "e": 95.3,
+     "s": 90.26,
+     "e": 94.72,
      "text": "Och från foten och upp längs tornet till kanten är det fyrtiosex meter."
     },
     {
-     "s": 96.6,
-     "e": 98.76,
+     "s": 96.02,
+     "e": 98.04,
      "text": "Snöret ger alltså två längder."
     },
     {
-     "s": 99.76,
-     "e": 102.3,
+     "s": 99.04,
+     "e": 101.58,
      "text": "Men gruppen vill veta lutningen i grader."
     },
     {
-     "s": 103.3,
-     "e": 105.3,
+     "s": 102.58,
+     "e": 104.44,
      "text": "Hur många grader lutar tornet?"
     },
     {
-     "s": 106.6,
-     "e": 107.62,
+     "s": 105.74,
+     "e": 106.76,
      "text": "Det kan vi räkna ut."
     },
     {
-     "s": 108.62,
-     "e": 111.44,
+     "s": 107.76,
+     "e": 110.54,
      "text": "Vi börjar med tornet, snöret och marken."
     },
     {
-     "s": 112.44,
-     "e": 114.48,
+     "s": 111.54,
+     "e": 113.66,
      "text": "Tillsammans bildar de en triangel."
     },
     {
-     "s": 115.48,
-     "e": 117.1,
+     "s": 114.66,
+     "e": 116.18,
      "text": "Snöret hänger rakt ner."
     },
     {
-     "s": 118.1,
-     "e": 122.76,
+     "s": 117.18,
+     "e": 121.66,
      "text": "Så där det möter marken blir hörnet helt rakt, som hörnet på ett papper."
     },
     {
-     "s": 123.76,
-     "e": 126.42,
+     "s": 122.66,
+     "e": 125.24,
      "text": "Ett sånt hörn kallas en rät vinkel."
     },
     {
-     "s": 127.42,
-     "e": 128.92,
+     "s": 126.24,
+     "e": 127.7,
      "text": "Den är nittio grader."
     },
     {
-     "s": 130.22,
-     "e": 132.5,
+     "s": 129,
+     "e": 131.14,
      "text": "Var syns lutningen i triangeln?"
     },
     {
-     "s": 133.5,
-     "e": 136.46,
+     "s": 132.14,
+     "e": 135.06,
      "text": "Uppe vid kanten, mellan tornet och snöret."
     },
     {
-     "s": 137.46,
-     "e": 139.14,
+     "s": 136.06,
+     "e": 137.86,
      "text": "Där är det en smal vinkel."
     },
     {
-     "s": 140.14,
-     "e": 142.66,
+     "s": 138.86,
+     "e": 141.32,
      "text": "Lutar tornet mer, blir vinkeln större."
     },
     {
-     "s": 143.66,
-     "e": 145.54,
+     "s": 142.32,
+     "e": 144.06,
      "text": "Det är den vinkeln vi vill veta."
     },
     {
-     "s": 146.54,
-     "e": 147.86,
+     "s": 145.06,
+     "e": 146.06,
      "text": "Vi kallar den v."
     },
     {
-     "s": 149.11,
-     "e": 151.75,
+     "s": 147.3,
+     "e": 149.3,
      "text": "Nu ger vi triangelns sidor namn."
     },
     {
-     "s": 152.34,
-     "e": 153.74,
+     "s": 150.3,
+     "e": 151.74,
      "text": "Vilken sida är längst?"
     },
     {
-     "s": 154.74,
-     "e": 156.92,
+     "s": 152.74,
+     "e": 154.96,
      "text": "Det är tornet, fyrtiosex meter."
     },
     {
-     "s": 157.92,
-     "e": 160.42,
+     "s": 155.96,
+     "e": 158.36,
      "text": "Den ligger mitt emot den räta vinkeln."
     },
     {
-     "s": 161.42,
-     "e": 164.14,
+     "s": 159.36,
+     "e": 162.08,
      "text": "Den längsta sidan kallas hypotenusa."
     },
     {
-     "s": 165.14,
-     "e": 167.82,
+     "s": 163.08,
+     "e": 165.7,
      "text": "De två andra sidorna kallas kateter."
     },
     {
-     "s": 169.4,
-     "e": 171.98,
+     "s": 167,
+     "e": 169.48,
      "text": "Kateterna får namn efter vinkeln v."
     },
     {
-     "s": 172.98,
-     "e": 175.9,
+     "s": 170.48,
+     "e": 173.18,
      "text": "Tänk dig att du står uppe i hörnet där v är."
     },
     {
-     "s": 176.9,
-     "e": 178.78,
+     "s": 174.18,
+     "e": 176.38,
      "text": "Vilken sida ligger mitt emot dig?"
     },
     {
-     "s": 179.78,
-     "e": 183.24,
+     "s": 177.38,
+     "e": 180.68,
      "text": "Det är sträckan på marken, fyra komma tre meter."
     },
     {
-     "s": 184.24,
-     "e": 186.48,
+     "s": 181.68,
+     "e": 183.94,
      "text": "Den kallas motstående katet."
     },
     {
-     "s": 187.48,
-     "e": 189.3,
+     "s": 184.94,
+     "e": 186.76,
      "text": "Snöret går ut från ditt hörn."
     },
     {
-     "s": 190.3,
-     "e": 194.36,
+     "s": 187.76,
+     "e": 191.6,
      "text": "Det ligger intill v, så det kallas närliggande katet."
     },
     {
-     "s": 195.66,
-     "e": 198.86,
+     "s": 192.9,
+     "e": 195.92,
      "text": "Men hur kan två längder säga något om en vinkel?"
     },
     {
-     "s": 199.86,
-     "e": 201.82,
+     "s": 196.92,
+     "e": 198.88,
      "text": "Tänk dig att tornet lutar mer."
     },
     {
-     "s": 202.82,
-     "e": 205.4,
+     "s": 199.88,
+     "e": 202.46,
      "text": "Då hamnar snöret längre bort från foten."
     },
     {
-     "s": 206.4,
-     "e": 208.68,
+     "s": 203.46,
+     "e": 205.92,
      "text": "Sträckan på marken blir längre, ser du?"
     },
     {
-     "s": 209.68,
-     "e": 212.64,
+     "s": 206.92,
+     "e": 209.74,
      "text": "Och lutar tornet mindre, blir sträckan kortare."
     },
     {
-     "s": 213.94,
-     "e": 219.18,
+     "s": 211.04,
+     "e": 216.04,
      "text": "Fast ett högre torn ger också en längre sträcka, även om det lutar lika mycket."
     },
     {
-     "s": 220.18,
-     "e": 222.88,
+     "s": 217.04,
+     "e": 219.52,
      "text": "Därför jämför vi sträckan med tornet."
     },
     {
-     "s": 223.88,
-     "e": 226.58,
-     "text": "Vi delar fyra komma tre med fyrtiosex."
+     "s": 220.52,
+     "e": 223.1,
+     "text": "Vi delar sträckan på marken med tornet."
     },
     {
-     "s": 227.58,
-     "e": 230.66,
+     "s": 224.1,
+     "e": 227.1,
      "text": "Ett tal delat med ett annat kallas en kvot."
     },
     {
-     "s": 231.66,
-     "e": 234.1,
+     "s": 228.1,
+     "e": 230.6,
      "text": "Och varje lutning har sin egen kvot."
     },
     {
-     "s": 235.4,
-     "e": 237,
+     "s": 231.9,
+     "e": 233.58,
      "text": "Den här kvoten har ett namn."
     },
     {
-     "s": 238,
-     "e": 240.58,
+     "s": 234.58,
+     "e": 237.18,
      "text": "Den kallas sinus för vinkeln v."
     },
     {
-     "s": 241.58,
-     "e": 245.3,
-     "text": "Sinus v är alltså fyra komma tre delat med fyrtiosex."
+     "s": 238.18,
+     "e": 241.9,
+     "text": "Sinus står på formelbladet, under rubriken Trigonometri."
     },
     {
-     "s": 246.3,
-     "e": 250.88,
-     "text": "Formelbladet skriver samma sak med bokstäver, under rubriken Trigonometri."
+     "s": 242.9,
+     "e": 244.46,
+     "text": "Titta på triangeln på bladet."
     },
     {
-     "s": 251.88,
-     "e": 255.78,
-     "text": "Där är a motstående katet, och c är hypotenusan."
+     "s": 245.46,
+     "e": 247.14,
+     "text": "Där har sidorna bokstäver."
     },
     {
-     "s": 256.78,
-     "e": 258.84,
-     "text": "Sinus v är a delat med c."
+     "s": 248.14,
+     "e": 250.44,
+     "text": "Vinkeln heter v, precis som hos oss."
     },
     {
-     "s": 260.14,
-     "e": 261.68,
-     "text": "Där står två kvoter till."
+     "s": 251.44,
+     "e": 253.66,
+     "text": "Sidan a står mitt emot v."
     },
     {
-     "s": 262.68,
-     "e": 265.16,
-     "text": "Cosinus v är b delat med c."
+     "s": 254.66,
+     "e": 256.42,
+     "text": "Den är motstående katet."
     },
     {
-     "s": 266.16,
-     "e": 269.16,
-     "text": "Det är närliggande katet delat med hypotenusan."
+     "s": 257.42,
+     "e": 259.3,
+     "text": "Sidan b går ut från v."
     },
     {
-     "s": 270.16,
-     "e": 272.54,
-     "text": "Tangens v är a delat med b."
+     "s": 260.3,
+     "e": 262.02,
+     "text": "Den är närliggande katet."
     },
     {
-     "s": 273.54,
-     "e": 276.82,
-     "text": "Det är motstående katet delat med närliggande katet."
+     "s": 263.02,
+     "e": 265.14,
+     "text": "Sidan c är den längsta sidan."
     },
     {
-     "s": 277.82,
-     "e": 279.24,
-     "text": "Tangens använder vi snart."
+     "s": 266.14,
+     "e": 267.54,
+     "text": "Den är hypotenusan."
     },
     {
-     "s": 280.54,
-     "e": 281.7,
-     "text": "Nu vet vi kvoten."
+     "s": 268.84,
+     "e": 271.02,
+     "text": "Bredvid triangeln står tre formler."
     },
     {
-     "s": 282.7,
-     "e": 284.08,
-     "text": "Men vi söker vinkeln."
+     "s": 272.02,
+     "e": 273.92,
+     "text": "Den första är sinus v."
     },
     {
-     "s": 285.08,
-     "e": 288.76,
-     "text": "Vi måste alltså gå baklänges, från kvoten till vinkeln."
+     "s": 274.92,
+     "e": 276.66,
+     "text": "Den är a delat med c."
     },
     {
-     "s": 289.76,
-     "e": 290.76,
-     "text": "Hur gör vi det?"
+     "s": 277.66,
+     "e": 281.22,
+     "text": "Det betyder motstående katet delat med hypotenusan."
     },
     {
-     "s": 291.36,
-     "e": 295.14,
-     "text": "Varje vinkel har sin egen kvot, och räknaren vet vilken."
+     "s": 282.22,
+     "e": 284.4,
+     "text": "Den andra är cosinus v."
     },
     {
-     "s": 296.14,
-     "e": 298.76,
-     "text": "Skriver du in en vinkel, kan den ge dig kvoten."
+     "s": 285.4,
+     "e": 287.16,
+     "text": "Den är b delat med c."
     },
     {
-     "s": 299.76,
-     "e": 302.38,
-     "text": "Skriver du in kvoten, kan den ge dig vinkeln."
+     "s": 288.16,
+     "e": 291.76,
+     "text": "Det betyder närliggande katet delat med hypotenusan."
     },
     {
-     "s": 303.38,
-     "e": 305.78,
-     "text": "Det andra hållet kallas arcussinus."
+     "s": 292.76,
+     "e": 294.82,
+     "text": "Den tredje är tangens v."
     },
     {
-     "s": 307.08,
+     "s": 295.82,
+     "e": 297.6,
+     "text": "Den är a delat med b."
+    },
+    {
+     "s": 298.6,
+     "e": 302.48,
+     "text": "Det betyder motstående katet delat med närliggande katet."
+    },
+    {
+     "s": 303.78,
+     "e": 306.12,
+     "text": "Nu läser vi av vår triangel på samma sätt."
+    },
+    {
+     "s": 307.12,
      "e": 309.74,
-     "text": "Arcussinus står på räknarens sinusknapp."
+     "text": "Vi börjar i vinkeln v, uppe vid kanten."
     },
     {
      "s": 310.74,
-     "e": 314.2,
+     "e": 313.18,
+     "text": "Sträckan på marken står mitt emot v."
+    },
+    {
+     "s": 314.18,
+     "e": 316.12,
+     "text": "Så a är fyra komma tre."
+    },
+    {
+     "s": 317.12,
+     "e": 318.92,
+     "text": "Tornet är den längsta sidan."
+    },
+    {
+     "s": 319.92,
+     "e": 321.52,
+     "text": "Så c är fyrtiosex."
+    },
+    {
+     "s": 322.52,
+     "e": 325.06,
+     "text": "Vilken formel har både a och c?"
+    },
+    {
+     "s": 326.06,
+     "e": 328.4,
+     "text": "Sinus v är a delat med c."
+    },
+    {
+     "s": 329.4,
+     "e": 330.4,
+     "text": "Där finns båda."
+    },
+    {
+     "s": 331.58,
+     "e": 332.98,
+     "text": "Vi skriver formeln först."
+    },
+    {
+     "s": 333.98,
+     "e": 336.76,
+     "text": "Sinus v är lika med a delat med c."
+    },
+    {
+     "s": 337.76,
+     "e": 339.72,
+     "text": "Sen skriver vi den igen med talen."
+    },
+    {
+     "s": 340.72,
+     "e": 342.14,
+     "text": "I formeln står a."
+    },
+    {
+     "s": 343.14,
+     "e": 345,
+     "text": "Här är a fyra komma tre."
+    },
+    {
+     "s": 346,
+     "e": 347.8,
+     "text": "Under bråkstrecket står c."
+    },
+    {
+     "s": 348.8,
+     "e": 350.36,
+     "text": "Här är c fyrtiosex."
+    },
+    {
+     "s": 351.36,
+     "e": 354.32,
+     "text": "Vinkeln v vet vi inte än, så v står kvar."
+    },
+    {
+     "s": 355.32,
+     "e": 359.52,
+     "text": "Så sinus v är lika med fyra komma tre delat med fyrtiosex."
+    },
+    {
+     "s": 360.82,
+     "e": 361.94,
+     "text": "Nu vet vi kvoten."
+    },
+    {
+     "s": 362.94,
+     "e": 364.26,
+     "text": "Men vi söker vinkeln."
+    },
+    {
+     "s": 365.26,
+     "e": 370.98,
+     "text": "Vi måste alltså gå baklänges, från kvoten till vinkeln. Hur gör vi det?"
+    },
+    {
+     "s": 371.98,
+     "e": 375.92,
+     "text": "Varje vinkel har sin egen kvot, och räknaren vet vilken."
+    },
+    {
+     "s": 376.92,
+     "e": 379.64,
+     "text": "Skriver du in en vinkel, kan den ge dig kvoten."
+    },
+    {
+     "s": 380.64,
+     "e": 383.38,
+     "text": "Skriver du in kvoten, kan den ge dig vinkeln."
+    },
+    {
+     "s": 384.38,
+     "e": 386.9,
+     "text": "Det andra hållet kallas arcussinus."
+    },
+    {
+     "s": 388.2,
+     "e": 391.12,
+     "text": "Arcussinus står på räknarens sinusknapp."
+    },
+    {
+     "s": 392.12,
+     "e": 395.72,
      "text": "Den skrivs sin med en liten minus etta uppe till höger."
     },
     {
-     "s": 315.2,
-     "e": 318.3,
+     "s": 396.72,
+     "e": 399.94,
      "text": "Man når den genom att trycka två gånger på sinusknappen."
     },
     {
-     "s": 319.3,
-     "e": 321.92,
+     "s": 400.94,
+     "e": 403.76,
      "text": "Men först kollar vi att räknaren räknar i grader."
     },
     {
-     "s": 322.92,
-     "e": 325.8,
+     "s": 404.76,
+     "e": 407.78,
      "text": "Då står det DEG högst upp på skärmen."
     },
     {
-     "s": 326.8,
-     "e": 331.46,
+     "s": 408.78,
+     "e": 413.58,
      "text": "Står det något annat, tryck på mode, välj DEGREE och tryck enter."
     },
     {
-     "s": 332.76,
-     "e": 334.62,
-     "text": "Nu trycker vi två gånger på sin."
+     "s": 414.88,
+     "e": 420,
+     "text": "Så v är lika med arcussinus av fyra komma tre delat med fyrtiosex."
     },
     {
-     "s": 335.62,
-     "e": 340.1,
+     "s": 421,
+     "e": 423.58,
+     "text": "På räknaren trycker vi två gånger på sin."
+    },
+    {
+     "s": 424.58,
+     "e": 429.12,
      "text": "Sen skriver vi hela divisionen, fyra komma tre delat med fyrtiosex."
     },
     {
-     "s": 341.1,
-     "e": 344.44,
+     "s": 430.12,
+     "e": 433.52,
      "text": "Avrunda inte kvoten först, för då kan svaret bli fel."
     },
     {
-     "s": 345.44,
-     "e": 347.78,
+     "s": 434.52,
+     "e": 436.92,
      "text": "Vi stänger parentesen och trycker enter."
     },
     {
-     "s": 348.78,
-     "e": 351.54,
+     "s": 437.92,
+     "e": 440.64,
      "text": "Räknaren ger ungefär fem komma fyra."
     },
     {
-     "s": 352.54,
-     "e": 355.8,
+     "s": 441.64,
+     "e": 445.02,
      "text": "Tornet lutar alltså ungefär fem komma fyra grader."
     },
     {
-     "s": 356.8,
-     "e": 357.8,
+     "s": 446.02,
+     "e": 447.02,
      "text": "Det låter lite."
     },
     {
-     "s": 358.68,
-     "e": 362.02,
+     "s": 447.9,
+     "e": 451.36,
      "text": "Men vid kanten hänger tornet ut över fyra meter, ser du?"
     },
     {
-     "s": 363.32,
-     "e": 365.06,
+     "s": 452.66,
+     "e": 454.46,
      "text": "Vi kan också välja en annan kvot."
     },
     {
-     "s": 366.06,
-     "e": 368.3,
+     "s": 455.46,
+     "e": 457.5,
      "text": "Tänk om vi inte visste hur långt tornet är."
     },
     {
-     "s": 369.3,
-     "e": 371.08,
+     "s": 458.5,
+     "e": 460.46,
      "text": "Då kan vi mäta snöret i stället."
     },
     {
-     "s": 372.08,
-     "e": 374.48,
+     "s": 461.46,
+     "e": 464.02,
      "text": "Det är fyrtiofem komma åtta meter långt."
     },
     {
-     "s": 375.48,
-     "e": 377.4,
+     "s": 465.02,
+     "e": 467.12,
      "text": "Snöret är närliggande katet."
     },
     {
-     "s": 378.4,
-     "e": 380.08,
+     "s": 468.12,
+     "e": 469.8,
      "text": "Nu känner vi de två kateterna."
     },
     {
-     "s": 381.08,
-     "e": 382.44,
+     "s": 470.8,
+     "e": 472.18,
      "text": "Vilken kvot ska vi välja?"
     },
     {
-     "s": 383.74,
-     "e": 384.86,
+     "s": 473.48,
+     "e": 474.58,
      "text": "Regeln är den här."
     },
     {
-     "s": 385.86,
-     "e": 389.36,
-     "text": "Vi väljer kvoten där båda sidorna vi känner finns med."
+     "s": 475.58,
+     "e": 478.82,
+     "text": "Vi väljer formeln där båda sidorna vi känner finns med."
     },
     {
-     "s": 390.36,
-     "e": 392.34,
+     "s": 479.82,
+     "e": 481.72,
      "text": "Det var därför vi valde sinus nyss."
     },
     {
-     "s": 393.34,
-     "e": 396.06,
-     "text": "Där fanns sträckan på marken och tornet."
+     "s": 482.72,
+     "e": 484.3,
+     "text": "Där fanns a och c."
     },
     {
-     "s": 397.06,
-     "e": 400.36,
-     "text": "Nu känner vi motstående katet och närliggande katet."
+     "s": 485.3,
+     "e": 487.64,
+     "text": "Nu läser vi av igen, från vinkeln v."
     },
     {
-     "s": 401.36,
-     "e": 402.82,
-     "text": "Båda finns i tangens."
+     "s": 488.64,
+     "e": 491.14,
+     "text": "Sträckan på marken står mitt emot v."
     },
     {
-     "s": 403.82,
-     "e": 407.94,
-     "text": "Så tangens v är fyra komma tre delat med fyrtiofem komma åtta."
+     "s": 492.14,
+     "e": 493.98,
+     "text": "Så a är fyra komma tre."
     },
     {
-     "s": 409.24,
-     "e": 411.98,
+     "s": 494.98,
+     "e": 496.52,
+     "text": "Snöret går ut från v."
+    },
+    {
+     "s": 497.52,
+     "e": 499.7,
+     "text": "Så b är fyrtiofem komma åtta."
+    },
+    {
+     "s": 500.7,
+     "e": 503.1,
+     "text": "Vilken formel har både a och b?"
+    },
+    {
+     "s": 504.4,
+     "e": 505.68,
+     "text": "Titta på formelbladet."
+    },
+    {
+     "s": 506.68,
+     "e": 509.06,
+     "text": "Tangens v är a delat med b."
+    },
+    {
+     "s": 510.06,
+     "e": 511.06,
+     "text": "Där finns båda."
+    },
+    {
+     "s": 512.28,
+     "e": 513.56,
+     "text": "Vi skriver formeln först."
+    },
+    {
+     "s": 514.56,
+     "e": 517.26,
+     "text": "Tangens v är lika med a delat med b."
+    },
+    {
+     "s": 518.26,
+     "e": 519.54,
+     "text": "Sen sätter vi in talen."
+    },
+    {
+     "s": 520.54,
+     "e": 524.66,
+     "text": "Här är a fyra komma tre, och b är fyrtiofem komma åtta."
+    },
+    {
+     "s": 525.66,
+     "e": 530.42,
+     "text": "Så tangens v är lika med fyra komma tre delat med fyrtiofem komma åtta."
+    },
+    {
+     "s": 531.72,
+     "e": 534.42,
      "text": "Vi går baklänges igen, med arcustangens."
     },
     {
-     "s": 412.98,
-     "e": 416.16,
+     "s": 535.42,
+     "e": 538.62,
      "text": "Den når man genom att trycka två gånger på tangensknappen."
     },
     {
-     "s": 417.16,
-     "e": 420.04,
+     "s": 539.62,
+     "e": 545.26,
+     "text": "Så v är lika med arcustangens av fyra komma tre delat med fyrtiofem komma åtta."
+    },
+    {
+     "s": 546.26,
+     "e": 549.04,
      "text": "Räknaren ger ungefär fem komma fyra igen."
     },
     {
-     "s": 421.04,
-     "e": 423.86,
+     "s": 550.04,
+     "e": 552.72,
      "text": "Det är ju samma triangel, så det blir samma vinkel."
     },
     {
-     "s": 424.86,
-     "e": 430.04,
-     "text": "Känner man snöret och tornet, blir det på samma sätt cosinus och arcuscosinus."
+     "s": 553.72,
+     "e": 556.74,
+     "text": "Känner man snöret och tornet, är det b och c."
     },
     {
-     "s": 431.34,
-     "e": 434.7,
+     "s": 557.74,
+     "e": 560.38,
+     "text": "Då blir det cosinus och arcuscosinus."
+    },
+    {
+     "s": 561.68,
+     "e": 564.88,
      "text": "Triangeln har en vinkel till, nere vid tornets fot."
     },
     {
-     "s": 435.7,
-     "e": 436.7,
+     "s": 565.88,
+     "e": 566.88,
      "text": "Hur stor är den?"
     },
     {
-     "s": 437.39,
-     "e": 440.94,
+     "s": 567.66,
+     "e": 570.16,
      "text": "Tänk dig att du klipper av triangelns tre hörn."
     },
     {
-     "s": 441.24,
-     "e": 442.8,
+     "s": 571.16,
+     "e": 572.76,
      "text": "Sen lägger du dem bredvid varandra."
     },
     {
-     "s": 443.8,
-     "e": 445.86,
+     "s": 573.76,
+     "e": 575.8,
      "text": "Då bildar de alltid en rak linje."
     },
     {
-     "s": 446.86,
-     "e": 449.32,
+     "s": 576.8,
+     "e": 579.14,
      "text": "Och en rak linje är hundraåttio grader."
     },
     {
-     "s": 451.19,
-     "e": 454.93,
+     "s": 580.44,
+     "e": 583.88,
      "text": "Alla tre vinklarna blir alltså hundraåttio grader tillsammans."
     },
     {
-     "s": 455.93,
-     "e": 457.83,
+     "s": 584.88,
+     "e": 586.62,
      "text": "Den räta vinkeln tar nittio."
     },
     {
-     "s": 458.83,
-     "e": 461.01,
+     "s": 587.62,
+     "e": 589.72,
      "text": "Då blir det nittio kvar till de två andra."
     },
     {
-     "s": 462.01,
-     "e": 464.51,
+     "s": 590.72,
+     "e": 592.84,
      "text": "Vinkeln uppe är fem komma fyra."
     },
     {
-     "s": 465.51,
-     "e": 466.51,
+     "s": 593.84,
+     "e": 594.84,
      "text": "Vad blir kvar?"
     },
     {
-     "s": 467.17,
-     "e": 469.41,
+     "s": 595.46,
+     "e": 597.46,
      "text": "Nittio minus fem komma fyra."
     },
     {
-     "s": 470.41,
-     "e": 472.71,
+     "s": 598.46,
+     "e": 600.46,
      "text": "Det är åttiofyra komma sex grader."
     },
     {
-     "s": 473.71,
-     "e": 476.41,
+     "s": 601.46,
+     "e": 604.18,
      "text": "Tornet står alltså nästan rakt upp, ser du?"
     },
     {
-     "s": 477.71,
-     "e": 481.57,
+     "s": 605.48,
+     "e": 609.06,
      "text": "Nu vet gruppen att tornet lutar fem komma fyra grader."
     },
     {
-     "s": 482.57,
-     "e": 487.81,
+     "s": 610.06,
+     "e": 615.28,
      "text": "År nittonhundranittiotre lägger de sexhundra ton bly vid tornets norra sida."
     },
     {
-     "s": 488.81,
-     "e": 492.55,
+     "s": 616.28,
+     "e": 619.94,
      "text": "Blyet trycker ner den norra sidan och håller emot lutningen."
     },
     {
-     "s": 493.85,
-     "e": 496.67,
+     "s": 621.24,
+     "e": 624.06,
      "text": "Sen borrar de snett in under den norra sidan."
     },
     {
-     "s": 497.67,
-     "e": 500.79,
+     "s": 625.06,
+     "e": 628.06,
      "text": "Genom borrhålen drar de ut lite jord i taget."
     },
     {
-     "s": 501.79,
-     "e": 504.05,
+     "s": 629.06,
+     "e": 631.12,
      "text": "Två gånger om dagen mäter de tornet."
     },
     {
-     "s": 505.05,
-     "e": 509.09,
+     "s": 632.12,
+     "e": 636.08,
      "text": "Långsamt sjunker den norra sidan, och toppen kommer tillbaka."
     },
     {
-     "s": 510.39,
-     "e": 515.43,
+     "s": 637.38,
+     "e": 642.36,
      "text": "År tvåtusenett når snöret marken bara tre komma nio meter från foten."
     },
     {
-     "s": 516.43,
-     "e": 518.45,
+     "s": 643.36,
+     "e": 645.24,
      "text": "Hur många grader lutar tornet nu?"
     },
     {
-     "s": 519.45,
-     "e": 520.45,
+     "s": 646.24,
+     "e": 647.24,
      "text": "Vad sa regeln?"
     },
     {
-     "s": 521.17,
-     "e": 523.69,
-     "text": "Vi känner sträckan på marken och tornet."
+     "s": 648.06,
+     "e": 649.92,
+     "text": "Vi läser av från vinkeln v."
     },
     {
-     "s": 524.69,
-     "e": 526.11,
-     "text": "Båda finns i sinus."
+     "s": 650.92,
+     "e": 653.48,
+     "text": "Sträckan på marken står mitt emot v."
     },
     {
-     "s": 527.11,
-     "e": 530.79,
-     "text": "Så sinus v är tre komma nio delat med fyrtiosex."
+     "s": 654.48,
+     "e": 656.36,
+     "text": "Så a är tre komma nio."
     },
     {
-     "s": 532.09,
-     "e": 534.33,
+     "s": 657.36,
+     "e": 659.08,
+     "text": "Tornet är den längsta sidan."
+    },
+    {
+     "s": 660.08,
+     "e": 661.6,
+     "text": "Så c är fyrtiosex."
+    },
+    {
+     "s": 662.6,
+     "e": 664.9,
+     "text": "Vilken formel har både a och c?"
+    },
+    {
+     "s": 666.2,
+     "e": 667.5,
+     "text": "Titta på formelbladet."
+    },
+    {
+     "s": 668.5,
+     "e": 670.8,
+     "text": "Sinus v är a delat med c."
+    },
+    {
+     "s": 671.8,
+     "e": 672.8,
+     "text": "Där finns båda."
+    },
+    {
+     "s": 674.04,
+     "e": 675.04,
+     "text": "Vi skriver formeln."
+    },
+    {
+     "s": 676,
+     "e": 678.76,
+     "text": "Sinus v är lika med a delat med c."
+    },
+    {
+     "s": 679.76,
+     "e": 681.06,
+     "text": "Sen sätter vi in talen."
+    },
+    {
+     "s": 682.06,
+     "e": 685.52,
+     "text": "Här är a tre komma nio, och c är fyrtiosex."
+    },
+    {
+     "s": 686.52,
+     "e": 690.54,
+     "text": "Så sinus v är lika med tre komma nio delat med fyrtiosex."
+    },
+    {
+     "s": 691.84,
+     "e": 694.1,
      "text": "Vi går baklänges med arcussinus."
     },
     {
-     "s": 535.33,
-     "e": 538.91,
+     "s": 695.1,
+     "e": 698.82,
      "text": "Två tryck på sinusknappen, och sen hela divisionen."
     },
     {
-     "s": 539.91,
-     "e": 543.07,
+     "s": 699.82,
+     "e": 702.72,
      "text": "Räknaren ger ungefär fyra komma nio grader."
     },
     {
-     "s": 544.07,
-     "e": 545.73,
+     "s": 703.72,
+     "e": 705.36,
      "text": "Förut var det fem komma fyra."
     },
     {
-     "s": 546.73,
-     "e": 549.87,
+     "s": 706.36,
+     "e": 709.44,
      "text": "Det är en halv grad mindre, precis som gruppen ville."
     },
     {
-     "s": 551.17,
-     "e": 555.07,
+     "s": 710.74,
+     "e": 714.58,
      "text": "I december tvåtusenett öppnas tornet igen för besökare."
     },
     {
-     "s": 556.07,
-     "e": 559.55,
+     "s": 715.58,
+     "e": 718.92,
      "text": "Nu lutar det ungefär lika mycket som för tvåhundra år sedan."
     },
     {
-     "s": 560.55,
-     "e": 566.81,
+     "s": 719.92,
+     "e": 725.82,
      "text": "Gruppen räknar med att det dröjer ungefär trehundra år innan det lutar lika mycket som nittonhundranittio."
     },
     {
-     "s": 568.11,
-     "e": 569.17,
+     "s": 727.12,
+     "e": 728.12,
      "text": "Nu är det din tur."
     },
     {
-     "s": 570.17,
-     "e": 572.47,
+     "s": 728.92,
+     "e": 731.2,
      "text": "Tänk dig ett annat torn som också lutar."
     },
     {
-     "s": 573.47,
-     "e": 575.39,
+     "s": 732.2,
+     "e": 734.1,
      "text": "Det är lägre än tornet i Pisa."
     },
     {
-     "s": 576.39,
-     "e": 580.39,
+     "s": 735.1,
+     "e": 739.02,
      "text": "Från foten och upp längs tornet till kanten är det tio meter."
     },
     {
-     "s": 581.39,
-     "e": 585.61,
+     "s": 740.02,
+     "e": 744.08,
      "text": "Ett snöre från kanten når marken en meter från tornets fot."
     },
     {
-     "s": 586.61,
-     "e": 588.57,
+     "s": 745.08,
+     "e": 747.02,
      "text": "Hur många grader lutar tornet?"
     },
     {
-     "s": 589.57,
-     "e": 592.53,
+     "s": 748.02,
+     "e": 750.94,
      "text": "Och hur stor är vinkeln nere vid tornets fot?"
     }
    ]

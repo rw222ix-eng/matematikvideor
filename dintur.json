@@ -1307,9 +1307,10 @@
       "text": "Tornet, snöret och marken bildar en rätvinklig triangel. Tornet är hypotenusan, 10 meter. Metern på marken ligger mitt emot vinkeln uppe vid kanten."
     },
     "losning": [
-      "Tornet är hypotenusan, 10 m.",
-      "Metern på marken ligger mitt emot vinkeln v uppe vid kanten. Den är motstående katet.",
-      "Båda finns i sinus: sin v = 1/10, så v = sin⁻¹(1/10) ≈ 5,7°.",
+      "Läs av sidorna från vinkeln v uppe vid kanten. Metern på marken står mitt emot v, så a = 1. Tornet är den längsta sidan, så c = 10.",
+      "Formeln med både a och c är sin v = a/c.",
+      "Sätt in talen: sin v = 1/10.",
+      "Gå baklänges med två tryck på sin: v = sin⁻¹(1/10) ≈ 5,7°.",
       "Vinkeln vid foten är 90 − 5,7 = 84,3°."
     ]
   },
