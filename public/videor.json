@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-12T12:03:55.250Z",
+ "byggd": "2026-10-12T12:36:41.419Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -39231,7 +39231,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-07-ekvationssystem-grafiskt-v1/ma2a-07-ekvationssystem-grafiskt-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-07-ekvationssystem-grafiskt-v2/ma2a-07-ekvationssystem-grafiskt-1080p.mp4",
    "moment": "Ekvationssystem grafiskt: skärningspunkten, antal lösningar, GeoGebra och att ställa upp ur text",
    "begrepp": [
     "ekvationssystem",
@@ -39257,137 +39257,161 @@
    ],
    "beskrivning": "År 1829 skulle järnvägen mellan Liverpool och Manchester välja mellan fasta ångmaskiner med rep och lok, och ingenjören James Walker jämförde kostnaderna. Vi skriver kostnaderna som två räta linjer, läser av skärningspunkten, ser när ett ekvationssystem har en, ingen eller oändligt många lösningar och löser det i GeoGebra.",
    "youtube": null,
-   "langd": 518,
+   "langd": 644,
    "omslag": "omslag/ma2a-07-ekvationssystem-grafiskt.jpg?v=8c473218",
    "omslagRen": "omslag/ma2a-07-ekvationssystem-grafiskt-ren.jpg?v=ad708d79",
    "omslagStor": null,
    "repliker": [
     {
-     "t": 1,
-     "text": "Vi är i Liverpool i England, vintern 1828. Hit kommer bomull med fartyg, och fabrikerna i staden Manchester behöver den. Därför bygger ett bolag en järnväg mellan städerna, femtio kilometer lång."
+     "t": 9,
+     "text": "Vi är i Liverpool i England, vintern artonhundratjugoåtta. Hit kommer bomull med fartyg. Bomullen ska till fabrikerna i staden Manchester, femtio kilometer bort. Därför bygger ett bolag en järnväg mellan städerna."
     },
     {
-     "t": 20,
-     "text": "Rälsen läggs ut, men bolaget har inte bestämt vad som ska dra vagnarna. Det finns två sätt. Det ena är fasta ångmaskiner i hus längs banan, som drar vagnarna med långa rep. Det andra är ånglok, som kör själva på rälsen och drar vagnarna efter sig."
+     "t": 26,
+     "text": "Rälsen läggs ut. Men bolaget har inte bestämt vad som ska dra vagnarna. Det finns två sätt. Det ena är stora ångmaskiner som står stilla i hus längs banan. De drar vagnarna med långa rep. Det andra är ånglok, som kör själva på rälsen och drar vagnarna efter sig."
     },
     {
-     "t": 43,
-     "text": "Bolaget anställer därför två ingenjörer, som ska jämföra de två sätten. En av dem är James Walker. Han reser runt till kolgruvorna i norra England, där både rep och lok redan används."
+     "t": 49,
+     "text": "Vilket sätt är billigast? Det vet ingen. Så bolaget anställer två ingenjörer, som ska jämföra de två sätten. En av dem heter James Walker. Han reser runt till kolgruvorna i norra England. Där används redan både rep och lok."
     },
     {
-     "t": 59,
-     "text": "Walker ser att repen är dyra att bygga, för maskinerna och repen måste finnas hela vägen innan första vagnen kan köra. Men sedan blir varje ton varor billigt att frakta. Loken är billigare i början, men varje ton blir dyrare."
+     "t": 69,
+     "text": "Walker ser att repen är dyra att bygga. Maskinerna och repen måste finnas hela vägen innan första vagnen kan köra. Men sen blir varje ton varor billigt att frakta. Med loken är det tvärtom. De är billigare i början, men varje ton blir dyrare."
     },
     {
-     "t": 80,
-     "text": "Svaret beror alltså på hur mycket varor järnvägen ska frakta. Walker skriver att om varorna är få, behövs ingen räkning, för då är loken billigast. Frågan är: hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+     "t": 90,
+     "text": "Så vad är billigast? Det beror på hur mycket varor järnvägen ska frakta. Walker skriver att om varorna är få, behövs ingen räkning. Då är loken billigast. Men hur mycket varor måste järnvägen frakta innan repen blir billigare? Det tar vi reda på nu."
     },
     {
-     "t": 100,
-     "text": "Vi räknar med enklare tal än Walkers. Talet x står för antalet tusen ton varor, och y står för kostnaden i tusen pund. Repen kostar sextio att bygga, och sedan tre för varje tusen ton. Kostnaden för repen är alltså y är lika med tre X plus sextio."
+     "t": 112,
+     "text": "Vi räknar med enklare tal än Walkers. Varorna räknar vi i tusen ton, och kostnaden i tusen pund. Vi börjar med repen. Att bygga dem kostar sextio. Sen kostar varje tusen ton tre till."
     },
     {
-     "t": 124,
-     "text": "Loken kostar tjugo att köpa, och sedan fyra för varje tusen ton. Kostnaden för loken är alltså y är lika med fyra X plus tjugo."
+     "t": 130,
+     "text": "Vad kostar repen om järnvägen fraktar tio tusen ton? Bygget kostar sextio. Tio tusen ton kostar tre gånger tio, alltså trettio. Sextio plus trettio blir nittio. Och tjugo tusen ton? Tre gånger tjugo är sextio. Sextio plus sextio blir hundratjugo."
     },
     {
-     "t": 137,
-     "text": "Båda ekvationerna har formen y är lika med k x plus m. Den står på formelbladet, under rubriken räta linjen. Talet m är där linjen korsar y-axeln, och här är det startkostnaden. Talet k är hur mycket y ökar när x ökar med ett, och här är det kostnaden för varje tusen ton."
+     "t": 156,
+     "text": "Hur räknade vi? Vi tog tre gånger antalet tusen ton, och sen lade vi till sextio. Antalet tusen ton kallar vi x. Kostnaden kallar vi y. Samma sak skrivet med bokstäver blir y är lika med tre X plus sextio."
     },
     {
-     "t": 165,
-     "text": "Nu ritar vi båda linjerna i samma koordinatsystem. Repens linje börjar på sextio och går upp tre för varje tusen ton åt höger. Lokens linje börjar lägre, på tjugo, men går upp fyra för varje tusen ton, så den är brantare."
+     "t": 176,
+     "text": "Nu loken. Loken kostar tjugo att köpa. Sen kostar varje tusen ton fyra. Tio tusen ton kostar då fyra gånger tio, alltså fyrtio. Tjugo plus fyrtio blir sextio. Med bokstäver blir det y är lika med fyra X plus tjugo."
     },
     {
-     "t": 185,
-     "text": "Alla punkter på repens linje passar i repens ekvation. Alla punkter på lokens linje passar i lokens ekvation. Linjerna korsar varandra i en punkt, som kallas skärningspunkten. Den ligger på båda linjerna, så den passar i båda ekvationerna."
+     "t": 200,
+     "text": "Nu ritar vi båda linjerna i samma koordinatsystem. Åt höger går tusen ton, och uppåt går tusen pund. Vi börjar med repen. Om inga varor fraktas kostar repen sextio. Där sätter vi en prick, på y-axeln vid sextio."
     },
     {
-     "t": 207,
-     "text": "Två ekvationer som ska gälla samtidigt kallas ett ekvationssystem. Man skriver dem under varandra, med en klammer framför. Att lösa systemet är att hitta det x och det y som passar i båda ekvationerna. Vi läser av skärningspunkten. Där är x lika med fyrtio och y lika med hundraåttio."
+     "t": 220,
+     "text": "Sen tar vi talen vi räknade ut. Tio tusen ton kostar nittio. Tjugo tusen ton kostar hundratjugo. Prickarna ligger på en rak linje, ser du? Tänk dig att du går längs linjen. Du går ett tusen ton åt höger. Då kommer du tre uppåt."
     },
     {
-     "t": 235,
-     "text": "Vi kontrollerar svaret i båda ekvationerna. Repen ger tre gånger fyrtio plus sextio, alltså hundraåttio. Loken ger fyra gånger fyrtio plus tjugo, alltså också hundraåttio. Båda stämmer, så lösningen är x lika med fyrtio och y lika med hundraåttio."
+     "t": 242,
+     "text": "Nu lokens linje. Den börjar lägre, på tjugo. Vid tio tusen ton är den på sextio. För varje tusen ton åt höger går den upp fyra. Fyra är mer än tre, så lokens linje är brantare."
     },
     {
-     "t": 260,
-     "text": "Nu kan vi svara på Walkers fråga. Vid fyrtiotusen ton kostar repen och loken lika mycket, hundraåttiotusen pund. Till vänster om skärningspunkten ligger lokens linje lägst, så där är loken billigast. Men efter fyrtiotusen ton ligger repens linje lägst, och då blir repen billigare."
+     "t": 259,
+     "text": "Därför står räta linjen så här på formelbladet. Y är lika med k x plus m. Talet m är där linjen börjar på y-axeln. Här är det vad det kostar innan någon vara fraktas. Talet k är hur mycket linjen går upp för varje steg åt höger. Här är det vad varje tusen ton kostar."
     },
     {
-     "t": 287,
-     "text": "Har två räta linjer olika k, korsar de varandra i precis en punkt. Men linjerna kan också ligga på andra sätt. Tänk dig två lok som båda kostar fyra för varje tusen ton. Det ena kostar tjugo att köpa och det andra trettio. Linjerna får samma k, så de är parallella och möts aldrig. Då saknar ekvationssystemet lösning, och det billigare loket är alltid billigast."
+     "t": 283,
+     "text": "Kolla nu var linjerna är. Först ligger lokens linje under repens. Men den är brantare, så den kommer ikapp. Var möts de? Vi följer linjerna åt höger. De möts vid fyrtio tusen ton. Där är båda på hundraåttio."
     },
     {
-     "t": 322,
-     "text": "Två ekvationer kan också beskriva samma linje. Ta y minus tjugo är lika med fyra X. Vi lägger till tjugo på båda sidor av likhetstecknet. Då står det y är lika med fyra X plus tjugo, alltså lokens linje. Linjerna ligger på varandra, så varje punkt på linjen är en lösning. Systemet har oändligt många lösningar."
+     "t": 302,
+     "text": "Varje punkt på repens linje passar i repens ekvation. Varje punkt på lokens linje passar i lokens ekvation. Punkten där linjerna möts ligger på båda. Den kallas skärningspunkten. Den passar alltså i båda ekvationerna."
     },
     {
-     "t": 353,
-     "text": "Walker skrev också att loken troligen skulle bli bättre. Säg att ett bättre lok kostar tre komma sex för varje tusen ton i stället för fyra. Då är skärningspunkten svår att läsa av exakt. Därför tar vi hjälp av GeoGebra."
+     "t": 321,
+     "text": "Stämmer det? Vi kollar. Repen först. Tre gånger fyrtio är hundratjugo. Hundratjugo plus sextio blir hundraåttio. Sen loken. Fyra gånger fyrtio är hundrasextio. Hundrasextio plus tjugo blir också hundraåttio. Båda stämmer."
     },
     {
-     "t": 373,
-     "text": "Öppna GeoGebras grafräknare och klicka i inmatningsfältet. Skriv y är lika med tre X plus sextio, och tryck på Enter. Då ritar GeoGebra repens linje."
+     "t": 344,
+     "text": "Två ekvationer som ska stämma på samma gång kallas ett ekvationssystem. Man skriver dem under varandra, med en klammer framför. Klammern betyder att båda ska gälla. Att lösa systemet betyder att hitta ett x och ett y som passar i båda. Det är skärningspunkten. Lösningen är x är lika med fyrtio och y är lika med hundraåttio."
     },
     {
-     "t": 389,
-     "text": "Skriv sedan y är lika med tre komma sex X plus tjugo, och tryck på Enter. Decimalkommat skriver man som en punkt. GeoGebra ritar lokens linje."
+     "t": 371,
+     "text": "Vad betyder det för Walker? Vid fyrtiotusen ton kostar repen och loken lika mycket, hundraåttiotusen pund. Kolla vid tjugo tusen ton. Där kostar repen hundratjugo och loken hundra. Lokens linje ligger lägst, och lägst betyder billigast. Men efter fyrtiotusen ton ligger repens linje lägst. Då blir repen billigare."
     },
     {
-     "t": 404,
-     "text": "Till sist klickar vi på repens linje. Då visar GeoGebra grå punkter där linjen möter något, till exempel lokens linje. Vi klickar på den grå punkten där linjerna möts. Då visar GeoGebra punkten sextiosex komma sex sju, tvåhundrasextio. Det första talet är x-värdet, och GeoGebra skriver en punkt i stället för komma."
+     "t": 398,
+     "text": "Har två räta linjer olika k, så lutar de olika mycket. Då korsar de varandra i precis en punkt. Men det kan bli på andra sätt också. Tänk dig två lok som båda kostar fyra för varje tusen ton. Det ena kostar tjugo att köpa, och det andra trettio."
     },
     {
-     "t": 434,
-     "text": "Med det bättre loket måste järnvägen alltså frakta nästan sextiosjutusen ton innan repen blir billigare. Ju bättre loken blir, desto mer varor behövs."
+     "t": 420,
+     "text": "Hur ser linjerna ut? Båda går upp fyra för varje tusen ton. De har samma k, så de lutar lika mycket. De är parallella, precis som de två rälerna i spåret. Avståndet mellan dem är alltid tio, och de möts aldrig. Då har ekvationssystemet ingen lösning. Det billigare loket är alltid billigast."
     },
     {
-     "t": 448,
-     "text": "Walkers rapport blev klar i mars 1829. Han tyckte att repen var lite billigare, men att valet var jämnt. Bolaget ville se vad loken klarade, så det ordnade en tävling för lok vid byn Rainhill i oktober samma år. Priset var femhundra pund."
-    },
-    {
-     "t": 471,
-     "text": "Loket Rocket vann tävlingen, och bolaget valde loken. Järnvägen öppnade år 1830, och sedan dess drar lok tågen på järnvägar över hela världen."
+     "t": 446,
+     "text": "Två ekvationer kan också se olika ut men vara samma linje. Ta y minus tjugo är lika med fyra X. Vi vill ha y ensamt. Så vi lägger till tjugo på båda sidor av likhetstecknet. Då står det y är lika med fyra X plus tjugo. Aha... det är ju lokens ekvation. Ritar vi den, hamnar den precis ovanpå lokens linje. Linjerna möts överallt, så varje punkt på linjen är en lösning. Systemet har oändligt många lösningar."
     },
     {
      "t": 485,
+     "text": "Walker skrev också att loken troligen skulle bli bättre. Säg att ett bättre lok kostar tre komma sex för varje tusen ton, i stället för fyra. Var möts linjerna nu? Det är svårt att se. De möts mellan två streck, och vi kan inte läsa av exakt. Därför tar vi hjälp av GeoGebra."
+    },
+    {
+     "t": 507,
+     "text": "Öppna GeoGebras grafräknare. Klicka i rutan längst upp till vänster. Där skriver man det som ska ritas. Skriv y är lika med tre X plus sextio. Tryck på Enter. Då ritar GeoGebra repens linje."
+    },
+    {
+     "t": 526,
+     "text": "Sen skriver du y är lika med tre komma sex X plus tjugo. I GeoGebra skriver man en punkt i stället för komma. Tryck på Enter. Då ritar GeoGebra lokens linje."
+    },
+    {
+     "t": 541,
+     "text": "Nu letar vi upp punkten där de möts. Klicka på repens linje. Då visar GeoGebra några grå punkter. Där möter linjen något annat. Klicka på den grå punkten där linjerna möts. Då visar GeoGebra punkten sextiosex komma sex sju, tvåhundrasextio. Det första talet är x."
+    },
+    {
+     "t": 565,
+     "text": "Vad betyder det? Med det bättre loket måste järnvägen frakta nästan sextiosjutusen ton innan repen blir billigare. Loken blev billigare för varje ton. Därför behövs fler ton innan repen hinner ikapp."
+    },
+    {
+     "t": 582,
+     "text": "Walkers rapport blev klar i mars artonhundratjugonio. Han tyckte att repen var lite billigare, men att det var jämnt. Bolaget ville se vad loken klarade. Så det ordnade en tävling för lok vid byn Rainhill, i oktober samma år. Priset var femhundra pund."
+    },
+    {
+     "t": 602,
+     "text": "Ett lok som hette Rocket vann tävlingen, och bolaget valde loken. Järnvägen öppnade år artonhundratrettio. Och sen dess drar lok tågen på järnvägar över hela världen."
+    },
+    {
+     "t": 616,
      "text": "Nu är det din tur. På en annan järnväg kostar repen fyrtio att bygga och sedan två för varje tusen ton. Loken kostar tio att köpa och sedan tre för varje tusen ton. Allt räknas i tusen pund och tusen ton. Rita båda linjerna i samma koordinatsystem. Hur mycket varor måste järnvägen frakta innan repen blir billigare?"
     }
    ],
    "kapitel": [
     {
-     "t": 1,
+     "t": 9,
      "rubrik": "Liverpool 1828: rep eller lok?",
      "typ": "historia"
     },
     {
-     "t": 100,
+     "t": 112,
      "rubrik": "Två kostnader, två ekvationer",
      "typ": "matte"
     },
     {
-     "t": 165,
+     "t": 200,
      "rubrik": "Linjerna och skärningspunkten",
      "typ": "matte"
     },
     {
-     "t": 287,
+     "t": 398,
      "rubrik": "En, ingen eller oändligt många lösningar",
      "typ": "matte"
     },
     {
-     "t": 353,
+     "t": 485,
      "rubrik": "Skärningspunkten med GeoGebra",
      "typ": "matte"
     },
     {
-     "t": 448,
+     "t": 582,
      "rubrik": "Tävlingen vid Rainhill",
      "typ": "historia"
     },
     {
-     "t": 485,
+     "t": 616,
      "rubrik": "Rep eller lok på en annan järnväg",
      "typ": "uppgift"
     }
@@ -39396,7 +39420,7 @@
     "geogebra": {
      "text": "Skriv y=2x+40 och y=3x+10. Klicka på en av linjerna och sedan på den grå punkten där de möts."
     },
-    "notisFran": 485,
+    "notisFran": 616,
     "fraga": "På en annan järnväg kostar repen 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Allt räknas i tusen pund och tusen ton. Rita båda linjerna i samma koordinatsystem.",
     "delar": [
      {
@@ -39428,7 +39452,7 @@
     ],
     "ledtrad": {
      "text": "Repens linje börjar på 40 och går upp 2 för varje tusen ton. Lokens linje börjar på 10 och går upp 3. Läs av x i skärningspunkten, som med 40 000 ton i filmen.",
-     "t": 165
+     "t": 200
     },
     "losning": [
      "Repen: y = 2x + 40. Loken: y = 3x + 10.",
@@ -39439,453 +39463,828 @@
    },
    "undertext": [
     {
-     "s": 1.5,
-     "e": 6.62,
-     "text": "Vi är i Liverpool i England, vintern 1828."
+     "s": 9.5,
+     "e": 13.5,
+     "text": "Vi är i Liverpool i England, vintern artonhundratjugoåtta."
     },
     {
-     "s": 7.64,
-     "e": 13.3,
-     "text": "Hit kommer bomull med fartyg, och fabrikerna i staden Manchester behöver den."
+     "s": 14.5,
+     "e": 16.34,
+     "text": "Hit kommer bomull med fartyg."
     },
     {
-     "s": 14.3,
-     "e": 19.64,
-     "text": "Därför bygger ett bolag en järnväg mellan städerna, 50 kilometer lång."
+     "s": 17.34,
+     "e": 21.5,
+     "text": "Bomullen ska till fabrikerna i staden Manchester, femtio kilometer bort."
     },
     {
-     "s": 20.94,
-     "e": 25.72,
-     "text": "Rälsen läggs ut, men bolaget har inte bestämt vad som ska dra vagnarna."
+     "s": 22.5,
+     "e": 25.46,
+     "text": "Därför bygger ett bolag en järnväg mellan städerna."
     },
     {
-     "s": 26.72,
-     "e": 28,
+     "s": 26.76,
+     "e": 27.88,
+     "text": "Rälsen läggs ut."
+    },
+    {
+     "s": 28.88,
+     "e": 31.66,
+     "text": "Men bolaget har inte bestämt vad som ska dra vagnarna."
+    },
+    {
+     "s": 32.66,
+     "e": 33.68,
      "text": "Det finns två sätt."
     },
     {
-     "s": 29,
-     "e": 35.22,
-     "text": "Det ena är fasta ångmaskiner i hus längs banan, som drar vagnarna med långa rep."
+     "s": 34.68,
+     "e": 39.12,
+     "text": "Det ena är stora ångmaskiner som står stilla i hus längs banan."
     },
     {
-     "s": 36.22,
-     "e": 41.9,
+     "s": 40.12,
+     "e": 42.12,
+     "text": "De drar vagnarna med långa rep."
+    },
+    {
+     "s": 43.12,
+     "e": 48.28,
      "text": "Det andra är ånglok, som kör själva på rälsen och drar vagnarna efter sig."
     },
     {
-     "s": 43.2,
-     "e": 48.52,
-     "text": "Bolaget anställer därför två ingenjörer, som ska jämföra de två sätten."
+     "s": 49.58,
+     "e": 50.9,
+     "text": "Vilket sätt är billigast?"
     },
     {
-     "s": 49.52,
-     "e": 51.52,
-     "text": "En av dem är James Walker."
+     "s": 51.9,
+     "e": 52.9,
+     "text": "Det vet ingen."
     },
     {
-     "s": 52.52,
-     "e": 58.38,
-     "text": "Han reser runt till kolgruvorna i norra England, där både rep och lok redan används."
+     "s": 53.6,
+     "e": 58.06,
+     "text": "Så bolaget anställer två ingenjörer, som ska jämföra de två sätten."
     },
     {
-     "s": 59.68,
-     "e": 66.58,
-     "text": "Walker ser att repen är dyra att bygga, för maskinerna och repen måste finnas hela vägen"
+     "s": 59.06,
+     "e": 60.94,
+     "text": "En av dem heter James Walker."
     },
     {
-     "s": 66.68,
-     "e": 68.64,
-     "text": "innan första vagnen kan köra."
+     "s": 61.94,
+     "e": 64.72,
+     "text": "Han reser runt till kolgruvorna i norra England."
     },
     {
-     "s": 69.64,
-     "e": 73.48,
-     "text": "Men sedan blir varje ton varor billigt att frakta."
+     "s": 65.72,
+     "e": 68.3,
+     "text": "Där används redan både rep och lok."
     },
     {
-     "s": 74.48,
-     "e": 78.94,
-     "text": "Loken är billigare i början, men varje ton blir dyrare."
+     "s": 69.6,
+     "e": 72.2,
+     "text": "Walker ser att repen är dyra att bygga."
     },
     {
-     "s": 80.24,
-     "e": 84.66,
-     "text": "Svaret beror alltså på hur mycket varor järnvägen ska frakta."
+     "s": 73.2,
+     "e": 78.02,
+     "text": "Maskinerna och repen måste finnas hela vägen innan första vagnen kan köra."
     },
     {
-     "s": 85.66,
-     "e": 91.78,
-     "text": "Walker skriver att om varorna är få, behövs ingen räkning, för då är loken billigast."
+     "s": 79.02,
+     "e": 82.42,
+     "text": "Men sen blir varje ton varor billigt att frakta."
     },
     {
-     "s": 92.78,
-     "e": 98.88,
-     "text": "Frågan är: hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+     "s": 83.42,
+     "e": 85,
+     "text": "Med loken är det tvärtom."
     },
     {
-     "s": 100.18,
-     "e": 102.7,
+     "s": 86,
+     "e": 89.58,
+     "text": "De är billigare i början, men varje ton blir dyrare."
+    },
+    {
+     "s": 90.88,
+     "e": 92.16,
+     "text": "Så vad är billigast?"
+    },
+    {
+     "s": 93.16,
+     "e": 96.2,
+     "text": "Det beror på hur mycket varor järnvägen ska frakta."
+    },
+    {
+     "s": 97.2,
+     "e": 100.88,
+     "text": "Walker skriver att om varorna är få, behövs ingen räkning."
+    },
+    {
+     "s": 101.88,
+     "e": 103.32,
+     "text": "Då är loken billigast."
+    },
+    {
+     "s": 104.32,
+     "e": 109,
+     "text": "Men hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+    },
+    {
+     "s": 110,
+     "e": 111.34,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 112.64,
+     "e": 114.98,
      "text": "Vi räknar med enklare tal än Walkers."
     },
     {
-     "s": 103.7,
-     "e": 110.92,
-     "text": "Talet x står för antalet tusen ton varor, och y står för kostnaden i tusen pund."
+     "s": 115.98,
+     "e": 120.52,
+     "text": "Varorna räknar vi i tusen ton, och kostnaden i tusen pund."
     },
     {
-     "s": 111.92,
-     "e": 117.08,
-     "text": "Repen kostar 60 att bygga, och sedan 3 för varje tusen ton."
+     "s": 121.52,
+     "e": 122.72,
+     "text": "Vi börjar med repen."
     },
     {
-     "s": 118.08,
-     "e": 123.52,
-     "text": "Kostnaden för repen är alltså y = 3x + 60."
+     "s": 123.72,
+     "e": 125.62,
+     "text": "Att bygga dem kostar sextio."
     },
     {
-     "s": 124.82,
-     "e": 130.04,
-     "text": "Loken kostar 20 att köpa, och sedan 4 för varje tusen ton."
+     "s": 126.62,
+     "e": 129.56,
+     "text": "Sen kostar varje tusen ton tre till."
     },
     {
-     "s": 131.04,
-     "e": 136.52,
-     "text": "Kostnaden för loken är alltså y = 4x + 20."
+     "s": 130.86,
+     "e": 134.72,
+     "text": "Vad kostar repen om järnvägen fraktar tio tusen ton?"
     },
     {
-     "s": 137.82,
-     "e": 142.98,
-     "text": "Båda ekvationerna har formen y = kx + m."
+     "s": 135.72,
+     "e": 137.22,
+     "text": "Bygget kostar sextio."
     },
     {
-     "s": 143.98,
-     "e": 148.08,
-     "text": "Den står på formelbladet, under rubriken räta linjen."
+     "s": 138.22,
+     "e": 142.4,
+     "text": "Tio tusen ton kostar tre gånger tio, alltså trettio."
     },
     {
-     "s": 149.08,
-     "e": 154.68,
-     "text": "Talet m är där linjen korsar y-axeln, och här är det startkostnaden."
+     "s": 143.4,
+     "e": 145.92,
+     "text": "Sextio plus trettio blir nittio."
     },
     {
-     "s": 155.68,
-     "e": 163.78,
-     "text": "Talet k är hur mycket y ökar när x ökar med ett, och här är det kostnaden för varje tusen ton."
+     "s": 146.92,
+     "e": 148.18,
+     "text": "Och tjugo tusen ton?"
     },
     {
-     "s": 165.08,
-     "e": 168.76,
+     "s": 149.18,
+     "e": 150.94,
+     "text": "Tre gånger tjugo är sextio."
+    },
+    {
+     "s": 151.94,
+     "e": 154.86,
+     "text": "Sextio plus sextio blir hundratjugo."
+    },
+    {
+     "s": 156.16,
+     "e": 157.16,
+     "text": "Hur räknade vi?"
+    },
+    {
+     "s": 157.96,
+     "e": 162.58,
+     "text": "Vi tog tre gånger antalet tusen ton, och sen lade vi till sextio."
+    },
+    {
+     "s": 163.58,
+     "e": 166.08,
+     "text": "Antalet tusen ton kallar vi x."
+    },
+    {
+     "s": 167.08,
+     "e": 168.66,
+     "text": "Kostnaden kallar vi y."
+    },
+    {
+     "s": 169.66,
+     "e": 175.5,
+     "text": "Samma sak skrivet med bokstäver blir y är lika med tre X plus sextio."
+    },
+    {
+     "s": 176.8,
+     "e": 180.68,
+     "text": "Nu loken. Loken kostar tjugo att köpa."
+    },
+    {
+     "s": 181.68,
+     "e": 184.32,
+     "text": "Sen kostar varje tusen ton fyra."
+    },
+    {
+     "s": 185.32,
+     "e": 189.8,
+     "text": "Tio tusen ton kostar då fyra gånger tio, alltså fyrtio."
+    },
+    {
+     "s": 190.8,
+     "e": 193.3,
+     "text": "Tjugo plus fyrtio blir sextio."
+    },
+    {
+     "s": 194.3,
+     "e": 199.08,
+     "text": "Med bokstäver blir det y är lika med fyra X plus tjugo."
+    },
+    {
+     "s": 200.38,
+     "e": 203.58,
      "text": "Nu ritar vi båda linjerna i samma koordinatsystem."
     },
     {
-     "s": 169.76,
-     "e": 175.84,
-     "text": "Repens linje börjar på 60 och går upp 3 för varje tusen ton åt höger."
+     "s": 204.58,
+     "e": 208.86,
+     "text": "Åt höger går tusen ton, och uppåt går tusen pund."
     },
     {
-     "s": 176.84,
-     "e": 182.9,
-     "text": "Lokens linje börjar lägre, på 20, men går upp 4 för varje tusen ton,"
+     "s": 209.86,
+     "e": 211.06,
+     "text": "Vi börjar med repen."
     },
     {
-     "s": 183.18,
-     "e": 184.44,
-     "text": "så den är brantare."
+     "s": 212.06,
+     "e": 215.22,
+     "text": "Om inga varor fraktas kostar repen sextio."
     },
     {
-     "s": 185.74,
-     "e": 189.94,
-     "text": "Alla punkter på repens linje passar i repens ekvation."
+     "s": 216.22,
+     "e": 219.28,
+     "text": "Där sätter vi en prick, på y-axeln vid sextio."
     },
     {
-     "s": 190.94,
-     "e": 195.02,
-     "text": "Alla punkter på lokens linje passar i lokens ekvation."
+     "s": 220.58,
+     "e": 222.46,
+     "text": "Sen tar vi talen vi räknade ut."
     },
     {
-     "s": 196.02,
-     "e": 200.92,
-     "text": "Linjerna korsar varandra i en punkt, som kallas skärningspunkten."
+     "s": 223.46,
+     "e": 225.7,
+     "text": "Tio tusen ton kostar nittio."
     },
     {
-     "s": 201.92,
-     "e": 206.34,
-     "text": "Den ligger på båda linjerna, så den passar i båda ekvationerna."
+     "s": 226.7,
+     "e": 229.34,
+     "text": "Tjugo tusen ton kostar hundratjugo."
     },
     {
-     "s": 207.64,
-     "e": 212.74,
-     "text": "Två ekvationer som ska gälla samtidigt kallas ett ekvationssystem."
+     "s": 230.34,
+     "e": 232.58,
+     "text": "Prickarna ligger på en rak linje, ser du?"
     },
     {
-     "s": 213.74,
-     "e": 217.44,
+     "s": 233.58,
+     "e": 235.38,
+     "text": "Tänk dig att du går längs linjen."
+    },
+    {
+     "s": 236.38,
+     "e": 238.76,
+     "text": "Du går ett tusen ton åt höger."
+    },
+    {
+     "s": 239.76,
+     "e": 241.38,
+     "text": "Då kommer du tre uppåt."
+    },
+    {
+     "s": 242.68,
+     "e": 243.96,
+     "text": "Nu lokens linje."
+    },
+    {
+     "s": 244.96,
+     "e": 246.74,
+     "text": "Den börjar lägre, på tjugo."
+    },
+    {
+     "s": 247.74,
+     "e": 250.04,
+     "text": "Vid tio tusen ton är den på sextio."
+    },
+    {
+     "s": 251.04,
+     "e": 254.1,
+     "text": "För varje tusen ton åt höger går den upp fyra."
+    },
+    {
+     "s": 255.1,
+     "e": 258.48,
+     "text": "Fyra är mer än tre, så lokens linje är brantare."
+    },
+    {
+     "s": 259.78,
+     "e": 262.7,
+     "text": "Därför står räta linjen så här på formelbladet."
+    },
+    {
+     "s": 263.7,
+     "e": 266.02,
+     "text": "Y är lika med k x plus m."
+    },
+    {
+     "s": 267.02,
+     "e": 270.02,
+     "text": "Talet m är där linjen börjar på y-axeln."
+    },
+    {
+     "s": 271.02,
+     "e": 273.88,
+     "text": "Här är det vad det kostar innan någon vara fraktas."
+    },
+    {
+     "s": 274.88,
+     "e": 278.78,
+     "text": "Talet k är hur mycket linjen går upp för varje steg åt höger."
+    },
+    {
+     "s": 279.78,
+     "e": 282.14,
+     "text": "Här är det vad varje tusen ton kostar."
+    },
+    {
+     "s": 283.44,
+     "e": 284.72,
+     "text": "Kolla nu var linjerna är."
+    },
+    {
+     "s": 285.72,
+     "e": 288.32,
+     "text": "Först ligger lokens linje under repens."
+    },
+    {
+     "s": 289.32,
+     "e": 291.46,
+     "text": "Men den är brantare, så den kommer ikapp."
+    },
+    {
+     "s": 292.46,
+     "e": 293.46,
+     "text": "Var möts de?"
+    },
+    {
+     "s": 294.14,
+     "e": 295.66,
+     "text": "Vi följer linjerna åt höger."
+    },
+    {
+     "s": 296.66,
+     "e": 298.62,
+     "text": "De möts vid fyrtio tusen ton."
+    },
+    {
+     "s": 299.62,
+     "e": 301.32,
+     "text": "Där är båda på hundraåttio."
+    },
+    {
+     "s": 302.62,
+     "e": 306.24,
+     "text": "Varje punkt på repens linje passar i repens ekvation."
+    },
+    {
+     "s": 307.24,
+     "e": 310.7,
+     "text": "Varje punkt på lokens linje passar i lokens ekvation."
+    },
+    {
+     "s": 311.7,
+     "e": 314.32,
+     "text": "Punkten där linjerna möts ligger på båda."
+    },
+    {
+     "s": 315.32,
+     "e": 317.28,
+     "text": "Den kallas skärningspunkten."
+    },
+    {
+     "s": 318.28,
+     "e": 320.42,
+     "text": "Den passar alltså i båda ekvationerna."
+    },
+    {
+     "s": 321.72,
+     "e": 325.36,
+     "text": "Stämmer det? Vi kollar. Repen först."
+    },
+    {
+     "s": 326.36,
+     "e": 328.54,
+     "text": "Tre gånger fyrtio är hundratjugo."
+    },
+    {
+     "s": 329.54,
+     "e": 334.08,
+     "text": "Hundratjugo plus sextio blir hundraåttio. Sen loken."
+    },
+    {
+     "s": 335.08,
+     "e": 337.3,
+     "text": "Fyra gånger fyrtio är hundrasextio."
+    },
+    {
+     "s": 338.3,
+     "e": 343.14,
+     "text": "Hundrasextio plus tjugo blir också hundraåttio. Båda stämmer."
+    },
+    {
+     "s": 344.44,
+     "e": 349.08,
+     "text": "Två ekvationer som ska stämma på samma gång kallas ett ekvationssystem."
+    },
+    {
+     "s": 350.08,
+     "e": 353.06,
      "text": "Man skriver dem under varandra, med en klammer framför."
     },
     {
-     "s": 218.44,
-     "e": 225.34,
-     "text": "Att lösa systemet är att hitta det x och det y som passar i båda ekvationerna."
+     "s": 354.06,
+     "e": 356.3,
+     "text": "Klammern betyder att båda ska gälla."
     },
     {
-     "s": 226.34,
-     "e": 228.26,
-     "text": "Vi läser av skärningspunkten."
+     "s": 357.3,
+     "e": 362.1,
+     "text": "Att lösa systemet betyder att hitta ett x och ett y som passar i båda."
     },
     {
-     "s": 229.26,
-     "e": 233.8,
-     "text": "Där är x = 40 och y = 180."
+     "s": 363.1,
+     "e": 364.44,
+     "text": "Det är skärningspunkten."
     },
     {
-     "s": 235.1,
-     "e": 238.34,
-     "text": "Vi kontrollerar svaret i båda ekvationerna."
+     "s": 365.44,
+     "e": 370,
+     "text": "Lösningen är x är lika med fyrtio och y är lika med hundraåttio."
     },
     {
-     "s": 239.34,
-     "e": 244.88,
-     "text": "Repen ger 3 · 40 + 60, alltså 180."
+     "s": 371.3,
+     "e": 372.52,
+     "text": "Vad betyder det för Walker?"
     },
     {
-     "s": 245.88,
-     "e": 251.82,
-     "text": "Loken ger 4 · 40 + 20, alltså också 180."
+     "s": 373.52,
+     "e": 379.26,
+     "text": "Vid fyrtiotusen ton kostar repen och loken lika mycket, hundraåttiotusen pund."
     },
     {
-     "s": 252.82,
-     "e": 259.42,
-     "text": "Båda stämmer, så lösningen är x = 40 och y = 180."
+     "s": 380.26,
+     "e": 381.72,
+     "text": "Kolla vid tjugo tusen ton."
     },
     {
-     "s": 260.72,
-     "e": 262.96,
-     "text": "Nu kan vi svara på Walkers fråga."
+     "s": 382.72,
+     "e": 385.9,
+     "text": "Där kostar repen hundratjugo och loken hundra."
     },
     {
-     "s": 263.96,
-     "e": 270.7,
-     "text": "Vid 40 000 ton kostar repen och loken lika mycket, 180 000 pund."
+     "s": 386.9,
+     "e": 390.68,
+     "text": "Lokens linje ligger lägst, och lägst betyder billigast."
     },
     {
-     "s": 271.7,
-     "e": 278.3,
-     "text": "Till vänster om skärningspunkten ligger lokens linje lägst, så där är loken billigast."
+     "s": 391.68,
+     "e": 395.02,
+     "text": "Men efter fyrtiotusen ton ligger repens linje lägst."
     },
     {
-     "s": 279.3,
-     "e": 285.88,
-     "text": "Men efter 40 000 ton ligger repens linje lägst, och då blir repen billigare."
+     "s": 396.02,
+     "e": 397.48,
+     "text": "Då blir repen billigare."
     },
     {
-     "s": 287.18,
-     "e": 293.24,
-     "text": "Har två räta linjer olika k, korsar de varandra i precis en punkt."
+     "s": 398.78,
+     "e": 403.06,
+     "text": "Har två räta linjer olika k, så lutar de olika mycket."
     },
     {
-     "s": 294.24,
-     "e": 296.98,
-     "text": "Men linjerna kan också ligga på andra sätt."
+     "s": 404.06,
+     "e": 406.78,
+     "text": "Då korsar de varandra i precis en punkt."
     },
     {
-     "s": 297.98,
-     "e": 302.98,
-     "text": "Tänk dig två lok som båda kostar 4 för varje tusen ton."
+     "s": 407.78,
+     "e": 409.4,
+     "text": "Men det kan bli på andra sätt också."
     },
     {
-     "s": 303.98,
-     "e": 307.96,
-     "text": "Det ena kostar 20 att köpa och det andra 30."
+     "s": 410.4,
+     "e": 414.62,
+     "text": "Tänk dig två lok som båda kostar fyra för varje tusen ton."
     },
     {
-     "s": 308.96,
-     "e": 313.54,
-     "text": "Linjerna får samma k, så de är parallella och möts aldrig."
+     "s": 415.62,
+     "e": 418.84,
+     "text": "Det ena kostar tjugo att köpa, och det andra trettio."
     },
     {
-     "s": 314.54,
-     "e": 320.7,
-     "text": "Då saknar ekvationssystemet lösning, och det billigare loket är alltid billigast."
+     "s": 420.14,
+     "e": 421.14,
+     "text": "Hur ser linjerna ut?"
     },
     {
-     "s": 322,
-     "e": 325.4,
-     "text": "Två ekvationer kan också beskriva samma linje."
+     "s": 422.12,
+     "e": 424.8,
+     "text": "Båda går upp fyra för varje tusen ton."
     },
     {
-     "s": 326.4,
-     "e": 330.16,
-     "text": "Ta y − 20 = 4x."
+     "s": 425.8,
+     "e": 428.66,
+     "text": "De har samma k, så de lutar lika mycket."
     },
     {
-     "s": 331.16,
-     "e": 334.82,
-     "text": "Vi lägger till 20 på båda sidor av likhetstecknet."
+     "s": 429.66,
+     "e": 433.12,
+     "text": "De är parallella, precis som de två rälerna i spåret."
     },
     {
-     "s": 335.82,
-     "e": 341.98,
-     "text": "Då står det y = 4x + 20, alltså lokens linje."
+     "s": 434.12,
+     "e": 438.12,
+     "text": "Avståndet mellan dem är alltid tio, och de möts aldrig."
     },
     {
-     "s": 342.98,
-     "e": 348.42,
-     "text": "Linjerna ligger på varandra, så varje punkt på linjen är en lösning."
+     "s": 439.12,
+     "e": 441.64,
+     "text": "Då har ekvationssystemet ingen lösning."
     },
     {
-     "s": 349.42,
-     "e": 352.2,
+     "s": 442.64,
+     "e": 445.32,
+     "text": "Det billigare loket är alltid billigast."
+    },
+    {
+     "s": 446.62,
+     "e": 450.48,
+     "text": "Två ekvationer kan också se olika ut men vara samma linje."
+    },
+    {
+     "s": 451.48,
+     "e": 454.74,
+     "text": "Ta y minus tjugo är lika med fyra X."
+    },
+    {
+     "s": 455.74,
+     "e": 457.3,
+     "text": "Vi vill ha y ensamt."
+    },
+    {
+     "s": 458.3,
+     "e": 461.7,
+     "text": "Så vi lägger till tjugo på båda sidor av likhetstecknet."
+    },
+    {
+     "s": 462.7,
+     "e": 468.54,
+     "text": "Då står det y är lika med fyra X plus tjugo. Aha..."
+    },
+    {
+     "s": 469.54,
+     "e": 471.3,
+     "text": "det är ju lokens ekvation."
+    },
+    {
+     "s": 472.3,
+     "e": 475.74,
+     "text": "Ritar vi den, hamnar den precis ovanpå lokens linje."
+    },
+    {
+     "s": 476.74,
+     "e": 480.9,
+     "text": "Linjerna möts överallt, så varje punkt på linjen är en lösning."
+    },
+    {
+     "s": 481.9,
+     "e": 484.44,
      "text": "Systemet har oändligt många lösningar."
     },
     {
-     "s": 353.5,
-     "e": 357.48,
+     "s": 485.74,
+     "e": 488.86,
      "text": "Walker skrev också att loken troligen skulle bli bättre."
     },
     {
-     "s": 358.48,
-     "e": 364.54,
-     "text": "Säg att ett bättre lok kostar 3,6 för varje tusen ton i stället för 4."
+     "s": 489.86,
+     "e": 493.66,
+     "text": "Säg att ett bättre lok kostar tre komma sex för varje tusen ton,"
     },
     {
-     "s": 365.54,
-     "e": 368.9,
-     "text": "Då är skärningspunkten svår att läsa av exakt."
+     "s": 493.84,
+     "e": 494.84,
+     "text": "i stället för fyra."
     },
     {
-     "s": 369.9,
-     "e": 372.12,
+     "s": 495.72,
+     "e": 497.04,
+     "text": "Var möts linjerna nu?"
+    },
+    {
+     "s": 498.04,
+     "e": 499.12,
+     "text": "Det är svårt att se."
+    },
+    {
+     "s": 500.12,
+     "e": 503.7,
+     "text": "De möts mellan två streck, och vi kan inte läsa av exakt."
+    },
+    {
+     "s": 504.7,
+     "e": 506.6,
      "text": "Därför tar vi hjälp av GeoGebra."
     },
     {
-     "s": 373.42,
-     "e": 378.16,
-     "text": "Öppna GeoGebras grafräknare och klicka i inmatningsfältet."
+     "s": 507.9,
+     "e": 509.88,
+     "text": "Öppna GeoGebras grafräknare."
     },
     {
-     "s": 379.16,
-     "e": 384.52,
-     "text": "Skriv y = 3x + 60, och tryck på Enter."
+     "s": 510.88,
+     "e": 513,
+     "text": "Klicka i rutan längst upp till vänster."
     },
     {
-     "s": 385.52,
-     "e": 388.2,
+     "s": 514,
+     "e": 515.78,
+     "text": "Där skriver man det som ska ritas."
+    },
+    {
+     "s": 516.78,
+     "e": 520.4,
+     "text": "Skriv y är lika med tre X plus sextio."
+    },
+    {
+     "s": 521.4,
+     "e": 522.4,
+     "text": "Tryck på Enter."
+    },
+    {
+     "s": 523.2,
+     "e": 525.4,
      "text": "Då ritar GeoGebra repens linje."
     },
     {
-     "s": 389.5,
-     "e": 396.02,
-     "text": "Skriv sedan y = 3,6x + 20, och tryck på Enter."
+     "s": 526.7,
+     "e": 531.16,
+     "text": "Sen skriver du y är lika med tre komma sex X plus tjugo."
     },
     {
-     "s": 397.02,
-     "e": 399.74,
-     "text": "Decimalkommat skriver man som en punkt."
+     "s": 532.16,
+     "e": 535.06,
+     "text": "I GeoGebra skriver man en punkt i stället för komma."
     },
     {
-     "s": 400.74,
-     "e": 403.16,
-     "text": "GeoGebra ritar lokens linje."
+     "s": 536.06,
+     "e": 537.06,
+     "text": "Tryck på Enter."
     },
     {
-     "s": 404.46,
-     "e": 406.98,
-     "text": "Till sist klickar vi på repens linje."
+     "s": 537.88,
+     "e": 540.1,
+     "text": "Då ritar GeoGebra lokens linje."
     },
     {
-     "s": 407.98,
-     "e": 414.38,
-     "text": "Då visar GeoGebra grå punkter där linjen möter något, till exempel lokens linje."
+     "s": 541.4,
+     "e": 543.28,
+     "text": "Nu letar vi upp punkten där de möts."
     },
     {
-     "s": 415.38,
-     "e": 418.6,
-     "text": "Vi klickar på den grå punkten där linjerna möts."
+     "s": 544.28,
+     "e": 545.78,
+     "text": "Klicka på repens linje."
     },
     {
-     "s": 419.6,
-     "e": 425.88,
-     "text": "Då visar GeoGebra punkten 66,67, 260."
+     "s": 546.78,
+     "e": 549.1,
+     "text": "Då visar GeoGebra några grå punkter."
     },
     {
-     "s": 426.88,
-     "e": 432.9,
-     "text": "Det första talet är x-värdet, och GeoGebra skriver en punkt i stället för komma."
+     "s": 550.1,
+     "e": 551.88,
+     "text": "Där möter linjen något annat."
     },
     {
-     "s": 434.2,
-     "e": 442.1,
-     "text": "Med det bättre loket måste järnvägen alltså frakta nästan 67 000 ton innan repen blir billigare."
+     "s": 552.88,
+     "e": 555.32,
+     "text": "Klicka på den grå punkten där linjerna möts."
     },
     {
-     "s": 443.1,
-     "e": 446.98,
-     "text": "Ju bättre loken blir, desto mer varor behövs."
+     "s": 556.32,
+     "e": 561.54,
+     "text": "Då visar GeoGebra punkten sextiosex komma sex sju, tvåhundrasextio."
     },
     {
-     "s": 448.28,
-     "e": 452,
-     "text": "Walkers rapport blev klar i mars 1829."
+     "s": 562.54,
+     "e": 564.14,
+     "text": "Det första talet är x."
     },
     {
-     "s": 453,
-     "e": 457.84,
-     "text": "Han tyckte att repen var lite billigare, men att valet var jämnt."
+     "s": 565.44,
+     "e": 566.44,
+     "text": "Vad betyder det?"
     },
     {
-     "s": 458.84,
-     "e": 465.1,
-     "text": "Bolaget ville se vad loken klarade, så det ordnade en tävling för lok vid byn Rainhill"
+     "s": 567.12,
+     "e": 573.4,
+     "text": "Med det bättre loket måste järnvägen frakta nästan sextiosjutusen ton innan repen blir billigare."
     },
     {
-     "s": 465.18,
-     "e": 466.62,
-     "text": "i oktober samma år."
+     "s": 574.4,
+     "e": 576.82,
+     "text": "Loken blev billigare för varje ton."
     },
     {
-     "s": 467.62,
-     "e": 469.9,
-     "text": "Priset var 500 pund."
+     "s": 577.82,
+     "e": 580.84,
+     "text": "Därför behövs fler ton innan repen hinner ikapp."
     },
     {
-     "s": 471.2,
-     "e": 475.5,
-     "text": "Loket Rocket vann tävlingen, och bolaget valde loken."
+     "s": 582.14,
+     "e": 585.52,
+     "text": "Walkers rapport blev klar i mars artonhundratjugonio."
     },
     {
-     "s": 476.5,
-     "e": 484.22,
-     "text": "Järnvägen öppnade år 1830, och sedan dess drar lok tågen på järnvägar över hela världen."
+     "s": 586.52,
+     "e": 590.12,
+     "text": "Han tyckte att repen var lite billigare, men att det var jämnt."
     },
     {
-     "s": 485.52,
-     "e": 487.36,
+     "s": 591.12,
+     "e": 593.22,
+     "text": "Bolaget ville se vad loken klarade."
+    },
+    {
+     "s": 594.22,
+     "e": 598.52,
+     "text": "Så det ordnade en tävling för lok vid byn Rainhill, i oktober samma år."
+    },
+    {
+     "s": 599.52,
+     "e": 601.38,
+     "text": "Priset var femhundra pund."
+    },
+    {
+     "s": 602.68,
+     "e": 607.06,
+     "text": "Ett lok som hette Rocket vann tävlingen, och bolaget valde loken."
+    },
+    {
+     "s": 608.06,
+     "e": 610.62,
+     "text": "Järnvägen öppnade år artonhundratrettio."
+    },
+    {
+     "s": 611.62,
+     "e": 615.62,
+     "text": "Och sen dess drar lok tågen på järnvägar över hela världen."
+    },
+    {
+     "s": 616.92,
+     "e": 617.96,
      "text": "Nu är det din tur."
     },
     {
-     "s": 488.36,
-     "e": 495.18,
-     "text": "På en annan järnväg kostar repen 40 att bygga och sedan 2 för varje tusen ton."
+     "s": 618.96,
+     "e": 624.5,
+     "text": "På en annan järnväg kostar repen fyrtio att bygga och sedan två för varje tusen ton."
     },
     {
-     "s": 496.18,
-     "e": 501.54,
-     "text": "Loken kostar 10 att köpa och sedan 3 för varje tusen ton."
+     "s": 625.5,
+     "e": 629.74,
+     "text": "Loken kostar tio att köpa och sedan tre för varje tusen ton."
     },
     {
-     "s": 502.54,
-     "e": 506.08,
+     "s": 630.74,
+     "e": 633.62,
      "text": "Allt räknas i tusen pund och tusen ton."
     },
     {
-     "s": 507.08,
-     "e": 510.54,
+     "s": 634.62,
+     "e": 637.46,
      "text": "Rita båda linjerna i samma koordinatsystem."
     },
     {
-     "s": 511.54,
-     "e": 516.4,
+     "s": 638.46,
+     "e": 642.6,
      "text": "Hur mycket varor måste järnvägen frakta innan repen blir billigare?"
     }
    ]
