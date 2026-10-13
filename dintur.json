@@ -1570,9 +1570,9 @@
     ],
     "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30. Vinkeln får du med tangens invers: tryck två gånger på tan." },
     "losning": [
-      "Vektorn från Carpathia till Titanic är (−40, 30).",
-      "Längden: 40² + 30² = 1 600 + 900 = 2 500, och √2 500 = 50. Det är 50 km.",
-      "Vinkeln från norr: motstående katet 40, närliggande katet 30, så tan v = 40/30.",
+      "Vektorn från Carpathia till Titanic är u = (−40, 30), alltså aₓ = −40 och aᵧ = 30.",
+      "Längden med mallen |u| = √(aₓ² + aᵧ²): |u| = √((−40)² + 30²) = √(1 600 + 900) = √2 500 = 50. Det är 50 km.",
+      "Vinkeln från norr med mallen tan v = a/b: a = 40 ligger mitt emot vinkeln och b = 30 intill, så tan v = 40/30.",
       "v = tan⁻¹(40/30) ≈ 53,1°, alltså ungefär 53° från norr åt väster."
     ]
   },
