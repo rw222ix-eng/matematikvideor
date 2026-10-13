@@ -1413,21 +1413,21 @@
   },
   "ma1c-k6-01-sinus-cosinus-tangens": {
     "notisFran": "Nu är det din tur",
-    "fraga": "En pyramid är 3 hög, och halva bredden är 4. Den sneda sidan är 5. Räkna ut sin v och tan v för vinkeln nere vid marken.",
+    "fraga": "En pyramid är 3 meter hög, och halva bredden är 4 meter. Sidan från toppen ner till kanten är 5 meter. Räkna ut sin v och tan v för vinkeln nere vid marken.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "p06-elevens-pyramid",
       "tema": "scen",
       "blak": { "farg": "#3A2314", "skugga": "rgba(255,228,184,.6)", "accent": "#3A2314", "svag": "rgba(58,35,20,.8)" },
       "utsnitt": [787, 600, 853, 480],
-      "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 3, halva bredden 4 och den sneda sidan 5. Vinkeln v ligger nere vid marken.",
+      "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 3 m, halva bredden 4 m och sidan från toppen ner till kanten 5 m. Vinkeln v ligger nere vid marken.",
       "delar": [
         { "typ": "linje", "p": [[1259, 758], [1259, 968]] },
-        { "typ": "sida", "p": [[1259, 758], [1259, 968]], "text": "3", "sida": -1, "avstand": 44 },
+        { "typ": "sida", "p": [[1259, 758], [1259, 968]], "text": "3 m", "sida": -1, "avstand": 44 },
         { "typ": "linje", "p": [[1259, 968], [979, 968]] },
-        { "typ": "sida", "p": [[1259, 968], [979, 968]], "text": "4", "sida": -1, "avstand": 44 },
+        { "typ": "sida", "p": [[1259, 968], [979, 968]], "text": "4 m", "sida": -1, "avstand": 44 },
         { "typ": "linje", "p": [[979, 968], [1259, 758]] },
-        { "typ": "sida", "p": [[979, 968], [1259, 758]], "text": "5", "sida": -1, "avstand": 50 },
+        { "typ": "sida", "p": [[979, 968], [1259, 758]], "text": "5 m", "sida": -1, "avstand": 50 },
         { "typ": "ratvinkel", "vid": [1259, 968], "mot": [[979, 968], [1259, 758]], "storlek": 24 },
         { "typ": "vinkel", "vid": [979, 968], "mot": [[1259, 968], [1259, 758]], "r": 60 },
         { "typ": "text", "vid": [939, 960], "text": "v" }
@@ -1457,7 +1457,7 @@
           {
             "svar": "3/4",
             "tolerans": 0.0006,
-            "text": "3/4 är tangens. Sinus delar med hypotenusan, den sneda sidan 5."
+            "text": "3/4 är tangens. Sinus delar med hypotenusan, sidan från toppen ner till kanten, 5."
           }
         ]
       },
@@ -1486,12 +1486,12 @@
     ],
     "ledtrad": {
       "fras": "Nu kommer de tre kvoterna",
-      "text": "Börja i vinkeln v vid marken. Höjden står mitt emot den, halva bredden går ut från den, och den sneda sidan är hypotenusan."
+      "text": "Börja i vinkeln v vid marken. Höjden står mitt emot den, halva bredden går ut från den, och sidan från toppen ner till kanten är hypotenusan."
     },
     "losning": [
-      "Höjden 3 står mitt emot v, så den är motstående katet: a = 3.",
-      "Halva bredden 4 går ut från v, så den är närliggande katet: b = 4.",
-      "Den sneda sidan 5 är hypotenusan: c = 5.",
+      "Höjden 3 m står mitt emot v, så den är motstående katet: a = 3.",
+      "Halva bredden 4 m går ut från v, så den är närliggande katet: b = 4.",
+      "Sidan från toppen ner till kanten, 5 m, är hypotenusan: c = 5.",
       "Formelbladet: sin v = a/c = 3/5 = 0,6.",
       "Formelbladet: tan v = a/b = 3/4 = 0,75."
     ]
