@@ -707,7 +707,7 @@
           },
           {
             "svar": "-4",
-            "text": "−4 är halva p. p är hela talet framför x."
+            "text": "−4 är p delat med två. p är hela talet framför x."
           }
         ]
       },
@@ -744,13 +744,13 @@
               -2,
               -6
             ],
-            "text": "Kolla tecknet. p är −8, så minus halva p blir +4, inte −4."
+            "text": "Kolla tecknet. p är −8, så minus p delat med två blir +4, inte −4."
           },
           {
             "svar": [
               4
             ],
-            "text": "4 är minus halva p. Nu ska du lägga till och dra bort roten ur 16 − 12."
+            "text": "4 är minus p delat med två. Nu ska du lägga till och dra bort roten ur 16 − 12."
           },
           {
             "svar": [
@@ -771,12 +771,14 @@
     ],
     "ledtrad": {
       "fras": "Här är p minus sex och q är åtta",
-      "text": "Gör som med x² − 6x + 8 = 0 i filmen. Läs av p och q med sina tecken, räkna minus halva p och sätt in i pq-formeln."
+      "text": "Gör som med x² − 6x + 8 = 0 i filmen. Läs av p och q med sina tecken. Skriv pq-formeln från bladet, x = −p/2 ± √((p/2)² − q), och sätt in talen där p och q står."
     },
     "losning": [
-      "p = −8 och q = 12, för tecknet hör till talet.",
-      "Minus halva p är +4, och halva p i kvadrat är 16.",
-      "x = 4 ± √(16 − 12) = 4 ± √4 = 4 ± 2.",
+      "x² + px + q = 0 ger p = −8 och q = 12, för tecknet hör till talet.",
+      "x = −p/2 ± √((p/2)² − q)",
+      "x = −(−8)/2 ± √(((−8)/2)² − 12)",
+      "(−8)/2 = −4, så längst fram står +4. Under rottecknet: (−4)² = 16, och 16 − 12 = 4.",
+      "x = 4 ± √4 = 4 ± 2",
       "x = 6 eller x = 2. Kontroll: 6² − 8 · 6 + 12 = 36 − 48 + 12 = 0."
     ],
     "notisFran": "Nu ett övningstal"
