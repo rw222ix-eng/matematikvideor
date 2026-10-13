@@ -1,13 +1,13 @@
 {
   "delos-och-altaret": {
-    "fraga": "Tänk dig att prästinnan i stället hade sagt att altaret skulle bli tre gånger så stort. Då måste sidan vara ett tal som upphöjt till 3 blir 3.",
+    "fraga": "Tänk dig att prästinnan i stället hade sagt att altaret skulle bli tre gånger så stort. Det gamla altaret var ett block, så det nya ska rymma 3 block. Vi kallar sidan x. Då ska x³ vara lika med 3.",
     "figur": {
       "vy": [1920, 1080],
       "bild": "p02-delos-apollons-altare",
       "tema": "scen",
       "blak": { "farg": "#FFFDF5", "skugga": "rgba(6,14,26,.92)" },
       "utsnitt": [720, 260, 1000, 562.5],
-      "text": "Apollons altare på Delos, en kub med sidan x. Altaret ska bli tre gånger så stort.",
+      "text": "Apollons altare på Delos, en kub med sidan x. Det nya altaret ska rymma 3 block.",
       "delar": [
         { "typ": "linje", "p": [[1143.4, 594], [1143, 734]] },
         { "typ": "linje", "p": [[1143.4, 594], [1323.5, 605]] },
@@ -32,8 +32,8 @@
         "tangenter": ["^", "³", "="],
         "fel": [
           { "svar": "x^3 = 2", "text": "Det är ekvationen för dubbelt så stort. Nu ska altaret bli tre gånger så stort." },
-          { "svar": "3x = 3", "text": "3x betyder 3 gånger x. Sidan ska upphöjd till 3 bli 3, så det är x³ som ska stå till vänster." },
-          { "svar": "x^2 = 3", "text": "Altaret är en kub, så sidan ska upphöjd till 3, inte till 2." }
+          { "svar": "3x = 3", "text": "3x betyder 3 gånger x. Altaret rymmer x · x · x block, och det skrivs x³. Så det är x³ som ska stå till vänster." },
+          { "svar": "x^2 = 3", "text": "Altaret är en kub. Det rymmer x · x · x block, alltså x³, inte x²." }
         ]
       },
       {
@@ -47,7 +47,7 @@
         "nara": { "tolerans": 0.05, "text": "Nästan. Svara med två decimaler, som 1,26 i filmen." },
         "fel": [
           { "svar": "1.26", "tolerans": 0.006, "text": "1,26 var sidan när altaret skulle bli dubbelt så stort. Nu står det 3 på höger sida." },
-          { "svar": "1.732", "tolerans": 0.006, "text": "Det är kvadratroten ur 3. Sidan ska upphöjd till 3 bli 3, så det är tredje roten du behöver." },
+          { "svar": "1.732", "tolerans": 0.006, "text": "Det är kvadratroten ur 3. Ekvationen är x³ = 3, så höj båda leden till en tredjedel." },
           { "svar": "1", "text": "1 upphöjt till 3 är 1, inte 3. Höj båda leden till en tredjedel." },
           { "svar": "27", "text": "Du har räknat 3 upphöjt till 3. Gå åt andra hållet och höj till en tredjedel." }
         ]
@@ -55,7 +55,7 @@
     ],
     "ledtrad": { "fras": "Men x upphöjt till tre", "text": "Gör som med x³ = 2 i filmen. Höj båda leden till en tredjedel." },
     "losning": [
-      "Altaret ska bli 3 gånger så stort, så x³ = 3.",
+      "Det gamla altaret var 1 block, så det nya ska rymma 3 block. Med sidan x blir det x³ = 3.",
       "Höj båda leden till en tredjedel, (x³)^(1/3) = 3^(1/3).",
       "Formelbladet: (a^x)^y = a^(xy). Här är a = x, x = 3 och y = 1/3, så vänster led blir x^(3 · 1/3) = x¹ = x.",
       "Formelbladet: a^(1/n) = ⁿ√a. Här är a = 3 och n = 3, så x = 3^(1/3) = ∛3.",
