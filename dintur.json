@@ -815,23 +815,31 @@
         "fel": [
           {
             "svar": "3",
-            "text": "3 sekunder är symmetrilinjen, när bollen är högst upp. Du fångar den när höjden är noll igen: 5x(6 − x) blir noll när x är 6."
+            "text": "3 är mitten, −p/2, alltså symmetrilinjen. Där är bollen högst upp. Nollställena ligger 3 steg åt var sida: 3 − 3 = 0 och 3 + 3 = 6."
           },
           {
             "svar": "0",
-            "text": "När x är noll kastar du bollen. Det andra nollstället är när du fångar den: 5x(6 − x) blir noll när 6 − x är noll, alltså när x är 6."
+            "text": "När x är noll kastar du bollen. Det andra nollstället får du med plus i formeln: x = 3 + 3 = 6."
           },
           {
             "svar": "30",
-            "text": "30 är talet framför x. Bryt ut fem x: −5x² + 30x = 5x(6 − x), och parentesen blir noll när x är 6."
+            "text": "30 är talet framför x. Dela först båda leden med −5, så blir p = −6. pq-formeln ger sedan x = 3 ± 3, alltså 0 och 6."
           },
           {
             "svar": "5",
-            "text": "5 kommer från fem x, som blir noll när x är noll. Titta på parentesen: 6 − x blir noll när x är 6."
+            "text": "5 kommer från talet framför x i kvadrat. Dela båda leden med −5: x² − 6x = 0, så p = −6 och x = 3 ± 3."
           },
           {
             "svar": "4",
-            "text": "4 sekunder var bollen i filmens exempel, som hade tjugo x. Här är det trettio x: 5x(6 − x) blir noll när x är 6."
+            "text": "4 sekunder var bollen i filmens exempel, som hade tjugo x. Här blir p = −6 och x = 3 ± 3, alltså 6."
+          },
+          {
+            "svar": "-6",
+            "text": "−6 är p. I formeln står minus p genom två: −(−6)/2 = 3. Sen x = 3 ± 3 = 6."
+          },
+          {
+            "svar": "9",
+            "text": "9 står under rottecknet. Roten ur 9 är 3, så x = 3 ± 3 = 6."
           }
         ]
       },
@@ -872,13 +880,16 @@
     ],
     "ledtrad": {
       "fras": "För att hitta nollställena sätter vi",
-      "text": "Bryt ut fem x, så ser du när höjden är noll. Symmetrilinjen ligger mitt emellan nollställena, och där är bollen högst upp."
+      "text": "Sätt y = 0 och dela båda leden med −5, så står det x² − 6x = 0. Sätt in p och q i pq-formeln på bladet, x = −p/2 ± √((p/2)² − q). Minus p genom två är symmetrilinjen, och där är bollen högst upp."
     },
     "losning": [
-      "Bryt ut fem x: y = 5x(6 − x).",
-      "Höjden är noll när x = 0 och när x = 6, så du fångar bollen efter 6 sekunder.",
-      "Symmetrilinjen ligger mitt emellan 0 och 6, vid x = 3.",
-      "y = −5 · 3² + 30 · 3 = −45 + 90 = 45, så bollen kommer 45 meter upp."
+      "−5x² + 30x = 0. Dela båda leden med −5: x² − 6x = 0.",
+      "Här är p = −6 och q = 0.",
+      "x = −p/2 ± √((p/2)² − q)",
+      "x = −(−6)/2 ± √((−6/2)² − 0)",
+      "−(−6)/2 = 3. Under rottecknet: (−3)² − 0 = 9, och √9 = 3.",
+      "x = 3 ± 3, så x = 0 eller x = 6. Du fångar bollen efter 6 sekunder.",
+      "Högst upp är bollen vid symmetrilinjen x = 3: y = −5 · 3² + 30 · 3 = −45 + 90 = 45. Bollen kommer 45 meter upp."
     ],
     "notisFran": "Allt det här står på sidan två"
   },
