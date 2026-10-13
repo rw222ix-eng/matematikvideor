@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-13T19:15:24.624Z",
+ "byggd": "2026-10-13T20:56:27.524Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -13987,7 +13987,7 @@
     "Matematik 1c",
     "Matematik 2a"
    ],
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-02-linjara-samband-v4/ma1c-k4-02-linjara-samband-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-02-linjara-samband-v5/ma1c-k4-02-linjara-samband-1080p.mp4",
    "moment": "Linjära samband, k-värdet och m-värdet",
    "begrepp": [
     "linjärt samband",
@@ -14004,7 +14004,7 @@
    ],
    "beskrivning": "Robert Hooke i London år 1678: han gömde sin upptäckt om fjädrar i en rad bokstäver i fel ordning, och nu visar han den med en fjäder, en vågskål och lika tunga vikter. Vi ritar försöket i ett koordinatsystem och lär oss direkt proportionalitet, linjära samband y = kx + m, k som lutningen (Δy/Δx) och m som där linjen skär y-axeln, också med negativt k.",
    "youtube": null,
-   "langd": 904,
+   "langd": 948,
    "omslag": "omslag/ma1c-k4-02-linjara-samband.jpg?v=15090506",
    "omslagRen": "omslag/ma1c-k4-02-linjara-samband-ren.jpg?v=801ee704",
    "omslagStor": null,
@@ -14014,159 +14014,163 @@
      "text": "Robert Hooke är forskare i London, och han bygger instrument. I många år har han gjort små fjädrar till fickur. Och han har kollat en sak väldigt noga. Han har mätt hur mycket längre en fjäder blir när man drar i den."
     },
     {
-     "t": 26,
+     "t": 25,
      "text": "För två år sedan skrev Hooke en rad bokstäver sist i en av sina böcker. I raden gömde han det han hade upptäckt om fjädrar. Men bokstäverna stod i fel ordning, så ingen kunde läsa den. Varför gjorde han så? Jo, han var inte färdig än. Och då kunde ingen annan hinna före och säga att upptäckten var deras."
     },
     {
-     "t": 51,
+     "t": 48,
      "text": "Nu, år sextonhundrasjuttioåtta, visar Hooke vad raden betyder. Han lindar en ståltråd till en fjäder och hänger upp den på en krok. Under fjädern hänger han en liten vågskål. Och sen lägger han i lika tunga vikter, en i taget, och mäter fjädern efter varje vikt."
     },
     {
-     "t": 73,
+     "t": 69,
      "text": "Raden betyder att om en vikt gör fjädern ett steg längre, så gör två vikter den två steg längre och tre vikter tre steg längre. Och Hooke skriver att man nu kan bygga en våg som väger saker utan vikter. Men hur kan en fjäder tala om hur tung en sak är? Det tar vi reda på nu."
     },
     {
-     "t": 96,
+     "t": 90,
      "text": "Vi gör samma försök med en egen fjäder. Först hänger vi i en vikt. Hur mycket längre blir fjädern? Tre centimeter. Sen hänger vi i en vikt till. Nu är fjädern sex centimeter längre. Med tre vikter blir den nio centimeter längre. Vi skriver det i en tabell."
     },
     {
-     "t": 119,
+     "t": 113,
      "text": "Ser du mönstret? Varje ny vikt ger tre centimeter till. Två vikter ger tre plus tre, alltså sex. Det är samma sak som tre gånger två. Antalet centimeter är alltså tre gånger antalet vikter."
     },
     {
-     "t": 138,
+     "t": 130,
      "text": "Nu skriver vi samma regel med bokstäver. Antalet vikter kallar vi x. Hur mycket längre fjädern blir kallar vi y. Då blir regeln y är lika med tre x. Tre x betyder tre gånger x."
     },
     {
-     "t": 157,
+     "t": 148,
      "text": "Med regeln kan vi räkna ut fler försök, utan att hänga i några vikter. Fem vikter? Då är x fem. Tre gånger fem är femton. Fjädern blir alltså femton centimeter längre."
     },
     {
-     "t": 172,
+     "t": 163,
      "text": "För att se mönstret som en bild ritar vi ett koordinatsystem. Det är två tallinjer som möts. Den ena går åt höger. Den kallas x-axeln, och där räknar vi vikterna. Den andra går uppåt. Den kallas y-axeln, och där räknar vi centimeterna."
     },
     {
-     "t": 194,
+     "t": 183,
      "text": "Varje försök blir en prick. Hur ritar vi en vikt och tre centimeter? Vi går ett steg åt höger, för en vikt. Sen går vi tre steg uppåt, för tre centimeter. Där sätter vi pricken. Den kallas punkten ett, tre."
     },
     {
-     "t": 214,
+     "t": 203,
      "text": "Vi gör likadant med de andra försöken. Två vikter blir två steg åt höger och sex steg uppåt. Tre vikter blir tre steg åt höger och nio steg uppåt. Och utan vikter? Då blir fjädern inte längre alls. Den pricken hamnar där axlarna möts. Den punkten kallas origo, och där är både x och y noll."
     },
     {
-     "t": 241,
+     "t": 228,
      "text": "Alla punkterna hamnar på en rak linje. Vi drar linjen genom dem. Varför blir den rak? Jo, varje vikt lägger till samma tre centimeter. Linjen är alltså samma regel som y är lika med tre x, fast som en bild."
     },
     {
-     "t": 259,
+     "t": 247,
      "text": "Kolla i tabellen igen. En vikt ger tre centimeter. Två vikter ger sex. Dubbelt så många vikter ger alltså dubbelt så mycket längre. Då säger man att y är direkt proportionell mot x."
     },
     {
-     "t": 275,
+     "t": 263,
      "text": "Talet tre i regeln har också ett namn. Det kallas proportionalitetskonstanten, och vi kallar det k. Hur får vi fram k? Vi delar centimeterna med vikterna. Sex delat med två är tre. Nio delat med tre är också tre. Så k är tre centimeter per vikt."
     },
     {
-     "t": 299,
+     "t": 286,
      "text": "Nu kan vi svara på Hookes fråga. Vi lägger en sten i vågskålen. Fjädern blir tolv centimeter längre. Hur många vikter väger stenen? Varje vikt ger tre centimeter. Så vi delar tolv med tre. Det blir fyra. Vi kollar. Tre gånger fyra är tolv. Stenen väger alltså lika mycket som fyra vikter."
     },
     {
-     "t": 326,
+     "t": 314,
      "text": "Vi kan se samma svar i grafen. Vi letar upp tolv på y-axeln. Där går vi rakt åt höger, tills vi når linjen. Sen går vi rakt ner till x-axeln. Där står det fyra. Så fjädern blir en våg. Hur mycket längre den blir visar hur tung saken är."
     },
     {
-     "t": 348,
+     "t": 336,
      "text": "Men oftast mäter man hela fjädern med en linjal. Hur lång är vår fjäder utan vikter? Tio centimeter. Sen hänger vi i tre vikter. Hur mycket drar de ut den? Tre gånger tre, alltså nio centimeter. Hur lång är fjädern nu? Tio plus nio. Det blir nitton centimeter."
     },
     {
-     "t": 372,
+     "t": 361,
      "text": "Nu får y vara fjäderns hela längd. Och x är fortfarande antalet vikter. Hur hänger de ihop nu? Först tre gånger x, för vikterna. Sen plus tio, för längden från början. Då blir sambandet y är lika med tre x plus tio."
     },
     {
-     "t": 394,
+     "t": 382,
      "text": "Hur ser det ut i grafen? Utan vikter är fjädern tio centimeter. Så linjen börjar vid tio på y-axeln. Sen går den uppåt som förut, tre för varje vikt. Den går alltså inte genom origo."
     },
     {
-     "t": 410,
+     "t": 399,
      "text": "Ett samband som ger en rak linje kallas ett linjärt samband. Ett samband är hur två saker hänger ihop, här vikterna och längden. Och linjärt kommer från ordet linje."
     },
     {
-     "t": 424,
+     "t": 414,
      "text": "Med bokstäver skrivs det y är lika med k x plus m. Det kallas räta linjens ekvation. Den står på formelbladet, under rubriken funktioner. Vad betyder bokstäverna? Vi tar en i taget."
     },
     {
-     "t": 442,
+     "t": 431,
      "text": "Först y. Det är fjäderns hela längd. Sen x. Det är antalet vikter. Sen k. Det är hur mycket längre fjädern blir för varje vikt. Till sist m. Det är hur lång fjädern är utan vikter."
     },
     {
-     "t": 462,
+     "t": 452,
      "text": "Nu sätter vi in våra tal. I formeln står k. Varje vikt ger tre centimeter, så här är k tre. Vi skriver tre där k står. I formeln står m. Utan vikter är fjädern tio centimeter, så här är m tio. Vi skriver tio där m står. Då står det y är lika med tre x plus tio."
     },
     {
-     "t": 495,
-     "text": "Hur lång är fjädern med fyra vikter? I formeln står x. Här är x fyra. Så vi skriver tre gånger fyra plus tio. Först gånger. Tre gånger fyra är tolv. Sen plus. Tolv plus tio är tjugotvå. Fjädern är alltså tjugotvå centimeter lång."
+     "t": 481,
+     "text": "Hur lång är fjädern med fyra vikter? Först tänker vi med fjädern. Med tre vikter var den nitton centimeter. En vikt till ger tre centimeter till. Så den borde bli tjugotvå. I formeln står x. Här är x fyra. Så vi skriver tre gånger fyra plus tio. Först gånger. Tre gånger fyra är tolv. Sen plus. Tolv plus tio är tjugotvå. Fjädern är alltså tjugotvå centimeter lång. Samma svar som vi tänkte ut. Då har vi räknat rätt."
     },
     {
-     "t": 521,
+     "t": 524,
+     "text": "En elev skriver y är lika med tio x plus tre. Har eleven rätt? Nej. Prova utan vikter. Då är x noll, och eleven får tre centimeter. Men fjädern var tio centimeter. Talet vid x är det som varje vikt lägger till, alltså tre. Det är k. Tio är längden från början. Det är m."
+    },
+    {
+     "t": 554,
      "text": "Talet m är värdet på y när x är noll. Var syns det i grafen? Där linjen skär y-axeln. Där börjar linjen, vid tio. Är m negativt, börjar linjen under origo."
     },
     {
-     "t": 538,
+     "t": 571,
      "text": "Talet k säger hur brant linjen är. Tänk dig att du går längs linjen. Du tar ett steg åt höger. Hur långt uppåt kommer du då? Det är k. Plus tio flyttar bara upp linjen. Den lutar lika mycket som förut."
     },
     {
-     "t": 558,
+     "t": 591,
      "text": "I en graf läser vi av k med en trappa. Vi börjar där linjen börjar, i punkten noll, tio. Vi går ett steg åt höger. Hur många steg måste vi gå uppåt för att nå linjen igen? Räkna rutorna. Ett, två, tre. Där slutar trappan, i punkten ett, tretton."
     },
     {
-     "t": 583,
-     "text": "På formelbladet står en formel för k. Den står under y är lika med k x plus m. Ettan är punkten där trappan börjar. Tvåan är punkten där den slutar. Ovanför bråkstrecket står y två minus y ett. Det är hur mycket y ändras, alltså stegen uppåt. Under bråkstrecket står x två minus x ett. Det är hur mycket x ändras, alltså stegen åt höger."
+     "t": 616,
+     "text": "På formelbladet står en formel för k. Den står under y är lika med k x plus m. Ettan är punkten där trappan börjar. Tvåan är punkten där den slutar. Ettan och tvåan står nere, inte uppe. De är inte upphöjt till, bara punkternas nummer. Ovanför bråkstrecket står y två minus y ett. Det är hur mycket y ändras, alltså stegen uppåt. Under bråkstrecket står x två minus x ett. Det är hur mycket x ändras, alltså stegen åt höger."
     },
     {
-     "t": 616,
+     "t": 657,
      "text": "Nu sätter vi in trappans punkter. Den börjar i punkten noll, tio. Så x ett är noll, och y ett är tio. Den slutar i punkten ett, tretton. Så x två är ett, och y två är tretton. Ovanför strecket skriver vi tretton minus tio. Det är tre. Under strecket skriver vi ett minus noll. Det är ett. Tre delat med ett är tre. Så k är tre, precis som trappan visade."
     },
     {
-     "t": 654,
+     "t": 696,
      "text": "Hooke provade tråd av stål, järn och mässing. En grövre tråd ger en styvare fjäder. Styv betyder att den är svår att dra ut. Tänk dig en styv fjäder som också är tio centimeter lång utan vikter. Den blir bara en centimeter längre för varje två vikter."
     },
     {
-     "t": 676,
+     "t": 719,
      "text": "Hur brant är den styva fjäderns linje? Vi tittar på formelbladet igen. Där står formeln för k."
     },
     {
-     "t": 685,
+     "t": 727,
      "text": "Trappan börjar i noll, tio. Två vikter senare är fjädern elva centimeter. Så trappan slutar i två, elva. Ovanför strecket står y två minus y ett. Elva minus tio är ett. Under strecket står x två minus x ett. Två minus noll är två. Ett delat med två är en halv. En halv skrivs noll komma fem. Så k är noll komma fem. Fjädern blir en halv centimeter längre för varje vikt."
     },
     {
-     "t": 725,
+     "t": 766,
      "text": "Nu sätter vi in talen i y är lika med k x plus m. Där k står, skriver vi noll komma fem. Där m står, skriver vi tio, som förut. Sambandet blir y är lika med noll komma fem x plus tio. Båda linjerna börjar vid tio. Men den styva fjäderns linje lutar mindre, ser du?"
     },
     {
-     "t": 751,
+     "t": 792,
      "text": "Hooke skrev också att regeln gäller när man trycker ihop en fjäder. Vi ställer en fjäder på bordet. Den är tio centimeter hög. Vi lägger en vikt ovanpå. Då trycks den ihop två centimeter. Fjädern blir alltså två centimeter kortare för varje vikt."
     },
     {
-     "t": 771,
+     "t": 812,
      "text": "Nu blir y mindre när x blir större. Vad blir k då? Vi tittar på formelbladet igen, på formeln för k."
     },
     {
-     "t": 782,
+     "t": 822,
      "text": "Trappan börjar i noll, tio. Efter en vikt är fjädern åtta centimeter. Så trappan slutar i ett, åtta. Ovanför strecket står y två minus y ett. Det blir åtta minus tio. Från tio ner till åtta är två steg nedåt. Därför blir det minus två. Under strecket står x två minus x ett. Ett minus noll är ett. Minus två delat med ett är minus två. Så k är minus två."
     },
     {
-     "t": 820,
+     "t": 861,
      "text": "Nu sätter vi in talen i y är lika med k x plus m. Där k står, skriver vi minus två. Där m står, skriver vi tio. Sambandet blir y är lika med minus två x plus tio. Linjen lutar nedåt, för fjädern blir två centimeter kortare för varje vikt."
     },
     {
-     "t": 843,
+     "t": 884,
      "text": "Den här linjen ritar vi utan värdetabell. Vi gör alltså ingen tabell med punkter först, som med vikterna. Var börjar linjen? I m, vid tio på y-axeln. Där sätter vi en punkt. Sen går vi ett steg åt höger och två steg nedåt, för k är minus två. Där sätter vi en punkt till. Till sist drar vi linjen genom de två punkterna."
     },
     {
-     "t": 870,
+     "t": 912,
      "text": "Hooke skrev ner försöket i en liten bok om fjädrar, som trycktes i London sextonhundrasjuttioåtta. Regeln kallas i dag Hookes lag. Och en fjädervåg, som den man hänger en väska i, bygger fortfarande på den."
     },
     {
-     "t": 886,
+     "t": 928,
      "text": "Nu är det din tur. En fjäder är åtta centimeter lång utan vikter. Varje vikt gör den två centimeter längre. Skriv sambandet på formen y är lika med k x plus m. Hur lång är fjädern med fem vikter?"
     }
    ],
@@ -14177,88 +14181,88 @@
      "typ": "historia"
     },
     {
-     "t": 26,
+     "t": 25,
      "rubrik": "Den hemliga raden",
      "typ": "historia"
     },
     {
-     "t": 51,
+     "t": 48,
      "rubrik": "Försöket med vikterna",
      "typ": "historia"
     },
     {
-     "t": 96,
+     "t": 90,
      "rubrik": "Tre centimeter per vikt",
      "typ": "matte"
     },
     {
-     "t": 172,
+     "t": 163,
      "rubrik": "Koordinatsystemet",
      "typ": "matte"
     },
     {
-     "t": 241,
+     "t": 228,
      "rubrik": "Direkt proportionalitet, y = 3x",
      "typ": "matte"
     },
     {
-     "t": 299,
+     "t": 286,
      "rubrik": "Vågen utan vikter",
      "typ": "matte"
     },
     {
-     "t": 348,
+     "t": 336,
      "rubrik": "Hela längden, y = 3x + 10",
      "typ": "matte"
     },
     {
-     "t": 410,
+     "t": 399,
      "rubrik": "Räta linjens ekvation",
      "typ": "matte"
     },
     {
-     "t": 521,
+     "t": 554,
      "rubrik": "m: där linjen skär y-axeln",
      "typ": "matte"
     },
     {
-     "t": 538,
+     "t": 571,
      "rubrik": "k: hur brant linjen är",
      "typ": "matte"
     },
     {
-     "t": 558,
+     "t": 591,
      "rubrik": "k: trappan och formeln för k",
      "typ": "matte"
     },
     {
-     "t": 654,
+     "t": 696,
      "rubrik": "Styv fjäder, k = 0,5",
      "typ": "matte"
     },
     {
-     "t": 751,
+     "t": 792,
      "rubrik": "Negativt k",
      "typ": "matte"
     },
     {
-     "t": 843,
+     "t": 884,
      "rubrik": "Rita linjen utan värdetabell",
      "typ": "matte"
     },
     {
-     "t": 870,
+     "t": 912,
      "rubrik": "Hookes lag",
      "typ": "historia"
     },
     {
-     "t": 886,
+     "t": 928,
      "rubrik": "Din tur: fjädern",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 886,
+    "notisFran": 928,
     "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre.",
     "delar": [
      {
@@ -14308,7 +14312,7 @@
     ],
     "ledtrad": {
      "text": "m är längden utan vikter, och k är hur många cm längre fjädern blir för varje vikt. Sätt sedan in antalet vikter som x.",
-     "t": 388
+     "t": 377
     },
     "losning": [
      "Utan vikter är fjädern 8 cm, så m = 8.",
@@ -14320,1207 +14324,1287 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 13.46,
+     "e": 13.1,
      "text": "Robert Hooke är forskare i London, och han bygger instrument."
     },
     {
-     "s": 14.46,
-     "e": 17.38,
+     "s": 14.1,
+     "e": 16.8,
      "text": "I många år har han gjort små fjädrar till fickur."
     },
     {
-     "s": 18.38,
-     "e": 20.8,
+     "s": 17.8,
+     "e": 20.18,
      "text": "Och han har kollat en sak väldigt noga."
     },
     {
-     "s": 21.8,
-     "e": 25.44,
+     "s": 21.18,
+     "e": 24.58,
      "text": "Han har mätt hur mycket längre en fjäder blir när man drar i den."
     },
     {
-     "s": 26.74,
-     "e": 31.26,
+     "s": 25.88,
+     "e": 30.06,
      "text": "För två år sedan skrev Hooke en rad bokstäver sist i en av sina böcker."
     },
     {
-     "s": 32.26,
-     "e": 35.44,
+     "s": 31.06,
+     "e": 33.88,
      "text": "I raden gömde han det han hade upptäckt om fjädrar."
     },
     {
-     "s": 36.44,
-     "e": 40.22,
+     "s": 34.88,
+     "e": 38.46,
      "text": "Men bokstäverna stod i fel ordning, så ingen kunde läsa den."
     },
     {
-     "s": 41.22,
-     "e": 42.22,
+     "s": 39.46,
+     "e": 40.46,
      "text": "Varför gjorde han så?"
     },
     {
-     "s": 43.22,
-     "e": 45.06,
+     "s": 41.32,
+     "e": 43.02,
      "text": "Jo, han var inte färdig än."
     },
     {
-     "s": 46.06,
-     "e": 49.96,
+     "s": 44.02,
+     "e": 47.68,
      "text": "Och då kunde ingen annan hinna före och säga att upptäckten var deras."
     },
     {
-     "s": 51.26,
-     "e": 55.68,
+     "s": 48.98,
+     "e": 53.08,
      "text": "Nu, år sextonhundrasjuttioåtta, visar Hooke vad raden betyder."
     },
     {
-     "s": 56.68,
-     "e": 60.68,
+     "s": 54.08,
+     "e": 57.72,
      "text": "Han lindar en ståltråd till en fjäder och hänger upp den på en krok."
     },
     {
-     "s": 61.68,
-     "e": 64.38,
+     "s": 58.72,
+     "e": 61.16,
      "text": "Under fjädern hänger han en liten vågskål."
     },
     {
-     "s": 65.38,
-     "e": 71.82,
+     "s": 62.16,
+     "e": 67.82,
      "text": "Och sen lägger han i lika tunga vikter, en i taget, och mäter fjädern efter varje vikt."
     },
     {
-     "s": 73.12,
-     "e": 79.54,
+     "s": 69.12,
+     "e": 74.98,
      "text": "Raden betyder att om en vikt gör fjädern ett steg längre, så gör två vikter den två steg"
     },
     {
-     "s": 79.6,
-     "e": 82.44,
+     "s": 75.02,
+     "e": 77.66,
      "text": "längre och tre vikter tre steg längre."
     },
     {
-     "s": 83.44,
-     "e": 88.9,
+     "s": 78.66,
+     "e": 83.14,
      "text": "Och Hooke skriver att man nu kan bygga en våg som väger saker utan vikter."
     },
     {
-     "s": 89.9,
-     "e": 93.22,
+     "s": 84.14,
+     "e": 87.4,
      "text": "Men hur kan en fjäder tala om hur tung en sak är?"
     },
     {
-     "s": 94.22,
-     "e": 95.26,
+     "s": 88.4,
+     "e": 89.52,
      "text": "Det tar vi reda på nu."
     },
     {
-     "s": 96.56,
-     "e": 99,
+     "s": 90.82,
+     "e": 93.1,
      "text": "Vi gör samma försök med en egen fjäder."
     },
     {
-     "s": 100,
-     "e": 101.48,
+     "s": 94.1,
+     "e": 95.54,
      "text": "Först hänger vi i en vikt."
     },
     {
-     "s": 102.48,
-     "e": 105.86,
+     "s": 96.54,
+     "e": 99.84,
      "text": "Hur mycket längre blir fjädern? Tre centimeter."
     },
     {
-     "s": 106.86,
-     "e": 108.58,
+     "s": 100.84,
+     "e": 102.46,
      "text": "Sen hänger vi i en vikt till."
     },
     {
-     "s": 109.58,
-     "e": 111.78,
+     "s": 103.46,
+     "e": 105.52,
      "text": "Nu är fjädern sex centimeter längre."
     },
     {
-     "s": 112.78,
-     "e": 115.78,
+     "s": 106.52,
+     "e": 109.36,
      "text": "Med tre vikter blir den nio centimeter längre."
     },
     {
-     "s": 116.78,
-     "e": 118.2,
+     "s": 110.36,
+     "e": 111.7,
      "text": "Vi skriver det i en tabell."
     },
     {
-     "s": 119.5,
-     "e": 120.5,
+     "s": 113,
+     "e": 114,
      "text": "Ser du mönstret?"
     },
     {
-     "s": 121.34,
-     "e": 124.26,
+     "s": 114.76,
+     "e": 117.46,
      "text": "Varje ny vikt ger tre centimeter till."
     },
     {
-     "s": 125.26,
-     "e": 128.84,
+     "s": 118.46,
+     "e": 121.74,
      "text": "Två vikter ger tre plus tre, alltså sex."
     },
     {
-     "s": 129.84,
-     "e": 131.94,
+     "s": 122.74,
+     "e": 124.66,
      "text": "Det är samma sak som tre gånger två."
     },
     {
-     "s": 132.94,
-     "e": 137.14,
+     "s": 125.66,
+     "e": 129.42,
      "text": "Antalet centimeter är alltså tre gånger antalet vikter."
     },
     {
-     "s": 138.44,
-     "e": 140.78,
+     "s": 130.72,
+     "e": 132.84,
      "text": "Nu skriver vi samma regel med bokstäver."
     },
     {
-     "s": 141.78,
-     "e": 143.8,
+     "s": 133.84,
+     "e": 135.68,
      "text": "Antalet vikter kallar vi x."
     },
     {
-     "s": 144.8,
-     "e": 147.36,
+     "s": 136.68,
+     "e": 139.1,
      "text": "Hur mycket längre fjädern blir kallar vi y."
     },
     {
-     "s": 148.36,
-     "e": 151.84,
+     "s": 140.1,
+     "e": 143.32,
      "text": "Då blir regeln y är lika med tre x."
     },
     {
-     "s": 152.84,
-     "e": 155.7,
+     "s": 144.32,
+     "e": 146.8,
      "text": "Tre x betyder tre gånger x."
     },
     {
-     "s": 157,
-     "e": 162.98,
+     "s": 148.1,
+     "e": 153.66,
      "text": "Med regeln kan vi räkna ut fler försök, utan att hänga i några vikter. Fem vikter?"
     },
     {
-     "s": 163.98,
-     "e": 165.14,
+     "s": 154.66,
+     "e": 155.7,
      "text": "Då är x fem."
     },
     {
-     "s": 166.14,
-     "e": 167.92,
+     "s": 156.7,
+     "e": 158.38,
      "text": "Tre gånger fem är femton."
     },
     {
-     "s": 168.92,
-     "e": 171.66,
+     "s": 159.38,
+     "e": 162,
      "text": "Fjädern blir alltså femton centimeter längre."
     },
     {
-     "s": 172.96,
-     "e": 176.78,
+     "s": 163.3,
+     "e": 166.8,
      "text": "För att se mönstret som en bild ritar vi ett koordinatsystem."
     },
     {
-     "s": 177.78,
-     "e": 179.92,
+     "s": 167.8,
+     "e": 169.76,
      "text": "Det är två tallinjer som möts."
     },
     {
-     "s": 180.92,
-     "e": 182.44,
+     "s": 170.76,
+     "e": 172.06,
      "text": "Den ena går åt höger."
     },
     {
-     "s": 183.44,
-     "e": 186.7,
+     "s": 173.06,
+     "e": 176.08,
      "text": "Den kallas x-axeln, och där räknar vi vikterna."
     },
     {
-     "s": 187.7,
-     "e": 189.12,
+     "s": 177.08,
+     "e": 178.38,
      "text": "Den andra går uppåt."
     },
     {
-     "s": 190.12,
-     "e": 193.62,
+     "s": 179.38,
+     "e": 182.6,
      "text": "Den kallas y-axeln, och där räknar vi centimeterna."
     },
     {
-     "s": 194.92,
-     "e": 196.66,
+     "s": 183.9,
+     "e": 185.58,
      "text": "Varje försök blir en prick."
     },
     {
-     "s": 197.66,
-     "e": 200.3,
+     "s": 186.58,
+     "e": 189,
      "text": "Hur ritar vi en vikt och tre centimeter?"
     },
     {
-     "s": 201.3,
-     "e": 203.98,
+     "s": 190,
+     "e": 192.6,
      "text": "Vi går ett steg åt höger, för en vikt."
     },
     {
-     "s": 204.98,
-     "e": 208.3,
+     "s": 193.6,
+     "e": 196.86,
      "text": "Sen går vi tre steg uppåt, för tre centimeter."
     },
     {
-     "s": 209.3,
-     "e": 210.52,
+     "s": 197.86,
+     "e": 199.02,
      "text": "Där sätter vi pricken."
     },
     {
-     "s": 211.52,
-     "e": 213.66,
+     "s": 200.02,
+     "e": 201.98,
      "text": "Den kallas punkten ett, tre."
     },
     {
-     "s": 214.96,
-     "e": 217.04,
+     "s": 203.28,
+     "e": 205.22,
      "text": "Vi gör likadant med de andra försöken."
     },
     {
-     "s": 218.04,
-     "e": 222.1,
+     "s": 206.22,
+     "e": 209.96,
      "text": "Två vikter blir två steg åt höger och sex steg uppåt."
     },
     {
-     "s": 223.1,
-     "e": 227.2,
+     "s": 210.96,
+     "e": 214.7,
      "text": "Tre vikter blir tre steg åt höger och nio steg uppåt."
     },
     {
-     "s": 228.2,
-     "e": 229.2,
+     "s": 215.7,
+     "e": 216.7,
      "text": "Och utan vikter?"
     },
     {
-     "s": 230.1,
-     "e": 231.72,
+     "s": 217.56,
+     "e": 219.2,
      "text": "Då blir fjädern inte längre alls."
     },
     {
-     "s": 232.72,
-     "e": 235.06,
+     "s": 220.2,
+     "e": 222.42,
      "text": "Den pricken hamnar där axlarna möts."
     },
     {
-     "s": 236.06,
-     "e": 240.2,
+     "s": 223.42,
+     "e": 227.64,
      "text": "Den punkten kallas origo, och där är både x och y noll."
     },
     {
-     "s": 241.5,
-     "e": 243.58,
+     "s": 228.94,
+     "e": 231.06,
      "text": "Alla punkterna hamnar på en rak linje."
     },
     {
-     "s": 244.58,
-     "e": 245.98,
+     "s": 232.06,
+     "e": 233.44,
      "text": "Vi drar linjen genom dem."
     },
     {
-     "s": 246.98,
-     "e": 248.1,
+     "s": 234.44,
+     "e": 235.44,
      "text": "Varför blir den rak?"
     },
     {
-     "s": 249.1,
-     "e": 252.6,
+     "s": 236.4,
+     "e": 240.06,
      "text": "Jo, varje vikt lägger till samma tre centimeter."
     },
     {
-     "s": 253.6,
-     "e": 258.38,
+     "s": 241.06,
+     "e": 245.84,
      "text": "Linjen är alltså samma regel som y är lika med tre x, fast som en bild."
     },
     {
-     "s": 259.68,
-     "e": 260.74,
+     "s": 247.14,
+     "e": 248.18,
      "text": "Kolla i tabellen igen."
     },
     {
-     "s": 261.74,
-     "e": 263.68,
+     "s": 249.18,
+     "e": 251.14,
      "text": "En vikt ger tre centimeter."
     },
     {
-     "s": 264.68,
-     "e": 266.14,
+     "s": 252.14,
+     "e": 253.66,
      "text": "Två vikter ger sex."
     },
     {
-     "s": 267.14,
-     "e": 270.22,
+     "s": 254.66,
+     "e": 257.78,
      "text": "Dubbelt så många vikter ger alltså dubbelt så mycket längre."
     },
     {
-     "s": 271.22,
-     "e": 274.52,
+     "s": 258.78,
+     "e": 262.12,
      "text": "Då säger man att y är direkt proportionell mot x."
     },
     {
-     "s": 275.82,
-     "e": 278.26,
+     "s": 263.42,
+     "e": 265.86,
      "text": "Talet tre i regeln har också ett namn."
     },
     {
-     "s": 279.26,
-     "e": 283.04,
+     "s": 266.86,
+     "e": 270.48,
      "text": "Det kallas proportionalitetskonstanten, och vi kallar det k."
     },
     {
-     "s": 284.04,
-     "e": 285.06,
+     "s": 271.48,
+     "e": 272.48,
      "text": "Hur får vi fram k?"
     },
     {
-     "s": 286.06,
-     "e": 288.2,
+     "s": 273.24,
+     "e": 275.3,
      "text": "Vi delar centimeterna med vikterna."
     },
     {
-     "s": 289.2,
-     "e": 291.12,
+     "s": 276.3,
+     "e": 278.32,
      "text": "Sex delat med två är tre."
     },
     {
-     "s": 292.12,
-     "e": 294.32,
+     "s": 279.32,
+     "e": 281.46,
      "text": "Nio delat med tre är också tre."
     },
     {
-     "s": 295.32,
-     "e": 297.9,
+     "s": 282.46,
+     "e": 285.04,
      "text": "Så k är tre centimeter per vikt."
     },
     {
-     "s": 299.2,
-     "e": 300.78,
+     "s": 286.34,
+     "e": 287.94,
      "text": "Nu kan vi svara på Hookes fråga."
     },
     {
-     "s": 301.78,
-     "e": 303.6,
+     "s": 288.94,
+     "e": 290.74,
      "text": "Vi lägger en sten i vågskålen."
     },
     {
-     "s": 304.6,
-     "e": 306.82,
+     "s": 291.74,
+     "e": 294.04,
      "text": "Fjädern blir tolv centimeter längre."
     },
     {
-     "s": 307.82,
-     "e": 309.48,
+     "s": 295.04,
+     "e": 296.9,
      "text": "Hur många vikter väger stenen?"
     },
     {
-     "s": 310.48,
-     "e": 312.6,
+     "s": 297.9,
+     "e": 300.02,
      "text": "Varje vikt ger tre centimeter."
     },
     {
-     "s": 313.6,
-     "e": 315.16,
+     "s": 301.02,
+     "e": 302.74,
      "text": "Så vi delar tolv med tre."
     },
     {
-     "s": 316.16,
-     "e": 318.4,
+     "s": 303.74,
+     "e": 306.18,
      "text": "Det blir fyra. Vi kollar."
     },
     {
-     "s": 319.4,
-     "e": 321.1,
+     "s": 307.18,
+     "e": 309.02,
      "text": "Tre gånger fyra är tolv."
     },
     {
-     "s": 322.1,
-     "e": 325.18,
+     "s": 310.02,
+     "e": 313.16,
      "text": "Stenen väger alltså lika mycket som fyra vikter."
     },
     {
-     "s": 326.48,
-     "e": 328.4,
+     "s": 314.46,
+     "e": 316.4,
      "text": "Vi kan se samma svar i grafen."
     },
     {
-     "s": 329.4,
-     "e": 331.36,
+     "s": 317.4,
+     "e": 319.4,
      "text": "Vi letar upp tolv på y-axeln."
     },
     {
-     "s": 332.36,
-     "e": 335.04,
+     "s": 320.4,
+     "e": 323.26,
      "text": "Där går vi rakt åt höger, tills vi når linjen."
     },
     {
-     "s": 336.04,
-     "e": 338.06,
+     "s": 324.26,
+     "e": 326.34,
      "text": "Sen går vi rakt ner till x-axeln."
     },
     {
-     "s": 339.06,
-     "e": 340.06,
+     "s": 327.34,
+     "e": 328.36,
      "text": "Där står det fyra."
     },
     {
-     "s": 341,
-     "e": 342.88,
+     "s": 329.36,
+     "e": 331.1,
      "text": "Så fjädern blir en våg."
     },
     {
-     "s": 343.88,
-     "e": 346.76,
+     "s": 332.1,
+     "e": 334.96,
      "text": "Hur mycket längre den blir visar hur tung saken är."
     },
     {
-     "s": 348.06,
-     "e": 350.8,
+     "s": 336.26,
+     "e": 339.12,
      "text": "Men oftast mäter man hela fjädern med en linjal."
     },
     {
-     "s": 351.8,
-     "e": 355.86,
+     "s": 340.12,
+     "e": 344.18,
      "text": "Hur lång är vår fjäder utan vikter? Tio centimeter."
     },
     {
-     "s": 356.86,
-     "e": 358.64,
+     "s": 345.18,
+     "e": 346.9,
      "text": "Sen hänger vi i tre vikter."
     },
     {
-     "s": 359.64,
-     "e": 360.8,
+     "s": 347.9,
+     "e": 348.98,
      "text": "Hur mycket drar de ut den?"
     },
     {
-     "s": 361.8,
-     "e": 364.5,
+     "s": 349.98,
+     "e": 352.84,
      "text": "Tre gånger tre, alltså nio centimeter."
     },
     {
-     "s": 365.5,
-     "e": 366.6,
+     "s": 353.84,
+     "e": 355.02,
      "text": "Hur lång är fjädern nu?"
     },
     {
-     "s": 367.6,
-     "e": 368.86,
+     "s": 356.02,
+     "e": 357.32,
      "text": "Tio plus nio."
     },
     {
-     "s": 369.86,
-     "e": 371.48,
+     "s": 358.32,
+     "e": 360.02,
      "text": "Det blir nitton centimeter."
     },
     {
-     "s": 372.78,
-     "e": 375.22,
+     "s": 361.32,
+     "e": 363.74,
      "text": "Nu får y vara fjäderns hela längd."
     },
     {
-     "s": 376.22,
-     "e": 378.44,
+     "s": 364.74,
+     "e": 367.06,
      "text": "Och x är fortfarande antalet vikter."
     },
     {
-     "s": 379.44,
-     "e": 380.52,
+     "s": 368.06,
+     "e": 369.14,
      "text": "Hur hänger de ihop nu?"
     },
     {
-     "s": 381.52,
-     "e": 383.94,
+     "s": 370.14,
+     "e": 372.58,
      "text": "Först tre gånger x, för vikterna."
     },
     {
-     "s": 384.94,
-     "e": 387.78,
+     "s": 373.58,
+     "e": 376.46,
      "text": "Sen plus tio, för längden från början."
     },
     {
-     "s": 388.78,
-     "e": 392.7,
+     "s": 377.46,
+     "e": 381.54,
      "text": "Då blir sambandet y är lika med tre x plus tio."
     },
     {
-     "s": 394,
-     "e": 395.22,
+     "s": 382.84,
+     "e": 383.94,
      "text": "Hur ser det ut i grafen?"
     },
     {
-     "s": 396.22,
-     "e": 398.68,
+     "s": 384.94,
+     "e": 387.5,
      "text": "Utan vikter är fjädern tio centimeter."
     },
     {
-     "s": 399.68,
-     "e": 402.08,
+     "s": 388.5,
+     "e": 390.96,
      "text": "Så linjen börjar vid tio på y-axeln."
     },
     {
-     "s": 403.08,
-     "e": 406.32,
+     "s": 391.96,
+     "e": 395.32,
      "text": "Sen går den uppåt som förut, tre för varje vikt."
     },
     {
-     "s": 407.32,
-     "e": 409.48,
+     "s": 396.32,
+     "e": 398.58,
      "text": "Den går alltså inte genom origo."
     },
     {
-     "s": 410.78,
-     "e": 414.66,
+     "s": 399.88,
+     "e": 404,
      "text": "Ett samband som ger en rak linje kallas ett linjärt samband."
     },
     {
-     "s": 415.66,
-     "e": 420.32,
+     "s": 405,
+     "e": 409.68,
      "text": "Ett samband är hur två saker hänger ihop, här vikterna och längden."
     },
     {
-     "s": 421.32,
-     "e": 423.66,
+     "s": 410.68,
+     "e": 413.08,
      "text": "Och linjärt kommer från ordet linje."
     },
     {
-     "s": 424.96,
-     "e": 429.14,
+     "s": 414.38,
+     "e": 418.62,
      "text": "Med bokstäver skrivs det y är lika med k x plus m."
     },
     {
-     "s": 430.14,
-     "e": 432.46,
+     "s": 419.62,
+     "e": 421.94,
      "text": "Det kallas räta linjens ekvation."
     },
     {
-     "s": 433.46,
-     "e": 436.66,
+     "s": 422.94,
+     "e": 426.2,
      "text": "Den står på formelbladet, under rubriken funktioner."
     },
     {
-     "s": 437.66,
-     "e": 438.9,
+     "s": 427.2,
+     "e": 428.36,
      "text": "Vad betyder bokstäverna?"
     },
     {
-     "s": 439.9,
-     "e": 441.06,
+     "s": 429.36,
+     "e": 430.52,
      "text": "Vi tar en i taget."
     },
     {
-     "s": 442.36,
-     "e": 447.46,
+     "s": 431.82,
+     "e": 437.12,
      "text": "Först y. Det är fjäderns hela längd. Sen x."
     },
     {
-     "s": 448.46,
-     "e": 451.28,
+     "s": 438.12,
+     "e": 441.12,
      "text": "Det är antalet vikter. Sen k."
     },
     {
-     "s": 452.28,
-     "e": 455.3,
+     "s": 442.12,
+     "e": 445.22,
      "text": "Det är hur mycket längre fjädern blir för varje vikt."
     },
     {
-     "s": 456.3,
-     "e": 457.3,
+     "s": 446.22,
+     "e": 447.42,
      "text": "Till sist m."
     },
     {
-     "s": 458.3,
-     "e": 460.76,
+     "s": 448.42,
+     "e": 450.94,
      "text": "Det är hur lång fjädern är utan vikter."
     },
     {
-     "s": 462.01,
-     "e": 463.96,
+     "s": 452.24,
+     "e": 453.52,
      "text": "Nu sätter vi in våra tal."
     },
     {
-     "s": 464.96,
-     "e": 466.92,
+     "s": 454.52,
+     "e": 455.8,
      "text": "I formeln står k."
     },
     {
-     "s": 467.92,
-     "e": 472.5,
+     "s": 456.8,
+     "e": 461.24,
      "text": "Varje vikt ger tre centimeter, så här är k tre."
     },
     {
-     "s": 473.5,
-     "e": 476.21,
+     "s": 462.24,
+     "e": 464,
      "text": "Vi skriver tre där k står."
     },
     {
-     "s": 477.21,
-     "e": 479.16,
+     "s": 465,
+     "e": 466.48,
      "text": "I formeln står m."
     },
     {
-     "s": 480.16,
-     "e": 485.12,
+     "s": 467.48,
+     "e": 472.5,
      "text": "Utan vikter är fjädern tio centimeter, så här är m tio."
     },
     {
-     "s": 486.12,
-     "e": 488.71,
+     "s": 473.5,
+     "e": 475.32,
      "text": "Vi skriver tio där m står."
     },
     {
-     "s": 489.71,
-     "e": 494.07,
+     "s": 476.32,
+     "e": 479.7,
      "text": "Då står det y är lika med tre x plus tio."
     },
     {
-     "s": 495.16,
-     "e": 497.32,
+     "s": 481,
+     "e": 483.12,
      "text": "Hur lång är fjädern med fyra vikter?"
     },
     {
-     "s": 498.32,
-     "e": 499.76,
+     "s": 484.12,
+     "e": 485.7,
+     "text": "Först tänker vi med fjädern."
+    },
+    {
+     "s": 486.7,
+     "e": 489.32,
+     "text": "Med tre vikter var den nitton centimeter."
+    },
+    {
+     "s": 490.32,
+     "e": 492.98,
+     "text": "En vikt till ger tre centimeter till."
+    },
+    {
+     "s": 493.98,
+     "e": 495.7,
+     "text": "Så den borde bli tjugotvå."
+    },
+    {
+     "s": 496.7,
+     "e": 498.22,
      "text": "I formeln står x."
     },
     {
-     "s": 500.76,
-     "e": 502.28,
+     "s": 499.22,
+     "e": 500.72,
      "text": "Här är x fyra."
     },
     {
-     "s": 503.28,
-     "e": 508.54,
+     "s": 501.72,
+     "e": 506.86,
      "text": "Så vi skriver tre gånger fyra plus tio. Först gånger."
     },
     {
-     "s": 509.54,
-     "e": 513.04,
+     "s": 507.86,
+     "e": 511.5,
      "text": "Tre gånger fyra är tolv. Sen plus."
     },
     {
-     "s": 514.04,
-     "e": 516.24,
+     "s": 512.5,
+     "e": 514.6,
      "text": "Tolv plus tio är tjugotvå."
     },
     {
-     "s": 517.24,
-     "e": 519.92,
+     "s": 515.6,
+     "e": 518.3,
      "text": "Fjädern är alltså tjugotvå centimeter lång."
     },
     {
-     "s": 521.22,
-     "e": 524.64,
+     "s": 519.3,
+     "e": 520.9,
+     "text": "Samma svar som vi tänkte ut."
+    },
+    {
+     "s": 521.9,
+     "e": 523.1,
+     "text": "Då har vi räknat rätt."
+    },
+    {
+     "s": 524.4,
+     "e": 528.36,
+     "text": "En elev skriver y är lika med tio x plus tre."
+    },
+    {
+     "s": 529.36,
+     "e": 531.6,
+     "text": "Har eleven rätt? Nej."
+    },
+    {
+     "s": 532.6,
+     "e": 533.9,
+     "text": "Prova utan vikter."
+    },
+    {
+     "s": 534.9,
+     "e": 538.48,
+     "text": "Då är x noll, och eleven får tre centimeter."
+    },
+    {
+     "s": 539.48,
+     "e": 541.52,
+     "text": "Men fjädern var tio centimeter."
+    },
+    {
+     "s": 542.52,
+     "e": 548.32,
+     "text": "Talet vid x är det som varje vikt lägger till, alltså tre. Det är k."
+    },
+    {
+     "s": 549.32,
+     "e": 551.22,
+     "text": "Tio är längden från början."
+    },
+    {
+     "s": 552.22,
+     "e": 553.22,
+     "text": "Det är m."
+    },
+    {
+     "s": 554.28,
+     "e": 557.48,
      "text": "Talet m är värdet på y när x är noll."
     },
     {
-     "s": 525.64,
-     "e": 527.14,
+     "s": 558.48,
+     "e": 559.88,
      "text": "Var syns det i grafen?"
     },
     {
-     "s": 528.14,
-     "e": 530,
+     "s": 560.88,
+     "e": 562.82,
      "text": "Där linjen skär y-axeln."
     },
     {
-     "s": 531,
-     "e": 533.08,
+     "s": 563.82,
+     "e": 565.94,
      "text": "Där börjar linjen, vid tio."
     },
     {
-     "s": 534.08,
-     "e": 537.4,
+     "s": 566.94,
+     "e": 570.28,
      "text": "Är m negativt, börjar linjen under origo."
     },
     {
-     "s": 538.7,
-     "e": 541.28,
+     "s": 571.58,
+     "e": 573.96,
      "text": "Talet k säger hur brant linjen är."
     },
     {
-     "s": 542.28,
-     "e": 543.9,
+     "s": 574.96,
+     "e": 576.68,
      "text": "Tänk dig att du går längs linjen."
     },
     {
-     "s": 544.9,
-     "e": 546.5,
+     "s": 577.68,
+     "e": 579.32,
      "text": "Du tar ett steg åt höger."
     },
     {
-     "s": 547.5,
-     "e": 550.7,
+     "s": 580.32,
+     "e": 583.42,
      "text": "Hur långt uppåt kommer du då? Det är k."
     },
     {
-     "s": 551.7,
-     "e": 554.04,
+     "s": 584.42,
+     "e": 586.78,
      "text": "Plus tio flyttar bara upp linjen."
     },
     {
-     "s": 555.04,
-     "e": 557.02,
+     "s": 587.78,
+     "e": 589.88,
      "text": "Den lutar lika mycket som förut."
     },
     {
-     "s": 558.32,
-     "e": 560.98,
+     "s": 591.18,
+     "e": 593.82,
      "text": "I en graf läser vi av k med en trappa."
     },
     {
-     "s": 561.98,
-     "e": 565.76,
+     "s": 594.82,
+     "e": 598.62,
      "text": "Vi börjar där linjen börjar, i punkten noll, tio."
     },
     {
-     "s": 566.76,
-     "e": 568.54,
+     "s": 599.62,
+     "e": 601.32,
      "text": "Vi går ett steg åt höger."
     },
     {
-     "s": 569.54,
-     "e": 574.84,
+     "s": 602.32,
+     "e": 607.6,
      "text": "Hur många steg måste vi gå uppåt för att nå linjen igen? Räkna rutorna."
     },
     {
-     "s": 575.84,
-     "e": 577.62,
+     "s": 608.6,
+     "e": 610.36,
      "text": "Ett, två, tre."
     },
     {
-     "s": 578.62,
-     "e": 582,
+     "s": 611.36,
+     "e": 614.8,
      "text": "Där slutar trappan, i punkten ett, tretton."
     },
     {
-     "s": 583.3,
-     "e": 585.86,
+     "s": 616.1,
+     "e": 618.42,
      "text": "På formelbladet står en formel för k."
     },
     {
-     "s": 586.86,
-     "e": 590.76,
+     "s": 619.42,
+     "e": 623.26,
      "text": "Den står under y är lika med k x plus m."
     },
     {
-     "s": 591.76,
-     "e": 594,
+     "s": 624.26,
+     "e": 626.6,
      "text": "Ettan är punkten där trappan börjar."
     },
     {
-     "s": 595,
-     "e": 597,
+     "s": 627.6,
+     "e": 629.68,
      "text": "Tvåan är punkten där den slutar."
     },
     {
-     "s": 598,
-     "e": 601.82,
+     "s": 630.68,
+     "e": 633.64,
+     "text": "Ettan och tvåan står nere, inte uppe."
+    },
+    {
+     "s": 634.64,
+     "e": 637.64,
+     "text": "De är inte upphöjt till, bara punkternas nummer."
+    },
+    {
+     "s": 638.64,
+     "e": 642.4,
      "text": "Ovanför bråkstrecket står y två minus y ett."
     },
     {
-     "s": 602.82,
-     "e": 606.52,
+     "s": 643.4,
+     "e": 647,
      "text": "Det är hur mycket y ändras, alltså stegen uppåt."
     },
     {
-     "s": 607.52,
-     "e": 611.02,
+     "s": 648,
+     "e": 651.58,
      "text": "Under bråkstrecket står x två minus x ett."
     },
     {
-     "s": 612.02,
-     "e": 615.44,
+     "s": 652.58,
+     "e": 656.08,
      "text": "Det är hur mycket x ändras, alltså stegen åt höger."
     },
     {
-     "s": 616.74,
-     "e": 618.54,
+     "s": 657.38,
+     "e": 659.3,
      "text": "Nu sätter vi in trappans punkter."
     },
     {
-     "s": 619.54,
-     "e": 622,
+     "s": 660.3,
+     "e": 662.78,
      "text": "Den börjar i punkten noll, tio."
     },
     {
-     "s": 623,
-     "e": 626.36,
+     "s": 663.78,
+     "e": 667.44,
      "text": "Så x ett är noll, och y ett är tio."
     },
     {
-     "s": 627.36,
-     "e": 630.22,
+     "s": 668.44,
+     "e": 671.2,
      "text": "Den slutar i punkten ett, tretton."
     },
     {
-     "s": 631.22,
-     "e": 634.5,
+     "s": 672.2,
+     "e": 675.9,
      "text": "Så x två är ett, och y två är tretton."
     },
     {
-     "s": 635.5,
-     "e": 638.82,
+     "s": 676.9,
+     "e": 680.1,
      "text": "Ovanför strecket skriver vi tretton minus tio."
     },
     {
-     "s": 639.82,
-     "e": 640.82,
+     "s": 681.1,
+     "e": 682.1,
      "text": "Det är tre."
     },
     {
-     "s": 641.68,
-     "e": 644.38,
+     "s": 683.02,
+     "e": 685.7,
      "text": "Under strecket skriver vi ett minus noll."
     },
     {
-     "s": 645.38,
-     "e": 646.38,
+     "s": 686.7,
+     "e": 687.7,
      "text": "Det är ett."
     },
     {
-     "s": 647.26,
-     "e": 649.28,
+     "s": 688.54,
+     "e": 690.6,
      "text": "Tre delat med ett är tre."
     },
     {
-     "s": 650.28,
-     "e": 653.28,
+     "s": 691.6,
+     "e": 695.1,
      "text": "Så k är tre, precis som trappan visade."
     },
     {
-     "s": 654.58,
-     "e": 658,
+     "s": 696.4,
+     "e": 699.92,
      "text": "Hooke provade tråd av stål, järn och mässing."
     },
     {
-     "s": 659,
-     "e": 661.62,
+     "s": 700.92,
+     "e": 703.6,
      "text": "En grövre tråd ger en styvare fjäder."
     },
     {
-     "s": 662.62,
-     "e": 665,
+     "s": 704.6,
+     "e": 707.06,
      "text": "Styv betyder att den är svår att dra ut."
     },
     {
-     "s": 666,
-     "e": 670.6,
+     "s": 708.06,
+     "e": 712.98,
      "text": "Tänk dig en styv fjäder som också är tio centimeter lång utan vikter."
     },
     {
-     "s": 671.6,
-     "e": 675.3,
+     "s": 713.98,
+     "e": 717.78,
      "text": "Den blir bara en centimeter längre för varje två vikter."
     },
     {
-     "s": 676.6,
-     "e": 679.12,
+     "s": 719.08,
+     "e": 721.74,
      "text": "Hur brant är den styva fjäderns linje?"
     },
     {
-     "s": 680.12,
-     "e": 681.8,
+     "s": 722.74,
+     "e": 724.44,
      "text": "Vi tittar på formelbladet igen."
     },
     {
-     "s": 682.8,
-     "e": 684.06,
+     "s": 725.44,
+     "e": 726.68,
      "text": "Där står formeln för k."
     },
     {
-     "s": 685.36,
-     "e": 687.66,
+     "s": 727.98,
+     "e": 730.22,
      "text": "Trappan börjar i noll, tio."
     },
     {
-     "s": 688.66,
-     "e": 691.9,
+     "s": 731.22,
+     "e": 734.2,
      "text": "Två vikter senare är fjädern elva centimeter."
     },
     {
-     "s": 692.9,
-     "e": 695.36,
+     "s": 735.2,
+     "e": 737.62,
      "text": "Så trappan slutar i två, elva."
     },
     {
-     "s": 696.36,
-     "e": 699.68,
+     "s": 738.62,
+     "e": 741.8,
      "text": "Ovanför strecket står y två minus y ett."
     },
     {
-     "s": 700.68,
-     "e": 702.76,
+     "s": 742.8,
+     "e": 744.7,
      "text": "Elva minus tio är ett."
     },
     {
-     "s": 703.76,
-     "e": 707,
+     "s": 745.7,
+     "e": 748.72,
      "text": "Under strecket står x två minus x ett."
     },
     {
-     "s": 708,
-     "e": 709.88,
+     "s": 749.72,
+     "e": 751.56,
      "text": "Två minus noll är två."
     },
     {
-     "s": 710.88,
-     "e": 712.94,
+     "s": 752.56,
+     "e": 754.58,
      "text": "Ett delat med två är en halv."
     },
     {
-     "s": 713.94,
-     "e": 716.24,
+     "s": 755.58,
+     "e": 757.86,
      "text": "En halv skrivs noll komma fem."
     },
     {
-     "s": 717.24,
-     "e": 719.18,
+     "s": 758.86,
+     "e": 760.9,
      "text": "Så k är noll komma fem."
     },
     {
-     "s": 720.18,
-     "e": 723.82,
+     "s": 761.9,
+     "e": 765.28,
      "text": "Fjädern blir en halv centimeter längre för varje vikt."
     },
     {
-     "s": 725.12,
-     "e": 729.22,
+     "s": 766.58,
+     "e": 770.62,
      "text": "Nu sätter vi in talen i y är lika med k x plus m."
     },
     {
-     "s": 730.22,
-     "e": 733.06,
+     "s": 771.62,
+     "e": 774.42,
      "text": "Där k står, skriver vi noll komma fem."
     },
     {
-     "s": 734.06,
-     "e": 736.84,
+     "s": 775.42,
+     "e": 778.4,
      "text": "Där m står, skriver vi tio, som förut."
     },
     {
-     "s": 737.84,
-     "e": 742.42,
+     "s": 779.4,
+     "e": 783.92,
      "text": "Sambandet blir y är lika med noll komma fem x plus tio."
     },
     {
-     "s": 743.42,
-     "e": 745.32,
+     "s": 784.92,
+     "e": 786.86,
      "text": "Båda linjerna börjar vid tio."
     },
     {
-     "s": 746.32,
-     "e": 749.76,
+     "s": 787.86,
+     "e": 791.04,
      "text": "Men den styva fjäderns linje lutar mindre, ser du?"
     },
     {
-     "s": 751.06,
-     "e": 754.64,
+     "s": 792.34,
+     "e": 796.02,
      "text": "Hooke skrev också att regeln gäller när man trycker ihop en fjäder."
     },
     {
-     "s": 755.64,
-     "e": 757.18,
+     "s": 797.02,
+     "e": 798.6,
      "text": "Vi ställer en fjäder på bordet."
     },
     {
-     "s": 758.18,
-     "e": 759.8,
+     "s": 799.6,
+     "e": 801.38,
      "text": "Den är tio centimeter hög."
     },
     {
-     "s": 760.8,
-     "e": 762.26,
+     "s": 802.38,
+     "e": 803.8,
      "text": "Vi lägger en vikt ovanpå."
     },
     {
-     "s": 763.26,
-     "e": 765.42,
+     "s": 804.8,
+     "e": 806.86,
      "text": "Då trycks den ihop två centimeter."
     },
     {
-     "s": 766.42,
-     "e": 770.06,
+     "s": 807.86,
+     "e": 811.64,
      "text": "Fjädern blir alltså två centimeter kortare för varje vikt."
     },
     {
-     "s": 771.31,
-     "e": 774.72,
+     "s": 812.94,
+     "e": 815.74,
      "text": "Nu blir y mindre när x blir större."
     },
     {
-     "s": 775.72,
-     "e": 777.14,
+     "s": 816.74,
+     "e": 817.74,
      "text": "Vad blir k då?"
     },
     {
-     "s": 778.14,
-     "e": 781.29,
+     "s": 818.66,
+     "e": 821.32,
      "text": "Vi tittar på formelbladet igen, på formeln för k."
     },
     {
-     "s": 782.37,
-     "e": 784.63,
+     "s": 822.62,
+     "e": 824.8,
      "text": "Trappan börjar i noll, tio."
     },
     {
-     "s": 785.63,
-     "e": 788.29,
+     "s": 825.8,
+     "e": 828.58,
      "text": "Efter en vikt är fjädern åtta centimeter."
     },
     {
-     "s": 789.29,
-     "e": 791.93,
+     "s": 829.58,
+     "e": 832.12,
      "text": "Så trappan slutar i ett, åtta."
     },
     {
-     "s": 792.93,
-     "e": 796.03,
+     "s": 833.12,
+     "e": 836.4,
      "text": "Ovanför strecket står y två minus y ett."
     },
     {
-     "s": 797.03,
-     "e": 799.03,
+     "s": 837.4,
+     "e": 839.4,
      "text": "Det blir åtta minus tio."
     },
     {
-     "s": 800.03,
-     "e": 803.25,
+     "s": 840.4,
+     "e": 843.62,
      "text": "Från tio ner till åtta är två steg nedåt."
     },
     {
-     "s": 804.25,
-     "e": 805.75,
+     "s": 844.62,
+     "e": 846.24,
      "text": "Därför blir det minus två."
     },
     {
-     "s": 806.75,
-     "e": 809.71,
+     "s": 847.24,
+     "e": 850.36,
      "text": "Under strecket står x två minus x ett."
     },
     {
-     "s": 810.71,
-     "e": 812.45,
+     "s": 851.36,
+     "e": 853.26,
      "text": "Ett minus noll är ett."
     },
     {
-     "s": 813.45,
-     "e": 816.09,
+     "s": 854.26,
+     "e": 856.98,
      "text": "Minus två delat med ett är minus två."
     },
     {
-     "s": 817.09,
-     "e": 818.73,
+     "s": 857.98,
+     "e": 859.88,
      "text": "Så k är minus två."
     },
     {
-     "s": 820.03,
-     "e": 824.09,
+     "s": 861.18,
+     "e": 865.38,
      "text": "Nu sätter vi in talen i y är lika med k x plus m."
     },
     {
-     "s": 825.09,
-     "e": 827.73,
+     "s": 866.38,
+     "e": 868.88,
      "text": "Där k står, skriver vi minus två."
     },
     {
-     "s": 828.73,
-     "e": 830.73,
+     "s": 869.88,
+     "e": 872.02,
      "text": "Där m står, skriver vi tio."
     },
     {
-     "s": 831.73,
-     "e": 836.07,
+     "s": 873.02,
+     "e": 877.42,
      "text": "Sambandet blir y är lika med minus två x plus tio."
     },
     {
-     "s": 837.07,
-     "e": 842.01,
+     "s": 878.42,
+     "e": 883.64,
      "text": "Linjen lutar nedåt, för fjädern blir två centimeter kortare för varje vikt."
     },
     {
-     "s": 843.31,
-     "e": 845.79,
+     "s": 884.94,
+     "e": 887.62,
      "text": "Den här linjen ritar vi utan värdetabell."
     },
     {
-     "s": 846.79,
-     "e": 849.95,
+     "s": 888.62,
+     "e": 892,
      "text": "Vi gör alltså ingen tabell med punkter först, som med vikterna."
     },
     {
-     "s": 850.95,
-     "e": 852.11,
+     "s": 893,
+     "e": 894.08,
      "text": "Var börjar linjen?"
     },
     {
-     "s": 853.11,
-     "e": 855.51,
+     "s": 895.08,
+     "e": 897.4,
      "text": "I m, vid tio på y-axeln."
     },
     {
-     "s": 856.51,
-     "e": 857.57,
+     "s": 898.4,
+     "e": 899.54,
      "text": "Där sätter vi en punkt."
     },
     {
-     "s": 858.57,
-     "e": 863.41,
+     "s": 900.54,
+     "e": 905.42,
      "text": "Sen går vi ett steg åt höger och två steg nedåt, för k är minus två."
     },
     {
-     "s": 864.41,
-     "e": 865.71,
+     "s": 906.42,
+     "e": 907.72,
      "text": "Där sätter vi en punkt till."
     },
     {
-     "s": 866.71,
-     "e": 869.63,
+     "s": 908.72,
+     "e": 911.64,
      "text": "Till sist drar vi linjen genom de två punkterna."
     },
     {
-     "s": 870.93,
-     "e": 876.57,
+     "s": 912.94,
+     "e": 919.04,
      "text": "Hooke skrev ner försöket i en liten bok om fjädrar, som trycktes i London sextonhundrasjuttioåtta."
     },
     {
-     "s": 877.57,
-     "e": 879.63,
+     "s": 920.04,
+     "e": 922.3,
      "text": "Regeln kallas i dag Hookes lag."
     },
     {
-     "s": 880.63,
-     "e": 884.73,
+     "s": 923.3,
+     "e": 927.66,
      "text": "Och en fjädervåg, som den man hänger en väska i, bygger fortfarande på den."
     },
     {
-     "s": 886.03,
-     "e": 887.03,
+     "s": 928.96,
+     "e": 929.96,
      "text": "Nu är det din tur."
     },
     {
-     "s": 887.91,
-     "e": 890.97,
+     "s": 930.94,
+     "e": 934.28,
      "text": "En fjäder är åtta centimeter lång utan vikter."
     },
     {
-     "s": 891.97,
-     "e": 894.47,
+     "s": 935.28,
+     "e": 937.86,
      "text": "Varje vikt gör den två centimeter längre."
     },
     {
-     "s": 895.47,
-     "e": 899.69,
+     "s": 938.86,
+     "e": 943.34,
      "text": "Skriv sambandet på formen y är lika med k x plus m."
     },
     {
-     "s": 900.69,
-     "e": 902.85,
+     "s": 944.34,
+     "e": 946.62,
      "text": "Hur lång är fjädern med fem vikter?"
     }
    ]
