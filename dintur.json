@@ -1952,10 +1952,10 @@
   "ma1c-k4-06-grafisk-ekvationslosning": {
     "geogebra": { "text": "Lös uppgiften grafiskt här i GeoGebra, med samma steg som i filmen: skriv modellen och linjen, klicka på kurvan och sedan på den grå skärningspunkten." },
     "notisFran": "Nu är det din tur",
-    "fraga": "En ö har 3 miljoner invånare, och folket blir dubbelt så många var 25:e år.",
+    "fraga": "En ö har 3 miljoner invånare. Folket blir dubbelt så många var 25:e år. Vi kallar 25 år för en period.",
     "delar": [
       {
-        "fraga": "Skriv en modell för antalet miljoner invånare y efter x perioder om 25 år.",
+        "fraga": "Skriv en modell y = C · aˣ. x är antalet perioder, inte antalet år. y är antalet miljoner invånare.",
         "typ": "ekvation",
         "svar": "y = 3 · 2^x",
         "exempel": "t.ex. y = 5 · 3^x",
@@ -1964,6 +1964,18 @@
           "^"
         ],
         "fel": [
+          {
+            "svar": "y / 2^25 = 3",
+            "text": "25 är antalet år i en period. x räknar perioder, så exponenten är x."
+          },
+          {
+            "svar": "25 = 3 · 2^x",
+            "text": "Det är en ekvation, inte en modell. Modellen börjar med y =, och 25 hör inte dit."
+          },
+          {
+            "svar": "y = 3 · 2^(x/25)",
+            "text": "Det stämmer om x är år. Här är x antalet perioder, så det blir y = 3 · 2ˣ."
+          },
           {
             "svar": "y = 2 · 3^x",
             "text": "Startvärdet och förändringsfaktorn har bytt plats. Startvärdet C är 3 miljoner, och förändringsfaktorn a är 2, eftersom folket blir dubbelt så många."
@@ -1979,7 +1991,24 @@
         ]
       },
       {
-        "fraga": "Lös grafiskt: efter hur många år har ön 24 miljoner invånare?",
+        "fraga": "Lös grafiskt: efter hur många perioder har ön 24 miljoner invånare?",
+        "typ": "tal",
+        "svar": 3,
+        "enhet": "perioder",
+        "exempel": "t.ex. 2",
+        "fel": [
+          {
+            "svar": "8",
+            "text": "8 är 24 delat med 3. Läs av x där kurvan möter linjen y = 24."
+          },
+          {
+            "svar": "75",
+            "text": "75 är antalet år. Här frågas efter perioder, alltså x där kurvan möter linjen y = 24."
+          }
+        ]
+      },
+      {
+        "fraga": "Hur många år är det? En period är 25 år.",
         "typ": "tal",
         "svar": 75,
         "enhet": "år",
@@ -1990,24 +2019,20 @@
             "text": "x = 3 är antalet perioder. Varje period är 25 år, så räkna 3 · 25."
           },
           {
-            "svar": "8",
-            "text": "Graferna y = 3 · 2ˣ och y = 24 skär varandra där x = 3. Det är 3 perioder om 25 år."
-          },
-          {
             "svar": "200",
-            "text": "Du har räknat 8 · 25. Läs av x där graferna skär varandra: x = 3, och 3 · 25 = 75."
+            "text": "Du har räknat 8 · 25. Kurvan möter linjen y = 24 där x = 3, och 3 · 25 = 75."
           }
         ]
       }
     ],
     "ledtrad": {
       "fras": "Nu är ekvationen sju",
-      "text": "Rita kurvan y = 3 · 2ˣ och den vågräta linjen y = 24. Läs av x där graferna skär varandra, och gör om perioderna till år."
+      "text": "Rita kurvan y = 3 · 2ˣ och den vågräta linjen y = 24. Läs av x där graferna skär varandra. Det är antalet perioder. Gör sedan om perioderna till år."
     },
     "losning": [
-      "Startvärdet är 3 och förändringsfaktorn 2, så y = 3 · 2ˣ.",
+      "Startvärdet C är 3 och förändringsfaktorn a är 2. x räknar perioder, så y = 3 · 2ˣ.",
       "Ekvationen är 3 · 2ˣ = 24. Rita y = 3 · 2ˣ och y = 24.",
-      "Graferna skär varandra där x = 3.",
+      "Graferna skär varandra där x = 3. Det är 3 perioder.",
       "3 perioder · 25 år = 75 år."
     ]
   },
