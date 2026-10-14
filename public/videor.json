@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-14T18:25:05.441Z",
+ "byggd": "2026-10-14T19:12:58.828Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -12441,143 +12441,128 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-04-potensfunktioner-v6/ma1c-k4-04-potensfunktioner-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-04-potensfunktioner-v7/ma1c-k4-04-potensfunktioner-1080p.mp4",
    "moment": "Potensfunktioner y = C · xᵃ",
    "begrepp": [
     "potensfunktion",
     "exponent",
     "negativ exponent",
     "omvänd proportionalitet",
-    "direkt proportionalitet",
-    "proportionalitetskonstant",
     "konstant",
     "term",
-    "kvadratrot",
     "graf",
     "formelbladet"
    ],
-   "beskrivning": "Robert Boyle i Oxford år 1662: han trycker ihop luft i ett U-format glasrör med kvicksilver och prövar en gissning om hur mycket mindre plats luften tar. Ur hans mätningar får vi y = 48/x = 48 · x⁻¹ och lär oss potensfunktioner y = C · xᵃ, omvänd proportionalitet, hur man räknar ut y och bestämmer C ur en punkt, grafen och exponenterna 2 och ½.",
+   "beskrivning": "Robert Boyle i Oxford år 1662: han trycker ihop luft i ett U-format glasrör med kvicksilver och prövar en gissning om hur mycket mindre plats luften tar. Ur hans mätningar får vi y = 48/x = 48 · x⁻¹ och lär oss omvänd proportionalitet, negativ exponent, potensfunktionen y = C · xᵃ på formelbladet och grafen.",
    "youtube": null,
-   "langd": 874,
+   "langd": 750,
    "omslag": "omslag/ma1c-k4-04-potensfunktioner.jpg?v=3bfe4cff",
    "omslagRen": "omslag/ma1c-k4-04-potensfunktioner-ren.jpg?v=18af5156",
    "omslagStor": null,
    "repliker": [
     {
      "t": 9,
-     "text": "Robert Boyle är forskare i Oxford i England, och han undersöker luften. Han vet att luft går att trycka ihop. Det kan du känna själv med en cykelpump. Håll för hålet och tryck ner pumpen. Luften tar mindre plats, men den trycker emot. Men hur mycket mindre plats tar luften, om man trycker hårdare?"
+     "text": "Robert Boyle är forskare i Oxford i England, och han undersöker luften. Han vet att luft går att trycka ihop. Det kan du faktiskt känna själv med en cykelpump. Håll för hålet och tryck ner pumpen. Luften tar mindre plats, men den trycker emot. Men hur mycket mindre plats tar luften, om man trycker hårdare?"
     },
     {
-     "t": 33,
-     "text": "Det är år 1662, och Boyle vill pröva en gissning om luft. Gissningen är att luften tar hälften så mycket plats, om man trycker dubbelt så hårt. Hur ska han kolla det? Jo, han tar ett långt glasrör som är böjt som ett U. Det korta benet är stängt upptill, och där inne finns lite luft."
+     "t": 32,
+     "text": "Det är år 1662, och Boyle vill pröva en gissning om luft. Gissningen är att luften tar hälften så mycket plats, om man trycker dubbelt så hårt. Hur ska han kolla gissningen? Jo, han tar ett långt glasrör som är böjt som ett U. Det korta benet är stängt upptill, och där inne finns lite luft."
     },
     {
-     "t": 56,
-     "text": "På det korta benet sitter en pappersremsa med lika långa streck, och luften fyller fyrtioåtta streck. Strecken visar hur mycket plats luften tar. I det långa benet häller Boyle kvicksilver. Kvicksilver är en tung metall som är flytande. Det trycker på luften, och ju högre kvicksilvret står i röret, desto hårdare trycks luften. Det är som när man dyker. Ju mer vatten man har ovanför sig, desto hårdare trycker det i öronen."
+     "t": 55,
+     "text": "På det korta benet sitter en pappersremsa med lika långa streck, och luften fyller fyrtioåtta streck. Strecken visar hur mycket plats luften tar. I det långa benet häller Boyle kvicksilver. Kvicksilver är en tung metall som är flytande. Kvicksilvret trycker på luften, och ju högre kvicksilvret står i röret, desto hårdare trycks luften. Det är som när man dyker. Ju mer vatten man har ovanför sig, desto hårdare trycker vattnet i öronen."
     },
     {
-     "t": 89,
-     "text": "Röret är så långt att det får stå i en trappa. Boyle och en medhjälpare som jobbar hos honom gör försöket tillsammans, för det är svårt att göra allt på en gång. Den ene häller kvicksilver uppifrån, och den andre läser av strecken nere vid luften och ropar upp dem."
+     "t": 87,
+     "text": "Röret är så långt att det får stå i en trappa. Boyle och en medhjälpare som jobbar hos honom gör försöket tillsammans, för det är svårt att göra allt på en gång. Den ene häller kvicksilver uppifrån, och den andre läser av strecken nere vid luften och ropar upp talen."
     },
     {
-     "t": 107,
-     "text": "Från början trycks luften i röret lika hårt som luften i rummet. Det kallar vi tryck ett. Boyle häller i kvicksilver tills luften trycks dubbelt så hårt, alltså tryck två. Då fyller luften tjugofyra streck. Det är hälften, precis som gissningen sa. Han häller i mer, och vid tryck fyra fyller den tolv streck. Och det är hälften igen."
+     "t": 104,
+     "text": "Från början trycks luften i röret lika hårt som luften i rummet. Det trycket kallar vi tryck ett. Då fyller luften fyrtioåtta streck. Boyle häller i kvicksilver tills luften trycks dubbelt så hårt, alltså tryck två. Då fyller luften tjugofyra streck."
     },
     {
-     "t": 134,
+     "t": 124,
+     "text": "Se på luften före och efter, bredvid varandra. Trycket blev dubbelt så stort, och samma luft fyller nu hälften så många streck, precis som gissningen sa. Luften har inte försvunnit. Den har bara fått mindre plats. Vad händer om Boyle dubblar trycket en gång till? Han häller i mer, och vid tryck fyra fyller luften tolv streck. Det är hälften igen."
+    },
+    {
+     "t": 148,
      "text": "Boyle skriver in varje mätning i sina anteckningar. Om gissningen stämmer, finns det en regel för hur många streck luften fyller vid varje tryck. Då kan han räkna ut vad han ska mäta, innan han mäter. Men tryck tre får man inte genom att dubbla något av de andra trycken. Hur många streck ska luften fylla vid tryck tre?"
     },
     {
-     "t": 157,
-     "text": "Vi skriver Boyles mätningar i en tabell. Trycket kallar vi x. Antalet streck kallar vi y. Vid tryck ett är y fyrtioåtta. Vid tryck två är y tjugofyra. Och vid tryck fyra är y tolv."
+     "t": 172,
+     "text": "Antalet streck vid tryck tre kan vi faktiskt räkna ut, med Boyles egna mätningar. Först skriver vi mätningarna i en tabell. Trycket kallar vi x, och antalet streck kallar vi y. Vid tryck ett är y fyrtioåtta. Vid tryck två är y tjugofyra. Och vid tryck fyra är y tolv."
     },
     {
-     "t": 176,
-     "text": "Finns det något som är likadant på varje rad? Nu tar vi x gånger y på varje rad. Ett gånger fyrtioåtta är fyrtioåtta. Två gånger tjugofyra, vad blir det? Tänk dig två remsor med tjugofyra streck var. Lägg dem efter varandra. Då blir det fyrtioåtta streck. Fyra gånger tolv är också fyrtioåtta. Aha... x gånger y blir samma tal på varje rad."
+     "t": 194,
+     "text": "Finns det något som är likadant på varje rad? Man kan se det på det här sättet. Tänk dig remsan med fyrtioåtta streck. Vid tryck två klipper vi remsan mitt itu, och då blir det två bitar med tjugofyra streck var. Luften fyller en sådan bit. Vid tryck fyra klipper vi varje bit mitt itu igen. Då blir det fyra bitar med tolv streck var. Trycket säger alltså hur många bitar det blir."
     },
     {
-     "t": 208,
-     "text": "Varför blir det så? Det beror på att y blir hälften så stort, när x blir dubbelt så stort. Dubbelt och hälften tar ut varandra. Då säger vi att y är omvänt proportionell mot x. Det betyder att x gånger y alltid blir samma tal. Här blir det fyrtioåtta. Talet ändras aldrig, så det kallas en konstant. Vi kallar det C."
+     "t": 221,
+     "text": "Lägg nu bitarna efter varandra igen. Inget streck försvinner när vi klipper, så det blir fyrtioåtta streck varje gång. Antalet bitar gånger strecken i varje bit, det är x gånger y. Ett gånger fyrtioåtta är fyrtioåtta. Två gånger tjugofyra är fyrtioåtta. Fyra gånger tolv är också fyrtioåtta. Det går ju jämnt ut, x gånger y blir samma tal på varje rad."
     },
     {
-     "t": 236,
-     "text": "Om x gånger y alltid är fyrtioåtta, hur räknar vi då ut y? Tänk på remsorna igen. Fyrtioåtta streck delas lika på x remsor. Så vi delar fyrtioåtta med x. Vi skriver y är lika med fyrtioåtta delat med x. Det här är regeln för Boyles luft. Vi stoppar in ett tryck och får ut antalet streck."
-    },
-    {
-     "t": 263,
-     "text": "Nu ska vi svara på frågan om tryck tre. Då räknar vi med formelbladet, för Boyles regel finns där också. Men där ser den annorlunda ut. Där står det upphöjt till, och inte delat med. Vad betyder då upphöjt till?"
+     "t": 248,
+     "text": "Vi har sett att y blir hälften så stort, när x blir dubbelt så stort. Då säger vi att y är omvänt proportionell mot x. Omvänt betyder åt motsatt håll. Trycket går upp, och platsen går ner. Men det räcker inte att y minskar när x ökar. Omvänt proportionell betyder att x gånger y alltid blir samma tal. Hos Boyle blir talet fyrtioåtta. Talet ändras aldrig, så det kallas en konstant. Konstanten kallar vi C."
     },
     {
      "t": 281,
-     "text": "Tänk dig x upphöjt till två. Det betyder x gånger x. Det kallas också x i kvadrat. Det lilla talet uppe till höger säger hur många x det är. Det talet kallas exponent. Men exponenten kan också vara minus ett. Vad betyder det? Det står på formelbladet, under rubriken potenser. x upphöjt till minus ett betyder ett delat med x. Minus i exponenten betyder alltså att vi delar."
+     "text": "Om x gånger y alltid är fyrtioåtta, hur räknar vi då ut y? Om vi går tillbaka till remsan, så ser vi att fyrtioåtta streck delas lika på x bitar. Så vi delar fyrtioåtta med x. Då får vi Boyles regel som en formel, y är lika med fyrtioåtta delat med x. I formeln sätter vi in ett tryck, och så får vi antalet streck."
     },
     {
-     "t": 316,
-     "text": "Nu tittar vi på formelbladet igen, under rubriken funktioner. Där står y är lika med C gånger x upphöjt till a. Det är formeln för en potensfunktion. Vi skriver av den precis som den står, och använder den som en mall. Talen ska in där bokstäverna står. Vad står bokstäverna för hos Boyle? y är antalet streck som luften fyller. x är trycket. C är talet som x gånger y alltid blir. a är exponenten, det lilla talet uppe till höger."
+     "t": 305,
+     "text": "Nu ska vi svara på Boyles fråga om tryck tre. Det gör vi med formelbladet, för formelbladet har du med dig på provet. Där finns en enda mall för många sådana formler. Mallen gäller både när något krymper, som Boyles luft, och när något växer. Boyles formel finns där också, men den ser annorlunda ut. Där står det upphöjt till, i stället för delat med. Så först tar vi reda på vad upphöjt till betyder."
     },
     {
-     "t": 354,
-     "text": "Vilka tal ska in i mallen hos Boyle? C är fyrtioåtta. Och a? Fyrtioåtta delat med x är fyrtioåtta gånger ett delat med x. Och ett delat med x är x upphöjt till minus ett. Så a är minus ett. Nu skriver vi mallen med Boyles tal. I mallen står C. Här är C fyrtioåtta, så vi skriver fyrtioåtta där. I mallen står a. Här är a minus ett, så vi skriver minus ett där. Då står det y är lika med fyrtioåtta gånger x upphöjt till minus ett."
+     "t": 333,
+     "text": "Två upphöjt till två betyder två gånger två, alltså fyra. Det lilla talet uppe till höger kallas exponent. Exponenten säger hur många tvåor vi tar gånger. Nu går vi nedåt i exponenten, ett steg i taget, som i en trappa. Två upphöjt till ett är två. Från fyra till två delade vi med två, och så blir det för varje steg nedåt. Två upphöjt till noll är alltså två delat med två, och det är ett. Ett steg till ger ett delat med två, alltså en halv. Så två upphöjt till minus ett är en halv. Det är inte minus två. Minus i exponenten betyder att vi delar."
     },
     {
-     "t": 397,
-     "text": "En potensfunktion har bara en enda del, utan plus eller minus. En sådan del kallas en term. Står det till exempel plus två efter, är det ingen potensfunktion."
+     "t": 379,
+     "text": "Med x är det likadant. x upphöjt till minus ett betyder ett delat med x, precis som två upphöjt till minus ett är ett delat med två. Den regeln står på formelbladet, under rubriken potenser."
     },
     {
-     "t": 411,
-     "text": "Nu kan vi svara på frågan om tryck tre. Vi tittar i mallen med Boyles tal. Där står x. Här är x tre. Så vi skriver tre där x står. Då står det y är lika med fyrtioåtta gånger tre upphöjt till minus ett. Vi räknar i två steg. Först upphöjt till. Tre upphöjt till minus ett är ett delat med tre, alltså en tredjedel. Sedan gånger C. Vad är en tredjedel av fyrtioåtta? Dela fyrtioåtta streck lika på tre remsor. Då får varje remsa sexton streck. Luften ska alltså fylla sexton streck. Så räknar vi alltid i mallen. Först upphöjt till, sedan gånger C."
+     "t": 394,
+     "text": "Nu vet vi vad upphöjt till betyder, så vi kan läsa mallen. Mallen står på formelbladet, under rubriken funktioner. Där står y är lika med C gånger x upphöjt till a. Det är formeln för en potensfunktion. Vi skriver av formeln precis som den står och använder den som en mall, där talen ska in i stället för bokstäverna. Vad står bokstäverna för hos Boyle? y är antalet streck, och x är trycket. C är konstanten, och a är exponenten."
     },
     {
-     "t": 466,
+     "t": 427,
+     "text": "Vilka tal ska in i mallen hos Boyle? C är fyrtioåtta, för x gånger y blir alltid fyrtioåtta. Och a? Tänk på tryck tre. Fyrtioåtta delat med tre är ju en tredjedel av fyrtioåtta, alltså fyrtioåtta gånger en tredjedel. På samma sätt är fyrtioåtta delat med x lika med fyrtioåtta gånger ett delat med x. Och ett delat med x är x upphöjt till minus ett, som i trappan. Så a är minus ett. I mallen står C, och här är C fyrtioåtta, så vi skriver fyrtioåtta där. I mallen står a, och här är a minus ett, så vi skriver minus ett där. Då står det y är lika med fyrtioåtta gånger x upphöjt till minus ett."
+    },
+    {
+     "t": 474,
+     "text": "Boyles formel har bara en enda del, utan plus eller minus. En sådan del kallas en term. En potensfunktion har alltid bara en term. Står det till exempel plus två efter, är det ingen potensfunktion."
+    },
+    {
+     "t": 489,
+     "text": "Nu kan vi äntligen svara på Boyles fråga. Hur många streck fyller luften vid tryck tre? I formeln står x, och här är x tre. Så vi skriver tre där x står. Då står det y är lika med fyrtioåtta gånger tre upphöjt till minus ett. Nu får vi inte glömma att upphöjt till räknas först, före gånger. Tre upphöjt till minus ett är ett delat med tre, alltså en tredjedel. Sedan tar vi gånger fyrtioåtta. En tredjedel av fyrtioåtta får vi när vi delar fyrtioåtta med tre. Divisionen kan vi räkna enklare så här. Fyrtioåtta är trettio plus arton, och de talen är lätta att dela med tre. Trettio delat med tre är tio, och arton delat med tre är sex. Tio och sex är sexton. Luften ska alltså fylla sexton streck. Men stämmer svaret med Boyles mätning i trappan?"
+    },
+    {
+     "t": 550,
      "text": "Boyle hällde i mer kvicksilver och mätte. När luften fyllde sexton streck, var trycket nästan exakt tre. I hans tabell står varje mätning bredvid det som regeln säger, och talen är nästan lika. Gissningen stämmer alltså."
     },
     {
-     "t": 484,
-     "text": "Tabellen har bara några få tryck. Vad händer mellan dem? Vi ritar punkterna i ett koordinatsystem, så ser vi det. Trycket går åt höger, längs x-axeln. Strecken går uppåt, längs y-axeln. Ligger punkterna på en rak linje? Nej. De ligger på en kurva som sjunker. Tänk dig att du går längs kurvan åt höger. Först går det brant nedför. Sedan planar det ut."
+     "t": 567,
+     "text": "Här är det lätt att tänka fel, så se upp. Från tryck ett till tryck två tappade luften tjugofyra streck. Då kan man tro att luften tappar tjugofyra streck till vid tryck tre, och att den fyller noll streck. Men luften tappar inte lika många streck för varje steg, för remsan klipps bara i fler bitar. Vid tryck tre blir det tre bitar med sexton streck var."
     },
     {
-     "t": 517,
-     "text": "Ju större x är, desto mindre blir y. Men blir y någonsin noll? Nej. Fyrtioåtta delat med ett positivt tal blir aldrig noll. Luften försvinner alltså aldrig helt, hur hårt man än trycker. Och när x är nära noll? Då går kurvan rakt uppåt. Trycker man nästan inte alls, fyller luften väldigt många streck."
+     "t": 593,
+     "text": "Med formeln räknar vi ett tryck i taget, men en graf visar lättare hur funktionen ser ut för alla tryck. Så vi ritar punkterna i ett koordinatsystem. Trycket lägger vi längs x-axeln, och antalet streck längs y-axeln. Som vi ser ligger punkterna inte på en rak linje, utan på en kurva som sjunker. Tänk dig att du går längs kurvan åt höger. Först går det brant nedför, och sedan planar kurvan ut."
     },
     {
-     "t": 545,
-     "text": "Är alla potensfunktioner kurvor som sjunker? Nej, det beror på exponenten. Jämför med y är lika med tre x. Här är exponenten ett, för x upphöjt till ett är bara x. Vad händer när x blir dubbelt så stort? Då blir y också dubbelt så stort. Det kallas att y är direkt proportionell mot x. Grafen blir en rak linje. Den går genom punkten där axlarna möts, och den punkten heter origo."
+     "t": 624,
+     "text": "Men blir y någonsin noll? Nej. Fyrtioåtta delat med ett positivt tal blir aldrig noll, hur stort talet än är. Luften försvinner alltså aldrig helt, hur hårt man än trycker. Och när x är nära noll går kurvan nästan rakt uppåt. Trycker man nästan inte alls, fyller luften väldigt många streck. Nu går vi tillbaka till Boyle i Oxford."
     },
     {
-     "t": 581,
-     "text": "Exponenten kan också vara två. Ta funktionen y är lika med tre x i kvadrat. Vad blir y, när x är fyra? Vi tittar på formelbladet igen. Där står mallen, y är lika med C gånger x upphöjt till a."
+     "t": 653,
+     "text": "Boyle mätte så noga för att bevisa en sak. Två år tidigare hade han skrivit en bok om att luft trycker tillbaka, ungefär som en fjäder som man trycker ihop. Den boken läste en präst som hette Franciscus Linus. Han undervisade i matematik i staden Liège, och han trodde inte på Boyle. Luft kan inte trycka så, sa han. I röret finns i stället en osynlig tråd som drar."
     },
     {
-     "t": 600,
-     "text": "Vi skriver av mallen. Sedan sätter vi in talen. I mallen står C. Här är C tre. I mallen står a. Här är a två, för i kvadrat betyder upphöjt till två. I mallen står x. Här är x fyra. Då står det y är lika med tre gånger fyra upphöjt till två. Först upphöjt till. Exponenten hör bara till x. Fyra upphöjt till två är fyra gånger fyra. Det är sexton. Sedan gånger C. Tre gånger sexton är fyrtioåtta. Så y är fyrtioåtta."
+     "t": 682,
+     "text": "Försöket i trappan var Boyles svar. Trycker luften tillbaka som en fjäder, så går det att räkna ut i förväg hur mycket plats luften tar. Och räkningen gick, för talen i tabellen stämde med regeln. Boyle skrev försöket och tabellen i en bok som trycktes samma år, och regeln kallas i dag Boyles lag. Så nästa gång du håller för hålet på en cykelpump, är det Boyles lag du känner i handen."
     },
     {
-     "t": 648,
-     "text": "Ibland känner vi en punkt på grafen, men inte C. Ta funktionen y är lika med C gånger x i kvadrat. Den går genom punkten två, tjugo. Vad betyder det? Att y är tjugo, när x är två. Hur hittar vi C? Vi använder samma mall, fast baklänges."
-    },
-    {
-     "t": 672,
-     "text": "Vi sätter in punkten i mallen. I mallen står y. Här är y tjugo. I mallen står x. Här är x två. Och a är två. Då står det tjugo är lika med C gånger två upphöjt till två. Först upphöjt till. Två gånger två är fyra. Så tjugo är lika med C gånger fyra. Vilket tal gånger fyra blir tjugo? Det är fem, för fem gånger fyra är tjugo. Så C är fem. Funktionen är y är lika med fem x i kvadrat."
-    },
-    {
-     "t": 715,
-     "text": "Exponenten kan också vara en halv. Vad betyder det? Tänk dig nio rutor som bildar en kvadrat. Hur många rutor har varje sida? Tre, för tre gånger tre är nio. Tre kallas kvadratroten ur nio. På formelbladet, under potenser, står att x upphöjt till en halv är kvadratroten ur x."
-    },
-    {
-     "t": 741,
-     "text": "Ta nu funktionen y är lika med två gånger x upphöjt till en halv. Vad blir y, när x är nio? Vi använder mallen under funktioner. I mallen står C. Här är C två. I mallen står a. Här är a en halv. Och x är nio. Då står det y är lika med två gånger nio upphöjt till en halv. Först upphöjt till. Nio upphöjt till en halv är kvadratroten ur nio. Det är tre. Sedan gånger C. Två gånger tre är sex. Så y är sex."
-    },
-    {
-     "t": 786,
-     "text": "Men varför ville Boyle veta det här så noga? Två år tidigare hade han skrivit en bok om att luft trycker tillbaka, ungefär som en fjäder som man trycker ihop. Den boken läste en präst som hette Franciscus Linus. Han undervisade i matematik i staden Liège, och han trodde inte på Boyle. Luft kan inte trycka så, sa han. I röret finns i stället en osynlig tråd som drar."
-    },
-    {
-     "t": 816,
-     "text": "Försöket i trappan var Boyles svar. Trycker luften tillbaka som en fjäder, så går det att räkna ut i förväg hur mycket plats den tar. Och det gick, för talen i tabellen stämde med regeln. Boyle skrev försöket och tabellen i en bok som trycktes samma år, och regeln kallas i dag Boyles lag. Så nästa gång du håller för hålet på en cykelpump, är det Boyles lag du känner i handen."
-    },
-    {
-     "t": 844,
-     "text": "Nu är det din tur. Luften i ett annat rör fyller trettio streck vid tryck två. Tryck två betyder att luften trycks dubbelt så hårt som luften i rummet. Skriv funktionen på formen y är lika med C gånger x upphöjt till minus ett. x är trycket, och y är antalet streck. Hur många streck fyller luften vid tryck tre, alltså tre gånger så hårt?"
+     "t": 712,
+     "text": "Nu är det din tur. Luften i ett annat rör fyller trettio streck vid tryck två. Tryck två betyder att luften trycks dubbelt så hårt som luften i rummet. Se upp, trettio är inte C. Börja med att räkna ut C, alltså trycket gånger strecken. Skriv sedan funktionen på formen y är lika med C gånger x upphöjt till minus ett. x är trycket, och y är antalet streck. Hur många streck fyller luften vid tryck tre, alltså tre gånger så hårt?"
     }
    ],
    "kapitel": [
@@ -12587,147 +12572,137 @@
      "typ": "historia"
     },
     {
-     "t": 33,
+     "t": 32,
      "rubrik": "Gissningen och glasröret",
      "typ": "historia"
     },
     {
-     "t": 56,
+     "t": 55,
      "rubrik": "Strecken och kvicksilvret",
      "typ": "historia"
     },
     {
-     "t": 89,
+     "t": 87,
      "rubrik": "Försöket i trappan",
      "typ": "historia"
     },
     {
-     "t": 107,
-     "rubrik": "Tryck 1, 2 och 4",
+     "t": 104,
+     "rubrik": "Tryck 1 och 2",
      "typ": "historia"
     },
     {
-     "t": 134,
+     "t": 124,
+     "rubrik": "Hälften så mycket plats",
+     "typ": "historia"
+    },
+    {
+     "t": 148,
      "rubrik": "Tabellen och frågan",
      "typ": "historia"
     },
     {
-     "t": 157,
+     "t": 172,
      "rubrik": "Tabellen med x och y",
      "typ": "matte"
     },
     {
-     "t": 180,
+     "t": 194,
+     "rubrik": "Remsan i bitar",
+     "typ": "matte"
+    },
+    {
+     "t": 221,
      "rubrik": "x · y = 48",
      "typ": "matte"
     },
     {
-     "t": 210,
+     "t": 248,
      "rubrik": "Omvänt proportionell",
      "typ": "matte"
     },
     {
-     "t": 236,
+     "t": 281,
      "rubrik": "y = 48/x",
      "typ": "matte"
     },
     {
-     "t": 263,
-     "rubrik": "Regeln på formelbladet",
+     "t": 305,
+     "rubrik": "Mallen på formelbladet",
      "typ": "matte"
     },
     {
-     "t": 281,
-     "rubrik": "Exponenten och x⁻¹ = 1/x",
+     "t": 333,
+     "rubrik": "Exponenten och trappan",
      "typ": "matte"
     },
     {
-     "t": 316,
+     "t": 379,
+     "rubrik": "x⁻¹ = 1/x",
+     "typ": "matte"
+    },
+    {
+     "t": 394,
      "rubrik": "Mallen y = Cxᵃ",
      "typ": "matte"
     },
     {
-     "t": 354,
+     "t": 427,
      "rubrik": "Boyles tal i mallen: y = 48 · x⁻¹",
      "typ": "matte"
     },
     {
-     "t": 397,
+     "t": 474,
      "rubrik": "En enda term",
      "typ": "matte"
     },
     {
-     "t": 411,
+     "t": 489,
      "rubrik": "Tryck 3 i mallen: 16 streck",
      "typ": "matte"
     },
     {
-     "t": 466,
+     "t": 550,
      "rubrik": "Boyles mätning",
      "typ": "historia"
     },
     {
-     "t": 489,
+     "t": 567,
+     "rubrik": "Inte noll streck",
+     "typ": "matte"
+    },
+    {
+     "t": 593,
      "rubrik": "Grafen till y = 48/x",
      "typ": "matte"
     },
     {
-     "t": 552,
-     "rubrik": "Direkt proportionell, y = 3x",
+     "t": 624,
+     "rubrik": "y blir aldrig noll",
      "typ": "matte"
     },
     {
-     "t": 581,
-     "rubrik": "Exponenten 2: y = 3x²",
-     "typ": "matte"
-    },
-    {
-     "t": 600,
-     "rubrik": "y = 3 · 4² i mallen",
-     "typ": "matte"
-    },
-    {
-     "t": 648,
-     "rubrik": "Bestäm C ur en punkt",
-     "typ": "matte"
-    },
-    {
-     "t": 672,
-     "rubrik": "C ur punkten i mallen",
-     "typ": "matte"
-    },
-    {
-     "t": 715,
-     "rubrik": "Exponenten ½: roten ur x",
-     "typ": "matte"
-    },
-    {
-     "t": 741,
-     "rubrik": "y = 2 · 9^½ i mallen",
-     "typ": "matte"
-    },
-    {
-     "t": 786,
+     "t": 653,
      "rubrik": "Linus och den osynliga tråden",
      "typ": "historia"
     },
     {
-     "t": 830,
+     "t": 682,
      "rubrik": "Boyles lag",
      "typ": "historia"
     },
     {
-     "t": 844,
+     "t": 712,
      "rubrik": "Din tur: luften i ett annat rör",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 844,
-    "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2. Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet.",
+    "notisFran": 712,
+    "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2. Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet. Se upp, 30 är inte C. Börja med att räkna ut C, alltså trycket gånger strecken.",
     "delar": [
      {
-      "fraga": "Skriv funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck.",
+      "fraga": "Skriv sedan funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck.",
       "typ": "ekvation",
       "svar": "y = 60x^(-1)",
       "exempel": "t.ex. y = 24x^(-1)",
@@ -12777,7 +12752,7 @@
     ],
     "ledtrad": {
      "text": "x gånger y är samma tal hela tiden, och det talet är C. Räkna 2 · 30. Sätt sedan in x = 3 och kom ihåg att x upphöjt till minus ett är ett delat med x.",
-     "t": 236
+     "t": 281
     },
     "losning": [
      "x gånger y är samma tal hela tiden: C = 2 · 30 = 60.",
@@ -12788,1187 +12763,922 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 14.2,
+     "e": 14.32,
      "text": "Robert Boyle är forskare i Oxford i England, och han undersöker luften."
     },
     {
-     "s": 15.2,
-     "e": 17.38,
+     "s": 15,
+     "e": 17.32,
      "text": "Han vet att luft går att trycka ihop."
     },
     {
-     "s": 18.38,
-     "e": 20.26,
-     "text": "Det kan du känna själv med en cykelpump."
+     "s": 17.98,
+     "e": 20.38,
+     "text": "Det kan du faktiskt känna själv med en cykelpump."
     },
     {
-     "s": 21.26,
-     "e": 23.36,
+     "s": 21.06,
+     "e": 23.44,
      "text": "Håll för hålet och tryck ner pumpen."
     },
     {
-     "s": 24.36,
-     "e": 27.22,
+     "s": 23.98,
+     "e": 27.12,
      "text": "Luften tar mindre plats, men den trycker emot."
     },
     {
-     "s": 28.22,
-     "e": 31.9,
+     "s": 27.94,
+     "e": 31.7,
      "text": "Men hur mycket mindre plats tar luften, om man trycker hårdare?"
     },
     {
-     "s": 33.2,
-     "e": 37.94,
+     "s": 32.7,
+     "e": 37.42,
      "text": "Det är år 1662, och Boyle vill pröva en gissning om luft."
     },
     {
-     "s": 38.94,
-     "e": 43.94,
+     "s": 38.16,
+     "e": 43.18,
      "text": "Gissningen är att luften tar hälften så mycket plats, om man trycker dubbelt så hårt."
     },
     {
-     "s": 44.94,
-     "e": 45.94,
-     "text": "Hur ska han kolla det?"
+     "s": 44.06,
+     "e": 45.28,
+     "text": "Hur ska han kolla gissningen?"
     },
     {
-     "s": 46.82,
-     "e": 50.5,
+     "s": 46.1,
+     "e": 49.76,
      "text": "Jo, han tar ett långt glasrör som är böjt som ett U."
     },
     {
-     "s": 51.5,
-     "e": 55.48,
+     "s": 50.42,
+     "e": 54.34,
      "text": "Det korta benet är stängt upptill, och där inne finns lite luft."
     },
     {
-     "s": 56.78,
-     "e": 60.56,
+     "s": 55.14,
+     "e": 58.98,
      "text": "På det korta benet sitter en pappersremsa med lika långa streck,"
     },
     {
-     "s": 60.92,
-     "e": 63.24,
+     "s": 59.38,
+     "e": 61.56,
      "text": "och luften fyller 48 streck."
     },
     {
-     "s": 64.24,
-     "e": 66.72,
+     "s": 62.22,
+     "e": 64.94,
      "text": "Strecken visar hur mycket plats luften tar."
     },
     {
-     "s": 67.72,
-     "e": 70.24,
+     "s": 65.78,
+     "e": 68.42,
      "text": "I det långa benet häller Boyle kvicksilver."
     },
     {
-     "s": 71.24,
-     "e": 74,
+     "s": 69,
+     "e": 71.84,
      "text": "Kvicksilver är en tung metall som är flytande."
     },
     {
-     "s": 75,
-     "e": 78.74,
-     "text": "Det trycker på luften, och ju högre kvicksilvret står i röret,"
+     "s": 72.52,
+     "e": 77.02,
+     "text": "Kvicksilvret trycker på luften, och ju högre kvicksilvret står i röret,"
     },
     {
-     "s": 78.98,
-     "e": 80.76,
+     "s": 77.26,
+     "e": 78.92,
      "text": "desto hårdare trycks luften."
     },
     {
-     "s": 81.76,
-     "e": 82.84,
+     "s": 79.62,
+     "e": 80.7,
      "text": "Det är som när man dyker."
     },
     {
-     "s": 83.84,
-     "e": 88.06,
-     "text": "Ju mer vatten man har ovanför sig, desto hårdare trycker det i öronen."
+     "s": 81.26,
+     "e": 85.72,
+     "text": "Ju mer vatten man har ovanför sig, desto hårdare trycker vattnet i öronen."
     },
     {
-     "s": 89.36,
-     "e": 91.96,
+     "s": 87,
+     "e": 89.78,
      "text": "Röret är så långt att det får stå i en trappa."
     },
     {
-     "s": 92.96,
-     "e": 96.74,
+     "s": 90.68,
+     "e": 94.58,
      "text": "Boyle och en medhjälpare som jobbar hos honom gör försöket tillsammans,"
     },
     {
-     "s": 97,
-     "e": 98.82,
+     "s": 94.84,
+     "e": 96.66,
      "text": "för det är svårt att göra allt på en gång."
     },
     {
-     "s": 99.82,
-     "e": 104.76,
+     "s": 97.38,
+     "e": 102.82,
      "text": "Den ene häller kvicksilver uppifrån, och den andre läser av strecken nere vid luften"
     },
     {
-     "s": 104.86,
-     "e": 105.86,
-     "text": "och ropar upp dem."
+     "s": 103.02,
+     "e": 104.14,
+     "text": "och ropar upp talen."
     },
     {
-     "s": 107,
-     "e": 110.86,
+     "s": 104.86,
+     "e": 108.94,
      "text": "Från början trycks luften i röret lika hårt som luften i rummet."
     },
     {
-     "s": 111.86,
-     "e": 113.42,
-     "text": "Det kallar vi tryck 1."
+     "s": 109.46,
+     "e": 111.5,
+     "text": "Det trycket kallar vi tryck 1."
     },
     {
-     "s": 114.42,
-     "e": 117.78,
+     "s": 112.14,
+     "e": 114.26,
+     "text": "Då fyller luften 48 streck."
+    },
+    {
+     "s": 115.18,
+     "e": 118.9,
      "text": "Boyle häller i kvicksilver tills luften trycks dubbelt så hårt,"
     },
     {
-     "s": 118.18,
-     "e": 119.4,
+     "s": 119.28,
+     "e": 120.46,
      "text": "alltså tryck 2."
     },
     {
-     "s": 120.4,
-     "e": 122.68,
+     "s": 121.1,
+     "e": 123.24,
      "text": "Då fyller luften 24 streck."
     },
     {
-     "s": 123.68,
-     "e": 125.98,
-     "text": "Det är hälften, precis som gissningen sa."
+     "s": 124.08,
+     "e": 127,
+     "text": "Se på luften före och efter, bredvid varandra."
     },
     {
-     "s": 126.98,
-     "e": 130.8,
-     "text": "Han häller i mer, och vid tryck 4 fyller den 12 streck."
+     "s": 127.6,
+     "e": 132.58,
+     "text": "Trycket blev dubbelt så stort, och samma luft fyller nu hälften så många streck,"
     },
     {
-     "s": 131.8,
-     "e": 132.96,
-     "text": "Och det är hälften igen."
+     "s": 132.86,
+     "e": 134.24,
+     "text": "precis som gissningen sa."
     },
     {
-     "s": 134.26,
-     "e": 137.14,
+     "s": 134.94,
+     "e": 136.3,
+     "text": "Luften har inte försvunnit."
+    },
+    {
+     "s": 136.62,
+     "e": 138.18,
+     "text": "Den har bara fått mindre plats."
+    },
+    {
+     "s": 139.02,
+     "e": 141.86,
+     "text": "Vad händer om Boyle dubblar trycket en gång till?"
+    },
+    {
+     "s": 142.48,
+     "e": 146.58,
+     "text": "Han häller i mer, och vid tryck 4 fyller luften 12 streck."
+    },
+    {
+     "s": 147.06,
+     "e": 148.1,
+     "text": "Det är hälften igen."
+    },
+    {
+     "s": 148.98,
+     "e": 151.9,
      "text": "Boyle skriver in varje mätning i sina anteckningar."
     },
     {
-     "s": 138.14,
-     "e": 143.46,
+     "s": 152.5,
+     "e": 157.84,
      "text": "Om gissningen stämmer, finns det en regel för hur många streck luften fyller vid varje tryck."
     },
     {
-     "s": 144.46,
-     "e": 147.76,
+     "s": 158.44,
+     "e": 161.64,
      "text": "Då kan han räkna ut vad han ska mäta, innan han mäter."
     },
     {
-     "s": 148.76,
-     "e": 152.82,
+     "s": 162.44,
+     "e": 166.72,
      "text": "Men tryck 3 får man inte genom att dubbla något av de andra trycken."
     },
     {
-     "s": 153.82,
-     "e": 156.56,
+     "s": 167.36,
+     "e": 170.26,
      "text": "Hur många streck ska luften fylla vid tryck 3?"
     },
     {
-     "s": 157.86,
-     "e": 160.14,
-     "text": "Vi skriver Boyles mätningar i en tabell."
+     "s": 172.76,
+     "e": 177.84,
+     "text": "Antalet streck vid tryck 3 kan vi faktiskt räkna ut, med Boyles egna mätningar."
     },
     {
-     "s": 161.14,
-     "e": 162.54,
-     "text": "Trycket kallar vi x."
+     "s": 178.64,
+     "e": 180.88,
+     "text": "Först skriver vi mätningarna i en tabell."
     },
     {
-     "s": 163.54,
-     "e": 165.2,
-     "text": "Antalet streck kallar vi y."
+     "s": 181.44,
+     "e": 185.22,
+     "text": "Trycket kallar vi x, och antalet streck kallar vi y."
     },
     {
-     "s": 166.2,
-     "e": 168.48,
+     "s": 185.94,
+     "e": 188.26,
      "text": "Vid tryck 1 är y 48."
     },
     {
-     "s": 169.48,
-     "e": 171.78,
+     "s": 188.66,
+     "e": 191,
      "text": "Vid tryck 2 är y 24."
     },
     {
-     "s": 172.78,
-     "e": 175.08,
+     "s": 191.62,
+     "e": 193.96,
      "text": "Och vid tryck 4 är y 12."
     },
     {
-     "s": 176.38,
-     "e": 179.2,
+     "s": 194.7,
+     "e": 197.32,
      "text": "Finns det något som är likadant på varje rad?"
     },
     {
-     "s": 180.2,
-     "e": 182.84,
-     "text": "Nu tar vi x gånger y på varje rad."
+     "s": 197.92,
+     "e": 199.48,
+     "text": "Man kan se det på det här sättet."
     },
     {
-     "s": 183.84,
-     "e": 185.96,
+     "s": 200.08,
+     "e": 202.4,
+     "text": "Tänk dig remsan med 48 streck."
+    },
+    {
+     "s": 202.94,
+     "e": 208.8,
+     "text": "Vid tryck 2 klipper vi remsan mitt itu, och då blir det två bitar med 24 streck var."
+    },
+    {
+     "s": 209.3,
+     "e": 210.88,
+     "text": "Luften fyller en sådan bit."
+    },
+    {
+     "s": 211.42,
+     "e": 214.8,
+     "text": "Vid tryck 4 klipper vi varje bit mitt itu igen."
+    },
+    {
+     "s": 215.18,
+     "e": 217.84,
+     "text": "Då blir det fyra bitar med 12 streck var."
+    },
+    {
+     "s": 218.34,
+     "e": 221.02,
+     "text": "Trycket säger alltså hur många bitar det blir."
+    },
+    {
+     "s": 221.54,
+     "e": 223.48,
+     "text": "Lägg nu bitarna efter varandra igen."
+    },
+    {
+     "s": 223.94,
+     "e": 228.48,
+     "text": "Inget streck försvinner när vi klipper, så det blir 48 streck varje gång."
+    },
+    {
+     "s": 228.98,
+     "e": 233.72,
+     "text": "Antalet bitar gånger strecken i varje bit, det är x gånger y."
+    },
+    {
+     "s": 234.24,
+     "e": 236.62,
      "text": "Ett gånger 48 är 48."
     },
     {
-     "s": 186.96,
-     "e": 189.06,
-     "text": "Två gånger 24, vad blir det?"
+     "s": 237.12,
+     "e": 239.34,
+     "text": "Två gånger 24 är 48."
     },
     {
-     "s": 190.06,
-     "e": 193.02,
-     "text": "Tänk dig två remsor med 24 streck var."
+     "s": 239.84,
+     "e": 242.14,
+     "text": "Fyra gånger 12 är också 48."
     },
     {
-     "s": 194.02,
-     "e": 195.24,
-     "text": "Lägg dem efter varandra."
+     "s": 243.3,
+     "e": 247.84,
+     "text": "Det går ju jämnt ut, x gånger y blir samma tal på varje rad."
     },
     {
-     "s": 196.24,
-     "e": 197.94,
-     "text": "Då blir det 48 streck."
+     "s": 248.44,
+     "e": 252.9,
+     "text": "Vi har sett att y blir hälften så stort, när x blir dubbelt så stort."
     },
     {
-     "s": 198.94,
-     "e": 202.98,
-     "text": "Fyra gånger 12 är också 48. Aha..."
-    },
-    {
-     "s": 203.98,
-     "e": 206.88,
-     "text": "x gånger y blir samma tal på varje rad."
-    },
-    {
-     "s": 208.18,
-     "e": 209.18,
-     "text": "Varför blir det så?"
-    },
-    {
-     "s": 210.04,
-     "e": 214.82,
-     "text": "Det beror på att y blir hälften så stort, när x blir dubbelt så stort."
-    },
-    {
-     "s": 215.82,
-     "e": 217.94,
-     "text": "Dubbelt och hälften tar ut varandra."
-    },
-    {
-     "s": 218.94,
-     "e": 222.26,
+     "s": 253.34,
+     "e": 257.08,
      "text": "Då säger vi att y är omvänt proportionell mot x."
     },
     {
-     "s": 223.26,
-     "e": 226.76,
-     "text": "Det betyder att x gånger y alltid blir samma tal."
+     "s": 257.6,
+     "e": 259.88,
+     "text": "Omvänt betyder åt motsatt håll."
     },
     {
-     "s": 227.76,
-     "e": 229.02,
-     "text": "Här blir det 48."
+     "s": 260.34,
+     "e": 262.76,
+     "text": "Trycket går upp, och platsen går ner."
     },
     {
-     "s": 230.02,
-     "e": 233.18,
+     "s": 263.3,
+     "e": 266.8,
+     "text": "Men det räcker inte att y minskar när x ökar."
+    },
+    {
+     "s": 267.26,
+     "e": 272.34,
+     "text": "Omvänt proportionell betyder att x gånger y alltid blir samma tal."
+    },
+    {
+     "s": 272.72,
+     "e": 274.76,
+     "text": "Hos Boyle blir talet 48."
+    },
+    {
+     "s": 275.24,
+     "e": 278.66,
      "text": "Talet ändras aldrig, så det kallas en konstant."
     },
     {
-     "s": 234.18,
-     "e": 235.18,
-     "text": "Vi kallar det C."
+     "s": 279.08,
+     "e": 280.5,
+     "text": "Konstanten kallar vi C."
     },
     {
-     "s": 236.24,
-     "e": 240.52,
+     "s": 281.32,
+     "e": 285.68,
      "text": "Om x gånger y alltid är 48, hur räknar vi då ut y?"
     },
     {
-     "s": 241.52,
-     "e": 242.64,
-     "text": "Tänk på remsorna igen."
+     "s": 286.2,
+     "e": 291.86,
+     "text": "Om vi går tillbaka till remsan, så ser vi att 48 streck delas lika på x bitar."
     },
     {
-     "s": 243.64,
-     "e": 246.8,
-     "text": "48 streck delas lika på x remsor."
-    },
-    {
-     "s": 247.8,
-     "e": 249.88,
+     "s": 292.3,
+     "e": 294.4,
      "text": "Så vi delar 48 med x."
     },
     {
-     "s": 250.88,
-     "e": 254.98,
-     "text": "Vi skriver y är lika med 48 delat med x."
+     "s": 294.86,
+     "e": 300.62,
+     "text": "Då får vi Boyles regel som en formel, y är lika med 48 delat med x."
     },
     {
-     "s": 255.98,
-     "e": 258.1,
-     "text": "Det här är regeln för Boyles luft."
+     "s": 301.06,
+     "e": 305,
+     "text": "I formeln sätter vi in ett tryck, och så får vi antalet streck."
     },
     {
-     "s": 259.1,
-     "e": 262.1,
-     "text": "Vi stoppar in ett tryck och får ut antalet streck."
+     "s": 305.68,
+     "e": 308.36,
+     "text": "Nu ska vi svara på Boyles fråga om tryck 3."
     },
     {
-     "s": 263.4,
-     "e": 265.7,
-     "text": "Nu ska vi svara på frågan om tryck 3."
+     "s": 308.78,
+     "e": 313.18,
+     "text": "Det gör vi med formelbladet, för formelbladet har du med dig på provet."
     },
     {
-     "s": 266.7,
-     "e": 270.62,
-     "text": "Då räknar vi med formelbladet, för Boyles regel finns där också."
+     "s": 313.56,
+     "e": 316.66,
+     "text": "Där finns en enda mall för många sådana formler."
     },
     {
-     "s": 271.62,
-     "e": 273.24,
-     "text": "Men där ser den annorlunda ut."
+     "s": 317.08,
+     "e": 322.08,
+     "text": "Mallen gäller både när något krymper, som Boyles luft, och när något växer."
     },
     {
-     "s": 274.24,
-     "e": 277.34,
-     "text": "Där står det upphöjt till, och inte delat med."
+     "s": 322.56,
+     "e": 326.14,
+     "text": "Boyles formel finns där också, men den ser annorlunda ut."
     },
     {
-     "s": 278.34,
-     "e": 280.04,
-     "text": "Vad betyder då upphöjt till?"
+     "s": 326.56,
+     "e": 329.88,
+     "text": "Där står det upphöjt till, i stället för delat med."
     },
     {
-     "s": 281.34,
-     "e": 283.3,
-     "text": "Tänk dig x upphöjt till två."
+     "s": 330.3,
+     "e": 333.44,
+     "text": "Så först tar vi reda på vad upphöjt till betyder."
     },
     {
-     "s": 284.3,
-     "e": 286.46,
-     "text": "Det betyder x gånger x."
+     "s": 333.88,
+     "e": 338.68,
+     "text": "Två upphöjt till två betyder två gånger två, alltså fyra."
     },
     {
-     "s": 287.46,
-     "e": 289.54,
-     "text": "Det kallas också x i kvadrat."
+     "s": 339.1,
+     "e": 342.28,
+     "text": "Det lilla talet uppe till höger kallas exponent."
     },
     {
-     "s": 290.54,
-     "e": 294,
-     "text": "Det lilla talet uppe till höger säger hur många x det är."
+     "s": 342.68,
+     "e": 346.2,
+     "text": "Exponenten säger hur många tvåor vi tar gånger."
     },
     {
-     "s": 295,
-     "e": 296.84,
-     "text": "Det talet kallas exponent."
+     "s": 346.68,
+     "e": 351.14,
+     "text": "Nu går vi nedåt i exponenten, ett steg i taget, som i en trappa."
     },
     {
-     "s": 297.84,
-     "e": 300.38,
-     "text": "Men exponenten kan också vara minus ett."
+     "s": 351.56,
+     "e": 353.7,
+     "text": "Två upphöjt till ett är två."
     },
     {
-     "s": 301.38,
-     "e": 302.38,
-     "text": "Vad betyder det?"
+     "s": 354.16,
+     "e": 359.32,
+     "text": "Från fyra till två delade vi med två, och så blir det för varje steg nedåt."
     },
     {
-     "s": 303.06,
-     "e": 306.34,
-     "text": "Det står på formelbladet, under rubriken potenser."
+     "s": 359.72,
+     "e": 364.62,
+     "text": "Två upphöjt till noll är alltså två delat med två, och det är ett."
     },
     {
-     "s": 307.34,
-     "e": 311.12,
-     "text": "x upphöjt till minus ett betyder ett delat med x."
+     "s": 365.06,
+     "e": 369.02,
+     "text": "Ett steg till ger ett delat med två, alltså en halv."
     },
     {
-     "s": 312.12,
-     "e": 315.1,
-     "text": "Minus i exponenten betyder alltså att vi delar."
+     "s": 369.44,
+     "e": 372.8,
+     "text": "Så två upphöjt till minus ett är en halv."
     },
     {
-     "s": 316.4,
-     "e": 320.08,
-     "text": "Nu tittar vi på formelbladet igen, under rubriken funktioner."
+     "s": 373.84,
+     "e": 375.44,
+     "text": "Det är inte minus två."
     },
     {
-     "s": 321.08,
-     "e": 325.42,
+     "s": 375.92,
+     "e": 378.86,
+     "text": "Minus i exponenten betyder att vi delar."
+    },
+    {
+     "s": 379.14,
+     "e": 380.7,
+     "text": "Med x är det likadant."
+    },
+    {
+     "s": 381.58,
+     "e": 387.6,
+     "text": "x upphöjt till minus ett betyder ett delat med x, precis som två upphöjt till minus ett"
+    },
+    {
+     "s": 387.96,
+     "e": 389.24,
+     "text": "är ett delat med två."
+    },
+    {
+     "s": 389.81,
+     "e": 394.37,
+     "text": "Den regeln står på formelbladet, under rubriken potenser."
+    },
+    {
+     "s": 394.91,
+     "e": 398.27,
+     "text": "Nu vet vi vad upphöjt till betyder, så vi kan läsa mallen."
+    },
+    {
+     "s": 398.85,
+     "e": 402.17,
+     "text": "Mallen står på formelbladet, under rubriken funktioner."
+    },
+    {
+     "s": 402.69,
+     "e": 406.87,
      "text": "Där står y är lika med C gånger x upphöjt till a."
     },
     {
-     "s": 326.42,
-     "e": 328.56,
+     "s": 407.49,
+     "e": 409.53,
      "text": "Det är formeln för en potensfunktion."
     },
     {
-     "s": 329.56,
-     "e": 333.3,
-     "text": "Vi skriver av den precis som den står, och använder den som en mall."
+     "s": 410.01,
+     "e": 413.89,
+     "text": "Vi skriver av formeln precis som den står och använder den som en mall,"
     },
     {
-     "s": 334.3,
-     "e": 336.34,
-     "text": "Talen ska in där bokstäverna står."
+     "s": 414.23,
+     "e": 416.53,
+     "text": "där talen ska in i stället för bokstäverna."
     },
     {
-     "s": 337.34,
-     "e": 339.34,
+     "s": 417.07,
+     "e": 419.07,
      "text": "Vad står bokstäverna för hos Boyle?"
     },
     {
-     "s": 340.34,
-     "e": 342.92,
-     "text": "y är antalet streck som luften fyller."
+     "s": 419.65,
+     "e": 422.71,
+     "text": "y är antalet streck, och x är trycket."
     },
     {
-     "s": 343.92,
-     "e": 344.92,
-     "text": "x är trycket."
+     "s": 423.27,
+     "e": 426.51,
+     "text": "C är konstanten, och a är exponenten."
     },
     {
-     "s": 345.88,
-     "e": 348.96,
-     "text": "C är talet som x gånger y alltid blir."
-    },
-    {
-     "s": 349.96,
-     "e": 353.2,
-     "text": "a är exponenten, det lilla talet uppe till höger."
-    },
-    {
-     "s": 354.5,
-     "e": 356.7,
+     "s": 427.03,
+     "e": 429.09,
      "text": "Vilka tal ska in i mallen hos Boyle?"
     },
     {
-     "s": 357.7,
-     "e": 360.44,
-     "text": "C är 48. Och a?"
+     "s": 429.73,
+     "e": 434.81,
+     "text": "C är 48, för x gånger y blir alltid 48. Och a?"
     },
     {
-     "s": 361.44,
-     "e": 366.18,
-     "text": "48 delat med x är 48 gånger ett delat med x."
+     "s": 435.39,
+     "e": 436.51,
+     "text": "Tänk på tryck 3."
     },
     {
-     "s": 367.18,
-     "e": 370.64,
-     "text": "Och ett delat med x är x upphöjt till minus ett."
+     "s": 436.97,
+     "e": 443.95,
+     "text": "48 delat med tre är ju en tredjedel av 48, alltså 48 gånger en tredjedel."
     },
     {
-     "s": 371.64,
-     "e": 373.4,
+     "s": 444.41,
+     "e": 450.27,
+     "text": "På samma sätt är 48 delat med x lika med 48 gånger ett delat med x."
+    },
+    {
+     "s": 450.77,
+     "e": 455.43,
+     "text": "Och ett delat med x är x upphöjt till minus ett, som i trappan."
+    },
+    {
+     "s": 455.87,
+     "e": 457.57,
      "text": "Så a är minus ett."
     },
     {
-     "s": 374.4,
-     "e": 376.4,
-     "text": "Nu skriver vi mallen med Boyles tal."
+     "s": 458.09,
+     "e": 463.05,
+     "text": "I mallen står C, och här är C 48, så vi skriver 48 där."
     },
     {
-     "s": 377.4,
-     "e": 378.74,
-     "text": "I mallen står C."
+     "s": 463.51,
+     "e": 468.87,
+     "text": "I mallen står a, och här är a minus ett, så vi skriver minus ett där."
     },
     {
-     "s": 379.74,
-     "e": 383.08,
-     "text": "Här är C 48, så vi skriver 48 där."
-    },
-    {
-     "s": 384.08,
-     "e": 385.48,
-     "text": "I mallen står a."
-    },
-    {
-     "s": 386.48,
-     "e": 390.28,
-     "text": "Här är a minus ett, så vi skriver minus ett där."
-    },
-    {
-     "s": 391.28,
-     "e": 396.6,
+     "s": 469.33,
+     "e": 474.41,
      "text": "Då står det y är lika med 48 gånger x upphöjt till minus ett."
     },
     {
-     "s": 397.9,
-     "e": 402.48,
-     "text": "En potensfunktion har bara en enda del, utan plus eller minus."
+     "s": 474.99,
+     "e": 479.09,
+     "text": "Boyles formel har bara en enda del, utan plus eller minus."
     },
     {
-     "s": 403.48,
-     "e": 405.28,
+     "s": 479.57,
+     "e": 481.47,
      "text": "En sådan del kallas en term."
     },
     {
-     "s": 406.28,
-     "e": 410.5,
+     "s": 481.95,
+     "e": 484.73,
+     "text": "En potensfunktion har alltid bara en term."
+    },
+    {
+     "s": 485.31,
+     "e": 489.25,
      "text": "Står det till exempel plus två efter, är det ingen potensfunktion."
     },
     {
-     "s": 411.8,
-     "e": 414.08,
-     "text": "Nu kan vi svara på frågan om tryck 3."
+     "s": 489.79,
+     "e": 492.37,
+     "text": "Nu kan vi äntligen svara på Boyles fråga."
     },
     {
-     "s": 415.08,
-     "e": 416.96,
-     "text": "Vi tittar i mallen med Boyles tal."
+     "s": 492.85,
+     "e": 495.69,
+     "text": "Hur många streck fyller luften vid tryck 3?"
     },
     {
-     "s": 417.96,
-     "e": 419.08,
-     "text": "Där står x."
+     "s": 496.15,
+     "e": 499.25,
+     "text": "I formeln står x, och här är x tre."
     },
     {
-     "s": 420.08,
-     "e": 421.34,
-     "text": "Här är x tre."
-    },
-    {
-     "s": 422.34,
-     "e": 424.28,
+     "s": 499.73,
+     "e": 501.73,
      "text": "Så vi skriver tre där x står."
     },
     {
-     "s": 425.28,
-     "e": 430.58,
+     "s": 502.17,
+     "e": 507.31,
      "text": "Då står det y är lika med 48 gånger tre upphöjt till minus ett."
     },
     {
-     "s": 431.58,
-     "e": 433.1,
-     "text": "Vi räknar i två steg."
+     "s": 507.85,
+     "e": 511.75,
+     "text": "Nu får vi inte glömma att upphöjt till räknas först, före gånger."
     },
     {
-     "s": 434.1,
-     "e": 435.36,
-     "text": "Först upphöjt till."
-    },
-    {
-     "s": 436.36,
-     "e": 441.66,
+     "s": 512.25,
+     "e": 517.39,
      "text": "Tre upphöjt till minus ett är ett delat med tre, alltså en tredjedel."
     },
     {
-     "s": 442.66,
-     "e": 443.98,
-     "text": "Sedan gånger C."
+     "s": 517.85,
+     "e": 519.81,
+     "text": "Sedan tar vi gånger 48."
     },
     {
-     "s": 444.98,
-     "e": 447.22,
-     "text": "Vad är en tredjedel av 48?"
+     "s": 520.33,
+     "e": 524.47,
+     "text": "En tredjedel av 48 får vi när vi delar 48 med tre."
     },
     {
-     "s": 448.22,
-     "e": 451.56,
-     "text": "Dela 48 streck lika på tre remsor."
+     "s": 524.95,
+     "e": 527.11,
+     "text": "Divisionen kan vi räkna enklare så här."
     },
     {
-     "s": 452.56,
-     "e": 455.08,
-     "text": "Då får varje remsa 16 streck."
+     "s": 527.53,
+     "e": 532.45,
+     "text": "48 är 30 plus 18, och de talen är lätta att dela med tre."
     },
     {
-     "s": 456.08,
-     "e": 458.56,
+     "s": 534.25,
+     "e": 538.93,
+     "text": "30 delat med tre är tio, och 18 delat med tre är sex."
+    },
+    {
+     "s": 539.41,
+     "e": 541.37,
+     "text": "Tio och sex är 16."
+    },
+    {
+     "s": 541.85,
+     "e": 544.37,
      "text": "Luften ska alltså fylla 16 streck."
     },
     {
-     "s": 459.56,
-     "e": 461.32,
-     "text": "Så räknar vi alltid i mallen."
+     "s": 544.95,
+     "e": 547.83,
+     "text": "Men stämmer svaret med Boyles mätning i trappan?"
     },
     {
-     "s": 462.32,
-     "e": 465.12,
-     "text": "Först upphöjt till, sedan gånger C."
-    },
-    {
-     "s": 466.42,
-     "e": 468.96,
+     "s": 550.33,
+     "e": 552.85,
      "text": "Boyle hällde i mer kvicksilver och mätte."
     },
     {
-     "s": 469.96,
-     "e": 474.3,
+     "s": 553.33,
+     "e": 557.47,
      "text": "När luften fyllde 16 streck, var trycket nästan exakt tre."
     },
     {
-     "s": 475.3,
-     "e": 479.08,
+     "s": 557.93,
+     "e": 561.57,
      "text": "I hans tabell står varje mätning bredvid det som regeln säger,"
     },
     {
-     "s": 479.38,
-     "e": 481.08,
+     "s": 561.89,
+     "e": 563.57,
      "text": "och talen är nästan lika."
     },
     {
-     "s": 482.08,
-     "e": 483.42,
+     "s": 564.03,
+     "e": 565.33,
      "text": "Gissningen stämmer alltså."
     },
     {
-     "s": 484.72,
-     "e": 486.78,
-     "text": "Tabellen har bara några få tryck."
+     "s": 567.83,
+     "e": 570.29,
+     "text": "Här är det lätt att tänka fel, så se upp."
     },
     {
-     "s": 487.78,
-     "e": 488.96,
-     "text": "Vad händer mellan dem?"
+     "s": 570.77,
+     "e": 575.03,
+     "text": "Från tryck 1 till tryck 2 tappade luften 24 streck."
     },
     {
-     "s": 489.96,
-     "e": 492.94,
-     "text": "Vi ritar punkterna i ett koordinatsystem, så ser vi det."
+     "s": 575.29,
+     "e": 579.43,
+     "text": "Då kan man tro att luften tappar 24 streck till vid tryck 3,"
     },
     {
-     "s": 493.94,
-     "e": 496.68,
-     "text": "Trycket går åt höger, längs x-axeln."
+     "s": 579.89,
+     "e": 581.31,
+     "text": "och att den fyller noll streck."
     },
     {
-     "s": 497.68,
-     "e": 500.32,
-     "text": "Strecken går uppåt, längs y-axeln."
+     "s": 582.27,
+     "e": 588.47,
+     "text": "Men luften tappar inte lika många streck för varje steg, för remsan klipps bara i fler bitar."
     },
     {
-     "s": 501.32,
-     "e": 504.38,
-     "text": "Ligger punkterna på en rak linje? Nej."
+     "s": 589.27,
+     "e": 593.01,
+     "text": "Vid tryck 3 blir det tre bitar med 16 streck var."
     },
     {
-     "s": 505.38,
-     "e": 507.46,
-     "text": "De ligger på en kurva som sjunker."
+     "s": 593.87,
+     "e": 599.43,
+     "text": "Med formeln räknar vi ett tryck i taget, men en graf visar lättare hur funktionen ser"
     },
     {
-     "s": 508.46,
-     "e": 510.8,
+     "s": 599.51,
+     "e": 600.53,
+     "text": "ut för alla tryck."
+    },
+    {
+     "s": 601.47,
+     "e": 604.17,
+     "text": "Så vi ritar punkterna i ett koordinatsystem."
+    },
+    {
+     "s": 604.93,
+     "e": 609.75,
+     "text": "Trycket lägger vi längs x-axeln, och antalet streck längs y-axeln."
+    },
+    {
+     "s": 610.67,
+     "e": 615.75,
+     "text": "Som vi ser ligger punkterna inte på en rak linje, utan på en kurva som sjunker."
+    },
+    {
+     "s": 616.67,
+     "e": 619.15,
      "text": "Tänk dig att du går längs kurvan åt höger."
     },
     {
-     "s": 511.8,
-     "e": 513.48,
-     "text": "Först går det brant nedför."
+     "s": 619.71,
+     "e": 623.39,
+     "text": "Först går det brant nedför, och sedan planar kurvan ut."
     },
     {
-     "s": 514.48,
-     "e": 515.78,
-     "text": "Sedan planar det ut."
-    },
-    {
-     "s": 517.08,
-     "e": 520,
-     "text": "Ju större x är, desto mindre blir y."
-    },
-    {
-     "s": 521,
-     "e": 524.3,
+     "s": 624.47,
+     "e": 627.83,
      "text": "Men blir y någonsin noll? Nej."
     },
     {
-     "s": 525.3,
-     "e": 529,
-     "text": "48 delat med ett positivt tal blir aldrig noll."
+     "s": 628.41,
+     "e": 634.05,
+     "text": "48 delat med ett positivt tal blir aldrig noll, hur stort talet än är."
     },
     {
-     "s": 530,
-     "e": 533.88,
+     "s": 634.99,
+     "e": 638.85,
      "text": "Luften försvinner alltså aldrig helt, hur hårt man än trycker."
     },
     {
-     "s": 534.88,
-     "e": 536.56,
-     "text": "Och när x är nära noll?"
+     "s": 639.51,
+     "e": 643.29,
+     "text": "Och när x är nära noll går kurvan nästan rakt uppåt."
     },
     {
-     "s": 537.56,
-     "e": 539.38,
-     "text": "Då går kurvan rakt uppåt."
-    },
-    {
-     "s": 540.38,
-     "e": 544.24,
+     "s": 643.99,
+     "e": 647.97,
      "text": "Trycker man nästan inte alls, fyller luften väldigt många streck."
     },
     {
-     "s": 545.54,
-     "e": 548.26,
-     "text": "Är alla potensfunktioner kurvor som sjunker?"
+     "s": 648.95,
+     "e": 651.03,
+     "text": "Nu går vi tillbaka till Boyle i Oxford."
     },
     {
-     "s": 549.26,
-     "e": 551.32,
-     "text": "Nej, det beror på exponenten."
+     "s": 653.53,
+     "e": 656.41,
+     "text": "Boyle mätte så noga för att bevisa en sak."
     },
     {
-     "s": 552.32,
-     "e": 555.02,
-     "text": "Jämför med y är lika med tre x."
-    },
-    {
-     "s": 556.02,
-     "e": 560.5,
-     "text": "Här är exponenten ett, för x upphöjt till ett är bara x."
-    },
-    {
-     "s": 561.5,
-     "e": 563.66,
-     "text": "Vad händer när x blir dubbelt så stort?"
-    },
-    {
-     "s": 564.66,
-     "e": 566.84,
-     "text": "Då blir y också dubbelt så stort."
-    },
-    {
-     "s": 567.84,
-     "e": 571.22,
-     "text": "Det kallas att y är direkt proportionell mot x."
-    },
-    {
-     "s": 572.22,
-     "e": 574.06,
-     "text": "Grafen blir en rak linje."
-    },
-    {
-     "s": 575.06,
-     "e": 579.94,
-     "text": "Den går genom punkten där axlarna möts, och den punkten heter origo."
-    },
-    {
-     "s": 581.24,
-     "e": 583.14,
-     "text": "Exponenten kan också vara två."
-    },
-    {
-     "s": 584.14,
-     "e": 587.58,
-     "text": "Ta funktionen y är lika med tre x i kvadrat."
-    },
-    {
-     "s": 588.58,
-     "e": 590.66,
-     "text": "Vad blir y, när x är fyra?"
-    },
-    {
-     "s": 591.66,
-     "e": 593.42,
-     "text": "Vi tittar på formelbladet igen."
-    },
-    {
-     "s": 594.42,
-     "e": 599.14,
-     "text": "Där står mallen, y är lika med C gånger x upphöjt till a."
-    },
-    {
-     "s": 600.44,
-     "e": 601.6,
-     "text": "Vi skriver av mallen."
-    },
-    {
-     "s": 602.6,
-     "e": 604.2,
-     "text": "Sedan sätter vi in talen."
-    },
-    {
-     "s": 605.2,
-     "e": 606.6,
-     "text": "I mallen står C."
-    },
-    {
-     "s": 607.6,
-     "e": 608.96,
-     "text": "Här är C tre."
-    },
-    {
-     "s": 609.96,
-     "e": 611.28,
-     "text": "I mallen står a."
-    },
-    {
-     "s": 612.28,
-     "e": 616.56,
-     "text": "Här är a två, för i kvadrat betyder upphöjt till två."
-    },
-    {
-     "s": 617.56,
-     "e": 619.04,
-     "text": "I mallen står x."
-    },
-    {
-     "s": 620.04,
-     "e": 621.56,
-     "text": "Här är x fyra."
-    },
-    {
-     "s": 622.56,
-     "e": 627.1,
-     "text": "Då står det y är lika med tre gånger fyra upphöjt till två."
-    },
-    {
-     "s": 628.1,
-     "e": 629.38,
-     "text": "Först upphöjt till."
-    },
-    {
-     "s": 630.38,
-     "e": 632.42,
-     "text": "Exponenten hör bara till x."
-    },
-    {
-     "s": 633.42,
-     "e": 636.38,
-     "text": "Fyra upphöjt till två är fyra gånger fyra."
-    },
-    {
-     "s": 637.38,
-     "e": 638.44,
-     "text": "Det är 16."
-    },
-    {
-     "s": 639.44,
-     "e": 640.96,
-     "text": "Sedan gånger C."
-    },
-    {
-     "s": 641.96,
-     "e": 644.14,
-     "text": "Tre gånger 16 är 48."
-    },
-    {
-     "s": 645.14,
-     "e": 646.78,
-     "text": "Så y är 48."
-    },
-    {
-     "s": 648.08,
-     "e": 651.22,
-     "text": "Ibland känner vi en punkt på grafen, men inte C."
-    },
-    {
-     "s": 652.22,
-     "e": 656.2,
-     "text": "Ta funktionen y är lika med C gånger x i kvadrat."
-    },
-    {
-     "s": 657.2,
-     "e": 659.9,
-     "text": "Den går genom punkten (2, 20)."
-    },
-    {
-     "s": 660.9,
-     "e": 661.9,
-     "text": "Vad betyder det?"
-    },
-    {
-     "s": 662.74,
-     "e": 665.54,
-     "text": "Att y är 20, när x är två."
-    },
-    {
-     "s": 666.54,
-     "e": 667.54,
-     "text": "Hur hittar vi C?"
-    },
-    {
-     "s": 668.52,
-     "e": 671.1,
-     "text": "Vi använder samma mall, fast baklänges."
-    },
-    {
-     "s": 672.4,
-     "e": 674.1,
-     "text": "Vi sätter in punkten i mallen."
-    },
-    {
-     "s": 675.1,
-     "e": 676.44,
-     "text": "I mallen står y."
-    },
-    {
-     "s": 677.44,
-     "e": 678.84,
-     "text": "Här är y 20."
-    },
-    {
-     "s": 679.84,
-     "e": 681.24,
-     "text": "I mallen står x."
-    },
-    {
-     "s": 682.24,
-     "e": 683.54,
-     "text": "Här är x två."
-    },
-    {
-     "s": 684.54,
-     "e": 685.78,
-     "text": "Och a är två."
-    },
-    {
-     "s": 686.78,
-     "e": 691.08,
-     "text": "Då står det 20 är lika med C gånger två upphöjt till två."
-    },
-    {
-     "s": 692.08,
-     "e": 693.26,
-     "text": "Först upphöjt till."
-    },
-    {
-     "s": 694.26,
-     "e": 695.82,
-     "text": "Två gånger två är fyra."
-    },
-    {
-     "s": 696.82,
-     "e": 699.58,
-     "text": "Så 20 är lika med C gånger fyra."
-    },
-    {
-     "s": 700.58,
-     "e": 702.82,
-     "text": "Vilket tal gånger fyra blir 20?"
-    },
-    {
-     "s": 703.82,
-     "e": 706.72,
-     "text": "Det är fem, för fem gånger fyra är 20."
-    },
-    {
-     "s": 707.72,
-     "e": 709.06,
-     "text": "Så C är fem."
-    },
-    {
-     "s": 710.06,
-     "e": 713.74,
-     "text": "Funktionen är y är lika med fem x i kvadrat."
-    },
-    {
-     "s": 715.04,
-     "e": 717.18,
-     "text": "Exponenten kan också vara en halv."
-    },
-    {
-     "s": 718.18,
-     "e": 719.18,
-     "text": "Vad betyder det?"
-    },
-    {
-     "s": 719.88,
-     "e": 722.84,
-     "text": "Tänk dig nio rutor som bildar en kvadrat."
-    },
-    {
-     "s": 723.84,
-     "e": 725.64,
-     "text": "Hur många rutor har varje sida?"
-    },
-    {
-     "s": 726.64,
-     "e": 729.3,
-     "text": "Tre, för tre gånger tre är nio."
-    },
-    {
-     "s": 730.3,
-     "e": 732.96,
-     "text": "Tre kallas kvadratroten ur nio."
-    },
-    {
-     "s": 733.96,
-     "e": 740.48,
-     "text": "På formelbladet, under potenser, står att x upphöjt till en halv är kvadratroten ur x."
-    },
-    {
-     "s": 741.78,
-     "e": 746.36,
-     "text": "Ta nu funktionen y är lika med två gånger x upphöjt till en halv."
-    },
-    {
-     "s": 747.36,
-     "e": 749.6,
-     "text": "Vad blir y, när x är nio?"
-    },
-    {
-     "s": 750.6,
-     "e": 752.58,
-     "text": "Vi använder mallen under funktioner."
-    },
-    {
-     "s": 753.58,
-     "e": 755.04,
-     "text": "I mallen står C."
-    },
-    {
-     "s": 756.04,
-     "e": 757.28,
-     "text": "Här är C två."
-    },
-    {
-     "s": 758.28,
-     "e": 759.6,
-     "text": "I mallen står a."
-    },
-    {
-     "s": 760.6,
-     "e": 762.12,
-     "text": "Här är a en halv."
-    },
-    {
-     "s": 763.12,
-     "e": 764.52,
-     "text": "Och x är nio."
-    },
-    {
-     "s": 765.52,
-     "e": 769.82,
-     "text": "Då står det y är lika med två gånger nio upphöjt till en halv."
-    },
-    {
-     "s": 770.82,
-     "e": 772.02,
-     "text": "Först upphöjt till."
-    },
-    {
-     "s": 773.02,
-     "e": 776.32,
-     "text": "Nio upphöjt till en halv är kvadratroten ur nio."
-    },
-    {
-     "s": 777.32,
-     "e": 778.32,
-     "text": "Det är tre."
-    },
-    {
-     "s": 778.96,
-     "e": 780.46,
-     "text": "Sedan gånger C."
-    },
-    {
-     "s": 781.46,
-     "e": 783.28,
-     "text": "Två gånger tre är sex."
-    },
-    {
-     "s": 784.28,
-     "e": 785.68,
-     "text": "Så y är sex."
-    },
-    {
-     "s": 786.98,
-     "e": 789.88,
-     "text": "Men varför ville Boyle veta det här så noga?"
-    },
-    {
-     "s": 790.88,
-     "e": 795,
+     "s": 657.19,
+     "e": 661.21,
      "text": "Två år tidigare hade han skrivit en bok om att luft trycker tillbaka,"
     },
     {
-     "s": 795.3,
-     "e": 797.48,
+     "s": 661.65,
+     "e": 663.89,
      "text": "ungefär som en fjäder som man trycker ihop."
     },
     {
-     "s": 798.48,
-     "e": 802.2,
+     "s": 664.69,
+     "e": 668.47,
      "text": "Den boken läste en präst som hette Franciscus Linus."
     },
     {
-     "s": 803.2,
-     "e": 807.64,
+     "s": 669.23,
+     "e": 673.93,
      "text": "Han undervisade i matematik i staden Liège, och han trodde inte på Boyle."
     },
     {
-     "s": 808.64,
-     "e": 810.92,
+     "s": 674.99,
+     "e": 677.15,
      "text": "Luft kan inte trycka så, sa han."
     },
     {
-     "s": 811.92,
-     "e": 815.36,
+     "s": 677.67,
+     "e": 681.09,
      "text": "I röret finns i stället en osynlig tråd som drar."
     },
     {
-     "s": 816.66,
-     "e": 819.1,
+     "s": 682.21,
+     "e": 684.71,
      "text": "Försöket i trappan var Boyles svar."
     },
     {
-     "s": 820.1,
-     "e": 825.44,
-     "text": "Trycker luften tillbaka som en fjäder, så går det att räkna ut i förväg hur mycket plats den tar."
+     "s": 685.35,
+     "e": 691.45,
+     "text": "Trycker luften tillbaka som en fjäder, så går det att räkna ut i förväg hur mycket plats luften tar."
     },
     {
-     "s": 826.44,
-     "e": 829.86,
-     "text": "Och det gick, för talen i tabellen stämde med regeln."
+     "s": 692.07,
+     "e": 695.87,
+     "text": "Och räkningen gick, för talen i tabellen stämde med regeln."
     },
     {
-     "s": 830.86,
-     "e": 834.88,
+     "s": 696.77,
+     "e": 700.77,
      "text": "Boyle skrev försöket och tabellen i en bok som trycktes samma år,"
     },
     {
-     "s": 835.18,
-     "e": 837.7,
+     "s": 701.25,
+     "e": 703.83,
      "text": "och regeln kallas i dag Boyles lag."
     },
     {
-     "s": 838.7,
-     "e": 843.62,
+     "s": 704.71,
+     "e": 709.85,
      "text": "Så nästa gång du håller för hålet på en cykelpump, är det Boyles lag du känner i handen."
     },
     {
-     "s": 844.92,
-     "e": 845.92,
+     "s": 712.35,
+     "e": 713.39,
      "text": "Nu är det din tur."
     },
     {
-     "s": 846.72,
-     "e": 850.7,
+     "s": 714.29,
+     "e": 718.19,
      "text": "Luften i ett annat rör fyller 30 streck vid tryck 2."
     },
     {
-     "s": 851.7,
-     "e": 856.14,
+     "s": 719.03,
+     "e": 723.33,
      "text": "Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet."
     },
     {
-     "s": 857.14,
-     "e": 862.58,
-     "text": "Skriv funktionen på formen y är lika med C gånger x upphöjt till minus ett."
+     "s": 723.97,
+     "e": 726.25,
+     "text": "Se upp, 30 är inte C."
     },
     {
-     "s": 863.58,
-     "e": 866.46,
+     "s": 727.39,
+     "e": 731.77,
+     "text": "Börja med att räkna ut C, alltså trycket gånger strecken."
+    },
+    {
+     "s": 732.59,
+     "e": 738.67,
+     "text": "Skriv sedan funktionen på formen y är lika med C gånger x upphöjt till minus ett."
+    },
+    {
+     "s": 739.73,
+     "e": 742.59,
      "text": "x är trycket, och y är antalet streck."
     },
     {
-     "s": 867.46,
-     "e": 872.02,
+     "s": 743.57,
+     "e": 748.43,
      "text": "Hur många streck fyller luften vid tryck 3, alltså tre gånger så hårt?"
     }
    ]
