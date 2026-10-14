@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-14T19:23:12.451Z",
+ "byggd": "2026-10-14T19:45:55.591Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -25173,7 +25173,7 @@
     "Matematik 1c",
     "Matematik 2a"
    ],
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-03-rata-linjens-ekvation-v6/ma1c-k4-03-rata-linjens-ekvation-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k4-03-rata-linjens-ekvation-v7/ma1c-k4-03-rata-linjens-ekvation-1080p.mp4",
    "moment": "Bestämma räta linjens ekvation ur två punkter",
    "begrepp": [
     "räta linjen",
@@ -25190,189 +25190,181 @@
    ],
    "beskrivning": "Den 2 juli 1937 flög Amelia Earhart och Fred Noonan mot den lilla ön Howland mitt i Stilla havet. Vi tar fram kurslinjens ekvation ur två punkter och prövar om en punkt ligger på linjen. Sedan följer vi Noonans solens linje, som är vinkelrät mot riktningen till solen och flyttas parallellt genom ön. Till sist skriver vi om en linje från allmän form till y = kx + m.",
    "youtube": null,
-   "langd": 929,
+   "langd": 813,
    "omslag": "omslag/ma1c-k4-03-rata-linjens-ekvation.jpg?v=f9089877",
    "omslagRen": "omslag/ma1c-k4-03-rata-linjens-ekvation-ren.jpg?v=4077eecc",
    "omslagStor": null,
    "repliker": [
     {
      "t": 9,
-     "text": "Den andra juli nittonhundratrettiosju lyfter ett flygplan från staden Lae på Nya Guinea. Piloten heter Amelia Earhart. Hon försöker flyga runt hela jorden nära ekvatorn, och det mesta av vägen är redan klar."
+     "text": "Den andra juli nittonhundratrettiosju lyfter ett flygplan från staden Lae på Nya Guinea. Piloten heter Amelia Earhart. Hon håller på att flyga runt hela jorden, nära ekvatorn, och det mesta av vägen är redan klar."
     },
     {
-     "t": 26,
+     "t": 25,
      "text": "Med i planet sitter Fred Noonan. Han har varit kapten på fartyg, och hans jobb är att hitta vägen åt henne. Han sitter vid ett litet bord och ritar på en karta. De ska flyga över Stilla havet till ön Howland, drygt fyratusen kilometer bort."
     },
     {
-     "t": 44,
+     "t": 42,
      "text": "Howland är bara ungefär två kilometer lång. På ön finns en landningsbana, och vid ön väntar ett fartyg med bensin. Planet måste landa där och tanka, annars kommer de inte vidare."
     },
     {
-     "t": 58,
-     "text": "Men ön är så liten att man ser den först när man är nära. Och runt den finns bara hav, åt alla håll. Så hur hittar man en ö som är två kilometer lång, mitt i ett hav som är flera tusen kilometer brett?"
+     "t": 56,
+     "text": "Men ön är så liten att man ser den först när man är nära. Och runt ön finns bara hav, åt alla håll. Så hur hittar man en ö som är två kilometer lång, mitt i ett hav som är flera tusen kilometer brett?"
     },
     {
-     "t": 75,
-     "text": "Noonan räknar på en karta. Vi gör som han och lägger ett rutnät över kartan. Varje ruta är tvåhundra kilometer. Mitt i Stilla havet, på ekvatorn, sätter vi en nollpunkt. Där drar vi två linjer med tal på, ungefär som två linjaler. De kallas axlar."
+     "t": 73,
+     "text": "Noonan räknar på en karta. Vi lägger ett koordinatsystem över kartan, och varje ruta är tvåhundra kilometer. Origo, alltså nollpunkten, sätter vi mitt i Stilla havet, på ekvatorn. X-axeln går mot öster, och Y-axeln går mot norr."
     },
     {
-     "t": 97,
-     "text": "Den ena axeln går åt höger, mot öster. Den kallas X-axeln. Den andra går uppåt, mot norr. Den kallas Y-axeln."
+     "t": 92,
+     "text": "Var ligger Lae? Arton rutor åt vänster, så X är minus arton. Och fyra rutor nedåt, så Y är minus fyra. Howland ligger två rutor åt höger, så där är X två och Y noll."
     },
     {
-     "t": 110,
-     "text": "Hur säger vi var en punkt ligger? Vi räknar rutor från nollpunkten. Hur många rutor åt höger? Det är X. Hur många rutor uppåt? Det är Y. De två talen kallas punktens koordinater. De är som punktens adress. Och om punkten ligger åt vänster, eller nedåt? Då sätter vi ett minus framför talet."
+     "t": 108,
+     "text": "Planet ska flyga rakt från Lae till Howland, och på kartan blir den vägen en rät linje. Vi kallar vägen kurslinjen. Varje rät linje har en ekvation, och hur ekvationen ser ut står på formelbladet, under rubriken Funktioner. Y är lika med K X plus M."
     },
     {
-     "t": 137,
-     "text": "Okej, nu sätter vi ut start och mål. Var ligger Lae? Arton rutor åt vänster. Så X är minus arton. Och fyra rutor nedåt. Så Y är minus fyra. Var ligger Howland? Två rutor åt höger. Så X är två. Och ingenting uppåt. Så Y är noll."
+     "t": 129,
+     "text": "Först tar vi reda på hur brant linjen är. Man kan se det på det här sättet. Du går längs linjen och tar ett steg åt höger. Hur långt uppåt kommer du då? Det är K. Därför kallas K för linjens lutning."
     },
     {
-     "t": 165,
-     "text": "Planet ska flyga rakt från Lae till Howland. På kartan blir det en rak linje. En rak linje har en ekvation. Den står på formelbladet, under rubriken Funktioner. Y är lika med K X plus M. Vad betyder K och M?"
+     "t": 144,
+     "text": "Nu tittar vi på hela vägen, från Lae till Howland. Först går vi åt höger, tills vi står rakt under Howland. Sen går vi uppåt, ända till Howland. K får vi om vi delar hur långt uppåt med hur långt åt höger."
     },
     {
-     "t": 185,
-     "text": "Först tar vi reda på hur brant linjen är. Det talet kallas K. Tänk dig att du går längs linjen. Du tar ett steg åt höger. Hur långt uppåt kommer du då? Det är K."
+     "t": 160,
+     "text": "Att räkna rutor fungerar på kartan, men formeln för K fungerar för alla punkter. Formeln står också på formelbladet, och den är ett bråk. Ovanför bråkstrecket står Y två minus Y ett, alltså hur långt uppåt. Hur långt uppåt kallas ändringen i Y. Under bråkstrecket står X två minus X ett, alltså ändringen i X, hur långt åt höger."
     },
     {
-     "t": 200,
-     "text": "Nu tittar vi på hela vägen, från Lae till Howland. Först går vi åt höger, tills vi står rakt under Howland. Sen går vi uppåt, ända till Howland. Hur får vi K av det? Vi delar hur långt uppåt med hur långt åt höger. Då får vi hur långt uppåt linjen går för varje steg åt höger."
+     "t": 188,
+     "text": "Nu får vi inte glömma att ettan och tvåan står nere, så de betyder inte upphöjt till. De är punkternas nummer. Punkt ett är Lae, så X ett är minus arton och Y ett är minus fyra. Punkt två är Howland, så X två är två och Y två är noll."
     },
     {
-     "t": 225,
-     "text": "Det här står också på formelbladet. Titta på formeln för K. Den är ett bråk. Ovanför bråkstrecket står Y två minus Y ett. Det är hur långt uppåt. Under bråkstrecket står X två minus X ett. Det är hur långt åt höger."
+     "t": 207,
+     "text": "Nu skriver vi formeln igen, med talen på samma ställen. Y två är noll, och Y ett är minus fyra. Minus fyra skriver vi inom parentes, så att två minustecken inte står bredvid varandra. X två är två, och X ett är minus arton, också inom parentes."
     },
     {
-     "t": 246,
-     "text": "Ettan och tvåan står nere, så de betyder inte upphöjt till. De är punkternas nummer. Ettan betyder den första punkten. Det är Lae. Så X ett är minus arton, och Y ett är minus fyra. Tvåan betyder den andra punkten. Det är Howland. Så X två är två, och Y två är noll."
+     "t": 227,
+     "text": "Först räknar vi ovanför bråkstrecket. Där står noll minus minus fyra. Två minus i rad blir plus, så det blir noll plus fyra, alltså fyra. Som vi ser på kartan är ändringen i Y just de fyra rutorna, från Lae upp till Howland."
     },
     {
-     "t": 273,
-     "text": "Nu skriver vi formeln igen, med talen på samma ställen. Där det står Y två skriver vi noll. Där det står Y ett skriver vi minus fyra. Den sätter vi inom parentes, så att två minustecken inte står bredvid varandra. Där det står X två skriver vi två. Och där det står X ett skriver vi minus arton, också inom parentes."
+     "t": 247,
+     "text": "Sen räknar vi under bråkstrecket. Där står två minus minus arton, och av samma skäl blir det två plus arton, alltså tjugo. Det är de tjugo rutorna åt höger."
     },
     {
-     "t": 300,
-     "text": "Först räknar vi ovanför bråkstrecket. Där står noll minus minus fyra. Hur långt är det från minus fyra upp till noll? Räkna rutorna på kartan. Det är de fyra rutorna, från Lae upp till Howland. Så noll minus minus fyra är fyra. Två minus i rad blir alltså plus. Det blir noll plus fyra, alltså fyra."
+     "t": 260,
+     "text": "Sist delar vi fyra med tjugo. Tjugo är fem gånger fyra, så fyra delat med tjugo är en femtedel. Så K är en femtedel, alltså noll komma två. För varje ruta åt höger går kurslinjen upp noll komma två rutor, så den är ganska flack."
     },
     {
-     "t": 330,
-     "text": "Sen räknar vi under bråkstrecket. Där står två minus minus arton. Så det blir två plus arton, alltså tjugo. Det är de tjugo rutorna åt höger. Arton fram till Y-axeln, och sen två till."
+     "t": 279,
+     "text": "Här är det lätt att vända på bråket och få att K är fem. Då skulle linjen gå fem rutor uppåt för varje ruta åt höger. Det är ju jättebrant. Men kurslinjen går bara fyra rutor uppåt på tjugo rutor åt höger."
     },
     {
-     "t": 350,
-     "text": "Nu delar vi. Fyra delat med tjugo blir noll komma två. Så K är noll komma två. För varje ruta åt höger går linjen upp noll komma två rutor. Det är ganska flackt, ser du?"
+     "t": 295,
+     "text": "Nu söker vi M. M är talet där linjen korsar Y-axeln, och M säger alltså var linjen ligger. Titta på formelbladet igen. M står sist i formeln Y är lika med K X plus M."
     },
     {
-     "t": 366,
-     "text": "En elev delar tjugo med fyra och får att K är fem. Har eleven rätt? Nej. Då skulle linjen gå fem rutor uppåt för varje steg åt höger. Det är jättebrant. Men vägen från Lae går bara fyra rutor uppåt, på tjugo rutor åt höger. K är hur långt uppåt, delat med hur långt åt höger."
+     "t": 310,
+     "text": "På kartan korsar kurslinjen Y-axeln strax under noll. Men exakt var? Då använder vi en regel. Ligger en punkt på linjen, så stämmer ekvationen med punktens X och Y. Howland ligger på kurslinjen, och där är X två och Y noll."
     },
     {
-     "t": 393,
-     "text": "Nu söker vi M. M är talet där linjen korsar Y-axeln. Titta på formelbladet igen. M står sist i den översta formeln, Y är lika med K X plus M."
-    },
-    {
-     "t": 408,
-     "text": "På kartan ser vi att det är strax under noll. Men exakt var? Regeln är den här. Ligger en punkt på linjen, så stämmer ekvationen med punktens X och Y. Howland ligger på linjen. Där är X två och Y noll."
-    },
-    {
-     "t": 427,
+     "t": 329,
      "text": "Vi skriver formeln, Y är lika med K X plus M. Sen sätter vi in talen på samma ställen. Där det står Y skriver vi noll. Där det står K skriver vi noll komma två. Och där det står X skriver vi två."
     },
     {
-     "t": 446,
-     "text": "Då står det noll är lika med noll komma två gånger två plus M. Vad är noll komma två gånger två? Det är noll komma fyra. Så noll är lika med noll komma fyra plus M. Vilket tal plus noll komma fyra blir noll? Minus noll komma fyra. Så M är minus noll komma fyra. Linjen korsar Y-axeln strax under noll, precis som på kartan."
+     "t": 344,
+     "text": "Då står det noll är lika med noll komma två gånger två plus M. Två gånger två är fyra, så noll komma två gånger två är noll komma fyra. Så noll är lika med noll komma fyra plus M. Vilket tal plus noll komma fyra blir noll? Minus noll komma fyra, för de två talen tar ut varandra. Så M är minus noll komma fyra, strax under noll, precis som på kartan."
     },
     {
-     "t": 477,
-     "text": "Kurslinjen är alltså Y är lika med noll komma två X minus noll komma fyra. Stämmer den? Vi kollar med Lae, som också ligger på linjen. Vad sa regeln? Då ska ekvationen stämma med Laes X och Y. Där är X minus arton."
+     "t": 374,
+     "text": "Kurslinjen är alltså Y är lika med noll komma två X minus noll komma fyra. Så vad är skillnaden mellan formeln och kurslinjens ekvation? Formeln gäller alla räta linjer, och där är K och M bara platser för tal. Kurslinjens ekvation har kurslinjens egna tal insatta, och den gäller bara kurslinjen."
     },
     {
-     "t": 498,
-     "text": "Vi sätter in minus arton. Noll komma två gånger minus arton. Noll komma två är en femtedel. En femtedel av arton är tre komma sex. Med minus blir det minus tre komma sex. Sen minus noll komma fyra till. Det blir minus fyra. Det är Laes Y, så ekvationen stämmer."
+     "t": 397,
+     "text": "Stämmer ekvationen? Vi kollar med Lae, som också ligger på kurslinjen. Där är X minus arton, och då ska Y bli minus fyra."
     },
     {
-     "t": 523,
-     "text": "Men över havet syns ingen linje. Och Noonan kan inte vara säker på att planet följer den, för vinden kan föra planet åt sidan. När solen går upp tittar han på klockan. Tiden säger honom hur långt planet har kommit i riktning mot solen. Men den säger ingenting om hur långt åt sidan planet är."
+     "t": 407,
+     "text": "Noll komma två gånger minus arton kan vi räkna enklare så här. Noll komma två är en femtedel, och arton delat med fem är tre komma sex. Med minus blir det minus tre komma sex. Sen minus noll komma fyra till, och då blir det minus fyra. Vad nice, det är ju Laes Y. Nu går vi tillbaka till Noonan i planet."
     },
     {
-     "t": 545,
-     "text": "Därför vet Noonan bara en sak. Planet är någonstans på en linje som går tvärs mot solen. Tänk dig hörnet på ett papper. Linjen och riktningen mot solen möts precis så. Då säger man att de är vinkelräta. Vinkeln mellan dem är nittio grader. Vi kallar linjen solens linje."
+     "t": 432,
+     "text": "Men över havet syns ingen linje. Och Noonan kan inte vara säker på att planet följer kurslinjen, för vinden kan föra planet åt sidan. När solen går upp tittar han på klockan. Tiden säger honom hur långt planet har kommit i riktning mot solen. Men tiden säger ingenting om hur långt åt sidan planet är."
     },
     {
-     "t": 569,
-     "text": "Solen går upp lite norr om öster. Hur brant är riktningen mot solen? Ett steg åt höger, och ungefär noll komma fyra uppåt. Så K är ungefär noll komma fyra. Men hur brant är solens linje?"
+     "t": 456,
+     "text": "Därför vet Noonan bara en sak. Planet är någonstans på en linje som går tvärs mot solen. Tänk dig hörnet på ett papper. Linjen och riktningen mot solen möts precis så, i nittio grader. Då säger man att linjerna är vinkelräta. Linjen tvärs mot solen kallar vi solens linje."
     },
     {
-     "t": 586,
-     "text": "Vi provar först med en enkel trappa. Den går ett steg åt höger och två steg uppåt. Då är K två. Vrid nu trappan ett kvarts varv, åt samma håll som klockans visare. Då blir den vinkelrät mot den första. Nu går den två steg åt höger och ett steg nedåt. Så den nya linjen har K lika med minus en halv. Ta de två K-värdena gånger varandra. Två gånger minus en halv är minus ett."
+     "t": 479,
+     "text": "Solen går upp lite norr om öster. Riktningen mot solen går ungefär noll komma fyra rutor uppåt för varje ruta åt höger. Så riktningen mot solen har K ungefär noll komma fyra. Men hur brant är solens linje?"
     },
     {
-     "t": 620,
-     "text": "För två linjer som är vinkelräta finns en regel. Ta deras K-värden gånger varandra. Då blir svaret alltid minus ett."
+     "t": 496,
+     "text": "Vi provar först med en enkel trappa. Trappan går en ruta åt höger och två uppåt, så K är två. Vrid nu trappan ett kvarts varv, åt samma håll som klockans visare. Då blir trappan vinkelrät mot den första trappan. Nu går trappan två rutor åt höger och en nedåt. Nedåt betyder minus, så K är minus en halv. Och två gånger minus en halv är minus ett."
     },
     {
-     "t": 631,
-     "text": "Så vi söker ett tal. Noll komma fyra gånger talet ska bli minus ett. Vi gör tvärtom och delar. Minus ett delat med noll komma fyra. Det blir minus två komma fem. Så solens linje har K lika med minus två komma fem."
+     "t": 526,
+     "text": "För två linjer som är vinkelräta finns en regel. Ta deras K-värden gånger varandra, så blir svaret alltid minus ett."
     },
     {
-     "t": 652,
-     "text": "Men varför minus? Tänk dig att du går längs solens linje. Du tar ett steg åt höger. Då kommer du två och en halv rutor nedåt. Linjen lutar nedåt, och den är brant, ser du?"
+     "t": 535,
+     "text": "Så noll komma fyra gånger K för solens linje ska bli minus ett. Gånger noll komma fyra tar vi bort genom att dela med noll komma fyra. Minus ett delat med noll komma fyra blir minus två komma fem, för noll komma fyra får plats två och en halv gång i ett. Så solens linje har K lika med minus två komma fem. Minuset betyder att solens linje lutar nedåt, två och en halv rutor för varje ruta åt höger."
     },
     {
-     "t": 668,
-     "text": "Redan i Lae har Noonan ritat en linje genom Howland. Den går åt samma håll som solens linje. Tänk på rälsen på ett järnvägsspår. De går bredvid varandra och möts aldrig. Sådana linjer kallas parallella."
+     "t": 568,
+     "text": "Redan i Lae har Noonan ritat en linje genom Howland. Linjen går åt samma håll som solens linje. Tänk på rälsen på ett järnvägsspår. De två skenorna går bredvid varandra och möts aldrig. Sådana linjer kallas parallella."
     },
     {
-     "t": 685,
-     "text": "Hur brant är linjen genom ön? Den lutar precis lika mycket som solens linje. Så den har samma K, minus två komma fem. Parallella linjer har samma K. Vinkelräta har K som gånger varandra blir minus ett."
+     "t": 585,
+     "text": "Linjen genom ön lutar precis lika mycket som solens linje, så den har samma K, minus två komma fem. Så vad är skillnaden mellan parallella och vinkelräta linjer? Parallella linjer har samma K. Vinkelräta linjer har K-värden som gånger varandra blir minus ett."
     },
     {
-     "t": 705,
-     "text": "Nu söker vi M för linjen genom ön. Vad sa regeln? Ligger en punkt på linjen, så stämmer ekvationen med punktens X och Y. Ön ligger på linjen. Där är X två och Y noll."
+     "t": 606,
+     "text": "Nu söker vi M för linjen genom ön, på samma sätt som för kurslinjen. Howland ligger på linjen, och där är X två och Y noll."
     },
     {
-     "t": 721,
-     "text": "Vi skriver formeln igen, Y är lika med K X plus M. Där det står Y skriver vi noll. Där det står K skriver vi minus två komma fem. Och där det står X skriver vi två."
+     "t": 616,
+     "text": "Vi skriver formeln igen, Y är lika med K X plus M. Sen sätter vi in Y lika med noll, K lika med minus två komma fem och X lika med två."
     },
     {
-     "t": 736,
-     "text": "Då står det noll är lika med minus två komma fem gånger två plus M. Vad är minus två komma fem gånger två? Det är minus fem. Så noll är lika med minus fem plus M. Minus fem plus vilket tal blir noll? Fem. Så M är fem. Linjen genom ön är Y är lika med minus två komma fem X plus fem."
+     "t": 627,
+     "text": "Då står det noll är lika med minus två komma fem gånger två plus M. Minus två komma fem gånger två är minus fem. Så noll är lika med minus fem plus M. Minus fem plus vilket tal blir noll? Fem. Så M är fem. Linjen genom ön har alltså ekvationen Y är lika med minus två komma fem X plus fem."
     },
     {
-     "t": 766,
-     "text": "Planen är alltså enkel. Planet flyger längs kurslinjen tills det når linjen genom ön. Där svänger det och flyger längs den nya linjen, åt norr eller åt söder, tills ön syns."
+     "t": 656,
+     "text": "Nu kan vi svara på frågan från början. Planet flyger längs kurslinjen tills det når linjen genom ön. Där svänger planet och flyger längs linjen genom ön, åt norr eller åt söder, tills ön syns."
     },
     {
-     "t": 780,
-     "text": "En linje kan också skrivas på ett annat sätt. Då samlar man allt på ena sidan av likhetstecknet. På den andra sidan står bara noll. Det kallas allmän form, och den står också på formelbladet. Linjen genom ön blir då fem X plus två Y minus tio är lika med noll. Men var är K och M nu? De syns inte."
+     "t": 670,
+     "text": "En linje kan också skrivas på ett annat sätt, och det sättet står också på formelbladet. Då samlar man allt på ena sidan av likhetstecknet, och på den andra sidan står bara noll. Det kallas allmän form. Linjen genom ön blir då fem X plus två Y minus tio är lika med noll. Men i allmän form syns inte K och M."
     },
     {
-     "t": 807,
-     "text": "Vi vill ha Y ensamt på ena sidan. Då gör vi samma sak på båda sidor. Först tar vi bort fem X på båda sidor. Fem X minus fem X är noll. Då står det två Y minus tio är lika med minus fem X."
+     "t": 693,
+     "text": "För att se K och M löser vi ut Y, alltså får Y ensamt på ena sidan. Vi gör samma sak i båda leden, på båda sidor om likhetstecknet, så att likheten gäller. Först drar vi bort fem X i båda leden. Då står det två Y minus tio är lika med minus fem X."
     },
     {
-     "t": 826,
-     "text": "Sen tar vi bort minus tio. Det gör vi genom att lägga till tio på båda sidor. Minus tio plus tio är noll. Då står det två Y är lika med minus fem X plus tio."
+     "t": 714,
+     "text": "Sen tar vi bort minus tio genom att lägga till tio i båda leden. Då står det två Y är lika med minus fem X plus tio."
     },
     {
-     "t": 841,
-     "text": "Två Y är två stycken Y, men vi vill ha ett. Så vi delar båda sidor med två. Minus fem delat med två är minus två komma fem. Tio delat med två är fem. Då står det Y är lika med minus två komma fem X plus fem."
+     "t": 724,
+     "text": "Två Y är två gånger Y. Gånger två tar vi bort genom att dela båda leden med två. Minus fem delat med två är minus två komma fem, och tio delat med två är fem. Då står det Y är lika med minus två komma fem X plus fem, och K och M syns igen. Nu går vi tillbaka till Earhart och Noonan."
     },
     {
-     "t": 861,
+     "t": 749,
      "text": "På fartyget vid Howland sitter en sjöman med hörlurar på sig. Han har lyssnat efter planet hela natten. Klockan sju och fyrtiotvå på morgonen hör han Earharts röst i radion. Hon säger att de borde vara precis över ön, men att de inte ser den. Bensinen börjar ta slut. Sjömannen vrider på ratten och svarar henne, om och om igen. Men hon hör honom inte."
     },
     {
-     "t": 889,
+     "t": 774,
      "text": "En timme senare kommer hennes sista meddelande. Hon säger att de flyger på linjen, fram och tillbaka mot norr och söder. Det är linjen genom ön, precis som Noonan hade planerat. Sedan hörs ingenting mer."
     },
     {
-     "t": 906,
+     "t": 789,
      "text": "Den amerikanska flottan letar efter planet i mer än två veckor, men det hittas aldrig."
     },
     {
-     "t": 912,
+     "t": 797,
      "text": "Nu är det din tur. På samma karta flyger ett annat plan rakt från punkten där X är två och Y är ett, till punkten där X är fem och Y är sju. Vilken ekvation har linjen som planet flyger på?"
     }
    ],
@@ -25383,68 +25375,68 @@
      "typ": "historia"
     },
     {
-     "t": 44,
+     "t": 42,
      "rubrik": "Ön mitt i Stilla havet",
      "typ": "historia"
     },
     {
-     "t": 75,
+     "t": 73,
      "rubrik": "Kartan som koordinatsystem",
      "typ": "matte"
     },
     {
-     "t": 165,
+     "t": 108,
      "rubrik": "Räta linjens ekvation y = kx + m",
      "typ": "matte"
     },
     {
-     "t": 185,
+     "t": 129,
      "rubrik": "k-värdet ur två punkter",
      "typ": "matte"
     },
     {
-     "t": 393,
+     "t": 295,
      "rubrik": "m-värdet: sätt in en punkt",
      "typ": "matte"
     },
     {
-     "t": 477,
+     "t": 374,
      "rubrik": "Ligger punkten på linjen?",
      "typ": "matte"
     },
     {
-     "t": 523,
+     "t": 432,
      "rubrik": "Solens linje",
      "typ": "matte"
     },
     {
-     "t": 586,
+     "t": 496,
      "rubrik": "Vinkelräta linjer",
      "typ": "matte"
     },
     {
-     "t": 668,
+     "t": 568,
      "rubrik": "Parallella linjer",
      "typ": "matte"
     },
     {
-     "t": 780,
+     "t": 670,
      "rubrik": "Allmän form",
      "typ": "matte"
     },
     {
-     "t": 869,
+     "t": 756,
      "rubrik": "De sista meddelandena",
      "typ": "historia"
     },
     {
-     "t": 912,
+     "t": 797,
      "rubrik": "Din tur",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 912,
+    "notisFran": 797,
     "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Vilken ekvation har linjen som planet flyger på?",
     "figur": {
      "vy": [
@@ -25632,7 +25624,7 @@
     ],
     "ledtrad": {
      "text": "Räkna k som ändringen i y delat med ändringen i x. Sätt sedan in en av punkterna i y = kx + m för att få m, som med Lae och Howland.",
-     "t": 185
+     "t": 129
     },
     "losning": [
      "Formeln från formelbladet: k = (y₂ − y₁)/(x₂ − x₁). Punkt 1 är (2, 1) och punkt 2 är (5, 7).",
@@ -25644,1247 +25636,932 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 15.34,
+     "e": 15.08,
      "text": "Den andra juli nittonhundratrettiosju lyfter ett flygplan från staden Lae på Nya Guinea."
     },
     {
-     "s": 16.34,
-     "e": 18.56,
+     "s": 15.82,
+     "e": 17.94,
      "text": "Piloten heter Amelia Earhart."
     },
     {
-     "s": 19.56,
-     "e": 24.72,
-     "text": "Hon försöker flyga runt hela jorden nära ekvatorn, och det mesta av vägen är redan klar."
+     "s": 18.54,
+     "e": 24.3,
+     "text": "Hon håller på att flyga runt hela jorden, nära ekvatorn, och det mesta av vägen är redan klar."
     },
     {
-     "s": 26.02,
-     "e": 28.14,
+     "s": 25.26,
+     "e": 27.42,
      "text": "Med i planet sitter Fred Noonan."
     },
     {
-     "s": 29.14,
-     "e": 33.28,
+     "s": 27.92,
+     "e": 31.96,
      "text": "Han har varit kapten på fartyg, och hans jobb är att hitta vägen åt henne."
     },
     {
-     "s": 34.28,
-     "e": 36.94,
+     "s": 32.64,
+     "e": 35.56,
      "text": "Han sitter vid ett litet bord och ritar på en karta."
     },
     {
-     "s": 37.94,
-     "e": 43.22,
+     "s": 36.46,
+     "e": 41.86,
      "text": "De ska flyga över Stilla havet till ön Howland, drygt fyratusen kilometer bort."
     },
     {
-     "s": 44.52,
-     "e": 47.3,
+     "s": 42.78,
+     "e": 45.56,
      "text": "Howland är bara ungefär två kilometer lång."
     },
     {
-     "s": 48.3,
-     "e": 52.84,
+     "s": 46.14,
+     "e": 50.78,
      "text": "På ön finns en landningsbana, och vid ön väntar ett fartyg med bensin."
     },
     {
-     "s": 53.84,
-     "e": 57.4,
+     "s": 51.9,
+     "e": 55.66,
      "text": "Planet måste landa där och tanka, annars kommer de inte vidare."
     },
     {
-     "s": 58.7,
-     "e": 61.78,
+     "s": 56.22,
+     "e": 59.98,
      "text": "Men ön är så liten att man ser den först när man är nära."
     },
     {
-     "s": 62.78,
-     "e": 66.1,
-     "text": "Och runt den finns bara hav, åt alla håll."
+     "s": 60.38,
+     "e": 63.46,
+     "text": "Och runt ön finns bara hav, åt alla håll."
     },
     {
-     "s": 67.1,
-     "e": 73.94,
+     "s": 64.18,
+     "e": 71.3,
      "text": "Så hur hittar man en ö som är två kilometer lång, mitt i ett hav som är flera tusen kilometer brett?"
     },
     {
-     "s": 75.24,
-     "e": 76.94,
+     "s": 73.8,
+     "e": 75.42,
      "text": "Noonan räknar på en karta."
     },
     {
-     "s": 77.94,
-     "e": 80.86,
-     "text": "Vi gör som han och lägger ett rutnät över kartan."
+     "s": 76.22,
+     "e": 81.44,
+     "text": "Vi lägger ett koordinatsystem över kartan, och varje ruta är tvåhundra kilometer."
     },
     {
-     "s": 81.86,
-     "e": 84.42,
-     "text": "Varje ruta är tvåhundra kilometer."
+     "s": 82.3,
+     "e": 87.12,
+     "text": "Origo, alltså nollpunkten, sätter vi mitt i Stilla havet, på ekvatorn."
     },
     {
-     "s": 85.42,
-     "e": 89.06,
-     "text": "Mitt i Stilla havet, på ekvatorn, sätter vi en nollpunkt."
+     "s": 87.92,
+     "e": 91.46,
+     "text": "X-axeln går mot öster, och Y-axeln går mot norr."
     },
     {
-     "s": 90.06,
-     "e": 94.22,
-     "text": "Där drar vi två linjer med tal på, ungefär som två linjaler."
-    },
-    {
-     "s": 95.22,
-     "e": 96.58,
-     "text": "De kallas axlar."
-    },
-    {
-     "s": 97.88,
-     "e": 100.58,
-     "text": "Den ena axeln går åt höger, mot öster."
-    },
-    {
-     "s": 101.58,
-     "e": 103.2,
-     "text": "Den kallas X-axeln."
-    },
-    {
-     "s": 104.2,
-     "e": 106.38,
-     "text": "Den andra går uppåt, mot norr."
-    },
-    {
-     "s": 107.38,
-     "e": 108.94,
-     "text": "Den kallas Y-axeln."
-    },
-    {
-     "s": 110.24,
-     "e": 111.92,
-     "text": "Hur säger vi var en punkt ligger?"
-    },
-    {
-     "s": 112.92,
-     "e": 115.3,
-     "text": "Vi räknar rutor från nollpunkten."
-    },
-    {
-     "s": 116.3,
-     "e": 117.56,
-     "text": "Hur många rutor åt höger?"
-    },
-    {
-     "s": 118.56,
-     "e": 119.56,
-     "text": "Det är X."
-    },
-    {
-     "s": 120.22,
-     "e": 122.92,
-     "text": "Hur många rutor uppåt? Det är Y."
-    },
-    {
-     "s": 123.92,
-     "e": 126.74,
-     "text": "De två talen kallas punktens koordinater."
-    },
-    {
-     "s": 127.74,
-     "e": 129.46,
-     "text": "De är som punktens adress."
-    },
-    {
-     "s": 130.46,
-     "e": 133.4,
-     "text": "Och om punkten ligger åt vänster, eller nedåt?"
-    },
-    {
-     "s": 134.4,
-     "e": 136.44,
-     "text": "Då sätter vi ett minus framför talet."
-    },
-    {
-     "s": 137.74,
-     "e": 140.08,
-     "text": "Okej, nu sätter vi ut start och mål."
-    },
-    {
-     "s": 141.08,
-     "e": 142.08,
+     "s": 92.18,
+     "e": 93.18,
      "text": "Var ligger Lae?"
     },
     {
-     "s": 142.94,
-     "e": 144.52,
-     "text": "Arton rutor åt vänster."
+     "s": 94,
+     "e": 97.62,
+     "text": "Arton rutor åt vänster, så X är minus arton."
     },
     {
-     "s": 145.52,
-     "e": 147.48,
-     "text": "Så X är minus arton."
+     "s": 98.1,
+     "e": 101.26,
+     "text": "Och fyra rutor nedåt, så Y är minus fyra."
     },
     {
-     "s": 148.48,
-     "e": 150.06,
-     "text": "Och fyra rutor nedåt."
+     "s": 102.14,
+     "e": 107.42,
+     "text": "Howland ligger två rutor åt höger, så där är X två och Y noll."
     },
     {
-     "s": 151.06,
-     "e": 152.8,
-     "text": "Så Y är minus fyra."
+     "s": 108.34,
+     "e": 113.92,
+     "text": "Planet ska flyga rakt från Lae till Howland, och på kartan blir den vägen en rät linje."
     },
     {
-     "s": 153.8,
-     "e": 154.82,
-     "text": "Var ligger Howland?"
+     "s": 114.46,
+     "e": 116.3,
+     "text": "Vi kallar vägen kurslinjen."
     },
     {
-     "s": 155.82,
-     "e": 157.28,
-     "text": "Två rutor åt höger."
+     "s": 117.2,
+     "e": 122.52,
+     "text": "Varje rät linje har en ekvation, och hur ekvationen ser ut står på formelbladet,"
     },
     {
-     "s": 158.28,
-     "e": 159.42,
-     "text": "Så X är två."
+     "s": 122.76,
+     "e": 124.44,
+     "text": "under rubriken Funktioner."
     },
     {
-     "s": 160.42,
-     "e": 161.76,
-     "text": "Och ingenting uppåt."
-    },
-    {
-     "s": 162.76,
-     "e": 163.9,
-     "text": "Så Y är noll."
-    },
-    {
-     "s": 165.2,
-     "e": 168.06,
-     "text": "Planet ska flyga rakt från Lae till Howland."
-    },
-    {
-     "s": 169.06,
-     "e": 170.92,
-     "text": "På kartan blir det en rak linje."
-    },
-    {
-     "s": 171.92,
-     "e": 173.78,
-     "text": "En rak linje har en ekvation."
-    },
-    {
-     "s": 174.78,
-     "e": 178.12,
-     "text": "Den står på formelbladet, under rubriken Funktioner."
-    },
-    {
-     "s": 179.12,
-     "e": 181.76,
+     "s": 125.38,
+     "e": 128.12,
      "text": "Y är lika med K X plus M."
     },
     {
-     "s": 182.76,
-     "e": 184.32,
-     "text": "Vad betyder K och M?"
-    },
-    {
-     "s": 185.62,
-     "e": 187.94,
+     "s": 129.2,
+     "e": 131.5,
      "text": "Först tar vi reda på hur brant linjen är."
     },
     {
-     "s": 188.94,
-     "e": 190.16,
-     "text": "Det talet kallas K."
+     "s": 131.84,
+     "e": 133.28,
+     "text": "Man kan se det på det här sättet."
     },
     {
-     "s": 191.16,
-     "e": 192.9,
-     "text": "Tänk dig att du går längs linjen."
+     "s": 133.9,
+     "e": 136.76,
+     "text": "Du går längs linjen och tar ett steg åt höger."
     },
     {
-     "s": 193.9,
-     "e": 195.4,
-     "text": "Du tar ett steg åt höger."
-    },
-    {
-     "s": 196.4,
-     "e": 199.58,
+     "s": 137.38,
+     "e": 140.06,
      "text": "Hur långt uppåt kommer du då? Det är K."
     },
     {
-     "s": 200.88,
-     "e": 204.28,
+     "s": 141,
+     "e": 143.56,
+     "text": "Därför kallas K för linjens lutning."
+    },
+    {
+     "s": 144.54,
+     "e": 147.56,
      "text": "Nu tittar vi på hela vägen, från Lae till Howland."
     },
     {
-     "s": 205.28,
-     "e": 208.82,
+     "s": 148.16,
+     "e": 151.56,
      "text": "Först går vi åt höger, tills vi står rakt under Howland."
     },
     {
-     "s": 209.82,
-     "e": 212.4,
+     "s": 152.06,
+     "e": 154.52,
      "text": "Sen går vi uppåt, ända till Howland."
     },
     {
-     "s": 213.4,
-     "e": 214.62,
-     "text": "Hur får vi K av det?"
+     "s": 155.28,
+     "e": 159.42,
+     "text": "K får vi om vi delar hur långt uppåt med hur långt åt höger."
     },
     {
-     "s": 215.62,
-     "e": 218.8,
-     "text": "Vi delar hur långt uppåt med hur långt åt höger."
+     "s": 160.48,
+     "e": 165.88,
+     "text": "Att räkna rutor fungerar på kartan, men formeln för K fungerar för alla punkter."
     },
     {
-     "s": 219.8,
-     "e": 223.94,
-     "text": "Då får vi hur långt uppåt linjen går för varje steg åt höger."
+     "s": 166.5,
+     "e": 169.88,
+     "text": "Formeln står också på formelbladet, och den är ett bråk."
     },
     {
-     "s": 225.24,
-     "e": 227.02,
-     "text": "Det här står också på formelbladet."
+     "s": 170.74,
+     "e": 176.18,
+     "text": "Ovanför bråkstrecket står Y två minus Y ett, alltså hur långt uppåt."
     },
     {
-     "s": 228.02,
-     "e": 229.18,
-     "text": "Titta på formeln för K."
+     "s": 176.88,
+     "e": 179.56,
+     "text": "Hur långt uppåt kallas ändringen i Y."
     },
     {
-     "s": 230.18,
-     "e": 231.18,
-     "text": "Den är ett bråk."
+     "s": 180.4,
+     "e": 185.64,
+     "text": "Under bråkstrecket står X två minus X ett, alltså ändringen i X,"
     },
     {
-     "s": 232.16,
-     "e": 235.86,
-     "text": "Ovanför bråkstrecket står Y två minus Y ett."
+     "s": 186.08,
+     "e": 187.14,
+     "text": "hur långt åt höger."
     },
     {
-     "s": 236.86,
-     "e": 238.42,
-     "text": "Det är hur långt uppåt."
+     "s": 188.22,
+     "e": 193.3,
+     "text": "Nu får vi inte glömma att ettan och tvåan står nere, så de betyder inte upphöjt till."
     },
     {
-     "s": 239.42,
-     "e": 243.06,
-     "text": "Under bråkstrecket står X två minus X ett."
-    },
-    {
-     "s": 244.06,
-     "e": 245.56,
-     "text": "Det är hur långt åt höger."
-    },
-    {
-     "s": 246.86,
-     "e": 250.9,
-     "text": "Ettan och tvåan står nere, så de betyder inte upphöjt till."
-    },
-    {
-     "s": 251.9,
-     "e": 253.32,
+     "s": 193.7,
+     "e": 195.24,
      "text": "De är punkternas nummer."
     },
     {
-     "s": 254.32,
-     "e": 256.4,
-     "text": "Ettan betyder den första punkten."
+     "s": 196.08,
+     "e": 201.8,
+     "text": "Punkt ett är Lae, så X ett är minus arton och Y ett är minus fyra."
     },
     {
-     "s": 257.4,
-     "e": 258.4,
-     "text": "Det är Lae."
+     "s": 202.62,
+     "e": 207.56,
+     "text": "Punkt två är Howland, så X två är två och Y två är noll."
     },
     {
-     "s": 259.1,
-     "e": 263.5,
-     "text": "Så X ett är minus arton, och Y ett är minus fyra."
-    },
-    {
-     "s": 264.5,
-     "e": 266.58,
-     "text": "Tvåan betyder den andra punkten."
-    },
-    {
-     "s": 267.58,
-     "e": 268.58,
-     "text": "Det är Howland."
-    },
-    {
-     "s": 269.4,
-     "e": 272.64,
-     "text": "Så X två är två, och Y två är noll."
-    },
-    {
-     "s": 273.94,
-     "e": 277.46,
+     "s": 207.82,
+     "e": 211.08,
      "text": "Nu skriver vi formeln igen, med talen på samma ställen."
     },
     {
-     "s": 278.46,
-     "e": 280.76,
-     "text": "Där det står Y två skriver vi noll."
+     "s": 211.86,
+     "e": 215.08,
+     "text": "Y två är noll, och Y ett är minus fyra."
     },
     {
-     "s": 281.76,
-     "e": 284.58,
-     "text": "Där det står Y ett skriver vi minus fyra."
+     "s": 215.76,
+     "e": 221.22,
+     "text": "Minus fyra skriver vi inom parentes, så att två minustecken inte står bredvid varandra."
     },
     {
-     "s": 285.58,
-     "e": 290.4,
-     "text": "Den sätter vi inom parentes, så att två minustecken inte står bredvid varandra."
+     "s": 222.04,
+     "e": 226.92,
+     "text": "X två är två, och X ett är minus arton, också inom parentes."
     },
     {
-     "s": 291.4,
-     "e": 293.62,
-     "text": "Där det står X två skriver vi två."
-    },
-    {
-     "s": 294.62,
-     "e": 299.22,
-     "text": "Och där det står X ett skriver vi minus arton, också inom parentes."
-    },
-    {
-     "s": 300.52,
-     "e": 302.8,
+     "s": 227.92,
+     "e": 230.12,
      "text": "Först räknar vi ovanför bråkstrecket."
     },
     {
-     "s": 303.8,
-     "e": 306.68,
+     "s": 230.6,
+     "e": 233.38,
      "text": "Där står noll minus minus fyra."
     },
     {
-     "s": 307.68,
-     "e": 310.34,
-     "text": "Hur långt är det från minus fyra upp till noll?"
+     "s": 234.16,
+     "e": 239.8,
+     "text": "Två minus i rad blir plus, så det blir noll plus fyra, alltså fyra."
     },
     {
-     "s": 311.34,
-     "e": 313,
-     "text": "Räkna rutorna på kartan."
+     "s": 240.44,
+     "e": 246.16,
+     "text": "Som vi ser på kartan är ändringen i Y just de fyra rutorna, från Lae upp till Howland."
     },
     {
-     "s": 314,
-     "e": 317.54,
-     "text": "Det är de fyra rutorna, från Lae upp till Howland."
-    },
-    {
-     "s": 318.54,
-     "e": 321.86,
-     "text": "Så noll minus minus fyra är fyra."
-    },
-    {
-     "s": 322.86,
-     "e": 325.28,
-     "text": "Två minus i rad blir alltså plus."
-    },
-    {
-     "s": 326.28,
-     "e": 329.6,
-     "text": "Det blir noll plus fyra, alltså fyra."
-    },
-    {
-     "s": 330.9,
-     "e": 332.92,
+     "s": 247.06,
+     "e": 249.12,
      "text": "Sen räknar vi under bråkstrecket."
     },
     {
-     "s": 333.92,
-     "e": 336.94,
-     "text": "Där står två minus minus arton."
+     "s": 249.68,
+     "e": 256.98,
+     "text": "Där står två minus minus arton, och av samma skäl blir det två plus arton, alltså tjugo."
     },
     {
-     "s": 337.94,
-     "e": 341.4,
-     "text": "Så det blir två plus arton, alltså tjugo."
-    },
-    {
-     "s": 342.4,
-     "e": 344.68,
+     "s": 257.5,
+     "e": 259.46,
      "text": "Det är de tjugo rutorna åt höger."
     },
     {
-     "s": 345.68,
-     "e": 348.78,
-     "text": "Arton fram till Y-axeln, och sen två till."
+     "s": 260.48,
+     "e": 262.6,
+     "text": "Sist delar vi fyra med tjugo."
     },
     {
-     "s": 350.08,
-     "e": 351.08,
-     "text": "Nu delar vi."
+     "s": 263.12,
+     "e": 268.24,
+     "text": "Tjugo är fem gånger fyra, så fyra delat med tjugo är en femtedel."
     },
     {
-     "s": 351.84,
-     "e": 354.82,
-     "text": "Fyra delat med tjugo blir noll komma två."
+     "s": 268.78,
+     "e": 272.34,
+     "text": "Så K är en femtedel, alltså noll komma två."
     },
     {
-     "s": 355.82,
-     "e": 357.72,
-     "text": "Så K är noll komma två."
+     "s": 273.34,
+     "e": 277.58,
+     "text": "För varje ruta åt höger går kurslinjen upp noll komma två rutor,"
     },
     {
-     "s": 358.72,
-     "e": 362.82,
-     "text": "För varje ruta åt höger går linjen upp noll komma två rutor."
+     "s": 277.88,
+     "e": 278.92,
+     "text": "så den är ganska flack."
     },
     {
-     "s": 363.82,
-     "e": 365.42,
-     "text": "Det är ganska flackt, ser du?"
+     "s": 279.72,
+     "e": 283.32,
+     "text": "Här är det lätt att vända på bråket och få att K är fem."
     },
     {
-     "s": 366.72,
-     "e": 370.54,
-     "text": "En elev delar tjugo med fyra och får att K är fem."
+     "s": 284,
+     "e": 287.82,
+     "text": "Då skulle linjen gå fem rutor uppåt för varje ruta åt höger."
     },
     {
-     "s": 371.54,
-     "e": 373.76,
-     "text": "Har eleven rätt? Nej."
+     "s": 288.52,
+     "e": 289.66,
+     "text": "Det är ju jättebrant."
     },
     {
-     "s": 374.76,
-     "e": 378.64,
-     "text": "Då skulle linjen gå fem rutor uppåt för varje steg åt höger."
+     "s": 290.28,
+     "e": 294.48,
+     "text": "Men kurslinjen går bara fyra rutor uppåt på tjugo rutor åt höger."
     },
     {
-     "s": 379.64,
-     "e": 380.96,
-     "text": "Det är jättebrant."
-    },
-    {
-     "s": 381.96,
-     "e": 387.08,
-     "text": "Men vägen från Lae går bara fyra rutor uppåt, på tjugo rutor åt höger."
-    },
-    {
-     "s": 388.08,
-     "e": 392,
-     "text": "K är hur långt uppåt, delat med hur långt åt höger."
-    },
-    {
-     "s": 393.3,
-     "e": 394.42,
+     "s": 295.5,
+     "e": 296.54,
      "text": "Nu söker vi M."
     },
     {
-     "s": 395.42,
-     "e": 398.2,
-     "text": "M är talet där linjen korsar Y-axeln."
+     "s": 297.32,
+     "e": 302.84,
+     "text": "M är talet där linjen korsar Y-axeln, och M säger alltså var linjen ligger."
     },
     {
-     "s": 399.2,
-     "e": 400.7,
+     "s": 303.48,
+     "e": 304.86,
      "text": "Titta på formelbladet igen."
     },
     {
-     "s": 401.7,
-     "e": 406.72,
-     "text": "M står sist i den översta formeln, Y är lika med K X plus M."
+     "s": 305.58,
+     "e": 309.78,
+     "text": "M står sist i formeln Y är lika med K X plus M."
     },
     {
-     "s": 408.02,
-     "e": 410.74,
-     "text": "På kartan ser vi att det är strax under noll."
+     "s": 310.56,
+     "e": 314.28,
+     "text": "På kartan korsar kurslinjen Y-axeln strax under noll."
     },
     {
-     "s": 411.74,
-     "e": 413.1,
+     "s": 314.82,
+     "e": 315.98,
      "text": "Men exakt var?"
     },
     {
-     "s": 414.1,
-     "e": 415.22,
-     "text": "Regeln är den här."
+     "s": 316.72,
+     "e": 318.04,
+     "text": "Då använder vi en regel."
     },
     {
-     "s": 416.22,
-     "e": 420.82,
+     "s": 318.7,
+     "e": 323.16,
      "text": "Ligger en punkt på linjen, så stämmer ekvationen med punktens X och Y."
     },
     {
-     "s": 421.82,
-     "e": 423.42,
-     "text": "Howland ligger på linjen."
+     "s": 323.86,
+     "e": 328.28,
+     "text": "Howland ligger på kurslinjen, och där är X två och Y noll."
     },
     {
-     "s": 424.42,
-     "e": 426.62,
-     "text": "Där är X två och Y noll."
-    },
-    {
-     "s": 427.92,
-     "e": 431.96,
+     "s": 329.04,
+     "e": 333.02,
      "text": "Vi skriver formeln, Y är lika med K X plus M."
     },
     {
-     "s": 432.96,
-     "e": 435.32,
+     "s": 333.76,
+     "e": 335.94,
      "text": "Sen sätter vi in talen på samma ställen."
     },
     {
-     "s": 436.32,
-     "e": 438.26,
+     "s": 336.58,
+     "e": 338.42,
      "text": "Där det står Y skriver vi noll."
     },
     {
-     "s": 439.26,
-     "e": 441.9,
+     "s": 339,
+     "e": 341.38,
      "text": "Där det står K skriver vi noll komma två."
     },
     {
-     "s": 442.9,
-     "e": 444.96,
+     "s": 341.94,
+     "e": 343.92,
      "text": "Och där det står X skriver vi två."
     },
     {
-     "s": 446.26,
-     "e": 451.12,
+     "s": 344.58,
+     "e": 349.42,
      "text": "Då står det noll är lika med noll komma två gånger två plus M."
     },
     {
-     "s": 452.12,
-     "e": 454.1,
-     "text": "Vad är noll komma två gånger två?"
+     "s": 350.16,
+     "e": 355,
+     "text": "Två gånger två är fyra, så noll komma två gånger två är noll komma fyra."
     },
     {
-     "s": 455.1,
-     "e": 456.64,
-     "text": "Det är noll komma fyra."
-    },
-    {
-     "s": 457.64,
-     "e": 461.3,
+     "s": 355.62,
+     "e": 359.04,
      "text": "Så noll är lika med noll komma fyra plus M."
     },
     {
-     "s": 462.3,
-     "e": 465.34,
+     "s": 360.82,
+     "e": 363.78,
      "text": "Vilket tal plus noll komma fyra blir noll?"
     },
     {
-     "s": 466.34,
-     "e": 467.78,
-     "text": "Minus noll komma fyra."
+     "s": 364.54,
+     "e": 368.02,
+     "text": "Minus noll komma fyra, för de två talen tar ut varandra."
     },
     {
-     "s": 468.78,
-     "e": 471.32,
-     "text": "Så M är minus noll komma fyra."
+     "s": 368.62,
+     "e": 373.94,
+     "text": "Så M är minus noll komma fyra, strax under noll, precis som på kartan."
     },
     {
-     "s": 472.32,
-     "e": 476.64,
-     "text": "Linjen korsar Y-axeln strax under noll, precis som på kartan."
+     "s": 374.74,
+     "e": 380.28,
+     "text": "Kurslinjen är alltså Y är lika med noll komma två X minus noll komma fyra."
     },
     {
-     "s": 477.94,
-     "e": 485,
-     "text": "Kurslinjen är alltså Y är lika med noll komma två X minus noll komma fyra. Stämmer den?"
+     "s": 381.1,
+     "e": 384.74,
+     "text": "Så vad är skillnaden mellan formeln och kurslinjens ekvation?"
     },
     {
-     "s": 486,
-     "e": 488.2,
-     "text": "Vi kollar med Lae, som också ligger på linjen."
+     "s": 385.48,
+     "e": 390.78,
+     "text": "Formeln gäller alla räta linjer, och där är K och M bara platser för tal."
     },
     {
-     "s": 489.2,
-     "e": 490.2,
-     "text": "Vad sa regeln?"
+     "s": 391.44,
+     "e": 397.18,
+     "text": "Kurslinjens ekvation har kurslinjens egna tal insatta, och den gäller bara kurslinjen."
     },
     {
-     "s": 490.92,
-     "e": 494,
-     "text": "Då ska ekvationen stämma med Laes X och Y."
+     "s": 397.94,
+     "e": 402.08,
+     "text": "Stämmer ekvationen? Vi kollar med Lae, som också ligger på kurslinjen."
     },
     {
-     "s": 495,
-     "e": 496.86,
-     "text": "Där är X minus arton."
+     "s": 402.68,
+     "e": 407.08,
+     "text": "Där är X minus arton, och då ska Y bli minus fyra."
     },
     {
-     "s": 498.16,
-     "e": 499.46,
-     "text": "Vi sätter in minus arton."
+     "s": 407.46,
+     "e": 411.34,
+     "text": "Noll komma två gånger minus arton kan vi räkna enklare så här."
     },
     {
-     "s": 500.46,
-     "e": 502.66,
-     "text": "Noll komma två gånger minus arton."
+     "s": 412.08,
+     "e": 417.18,
+     "text": "Noll komma två är en femtedel, och arton delat med fem är tre komma sex."
     },
     {
-     "s": 503.66,
-     "e": 505.76,
-     "text": "Noll komma två är en femtedel."
-    },
-    {
-     "s": 506.76,
-     "e": 509.42,
-     "text": "En femtedel av arton är tre komma sex."
-    },
-    {
-     "s": 510.42,
-     "e": 512.9,
+     "s": 417.86,
+     "e": 420.3,
      "text": "Med minus blir det minus tre komma sex."
     },
     {
-     "s": 513.9,
-     "e": 515.74,
-     "text": "Sen minus noll komma fyra till."
+     "s": 421.02,
+     "e": 424.94,
+     "text": "Sen minus noll komma fyra till, och då blir det minus fyra."
     },
     {
-     "s": 516.74,
-     "e": 518.12,
-     "text": "Det blir minus fyra."
+     "s": 425.92,
+     "e": 427.68,
+     "text": "Vad nice, det är ju Laes Y."
     },
     {
-     "s": 519.12,
-     "e": 521.82,
-     "text": "Det är Laes Y, så ekvationen stämmer."
+     "s": 428.16,
+     "e": 430.24,
+     "text": "Nu går vi tillbaka till Noonan i planet."
     },
     {
-     "s": 523.12,
-     "e": 525.62,
+     "s": 432.74,
+     "e": 435.28,
      "text": "Men över havet syns ingen linje."
     },
     {
-     "s": 526.62,
-     "e": 531.76,
-     "text": "Och Noonan kan inte vara säker på att planet följer den, för vinden kan föra planet åt sidan."
+     "s": 435.98,
+     "e": 439.56,
+     "text": "Och Noonan kan inte vara säker på att planet följer kurslinjen,"
     },
     {
-     "s": 532.76,
-     "e": 534.82,
+     "s": 439.94,
+     "e": 442.18,
+     "text": "för vinden kan föra planet åt sidan."
+    },
+    {
+     "s": 443.16,
+     "e": 445.16,
      "text": "När solen går upp tittar han på klockan."
     },
     {
-     "s": 535.82,
-     "e": 539.6,
+     "s": 445.82,
+     "e": 449.7,
      "text": "Tiden säger honom hur långt planet har kommit i riktning mot solen."
     },
     {
-     "s": 540.6,
-     "e": 543.74,
-     "text": "Men den säger ingenting om hur långt åt sidan planet är."
+     "s": 450.22,
+     "e": 454.02,
+     "text": "Men tiden säger ingenting om hur långt åt sidan planet är."
     },
     {
-     "s": 545.04,
-     "e": 547.08,
+     "s": 456.52,
+     "e": 458.72,
      "text": "Därför vet Noonan bara en sak."
     },
     {
-     "s": 548.08,
-     "e": 551.86,
+     "s": 459.36,
+     "e": 463.26,
      "text": "Planet är någonstans på en linje som går tvärs mot solen."
     },
     {
-     "s": 552.86,
-     "e": 554.42,
+     "s": 464.06,
+     "e": 465.6,
      "text": "Tänk dig hörnet på ett papper."
     },
     {
-     "s": 555.42,
-     "e": 558.42,
-     "text": "Linjen och riktningen mot solen möts precis så."
+     "s": 466.3,
+     "e": 470.94,
+     "text": "Linjen och riktningen mot solen möts precis så, i nittio grader."
     },
     {
-     "s": 559.42,
-     "e": 561.54,
-     "text": "Då säger man att de är vinkelräta."
+     "s": 471.66,
+     "e": 474.26,
+     "text": "Då säger man att linjerna är vinkelräta."
     },
     {
-     "s": 562.54,
-     "e": 564.7,
-     "text": "Vinkeln mellan dem är nittio grader."
+     "s": 475.06,
+     "e": 478.2,
+     "text": "Linjen tvärs mot solen kallar vi solens linje."
     },
     {
-     "s": 565.7,
-     "e": 567.82,
-     "text": "Vi kallar linjen solens linje."
-    },
-    {
-     "s": 569.12,
-     "e": 571.46,
+     "s": 479.22,
+     "e": 481.66,
      "text": "Solen går upp lite norr om öster."
     },
     {
-     "s": 572.46,
-     "e": 574.38,
-     "text": "Hur brant är riktningen mot solen?"
+     "s": 482.2,
+     "e": 488.1,
+     "text": "Riktningen mot solen går ungefär noll komma fyra rutor uppåt för varje ruta åt höger."
     },
     {
-     "s": 575.38,
-     "e": 579.08,
-     "text": "Ett steg åt höger, och ungefär noll komma fyra uppåt."
+     "s": 488.8,
+     "e": 492.8,
+     "text": "Så riktningen mot solen har K ungefär noll komma fyra."
     },
     {
-     "s": 580.08,
-     "e": 582.68,
-     "text": "Så K är ungefär noll komma fyra."
-    },
-    {
-     "s": 583.68,
-     "e": 585.6,
+     "s": 493.66,
+     "e": 496.06,
      "text": "Men hur brant är solens linje?"
     },
     {
-     "s": 586.9,
-     "e": 588.9,
+     "s": 496.84,
+     "e": 498.94,
      "text": "Vi provar först med en enkel trappa."
     },
     {
-     "s": 589.9,
-     "e": 593.08,
-     "text": "Den går ett steg åt höger och två steg uppåt."
+     "s": 499.62,
+     "e": 504.46,
+     "text": "Trappan går en ruta åt höger och två uppåt, så K är två."
     },
     {
-     "s": 594.08,
-     "e": 595.3,
-     "text": "Då är K två."
-    },
-    {
-     "s": 596.3,
-     "e": 600.52,
+     "s": 505.36,
+     "e": 509.58,
      "text": "Vrid nu trappan ett kvarts varv, åt samma håll som klockans visare."
     },
     {
-     "s": 601.52,
-     "e": 603.76,
-     "text": "Då blir den vinkelrät mot den första."
+     "s": 510.22,
+     "e": 513.28,
+     "text": "Då blir trappan vinkelrät mot den första trappan."
     },
     {
-     "s": 604.76,
-     "e": 608.08,
-     "text": "Nu går den två steg åt höger och ett steg nedåt."
+     "s": 514.14,
+     "e": 517.62,
+     "text": "Nu går trappan två rutor åt höger och en nedåt."
     },
     {
-     "s": 609.08,
-     "e": 612.42,
-     "text": "Så den nya linjen har K lika med minus en halv."
+     "s": 518.28,
+     "e": 522.02,
+     "text": "Nedåt betyder minus, så K är minus en halv."
     },
     {
-     "s": 613.42,
-     "e": 615.68,
-     "text": "Ta de två K-värdena gånger varandra."
+     "s": 522.54,
+     "e": 525.44,
+     "text": "Och två gånger minus en halv är minus ett."
     },
     {
-     "s": 616.68,
-     "e": 619.38,
-     "text": "Två gånger minus en halv är minus ett."
-    },
-    {
-     "s": 620.68,
-     "e": 623.7,
+     "s": 526.48,
+     "e": 529.62,
      "text": "För två linjer som är vinkelräta finns en regel."
     },
     {
-     "s": 624.7,
-     "e": 626.9,
-     "text": "Ta deras K-värden gånger varandra."
+     "s": 530.2,
+     "e": 534.96,
+     "text": "Ta deras K-värden gånger varandra, så blir svaret alltid minus ett."
     },
     {
-     "s": 627.9,
-     "e": 630.28,
-     "text": "Då blir svaret alltid minus ett."
+     "s": 535.7,
+     "e": 540.52,
+     "text": "Så noll komma fyra gånger K för solens linje ska bli minus ett."
     },
     {
-     "s": 631.58,
-     "e": 632.68,
-     "text": "Så vi söker ett tal."
+     "s": 541.56,
+     "e": 545.94,
+     "text": "Gånger noll komma fyra tar vi bort genom att dela med noll komma fyra."
     },
     {
-     "s": 633.68,
-     "e": 637.3,
-     "text": "Noll komma fyra gånger talet ska bli minus ett."
+     "s": 546.76,
+     "e": 550.86,
+     "text": "Minus ett delat med noll komma fyra blir minus två komma fem,"
     },
     {
-     "s": 638.3,
-     "e": 639.86,
-     "text": "Vi gör tvärtom och delar."
+     "s": 551.3,
+     "e": 555.02,
+     "text": "för noll komma fyra får plats två och en halv gång i ett."
     },
     {
-     "s": 640.86,
-     "e": 643.2,
-     "text": "Minus ett delat med noll komma fyra."
-    },
-    {
-     "s": 644.2,
-     "e": 646.32,
-     "text": "Det blir minus två komma fem."
-    },
-    {
-     "s": 647.32,
-     "e": 651.26,
+     "s": 555.9,
+     "e": 559.98,
      "text": "Så solens linje har K lika med minus två komma fem."
     },
     {
-     "s": 652.56,
-     "e": 654.02,
-     "text": "Men varför minus?"
+     "s": 560.74,
+     "e": 567.6,
+     "text": "Minuset betyder att solens linje lutar nedåt, två och en halv rutor för varje ruta åt höger."
     },
     {
-     "s": 655.02,
-     "e": 656.98,
-     "text": "Tänk dig att du går längs solens linje."
-    },
-    {
-     "s": 657.98,
-     "e": 659.52,
-     "text": "Du tar ett steg åt höger."
-    },
-    {
-     "s": 660.52,
-     "e": 663.18,
-     "text": "Då kommer du två och en halv rutor nedåt."
-    },
-    {
-     "s": 664.18,
-     "e": 667.32,
-     "text": "Linjen lutar nedåt, och den är brant, ser du?"
-    },
-    {
-     "s": 668.62,
-     "e": 671.82,
+     "s": 568.56,
+     "e": 572.16,
      "text": "Redan i Lae har Noonan ritat en linje genom Howland."
     },
     {
-     "s": 672.82,
-     "e": 675.16,
-     "text": "Den går åt samma håll som solens linje."
+     "s": 572.6,
+     "e": 575.2,
+     "text": "Linjen går åt samma håll som solens linje."
     },
     {
-     "s": 676.16,
-     "e": 678.16,
+     "s": 575.96,
+     "e": 578.04,
      "text": "Tänk på rälsen på ett järnvägsspår."
     },
     {
-     "s": 679.16,
-     "e": 681.74,
-     "text": "De går bredvid varandra och möts aldrig."
+     "s": 578.46,
+     "e": 582.06,
+     "text": "De två skenorna går bredvid varandra och möts aldrig."
     },
     {
-     "s": 682.74,
-     "e": 684.68,
+     "s": 582.66,
+     "e": 584.66,
      "text": "Sådana linjer kallas parallella."
     },
     {
-     "s": 685.98,
-     "e": 687.96,
-     "text": "Hur brant är linjen genom ön?"
+     "s": 585.56,
+     "e": 591.12,
+     "text": "Linjen genom ön lutar precis lika mycket som solens linje, så den har samma K,"
     },
     {
-     "s": 688.96,
-     "e": 691.76,
-     "text": "Den lutar precis lika mycket som solens linje."
+     "s": 591.56,
+     "e": 593.02,
+     "text": "minus två komma fem."
     },
     {
-     "s": 692.76,
-     "e": 695.84,
-     "text": "Så den har samma K, minus två komma fem."
+     "s": 594.06,
+     "e": 598,
+     "text": "Så vad är skillnaden mellan parallella och vinkelräta linjer?"
     },
     {
-     "s": 696.84,
-     "e": 699.04,
+     "s": 598.84,
+     "e": 600.82,
      "text": "Parallella linjer har samma K."
     },
     {
-     "s": 700.04,
-     "e": 703.9,
-     "text": "Vinkelräta har K som gånger varandra blir minus ett."
+     "s": 601.38,
+     "e": 606.08,
+     "text": "Vinkelräta linjer har K-värden som gånger varandra blir minus ett."
     },
     {
-     "s": 705.2,
-     "e": 707.62,
-     "text": "Nu söker vi M för linjen genom ön."
+     "s": 606.38,
+     "e": 610.6,
+     "text": "Nu söker vi M för linjen genom ön, på samma sätt som för kurslinjen."
     },
     {
-     "s": 708.62,
-     "e": 709.62,
-     "text": "Vad sa regeln?"
+     "s": 611.26,
+     "e": 615.4,
+     "text": "Howland ligger på linjen, och där är X två och Y noll."
     },
     {
-     "s": 710.42,
-     "e": 714.8,
-     "text": "Ligger en punkt på linjen, så stämmer ekvationen med punktens X och Y."
-    },
-    {
-     "s": 715.8,
-     "e": 717.14,
-     "text": "Ön ligger på linjen."
-    },
-    {
-     "s": 718.14,
-     "e": 720.24,
-     "text": "Där är X två och Y noll."
-    },
-    {
-     "s": 721.54,
-     "e": 725.5,
+     "s": 616.02,
+     "e": 620.18,
      "text": "Vi skriver formeln igen, Y är lika med K X plus M."
     },
     {
-     "s": 726.5,
-     "e": 728.28,
-     "text": "Där det står Y skriver vi noll."
+     "s": 621,
+     "e": 627.04,
+     "text": "Sen sätter vi in Y lika med noll, K lika med minus två komma fem och X lika med två."
     },
     {
-     "s": 729.28,
-     "e": 732.3,
-     "text": "Där det står K skriver vi minus två komma fem."
-    },
-    {
-     "s": 733.3,
-     "e": 735.24,
-     "text": "Och där det står X skriver vi två."
-    },
-    {
-     "s": 736.54,
-     "e": 741.64,
+     "s": 627.88,
+     "e": 632.88,
      "text": "Då står det noll är lika med minus två komma fem gånger två plus M."
     },
     {
-     "s": 742.64,
-     "e": 744.96,
-     "text": "Vad är minus två komma fem gånger två?"
+     "s": 633.84,
+     "e": 636.66,
+     "text": "Minus två komma fem gånger två är minus fem."
     },
     {
-     "s": 745.96,
-     "e": 747.08,
-     "text": "Det är minus fem."
-    },
-    {
-     "s": 748.08,
-     "e": 751.12,
+     "s": 637.06,
+     "e": 640.34,
      "text": "Så noll är lika med minus fem plus M."
     },
     {
-     "s": 752.12,
-     "e": 756.06,
+     "s": 642,
+     "e": 646.44,
      "text": "Minus fem plus vilket tal blir noll? Fem."
     },
     {
-     "s": 757.06,
-     "e": 758.4,
+     "s": 646.92,
+     "e": 648.3,
      "text": "Så M är fem."
     },
     {
-     "s": 759.4,
-     "e": 764.92,
-     "text": "Linjen genom ön är Y är lika med minus två komma fem X plus fem."
+     "s": 649.1,
+     "e": 655.18,
+     "text": "Linjen genom ön har alltså ekvationen Y är lika med minus två komma fem X plus fem."
     },
     {
-     "s": 766.22,
-     "e": 767.7,
-     "text": "Planen är alltså enkel."
+     "s": 656.08,
+     "e": 658.02,
+     "text": "Nu kan vi svara på frågan från början."
     },
     {
-     "s": 768.7,
-     "e": 772.34,
+     "s": 658.64,
+     "e": 662.48,
      "text": "Planet flyger längs kurslinjen tills det når linjen genom ön."
     },
     {
-     "s": 773.34,
-     "e": 777.54,
-     "text": "Där svänger det och flyger längs den nya linjen, åt norr eller åt söder,"
+     "s": 663.02,
+     "e": 667.84,
+     "text": "Där svänger planet och flyger längs linjen genom ön, åt norr eller åt söder,"
     },
     {
-     "s": 777.84,
-     "e": 778.9,
+     "s": 668.06,
+     "e": 669.1,
      "text": "tills ön syns."
     },
     {
-     "s": 780.2,
-     "e": 782.36,
-     "text": "En linje kan också skrivas på ett annat sätt."
+     "s": 670.1,
+     "e": 674.64,
+     "text": "En linje kan också skrivas på ett annat sätt, och det sättet står också på formelbladet."
     },
     {
-     "s": 783.36,
-     "e": 786.26,
-     "text": "Då samlar man allt på ena sidan av likhetstecknet."
+     "s": 675.34,
+     "e": 680.68,
+     "text": "Då samlar man allt på ena sidan av likhetstecknet, och på den andra sidan står bara noll."
     },
     {
-     "s": 787.26,
-     "e": 789.42,
-     "text": "På den andra sidan står bara noll."
+     "s": 681.24,
+     "e": 682.94,
+     "text": "Det kallas allmän form."
     },
     {
-     "s": 790.42,
-     "e": 794.04,
-     "text": "Det kallas allmän form, och den står också på formelbladet."
-    },
-    {
-     "s": 795.04,
-     "e": 800.98,
+     "s": 683.64,
+     "e": 689.46,
      "text": "Linjen genom ön blir då fem X plus två Y minus tio är lika med noll."
     },
     {
-     "s": 801.98,
-     "e": 803.8,
-     "text": "Men var är K och M nu?"
+     "s": 690.12,
+     "e": 692.88,
+     "text": "Men i allmän form syns inte K och M."
     },
     {
-     "s": 804.8,
-     "e": 805.8,
-     "text": "De syns inte."
+     "s": 693.6,
+     "e": 699,
+     "text": "För att se K och M löser vi ut Y, alltså får Y ensamt på ena sidan."
     },
     {
-     "s": 807,
-     "e": 809.46,
-     "text": "Vi vill ha Y ensamt på ena sidan."
+     "s": 699.62,
+     "e": 703.66,
+     "text": "Vi gör samma sak i båda leden, på båda sidor om likhetstecknet,"
     },
     {
-     "s": 810.46,
-     "e": 812.48,
-     "text": "Då gör vi samma sak på båda sidor."
+     "s": 703.92,
+     "e": 705.22,
+     "text": "så att likheten gäller."
     },
     {
-     "s": 813.48,
-     "e": 816,
-     "text": "Först tar vi bort fem X på båda sidor."
+     "s": 705.96,
+     "e": 708.5,
+     "text": "Först drar vi bort fem X i båda leden."
     },
     {
-     "s": 817,
-     "e": 819.5,
-     "text": "Fem X minus fem X är noll."
-    },
-    {
-     "s": 820.5,
-     "e": 825.06,
+     "s": 709.04,
+     "e": 713.58,
      "text": "Då står det två Y minus tio är lika med minus fem X."
     },
     {
-     "s": 826.36,
-     "e": 827.94,
-     "text": "Sen tar vi bort minus tio."
+     "s": 714.48,
+     "e": 718.44,
+     "text": "Sen tar vi bort minus tio genom att lägga till tio i båda leden."
     },
     {
-     "s": 828.94,
-     "e": 831.76,
-     "text": "Det gör vi genom att lägga till tio på båda sidor."
-    },
-    {
-     "s": 832.76,
-     "e": 835.14,
-     "text": "Minus tio plus tio är noll."
-    },
-    {
-     "s": 836.14,
-     "e": 840.5,
+     "s": 718.96,
+     "e": 723.5,
      "text": "Då står det två Y är lika med minus fem X plus tio."
     },
     {
-     "s": 841.8,
-     "e": 844.92,
-     "text": "Två Y är två stycken Y, men vi vill ha ett."
+     "s": 724.26,
+     "e": 726.16,
+     "text": "Två Y är två gånger Y."
     },
     {
-     "s": 845.92,
-     "e": 847.8,
-     "text": "Så vi delar båda sidor med två."
+     "s": 726.76,
+     "e": 730.02,
+     "text": "Gånger två tar vi bort genom att dela båda leden med två."
     },
     {
-     "s": 848.8,
-     "e": 852.22,
-     "text": "Minus fem delat med två är minus två komma fem."
+     "s": 730.8,
+     "e": 736.36,
+     "text": "Minus fem delat med två är minus två komma fem, och tio delat med två är fem."
     },
     {
-     "s": 853.22,
-     "e": 855.08,
-     "text": "Tio delat med två är fem."
+     "s": 737.02,
+     "e": 743.94,
+     "text": "Då står det Y är lika med minus två komma fem X plus fem, och K och M syns igen."
     },
     {
-     "s": 856.08,
-     "e": 860.62,
-     "text": "Då står det Y är lika med minus två komma fem X plus fem."
+     "s": 744.8,
+     "e": 746.92,
+     "text": "Nu går vi tillbaka till Earhart och Noonan."
     },
     {
-     "s": 861.92,
-     "e": 865.66,
+     "s": 749.42,
+     "e": 753.1,
      "text": "På fartyget vid Howland sitter en sjöman med hörlurar på sig."
     },
     {
-     "s": 866.66,
-     "e": 868.88,
+     "s": 753.58,
+     "e": 755.7,
      "text": "Han har lyssnat efter planet hela natten."
     },
     {
-     "s": 869.88,
-     "e": 874,
+     "s": 756.38,
+     "e": 760.46,
      "text": "Klockan sju och fyrtiotvå på morgonen hör han Earharts röst i radion."
     },
     {
-     "s": 875,
-     "e": 878.86,
+     "s": 761.12,
+     "e": 765.12,
      "text": "Hon säger att de borde vara precis över ön, men att de inte ser den."
     },
     {
-     "s": 879.86,
-     "e": 881.28,
+     "s": 765.8,
+     "e": 767.18,
      "text": "Bensinen börjar ta slut."
     },
     {
-     "s": 882.28,
-     "e": 886.22,
+     "s": 767.88,
+     "e": 771.66,
      "text": "Sjömannen vrider på ratten och svarar henne, om och om igen."
     },
     {
-     "s": 887.22,
-     "e": 888.26,
+     "s": 772.12,
+     "e": 773.26,
      "text": "Men hon hör honom inte."
     },
     {
-     "s": 889.56,
-     "e": 892.1,
+     "s": 774.18,
+     "e": 776.8,
      "text": "En timme senare kommer hennes sista meddelande."
     },
     {
-     "s": 893.1,
-     "e": 897.46,
+     "s": 777.28,
+     "e": 781.74,
      "text": "Hon säger att de flyger på linjen, fram och tillbaka mot norr och söder."
     },
     {
-     "s": 898.46,
-     "e": 902.2,
+     "s": 782.44,
+     "e": 786.04,
      "text": "Det är linjen genom ön, precis som Noonan hade planerat."
     },
     {
-     "s": 903.2,
-     "e": 904.74,
+     "s": 786.78,
+     "e": 788.5,
      "text": "Sedan hörs ingenting mer."
     },
     {
-     "s": 906.04,
-     "e": 909.6,
+     "s": 789.34,
+     "e": 792.98,
      "text": "Den amerikanska flottan letar efter planet i mer än två veckor,"
     },
     {
-     "s": 909.88,
-     "e": 910.88,
+     "s": 793.46,
+     "e": 794.7,
      "text": "men det hittas aldrig."
     },
     {
-     "s": 912.16,
-     "e": 913.28,
+     "s": 797.2,
+     "e": 798.26,
      "text": "Nu är det din tur."
     },
     {
-     "s": 914.28,
-     "e": 919.84,
+     "s": 798.56,
+     "e": 804.42,
      "text": "På samma karta flyger ett annat plan rakt från punkten där X är två och Y är ett,"
     },
     {
-     "s": 920.1,
-     "e": 922.86,
+     "s": 804.86,
+     "e": 807.68,
      "text": "till punkten där X är fem och Y är sju."
     },
     {
-     "s": 923.86,
-     "e": 927.54,
+     "s": 808.52,
+     "e": 811.44,
      "text": "Vilken ekvation har linjen som planet flyger på?"
     }
    ]
