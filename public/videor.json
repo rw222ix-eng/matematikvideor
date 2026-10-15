@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-15T16:11:36.159Z",
+ "byggd": "2026-10-15T17:16:47.647Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -44685,7 +44685,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-02-faktorisera-v6/ma2a-02-faktorisera-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-02-faktorisera-v7/ma2a-02-faktorisera-1080p.mp4",
    "moment": "Faktorisera med kvadrerings- och konjugatregeln",
    "begrepp": [
     "faktorisera",
@@ -44704,7 +44704,7 @@
    ],
    "beskrivning": "Eugène Carissan visade 1920 i Paris en vevad maskin som delade upp stora tal i faktorer. Vi faktoriserar genom att bryta ut den största gemensamma faktorn, och i enkla fall med konjugatregeln och kvadreringsregeln på formelbladet.",
    "youtube": null,
-   "langd": 711,
+   "langd": 839,
    "omslag": "omslag/ma2a-02-faktorisera.jpg?v=1b78faa4",
    "omslagRen": "omslag/ma2a-02-faktorisera-ren.jpg?v=49d32232",
    "omslagStor": null,
@@ -44718,140 +44718,144 @@
      "text": "Eugène har byggt maskinen tillsammans med sin storebror Pierre, som är mattelärare. I maskinens ringar sitter små stift av stål. Och maskinen ska dela upp stora tal i faktorer."
     },
     {
-     "t": 39,
-     "text": "Vad är en faktor? Tänk dig tolv stift på en bänk. Man kan lägga dem i tre rader, med fyra stift i varje rad. Räkna dem, så ser du att det blir tolv. Tolv är alltså tre gånger fyra. Tre och fyra kallas faktorer. Det är talen som tas gånger varandra. Och tre gånger fyra kallas en produkt. Att skriva ett tal som en produkt kallas att faktorisera."
+     "t": 38,
+     "text": "Vad är en faktor? Tänk dig tolv stift på en bänk. Man kan lägga dem i tre rader, med fyra stift i varje rad. Tolv är alltså tre gånger fyra. Tre och fyra kallas faktorer. Faktorer är talen som man tar gånger varandra. Och tre gånger fyra kallas en produkt. Att skriva ett tal som en produkt kallas att faktorisera."
     },
     {
-     "t": 70,
-     "text": "Tolv är lätt att faktorisera. Men ett tal med tio siffror är svårt. För hand måste man prova att dela talet med två, med tre, med fem och så vidare. Det kan bli tusentals försök. Därför har bröderna byggt maskinen."
+     "t": 67,
+     "text": "Tolv är lätt att faktorisera. Men ett tal med tio siffror är svårt att faktorisera. För hand måste man prova att dela talet med två, med tre, med fem och så vidare. Det kan bli tusentals försök. Därför har bröderna byggt maskinen."
     },
     {
-     "t": 89,
-     "text": "Eugène vevar, och fjorton ringar av metall snurrar. Han håller en telefonlur mot örat. När maskinen hittar ett tal som passar, hörs ett knäpp i luren. Så prövar maskinen trettiofem tal i sekunden."
+     "t": 86,
+     "text": "Eugène vevar, och fjorton ringar av metall snurrar. Han håller en telefonlur mot örat. När maskinen hittar ett tal som det stora talet går att dela med, utan att något blir över, hörs ett knäpp i luren. Maskinen hinner pröva trettiofem tal i sekunden."
     },
     {
      "t": 106,
      "text": "Men hur hittar man faktorer, när man inte har någon maskin?"
     },
     {
-     "t": 111,
-     "text": "Man gör som man gör för hand. Man letar efter ett tal som går att dela med. Vi tar stiften igen. Säg att Eugène har tolv stift i en hög och arton stift i en annan. Han lägger dem i rader, med sex stift i varje rad."
+     "t": 112,
+     "text": "Vi gör det för hand och letar efter ett tal som båda talen går att dela med. Vi tar stiften igen. Säg att Eugène har tolv stift i en hög och arton stift i en annan. Han lägger dem i rader, med sex stift i varje rad. Sex passar, för då blir inget stift över i någon av högarna."
     },
     {
-     "t": 129,
+     "t": 134,
      "text": "Hur många rader blir det av tolv stift? Två rader. Tolv är alltså sex gånger två. Och hur många rader blir det av arton stift? Tre rader. Arton är sex gånger tre."
     },
     {
-     "t": 145,
-     "text": "Hur många rader är det tillsammans? Två plus tre, alltså fem rader. Och i varje rad ligger sex stift. Så tolv plus arton är sex gånger fem."
+     "t": 149,
+     "text": "Nu skjuter vi ihop högarna. Hur många rader är det tillsammans? Två plus tre, alltså fem rader. Och i varje rad ligger sex stift. Så tolv plus arton är sex gånger fem."
     },
     {
-     "t": 160,
-     "text": "Det skriver vi så här. Sex gånger parentesen två plus tre. Parentesen betyder att vi räknar det som står inuti först. Sexan fanns i båda högarna. Nu står den framför parentesen. Och i parentesen står det som blev kvar. Det kallas att bryta ut sexan."
+     "t": 165,
+     "text": "Sex gånger fem kan vi också skriva så att båda högarna syns. Vi skriver sex gånger parentesen två plus tre. Parentesen betyder att vi räknar det som står inuti först. Sexan fanns i båda högarna. Nu står den framför parentesen. Och i parentesen står det som blev kvar, två rader och tre rader. Att flytta sexan framför parentesen kallas att bryta ut sexan."
     },
     {
-     "t": 183,
-     "text": "Stämmer det? Vi kollar. Sex gånger fem är trettio. Och tolv plus arton är också trettio. Aha... sexan är en faktor i trettio. Vi har faktoriserat, och utan någon maskin."
+     "t": 195,
+     "text": "Vi kontrollerar svaret, alltså ser efter om det stämmer. Sex gånger fem är trettio. Och tolv plus arton är också trettio. Så sexan är en faktor i trettio. Vi har faktoriserat, och utan någon maskin."
     },
     {
-     "t": 202,
-     "text": "Samma sak går att göra med bokstäver. En bokstav står för ett tal som vi inte vet. Ta fem X plus femton. Det har två delar, med plus emellan. Delarna kallas termer."
+     "t": 213,
+     "text": "Att bryta ut går också när det står bokstäver. En bokstav står för ett tal som vi inte vet. Ta fem X plus femton. Uttrycket har två delar, med plus emellan. Delarna kallas termer."
     },
     {
-     "t": 218,
-     "text": "Vad finns i båda termerna? Fem X betyder fem gånger X. Och femton är fem gånger tre. Så femman finns i båda. Då kan vi bryta ut femman."
+     "t": 229,
+     "text": "Vad finns i båda termerna? Fem X betyder fem gånger X. Och femton är fem gånger tre. Så femman finns i båda termerna. Då kan vi bryta ut femman."
     },
     {
-     "t": 233,
-     "text": "Vad blir kvar av fem X, när femman är borta? Bara X. Och vad blir kvar av femton? Tre. Svaret är fem gånger parentesen X plus tre."
+     "t": 243,
+     "text": "Vad blir kvar av fem X, när femman är borta? Bara X. Och vad blir kvar av femton? Tre. Svaret är fem gånger parentesen X plus tre. Man kan se det på det här sättet. Säg att X är antalet stift på en av maskinens ringar. Då blir det fem rader, och i varje rad ligger en ring och tre lösa stift."
     },
     {
-     "t": 247,
-     "text": "Vi kollar med ett tal. Säg att X är två. Fem gånger två är tio, och tio plus femton är tjugofem. I svaret blir parentesen två plus tre, alltså fem. Fem gånger fem är också tjugofem. Det stämmer."
+     "t": 269,
+     "text": "Vi kontrollerar med ett tal. Säg att X är två. Fem gånger två är tio, och tio plus femton är tjugofem. I svaret blir parentesen två plus tre, alltså fem. Fem gånger fem är också tjugofem. Svaret stämmer."
     },
     {
-     "t": 266,
-     "text": "En bokstav kan också brytas ut. Ta X i kvadrat plus fyra X. Vad betyder X i kvadrat? Det betyder X gånger X. Och fyra X är fyra gånger X. Så ett X finns i båda termerna."
+     "t": 287,
+     "text": "Hittills har vi brutit ut ett tal. Men en bokstav kan också brytas ut. Ta X i kvadrat plus fyra X. Vad betyder X i kvadrat? Det betyder X gånger X. Och fyra X är fyra gånger X. Så ett X finns i båda termerna."
     },
     {
-     "t": 285,
+     "t": 308,
      "text": "Vi bryter ut X. Vad blir kvar av X gånger X? Ett X. Vad blir kvar av fyra gånger X? Fyra. Svaret är X gånger parentesen X plus fyra."
     },
     {
-     "t": 300,
-     "text": "Ibland kan man bryta ut både ett tal och en bokstav. Ta tre X plus nio X i kvadrat. Vi skriver ut allt som tas gånger i varje term. Tre X är tre gånger X. Nio är tre gånger tre. Så nio X i kvadrat är tre gånger tre gånger X gånger X."
+     "t": 323,
+     "text": "Ibland kan man bryta ut både ett tal och en bokstav. Ta tre X plus nio X i kvadrat. För att se vad som finns i båda termerna, skriver vi ut allt som tas gånger. Tre X är tre gånger X. Nio är tre gånger tre. Så nio X i kvadrat är tre gånger tre gånger X gånger X."
     },
     {
-     "t": 324,
-     "text": "Vad finns i båda termerna? En trea finns i båda. Ett X finns också i båda. Så vi bryter ut tre X. Vi tar med allt som finns i båda, för man vill bryta ut så mycket som möjligt. Det kallas den största gemensamma faktorn. Gemensam betyder att den finns i alla termer."
+     "t": 348,
+     "text": "Vad finns i båda termerna? En trea finns i båda. Ett X finns också i båda. Så vi bryter ut tre X. Vi tar med allt som finns i båda termerna, för man vill bryta ut så mycket som möjligt. Tre X kallas den största gemensamma faktorn. Gemensam betyder att den finns i alla termer."
     },
     {
-     "t": 347,
-     "text": "Vad blir kvar av tre X? Där tar vi bort allt. Men tre X är ju tre X gånger ett. Så kvar blir ett. Och vad blir kvar av nio X i kvadrat? Vi tar bort en trea och ett X. Kvar blir tre gånger X, alltså tre X. Svaret är tre X gånger parentesen ett plus tre X."
+     "t": 371,
+     "text": "Vad blir kvar av tre X, när vi bryter ut tre X? Det är lätt att tro att inget blir kvar. Men tre X är ju tre X gånger ett. Så kvar blir ett. Om vi går tillbaka till stiften, så ser vi varför. Lägger vi tolv stift i rader med tolv i varje, blir det en rad, inte noll rader. Och vad blir kvar av nio X i kvadrat? Vi tar bort en trea och ett X. Kvar blir tre gånger X, alltså tre X. Svaret är tre X gånger parentesen ett plus tre X."
     },
     {
-     "t": 373,
-     "text": "Vi kollar åt andra hållet. Vi tar tre X gånger varje term i parentesen. Tre X gånger ett är tre X. Sen tre X gånger tre X. Tre gånger tre är nio, och X gånger X är X i kvadrat. Det blir nio X i kvadrat. Vi fick tillbaka det vi började med, så svaret stämmer."
+     "t": 409,
+     "text": "Nu kontrollerar vi svaret åt andra hållet. Vi multiplicerar tre X med varje term i parentesen. Tre X gånger ett är tre X. Sen tre X gånger tre X. Tre gånger tre är nio, och X gånger X är X i kvadrat. Tillsammans blir det nio X i kvadrat. Vi fick tillbaka tre X plus nio X i kvadrat, som vi började med. Att multiplicera in i parentesen är alltså tvärtom mot att bryta ut."
     },
     {
-     "t": 399,
-     "text": "Ibland finns det ingen gemensam faktor att bryta ut. Då kan formelbladet hjälpa. Där står konjugatregeln. Parentesen a plus b gånger parentesen a minus b är lika med a i kvadrat minus b i kvadrat. Vi läser den baklänges, från höger till vänster."
+     "t": 442,
+     "text": "En elev bryter bara ut trean och skriver tre gånger parentesen X plus tre X i kvadrat. Har eleven rätt? Det är inte fel räknat, men eleven är inte klar. X finns ju kvar i båda termerna i parentesen. Eleven måste bryta ut X också, alltså tre X."
     },
     {
-     "t": 421,
+     "t": 466,
+     "text": "Ibland finns det ingen gemensam faktor att bryta ut. Då kan formelbladet hjälpa. Där står konjugatregeln. Parentesen a plus b gånger parentesen a minus b är lika med a i kvadrat minus b i kvadrat. Vi läser den baklänges, från höger till vänster, för vi vill få en produkt."
+    },
+    {
+     "t": 489,
      "text": "Vad betyder a i kvadrat? Det är något gånger sig självt. Och b i kvadrat är något annat gånger sig självt. Så regeln passar när det står en kvadrat, minus en annan kvadrat."
     },
     {
-     "t": 436,
-     "text": "Ta X i kvadrat minus tjugofem. Vi skriver regeln ovanför, a i kvadrat minus b i kvadrat. Under a i kvadrat står X i kvadrat. Det är X gånger X, så a är X. Under b i kvadrat står tjugofem. Det är fem gånger fem, så b är fem."
+     "t": 503,
+     "text": "Ta X i kvadrat minus tjugofem. Vi skriver regeln ovanför, a i kvadrat minus b i kvadrat. Under a i kvadrat står X i kvadrat. X i kvadrat är X gånger X, så a är X. Under b i kvadrat står tjugofem. Vilket tal gånger sig självt blir tjugofem? Tjugofem stift kan ligga i fem rader med fem i varje. Tjugofem är fem gånger fem, så b är fem."
     },
     {
-     "t": 459,
-     "text": "Nu den andra sidan av regeln. Där står parentesen a plus b gånger parentesen a minus b. Vi sätter in X för a och fem för b. Så X i kvadrat minus tjugofem är parentesen X plus fem gånger parentesen X minus fem."
+     "t": 537,
+     "text": "Nu vet vi vad a och b är, så vi går till den andra sidan av regeln. Där står parentesen a plus b gånger parentesen a minus b. Vi sätter in X för a och fem för b. Så X i kvadrat minus tjugofem är parentesen X plus fem gånger parentesen X minus fem."
     },
     {
-     "t": 480,
-     "text": "Vi kollar med ett tal. Säg att X är tio. Tio i kvadrat är hundra, och hundra minus tjugofem är sjuttiofem. I parenteserna står tio plus fem, alltså femton, och tio minus fem, alltså fem. Femton gånger fem är också sjuttiofem."
+     "t": 559,
+     "text": "Vi kontrollerar med ett tal. Säg att X är tio. Tio i kvadrat är hundra, och hundra minus tjugofem är sjuttiofem. I parenteserna står tio plus fem, alltså femton, och tio minus fem, alltså fem. Femton gånger fem tar vi i två steg. Tio gånger fem är femtio, och fem gånger fem är tjugofem. Femtio plus tjugofem är sjuttiofem. Vad nice, båda sidorna blir sjuttiofem."
     },
     {
-     "t": 500,
-     "text": "På formelbladet står också kvadreringsreglerna. Den första säger att parentesen a plus b i kvadrat är lika med a i kvadrat plus två a b plus b i kvadrat. Det är tre delar. a i kvadrat är a gånger a. Två a b betyder två gånger a gånger b. Och b i kvadrat är b gånger b."
+     "t": 591,
+     "text": "Konjugatregeln passar bara när det står en kvadrat minus en annan kvadrat. Står det tre termer, kan kvadreringsreglerna hjälpa. De står också på formelbladet. Den första säger att parentesen a plus b i kvadrat är lika med a i kvadrat plus två a b plus b i kvadrat. Två a b i mitten betyder två gånger a gånger b."
     },
     {
-     "t": 526,
+     "t": 618,
      "text": "Ta X i kvadrat plus sex X plus nio. Vi skriver regeln ovanför, a i kvadrat plus två a b plus b i kvadrat. Under a i kvadrat står X i kvadrat, så a är X. Under b i kvadrat står nio. Nio är tre gånger tre, så b är tre."
     },
     {
-     "t": 550,
-     "text": "Men i mitten står två a b. Stämmer den här? Vi sätter in X för a och tre för b. Då blir det två gånger X gånger tre. Två gånger tre är sex, så det blir sex X. Och det står sex X i mitten, ser du? Allt passar."
+     "t": 641,
+     "text": "Men regeln passar bara om mitten också stämmer. I mitten står två a b. Stämmer mitten här? Vi sätter in X för a och tre för b. Då blir det två gånger X gånger tre. Två gånger tre är sex, så det blir sex X. Och som vi ser står det sex X i mitten. Alla tre termerna passar, så vi kan använda regeln."
     },
     {
-     "t": 571,
-     "text": "Nu den andra sidan av regeln. Där står parentesen a plus b i kvadrat. Vi sätter in X för a och tre för b. Så X i kvadrat plus sex X plus nio är parentesen X plus tre i kvadrat. Vi kollar med X lika med ett. Ett plus sex plus nio är sexton. Och parentesen ett plus tre är fyra. Fyra i kvadrat är också sexton."
+     "t": 669,
+     "text": "Nu kan vi gå till den andra sidan av regeln. Där står parentesen a plus b i kvadrat. Vi sätter in X för a och tre för b. Så X i kvadrat plus sex X plus nio är parentesen X plus tre i kvadrat. Vi kontrollerar med X lika med ett. Då är X i kvadrat ett, och sex X är sex. Ett plus sex plus nio är sexton. Och parentesen ett plus tre är fyra. Fyra i kvadrat är fyra gånger fyra, alltså också sexton."
     },
     {
-     "t": 601,
-     "text": "Okej, nu ett övningstal. Faktorisera åtta X minus tolv. Vad finns i båda termerna? Åtta är fyra gånger två. Tolv är fyra gånger tre. Så fyran finns i båda."
+     "t": 708,
+     "text": "Okej, nu ett övningstal där vi bryter ut igen. Faktorisera åtta X minus tolv. Vad finns i båda termerna? Åtta X är fyra gånger två gånger X. Tolv är fyra gånger tre. Så fyran finns i båda. X finns bara i den första termen, så X bryter vi inte ut."
     },
     {
-     "t": 619,
-     "text": "Tvåan finns också i båda, men fyran är större. Och vi vill bryta ut så mycket som möjligt. Så vi bryter ut fyran. Kvar av åtta X är två X. Kvar av tolv är tre. Minustecknet står kvar mellan dem. Svaret är fyra gånger parentesen två X minus tre."
+     "t": 733,
+     "text": "Tvåan finns också i båda, men fyran är större. Och vi vill bryta ut så mycket som möjligt. Så vi bryter ut fyran. Kvar av åtta X är två X. Kvar av tolv är tre. Nu får vi inte glömma minustecknet. Det står kvar mellan termerna. Svaret är fyra gånger parentesen två X minus tre. Nu går vi tillbaka till maskinen."
     },
     {
-     "t": 643,
+     "t": 763,
      "text": "Pierre dog år nittonhundratjugotre, och Eugène år nittonhundratjugofem. Sen gav familjen maskinen till en stjärnforskare på ett observatorium nära Bordeaux. Där lades den i en låda. Och sen glömdes den bort i ungefär femtio år."
     },
     {
-     "t": 661,
+     "t": 781,
      "text": "År nittonhundraåttionio läste en forskare i Kanada en gammal tidskrift från nittonhundratjugo. Där hade Eugène skrivit om maskinen. Forskaren ville veta om maskinen fanns kvar. Men ingen visste var den var."
     },
     {
-     "t": 677,
+     "t": 797,
      "text": "Han tänkte att någon släkting till bröderna kanske visste. Därför skrev han ett brev till varje person i Frankrike som hette Carissan. En av Eugènes döttrar hörde av sig. Och tack vare henne hittade man maskinen i lådan. I dag står den på ett teknikmuseum i Paris."
     },
     {
-     "t": 697,
-     "text": "Nu är det din tur. Faktorisera nio X i kvadrat plus arton X. Leta efter det största tal och den bokstav som finns i båda termerna, och bryt ut dem."
+     "t": 819,
+     "text": "Nu är det din tur. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vad är den största gemensamma faktorn i nio X i kvadrat plus arton X? Sen: Faktorisera nio X i kvadrat plus arton X."
     }
    ],
    "kapitel": [
@@ -44861,41 +44865,76 @@
      "typ": "historia"
     },
     {
-     "t": 111,
+     "t": 112,
      "rubrik": "Bryta ut ett tal",
      "typ": "matte"
     },
     {
-     "t": 202,
+     "t": 213,
      "rubrik": "Bryta ut ur uttryck",
      "typ": "matte"
     },
     {
-     "t": 300,
+     "t": 323,
      "rubrik": "Största gemensamma faktorn",
      "typ": "matte"
     },
     {
-     "t": 399,
+     "t": 466,
      "rubrik": "Konjugat- och kvadreringsregeln",
      "typ": "matte"
     },
     {
-     "t": 643,
+     "t": 763,
      "rubrik": "Maskinen som försvann och hittades",
      "typ": "historia"
     },
     {
-     "t": 697,
+     "t": 819,
      "rubrik": "Bryt ut ur 9x² + 18x",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "fraga": "Nu är det din tur.",
+    "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vad är den största gemensamma faktorn i 9x² + 18x?",
+     "Sen: Faktorisera 9x² + 18x."
+    ],
     "delar": [
      {
-      "fraga": "Faktorisera 9x² + 18x.",
+      "fraga": "Först: Vad är den största gemensamma faktorn i 9x² + 18x?",
+      "typ": "uttryck",
+      "svar": "9x",
+      "variabler": [
+       "x"
+      ],
+      "exempel": "t.ex. 3x",
+      "fel": [
+       {
+        "svar": "3x",
+        "text": "3x finns i båda termerna, men det går att ta mer. Vilket är det största tal som både 9 och 18 kan delas med?"
+       },
+       {
+        "svar": "9",
+        "text": "9 finns i båda termerna. Men x finns också i båda, så ta med x."
+       },
+       {
+        "svar": "x",
+        "text": "x finns i båda termerna. Men 9 finns också i båda, så ta med 9."
+       },
+       {
+        "svar": "3",
+        "text": "3 finns i båda termerna, men det går att ta mer. Både 9 och 18 kan delas med 9, och x finns i båda."
+       },
+       {
+        "svar": "9x^2",
+        "text": "9x² finns bara i den första termen. 18x har bara ett x."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Faktorisera 9x² + 18x.",
       "typ": "uttryck",
       "svar": "9x^2 + 18x",
       "visa": "9x² + 18x",
@@ -44910,7 +44949,7 @@
     ],
     "ledtrad": {
      "text": "Gör som med 3x + 9x² i filmen. Vilket är det största tal som både 9 och 18 kan delas med? Finns x i båda termerna?",
-     "t": 300
+     "t": 323
     },
     "losning": [
      "9 och 18 kan båda delas med 9.",
@@ -44920,948 +44959,1068 @@
      "9x² + 18x = 9x(x + 2)",
      "Kontroll: 9x · x = 9x² och 9x · 2 = 18x."
     ],
-    "notisFran": 399
+    "notisFran": 466
    },
    "undertext": [
     {
      "s": 9.5,
-     "e": 12.98,
+     "e": 13,
      "text": "Det är år nittonhundratjugo, och vi är i Paris."
     },
     {
-     "s": 13.98,
-     "e": 17.1,
+     "s": 13.8,
+     "e": 16.96,
      "text": "Eugène Carissan är officer i den franska armén."
     },
     {
-     "s": 18.1,
-     "e": 20,
+     "s": 17.76,
+     "e": 19.7,
      "text": "Han sitter vid en maskin av mässing."
     },
     {
-     "s": 21,
-     "e": 24.22,
+     "s": 20.5,
+     "e": 23.9,
      "text": "Snart ska han visa den på en utställning av räknemaskiner."
     },
     {
-     "s": 25.52,
-     "e": 28.8,
+     "s": 25,
+     "e": 28.42,
      "text": "Eugène har byggt maskinen tillsammans med sin storebror Pierre,"
     },
     {
-     "s": 28.94,
-     "e": 29.94,
+     "s": 28.7,
+     "e": 29.72,
      "text": "som är mattelärare."
     },
     {
-     "s": 30.94,
-     "e": 33.88,
+     "s": 30.68,
+     "e": 33.8,
      "text": "I maskinens ringar sitter små stift av stål."
     },
     {
-     "s": 34.88,
-     "e": 37.98,
+     "s": 34.6,
+     "e": 37.82,
      "text": "Och maskinen ska dela upp stora tal i faktorer."
     },
     {
-     "s": 39.28,
-     "e": 40.44,
+     "s": 38.92,
+     "e": 40,
      "text": "Vad är en faktor?"
     },
     {
-     "s": 41.44,
-     "e": 43.48,
+     "s": 41.02,
+     "e": 43.1,
      "text": "Tänk dig tolv stift på en bänk."
     },
     {
-     "s": 44.48,
-     "e": 48.24,
+     "s": 43.9,
+     "e": 47.96,
      "text": "Man kan lägga dem i tre rader, med fyra stift i varje rad."
     },
     {
-     "s": 49.24,
-     "e": 51.34,
-     "text": "Räkna dem, så ser du att det blir tolv."
-    },
-    {
-     "s": 52.34,
-     "e": 54.76,
+     "s": 48.76,
+     "e": 51.4,
      "text": "Tolv är alltså tre gånger fyra."
     },
     {
-     "s": 55.76,
-     "e": 58.02,
+     "s": 52.2,
+     "e": 54.44,
      "text": "Tre och fyra kallas faktorer."
     },
     {
-     "s": 59.02,
-     "e": 61.14,
-     "text": "Det är talen som tas gånger varandra."
+     "s": 55.44,
+     "e": 58.34,
+     "text": "Faktorer är talen som man tar gånger varandra."
     },
     {
-     "s": 62.14,
-     "e": 64.62,
+     "s": 59.14,
+     "e": 61.84,
      "text": "Och tre gånger fyra kallas en produkt."
     },
     {
-     "s": 65.62,
-     "e": 69.44,
+     "s": 62.64,
+     "e": 66.34,
      "text": "Att skriva ett tal som en produkt kallas att faktorisera."
     },
     {
-     "s": 70.74,
-     "e": 72.52,
+     "s": 67.44,
+     "e": 69.32,
      "text": "Tolv är lätt att faktorisera."
     },
     {
-     "s": 73.52,
-     "e": 76.08,
-     "text": "Men ett tal med tio siffror är svårt."
+     "s": 70.12,
+     "e": 73.44,
+     "text": "Men ett tal med tio siffror är svårt att faktorisera."
     },
     {
-     "s": 77.08,
-     "e": 82.4,
+     "s": 74.24,
+     "e": 79.9,
      "text": "För hand måste man prova att dela talet med två, med tre, med fem och så vidare."
     },
     {
-     "s": 83.4,
-     "e": 85.32,
+     "s": 80.7,
+     "e": 82.64,
      "text": "Det kan bli tusentals försök."
     },
     {
-     "s": 86.32,
-     "e": 88.38,
+     "s": 83.44,
+     "e": 85.72,
      "text": "Därför har bröderna byggt maskinen."
     },
     {
-     "s": 89.68,
-     "e": 93.4,
+     "s": 86.82,
+     "e": 90.54,
      "text": "Eugène vevar, och fjorton ringar av metall snurrar."
     },
     {
-     "s": 94.4,
-     "e": 96.38,
+     "s": 91.34,
+     "e": 93.3,
      "text": "Han håller en telefonlur mot örat."
     },
     {
-     "s": 97.38,
-     "e": 101.06,
-     "text": "När maskinen hittar ett tal som passar, hörs ett knäpp i luren."
+     "s": 94.1,
+     "e": 97.54,
+     "text": "När maskinen hittar ett tal som det stora talet går att dela med,"
     },
     {
-     "s": 102.06,
+     "s": 97.94,
+     "e": 101.1,
+     "text": "utan att något blir över, hörs ett knäpp i luren."
+    },
+    {
+     "s": 101.9,
      "e": 105.12,
-     "text": "Så prövar maskinen trettiofem tal i sekunden."
+     "text": "Maskinen hinner pröva trettiofem tal i sekunden."
     },
     {
-     "s": 106.42,
-     "e": 109.78,
+     "s": 106.22,
+     "e": 109.86,
      "text": "Men hur hittar man faktorer, när man inte har någon maskin?"
     },
     {
-     "s": 111.08,
-     "e": 112.58,
-     "text": "Man gör som man gör för hand."
+     "s": 112.36,
+     "e": 116.94,
+     "text": "Vi gör det för hand och letar efter ett tal som båda talen går att dela med."
     },
     {
-     "s": 113.58,
-     "e": 116.22,
-     "text": "Man letar efter ett tal som går att dela med."
-    },
-    {
-     "s": 117.22,
-     "e": 118.22,
+     "s": 117.74,
+     "e": 118.9,
      "text": "Vi tar stiften igen."
     },
     {
-     "s": 119.22,
-     "e": 123.8,
+     "s": 119.74,
+     "e": 124.38,
      "text": "Säg att Eugène har tolv stift i en hög och arton stift i en annan."
     },
     {
-     "s": 124.8,
-     "e": 128.02,
+     "s": 125.18,
+     "e": 128.58,
      "text": "Han lägger dem i rader, med sex stift i varje rad."
     },
     {
-     "s": 129.32,
-     "e": 133.38,
+     "s": 129.38,
+     "e": 133.2,
+     "text": "Sex passar, för då blir inget stift över i någon av högarna."
+    },
+    {
+     "s": 134.3,
+     "e": 138,
      "text": "Hur många rader blir det av tolv stift? Två rader."
     },
     {
-     "s": 134.38,
-     "e": 136.68,
+     "s": 138.8,
+     "e": 141.24,
      "text": "Tolv är alltså sex gånger två."
     },
     {
-     "s": 137.68,
-     "e": 141.68,
+     "s": 142.04,
+     "e": 145.9,
      "text": "Och hur många rader blir det av arton stift? Tre rader."
     },
     {
-     "s": 142.68,
-     "e": 144.56,
+     "s": 146.7,
+     "e": 148.66,
      "text": "Arton är sex gånger tre."
     },
     {
-     "s": 145.86,
-     "e": 147.44,
+     "s": 149.76,
+     "e": 151.26,
+     "text": "Nu skjuter vi ihop högarna."
+    },
+    {
+     "s": 152.06,
+     "e": 153.66,
      "text": "Hur många rader är det tillsammans?"
     },
     {
-     "s": 148.44,
-     "e": 151.28,
+     "s": 154.46,
+     "e": 157.22,
      "text": "Två plus tre, alltså fem rader."
     },
     {
-     "s": 152.28,
-     "e": 154.68,
+     "s": 158.02,
+     "e": 160.28,
      "text": "Och i varje rad ligger sex stift."
     },
     {
-     "s": 155.68,
-     "e": 158.8,
+     "s": 161.08,
+     "e": 164.32,
      "text": "Så tolv plus arton är sex gånger fem."
     },
     {
-     "s": 160.1,
-     "e": 161.1,
-     "text": "Det skriver vi så här."
+     "s": 165.42,
+     "e": 169.3,
+     "text": "Sex gånger fem kan vi också skriva så att båda högarna syns."
     },
     {
-     "s": 162.06,
-     "e": 165.52,
-     "text": "Sex gånger parentesen två plus tre."
+     "s": 170.1,
+     "e": 174.32,
+     "text": "Vi skriver sex gånger parentesen två plus tre."
     },
     {
-     "s": 166.52,
-     "e": 170.22,
+     "s": 175.12,
+     "e": 178.9,
      "text": "Parentesen betyder att vi räknar det som står inuti först."
     },
     {
-     "s": 171.22,
-     "e": 173.12,
+     "s": 179.7,
+     "e": 181.54,
      "text": "Sexan fanns i båda högarna."
     },
     {
-     "s": 174.12,
-     "e": 175.94,
+     "s": 182.34,
+     "e": 184.14,
      "text": "Nu står den framför parentesen."
     },
     {
-     "s": 176.94,
-     "e": 179.3,
-     "text": "Och i parentesen står det som blev kvar."
+     "s": 184.94,
+     "e": 189.4,
+     "text": "Och i parentesen står det som blev kvar, två rader och tre rader."
     },
     {
-     "s": 180.3,
-     "e": 182.58,
-     "text": "Det kallas att bryta ut sexan."
+     "s": 190.2,
+     "e": 194.84,
+     "text": "Att flytta sexan framför parentesen kallas att bryta ut sexan."
     },
     {
-     "s": 183.88,
-     "e": 185.72,
-     "text": "Stämmer det? Vi kollar."
+     "s": 195.94,
+     "e": 199.1,
+     "text": "Vi kontrollerar svaret, alltså ser efter om det stämmer."
     },
     {
-     "s": 186.72,
-     "e": 188.52,
+     "s": 199.9,
+     "e": 201.6,
      "text": "Sex gånger fem är trettio."
     },
     {
-     "s": 189.52,
-     "e": 193.5,
-     "text": "Och tolv plus arton är också trettio. Aha..."
+     "s": 202.4,
+     "e": 204.88,
+     "text": "Och tolv plus arton är också trettio."
     },
     {
-     "s": 194.5,
-     "e": 196.84,
-     "text": "sexan är en faktor i trettio."
+     "s": 205.68,
+     "e": 208.06,
+     "text": "Så sexan är en faktor i trettio."
     },
     {
-     "s": 197.84,
-     "e": 201.04,
+     "s": 208.86,
+     "e": 212.1,
      "text": "Vi har faktoriserat, och utan någon maskin."
     },
     {
-     "s": 202.34,
-     "e": 204.36,
-     "text": "Samma sak går att göra med bokstäver."
+     "s": 213.2,
+     "e": 216.1,
+     "text": "Att bryta ut går också när det står bokstäver."
     },
     {
-     "s": 205.36,
-     "e": 208.1,
+     "s": 216.9,
+     "e": 219.7,
      "text": "En bokstav står för ett tal som vi inte vet."
     },
     {
-     "s": 209.1,
-     "e": 211.26,
+     "s": 220.5,
+     "e": 222.42,
      "text": "Ta fem X plus femton."
     },
     {
-     "s": 212.26,
-     "e": 214.74,
-     "text": "Det har två delar, med plus emellan."
+     "s": 223.22,
+     "e": 226,
+     "text": "Uttrycket har två delar, med plus emellan."
     },
     {
-     "s": 215.74,
-     "e": 217.42,
+     "s": 226.8,
+     "e": 228.3,
      "text": "Delarna kallas termer."
     },
     {
-     "s": 218.72,
-     "e": 220.2,
+     "s": 229.4,
+     "e": 230.86,
      "text": "Vad finns i båda termerna?"
     },
     {
-     "s": 221.2,
-     "e": 224.1,
+     "s": 231.66,
+     "e": 234.36,
      "text": "Fem X betyder fem gånger X."
     },
     {
-     "s": 225.1,
-     "e": 227.42,
+     "s": 235.16,
+     "e": 237.16,
      "text": "Och femton är fem gånger tre."
     },
     {
-     "s": 228.42,
-     "e": 230,
-     "text": "Så femman finns i båda."
+     "s": 237.96,
+     "e": 240.22,
+     "text": "Så femman finns i båda termerna."
     },
     {
-     "s": 231,
-     "e": 232.38,
+     "s": 241.02,
+     "e": 242.32,
      "text": "Då kan vi bryta ut femman."
     },
     {
-     "s": 233.68,
-     "e": 238.28,
+     "s": 243.42,
+     "e": 247.78,
      "text": "Vad blir kvar av fem X, när femman är borta? Bara X."
     },
     {
-     "s": 239.28,
-     "e": 242.12,
+     "s": 248.58,
+     "e": 251.04,
      "text": "Och vad blir kvar av femton? Tre."
     },
     {
-     "s": 243.12,
-     "e": 246.66,
+     "s": 251.84,
+     "e": 255.8,
      "text": "Svaret är fem gånger parentesen X plus tre."
     },
     {
-     "s": 247.96,
-     "e": 248.96,
-     "text": "Vi kollar med ett tal."
+     "s": 256.6,
+     "e": 257.96,
+     "text": "Man kan se det på det här sättet."
     },
     {
-     "s": 249.88,
-     "e": 251.08,
+     "s": 258.76,
+     "e": 262.2,
+     "text": "Säg att X är antalet stift på en av maskinens ringar."
+    },
+    {
+     "s": 263,
+     "e": 268.16,
+     "text": "Då blir det fem rader, och i varje rad ligger en ring och tre lösa stift."
+    },
+    {
+     "s": 269.26,
+     "e": 270.7,
+     "text": "Vi kontrollerar med ett tal."
+    },
+    {
+     "s": 271.5,
+     "e": 272.62,
      "text": "Säg att X är två."
     },
     {
-     "s": 252.08,
-     "e": 255.92,
+     "s": 273.42,
+     "e": 277.7,
      "text": "Fem gånger två är tio, och tio plus femton är tjugofem."
     },
     {
-     "s": 256.92,
-     "e": 260.56,
+     "s": 278.5,
+     "e": 282.5,
      "text": "I svaret blir parentesen två plus tre, alltså fem."
     },
     {
-     "s": 261.56,
-     "e": 264.96,
-     "text": "Fem gånger fem är också tjugofem. Det stämmer."
+     "s": 283.3,
+     "e": 286.74,
+     "text": "Fem gånger fem är också tjugofem. Svaret stämmer."
     },
     {
-     "s": 266.26,
-     "e": 268.12,
-     "text": "En bokstav kan också brytas ut."
+     "s": 287.84,
+     "e": 289.78,
+     "text": "Hittills har vi brutit ut ett tal."
     },
     {
-     "s": 269.12,
-     "e": 271.7,
+     "s": 290.58,
+     "e": 292.6,
+     "text": "Men en bokstav kan också brytas ut."
+    },
+    {
+     "s": 293.4,
+     "e": 295.94,
      "text": "Ta X i kvadrat plus fyra X."
     },
     {
-     "s": 272.7,
-     "e": 274.32,
+     "s": 296.74,
+     "e": 298.48,
      "text": "Vad betyder X i kvadrat?"
     },
     {
-     "s": 275.32,
-     "e": 277.34,
+     "s": 299.28,
+     "e": 301.44,
      "text": "Det betyder X gånger X."
     },
     {
-     "s": 278.34,
-     "e": 280.54,
+     "s": 302.24,
+     "e": 304.62,
      "text": "Och fyra X är fyra gånger X."
     },
     {
-     "s": 281.54,
-     "e": 283.76,
+     "s": 305.42,
+     "e": 307.72,
      "text": "Så ett X finns i båda termerna."
     },
     {
-     "s": 285.06,
-     "e": 286.16,
+     "s": 308.82,
+     "e": 309.82,
      "text": "Vi bryter ut X."
     },
     {
-     "s": 287.16,
-     "e": 290.7,
+     "s": 310.58,
+     "e": 313.86,
      "text": "Vad blir kvar av X gånger X? Ett X."
     },
     {
-     "s": 291.7,
-     "e": 294.94,
+     "s": 314.66,
+     "e": 317.52,
      "text": "Vad blir kvar av fyra gånger X? Fyra."
     },
     {
-     "s": 295.94,
-     "e": 299.62,
+     "s": 318.32,
+     "e": 322.24,
      "text": "Svaret är X gånger parentesen X plus fyra."
     },
     {
-     "s": 300.92,
-     "e": 303.9,
+     "s": 323.34,
+     "e": 326.64,
      "text": "Ibland kan man bryta ut både ett tal och en bokstav."
     },
     {
-     "s": 304.9,
-     "e": 307.82,
+     "s": 327.44,
+     "e": 330.5,
      "text": "Ta tre X plus nio X i kvadrat."
     },
     {
-     "s": 308.82,
-     "e": 311.66,
-     "text": "Vi skriver ut allt som tas gånger i varje term."
+     "s": 331.3,
+     "e": 335.5,
+     "text": "För att se vad som finns i båda termerna, skriver vi ut allt som tas gånger."
     },
     {
-     "s": 312.66,
-     "e": 314.66,
+     "s": 336.3,
+     "e": 338.48,
      "text": "Tre X är tre gånger X."
     },
     {
-     "s": 315.66,
-     "e": 317.26,
+     "s": 339.28,
+     "e": 341.04,
      "text": "Nio är tre gånger tre."
     },
     {
-     "s": 318.26,
-     "e": 322.9,
+     "s": 341.84,
+     "e": 347.22,
      "text": "Så nio X i kvadrat är tre gånger tre gånger X gånger X."
     },
     {
-     "s": 324.2,
-     "e": 325.64,
+     "s": 348.32,
+     "e": 349.76,
      "text": "Vad finns i båda termerna?"
     },
     {
-     "s": 326.64,
-     "e": 327.94,
+     "s": 350.56,
+     "e": 352.12,
      "text": "En trea finns i båda."
     },
     {
-     "s": 328.94,
-     "e": 330.46,
+     "s": 352.92,
+     "e": 354.48,
      "text": "Ett X finns också i båda."
     },
     {
-     "s": 331.46,
-     "e": 333.04,
+     "s": 355.28,
+     "e": 356.84,
      "text": "Så vi bryter ut tre X."
     },
     {
-     "s": 334.04,
-     "e": 338.3,
-     "text": "Vi tar med allt som finns i båda, för man vill bryta ut så mycket som möjligt."
+     "s": 357.64,
+     "e": 362.26,
+     "text": "Vi tar med allt som finns i båda termerna, för man vill bryta ut så mycket som möjligt."
     },
     {
-     "s": 339.3,
-     "e": 341.9,
-     "text": "Det kallas den största gemensamma faktorn."
+     "s": 363.06,
+     "e": 366.4,
+     "text": "Tre X kallas den största gemensamma faktorn."
     },
     {
-     "s": 342.9,
-     "e": 345.7,
+     "s": 367.2,
+     "e": 370.06,
      "text": "Gemensam betyder att den finns i alla termer."
     },
     {
-     "s": 347,
-     "e": 348.6,
-     "text": "Vad blir kvar av tre X?"
+     "s": 371.16,
+     "e": 374.42,
+     "text": "Vad blir kvar av tre X, när vi bryter ut tre X?"
     },
     {
-     "s": 349.6,
-     "e": 350.7,
-     "text": "Där tar vi bort allt."
+     "s": 375.22,
+     "e": 377.12,
+     "text": "Det är lätt att tro att inget blir kvar."
     },
     {
-     "s": 351.7,
-     "e": 354.38,
+     "s": 377.92,
+     "e": 381.02,
      "text": "Men tre X är ju tre X gånger ett."
     },
     {
-     "s": 355.38,
-     "e": 356.54,
+     "s": 381.82,
+     "e": 383.24,
      "text": "Så kvar blir ett."
     },
     {
-     "s": 357.54,
-     "e": 359.74,
+     "s": 384.04,
+     "e": 386.46,
+     "text": "Om vi går tillbaka till stiften, så ser vi varför."
+    },
+    {
+     "s": 387.26,
+     "e": 391.46,
+     "text": "Lägger vi tolv stift i rader med tolv i varje, blir det en rad,"
+    },
+    {
+     "s": 391.78,
+     "e": 392.78,
+     "text": "inte noll rader."
+    },
+    {
+     "s": 393.52,
+     "e": 395.9,
      "text": "Och vad blir kvar av nio X i kvadrat?"
     },
     {
-     "s": 360.74,
-     "e": 362.94,
+     "s": 396.7,
+     "e": 398.94,
      "text": "Vi tar bort en trea och ett X."
     },
     {
-     "s": 363.94,
-     "e": 367.3,
+     "s": 399.74,
+     "e": 403.26,
      "text": "Kvar blir tre gånger X, alltså tre X."
     },
     {
-     "s": 368.3,
-     "e": 372.58,
+     "s": 404.06,
+     "e": 408.8,
      "text": "Svaret är tre X gånger parentesen ett plus tre X."
     },
     {
-     "s": 373.88,
-     "e": 375.12,
-     "text": "Vi kollar åt andra hållet."
+     "s": 409.9,
+     "e": 411.96,
+     "text": "Nu kontrollerar vi svaret åt andra hållet."
     },
     {
-     "s": 376.12,
-     "e": 379.4,
-     "text": "Vi tar tre X gånger varje term i parentesen."
+     "s": 412.76,
+     "e": 416.26,
+     "text": "Vi multiplicerar tre X med varje term i parentesen."
     },
     {
-     "s": 380.4,
-     "e": 382.62,
+     "s": 417.06,
+     "e": 419.3,
      "text": "Tre X gånger ett är tre X."
     },
     {
-     "s": 383.62,
-     "e": 386,
+     "s": 420.1,
+     "e": 422.54,
      "text": "Sen tre X gånger tre X."
     },
     {
-     "s": 387,
-     "e": 391.22,
+     "s": 423.34,
+     "e": 427.72,
      "text": "Tre gånger tre är nio, och X gånger X är X i kvadrat."
     },
     {
-     "s": 392.22,
-     "e": 394.16,
-     "text": "Det blir nio X i kvadrat."
+     "s": 428.52,
+     "e": 431.02,
+     "text": "Tillsammans blir det nio X i kvadrat."
     },
     {
-     "s": 395.16,
-     "e": 397.96,
-     "text": "Vi fick tillbaka det vi började med, så svaret stämmer."
+     "s": 431.82,
+     "e": 436.14,
+     "text": "Vi fick tillbaka tre X plus nio X i kvadrat, som vi började med."
     },
     {
-     "s": 399.26,
-     "e": 402.08,
+     "s": 436.94,
+     "e": 441.46,
+     "text": "Att multiplicera in i parentesen är alltså tvärtom mot att bryta ut."
+    },
+    {
+     "s": 442.56,
+     "e": 449.68,
+     "text": "En elev bryter bara ut trean och skriver tre gånger parentesen X plus tre X i kvadrat."
+    },
+    {
+     "s": 451.56,
+     "e": 452.62,
+     "text": "Har eleven rätt?"
+    },
+    {
+     "s": 454.06,
+     "e": 457.26,
+     "text": "Det är inte fel räknat, men eleven är inte klar."
+    },
+    {
+     "s": 458.22,
+     "e": 460.74,
+     "text": "X finns ju kvar i båda termerna i parentesen."
+    },
+    {
+     "s": 461.54,
+     "e": 465.32,
+     "text": "Eleven måste bryta ut X också, alltså tre X."
+    },
+    {
+     "s": 466.46,
+     "e": 469.38,
      "text": "Ibland finns det ingen gemensam faktor att bryta ut."
     },
     {
-     "s": 403.08,
-     "e": 404.7,
+     "s": 470.18,
+     "e": 471.86,
      "text": "Då kan formelbladet hjälpa."
     },
     {
-     "s": 405.7,
-     "e": 407.58,
+     "s": 472.66,
+     "e": 474.42,
      "text": "Där står konjugatregeln."
     },
     {
-     "s": 408.58,
-     "e": 416.22,
+     "s": 475.22,
+     "e": 482.96,
      "text": "Parentesen a plus b gånger parentesen a minus b är lika med a i kvadrat minus b i kvadrat."
     },
     {
-     "s": 417.22,
-     "e": 419.98,
-     "text": "Vi läser den baklänges, från höger till vänster."
+     "s": 483.8,
+     "e": 488.38,
+     "text": "Vi läser den baklänges, från höger till vänster, för vi vill få en produkt."
     },
     {
-     "s": 421.28,
-     "e": 423.02,
+     "s": 489.48,
+     "e": 491.28,
      "text": "Vad betyder a i kvadrat?"
     },
     {
-     "s": 424.02,
-     "e": 425.9,
+     "s": 492.08,
+     "e": 493.84,
      "text": "Det är något gånger sig självt."
     },
     {
-     "s": 426.9,
-     "e": 429.74,
+     "s": 494.64,
+     "e": 497.56,
      "text": "Och b i kvadrat är något annat gånger sig självt."
     },
     {
-     "s": 430.74,
-     "e": 434.88,
+     "s": 498.36,
+     "e": 502.54,
      "text": "Så regeln passar när det står en kvadrat, minus en annan kvadrat."
     },
     {
-     "s": 436.18,
-     "e": 438.5,
+     "s": 503.64,
+     "e": 506.04,
      "text": "Ta X i kvadrat minus tjugofem."
     },
     {
-     "s": 439.5,
-     "e": 443.8,
+     "s": 506.84,
+     "e": 511.4,
      "text": "Vi skriver regeln ovanför, a i kvadrat minus b i kvadrat."
     },
     {
-     "s": 444.8,
-     "e": 447.4,
+     "s": 512.28,
+     "e": 515.12,
      "text": "Under a i kvadrat står X i kvadrat."
     },
     {
-     "s": 448.4,
-     "e": 451.34,
-     "text": "Det är X gånger X, så a är X."
+     "s": 516.06,
+     "e": 519.86,
+     "text": "X i kvadrat är X gånger X, så a är X."
     },
     {
-     "s": 452.34,
-     "e": 454.44,
+     "s": 520.8,
+     "e": 523.04,
      "text": "Under b i kvadrat står tjugofem."
     },
     {
-     "s": 455.44,
-     "e": 458.26,
-     "text": "Det är fem gånger fem, så b är fem."
+     "s": 523.92,
+     "e": 526.56,
+     "text": "Vilket tal gånger sig självt blir tjugofem?"
     },
     {
-     "s": 459.56,
-     "e": 461.14,
-     "text": "Nu den andra sidan av regeln."
+     "s": 527.94,
+     "e": 531.7,
+     "text": "Tjugofem stift kan ligga i fem rader med fem i varje."
     },
     {
-     "s": 462.14,
-     "e": 467.04,
+     "s": 532.5,
+     "e": 535.92,
+     "text": "Tjugofem är fem gånger fem, så b är fem."
+    },
+    {
+     "s": 537.04,
+     "e": 540.94,
+     "text": "Nu vet vi vad a och b är, så vi går till den andra sidan av regeln."
+    },
+    {
+     "s": 541.74,
+     "e": 546.66,
      "text": "Där står parentesen a plus b gånger parentesen a minus b."
     },
     {
-     "s": 468.04,
-     "e": 470.68,
+     "s": 547.46,
+     "e": 550.24,
      "text": "Vi sätter in X för a och fem för b."
     },
     {
-     "s": 471.68,
-     "e": 478.7,
+     "s": 551.04,
+     "e": 558.5,
      "text": "Så X i kvadrat minus tjugofem är parentesen X plus fem gånger parentesen X minus fem."
     },
     {
-     "s": 480,
-     "e": 481,
-     "text": "Vi kollar med ett tal."
-    },
-    {
-     "s": 481.96,
-     "e": 483.26,
-     "text": "Säg att X är tio."
-    },
-    {
-     "s": 484.26,
-     "e": 488.98,
-     "text": "Tio i kvadrat är hundra, och hundra minus tjugofem är sjuttiofem."
-    },
-    {
-     "s": 489.98,
-     "e": 496.1,
-     "text": "I parenteserna står tio plus fem, alltså femton, och tio minus fem, alltså fem."
-    },
-    {
-     "s": 497.1,
-     "e": 499.4,
-     "text": "Femton gånger fem är också sjuttiofem."
-    },
-    {
-     "s": 500.7,
-     "e": 503.46,
-     "text": "På formelbladet står också kvadreringsreglerna."
-    },
-    {
-     "s": 504.46,
-     "e": 510.88,
-     "text": "Den första säger att parentesen a plus b i kvadrat är lika med a i kvadrat plus två a"
-    },
-    {
-     "s": 510.94,
-     "e": 512.62,
-     "text": "b plus b i kvadrat."
-    },
-    {
-     "s": 513.62,
-     "e": 514.66,
-     "text": "Det är tre delar."
-    },
-    {
-     "s": 515.66,
-     "e": 517.64,
-     "text": "a i kvadrat är a gånger a."
-    },
-    {
-     "s": 518.64,
-     "e": 522.18,
-     "text": "Två a b betyder två gånger a gånger b."
-    },
-    {
-     "s": 523.18,
-     "e": 525.42,
-     "text": "Och b i kvadrat är b gånger b."
-    },
-    {
-     "s": 526.72,
-     "e": 530.08,
-     "text": "Ta X i kvadrat plus sex X plus nio."
-    },
-    {
-     "s": 531.08,
-     "e": 536.84,
-     "text": "Vi skriver regeln ovanför, a i kvadrat plus två a b plus b i kvadrat."
-    },
-    {
-     "s": 537.84,
-     "e": 541.86,
-     "text": "Under a i kvadrat står X i kvadrat, så a är X."
-    },
-    {
-     "s": 542.86,
-     "e": 544.82,
-     "text": "Under b i kvadrat står nio."
-    },
-    {
-     "s": 545.82,
-     "e": 548.74,
-     "text": "Nio är tre gånger tre, så b är tre."
-    },
-    {
-     "s": 550.04,
-     "e": 552.06,
-     "text": "Men i mitten står två a b."
-    },
-    {
-     "s": 553.06,
-     "e": 554.06,
-     "text": "Stämmer den här?"
-    },
-    {
-     "s": 554.7,
-     "e": 557.32,
-     "text": "Vi sätter in X för a och tre för b."
-    },
-    {
-     "s": 558.32,
-     "e": 560.78,
-     "text": "Då blir det två gånger X gånger tre."
+     "s": 559.6,
+     "e": 560.98,
+     "text": "Vi kontrollerar med ett tal."
     },
     {
      "s": 561.78,
-     "e": 564.92,
-     "text": "Två gånger tre är sex, så det blir sex X."
+     "e": 563.12,
+     "text": "Säg att X är tio."
     },
     {
-     "s": 565.92,
-     "e": 569.86,
-     "text": "Och det står sex X i mitten, ser du? Allt passar."
+     "s": 563.92,
+     "e": 568.48,
+     "text": "Tio i kvadrat är hundra, och hundra minus tjugofem är sjuttiofem."
     },
     {
-     "s": 571.16,
-     "e": 572.76,
-     "text": "Nu den andra sidan av regeln."
+     "s": 569.28,
+     "e": 575.84,
+     "text": "I parenteserna står tio plus fem, alltså femton, och tio minus fem, alltså fem."
     },
     {
-     "s": 573.76,
-     "e": 576.72,
-     "text": "Där står parentesen a plus b i kvadrat."
+     "s": 576.66,
+     "e": 579.04,
+     "text": "Femton gånger fem tar vi i två steg."
     },
     {
-     "s": 577.72,
-     "e": 580.22,
+     "s": 579.84,
+     "e": 583.86,
+     "text": "Tio gånger fem är femtio, och fem gånger fem är tjugofem."
+    },
+    {
+     "s": 584.66,
+     "e": 587.08,
+     "text": "Femtio plus tjugofem är sjuttiofem."
+    },
+    {
+     "s": 587.88,
+     "e": 590.54,
+     "text": "Vad nice, båda sidorna blir sjuttiofem."
+    },
+    {
+     "s": 591.64,
+     "e": 596.56,
+     "text": "Konjugatregeln passar bara när det står en kvadrat minus en annan kvadrat."
+    },
+    {
+     "s": 597.36,
+     "e": 600.28,
+     "text": "Står det tre termer, kan kvadreringsreglerna hjälpa."
+    },
+    {
+     "s": 601.08,
+     "e": 602.8,
+     "text": "De står också på formelbladet."
+    },
+    {
+     "s": 603.7,
+     "e": 610.6,
+     "text": "Den första säger att parentesen a plus b i kvadrat är lika med a i kvadrat plus två a"
+    },
+    {
+     "s": 610.66,
+     "e": 612.6,
+     "text": "b plus b i kvadrat."
+    },
+    {
+     "s": 613.5,
+     "e": 617.48,
+     "text": "Två a b i mitten betyder två gånger a gånger b."
+    },
+    {
+     "s": 618.68,
+     "e": 622.08,
+     "text": "Ta X i kvadrat plus sex X plus nio."
+    },
+    {
+     "s": 622.88,
+     "e": 628.88,
+     "text": "Vi skriver regeln ovanför, a i kvadrat plus två a b plus b i kvadrat."
+    },
+    {
+     "s": 629.82,
+     "e": 633.9,
+     "text": "Under a i kvadrat står X i kvadrat, så a är X."
+    },
+    {
+     "s": 634.72,
+     "e": 636.76,
+     "text": "Under b i kvadrat står nio."
+    },
+    {
+     "s": 637.56,
+     "e": 640.64,
+     "text": "Nio är tre gånger tre, så b är tre."
+    },
+    {
+     "s": 641.74,
+     "e": 644.56,
+     "text": "Men regeln passar bara om mitten också stämmer."
+    },
+    {
+     "s": 645.36,
+     "e": 647.1,
+     "text": "I mitten står två a b."
+    },
+    {
+     "s": 649.12,
+     "e": 650.14,
+     "text": "Stämmer mitten här?"
+    },
+    {
+     "s": 651.08,
+     "e": 653.46,
      "text": "Vi sätter in X för a och tre för b."
     },
     {
-     "s": 581.22,
-     "e": 587.36,
+     "s": 654.3,
+     "e": 656.78,
+     "text": "Då blir det två gånger X gånger tre."
+    },
+    {
+     "s": 657.58,
+     "e": 660.72,
+     "text": "Två gånger tre är sex, så det blir sex X."
+    },
+    {
+     "s": 661.52,
+     "e": 664.12,
+     "text": "Och som vi ser står det sex X i mitten."
+    },
+    {
+     "s": 664.92,
+     "e": 667.96,
+     "text": "Alla tre termerna passar, så vi kan använda regeln."
+    },
+    {
+     "s": 669.06,
+     "e": 671.28,
+     "text": "Nu kan vi gå till den andra sidan av regeln."
+    },
+    {
+     "s": 672.08,
+     "e": 675.54,
+     "text": "Där står parentesen a plus b i kvadrat."
+    },
+    {
+     "s": 676.38,
+     "e": 679.14,
+     "text": "Vi sätter in X för a och tre för b."
+    },
+    {
+     "s": 679.94,
+     "e": 687.06,
      "text": "Så X i kvadrat plus sex X plus nio är parentesen X plus tre i kvadrat."
     },
     {
-     "s": 588.36,
-     "e": 589.98,
-     "text": "Vi kollar med X lika med ett."
+     "s": 687.86,
+     "e": 690.16,
+     "text": "Vi kontrollerar med X lika med ett."
     },
     {
-     "s": 590.98,
-     "e": 593.62,
+     "s": 690.96,
+     "e": 694.78,
+     "text": "Då är X i kvadrat ett, och sex X är sex."
+    },
+    {
+     "s": 695.62,
+     "e": 698.46,
      "text": "Ett plus sex plus nio är sexton."
     },
     {
-     "s": 594.62,
-     "e": 597.18,
+     "s": 699.26,
+     "e": 702.02,
      "text": "Och parentesen ett plus tre är fyra."
     },
     {
-     "s": 598.18,
-     "e": 600.34,
-     "text": "Fyra i kvadrat är också sexton."
+     "s": 702.82,
+     "e": 707.5,
+     "text": "Fyra i kvadrat är fyra gånger fyra, alltså också sexton."
     },
     {
-     "s": 601.64,
-     "e": 603.44,
-     "text": "Okej, nu ett övningstal."
+     "s": 708.6,
+     "e": 711.7,
+     "text": "Okej, nu ett övningstal där vi bryter ut igen."
     },
     {
-     "s": 604.44,
-     "e": 607.22,
+     "s": 712.5,
+     "e": 715.2,
      "text": "Faktorisera åtta X minus tolv."
     },
     {
-     "s": 608.22,
-     "e": 609.86,
+     "s": 716,
+     "e": 717.66,
      "text": "Vad finns i båda termerna?"
     },
     {
-     "s": 610.86,
-     "e": 612.64,
-     "text": "Åtta är fyra gånger två."
+     "s": 718.56,
+     "e": 721.92,
+     "text": "Åtta X är fyra gånger två gånger X."
     },
     {
-     "s": 613.64,
-     "e": 615.46,
+     "s": 722.72,
+     "e": 724.7,
      "text": "Tolv är fyra gånger tre."
     },
     {
-     "s": 616.46,
-     "e": 618.06,
+     "s": 725.5,
+     "e": 727.26,
      "text": "Så fyran finns i båda."
     },
     {
-     "s": 619.36,
-     "e": 622.3,
+     "s": 728.44,
+     "e": 732.26,
+     "text": "X finns bara i den första termen, så X bryter vi inte ut."
+    },
+    {
+     "s": 733.36,
+     "e": 736.68,
      "text": "Tvåan finns också i båda, men fyran är större."
     },
     {
-     "s": 623.3,
-     "e": 625.54,
+     "s": 737.48,
+     "e": 739.66,
      "text": "Och vi vill bryta ut så mycket som möjligt."
     },
     {
-     "s": 626.54,
-     "e": 627.88,
+     "s": 740.46,
+     "e": 741.98,
      "text": "Så vi bryter ut fyran."
     },
     {
-     "s": 628.88,
-     "e": 631.14,
+     "s": 742.78,
+     "e": 745.16,
      "text": "Kvar av åtta X är två X."
     },
     {
-     "s": 632.14,
-     "e": 633.66,
+     "s": 745.96,
+     "e": 747.68,
      "text": "Kvar av tolv är tre."
     },
     {
-     "s": 634.66,
-     "e": 636.48,
-     "text": "Minustecknet står kvar mellan dem."
+     "s": 748.58,
+     "e": 750.92,
+     "text": "Nu får vi inte glömma minustecknet."
     },
     {
-     "s": 637.48,
-     "e": 641.82,
+     "s": 751.72,
+     "e": 753.4,
+     "text": "Det står kvar mellan termerna."
+    },
+    {
+     "s": 754.2,
+     "e": 758.72,
      "text": "Svaret är fyra gånger parentesen två X minus tre."
     },
     {
-     "s": 643.12,
-     "e": 647.9,
+     "s": 759.52,
+     "e": 761.2,
+     "text": "Nu går vi tillbaka till maskinen."
+    },
+    {
+     "s": 763.7,
+     "e": 768.58,
      "text": "Pierre dog år nittonhundratjugotre, och Eugène år nittonhundratjugofem."
     },
     {
-     "s": 648.9,
-     "e": 653.54,
+     "s": 769.44,
+     "e": 774.48,
      "text": "Sen gav familjen maskinen till en stjärnforskare på ett observatorium nära Bordeaux."
     },
     {
-     "s": 654.54,
-     "e": 656.1,
+     "s": 775.28,
+     "e": 777.08,
      "text": "Där lades den i en låda."
     },
     {
-     "s": 657.1,
-     "e": 659.92,
+     "s": 777.88,
+     "e": 780.78,
      "text": "Och sen glömdes den bort i ungefär femtio år."
     },
     {
-     "s": 661.22,
-     "e": 666.98,
+     "s": 781.88,
+     "e": 787.76,
      "text": "År nittonhundraåttionio läste en forskare i Kanada en gammal tidskrift från nittonhundratjugo."
     },
     {
-     "s": 667.98,
-     "e": 670.12,
+     "s": 788.56,
+     "e": 790.96,
      "text": "Där hade Eugène skrivit om maskinen."
     },
     {
-     "s": 671.12,
-     "e": 673.42,
+     "s": 791.76,
+     "e": 794.32,
      "text": "Forskaren ville veta om maskinen fanns kvar."
     },
     {
-     "s": 674.42,
-     "e": 675.96,
+     "s": 795.12,
+     "e": 796.8,
      "text": "Men ingen visste var den var."
     },
     {
-     "s": 677.26,
-     "e": 679.96,
+     "s": 797.9,
+     "e": 800.8,
      "text": "Han tänkte att någon släkting till bröderna kanske visste."
     },
     {
-     "s": 680.96,
-     "e": 685.32,
+     "s": 801.82,
+     "e": 806.6,
      "text": "Därför skrev han ett brev till varje person i Frankrike som hette Carissan."
     },
     {
-     "s": 686.32,
-     "e": 688.48,
+     "s": 807.4,
+     "e": 809.54,
      "text": "En av Eugènes döttrar hörde av sig."
     },
     {
-     "s": 689.48,
-     "e": 692.38,
+     "s": 810.34,
+     "e": 813.26,
      "text": "Och tack vare henne hittade man maskinen i lådan."
     },
     {
-     "s": 693.38,
-     "e": 696.02,
+     "s": 814.06,
+     "e": 816.72,
      "text": "I dag står den på ett teknikmuseum i Paris."
     },
     {
-     "s": 697.32,
-     "e": 698.34,
+     "s": 819.22,
+     "e": 820.22,
      "text": "Nu är det din tur."
     },
     {
-     "s": 699.34,
-     "e": 703,
-     "text": "Faktorisera nio X i kvadrat plus arton X."
+     "s": 821.02,
+     "e": 825.1,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 704,
-     "e": 708.18,
-     "text": "Leta efter det största tal och den bokstav som finns i båda termerna,"
+     "s": 825.9,
+     "e": 832.48,
+     "text": "Först: Vad är den största gemensamma faktorn i nio X i kvadrat plus arton X?"
     },
     {
-     "s": 708.48,
-     "e": 709.48,
-     "text": "och bryt ut dem."
+     "s": 833.28,
+     "e": 837.9,
+     "text": "Sen: Faktorisera nio X i kvadrat plus arton X."
     }
    ]
   },
