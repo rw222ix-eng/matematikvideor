@@ -1413,7 +1413,11 @@
   },
   "ma1c-k6-01-sinus-cosinus-tangens": {
     "notisFran": "Nu är det din tur",
-    "fraga": "En pyramid är 3 meter hög, och halva bredden är 4 meter. Sidan från toppen ner till kanten är 5 meter. Räkna ut sin v och tan v för vinkeln nere vid marken.",
+    "fraga": "En pyramid är 3 meter hög, och halva bredden är 4 meter. Sidan från toppen ner till kanten är 5 meter. Vinkeln v ligger nere vid marken. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är sin v?",
+      "Sen: Vad är tan v?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "p06-elevens-pyramid",
@@ -1435,7 +1439,7 @@
     },
     "delar": [
       {
-        "fraga": "Vad är sin v?",
+        "fraga": "Först: Vad är sin v?",
         "typ": "tal",
         "svar": 0.6,
         "tolerans": 0.006,
@@ -1462,7 +1466,7 @@
         ]
       },
       {
-        "fraga": "Vad är tan v?",
+        "fraga": "Sen: Vad är tan v?",
         "typ": "tal",
         "svar": 0.75,
         "tolerans": 0.006,
