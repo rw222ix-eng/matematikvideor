@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-15T20:11:57.855Z",
+ "byggd": "2026-10-15T20:14:22.804Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -22973,7 +22973,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-06-vektorer-i-koordinatform-v5/ma1c-k6-06-vektorer-i-koordinatform-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-06-vektorer-i-koordinatform-v6/ma1c-k6-06-vektorer-i-koordinatform-1080p.mp4",
    "moment": "Rita trianglar i koordinatsystemet",
    "begrepp": [
     "vektor",
@@ -22988,7 +22988,7 @@
    ],
    "beskrivning": "Natten i april 1912 får kapten Rostron på Carpathia ett nödanrop från Titanic. Åt vilket håll ska han styra, och hur långt är det? Vi skriver vektorn med koordinater, delar upp den i katetvektorer, räknar längden med Pythagoras sats och vinkeln från norr med tangens invers. I gryningen räknar vi på samma sätt ut var en av livbåtarna ligger.",
    "youtube": null,
-   "langd": 821,
+   "langd": 837,
    "omslag": "omslag/ma1c-k6-06-vektorer-i-koordinatform.jpg?v=cd2cea10",
    "omslagRen": "omslag/ma1c-k6-06-vektorer-i-koordinatform-ren.jpg?v=848fce3f",
    "omslagStor": null,
@@ -22998,208 +22998,196 @@
      "text": "Det är strax efter midnatt, en natt i april nittonhundratolv. Passagerarfartyget Carpathia är på väg över Atlanten, från New York till Medelhavet. Kaptenen heter Arthur Rostron. Han har precis gått och lagt sig."
     },
     {
-     "t": 26,
+     "t": 25,
      "text": "Ombord finns en man som sköter fartygets radio. Han sitter kvar med hörlurarna på. Då kommer ett meddelande från Titanic, det största fartyget i världen. Titanic har kört på ett isberg. De ber om hjälp, genast."
     },
     {
-     "t": 44,
-     "text": "I meddelandet står också var Titanic ligger. Radiomannen springer med det till kaptenen. Rostron ger order om att vända fartyget direkt."
+     "t": 43,
+     "text": "I meddelandet står också var Titanic ligger. Radiomannen springer med meddelandet till kaptenen. Rostron ger order om att vända fartyget direkt."
     },
     {
-     "t": 55,
+     "t": 54,
      "text": "Medan han klär på sig, ritar han in Titanics plats på kartan. Bredvid sätter han Carpathias egen plats. Titanic ligger någonstans ute i mörkret, åt nordväst."
     },
     {
-     "t": 68,
-     "text": "Men exakt åt vilket håll ska Carpathia styra? Och hur långt är det dit? Det kan vi räkna ut. Vi gör som Rostron och börjar med kartan."
+     "t": 67,
+     "text": "Men exakt åt vilket håll ska Carpathia styra? Och hur långt är det till Titanic? Det kan vi räkna ut. Vi gör som Rostron och börjar med kartan."
     },
     {
-     "t": 79,
-     "text": "Vi ritar kartan som ett koordinatsystem. Carpathia sätter vi i mitten. Den punkten kallas origo. Genom origo drar vi två linjer med tal på, ungefär som två linjaler. De kallas axlar."
+     "t": 80,
+     "text": "Vi ritar kartan som ett koordinatsystem. Carpathia sätter vi i mitten, och den punkten kallas origo. x-axeln går åt höger, mot öster, och y-axeln går uppåt, mot norr. Talen på axlarna är kilometer."
     },
     {
      "t": 97,
-     "text": "Den ena axeln går åt höger, mot öster. Den kallas x-axeln. Den andra går uppåt, mot norr. Den kallas y-axeln. Talen på axlarna är kilometer."
+     "text": "Var ligger Titanic? Åttiofyra kilometer västerut. Men väster är åt vänster, och där har x-axeln minustal. Så det blir minus åttiofyra. Norrut är det sextiosex kilometer, så det blir sextiosex."
     },
     {
-     "t": 112,
-     "text": "Var ligger Titanic? Åttiofyra kilometer västerut. Men väster är åt vänster. Vilka tal står på x-axeln åt vänster? Minustal. Så det blir minus åttiofyra."
+     "t": 115,
+     "text": "Nu drar vi en pil från Carpathia till Titanic. Pilen har en längd och pekar åt ett visst håll. En sån pil kallas en vektor."
     },
     {
-     "t": 129,
-     "text": "Och hur långt norrut? Sextiosex kilometer. Norr är uppåt, så det blir sextiosex."
+     "t": 125,
+     "text": "Vektorn skriver vi med två tal i en parentes, minus åttiofyra och sextiosex. Det kallas att skriva vektorn i koordinatform."
     },
     {
-     "t": 138,
-     "text": "Nu drar vi en pil från Carpathia till Titanic. Pilen har en längd. Och den pekar åt ett visst håll. En sån pil kallas en vektor."
+     "t": 136,
+     "text": "Man kan också ta sig till Titanic i två steg. Först rakt norrut, sextiosex kilometer. Den vektorn är noll och sextiosex, för man går inte alls åt sidan. Sen rakt västerut, åttiofyra kilometer. Den vektorn är minus åttiofyra och noll. Då hamnar man precis vid Titanic."
     },
     {
-     "t": 150,
-     "text": "Vi skriver vektorn med två tal i en parentes. Först x och sen y. Alltså minus åttiofyra och sextiosex. Det kallas att skriva vektorn i koordinatform."
+     "t": 158,
+     "text": "De två stegen och vektorn till Titanic bildar en triangel. Hörnet där stegen möts är en rät vinkel, nittio grader. Så triangeln är rätvinklig. De två kortare sidorna kallas kateter, och därför kallas de två stegen katetvektorer. Den längsta sidan är vektorn till Titanic. Den kallas hypotenusan."
     },
     {
-     "t": 165,
-     "text": "Man kan också ta sig till Titanic i två steg. Först går man rakt norrut, sextiosex kilometer. Den pilen är noll och sextiosex. Varför noll? För man går inte alls åt sidan."
+     "t": 183,
+     "text": "Nu kan vi svara på den första frågan. Hur långt är det till Titanic? Det är vektorns längd. Hur lång en vektor är räknar vi ut med Pythagoras sats."
     },
     {
-     "t": 181,
-     "text": "Sen går man rakt västerut, åttiofyra kilometer. Den pilen är minus åttiofyra och noll. Nu går man inte alls uppåt. Och man hamnar precis vid Titanic, ser du?"
+     "t": 195,
+     "text": "Pythagoras sats säger så här. Ta den ena kateten i kvadrat, alltså gånger sig själv. Ta den andra kateten i kvadrat. Lägg ihop dem, så får du hypotenusan i kvadrat."
     },
     {
-     "t": 196,
-     "text": "De två stegen och den raka pilen bildar en triangel. Hörnet där stegen möts är rakt, som hörnet på ett papper. Så triangeln är rätvinklig."
+     "t": 209,
+     "text": "Samma regel står på formelbladet, längst ner under rubriken Vektorer. Där heter vektorn u. Längden av u skrivs med ett lodrätt streck på var sida om u."
     },
     {
-     "t": 208,
-     "text": "De två kortare sidorna kallas kateter. Därför kallas de två stegen katetvektorer. Den längsta sidan är den raka pilen. Den kallas hypotenusan."
-    },
-    {
-     "t": 223,
-     "text": "Hur långt är det till Titanic? Lika långt som den raka pilen. Hur lång en vektor är räknar vi ut med Pythagoras sats."
-    },
-    {
-     "t": 233,
-     "text": "Pythagoras sats säger så här. Ta den ena kateten gånger sig själv. Ta den andra kateten gånger sig själv. Lägg ihop dem. Då får du hypotenusan gånger sig själv. Ett tal gånger sig självt kallas talet i kvadrat."
-    },
-    {
-     "t": 253,
-     "text": "Pythagoras sats står på formelbladet, längst ner under rubriken Vektorer. Där heter vektorn u. Längden av u skrivs med ett lodrätt streck på var sida om u."
-    },
-    {
-     "t": 267,
+     "t": 222,
      "text": "Under rottecknet står a x. Det är vektorns x-koordinat, alltså steget åt sidan. Sen står a y. Det är vektorns y-koordinat, alltså steget uppåt. De två stegen är kateterna."
     },
     {
-     "t": 285,
-     "text": "Båda kateterna tas i kvadrat och läggs ihop. Det är hypotenusan i kvadrat. Sist kommer rottecknet. Det svarar på en fråga. Vilket tal gånger sig självt blir det som står under? Det talet är längden."
+     "t": 239,
+     "text": "Båda kateterna tas i kvadrat och läggs ihop. Det är hypotenusan i kvadrat. Sist kommer rottecknet. Rottecknet svarar på en fråga. Vilket tal gånger sig självt blir det som står under? Det talet är längden."
     },
     {
-     "t": 304,
-     "text": "Nu sätter vi in Titanics tal. Pilen till Titanic kallar vi u. Den är minus åttiofyra och sextiosex. Så a x är minus åttiofyra. Och a y är sextiosex."
+     "t": 256,
+     "text": "Nu sätter vi in Titanics tal. Vektorn till Titanic kallar vi u, så a x är minus åttiofyra och a y är sextiosex."
     },
     {
-     "t": 320,
-     "text": "Vi skriver formeln först. Längden av u är lika med roten ur a x i kvadrat plus a y i kvadrat. Sen skriver vi den igen med talen. I formeln står a x. Här är a x minus åttiofyra. Vi sätter det i en parentes, så att minuset följer med. I formeln står a y. Här är a y sextiosex."
+     "t": 267,
+     "text": "Vi skriver formeln först. Längden av u är lika med roten ur a x i kvadrat plus a y i kvadrat. Sen skriver vi formeln igen, med talen på samma ställen. Där a x står, skriver vi minus åttiofyra. Vi sätter minus åttiofyra i en parentes, så att minuset följer med. Där a y står, skriver vi sextiosex."
     },
     {
-     "t": 353,
-     "text": "Nu räknar vi del för del. Först minus åttiofyra i kvadrat. Det är minus åttiofyra gånger minus åttiofyra. Minus gånger minus blir plus. Så räknaren ger sjutusen femtiosex."
+     "t": 293,
+     "text": "Nu räknar vi del för del. Först minus åttiofyra i kvadrat. Minus gånger minus blir plus. Oj, åttiofyra gånger åttiofyra är jobbigt i huvudet. Det kan vi räkna enklare med räknaren. Räknaren ger sjutusen femtiosex."
     },
     {
-     "t": 371,
-     "text": "Sen sextiosex i kvadrat. Det blir fyratusen trehundrafemtiosex. Under rottecknet lägger vi ihop dem. Det blir elvatusen fyrahundratolv."
+     "t": 313,
+     "text": "Sen sextiosex i kvadrat. Räknaren ger fyratusen trehundrafemtiosex. Mellan kvadraterna står ett plus, så vi lägger ihop de två talen. Det blir elvatusen fyrahundratolv."
     },
     {
-     "t": 385,
-     "text": "Sist rottecknet. Vilket tal gånger sig självt blir elvatusen fyrahundratolv? Det räknar vi ut med räknaren. Räknaren visar först ett svar med ett rottecken. Tryck på knappen med pilarna och ungefär-tecknet. Då får du ett decimaltal, ungefär hundrasex komma åtta. Det är alltså ungefär hundrasju kilometer till Titanic."
+     "t": 328,
+     "text": "Sist rottecknet. Vilket tal gånger sig självt blir elvatusen fyrahundratolv? Räknaren visar först ett svar med ett rottecken. Tryck på knappen med pilarna och ungefär-tecknet. Då får du ett decimaltal, ungefär hundrasex komma åtta. Det är alltså ungefär hundrasju kilometer till Titanic."
     },
     {
-     "t": 413,
+     "t": 352,
+     "text": "Här är det lätt att bara lägga ihop åttiofyra och sextiosex. Då blir det hundrafemtio kilometer. Men hundrafemtio kilometer är vägen i två steg, först norrut och sen västerut. Carpathia kör den raka vägen, längs vektorn u. Som vi ser i triangeln är den vägen kortare, ungefär hundrasju kilometer."
+    },
+    {
+     "t": 374,
+     "text": "Så vad är skillnaden mellan vektorn och längden? Vektorn u är minus åttiofyra och sextiosex. Vektorn säger både hur långt och åt vilket håll. Längden av u är bara ett tal, hundrasju kilometer. Längden säger hur långt, men inte åt vilket håll."
+    },
+    {
+     "t": 395,
      "text": "Nu den andra frågan. Åt vilket håll ska Carpathia styra? På fartyg anger man hållet som en vinkel från norr."
     },
     {
-     "t": 424,
-     "text": "Tänk dig att du står på Carpathia och tittar rakt mot norr. Hur mycket måste du vrida dig åt vänster för att titta mot Titanic? Det är vinkeln. Vi kallar den v."
+     "t": 404,
+     "text": "Tänk dig att du står på Carpathia och tittar rakt mot norr. Hur mycket måste du vrida dig åt vänster för att titta mot Titanic? Så mycket du vrider dig är vinkeln. Vi kallar vinkeln v."
     },
     {
-     "t": 437,
-     "text": "Nu ger vi kateterna namn efter vinkeln v. Tänk dig att du står i hörnet där v är. Vilken sida ligger mitt emot dig? Det är steget västerut, åttiofyra. Den kallas motstående katet."
+     "t": 418,
+     "text": "Nu ger vi kateterna namn efter vinkeln v. Tänk dig att du står i hörnet där v är. Vilken sida ligger mitt emot dig? Det är kateten västerut, åttiofyra kilometer. Den kallas motstående katet. Kateten norrut går ut från ditt hörn och ligger intill v. Därför kallas den närliggande katet."
     },
     {
-     "t": 454,
-     "text": "Steget norrut går ut från ditt hörn. Det ligger intill v, så det kallas närliggande katet."
+     "t": 442,
+     "text": "Men hur kan två sidor säga något om en vinkel? Man kan se det på det här sättet. Tänk dig att Titanic låg längre västerut. Då måste du vrida dig mer, och den motstående kateten blir längre."
     },
     {
-     "t": 462,
-     "text": "Men hur kan två sidor säga något om en vinkel? Tänk dig att Titanic låg längre västerut. Då måste du vrida dig mer. Och sidan mitt emot blir längre, ser du?"
+     "t": 457,
+     "text": "Men om Titanic låg dubbelt så långt bort åt samma håll, skulle båda kateterna bli dubbelt så långa. Vinkeln är ändå densamma. Därför jämför vi kateterna med varandra. Vi delar den motstående kateten med den närliggande. Ett tal delat med ett annat kallas en kvot. Den här kvoten kallas tangens för vinkeln v."
     },
     {
-     "t": 477,
-     "text": "Därför jämför vi de två kateterna. Vi delar den motstående kateten med den närliggande. Ett tal delat med ett annat kallas en kvot. Den här kvoten kallas tangens för vinkeln v."
+     "t": 481,
+     "text": "Tangens står på formelbladet, under rubriken Trigonometri. Titta på triangeln där. Sidan a står mitt emot v, så a är motstående katet. Sidan b går ut från v, så b är närliggande katet. Tangens v är a delat med b."
     },
     {
-     "t": 492,
-     "text": "Tangens står på formelbladet, under rubriken Trigonometri. Titta på triangeln där. Sidan a står mitt emot v. Den är motstående katet. Sidan b går ut från v. Den är närliggande katet. Tangens v är a delat med b."
+     "t": 501,
+     "text": "Nu läser vi av vår triangel från vinkeln v. Mitt emot v ligger kateten västerut, så a är åttiofyra. Kateten norrut går ut från v, så b är sextiosex."
     },
     {
      "t": 514,
-     "text": "Nu läser vi av vår triangel från vinkeln v. Mitt emot v ligger steget västerut, åttiofyra kilometer. Så a är åttiofyra. Steget norrut går ut från v. Så b är sextiosex."
+     "text": "Vi skriver formeln först. Tangens v är lika med a delat med b. Sen skriver vi formeln igen med talen. Där a står, skriver vi åttiofyra. Under bråkstrecket står b, och där skriver vi sextiosex. Så tangens v är lika med åttiofyra delat med sextiosex."
     },
     {
-     "t": 531,
-     "text": "Vi skriver formeln först. Tangens v är lika med a delat med b. Sen skriver vi den igen med talen. I formeln står a. Här är a åttiofyra. Under bråkstrecket står b. Här är b sextiosex. Så tangens v är lika med åttiofyra delat med sextiosex."
+     "t": 536,
+     "text": "Nu vet vi kvoten, men vi söker vinkeln. Tangens går från vinkeln till kvoten. Nu vill vi åt andra hållet, från kvoten till vinkeln. Det kallas tangens invers. På räknaren skrivs det tan med en liten minus etta. Minus ettan betyder inte minus, och inte ett delat med tangens. Den betyder att vi går åt andra hållet."
     },
     {
-     "t": 559,
-     "text": "Nu vet vi kvoten. Men vi söker vinkeln. Vi måste alltså gå baklänges, från kvoten till vinkeln. Det kallas tangens invers. På räknaren skrivs det tan med en liten minus etta."
+     "t": 563,
+     "text": "Nu får vi inte glömma att kolla att det står DEG högst upp på skärmen. Då räknar räknaren i grader."
     },
     {
-     "t": 576,
-     "text": "Man når den genom att trycka två gånger på tangensknappen. Men först kollar vi att det står DEG högst upp på skärmen. Då räknar räknaren i grader."
+     "t": 571,
+     "text": "Tangens invers når vi genom att trycka två gånger på tangensknappen. Sen skriver vi åttiofyra delat med sextiosex. Vi stänger parentesen och trycker enter. Räknaren ger ungefär femtioett komma åtta. Avrundat till hela grader är det femtiotvå grader. Nu går vi tillbaka till Rostron och kartan."
     },
     {
-     "t": 589,
-     "text": "Nu trycker vi två gånger på tan. Sen skriver vi åttiofyra delat med sextiosex. Vi stänger parentesen och trycker enter. Räknaren ger ungefär femtioett komma åtta. Det är ungefär femtiotvå grader."
+     "t": 595,
+     "text": "Carpathia ska alltså styra femtiotvå grader från norr, åt väster. Nordväst ligger mitt emellan norr och väster, alltså fyrtiofem grader. Så Titanic ligger lite mer åt väster än nordväst. Det är samma riktning som Rostron räknade fram den natten."
     },
     {
-     "t": 606,
-     "text": "Carpathia ska alltså styra femtiotvå grader från norr, åt väster. Nordväst ligger mitt emellan norr och väster, alltså fyrtiofem grader. Så Titanic ligger lite mer åt väster än nordväst, ser du? Det är samma riktning som Rostron räknade fram den natten."
-    },
-    {
-     "t": 626,
+     "t": 614,
      "text": "Carpathia kör så fort hon kan hela natten. Efter tre och en halv timme är hon framme. Men då har Titanic redan sjunkit. Klockan tio över fyra tar de upp den första livbåten."
     },
     {
-     "t": 641,
-     "text": "Sen ljusnar det. Nu ser Rostron fler livbåtar, utspridda på havet runt fartyget. Var ligger de, och hur långt bort? Vi räknar på en av dem."
+     "t": 628,
+     "text": "Sen ljusnar det. Nu ser Rostron fler livbåtar, utspridda på havet runt fartyget. Var ligger livbåtarna, och hur långt bort? Vi räknar på en av livbåtarna."
     },
     {
-     "t": 653,
-     "text": "Vi lägger ett rutnät över havet. Varje ruta är hundra meter. Säg att en livbåt ligger fem rutor västerut och tolv rutor norrut. Pilen dit är alltså minus fem och tolv."
+     "t": 643,
+     "text": "Vi lägger ett rutnät över havet. Varje ruta är hundra meter. Säg att en livbåt ligger fem rutor västerut och tolv rutor norrut. Vektorn till livbåten är alltså minus fem och tolv."
     },
     {
-     "t": 669,
-     "text": "Katetvektorerna är noll och tolv rakt norrut, och minus fem och noll rakt västerut. Hur lång är pilen?"
+     "t": 658,
+     "text": "Katetvektorerna är noll och tolv rakt norrut, och minus fem och noll rakt västerut. Hur lång är vektorn till livbåten?"
     },
     {
-     "t": 679,
-     "text": "Titta på formelbladet igen. Längden av u är roten ur a x i kvadrat plus a y i kvadrat."
+     "t": 668,
+     "text": "Om vi går tillbaka till formelbladet, så ser vi att längden av u är roten ur a x i kvadrat plus a y i kvadrat."
     },
     {
-     "t": 689,
-     "text": "Vi skriver formeln först. Sen skriver vi den igen med talen. Här är a x minus fem, i en parentes. Och a y är tolv."
+     "t": 678,
+     "text": "Vi skriver formeln först. Sen skriver vi formeln igen med talen. Där a x står, skriver vi minus fem, i en parentes. Och där a y står, skriver vi tolv."
     },
     {
-     "t": 704,
+     "t": 691,
      "text": "Nu räknar vi del för del. Minus fem i kvadrat är tjugofem, för minus gånger minus blir plus. Tolv i kvadrat är hundrafyrtiofyra. Under rottecknet blir det hundrasextionio."
     },
     {
-     "t": 719,
-     "text": "Sist rottecknet. Vilket tal gånger sig självt blir hundrasextionio? Tretton. Livbåten ligger alltså tretton rutor bort. Det är tusen trehundra meter."
+     "t": 705,
+     "text": "Sist rottecknet. Vilket tal gånger sig självt blir hundrasextionio? Tolv gånger tolv är hundrafyrtiofyra, så talet är lite mer än tolv. Vi provar tretton. Tretton gånger tio är hundratrettio, och tretton gånger tre är trettionio. Tillsammans blir det hundrasextionio. Livbåten ligger alltså tretton rutor bort. Varje ruta är hundra meter, så det är tusen trehundra meter."
     },
     {
-     "t": 734,
-     "text": "Och åt vilket håll? Vi tittar mot norr igen. Mitt emot vinkeln v ligger steget västerut, fem. Så a är fem. Intill v ligger steget norrut, tolv. Så b är tolv."
+     "t": 738,
+     "text": "Och åt vilket håll? Vi tittar mot norr igen. Mitt emot vinkeln v ligger kateten västerut, fem. Så a är fem. Intill v ligger kateten norrut, tolv. Så b är tolv."
     },
     {
-     "t": 752,
+     "t": 755,
      "text": "Vilken formel har både a och b? På formelbladet står tangens v är a delat med b."
     },
     {
-     "t": 760,
-     "text": "Vi skriver formeln och sätter in talen. a är fem och b är tolv. Så tangens v är lika med fem delat med tolv."
+     "t": 763,
+     "text": "Vi skriver formeln och sätter in talen. Så tangens v är lika med fem delat med tolv."
     },
     {
      "t": 771,
-     "text": "Vinkeln får vi som förut, med två tryck på tangensknappen. Sen skriver vi fem delat med tolv. Räknaren ger ungefär tjugotvå komma sex grader. Livbåten ligger alltså nästan rakt norrut, bara lite åt väster."
+     "text": "Vinkeln får vi som förut, med två tryck på tangensknappen. Sen skriver vi fem delat med tolv. Räknaren ger ungefär tjugotvå komma sex grader. Livbåten ligger alltså nästan rakt norrut, bara lite åt väster. Vad nice, det ser man ju i rutnätet också. Nu tillbaka till Carpathia."
     },
     {
-     "t": 788,
+     "t": 795,
      "text": "Vid halv nio på morgonen är alla livbåtar uppe. Drygt sjuhundra människor är räddade. Sen kör Carpathia tillbaka till New York, med alla ombord."
     },
     {
-     "t": 800,
-     "text": "Nu är det din tur. Tänk dig att meddelandet i stället hade sagt att Titanic låg fyrtio kilometer västerut och trettio kilometer norrut om Carpathia. Hur långt är det till Titanic? Och hur många grader från norr ska Carpathia styra? Avrunda till hela grader."
+     "t": 808,
+     "text": "Nu är det din tur. Tänk dig att meddelandet i stället hade sagt att Titanic låg fyrtio kilometer västerut och trettio kilometer norrut om Carpathia. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur långt är det till Titanic? Svara i kilometer. Sen: Hur många grader från norr ska Carpathia styra? Avrunda till hela grader."
     }
    ],
    "kapitel": [
@@ -23209,49 +23197,58 @@
      "typ": "historia"
     },
     {
-     "t": 68,
+     "t": 67,
      "rubrik": "Frågan: åt vilket håll och hur långt?",
      "typ": "historia"
     },
     {
-     "t": 79,
+     "t": 80,
      "rubrik": "Vektorn och katetvektorerna",
      "typ": "matte"
     },
     {
-     "t": 228,
+     "t": 191,
      "rubrik": "Längden med Pythagoras sats",
      "typ": "matte"
     },
     {
-     "t": 413,
+     "t": 374,
+     "rubrik": "Vektor eller längd?",
+     "typ": "matte"
+    },
+    {
+     "t": 395,
      "rubrik": "Vinkeln från norr med tangens",
      "typ": "matte"
     },
     {
-     "t": 626,
+     "t": 614,
      "rubrik": "Framme, men Titanic har sjunkit",
      "typ": "historia"
     },
     {
-     "t": 641,
+     "t": 628,
      "rubrik": "Livbåten: hur långt och åt vilket håll?",
      "typ": "matte"
     },
     {
-     "t": 788,
+     "t": 795,
      "rubrik": "Alla livbåtar uppe",
      "typ": "historia"
     },
     {
-     "t": 800,
+     "t": 808,
      "rubrik": "Din tur",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 800,
-    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia.",
+    "notisFran": 808,
+    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Hur långt är det till Titanic? Svara i km.",
+     "Sen: Hur många grader från norr ska Carpathia styra?"
+    ],
     "figur": {
      "vy": [
       1920,
@@ -23416,7 +23413,7 @@
     },
     "delar": [
      {
-      "fraga": "Hur långt är det till Titanic? Svara i kilometer.",
+      "fraga": "Först: Hur långt är det till Titanic? Svara i kilometer.",
       "typ": "tal",
       "svar": 50,
       "exempel": "t.ex. 80",
@@ -23436,7 +23433,7 @@
       ]
      },
      {
-      "fraga": "Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.",
+      "fraga": "Sen: Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.",
       "typ": "tal",
       "svar": 53,
       "tolerans": 0.6,
@@ -23457,7 +23454,7 @@
     ],
     "ledtrad": {
      "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30. Vinkeln får du med tangens invers: tryck två gånger på tan.",
-     "t": 228
+     "t": 191
     },
     "losning": [
      "Vektorn från Carpathia till Titanic är u = (−40, 30), alltså aₓ = −40 och aᵧ = 30.",
@@ -23469,1102 +23466,1077 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 13.4,
+     "e": 13.46,
      "text": "Det är strax efter midnatt, en natt i april nittonhundratolv."
     },
     {
-     "s": 14.4,
-     "e": 19.72,
+     "s": 14.26,
+     "e": 19.66,
      "text": "Passagerarfartyget Carpathia är på väg över Atlanten, från New York till Medelhavet."
     },
     {
-     "s": 20.72,
-     "e": 22.86,
+     "s": 20.46,
+     "e": 22.52,
      "text": "Kaptenen heter Arthur Rostron."
     },
     {
-     "s": 23.86,
-     "e": 25.18,
+     "s": 23.32,
+     "e": 24.76,
      "text": "Han har precis gått och lagt sig."
     },
     {
-     "s": 26.48,
-     "e": 29.22,
+     "s": 25.86,
+     "e": 28.64,
      "text": "Ombord finns en man som sköter fartygets radio."
     },
     {
-     "s": 30.22,
-     "e": 31.94,
+     "s": 29.44,
+     "e": 31.22,
      "text": "Han sitter kvar med hörlurarna på."
     },
     {
-     "s": 32.94,
-     "e": 37.38,
+     "s": 32.12,
+     "e": 36.6,
      "text": "Då kommer ett meddelande från Titanic, det största fartyget i världen."
     },
     {
-     "s": 38.38,
-     "e": 40.44,
+     "s": 37.86,
+     "e": 39.82,
      "text": "Titanic har kört på ett isberg."
     },
     {
-     "s": 41.44,
-     "e": 43.14,
+     "s": 40.62,
+     "e": 42.38,
      "text": "De ber om hjälp, genast."
     },
     {
-     "s": 44.44,
-     "e": 46.98,
+     "s": 43.48,
+     "e": 46.32,
      "text": "I meddelandet står också var Titanic ligger."
     },
     {
-     "s": 47.98,
-     "e": 50.04,
-     "text": "Radiomannen springer med det till kaptenen."
+     "s": 47.14,
+     "e": 49.94,
+     "text": "Radiomannen springer med meddelandet till kaptenen."
     },
     {
-     "s": 51.04,
-     "e": 53.9,
+     "s": 50.74,
+     "e": 53.56,
      "text": "Rostron ger order om att vända fartyget direkt."
     },
     {
-     "s": 55.2,
-     "e": 58.66,
+     "s": 54.66,
+     "e": 58.36,
      "text": "Medan han klär på sig, ritar han in Titanics plats på kartan."
     },
     {
-     "s": 59.66,
-     "e": 62.18,
+     "s": 59.16,
+     "e": 61.7,
      "text": "Bredvid sätter han Carpathias egen plats."
     },
     {
-     "s": 63.18,
-     "e": 66.8,
+     "s": 62.52,
+     "e": 66.34,
      "text": "Titanic ligger någonstans ute i mörkret, åt nordväst."
     },
     {
-     "s": 68.1,
-     "e": 71.02,
+     "s": 67.44,
+     "e": 70.42,
      "text": "Men exakt åt vilket håll ska Carpathia styra?"
     },
     {
-     "s": 72.02,
-     "e": 73.18,
-     "text": "Och hur långt är det dit?"
+     "s": 71.22,
+     "e": 72.9,
+     "text": "Och hur långt är det till Titanic?"
     },
     {
-     "s": 74.18,
-     "e": 75.38,
+     "s": 73.76,
+     "e": 74.86,
      "text": "Det kan vi räkna ut."
     },
     {
-     "s": 76.38,
-     "e": 78.68,
+     "s": 75.66,
+     "e": 77.9,
      "text": "Vi gör som Rostron och börjar med kartan."
     },
     {
-     "s": 79.98,
-     "e": 82.32,
+     "s": 80.4,
+     "e": 82.8,
      "text": "Vi ritar kartan som ett koordinatsystem."
     },
     {
-     "s": 83.32,
-     "e": 85.1,
-     "text": "Carpathia sätter vi i mitten."
+     "s": 83.6,
+     "e": 87.62,
+     "text": "Carpathia sätter vi i mitten, och den punkten kallas origo."
     },
     {
-     "s": 86.1,
-     "e": 87.92,
-     "text": "Den punkten kallas origo."
+     "s": 88.58,
+     "e": 93.74,
+     "text": "x-axeln går åt höger, mot öster, och y-axeln går uppåt, mot norr."
     },
     {
-     "s": 88.92,
-     "e": 93.42,
-     "text": "Genom origo drar vi två linjer med tal på, ungefär som två linjaler."
-    },
-    {
-     "s": 94.42,
-     "e": 95.98,
-     "text": "De kallas axlar."
-    },
-    {
-     "s": 97.28,
-     "e": 99.84,
-     "text": "Den ena axeln går åt höger, mot öster."
-    },
-    {
-     "s": 100.84,
-     "e": 102.54,
-     "text": "Den kallas x-axeln."
-    },
-    {
-     "s": 103.54,
-     "e": 105.6,
-     "text": "Den andra går uppåt, mot norr."
-    },
-    {
-     "s": 106.6,
-     "e": 108.2,
-     "text": "Den kallas y-axeln."
-    },
-    {
-     "s": 109.2,
-     "e": 111.24,
+     "s": 94.54,
+     "e": 96.42,
      "text": "Talen på axlarna är kilometer."
     },
     {
-     "s": 112.54,
-     "e": 113.74,
+     "s": 97.52,
+     "e": 98.6,
      "text": "Var ligger Titanic?"
     },
     {
-     "s": 114.74,
-     "e": 116.94,
+     "s": 99.4,
+     "e": 101.54,
      "text": "Åttiofyra kilometer västerut."
     },
     {
-     "s": 117.94,
-     "e": 120,
-     "text": "Men väster är åt vänster."
+     "s": 102.34,
+     "e": 106.48,
+     "text": "Men väster är åt vänster, och där har x-axeln minustal."
     },
     {
-     "s": 121,
-     "e": 125.38,
-     "text": "Vilka tal står på x-axeln åt vänster? Minustal."
-    },
-    {
-     "s": 126.38,
-     "e": 128.14,
+     "s": 107.28,
+     "e": 109.24,
      "text": "Så det blir minus åttiofyra."
     },
     {
-     "s": 129.44,
-     "e": 132.98,
-     "text": "Och hur långt norrut? Sextiosex kilometer."
+     "s": 110.04,
+     "e": 113.94,
+     "text": "Norrut är det sextiosex kilometer, så det blir sextiosex."
     },
     {
-     "s": 133.98,
-     "e": 136.78,
-     "text": "Norr är uppåt, så det blir sextiosex."
-    },
-    {
-     "s": 138.08,
-     "e": 141.44,
+     "s": 115.04,
+     "e": 118.26,
      "text": "Nu drar vi en pil från Carpathia till Titanic."
     },
     {
-     "s": 142.44,
-     "e": 143.7,
-     "text": "Pilen har en längd."
+     "s": 119.06,
+     "e": 121.76,
+     "text": "Pilen har en längd och pekar åt ett visst håll."
     },
     {
-     "s": 144.7,
-     "e": 146.38,
-     "text": "Och den pekar åt ett visst håll."
-    },
-    {
-     "s": 147.38,
-     "e": 149.54,
+     "s": 122.56,
+     "e": 124.56,
      "text": "En sån pil kallas en vektor."
     },
     {
-     "s": 150.84,
-     "e": 153.78,
-     "text": "Vi skriver vektorn med två tal i en parentes."
+     "s": 125.66,
+     "e": 131.26,
+     "text": "Vektorn skriver vi med två tal i en parentes, minus åttiofyra och sextiosex."
     },
     {
-     "s": 154.78,
-     "e": 156.62,
-     "text": "Först x och sen y."
-    },
-    {
-     "s": 157.62,
-     "e": 160.48,
-     "text": "Alltså minus åttiofyra och sextiosex."
-    },
-    {
-     "s": 161.48,
-     "e": 164.44,
+     "s": 132.06,
+     "e": 135.04,
      "text": "Det kallas att skriva vektorn i koordinatform."
     },
     {
-     "s": 165.74,
-     "e": 168.48,
+     "s": 136.14,
+     "e": 138.7,
      "text": "Man kan också ta sig till Titanic i två steg."
     },
     {
-     "s": 169.48,
-     "e": 172.82,
-     "text": "Först går man rakt norrut, sextiosex kilometer."
+     "s": 139.5,
+     "e": 142.36,
+     "text": "Först rakt norrut, sextiosex kilometer."
     },
     {
-     "s": 173.82,
-     "e": 177.88,
-     "text": "Den pilen är noll och sextiosex. Varför noll?"
+     "s": 143.16,
+     "e": 147.18,
+     "text": "Den vektorn är noll och sextiosex, för man går inte alls åt sidan."
     },
     {
-     "s": 178.88,
-     "e": 180.62,
-     "text": "För man går inte alls åt sidan."
+     "s": 147.98,
+     "e": 150.8,
+     "text": "Sen rakt västerut, åttiofyra kilometer."
     },
     {
-     "s": 181.92,
-     "e": 185.26,
-     "text": "Sen går man rakt västerut, åttiofyra kilometer."
+     "s": 151.6,
+     "e": 154.2,
+     "text": "Den vektorn är minus åttiofyra och noll."
     },
     {
-     "s": 186.26,
-     "e": 189,
-     "text": "Den pilen är minus åttiofyra och noll."
+     "s": 155,
+     "e": 157.34,
+     "text": "Då hamnar man precis vid Titanic."
     },
     {
-     "s": 190,
-     "e": 191.52,
-     "text": "Nu går man inte alls uppåt."
+     "s": 158.44,
+     "e": 162.28,
+     "text": "De två stegen och vektorn till Titanic bildar en triangel."
     },
     {
-     "s": 192.52,
-     "e": 195.1,
-     "text": "Och man hamnar precis vid Titanic, ser du?"
+     "s": 163.08,
+     "e": 166.92,
+     "text": "Hörnet där stegen möts är en rät vinkel, nittio grader."
     },
     {
-     "s": 196.4,
-     "e": 199.92,
-     "text": "De två stegen och den raka pilen bildar en triangel."
-    },
-    {
-     "s": 200.92,
-     "e": 204.58,
-     "text": "Hörnet där stegen möts är rakt, som hörnet på ett papper."
-    },
-    {
-     "s": 205.58,
-     "e": 207.52,
+     "s": 167.72,
+     "e": 169.7,
      "text": "Så triangeln är rätvinklig."
     },
     {
-     "s": 208.82,
-     "e": 211.54,
-     "text": "De två kortare sidorna kallas kateter."
+     "s": 170.5,
+     "e": 176.52,
+     "text": "De två kortare sidorna kallas kateter, och därför kallas de två stegen katetvektorer."
     },
     {
-     "s": 212.54,
-     "e": 215.6,
-     "text": "Därför kallas de två stegen katetvektorer."
+     "s": 177.32,
+     "e": 180.02,
+     "text": "Den längsta sidan är vektorn till Titanic."
     },
     {
-     "s": 216.6,
-     "e": 218.96,
-     "text": "Den längsta sidan är den raka pilen."
-    },
-    {
-     "s": 219.96,
-     "e": 221.8,
+     "s": 180.82,
+     "e": 182.58,
      "text": "Den kallas hypotenusan."
     },
     {
-     "s": 223.1,
-     "e": 224.54,
+     "s": 183.68,
+     "e": 185.58,
+     "text": "Nu kan vi svara på den första frågan."
+    },
+    {
+     "s": 186.38,
+     "e": 188.04,
      "text": "Hur långt är det till Titanic?"
     },
     {
-     "s": 225.54,
-     "e": 227.5,
-     "text": "Lika långt som den raka pilen."
+     "s": 188.84,
+     "e": 190.54,
+     "text": "Det är vektorns längd."
     },
     {
-     "s": 228.5,
-     "e": 231.84,
+     "s": 191.34,
+     "e": 194.6,
      "text": "Hur lång en vektor är räknar vi ut med Pythagoras sats."
     },
     {
-     "s": 233.14,
-     "e": 234.9,
+     "s": 195.7,
+     "e": 197.42,
      "text": "Pythagoras sats säger så här."
     },
     {
-     "s": 235.9,
-     "e": 238.52,
-     "text": "Ta den ena kateten gånger sig själv."
+     "s": 198.22,
+     "e": 202,
+     "text": "Ta den ena kateten i kvadrat, alltså gånger sig själv."
     },
     {
-     "s": 239.52,
-     "e": 242.02,
-     "text": "Ta den andra kateten gånger sig själv."
+     "s": 202.8,
+     "e": 204.7,
+     "text": "Ta den andra kateten i kvadrat."
     },
     {
-     "s": 243.02,
-     "e": 244.02,
-     "text": "Lägg ihop dem."
+     "s": 205.5,
+     "e": 208.72,
+     "text": "Lägg ihop dem, så får du hypotenusan i kvadrat."
     },
     {
-     "s": 244.74,
-     "e": 247.4,
-     "text": "Då får du hypotenusan gånger sig själv."
+     "s": 209.82,
+     "e": 214.3,
+     "text": "Samma regel står på formelbladet, längst ner under rubriken Vektorer."
     },
     {
-     "s": 248.4,
-     "e": 251.9,
-     "text": "Ett tal gånger sig självt kallas talet i kvadrat."
-    },
-    {
-     "s": 253.2,
-     "e": 258.2,
-     "text": "Pythagoras sats står på formelbladet, längst ner under rubriken Vektorer."
-    },
-    {
-     "s": 259.2,
-     "e": 260.78,
+     "s": 215.1,
+     "e": 216.6,
      "text": "Där heter vektorn u."
     },
     {
-     "s": 261.78,
-     "e": 265.76,
+     "s": 217.4,
+     "e": 221.4,
      "text": "Längden av u skrivs med ett lodrätt streck på var sida om u."
     },
     {
-     "s": 267.06,
-     "e": 269.3,
+     "s": 222.5,
+     "e": 224.7,
      "text": "Under rottecknet står a x."
     },
     {
-     "s": 270.3,
-     "e": 274.24,
+     "s": 225.5,
+     "e": 229.26,
      "text": "Det är vektorns x-koordinat, alltså steget åt sidan."
     },
     {
-     "s": 275.24,
-     "e": 276.74,
+     "s": 230.06,
+     "e": 231.32,
      "text": "Sen står a y."
     },
     {
-     "s": 277.74,
-     "e": 281.38,
+     "s": 232.12,
+     "e": 235.5,
      "text": "Det är vektorns y-koordinat, alltså steget uppåt."
     },
     {
-     "s": 282.38,
-     "e": 284.32,
+     "s": 236.3,
+     "e": 238.2,
      "text": "De två stegen är kateterna."
     },
     {
-     "s": 285.62,
-     "e": 288.46,
+     "s": 239.3,
+     "e": 241.9,
      "text": "Båda kateterna tas i kvadrat och läggs ihop."
     },
     {
-     "s": 289.46,
-     "e": 291.44,
+     "s": 242.7,
+     "e": 244.7,
      "text": "Det är hypotenusan i kvadrat."
     },
     {
-     "s": 292.44,
-     "e": 293.9,
+     "s": 245.52,
+     "e": 246.96,
      "text": "Sist kommer rottecknet."
     },
     {
-     "s": 294.9,
-     "e": 296.14,
-     "text": "Det svarar på en fråga."
+     "s": 247.76,
+     "e": 249.62,
+     "text": "Rottecknet svarar på en fråga."
     },
     {
-     "s": 297.14,
-     "e": 300.58,
+     "s": 250.42,
+     "e": 253.58,
      "text": "Vilket tal gånger sig självt blir det som står under?"
     },
     {
-     "s": 301.58,
-     "e": 303.04,
+     "s": 254.38,
+     "e": 255.78,
      "text": "Det talet är längden."
     },
     {
-     "s": 304.34,
-     "e": 306,
+     "s": 256.88,
+     "e": 258.58,
      "text": "Nu sätter vi in Titanics tal."
     },
     {
-     "s": 307,
-     "e": 308.96,
-     "text": "Pilen till Titanic kallar vi u."
+     "s": 259.38,
+     "e": 266.48,
+     "text": "Vektorn till Titanic kallar vi u, så a x är minus åttiofyra och a y är sextiosex."
     },
     {
-     "s": 309.96,
-     "e": 312.66,
-     "text": "Den är minus åttiofyra och sextiosex."
-    },
-    {
-     "s": 313.66,
-     "e": 316.4,
-     "text": "Så a x är minus åttiofyra."
-    },
-    {
-     "s": 317.4,
-     "e": 319.42,
-     "text": "Och a y är sextiosex."
-    },
-    {
-     "s": 320.67,
-     "e": 322.67,
+     "s": 267.58,
+     "e": 268.86,
      "text": "Vi skriver formeln först."
     },
     {
-     "s": 323.67,
-     "e": 330.62,
+     "s": 269.66,
+     "e": 275.98,
      "text": "Längden av u är lika med roten ur a x i kvadrat plus a y i kvadrat."
     },
     {
-     "s": 331.62,
-     "e": 334.03,
-     "text": "Sen skriver vi den igen med talen."
+     "s": 276.78,
+     "e": 280.08,
+     "text": "Sen skriver vi formeln igen, med talen på samma ställen."
     },
     {
-     "s": 335.03,
-     "e": 337.35,
-     "text": "I formeln står a x."
+     "s": 280.88,
+     "e": 284.04,
+     "text": "Där a x står, skriver vi minus åttiofyra."
     },
     {
-     "s": 338.35,
-     "e": 341.4,
-     "text": "Här är a x minus åttiofyra."
+     "s": 284.84,
+     "e": 288.64,
+     "text": "Vi sätter minus åttiofyra i en parentes, så att minuset följer med."
     },
     {
-     "s": 342.4,
-     "e": 345.99,
-     "text": "Vi sätter det i en parentes, så att minuset följer med."
+     "s": 289.44,
+     "e": 292.1,
+     "text": "Där a y står, skriver vi sextiosex."
     },
     {
-     "s": 346.99,
-     "e": 349.26,
-     "text": "I formeln står a y."
-    },
-    {
-     "s": 350.26,
-     "e": 352.81,
-     "text": "Här är a y sextiosex."
-    },
-    {
-     "s": 353.98,
-     "e": 355.58,
+     "s": 293.2,
+     "e": 294.76,
      "text": "Nu räknar vi del för del."
     },
     {
-     "s": 356.58,
-     "e": 359,
+     "s": 295.56,
+     "e": 297.84,
      "text": "Först minus åttiofyra i kvadrat."
     },
     {
-     "s": 360,
-     "e": 363.56,
-     "text": "Det är minus åttiofyra gånger minus åttiofyra."
-    },
-    {
-     "s": 364.56,
-     "e": 366.82,
+     "s": 298.64,
+     "e": 300.82,
      "text": "Minus gånger minus blir plus."
     },
     {
-     "s": 367.82,
-     "e": 370.62,
-     "text": "Så räknaren ger sjutusen femtiosex."
+     "s": 302.48,
+     "e": 306.44,
+     "text": "Oj, åttiofyra gånger åttiofyra är jobbigt i huvudet."
     },
     {
-     "s": 371.92,
-     "e": 373.88,
+     "s": 307.24,
+     "e": 309.18,
+     "text": "Det kan vi räkna enklare med räknaren."
+    },
+    {
+     "s": 309.98,
+     "e": 312.48,
+     "text": "Räknaren ger sjutusen femtiosex."
+    },
+    {
+     "s": 313.58,
+     "e": 315.48,
      "text": "Sen sextiosex i kvadrat."
     },
     {
-     "s": 374.88,
-     "e": 377.78,
-     "text": "Det blir fyratusen trehundrafemtiosex."
+     "s": 316.28,
+     "e": 319.4,
+     "text": "Räknaren ger fyratusen trehundrafemtiosex."
     },
     {
-     "s": 378.78,
-     "e": 380.6,
-     "text": "Under rottecknet lägger vi ihop dem."
+     "s": 320.2,
+     "e": 323.82,
+     "text": "Mellan kvadraterna står ett plus, så vi lägger ihop de två talen."
     },
     {
-     "s": 381.6,
-     "e": 384.26,
+     "s": 324.62,
+     "e": 327.16,
      "text": "Det blir elvatusen fyrahundratolv."
     },
     {
-     "s": 385.56,
-     "e": 392.16,
+     "s": 328.26,
+     "e": 334.34,
      "text": "Sist rottecknet. Vilket tal gånger sig självt blir elvatusen fyrahundratolv?"
     },
     {
-     "s": 393.16,
-     "e": 394.7,
-     "text": "Det räknar vi ut med räknaren."
-    },
-    {
-     "s": 395.7,
-     "e": 398.42,
+     "s": 335.14,
+     "e": 337.86,
      "text": "Räknaren visar först ett svar med ett rottecken."
     },
     {
-     "s": 399.42,
-     "e": 402.34,
+     "s": 338.66,
+     "e": 341.56,
      "text": "Tryck på knappen med pilarna och ungefär-tecknet."
     },
     {
-     "s": 403.34,
-     "e": 407.46,
+     "s": 342.36,
+     "e": 346.22,
      "text": "Då får du ett decimaltal, ungefär hundrasex komma åtta."
     },
     {
-     "s": 408.46,
-     "e": 412.4,
+     "s": 347.02,
+     "e": 350.76,
      "text": "Det är alltså ungefär hundrasju kilometer till Titanic."
     },
     {
-     "s": 413.7,
-     "e": 415.02,
+     "s": 352,
+     "e": 355.02,
+     "text": "Här är det lätt att bara lägga ihop åttiofyra och sextiosex."
+    },
+    {
+     "s": 355.82,
+     "e": 357.6,
+     "text": "Då blir det hundrafemtio kilometer."
+    },
+    {
+     "s": 358.4,
+     "e": 363.92,
+     "text": "Men hundrafemtio kilometer är vägen i två steg, först norrut och sen västerut."
+    },
+    {
+     "s": 364.72,
+     "e": 368.26,
+     "text": "Carpathia kör den raka vägen, längs vektorn u."
+    },
+    {
+     "s": 369.06,
+     "e": 373.68,
+     "text": "Som vi ser i triangeln är den vägen kortare, ungefär hundrasju kilometer."
+    },
+    {
+     "s": 374.78,
+     "e": 377.72,
+     "text": "Så vad är skillnaden mellan vektorn och längden?"
+    },
+    {
+     "s": 378.52,
+     "e": 381.78,
+     "text": "Vektorn u är minus åttiofyra och sextiosex."
+    },
+    {
+     "s": 382.58,
+     "e": 385.76,
+     "text": "Vektorn säger både hur långt och åt vilket håll."
+    },
+    {
+     "s": 386.56,
+     "e": 390.02,
+     "text": "Längden av u är bara ett tal, hundrasju kilometer."
+    },
+    {
+     "s": 390.82,
+     "e": 394,
+     "text": "Längden säger hur långt, men inte åt vilket håll."
+    },
+    {
+     "s": 395.1,
+     "e": 396.36,
      "text": "Nu den andra frågan."
     },
     {
-     "s": 416.02,
-     "e": 418.48,
+     "s": 397.16,
+     "e": 399.34,
      "text": "Åt vilket håll ska Carpathia styra?"
     },
     {
-     "s": 419.48,
-     "e": 422.7,
+     "s": 400.14,
+     "e": 403.18,
      "text": "På fartyg anger man hållet som en vinkel från norr."
     },
     {
-     "s": 424,
-     "e": 427.32,
+     "s": 404.28,
+     "e": 407.78,
      "text": "Tänk dig att du står på Carpathia och tittar rakt mot norr."
     },
     {
-     "s": 428.32,
-     "e": 432.14,
+     "s": 408.58,
+     "e": 412.38,
      "text": "Hur mycket måste du vrida dig åt vänster för att titta mot Titanic?"
     },
     {
-     "s": 433.14,
-     "e": 434.26,
-     "text": "Det är vinkeln."
+     "s": 413.18,
+     "e": 415.28,
+     "text": "Så mycket du vrider dig är vinkeln."
     },
     {
-     "s": 435.26,
-     "e": 436.26,
-     "text": "Vi kallar den v."
+     "s": 416.08,
+     "e": 417.32,
+     "text": "Vi kallar vinkeln v."
     },
     {
-     "s": 437.48,
-     "e": 440.24,
+     "s": 418.42,
+     "e": 421.28,
      "text": "Nu ger vi kateterna namn efter vinkeln v."
     },
     {
-     "s": 441.24,
-     "e": 443.64,
+     "s": 422.08,
+     "e": 424.48,
      "text": "Tänk dig att du står i hörnet där v är."
     },
     {
-     "s": 444.64,
-     "e": 446.52,
+     "s": 425.28,
+     "e": 427.18,
      "text": "Vilken sida ligger mitt emot dig?"
     },
     {
-     "s": 447.52,
-     "e": 450.08,
-     "text": "Det är steget västerut, åttiofyra."
+     "s": 427.98,
+     "e": 430.82,
+     "text": "Det är kateten västerut, åttiofyra kilometer."
     },
     {
-     "s": 451.08,
-     "e": 453.16,
+     "s": 431.62,
+     "e": 433.42,
      "text": "Den kallas motstående katet."
     },
     {
-     "s": 454.46,
-     "e": 456.78,
-     "text": "Steget norrut går ut från ditt hörn."
+     "s": 434.28,
+     "e": 437.78,
+     "text": "Kateten norrut går ut från ditt hörn och ligger intill v."
     },
     {
-     "s": 457.78,
-     "e": 461.66,
-     "text": "Det ligger intill v, så det kallas närliggande katet."
+     "s": 438.58,
+     "e": 440.88,
+     "text": "Därför kallas den närliggande katet."
     },
     {
-     "s": 462.96,
-     "e": 466.32,
+     "s": 442.4,
+     "e": 445.58,
      "text": "Men hur kan två sidor säga något om en vinkel?"
     },
     {
-     "s": 467.32,
-     "e": 469.88,
+     "s": 446.38,
+     "e": 447.86,
+     "text": "Man kan se det på det här sättet."
+    },
+    {
+     "s": 448.66,
+     "e": 451.36,
      "text": "Tänk dig att Titanic låg längre västerut."
     },
     {
-     "s": 470.88,
-     "e": 472.54,
-     "text": "Då måste du vrida dig mer."
+     "s": 452.16,
+     "e": 455.98,
+     "text": "Då måste du vrida dig mer, och den motstående kateten blir längre."
     },
     {
-     "s": 473.54,
-     "e": 475.98,
-     "text": "Och sidan mitt emot blir längre, ser du?"
+     "s": 457.08,
+     "e": 463.38,
+     "text": "Men om Titanic låg dubbelt så långt bort åt samma håll, skulle båda kateterna bli dubbelt så långa."
     },
     {
-     "s": 477.28,
-     "e": 479.5,
-     "text": "Därför jämför vi de två kateterna."
+     "s": 464.18,
+     "e": 465.82,
+     "text": "Vinkeln är ändå densamma."
     },
     {
-     "s": 480.5,
-     "e": 483.54,
+     "s": 466.62,
+     "e": 468.94,
+     "text": "Därför jämför vi kateterna med varandra."
+    },
+    {
+     "s": 469.74,
+     "e": 472.68,
      "text": "Vi delar den motstående kateten med den närliggande."
     },
     {
-     "s": 484.54,
-     "e": 487.26,
+     "s": 473.48,
+     "e": 476.42,
      "text": "Ett tal delat med ett annat kallas en kvot."
     },
     {
-     "s": 488.26,
-     "e": 491.26,
+     "s": 477.22,
+     "e": 480.22,
      "text": "Den här kvoten kallas tangens för vinkeln v."
     },
     {
-     "s": 492.56,
-     "e": 496.52,
+     "s": 481.32,
+     "e": 485.14,
      "text": "Tangens står på formelbladet, under rubriken Trigonometri."
     },
     {
-     "s": 497.52,
-     "e": 498.58,
+     "s": 485.94,
+     "e": 486.94,
      "text": "Titta på triangeln där."
     },
     {
-     "s": 499.58,
-     "e": 501.7,
-     "text": "Sidan a står mitt emot v."
+     "s": 487.74,
+     "e": 492.06,
+     "text": "Sidan a står mitt emot v, så a är motstående katet."
     },
     {
-     "s": 502.7,
-     "e": 504.22,
-     "text": "Den är motstående katet."
+     "s": 492.86,
+     "e": 496.86,
+     "text": "Sidan b går ut från v, så b är närliggande katet."
     },
     {
-     "s": 505.22,
-     "e": 507.08,
-     "text": "Sidan b går ut från v."
-    },
-    {
-     "s": 508.08,
-     "e": 509.66,
-     "text": "Den är närliggande katet."
-    },
-    {
-     "s": 510.66,
-     "e": 513,
+     "s": 497.66,
+     "e": 500.18,
      "text": "Tangens v är a delat med b."
     },
     {
-     "s": 514.3,
-     "e": 516.88,
+     "s": 501.28,
+     "e": 503.8,
      "text": "Nu läser vi av vår triangel från vinkeln v."
     },
     {
-     "s": 517.88,
-     "e": 521.92,
-     "text": "Mitt emot v ligger steget västerut, åttiofyra kilometer."
+     "s": 504.6,
+     "e": 508.8,
+     "text": "Mitt emot v ligger kateten västerut, så a är åttiofyra."
     },
     {
-     "s": 522.92,
-     "e": 524.44,
-     "text": "Så a är åttiofyra."
+     "s": 509.6,
+     "e": 513.58,
+     "text": "Kateten norrut går ut från v, så b är sextiosex."
     },
     {
-     "s": 525.44,
-     "e": 527.48,
-     "text": "Steget norrut går ut från v."
-    },
-    {
-     "s": 528.48,
-     "e": 530.08,
-     "text": "Så b är sextiosex."
-    },
-    {
-     "s": 531.33,
-     "e": 533.15,
+     "s": 514.68,
+     "e": 516.08,
      "text": "Vi skriver formeln först."
     },
     {
-     "s": 534.15,
-     "e": 537.74,
+     "s": 516.88,
+     "e": 519.86,
      "text": "Tangens v är lika med a delat med b."
     },
     {
-     "s": 538.74,
-     "e": 541.01,
-     "text": "Sen skriver vi den igen med talen."
+     "s": 520.66,
+     "e": 523,
+     "text": "Sen skriver vi formeln igen med talen."
     },
     {
-     "s": 542.01,
-     "e": 543.88,
-     "text": "I formeln står a."
+     "s": 523.8,
+     "e": 526.16,
+     "text": "Där a står, skriver vi åttiofyra."
     },
     {
-     "s": 544.88,
-     "e": 547.06,
-     "text": "Här är a åttiofyra."
+     "s": 526.96,
+     "e": 531.02,
+     "text": "Under bråkstrecket står b, och där skriver vi sextiosex."
     },
     {
-     "s": 548.06,
-     "e": 550.15,
-     "text": "Under bråkstrecket står b."
-    },
-    {
-     "s": 551.15,
-     "e": 553.33,
-     "text": "Här är b sextiosex."
-    },
-    {
-     "s": 554.33,
-     "e": 558.78,
+     "s": 531.82,
+     "e": 535.8,
      "text": "Så tangens v är lika med åttiofyra delat med sextiosex."
     },
     {
-     "s": 559.95,
-     "e": 561.03,
-     "text": "Nu vet vi kvoten."
+     "s": 536.9,
+     "e": 539.52,
+     "text": "Nu vet vi kvoten, men vi söker vinkeln."
     },
     {
-     "s": 562.03,
-     "e": 563.37,
-     "text": "Men vi söker vinkeln."
+     "s": 540.32,
+     "e": 543.16,
+     "text": "Tangens går från vinkeln till kvoten."
     },
     {
-     "s": 564.37,
-     "e": 568.41,
-     "text": "Vi måste alltså gå baklänges, från kvoten till vinkeln."
+     "s": 543.96,
+     "e": 547.4,
+     "text": "Nu vill vi åt andra hållet, från kvoten till vinkeln."
     },
     {
-     "s": 569.41,
-     "e": 571.33,
+     "s": 548.2,
+     "e": 549.98,
      "text": "Det kallas tangens invers."
     },
     {
-     "s": 572.33,
-     "e": 575.51,
+     "s": 550.78,
+     "e": 553.88,
      "text": "På räknaren skrivs det tan med en liten minus etta."
     },
     {
-     "s": 576.81,
-     "e": 579.99,
-     "text": "Man når den genom att trycka två gånger på tangensknappen."
+     "s": 554.68,
+     "e": 559.26,
+     "text": "Minus ettan betyder inte minus, och inte ett delat med tangens."
     },
     {
-     "s": 580.99,
-     "e": 584.89,
-     "text": "Men först kollar vi att det står DEG högst upp på skärmen."
+     "s": 560.06,
+     "e": 562.22,
+     "text": "Den betyder att vi går åt andra hållet."
     },
     {
-     "s": 585.89,
-     "e": 587.73,
+     "s": 563.32,
+     "e": 567.7,
+     "text": "Nu får vi inte glömma att kolla att det står DEG högst upp på skärmen."
+    },
+    {
+     "s": 568.5,
+     "e": 570.32,
      "text": "Då räknar räknaren i grader."
     },
     {
-     "s": 589.03,
-     "e": 590.91,
-     "text": "Nu trycker vi två gånger på tan."
+     "s": 571.42,
+     "e": 575.5,
+     "text": "Tangens invers når vi genom att trycka två gånger på tangensknappen."
     },
     {
-     "s": 591.91,
-     "e": 594.99,
+     "s": 576.3,
+     "e": 579.38,
      "text": "Sen skriver vi åttiofyra delat med sextiosex."
     },
     {
-     "s": 595.99,
-     "e": 598.51,
+     "s": 580.18,
+     "e": 582.72,
      "text": "Vi stänger parentesen och trycker enter."
     },
     {
-     "s": 599.51,
-     "e": 602.31,
+     "s": 583.52,
+     "e": 586.32,
      "text": "Räknaren ger ungefär femtioett komma åtta."
     },
     {
-     "s": 603.31,
-     "e": 605.29,
-     "text": "Det är ungefär femtiotvå grader."
+     "s": 587.12,
+     "e": 590.18,
+     "text": "Avrundat till hela grader är det femtiotvå grader."
     },
     {
-     "s": 606.59,
-     "e": 610.81,
+     "s": 590.98,
+     "e": 593.08,
+     "text": "Nu går vi tillbaka till Rostron och kartan."
+    },
+    {
+     "s": 595.58,
+     "e": 599.8,
      "text": "Carpathia ska alltså styra femtiotvå grader från norr, åt väster."
     },
     {
-     "s": 611.81,
-     "e": 616.19,
+     "s": 600.6,
+     "e": 605.24,
      "text": "Nordväst ligger mitt emellan norr och väster, alltså fyrtiofem grader."
     },
     {
-     "s": 617.19,
-     "e": 620.91,
-     "text": "Så Titanic ligger lite mer åt väster än nordväst, ser du?"
+     "s": 606.04,
+     "e": 609.46,
+     "text": "Så Titanic ligger lite mer åt väster än nordväst."
     },
     {
-     "s": 621.91,
-     "e": 625.03,
+     "s": 610.26,
+     "e": 613.4,
      "text": "Det är samma riktning som Rostron räknade fram den natten."
     },
     {
-     "s": 626.33,
-     "e": 629.13,
+     "s": 614.5,
+     "e": 617.42,
      "text": "Carpathia kör så fort hon kan hela natten."
     },
     {
-     "s": 630.13,
-     "e": 632.29,
+     "s": 618.22,
+     "e": 620.56,
      "text": "Efter tre och en halv timme är hon framme."
     },
     {
-     "s": 633.29,
-     "e": 635.59,
+     "s": 621.36,
+     "e": 623.68,
      "text": "Men då har Titanic redan sjunkit."
     },
     {
-     "s": 636.59,
-     "e": 639.85,
+     "s": 624.48,
+     "e": 627.74,
      "text": "Klockan tio över fyra tar de upp den första livbåten."
     },
     {
-     "s": 641.15,
-     "e": 642.15,
+     "s": 628.84,
+     "e": 629.96,
      "text": "Sen ljusnar det."
     },
     {
-     "s": 643.09,
-     "e": 647.61,
+     "s": 630.76,
+     "e": 635.12,
      "text": "Nu ser Rostron fler livbåtar, utspridda på havet runt fartyget."
     },
     {
-     "s": 648.61,
-     "e": 650.45,
-     "text": "Var ligger de, och hur långt bort?"
+     "s": 635.92,
+     "e": 638.42,
+     "text": "Var ligger livbåtarna, och hur långt bort?"
     },
     {
-     "s": 651.45,
-     "e": 652.67,
-     "text": "Vi räknar på en av dem."
+     "s": 639.32,
+     "e": 641.06,
+     "text": "Vi räknar på en av livbåtarna."
     },
     {
-     "s": 653.97,
-     "e": 655.93,
+     "s": 643.56,
+     "e": 645.4,
      "text": "Vi lägger ett rutnät över havet."
     },
     {
-     "s": 656.93,
-     "e": 658.81,
+     "s": 646.2,
+     "e": 647.94,
      "text": "Varje ruta är hundra meter."
     },
     {
-     "s": 659.81,
-     "e": 664.35,
+     "s": 648.74,
+     "e": 653.42,
      "text": "Säg att en livbåt ligger fem rutor västerut och tolv rutor norrut."
     },
     {
-     "s": 665.35,
-     "e": 668.43,
-     "text": "Pilen dit är alltså minus fem och tolv."
+     "s": 654.22,
+     "e": 657.56,
+     "text": "Vektorn till livbåten är alltså minus fem och tolv."
     },
     {
-     "s": 669.73,
-     "e": 676.15,
+     "s": 658.66,
+     "e": 664.54,
      "text": "Katetvektorerna är noll och tolv rakt norrut, och minus fem och noll rakt västerut."
     },
     {
-     "s": 677.15,
-     "e": 678.31,
-     "text": "Hur lång är pilen?"
+     "s": 665.34,
+     "e": 667.5,
+     "text": "Hur lång är vektorn till livbåten?"
     },
     {
-     "s": 679.56,
-     "e": 681.74,
-     "text": "Titta på formelbladet igen."
+     "s": 668.6,
+     "e": 674.86,
+     "text": "Om vi går tillbaka till formelbladet, så ser vi att längden av u är roten ur a x i kvadrat"
     },
     {
-     "s": 682.74,
-     "e": 688.61,
-     "text": "Längden av u är roten ur a x i kvadrat plus a y i kvadrat."
+     "s": 675.14,
+     "e": 676.9,
+     "text": "plus a y i kvadrat."
     },
     {
-     "s": 689.73,
-     "e": 691.73,
+     "s": 678,
+     "e": 679.28,
      "text": "Vi skriver formeln först."
     },
     {
-     "s": 692.73,
-     "e": 695.18,
-     "text": "Sen skriver vi den igen med talen."
+     "s": 680.08,
+     "e": 682.44,
+     "text": "Sen skriver vi formeln igen med talen."
     },
     {
-     "s": 696.18,
-     "e": 699.96,
-     "text": "Här är a x minus fem, i en parentes."
+     "s": 683.24,
+     "e": 687.24,
+     "text": "Där a x står, skriver vi minus fem, i en parentes."
     },
     {
-     "s": 700.96,
-     "e": 703.05,
-     "text": "Och a y är tolv."
+     "s": 688.04,
+     "e": 690.32,
+     "text": "Och där a y står, skriver vi tolv."
     },
     {
-     "s": 704.22,
-     "e": 705.76,
+     "s": 691.42,
+     "e": 692.96,
      "text": "Nu räknar vi del för del."
     },
     {
-     "s": 706.76,
-     "e": 711.34,
+     "s": 693.76,
+     "e": 698.42,
      "text": "Minus fem i kvadrat är tjugofem, för minus gånger minus blir plus."
     },
     {
-     "s": 712.34,
-     "e": 714.48,
+     "s": 699.26,
+     "e": 701.38,
      "text": "Tolv i kvadrat är hundrafyrtiofyra."
     },
     {
-     "s": 715.48,
-     "e": 718.16,
+     "s": 702.18,
+     "e": 704.6,
      "text": "Under rottecknet blir det hundrasextionio."
     },
     {
-     "s": 719.46,
-     "e": 726.3,
-     "text": "Sist rottecknet. Vilket tal gånger sig självt blir hundrasextionio? Tretton."
+     "s": 705.7,
+     "e": 710.96,
+     "text": "Sist rottecknet. Vilket tal gånger sig självt blir hundrasextionio?"
     },
     {
-     "s": 727.3,
-     "e": 729.98,
+     "s": 712.98,
+     "e": 717.76,
+     "text": "Tolv gånger tolv är hundrafyrtiofyra, så talet är lite mer än tolv."
+    },
+    {
+     "s": 718.56,
+     "e": 719.64,
+     "text": "Vi provar tretton."
+    },
+    {
+     "s": 720.44,
+     "e": 725.54,
+     "text": "Tretton gånger tio är hundratrettio, och tretton gånger tre är trettionio."
+    },
+    {
+     "s": 726.34,
+     "e": 728.58,
+     "text": "Tillsammans blir det hundrasextionio."
+    },
+    {
+     "s": 729.38,
+     "e": 732.08,
      "text": "Livbåten ligger alltså tretton rutor bort."
     },
     {
-     "s": 730.98,
-     "e": 732.96,
-     "text": "Det är tusen trehundra meter."
+     "s": 732.88,
+     "e": 737.1,
+     "text": "Varje ruta är hundra meter, så det är tusen trehundra meter."
     },
     {
-     "s": 734.26,
-     "e": 735.36,
+     "s": 738.2,
+     "e": 739.32,
      "text": "Och åt vilket håll?"
     },
     {
-     "s": 736.36,
-     "e": 737.52,
+     "s": 740.12,
+     "e": 741.52,
      "text": "Vi tittar mot norr igen."
     },
     {
-     "s": 738.52,
-     "e": 742.08,
-     "text": "Mitt emot vinkeln v ligger steget västerut, fem."
+     "s": 742.32,
+     "e": 746.14,
+     "text": "Mitt emot vinkeln v ligger kateten västerut, fem."
     },
     {
-     "s": 743.08,
-     "e": 744.58,
+     "s": 746.94,
+     "e": 748.24,
      "text": "Så a är fem."
     },
     {
-     "s": 745.58,
-     "e": 748.44,
-     "text": "Intill v ligger steget norrut, tolv."
+     "s": 749.04,
+     "e": 752.04,
+     "text": "Intill v ligger kateten norrut, tolv."
     },
     {
-     "s": 749.44,
-     "e": 750.82,
+     "s": 752.84,
+     "e": 754.12,
      "text": "Så b är tolv."
     },
     {
-     "s": 752.12,
-     "e": 754.38,
+     "s": 755.22,
+     "e": 757.96,
      "text": "Vilken formel har både a och b?"
     },
     {
-     "s": 755.38,
-     "e": 759.02,
+     "s": 758.76,
+     "e": 762.62,
      "text": "På formelbladet står tangens v är a delat med b."
     },
     {
-     "s": 760.32,
-     "e": 762.42,
+     "s": 763.72,
+     "e": 765.86,
      "text": "Vi skriver formeln och sätter in talen."
     },
     {
-     "s": 763.42,
-     "e": 765.68,
-     "text": "a är fem och b är tolv."
-    },
-    {
-     "s": 766.68,
-     "e": 769.98,
+     "s": 766.66,
+     "e": 770.16,
      "text": "Så tangens v är lika med fem delat med tolv."
     },
     {
-     "s": 771.28,
-     "e": 774.68,
+     "s": 771.26,
+     "e": 774.7,
      "text": "Vinkeln får vi som förut, med två tryck på tangensknappen."
     },
     {
-     "s": 775.68,
-     "e": 777.9,
+     "s": 775.5,
+     "e": 777.96,
      "text": "Sen skriver vi fem delat med tolv."
     },
     {
-     "s": 778.9,
-     "e": 782.22,
+     "s": 778.76,
+     "e": 781.88,
      "text": "Räknaren ger ungefär tjugotvå komma sex grader."
     },
     {
-     "s": 783.22,
-     "e": 787.42,
+     "s": 782.68,
+     "e": 786.9,
      "text": "Livbåten ligger alltså nästan rakt norrut, bara lite åt väster."
     },
     {
-     "s": 788.72,
-     "e": 791.7,
+     "s": 787.78,
+     "e": 790.34,
+     "text": "Vad nice, det ser man ju i rutnätet också."
+    },
+    {
+     "s": 791.14,
+     "e": 792.72,
+     "text": "Nu tillbaka till Carpathia."
+    },
+    {
+     "s": 795.22,
+     "e": 798.2,
      "text": "Vid halv nio på morgonen är alla livbåtar uppe."
     },
     {
-     "s": 792.7,
-     "e": 794.86,
+     "s": 799,
+     "e": 801.36,
      "text": "Drygt sjuhundra människor är räddade."
     },
     {
-     "s": 795.86,
-     "e": 799.56,
+     "s": 802.16,
+     "e": 805.82,
      "text": "Sen kör Carpathia tillbaka till New York, med alla ombord."
     },
     {
-     "s": 800.86,
-     "e": 801.88,
+     "s": 808.32,
+     "e": 809.32,
      "text": "Nu är det din tur."
     },
     {
-     "s": 802.88,
-     "e": 808.22,
+     "s": 810.12,
+     "e": 815.62,
      "text": "Tänk dig att meddelandet i stället hade sagt att Titanic låg fyrtio kilometer västerut"
     },
     {
-     "s": 808.48,
-     "e": 811.12,
+     "s": 815.94,
+     "e": 818.46,
      "text": "och trettio kilometer norrut om Carpathia."
     },
     {
-     "s": 812.12,
-     "e": 813.72,
-     "text": "Hur långt är det till Titanic?"
+     "s": 819.26,
+     "e": 823.24,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 814.72,
-     "e": 817.68,
-     "text": "Och hur många grader från norr ska Carpathia styra?"
+     "s": 824.04,
+     "e": 826.66,
+     "text": "Först: Hur långt är det till Titanic?"
     },
     {
-     "s": 818.68,
-     "e": 820.2,
+     "s": 827.46,
+     "e": 828.62,
+     "text": "Svara i kilometer."
+    },
+    {
+     "s": 829.42,
+     "e": 833.26,
+     "text": "Sen: Hur många grader från norr ska Carpathia styra?"
+    },
+    {
+     "s": 834.06,
+     "e": 835.6,
      "text": "Avrunda till hela grader."
     }
    ]

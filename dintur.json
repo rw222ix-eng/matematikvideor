@@ -1623,7 +1623,11 @@
   },
   "ma1c-k6-06-vektorer-i-koordinatform": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia.",
+    "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur långt är det till Titanic? Svara i km.",
+      "Sen: Hur många grader från norr ska Carpathia styra?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "b01-uppslag-koordinater",
@@ -1647,12 +1651,12 @@
       ]
     },
     "delar": [
-      { "fraga": "Hur långt är det till Titanic? Svara i kilometer.", "typ": "tal", "svar": 50, "exempel": "t.ex. 80",
+      { "fraga": "Först: Hur långt är det till Titanic? Svara i kilometer.", "typ": "tal", "svar": 50, "exempel": "t.ex. 80",
         "fel": [
           { "svar": "70", "text": "Du har lagt ihop 40 och 30. Men vägen går snett, som hypotenusan. Ta roten ur 40² + 30²." },
           { "svar": "2500", "text": "Det är 40² + 30². Glöm inte att ta roten ur summan." },
           { "svar": "10", "text": "Kvadrera först: 40² + 30² = 1 600 + 900. Ta sedan roten ur." } ] },
-      { "fraga": "Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.", "typ": "tal", "svar": 53, "tolerans": 0.6, "exempel": "t.ex. 45",
+      { "fraga": "Sen: Hur många grader från norr ska Carpathia styra? Avrunda till hela grader.", "typ": "tal", "svar": 53, "tolerans": 0.6, "exempel": "t.ex. 45",
         "fel": [
           { "svar": "37", "tolerans": 0.6, "text": "Det är vinkeln från x-axeln. Vinkeln från norr har 40 mitt emot sig och 30 intill: tangens v = 40/30." },
           { "svar": "1.33", "tolerans": 0.01, "text": "Det är tangens v. Använd tangens invers på räknaren (tryck två gånger på tan) för att få vinkeln." } ] }
