@@ -2118,10 +2118,14 @@
   },
   "ma1c-k2-02-formler-och-modeller": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Ett ljus har 10 streck, och det brinner ner 2 streck varje timme.",
+    "fraga": "Ett ljus har 10 streck, och det brinner ner 2 streck varje timme. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv en formel för L efter t timmar.",
+      "Sen: Hur länge har ljuset brunnit när 4 streck är kvar?"
+    ],
     "delar": [
       {
-        "fraga": "Skriv en formel för hur många streck L som är kvar efter t timmar.",
+        "fraga": "Först: Skriv en formel för hur många streck L som är kvar efter t timmar.",
         "typ": "ekvation",
         "svar": "L = 10 − 2t",
         "exempel": "t.ex. L = 8 − 3t",
@@ -2153,7 +2157,7 @@
         ]
       },
       {
-        "fraga": "Hur länge har ljuset brunnit när 4 streck är kvar?",
+        "fraga": "Sen: Hur länge har ljuset brunnit när 4 streck är kvar?",
         "typ": "tal",
         "svar": 3,
         "enhet": "timmar",
