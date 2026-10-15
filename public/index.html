@@ -3428,12 +3428,14 @@
   // YouTubes egna undertexter av — sidan ritar sina egna ur tal.srt.
   function stangYtText() { if (yt && yt.unloadModule) { try { yt.unloadModule("captions"); yt.unloadModule("cc"); } catch (e) {} } }
   // När filmen är slut: Din tur-frågan och vägen till svaret, och i en formelbladsdel också Nästa del.
+  // `slut` i dintur.json (en rad per fråga) visar alla frågorna kort; utan den visas första delens fråga.
+  const slutFraga = (d) => [].concat(d.slut || d.delar[0].fraga).map(esc).join("<br>");
   function slutHtml(v) {
     const n = nastaDel(v), nasta = n && !n.saknas ? n : null;
     if (!v.dinTur && !nasta) return "";
     const pil = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.5 6 H10.5 M6.5 2 L10.5 6 L6.5 10"/></svg>';
     return `<div class="slut" id="duk-slut" hidden><div>${v.dinTur
-      ? `<p class="etikett">Din tur</p><p class="slut-fraga">${esc(v.dinTur.delar[0].fraga)}</p>`
+      ? `<p class="etikett">Din tur</p><p class="slut-fraga">${slutFraga(v.dinTur)}</p>`
       : `<p class="etikett">${nastaOrd(v)}</p><p class="slut-fraga">${esc(nastaNamn(nasta))}</p>`}<div class="knapprad">${v.dinTur ? `<button type="button" class="kolla" id="duk-svara">Svara på frågan</button>` : ""}${nasta ? `<button type="button" class="${v.dinTur ? "kant" : "kolla"}" id="duk-nasta" data-film="${nasta.id}">${nastaOrd(v)}${pil}</button>` : ""}<button type="button" class="kant" id="duk-se-igen">Se filmen igen</button></div></div></div>`;
   }
   function byggDuk(v) {

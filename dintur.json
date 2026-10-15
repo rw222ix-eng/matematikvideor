@@ -1814,10 +1814,14 @@
   },
   "ma1c-k4-05-exponentialfunktioner": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år. Börja med förändringsfaktorn.",
+    "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv exponentialfunktionen, x = år och y = pund.",
+      "Sen: Hur många pund blir det efter tio år?"
+    ],
     "delar": [
       {
-        "fraga": "Skriv sen exponentialfunktionen, med x för antalet år och y för pengarna i pund.",
+        "fraga": "Först: Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund. Börja med förändringsfaktorn.",
         "typ": "ekvation",
         "svar": "y = 1000 · 1,04^x",
         "exempel": "t.ex. y = 500 · 1,03^x",
@@ -1850,7 +1854,7 @@
         ]
       },
       {
-        "fraga": "Hur många pund blir det efter tio år? Avrunda till hela pund.",
+        "fraga": "Sen: Hur många pund blir det efter tio år? Avrunda till hela pund.",
         "typ": "tal",
         "svar": 1480,
         "tolerans": 0.5,
