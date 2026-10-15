@@ -696,10 +696,11 @@
   },
   "ma2a-04-pq-formeln": {
     "notisFran": "Omkring trehundra år senare",
-    "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter.",
+    "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Du ska svara på två frågor.",
+    "slut": ["Först: Ställ upp en ekvation, med x för bredden.", "Sen: Lös den med pq-formeln. Hur bred är åkern?"],
     "delar": [
       {
-        "fraga": "Ställ upp en ekvation, med x för bredden.",
+        "fraga": "Först: Ställ upp en ekvation, med x för bredden.",
         "typ": "ekvation",
         "svar": "x*(x + 6) = 72",
         "exempel": "t.ex. x(x + 4) = 96",
@@ -725,7 +726,7 @@
         ]
       },
       {
-        "fraga": "Lös den med pq-formeln. Hur bred är åkern?",
+        "fraga": "Sen: Lös den med pq-formeln. Hur bred är åkern?",
         "typ": "tal",
         "svar": 6,
         "tolerans": 0.001,
