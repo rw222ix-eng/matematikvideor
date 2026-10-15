@@ -503,10 +503,30 @@
     "notisFran": "Nu är det din tur"
   },
   "ma2a-01-kvadreringsreglerna": {
-    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel.",
+    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel. Du ska svara på två frågor.",
+    "slut": [
+      "Först: 47 är 50 minus vad?",
+      "Sen: Räkna 47 i kvadrat i huvudet, som Bethe."
+    ],
     "delar": [
       {
-        "fraga": "Räkna 47 i kvadrat i huvudet, som Bethe.",
+        "fraga": "Först: 47 är 50 minus vad?",
+        "typ": "tal",
+        "svar": 3,
+        "exempel": "t.ex. 2",
+        "fel": [
+          {
+            "svar": "-3",
+            "text": "Minus står redan i frågan. 50 − 3 = 47, så talet som dras bort är 3."
+          },
+          {
+            "svar": "53",
+            "text": "53 ligger tre steg efter 50. 47 ligger tre steg före, och 50 − 3 = 47."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Räkna 47 i kvadrat i huvudet, som Bethe.",
         "typ": "tal",
         "svar": 2209,
         "exempel": "t.ex. 2304",
@@ -539,7 +559,7 @@
       }
     ],
     "ledtrad": {
-      "fras": "Vi tar delarna en i taget",
+      "fras": "Vi tar termerna i mallen en i taget",
       "text": "Tänk på 47 som 50 − 3, som Bethe gjorde med 48. Först 50 i kvadrat, sedan dubbla produkten, sist 3 i kvadrat."
     },
     "losning": [
