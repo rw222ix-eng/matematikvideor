@@ -2066,10 +2066,14 @@
   },
   "ma1c-k2-01-linjara-ekvationer": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Lös ekvationen 6x + 9 = 45.",
+    "fraga": "Lös ekvationen 6x + 9 = 45. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Lös 6x + 9 = 45. Vad är x?",
+      "Sen: Sätt in x i vänster led. Vad blir 6x + 9?"
+    ],
     "delar": [
       {
-        "fraga": "Vad är x?",
+        "fraga": "Först: Vad är x?",
         "typ": "tal",
         "svar": 6,
         "exempel": "t.ex. 3",
@@ -2089,7 +2093,7 @@
         ]
       },
       {
-        "fraga": "Kontrollera svaret: sätt in det i vänster led. Vad blir 6x + 9?",
+        "fraga": "Sen: Kontrollera svaret. Sätt in x i vänster led. Vad blir 6x + 9?",
         "typ": "tal",
         "svar": 45,
         "exempel": "t.ex. 30",
