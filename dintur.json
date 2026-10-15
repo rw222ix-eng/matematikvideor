@@ -572,10 +572,45 @@
     ]
   },
   "ma2a-02-faktorisera": {
-    "fraga": "Nu är det din tur.",
+    "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är den största gemensamma faktorn i 9x² + 18x?",
+      "Sen: Faktorisera 9x² + 18x."
+    ],
     "delar": [
       {
-        "fraga": "Faktorisera 9x² + 18x.",
+        "fraga": "Först: Vad är den största gemensamma faktorn i 9x² + 18x?",
+        "typ": "uttryck",
+        "svar": "9x",
+        "variabler": [
+          "x"
+        ],
+        "exempel": "t.ex. 3x",
+        "fel": [
+          {
+            "svar": "3x",
+            "text": "3x finns i båda termerna, men det går att ta mer. Vilket är det största tal som både 9 och 18 kan delas med?"
+          },
+          {
+            "svar": "9",
+            "text": "9 finns i båda termerna. Men x finns också i båda, så ta med x."
+          },
+          {
+            "svar": "x",
+            "text": "x finns i båda termerna. Men 9 finns också i båda, så ta med 9."
+          },
+          {
+            "svar": "3",
+            "text": "3 finns i båda termerna, men det går att ta mer. Både 9 och 18 kan delas med 9, och x finns i båda."
+          },
+          {
+            "svar": "9x^2",
+            "text": "9x² finns bara i den första termen. 18x har bara ett x."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Faktorisera 9x² + 18x.",
         "typ": "uttryck",
         "svar": "9x^2 + 18x",
         "visa": "9x² + 18x",
