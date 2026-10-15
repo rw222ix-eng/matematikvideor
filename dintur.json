@@ -1732,10 +1732,14 @@
   },
   "ma1c-k4-02-linjara-samband": {
     "notisFran": "Nu är det din tur",
-    "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre.",
+    "fraga": "En fjäder är 8 cm lång utan vikter. Varje vikt gör den 2 cm längre. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv sambandet, y = kx + m.",
+      "Sen: Hur lång är fjädern med fem vikter?"
+    ],
     "delar": [
       {
-        "fraga": "Skriv sambandet på formen y = kx + m, med x för antalet vikter och y för fjäderns längd i cm.",
+        "fraga": "Först: Skriv sambandet på formen y = kx + m, med x för antalet vikter och y för fjäderns längd i cm.",
         "typ": "ekvation",
         "svar": "y = 2x + 8",
         "exempel": "t.ex. y = 4x + 6",
@@ -1758,7 +1762,7 @@
         ]
       },
       {
-        "fraga": "Hur lång är fjädern med fem vikter?",
+        "fraga": "Sen: Hur lång är fjädern med fem vikter?",
         "typ": "tal",
         "svar": 18,
         "enhet": "cm",
