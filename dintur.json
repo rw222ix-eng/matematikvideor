@@ -1671,10 +1671,14 @@
   },
   "ma1c-k4-01-funktioner": {
     "notisFran": "Nu är det din tur",
-    "fraga": "En annan ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40.",
+    "fraga": "En annan ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är f(20)?",
+      "Sen: Vilken är funktionens värdemängd?"
+    ],
     "delar": [
       {
-        "fraga": "Vad är f(20)?",
+        "fraga": "Först: Vad är f(20)?",
         "typ": "tal",
         "svar": 3000,
         "tolerans": 0.5,
@@ -1699,7 +1703,7 @@
         ]
       },
       {
-        "fraga": "Vilken är funktionens värdemängd? Skriv den som en olikhet.",
+        "fraga": "Sen: Vilken är funktionens värdemängd? Skriv den som en olikhet.",
         "typ": "olikhet",
         "svar": "0 <= f(t) <= 6000",
         "exempel": "t.ex. 0 ≤ f(t) ≤ 8 500",
