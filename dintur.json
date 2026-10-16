@@ -1329,7 +1329,11 @@
   },
   "ma1c-k6-03-berakna-vinklar": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Tänk dig ett annat torn som också lutar. Det är lägre än tornet i Pisa. Från foten och upp längs tornet till kanten är det 10 meter. Ett snöre med en tyngd hänger rakt ner från kanten. Det når marken 1 meter från tornets fot.",
+    "fraga": "Tänk dig ett annat torn som också lutar. Det är lägre än tornet i Pisa. Från foten och upp längs tornet till kanten är det 10 meter. Ett snöre med en tyngd hänger rakt ner från kanten. Det når marken 1 meter från tornets fot. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många grader lutar tornet?",
+      "Sen: Hur stor är vinkeln nere vid tornets fot?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "p07-annat-torn",
@@ -1351,7 +1355,7 @@
     },
     "delar": [
       {
-        "fraga": "Hur många grader lutar tornet? Svara med en decimal.",
+        "fraga": "Först: Hur många grader lutar tornet? Svara med en decimal.",
         "typ": "tal",
         "svar": 5.7392,
         "tolerans": 0.06,
@@ -1376,7 +1380,7 @@
         ]
       },
       {
-        "fraga": "Hur stor är vinkeln nere vid tornets fot? Svara med en decimal.",
+        "fraga": "Sen: Hur stor är vinkeln nere vid tornets fot? Svara med en decimal.",
         "typ": "tal",
         "svar": 84.2608,
         "tolerans": 0.06,
