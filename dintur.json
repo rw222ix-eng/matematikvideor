@@ -1996,10 +1996,14 @@
   },
   "ma1c-k4-04-potensfunktioner": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2. Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet. Se upp, 30 är inte C. Börja med att räkna ut C, alltså trycket gånger strecken.",
+    "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2. Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv funktionen y = C · x^(−1).",
+      "Sen: Hur många streck vid tryck 3?"
+    ],
     "delar": [
       {
-        "fraga": "Skriv sedan funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck.",
+        "fraga": "Först: Skriv funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck. Se upp, 30 är inte C. Börja med att räkna ut C, alltså trycket gånger strecken.",
         "typ": "ekvation",
         "svar": "y = 60x^(-1)",
         "exempel": "t.ex. y = 24x^(-1)",
@@ -2026,7 +2030,7 @@
         ]
       },
       {
-        "fraga": "Hur många streck fyller luften vid tryck 3, alltså tre gånger så hårt?",
+        "fraga": "Sen: Hur många streck fyller luften vid tryck 3, alltså tre gånger så hårt?",
         "typ": "tal",
         "svar": 20,
         "enhet": "streck",
