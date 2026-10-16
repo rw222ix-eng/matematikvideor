@@ -1261,7 +1261,11 @@
     "notisFran": "Nu tar vi tre bitar"
   },
   "ma1c-k6-05-addera-vektorer": {
-    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7).",
+    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7). Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv u + v i koordinatform.",
+      "Sen: Hur många rutor från starten ligger båten då, om man mäter rakt?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "b01-uppslag-kompass",
@@ -1282,7 +1286,7 @@
     },
     "delar": [
       {
-        "fraga": "Vad blir x-koordinaten i u + v?",
+        "fraga": "Först: Skriv u + v i koordinatform. Vad blir x-koordinaten?",
         "typ": "tal",
         "svar": -6,
         "exempel": "t.ex. −3",
@@ -1304,7 +1308,7 @@
         ]
       },
       {
-        "fraga": "Hur många rutor från starten ligger båten då, om man mäter rakt?",
+        "fraga": "Sen: Hur många rutor från starten ligger båten då, om man mäter rakt?",
         "typ": "tal",
         "svar": 10,
         "enhet": "rutor",
