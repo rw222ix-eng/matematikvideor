@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-16T09:11:54.814Z",
+ "byggd": "2026-10-16T22:41:26.415Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -50200,6 +50200,941 @@
      "s": 738.74,
      "e": 742.74,
      "text": "Hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-08-substitution-och-addition",
+   "titel": "Kirchhoff och strömmen – Lösa ekvationssystem med substitutions- och additionsmetoden",
+   "ar": 1845,
+   "serie": "ma2a",
+   "del": 8,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-08-substitution-och-addition-v1/ma2a-08-substitution-och-addition-1080p.mp4",
+   "moment": "Lösa ekvationssystem algebraiskt med substitutionsmetoden och additionsmetoden",
+   "begrepp": [
+    "ekvationssystem",
+    "klammer",
+    "obekant",
+    "substitutionsmetoden",
+    "additionsmetoden",
+    "lösa ut",
+    "sätta in",
+    "eliminera",
+    "multiplicera en ekvation",
+    "kontroll",
+    "ström",
+    "ampere",
+    "resistans",
+    "ohm",
+    "Ohms lag",
+    "Kirchhoffs lagar",
+    "Königsberg",
+    "Gustav Kirchhoff"
+   ],
+   "beskrivning": "År 1845 studerar Gustav Kirchhoff i Königsberg och kommer fram till två regler för hur strömmen delar sig i ett nät av trådar. Reglerna ger ett ekvationssystem, och vi löser det exakt på två sätt: med substitutionsmetoden och med additionsmetoden.",
+   "youtube": null,
+   "langd": 582,
+   "omslag": "omslag/ma2a-08-substitution-och-addition.jpg?v=9f236835",
+   "omslagRen": "omslag/ma2a-08-substitution-och-addition-ren.jpg?v=7d39d834",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Vi är i staden Königsberg vid Östersjön, vintern artonhundrafyrtiofem. I dag heter staden Kaliningrad och hör till Ryssland. Här studerar Gustav Kirchhoff matematik och fysik vid universitetet. Han är tjugoett år gammal."
+    },
+    {
+     "t": 26,
+     "text": "Kirchhoffs lärare heter Franz Neumann. Han är professor i fysik. Neumann träffar en liten grupp studenter och ger dem svåra uppgifter att lösa. En av uppgifterna handlar om elektrisk ström i trådar."
+    },
+    {
+     "t": 41,
+     "text": "Hur strömmen går i en enda tråd vet man redan. Det visade Georg Ohm arton år tidigare. Men när en tråd delar sig i flera trådar blir det svårare. Många trådar som sitter ihop kallas ett nät. Hur mycket ström går i varje tråd i ett nät? Ingen har ett sätt att räkna ut det för vilket nät som helst."
+    },
+    {
+     "t": 64,
+     "text": "Kirchhoff sitter vid sitt skrivbord och ritar nät efter nät. Han kommer fram till två regler, som gäller i alla nät. Med reglerna blir varje nät några ekvationer, som ska gälla på samma gång. Men hur löser man sådana ekvationer exakt? Det tar vi reda på nu."
+    },
+    {
+     "t": 86,
+     "text": "Kirchhoff hade andra enheter än vi, så vi räknar med dagens. Strömmen mäter vi i ampere. Vi tar det enklaste nätet. I punkten A delar sig tråden i två trådar, en tjock och en tunn. I punkten B går de ihop igen. Fem ampere kommer in till punkten A."
+    },
+    {
+     "t": 107,
+     "text": "Den tunna tråden är svårare för strömmen att ta sig igenom. Man säger att den har större resistans, och resistansen mäts i ohm. Den tjocka tråden har två ohm, och den tunna har tre ohm. Strömmen i den tjocka tråden kallar vi x, och strömmen i den tunna kallar vi y. x och y kallas de obekanta, för vi vet inte vad de är än."
+    },
+    {
+     "t": 132,
+     "text": "Nu tar vi Kirchhoffs första regel. Ström försvinner inte på vägen. Lika mycket ström som kommer in i punkten A, går ut ur den. Fem ampere kommer in, och x och y går ut. Alltså är x plus y lika med fem."
+    },
+    {
+     "t": 151,
+     "text": "Den andra regeln bygger på Ohms lag. Spänningen är det som driver strömmen genom tråden, och den mäts i volt. Ohms lag säger att spänningen är resistansen gånger strömmen. I den tjocka tråden är spänningen två gånger x, alltså två x. I den tunna tråden är den tre y."
+    },
+    {
+     "t": 173,
+     "text": "Båda trådarna går från punkten A till punkten B. För ett sådant nät säger Kirchhoffs andra regel att spänningen är lika stor i båda trådarna. Alltså är två x lika med tre y."
+    },
+    {
+     "t": 188,
+     "text": "Nu har vi två ekvationer, och båda ska gälla på samma gång. Två sådana ekvationer kallas ett ekvationssystem. Vi skriver dem under varandra, med en klammer framför. Att lösa systemet betyder att hitta ett x och ett y som passar i båda ekvationerna."
+    },
+    {
+     "t": 207,
+     "text": "Man kan rita ekvationerna som två räta linjer och läsa av var linjerna möts. Men grafen ger sällan ett exakt svar. Därför räknar vi i stället. Hur gör vi det, när det finns två obekanta? Vi blir av med den ena. Då har vi en ekvation med bara en obekant, och en sådan ekvation kan vi lösa."
+    },
+    {
+     "t": 230,
+     "text": "Vi börjar med den första ekvationen, x plus y är lika med fem. Där kan vi få y ensamt. Det som står på var sin sida om likhetstecknet kallas leden. Vi drar bort x från båda leden, för x minus x är noll. Då står det y är lika med fem minus x."
+    },
+    {
+     "t": 251,
+     "text": "y och fem minus x är alltså samma sak. Därför kan vi byta ut y i den andra ekvationen mot fem minus x. Vi sätter fem minus x inom en parentes, för hela parentesen ska multipliceras med tre. Då står det två x är lika med tre gånger parentesen fem minus x. Nu finns bara x kvar."
+    },
+    {
+     "t": 275,
+     "text": "Först multiplicerar vi in trean i parentesen. Tre gånger fem är femton, och tre gånger minus x är minus tre x. Då har vi två x är lika med femton minus tre x."
+    },
+    {
+     "t": 290,
+     "text": "Nu vill vi ha alla x på samma sida. Vi lägger till tre x i båda leden, för minus tre x plus tre x är noll. Två x plus tre x blir fem x, så fem x är lika med femton. Hur mycket är då ett x? Vi delar båda leden med fem. Femton delat med fem är tre, så x är lika med tre."
+    },
+    {
+     "t": 315,
+     "text": "Nu får vi inte glömma y. Vi hade y är lika med fem minus x, och x är tre. Fem minus tre är två, så y är två. Stämmer det i den andra ekvationen? Två gånger tre är sex, och tre gånger två är också sex. Snyggt. Båda leden blir sex."
+    },
+    {
+     "t": 337,
+     "text": "Vad betyder svaret för Kirchhoffs nät? Tre ampere går i den tjocka tråden, och två ampere i den tunna. Mest ström går alltså där det är lättast att ta sig fram. Och sexan är spänningen, sex volt i båda trådarna."
+    },
+    {
+     "t": 353,
+     "text": "Det vi just gjorde kallas substitutionsmetoden. Att substituera betyder att ersätta. Vi ersatte y med fem minus x, så att bara en obekant fanns kvar."
+    },
+    {
+     "t": 366,
+     "text": "Men Kirchhoffs nät kunde ha många trådar. Då blir det många obekanta att lösa ut och sätta in i varandra. Oj, vad jobbigt. Det finns ett annat sätt, som ofta går snabbare. Vi tar samma två ekvationer, men nu lägger vi ihop dem."
+    },
+    {
+     "t": 384,
+     "text": "Först skriver vi om den andra ekvationen, så att x och y står i samma led. Vi drar bort tre y från båda leden. Då står det två x minus tre y är lika med noll."
+    },
+    {
+     "t": 397,
+     "text": "Nu lägger vi ihop ekvationerna, led för led. Det får vi göra. Fem är ju lika mycket som x plus y. Så när vi lägger till x plus y i det ena ledet och fem i det andra, lägger vi till lika mycket på båda sidor om likhetstecknet."
+    },
+    {
+     "t": 414,
+     "text": "Men vad händer om vi lägger ihop ekvationerna som de står nu? Plus y och minus tre y blir minus två y, så y försvinner inte. Vi vill att y försvinner. Om det stod plus tre y i den första ekvationen, skulle plus tre y och minus tre y bli noll."
+    },
+    {
+     "t": 435,
+     "text": "Därför multiplicerar vi den första ekvationen med tre. Tre gånger x plus y blir tre x plus tre y, och tre gånger fem blir femton. Det är lätt att glömma femman. Men båda leden ska multipliceras, annars gäller inte likheten längre."
+    },
+    {
+     "t": 454,
+     "text": "Nu lägger vi ihop. Tre x plus två x är fem x. Plus tre y och minus tre y är noll, så y försvinner. Femton plus noll är femton. Kvar står fem x är lika med femton. Det är samma ekvation som förut, så x är tre och y är två igen."
+    },
+    {
+     "t": 477,
+     "text": "Det här kallas additionsmetoden, för vi adderar ekvationerna. Båda metoderna ger samma svar. Skillnaden är hur vi blir av med en obekant. Med substitutionsmetoden ersätter vi en obekant med det den är lika med. Med additionsmetoden lägger vi ihop ekvationerna, så att en obekant försvinner. Står en obekant nästan ensam, passar substitution. Står samma obekant med motsatta tal, som tre y och minus tre y, passar addition. Nu går vi tillbaka till Kirchhoff."
+    },
+    {
+     "t": 514,
+     "text": "Kirchhoffs två regler trycktes samma år, artonhundrafyrtiofem. Två år senare skrev han hur man löser ekvationerna för vilket nät som helst, hur stort det än är. Samma år blev han klar med sina studier och flyttade till Berlin."
+    },
+    {
+     "t": 530,
+     "text": "Kirchhoff blev sedan professor i fysik. Hans två regler kallas i dag Kirchhoffs lagar. Elektriker och ingenjörer räknar med dem när de bygger allt från elen i ett hus till kretsarna i en mobiltelefon."
+    },
+    {
+     "t": 547,
+     "text": "Nu är det din tur. I ett annat nät kommer sex ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen ett ohm, och den andra har två ohm. Strömmen i tråden med ett ohm kallar vi x, och strömmen i tråden med två ohm kallar vi y. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur många ampere går i tråden med ett ohm? Sen: Hur många ampere går i tråden med två ohm?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Königsberg 1845: strömmen i ett nät",
+     "typ": "historia"
+    },
+    {
+     "t": 86,
+     "rubrik": "Två regler, två ekvationer",
+     "typ": "matte"
+    },
+    {
+     "t": 207,
+     "rubrik": "Substitutionsmetoden",
+     "typ": "matte"
+    },
+    {
+     "t": 337,
+     "rubrik": "Svaret i nätet",
+     "typ": "matte"
+    },
+    {
+     "t": 366,
+     "rubrik": "Additionsmetoden",
+     "typ": "matte"
+    },
+    {
+     "t": 514,
+     "rubrik": "Kirchhoffs lagar",
+     "typ": "historia"
+    },
+    {
+     "t": 547,
+     "rubrik": "Strömmen i ett annat nät",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 547,
+    "fraga": "I ett annat nät kommer 6 ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen 1 ohm, och den andra har 2 ohm. Strömmen i tråden med 1 ohm kallar vi x, och strömmen i tråden med 2 ohm kallar vi y. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Hur många ampere går i tråden med 1 ohm?",
+     "Sen: Hur många ampere går i tråden med 2 ohm?"
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Hur många ampere går i tråden med 1 ohm? Ställ upp ekvationssystemet med Kirchhoffs två regler och lös det.",
+      "typ": "tal",
+      "svar": 4,
+      "tolerans": 0.001,
+      "enhet": "ampere",
+      "exempel": "t.ex. 3",
+      "fel": [
+       {
+        "svar": "2",
+        "text": "2 ampere går i den andra tråden. Mest ström går där resistansen är minst, alltså i tråden med 1 ohm."
+       },
+       {
+        "svar": "3",
+        "text": "Strömmen delar sig inte lika. Spänningen är lika i båda trådarna: 1 · x = 2 · y, så x är dubbelt så stor som y."
+       },
+       {
+        "svar": "6",
+        "text": "6 ampere är hela strömmen in till punkten. Den delar sig: x + y = 6."
+       },
+       {
+        "svar": "12",
+        "text": "Kolla med första regeln: x + y = 6, så x kan inte vara större än 6. Lös ut y = 6 − x och sätt in i x = 2y."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Hur många ampere går i tråden med 2 ohm?",
+      "typ": "tal",
+      "svar": 2,
+      "tolerans": 0.001,
+      "enhet": "ampere",
+      "exempel": "t.ex. 1",
+      "fel": [
+       {
+        "svar": "4",
+        "text": "4 ampere går i tråden med 1 ohm. I tråden med 2 ohm går mindre ström, eftersom den är svårare att ta sig igenom."
+       },
+       {
+        "svar": "3",
+        "text": "Strömmen delar sig inte lika. Sätt in x = 4 i x + y = 6."
+       },
+       {
+        "svar": "6",
+        "text": "6 ampere är hela strömmen. Sätt in x = 4 i x + y = 6 för att få y."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Första regeln: x + y = 6. Andra regeln: spänningen är lika i båda trådarna, 1 · x = 2 · y. Lös ut y = 6 − x ur den första och sätt in i den andra.",
+     "t": 132
+    },
+    "losning": [
+     "Första regeln: strömmen som kommer in går ut, så x + y = 6.",
+     "Andra regeln: spänningen är resistansen gånger strömmen och lika stor i båda trådarna, så 1 · x = 2 · y, alltså x = 2y.",
+     "Substitution: x + y = 6 ger y = 6 − x. Sätt in: x = 2(6 − x) = 12 − 2x. Lägg till 2x i båda leden: 3x = 12, så x = 4.",
+     "Sätt in x = 4 i x + y = 6: y = 6 − 4 = 2.",
+     "Kontroll: 1 · 4 = 4 och 2 · 2 = 4. Spänningen är 4 volt i båda trådarna. Svar: 4 ampere i tråden med 1 ohm och 2 ampere i tråden med 2 ohm."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 14.22,
+     "text": "Vi är i staden Königsberg vid Östersjön, vintern artonhundrafyrtiofem."
+    },
+    {
+     "s": 15.02,
+     "e": 18,
+     "text": "I dag heter staden Kaliningrad och hör till Ryssland."
+    },
+    {
+     "s": 18.8,
+     "e": 23,
+     "text": "Här studerar Gustav Kirchhoff matematik och fysik vid universitetet."
+    },
+    {
+     "s": 23.8,
+     "e": 25.36,
+     "text": "Han är tjugoett år gammal."
+    },
+    {
+     "s": 26.46,
+     "e": 28.84,
+     "text": "Kirchhoffs lärare heter Franz Neumann."
+    },
+    {
+     "s": 29.64,
+     "e": 31.16,
+     "text": "Han är professor i fysik."
+    },
+    {
+     "s": 31.96,
+     "e": 36.16,
+     "text": "Neumann träffar en liten grupp studenter och ger dem svåra uppgifter att lösa."
+    },
+    {
+     "s": 37.06,
+     "e": 40.44,
+     "text": "En av uppgifterna handlar om elektrisk ström i trådar."
+    },
+    {
+     "s": 41.54,
+     "e": 44.26,
+     "text": "Hur strömmen går i en enda tråd vet man redan."
+    },
+    {
+     "s": 45.06,
+     "e": 47.76,
+     "text": "Det visade Georg Ohm arton år tidigare."
+    },
+    {
+     "s": 48.56,
+     "e": 52.1,
+     "text": "Men när en tråd delar sig i flera trådar blir det svårare."
+    },
+    {
+     "s": 52.92,
+     "e": 55.64,
+     "text": "Många trådar som sitter ihop kallas ett nät."
+    },
+    {
+     "s": 56.44,
+     "e": 59.36,
+     "text": "Hur mycket ström går i varje tråd i ett nät?"
+    },
+    {
+     "s": 60.16,
+     "e": 63.26,
+     "text": "Ingen har ett sätt att räkna ut det för vilket nät som helst."
+    },
+    {
+     "s": 64.36,
+     "e": 67.98,
+     "text": "Kirchhoff sitter vid sitt skrivbord och ritar nät efter nät."
+    },
+    {
+     "s": 68.78,
+     "e": 72.02,
+     "text": "Han kommer fram till två regler, som gäller i alla nät."
+    },
+    {
+     "s": 72.82,
+     "e": 77.36,
+     "text": "Med reglerna blir varje nät några ekvationer, som ska gälla på samma gång."
+    },
+    {
+     "s": 79.14,
+     "e": 81.74,
+     "text": "Men hur löser man sådana ekvationer exakt?"
+    },
+    {
+     "s": 82.54,
+     "e": 83.74,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 86.24,
+     "e": 90,
+     "text": "Kirchhoff hade andra enheter än vi, så vi räknar med dagens."
+    },
+    {
+     "s": 90.8,
+     "e": 92.8,
+     "text": "Strömmen mäter vi i ampere."
+    },
+    {
+     "s": 93.6,
+     "e": 95.06,
+     "text": "Vi tar det enklaste nätet."
+    },
+    {
+     "s": 95.86,
+     "e": 100.46,
+     "text": "I punkten A delar sig tråden i två trådar, en tjock och en tunn."
+    },
+    {
+     "s": 101.26,
+     "e": 103.12,
+     "text": "I punkten B går de ihop igen."
+    },
+    {
+     "s": 103.92,
+     "e": 106.1,
+     "text": "Fem ampere kommer in till punkten A."
+    },
+    {
+     "s": 107.2,
+     "e": 110.38,
+     "text": "Den tunna tråden är svårare för strömmen att ta sig igenom."
+    },
+    {
+     "s": 111.18,
+     "e": 116.04,
+     "text": "Man säger att den har större resistans, och resistansen mäts i ohm."
+    },
+    {
+     "s": 116.84,
+     "e": 121.06,
+     "text": "Den tjocka tråden har två ohm, och den tunna har tre ohm."
+    },
+    {
+     "s": 121.88,
+     "e": 127.04,
+     "text": "Strömmen i den tjocka tråden kallar vi x, och strömmen i den tunna kallar vi y."
+    },
+    {
+     "s": 127.88,
+     "e": 131.64,
+     "text": "x och y kallas de obekanta, för vi vet inte vad de är än."
+    },
+    {
+     "s": 132.74,
+     "e": 134.86,
+     "text": "Nu tar vi Kirchhoffs första regel."
+    },
+    {
+     "s": 135.66,
+     "e": 137.72,
+     "text": "Ström försvinner inte på vägen."
+    },
+    {
+     "s": 138.52,
+     "e": 142.1,
+     "text": "Lika mycket ström som kommer in i punkten A, går ut ur den."
+    },
+    {
+     "s": 142.9,
+     "e": 146.2,
+     "text": "Fem ampere kommer in, och x och y går ut."
+    },
+    {
+     "s": 147,
+     "e": 149.96,
+     "text": "Alltså är x plus y lika med fem."
+    },
+    {
+     "s": 151.06,
+     "e": 153.38,
+     "text": "Den andra regeln bygger på Ohms lag."
+    },
+    {
+     "s": 154.18,
+     "e": 158.94,
+     "text": "Spänningen är det som driver strömmen genom tråden, och den mäts i volt."
+    },
+    {
+     "s": 159.74,
+     "e": 163.86,
+     "text": "Ohms lag säger att spänningen är resistansen gånger strömmen."
+    },
+    {
+     "s": 164.66,
+     "e": 169.3,
+     "text": "I den tjocka tråden är spänningen två gånger x, alltså två x."
+    },
+    {
+     "s": 170.1,
+     "e": 172.32,
+     "text": "I den tunna tråden är den tre y."
+    },
+    {
+     "s": 173.42,
+     "e": 176.68,
+     "text": "Båda trådarna går från punkten A till punkten B."
+    },
+    {
+     "s": 177.48,
+     "e": 183.3,
+     "text": "För ett sådant nät säger Kirchhoffs andra regel att spänningen är lika stor i båda trådarna."
+    },
+    {
+     "s": 184.1,
+     "e": 187.3,
+     "text": "Alltså är två x lika med tre y."
+    },
+    {
+     "s": 188.4,
+     "e": 192.38,
+     "text": "Nu har vi två ekvationer, och båda ska gälla på samma gång."
+    },
+    {
+     "s": 193.18,
+     "e": 196.28,
+     "text": "Två sådana ekvationer kallas ett ekvationssystem."
+    },
+    {
+     "s": 197.08,
+     "e": 200.02,
+     "text": "Vi skriver dem under varandra, med en klammer framför."
+    },
+    {
+     "s": 200.82,
+     "e": 206.62,
+     "text": "Att lösa systemet betyder att hitta ett x och ett y som passar i båda ekvationerna."
+    },
+    {
+     "s": 207.72,
+     "e": 212.54,
+     "text": "Man kan rita ekvationerna som två räta linjer och läsa av var linjerna möts."
+    },
+    {
+     "s": 213.34,
+     "e": 215.8,
+     "text": "Men grafen ger sällan ett exakt svar."
+    },
+    {
+     "s": 216.6,
+     "e": 218.12,
+     "text": "Därför räknar vi i stället."
+    },
+    {
+     "s": 219.78,
+     "e": 222.24,
+     "text": "Hur gör vi det, när det finns två obekanta?"
+    },
+    {
+     "s": 223.04,
+     "e": 224.32,
+     "text": "Vi blir av med den ena."
+    },
+    {
+     "s": 225.12,
+     "e": 229.7,
+     "text": "Då har vi en ekvation med bara en obekant, och en sådan ekvation kan vi lösa."
+    },
+    {
+     "s": 230.8,
+     "e": 234.88,
+     "text": "Vi börjar med den första ekvationen, x plus y är lika med fem."
+    },
+    {
+     "s": 235.68,
+     "e": 237.28,
+     "text": "Där kan vi få y ensamt."
+    },
+    {
+     "s": 238.28,
+     "e": 242.02,
+     "text": "Det som står på var sin sida om likhetstecknet kallas leden."
+    },
+    {
+     "s": 242.82,
+     "e": 246.88,
+     "text": "Vi drar bort x från båda leden, för x minus x är noll."
+    },
+    {
+     "s": 247.68,
+     "e": 250.66,
+     "text": "Då står det y är lika med fem minus x."
+    },
+    {
+     "s": 251.76,
+     "e": 254.5,
+     "text": "y och fem minus x är alltså samma sak."
+    },
+    {
+     "s": 255.3,
+     "e": 259.68,
+     "text": "Därför kan vi byta ut y i den andra ekvationen mot fem minus x."
+    },
+    {
+     "s": 260.54,
+     "e": 266.16,
+     "text": "Vi sätter fem minus x inom en parentes, för hela parentesen ska multipliceras med tre."
+    },
+    {
+     "s": 266.96,
+     "e": 272.38,
+     "text": "Då står det två x är lika med tre gånger parentesen fem minus x."
+    },
+    {
+     "s": 273.18,
+     "e": 274.56,
+     "text": "Nu finns bara x kvar."
+    },
+    {
+     "s": 275.66,
+     "e": 278.32,
+     "text": "Först multiplicerar vi in trean i parentesen."
+    },
+    {
+     "s": 279.12,
+     "e": 284.54,
+     "text": "Tre gånger fem är femton, och tre gånger minus x är minus tre x."
+    },
+    {
+     "s": 285.34,
+     "e": 289.38,
+     "text": "Då har vi två x är lika med femton minus tre x."
+    },
+    {
+     "s": 290.48,
+     "e": 292.74,
+     "text": "Nu vill vi ha alla x på samma sida."
+    },
+    {
+     "s": 293.54,
+     "e": 298.84,
+     "text": "Vi lägger till tre x i båda leden, för minus tre x plus tre x är noll."
+    },
+    {
+     "s": 299.72,
+     "e": 304.82,
+     "text": "Två x plus tre x blir fem x, så fem x är lika med femton."
+    },
+    {
+     "s": 305.62,
+     "e": 307.04,
+     "text": "Hur mycket är då ett x?"
+    },
+    {
+     "s": 308.62,
+     "e": 310.3,
+     "text": "Vi delar båda leden med fem."
+    },
+    {
+     "s": 311.1,
+     "e": 314.88,
+     "text": "Femton delat med fem är tre, så x är lika med tre."
+    },
+    {
+     "s": 315.98,
+     "e": 317.4,
+     "text": "Nu får vi inte glömma y."
+    },
+    {
+     "s": 318.2,
+     "e": 322.34,
+     "text": "Vi hade y är lika med fem minus x, och x är tre."
+    },
+    {
+     "s": 323.14,
+     "e": 326.24,
+     "text": "Fem minus tre är två, så y är två."
+    },
+    {
+     "s": 327.04,
+     "e": 328.58,
+     "text": "Stämmer det i den andra ekvationen?"
+    },
+    {
+     "s": 329.38,
+     "e": 334.4,
+     "text": "Två gånger tre är sex, och tre gånger två är också sex. Snyggt."
+    },
+    {
+     "s": 335.2,
+     "e": 336.68,
+     "text": "Båda leden blir sex."
+    },
+    {
+     "s": 337.78,
+     "e": 339.78,
+     "text": "Vad betyder svaret för Kirchhoffs nät?"
+    },
+    {
+     "s": 340.58,
+     "e": 344.62,
+     "text": "Tre ampere går i den tjocka tråden, och två ampere i den tunna."
+    },
+    {
+     "s": 345.42,
+     "e": 348.32,
+     "text": "Mest ström går alltså där det är lättast att ta sig fram."
+    },
+    {
+     "s": 349.12,
+     "e": 352.64,
+     "text": "Och sexan är spänningen, sex volt i båda trådarna."
+    },
+    {
+     "s": 353.74,
+     "e": 356.62,
+     "text": "Det vi just gjorde kallas substitutionsmetoden."
+    },
+    {
+     "s": 357.42,
+     "e": 359.8,
+     "text": "Att substituera betyder att ersätta."
+    },
+    {
+     "s": 360.6,
+     "e": 365.2,
+     "text": "Vi ersatte y med fem minus x, så att bara en obekant fanns kvar."
+    },
+    {
+     "s": 366.3,
+     "e": 368.66,
+     "text": "Men Kirchhoffs nät kunde ha många trådar."
+    },
+    {
+     "s": 369.46,
+     "e": 372.76,
+     "text": "Då blir det många obekanta att lösa ut och sätta in i varandra."
+    },
+    {
+     "s": 374.18,
+     "e": 375.32,
+     "text": "Oj, vad jobbigt."
+    },
+    {
+     "s": 376.12,
+     "e": 378.56,
+     "text": "Det finns ett annat sätt, som ofta går snabbare."
+    },
+    {
+     "s": 379.36,
+     "e": 382.94,
+     "text": "Vi tar samma två ekvationer, men nu lägger vi ihop dem."
+    },
+    {
+     "s": 384.04,
+     "e": 388.62,
+     "text": "Först skriver vi om den andra ekvationen, så att x och y står i samma led."
+    },
+    {
+     "s": 389.42,
+     "e": 391.66,
+     "text": "Vi drar bort tre y från båda leden."
+    },
+    {
+     "s": 392.46,
+     "e": 396.08,
+     "text": "Då står det två x minus tre y är lika med noll."
+    },
+    {
+     "s": 397.18,
+     "e": 399.94,
+     "text": "Nu lägger vi ihop ekvationerna, led för led."
+    },
+    {
+     "s": 400.74,
+     "e": 401.74,
+     "text": "Det får vi göra."
+    },
+    {
+     "s": 402.2,
+     "e": 404.7,
+     "text": "Fem är ju lika mycket som x plus y."
+    },
+    {
+     "s": 405.5,
+     "e": 409.62,
+     "text": "Så när vi lägger till x plus y i det ena ledet och fem i det andra,"
+    },
+    {
+     "s": 410.06,
+     "e": 413.46,
+     "text": "lägger vi till lika mycket på båda sidor om likhetstecknet."
+    },
+    {
+     "s": 414.56,
+     "e": 418.2,
+     "text": "Men vad händer om vi lägger ihop ekvationerna som de står nu?"
+    },
+    {
+     "s": 419.32,
+     "e": 424.68,
+     "text": "Plus y och minus tre y blir minus två y, så y försvinner inte."
+    },
+    {
+     "s": 425.48,
+     "e": 427.02,
+     "text": "Vi vill att y försvinner."
+    },
+    {
+     "s": 427.96,
+     "e": 434.4,
+     "text": "Om det stod plus tre y i den första ekvationen, skulle plus tre y och minus tre y bli noll."
+    },
+    {
+     "s": 435.5,
+     "e": 438.64,
+     "text": "Därför multiplicerar vi den första ekvationen med tre."
+    },
+    {
+     "s": 439.44,
+     "e": 446.12,
+     "text": "Tre gånger x plus y blir tre x plus tre y, och tre gånger fem blir femton."
+    },
+    {
+     "s": 447.06,
+     "e": 448.38,
+     "text": "Det är lätt att glömma femman."
+    },
+    {
+     "s": 449.18,
+     "e": 453.32,
+     "text": "Men båda leden ska multipliceras, annars gäller inte likheten längre."
+    },
+    {
+     "s": 454.42,
+     "e": 455.42,
+     "text": "Nu lägger vi ihop."
+    },
+    {
+     "s": 455.98,
+     "e": 458.66,
+     "text": "Tre x plus två x är fem x."
+    },
+    {
+     "s": 459.46,
+     "e": 463.76,
+     "text": "Plus tre y och minus tre y är noll, så y försvinner."
+    },
+    {
+     "s": 464.56,
+     "e": 466.74,
+     "text": "Femton plus noll är femton."
+    },
+    {
+     "s": 467.54,
+     "e": 470.52,
+     "text": "Kvar står fem x är lika med femton."
+    },
+    {
+     "s": 471.32,
+     "e": 476.1,
+     "text": "Det är samma ekvation som förut, så x är tre och y är två igen."
+    },
+    {
+     "s": 477.2,
+     "e": 481.14,
+     "text": "Det här kallas additionsmetoden, för vi adderar ekvationerna."
+    },
+    {
+     "s": 481.98,
+     "e": 484.06,
+     "text": "Båda metoderna ger samma svar."
+    },
+    {
+     "s": 484.86,
+     "e": 487.5,
+     "text": "Skillnaden är hur vi blir av med en obekant."
+    },
+    {
+     "s": 488.3,
+     "e": 492.64,
+     "text": "Med substitutionsmetoden ersätter vi en obekant med det den är lika med."
+    },
+    {
+     "s": 493.44,
+     "e": 497.96,
+     "text": "Med additionsmetoden lägger vi ihop ekvationerna, så att en obekant försvinner."
+    },
+    {
+     "s": 498.76,
+     "e": 502.4,
+     "text": "Står en obekant nästan ensam, passar substitution."
+    },
+    {
+     "s": 503.2,
+     "e": 509.42,
+     "text": "Står samma obekant med motsatta tal, som tre y och minus tre y, passar addition."
+    },
+    {
+     "s": 510.32,
+     "e": 511.78,
+     "text": "Nu går vi tillbaka till Kirchhoff."
+    },
+    {
+     "s": 514.28,
+     "e": 518.38,
+     "text": "Kirchhoffs två regler trycktes samma år, artonhundrafyrtiofem."
+    },
+    {
+     "s": 519.22,
+     "e": 523.78,
+     "text": "Två år senare skrev han hur man löser ekvationerna för vilket nät som helst,"
+    },
+    {
+     "s": 524.08,
+     "e": 525.32,
+     "text": "hur stort det än är."
+    },
+    {
+     "s": 526.26,
+     "e": 529.66,
+     "text": "Samma år blev han klar med sina studier och flyttade till Berlin."
+    },
+    {
+     "s": 530.76,
+     "e": 533.08,
+     "text": "Kirchhoff blev sedan professor i fysik."
+    },
+    {
+     "s": 533.88,
+     "e": 537,
+     "text": "Hans två regler kallas i dag Kirchhoffs lagar."
+    },
+    {
+     "s": 537.8,
+     "e": 542.78,
+     "text": "Elektriker och ingenjörer räknar med dem när de bygger allt från elen i ett hus till"
+    },
+    {
+     "s": 542.82,
+     "e": 544.6,
+     "text": "kretsarna i en mobiltelefon."
+    },
+    {
+     "s": 547.1,
+     "e": 548.26,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 549.06,
+     "e": 555.08,
+     "text": "I ett annat nät kommer sex ampere in till en punkt, och där delar sig strömmen i två trådar."
+    },
+    {
+     "s": 555.88,
+     "e": 560.54,
+     "text": "Den ena tråden har resistansen ett ohm, och den andra har två ohm."
+    },
+    {
+     "s": 561.34,
+     "e": 567.38,
+     "text": "Strömmen i tråden med ett ohm kallar vi x, och strömmen i tråden med två ohm kallar vi y."
+    },
+    {
+     "s": 568.2,
+     "e": 571.96,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 572.76,
+     "e": 576.4,
+     "text": "Först: Hur många ampere går i tråden med ett ohm?"
+    },
+    {
+     "s": 577.2,
+     "e": 580.72,
+     "text": "Sen: Hur många ampere går i tråden med två ohm?"
     }
    ]
   }

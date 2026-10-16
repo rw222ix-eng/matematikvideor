@@ -2350,5 +2350,74 @@
       "Kontroll: 2 · 30 + 40 = 100 och 3 · 30 + 10 = 100. Båda stämmer.",
       "Till vänster om 30 är loken billigast, och efter 30 000 ton är repen billigare."
     ]
+  },
+  "ma2a-08-substitution-och-addition": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "I ett annat nät kommer 6 ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen 1 ohm, och den andra har 2 ohm. Strömmen i tråden med 1 ohm kallar vi x, och strömmen i tråden med 2 ohm kallar vi y. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många ampere går i tråden med 1 ohm?",
+      "Sen: Hur många ampere går i tråden med 2 ohm?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Hur många ampere går i tråden med 1 ohm? Ställ upp ekvationssystemet med Kirchhoffs två regler och lös det.",
+        "typ": "tal",
+        "svar": 4,
+        "tolerans": 0.001,
+        "enhet": "ampere",
+        "exempel": "t.ex. 3",
+        "fel": [
+          {
+            "svar": "2",
+            "text": "2 ampere går i den andra tråden. Mest ström går där resistansen är minst, alltså i tråden med 1 ohm."
+          },
+          {
+            "svar": "3",
+            "text": "Strömmen delar sig inte lika. Spänningen är lika i båda trådarna: 1 · x = 2 · y, så x är dubbelt så stor som y."
+          },
+          {
+            "svar": "6",
+            "text": "6 ampere är hela strömmen in till punkten. Den delar sig: x + y = 6."
+          },
+          {
+            "svar": "12",
+            "text": "Kolla med första regeln: x + y = 6, så x kan inte vara större än 6. Lös ut y = 6 − x och sätt in i x = 2y."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur många ampere går i tråden med 2 ohm?",
+        "typ": "tal",
+        "svar": 2,
+        "tolerans": 0.001,
+        "enhet": "ampere",
+        "exempel": "t.ex. 1",
+        "fel": [
+          {
+            "svar": "4",
+            "text": "4 ampere går i tråden med 1 ohm. I tråden med 2 ohm går mindre ström, eftersom den är svårare att ta sig igenom."
+          },
+          {
+            "svar": "3",
+            "text": "Strömmen delar sig inte lika. Sätt in x = 4 i x + y = 6."
+          },
+          {
+            "svar": "6",
+            "text": "6 ampere är hela strömmen. Sätt in x = 4 i x + y = 6 för att få y."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu tar vi Kirchhoffs första regel",
+      "text": "Första regeln: x + y = 6. Andra regeln: spänningen är lika i båda trådarna, 1 · x = 2 · y. Lös ut y = 6 − x ur den första och sätt in i den andra."
+    },
+    "losning": [
+      "Första regeln: strömmen som kommer in går ut, så x + y = 6.",
+      "Andra regeln: spänningen är resistansen gånger strömmen och lika stor i båda trådarna, så 1 · x = 2 · y, alltså x = 2y.",
+      "Substitution: x + y = 6 ger y = 6 − x. Sätt in: x = 2(6 − x) = 12 − 2x. Lägg till 2x i båda leden: 3x = 12, så x = 4.",
+      "Sätt in x = 4 i x + y = 6: y = 6 − 4 = 2.",
+      "Kontroll: 1 · 4 = 4 och 2 · 2 = 4. Spänningen är 4 volt i båda trådarna. Svar: 4 ampere i tråden med 1 ohm och 2 ampere i tråden med 2 ohm."
+    ]
   }
 }
