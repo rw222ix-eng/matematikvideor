@@ -1800,7 +1800,11 @@
   },
   "ma1c-k4-03-rata-linjens-ekvation": {
     "notisFran": "Nu är det din tur",
-    "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Vilken ekvation har linjen som planet flyger på?",
+    "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är k?",
+      "Sen: Vilken ekvation har linjen?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "b02-din-tur",
@@ -1822,7 +1826,7 @@
     },
     "delar": [
       {
-        "fraga": "Vad är k-värdet?",
+        "fraga": "Först: Vad är k?",
         "typ": "tal",
         "svar": 2,
         "exempel": "t.ex. 3",
@@ -1846,27 +1850,7 @@
         ]
       },
       {
-        "fraga": "Vad är m-värdet?",
-        "typ": "tal",
-        "svar": -3,
-        "exempel": "t.ex. 4",
-        "fel": [
-          {
-            "svar": "3",
-            "text": "Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m. Då måste m vara 1 − 4."
-          },
-          {
-            "svar": "5",
-            "text": "Du har lagt ihop 1 och 4. Sätt in (2, 1): 1 = 4 + m, så m = 1 − 4."
-          },
-          {
-            "svar": "1",
-            "text": "1 är punktens y. Sätt in hela punkten (2, 1) i y = 2x + m och lös ut m."
-          }
-        ]
-      },
-      {
-        "fraga": "Skriv linjens ekvation.",
+        "fraga": "Sen: Vilken ekvation har linjen som planet flyger på?",
         "typ": "ekvation",
         "svar": "y = 2x - 3",
         "exempel": "t.ex. y = 3x + 1",
@@ -1885,6 +1869,14 @@
           {
             "svar": "y = 3x - 3",
             "text": "k är 6 delat med 3, alltså 2."
+          },
+          {
+            "svar": "y = 2x + 5",
+            "text": "Du har lagt ihop 1 och 4. Sätt in (2, 1): 1 = 2 · 2 + m, alltså 1 = 4 + m, så m = 1 − 4 = −3."
+          },
+          {
+            "svar": "y = 2x + 1",
+            "text": "1 är punktens y, inte m. Sätt in hela punkten (2, 1) i y = 2x + m och lös ut m."
           }
         ]
       }
