@@ -1415,7 +1415,11 @@
   },
   "ma1c-k6-02-berakna-sidor": {
     "notisFran": "Nicolsons mätningar räknades igenom",
-    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp.",
+    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vilken kvot ska du välja?",
+      "Sen: Hur högt är berget?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "p08-berget-i-dalen",
@@ -1434,7 +1438,23 @@
     },
     "delar": [
       {
-        "fraga": "Hur högt är berget? Svara i kilometer med en decimal.",
+        "fraga": "Först: Vilken kvot ska du välja?",
+        "typ": "ord",
+        "svar": ["tangens", "tan", "tangens v", "tan v", "tangens 20°", "tan 20°", "tangens 20", "tan 20", "tan(20)"],
+        "exempel": "t.ex. cosinus",
+        "fel": [
+          {
+            "svar": ["sinus", "sin", "sinus v", "sin v", "sinus 20°", "sin 20°", "sinus 20", "sin 20", "sin(20)"],
+            "text": "Sinus är motstående katet delat med hypotenusan. Men hypotenusan, siktlinjen, vet du inte. Du vet närliggande katet, 10 km, och söker motstående katet, höjden."
+          },
+          {
+            "svar": ["cosinus", "cos", "cosinus v", "cos v", "cosinus 20°", "cos 20°", "cosinus 20", "cos 20", "cos(20)"],
+            "text": "Cosinus är närliggande katet delat med hypotenusan. Höjden finns inte i cosinus. Du vet närliggande katet och söker motstående katet."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur högt är berget? Svara i kilometer med en decimal.",
         "typ": "tal",
         "svar": 3.6397,
         "tolerans": 0.06,
