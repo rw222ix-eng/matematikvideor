@@ -2064,10 +2064,14 @@
   "ma1c-k4-06-grafisk-ekvationslosning": {
     "geogebra": { "text": "Lös uppgiften grafiskt här i GeoGebra, med samma steg som i filmen: skriv modellen och linjen, klicka på kurvan och sedan på den grå skärningspunkten." },
     "notisFran": "Nu är det din tur",
-    "fraga": "En ö har 3 miljoner invånare. Folket blir dubbelt så många var 25:e år. Vi kallar 25 år för en period.",
+    "fraga": "En ö har 3 miljoner invånare. Folket blir dubbelt så många var 25:e år. Vi kallar 25 år för en period. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv en modell y = C · aˣ, x = perioder.",
+      "Sen: Efter hur många år har ön 24 miljoner invånare?"
+    ],
     "delar": [
       {
-        "fraga": "Skriv en modell y = C · aˣ. x är antalet perioder, inte antalet år. y är antalet miljoner invånare.",
+        "fraga": "Först: Skriv en modell y = C · aˣ. x är antalet perioder, inte antalet år. y är antalet miljoner invånare.",
         "typ": "ekvation",
         "svar": "y = 3 · 2^x",
         "exempel": "t.ex. y = 5 · 3^x",
@@ -2103,24 +2107,7 @@
         ]
       },
       {
-        "fraga": "Lös grafiskt: efter hur många perioder har ön 24 miljoner invånare?",
-        "typ": "tal",
-        "svar": 3,
-        "enhet": "perioder",
-        "exempel": "t.ex. 2",
-        "fel": [
-          {
-            "svar": "8",
-            "text": "8 är 24 delat med 3. Läs av x där kurvan möter linjen y = 24."
-          },
-          {
-            "svar": "75",
-            "text": "75 är antalet år. Här frågas efter perioder, alltså x där kurvan möter linjen y = 24."
-          }
-        ]
-      },
-      {
-        "fraga": "Hur många år är det? En period är 25 år.",
+        "fraga": "Sen: Efter hur många år har ön 24 miljoner invånare? Lös det grafiskt. Läs av antalet perioder i grafen och räkna om dem till år. En period är 25 år.",
         "typ": "tal",
         "svar": 75,
         "enhet": "år",
@@ -2129,6 +2116,10 @@
           {
             "svar": "3",
             "text": "x = 3 är antalet perioder. Varje period är 25 år, så räkna 3 · 25."
+          },
+          {
+            "svar": "8",
+            "text": "8 är 24 delat med 3. Läs av x där kurvan möter linjen y = 24. Det är antalet perioder, och varje period är 25 år."
           },
           {
             "svar": "200",
