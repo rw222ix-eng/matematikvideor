@@ -1601,7 +1601,11 @@
     ]
   },
   "ma1c-k6-04-vektorbegreppet": {
-    "fraga": "Vektorn u går tre rutor åt höger. Vektorn v går en ruta åt höger och två rutor uppåt. Rita u − v.",
+    "fraga": "Vektorn u går tre rutor åt höger. Vektorn v går en ruta åt höger och två rutor uppåt. Rita u − v. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många rutor åt höger går resultanten?",
+      "Sen: Hur många rutor nedåt går resultanten?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "b04-uppslag-linjal",
@@ -1618,7 +1622,7 @@
     },
     "delar": [
       {
-        "fraga": "Hur många rutor åt höger går resultanten?",
+        "fraga": "Först: Hur många rutor åt höger går resultanten?",
         "typ": "tal",
         "svar": 2,
         "exempel": "t.ex. 5",
@@ -1628,7 +1632,7 @@
         ]
       },
       {
-        "fraga": "Hur många rutor nedåt går resultanten?",
+        "fraga": "Sen: Hur många rutor nedåt går resultanten?",
         "typ": "tal",
         "svar": 2,
         "exempel": "t.ex. 1",
