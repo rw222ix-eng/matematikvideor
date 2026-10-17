@@ -2419,5 +2419,88 @@
       "Sätt in x = 4 i x + y = 6: y = 6 − 4 = 2.",
       "Kontroll: 1 · 4 = 4 och 2 · 2 = 4. Spänningen är 4 volt i båda trådarna. Svar: 4 ampere i tråden med 1 ohm och 2 ampere i tråden med 2 ohm."
     ]
+  },
+  "ma1c-k3-01-forandringsfaktor": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En aktie kostar 200 dollar. En dag faller priset med 10 %, och nästa dag stiger det med 10 %. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är den totala förändringsfaktorn för de två dagarna?",
+      "Sen: Vad kostar aktien efter de två dagarna?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Vad är den totala förändringsfaktorn för de två dagarna?",
+        "typ": "tal",
+        "svar": 0.99,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 0,85",
+        "fel": [
+          {
+            "svar": "1",
+            "text": "Priset kommer inte tillbaka. Ökningen är 10 % av ett mindre pris än fallet. Multiplicera förändringsfaktorerna: 0,90 · 1,10."
+          },
+          {
+            "svar": "0",
+            "text": "Det är förändringen i procent, minus 10 plus 10. Förändringsfaktorn är det som finns kvar: 0,90 · 1,10."
+          },
+          {
+            "svar": "0.9",
+            "text": "Det är bara första dagen. Andra dagen stiger priset med 10 %, så multiplicera också med 1,10."
+          },
+          {
+            "svar": "1.1",
+            "text": "Det är bara andra dagen. Första dagen faller priset med 10 %, så multiplicera också med 0,90."
+          },
+          {
+            "svar": "0.01",
+            "text": "Det är förändringen, 1 %. Förändringsfaktorn är det som finns kvar: 0,90 · 1,10 = 0,99."
+          },
+          {
+            "svar": "2",
+            "text": "Förändringsfaktorerna ska multipliceras, inte adderas: 0,90 · 1,10."
+          },
+          {
+            "svar": "99",
+            "text": "99 % är kvar, men förändringsfaktorn skrivs som decimaltal: 99 % = 0,99."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Vad kostar aktien efter de två dagarna?",
+        "typ": "tal",
+        "svar": 198,
+        "tolerans": 0.01,
+        "enhet": "dollar",
+        "exempel": "t.ex. 175",
+        "fel": [
+          {
+            "svar": "200",
+            "text": "Priset kommer inte tillbaka till 200. Fallet är 10 % av 200, men ökningen bara 10 % av 180."
+          },
+          {
+            "svar": "180",
+            "text": "Det är efter första dagen. Andra dagen stiger priset med 10 % av 180."
+          },
+          {
+            "svar": "220",
+            "text": "Det är om priset bara steg med 10 %. Första dagen föll det: 200 · 0,90 · 1,10."
+          },
+          {
+            "svar": "202",
+            "text": "Priset blir lägre, inte högre. Den totala förändringsfaktorn är 0,90 · 1,10 = 0,99, så 200 · 0,99."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Med förändringsfaktorerna går det fortare",
+      "text": "Ett fall med 10 % ger förändringsfaktorn 0,90, och en ökning med 10 % ger 1,10. Multiplicera dem med varandra, så får du den totala förändringsfaktorn. Multiplicera sedan 200 med den."
+    },
+    "losning": [
+      "Första dagen faller priset med 10 %. Kvar är 100 % − 10 % = 90 % = 0,90.",
+      "Andra dagen stiger priset med 10 %. Det blir 100 % + 10 % = 110 % = 1,10.",
+      "Den totala förändringsfaktorn: 0,90 · 1,10 = 0,99.",
+      "Priset efter två dagar: 200 · 0,99 = 198 dollar. Det är 1 % lägre än från början, för ökningen räknades på 180 och inte på 200."
+    ]
   }
 }

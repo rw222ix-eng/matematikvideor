@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-16T22:41:26.415Z",
+ "byggd": "2026-10-17T06:52:10.577Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -24959,6 +24959,1053 @@
      "s": 834.06,
      "e": 835.6,
      "text": "Avrunda till hela grader."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k3-01-forandringsfaktor",
+   "titel": "Fisher och kraschen",
+   "ar": 1929,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k3-01-forandringsfaktor-v1/ma1c-k3-01-forandringsfaktor-1080p.mp4",
+   "moment": "Förändringsfaktor",
+   "begrepp": [
+    "förändringsfaktor",
+    "procent",
+    "ökning",
+    "minskning",
+    "nya värdet",
+    "gamla värdet",
+    "total förändringsfaktor",
+    "exponent",
+    "index"
+   ],
+   "beskrivning": "Hösten 1929 är Irving Fisher en av de mest kända ekonomerna i USA, och han tror att aktiepriserna ska stanna där de är. Sedan rasar börsen: indexet faller med 13 % på måndagen och 12 % på svarta tisdagen, och stiger med 12 % på onsdagen. Är priserna då tillbaka? Vi räknar först steg för steg och sedan i ett enda steg med förändringsfaktorn, regeln nya värdet = gamla värdet · förändringsfaktorn åt alla tre håll, den totala förändringsfaktorn för flera dagar och upprepad förändring som 0,88³.",
+   "youtube": null,
+   "langd": 642,
+   "omslag": "omslag/ma1c-k3-01-forandringsfaktor.jpg?v=5fe78011",
+   "omslagRen": "omslag/ma1c-k3-01-forandringsfaktor-ren.jpg?v=16cb6304",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är hösten nittonhundratjugonio. Irving Fisher bor i staden New Haven, nära New York. Han är professor vid universitetet Yale, och han är en av de mest kända ekonomerna i USA. I källaren i hans hus räknar medhjälpare varje vecka ut hur mycket priserna på varor har ändrats, i procent. Siffrorna trycks sen i tidningar över hela landet."
+    },
+    {
+     "t": 34,
+     "text": "Fisher har också köpt aktier, och mycket av pengarna till dem har han lånat. En aktie är en liten del av ett företag. Den som äger en aktie äger alltså en bit av företaget. Aktier köps och säljs på börsen i New York, och priset på dem ändras hela tiden."
+    },
+    {
+     "t": 54,
+     "text": "Den femtonde oktober håller Fisher ett tal på en middag i New York. Han säger att priserna på aktier har stigit till en hög nivå, och att de ser ut att stanna där för alltid."
+    },
+    {
+     "t": 67,
+     "text": "Tidningarna mäter priserna på börsen med ett enda tal, som heter Dow Jones-indexet. Det visar hur dyra trettio stora företags aktier är, alla tillsammans. Stiger priserna, så stiger indexet. På lördagen den tjugosjätte oktober är indexet ungefär trehundra."
+    },
+    {
+     "t": 87,
+     "text": "Två dagar senare, på måndagen, vill många människor sälja sina aktier samtidigt. Då rasar priserna, och indexet faller med tretton procent på en enda dag. På tisdagen faller det med tolv procent till. Den dagen kallas i dag för svarta tisdagen. Utanför börsen står tusentals människor och väntar på nyheter. Fishers egna aktier faller också."
+    },
+    {
+     "t": 115,
+     "text": "Sen, på onsdagen, stiger indexet med tolv procent. På tisdagen föll alltså priserna med tolv procent, och på onsdagen steg de med tolv procent. Är priserna då tillbaka där de var på tisdagsmorgonen? Det tar vi reda på nu."
+    },
+    {
+     "t": 135,
+     "text": "Vi börjar med måndagen. Indexet var trehundra, och det föll med tretton procent. Hur mycket är tretton procent av trehundra? Procent betyder hundradelar. En procent av trehundra är alltså en hundradel av trehundra, och det är tre. Då är tretton procent lika med tretton gånger tre, alltså trettionio. Indexet föll med trettionio, och trehundra minus trettionio är tvåhundrasextioett."
+    },
+    {
+     "t": 167,
+     "text": "Det kan vi räkna snabbare, i ett enda steg. Tänk dig indexet som en stapel. Hela stapeln är hundra procent. Vi tar bort tretton procent från toppen. Då är hundra minus tretton kvar, alltså åttiosju procent. Och åttiosju procent är åttiosju hundradelar, som skrivs noll komma åttiosju."
+    },
+    {
+     "t": 190,
+     "text": "Det som är kvar får vi direkt, om vi multiplicerar med noll komma åttiosju. Så vi tar trehundra gånger noll komma åttiosju. Hundra gånger noll komma åttiosju är åttiosju, för kommat flyttas två steg åt höger. Trehundra är tre gånger så mycket, så vi tar tre gånger åttiosju. Det blir tvåhundrasextioett, samma svar som förut."
+    },
+    {
+     "t": 215,
+     "text": "Talet noll komma åttiosju kallas förändringsfaktorn. Den säger hur stor del som finns kvar efter förändringen. Regeln är alltså: det nya värdet är lika med det gamla värdet gånger förändringsfaktorn."
+    },
+    {
+     "t": 230,
+     "text": "När något ökar, gör vi likadant. På onsdagen steg indexet med tolv procent. Då har vi hela stapeln, hundra procent, och tolv procent till ovanpå. Det blir hundratolv procent, alltså ett komma tolv. Fördubblas något, har det ökat med hundra procent, och då är förändringsfaktorn två. Som vi ser är förändringsfaktorn större än ett när något ökar, och mindre än ett när något minskar."
+    },
+    {
+     "t": 260,
+     "text": "Regeln har tre delar: det gamla värdet, förändringsfaktorn och det nya värdet. Vet vi två av dem, kan vi räkna ut den tredje. På tisdagen vet vi det gamla och det nya värdet. Indexet gick från tvåhundrasextioett till tvåhundratrettio. Hur många procent föll det?"
+    },
+    {
+     "t": 280,
+     "text": "Regeln säger att tvåhundrasextioett gånger förändringsfaktorn är tvåhundratrettio. Gånger tvåhundrasextioett tar vi bort genom att dela med tvåhundrasextioett. Så förändringsfaktorn är tvåhundratrettio delat med tvåhundrasextioett. Det tar vi på räknaren, och det blir ungefär noll komma åttioåtta. Alltså: det nya värdet delat med det gamla värdet ger förändringsfaktorn."
+    },
+    {
+     "t": 307,
+     "text": "Men förändringsfaktorn och förändringen i procent är lätta att blanda ihop. Förändringsfaktorn noll komma åttioåtta är det som är kvar, alltså åttioåtta procent. Förändringen är det som försvann. Det är hundra minus åttioåtta, alltså tolv procent. Indexet föll med tolv procent."
+    },
+    {
+     "t": 328,
+     "text": "Man kan också vara ute efter det gamla värdet. På onsdagskvällen var indexet tvåhundrafemtioåtta, och det hade stigit med tolv procent under dagen. Vad var det på morgonen? Regeln säger att morgonens värde gånger ett komma tolv är tvåhundrafemtioåtta. Gånger ett komma tolv tar vi bort genom att dela med ett komma tolv. Så tvåhundrafemtioåtta delat med ett komma tolv, och det blir ungefär tvåhundratrettio. Det stämmer med tisdagskvällen."
+    },
+    {
+     "t": 359,
+     "text": "Nu tar vi två dagar efter varandra. På måndagen föll indexet med tretton procent och på tisdagen med tolv procent. Då är det lätt att tro att det föll med tretton plus tolv, alltså tjugofem procent. Men stämmer det? Nej. Det ser vi när vi följer förändringsfaktorerna."
+    },
+    {
+     "t": 380,
+     "text": "På måndagen multiplicerar vi med noll komma åttiosju, och på tisdagen med noll komma åttioåtta. På två dagar blir det alltså trehundra gånger noll komma åttiosju gånger noll komma åttioåtta. Vi kan multiplicera förändringsfaktorerna med varandra först. Noll komma åttiosju gånger noll komma åttioåtta är ungefär noll komma sjuttiosju. Det kallas den totala förändringsfaktorn."
+    },
+    {
+     "t": 407,
+     "text": "Noll komma sjuttiosju betyder att sjuttiosju procent är kvar. Indexet föll alltså med tjugotre procent på två dagar, inte med tjugofem. Varför inte tjugofem? Jo, tisdagens tolv procent räknades på tvåhundrasextioett, inte på trehundra. Och tolv procent av ett mindre tal är mindre."
+    },
+    {
+     "t": 428,
+     "text": "Nu kan vi svara på frågan från början. Är indexet tillbaka efter tisdagens fall och onsdagens ökning? Vi följer talen. På tisdagsmorgonen var indexet tvåhundrasextioett. Tio procent av tvåhundrasextioett är ungefär tjugosex, och två procent är ungefär fem. Tillsammans är tolv procent alltså ungefär trettioett. Indexet föll med trettioett, ner till tvåhundratrettio."
+    },
+    {
+     "t": 457,
+     "text": "På onsdagen steg det med tolv procent. Men nu räknar vi tolv procent av tvåhundratrettio. Tio procent av tvåhundratrettio är tjugotre, och två procent är nästan fem. Tillsammans blir det bara ungefär tjugoåtta. Tvåhundratrettio plus tjugoåtta är tvåhundrafemtioåtta. Indexet föll med trettioett men steg bara med tjugoåtta. Så det kom inte tillbaka till tvåhundrasextioett."
+    },
+    {
+     "t": 485,
+     "text": "Med förändringsfaktorerna går det fortare. Noll komma åttioåtta gånger ett komma tolv är ungefär noll komma nittionio. Det är mindre än ett, alltså en minskning. Efter de två dagarna var indexet ungefär en procent lägre än på tisdagsmorgonen. Vad nice, det stämmer ju med tvåhundrafemtioåtta i tidningarna."
+    },
+    {
+     "t": 507,
+     "text": "Ibland ändras något lika mycket flera gånger i rad. Tänk om indexet hade fallit med tolv procent tre dagar i rad. Då multiplicerar vi med noll komma åttioåtta tre gånger: noll komma åttioåtta gånger noll komma åttioåtta gånger noll komma åttioåtta. Oj, det blir långt att skriva. Det finns ett kortare sätt."
+    },
+    {
+     "t": 529,
+     "text": "Vi skriver noll komma åttioåtta bara en gång och sätter ett litet tal uppe till höger, noll komma åttioåtta upphöjt till tre. Det lilla talet kallas exponent och säger hur många gånger vi multiplicerar med förändringsfaktorn. På räknaren skriver vi noll komma åttioåtta, trycker på knappen för upphöjt till och skriver tre. Det blir ungefär noll komma sextioåtta. Indexet hade alltså fallit med trettiotvå procent på tre dagar, inte med trettiosex. Nu går vi tillbaka till Fisher."
+    },
+    {
+     "t": 564,
+     "text": "Fisher tror fortfarande att priserna snart ska stiga igen. År nittonhundratrettio ger han ut en bok om kraschen, och där skriver han att det kommer att bli bättre. Men priserna fortsätter att falla i nästan tre år. Sommaren nittonhundratrettiotvå är indexet nere på fyrtioett. I september nittonhundratjugonio var det trehundraåttioett, så det har fallit med nästan nittio procent."
+    },
+    {
+     "t": 591,
+     "text": "Fisher förlorar nästan alla sina pengar, för han köpte ju aktierna med lånade pengar. Han har inte ens råd att behålla sitt hus. Därför köper universitetet Yale huset, och sen hyr Fisher det, så att han kan bo kvar. I källaren räknar medhjälparna ändå ut förändringen i procent, vecka efter vecka, i flera år till."
+    },
+    {
+     "t": 615,
+     "text": "Nu är det din tur. En aktie kostar tvåhundra dollar. En dag faller priset med tio procent, och nästa dag stiger det med tio procent. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vad är den totala förändringsfaktorn för de två dagarna? Sen: Vad kostar aktien efter de två dagarna?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Fisher i New Haven",
+     "typ": "historia"
+    },
+    {
+     "t": 34,
+     "rubrik": "Aktier och börsen",
+     "typ": "historia"
+    },
+    {
+     "t": 54,
+     "rubrik": "Talet på middagen",
+     "typ": "historia"
+    },
+    {
+     "t": 67,
+     "rubrik": "Dow Jones-indexet",
+     "typ": "historia"
+    },
+    {
+     "t": 87,
+     "rubrik": "Svarta tisdagen",
+     "typ": "historia"
+    },
+    {
+     "t": 115,
+     "rubrik": "Frågan: tillbaka efter −12 % och +12 %?",
+     "typ": "historia"
+    },
+    {
+     "t": 135,
+     "rubrik": "Minus 13 % steg för steg",
+     "typ": "matte"
+    },
+    {
+     "t": 167,
+     "rubrik": "100 % − 13 % = 87 %",
+     "typ": "matte"
+    },
+    {
+     "t": 215,
+     "rubrik": "Förändringsfaktorn 0,87",
+     "typ": "matte"
+    },
+    {
+     "t": 230,
+     "rubrik": "Ökning: förändringsfaktorn 1,12",
+     "typ": "matte"
+    },
+    {
+     "t": 260,
+     "rubrik": "Nya värdet = gamla värdet · förändringsfaktorn",
+     "typ": "matte"
+    },
+    {
+     "t": 307,
+     "rubrik": "Faktorn mot förändringen i procent",
+     "typ": "matte"
+    },
+    {
+     "t": 328,
+     "rubrik": "Det gamla värdet",
+     "typ": "matte"
+    },
+    {
+     "t": 359,
+     "rubrik": "Två dagar i rad",
+     "typ": "matte"
+    },
+    {
+     "t": 428,
+     "rubrik": "Svaret på frågan",
+     "typ": "matte"
+    },
+    {
+     "t": 485,
+     "rubrik": "Den totala förändringsfaktorn",
+     "typ": "matte"
+    },
+    {
+     "t": 507,
+     "rubrik": "Samma förändring flera gånger",
+     "typ": "matte"
+    },
+    {
+     "t": 529,
+     "rubrik": "Exponenten: 0,88³",
+     "typ": "matte"
+    },
+    {
+     "t": 564,
+     "rubrik": "Kraschen fortsätter",
+     "typ": "historia"
+    },
+    {
+     "t": 591,
+     "rubrik": "Fisher förlorar huset",
+     "typ": "historia"
+    },
+    {
+     "t": 615,
+     "rubrik": "Din tur: −10 % och +10 %",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 615,
+    "fraga": "En aktie kostar 200 dollar. En dag faller priset med 10 %, och nästa dag stiger det med 10 %. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vad är den totala förändringsfaktorn för de två dagarna?",
+     "Sen: Vad kostar aktien efter de två dagarna?"
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Vad är den totala förändringsfaktorn för de två dagarna?",
+      "typ": "tal",
+      "svar": 0.99,
+      "tolerans": 0.001,
+      "exempel": "t.ex. 0,85",
+      "fel": [
+       {
+        "svar": "1",
+        "text": "Priset kommer inte tillbaka. Ökningen är 10 % av ett mindre pris än fallet. Multiplicera förändringsfaktorerna: 0,90 · 1,10."
+       },
+       {
+        "svar": "0",
+        "text": "Det är förändringen i procent, minus 10 plus 10. Förändringsfaktorn är det som finns kvar: 0,90 · 1,10."
+       },
+       {
+        "svar": "0.9",
+        "text": "Det är bara första dagen. Andra dagen stiger priset med 10 %, så multiplicera också med 1,10."
+       },
+       {
+        "svar": "1.1",
+        "text": "Det är bara andra dagen. Första dagen faller priset med 10 %, så multiplicera också med 0,90."
+       },
+       {
+        "svar": "0.01",
+        "text": "Det är förändringen, 1 %. Förändringsfaktorn är det som finns kvar: 0,90 · 1,10 = 0,99."
+       },
+       {
+        "svar": "2",
+        "text": "Förändringsfaktorerna ska multipliceras, inte adderas: 0,90 · 1,10."
+       },
+       {
+        "svar": "99",
+        "text": "99 % är kvar, men förändringsfaktorn skrivs som decimaltal: 99 % = 0,99."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Vad kostar aktien efter de två dagarna?",
+      "typ": "tal",
+      "svar": 198,
+      "tolerans": 0.01,
+      "enhet": "dollar",
+      "exempel": "t.ex. 175",
+      "fel": [
+       {
+        "svar": "200",
+        "text": "Priset kommer inte tillbaka till 200. Fallet är 10 % av 200, men ökningen bara 10 % av 180."
+       },
+       {
+        "svar": "180",
+        "text": "Det är efter första dagen. Andra dagen stiger priset med 10 % av 180."
+       },
+       {
+        "svar": "220",
+        "text": "Det är om priset bara steg med 10 %. Första dagen föll det: 200 · 0,90 · 1,10."
+       },
+       {
+        "svar": "202",
+        "text": "Priset blir lägre, inte högre. Den totala förändringsfaktorn är 0,90 · 1,10 = 0,99, så 200 · 0,99."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Ett fall med 10 % ger förändringsfaktorn 0,90, och en ökning med 10 % ger 1,10. Multiplicera dem med varandra, så får du den totala förändringsfaktorn. Multiplicera sedan 200 med den.",
+     "t": 485
+    },
+    "losning": [
+     "Första dagen faller priset med 10 %. Kvar är 100 % − 10 % = 90 % = 0,90.",
+     "Andra dagen stiger priset med 10 %. Det blir 100 % + 10 % = 110 % = 1,10.",
+     "Den totala förändringsfaktorn: 0,90 · 1,10 = 0,99.",
+     "Priset efter två dagar: 200 · 0,99 = 198 dollar. Det är 1 % lägre än från början, för ökningen räknades på 180 och inte på 200."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 11.5,
+     "text": "Det är hösten nittonhundratjugonio."
+    },
+    {
+     "s": 12.3,
+     "e": 15.5,
+     "text": "Irving Fisher bor i staden New Haven, nära New York."
+    },
+    {
+     "s": 16.3,
+     "e": 21.7,
+     "text": "Han är professor vid universitetet Yale, och han är en av de mest kända ekonomerna i USA."
+    },
+    {
+     "s": 22.8,
+     "e": 28.3,
+     "text": "I källaren i hans hus räknar medhjälpare varje vecka ut hur mycket priserna på varor"
+    },
+    {
+     "s": 28.34,
+     "e": 30,
+     "text": "har ändrats, i procent."
+    },
+    {
+     "s": 30.8,
+     "e": 33.74,
+     "text": "Siffrorna trycks sen i tidningar över hela landet."
+    },
+    {
+     "s": 34.84,
+     "e": 39.28,
+     "text": "Fisher har också köpt aktier, och mycket av pengarna till dem har han lånat."
+    },
+    {
+     "s": 40.26,
+     "e": 43.1,
+     "text": "En aktie är en liten del av ett företag."
+    },
+    {
+     "s": 43.9,
+     "e": 47.48,
+     "text": "Den som äger en aktie äger alltså en bit av företaget."
+    },
+    {
+     "s": 48.38,
+     "e": 53.86,
+     "text": "Aktier köps och säljs på börsen i New York, och priset på dem ändras hela tiden."
+    },
+    {
+     "s": 54.96,
+     "e": 58.96,
+     "text": "Den femtonde oktober håller Fisher ett tal på en middag i New York."
+    },
+    {
+     "s": 59.76,
+     "e": 63.32,
+     "text": "Han säger att priserna på aktier har stigit till en hög nivå,"
+    },
+    {
+     "s": 63.72,
+     "e": 66,
+     "text": "och att de ser ut att stanna där för alltid."
+    },
+    {
+     "s": 67.1,
+     "e": 72.56,
+     "text": "Tidningarna mäter priserna på börsen med ett enda tal, som heter Dow Jones-indexet."
+    },
+    {
+     "s": 73.36,
+     "e": 78.22,
+     "text": "Det visar hur dyra trettio stora företags aktier är, alla tillsammans."
+    },
+    {
+     "s": 79.02,
+     "e": 81.28,
+     "text": "Stiger priserna, så stiger indexet."
+    },
+    {
+     "s": 82.08,
+     "e": 86.34,
+     "text": "På lördagen den tjugosjätte oktober är indexet ungefär trehundra."
+    },
+    {
+     "s": 87.44,
+     "e": 92.5,
+     "text": "Två dagar senare, på måndagen, vill många människor sälja sina aktier samtidigt."
+    },
+    {
+     "s": 93.3,
+     "e": 98.74,
+     "text": "Då rasar priserna, och indexet faller med tretton procent på en enda dag."
+    },
+    {
+     "s": 99.54,
+     "e": 102.22,
+     "text": "På tisdagen faller det med tolv procent till."
+    },
+    {
+     "s": 103.02,
+     "e": 105.82,
+     "text": "Den dagen kallas i dag för svarta tisdagen."
+    },
+    {
+     "s": 106.62,
+     "e": 110.5,
+     "text": "Utanför börsen står tusentals människor och väntar på nyheter."
+    },
+    {
+     "s": 112.26,
+     "e": 114.5,
+     "text": "Fishers egna aktier faller också."
+    },
+    {
+     "s": 115.6,
+     "e": 119.32,
+     "text": "Sen, på onsdagen, stiger indexet med tolv procent."
+    },
+    {
+     "s": 120.16,
+     "e": 126.18,
+     "text": "På tisdagen föll alltså priserna med tolv procent, och på onsdagen steg de med tolv procent."
+    },
+    {
+     "s": 128.02,
+     "e": 130.74,
+     "text": "Är priserna då tillbaka där de var på tisdagsmorgonen?"
+    },
+    {
+     "s": 131.54,
+     "e": 132.68,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 135.18,
+     "e": 136.5,
+     "text": "Vi börjar med måndagen."
+    },
+    {
+     "s": 137.3,
+     "e": 140.94,
+     "text": "Indexet var trehundra, och det föll med tretton procent."
+    },
+    {
+     "s": 141.74,
+     "e": 144.58,
+     "text": "Hur mycket är tretton procent av trehundra?"
+    },
+    {
+     "s": 145.4,
+     "e": 147.36,
+     "text": "Procent betyder hundradelar."
+    },
+    {
+     "s": 148.16,
+     "e": 152.08,
+     "text": "En procent av trehundra är alltså en hundradel av trehundra,"
+    },
+    {
+     "s": 152.4,
+     "e": 153.4,
+     "text": "och det är tre."
+    },
+    {
+     "s": 154.08,
+     "e": 159.08,
+     "text": "Då är tretton procent lika med tretton gånger tre, alltså trettionio."
+    },
+    {
+     "s": 159.88,
+     "e": 165.96,
+     "text": "Indexet föll med trettionio, och trehundra minus trettionio är tvåhundrasextioett."
+    },
+    {
+     "s": 167.06,
+     "e": 169.72,
+     "text": "Det kan vi räkna snabbare, i ett enda steg."
+    },
+    {
+     "s": 170.52,
+     "e": 172.52,
+     "text": "Tänk dig indexet som en stapel."
+    },
+    {
+     "s": 173.32,
+     "e": 175.34,
+     "text": "Hela stapeln är hundra procent."
+    },
+    {
+     "s": 176.14,
+     "e": 178.28,
+     "text": "Vi tar bort tretton procent från toppen."
+    },
+    {
+     "s": 179.08,
+     "e": 183.28,
+     "text": "Då är hundra minus tretton kvar, alltså åttiosju procent."
+    },
+    {
+     "s": 184.08,
+     "e": 189.52,
+     "text": "Och åttiosju procent är åttiosju hundradelar, som skrivs noll komma åttiosju."
+    },
+    {
+     "s": 190.62,
+     "e": 194.8,
+     "text": "Det som är kvar får vi direkt, om vi multiplicerar med noll komma åttiosju."
+    },
+    {
+     "s": 195.6,
+     "e": 198.68,
+     "text": "Så vi tar trehundra gånger noll komma åttiosju."
+    },
+    {
+     "s": 199.48,
+     "e": 204.92,
+     "text": "Hundra gånger noll komma åttiosju är åttiosju, för kommat flyttas två steg åt höger."
+    },
+    {
+     "s": 205.72,
+     "e": 210.24,
+     "text": "Trehundra är tre gånger så mycket, så vi tar tre gånger åttiosju."
+    },
+    {
+     "s": 211.04,
+     "e": 214.08,
+     "text": "Det blir tvåhundrasextioett, samma svar som förut."
+    },
+    {
+     "s": 215.18,
+     "e": 218.82,
+     "text": "Talet noll komma åttiosju kallas förändringsfaktorn."
+    },
+    {
+     "s": 219.62,
+     "e": 223.02,
+     "text": "Den säger hur stor del som finns kvar efter förändringen."
+    },
+    {
+     "s": 223.82,
+     "e": 229.46,
+     "text": "Regeln är alltså: det nya värdet är lika med det gamla värdet gånger förändringsfaktorn."
+    },
+    {
+     "s": 230.56,
+     "e": 232.74,
+     "text": "När något ökar, gör vi likadant."
+    },
+    {
+     "s": 233.54,
+     "e": 236.38,
+     "text": "På onsdagen steg indexet med tolv procent."
+    },
+    {
+     "s": 237.18,
+     "e": 241.78,
+     "text": "Då har vi hela stapeln, hundra procent, och tolv procent till ovanpå."
+    },
+    {
+     "s": 242.58,
+     "e": 246,
+     "text": "Det blir hundratolv procent, alltså ett komma tolv."
+    },
+    {
+     "s": 246.8,
+     "e": 251.94,
+     "text": "Fördubblas något, har det ökat med hundra procent, och då är förändringsfaktorn två."
+    },
+    {
+     "s": 252.74,
+     "e": 256.7,
+     "text": "Som vi ser är förändringsfaktorn större än ett när något ökar,"
+    },
+    {
+     "s": 257.08,
+     "e": 259.14,
+     "text": "och mindre än ett när något minskar."
+    },
+    {
+     "s": 260.24,
+     "e": 265.68,
+     "text": "Regeln har tre delar: det gamla värdet, förändringsfaktorn och det nya värdet."
+    },
+    {
+     "s": 266.48,
+     "e": 268.96,
+     "text": "Vet vi två av dem, kan vi räkna ut den tredje."
+    },
+    {
+     "s": 269.76,
+     "e": 272.64,
+     "text": "På tisdagen vet vi det gamla och det nya värdet."
+    },
+    {
+     "s": 273.44,
+     "e": 276.92,
+     "text": "Indexet gick från tvåhundrasextioett till tvåhundratrettio."
+    },
+    {
+     "s": 277.72,
+     "e": 279.12,
+     "text": "Hur många procent föll det?"
+    },
+    {
+     "s": 280.22,
+     "e": 285.32,
+     "text": "Regeln säger att tvåhundrasextioett gånger förändringsfaktorn är tvåhundratrettio."
+    },
+    {
+     "s": 286.12,
+     "e": 290.4,
+     "text": "Gånger tvåhundrasextioett tar vi bort genom att dela med tvåhundrasextioett."
+    },
+    {
+     "s": 291.2,
+     "e": 295.72,
+     "text": "Så förändringsfaktorn är tvåhundratrettio delat med tvåhundrasextioett."
+    },
+    {
+     "s": 296.52,
+     "e": 300.24,
+     "text": "Det tar vi på räknaren, och det blir ungefär noll komma åttioåtta."
+    },
+    {
+     "s": 301.04,
+     "e": 306.02,
+     "text": "Alltså: det nya värdet delat med det gamla värdet ger förändringsfaktorn."
+    },
+    {
+     "s": 307.2,
+     "e": 311.54,
+     "text": "Men förändringsfaktorn och förändringen i procent är lätta att blanda ihop."
+    },
+    {
+     "s": 312.34,
+     "e": 317.7,
+     "text": "Förändringsfaktorn noll komma åttioåtta är det som är kvar, alltså åttioåtta procent."
+    },
+    {
+     "s": 318.5,
+     "e": 320.2,
+     "text": "Förändringen är det som försvann."
+    },
+    {
+     "s": 321,
+     "e": 324.74,
+     "text": "Det är hundra minus åttioåtta, alltså tolv procent."
+    },
+    {
+     "s": 325.54,
+     "e": 327.72,
+     "text": "Indexet föll med tolv procent."
+    },
+    {
+     "s": 328.82,
+     "e": 330.98,
+     "text": "Man kan också vara ute efter det gamla värdet."
+    },
+    {
+     "s": 331.78,
+     "e": 337.88,
+     "text": "På onsdagskvällen var indexet tvåhundrafemtioåtta, och det hade stigit med tolv procent under dagen."
+    },
+    {
+     "s": 338.68,
+     "e": 339.74,
+     "text": "Vad var det på morgonen?"
+    },
+    {
+     "s": 340.54,
+     "e": 345.54,
+     "text": "Regeln säger att morgonens värde gånger ett komma tolv är tvåhundrafemtioåtta."
+    },
+    {
+     "s": 346.34,
+     "e": 350.22,
+     "text": "Gånger ett komma tolv tar vi bort genom att dela med ett komma tolv."
+    },
+    {
+     "s": 351.02,
+     "e": 356.6,
+     "text": "Så tvåhundrafemtioåtta delat med ett komma tolv, och det blir ungefär tvåhundratrettio."
+    },
+    {
+     "s": 357.4,
+     "e": 358.88,
+     "text": "Det stämmer med tisdagskvällen."
+    },
+    {
+     "s": 359.98,
+     "e": 362,
+     "text": "Nu tar vi två dagar efter varandra."
+    },
+    {
+     "s": 362.8,
+     "e": 367.88,
+     "text": "På måndagen föll indexet med tretton procent och på tisdagen med tolv procent."
+    },
+    {
+     "s": 368.88,
+     "e": 373.66,
+     "text": "Då är det lätt att tro att det föll med tretton plus tolv, alltså tjugofem procent."
+    },
+    {
+     "s": 374.46,
+     "e": 376.66,
+     "text": "Men stämmer det? Nej."
+    },
+    {
+     "s": 377.46,
+     "e": 379.8,
+     "text": "Det ser vi när vi följer förändringsfaktorerna."
+    },
+    {
+     "s": 380.9,
+     "e": 386.58,
+     "text": "På måndagen multiplicerar vi med noll komma åttiosju, och på tisdagen med noll komma åttioåtta."
+    },
+    {
+     "s": 387.38,
+     "e": 393.08,
+     "text": "På två dagar blir det alltså trehundra gånger noll komma åttiosju gånger noll komma åttioåtta."
+    },
+    {
+     "s": 393.88,
+     "e": 397.08,
+     "text": "Vi kan multiplicera förändringsfaktorerna med varandra först."
+    },
+    {
+     "s": 397.88,
+     "e": 402.8,
+     "text": "Noll komma åttiosju gånger noll komma åttioåtta är ungefär noll komma sjuttiosju."
+    },
+    {
+     "s": 403.6,
+     "e": 406,
+     "text": "Det kallas den totala förändringsfaktorn."
+    },
+    {
+     "s": 407.1,
+     "e": 410.58,
+     "text": "Noll komma sjuttiosju betyder att sjuttiosju procent är kvar."
+    },
+    {
+     "s": 411.38,
+     "e": 415.98,
+     "text": "Indexet föll alltså med tjugotre procent på två dagar, inte med tjugofem."
+    },
+    {
+     "s": 416.78,
+     "e": 417.84,
+     "text": "Varför inte tjugofem?"
+    },
+    {
+     "s": 418.64,
+     "e": 424.14,
+     "text": "Jo, tisdagens tolv procent räknades på tvåhundrasextioett, inte på trehundra."
+    },
+    {
+     "s": 424.94,
+     "e": 427.56,
+     "text": "Och tolv procent av ett mindre tal är mindre."
+    },
+    {
+     "s": 428.66,
+     "e": 430.52,
+     "text": "Nu kan vi svara på frågan från början."
+    },
+    {
+     "s": 431.32,
+     "e": 435.14,
+     "text": "Är indexet tillbaka efter tisdagens fall och onsdagens ökning?"
+    },
+    {
+     "s": 435.94,
+     "e": 436.94,
+     "text": "Vi följer talen."
+    },
+    {
+     "s": 437.6,
+     "e": 440.74,
+     "text": "På tisdagsmorgonen var indexet tvåhundrasextioett."
+    },
+    {
+     "s": 441.54,
+     "e": 447.76,
+     "text": "Tio procent av tvåhundrasextioett är ungefär tjugosex, och två procent är ungefär fem."
+    },
+    {
+     "s": 448.56,
+     "e": 451.78,
+     "text": "Tillsammans är tolv procent alltså ungefär trettioett."
+    },
+    {
+     "s": 452.58,
+     "e": 456,
+     "text": "Indexet föll med trettioett, ner till tvåhundratrettio."
+    },
+    {
+     "s": 457.1,
+     "e": 459.44,
+     "text": "På onsdagen steg det med tolv procent."
+    },
+    {
+     "s": 460.24,
+     "e": 463.16,
+     "text": "Men nu räknar vi tolv procent av tvåhundratrettio."
+    },
+    {
+     "s": 463.96,
+     "e": 468.98,
+     "text": "Tio procent av tvåhundratrettio är tjugotre, och två procent är nästan fem."
+    },
+    {
+     "s": 469.78,
+     "e": 472.26,
+     "text": "Tillsammans blir det bara ungefär tjugoåtta."
+    },
+    {
+     "s": 473.06,
+     "e": 476.76,
+     "text": "Tvåhundratrettio plus tjugoåtta är tvåhundrafemtioåtta."
+    },
+    {
+     "s": 477.56,
+     "e": 481.08,
+     "text": "Indexet föll med trettioett men steg bara med tjugoåtta."
+    },
+    {
+     "s": 481.88,
+     "e": 484.38,
+     "text": "Så det kom inte tillbaka till tvåhundrasextioett."
+    },
+    {
+     "s": 485.48,
+     "e": 487.52,
+     "text": "Med förändringsfaktorerna går det fortare."
+    },
+    {
+     "s": 488.32,
+     "e": 492.9,
+     "text": "Noll komma åttioåtta gånger ett komma tolv är ungefär noll komma nittionio."
+    },
+    {
+     "s": 493.7,
+     "e": 496.42,
+     "text": "Det är mindre än ett, alltså en minskning."
+    },
+    {
+     "s": 497.22,
+     "e": 502.22,
+     "text": "Efter de två dagarna var indexet ungefär en procent lägre än på tisdagsmorgonen."
+    },
+    {
+     "s": 503.1,
+     "e": 506.34,
+     "text": "Vad nice, det stämmer ju med tvåhundrafemtioåtta i tidningarna."
+    },
+    {
+     "s": 507.44,
+     "e": 510.46,
+     "text": "Ibland ändras något lika mycket flera gånger i rad."
+    },
+    {
+     "s": 511.26,
+     "e": 514.9,
+     "text": "Tänk om indexet hade fallit med tolv procent tre dagar i rad."
+    },
+    {
+     "s": 515.7,
+     "e": 520.92,
+     "text": "Då multiplicerar vi med noll komma åttioåtta tre gånger: noll komma åttioåtta gånger"
+    },
+    {
+     "s": 520.98,
+     "e": 523.84,
+     "text": "noll komma åttioåtta gånger noll komma åttioåtta."
+    },
+    {
+     "s": 525.16,
+     "e": 526.78,
+     "text": "Oj, det blir långt att skriva."
+    },
+    {
+     "s": 527.58,
+     "e": 528.84,
+     "text": "Det finns ett kortare sätt."
+    },
+    {
+     "s": 529.94,
+     "e": 535.02,
+     "text": "Vi skriver noll komma åttioåtta bara en gång och sätter ett litet tal uppe till höger,"
+    },
+    {
+     "s": 535.52,
+     "e": 537.86,
+     "text": "noll komma åttioåtta upphöjt till tre."
+    },
+    {
+     "s": 538.66,
+     "e": 544.42,
+     "text": "Det lilla talet kallas exponent och säger hur många gånger vi multiplicerar med förändringsfaktorn."
+    },
+    {
+     "s": 545.22,
+     "e": 551.16,
+     "text": "På räknaren skriver vi noll komma åttioåtta, trycker på knappen för upphöjt till och skriver tre."
+    },
+    {
+     "s": 551.96,
+     "e": 554.3,
+     "text": "Det blir ungefär noll komma sextioåtta."
+    },
+    {
+     "s": 555.1,
+     "e": 558.7,
+     "text": "Indexet hade alltså fallit med trettiotvå procent på tre dagar,"
+    },
+    {
+     "s": 559.06,
+     "e": 560.29,
+     "text": "inte med trettiosex."
+    },
+    {
+     "s": 561.09,
+     "e": 562.4,
+     "text": "Nu går vi tillbaka till Fisher."
+    },
+    {
+     "s": 564.9,
+     "e": 568.24,
+     "text": "Fisher tror fortfarande att priserna snart ska stiga igen."
+    },
+    {
+     "s": 569.04,
+     "e": 573.9,
+     "text": "År nittonhundratrettio ger han ut en bok om kraschen, och där skriver han att det kommer"
+    },
+    {
+     "s": 573.94,
+     "e": 574.94,
+     "text": "att bli bättre."
+    },
+    {
+     "s": 575.54,
+     "e": 578.72,
+     "text": "Men priserna fortsätter att falla i nästan tre år."
+    },
+    {
+     "s": 579.64,
+     "e": 583.36,
+     "text": "Sommaren nittonhundratrettiotvå är indexet nere på fyrtioett."
+    },
+    {
+     "s": 584.16,
+     "e": 590.54,
+     "text": "I september nittonhundratjugonio var det trehundraåttioett, så det har fallit med nästan nittio procent."
+    },
+    {
+     "s": 591.78,
+     "e": 596.94,
+     "text": "Fisher förlorar nästan alla sina pengar, för han köpte ju aktierna med lånade pengar."
+    },
+    {
+     "s": 597.74,
+     "e": 599.66,
+     "text": "Han har inte ens råd att behålla sitt hus."
+    },
+    {
+     "s": 600.46,
+     "e": 604.5,
+     "text": "Därför köper universitetet Yale huset, och sen hyr Fisher det,"
+    },
+    {
+     "s": 604.78,
+     "e": 605.84,
+     "text": "så att han kan bo kvar."
+    },
+    {
+     "s": 606.64,
+     "e": 610.32,
+     "text": "I källaren räknar medhjälparna ändå ut förändringen i procent,"
+    },
+    {
+     "s": 610.66,
+     "e": 613.44,
+     "text": "vecka efter vecka, i flera år till."
+    },
+    {
+     "s": 615.94,
+     "e": 617.02,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 617.82,
+     "e": 620.16,
+     "text": "En aktie kostar tvåhundra dollar."
+    },
+    {
+     "s": 620.98,
+     "e": 626.22,
+     "text": "En dag faller priset med tio procent, och nästa dag stiger det med tio procent."
+    },
+    {
+     "s": 627.06,
+     "e": 631.1,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 631.9,
+     "e": 636.36,
+     "text": "Först: Vad är den totala förändringsfaktorn för de två dagarna?"
+    },
+    {
+     "s": 637.16,
+     "e": 640.62,
+     "text": "Sen: Vad kostar aktien efter de två dagarna?"
     }
    ]
   },
