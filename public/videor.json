@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-17T11:44:35.465Z",
+ "byggd": "2026-10-17T11:52:10.120Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -22205,6 +22205,1036 @@
      "s": 843.04,
      "e": 845.16,
      "text": "Sen: Hur högt är berget?"
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k5-01-diagram",
+   "titel": "Nightingale och rosen",
+   "ar": 1857,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k5-01-diagram-v1/ma1c-k5-01-diagram-1080p.mp4",
+   "moment": "Diagram och vilseledande statistik",
+   "begrepp": [
+    "tabell",
+    "antal",
+    "andel",
+    "stapeldiagram",
+    "cirkeldiagram",
+    "vinkel",
+    "linjediagram",
+    "histogram",
+    "intervall",
+    "axel",
+    "vilseledande diagram",
+    "area",
+    "Florence Nightingale",
+    "William Farr",
+    "Krimkriget"
+   ],
+   "beskrivning": "Hösten 1857 sitter Florence Nightingale på ett hotellrum i London med arméns listor över soldaterna som dog i Krimkriget. Hennes första diagram visar rätt tal, men ser ändå fel ut. Hur kan ett diagram lura ögat? Vi läser januari 1855 ur tabellen, skiljer på antal och andel (2 800 av 3 200 ≈ 88 %), ritar stapeldiagram, cirkeldiagram med vinkeln = andelen · 360°, linjediagram och histogram, och ser två sätt att lura: en axel som inte börjar på noll och ytor som växer fyra gånger när talet bara dubblas.",
+   "youtube": null,
+   "langd": 644,
+   "omslag": "omslag/ma1c-k5-01-diagram.jpg?v=30486eaf",
+   "omslagRen": "omslag/ma1c-k5-01-diagram-ren.jpg?v=60f48b39",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är hösten artonhundrafemtiosju. Florence Nightingale bor på Burlington Hotel i London, och hennes rum är fullt av papper. För två år sen var hon sjuksköterska på ett stort sjukhus för brittiska soldater. Storbritannien krigade då mot Ryssland, i Krimkriget. På sjukhuset såg hon soldater dö varje dag. Men de flesta dog inte av sina sår. De dog av sjukdomar, för sjukhusen var smutsiga och trånga."
+    },
+    {
+     "t": 41,
+     "text": "Nu har regeringen satt ihop en grupp som ska ta reda på varför så många soldater dog. En sådan grupp kallas kommission. Nightingale får inte sitta med i kommissionen, för hon är kvinna. Men hon får skriva rapporter till den. Och hon får hjälp av William Farr. Farr är statistiker, och hans jobb är att räkna hur många som föds och dör i England."
+    },
+    {
+     "t": 67,
+     "text": "Tillsammans går de igenom arméns listor. Varje månad har armén skrivit upp hur många soldater som dog, och av vad: av sjukdom, av sår från striderna eller av något annat. Det blir långa tabeller med hundratals tal. Under två år i kriget dog nästan artontusen soldater. Men Nightingale vet att generalerna och ministrarna inte orkar läsa tabeller. Hon vill att de ska se det med ögonen, på en gång. Därför ritar hon diagram."
+    },
+    {
+     "t": 101,
+     "text": "Hennes första diagram ser ut som en rund tårta. Varje månad är en tårtbit. Ju fler soldater som dog den månaden, desto längre är tårtbiten. Dog dubbelt så många, så är tårtbiten dubbelt så lång. Talen är rätt. Men när Nightingale tittar på diagrammet, ser de svåra månaderna mycket värre ut än de var."
+    },
+    {
+     "t": 126,
+     "text": "Hur kan ett diagram lura ögat, när alla talen i det är rätt? Det tar vi reda på nu. Men först ska vi läsa en del av tabellen och rita den som diagram."
+    },
+    {
+     "t": 140,
+     "text": "Vi tar en enda månad, januari artonhundrafemtiofem. Den månaden dog ungefär tvåtusenåttahundra soldater av sjukdom, ungefär åttio av sår och ungefär trehundratjugo av annat. tvåtusenåttahundra plus åttio plus trehundratjugo är tretusentvåhundra. Så det dog ungefär tretusentvåhundra soldater i januari."
+    },
+    {
+     "t": 166,
+     "text": "Hur stor del av dem dog av sjukdom? Den delen kallas andel. Men antal och andel är lätta att blanda ihop. Antalet är hur många, alltså tvåtusenåttahundra. Andelen är hur stor del av alla. Vi får andelen när vi delar delen med det hela, alltså tvåtusenåttahundra delat med tretusentvåhundra. Det tar vi på räknaren, och det blir noll komma åtta sju fem. Det är ungefär åttioåtta procent. Nästan nio av tio dog alltså av sjukdom."
+    },
+    {
+     "t": 206,
+     "text": "Nu ritar vi talen som diagram. Ett stapeldiagram har en stapel för varje sort: sjukdom, sår och annat. Staplarna är lika breda, och höjden visar antalet. Talen står på den lodräta axeln, och axeln börjar på noll. Som vi ser blir stapeln för sjukdom trettiofem gånger så hög som stapeln för sår, för tvåtusenåttahundra delat med åttio är trettiofem. Stapeldiagram passar när vi jämför olika sorter."
+    },
+    {
+     "t": 238,
+     "text": "Vill vi visa andelarna, ritar vi i stället ett cirkeldiagram. Hela cirkeln är alla tretusentvåhundra döda. Varje sort får en tårtbit, och tårtbitens vinkel visar andelen. Ett helt varv är trehundrasextio grader. Så vinkeln är andelen gånger trehundrasextio grader. Vi börjar med annat. Andelen är trehundratjugo delat med tretusentvåhundra, och det är en tiondel, alltså noll komma ett. En tiondel av trehundrasextio grader är trettiosex grader."
+    },
+    {
+     "t": 275,
+     "text": "Sen sår. Andelen är åttio delat med tretusentvåhundra, alltså noll komma noll två fem. Oj, noll komma noll två fem gånger trehundrasextio är jobbigt i huvudet. Det kan vi räkna enklare så här. åttio går fyrtio gånger i tretusentvåhundra, så andelen är en fyrtiondel. Och trehundrasextio delat med fyrtio är nio. Sår får alltså en tunn tårtbit på nio grader. Sjukdom får resten: trehundrasextio minus trettiosex minus nio, alltså trehundrafemton grader. Det är nästan hela cirkeln."
+    },
+    {
+     "t": 317,
+     "text": "Ett tredje diagram visar hur något ändras över tid. Det heter linjediagram. Tiden står på den vågräta axeln, månad för månad, och antalet döda av sjukdom på den lodräta. Varje månad blir en punkt, och punkterna binds ihop med raka linjer. Linjen går uppåt från sommaren artonhundrafemtiofyra och når sin högsta punkt i januari artonhundrafemtiofem, med ungefär tvåtusenåttahundra. Sen faller den. I april artonhundrafemtiofem är den nere på ungefär femhundra."
+    },
+    {
+     "t": 353,
+     "text": "Vi kan också fråga hur många av månaderna som var riktigt svåra. Då delar vi antalet döda i intervall, alltså grupper av tal: från noll till femhundra, från femhundra till tusen, och så vidare. Sen räknar vi hur många månader som hamnar i varje intervall. fjorton av de tjugofyra månaderna hamnar mellan noll och femhundra. Bara fyra månader hade över tusen döda. Ett sådant diagram heter histogram. Där står staplarna tätt, för intervallen ligger kant i kant. Men histogrammet visar inte de exakta talen. Vi ser att en månad låg mellan tvåtusenfemhundra och tretusen, men inte att det var tvåtusenåttahundra."
+    },
+    {
+     "t": 401,
+     "text": "Nu får vi inte glömma att varje diagram har sitt eget jobb. Stapeldiagram jämför sorter, cirkeldiagram visar andelar, linjediagram visar förändring över tid, och histogram visar hur många som hamnar i varje intervall. Då går vi tillbaka till frågan om hur ett diagram kan lura. Det första sättet är axeln. Vi jämför januari och februari. I januari dog ungefär tvåtusenåttahundra av sjukdom, och i februari ungefär tvåtusenetthundra. Med axeln från noll är januaristapeln bara lite högre."
+    },
+    {
+     "t": 440,
+     "text": "Men tänk om axeln börjar på tvåtusen i stället. Då syns bara det som är över tvåtusen. Januaristapeln blir åttahundra hög, och februaristapeln bara hundra. Hur många gånger värre ser januari ut nu? Åtta gånger. Men skillnaden är sjuhundra, och sjuhundra är en tredjedel av tvåtusenetthundra. Januari hade alltså bara en tredjedel fler döda. En sådan axel kallas kapad, och den ska ha ett litet sicksackstreck nertill. Kolla därför alltid var axeln börjar."
+    },
+    {
+     "t": 480,
+     "text": "Det andra sättet är bilder och ytor, och det var Nightingales problem. Tänk dig en kvadrat där sidan är en ruta lång. Nu gör vi sidan dubbelt så lång. Då blir kvadraten också dubbelt så bred. Det får plats två gånger två rutor, alltså fyra. Kvadraten blir fyra gånger så stor, fast sidan bara är dubbelt så lång."
+    },
+    {
+     "t": 506,
+     "text": "Nu kan vi svara på frågan från början. Nightingales tårtbitar blev bredare när de blev längre. När en månad hade dubbelt så många döda, blev tårtbiten dubbelt så lång och dubbelt så bred. Ögat ser ytan, och ytan blev fyra gånger så stor. Därför såg de svåra månaderna mycket värre ut än de var."
+    },
+    {
+     "t": 530,
+     "text": "Hur ska det då se ut? Ytan ska bli dubbelt så stor när talet blir dubbelt så stort. Då gör man tårtbiten ungefär ett komma fyra gånger så lång, för ett komma fyra gånger ett komma fyra är ungefär två. Och det går ihop. Ytan blir dubbelt så stor, precis som talet. Samma sak gäller staplar. En stapel får bli högre, men aldrig bredare. Nu går vi tillbaka till Nightingale."
+    },
+    {
+     "t": 561,
+     "text": "Nightingale ritar om diagrammet. Nu är det ytan av varje tårtbit som visar hur många som dog. Hon delar det i två cirklar. Den högra visar året före våren artonhundrafemtiofem, och den vänstra året efter. Våren artonhundrafemtiofem städades sjukhusen, och avloppen rensades. Den högra cirkeln är stor, och den vänstra mycket mindre. Diagrammet kallas i dag Nightingales ros."
+    },
+    {
+     "t": 592,
+     "text": "År artonhundrafemtioåtta trycker hon rosen i en rapport till krigsministern, och året efter i en bok. Med rosen ser ministrarna på en gång att de flesta soldaterna dog av sjukdomar, och inte i striderna. Samma år, artonhundrafemtioåtta, väljs Nightingale in i Statistiska sällskapet i London. Hon är den första kvinnan där."
+    },
+    {
+     "t": 618,
+     "text": "Nu är det din tur. Tänk dig en månad då fyrahundra soldater dog. trehundra av dem dog av sjukdom. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal. Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Nightingale i London",
+     "typ": "historia"
+    },
+    {
+     "t": 41,
+     "rubrik": "Kommissionen och William Farr",
+     "typ": "historia"
+    },
+    {
+     "t": 67,
+     "rubrik": "Arméns listor",
+     "typ": "historia"
+    },
+    {
+     "t": 101,
+     "rubrik": "Det första diagrammet",
+     "typ": "historia"
+    },
+    {
+     "t": 126,
+     "rubrik": "Frågan: hur kan ett diagram lura?",
+     "typ": "historia"
+    },
+    {
+     "t": 140,
+     "rubrik": "Tabellen för januari 1855",
+     "typ": "matte"
+    },
+    {
+     "t": 166,
+     "rubrik": "Antal och andel",
+     "typ": "matte"
+    },
+    {
+     "t": 206,
+     "rubrik": "Stapeldiagram",
+     "typ": "matte"
+    },
+    {
+     "t": 238,
+     "rubrik": "Cirkeldiagram: vinkeln = andelen · 360°",
+     "typ": "matte"
+    },
+    {
+     "t": 275,
+     "rubrik": "Vinklarna för sår och annat",
+     "typ": "matte"
+    },
+    {
+     "t": 317,
+     "rubrik": "Linjediagram",
+     "typ": "matte"
+    },
+    {
+     "t": 353,
+     "rubrik": "Histogram och intervall",
+     "typ": "matte"
+    },
+    {
+     "t": 401,
+     "rubrik": "Varje diagram har sitt jobb",
+     "typ": "matte"
+    },
+    {
+     "t": 440,
+     "rubrik": "Axeln som inte börjar på noll",
+     "typ": "matte"
+    },
+    {
+     "t": 480,
+     "rubrik": "Ytor som växer fyra gånger",
+     "typ": "matte"
+    },
+    {
+     "t": 506,
+     "rubrik": "Svaret på frågan",
+     "typ": "matte"
+    },
+    {
+     "t": 530,
+     "rubrik": "Dubbelt så stor yta",
+     "typ": "matte"
+    },
+    {
+     "t": 561,
+     "rubrik": "Rosen",
+     "typ": "historia"
+    },
+    {
+     "t": 592,
+     "rubrik": "Rosen når ministrarna",
+     "typ": "historia"
+    },
+    {
+     "t": 618,
+     "rubrik": "Din tur: andel och vinkel",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 618,
+    "fraga": "Tänk dig en månad då 400 soldater dog. 300 av dem dog av sjukdom. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal.",
+     "Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?"
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal.",
+      "typ": "tal",
+      "svar": 0.75,
+      "tolerans": 0.001,
+      "exempel": "t.ex. 0,6",
+      "fel": [
+       {
+        "svar": "75",
+        "text": "75 % är rätt, men svara med ett decimaltal: 75 % är 75 hundradelar, alltså 0,75."
+       },
+       {
+        "svar": "300",
+        "text": "300 är antalet. Andelen är hur stor del av alla: dela delen med det hela, 300 / 400."
+       },
+       {
+        "svar": "0.25",
+        "text": "Det är andelen som dog av annat än sjukdom. Sjukdom är 300 av 400: 300 / 400."
+       },
+       {
+        "svar": "1.33",
+        "text": "Du har delat det hela med delen. Andelen är delen delat med det hela: 300 / 400."
+       },
+       {
+        "svar": "100",
+        "text": "100 är antalet som inte dog av sjukdom. Andelen som dog av sjukdom är 300 / 400."
+       }
+      ],
+      "tangenter": [
+       "/"
+      ]
+     },
+     {
+      "fraga": "Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?",
+      "typ": "tal",
+      "svar": 270,
+      "tolerans": 0.5,
+      "enhet": "grader",
+      "exempel": "t.ex. 120",
+      "fel": [
+       {
+        "svar": "75",
+        "text": "Det är andelen i procent. Vinkeln är andelen gånger 360 grader: 0,75 · 360."
+       },
+       {
+        "svar": "0.75",
+        "text": "Det är andelen. Vinkeln är andelen gånger 360 grader: 0,75 · 360."
+       },
+       {
+        "svar": "90",
+        "text": "Det är vinkeln för de andra 100 soldaterna. Sjukdom är 0,75 av cirkeln: 0,75 · 360."
+       },
+       {
+        "svar": "300",
+        "text": "300 är antalet döda av sjukdom. Hela cirkeln är 360 grader, och sjukdom får 0,75 av den."
+       },
+       {
+        "svar": "360",
+        "text": "360 grader är hela cirkeln, alla 400 döda. Sjukdom får bara 0,75 av den."
+       },
+       {
+        "svar": "180",
+        "text": "180 grader är en halv cirkel. Sjukdom är tre fjärdedelar: 0,75 · 360."
+       }
+      ],
+      "tangenter": [
+       "·"
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Andelen är delen delat med det hela: 300 av 400. Vinkeln i cirkeldiagrammet är andelen gånger 360 grader, för ett helt varv är 360 grader.",
+     "t": 255
+    },
+    "losning": [
+     "Andelen som dog av sjukdom: 300 / 400 = 0,75.",
+     "Det är 75 %, tre fjärdedelar av alla.",
+     "Vinkeln: 0,75 · 360° = 270°.",
+     "I huvudet: en fjärdedel av 360 är 90, och tre fjärdedelar är 3 · 90 = 270 grader."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 11.68,
+     "text": "Det är hösten artonhundrafemtiosju."
+    },
+    {
+     "s": 12.48,
+     "e": 18.12,
+     "text": "Florence Nightingale bor på Burlington Hotel i London, och hennes rum är fullt av papper."
+    },
+    {
+     "s": 19,
+     "e": 23.66,
+     "text": "För två år sen var hon sjuksköterska på ett stort sjukhus för brittiska soldater."
+    },
+    {
+     "s": 24.46,
+     "e": 28.04,
+     "text": "Storbritannien krigade då mot Ryssland, i Krimkriget."
+    },
+    {
+     "s": 28.84,
+     "e": 32.12,
+     "text": "På sjukhuset såg hon soldater dö varje dag."
+    },
+    {
+     "s": 32.92,
+     "e": 35.04,
+     "text": "Men de flesta dog inte av sina sår."
+    },
+    {
+     "s": 35.84,
+     "e": 40.06,
+     "text": "De dog av sjukdomar, för sjukhusen var smutsiga och trånga."
+    },
+    {
+     "s": 41.16,
+     "e": 46.34,
+     "text": "Nu har regeringen satt ihop en grupp som ska ta reda på varför så många soldater dog."
+    },
+    {
+     "s": 47.14,
+     "e": 49.12,
+     "text": "En sådan grupp kallas kommission."
+    },
+    {
+     "s": 50.46,
+     "e": 54,
+     "text": "Nightingale får inte sitta med i kommissionen, för hon är kvinna."
+    },
+    {
+     "s": 54.8,
+     "e": 56.78,
+     "text": "Men hon får skriva rapporter till den."
+    },
+    {
+     "s": 57.58,
+     "e": 59.58,
+     "text": "Och hon får hjälp av William Farr."
+    },
+    {
+     "s": 60.38,
+     "e": 65.94,
+     "text": "Farr är statistiker, och hans jobb är att räkna hur många som föds och dör i England."
+    },
+    {
+     "s": 67.04,
+     "e": 69.62,
+     "text": "Tillsammans går de igenom arméns listor."
+    },
+    {
+     "s": 70.42,
+     "e": 74.12,
+     "text": "Varje månad har armén skrivit upp hur många soldater som dog,"
+    },
+    {
+     "s": 74.38,
+     "e": 79.44,
+     "text": "och av vad: av sjukdom, av sår från striderna eller av något annat."
+    },
+    {
+     "s": 80.24,
+     "e": 83.16,
+     "text": "Det blir långa tabeller med hundratals tal."
+    },
+    {
+     "s": 84.92,
+     "e": 89.08,
+     "text": "Under två år i kriget dog nästan artontusen soldater."
+    },
+    {
+     "s": 89.88,
+     "e": 94.48,
+     "text": "Men Nightingale vet att generalerna och ministrarna inte orkar läsa tabeller."
+    },
+    {
+     "s": 95.28,
+     "e": 98.2,
+     "text": "Hon vill att de ska se det med ögonen, på en gång."
+    },
+    {
+     "s": 99,
+     "e": 100.74,
+     "text": "Därför ritar hon diagram."
+    },
+    {
+     "s": 101.84,
+     "e": 104.74,
+     "text": "Hennes första diagram ser ut som en rund tårta."
+    },
+    {
+     "s": 105.54,
+     "e": 107.52,
+     "text": "Varje månad är en tårtbit."
+    },
+    {
+     "s": 108.32,
+     "e": 112.52,
+     "text": "Ju fler soldater som dog den månaden, desto längre är tårtbiten."
+    },
+    {
+     "s": 113.32,
+     "e": 116.56,
+     "text": "Dog dubbelt så många, så är tårtbiten dubbelt så lång."
+    },
+    {
+     "s": 117.36,
+     "e": 118.36,
+     "text": "Talen är rätt."
+    },
+    {
+     "s": 119.14,
+     "e": 124.94,
+     "text": "Men när Nightingale tittar på diagrammet, ser de svåra månaderna mycket värre ut än de var."
+    },
+    {
+     "s": 126.5,
+     "e": 131.08,
+     "text": "Hur kan ett diagram lura ögat, när alla talen i det är rätt?"
+    },
+    {
+     "s": 131.88,
+     "e": 133.1,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 133.9,
+     "e": 137.78,
+     "text": "Men först ska vi läsa en del av tabellen och rita den som diagram."
+    },
+    {
+     "s": 140.28,
+     "e": 144.08,
+     "text": "Vi tar en enda månad, januari artonhundrafemtiofem."
+    },
+    {
+     "s": 144.88,
+     "e": 149.42,
+     "text": "Den månaden dog ungefär tvåtusenåttahundra soldater av sjukdom,"
+    },
+    {
+     "s": 149.82,
+     "e": 154.1,
+     "text": "ungefär åttio av sår och ungefär trehundratjugo av annat."
+    },
+    {
+     "s": 154.9,
+     "e": 161.04,
+     "text": "tvåtusenåttahundra plus åttio plus trehundratjugo är tretusentvåhundra."
+    },
+    {
+     "s": 161.84,
+     "e": 165.88,
+     "text": "Så det dog ungefär tretusentvåhundra soldater i januari."
+    },
+    {
+     "s": 166.98,
+     "e": 169.3,
+     "text": "Hur stor del av dem dog av sjukdom?"
+    },
+    {
+     "s": 170.1,
+     "e": 171.98,
+     "text": "Den delen kallas andel."
+    },
+    {
+     "s": 172.86,
+     "e": 176.3,
+     "text": "Men antal och andel är lätta att blanda ihop."
+    },
+    {
+     "s": 177.1,
+     "e": 181.02,
+     "text": "Antalet är hur många, alltså tvåtusenåttahundra."
+    },
+    {
+     "s": 181.82,
+     "e": 184.56,
+     "text": "Andelen är hur stor del av alla."
+    },
+    {
+     "s": 185.36,
+     "e": 193.02,
+     "text": "Vi får andelen när vi delar delen med det hela, alltså tvåtusenåttahundra delat med tretusentvåhundra."
+    },
+    {
+     "s": 193.82,
+     "e": 197.84,
+     "text": "Det tar vi på räknaren, och det blir noll komma åtta sju fem."
+    },
+    {
+     "s": 198.64,
+     "e": 200.9,
+     "text": "Det är ungefär åttioåtta procent."
+    },
+    {
+     "s": 201.7,
+     "e": 205,
+     "text": "Nästan nio av tio dog alltså av sjukdom."
+    },
+    {
+     "s": 206.1,
+     "e": 208.08,
+     "text": "Nu ritar vi talen som diagram."
+    },
+    {
+     "s": 208.88,
+     "e": 214.48,
+     "text": "Ett stapeldiagram har en stapel för varje sort: sjukdom, sår och annat."
+    },
+    {
+     "s": 215.28,
+     "e": 218.74,
+     "text": "Staplarna är lika breda, och höjden visar antalet."
+    },
+    {
+     "s": 219.58,
+     "e": 223.48,
+     "text": "Talen står på den lodräta axeln, och axeln börjar på noll."
+    },
+    {
+     "s": 224.3,
+     "e": 229.24,
+     "text": "Som vi ser blir stapeln för sjukdom trettiofem gånger så hög som stapeln för sår,"
+    },
+    {
+     "s": 229.74,
+     "e": 233.12,
+     "text": "för tvåtusenåttahundra delat med åttio är trettiofem."
+    },
+    {
+     "s": 233.96,
+     "e": 236.98,
+     "text": "Stapeldiagram passar när vi jämför olika sorter."
+    },
+    {
+     "s": 238.08,
+     "e": 242.04,
+     "text": "Vill vi visa andelarna, ritar vi i stället ett cirkeldiagram."
+    },
+    {
+     "s": 242.84,
+     "e": 246.12,
+     "text": "Hela cirkeln är alla tretusentvåhundra döda."
+    },
+    {
+     "s": 246.92,
+     "e": 251.72,
+     "text": "Varje sort får en tårtbit, och tårtbitens vinkel visar andelen."
+    },
+    {
+     "s": 252.52,
+     "e": 254.9,
+     "text": "Ett helt varv är trehundrasextio grader."
+    },
+    {
+     "s": 255.7,
+     "e": 259.3,
+     "text": "Så vinkeln är andelen gånger trehundrasextio grader."
+    },
+    {
+     "s": 260.1,
+     "e": 261.24,
+     "text": "Vi börjar med annat."
+    },
+    {
+     "s": 262.04,
+     "e": 267.84,
+     "text": "Andelen är trehundratjugo delat med tretusentvåhundra, och det är en tiondel,"
+    },
+    {
+     "s": 268.2,
+     "e": 269.62,
+     "text": "alltså noll komma ett."
+    },
+    {
+     "s": 270.46,
+     "e": 274.18,
+     "text": "En tiondel av trehundrasextio grader är trettiosex grader."
+    },
+    {
+     "s": 275.28,
+     "e": 282.88,
+     "text": "Sen sår. Andelen är åttio delat med tretusentvåhundra, alltså noll komma noll två fem."
+    },
+    {
+     "s": 284.22,
+     "e": 289.18,
+     "text": "Oj, noll komma noll två fem gånger trehundrasextio är jobbigt i huvudet."
+    },
+    {
+     "s": 289.98,
+     "e": 291.58,
+     "text": "Det kan vi räkna enklare så här."
+    },
+    {
+     "s": 292.38,
+     "e": 297.82,
+     "text": "åttio går fyrtio gånger i tretusentvåhundra, så andelen är en fyrtiondel."
+    },
+    {
+     "s": 298.62,
+     "e": 301.5,
+     "text": "Och trehundrasextio delat med fyrtio är nio."
+    },
+    {
+     "s": 302.3,
+     "e": 305.32,
+     "text": "Sår får alltså en tunn tårtbit på nio grader."
+    },
+    {
+     "s": 306.12,
+     "e": 311.08,
+     "text": "Sjukdom får resten: trehundrasextio minus trettiosex minus nio,"
+    },
+    {
+     "s": 311.58,
+     "e": 313.52,
+     "text": "alltså trehundrafemton grader."
+    },
+    {
+     "s": 314.32,
+     "e": 315.9,
+     "text": "Det är nästan hela cirkeln."
+    },
+    {
+     "s": 317,
+     "e": 320.2,
+     "text": "Ett tredje diagram visar hur något ändras över tid."
+    },
+    {
+     "s": 321,
+     "e": 322.8,
+     "text": "Det heter linjediagram."
+    },
+    {
+     "s": 323.6,
+     "e": 330.3,
+     "text": "Tiden står på den vågräta axeln, månad för månad, och antalet döda av sjukdom på den lodräta."
+    },
+    {
+     "s": 331.1,
+     "e": 335.34,
+     "text": "Varje månad blir en punkt, och punkterna binds ihop med raka linjer."
+    },
+    {
+     "s": 336.14,
+     "e": 341.96,
+     "text": "Linjen går uppåt från sommaren artonhundrafemtiofyra och når sin högsta punkt i januari"
+    },
+    {
+     "s": 342.06,
+     "e": 345.88,
+     "text": "artonhundrafemtiofem, med ungefär tvåtusenåttahundra."
+    },
+    {
+     "s": 346.68,
+     "e": 347.68,
+     "text": "Sen faller den."
+    },
+    {
+     "s": 348.46,
+     "e": 352.66,
+     "text": "I april artonhundrafemtiofem är den nere på ungefär femhundra."
+    },
+    {
+     "s": 353.76,
+     "e": 357.7,
+     "text": "Vi kan också fråga hur många av månaderna som var riktigt svåra."
+    },
+    {
+     "s": 358.5,
+     "e": 364.76,
+     "text": "Då delar vi antalet döda i intervall, alltså grupper av tal: från noll till femhundra,"
+    },
+    {
+     "s": 365.18,
+     "e": 367.72,
+     "text": "från femhundra till tusen, och så vidare."
+    },
+    {
+     "s": 368.52,
+     "e": 372.24,
+     "text": "Sen räknar vi hur många månader som hamnar i varje intervall."
+    },
+    {
+     "s": 373.08,
+     "e": 377.28,
+     "text": "fjorton av de tjugofyra månaderna hamnar mellan noll och femhundra."
+    },
+    {
+     "s": 378.08,
+     "e": 380.94,
+     "text": "Bara fyra månader hade över tusen döda."
+    },
+    {
+     "s": 381.74,
+     "e": 384.16,
+     "text": "Ett sådant diagram heter histogram."
+    },
+    {
+     "s": 384.96,
+     "e": 388.84,
+     "text": "Där står staplarna tätt, för intervallen ligger kant i kant."
+    },
+    {
+     "s": 389.64,
+     "e": 392.44,
+     "text": "Men histogrammet visar inte de exakta talen."
+    },
+    {
+     "s": 393.24,
+     "e": 397.42,
+     "text": "Vi ser att en månad låg mellan tvåtusenfemhundra och tretusen,"
+    },
+    {
+     "s": 397.86,
+     "e": 400.44,
+     "text": "men inte att det var tvåtusenåttahundra."
+    },
+    {
+     "s": 401.54,
+     "e": 405.04,
+     "text": "Nu får vi inte glömma att varje diagram har sitt eget jobb."
+    },
+    {
+     "s": 405.84,
+     "e": 412.98,
+     "text": "Stapeldiagram jämför sorter, cirkeldiagram visar andelar, linjediagram visar förändring"
+    },
+    {
+     "s": 413.04,
+     "e": 418.06,
+     "text": "över tid, och histogram visar hur många som hamnar i varje intervall."
+    },
+    {
+     "s": 418.9,
+     "e": 422.08,
+     "text": "Då går vi tillbaka till frågan om hur ett diagram kan lura."
+    },
+    {
+     "s": 422.88,
+     "e": 424.68,
+     "text": "Det första sättet är axeln."
+    },
+    {
+     "s": 425.48,
+     "e": 427.52,
+     "text": "Vi jämför januari och februari."
+    },
+    {
+     "s": 428.32,
+     "e": 435.24,
+     "text": "I januari dog ungefär tvåtusenåttahundra av sjukdom, och i februari ungefär tvåtusenetthundra."
+    },
+    {
+     "s": 436.04,
+     "e": 439.86,
+     "text": "Med axeln från noll är januaristapeln bara lite högre."
+    },
+    {
+     "s": 440.96,
+     "e": 444.12,
+     "text": "Men tänk om axeln börjar på tvåtusen i stället."
+    },
+    {
+     "s": 444.92,
+     "e": 447.32,
+     "text": "Då syns bara det som är över tvåtusen."
+    },
+    {
+     "s": 448.12,
+     "e": 452.88,
+     "text": "Januaristapeln blir åttahundra hög, och februaristapeln bara hundra."
+    },
+    {
+     "s": 453.68,
+     "e": 459.02,
+     "text": "Hur många gånger värre ser januari ut nu? Åtta gånger."
+    },
+    {
+     "s": 459.82,
+     "e": 465.56,
+     "text": "Men skillnaden är sjuhundra, och sjuhundra är en tredjedel av tvåtusenetthundra."
+    },
+    {
+     "s": 466.36,
+     "e": 469.72,
+     "text": "Januari hade alltså bara en tredjedel fler döda."
+    },
+    {
+     "s": 470.98,
+     "e": 475.92,
+     "text": "En sådan axel kallas kapad, och den ska ha ett litet sicksackstreck nertill."
+    },
+    {
+     "s": 476.72,
+     "e": 479.48,
+     "text": "Kolla därför alltid var axeln börjar."
+    },
+    {
+     "s": 480.58,
+     "e": 485.28,
+     "text": "Det andra sättet är bilder och ytor, och det var Nightingales problem."
+    },
+    {
+     "s": 486.08,
+     "e": 489.4,
+     "text": "Tänk dig en kvadrat där sidan är en ruta lång."
+    },
+    {
+     "s": 490.2,
+     "e": 492.14,
+     "text": "Nu gör vi sidan dubbelt så lång."
+    },
+    {
+     "s": 492.94,
+     "e": 495.5,
+     "text": "Då blir kvadraten också dubbelt så bred."
+    },
+    {
+     "s": 496.3,
+     "e": 499.86,
+     "text": "Det får plats två gånger två rutor, alltså fyra."
+    },
+    {
+     "s": 500.66,
+     "e": 505.58,
+     "text": "Kvadraten blir fyra gånger så stor, fast sidan bara är dubbelt så lång."
+    },
+    {
+     "s": 506.68,
+     "e": 508.8,
+     "text": "Nu kan vi svara på frågan från början."
+    },
+    {
+     "s": 509.6,
+     "e": 513.02,
+     "text": "Nightingales tårtbitar blev bredare när de blev längre."
+    },
+    {
+     "s": 513.82,
+     "e": 519.88,
+     "text": "När en månad hade dubbelt så många döda, blev tårtbiten dubbelt så lång och dubbelt så bred."
+    },
+    {
+     "s": 520.68,
+     "e": 524.58,
+     "text": "Ögat ser ytan, och ytan blev fyra gånger så stor."
+    },
+    {
+     "s": 525.38,
+     "e": 529.1,
+     "text": "Därför såg de svåra månaderna mycket värre ut än de var."
+    },
+    {
+     "s": 530.2,
+     "e": 531.28,
+     "text": "Hur ska det då se ut?"
+    },
+    {
+     "s": 532.08,
+     "e": 536.04,
+     "text": "Ytan ska bli dubbelt så stor när talet blir dubbelt så stort."
+    },
+    {
+     "s": 536.84,
+     "e": 542.62,
+     "text": "Då gör man tårtbiten ungefär ett komma fyra gånger så lång, för ett komma fyra gånger"
+    },
+    {
+     "s": 542.68,
+     "e": 544.86,
+     "text": "ett komma fyra är ungefär två."
+    },
+    {
+     "s": 545.66,
+     "e": 546.66,
+     "text": "Och det går ihop."
+    },
+    {
+     "s": 547.28,
+     "e": 550.42,
+     "text": "Ytan blir dubbelt så stor, precis som talet."
+    },
+    {
+     "s": 551.22,
+     "e": 552.78,
+     "text": "Samma sak gäller staplar."
+    },
+    {
+     "s": 553.58,
+     "e": 556.86,
+     "text": "En stapel får bli högre, men aldrig bredare."
+    },
+    {
+     "s": 557.66,
+     "e": 559.38,
+     "text": "Nu går vi tillbaka till Nightingale."
+    },
+    {
+     "s": 561.88,
+     "e": 563.88,
+     "text": "Nightingale ritar om diagrammet."
+    },
+    {
+     "s": 564.68,
+     "e": 568.7,
+     "text": "Nu är det ytan av varje tårtbit som visar hur många som dog."
+    },
+    {
+     "s": 569.5,
+     "e": 571.34,
+     "text": "Hon delar det i två cirklar."
+    },
+    {
+     "s": 572.14,
+     "e": 578,
+     "text": "Den högra visar året före våren artonhundrafemtiofem, och den vänstra året efter."
+    },
+    {
+     "s": 578.8,
+     "e": 583.6,
+     "text": "Våren artonhundrafemtiofem städades sjukhusen, och avloppen rensades."
+    },
+    {
+     "s": 584.4,
+     "e": 588.04,
+     "text": "Den högra cirkeln är stor, och den vänstra mycket mindre."
+    },
+    {
+     "s": 588.84,
+     "e": 591.78,
+     "text": "Diagrammet kallas i dag Nightingales ros."
+    },
+    {
+     "s": 592.88,
+     "e": 597.4,
+     "text": "År artonhundrafemtioåtta trycker hon rosen i en rapport till krigsministern,"
+    },
+    {
+     "s": 597.66,
+     "e": 599.38,
+     "text": "och året efter i en bok."
+    },
+    {
+     "s": 600.18,
+     "e": 605.44,
+     "text": "Med rosen ser ministrarna på en gång att de flesta soldaterna dog av sjukdomar,"
+    },
+    {
+     "s": 605.66,
+     "e": 607.06,
+     "text": "och inte i striderna."
+    },
+    {
+     "s": 607.86,
+     "e": 614.14,
+     "text": "Samma år, artonhundrafemtioåtta, väljs Nightingale in i Statistiska sällskapet i London."
+    },
+    {
+     "s": 614.94,
+     "e": 616.42,
+     "text": "Hon är den första kvinnan där."
+    },
+    {
+     "s": 618.92,
+     "e": 619.92,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 620.7,
+     "e": 623.7,
+     "text": "Tänk dig en månad då fyrahundra soldater dog."
+    },
+    {
+     "s": 624.5,
+     "e": 626.54,
+     "text": "trehundra av dem dog av sjukdom."
+    },
+    {
+     "s": 627.36,
+     "e": 631.26,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 632.06,
+     "e": 635.08,
+     "text": "Först: Hur stor andel dog av sjukdom?"
+    },
+    {
+     "s": 635.88,
+     "e": 637.42,
+     "text": "Svara med ett decimaltal."
+    },
+    {
+     "s": 638.22,
+     "e": 642.36,
+     "text": "Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?"
     }
    ]
   },

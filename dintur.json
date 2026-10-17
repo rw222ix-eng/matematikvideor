@@ -2798,5 +2798,94 @@
       "Grupperna är olika stora, så vi jämför andelarna och inte antalen. 40 % är mer än 20 %.",
       "Att röka mycket är vanligare bland dem med lungcancer. När den ena ökar, ökar den andra också, så korrelationen är positiv."
     ]
+  },
+  "ma1c-k5-01-diagram": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Tänk dig en månad då 400 soldater dog. 300 av dem dog av sjukdom. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal.",
+      "Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal.",
+        "typ": "tal",
+        "svar": 0.75,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 0,6",
+        "fel": [
+          {
+            "svar": "75",
+            "text": "75 % är rätt, men svara med ett decimaltal: 75 % är 75 hundradelar, alltså 0,75."
+          },
+          {
+            "svar": "300",
+            "text": "300 är antalet. Andelen är hur stor del av alla: dela delen med det hela, 300 / 400."
+          },
+          {
+            "svar": "0.25",
+            "text": "Det är andelen som dog av annat än sjukdom. Sjukdom är 300 av 400: 300 / 400."
+          },
+          {
+            "svar": "1.33",
+            "text": "Du har delat det hela med delen. Andelen är delen delat med det hela: 300 / 400."
+          },
+          {
+            "svar": "100",
+            "text": "100 är antalet som inte dog av sjukdom. Andelen som dog av sjukdom är 300 / 400."
+          }
+        ],
+        "tangenter": [
+          "/"
+        ]
+      },
+      {
+        "fraga": "Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?",
+        "typ": "tal",
+        "svar": 270,
+        "tolerans": 0.5,
+        "enhet": "grader",
+        "exempel": "t.ex. 120",
+        "fel": [
+          {
+            "svar": "75",
+            "text": "Det är andelen i procent. Vinkeln är andelen gånger 360 grader: 0,75 · 360."
+          },
+          {
+            "svar": "0.75",
+            "text": "Det är andelen. Vinkeln är andelen gånger 360 grader: 0,75 · 360."
+          },
+          {
+            "svar": "90",
+            "text": "Det är vinkeln för de andra 100 soldaterna. Sjukdom är 0,75 av cirkeln: 0,75 · 360."
+          },
+          {
+            "svar": "300",
+            "text": "300 är antalet döda av sjukdom. Hela cirkeln är 360 grader, och sjukdom får 0,75 av den."
+          },
+          {
+            "svar": "360",
+            "text": "360 grader är hela cirkeln, alla 400 döda. Sjukdom får bara 0,75 av den."
+          },
+          {
+            "svar": "180",
+            "text": "180 grader är en halv cirkel. Sjukdom är tre fjärdedelar: 0,75 · 360."
+          }
+        ],
+        "tangenter": [
+          "·"
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Så vinkeln är andelen gånger",
+      "text": "Andelen är delen delat med det hela: 300 av 400. Vinkeln i cirkeldiagrammet är andelen gånger 360 grader, för ett helt varv är 360 grader."
+    },
+    "losning": [
+      "Andelen som dog av sjukdom: 300 / 400 = 0,75.",
+      "Det är 75 %, tre fjärdedelar av alla.",
+      "Vinkeln: 0,75 · 360° = 270°.",
+      "I huvudet: en fjärdedel av 360 är 90, och tre fjärdedelar är 3 · 90 = 270 grader."
+    ]
   }
 }
