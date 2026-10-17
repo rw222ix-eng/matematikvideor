@@ -2502,5 +2502,100 @@
       "Den totala förändringsfaktorn: 0,90 · 1,10 = 0,99.",
       "Priset efter två dagar: 200 · 0,99 = 198 dollar. Det är 1 % lägre än från början, för ökningen räknades på 180 och inte på 200."
     ]
+  },
+  "ma1c-k3-03-sannolikhet-i-flera-steg": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En ärta blir gul med sannolikheten 3/4 och grön med sannolikheten 1/4. Den blir rund med sannolikheten 3/4 och skrynklig med sannolikheten 1/4. Färgen och formen avgörs var för sig. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor är sannolikheten att en ärta blir grön och rund?",
+      "Sen: Mendel har 160 ärtor. Hur många av dem blir troligen gröna och runda?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Hur stor är sannolikheten att en ärta blir grön och rund?",
+        "typ": "tal",
+        "svar": 0.1875,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 5/16 eller 0,3125",
+        "fel": [
+          {
+            "svar": "9/16",
+            "text": "Det är gul och rund. Grön har sannolikheten 1/4, så multiplicera 1/4 · 3/4."
+          },
+          {
+            "svar": "1/16",
+            "text": "Det är grön och skrynklig. Rund har sannolikheten 3/4, så multiplicera 1/4 · 3/4."
+          },
+          {
+            "svar": "1",
+            "text": "Längs en gren ska sannolikheterna multipliceras, inte adderas: 1/4 · 3/4."
+          },
+          {
+            "svar": "1/2",
+            "text": "Längs en gren multiplicerar vi. Multiplicera täljarna, 1 · 3, och nämnarna, 4 · 4."
+          },
+          {
+            "svar": "1/4",
+            "text": "Det är bara färgen. Ärtan ska också vara rund, så multiplicera med 3/4."
+          },
+          {
+            "svar": "3/4",
+            "text": "Det är bara formen. Ärtan ska också vara grön, så multiplicera med 1/4."
+          },
+          {
+            "svar": "3/8",
+            "text": "Täljarna blir 1 · 3 = 3. Nämnarna ska också multipliceras: 4 · 4 = 16."
+          },
+          {
+            "svar": "18.75",
+            "text": "Det är rätt i procent. Skriv sannolikheten som bråk eller decimaltal: 3/16 eller 0,1875."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Mendel har 160 ärtor. Hur många av dem blir troligen gröna och runda?",
+        "typ": "tal",
+        "svar": 30,
+        "tolerans": 0.01,
+        "enhet": "ärtor",
+        "exempel": "t.ex. 50",
+        "fel": [
+          {
+            "svar": "90",
+            "text": "Det är gul och rund, 9/16. Grön och rund har sannolikheten 3/16: 160 ÷ 16 = 10, och 3 · 10."
+          },
+          {
+            "svar": "10",
+            "text": "Det är en sextondel av 160. Grön och rund är tre sextondelar: 3 · 10."
+          },
+          {
+            "svar": "40",
+            "text": "Det är alla gröna, 1/4 av 160. De ska också vara runda: 3/16 av 160."
+          },
+          {
+            "svar": "120",
+            "text": "Det är alla runda, 3/4 av 160. De ska också vara gröna: 3/16 av 160."
+          },
+          {
+            "svar": "160",
+            "text": "Alla blir inte gröna och runda. Ta sannolikheten gånger antalet: 3/16 av 160."
+          },
+          {
+            "svar": "3",
+            "text": "En sextondel av 160 är 10, inte 1. Så 3/16 av 160 är 3 · 10."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Gul och rund är en gren, så vi multiplicerar",
+      "text": "Grön och rund är en gren i trädet: först färgen, grön 1/4, sen formen, rund 3/4. Multiplicera sannolikheterna längs grenen. Ta sedan sannolikheten gånger 160."
+    },
+    "losning": [
+      "Grön och rund är en gren: först grön, 1/4, sen rund, 3/4.",
+      "Längs en gren multiplicerar vi: 1/4 · 3/4. Täljarna 1 · 3 = 3, nämnarna 4 · 4 = 16. Sannolikheten är 3/16, alltså 0,1875.",
+      "En sextondel av 160 är 160 ÷ 16 = 10.",
+      "Tre sextondelar är 3 · 10 = 30. Ungefär 30 av de 160 ärtorna blir troligen gröna och runda."
+    ]
   }
 }

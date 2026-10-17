@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-17T06:52:10.577Z",
+ "byggd": "2026-10-17T10:35:34.934Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -23382,6 +23382,1152 @@
      "s": 808.06,
      "e": 809.62,
      "text": "Skriv den som en olikhet."
+    }
+   ]
+  },
+  {
+   "id": "ma1c-k3-03-sannolikhet-i-flera-steg",
+   "titel": "Mendel och ärtorna",
+   "ar": 1865,
+   "serie": null,
+   "del": null,
+   "ocksa": null,
+   "kurs": "Matematik 1c",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k3-03-sannolikhet-i-flera-steg-v1/ma1c-k3-03-sannolikhet-i-flera-steg-1080p.mp4",
+   "moment": "Sannolikhet i flera steg",
+   "begrepp": [
+    "slumpförsök",
+    "utfall",
+    "utfallsrum",
+    "händelse",
+    "sannolikhet",
+    "gynnsamma utfall",
+    "möjliga utfall",
+    "tabell",
+    "träddiagram",
+    "multiplikationsprincipen",
+    "additionsprincipen",
+    "oberoende händelser",
+    "anlag",
+    "Gregor Mendel",
+    "Brno"
+   ],
+   "beskrivning": "Våren 1856 börjar munken Gregor Mendel korsa ärtplantor i klostrets trädgård i Brno. Han räknar 8 023 ärtor, och ungefär var fjärde blir grön. Varför? Vi går från slumpförsök, utfall och händelse till sannolikheten som gynnsamma delat med möjliga utfall, ritar Mendels anlag i en tabell och sedan i ett träddiagram, multiplicerar längs en gren (½ · ½ = ¼), adderar mellan grenar och räknar med två egenskaper samtidigt: gul och rund, ¾ · ¾ = 9/16.",
+   "youtube": null,
+   "langd": 721,
+   "omslag": "omslag/ma1c-k3-03-sannolikhet-i-flera-steg.jpg?v=78a0bab4",
+   "omslagRen": "omslag/ma1c-k3-03-sannolikhet-i-flera-steg-ren.jpg?v=f75d2685",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är våren artonhundrafemtiosex. Gregor Mendel är munk i ett kloster i staden Brno, i det som i dag är Tjeckien. Han har studerat matematik och fysik vid universitetet i Wien, och nu undervisar han i fysik på en skola i staden. Klostret låter honom odla ärtor i trädgården."
+    },
+    {
+     "t": 29,
+     "text": "Mendel vill ta reda på hur ärtplantor för vidare sina egenskaper till nya plantor. Vissa ärtplantor ger alltid gula ärtor, och andra ger alltid gröna. Vad händer om man blandar dem?"
+    },
+    {
+     "t": 43,
+     "text": "Så här gör han. I varje ärtblomma finns pollen, ett fint gult damm. Först tar Mendel bort blommans eget pollen med en liten pincett. Sen tar han pollen från en planta med gröna ärtor och stryker det med en pensel på blomman hos en planta med gula ärtor. Ur blomman växer sen en skida med nya ärtor."
+    },
+    {
+     "t": 67,
+     "text": "När skidorna är mogna öppnar han dem. Alla de nya ärtorna är gula. Det gröna verkar ha försvunnit. Mendel sår de gula ärtorna, och året efter får de nya plantorna egna skidor. Nu ligger gula och gröna ärtor om varandra i samma skida. Det gröna har kommit tillbaka."
+    },
+    {
+     "t": 89,
+     "text": "Mendel räknar varenda ärta. Av åttatusentjugotre ärtor är sextusentjugotvå gula och tvåtusenett gröna. Det är ungefär tre gula för varje grön. Han gör om försöket med ärtornas form och med andra egenskaper, och nästan samma förhållande kommer tillbaka varje gång. Varför kommer det gröna tillbaka? Och varför blir ungefär var fjärde ärta grön? Det tar vi reda på nu."
+    },
+    {
+     "t": 122,
+     "text": "Vi börjar med Mendels ärtor. Tänk dig att han blandar alla åttatusentjugotre ärtorna och tar upp en utan att titta. Det kallas ett slumpförsök, för vi vet inte i förväg vad vi får. Det vi kan få kallas ett utfall, och här är varje ärta ett utfall. Alla utfall tillsammans kallas utfallsrummet. Här är utfallsrummet alla åttatusentjugotre ärtorna."
+    },
+    {
+     "t": 150,
+     "text": "Att ärtan blir grön kallas en händelse. Sannolikheten för händelsen är hur stor del av ärtorna som är gröna. De gröna ärtorna kallas de gynnsamma utfallen, och alla ärtorna kallas de möjliga utfallen. Så sannolikheten är antalet gynnsamma utfall delat med antalet möjliga utfall. Här blir det tvåtusenett delat med åttatusentjugotre."
+    },
+    {
+     "t": 178,
+     "text": "Det kan vi räkna ungefär i huvudet. Tvåtusenett är nästan tvåtusen, och åttatusentjugotre är nästan åttatusen. Åttatusen är fyra gånger tvåtusen, så tvåtusen delat med åttatusen är en fjärdedel. Sannolikheten för en grön ärta är alltså ungefär en fjärdedel. Man kan också säga noll komma tjugofem, eller tjugofem procent."
+    },
+    {
+     "t": 206,
+     "text": "Nu till frågan varför. Mendel tänker sig att varje ärta har två anlag för färgen. Ett anlag är som en liten instruktion om vilken färg ärtan ska få. Ett anlag är antingen gult eller grönt, och gult vinner. En ärta som har ett gult anlag eller två blir gul. Bara en ärta med två gröna anlag blir grön."
+    },
+    {
+     "t": 232,
+     "text": "De gula ärtorna i första försöket fick ett gult anlag från den gula plantan och ett grönt från pollenet. Det gröna anlaget syntes inte, för gult vinner. När plantorna från de ärtorna gör nya ärtor, ger pollenet ett av sina två anlag, och blomman ger ett av sina två. Vilket det blir avgör slumpen, och båda är lika troliga. Mendel skriver själv att det går enligt sannolikhetens regler."
+    },
+    {
+     "t": 262,
+     "text": "Varje ny ärta är alltså ett slumpförsök i två steg. Först ger pollenet ett anlag, sen ger blomman ett. Det kan vi rita som en tabell. Pollenets anlag står överst, gult eller grönt, och blommans anlag står till vänster. I varje ruta står vad ärtan får. Det blir fyra rutor: gult och gult, gult och grönt, grönt och gult, och grönt och grönt."
+    },
+    {
+     "t": 291,
+     "text": "De fyra rutorna är lika troliga, så nu har vi fyra möjliga utfall. Ärtan blir grön bara i en ruta, grönt och grönt. Det är ett gynnsamt utfall av fyra möjliga, så sannolikheten för grön är en fjärdedel. Gul blir ärtan i tre rutor, så sannolikheten för gul är tre fjärdedelar. Det är svaret på Mendels fråga. Ungefär var fjärde ärta blir grön. Mendel skrev faktiskt upp samma fyra par i sin egen text."
+    },
+    {
+     "t": 324,
+     "text": "Tabellen fungerar bra när försöket har två steg och alla rutor är lika troliga. Men det finns ett sätt som fungerar med fler steg också, och det är ett träddiagram. Vi ritar samma försök som ett träd. Från en punkt går två grenar för pollenet, gult och grönt. På varje gren skriver vi sannolikheten, en halv. Från varje gren går sen två nya grenar för blomman, också med en halv på varje."
+    },
+    {
+     "t": 356,
+     "text": "Hur stor är sannolikheten att vi går längs grenen grönt och sen grönt igen? Pollenet ger grönt i hälften av fallen. Och av de fallen ger blomman grönt i hälften. Hälften av en halv är en fjärdedel. Så vi multiplicerar sannolikheterna, en halv gånger en halv. Vi multiplicerar täljarna, alltså talen överst. Ett gånger ett är ett. Sen multiplicerar vi nämnarna, talen nederst. Två gånger två är fyra. Det blir en fjärdedel, samma svar som i tabellen. Att man multiplicerar längs en gren kallas multiplikationsprincipen."
+    },
+    {
+     "t": 401,
+     "text": "Nu får vi inte glömma varför vi får multiplicera så. Blomman bryr sig inte om vilket anlag pollenet gav. I andra steget är sannolikheten en halv, vad som än hände i första steget. Sådana händelser kallas oberoende. Det är som när man singlar slant två gånger. Myntet minns inte det första kastet."
+    },
+    {
+     "t": 424,
+     "text": "Hur stor är då sannolikheten för en gul ärta? I trädet ger tre grenar en gul ärta: gult och gult, gult och grönt, och grönt och gult. Varje gren har sannolikheten en fjärdedel. Grenarna adderar vi, en fjärdedel plus en fjärdedel plus en fjärdedel är tre fjärdedelar. Det kallas additionsprincipen. Lägger vi ihop alla fyra grenarna blir det ett, för någon av dem händer alltid."
+    },
+    {
+     "t": 455,
+     "text": "Multiplicera och addera är lätta att blanda ihop. Längs en gren, när det ena händer och sen det andra, multiplicerar vi. Mellan olika grenar, som ger samma händelse, adderar vi."
+    },
+    {
+     "t": 469,
+     "text": "Stämmer det här med Mendels ärtor? Om tre fjärdedelar av ärtorna blir gula, hur många av de åttatusentjugotre blir då troligen gula? Vi räknar med åttatusen, det är lättare. En fjärdedel av åttatusen är tvåtusen. Tre fjärdedelar är tre gånger så mycket, alltså sextusen. Mendel fick sextusentjugotvå. Bara tjugotvå ifrån, av över åttatusen."
+    },
+    {
+     "t": 499,
+     "text": "Nu tar vi två egenskaper samtidigt, precis som Mendel gjorde. En ärta kan också vara rund eller skrynklig, och där vinner rund. Det fungerar på samma sätt som med färgen. Sannolikheten för rund är tre fjärdedelar, och för skrynklig en fjärdedel. Färgen och formen avgörs var för sig, så de är oberoende."
+    },
+    {
+     "t": 523,
+     "text": "Hur stor är sannolikheten att en ärta blir både gul och rund? Nu är grenarna olika troliga, så vi tar trädet. Första steget är färgen, gul tre fjärdedelar och grön en fjärdedel. Andra steget är formen, rund tre fjärdedelar och skrynklig en fjärdedel. Gul och rund är en gren, så vi multiplicerar, tre fjärdedelar gånger tre fjärdedelar. I täljaren är tre gånger tre lika med nio, och i nämnaren är fyra gånger fyra lika med sexton. Det blir nio sextondelar. Grön och skrynklig är också en gren. En fjärdedel gånger en fjärdedel är en sextondel."
+    },
+    {
+     "t": 569,
+     "text": "Mendel räknade femhundrafemtiosex sådana ärtor. Vi räknar med femhundrasextio, det är lättare. En sextondel av femhundrasextio är trettiofem, för sexton gånger trettiofem är femhundrasextio. Så ungefär trettiofem ärtor borde bli gröna och skrynkliga, och Mendel fick trettiotvå. Nio sextondelar är nio gånger trettiofem, alltså trehundrafemton. Och Mendel fick trehundrafemton gula och runda ärtor."
+    },
+    {
+     "t": 601,
+     "text": "Mendel provade också med tre egenskaper samtidigt. Då får trädet tre steg. Oj, då blir det åtta grenar längst ut. Men principen är densamma. Vi multiplicerar längs grenen, med tre sannolikheter i stället för två. Nu går vi tillbaka till Mendel."
+    },
+    {
+     "t": 624,
+     "text": "I februari och mars artonhundrasextiofem berättar Mendel om sina ärtor för en förening av naturforskare i Brno, på två möten. Han visar sina tal och förklarar dem med sannolikhet. Året efter trycks hans text. Men nästan ingen förstår vad han har hittat, och i trettiofem år är det nästan ingen som läser den."
+    },
+    {
+     "t": 649,
+     "text": "År artonhundrasextioåtta väljs Mendel till abbot, alltså chef för hela klostret. Då får han allt mindre tid för ärtorna. Han dör artonhundraåttiofyra. År nittonhundra hittar tre forskare i olika länder hans text, var för sig. Då förstår de att Mendel hade räknat rätt. I dag kallas han genetikens fader. Genetik är läran om hur egenskaper ärvs."
+    },
+    {
+     "t": 680,
+     "text": "Nu är det din tur. En ärta blir gul med sannolikheten tre fjärdedelar och grön med sannolikheten en fjärdedel. Den blir rund med sannolikheten tre fjärdedelar och skrynklig med sannolikheten en fjärdedel. Färgen och formen avgörs var för sig. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur stor är sannolikheten att en ärta blir grön och rund? Sen: Mendel har hundrasextio ärtor. Hur många av dem blir troligen gröna och runda?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Mendel i Brno",
+     "typ": "historia"
+    },
+    {
+     "t": 29,
+     "rubrik": "Gula och gröna ärtor",
+     "typ": "historia"
+    },
+    {
+     "t": 43,
+     "rubrik": "Pollen med pensel",
+     "typ": "historia"
+    },
+    {
+     "t": 67,
+     "rubrik": "Det gröna kommer tillbaka",
+     "typ": "historia"
+    },
+    {
+     "t": 89,
+     "rubrik": "Frågan: varför blir var fjärde grön?",
+     "typ": "historia"
+    },
+    {
+     "t": 122,
+     "rubrik": "Slumpförsök, utfall och utfallsrum",
+     "typ": "matte"
+    },
+    {
+     "t": 150,
+     "rubrik": "Sannolikhet = gynnsamma / möjliga",
+     "typ": "matte"
+    },
+    {
+     "t": 178,
+     "rubrik": "2 000 / 8 000 = 1/4",
+     "typ": "matte"
+    },
+    {
+     "t": 206,
+     "rubrik": "Två anlag, gult vinner",
+     "typ": "matte"
+    },
+    {
+     "t": 262,
+     "rubrik": "Tabellen med fyra rutor",
+     "typ": "matte"
+    },
+    {
+     "t": 291,
+     "rubrik": "Svaret: grön 1/4, gul 3/4",
+     "typ": "matte"
+    },
+    {
+     "t": 324,
+     "rubrik": "Träddiagram",
+     "typ": "matte"
+    },
+    {
+     "t": 356,
+     "rubrik": "Multiplikationsprincipen: 1/2 · 1/2 = 1/4",
+     "typ": "matte"
+    },
+    {
+     "t": 401,
+     "rubrik": "Oberoende händelser",
+     "typ": "matte"
+    },
+    {
+     "t": 424,
+     "rubrik": "Additionsprincipen",
+     "typ": "matte"
+    },
+    {
+     "t": 455,
+     "rubrik": "Multiplicera eller addera?",
+     "typ": "matte"
+    },
+    {
+     "t": 469,
+     "rubrik": "3/4 av 8 000 ärtor",
+     "typ": "matte"
+    },
+    {
+     "t": 499,
+     "rubrik": "Färg och form",
+     "typ": "matte"
+    },
+    {
+     "t": 523,
+     "rubrik": "Gul och rund: 3/4 · 3/4 = 9/16",
+     "typ": "matte"
+    },
+    {
+     "t": 569,
+     "rubrik": "Mendels 315 gula och runda",
+     "typ": "matte"
+    },
+    {
+     "t": 601,
+     "rubrik": "Tre egenskaper, åtta grenar",
+     "typ": "matte"
+    },
+    {
+     "t": 624,
+     "rubrik": "Mendel berättar i Brno",
+     "typ": "historia"
+    },
+    {
+     "t": 649,
+     "rubrik": "Genetikens fader",
+     "typ": "historia"
+    },
+    {
+     "t": 680,
+     "rubrik": "Din tur: grön och rund",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 680,
+    "fraga": "En ärta blir gul med sannolikheten 3/4 och grön med sannolikheten 1/4. Den blir rund med sannolikheten 3/4 och skrynklig med sannolikheten 1/4. Färgen och formen avgörs var för sig. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Hur stor är sannolikheten att en ärta blir grön och rund?",
+     "Sen: Mendel har 160 ärtor. Hur många av dem blir troligen gröna och runda?"
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Hur stor är sannolikheten att en ärta blir grön och rund?",
+      "typ": "tal",
+      "svar": 0.1875,
+      "tolerans": 0.001,
+      "exempel": "t.ex. 5/16 eller 0,3125",
+      "fel": [
+       {
+        "svar": "9/16",
+        "text": "Det är gul och rund. Grön har sannolikheten 1/4, så multiplicera 1/4 · 3/4."
+       },
+       {
+        "svar": "1/16",
+        "text": "Det är grön och skrynklig. Rund har sannolikheten 3/4, så multiplicera 1/4 · 3/4."
+       },
+       {
+        "svar": "1",
+        "text": "Längs en gren ska sannolikheterna multipliceras, inte adderas: 1/4 · 3/4."
+       },
+       {
+        "svar": "1/2",
+        "text": "Längs en gren multiplicerar vi. Multiplicera täljarna, 1 · 3, och nämnarna, 4 · 4."
+       },
+       {
+        "svar": "1/4",
+        "text": "Det är bara färgen. Ärtan ska också vara rund, så multiplicera med 3/4."
+       },
+       {
+        "svar": "3/4",
+        "text": "Det är bara formen. Ärtan ska också vara grön, så multiplicera med 1/4."
+       },
+       {
+        "svar": "3/8",
+        "text": "Täljarna blir 1 · 3 = 3. Nämnarna ska också multipliceras: 4 · 4 = 16."
+       },
+       {
+        "svar": "18.75",
+        "text": "Det är rätt i procent. Skriv sannolikheten som bråk eller decimaltal: 3/16 eller 0,1875."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Mendel har 160 ärtor. Hur många av dem blir troligen gröna och runda?",
+      "typ": "tal",
+      "svar": 30,
+      "tolerans": 0.01,
+      "enhet": "ärtor",
+      "exempel": "t.ex. 50",
+      "fel": [
+       {
+        "svar": "90",
+        "text": "Det är gul och rund, 9/16. Grön och rund har sannolikheten 3/16: 160 ÷ 16 = 10, och 3 · 10."
+       },
+       {
+        "svar": "10",
+        "text": "Det är en sextondel av 160. Grön och rund är tre sextondelar: 3 · 10."
+       },
+       {
+        "svar": "40",
+        "text": "Det är alla gröna, 1/4 av 160. De ska också vara runda: 3/16 av 160."
+       },
+       {
+        "svar": "120",
+        "text": "Det är alla runda, 3/4 av 160. De ska också vara gröna: 3/16 av 160."
+       },
+       {
+        "svar": "160",
+        "text": "Alla blir inte gröna och runda. Ta sannolikheten gånger antalet: 3/16 av 160."
+       },
+       {
+        "svar": "3",
+        "text": "En sextondel av 160 är 10, inte 1. Så 3/16 av 160 är 3 · 10."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Grön och rund är en gren i trädet: först färgen, grön 1/4, sen formen, rund 3/4. Multiplicera sannolikheterna längs grenen. Ta sedan sannolikheten gånger 160.",
+     "t": 544
+    },
+    "losning": [
+     "Grön och rund är en gren: först grön, 1/4, sen rund, 3/4.",
+     "Längs en gren multiplicerar vi: 1/4 · 3/4. Täljarna 1 · 3 = 3, nämnarna 4 · 4 = 16. Sannolikheten är 3/16, alltså 0,1875.",
+     "En sextondel av 160 är 160 ÷ 16 = 10.",
+     "Tre sextondelar är 3 · 10 = 30. Ungefär 30 av de 160 ärtorna blir troligen gröna och runda."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 11.72,
+     "text": "Det är våren artonhundrafemtiosex."
+    },
+    {
+     "s": 12.52,
+     "e": 17.62,
+     "text": "Gregor Mendel är munk i ett kloster i staden Brno, i det som i dag är Tjeckien."
+    },
+    {
+     "s": 18.42,
+     "e": 21.9,
+     "text": "Han har studerat matematik och fysik vid universitetet i Wien,"
+    },
+    {
+     "s": 22.36,
+     "e": 25.22,
+     "text": "och nu undervisar han i fysik på en skola i staden."
+    },
+    {
+     "s": 26.02,
+     "e": 28.7,
+     "text": "Klostret låter honom odla ärtor i trädgården."
+    },
+    {
+     "s": 29.8,
+     "e": 35.1,
+     "text": "Mendel vill ta reda på hur ärtplantor för vidare sina egenskaper till nya plantor."
+    },
+    {
+     "s": 35.9,
+     "e": 40.7,
+     "text": "Vissa ärtplantor ger alltid gula ärtor, och andra ger alltid gröna."
+    },
+    {
+     "s": 41.5,
+     "e": 42.86,
+     "text": "Vad händer om man blandar dem?"
+    },
+    {
+     "s": 43.96,
+     "e": 44.96,
+     "text": "Så här gör han."
+    },
+    {
+     "s": 45.54,
+     "e": 49.54,
+     "text": "I varje ärtblomma finns pollen, ett fint gult damm."
+    },
+    {
+     "s": 50.34,
+     "e": 54.16,
+     "text": "Först tar Mendel bort blommans eget pollen med en liten pincett."
+    },
+    {
+     "s": 54.96,
+     "e": 60.5,
+     "text": "Sen tar han pollen från en planta med gröna ärtor och stryker det med en pensel på blomman"
+    },
+    {
+     "s": 60.56,
+     "e": 62.3,
+     "text": "hos en planta med gula ärtor."
+    },
+    {
+     "s": 63.12,
+     "e": 66.22,
+     "text": "Ur blomman växer sen en skida med nya ärtor."
+    },
+    {
+     "s": 67.32,
+     "e": 69.56,
+     "text": "När skidorna är mogna öppnar han dem."
+    },
+    {
+     "s": 70.36,
+     "e": 72.36,
+     "text": "Alla de nya ärtorna är gula."
+    },
+    {
+     "s": 73.16,
+     "e": 74.98,
+     "text": "Det gröna verkar ha försvunnit."
+    },
+    {
+     "s": 75.78,
+     "e": 81.12,
+     "text": "Mendel sår de gula ärtorna, och året efter får de nya plantorna egna skidor."
+    },
+    {
+     "s": 81.92,
+     "e": 86.1,
+     "text": "Nu ligger gula och gröna ärtor om varandra i samma skida."
+    },
+    {
+     "s": 86.9,
+     "e": 88.62,
+     "text": "Det gröna har kommit tillbaka."
+    },
+    {
+     "s": 89.9,
+     "e": 92.02,
+     "text": "Mendel räknar varenda ärta."
+    },
+    {
+     "s": 92.82,
+     "e": 99.14,
+     "text": "Av åttatusentjugotre ärtor är sextusentjugotvå gula och tvåtusenett gröna."
+    },
+    {
+     "s": 99.94,
+     "e": 102.42,
+     "text": "Det är ungefär tre gula för varje grön."
+    },
+    {
+     "s": 103.22,
+     "e": 106.66,
+     "text": "Han gör om försöket med ärtornas form och med andra egenskaper,"
+    },
+    {
+     "s": 107.06,
+     "e": 110.2,
+     "text": "och nästan samma förhållande kommer tillbaka varje gång."
+    },
+    {
+     "s": 112.2,
+     "e": 114.2,
+     "text": "Varför kommer det gröna tillbaka?"
+    },
+    {
+     "s": 115,
+     "e": 117.84,
+     "text": "Och varför blir ungefär var fjärde ärta grön?"
+    },
+    {
+     "s": 118.64,
+     "e": 119.86,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 122.36,
+     "e": 124.2,
+     "text": "Vi börjar med Mendels ärtor."
+    },
+    {
+     "s": 125,
+     "e": 130.72,
+     "text": "Tänk dig att han blandar alla åttatusentjugotre ärtorna och tar upp en utan att titta."
+    },
+    {
+     "s": 131.52,
+     "e": 135.6,
+     "text": "Det kallas ett slumpförsök, för vi vet inte i förväg vad vi får."
+    },
+    {
+     "s": 136.4,
+     "e": 141.36,
+     "text": "Det vi kan få kallas ett utfall, och här är varje ärta ett utfall."
+    },
+    {
+     "s": 142.16,
+     "e": 145.36,
+     "text": "Alla utfall tillsammans kallas utfallsrummet."
+    },
+    {
+     "s": 146.16,
+     "e": 149.78,
+     "text": "Här är utfallsrummet alla åttatusentjugotre ärtorna."
+    },
+    {
+     "s": 150.88,
+     "e": 153.6,
+     "text": "Att ärtan blir grön kallas en händelse."
+    },
+    {
+     "s": 154.4,
+     "e": 158.86,
+     "text": "Sannolikheten för händelsen är hur stor del av ärtorna som är gröna."
+    },
+    {
+     "s": 159.66,
+     "e": 166.02,
+     "text": "De gröna ärtorna kallas de gynnsamma utfallen, och alla ärtorna kallas de möjliga utfallen."
+    },
+    {
+     "s": 166.82,
+     "e": 172.66,
+     "text": "Så sannolikheten är antalet gynnsamma utfall delat med antalet möjliga utfall."
+    },
+    {
+     "s": 173.46,
+     "e": 177.64,
+     "text": "Här blir det tvåtusenett delat med åttatusentjugotre."
+    },
+    {
+     "s": 178.74,
+     "e": 180.7,
+     "text": "Det kan vi räkna ungefär i huvudet."
+    },
+    {
+     "s": 181.5,
+     "e": 187.38,
+     "text": "Tvåtusenett är nästan tvåtusen, och åttatusentjugotre är nästan åttatusen."
+    },
+    {
+     "s": 188.18,
+     "e": 195,
+     "text": "Åttatusen är fyra gånger tvåtusen, så tvåtusen delat med åttatusen är en fjärdedel."
+    },
+    {
+     "s": 195.8,
+     "e": 200.18,
+     "text": "Sannolikheten för en grön ärta är alltså ungefär en fjärdedel."
+    },
+    {
+     "s": 200.98,
+     "e": 205.12,
+     "text": "Man kan också säga noll komma tjugofem, eller tjugofem procent."
+    },
+    {
+     "s": 206.22,
+     "e": 207.92,
+     "text": "Nu till frågan varför."
+    },
+    {
+     "s": 208.72,
+     "e": 212.72,
+     "text": "Mendel tänker sig att varje ärta har två anlag för färgen."
+    },
+    {
+     "s": 213.52,
+     "e": 217.9,
+     "text": "Ett anlag är som en liten instruktion om vilken färg ärtan ska få."
+    },
+    {
+     "s": 218.76,
+     "e": 222.84,
+     "text": "Ett anlag är antingen gult eller grönt, och gult vinner."
+    },
+    {
+     "s": 223.66,
+     "e": 227.02,
+     "text": "En ärta som har ett gult anlag eller två blir gul."
+    },
+    {
+     "s": 227.82,
+     "e": 231.22,
+     "text": "Bara en ärta med två gröna anlag blir grön."
+    },
+    {
+     "s": 232.32,
+     "e": 238.84,
+     "text": "De gula ärtorna i första försöket fick ett gult anlag från den gula plantan och ett grönt från pollenet."
+    },
+    {
+     "s": 239.64,
+     "e": 242.96,
+     "text": "Det gröna anlaget syntes inte, för gult vinner."
+    },
+    {
+     "s": 243.92,
+     "e": 249.28,
+     "text": "När plantorna från de ärtorna gör nya ärtor, ger pollenet ett av sina två anlag,"
+    },
+    {
+     "s": 249.66,
+     "e": 251.68,
+     "text": "och blomman ger ett av sina två."
+    },
+    {
+     "s": 252.5,
+     "e": 256.42,
+     "text": "Vilket det blir avgör slumpen, och båda är lika troliga."
+    },
+    {
+     "s": 257.22,
+     "e": 260.9,
+     "text": "Mendel skriver själv att det går enligt sannolikhetens regler."
+    },
+    {
+     "s": 262,
+     "e": 265.86,
+     "text": "Varje ny ärta är alltså ett slumpförsök i två steg."
+    },
+    {
+     "s": 266.66,
+     "e": 270.32,
+     "text": "Först ger pollenet ett anlag, sen ger blomman ett."
+    },
+    {
+     "s": 271.12,
+     "e": 272.54,
+     "text": "Det kan vi rita som en tabell."
+    },
+    {
+     "s": 273.34,
+     "e": 278.96,
+     "text": "Pollenets anlag står överst, gult eller grönt, och blommans anlag står till vänster."
+    },
+    {
+     "s": 279.78,
+     "e": 282.18,
+     "text": "I varje ruta står vad ärtan får."
+    },
+    {
+     "s": 282.98,
+     "e": 288.62,
+     "text": "Det blir fyra rutor: gult och gult, gult och grönt, grönt och gult,"
+    },
+    {
+     "s": 289,
+     "e": 290.12,
+     "text": "och grönt och grönt."
+    },
+    {
+     "s": 291.22,
+     "e": 295.9,
+     "text": "De fyra rutorna är lika troliga, så nu har vi fyra möjliga utfall."
+    },
+    {
+     "s": 296.7,
+     "e": 300.4,
+     "text": "Ärtan blir grön bara i en ruta, grönt och grönt."
+    },
+    {
+     "s": 301.2,
+     "e": 306.98,
+     "text": "Det är ett gynnsamt utfall av fyra möjliga, så sannolikheten för grön är en fjärdedel."
+    },
+    {
+     "s": 307.92,
+     "e": 313.14,
+     "text": "Gul blir ärtan i tre rutor, så sannolikheten för gul är tre fjärdedelar."
+    },
+    {
+     "s": 314.02,
+     "e": 316,
+     "text": "Det är svaret på Mendels fråga."
+    },
+    {
+     "s": 316.8,
+     "e": 319.36,
+     "text": "Ungefär var fjärde ärta blir grön."
+    },
+    {
+     "s": 320.16,
+     "e": 323.68,
+     "text": "Mendel skrev faktiskt upp samma fyra par i sin egen text."
+    },
+    {
+     "s": 324.78,
+     "e": 330.04,
+     "text": "Tabellen fungerar bra när försöket har två steg och alla rutor är lika troliga."
+    },
+    {
+     "s": 330.84,
+     "e": 336.36,
+     "text": "Men det finns ett sätt som fungerar med fler steg också, och det är ett träddiagram."
+    },
+    {
+     "s": 337.16,
+     "e": 339.62,
+     "text": "Vi ritar samma försök som ett träd."
+    },
+    {
+     "s": 340.42,
+     "e": 344.54,
+     "text": "Från en punkt går två grenar för pollenet, gult och grönt."
+    },
+    {
+     "s": 345.34,
+     "e": 348.72,
+     "text": "På varje gren skriver vi sannolikheten, en halv."
+    },
+    {
+     "s": 349.52,
+     "e": 355.02,
+     "text": "Från varje gren går sen två nya grenar för blomman, också med en halv på varje."
+    },
+    {
+     "s": 356.12,
+     "e": 361.42,
+     "text": "Hur stor är sannolikheten att vi går längs grenen grönt och sen grönt igen?"
+    },
+    {
+     "s": 363.28,
+     "e": 365.74,
+     "text": "Pollenet ger grönt i hälften av fallen."
+    },
+    {
+     "s": 366.54,
+     "e": 369.4,
+     "text": "Och av de fallen ger blomman grönt i hälften."
+    },
+    {
+     "s": 370.2,
+     "e": 372.72,
+     "text": "Hälften av en halv är en fjärdedel."
+    },
+    {
+     "s": 373.52,
+     "e": 377.48,
+     "text": "Så vi multiplicerar sannolikheterna, en halv gånger en halv."
+    },
+    {
+     "s": 378.28,
+     "e": 381.8,
+     "text": "Vi multiplicerar täljarna, alltså talen överst."
+    },
+    {
+     "s": 382.6,
+     "e": 384.28,
+     "text": "Ett gånger ett är ett."
+    },
+    {
+     "s": 385.12,
+     "e": 388.3,
+     "text": "Sen multiplicerar vi nämnarna, talen nederst."
+    },
+    {
+     "s": 389.1,
+     "e": 390.96,
+     "text": "Två gånger två är fyra."
+    },
+    {
+     "s": 391.76,
+     "e": 395.24,
+     "text": "Det blir en fjärdedel, samma svar som i tabellen."
+    },
+    {
+     "s": 396.04,
+     "e": 400.54,
+     "text": "Att man multiplicerar längs en gren kallas multiplikationsprincipen."
+    },
+    {
+     "s": 401.64,
+     "e": 404.62,
+     "text": "Nu får vi inte glömma varför vi får multiplicera så."
+    },
+    {
+     "s": 405.42,
+     "e": 409,
+     "text": "Blomman bryr sig inte om vilket anlag pollenet gav."
+    },
+    {
+     "s": 409.8,
+     "e": 414.68,
+     "text": "I andra steget är sannolikheten en halv, vad som än hände i första steget."
+    },
+    {
+     "s": 415.48,
+     "e": 417.72,
+     "text": "Sådana händelser kallas oberoende."
+    },
+    {
+     "s": 418.52,
+     "e": 420.94,
+     "text": "Det är som när man singlar slant två gånger."
+    },
+    {
+     "s": 421.74,
+     "e": 423.66,
+     "text": "Myntet minns inte det första kastet."
+    },
+    {
+     "s": 424.76,
+     "e": 427.48,
+     "text": "Hur stor är då sannolikheten för en gul ärta?"
+    },
+    {
+     "s": 428.28,
+     "e": 433.92,
+     "text": "I trädet ger tre grenar en gul ärta: gult och gult, gult och grönt,"
+    },
+    {
+     "s": 434.26,
+     "e": 435.32,
+     "text": "och grönt och gult."
+    },
+    {
+     "s": 436.26,
+     "e": 439.22,
+     "text": "Varje gren har sannolikheten en fjärdedel."
+    },
+    {
+     "s": 440.02,
+     "e": 446.34,
+     "text": "Grenarna adderar vi, en fjärdedel plus en fjärdedel plus en fjärdedel är tre fjärdedelar."
+    },
+    {
+     "s": 447.14,
+     "e": 449.14,
+     "text": "Det kallas additionsprincipen."
+    },
+    {
+     "s": 449.94,
+     "e": 454.74,
+     "text": "Lägger vi ihop alla fyra grenarna blir det ett, för någon av dem händer alltid."
+    },
+    {
+     "s": 455.94,
+     "e": 458.94,
+     "text": "Multiplicera och addera är lätta att blanda ihop."
+    },
+    {
+     "s": 459.74,
+     "e": 464.22,
+     "text": "Längs en gren, när det ena händer och sen det andra, multiplicerar vi."
+    },
+    {
+     "s": 465.02,
+     "e": 468.88,
+     "text": "Mellan olika grenar, som ger samma händelse, adderar vi."
+    },
+    {
+     "s": 469.98,
+     "e": 471.72,
+     "text": "Stämmer det här med Mendels ärtor?"
+    },
+    {
+     "s": 472.52,
+     "e": 479.2,
+     "text": "Om tre fjärdedelar av ärtorna blir gula, hur många av de åttatusentjugotre blir då troligen gula?"
+    },
+    {
+     "s": 480,
+     "e": 482.44,
+     "text": "Vi räknar med åttatusen, det är lättare."
+    },
+    {
+     "s": 483.24,
+     "e": 486,
+     "text": "En fjärdedel av åttatusen är tvåtusen."
+    },
+    {
+     "s": 486.8,
+     "e": 490.88,
+     "text": "Tre fjärdedelar är tre gånger så mycket, alltså sextusen."
+    },
+    {
+     "s": 491.68,
+     "e": 494.02,
+     "text": "Mendel fick sextusentjugotvå."
+    },
+    {
+     "s": 494.82,
+     "e": 498.32,
+     "text": "Bara tjugotvå ifrån, av över åttatusen."
+    },
+    {
+     "s": 499.42,
+     "e": 503.46,
+     "text": "Nu tar vi två egenskaper samtidigt, precis som Mendel gjorde."
+    },
+    {
+     "s": 504.26,
+     "e": 509.06,
+     "text": "En ärta kan också vara rund eller skrynklig, och där vinner rund."
+    },
+    {
+     "s": 509.86,
+     "e": 511.98,
+     "text": "Det fungerar på samma sätt som med färgen."
+    },
+    {
+     "s": 512.78,
+     "e": 517.7,
+     "text": "Sannolikheten för rund är tre fjärdedelar, och för skrynklig en fjärdedel."
+    },
+    {
+     "s": 518.5,
+     "e": 522.32,
+     "text": "Färgen och formen avgörs var för sig, så de är oberoende."
+    },
+    {
+     "s": 523.42,
+     "e": 527.76,
+     "text": "Hur stor är sannolikheten att en ärta blir både gul och rund?"
+    },
+    {
+     "s": 528.56,
+     "e": 531.72,
+     "text": "Nu är grenarna olika troliga, så vi tar trädet."
+    },
+    {
+     "s": 532.52,
+     "e": 537.72,
+     "text": "Första steget är färgen, gul tre fjärdedelar och grön en fjärdedel."
+    },
+    {
+     "s": 538.52,
+     "e": 544.04,
+     "text": "Andra steget är formen, rund tre fjärdedelar och skrynklig en fjärdedel."
+    },
+    {
+     "s": 544.96,
+     "e": 551,
+     "text": "Gul och rund är en gren, så vi multiplicerar, tre fjärdedelar gånger tre fjärdedelar."
+    },
+    {
+     "s": 551.8,
+     "e": 558.42,
+     "text": "I täljaren är tre gånger tre lika med nio, och i nämnaren är fyra gånger fyra lika med sexton."
+    },
+    {
+     "s": 559.22,
+     "e": 561.24,
+     "text": "Det blir nio sextondelar."
+    },
+    {
+     "s": 562.04,
+     "e": 564.5,
+     "text": "Grön och skrynklig är också en gren."
+    },
+    {
+     "s": 565.3,
+     "e": 568.84,
+     "text": "En fjärdedel gånger en fjärdedel är en sextondel."
+    },
+    {
+     "s": 569.94,
+     "e": 573.32,
+     "text": "Mendel räknade femhundrafemtiosex sådana ärtor."
+    },
+    {
+     "s": 574.12,
+     "e": 576.52,
+     "text": "Vi räknar med femhundrasextio, det är lättare."
+    },
+    {
+     "s": 577.32,
+     "e": 583.48,
+     "text": "En sextondel av femhundrasextio är trettiofem, för sexton gånger trettiofem är femhundrasextio."
+    },
+    {
+     "s": 584.28,
+     "e": 590.22,
+     "text": "Så ungefär trettiofem ärtor borde bli gröna och skrynkliga, och Mendel fick trettiotvå."
+    },
+    {
+     "s": 591.12,
+     "e": 595.94,
+     "text": "Nio sextondelar är nio gånger trettiofem, alltså trehundrafemton."
+    },
+    {
+     "s": 596.74,
+     "e": 600.48,
+     "text": "Och Mendel fick trehundrafemton gula och runda ärtor."
+    },
+    {
+     "s": 601.58,
+     "e": 604.82,
+     "text": "Mendel provade också med tre egenskaper samtidigt."
+    },
+    {
+     "s": 605.62,
+     "e": 607.3,
+     "text": "Då får trädet tre steg."
+    },
+    {
+     "s": 609.16,
+     "e": 611.82,
+     "text": "Oj, då blir det åtta grenar längst ut."
+    },
+    {
+     "s": 612.62,
+     "e": 614.14,
+     "text": "Men principen är densamma."
+    },
+    {
+     "s": 614.94,
+     "e": 619.54,
+     "text": "Vi multiplicerar längs grenen, med tre sannolikheter i stället för två."
+    },
+    {
+     "s": 620.66,
+     "e": 622.24,
+     "text": "Nu går vi tillbaka till Mendel."
+    },
+    {
+     "s": 624.74,
+     "e": 630.5,
+     "text": "I februari och mars artonhundrasextiofem berättar Mendel om sina ärtor för en förening"
+    },
+    {
+     "s": 630.54,
+     "e": 633.44,
+     "text": "av naturforskare i Brno, på två möten."
+    },
+    {
+     "s": 634.24,
+     "e": 637.4,
+     "text": "Han visar sina tal och förklarar dem med sannolikhet."
+    },
+    {
+     "s": 638.2,
+     "e": 640.14,
+     "text": "Året efter trycks hans text."
+    },
+    {
+     "s": 641.3,
+     "e": 647.1,
+     "text": "Men nästan ingen förstår vad han har hittat, och i trettiofem år är det nästan ingen"
+    },
+    {
+     "s": 647.16,
+     "e": 648.16,
+     "text": "som läser den."
+    },
+    {
+     "s": 649.06,
+     "e": 654.86,
+     "text": "År artonhundrasextioåtta väljs Mendel till abbot, alltså chef för hela klostret."
+    },
+    {
+     "s": 655.66,
+     "e": 658.02,
+     "text": "Då får han allt mindre tid för ärtorna."
+    },
+    {
+     "s": 658.82,
+     "e": 660.9,
+     "text": "Han dör artonhundraåttiofyra."
+    },
+    {
+     "s": 661.96,
+     "e": 666.26,
+     "text": "År nittonhundra hittar tre forskare i olika länder hans text,"
+    },
+    {
+     "s": 666.54,
+     "e": 667.54,
+     "text": "var för sig."
+    },
+    {
+     "s": 668.12,
+     "e": 671.16,
+     "text": "Då förstår de att Mendel hade räknat rätt."
+    },
+    {
+     "s": 671.96,
+     "e": 675,
+     "text": "I dag kallas han genetikens fader."
+    },
+    {
+     "s": 675.8,
+     "e": 679.24,
+     "text": "Genetik är läran om hur egenskaper ärvs."
+    },
+    {
+     "s": 680.94,
+     "e": 682.04,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 682.88,
+     "e": 689.74,
+     "text": "En ärta blir gul med sannolikheten tre fjärdedelar och grön med sannolikheten en fjärdedel."
+    },
+    {
+     "s": 690.54,
+     "e": 696.96,
+     "text": "Den blir rund med sannolikheten tre fjärdedelar och skrynklig med sannolikheten en fjärdedel."
+    },
+    {
+     "s": 697.76,
+     "e": 700.54,
+     "text": "Färgen och formen avgörs var för sig."
+    },
+    {
+     "s": 701.46,
+     "e": 705.66,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 706.46,
+     "e": 711.48,
+     "text": "Först: Hur stor är sannolikheten att en ärta blir grön och rund?"
+    },
+    {
+     "s": 712.32,
+     "e": 715.7,
+     "text": "Sen: Mendel har hundrasextio ärtor."
+    },
+    {
+     "s": 716.5,
+     "e": 719.82,
+     "text": "Hur många av dem blir troligen gröna och runda?"
     }
    ]
   },
