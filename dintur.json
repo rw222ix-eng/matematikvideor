@@ -1280,7 +1280,11 @@
     "notisFran": "Nu är det din tur"
   },
   "formelbladet-ma2-6-statistik": {
-    "fraga": "Äggen från en gård väger 60 gram i medel, och standardavvikelsen är 4 gram. Vikten är normalfördelad.",
+    "fraga": "Äggen från en gård väger 60 gram i medel, och standardavvikelsen är 4 gram. Vikten är normalfördelad. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många gram är två sigma?",
+      "Sen: Hur många procent av äggen väger mellan 52 och 60 gram?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "d05-aggen",
@@ -1310,7 +1314,34 @@
     },
     "delar": [
       {
-        "fraga": "Hur många procent av äggen väger mellan 52 och 60 gram?",
+        "fraga": "Först: Hur många gram är två sigma?",
+        "typ": "tal",
+        "svar": 8,
+        "tolerans": 0.01,
+        "enhet": "gram",
+        "exempel": "t.ex. 5",
+        "tangenter": ["·"],
+        "fel": [
+          {
+            "svar": "4",
+            "text": "4 gram är ett sigma. Två sigma är två gånger sigma, alltså 2 · 4."
+          },
+          {
+            "svar": "2",
+            "text": "2 är hur många sigma det är. Frågan är hur många gram det blir: två gånger sigma, alltså 2 · 4."
+          },
+          {
+            "svar": "52",
+            "text": "52 gram är μ − 2σ, alltså 60 − 8. Frågan är bara hur många gram två sigma är: 2 · 4."
+          },
+          {
+            "svar": "56",
+            "text": "56 gram är μ − σ, alltså 60 − 4. Frågan är hur många gram två sigma är: två gånger sigma, alltså 2 · 4."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur många procent av äggen väger mellan 52 och 60 gram?",
         "typ": "tal",
         "svar": 47.7,
         "tolerans": 0.05,
