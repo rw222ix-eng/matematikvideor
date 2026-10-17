@@ -778,10 +778,14 @@
     ]
   },
   "formelbladet-ma2-1-algebra": {
-    "fraga": "Lös ekvationen x² − 8x + 12 = 0 med pq-formeln.",
+    "fraga": "Lös ekvationen x² − 8x + 12 = 0 med pq-formeln. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är p och vad är q?",
+      "Sen: Vilka är lösningarna?"
+    ],
     "delar": [
       {
-        "fraga": "Vad är p?",
+        "fraga": "Först: Vad är p?",
         "typ": "tal",
         "svar": -8,
         "exempel": "t.ex. −6",
@@ -823,7 +827,7 @@
         ]
       },
       {
-        "fraga": "Vilka är lösningarna?",
+        "fraga": "Sen: Vilka är lösningarna?",
         "typ": "losningar",
         "svar": [
           2,
