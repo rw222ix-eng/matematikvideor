@@ -458,7 +458,11 @@
     "notisFran": "Nu är det din tur"
   },
   "formelbladet-5-pythagoras-trigonometri-vektorer": {
-    "fraga": "En stege lutar mot en vägg. Foten står 6 meter från väggen, och toppen når 8 meter upp.",
+    "fraga": "En stege lutar mot en vägg. Foten står 6 meter från väggen, och toppen når 8 meter upp. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur lång är stegen?",
+      "Sen: Vad är sinus v?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "b01-stegen",
@@ -484,7 +488,7 @@
     },
     "delar": [
       {
-        "fraga": "Hur lång är stegen?",
+        "fraga": "Först: Hur lång är stegen?",
         "typ": "tal",
         "svar": 10,
         "enhet": "meter",
@@ -496,7 +500,7 @@
         ]
       },
       {
-        "fraga": "Vad är sinus v, där v är vinkeln mellan stegen och marken?",
+        "fraga": "Sen: Vad är sinus v, där v är vinkeln mellan stegen och marken?",
         "typ": "tal",
         "svar": 0.8,
         "tolerans": 0.001,
