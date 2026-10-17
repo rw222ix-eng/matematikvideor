@@ -226,10 +226,14 @@
     ]
   },
   "formelbladet-1-prefix-och-potenser": {
-    "fraga": "Skriv 10⁴ · 10⁵ som en enda potens, och säg vilket prefix det blir.",
+    "fraga": "Skriv 10⁴ · 10⁵ som en enda potens. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv 10⁴ · 10⁵ som en enda potens.",
+      "Sen: Vilket prefix står för den tiopotensen?"
+    ],
     "delar": [
       {
-        "fraga": "Vilken potens blir det?",
+        "fraga": "Först: Skriv 10⁴ · 10⁵ som en enda potens.",
         "typ": "tal",
         "svar": 1000000000,
         "exempel": "t.ex. 10^6",
@@ -241,12 +245,12 @@
         ]
       },
       {
-        "fraga": "Vilket prefix står för den tiopotensen?",
+        "fraga": "Sen: Vilket prefix står för den tiopotensen?",
         "typ": "ord",
         "svar": ["giga", "G"],
         "exempel": "t.ex. mega",
         "fel": [
-          { "svar": ["mega", "M"], "text": "Mega är 10⁶. Leta upp tiopotensen du fick i a) i tabellen." },
+          { "svar": ["mega", "M"], "text": "Mega är 10⁶. Leta upp tiopotensen från den första frågan i tabellen." },
           { "svar": ["tera", "T"], "text": "Tera är 10¹². Exponenterna ska läggas ihop, och 4 + 5 är 9." },
           { "svar": ["g"], "text": "Nästan. Giga skrivs med stort G, litet g betyder gram." }
         ]
