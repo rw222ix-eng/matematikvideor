@@ -2887,5 +2887,100 @@
       "Vinkeln: 0,75 · 360° = 270°.",
       "I huvudet: en fjärdedel av 360 är 90, och tre fjärdedelar är 3 · 90 = 270 grader."
     ]
+  },
+  "ma1c-k3-02-lan-ranta-amortering": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Sufia lånar 500 taka av Yunus. Hon amorterar lika mycket varje vecka i 50 veckor, och räntesatsen är 0,4 % per vecka. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor är amorteringen varje vecka?",
+      "Sen: Hur mycket betalar Sufia första veckan, när hon betalar både amortering och ränta?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Hur stor är amorteringen varje vecka?",
+        "typ": "tal",
+        "svar": 10,
+        "tolerans": 0.01,
+        "enhet": "taka",
+        "exempel": "t.ex. 15",
+        "tangenter": [
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "500",
+            "text": "Det är hela lånet. Lånet delas lika på de 50 betalningarna: 500 / 50."
+          },
+          {
+            "svar": "50",
+            "text": "50 är antalet veckor. Amorteringen är lånet delat med antalet betalningar: 500 / 50."
+          },
+          {
+            "svar": "2",
+            "text": "Det är räntan första veckan. Amorteringen är den del av själva lånet som betalas tillbaka: 500 / 50."
+          },
+          {
+            "svar": "12",
+            "text": "Det är hela betalningen första veckan, amortering plus ränta. Amorteringen är bara 500 / 50."
+          },
+          {
+            "svar": "20",
+            "text": "Det är amorteringen på 1 000 taka. Sufia lånar 500 taka: 500 / 50."
+          },
+          {
+            "svar": "25",
+            "text": "Dela med antalet betalningar, alltså 50: 500 / 50."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur mycket betalar Sufia första veckan, när hon betalar både amortering och ränta?",
+        "typ": "tal",
+        "svar": 12,
+        "tolerans": 0.01,
+        "enhet": "taka",
+        "exempel": "t.ex. 15",
+        "tangenter": [
+          "·",
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "10",
+            "text": "Det är bara amorteringen. Lägg till räntan: 0,4 % av 500."
+          },
+          {
+            "svar": "2",
+            "text": "Det är bara räntan. Lägg till amorteringen, 500 / 50 = 10."
+          },
+          {
+            "svar": "210",
+            "text": "0,4 % är 0,004, inte 0,4. 1 % av 500 är 5, så 0,4 % är fyra tiondelar av 5, alltså 2. Sen 10 + 2."
+          },
+          {
+            "svar": "30",
+            "text": "0,4 % är 0,004, inte 0,04. 1 % av 500 är 5, så 0,4 % är fyra tiondelar av 5, alltså 2. Sen 10 + 2."
+          },
+          {
+            "svar": "24",
+            "text": "24 taka var första veckan på lånet på 1 000 taka. Här är lånet 500 taka: amorteringen 10 och räntan 2."
+          },
+          {
+            "svar": "11.96",
+            "text": "Första veckan är Sufia skyldig hela lånet, 500 taka, så räntan räknas på 500: 0,4 % av 500 = 2."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Första veckan är hon skyldig hela lånet",
+      "text": "Amorteringen är lånet delat lika på alla betalningarna. Första veckan räknas räntan på hela lånet: 1 % av 500 är 5, och 0,4 % är fyra tiondelar av det. Betalningen är amorteringen plus räntan."
+    },
+    "losning": [
+      "Amorteringen: 500 / 50 = 10 taka varje vecka.",
+      "Första veckan är Sufia skyldig hela lånet, 500 taka.",
+      "1 % av 500 är 5, så 0,4 % är fyra tiondelar av 5, alltså 2 taka i ränta.",
+      "Första veckan betalar hon amorteringen plus räntan: 10 + 2 = 12 taka."
+    ]
   }
 }
