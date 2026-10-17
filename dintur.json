@@ -1200,7 +1200,11 @@
     "notisFran": "Allt det här står på sidan tre"
   },
   "formelbladet-ma2-5-vinklar-och-cirkelsatser": {
-    "fraga": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora.",
+    "fraga": "En fotboll är sydd av bitar med sex hörn och bitar med fem hörn, och i varje bit är alla vinklar lika stora. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor är vinkelsumman i en bit med fem hörn?",
+      "Sen: Hur stor är varje vinkel i en bit med fem hörn?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "d04-fotbollen",
@@ -1218,7 +1222,7 @@
     },
     "delar": [
       {
-        "fraga": "Hur stor är vinkelsumman i en bit med fem hörn?",
+        "fraga": "Först: Hur stor är vinkelsumman i en bit med fem hörn?",
         "typ": "tal",
         "svar": 540,
         "enhet": "grader",
@@ -1244,7 +1248,7 @@
         ]
       },
       {
-        "fraga": "Hur stor är varje vinkel i en bit med fem hörn?",
+        "fraga": "Sen: Hur stor är varje vinkel i en bit med fem hörn?",
         "typ": "tal",
         "svar": 108,
         "enhet": "grader",
