@@ -233,7 +233,7 @@
         "typ": "tal",
         "svar": 1000000000,
         "exempel": "t.ex. 10^6",
-        "tangenter": ["^", "-", "(", ")"],
+        "tangenter": ["^", "-", "(", ")", "·"],
         "fel": [
           { "svar": "10^20", "text": "Du har tagit exponenterna gånger varandra. När potenserna tas gånger varandra läggs exponenterna ihop: 4 + 5." },
           { "svar": "10^1", "text": "Du har dragit bort exponenterna. Det gör man när man delar. När potenserna tas gånger varandra läggs exponenterna ihop: 4 + 5." },
@@ -273,6 +273,7 @@
         "svar": 25,
         "enhet": "kr per km",
         "exempel": "t.ex. 15",
+        "tangenter": ["/", "(", ")"],
         "fel": [
           { "svar": "100", "text": "100 kr är hur mycket mer den andra resan kostade. Dela med hur många kilometer längre den var: 6 − 2 = 4." },
           { "svar": "40", "text": "Du har delat 80 med 2. Men de 80 kronorna innehåller också startavgiften. Räkna skillnaden: 180 − 80 = 100 kr för 6 − 2 = 4 km." },
@@ -286,6 +287,7 @@
         "svar": 30,
         "enhet": "kr",
         "exempel": "t.ex. 40",
+        "tangenter": ["·"],
         "fel": [
           { "svar": "50", "text": "50 kr är vad 2 kilometer kostar: 2 · 25. Startavgiften är det som är kvar av resans 80 kronor." },
           { "svar": "80", "text": "80 kr är hela resan. Dra bort vad de 2 kilometerna kostar: 2 · 25 = 50." },
@@ -338,6 +340,7 @@
         "svar": 45,
         "enhet": "grader",
         "exempel": "t.ex. 90",
+        "tangenter": ["/"],
         "fel": [
           { "svar": "90", "text": "90 grader är vinkeln när pizzan delas i fyra bitar. Här är det åtta: 360 delat med 8." },
           { "svar": "8", "text": "8 är antalet bitar. Hela varvet är 360 grader, och det delas i 8 lika stora bitar." },
@@ -351,6 +354,7 @@
         "tolerans": 0.06,
         "enhet": "cm",
         "exempel": "t.ex. 15,7",
+        "tangenter": ["·", "/"],
         "fel": [
           { "svar": "15.7", "tolerans": 0.01, "text": "15,7 centimeter är kanten när pizzan delas i fyra bitar. Här tar du en åttondel av 62,8." },
           { "svar": "39.25", "tolerans": 0.05, "text": "Det är bitens area, 314 delat med 8. Den böjda kanten är en åttondel av omkretsen, 62,8." },
@@ -402,6 +406,7 @@
         "typ": "tal",
         "svar": 25,
         "exempel": "t.ex. 100",
+        "tangenter": ["·", "^"],
         "fel": [
           { "svar": "5", "text": "5 är längdskalan. En yta har både längd och bredd, så areaskalan är 5 gånger 5." },
           { "svar": "10", "text": "Areaskalan är längdskalan upphöjt till 2, alltså 5 gånger 5, inte 5 plus 5." },
@@ -414,6 +419,7 @@
         "typ": "tal",
         "svar": 125,
         "exempel": "t.ex. 1000",
+        "tangenter": ["·", "^"],
         "fel": [
           { "svar": "15", "text": "Volymskalan är längdskalan upphöjt till 3, alltså 5 gånger 5 gånger 5, inte 5 gånger 3." },
           { "svar": "25", "text": "25 är areaskalan. En volym har också höjd, så det är 5 upphöjt till 3." },
@@ -479,6 +485,7 @@
         "svar": 0.8,
         "tolerans": 0.001,
         "exempel": "t.ex. 0,5",
+        "tangenter": ["/"],
         "fel": [
           { "svar": "0.6", "text": "Det är cosinus v: närliggande katet, 6, delat med hypotenusan. Sinus är motstående katet delat med hypotenusan." },
           { "svar": "1.333", "tolerans": 0.01, "text": "Det är tangens v: 8 delat med 6. Sinus är motstående katet delat med hypotenusan, stegen." },
@@ -530,6 +537,7 @@
         "typ": "tal",
         "svar": 2209,
         "exempel": "t.ex. 2304",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "2491",
@@ -649,6 +657,7 @@
         "typ": "tal",
         "svar": 16,
         "exempel": "t.ex. 9",
+        "tangenter": ["/"],
         "fel": [
           {
             "svar": "400",
@@ -708,7 +717,8 @@
           "(",
           ")",
           "^",
-          "="
+          "=",
+          "·"
         ],
         "fel": [
           {
@@ -922,6 +932,7 @@
         "tolerans": 0.001,
         "enhet": "meter",
         "exempel": "t.ex. 12",
+        "tangenter": ["·", "^"],
         "fel": [
           {
             "svar": "135",
@@ -1052,6 +1063,7 @@
         "tolerans": 0.01,
         "enhet": "meter",
         "exempel": "t.ex. 5",
+        "tangenter": ["·", "/"],
         "fel": [
           {
             "svar": "24",
@@ -1118,6 +1130,7 @@
         "svar": 540,
         "enhet": "grader",
         "exempel": "t.ex. 720",
+        "tangenter": ["·", "(", ")"],
         "fel": [
           {
             "svar": "720",
@@ -1143,6 +1156,7 @@
         "svar": 108,
         "enhet": "grader",
         "exempel": "t.ex. 120",
+        "tangenter": ["/"],
         "fel": [
           {
             "svar": "120",
@@ -1468,6 +1482,7 @@
         "tolerans": 0.06,
         "enhet": "kilometer",
         "exempel": "t.ex. 6,7",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "3.42",
@@ -1716,6 +1731,7 @@
         "tolerans": 0.5,
         "enhet": "meter",
         "exempel": "t.ex. 5 100",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "170",
@@ -1803,6 +1819,7 @@
         "svar": 18,
         "enhet": "cm",
         "exempel": "t.ex. 12",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "10",
@@ -1862,6 +1879,7 @@
         "typ": "tal",
         "svar": 2,
         "exempel": "t.ex. 3",
+        "tangenter": ["/", "(", ")"],
         "fel": [
           {
             "svar": "0.5",
@@ -1972,6 +1990,7 @@
         "tolerans": 0.5,
         "enhet": "pund",
         "exempel": "t.ex. 1250",
+        "tangenter": ["·", "^"],
         "fel": [
           {
             "svar": "1400",
@@ -2020,7 +2039,8 @@
           "^",
           "(",
           ")",
-          "-"
+          "-",
+          "·"
         ],
         "fel": [
           {
@@ -2043,6 +2063,7 @@
         "svar": 20,
         "enhet": "streck",
         "exempel": "t.ex. 12",
+        "tangenter": ["·", "/"],
         "fel": [
           {
             "svar": "10",
@@ -2085,7 +2106,8 @@
         "exempel": "t.ex. y = 5 · 3^x",
         "tangenter": [
           "=",
-          "^"
+          "^",
+          "·"
         ],
         "fel": [
           {
@@ -2120,6 +2142,7 @@
         "svar": 75,
         "enhet": "år",
         "exempel": "t.ex. 50",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "3",
@@ -2180,6 +2203,7 @@
         "typ": "tal",
         "svar": 45,
         "exempel": "t.ex. 30",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "36",
@@ -2352,6 +2376,7 @@
     ]
   },
   "ma2a-08-substitution-och-addition": {
+    "geogebra": { "text": "Kontrollera svaret grafiskt här i GeoGebra: skriv x + y = 6 och x = 2y. Klicka på en av linjerna och sedan på den grå punkten där de möts. x är strömmen i tråden med 1 ohm och y strömmen i tråden med 2 ohm." },
     "notisFran": "Nu är det din tur",
     "fraga": "I ett annat nät kommer 6 ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen 1 ohm, och den andra har 2 ohm. Strömmen i tråden med 1 ohm kallar vi x, och strömmen i tråden med 2 ohm kallar vi y. Du ska svara på två frågor.",
     "slut": [
@@ -2366,6 +2391,7 @@
         "tolerans": 0.001,
         "enhet": "ampere",
         "exempel": "t.ex. 3",
+        "tangenter": ["·", "/"],
         "fel": [
           {
             "svar": "2",
@@ -2392,6 +2418,7 @@
         "tolerans": 0.001,
         "enhet": "ampere",
         "exempel": "t.ex. 1",
+        "tangenter": ["·", "/"],
         "fel": [
           {
             "svar": "4",
@@ -2434,6 +2461,7 @@
         "svar": 0.99,
         "tolerans": 0.001,
         "exempel": "t.ex. 0,85",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "1",
@@ -2472,6 +2500,7 @@
         "tolerans": 0.01,
         "enhet": "dollar",
         "exempel": "t.ex. 175",
+        "tangenter": ["·"],
         "fel": [
           {
             "svar": "200",
@@ -2517,6 +2546,7 @@
         "svar": 0.1875,
         "tolerans": 0.001,
         "exempel": "t.ex. 5/16 eller 0,3125",
+        "tangenter": ["·", "/"],
         "fel": [
           {
             "svar": "9/16",
@@ -2559,6 +2589,7 @@
         "tolerans": 0.01,
         "enhet": "ärtor",
         "exempel": "t.ex. 50",
+        "tangenter": ["·", "/"],
         "fel": [
           {
             "svar": "90",

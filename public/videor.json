@@ -6013,6 +6013,9 @@
       "typ": "tal",
       "svar": 45,
       "exempel": "t.ex. 30",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "36",
@@ -12512,7 +12515,8 @@
        "^",
        "(",
        ")",
-       "-"
+       "-",
+       "·"
       ],
       "fel": [
        {
@@ -12535,6 +12539,10 @@
       "svar": 20,
       "enhet": "streck",
       "exempel": "t.ex. 12",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "10",
@@ -13839,6 +13847,9 @@
       "svar": 18,
       "enhet": "cm",
       "exempel": "t.ex. 12",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "10",
@@ -18271,6 +18282,10 @@
       "tolerans": 0.5,
       "enhet": "pund",
       "exempel": "t.ex. 1250",
+      "tangenter": [
+       "·",
+       "^"
+      ],
       "fel": [
        {
         "svar": "1400",
@@ -19524,7 +19539,8 @@
       "exempel": "t.ex. y = 5 · 3^x",
       "tangenter": [
        "=",
-       "^"
+       "^",
+       "·"
       ],
       "fel": [
        {
@@ -19559,6 +19575,9 @@
       "svar": 75,
       "enhet": "år",
       "exempel": "t.ex. 50",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "3",
@@ -21055,6 +21074,9 @@
       "tolerans": 0.06,
       "enhet": "kilometer",
       "exempel": "t.ex. 6,7",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "3.42",
@@ -22412,6 +22434,9 @@
       "tolerans": 0.5,
       "enhet": "meter",
       "exempel": "t.ex. 5 100",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "170",
@@ -23657,6 +23682,10 @@
       "svar": 0.1875,
       "tolerans": 0.001,
       "exempel": "t.ex. 5/16 eller 0,3125",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "9/16",
@@ -23699,6 +23728,10 @@
       "tolerans": 0.01,
       "enhet": "ärtor",
       "exempel": "t.ex. 50",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "90",
@@ -26363,6 +26396,9 @@
       "svar": 0.99,
       "tolerans": 0.001,
       "exempel": "t.ex. 0,85",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "1",
@@ -26401,6 +26437,9 @@
       "tolerans": 0.01,
       "enhet": "dollar",
       "exempel": "t.ex. 175",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "200",
@@ -27559,6 +27598,11 @@
       "typ": "tal",
       "svar": 2,
       "exempel": "t.ex. 3",
+      "tangenter": [
+       "/",
+       "(",
+       ")"
+      ],
       "fel": [
        {
         "svar": "0.5",
@@ -30243,7 +30287,8 @@
        "^",
        "-",
        "(",
-       ")"
+       ")",
+       "·"
       ],
       "fel": [
        {
@@ -31385,6 +31430,11 @@
       "svar": 25,
       "enhet": "kr per km",
       "exempel": "t.ex. 15",
+      "tangenter": [
+       "/",
+       "(",
+       ")"
+      ],
       "fel": [
        {
         "svar": "100",
@@ -31410,6 +31460,9 @@
       "svar": 30,
       "enhet": "kr",
       "exempel": "t.ex. 40",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "50",
@@ -32891,6 +32944,9 @@
       "svar": 45,
       "enhet": "grader",
       "exempel": "t.ex. 90",
+      "tangenter": [
+       "/"
+      ],
       "fel": [
        {
         "svar": "90",
@@ -32913,6 +32969,10 @@
       "tolerans": 0.06,
       "enhet": "cm",
       "exempel": "t.ex. 15,7",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "15.7",
@@ -34445,6 +34505,10 @@
       "typ": "tal",
       "svar": 25,
       "exempel": "t.ex. 100",
+      "tangenter": [
+       "·",
+       "^"
+      ],
       "fel": [
        {
         "svar": "5",
@@ -34469,6 +34533,10 @@
       "typ": "tal",
       "svar": 125,
       "exempel": "t.ex. 1000",
+      "tangenter": [
+       "·",
+       "^"
+      ],
       "fel": [
        {
         "svar": "15",
@@ -36030,6 +36098,9 @@
       "svar": 0.8,
       "tolerans": 0.001,
       "exempel": "t.ex. 0,5",
+      "tangenter": [
+       "/"
+      ],
       "fel": [
        {
         "svar": "0.6",
@@ -38808,6 +38879,10 @@
       "tolerans": 0.001,
       "enhet": "meter",
       "exempel": "t.ex. 12",
+      "tangenter": [
+       "·",
+       "^"
+      ],
       "fel": [
        {
         "svar": "135",
@@ -41625,6 +41700,10 @@
       "tolerans": 0.01,
       "enhet": "meter",
       "exempel": "t.ex. 5",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "24",
@@ -42914,6 +42993,11 @@
       "svar": 540,
       "enhet": "grader",
       "exempel": "t.ex. 720",
+      "tangenter": [
+       "·",
+       "(",
+       ")"
+      ],
       "fel": [
        {
         "svar": "720",
@@ -42939,6 +43023,9 @@
       "svar": 108,
       "enhet": "grader",
       "exempel": "t.ex. 120",
+      "tangenter": [
+       "/"
+      ],
       "fel": [
        {
         "svar": "120",
@@ -46148,6 +46235,9 @@
       "typ": "tal",
       "svar": 2209,
       "exempel": "t.ex. 2304",
+      "tangenter": [
+       "·"
+      ],
       "fel": [
        {
         "svar": "2491",
@@ -48856,6 +48946,9 @@
       "typ": "tal",
       "svar": 16,
       "exempel": "t.ex. 9",
+      "tangenter": [
+       "/"
+      ],
       "fel": [
        {
         "svar": "400",
@@ -49903,7 +49996,8 @@
        "(",
        ")",
        "^",
-       "="
+       "=",
+       "·"
       ],
       "fel": [
        {
@@ -52585,6 +52679,9 @@
     }
    ],
    "dinTur": {
+    "geogebra": {
+     "text": "Kontrollera svaret grafiskt här i GeoGebra: skriv x + y = 6 och x = 2y. Klicka på en av linjerna och sedan på den grå punkten där de möts. x är strömmen i tråden med 1 ohm och y strömmen i tråden med 2 ohm."
+    },
     "notisFran": 547,
     "fraga": "I ett annat nät kommer 6 ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen 1 ohm, och den andra har 2 ohm. Strömmen i tråden med 1 ohm kallar vi x, och strömmen i tråden med 2 ohm kallar vi y. Du ska svara på två frågor.",
     "slut": [
@@ -52599,6 +52696,10 @@
       "tolerans": 0.001,
       "enhet": "ampere",
       "exempel": "t.ex. 3",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "2",
@@ -52625,6 +52726,10 @@
       "tolerans": 0.001,
       "enhet": "ampere",
       "exempel": "t.ex. 1",
+      "tangenter": [
+       "·",
+       "/"
+      ],
       "fel": [
        {
         "svar": "4",
