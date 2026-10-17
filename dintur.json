@@ -888,7 +888,11 @@
     "notisFran": "Nu ett övningstal"
   },
   "formelbladet-ma2-2-andragradsfunktionen": {
-    "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x.",
+    "fraga": "Du kastar en boll rakt upp. Efter x sekunder är bollen y meter över din hand, och y = −5x² + 30x. Du ska svara på två frågor.",
+    "slut": [
+      "Först: När fångar du bollen?",
+      "Sen: Hur högt kommer bollen?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "b01-boll",
@@ -908,7 +912,7 @@
     },
     "delar": [
       {
-        "fraga": "När fångar du bollen?",
+        "fraga": "Först: När fångar du bollen?",
         "typ": "tal",
         "svar": 6,
         "tolerans": 0.001,
@@ -946,7 +950,7 @@
         ]
       },
       {
-        "fraga": "Hur högt kommer bollen?",
+        "fraga": "Sen: Hur högt kommer bollen?",
         "typ": "tal",
         "svar": 45,
         "tolerans": 0.001,
