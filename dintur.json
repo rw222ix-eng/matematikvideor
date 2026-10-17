@@ -310,7 +310,11 @@
     "notisFran": "Nu är det din tur"
   },
   "formelbladet-3-plan-geometri": {
-    "fraga": "En pizza har omkretsen 62,8 centimeter. Den delas i åtta lika stora bitar.",
+    "fraga": "En pizza har omkretsen 62,8 centimeter. Den delas i åtta lika stora bitar. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor blir vinkeln i spetsen?",
+      "Sen: Hur lång blir den böjda kanten på en bit?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "d01-pizza",
@@ -335,7 +339,7 @@
     },
     "delar": [
       {
-        "fraga": "Hur stor blir vinkeln i spetsen?",
+        "fraga": "Först: Hur stor blir vinkeln i spetsen?",
         "typ": "tal",
         "svar": 45,
         "enhet": "grader",
@@ -348,7 +352,7 @@
         ]
       },
       {
-        "fraga": "Hur lång blir den böjda kanten på en bit?",
+        "fraga": "Sen: Hur lång blir den böjda kanten på en bit?",
         "typ": "tal",
         "svar": 7.85,
         "tolerans": 0.06,
