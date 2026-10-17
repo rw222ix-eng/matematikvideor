@@ -2628,5 +2628,99 @@
       "En sextondel av 160 är 160 ÷ 16 = 10.",
       "Tre sextondelar är 3 · 10 = 30. Ungefär 30 av de 160 ärtorna blir troligen gröna och runda."
     ]
+  },
+  "ma1c-k3-04-beroende-och-komplementhandelse": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "5 kort är kvar i leken, och två av dem är ess. Du får två kort, och korten läggs inte tillbaka. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor är sannolikheten att inget av korten är ett ess?",
+      "Sen: Hur stor är sannolikheten att minst ett av korten är ett ess?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Hur stor är sannolikheten att inget av korten är ett ess?",
+        "typ": "tal",
+        "svar": 0.3,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 2/9 eller 0,25",
+        "tangenter": [
+          "·",
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "0.36",
+            "text": "Det är med återläggning. Korten läggs inte tillbaka, så andra gången är bara 4 kort kvar och 2 av dem är inte ess: 3/5 · 2/4."
+          },
+          {
+            "svar": "0.6",
+            "text": "Det är bara det första kortet. Multiplicera också med sannolikheten för inte ess på det andra kortet: 3/5 · 2/4."
+          },
+          {
+            "svar": "0.5",
+            "text": "Det är bara det andra kortet. Multiplicera längs grenen inte ess, inte ess: 3/5 · 2/4."
+          },
+          {
+            "svar": "0.1",
+            "text": "Det är sannolikheten att båda korten är ess. Följ grenen inte ess, inte ess: 3/5 · 2/4."
+          },
+          {
+            "svar": "0.7",
+            "text": "Det är sannolikheten för minst ett ess, alltså nästa fråga. Här ska inget av korten vara ett ess: 3/5 · 2/4."
+          },
+          {
+            "svar": "30",
+            "text": "Skriv sannolikheten som bråk eller decimaltal, inte i procent: 30 % = 0,3."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur stor är sannolikheten att minst ett av korten är ett ess?",
+        "typ": "tal",
+        "svar": 0.7,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 2/9 eller 0,25",
+        "tangenter": [
+          "·",
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "0.3",
+            "text": "Det är sannolikheten för inget ess. Minst ett ess är komplementhändelsen: 1 − P(inget ess)."
+          },
+          {
+            "svar": "0.64",
+            "text": "Det är med återläggning. Utan återläggning är P(inget ess) = 3/5 · 2/4 = 0,3, så P(minst ett ess) = 1 − 0,3."
+          },
+          {
+            "svar": "0.4",
+            "text": "Det är bara chansen för ess på det första kortet. Räkna P(inget ess) först och ta 1 minus det."
+          },
+          {
+            "svar": "0.1",
+            "text": "Det är sannolikheten att båda korten är ess. Minst ett ess betyder ett eller två ess: 1 − P(inget ess)."
+          },
+          {
+            "svar": "0.9",
+            "text": "Det är 1 minus sannolikheten för två ess. Komplementet till minst ett ess är inget ess: 1 − 3/5 · 2/4."
+          },
+          {
+            "svar": "70",
+            "text": "Skriv sannolikheten som bråk eller decimaltal, inte i procent: 70 % = 0,7."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Bara en gren saknar ess helt",
+      "text": "Rita ett träddiagram. Första kortet: 3 av 5 är inte ess. Andra kortet: då är 4 kort kvar, och 2 av dem är inte ess. Multiplicera längs grenen inte ess, inte ess. Minst ett ess är komplementhändelsen, så ta 1 minus det."
+    },
+    "losning": [
+      "Första kortet: 5 kort, 3 av dem är inte ess. P = 3/5.",
+      "Andra kortet läggs inte tillbaka: 4 kort kvar, 2 av dem är inte ess. P = 2/4.",
+      "P(inget ess) = 3/5 · 2/4 = 6/20 = 0,3.",
+      "Minst ett ess är komplementhändelsen till inget ess: P(minst ett ess) = 1 − 0,3 = 0,7."
+    ]
   }
 }
