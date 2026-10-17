@@ -1057,7 +1057,11 @@
     "notisFran": "Nu ett övningstal"
   },
   "formelbladet-ma2-4-likformighet": {
-    "fraga": "En lyktstolpe kastar en skugga som är 12 meter lång. Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång.",
+    "fraga": "En lyktstolpe kastar en skugga som är 12 meter lång. Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många gånger längre är lyktstolpens skugga än pinnens skugga?",
+      "Sen: Hur hög är lyktstolpen?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "d03-lyktstolpen",
@@ -1081,7 +1085,35 @@
     },
     "delar": [
       {
-        "fraga": "Hur hög är lyktstolpen?",
+        "fraga": "Först: Hur många gånger längre är lyktstolpens skugga än pinnens skugga?",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.01,
+        "enhet": "gånger",
+        "exempel": "t.ex. 3",
+        "tangenter": ["/"],
+        "fel": [
+          {
+            "svar": "10",
+            "text": "Du har räknat 12 minus 2. Frågan är hur många gånger längre skuggan är: vilket tal gånger 2 blir 12?"
+          },
+          {
+            "svar": "14",
+            "text": "Du har räknat 12 plus 2. Frågan är hur många gånger längre skuggan är: vilket tal gånger 2 blir 12?"
+          },
+          {
+            "svar": "24",
+            "text": "Du har tagit 12 gånger 2. Frågan är vilket tal gånger 2 blir 12. Det är 12 delat med 2."
+          },
+          {
+            "svar": "0.1667",
+            "tolerans": 0.01,
+            "text": "Du har räknat 2 delat med 12. Stolpens skugga är den längre, så räkna 12 delat med 2."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur hög är lyktstolpen?",
         "typ": "tal",
         "svar": 6,
         "tolerans": 0.01,
