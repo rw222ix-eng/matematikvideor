@@ -265,10 +265,14 @@
     "notisFran": "Prefixen och potenserna hänger ihop"
   },
   "formelbladet-2-funktioner": {
-    "fraga": "En taxi kostar en startavgift och ett pris per kilometer. En resa på 2 kilometer kostar 80 kronor. En resa på 6 kilometer kostar 180 kronor.",
+    "fraga": "En taxi kostar en startavgift och ett pris per kilometer. En resa på 2 kilometer kostar 80 kronor. En resa på 6 kilometer kostar 180 kronor. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är k, alltså priset per kilometer?",
+      "Sen: Vad är m, alltså startavgiften?"
+    ],
     "delar": [
       {
-        "fraga": "Vad är k, alltså priset per kilometer?",
+        "fraga": "Först: Vad är k, alltså priset per kilometer?",
         "typ": "tal",
         "svar": 25,
         "enhet": "kr per km",
@@ -282,7 +286,7 @@
         ]
       },
       {
-        "fraga": "Vad är m, alltså startavgiften?",
+        "fraga": "Sen: Vad är m, alltså startavgiften?",
         "typ": "tal",
         "svar": 30,
         "enhet": "kr",
