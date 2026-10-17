@@ -1001,10 +1001,39 @@
     "notisFran": "Allt det här står på sidan två"
   },
   "formelbladet-ma2-3-logaritmer": {
-    "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor?",
+    "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor? Du ska svara på två frågor.",
     "delar": [
       {
-        "fraga": "Hur många år tar det? Svara med en decimal.",
+        "fraga": "Först: Vad är förändringsfaktorn?",
+        "typ": "tal",
+        "svar": 1.02,
+        "tolerans": 0.0001,
+        "exempel": "t.ex. 1,5",
+        "fel": [
+          {
+            "svar": "0.02",
+            "tolerans": 0.0001,
+            "text": "0,02 är räntan, alltså det som läggs till. Förändringsfaktorn är allt som finns efter ett år: 100 % + 2 % = 102 %, alltså 1,02."
+          },
+          {
+            "svar": "2",
+            "tolerans": 0.0001,
+            "text": "2 är räntan i procent. Förändringsfaktorn är 100 % + 2 % = 102 %, och procent betyder hundradelar, så det blir 1,02."
+          },
+          {
+            "svar": "1.2",
+            "tolerans": 0.0001,
+            "text": "1,2 är 120 procent, alltså 20 procents ränta. Med 2 procent blir det 102 procent, alltså 1,02."
+          },
+          {
+            "svar": "0.98",
+            "tolerans": 0.0001,
+            "text": "0,98 betyder att pengarna minskar med 2 procent. Räntan läggs till, så det blir 102 procent, alltså 1,02."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur många år tar det? Svara med en decimal.",
         "typ": "tal",
         "svar": 35.0028,
         "tolerans": 0.06,
@@ -1046,7 +1075,7 @@
       "text": "Gör som med 10 procent i filmen. Med 2 procent ränta tar vi pengarna gånger 1,02 varje år, så ekvationen blir 1,02ˣ = 2. Ta lg av båda sidorna och använd regeln lg xᵖ = p · lg x från bladet. Då är x = lg 2 / lg 1,02, och det räknar du på räknaren."
     },
     "losning": [
-      "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år, så vi tar dem gånger 1,02.",
+      "Med 2 procent ränta blir pengarna 102 procent av vad de var varje år. Förändringsfaktorn är alltså 1,02, och vi tar pengarna gånger 1,02.",
       "Efter x år finns det 1000 · 1,02ˣ kronor, så 1000 · 1,02ˣ = 2000.",
       "Dela båda sidorna med 1000: 1,02ˣ = 2.",
       "Ta lg av båda sidorna: lg 1,02ˣ = lg 2.",
@@ -1054,7 +1083,11 @@
       "Dela båda sidorna med lg 1,02: x = lg 2 / lg 1,02.",
       "På räknaren: två tryck på ln log, 2, ), ÷, två tryck på ln log, 1.02, enter. x ≈ 35,0. Det tar ungefär 35 år."
     ],
-    "notisFran": "Nu ett övningstal"
+    "notisFran": "Nu ett övningstal",
+    "slut": [
+      "Först: Vad är förändringsfaktorn?",
+      "Sen: Hur många år tar det? Svara med en decimal."
+    ]
   },
   "formelbladet-ma2-4-likformighet": {
     "fraga": "En lyktstolpe kastar en skugga som är 12 meter lång. Samtidigt kastar en pinne som är 1 meter hög en skugga som är 2 meter lång. Du ska svara på två frågor.",
