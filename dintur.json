@@ -2722,5 +2722,81 @@
       "P(inget ess) = 3/5 · 2/4 = 6/20 = 0,3.",
       "Minst ett ess är komplementhändelsen till inget ess: P(minst ett ess) = 1 − 0,3 = 0,7."
     ]
+  },
+  "ma1c-k5-02-korrelation-och-kausalitet": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "På ett annat sjukhus i London frågar en läkare 50 patienter med lungcancer och 200 patienter med andra sjukdomar. 20 av lungcancerpatienterna röker mycket. Bland de andra patienterna röker 40 mycket. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur stor andel av lungcancerpatienterna röker mycket?",
+      "Sen: Är korrelationen mellan att röka mycket och att ha lungcancer positiv eller negativ?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Hur stor andel av lungcancerpatienterna röker mycket?",
+        "typ": "tal",
+        "svar": 40,
+        "tolerans": 0.01,
+        "enhet": "%",
+        "exempel": "t.ex. 35",
+        "tangenter": [
+          "/",
+          "·"
+        ],
+        "fel": [
+          {
+            "svar": "0.4",
+            "text": "Rätt andel, men skriven som decimaltal. Svara i procent: 0,4 = 40 %."
+          },
+          {
+            "svar": "20",
+            "text": "20 är antalet lungcancerpatienter som röker mycket. Andelen är delen delat med det hela: 20 / 50."
+          },
+          {
+            "svar": "2.5",
+            "text": "Du har delat åt fel håll. Andelen är delen delat med det hela: 20 / 50, inte 50 / 20."
+          },
+          {
+            "svar": "8",
+            "text": "Du har delat med alla 250 patienter. Frågan gäller bara lungcancerpatienterna, så dela med 50: 20 / 50."
+          },
+          {
+            "svar": "24",
+            "text": "Det är andelen av alla patienter som röker mycket, 60 / 250. Frågan gäller bara lungcancerpatienterna: 20 / 50."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Är korrelationen mellan att röka mycket och att ha lungcancer positiv eller negativ?",
+        "typ": "ord",
+        "svar": [
+          "positiv"
+        ],
+        "exempel": "positiv eller negativ",
+        "fel": [
+          {
+            "svar": [
+              "negativ"
+            ],
+            "text": "Jämför andelar, inte antal. 40 är fler än 20, men 40 av 200 är bara 20 %. Bland lungcancerpatienterna är det 20 av 50, alltså 40 %. Att röka mycket är vanligare bland dem med lungcancer."
+          },
+          {
+            "svar": [
+              "ingen"
+            ],
+            "text": "Räkna andelen i båda grupperna: 20 / 50 = 40 % och 40 / 200 = 20 %. Andelarna är olika, så det finns en korrelation."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Andelen är delen delat med det hela",
+      "text": "Räkna andelen som röker mycket i varje grupp: delen delat med det hela. Jämför sedan andelarna. Är det vanligare att röka mycket bland dem med lungcancer, är korrelationen positiv."
+    },
+    "losning": [
+      "Andelen bland lungcancerpatienterna: 20 / 50 = 0,40 = 40 %.",
+      "Andelen bland de andra patienterna: 40 / 200 = 0,20 = 20 %.",
+      "Grupperna är olika stora, så vi jämför andelarna och inte antalen. 40 % är mer än 20 %.",
+      "Att röka mycket är vanligare bland dem med lungcancer. När den ena ökar, ökar den andra också, så korrelationen är positiv."
+    ]
   }
 }
