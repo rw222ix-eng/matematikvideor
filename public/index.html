@@ -1138,7 +1138,9 @@
   .newton.pratar .newton-gunga { animation: newton-gunga-prat 2.4s ease-in-out infinite alternate; }
   .newton-kropp { transform-origin: 50% 100%; animation: newton-andas 4.2s ease-in-out .8s infinite; }
   .newton.gar-steg .newton-kropp { animation: newton-steg .32s ease-in-out infinite alternate; }
-  .newton-kropp img, .newton-rorelse { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; filter: drop-shadow(0 10px 16px rgba(0, 0, 0, .55)); }
+  /* Ingen drop-shadow (Rickard 2026-10-18): blinkbilden och uttrycket ligger ovanpå grundbilden, och med en
+     skugga på varje lager blev skuggan dubbelt så mörk varje gång han blinkade. Det såg ut som en glitch. */
+  .newton-kropp img, .newton-rorelse { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; }
   .newton-kropp .newton-uttryck { opacity: 0; transition: opacity .3s var(--lugn); }
   .newton-kropp .newton-uttryck.syns { opacity: 1; }
   .newton-kropp .newton-blink { opacity: 0; }
