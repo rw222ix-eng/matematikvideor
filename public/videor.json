@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-18T11:46:20.248Z",
+ "byggd": "2026-10-18T11:53:40.521Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -55251,6 +55251,930 @@
      "s": 585.82,
      "e": 589.98,
      "text": "Sen: Hur många sekunder tar det innan kulan slår i marken?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-03b-nollproduktmetoden",
+   "titel": "Harriot och kulan – nollproduktmetoden",
+   "ar": 1600,
+   "serie": "ma2a",
+   "del": 3.5,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-03b-nollproduktmetoden-v1/ma2a-03b-nollproduktmetoden-1080p.mp4",
+   "moment": "Lösa andragradsekvationer med nollproduktmetoden",
+   "begrepp": [
+    "andragradsekvation",
+    "nollproduktmetoden",
+    "produkt",
+    "faktor",
+    "term",
+    "bryta ut",
+    "led",
+    "ekvation ur lösningarna",
+    "kast rakt upp",
+    "Thomas Harriot"
+   ],
+   "beskrivning": "Omkring år 1600 funderar matematikern Thomas Harriot på kulor som skjuts rakt upp med en kort kanon. Höjden blir 50t − 5t², och med nollproduktmetoden räknar vi ut när kulan är nere igen.",
+   "youtube": null,
+   "langd": 556,
+   "omslag": "omslag/ma2a-03b-nollproduktmetoden.jpg?v=8129c3be",
+   "omslagRen": "omslag/ma2a-03b-nollproduktmetoden-ren.jpg?v=aadc1663",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Omkring år sextonhundra bor en engelsk matematiker i ett stort hus vid floden Themsen, utanför London. Han heter Thomas Harriot. Huset tillhör en rik greve. Och greven betalar Harriot för att han ska forska."
+    },
+    {
+     "t": 26,
+     "text": "Harriot vill förstå hur en kanonkula flyger genom luften. En tjänare har släppt kulor från husets tak, och Harriot har räknat tiden med sin puls. En kula faller ungefär fem meter på den första sekunden. Efter två sekunder har den fallit fyra gånger så långt, för två gånger två är fyra. Det blir tjugo meter. Tiden i sekunder kallar vi t. Efter t sekunder har kulan fallit fem gånger t i kvadrat meter. t i kvadrat betyder t gånger t."
+    },
+    {
+     "t": 62,
+     "text": "Nu funderar Harriot på kulor som skjuts rakt upp, med en kort kanon som pekar mot himlen. En sådan kula stiger först, och sen faller den ner igen. Men när kommer den ner? Det tar vi reda på nu."
+    },
+    {
+     "t": 80,
+     "text": "Säg att en kula skjuts rakt upp, så fort att den skulle stiga femtio meter varje sekund, om ingenting drog den nedåt. Efter en sekund är den femtio meter upp. Efter två sekunder hundra meter. Efter t sekunder är den alltså femtio gånger t meter upp. Femtio gånger t skriver vi kort som femtio t."
+    },
+    {
+     "t": 104,
+     "text": "Men samtidigt faller kulan, precis som kulorna från taket. På t sekunder faller den fem gånger t i kvadrat meter. De metrarna drar vi bort från femtio t. Höjden efter t sekunder är alltså femtio t minus fem t i kvadrat. Vi kollar efter en sekund. Då är t ett, och ett i kvadrat är ett. Femtio minus fem är fyrtiofem. Så efter en sekund är kulan fyrtiofem meter upp."
+    },
+    {
+     "t": 138,
+     "text": "När är kulan nere igen? När höjden är noll. Alltså ska femtio t minus fem t i kvadrat vara lika med noll. Här finns två sorters t. Ett t som står i kvadrat, och ett t som inte gör det. Oj, vad krångligt. Det finns säkert ett enklare sätt att skriva det här på."
+    },
+    {
+     "t": 161,
+     "text": "Femtio t och fem t i kvadrat kallas termer, för de dras från varandra. Båda termerna har ett t. Femtio t är t gånger femtio. Fem t i kvadrat är fem gånger t gånger t. Där tar vi ett t, och kvar blir fem t. Så vi skriver t bara en gång, framför en parentes. Parentesen visar att t ska tas gånger allt som står i den. I parentesen står det som är kvar, femtio minus fem t. Det kallas att bryta ut t. Nu står det t gånger parentesen femtio minus fem t, lika med noll."
+    },
+    {
+     "t": 205,
+     "text": "Vi kollar att det är samma sak, genom att ta t gånger varje del i parentesen. t gånger femtio är femtio t. Och t gånger fem t är fem t i kvadrat. Det stämmer. Nu står det alltså två saker gånger varandra, och vi får inte glömma att svaret ska bli noll."
+    },
+    {
+     "t": 227,
+     "text": "Hur kan två tal gånger varandra bli noll? Vi provar. Sju gånger noll är noll. Noll gånger tolv är noll. Men tre gånger fyra är tolv. Man kan se det på det här sättet. Sju gånger noll är som sju högar med noll kulor i varje. Då blir det inga kulor alls. Men tre högar med fyra kulor i varje blir tolv kulor. Finns det kulor i varje hög, blir det aldrig noll. Så ett av talen måste vara noll."
+    },
+    {
+     "t": 262,
+     "text": "Talen som tas gånger varandra kallas faktorer. Svaret kallas en produkt. Så vad är skillnaden mellan termer och faktorer? Termer läggs ihop eller dras från varandra. Faktorer tas gånger varandra. När vi bröt ut t, gjorde vi alltså om två termer till två faktorer. Vår produkt är noll. Så antingen är t lika med noll. Eller så är parentesen, femtio minus fem t, lika med noll. Det här sättet kallas nollproduktmetoden, för produkten är noll."
+    },
+    {
+     "t": 301,
+     "text": "Vad betyder svaren? När t är noll har ingen tid gått, så kulan har precis skjutits iväg. Sen den andra faktorn. När är femtio minus fem t lika med noll? När fem t är femtio, för femtio minus femtio är noll. Fem gånger vad är femtio? Tio, för fem gånger tio är femtio. Kulan kommer alltså ner igen efter tio sekunder. Vi kollar i höjden. Femtio gånger tio är femhundra. Tio i kvadrat är tio gånger tio, alltså hundra, och fem gånger hundra är också femhundra. Femhundra minus femhundra är noll. Vad nice, höjden är noll, så det stämmer ju."
+    },
+    {
+     "t": 349,
+     "text": "Men det finns en sak som är lätt att missa. Metoden fungerar bara när det står noll på ena sidan. Varför? Tänk om produkten i stället skulle bli tjugo. Fyra gånger fem är tjugo. Två gånger tio är också tjugo, och det finns många fler. Då vet vi ingenting om faktorerna. Men noll blir produkten bara när en faktor är noll. Därför måste det stå noll på ena sidan."
+    },
+    {
+     "t": 379,
+     "text": "Ibland står det inte noll på någon sida. Säg att fem t i kvadrat är lika med femtio t. Då flyttar vi först allt till samma sida. Sidorna av likhetstecknet kallas led. Vi drar bort femtio t från båda leden, för då blir det noll i högerledet. Och för att likheten ska gälla gör vi samma sak i båda leden. Då står det fem t i kvadrat minus femtio t, lika med noll. Sen bryter vi ut t, som förut. Om vi går tillbaka till kulan, så ser vi att det faktiskt är samma kula. Så svaren blir noll och tio igen."
+    },
+    {
+     "t": 421,
+     "text": "Nu en ekvation utan kulor. Där kallar vi det okända talet x, som man brukar göra. Ibland står ekvationen redan som en produkt. Lös ekvationen parentesen x minus fyra, gånger parentesen x plus två, lika med noll. Som vi ser behöver vi inte bryta ut något här. Produkten är noll, så en av faktorerna är noll. När är x minus fyra noll? När x är fyra, för fyra minus fyra är noll. När är x plus två noll? När x är minus två, för minus två plus två är noll. Så x är fyra eller minus två."
+    },
+    {
+     "t": 465,
+     "text": "Nu ett fel som många gör. En elev säger att lösningarna är minus fyra och två, för det är talen i parenteserna. Har eleven rätt? Vi provar med minus fyra i den första parentesen. Minus fyra minus fyra är minus åtta, inte noll. Så eleven har fel. Talen byter alltså tecken. Lösningarna är fyra och minus två."
+    },
+    {
+     "t": 493,
+     "text": "Det går också att tänka baklänges. Vill vi ha en ekvation med lösningarna fyra och minus två? Då skriver vi just den här produkten, lika med noll. Nu går vi tillbaka till Harriot."
+    },
+    {
+     "t": 507,
+     "text": "Harriot gav aldrig ut det han kom fram till om kulorna. Han dog år sextonhundratjugoett. Tio år senare gav hans vänner ut en bok med hans algebra, alltså hans räkning med bokstäver. I boken står ekvationerna som produkter som är lika med noll. Precis som vi skrev dem nyss."
+    },
+    {
+     "t": 529,
+     "text": "Nu är det din tur. En kula skjuts rakt upp, och efter t sekunder är höjden trettio t minus fem t i kvadrat meter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur högt upp är kulan efter en sekund? Sen: Använd nollproduktmetoden. Efter hur många sekunder är kulan nere igen?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Harriot och kulorna från taket",
+     "typ": "historia"
+    },
+    {
+     "t": 62,
+     "rubrik": "Kulan som skjuts rakt upp",
+     "typ": "historia"
+    },
+    {
+     "t": 80,
+     "rubrik": "Höjden: 50t − 5t²",
+     "typ": "matte"
+    },
+    {
+     "t": 138,
+     "rubrik": "Höjden är noll: bryta ut t",
+     "typ": "matte"
+    },
+    {
+     "t": 227,
+     "rubrik": "En produkt som är noll",
+     "typ": "matte"
+    },
+    {
+     "t": 262,
+     "rubrik": "Termer, faktorer och nollproduktmetoden",
+     "typ": "matte"
+    },
+    {
+     "t": 301,
+     "rubrik": "Svaren: 0 s och 10 s",
+     "typ": "matte"
+    },
+    {
+     "t": 349,
+     "rubrik": "Det måste stå 0 på ena sidan",
+     "typ": "matte"
+    },
+    {
+     "t": 379,
+     "rubrik": "Flytta allt till samma led",
+     "typ": "matte"
+    },
+    {
+     "t": 421,
+     "rubrik": "Övningstal: (x − 4)(x + 2) = 0",
+     "typ": "matte"
+    },
+    {
+     "t": 465,
+     "rubrik": "Felet med tecknen",
+     "typ": "matte"
+    },
+    {
+     "t": 507,
+     "rubrik": "Boken efter hans död",
+     "typ": "historia"
+    },
+    {
+     "t": 529,
+     "rubrik": "Kulan med höjden 30t − 5t²",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 529,
+    "fraga": "En kula skjuts rakt upp, och efter t sekunder är höjden 30t − 5t² meter. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Hur högt upp är kulan efter en sekund?",
+     "Sen: Använd nollproduktmetoden. Efter hur många sekunder är kulan nere igen?"
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Hur högt upp är kulan efter en sekund?",
+      "typ": "tal",
+      "svar": 25,
+      "tolerans": 0.001,
+      "enhet": "meter",
+      "exempel": "t.ex. 45",
+      "fel": [
+       {
+        "svar": "30",
+        "text": "30 · 1 = 30, men dra bort 5 · 1² = 5."
+       },
+       {
+        "svar": "35",
+        "text": "Det står minus 5t². Dra bort 5, lägg inte till."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Använd nollproduktmetoden. Efter hur många sekunder är kulan nere igen?",
+      "typ": "tal",
+      "svar": 6,
+      "tolerans": 0.001,
+      "enhet": "sekunder",
+      "exempel": "t.ex. 10",
+      "fel": [
+       {
+        "svar": "0",
+        "text": "t = 0 är när kulan skjuts iväg, precis som i filmen. Den andra faktorn, 30 − 5t, ger när den är nere igen."
+       },
+       {
+        "svar": "30",
+        "text": "30 − 5t = 0 betyder att 5t = 30. Dela båda leden med 5."
+       },
+       {
+        "svar": "10",
+        "text": "10 sekunder var svaret i filmen, där höjden var 50t − 5t². Här står det 30t."
+       },
+       {
+        "svar": "3",
+        "text": "Efter 3 sekunder är kulan högst upp. Den är nere igen när 30 − 5t = 0."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med 50t − 5t² i filmen: sätt höjden lika med 0, bryt ut t och sätt varje faktor lika med 0.",
+     "t": 287
+    },
+    "losning": [
+     "Efter en sekund är t = 1: 30 · 1 − 5 · 1² = 30 − 5 = 25. Kulan är 25 meter upp.",
+     "Kulan är nere när höjden är 0: 30t − 5t² = 0.",
+     "t finns i båda termerna, så vi bryter ut t: t(30 − 5t) = 0.",
+     "En produkt är 0 bara om en faktor är 0: t = 0 eller 30 − 5t = 0.",
+     "t = 0 är när kulan skjuts iväg. 30 − 5t = 0 ger 5t = 30, alltså t = 6.",
+     "Kulan är nere igen efter 6 sekunder."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 16.16,
+     "text": "Omkring år sextonhundra bor en engelsk matematiker i ett stort hus vid floden Themsen, utanför London."
+    },
+    {
+     "s": 16.96,
+     "e": 18.66,
+     "text": "Han heter Thomas Harriot."
+    },
+    {
+     "s": 19.46,
+     "e": 21.58,
+     "text": "Huset tillhör en rik greve."
+    },
+    {
+     "s": 22.38,
+     "e": 24.98,
+     "text": "Och greven betalar Harriot för att han ska forska."
+    },
+    {
+     "s": 26.08,
+     "e": 29.78,
+     "text": "Harriot vill förstå hur en kanonkula flyger genom luften."
+    },
+    {
+     "s": 30.58,
+     "e": 35.92,
+     "text": "En tjänare har släppt kulor från husets tak, och Harriot har räknat tiden med sin puls."
+    },
+    {
+     "s": 36.78,
+     "e": 40.34,
+     "text": "En kula faller ungefär fem meter på den första sekunden."
+    },
+    {
+     "s": 41.14,
+     "e": 46.66,
+     "text": "Efter två sekunder har den fallit fyra gånger så långt, för två gånger två är fyra."
+    },
+    {
+     "s": 47.46,
+     "e": 48.92,
+     "text": "Det blir tjugo meter."
+    },
+    {
+     "s": 49.72,
+     "e": 52.06,
+     "text": "Tiden i sekunder kallar vi t."
+    },
+    {
+     "s": 52.86,
+     "e": 57.88,
+     "text": "Efter t sekunder har kulan fallit fem gånger t i kvadrat meter."
+    },
+    {
+     "s": 58.68,
+     "e": 61.36,
+     "text": "t i kvadrat betyder t gånger t."
+    },
+    {
+     "s": 62.6,
+     "e": 68.22,
+     "text": "Nu funderar Harriot på kulor som skjuts rakt upp, med en kort kanon som pekar mot himlen."
+    },
+    {
+     "s": 69.02,
+     "e": 72.58,
+     "text": "En sådan kula stiger först, och sen faller den ner igen."
+    },
+    {
+     "s": 74.46,
+     "e": 76,
+     "text": "Men när kommer den ner?"
+    },
+    {
+     "s": 76.8,
+     "e": 78.04,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 80.54,
+     "e": 86.44,
+     "text": "Säg att en kula skjuts rakt upp, så fort att den skulle stiga femtio meter varje sekund,"
+    },
+    {
+     "s": 86.76,
+     "e": 88.42,
+     "text": "om ingenting drog den nedåt."
+    },
+    {
+     "s": 89.3,
+     "e": 91.74,
+     "text": "Efter en sekund är den femtio meter upp."
+    },
+    {
+     "s": 92.54,
+     "e": 94.56,
+     "text": "Efter två sekunder hundra meter."
+    },
+    {
+     "s": 95.36,
+     "e": 99.8,
+     "text": "Efter t sekunder är den alltså femtio gånger t meter upp."
+    },
+    {
+     "s": 100.6,
+     "e": 103.8,
+     "text": "Femtio gånger t skriver vi kort som femtio t."
+    },
+    {
+     "s": 104.9,
+     "e": 108.76,
+     "text": "Men samtidigt faller kulan, precis som kulorna från taket."
+    },
+    {
+     "s": 109.56,
+     "e": 113.68,
+     "text": "På t sekunder faller den fem gånger t i kvadrat meter."
+    },
+    {
+     "s": 114.48,
+     "e": 116.88,
+     "text": "De metrarna drar vi bort från femtio t."
+    },
+    {
+     "s": 117.68,
+     "e": 123.2,
+     "text": "Höjden efter t sekunder är alltså femtio t minus fem t i kvadrat."
+    },
+    {
+     "s": 124.04,
+     "e": 125.7,
+     "text": "Vi kollar efter en sekund."
+    },
+    {
+     "s": 126.5,
+     "e": 129.74,
+     "text": "Då är t ett, och ett i kvadrat är ett."
+    },
+    {
+     "s": 130.54,
+     "e": 132.82,
+     "text": "Femtio minus fem är fyrtiofem."
+    },
+    {
+     "s": 133.62,
+     "e": 137.22,
+     "text": "Så efter en sekund är kulan fyrtiofem meter upp."
+    },
+    {
+     "s": 138.32,
+     "e": 139.84,
+     "text": "När är kulan nere igen?"
+    },
+    {
+     "s": 140.64,
+     "e": 141.96,
+     "text": "När höjden är noll."
+    },
+    {
+     "s": 142.76,
+     "e": 147.48,
+     "text": "Alltså ska femtio t minus fem t i kvadrat vara lika med noll."
+    },
+    {
+     "s": 148.28,
+     "e": 150.02,
+     "text": "Här finns två sorters t."
+    },
+    {
+     "s": 150.82,
+     "e": 154.64,
+     "text": "Ett t som står i kvadrat, och ett t som inte gör det."
+    },
+    {
+     "s": 156.08,
+     "e": 157.38,
+     "text": "Oj, vad krångligt."
+    },
+    {
+     "s": 158.18,
+     "e": 160.74,
+     "text": "Det finns säkert ett enklare sätt att skriva det här på."
+    },
+    {
+     "s": 161.84,
+     "e": 167.12,
+     "text": "Femtio t och fem t i kvadrat kallas termer, för de dras från varandra."
+    },
+    {
+     "s": 167.92,
+     "e": 169.86,
+     "text": "Båda termerna har ett t."
+    },
+    {
+     "s": 170.66,
+     "e": 173.24,
+     "text": "Femtio t är t gånger femtio."
+    },
+    {
+     "s": 174.04,
+     "e": 177.84,
+     "text": "Fem t i kvadrat är fem gånger t gånger t."
+    },
+    {
+     "s": 178.64,
+     "e": 181.66,
+     "text": "Där tar vi ett t, och kvar blir fem t."
+    },
+    {
+     "s": 182.46,
+     "e": 185.96,
+     "text": "Så vi skriver t bara en gång, framför en parentes."
+    },
+    {
+     "s": 186.76,
+     "e": 190.82,
+     "text": "Parentesen visar att t ska tas gånger allt som står i den."
+    },
+    {
+     "s": 191.62,
+     "e": 195.72,
+     "text": "I parentesen står det som är kvar, femtio minus fem t."
+    },
+    {
+     "s": 196.52,
+     "e": 198.54,
+     "text": "Det kallas att bryta ut t."
+    },
+    {
+     "s": 199.34,
+     "e": 204.44,
+     "text": "Nu står det t gånger parentesen femtio minus fem t, lika med noll."
+    },
+    {
+     "s": 205.54,
+     "e": 210.42,
+     "text": "Vi kollar att det är samma sak, genom att ta t gånger varje del i parentesen."
+    },
+    {
+     "s": 211.22,
+     "e": 213.54,
+     "text": "t gånger femtio är femtio t."
+    },
+    {
+     "s": 214.34,
+     "e": 219,
+     "text": "Och t gånger fem t är fem t i kvadrat. Det stämmer."
+    },
+    {
+     "s": 219.8,
+     "e": 225.82,
+     "text": "Nu står det alltså två saker gånger varandra, och vi får inte glömma att svaret ska bli noll."
+    },
+    {
+     "s": 227.36,
+     "e": 231.62,
+     "text": "Hur kan två tal gånger varandra bli noll? Vi provar."
+    },
+    {
+     "s": 232.42,
+     "e": 234.14,
+     "text": "Sju gånger noll är noll."
+    },
+    {
+     "s": 234.94,
+     "e": 236.64,
+     "text": "Noll gånger tolv är noll."
+    },
+    {
+     "s": 237.44,
+     "e": 240.02,
+     "text": "Men tre gånger fyra är tolv."
+    },
+    {
+     "s": 240.92,
+     "e": 242.24,
+     "text": "Man kan se det på det här sättet."
+    },
+    {
+     "s": 243.04,
+     "e": 247.2,
+     "text": "Sju gånger noll är som sju högar med noll kulor i varje."
+    },
+    {
+     "s": 248,
+     "e": 249.4,
+     "text": "Då blir det inga kulor alls."
+    },
+    {
+     "s": 250.2,
+     "e": 254.16,
+     "text": "Men tre högar med fyra kulor i varje blir tolv kulor."
+    },
+    {
+     "s": 254.96,
+     "e": 258.1,
+     "text": "Finns det kulor i varje hög, blir det aldrig noll."
+    },
+    {
+     "s": 258.9,
+     "e": 261.14,
+     "text": "Så ett av talen måste vara noll."
+    },
+    {
+     "s": 262.24,
+     "e": 265.5,
+     "text": "Talen som tas gånger varandra kallas faktorer."
+    },
+    {
+     "s": 266.3,
+     "e": 268.06,
+     "text": "Svaret kallas en produkt."
+    },
+    {
+     "s": 269.04,
+     "e": 271.72,
+     "text": "Så vad är skillnaden mellan termer och faktorer?"
+    },
+    {
+     "s": 272.56,
+     "e": 275.52,
+     "text": "Termer läggs ihop eller dras från varandra."
+    },
+    {
+     "s": 276.32,
+     "e": 278.4,
+     "text": "Faktorer tas gånger varandra."
+    },
+    {
+     "s": 279.3,
+     "e": 283.9,
+     "text": "När vi bröt ut t, gjorde vi alltså om två termer till två faktorer."
+    },
+    {
+     "s": 284.7,
+     "e": 286.22,
+     "text": "Vår produkt är noll."
+    },
+    {
+     "s": 287.02,
+     "e": 289.42,
+     "text": "Så antingen är t lika med noll."
+    },
+    {
+     "s": 290.22,
+     "e": 294.78,
+     "text": "Eller så är parentesen, femtio minus fem t, lika med noll."
+    },
+    {
+     "s": 295.58,
+     "e": 299.92,
+     "text": "Det här sättet kallas nollproduktmetoden, för produkten är noll."
+    },
+    {
+     "s": 301.02,
+     "e": 302.34,
+     "text": "Vad betyder svaren?"
+    },
+    {
+     "s": 303.14,
+     "e": 308,
+     "text": "När t är noll har ingen tid gått, så kulan har precis skjutits iväg."
+    },
+    {
+     "s": 308.8,
+     "e": 310.1,
+     "text": "Sen den andra faktorn."
+    },
+    {
+     "s": 310.9,
+     "e": 314.18,
+     "text": "När är femtio minus fem t lika med noll?"
+    },
+    {
+     "s": 314.98,
+     "e": 319.36,
+     "text": "När fem t är femtio, för femtio minus femtio är noll."
+    },
+    {
+     "s": 320.2,
+     "e": 322.26,
+     "text": "Fem gånger vad är femtio?"
+    },
+    {
+     "s": 323.64,
+     "e": 326.44,
+     "text": "Tio, för fem gånger tio är femtio."
+    },
+    {
+     "s": 327.24,
+     "e": 330,
+     "text": "Kulan kommer alltså ner igen efter tio sekunder."
+    },
+    {
+     "s": 330.8,
+     "e": 331.8,
+     "text": "Vi kollar i höjden."
+    },
+    {
+     "s": 332.48,
+     "e": 334.66,
+     "text": "Femtio gånger tio är femhundra."
+    },
+    {
+     "s": 335.46,
+     "e": 341.8,
+     "text": "Tio i kvadrat är tio gånger tio, alltså hundra, och fem gånger hundra är också femhundra."
+    },
+    {
+     "s": 342.6,
+     "e": 345.22,
+     "text": "Femhundra minus femhundra är noll."
+    },
+    {
+     "s": 346.26,
+     "e": 348.86,
+     "text": "Vad nice, höjden är noll, så det stämmer ju."
+    },
+    {
+     "s": 349.98,
+     "e": 352.12,
+     "text": "Men det finns en sak som är lätt att missa."
+    },
+    {
+     "s": 352.92,
+     "e": 357.66,
+     "text": "Metoden fungerar bara när det står noll på ena sidan. Varför?"
+    },
+    {
+     "s": 358.58,
+     "e": 360.98,
+     "text": "Tänk om produkten i stället skulle bli tjugo."
+    },
+    {
+     "s": 361.78,
+     "e": 363.54,
+     "text": "Fyra gånger fem är tjugo."
+    },
+    {
+     "s": 364.34,
+     "e": 367.8,
+     "text": "Två gånger tio är också tjugo, och det finns många fler."
+    },
+    {
+     "s": 368.6,
+     "e": 370.76,
+     "text": "Då vet vi ingenting om faktorerna."
+    },
+    {
+     "s": 371.56,
+     "e": 375.26,
+     "text": "Men noll blir produkten bara när en faktor är noll."
+    },
+    {
+     "s": 376.06,
+     "e": 378.86,
+     "text": "Därför måste det stå noll på ena sidan."
+    },
+    {
+     "s": 379.96,
+     "e": 382.3,
+     "text": "Ibland står det inte noll på någon sida."
+    },
+    {
+     "s": 383.1,
+     "e": 386.78,
+     "text": "Säg att fem t i kvadrat är lika med femtio t."
+    },
+    {
+     "s": 387.58,
+     "e": 389.84,
+     "text": "Då flyttar vi först allt till samma sida."
+    },
+    {
+     "s": 390.64,
+     "e": 393.3,
+     "text": "Sidorna av likhetstecknet kallas led."
+    },
+    {
+     "s": 394.1,
+     "e": 398.82,
+     "text": "Vi drar bort femtio t från båda leden, för då blir det noll i högerledet."
+    },
+    {
+     "s": 399.62,
+     "e": 403.3,
+     "text": "Och för att likheten ska gälla gör vi samma sak i båda leden."
+    },
+    {
+     "s": 404.1,
+     "e": 408.76,
+     "text": "Då står det fem t i kvadrat minus femtio t, lika med noll."
+    },
+    {
+     "s": 409.56,
+     "e": 411.74,
+     "text": "Sen bryter vi ut t, som förut."
+    },
+    {
+     "s": 412.62,
+     "e": 416.78,
+     "text": "Om vi går tillbaka till kulan, så ser vi att det faktiskt är samma kula."
+    },
+    {
+     "s": 417.58,
+     "e": 420.4,
+     "text": "Så svaren blir noll och tio igen."
+    },
+    {
+     "s": 421.5,
+     "e": 423.54,
+     "text": "Nu en ekvation utan kulor."
+    },
+    {
+     "s": 424.34,
+     "e": 427.44,
+     "text": "Där kallar vi det okända talet x, som man brukar göra."
+    },
+    {
+     "s": 428.24,
+     "e": 430.76,
+     "text": "Ibland står ekvationen redan som en produkt."
+    },
+    {
+     "s": 431.56,
+     "e": 437.24,
+     "text": "Lös ekvationen parentesen x minus fyra, gånger parentesen x plus två,"
+    },
+    {
+     "s": 437.6,
+     "e": 438.6,
+     "text": "lika med noll."
+    },
+    {
+     "s": 439.32,
+     "e": 441.6,
+     "text": "Som vi ser behöver vi inte bryta ut något här."
+    },
+    {
+     "s": 442.4,
+     "e": 445.6,
+     "text": "Produkten är noll, så en av faktorerna är noll."
+    },
+    {
+     "s": 446.6,
+     "e": 448.72,
+     "text": "När är x minus fyra noll?"
+    },
+    {
+     "s": 449.52,
+     "e": 453.18,
+     "text": "När x är fyra, för fyra minus fyra är noll."
+    },
+    {
+     "s": 454.12,
+     "e": 455.96,
+     "text": "När är x plus två noll?"
+    },
+    {
+     "s": 456.76,
+     "e": 460.84,
+     "text": "När x är minus två, för minus två plus två är noll."
+    },
+    {
+     "s": 461.64,
+     "e": 464.54,
+     "text": "Så x är fyra eller minus två."
+    },
+    {
+     "s": 465.74,
+     "e": 467.52,
+     "text": "Nu ett fel som många gör."
+    },
+    {
+     "s": 468.32,
+     "e": 473.62,
+     "text": "En elev säger att lösningarna är minus fyra och två, för det är talen i parenteserna."
+    },
+    {
+     "s": 474.42,
+     "e": 475.42,
+     "text": "Har eleven rätt?"
+    },
+    {
+     "s": 476.84,
+     "e": 479.46,
+     "text": "Vi provar med minus fyra i den första parentesen."
+    },
+    {
+     "s": 480.26,
+     "e": 484.4,
+     "text": "Minus fyra minus fyra är minus åtta, inte noll."
+    },
+    {
+     "s": 485.2,
+     "e": 486.56,
+     "text": "Så eleven har fel."
+    },
+    {
+     "s": 487.36,
+     "e": 488.94,
+     "text": "Talen byter alltså tecken."
+    },
+    {
+     "s": 489.74,
+     "e": 492.36,
+     "text": "Lösningarna är fyra och minus två."
+    },
+    {
+     "s": 493.46,
+     "e": 495.12,
+     "text": "Det går också att tänka baklänges."
+    },
+    {
+     "s": 495.92,
+     "e": 499.1,
+     "text": "Vill vi ha en ekvation med lösningarna fyra och minus två?"
+    },
+    {
+     "s": 499.9,
+     "e": 503.06,
+     "text": "Då skriver vi just den här produkten, lika med noll."
+    },
+    {
+     "s": 504.1,
+     "e": 505.48,
+     "text": "Nu går vi tillbaka till Harriot."
+    },
+    {
+     "s": 507.98,
+     "e": 510.9,
+     "text": "Harriot gav aldrig ut det han kom fram till om kulorna."
+    },
+    {
+     "s": 511.7,
+     "e": 513.62,
+     "text": "Han dog år sextonhundratjugoett."
+    },
+    {
+     "s": 514.62,
+     "e": 520.5,
+     "text": "Tio år senare gav hans vänner ut en bok med hans algebra, alltså hans räkning med bokstäver."
+    },
+    {
+     "s": 521.3,
+     "e": 524.76,
+     "text": "I boken står ekvationerna som produkter som är lika med noll."
+    },
+    {
+     "s": 525.56,
+     "e": 527.06,
+     "text": "Precis som vi skrev dem nyss."
+    },
+    {
+     "s": 529.56,
+     "e": 530.66,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 531.46,
+     "e": 538.54,
+     "text": "En kula skjuts rakt upp, och efter t sekunder är höjden trettio t minus fem t i kvadrat meter."
+    },
+    {
+     "s": 539.34,
+     "e": 543.1,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 543.9,
+     "e": 547.42,
+     "text": "Först: Hur högt upp är kulan efter en sekund?"
+    },
+    {
+     "s": 548.22,
+     "e": 550.98,
+     "text": "Sen: Använd nollproduktmetoden."
+    },
+    {
+     "s": 551.78,
+     "e": 554.38,
+     "text": "Efter hur många sekunder är kulan nere igen?"
     }
    ]
   },
