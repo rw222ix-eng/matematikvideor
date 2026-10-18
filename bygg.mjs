@@ -116,9 +116,13 @@ const OMSLAGSKURVA_HALV = "curves=all='0/0 0.05/0.10 0.15/0.22 0.45/0.50 0.8/0.8
 function medelljus(fil) {
   if (!harFfmpeg) return null;
   try {
-    const ut = execFileSync("ffprobe", ["-v", "error", "-f", "lavfi", "-i", `movie=${fil},scale=360:-2,signalstats`, "-show_entries", "frame_tags=lavfi.signalstats.YAVG", "-of", "csv=p=0"], { encoding: "utf8" });
-    return parseFloat(ut.split("\n")[0]);
-  } catch (e) { return null; }
+    // Filen går in som vanlig -i, inte som movie= i en lavfi-sträng: där läses kolonet i
+    // E:\… som avgränsare, och på Windows föll mätningen tyst i varje bygge 7–18/10 2026,
+    // så alla kort fick full kurva, även de ljusa.
+    const ut = execFileSync("ffmpeg", ["-v", "error", "-i", fil, "-vf", "scale=360:-2,signalstats,metadata=print:key=lavfi.signalstats.YAVG:file=-", "-f", "null", "-"], { encoding: "utf8" });
+    const m = ut.match(/lavfi\.signalstats\.YAVG=([\d.]+)/);
+    return m ? parseFloat(m[1]) : null;
+  } catch (e) { console.warn(`  varning: kunde inte mäta ljusheten i ${fil}: ${e.message.split("\n")[0]}`); return null; }
 }
 function omslagskurva(fil) {
   const y = medelljus(fil);
