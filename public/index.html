@@ -3886,7 +3886,7 @@
     video = document.createElement("video"); video.playsInline = true; video.preload = "metadata"; video.src = v.fil;
     video.defaultPlaybackRate = fart; video.playbackRate = fart;
     video.addEventListener("error", () => filmFel(v));
-    video.addEventListener("loadedmetadata", () => { if (video) video.playbackRate = fart; });
+    video.addEventListener("loadedmetadata", (e) => { e.target.dataset.spelbar = "ja"; if (video) video.playbackRate = fart; });
     dukEl.querySelector(".halla").appendChild(video); video.volume = volym / 100; video.currentTime = start;
     if (spela) sp.spela();
   }
@@ -3905,6 +3905,17 @@
     if (aktuell !== v || !video) return;
     clearTimeout(vaktTimer);
     const t = Math.floor(video.currentTime || 0), spelade = !video.paused;
+    // GitHub skickar filmen vidare till en signerad adress som slutar gälla efter ungefär en timme,
+    // och webbläsaren fortsätter att hämta från den. Efter en lång paus gav nästa spolning 403, och
+    // sidan sa att skolans nät spärrade filmen. Har filmen gått att spela hämtas den därför en gång
+    // till från samma sekund, med en ny adress. Högst en gång per minut, så att ett nät som verkligen
+    // spärrar filmen inte ger en slinga.
+    if (video.dataset.spelbar && Date.now() - (Number(video.dataset.fornyad) || 0) > 60000) {
+      video.dataset.fornyad = String(Date.now());
+      video.src = v.fil; video.currentTime = t;
+      if (spelade) sp.spela();
+      return;
+    }
     console.warn("Filmfilen gick inte att spela:", v.fil);
     video.remove(); video = null;
     if (v.youtube) startaYoutube(v, t, spelade); else visaFilmFel();
