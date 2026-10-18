@@ -1584,7 +1584,8 @@
   const autoTraff = (regel, id) => {
     const m = String(regel).match(/^(.+)-(\d+)\.\.(\d+)$/);
     if (!m) return id.startsWith(`${regel}-`);
-    const n = id.startsWith(`${m[1]}-`) && id.slice(m[1].length + 1).match(/^(\d+)-/);
+    // En tilläggsfilm har en bokstav efter numret (ma2a-03b-nollproduktmetoden) och räknas som 03.
+    const n = id.startsWith(`${m[1]}-`) && id.slice(m[1].length + 1).match(/^(\d+)[a-z]?-/);
     return !!n && Number(n[1]) >= Number(m[2]) && Number(n[1]) <= Number(m[3]);
   };
   const provFilmer = (p) => {
