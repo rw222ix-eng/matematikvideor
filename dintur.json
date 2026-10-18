@@ -297,10 +297,15 @@
     ]
   },
   "harrison-och-longituden": {
-    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer, men högst 150.",
+    "notisFran": "Nu är det din tur",
+    "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer, men högst 150. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv intervallet med hakparenteser.",
+      "Sen: Skriv samma intervall som en olikhet."
+    ],
     "delar": [
       {
-        "fraga": "Skriv intervallet med hakparenteser, och rita det på tallinjen.",
+        "fraga": "Först: Skriv intervallet med hakparenteser.",
         "typ": "intervall",
         "svar": "]110, 150]",
         "exempel": "t.ex. [0, 55]",
@@ -311,15 +316,30 @@
           { "svar": "[110, 150[", "text": "Båda parenteserna är vända åt fel håll. 110 räknas inte med, men 150 gör det." },
           { "svar": "]110, ∞[", "text": "Det är intervallet för fel som inte gav något pris alls. Nu finns ett slut: högst 150 kilometer, så 150 räknas med." }
         ]
+      },
+      {
+        "fraga": "Sen: Skriv samma intervall som en olikhet.",
+        "typ": "olikhet",
+        "svar": "110 < x <= 150",
+        "exempel": "t.ex. 0 ≤ x ≤ 55",
+        "tangenter": ["<", "≤", "x"],
+        "fel": [
+          { "svar": "110 <= x <= 150", "text": "110 räknas inte med, för felet ska vara större än 110. Vid 110 står bara mindre än, utan streck." },
+          { "svar": "110 < x < 150", "text": "150 räknas med, för felet får vara högst 150. Vid 150 står mindre än eller lika med." },
+          { "svar": "x > 110", "text": "Det är olikheten för fel som inte gav något pris. Nu finns ett slut: högst 150, så x ≤ 150 ska också stå med." }
+        ]
       }
     ],
-    "ledtrad": { "fras": "Nästa pris gäller när felet", "text": "Räknas talet med vänds parentesen inåt, mot talet. Räknas det inte med vänds den utåt." },
+    "ledtrad": {
+      "fras": "Nästa pris gäller när felet",
+      "text": "Räknas talet med vänds parentesen inåt, mot talet. Räknas det inte med vänds den utåt."
+    },
     "losning": [
       "Större än 110 betyder att 110 inte räknas med, så parentesen vid 110 vänds utåt.",
       "Högst 150 betyder att 150 räknas med, så parentesen vid 150 vänds inåt.",
       "Intervallet är ]110, 150].",
       "Som olikhet blir det 110 < x ≤ 150.",
-      "På tallinjen blir det en ring vid 110 och en fylld prick vid 150."
+      "På tallinjen blir det en ofylld punkt vid 110 och en fylld punkt vid 150."
     ]
   },
   "formelbladet-1-prefix-och-potenser": {
