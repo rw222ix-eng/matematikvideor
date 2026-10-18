@@ -1,60 +1,60 @@
 {
-  "om": "Fliken Inför provet (Rickard 2026-10-18). Klassernas prov ur grovplaneringarna i Drive, lästa 2026-10-18 och avstämda mot Transkribera. Bara klassnamn, datum, kapitel och filmer, ingen elevdata. Filmerna står i bokens ordning, formelbladets delar sist. Ett id som inte finns i videor.json hoppas över. Kontroll: node verktyg/provtest.mjs.",
+  "om": "Fliken Inför provet (Rickard 2026-10-18). Klassernas prov ur grovplaneringarna i Drive, lästa 2026-10-18 och avstämda mot Transkribera. Bara klassnamn, datum, kapitel och filmer, ingen elevdata. Filmerna står i bokens ordning, formelbladets delar sist. Ett id som inte finns i videor.json hoppas över. Fältet auto tar med nya filmer av sig själv när de publiceras: ma1c-k4 är alla filmer vars id börjar med ma1c-k4-, ma2a-09..13 är Ma 2a-filmerna 09 till 13. En ny film hamnar bland sitt kapitels filmer i nummerordning. Fältet utom är filmer som inte ska med fast regeln träffar dem. Kontroll: node verktyg/provtest.mjs.",
   "klasser": [
     {
       "namn": "NA26F",
       "prov": [
-        { "datum": "2026-10-01", "namn": "Prov 1", "kurs": "Matematik 1c", "kapitel": "Kapitel 1 och 2", "innehall": "Tal, algebra, ekvationer och olikheter",
+        { "datum": "2026-10-01", "namn": "Prov 1", "kurs": "Matematik 1c", "kapitel": "Kapitel 1 och 2", "innehall": "Tal, algebra, ekvationer och olikheter", "auto": ["ma1c-k1", "ma1c-k2"],
           "filmer": ["kepler-och-planeterna", "viete-och-chiffret", "ma1c-k2-01-linjara-ekvationer", "delos-och-altaret", "arkimedes-och-cirkeln", "harrison-och-longituden", "ma1c-k2-02-formler-och-modeller", "galilei-och-rannan", "formelbladet-1-prefix-och-potenser"] },
-        { "datum": "2026-11-19", "namn": "Prov 2", "kurs": "Matematik 1c", "kapitel": "Kapitel 4 och 6", "innehall": "Funktioner, trigonometri och vektorer",
+        { "datum": "2026-11-19", "namn": "Prov 2", "kurs": "Matematik 1c", "kapitel": "Kapitel 4 och 6", "innehall": "Funktioner, trigonometri och vektorer", "auto": ["ma1c-k4", "ma1c-k6"],
           "filmer": ["ma1c-k4-01-funktioner", "ma1c-k4-02-linjara-samband", "ma1c-k4-03-rata-linjens-ekvation", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "ma1c-k4-06-grafisk-ekvationslosning", "ma1c-k6-01-sinus-cosinus-tangens", "ma1c-k6-02-berakna-sidor", "ma1c-k6-03-berakna-vinklar", "ma1c-k6-04-vektorbegreppet", "ma1c-k6-05-addera-vektorer", "ma1c-k6-06-vektorer-i-koordinatform", "formelbladet-2-funktioner", "formelbladet-5-pythagoras-trigonometri-vektorer"] },
-        { "datum": "2026-12-15", "namn": "Nationellt prov", "kurs": "Matematik 1c", "kapitel": "Hela kursen", "innehall": "Allt i kursen",
+        { "datum": "2026-12-15", "namn": "Nationellt prov", "kurs": "Matematik 1c", "kapitel": "Hela kursen", "innehall": "Allt i kursen", "auto": ["ma1c-k1", "ma1c-k2", "ma1c-k3", "ma1c-k4", "ma1c-k5", "ma1c-k6"],
           "filmer": ["kepler-och-planeterna", "viete-och-chiffret", "ma1c-k2-01-linjara-ekvationer", "delos-och-altaret", "arkimedes-och-cirkeln", "harrison-och-longituden", "ma1c-k2-02-formler-och-modeller", "galilei-och-rannan", "ma1c-k4-01-funktioner", "ma1c-k4-02-linjara-samband", "ma1c-k4-03-rata-linjens-ekvation", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "ma1c-k4-06-grafisk-ekvationslosning", "ma1c-k6-01-sinus-cosinus-tangens", "ma1c-k6-02-berakna-sidor", "ma1c-k6-03-berakna-vinklar", "ma1c-k6-04-vektorbegreppet", "ma1c-k6-05-addera-vektorer", "ma1c-k6-06-vektorer-i-koordinatform", "ma1c-k3-01-forandringsfaktor", "ma1c-k3-02-lan-ranta-amortering", "ma1c-k3-03-sannolikhet-i-flera-steg", "ma1c-k3-04-beroende-och-komplementhandelse", "ma1c-k5-01-diagram", "ma1c-k5-02-korrelation-och-kausalitet", "formelbladet-1-prefix-och-potenser", "formelbladet-2-funktioner", "formelbladet-5-pythagoras-trigonometri-vektorer"] },
-        { "datum": "2027-01-14", "namn": "Prov 3", "kurs": "Matematik 1c", "kapitel": "Kapitel 3 och 5", "innehall": "Procent, privatekonomi, sannolikhet och statistik",
+        { "datum": "2027-01-14", "namn": "Prov 3", "kurs": "Matematik 1c", "kapitel": "Kapitel 3 och 5", "innehall": "Procent, privatekonomi, sannolikhet och statistik", "auto": ["ma1c-k3", "ma1c-k5"],
           "filmer": ["ma1c-k3-01-forandringsfaktor", "ma1c-k3-02-lan-ranta-amortering", "ma1c-k3-03-sannolikhet-i-flera-steg", "ma1c-k3-04-beroende-och-komplementhandelse", "ma1c-k5-01-diagram", "ma1c-k5-02-korrelation-och-kausalitet"] },
-        { "datum": "2027-03-08", "namn": "Prov 4", "kurs": "Matematik 2c", "kapitel": "Kapitel 1 och 2", "innehall": "Ekvationssystem, andragradsuttryck och andragradsfunktioner",
+        { "datum": "2027-03-08", "namn": "Prov 4", "kurs": "Matematik 2c", "kapitel": "Kapitel 1 och 2", "innehall": "Ekvationssystem, andragradsuttryck och andragradsfunktioner", "auto": ["ma2c-k1", "ma2c-k2", "ma2a-10..11"],
           "filmer": ["ma2a-07-ekvationssystem-grafiskt", "ma2a-08-substitution-och-addition", "ma2a-01-kvadreringsreglerna", "ma2a-02-faktorisera", "ma2a-03-x2-och-nollprodukt", "ma2a-04-pq-formeln", "formelbladet-ma2-1-algebra", "formelbladet-ma2-2-andragradsfunktionen"] },
-        { "datum": "2027-04-26", "namn": "Prov 5", "kurs": "Matematik 2c", "kapitel": "Kapitel 3 och 4", "innehall": "Logaritmer, exponentialekvationer, geometri och bevis",
+        { "datum": "2027-04-26", "namn": "Prov 5", "kurs": "Matematik 2c", "kapitel": "Kapitel 3 och 4", "innehall": "Logaritmer, exponentialekvationer, geometri och bevis", "auto": ["ma2c-k3", "ma2c-k4", "ma2a-09..09", "ma2a-12..13", "ma2a-18..19"],
           "filmer": ["kepler-och-planeterna", "delos-och-altaret", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "formelbladet-ma2-3-logaritmer", "formelbladet-ma2-4-likformighet", "formelbladet-ma2-5-vinklar-och-cirkelsatser", "formelbladet-4-rymdgeometri-och-skala"] },
-        { "datum": "2027-05-19", "namn": "Nationellt prov", "kurs": "Matematik 2c", "kapitel": "Hela kursen", "innehall": "Allt i kursen",
+        { "datum": "2027-05-19", "namn": "Nationellt prov", "kurs": "Matematik 2c", "kapitel": "Hela kursen", "innehall": "Allt i kursen", "auto": ["ma2c-k1", "ma2c-k2", "ma2c-k3", "ma2c-k4", "ma2c-k5", "ma2a-09..19"],
           "filmer": ["ma2a-07-ekvationssystem-grafiskt", "ma2a-08-substitution-och-addition", "ma2a-01-kvadreringsreglerna", "ma2a-02-faktorisera", "ma2a-03-x2-och-nollprodukt", "ma2a-04-pq-formeln", "kepler-och-planeterna", "delos-och-altaret", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "formelbladet-ma2-1-algebra", "formelbladet-ma2-2-andragradsfunktionen", "formelbladet-ma2-3-logaritmer", "formelbladet-ma2-4-likformighet", "formelbladet-ma2-5-vinklar-och-cirkelsatser", "formelbladet-ma2-6-statistik", "formelbladet-4-rymdgeometri-och-skala"] }
       ]
     },
     {
       "namn": "TE26A",
       "prov": [
-        { "datum": "2026-09-16", "namn": "Prov 1", "kurs": "Matematik 1c", "kapitel": "Kapitel 1", "innehall": "Tal och algebra",
+        { "datum": "2026-09-16", "namn": "Prov 1", "kurs": "Matematik 1c", "kapitel": "Kapitel 1", "innehall": "Tal och algebra", "auto": ["ma1c-k1"],
           "filmer": ["kepler-och-planeterna", "viete-och-chiffret", "formelbladet-1-prefix-och-potenser"] },
-        { "datum": "2026-10-14", "namn": "Prov 2", "kurs": "Matematik 1c", "kapitel": "Kapitel 2", "innehall": "Ekvationer, olikheter och formler",
+        { "datum": "2026-10-14", "namn": "Prov 2", "kurs": "Matematik 1c", "kapitel": "Kapitel 2", "innehall": "Ekvationer, olikheter och formler", "auto": ["ma1c-k2"],
           "filmer": ["ma1c-k2-01-linjara-ekvationer", "delos-och-altaret", "arkimedes-och-cirkeln", "harrison-och-longituden", "ma1c-k2-02-formler-och-modeller", "galilei-och-rannan"] },
-        { "datum": "2026-11-11", "namn": "Prov 3", "kurs": "Matematik 1c", "kapitel": "Kapitel 6", "innehall": "Trigonometri och vektorer",
+        { "datum": "2026-11-11", "namn": "Prov 3", "kurs": "Matematik 1c", "kapitel": "Kapitel 6", "innehall": "Trigonometri och vektorer", "auto": ["ma1c-k6"],
           "filmer": ["ma1c-k6-01-sinus-cosinus-tangens", "ma1c-k6-02-berakna-sidor", "ma1c-k6-03-berakna-vinklar", "ma1c-k6-04-vektorbegreppet", "ma1c-k6-05-addera-vektorer", "ma1c-k6-06-vektorer-i-koordinatform", "formelbladet-5-pythagoras-trigonometri-vektorer"] },
-        { "datum": "2026-12-09", "namn": "Prov 4", "kurs": "Matematik 1c", "kapitel": "Kapitel 4", "innehall": "Funktioner, räta linjen och potensfunktioner",
+        { "datum": "2026-12-09", "namn": "Prov 4", "kurs": "Matematik 1c", "kapitel": "Kapitel 4", "innehall": "Funktioner, räta linjen och potensfunktioner", "auto": ["ma1c-k4"], "utom": ["ma1c-k4-05-exponentialfunktioner"],
           "filmer": ["ma1c-k4-01-funktioner", "ma1c-k4-02-linjara-samband", "ma1c-k4-03-rata-linjens-ekvation", "ma1c-k4-04-potensfunktioner", "ma1c-k4-06-grafisk-ekvationslosning", "formelbladet-2-funktioner"] },
-        { "datum": "2027-01-27", "namn": "Prov 5", "kurs": "Matematik 1c", "kapitel": "Kapitel 3 och exponentialfunktioner", "innehall": "Procent, exponentialfunktioner, privatekonomi och sannolikhet",
+        { "datum": "2027-01-27", "namn": "Prov 5", "kurs": "Matematik 1c", "kapitel": "Kapitel 3 och exponentialfunktioner", "innehall": "Procent, exponentialfunktioner, privatekonomi och sannolikhet", "auto": ["ma1c-k3"],
           "filmer": ["ma1c-k3-01-forandringsfaktor", "ma1c-k3-02-lan-ranta-amortering", "ma1c-k3-03-sannolikhet-i-flera-steg", "ma1c-k3-04-beroende-och-komplementhandelse", "ma1c-k4-05-exponentialfunktioner"] },
-        { "datum": "2027-02-10", "namn": "Projekt", "kurs": "Matematik 1c", "kapitel": "Kapitel 5", "innehall": "Statistik, projektet redovisas",
+        { "datum": "2027-02-10", "namn": "Projekt", "kurs": "Matematik 1c", "kapitel": "Kapitel 5", "innehall": "Statistik, projektet redovisas", "auto": ["ma1c-k5"],
           "filmer": ["ma1c-k5-01-diagram", "ma1c-k5-02-korrelation-och-kausalitet"] },
-        { "datum": "2027-04-21", "namn": "Prov 1", "kurs": "Matematik 2c", "kapitel": "Kapitel 1 och 2", "innehall": "Ekvationssystem, andragradsuttryck och andragradsfunktioner",
+        { "datum": "2027-04-21", "namn": "Prov 1", "kurs": "Matematik 2c", "kapitel": "Kapitel 1 och 2", "innehall": "Ekvationssystem, andragradsuttryck och andragradsfunktioner", "auto": ["ma2c-k1", "ma2c-k2", "ma2a-10..11"],
           "filmer": ["ma2a-07-ekvationssystem-grafiskt", "ma2a-08-substitution-och-addition", "ma2a-01-kvadreringsreglerna", "ma2a-02-faktorisera", "ma2a-03-x2-och-nollprodukt", "ma2a-04-pq-formeln", "formelbladet-ma2-1-algebra", "formelbladet-ma2-2-andragradsfunktionen"] },
-        { "datum": "2027-05-18", "namn": "Prov 2", "kurs": "Matematik 2c", "kapitel": "Kapitel 3", "innehall": "Potenser, logaritmer och exponentialekvationer",
+        { "datum": "2027-05-18", "namn": "Prov 2", "kurs": "Matematik 2c", "kapitel": "Kapitel 3", "innehall": "Potenser, logaritmer och exponentialekvationer", "auto": ["ma2c-k3", "ma2a-09..09", "ma2a-12..13"],
           "filmer": ["kepler-och-planeterna", "delos-och-altaret", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "formelbladet-ma2-3-logaritmer"] },
-        { "datum": "2027-06-09", "namn": "Kapiteltest", "kurs": "Matematik 2c", "kapitel": "Kapitel 4", "innehall": "Geometri och bevis",
+        { "datum": "2027-06-09", "namn": "Kapiteltest", "kurs": "Matematik 2c", "kapitel": "Kapitel 4", "innehall": "Geometri och bevis", "auto": ["ma2c-k4", "ma2a-18..19"],
           "filmer": ["formelbladet-ma2-4-likformighet", "formelbladet-ma2-5-vinklar-och-cirkelsatser", "formelbladet-4-rymdgeometri-och-skala"] }
       ]
     },
     {
       "namn": "IndA",
       "prov": [
-        { "datum": "2026-10-20", "namn": "Prov 1", "kurs": "Matematik 2a", "kapitel": "Kapitel 1", "innehall": "Uttryck och andragradsekvationer",
+        { "datum": "2026-10-20", "namn": "Prov 1", "kurs": "Matematik 2a", "kapitel": "Kapitel 1", "innehall": "Uttryck och andragradsekvationer", "auto": ["ma2a-01..04"],
           "filmer": ["ma2a-01-kvadreringsreglerna", "ma2a-02-faktorisera", "ma2a-03-x2-och-nollprodukt", "ma2a-04-pq-formeln", "formelbladet-ma2-1-algebra"] },
-        { "datum": "2026-12-14", "namn": "Prov 2", "kurs": "Matematik 2a", "kapitel": "Kapitel 2", "innehall": "Räta linjen och ekvationssystem",
+        { "datum": "2026-12-14", "namn": "Prov 2", "kurs": "Matematik 2a", "kapitel": "Kapitel 2", "innehall": "Räta linjen och ekvationssystem", "auto": ["ma2a-05..08"],
           "filmer": ["ma1c-k4-02-linjara-samband", "ma1c-k4-03-rata-linjens-ekvation", "ma2a-07-ekvationssystem-grafiskt", "ma2a-08-substitution-och-addition"] },
-        { "datum": "2027-02-16", "namn": "Prov 3", "kurs": "Matematik 2a", "kapitel": "Kapitel 3", "innehall": "Andragradsfunktioner, potenser och potensfunktioner",
+        { "datum": "2027-02-16", "namn": "Prov 3", "kurs": "Matematik 2a", "kapitel": "Kapitel 3", "innehall": "Andragradsfunktioner, potenser och potensfunktioner", "auto": ["ma2a-09..13"],
           "filmer": ["kepler-och-planeterna", "delos-och-altaret", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "formelbladet-ma2-2-andragradsfunktionen"] },
-        { "datum": "2027-04-19", "namn": "Prov 4", "kurs": "Matematik 2a", "kapitel": "Kapitel 4 och 5.1", "innehall": "Statistik, normalfördelning och Pythagoras sats",
+        { "datum": "2027-04-19", "namn": "Prov 4", "kurs": "Matematik 2a", "kapitel": "Kapitel 4 och 5.1", "innehall": "Statistik, normalfördelning och Pythagoras sats", "auto": ["ma2a-14..19"],
           "filmer": ["formelbladet-ma2-6-statistik", "formelbladet-5-pythagoras-trigonometri-vektorer"] },
-        { "datum": "2027-05-19", "namn": "Nationellt prov", "kurs": "Matematik 2a", "kapitel": "Hela kursen", "innehall": "Allt i kursen",
+        { "datum": "2027-05-19", "namn": "Nationellt prov", "kurs": "Matematik 2a", "kapitel": "Hela kursen", "innehall": "Allt i kursen", "auto": ["ma2a-01..19"],
           "filmer": ["ma2a-01-kvadreringsreglerna", "ma2a-02-faktorisera", "ma2a-03-x2-och-nollprodukt", "ma2a-04-pq-formeln", "ma1c-k4-02-linjara-samband", "ma1c-k4-03-rata-linjens-ekvation", "ma2a-07-ekvationssystem-grafiskt", "ma2a-08-substitution-och-addition", "kepler-och-planeterna", "delos-och-altaret", "ma1c-k4-04-potensfunktioner", "ma1c-k4-05-exponentialfunktioner", "formelbladet-ma2-1-algebra", "formelbladet-ma2-2-andragradsfunktionen", "formelbladet-ma2-6-statistik", "formelbladet-5-pythagoras-trigonometri-vektorer"] }
       ]
     }

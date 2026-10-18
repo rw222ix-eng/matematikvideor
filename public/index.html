@@ -1577,8 +1577,30 @@
   const provDag = (s) => { const [a, m, d] = String(s).split("-").map(Number); return new Date(a, m - 1, d); };
   const idag = () => { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); };
   const nastaProv = (k) => k.prov.filter((p) => provDag(p.datum) >= idag()).sort((a, b) => provDag(a.datum) - provDag(b.datum))[0] || null;
-  // Filmerna till provet i den ordning som prov.json har dem (bokens), bara de som finns.
-  const provFilmer = (p) => (p ? p.filmer.map((id) => videor.find((v) => v.id === id)).filter(Boolean) : []);
+  // Filmerna till provet i den ordning som prov.json har dem (bokens), bara de som finns. Nya filmer kommer med
+  // av sig själva (provets "auto"): "ma1c-k4" är alla filmer vars id börjar med ma1c-k4-, "ma2a-09..13" är Ma 2a-filmerna
+  // 09 till 13. En ny film läggs efter kapitlets film med närmast lägre nummer, annars före kapitlets första, annars
+  // före formelbladets delar. "utom" är filmer som inte ska med fast regeln träffar dem.
+  const autoTraff = (regel, id) => {
+    const m = String(regel).match(/^(.+)-(\d+)\.\.(\d+)$/);
+    if (!m) return id.startsWith(`${regel}-`);
+    const n = id.startsWith(`${m[1]}-`) && id.slice(m[1].length + 1).match(/^(\d+)-/);
+    return !!n && Number(n[1]) >= Number(m[2]) && Number(n[1]) <= Number(m[3]);
+  };
+  const provFilmer = (p) => {
+    if (!p) return [];
+    const ids = [...p.filmer], utom = new Set(p.utom || []);
+    for (const regel of p.auto || []) {
+      const nya = videor.map((v) => v.id).filter((id) => autoTraff(regel, id) && !ids.includes(id) && !utom.has(id)).sort();
+      for (const id of nya) {
+        const kapitlet = ids.map((x, i) => [x, i]).filter(([x]) => autoTraff(regel, x));
+        const fore = kapitlet.filter(([x]) => x < id).pop();
+        const plats = fore ? fore[1] + 1 : kapitlet.length ? kapitlet[0][1] : ids.findIndex((x) => x.startsWith("formelbladet-"));
+        ids.splice(plats < 0 ? ids.length : plats, 0, id);
+      }
+    }
+    return ids.map((id) => videor.find((v) => v.id === id)).filter(Boolean);
+  };
   // "tors 19 nov", med året när det inte är i år: "tors 14 jan 2027".
   const VECKODAG = ["sön", "mån", "tis", "ons", "tors", "fre", "lör"];
   const MANAD = ["jan", "feb", "mars", "april", "maj", "juni", "juli", "aug", "sep", "okt", "nov", "dec"];
