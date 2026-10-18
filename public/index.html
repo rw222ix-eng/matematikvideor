@@ -3083,8 +3083,12 @@
   // En textbit i indexet: texten (för fraser), dess stammar och den vikade texten.
   const bit = (text) => ({ text, f: fold(norm(text)), stammar: [...new Set(ordI(text).map(stam))] });
   // Sökindexet byggs en gång: titel, moment, begrepp, beskrivning, kapitel, repliker och undertextrader.
+  // Lektionens namn ur planeringen står i filmens id (ma1c-k2-02-formler-och-modeller). Det räknas bara
+  // som hel fras, och bara för filmer som redan har alla orden: "formler och modeller" går till
+  // Alfred och ljusklockan och inte till Malthus, som säger modell oftare (2026-10-18).
+  const lektion = (id) => id.replace(/^(ma\d[a-c]?-k\d+-\d+|ma2a-\d+|formelbladet(-ma2)?-\d+)-/, "").replace(/-/g, " ");
   const INDEX = videor.map((v) => ({
-    v, titel: bit(v.titel), moment: bit(v.moment), begrepp: v.begrepp.map(bit), besk: bit(v.beskrivning),
+    v, titel: bit(v.titel), moment: bit(v.moment), lektion: bit(lektion(v.id)), begrepp: v.begrepp.map(bit), besk: bit(v.beskrivning),
     kapitel: (v.kapitel || []).map((k) => ({ t: k.t, text: k.rubrik, kap: true, ...bit(`${k.typ === "uppgift" ? "din tur " : ""}${k.rubrik}`), text: k.rubrik })),
     repliker: v.repliker.map((r, i) => ({ t: r.t, slut: v.repliker[i + 1] && v.repliker[i + 1].t != null ? v.repliker[i + 1].t : Infinity, ...bit(r.text) })),
     rader: (v.undertext || []).map((u) => ({ t: u.s, ...bit(u.text) })),
@@ -3149,7 +3153,7 @@
       for (const t of q.valfria) r.poang += t.vikt * (t.amne ? Math.max(passar(t, r.x.moment), passar(t, r.x.titel)) : Math.min(1, r.x.repliker.reduce((s, y) => s + passar(t, y), 0)));
       // Hela frasen ("likformiga trianglar") där filmen säger vad den handlar om, eller i rösten.
       if (q.fras) {
-        if ([r.x.moment, r.x.titel, ...r.x.begrepp, ...r.x.kapitel].some(helFras)) r.poang += 25;
+        if ([r.x.moment, r.x.titel, r.x.lektion, ...r.x.begrepp, ...r.x.kapitel].some(helFras)) r.poang += 25;
         else if (r.x.repliker.some(helFras)) r.poang += 8;
       }
     }

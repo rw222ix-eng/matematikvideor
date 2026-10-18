@@ -45,6 +45,9 @@ const K = {
   esys: "ma2a-07-ekvationssystem-grafiskt", k201: "ma1c-k2-01-linjara-ekvationer", k202: "ma1c-k2-02-formler-och-modeller",
   k401: "ma1c-k4-01-funktioner", k402: "ma1c-k4-02-linjara-samband", k403: "ma1c-k4-03-rata-linjens-ekvation",
   k404: "ma1c-k4-04-potensfunktioner", k405: "ma1c-k4-05-exponentialfunktioner", k406: "ma1c-k4-06-grafisk-ekvationslosning",
+  k301: "ma1c-k3-01-forandringsfaktor", k302: "ma1c-k3-02-lan-ranta-amortering", k303: "ma1c-k3-03-sannolikhet-i-flera-steg",
+  k304: "ma1c-k3-04-beroende-och-komplementhandelse", k501: "ma1c-k5-01-diagram", k502: "ma1c-k5-02-korrelation-och-kausalitet",
+  esys2: "ma2a-08-substitution-och-addition",
 };
 // [fråga, rätta förstaträffar]
 const PROV = [
@@ -55,18 +58,18 @@ const PROV = [
   ["beräkna en sida i en triangel", "sidor"], ["räkna ut sidan i en rätvinklig triangel", "sidor"], ["hur lång är hypotenusan", "sidor sincos"],
   ["pythagoras sats", "fb5"], ["pythagoras", "fb5"],
   ["vektor", "vbegr"], ["vad är en vektor", "vbegr"], ["resultant", "vbegr"], ["addera vektorer", "vadd vbegr"],
-  ["vektorer i koordinatform", "vadd"], ["längden av en vektor", "vkoord"], ["vinkeln mellan två vektorer", "vkoord"],
+  ["vektorer i koordinatform", "vadd"], ["längden av en vektor", "vkoord vadd"], ["vinkeln mellan två vektorer", "vkoord fb5"],
   ["olikheter", "ark"], ["lösa olikheter", "ark"], ["olikhetstecken", "ark"], ["intervall", "harrison"], ["öppet intervall", "harrison"],
   ["potensekvation", "delos"], ["potensekvationer", "delos"], ["x^3 = 8", "delos"], ["tredje roten", "delos kepler"],
   ["bråk i exponenten", "kepler"], ["potenser med bråk", "kepler"], ["keplers lag", "kepler"],
   ["faktorisera", "viete fakt"], ["bryta ut", "viete fakt"], ["utveckla parenteser", "viete"], ["multiplicera in", "viete"],
   ["mönster", "galilei"], ["formel för tal nummer n", "galilei"], ["talföljd", "galilei"],
   ["kvadreringsreglerna", "kvadr"], ["kvadreringsregeln", "kvadr"], ["konjugatregeln", "kvadr"], ["(a+b)^2", "kvadr"],
-  ["pq-formeln", "pq"], ["pq formeln", "pq"], ["andragradsekvation", "nollp pq"], ["nollproduktmetoden", "nollp"], ["x^2 = 25", "nollp"],
+  ["pq-formeln", "pq"], ["pq formeln", "pq"], ["andragradsekvation", "nollp pq"], ["x^2 = 25", "nollp"],
   ["prefix", "fb1"], ["tiopotenser", "fb1 m23"], ["potensregler", "fb1"],
-  ["räta linjens ekvation", "k403"], ["k-värde", "k402 k403"], ["exponentialfunktion", "k405"], ["förändringsfaktor", "k405 fb2"],
+  ["räta linjens ekvation", "k403"], ["k-värde", "k402 k403"], ["exponentialfunktion", "k405"], ["förändringsfaktor", "k301 k405 fb2"],
   ["area av en cirkel", "fb3"], ["cirkelsektor", "fb3"], ["omkrets", "fb3"], ["parallelltrapets", "fb3"],
-  ["volym av en kon", "fb4"], ["volym", "fb4"], ["skala", "fb4"], ["areaskala", "fb4"],
+  ["volym av en kon", "fb4"], ["volym", "fb4"], ["skala", "fb4"], ["areaskala", "fb4 m24"],
   ["abc-formeln", "m21"],
   ["parabel", "m22"], ["symmetrilinje", "m22"], ["mittpunktsformeln", "m22"], ["avståndsformeln", "m22"], ["vinkelräta linjer", "m22"],
   ["logaritmer", "m23"], ["lg", "m23"], ["exponentialekvation", "m23"],
@@ -78,7 +81,7 @@ const PROV = [
 // Kontrollfrågor, skrivna efter att vikterna satts (2026-10-05): de visar om sökningen klarar
 // frågor den inte är inställd efter. Räknas för sig.
 const KONTROLL = [
-  ["vad betyder cos", "sincos"], ["sin cos tan", "sincos"], ["kvoten mellan sidorna", "sincos"], ["närliggande katet", "sincos"],
+  ["vad betyder cos", "sincos"], ["sin cos tan", "sincos"], ["kvoten mellan sidorna", "sincos vinklar"], ["närliggande katet", "sincos"],
   ["hur högt är berget", "sidor"], ["räkna ut höjden med tangens", "sidor"], ["lutande tornet", "vinklar"], ["hur mycket lutar tornet", "vinklar"],
   ["den andra vinkeln", "vinklar"], ["kraft och resultant", "vbegr"], ["motsatt vektor", "vbegr"],
   ["komposanter", "vadd"], ["basvektorer", "vadd"], ["avstånd till titanic", "vkoord"], ["x^3 = 2", "delos"], ["dubbelt så stor kub", "delos"],
@@ -86,7 +89,7 @@ const KONTROLL = [
   ["n:te talet i en talföljd", "galilei"], ["kvadrattal", "galilei"], ["omloppstid planet", "kepler"], ["upphöjt till en tredjedel", "kepler delos"],
   ["48 i kvadrat", "kvadr"], ["dubbla produkten", "kvadr"], ["faktorisera med konjugatregeln", "fakt"], ["två lösningar roten ur", "nollp"],
   ["fritt fall", "nollp"], ["ingen lösning andragradsekvation", "pq nollp"], ["al-khwarizmi", "pq"], ["halva p", "pq"],
-  ["kilo mega giga", "fb1"], ["y = kx + m", "k403 k402"], ["ränta", "k405 fb2 m23"], ["mantelarea cylinder", "fb4"], ["klotets volym", "fb4"],
+  ["kilo mega giga", "fb1"], ["y = kx + m", "k403 k402"], ["ränta", "k302 k405 fb2 m23"], ["mantelarea cylinder", "fb4"], ["klotets volym", "fb4"],
   ["kordasatsen", "m25"], ["sannolikhet normalfördelning", "m26"],
 ];
 // De nya filmerna (2026-10-05).
@@ -95,7 +98,16 @@ const NYA = [
   ["lösa ut en variabel", "k202"], ["formler och modeller", "k202"], ["sätta in i en formel", "k202"],
   ["definitionsmängd", "k401"], ["värdemängd", "k401"], ["vad är en funktion", "k401"],
   ["linjära samband", "k402"], ["m-värde", "k402 k403"], ["potensfunktion", "k404"], ["exponentialfunktioner", "k405"],
-  ["grafisk ekvationslösning", "k406"], ["matematisk modell", "k406 k202"], ["ekvationssystem", "esys"], ["skärningspunkt", "esys k406"],
+  ["grafisk ekvationslösning", "k406"], ["matematisk modell", "k406 k202"], ["ekvationssystem", "esys esys2"], ["skärningspunkt", "esys k406"],
+  // Ma 1c kap 3 och 5 och Ma 2a 8 (2026-10-18). "nollproduktmetoden" är borttagen: ma2a-03 handlar
+  // sedan omgörningen bara om x² = a, och ingen film tar upp metoden.
+  ["procentuell förändring", "k301"], ["förändring i flera steg", "k301"], ["minskning i procent", "k301"],
+  ["amortering", "k302"], ["räntekostnad", "k302"], ["lån", "k302"],
+  ["sannolikhet i flera steg", "k303"], ["utfallsrum", "k303"], ["gynnsamma utfall", "k303"],
+  ["komplementhändelse", "k304"], ["utan återläggning", "k304"], ["beroende händelser", "k304"], ["träddiagram", "k304 k303"],
+  ["vilseledande diagram", "k501"], ["cirkeldiagram", "k501"], ["stapeldiagram", "k501"],
+  ["korrelation", "k502"], ["kausalitet", "k502"], ["stickprov", "k502"], ["urval", "k502"],
+  ["substitutionsmetoden", "esys2"], ["additionsmetoden", "esys2"], ["lösa ekvationssystem algebraiskt", "esys2"],
 ];
 // Stavfel (Rickard 2026-10-05: "det borde finnas automatiska rättningar om eleverna råkar skriva fel").
 const STAVFEL = [
