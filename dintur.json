@@ -176,10 +176,25 @@
     ]
   },
   "galilei-och-rannan": {
-    "fraga": "Tänk dig en annan ränna, där märkena står vid 5, 8, 13 och 20 steg.",
+    "fraga": "Tänk dig en annan ränna, där märkena står vid 5, 8, 13 och 20 steg. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många steg längre bort står varje märke än kvadrattalet?",
+      "Sen: Skriv formeln för märke nummer n."
+    ],
     "delar": [
       {
-        "fraga": "Skriv formeln för märke nummer n.",
+        "fraga": "Först: Hur många steg längre bort står varje märke än kvadrattalet?",
+        "typ": "tal",
+        "svar": 4,
+        "exempel": "t.ex. 2",
+        "fel": [
+          { "svar": "3", "text": "3 är avståndet mellan de två första märkena, 8 − 5. Ta i stället märket minus kvadrattalet under: 5 − 1 = 4." },
+          { "svar": "1", "text": "Det gällde rännan med 2, 5, 10 och 17 i filmen. Här är 5 − 1 = 4 och 8 − 4 = 4." },
+          { "svar": "-4", "text": "Märkena står längre bort än kvadrattalen, så skillnaden är plus: 5 − 1 = 4." }
+        ]
+      },
+      {
+        "fraga": "Sen: Skriv formeln för märke nummer n.",
         "typ": "uttryck",
         "svar": "n^2 + 4",
         "variabler": ["n"],
@@ -189,7 +204,8 @@
         "fel": [
           { "svar": "n^2", "text": "n² ger 1, 4, 9 och 16. Hur mycket längre bort ligger varje märke?" },
           { "svar": "3n + 2", "text": "Det ger 5, 8, 11 och 14. Skillnaderna i rännan växer, 3, 5 och 7, så kvadrattalen är med." },
-          { "svar": "n^2 + 3", "text": "Pröva med märke nummer 1. 1 + 3 är 4, men märket står vid 5." }
+          { "svar": "n^2 + 3", "text": "Pröva med märke nummer 1. 1 + 3 är 4, men märket står vid 5." },
+          { "svar": "4", "text": "4 är hur mycket längre bort varje märke står. Formeln är kvadrattalet plus 4: n² + 4." }
         ]
       }
     ],
