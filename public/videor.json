@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-18T12:06:09.958Z",
+ "byggd": "2026-10-18T12:27:45.300Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -3093,7 +3093,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/arkimedes-v14/arkimedes-och-cirkeln-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/arkimedes-v15/arkimedes-och-cirkeln-1080p.mp4",
    "moment": "Olikheter",
    "begrepp": [
     "olikhet",
@@ -3106,7 +3106,7 @@
    ],
    "beskrivning": "Syrakusa 213 f.Kr.: Arkimedes kastmaskiner på muren och ett romerskt skepp som ror in. Olikhetstecken, olikheten 300 − 4t ≤ 200, att lösa en olikhet som en ekvation och varför tecknet vänder när man delar med ett negativt tal, med svaret på tallinjen.",
    "youtube": null,
-   "langd": 646,
+   "langd": 708,
    "omslag": "omslag/arkimedes-och-cirkeln.jpg?v=4c81efbf",
    "omslagRen": "omslag/arkimedes-och-cirkeln-ren.jpg?v=be8c5cd5",
    "omslagStor": "omslag/arkimedes-och-cirkeln-stor.jpg?v=e955d6b7",
@@ -3117,127 +3117,127 @@
     },
     {
      "t": 28,
-     "text": "I Syrakusa bor Arkimedes. Han är den skickligaste matematikern i staden, och stadens kung har bett honom försvara muren. Därför har Arkimedes byggt kastmaskiner. De står uppe på muren och slungar tunga stenar ut över vattnet."
+     "text": "I Syrakusa bor Arkimedes. Han är den skickligaste matematikern i staden, och stadens kung har bett honom försvara muren. Därför har Arkimedes byggt kastmaskiner. Kastmaskinerna står uppe på muren och slungar tunga stenar ut över vattnet."
     },
     {
      "t": 47,
-     "text": "Säg att en av kastmaskinerna når tvåhundra meter ut från muren. Ett skepp som ligger längre bort än så, det kan den inte träffa."
+     "text": "Säg att en av kastmaskinerna når tvåhundra meter ut från muren. Ett skepp som ligger längre bort än så, det kan kastmaskinen inte träffa."
     },
     {
-     "t": 56,
-     "text": "Nu ligger ett romerskt skepp trehundra meter från muren. Det ror rakt mot muren, och varje sekund kommer det fyra meter närmare. Efter hur många sekunder kan kastmaskinen träffa skeppet?"
+     "t": 57,
+     "text": "Nu ligger ett romerskt skepp trehundra meter från muren. Skeppet ror rakt mot muren, och varje sekund kommer det fyra meter närmare. Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     },
     {
-     "t": 71,
-     "text": "Okej... vi börjar med att prova. Tänk dig skeppet ute på vattnet. Det är trehundra meter kvar till muren. Nu går det tio sekunder. Hur långt har skeppet rott då? Fyra meter varje sekund, i tio sekunder. Tio gånger fyra är fyrtio. Skeppet har rott fyrtio meter."
+     "t": 74,
+     "text": "Okej... vi börjar med att prova. Tänk dig skeppet ute på vattnet. Det är trehundra meter kvar till muren. Nu går det tio sekunder. Hur långt har skeppet rott då? Fyra meter varje sekund, i tio sekunder. Tio gånger fyra är fyrtio."
     },
     {
-     "t": 95,
+     "t": 94,
      "text": "Hur långt är det kvar till muren? Trehundra minus fyrtio. Det blir tvåhundrasextio meter. Når kastmaskinen så långt? Nej, den når bara tvåhundra. Skeppet är fortfarande för långt bort."
     },
     {
-     "t": 112,
-     "text": "Vi provar med trettio sekunder. Hur långt har skeppet rott då? Trettio gånger fyra är hundratjugo meter. Hur långt är det kvar? Trehundra minus hundratjugo. Det blir hundraåttio meter. Det är mindre än tvåhundra. Nu kan kastmaskinen träffa."
+     "t": 111,
+     "text": "Vi provar med trettio sekunder. Hur långt har skeppet rott då? Tre gånger fyra är tolv, och trettio är tio gånger mer än tre. Så trettio gånger fyra är hundratjugo meter. Hur långt är det kvar? Trehundra minus hundratjugo. Det kan vi räkna enklare så här. Trehundra minus hundra är tvåhundra, och sen tar vi bort tjugo till. Det blir hundraåttio meter. Hundraåttio är mindre än tvåhundra. Nu kan kastmaskinen träffa."
     },
     {
-     "t": 133,
-     "text": "Svaret ligger alltså någonstans mellan tio och trettio sekunder. Men var? Att prova tar lång tid. Vi behöver ett sätt att räkna ut det på en gång. Vi vet inte hur många sekunder det tar. Så vi kallar antalet sekunder t."
+     "t": 146,
+     "text": "Svaret ligger alltså någonstans mellan tio och trettio sekunder. Men var? Ska vi prova varenda sekund där emellan? Det tar ju alldeles för lång tid. Vi behöver ett sätt att räkna ut svaret på en gång. Vi vet inte hur många sekunder det tar. Så vi kallar antalet sekunder t."
     },
     {
-     "t": 152,
-     "text": "Först tar vi reda på hur långt skeppet har rott. Vi gör som när vi provade. Förut tog vi tio gånger fyra. Nu tar vi t gånger fyra. Det blir fyra gånger t meter. Det skriver vi kort som fyra t."
+     "t": 169,
+     "text": "Först tar vi reda på hur långt skeppet har rott efter t sekunder. Vi gör som när vi provade. Förut tog vi tio gånger fyra. Nu tar vi t gånger fyra. Det blir fyra gånger t meter, och det skriver vi kort som fyra t."
     },
     {
-     "t": 170,
-     "text": "Hur långt är det då kvar till muren? Förut tog vi trehundra minus fyrtio. Nu tar vi trehundra minus fyra t. Det är avståndet till muren efter t sekunder."
+     "t": 187,
+     "text": "Hur långt är det då kvar till muren? Förut tog vi trehundra minus fyrtio. Nu tar vi trehundra minus fyra t. Trehundra minus fyra t är alltså avståndet till muren efter t sekunder."
     },
     {
-     "t": 185,
-     "text": "Kastmaskinen träffar när det är tvåhundra meter kvar. Men den träffar också när det är mindre. Hundraåttio meter gick ju bra. Avståndet ska alltså vara tvåhundra eller mindre."
+     "t": 203,
+     "text": "Kastmaskinen träffar när det är tvåhundra meter kvar. Men kastmaskinen träffar också när det är mindre kvar. Hundraåttio meter gick ju bra. Avståndet ska alltså vara tvåhundra eller mindre."
     },
     {
-     "t": 199,
-     "text": "För det finns ett eget tecken. Det ser ut som en spets med ett streck under. Spetsen pekar mot det mindre. Den öppna sidan är vänd mot det större. Och strecket betyder \"eller lika med\". Tecknet läser vi alltså som mindre än eller lika med."
+     "t": 218,
+     "text": "För tvåhundra eller mindre finns det ett eget tecken. Tecknet ser ut som en spets med ett streck under. Spetsen pekar mot det mindre. Den öppna sidan är vänd mot det större. Och strecket betyder eller lika med. Tecknet läser vi alltså som mindre än eller lika med."
     },
     {
-     "t": 220,
-     "text": "Nu skriver vi frågan med tecknet. Trehundra minus fyra t är mindre än eller lika med tvåhundra. Vad betyder det? Att avståndet till muren är tvåhundra meter eller mindre. Sidorna behöver inte vara lika. Därför kallas det en olikhet. Och tecknet kallas olikhetstecken."
+     "t": 238,
+     "text": "Nu skriver vi frågan med tecknet. Trehundra minus fyra t är mindre än eller lika med tvåhundra. Vad betyder det? Att avståndet till muren är tvåhundra meter eller mindre. Det som står på var sin sida om tecknet kallas vänster led och höger led. Leden behöver inte vara lika. Därför kallas hela raden en olikhet, och tecknet kallas olikhetstecken."
     },
     {
-     "t": 244,
-     "text": "En olikhet löser man nästan som en ekvation. Vi vill att t ska stå ensamt. Regeln är att vi gör samma sak på båda sidor om tecknet. Vad står i vägen för t? Först trehundra."
+     "t": 267,
+     "text": "Nu löser vi olikheten. En olikhet löser man nästan som en ekvation. Vi vill att t ska stå ensamt, och då gör vi samma sak i båda leden. Vad står i vägen för t? Först trehundra."
     },
     {
-     "t": 260,
-     "text": "Så vi drar bort trehundra på båda sidor. Vad blir kvar på vänster sida? Trehundra minus trehundra är noll. Kvar står minus fyra t. Och på höger sida? Tvåhundra minus trehundra. Då hamnar vi under noll. Hundra under noll, alltså minus hundra. Nu står det minus fyra t är mindre än eller lika med minus hundra."
+     "t": 282,
+     "text": "Så vi drar bort trehundra från båda leden. Trehundra minus trehundra är noll, så i vänster led står bara minus fyra t kvar. Och i höger led? Tvåhundra minus trehundra. Har man tvåhundra och ska ta bort trehundra, så räcker det inte. Vi hamnar hundra under noll, alltså minus hundra. Nu står det minus fyra t är mindre än eller lika med minus hundra."
     },
     {
-     "t": 290,
-     "text": "Nu vill vi dela båda sidor med minus fyra, så att t blir ensamt. Men här skiljer sig olikheter från ekvationer. Vad händer med tecknet, när man delar med ett minustal? Vi kollar först med två vanliga tal."
+     "t": 311,
+     "text": "Nu vill vi dela båda leden med minus fyra, så att t blir ensamt. Men här skiljer sig olikheter från ekvationer. Minus fyra är ett negativt tal, alltså ett tal under noll. Vad händer med tecknet, när man delar med ett negativt tal? Vi kollar först med två vanliga tal."
     },
     {
-     "t": 306,
-     "text": "Två är mindre än fem. Nu tar vi båda gånger minus ett. Då får vi minus två och minus fem. Vilket av dem är störst nu?"
+     "t": 332,
+     "text": "Två är mindre än fem. Nu multiplicerar vi båda talen med minus ett. Då får vi minus två och minus fem. Vilket av talen är störst nu?"
     },
     {
-     "t": 318,
-     "text": "Tänk på en kall vinterdag. Minus två grader är varmare än minus fem grader. Så minus två är större än minus fem. Kolla på tallinjen. Minus fem ligger längre till vänster. Talen har bytt ordning. För gånger minus ett flyttar dem till andra sidan om nollan. Och där byter de plats."
+     "t": 344,
+     "text": "Tänk på en kall vinterdag. Minus två grader är varmare än minus fem grader. Så minus två är större än minus fem. Kolla på tallinjen. Minus fem ligger längre till vänster. Talen har bytt ordning. Man kan se det på det här sättet. Gånger minus ett flyttar talen till andra sidan om nollan, som i en spegel. Och där byter talen plats, för på den sidan är talet närmast nollan störst."
     },
     {
-     "t": 343,
-     "text": "Förut stod det mindre än. Nu står det större än. Tecknet har vänt. Och så är det alltid. Tar man båda sidor gånger ett minustal, så vänder tecknet. Delar man med ett minustal, så vänder det också. Ett minustal är ett tal under noll. Det är samma regel som förut, samma sak på båda sidor. Men med ett tillägg för minustal."
+     "t": 374,
+     "text": "Förut stod det mindre än. Nu står det större än. Tecknet har vänt. Och så är det alltid. Multiplicerar man båda leden med ett negativt tal, så vänder tecknet. Delar man med ett negativt tal, så vänder tecknet också. Det är samma regel som förut, samma sak i båda leden. Men med ett tillägg för negativa tal."
     },
     {
-     "t": 373,
-     "text": "Nu delar vi båda sidor med minus fyra, och vi vänder tecknet. Vad blir det på vänster sida? Minus fyra t delat med minus fyra. Minus fyra delat med minus fyra är ett. Så kvar står bara t."
+     "t": 399,
+     "text": "Nu delar vi båda leden med minus fyra, och vi vänder tecknet. Vad blir det i vänster led? Minus fyra t betyder minus fyra gånger t. Minus fyra delat med minus fyra är ett. Så kvar står bara t."
     },
     {
-     "t": 390,
-     "text": "Och på höger sida? Minus hundra delat med minus fyra. Hundra delat med fyra är tjugofem. Och minus delat med minus blir plus. Så det blir tjugofem. Det kan vi kolla baklänges. Minus fyra gånger tjugofem är minus hundra. Det stämmer."
+     "t": 416,
+     "text": "Och i höger led? Minus hundra delat med minus fyra. Först hundra delat med fyra. Att dela med fyra är att halvera två gånger. Hälften av hundra är femtio, och hälften av femtio är tjugofem. Och minus delat med minus blir plus, precis som minus gånger minus. Så det blir tjugofem."
     },
     {
-     "t": 412,
-     "text": "Nu står det att t är större än eller lika med tjugofem. Tecknet har vänt. Vad betyder det? Att t är tjugofem eller mer. Och kom ihåg att t är antalet sekunder."
+     "t": 440,
+     "text": "Nu står det att t är större än eller lika med tjugofem. Vad betyder det? Att t är tjugofem eller mer. Och nu får vi inte glömma att t är antalet sekunder. Men en ekvation och en olikhet är lätta att blanda ihop. En ekvation har ett likhetstecken, och svaret blir ofta ett enda tal, till exempel t är lika med tjugofem. En olikhet har ett olikhetstecken, och svaret blir många tal. Här är det alla tal från tjugofem och uppåt."
     },
     {
-     "t": 428,
-     "text": "Kastmaskinen kan alltså träffa skeppet efter tjugofem sekunder. Och hela tiden efter det. Stämmer det med när vi provade? Ja, för tjugofem ligger mellan tio och trettio. Vi kan också kolla exakt. Efter tjugofem sekunder har skeppet rott tjugofem gånger fyra. Det är hundra meter. Då är det tvåhundra meter kvar. Precis så långt som kastmaskinen når."
+     "t": 474,
+     "text": "Kastmaskinen kan alltså träffa skeppet efter tjugofem sekunder, och hela tiden efter det. Om vi går tillbaka till när vi provade, så ser vi att det stämmer, för tjugofem ligger mellan tio och trettio. Men tänk om man glömmer att vända tecknet. Då får man att t är mindre än eller lika med tjugofem. Då skulle tio sekunder räknas med. Men efter tio sekunder var det ju tvåhundrasextio meter kvar till muren, och det var för långt. Så tecknet måste vända."
     },
     {
-     "t": 457,
-     "text": "Svaret kan vi också rita på tallinjen. Vi ritar en fylld prick vid tjugofem, för tjugofem räknas med. Från pricken drar vi en linje åt höger. För alla större tal räknas också. Var ligger tio? Utanför linjen. Efter tio sekunder var skeppet för långt bort. Och trettio? På linjen. Då kunde kastmaskinen träffa."
+     "t": 508,
+     "text": "Alla tal från tjugofem och uppåt kan vi rita på tallinjen. Vi ritar en fylld punkt vid tjugofem, för tjugofem räknas med. Efter tjugofem sekunder är det ju precis tvåhundra meter kvar, och så långt når kastmaskinen. Från punkten drar vi en linje åt höger, för alla större tal räknas också."
     },
     {
-     "t": 486,
-     "text": "Tänk om strecket under tecknet hade saknats. Då hade tjugofem inte räknats med. Då hade vi ritat en ring vid tjugofem. Inte en prick."
+     "t": 529,
+     "text": "Tänk om strecket under tecknet hade saknats. Då hade tjugofem inte räknats med. Då hade vi ritat en ring vid tjugofem, som är tom inuti. Inte en fylld punkt."
     },
     {
-     "t": 497,
-     "text": "Nu en olikhet utan skepp. Tre x plus fem är mindre än tjugo. Här står x för ett okänt tal. Vi vill ha x ensamt. Vad står i vägen? Först femman. Så vi drar bort fem på båda sidor. Då står det tre x är mindre än femton."
+     "t": 542,
+     "text": "Nu en olikhet utan skepp, där vi delar med ett positivt tal, alltså ett tal över noll. Tre x plus fem är mindre än tjugo. Här står x för ett okänt tal. Vi vill ha x ensamt. Vad står i vägen? Först femman. Så vi drar bort fem från båda leden. Då står det tre x är mindre än femton."
     },
     {
-     "t": 521,
-     "text": "Sen trean. Tre x betyder tre gånger x. Så vi delar båda sidor med tre. Och vad sa regeln om minustal? Tre är inget minustal, det är större än noll. Så tecknet står kvar. Femton delat med tre är fem. Då är x mindre än fem."
+     "t": 568,
+     "text": "Sen trean. Tre x är tre gånger x, så vi delar båda leden med tre. Och vad sa regeln om negativa tal? Tre är inget negativt tal, det är större än noll. Så tecknet står kvar. Femton delat med tre är fem. Då är x mindre än fem."
     },
     {
-     "t": 545,
-     "text": "Vad betyder det? Att x kan vara vilket tal som helst under fem. Till exempel tre, eller noll. Här saknas strecket under tecknet. Så fem räknas inte med. På tallinjen blir det en ring vid fem. Och en linje åt vänster, mot de mindre talen."
+     "t": 590,
+     "text": "Vad betyder det? Att x kan vara vilket tal som helst under fem. Till exempel tre, eller noll. Som vi ser saknas strecket under tecknet. Så fem räknas inte med. På tallinjen blir det en ring vid fem. Och en linje åt vänster, mot de mindre talen."
     },
     {
-     "t": 567,
-     "text": "Vi kollar med ett tal på linjen, till exempel fyra. Tre gånger fyra är tolv. Tolv plus fem är sjutton. Är sjutton mindre än tjugo? Ja. Det stämmer."
+     "t": 611,
+     "text": "Vi kollar med ett tal på linjen, till exempel fyra. Tre gånger fyra är tolv. Tolv plus fem är sjutton. Är sjutton mindre än tjugo? Ja. Snyggt, det går ihop. Nu går vi tillbaka till Syrakusa."
     },
     {
-     "t": 582,
-     "text": "Arkimedes kastmaskiner höll de romerska skeppen borta från muren. Romarna fick vänta utanför staden i två år. Men en natt år tvåhundratolv före Kristus firade staden en fest. Det var få vakter på muren, och romerska soldater klättrade över muren och tog staden."
+     "t": 630,
+     "text": "Arkimedes kastmaskiner höll de romerska skeppen borta från muren. Romarna fick vänta utanför staden i två år. Men en natt år tvåhundratolv före Kristus firade staden en fest. Det var bara några få vakter på muren. Romerska soldater klättrade över muren och tog staden."
     },
     {
-     "t": 603,
+     "t": 652,
      "text": "En romersk soldat hittade Arkimedes i hans hus. Han satt böjd över en figur som han hade ritat i sand på ett bord. Arkimedes bad att få räkna klart, men soldaten dödade honom."
     },
     {
-     "t": 617,
-     "text": "Nu är det din tur. Ett annat romerskt skepp ligger fyrahundra meter från muren. Det ror rakt mot muren, och varje sekund kommer det fem meter närmare. Kastmaskinen når tvåhundra meter. Lös olikheten fyrahundra minus fem t är mindre än eller lika med tvåhundra. Efter hur många sekunder kan kastmaskinen träffa skeppet?"
+     "t": 667,
+     "text": "Nu är det din tur. Ett annat romerskt skepp ligger fyrahundra meter från muren. Det ror rakt mot muren, och varje sekund kommer det fem meter närmare. Kastmaskinen når tvåhundra meter. Nu får du två frågor att svara på i Din tur-rutan längre ner på sidan. Först: Prova med tjugo sekunder. Hur långt är det kvar till muren då? Sen: Lös olikheten fyrahundra minus fem t är mindre än eller lika med tvåhundra. Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     }
    ],
    "kapitel": [
@@ -3247,47 +3247,47 @@
      "typ": "historia"
     },
     {
-     "t": 71,
+     "t": 74,
      "rubrik": "Vi provar med 10 och 30 sekunder",
      "typ": "matte"
     },
     {
-     "t": 152,
+     "t": 169,
      "rubrik": "Avståndet 300 − 4t",
      "typ": "matte"
     },
     {
-     "t": 185,
+     "t": 203,
      "rubrik": "Olikhetstecknet ≤ och olikheten",
      "typ": "matte"
     },
     {
-     "t": 244,
+     "t": 269,
      "rubrik": "Lös olikheten som en ekvation",
      "typ": "matte"
     },
     {
-     "t": 290,
+     "t": 311,
      "rubrik": "Därför vänder tecknet",
      "typ": "matte"
     },
     {
-     "t": 373,
+     "t": 399,
      "rubrik": "t ≥ 25, kontroll och tallinjen",
      "typ": "matte"
     },
     {
-     "t": 497,
+     "t": 542,
      "rubrik": "Övning: 3x + 5 < 20",
      "typ": "matte"
     },
     {
-     "t": 582,
+     "t": 630,
      "rubrik": "Syrakusa faller",
      "typ": "historia"
     },
     {
-     "t": 617,
+     "t": 667,
      "rubrik": "Din tur",
      "typ": "uppgift"
     }
@@ -3434,7 +3434,24 @@
     },
     "delar": [
      {
-      "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
+      "fraga": "Först: Prova med 20 sekunder. Hur långt är det kvar till muren då?",
+      "typ": "tal",
+      "svar": 300,
+      "enhet": "meter",
+      "exempel": "t.ex. 260",
+      "fel": [
+       {
+        "svar": "100",
+        "text": "Det är hur långt skeppet har rott. Dra det från 400."
+       },
+       {
+        "svar": "380",
+        "text": "Skeppet ror 5 m varje sekund i 20 sekunder, alltså 20 · 5 = 100 m."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
       "typ": "olikhet",
       "variabel": "t",
       "svar": "t >= 40",
@@ -3481,7 +3498,7 @@
     ],
     "ledtrad": {
      "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet.",
-     "t": 290
+     "t": 311
     },
     "losning": [
      "400 − 5t ≤ 200",
@@ -3490,907 +3507,956 @@
      "Kastmaskinen kan träffa skeppet efter 40 sekunder.",
      "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinen når."
     ],
-    "notisFran": 373
+    "slut": [
+     "Först: Hur långt är det kvar efter 20 sekunder?",
+     "Sen: Lös 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa?"
+    ],
+    "notisFran": 399
    },
    "undertext": [
     {
      "s": 9.5,
-     "e": 14.92,
+     "e": 14.9,
      "text": "År tvåhundratretton före Kristus ligger staden Syrakusa på ön Sicilien."
     },
     {
-     "s": 15.92,
-     "e": 18.28,
+     "s": 15.7,
+     "e": 18.06,
      "text": "Staden har en hög mur ut mot havet."
     },
     {
-     "s": 19.28,
-     "e": 20.42,
+     "s": 18.86,
+     "e": 20.08,
      "text": "Men det är krig."
     },
     {
-     "s": 21.42,
-     "e": 27.04,
+     "s": 20.88,
+     "e": 26.88,
      "text": "Rom är i krig med Syrakusa, och nu ror romerska krigsskepp mot staden för att erövra den."
     },
     {
-     "s": 28.34,
-     "e": 30.42,
+     "s": 28.06,
+     "e": 30.16,
      "text": "I Syrakusa bor Arkimedes."
     },
     {
-     "s": 31.42,
-     "e": 36.76,
+     "s": 30.96,
+     "e": 36.54,
      "text": "Han är den skickligaste matematikern i staden, och stadens kung har bett honom försvara muren."
     },
     {
-     "s": 37.76,
-     "e": 40.54,
+     "s": 37.36,
+     "e": 40.06,
      "text": "Därför har Arkimedes byggt kastmaskiner."
     },
     {
-     "s": 41.54,
-     "e": 45.76,
-     "text": "De står uppe på muren och slungar tunga stenar ut över vattnet."
+     "s": 40.94,
+     "e": 46.16,
+     "text": "Kastmaskinerna står uppe på muren och slungar tunga stenar ut över vattnet."
     },
     {
-     "s": 47.06,
-     "e": 51.12,
+     "s": 47.26,
+     "e": 51.42,
      "text": "Säg att en av kastmaskinerna når tvåhundra meter ut från muren."
     },
     {
-     "s": 52.12,
-     "e": 55.2,
-     "text": "Ett skepp som ligger längre bort än så, det kan den inte träffa."
+     "s": 52.22,
+     "e": 56.58,
+     "text": "Ett skepp som ligger längre bort än så, det kan kastmaskinen inte träffa."
     },
     {
-     "s": 56.5,
-     "e": 59.86,
+     "s": 57.82,
+     "e": 61.34,
      "text": "Nu ligger ett romerskt skepp trehundra meter från muren."
     },
     {
-     "s": 60.86,
-     "e": 65.66,
-     "text": "Det ror rakt mot muren, och varje sekund kommer det fyra meter närmare."
+     "s": 62.14,
+     "e": 67.08,
+     "text": "Skeppet ror rakt mot muren, och varje sekund kommer det fyra meter närmare."
     },
     {
-     "s": 66.66,
-     "e": 70.32,
+     "s": 68,
+     "e": 71.5,
      "text": "Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     },
     {
-     "s": 71.62,
-     "e": 73.82,
+     "s": 74,
+     "e": 76.44,
      "text": "Okej... vi börjar med att prova."
     },
     {
-     "s": 74.82,
-     "e": 76.58,
+     "s": 77.24,
+     "e": 79.18,
      "text": "Tänk dig skeppet ute på vattnet."
     },
     {
-     "s": 77.58,
-     "e": 79.72,
+     "s": 79.98,
+     "e": 82.28,
      "text": "Det är trehundra meter kvar till muren."
     },
     {
-     "s": 80.72,
-     "e": 82.16,
+     "s": 83.08,
+     "e": 84.58,
      "text": "Nu går det tio sekunder."
     },
     {
-     "s": 83.16,
-     "e": 84.48,
+     "s": 85.38,
+     "e": 86.92,
      "text": "Hur långt har skeppet rott då?"
     },
     {
-     "s": 85.48,
-     "e": 88.5,
+     "s": 87.78,
+     "e": 90.78,
      "text": "Fyra meter varje sekund, i tio sekunder."
     },
     {
-     "s": 89.5,
-     "e": 91.3,
+     "s": 91.58,
+     "e": 93.66,
      "text": "Tio gånger fyra är fyrtio."
     },
     {
-     "s": 92.3,
-     "e": 94.08,
-     "text": "Skeppet har rott fyrtio meter."
-    },
-    {
-     "s": 95.38,
-     "e": 96.7,
+     "s": 94.76,
+     "e": 96.2,
      "text": "Hur långt är det kvar till muren?"
     },
     {
-     "s": 97.7,
-     "e": 99.54,
+     "s": 97,
+     "e": 98.82,
      "text": "Trehundra minus fyrtio."
     },
     {
-     "s": 100.54,
-     "e": 102.46,
+     "s": 99.62,
+     "e": 101.6,
      "text": "Det blir tvåhundrasextio meter."
     },
     {
-     "s": 103.46,
-     "e": 104.92,
+     "s": 102.4,
+     "e": 103.96,
      "text": "Når kastmaskinen så långt?"
     },
     {
-     "s": 105.92,
-     "e": 107.9,
+     "s": 105.7,
+     "e": 107.8,
      "text": "Nej, den når bara tvåhundra."
     },
     {
-     "s": 108.9,
-     "e": 110.88,
+     "s": 108.6,
+     "e": 110.68,
      "text": "Skeppet är fortfarande för långt bort."
     },
     {
-     "s": 112.18,
-     "e": 113.68,
+     "s": 111.78,
+     "e": 113.46,
      "text": "Vi provar med trettio sekunder."
     },
     {
-     "s": 114.68,
-     "e": 116,
+     "s": 114.26,
+     "e": 115.82,
      "text": "Hur långt har skeppet rott då?"
     },
     {
-     "s": 117,
-     "e": 119.58,
-     "text": "Trettio gånger fyra är hundratjugo meter."
+     "s": 116.62,
+     "e": 121.2,
+     "text": "Tre gånger fyra är tolv, och trettio är tio gånger mer än tre."
     },
     {
-     "s": 120.58,
-     "e": 121.58,
+     "s": 122,
+     "e": 124.88,
+     "text": "Så trettio gånger fyra är hundratjugo meter."
+    },
+    {
+     "s": 125.68,
+     "e": 126.68,
      "text": "Hur långt är det kvar?"
     },
     {
-     "s": 122.42,
-     "e": 124.56,
+     "s": 127.48,
+     "e": 129.54,
      "text": "Trehundra minus hundratjugo."
     },
     {
-     "s": 125.56,
-     "e": 127.18,
+     "s": 130.34,
+     "e": 132.04,
+     "text": "Det kan vi räkna enklare så här."
+    },
+    {
+     "s": 132.84,
+     "e": 137.62,
+     "text": "Trehundra minus hundra är tvåhundra, och sen tar vi bort tjugo till."
+    },
+    {
+     "s": 138.42,
+     "e": 140.12,
      "text": "Det blir hundraåttio meter."
     },
     {
-     "s": 128.18,
-     "e": 129.62,
-     "text": "Det är mindre än tvåhundra."
+     "s": 140.92,
+     "e": 143.24,
+     "text": "Hundraåttio är mindre än tvåhundra."
     },
     {
-     "s": 130.62,
-     "e": 132.14,
+     "s": 144.04,
+     "e": 145.72,
      "text": "Nu kan kastmaskinen träffa."
     },
     {
-     "s": 133.44,
-     "e": 139.02,
+     "s": 146.82,
+     "e": 152.18,
      "text": "Svaret ligger alltså någonstans mellan tio och trettio sekunder. Men var?"
     },
     {
-     "s": 140.02,
-     "e": 141.64,
-     "text": "Att prova tar lång tid."
+     "s": 153.98,
+     "e": 156.48,
+     "text": "Ska vi prova varenda sekund där emellan?"
     },
     {
-     "s": 142.64,
-     "e": 145.12,
-     "text": "Vi behöver ett sätt att räkna ut det på en gång."
+     "s": 157.28,
+     "e": 158.9,
+     "text": "Det tar ju alldeles för lång tid."
     },
     {
-     "s": 146.12,
-     "e": 148.02,
+     "s": 159.7,
+     "e": 162.68,
+     "text": "Vi behöver ett sätt att räkna ut svaret på en gång."
+    },
+    {
+     "s": 163.48,
+     "e": 165.5,
      "text": "Vi vet inte hur många sekunder det tar."
     },
     {
-     "s": 149.02,
-     "e": 151.04,
+     "s": 166.3,
+     "e": 168.3,
      "text": "Så vi kallar antalet sekunder t."
     },
     {
-     "s": 152.34,
-     "e": 154.9,
-     "text": "Först tar vi reda på hur långt skeppet har rott."
+     "s": 169.44,
+     "e": 173.58,
+     "text": "Först tar vi reda på hur långt skeppet har rott efter t sekunder."
     },
     {
-     "s": 155.9,
-     "e": 157.02,
+     "s": 174.38,
+     "e": 175.6,
      "text": "Vi gör som när vi provade."
     },
     {
-     "s": 158.02,
-     "e": 160.06,
+     "s": 176.4,
+     "e": 178.5,
      "text": "Förut tog vi tio gånger fyra."
     },
     {
-     "s": 161.06,
-     "e": 162.9,
+     "s": 179.3,
+     "e": 181.2,
      "text": "Nu tar vi t gånger fyra."
     },
     {
-     "s": 163.9,
-     "e": 166.1,
-     "text": "Det blir fyra gånger t meter."
+     "s": 182,
+     "e": 186.56,
+     "text": "Det blir fyra gånger t meter, och det skriver vi kort som fyra t."
     },
     {
-     "s": 167.1,
-     "e": 168.96,
-     "text": "Det skriver vi kort som fyra t."
-    },
-    {
-     "s": 170.26,
-     "e": 171.94,
+     "s": 187.74,
+     "e": 189.52,
      "text": "Hur långt är det då kvar till muren?"
     },
     {
-     "s": 172.94,
-     "e": 175.66,
+     "s": 190.32,
+     "e": 192.98,
      "text": "Förut tog vi trehundra minus fyrtio."
     },
     {
-     "s": 176.66,
-     "e": 179.7,
+     "s": 193.78,
+     "e": 196.6,
      "text": "Nu tar vi trehundra minus fyra t."
     },
     {
-     "s": 180.7,
-     "e": 183.74,
-     "text": "Det är avståndet till muren efter t sekunder."
+     "s": 197.4,
+     "e": 202.66,
+     "text": "Trehundra minus fyra t är alltså avståndet till muren efter t sekunder."
     },
     {
-     "s": 185.04,
-     "e": 188.18,
+     "s": 203.76,
+     "e": 206.94,
      "text": "Kastmaskinen träffar när det är tvåhundra meter kvar."
     },
     {
-     "s": 189.18,
-     "e": 191,
-     "text": "Men den träffar också när det är mindre."
+     "s": 207.74,
+     "e": 210.88,
+     "text": "Men kastmaskinen träffar också när det är mindre kvar."
     },
     {
-     "s": 192,
-     "e": 193.54,
+     "s": 211.68,
+     "e": 213.24,
      "text": "Hundraåttio meter gick ju bra."
     },
     {
-     "s": 194.54,
-     "e": 198.02,
+     "s": 214.04,
+     "e": 217.04,
      "text": "Avståndet ska alltså vara tvåhundra eller mindre."
     },
     {
-     "s": 199.32,
-     "e": 200.84,
-     "text": "För det finns ett eget tecken."
+     "s": 218.14,
+     "e": 221.02,
+     "text": "För tvåhundra eller mindre finns det ett eget tecken."
     },
     {
-     "s": 201.84,
-     "e": 204.1,
-     "text": "Det ser ut som en spets med ett streck under."
+     "s": 221.82,
+     "e": 224.48,
+     "text": "Tecknet ser ut som en spets med ett streck under."
     },
     {
-     "s": 205.1,
-     "e": 206.98,
+     "s": 225.28,
+     "e": 227,
      "text": "Spetsen pekar mot det mindre."
     },
     {
-     "s": 207.98,
-     "e": 210.26,
+     "s": 227.8,
+     "e": 230,
      "text": "Den öppna sidan är vänd mot det större."
     },
     {
-     "s": 211.26,
-     "e": 213.9,
-     "text": "Och strecket betyder \"eller lika med\"."
+     "s": 230.8,
+     "e": 233.22,
+     "text": "Och strecket betyder eller lika med."
     },
     {
-     "s": 214.9,
-     "e": 218.7,
+     "s": 234.02,
+     "e": 237.46,
      "text": "Tecknet läser vi alltså som mindre än eller lika med."
     },
     {
-     "s": 220,
-     "e": 221.78,
+     "s": 238.56,
+     "e": 240.28,
      "text": "Nu skriver vi frågan med tecknet."
     },
     {
-     "s": 222.78,
-     "e": 227.56,
-     "text": "Trehundra minus fyra t är mindre än eller lika med tvåhundra."
+     "s": 241.08,
+     "e": 247.38,
+     "text": "Trehundra minus fyra t är mindre än eller lika med tvåhundra. Vad betyder det?"
     },
     {
-     "s": 228.56,
-     "e": 229.56,
-     "text": "Vad betyder det?"
-    },
-    {
-     "s": 230.26,
-     "e": 233.9,
+     "s": 248.18,
+     "e": 251.9,
      "text": "Att avståndet till muren är tvåhundra meter eller mindre."
     },
     {
-     "s": 234.9,
-     "e": 236.54,
-     "text": "Sidorna behöver inte vara lika."
+     "s": 252.86,
+     "e": 257.64,
+     "text": "Det som står på var sin sida om tecknet kallas vänster led och höger led."
     },
     {
-     "s": 237.54,
-     "e": 239.36,
-     "text": "Därför kallas det en olikhet."
+     "s": 258.44,
+     "e": 260.16,
+     "text": "Leden behöver inte vara lika."
     },
     {
-     "s": 240.36,
-     "e": 242.74,
-     "text": "Och tecknet kallas olikhetstecken."
+     "s": 260.96,
+     "e": 266.18,
+     "text": "Därför kallas hela raden en olikhet, och tecknet kallas olikhetstecken."
     },
     {
-     "s": 244.04,
-     "e": 246.86,
+     "s": 267.28,
+     "e": 268.64,
+     "text": "Nu löser vi olikheten."
+    },
+    {
+     "s": 269.44,
+     "e": 272.06,
      "text": "En olikhet löser man nästan som en ekvation."
     },
     {
-     "s": 247.86,
-     "e": 250.04,
-     "text": "Vi vill att t ska stå ensamt."
+     "s": 272.86,
+     "e": 277.2,
+     "text": "Vi vill att t ska stå ensamt, och då gör vi samma sak i båda leden."
     },
     {
-     "s": 251.04,
-     "e": 254.38,
-     "text": "Regeln är att vi gör samma sak på båda sidor om tecknet."
-    },
-    {
-     "s": 255.38,
-     "e": 258.84,
+     "s": 278,
+     "e": 281.12,
      "text": "Vad står i vägen för t? Först trehundra."
     },
     {
-     "s": 260.14,
-     "e": 262.46,
-     "text": "Så vi drar bort trehundra på båda sidor."
+     "s": 282.22,
+     "e": 284.44,
+     "text": "Så vi drar bort trehundra från båda leden."
     },
     {
-     "s": 263.46,
-     "e": 264.84,
-     "text": "Vad blir kvar på vänster sida?"
+     "s": 285.24,
+     "e": 291.24,
+     "text": "Trehundra minus trehundra är noll, så i vänster led står bara minus fyra t kvar."
     },
     {
-     "s": 265.84,
-     "e": 268.42,
-     "text": "Trehundra minus trehundra är noll."
+     "s": 292.04,
+     "e": 293.04,
+     "text": "Och i höger led?"
     },
     {
-     "s": 269.42,
-     "e": 271.64,
-     "text": "Kvar står minus fyra t."
-    },
-    {
-     "s": 272.64,
-     "e": 273.64,
-     "text": "Och på höger sida?"
-    },
-    {
-     "s": 274.5,
-     "e": 276.48,
+     "s": 293.58,
+     "e": 295.48,
      "text": "Tvåhundra minus trehundra."
     },
     {
-     "s": 277.48,
-     "e": 278.84,
-     "text": "Då hamnar vi under noll."
+     "s": 296.28,
+     "e": 299.82,
+     "text": "Har man tvåhundra och ska ta bort trehundra, så räcker det inte."
     },
     {
-     "s": 279.84,
-     "e": 282.98,
-     "text": "Hundra under noll, alltså minus hundra."
+     "s": 300.62,
+     "e": 304.22,
+     "text": "Vi hamnar hundra under noll, alltså minus hundra."
     },
     {
-     "s": 283.98,
-     "e": 289,
+     "s": 305.02,
+     "e": 309.96,
      "text": "Nu står det minus fyra t är mindre än eller lika med minus hundra."
     },
     {
-     "s": 290.3,
-     "e": 294.48,
-     "text": "Nu vill vi dela båda sidor med minus fyra, så att t blir ensamt."
+     "s": 311.06,
+     "e": 315.32,
+     "text": "Nu vill vi dela båda leden med minus fyra, så att t blir ensamt."
     },
     {
-     "s": 295.48,
-     "e": 298.14,
+     "s": 316.12,
+     "e": 318.74,
      "text": "Men här skiljer sig olikheter från ekvationer."
     },
     {
-     "s": 299.14,
-     "e": 302.12,
-     "text": "Vad händer med tecknet, när man delar med ett minustal?"
+     "s": 319.54,
+     "e": 323.62,
+     "text": "Minus fyra är ett negativt tal, alltså ett tal under noll."
     },
     {
-     "s": 303.12,
-     "e": 305.04,
+     "s": 325.5,
+     "e": 328.72,
+     "text": "Vad händer med tecknet, när man delar med ett negativt tal?"
+    },
+    {
+     "s": 329.52,
+     "e": 331.42,
      "text": "Vi kollar först med två vanliga tal."
     },
     {
-     "s": 306.34,
-     "e": 308.04,
+     "s": 332.52,
+     "e": 334,
      "text": "Två är mindre än fem."
     },
     {
-     "s": 309.04,
-     "e": 311.18,
-     "text": "Nu tar vi båda gånger minus ett."
+     "s": 334.8,
+     "e": 337.46,
+     "text": "Nu multiplicerar vi båda talen med minus ett."
     },
     {
-     "s": 312.18,
-     "e": 314.86,
+     "s": 338.26,
+     "e": 340.78,
      "text": "Då får vi minus två och minus fem."
     },
     {
-     "s": 315.86,
-     "e": 317.14,
-     "text": "Vilket av dem är störst nu?"
+     "s": 341.58,
+     "e": 343.08,
+     "text": "Vilket av talen är störst nu?"
     },
     {
-     "s": 318.44,
-     "e": 320,
+     "s": 344.18,
+     "e": 345.6,
      "text": "Tänk på en kall vinterdag."
     },
     {
-     "s": 321,
-     "e": 324.32,
+     "s": 346.4,
+     "e": 349.66,
      "text": "Minus två grader är varmare än minus fem grader."
     },
     {
-     "s": 325.32,
-     "e": 327.86,
+     "s": 350.46,
+     "e": 352.98,
      "text": "Så minus två är större än minus fem."
     },
     {
-     "s": 328.86,
-     "e": 329.92,
+     "s": 353.78,
+     "e": 354.82,
      "text": "Kolla på tallinjen."
     },
     {
-     "s": 330.92,
-     "e": 333.04,
+     "s": 355.62,
+     "e": 357.74,
      "text": "Minus fem ligger längre till vänster."
     },
     {
-     "s": 334.04,
-     "e": 335.46,
+     "s": 358.54,
+     "e": 359.92,
      "text": "Talen har bytt ordning."
     },
     {
-     "s": 336.46,
-     "e": 340,
-     "text": "För gånger minus ett flyttar dem till andra sidan om nollan."
+     "s": 360.72,
+     "e": 362.12,
+     "text": "Man kan se det på det här sättet."
     },
     {
-     "s": 341,
-     "e": 342.38,
-     "text": "Och där byter de plats."
+     "s": 362.92,
+     "e": 367.76,
+     "text": "Gånger minus ett flyttar talen till andra sidan om nollan, som i en spegel."
     },
     {
-     "s": 343.68,
-     "e": 345.32,
+     "s": 368.56,
+     "e": 373.4,
+     "text": "Och där byter talen plats, för på den sidan är talet närmast nollan störst."
+    },
+    {
+     "s": 374.5,
+     "e": 376.24,
      "text": "Förut stod det mindre än."
     },
     {
-     "s": 346.32,
-     "e": 347.88,
+     "s": 377.04,
+     "e": 378.52,
      "text": "Nu står det större än."
     },
     {
-     "s": 348.88,
-     "e": 349.94,
+     "s": 379.32,
+     "e": 380.32,
      "text": "Tecknet har vänt."
     },
     {
-     "s": 350.94,
-     "e": 352.34,
+     "s": 381.1,
+     "e": 382.22,
      "text": "Och så är det alltid."
     },
     {
-     "s": 353.34,
-     "e": 357,
-     "text": "Tar man båda sidor gånger ett minustal, så vänder tecknet."
+     "s": 383.02,
+     "e": 387.16,
+     "text": "Multiplicerar man båda leden med ett negativt tal, så vänder tecknet."
     },
     {
-     "s": 358,
-     "e": 360.66,
-     "text": "Delar man med ett minustal, så vänder det också."
+     "s": 387.96,
+     "e": 391.12,
+     "text": "Delar man med ett negativt tal, så vänder tecknet också."
     },
     {
-     "s": 361.66,
-     "e": 364.18,
-     "text": "Ett minustal är ett tal under noll."
+     "s": 391.92,
+     "e": 395.46,
+     "text": "Det är samma regel som förut, samma sak i båda leden."
     },
     {
-     "s": 365.18,
-     "e": 368.82,
-     "text": "Det är samma regel som förut, samma sak på båda sidor."
+     "s": 396.26,
+     "e": 398.5,
+     "text": "Men med ett tillägg för negativa tal."
     },
     {
-     "s": 369.82,
-     "e": 372.06,
-     "text": "Men med ett tillägg för minustal."
+     "s": 399.6,
+     "e": 403.3,
+     "text": "Nu delar vi båda leden med minus fyra, och vi vänder tecknet."
     },
     {
-     "s": 373.36,
-     "e": 377.32,
-     "text": "Nu delar vi båda sidor med minus fyra, och vi vänder tecknet."
+     "s": 404.1,
+     "e": 405.32,
+     "text": "Vad blir det i vänster led?"
     },
     {
-     "s": 378.32,
-     "e": 379.54,
-     "text": "Vad blir det på vänster sida?"
+     "s": 406.12,
+     "e": 409.84,
+     "text": "Minus fyra t betyder minus fyra gånger t."
     },
     {
-     "s": 380.54,
-     "e": 383.14,
-     "text": "Minus fyra t delat med minus fyra."
-    },
-    {
-     "s": 384.14,
-     "e": 386.88,
+     "s": 410.64,
+     "e": 413.54,
      "text": "Minus fyra delat med minus fyra är ett."
     },
     {
-     "s": 387.88,
-     "e": 389,
+     "s": 414.34,
+     "e": 415.58,
      "text": "Så kvar står bara t."
     },
     {
-     "s": 390.3,
-     "e": 391.3,
-     "text": "Och på höger sida?"
+     "s": 416.68,
+     "e": 417.68,
+     "text": "Och i höger led?"
     },
     {
-     "s": 392.18,
-     "e": 394.56,
+     "s": 418.24,
+     "e": 420.72,
      "text": "Minus hundra delat med minus fyra."
     },
     {
-     "s": 395.56,
-     "e": 397.78,
-     "text": "Hundra delat med fyra är tjugofem."
+     "s": 421.52,
+     "e": 423.52,
+     "text": "Först hundra delat med fyra."
     },
     {
-     "s": 398.78,
-     "e": 401.24,
-     "text": "Och minus delat med minus blir plus."
+     "s": 424.32,
+     "e": 427.06,
+     "text": "Att dela med fyra är att halvera två gånger."
     },
     {
-     "s": 402.24,
-     "e": 403.4,
+     "s": 427.86,
+     "e": 431.76,
+     "text": "Hälften av hundra är femtio, och hälften av femtio är tjugofem."
+    },
+    {
+     "s": 432.56,
+     "e": 437.2,
+     "text": "Och minus delat med minus blir plus, precis som minus gånger minus."
+    },
+    {
+     "s": 438,
+     "e": 439.06,
      "text": "Så det blir tjugofem."
     },
     {
-     "s": 404.4,
-     "e": 405.74,
-     "text": "Det kan vi kolla baklänges."
-    },
-    {
-     "s": 406.74,
-     "e": 411.24,
-     "text": "Minus fyra gånger tjugofem är minus hundra. Det stämmer."
-    },
-    {
-     "s": 412.54,
-     "e": 416.32,
+     "s": 440.16,
+     "e": 443.94,
      "text": "Nu står det att t är större än eller lika med tjugofem."
     },
     {
-     "s": 417.32,
-     "e": 418.44,
-     "text": "Tecknet har vänt."
-    },
-    {
-     "s": 419.44,
-     "e": 420.44,
+     "s": 444.74,
+     "e": 445.74,
      "text": "Vad betyder det?"
     },
     {
-     "s": 421.16,
-     "e": 423.44,
+     "s": 446.2,
+     "e": 448.52,
      "text": "Att t är tjugofem eller mer."
     },
     {
-     "s": 424.44,
-     "e": 427.22,
-     "text": "Och kom ihåg att t är antalet sekunder."
+     "s": 449.32,
+     "e": 452.58,
+     "text": "Och nu får vi inte glömma att t är antalet sekunder."
     },
     {
-     "s": 428.52,
-     "e": 432,
-     "text": "Kastmaskinen kan alltså träffa skeppet efter tjugofem sekunder."
+     "s": 453.6,
+     "e": 456.96,
+     "text": "Men en ekvation och en olikhet är lätta att blanda ihop."
     },
     {
-     "s": 433,
-     "e": 434.54,
-     "text": "Och hela tiden efter det."
+     "s": 457.76,
+     "e": 462.42,
+     "text": "En ekvation har ett likhetstecken, och svaret blir ofta ett enda tal,"
     },
     {
-     "s": 435.54,
-     "e": 436.82,
-     "text": "Stämmer det med när vi provade?"
+     "s": 462.72,
+     "e": 465.1,
+     "text": "till exempel t är lika med tjugofem."
     },
     {
-     "s": 437.82,
-     "e": 440.86,
-     "text": "Ja, för tjugofem ligger mellan tio och trettio."
+     "s": 465.9,
+     "e": 470.18,
+     "text": "En olikhet har ett olikhetstecken, och svaret blir många tal."
     },
     {
-     "s": 441.86,
-     "e": 443.24,
-     "text": "Vi kan också kolla exakt."
+     "s": 470.98,
+     "e": 473.82,
+     "text": "Här är det alla tal från tjugofem och uppåt."
     },
     {
-     "s": 444.24,
-     "e": 448.02,
-     "text": "Efter tjugofem sekunder har skeppet rott tjugofem gånger fyra."
+     "s": 474.92,
+     "e": 478.34,
+     "text": "Kastmaskinen kan alltså träffa skeppet efter tjugofem sekunder,"
     },
     {
-     "s": 449.02,
-     "e": 450.36,
-     "text": "Det är hundra meter."
+     "s": 478.66,
+     "e": 480.06,
+     "text": "och hela tiden efter det."
     },
     {
-     "s": 451.36,
-     "e": 453.18,
-     "text": "Då är det tvåhundra meter kvar."
+     "s": 480.86,
+     "e": 484.06,
+     "text": "Om vi går tillbaka till när vi provade, så ser vi att det stämmer,"
     },
     {
-     "s": 454.18,
-     "e": 456.58,
-     "text": "Precis så långt som kastmaskinen når."
+     "s": 484.38,
+     "e": 487.06,
+     "text": "för tjugofem ligger mellan tio och trettio."
     },
     {
-     "s": 457.88,
-     "e": 460.18,
-     "text": "Svaret kan vi också rita på tallinjen."
+     "s": 488.8,
+     "e": 491.24,
+     "text": "Men tänk om man glömmer att vända tecknet."
     },
     {
-     "s": 461.18,
-     "e": 465.14,
-     "text": "Vi ritar en fylld prick vid tjugofem, för tjugofem räknas med."
+     "s": 492.04,
+     "e": 495.5,
+     "text": "Då får man att t är mindre än eller lika med tjugofem."
     },
     {
-     "s": 466.14,
-     "e": 468.42,
-     "text": "Från pricken drar vi en linje åt höger."
+     "s": 496.3,
+     "e": 498.3,
+     "text": "Då skulle tio sekunder räknas med."
     },
     {
-     "s": 469.42,
-     "e": 471.56,
-     "text": "För alla större tal räknas också."
+     "s": 499.1,
+     "e": 503.38,
+     "text": "Men efter tio sekunder var det ju tvåhundrasextio meter kvar till muren,"
     },
     {
-     "s": 472.56,
-     "e": 475.32,
-     "text": "Var ligger tio? Utanför linjen."
+     "s": 503.68,
+     "e": 504.68,
+     "text": "och det var för långt."
     },
     {
-     "s": 476.32,
-     "e": 482.3,
-     "text": "Efter tio sekunder var skeppet för långt bort. Och trettio? På linjen."
+     "s": 505.48,
+     "e": 507.1,
+     "text": "Så tecknet måste vända."
     },
     {
-     "s": 483.3,
-     "e": 484.96,
-     "text": "Då kunde kastmaskinen träffa."
+     "s": 508.2,
+     "e": 511.72,
+     "text": "Alla tal från tjugofem och uppåt kan vi rita på tallinjen."
     },
     {
-     "s": 486.26,
-     "e": 488.74,
+     "s": 512.52,
+     "e": 516.24,
+     "text": "Vi ritar en fylld punkt vid tjugofem, för tjugofem räknas med."
+    },
+    {
+     "s": 517.04,
+     "e": 520.6,
+     "text": "Efter tjugofem sekunder är det ju precis tvåhundra meter kvar,"
+    },
+    {
+     "s": 520.96,
+     "e": 522.9,
+     "text": "och så långt når kastmaskinen."
+    },
+    {
+     "s": 523.7,
+     "e": 528.44,
+     "text": "Från punkten drar vi en linje åt höger, för alla större tal räknas också."
+    },
+    {
+     "s": 529.54,
+     "e": 532.18,
      "text": "Tänk om strecket under tecknet hade saknats."
     },
     {
-     "s": 489.74,
-     "e": 491.7,
+     "s": 532.98,
+     "e": 534.86,
      "text": "Då hade tjugofem inte räknats med."
     },
     {
-     "s": 492.7,
-     "e": 494.58,
-     "text": "Då hade vi ritat en ring vid tjugofem."
+     "s": 535.66,
+     "e": 539.06,
+     "text": "Då hade vi ritat en ring vid tjugofem, som är tom inuti."
     },
     {
-     "s": 495.58,
-     "e": 496.58,
-     "text": "Inte en prick."
+     "s": 539.86,
+     "e": 541.16,
+     "text": "Inte en fylld punkt."
     },
     {
-     "s": 497.74,
-     "e": 499.88,
-     "text": "Nu en olikhet utan skepp."
+     "s": 542.26,
+     "e": 546.48,
+     "text": "Nu en olikhet utan skepp, där vi delar med ett positivt tal,"
     },
     {
-     "s": 500.88,
-     "e": 503.74,
+     "s": 546.84,
+     "e": 548.52,
+     "text": "alltså ett tal över noll."
+    },
+    {
+     "s": 549.32,
+     "e": 552.24,
      "text": "Tre x plus fem är mindre än tjugo."
     },
     {
-     "s": 504.74,
-     "e": 506.92,
+     "s": 553.04,
+     "e": 555.3,
      "text": "Här står x för ett okänt tal."
     },
     {
-     "s": 507.92,
-     "e": 509.56,
+     "s": 556.1,
+     "e": 557.72,
      "text": "Vi vill ha x ensamt."
     },
     {
-     "s": 510.56,
-     "e": 513.4,
+     "s": 558.52,
+     "e": 561.06,
      "text": "Vad står i vägen? Först femman."
     },
     {
-     "s": 514.4,
-     "e": 516.42,
-     "text": "Så vi drar bort fem på båda sidor."
+     "s": 561.86,
+     "e": 563.88,
+     "text": "Så vi drar bort fem från båda leden."
     },
     {
-     "s": 517.42,
-     "e": 520.18,
+     "s": 564.68,
+     "e": 567.7,
      "text": "Då står det tre x är mindre än femton."
     },
     {
-     "s": 521.48,
-     "e": 525.78,
-     "text": "Sen trean. Tre x betyder tre gånger x."
+     "s": 568.8,
+     "e": 574.8,
+     "text": "Sen trean. Tre x är tre gånger x, så vi delar båda leden med tre."
     },
     {
-     "s": 526.78,
-     "e": 528.62,
-     "text": "Så vi delar båda sidor med tre."
+     "s": 575.6,
+     "e": 577.6,
+     "text": "Och vad sa regeln om negativa tal?"
     },
     {
-     "s": 529.62,
-     "e": 531.46,
-     "text": "Och vad sa regeln om minustal?"
+     "s": 578.58,
+     "e": 581.6,
+     "text": "Tre är inget negativt tal, det är större än noll."
     },
     {
-     "s": 532.46,
-     "e": 535.54,
-     "text": "Tre är inget minustal, det är större än noll."
-    },
-    {
-     "s": 536.54,
-     "e": 537.76,
+     "s": 582.4,
+     "e": 583.68,
      "text": "Så tecknet står kvar."
     },
     {
-     "s": 538.76,
-     "e": 540.9,
+     "s": 584.48,
+     "e": 586.58,
      "text": "Femton delat med tre är fem."
     },
     {
-     "s": 541.9,
-     "e": 543.76,
+     "s": 587.38,
+     "e": 589.26,
      "text": "Då är x mindre än fem."
     },
     {
-     "s": 545.06,
-     "e": 546.06,
+     "s": 590.36,
+     "e": 591.36,
      "text": "Vad betyder det?"
     },
     {
-     "s": 546.74,
-     "e": 549.98,
+     "s": 591.82,
+     "e": 595.08,
      "text": "Att x kan vara vilket tal som helst under fem."
     },
     {
-     "s": 550.98,
-     "e": 552.86,
+     "s": 595.88,
+     "e": 598.06,
      "text": "Till exempel tre, eller noll."
     },
     {
-     "s": 553.86,
-     "e": 556.1,
-     "text": "Här saknas strecket under tecknet."
+     "s": 598.86,
+     "e": 601.52,
+     "text": "Som vi ser saknas strecket under tecknet."
     },
     {
-     "s": 557.1,
-     "e": 558.82,
+     "s": 602.32,
+     "e": 604.02,
      "text": "Så fem räknas inte med."
     },
     {
-     "s": 559.82,
-     "e": 562.08,
+     "s": 604.82,
+     "e": 607.04,
      "text": "På tallinjen blir det en ring vid fem."
     },
     {
-     "s": 563.08,
-     "e": 565.7,
+     "s": 607.84,
+     "e": 610.42,
      "text": "Och en linje åt vänster, mot de mindre talen."
     },
     {
-     "s": 567,
-     "e": 569.84,
+     "s": 611.52,
+     "e": 614.46,
      "text": "Vi kollar med ett tal på linjen, till exempel fyra."
     },
     {
-     "s": 570.84,
-     "e": 572.58,
+     "s": 615.26,
+     "e": 616.98,
      "text": "Tre gånger fyra är tolv."
     },
     {
-     "s": 573.58,
-     "e": 575.64,
+     "s": 617.78,
+     "e": 619.74,
      "text": "Tolv plus fem är sjutton."
     },
     {
-     "s": 576.64,
-     "e": 581.08,
-     "text": "Är sjutton mindre än tjugo? Ja. Det stämmer."
+     "s": 620.54,
+     "e": 623.48,
+     "text": "Är sjutton mindre än tjugo? Ja."
     },
     {
-     "s": 582.38,
-     "e": 586.42,
+     "s": 624.56,
+     "e": 625.82,
+     "text": "Snyggt, det går ihop."
+    },
+    {
+     "s": 626.62,
+     "e": 628.26,
+     "text": "Nu går vi tillbaka till Syrakusa."
+    },
+    {
+     "s": 630.76,
+     "e": 634.84,
      "text": "Arkimedes kastmaskiner höll de romerska skeppen borta från muren."
     },
     {
-     "s": 587.42,
-     "e": 590.4,
+     "s": 635.64,
+     "e": 638.58,
      "text": "Romarna fick vänta utanför staden i två år."
     },
     {
-     "s": 591.4,
-     "e": 596.2,
+     "s": 639.38,
+     "e": 644.08,
      "text": "Men en natt år tvåhundratolv före Kristus firade staden en fest."
     },
     {
-     "s": 597.2,
-     "e": 602.6,
-     "text": "Det var få vakter på muren, och romerska soldater klättrade över muren och tog staden."
+     "s": 644.98,
+     "e": 647,
+     "text": "Det var bara några få vakter på muren."
     },
     {
-     "s": 603.9,
-     "e": 606.8,
+     "s": 647.8,
+     "e": 651.32,
+     "text": "Romerska soldater klättrade över muren och tog staden."
+    },
+    {
+     "s": 652.46,
+     "e": 655.5,
      "text": "En romersk soldat hittade Arkimedes i hans hus."
     },
     {
-     "s": 607.8,
-     "e": 611.44,
+     "s": 656.3,
+     "e": 660.22,
      "text": "Han satt böjd över en figur som han hade ritat i sand på ett bord."
     },
     {
-     "s": 612.44,
-     "e": 616.34,
+     "s": 661.02,
+     "e": 665.34,
      "text": "Arkimedes bad att få räkna klart, men soldaten dödade honom."
     },
     {
-     "s": 617.64,
-     "e": 618.66,
+     "s": 667.84,
+     "e": 668.84,
      "text": "Nu är det din tur."
     },
     {
-     "s": 619.66,
-     "e": 623.2,
+     "s": 669.56,
+     "e": 673,
      "text": "Ett annat romerskt skepp ligger fyrahundra meter från muren."
     },
     {
-     "s": 624.2,
-     "e": 629.04,
+     "s": 673.8,
+     "e": 678.74,
      "text": "Det ror rakt mot muren, och varje sekund kommer det fem meter närmare."
     },
     {
-     "s": 630.04,
-     "e": 632.5,
+     "s": 679.54,
+     "e": 682,
      "text": "Kastmaskinen når tvåhundra meter."
     },
     {
-     "s": 633.5,
-     "e": 639.88,
-     "text": "Lös olikheten fyrahundra minus fem t är mindre än eller lika med tvåhundra."
+     "s": 683.08,
+     "e": 687.8,
+     "text": "Nu får du två frågor att svara på i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 640.88,
-     "e": 644.34,
+     "s": 688.6,
+     "e": 691.26,
+     "text": "Först: Prova med tjugo sekunder."
+    },
+    {
+     "s": 692.06,
+     "e": 693.9,
+     "text": "Hur långt är det kvar till muren då?"
+    },
+    {
+     "s": 694.82,
+     "e": 702.68,
+     "text": "Sen: Lös olikheten fyrahundra minus fem t är mindre än eller lika med tvåhundra."
+    },
+    {
+     "s": 703.48,
+     "e": 706.82,
      "text": "Efter hur många sekunder kan kastmaskinen träffa skeppet?"
     }
    ]

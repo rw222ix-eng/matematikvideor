@@ -87,7 +87,18 @@
     },
     "delar": [
       {
-        "fraga": "Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
+        "fraga": "Först: Prova med 20 sekunder. Hur långt är det kvar till muren då?",
+        "typ": "tal",
+        "svar": 300,
+        "enhet": "meter",
+        "exempel": "t.ex. 260",
+        "fel": [
+          { "svar": "100", "text": "Det är hur långt skeppet har rott. Dra det från 400." },
+          { "svar": "380", "text": "Skeppet ror 5 m varje sekund i 20 sekunder, alltså 20 · 5 = 100 m." }
+        ]
+      },
+      {
+        "fraga": "Sen: Lös olikheten 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
         "typ": "olikhet",
         "variabel": "t",
         "svar": "t >= 40",
@@ -106,13 +117,17 @@
         ]
       }
     ],
-    "ledtrad": { "fras": "Nu vill vi dela båda sidor med minus fyra", "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet." },
+    "ledtrad": { "fras": "Nu vill vi dela båda leden med minus fyra", "text": "Dra 400 från båda sidor och dela sedan med −5. Tänk på vad som händer med tecknet." },
     "losning": [
       "400 − 5t ≤ 200",
       "Dra 400 från båda sidor. Då blir det −5t ≤ −200.",
       "Dela med −5. Det är ett negativt tal, så tecknet vänder, och t ≥ 40.",
       "Kastmaskinen kan träffa skeppet efter 40 sekunder.",
       "Kontroll: 400 − 5 · 40 = 200, precis så långt kastmaskinen når."
+    ],
+    "slut": [
+      "Först: Hur långt är det kvar efter 20 sekunder?",
+      "Sen: Lös 400 − 5t ≤ 200. Efter hur många sekunder kan kastmaskinen träffa?"
     ]
   },
   "viete-och-chiffret": {
