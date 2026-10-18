@@ -1,6 +1,10 @@
 {
   "delos-och-altaret": {
     "fraga": "Tänk dig att prästinnan i stället hade sagt att altaret skulle bli tre gånger så stort. Det gamla altaret var ett block, så det nya ska rymma 3 block. Vi kallar sidan x. Då ska x³ vara lika med 3.",
+    "slut": [
+      "Först: Skriv ekvationen för sidan x.",
+      "Sen: Lös den på räknaren. Hur lång blir sidan, med två decimaler?"
+    ],
     "figur": {
       "vy": [1920, 1080],
       "bild": "p02-delos-apollons-altare",
@@ -25,7 +29,7 @@
     },
     "delar": [
       {
-        "fraga": "Skriv ekvationen för sidan x.",
+        "fraga": "Först: Skriv ekvationen för sidan x.",
         "typ": "ekvation",
         "svar": "x^3 = 3",
         "exempel": "t.ex. x^3 = 2",
@@ -37,7 +41,7 @@
         ]
       },
       {
-        "fraga": "Lös den på räknaren. Hur lång blir sidan, med två decimaler?",
+        "fraga": "Sen: Lös den på räknaren. Hur lång blir sidan, med två decimaler?",
         "typ": "tal",
         "svar": 1.44225,
         "tolerans": 0.006,
