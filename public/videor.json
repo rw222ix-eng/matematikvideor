@@ -1,5 +1,5 @@
 {
- "byggd": "2026-10-18T14:27:48.140Z",
+ "byggd": "2026-10-19T19:24:34.376Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -30790,7 +30790,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k3-04-beroende-och-komplementhandelse-v1/ma1c-k3-04-beroende-och-komplementhandelse-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k3-04-beroende-och-komplementhandelse-v2/ma1c-k3-04-beroende-och-komplementhandelse-1080p.mp4",
    "moment": "Beroende händelser och komplementhändelse",
    "begrepp": [
     "sannolikhet",
@@ -30808,7 +30808,7 @@
    ],
    "beskrivning": "Våren 1961 sitter Edward Thorp, 28 år och lärare i matematik vid MIT, vid ett spelbord på ett kasino vid sjön Tahoe. Korten som har delats ut läggs inte tillbaka i leken. Hur stor är chansen att han får minst ett ess? Vi räknar sannolikheten för nästa kort utan återläggning, skiljer på beroende och oberoende händelser, ritar ett träddiagram och multiplicerar längs grenen (4/10 · 3/9 ≈ 13 %). Sedan räknar vi minst ett ess som komplementhändelsen till inget ess: 1 − 1/3 = 2/3. Med återläggning blir det 64 %.",
    "youtube": null,
-   "langd": 565,
+   "langd": 575,
    "omslag": "omslag/ma1c-k3-04-beroende-och-komplementhandelse.jpg?v=07dd99d4",
    "omslagRen": "omslag/ma1c-k3-04-beroende-och-komplementhandelse-ren.jpg?v=97791ae4",
    "omslagStor": null,
@@ -30818,83 +30818,87 @@
      "text": "Det är våren nittonhundrasextioett. Edward Thorp är tjugoåtta år och lärare i matematik vid universitetet M I T, nära Boston. Men just nu sitter han vid ett spelbord på ett kasino vid sjön Tahoe, högt uppe i bergen i Nevada. Han spelar kortspelet tjugoett, och framför sig har han en hög med spelmarker. Spelmarker är små plastbrickor som man spelar med i stället för pengar."
     },
     {
-     "t": 38,
+     "t": 37,
      "text": "Kortgivaren delar ut korten ur en vanlig kortlek med femtiotvå kort. Fyra av korten är ess, och ess är bra kort för spelaren. Korten som har spelats läggs i en hög vid sidan av. De läggs inte tillbaka i leken förrän kortgivaren blandar om hela leken."
     },
     {
-     "t": 57,
+     "t": 56,
      "text": "Thorp har tänkt på något som de andra spelarna inte tänker på. Varje kort som läggs åt sidan ändrar vad som finns kvar i leken. Hemma på M I T har han räknat på det med universitetets stora dator. Han tror att han kan vinna, om han håller räkningen på korten som redan har kommit."
     },
     {
-     "t": 78,
+     "t": 77,
      "text": "Pengarna på bordet är inte hans egna. En rik man som spelar mycket har lånat honom tiotusen dollar för att se om idén fungerar, och mannen är med på resan."
     },
     {
-     "t": 90,
+     "t": 89,
      "text": "Nu har kortgivaren delat ut nästan hela leken. Tänk dig att tio kort är kvar, och att Thorp har räknat ut att alla fyra essen finns bland dem. Han ska få två kort. Hur stor är chansen att minst ett av hans två kort är ett ess? Och ändras chansen för det andra kortet, när det första inte läggs tillbaka? Det tar vi reda på nu."
     },
     {
-     "t": 118,
+     "t": 117,
      "text": "Vi börjar med det första kortet. Chansen för något kallas sannolikhet, och i matten skrivs den med ett stort pe. Sannolikheten får vi genom att ta antalet kort vi vill ha, delat med antalet kort som finns. Här vill vi ha ett ess. Fyra av de tio korten är ess, så sannolikheten är fyra tiondelar."
     },
     {
-     "t": 142,
+     "t": 140,
      "text": "Säg nu att det första kortet blir ett ess. Det läggs inte tillbaka, och det kallas utan återläggning. Hur många kort finns kvar då? Nio. Och hur många av dem är ess? Bara tre. Så sannolikheten att det andra kortet också är ett ess är tre niondelar."
     },
     {
-     "t": 162,
+     "t": 161,
      "text": "Säg i stället att det första kortet inte blir ett ess. Då är nio kort kvar, men alla fyra essen finns kvar. Sannolikheten för ett ess blir då fyra niondelar. Ändras alltså chansen för det andra kortet? Ja. Den beror på vad det första kortet blev. Därför kallas de två korten för beroende händelser."
     },
     {
-     "t": 186,
+     "t": 187,
      "text": "Beroende och oberoende händelser är lätta att blanda ihop. När man kastar en tärning två gånger, minns tärningen inte det första kastet. Sannolikheten för en sexa är en sjättedel varje gång. De två kasten är oberoende händelser. Men kortleken minns. Varje kort som inte läggs tillbaka ändrar sannolikheten för nästa kort."
     },
     {
-     "t": 211,
+     "t": 212,
      "text": "Nu samlar vi allt det här i ett träddiagram. Varje gren är ett kort, och på grenen står sannolikheten. Första kortet: ess med fyra tiondelar. Sex av de tio korten är inte ess, så inte ess får sex tiondelar. Som vi ser är grenarna från samma punkt ett tillsammans. Efter ett ess: ess med tre niondelar och inte ess med sex niondelar. Efter ett kort som inte är ess: ess med fyra niondelar och inte ess med fem niondelar."
     },
     {
-     "t": 246,
+     "t": 247,
      "text": "Hur stor är sannolikheten att båda korten är ess? Vi följer grenen ess, ess, och multiplicerar längs grenen, precis som med oberoende händelser. Det kallas multiplikationsprincipen. Det enda nya är att den andra sannolikheten har ändrats. Alltså fyra tiondelar gånger tre niondelar. Först täljarna, talen överst: fyra gånger tre är tolv. Sen nämnarna, talen nederst: tio gånger nio är nittio. Det blir tolv nittiondelar. Det är ungefär tretton procent, så det händer inte så ofta."
     },
     {
-     "t": 286,
+     "t": 288,
      "text": "Nu tillbaka till frågan om minst ett ess. Minst ett ess betyder ett ess eller två ess. I trädet är det tre grenar: ess och ess, ess och inte ess, och inte ess och ess. Vi kunde räkna ut alla tre grenarna och lägga ihop dem med additionsprincipen. Oj, vad jobbigt. Det finns ett kortare sätt."
     },
     {
-     "t": 312,
+     "t": 315,
      "text": "Bara en gren saknar ess helt, och det är inte ess och inte ess. Den räknar vi ut. Sex tiondelar gånger fem niondelar. Sex gånger fem är trettio, och tio gånger nio är nittio. Så det blir trettio nittiondelar. Och trettio nittiondelar är en tredjedel, för trettio går tre gånger i nittio. Sannolikheten att Thorp inte får något ess alls är alltså en tredjedel."
     },
     {
-     "t": 342,
+     "t": 345,
      "text": "Nu får vi inte glömma att alla grenarna tillsammans är ett, för Thorp hamnar alltid på någon av grenarna. Antingen får Thorp minst ett ess, eller så får han inget ess alls. Finns det något tredje? Nej. Två händelser som inte kan hända samtidigt, men som tillsammans är allt som kan hända, kallas varandras komplementhändelser. Inget ess är alltså komplementhändelsen till minst ett ess. Deras sannolikheter är alltid ett tillsammans."
     },
     {
-     "t": 374,
+     "t": 378,
      "text": "Det skriver vi som en regel. Pe av minst ett ess plus pe av inget ess är ett. Då är pe av minst ett ess lika med ett minus pe av inget ess. Här blir det ett minus en tredjedel. Ett är tre tredjedelar, och tar vi bort en tredjedel är två tredjedelar kvar. Thorp får alltså minst ett ess i två fall av tre. Det är ganska ofta."
     },
     {
-     "t": 403,
+     "t": 407,
      "text": "Man kan också se det på det här sättet. Tänk om kortgivaren lade tillbaka varje kort och blandade igen. Det kallas med återläggning, och då är korten oberoende händelser. Sannolikheten för inget ess är sex tiondelar båda gångerna. Sex tiondelar gånger sex tiondelar: sex gånger sex är trettiosex, och tio gånger tio är hundra. Det blir trettiosex hundradelar. Sannolikheten för minst ett ess blir ett minus trettiosex hundradelar. Ett är hundra hundradelar, så det blir sextiofyra hundradelar, alltså sextiofyra procent."
     },
     {
-     "t": 445,
+     "t": 448,
      "text": "Utan återläggning var det två tredjedelar, alltså ungefär sextiosju procent. Det är lite mer. Varför då? Jo, när ett kort som inte är ess försvinner, blir essen en större del av korten som är kvar. Regeln ett minus pe av inget ess fungerar alltså både med beroende och oberoende händelser. Nu går vi tillbaka till Thorp."
     },
     {
-     "t": 472,
+     "t": 475,
      "text": "Thorp spelar på just det här sättet. Han håller räkningen på korten som har kommit. När många ess och tior är kvar i leken, satsar han mycket. När de är slut, satsar han lite. På en enda helg vid sjön Tahoe vinner han elvatusen dollar."
     },
     {
-     "t": 491,
-     "text": "Men kasinona märker vad han gör. Kortgivarna börjar blanda om leken långt innan korten tar slut. Senare spelar många kasinon med flera kortlekar samtidigt. Thorp blir igenkänd och får inte spela, så han klär ut sig med lösskägg och glasögon. För alla som inte räknar korten vinner kasinot i längden."
+     "t": 493,
+     "text": "Men kasinona märker vad han gör. Kortgivarna börjar blanda om leken långt innan korten tar slut. Senare spelar många kasinon med flera kortlekar samtidigt. Thorp blir igenkänd och får inte spela längre."
     },
     {
-     "t": 515,
+     "t": 509,
+     "text": "Så han klär ut sig. Han sätter på sig ett lösskägg och andra glasögon och går tillbaka till spelbordet. Det går bra för Thorp. Men kasinot tjänar ändå pengar, eftersom de andra spelarna inte räknar korten som han gör."
+    },
+    {
+     "t": 525,
      "text": "År nittonhundrasextiotvå ger Thorp ut en bok om hur man räknar korten, och den säljs i hundratusentals exemplar. Senare slutar han spela och använder matten på börsen i stället. Men en fråga står kvar. Kan man räkna korten, om kortgivaren blandar leken efter varje runda?"
     },
     {
-     "t": 538,
+     "t": 548,
      "text": "Nu är det din tur. Fem kort är kvar i leken, och två av dem är ess. Du får två kort, och korten läggs inte tillbaka. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur stor är sannolikheten att inget av korten är ett ess? Sen: Hur stor är sannolikheten att minst ett av korten är ett ess?"
     }
    ],
@@ -30905,108 +30909,113 @@
      "typ": "historia"
     },
     {
-     "t": 38,
+     "t": 37,
      "rubrik": "52 kort och 4 ess",
      "typ": "historia"
     },
     {
-     "t": 57,
+     "t": 56,
      "rubrik": "Korten läggs inte tillbaka",
      "typ": "historia"
     },
     {
-     "t": 78,
+     "t": 77,
      "rubrik": "Lånade pengar",
      "typ": "historia"
     },
     {
-     "t": 90,
+     "t": 89,
      "rubrik": "Frågan: minst ett ess?",
      "typ": "historia"
     },
     {
-     "t": 118,
+     "t": 117,
      "rubrik": "Sannolikhet: P(ess) = 4/10",
      "typ": "matte"
     },
     {
-     "t": 142,
+     "t": 140,
      "rubrik": "Utan återläggning: 3/9",
      "typ": "matte"
     },
     {
-     "t": 162,
+     "t": 161,
      "rubrik": "Inte ess först: 4/9",
      "typ": "matte"
     },
     {
-     "t": 186,
+     "t": 187,
      "rubrik": "Beroende och oberoende händelser",
      "typ": "matte"
     },
     {
-     "t": 211,
+     "t": 212,
      "rubrik": "Träddiagram",
      "typ": "matte"
     },
     {
-     "t": 246,
+     "t": 247,
      "rubrik": "Båda ess: 4/10 · 3/9 ≈ 13 %",
      "typ": "matte"
     },
     {
-     "t": 286,
+     "t": 288,
      "rubrik": "Minst ett ess: tre grenar",
      "typ": "matte"
     },
     {
-     "t": 312,
+     "t": 315,
      "rubrik": "Inget ess: 6/10 · 5/9 = 1/3",
      "typ": "matte"
     },
     {
-     "t": 342,
+     "t": 345,
      "rubrik": "Komplementhändelser",
      "typ": "matte"
     },
     {
-     "t": 374,
+     "t": 378,
      "rubrik": "P(minst ett ess) = 1 − 1/3 = 2/3",
      "typ": "matte"
     },
     {
-     "t": 403,
+     "t": 407,
      "rubrik": "Med återläggning: 64 %",
      "typ": "matte"
     },
     {
-     "t": 445,
+     "t": 448,
      "rubrik": "67 % mot 64 %",
      "typ": "matte"
     },
     {
-     "t": 472,
+     "t": 475,
      "rubrik": "Thorp vinner 11 000 dollar",
      "typ": "historia"
     },
     {
-     "t": 491,
+     "t": 493,
      "rubrik": "Kasinona slår tillbaka",
      "typ": "historia"
     },
     {
-     "t": 515,
+     "t": 509,
+     "rubrik": "Thorp i lösskägg",
+     "typ": "historia"
+    },
+    {
+     "t": 525,
      "rubrik": "Boken och börsen",
      "typ": "historia"
     },
     {
-     "t": 538,
+     "t": 548,
      "rubrik": "Din tur: fem kort, två ess",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 538,
+    "notisFran": 548,
     "fraga": "5 kort är kvar i leken, och två av dem är ess. Du får två kort, och korten läggs inte tillbaka. Du ska svara på två frågor.",
     "slut": [
      "Först: Hur stor är sannolikheten att inget av korten är ett ess?",
@@ -31090,7 +31099,7 @@
     ],
     "ledtrad": {
      "text": "Rita ett träddiagram. Första kortet: 3 av 5 är inte ess. Andra kortet: då är 4 kort kvar, och 2 av dem är inte ess. Multiplicera längs grenen inte ess, inte ess. Minst ett ess är komplementhändelsen, så ta 1 minus det.",
-     "t": 312
+     "t": 315
     },
     "losning": [
      "Första kortet: 5 kort, 3 av dem är inte ess. P = 3/5.",
@@ -31102,627 +31111,642 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 11.66,
+     "e": 11.68,
      "text": "Det är våren nittonhundrasextioett."
     },
     {
-     "s": 12.46,
-     "e": 18.8,
+     "s": 12.48,
+     "e": 18.82,
      "text": "Edward Thorp är tjugoåtta år och lärare i matematik vid universitetet M I T, nära Boston."
     },
     {
      "s": 19.62,
-     "e": 23.98,
+     "e": 23.88,
      "text": "Men just nu sitter han vid ett spelbord på ett kasino vid sjön Tahoe,"
     },
     {
-     "s": 24.28,
-     "e": 25.98,
+     "s": 24.2,
+     "e": 25.94,
      "text": "högt uppe i bergen i Nevada."
     },
     {
-     "s": 26.88,
-     "e": 31.82,
+     "s": 26.78,
+     "e": 31.74,
      "text": "Han spelar kortspelet tjugoett, och framför sig har han en hög med spelmarker."
     },
     {
-     "s": 32.86,
-     "e": 37.04,
+     "s": 32.56,
+     "e": 36.76,
      "text": "Spelmarker är små plastbrickor som man spelar med i stället för pengar."
     },
     {
-     "s": 38.14,
-     "e": 42.26,
+     "s": 37.86,
+     "e": 41.74,
      "text": "Kortgivaren delar ut korten ur en vanlig kortlek med femtiotvå kort."
     },
     {
-     "s": 43.06,
-     "e": 47.02,
+     "s": 42.54,
+     "e": 46.48,
      "text": "Fyra av korten är ess, och ess är bra kort för spelaren."
     },
     {
-     "s": 48.02,
-     "e": 51,
+     "s": 47.34,
+     "e": 50.16,
      "text": "Korten som har spelats läggs i en hög vid sidan av."
     },
     {
-     "s": 51.8,
-     "e": 56.52,
+     "s": 50.96,
+     "e": 55.12,
      "text": "De läggs inte tillbaka i leken förrän kortgivaren blandar om hela leken."
     },
     {
-     "s": 57.62,
-     "e": 61.12,
+     "s": 56.22,
+     "e": 59.78,
      "text": "Thorp har tänkt på något som de andra spelarna inte tänker på."
     },
     {
-     "s": 62,
-     "e": 66.18,
+     "s": 60.62,
+     "e": 64.78,
      "text": "Varje kort som läggs åt sidan ändrar vad som finns kvar i leken."
     },
     {
-     "s": 67.04,
-     "e": 71.62,
+     "s": 65.58,
+     "e": 69.84,
      "text": "Hemma på M I T har han räknat på det med universitetets stora dator."
     },
     {
-     "s": 72.42,
-     "e": 77.26,
+     "s": 70.64,
+     "e": 75.82,
      "text": "Han tror att han kan vinna, om han håller räkningen på korten som redan har kommit."
     },
     {
-     "s": 78.78,
-     "e": 81.08,
+     "s": 77.4,
+     "e": 79.66,
      "text": "Pengarna på bordet är inte hans egna."
     },
     {
-     "s": 81.88,
-     "e": 87.54,
+     "s": 80.46,
+     "e": 86.06,
      "text": "En rik man som spelar mycket har lånat honom tiotusen dollar för att se om idén fungerar,"
     },
     {
-     "s": 87.94,
-     "e": 89.48,
+     "s": 86.44,
+     "e": 87.98,
      "text": "och mannen är med på resan."
     },
     {
-     "s": 90.58,
-     "e": 93.58,
+     "s": 89.08,
+     "e": 92.08,
      "text": "Nu har kortgivaren delat ut nästan hela leken."
     },
     {
-     "s": 94.38,
-     "e": 100.34,
+     "s": 92.88,
+     "e": 98.84,
      "text": "Tänk dig att tio kort är kvar, och att Thorp har räknat ut att alla fyra essen finns bland dem."
     },
     {
-     "s": 101.14,
-     "e": 102.46,
+     "s": 99.64,
+     "e": 101.04,
      "text": "Han ska få två kort."
     },
     {
-     "s": 104.94,
-     "e": 109.18,
+     "s": 103.16,
+     "e": 107.5,
      "text": "Hur stor är chansen att minst ett av hans två kort är ett ess?"
     },
     {
-     "s": 109.98,
-     "e": 113.94,
+     "s": 108.3,
+     "e": 112.44,
      "text": "Och ändras chansen för det andra kortet, när det första inte läggs tillbaka?"
     },
     {
-     "s": 114.74,
-     "e": 116.18,
+     "s": 113.24,
+     "e": 114.5,
      "text": "Det tar vi reda på nu."
     },
     {
-     "s": 118.68,
-     "e": 120.34,
+     "s": 117,
+     "e": 118.64,
      "text": "Vi börjar med det första kortet."
     },
     {
-     "s": 121.14,
-     "e": 126.24,
+     "s": 119.44,
+     "e": 124.76,
      "text": "Chansen för något kallas sannolikhet, och i matten skrivs den med ett stort pe."
     },
     {
-     "s": 127.2,
-     "e": 133.04,
+     "s": 125.66,
+     "e": 131.52,
      "text": "Sannolikheten får vi genom att ta antalet kort vi vill ha, delat med antalet kort som finns."
     },
     {
-     "s": 133.84,
-     "e": 135.22,
+     "s": 132.32,
+     "e": 133.76,
      "text": "Här vill vi ha ett ess."
     },
     {
-     "s": 136.02,
-     "e": 140.96,
+     "s": 134.56,
+     "e": 139.52,
      "text": "Fyra av de tio korten är ess, så sannolikheten är fyra tiondelar."
     },
     {
-     "s": 142.06,
-     "e": 144.42,
+     "s": 140.62,
+     "e": 143.18,
      "text": "Säg nu att det första kortet blir ett ess."
     },
     {
-     "s": 145.22,
-     "e": 148.74,
+     "s": 143.98,
+     "e": 147.72,
      "text": "Det läggs inte tillbaka, och det kallas utan återläggning."
     },
     {
-     "s": 149.54,
-     "e": 152.12,
+     "s": 148.52,
+     "e": 151.18,
      "text": "Hur många kort finns kvar då? Nio."
     },
     {
-     "s": 152.92,
-     "e": 156.02,
+     "s": 151.98,
+     "e": 155,
      "text": "Och hur många av dem är ess? Bara tre."
     },
     {
-     "s": 156.82,
-     "e": 161.42,
+     "s": 155.8,
+     "e": 160.84,
      "text": "Så sannolikheten att det andra kortet också är ett ess är tre niondelar."
     },
     {
-     "s": 162.52,
-     "e": 165.44,
+     "s": 161.94,
+     "e": 165.08,
      "text": "Säg i stället att det första kortet inte blir ett ess."
     },
     {
-     "s": 166.24,
-     "e": 169.86,
+     "s": 165.88,
+     "e": 169.74,
      "text": "Då är nio kort kvar, men alla fyra essen finns kvar."
     },
     {
-     "s": 170.66,
-     "e": 173.88,
+     "s": 170.54,
+     "e": 173.92,
      "text": "Sannolikheten för ett ess blir då fyra niondelar."
     },
     {
-     "s": 174.68,
-     "e": 178.08,
+     "s": 174.72,
+     "e": 178.28,
      "text": "Ändras alltså chansen för det andra kortet? Ja."
     },
     {
-     "s": 178.88,
-     "e": 180.88,
+     "s": 179.08,
+     "e": 181.3,
      "text": "Den beror på vad det första kortet blev."
     },
     {
-     "s": 181.68,
-     "e": 184.96,
+     "s": 182.1,
+     "e": 185.82,
      "text": "Därför kallas de två korten för beroende händelser."
     },
     {
-     "s": 186.1,
-     "e": 189.66,
+     "s": 187.28,
+     "e": 191.02,
      "text": "Beroende och oberoende händelser är lätta att blanda ihop."
     },
     {
-     "s": 190.46,
-     "e": 194.92,
+     "s": 191.82,
+     "e": 196.26,
      "text": "När man kastar en tärning två gånger, minns tärningen inte det första kastet."
     },
     {
-     "s": 195.72,
-     "e": 199.26,
+     "s": 197.06,
+     "e": 200.62,
      "text": "Sannolikheten för en sexa är en sjättedel varje gång."
     },
     {
-     "s": 200.06,
-     "e": 202.58,
+     "s": 201.42,
+     "e": 203.8,
      "text": "De två kasten är oberoende händelser."
     },
     {
-     "s": 203.38,
-     "e": 204.9,
+     "s": 204.6,
+     "e": 206.12,
      "text": "Men kortleken minns."
     },
     {
-     "s": 205.7,
-     "e": 210.04,
+     "s": 206.92,
+     "e": 211.3,
      "text": "Varje kort som inte läggs tillbaka ändrar sannolikheten för nästa kort."
     },
     {
-     "s": 211.14,
-     "e": 213.6,
+     "s": 212.4,
+     "e": 214.8,
      "text": "Nu samlar vi allt det här i ett träddiagram."
     },
     {
-     "s": 214.4,
-     "e": 218.14,
+     "s": 215.6,
+     "e": 219.28,
      "text": "Varje gren är ett kort, och på grenen står sannolikheten."
     },
     {
-     "s": 219.12,
-     "e": 222,
+     "s": 220.16,
+     "e": 223.02,
      "text": "Första kortet: ess med fyra tiondelar."
     },
     {
-     "s": 222.84,
-     "e": 227.78,
+     "s": 223.88,
+     "e": 228.8,
      "text": "Sex av de tio korten är inte ess, så inte ess får sex tiondelar."
     },
     {
-     "s": 228.6,
-     "e": 231.94,
+     "s": 229.6,
+     "e": 233.04,
      "text": "Som vi ser är grenarna från samma punkt ett tillsammans."
     },
     {
-     "s": 233.08,
-     "e": 238.22,
+     "s": 234.1,
+     "e": 239.42,
      "text": "Efter ett ess: ess med tre niondelar och inte ess med sex niondelar."
     },
     {
-     "s": 239.1,
-     "e": 245.34,
+     "s": 240.26,
+     "e": 246.36,
      "text": "Efter ett kort som inte är ess: ess med fyra niondelar och inte ess med fem niondelar."
     },
     {
-     "s": 246.44,
-     "e": 249.6,
+     "s": 247.46,
+     "e": 250.82,
      "text": "Hur stor är sannolikheten att båda korten är ess?"
     },
     {
-     "s": 250.52,
-     "e": 256.92,
+     "s": 251.86,
+     "e": 258.44,
      "text": "Vi följer grenen ess, ess, och multiplicerar längs grenen, precis som med oberoende händelser."
     },
     {
-     "s": 257.72,
-     "e": 259.98,
+     "s": 259.24,
+     "e": 261.4,
      "text": "Det kallas multiplikationsprincipen."
     },
     {
-     "s": 260.84,
-     "e": 264.16,
+     "s": 262.26,
+     "e": 265.76,
      "text": "Det enda nya är att den andra sannolikheten har ändrats."
     },
     {
-     "s": 264.96,
-     "e": 268.48,
+     "s": 266.56,
+     "e": 270.28,
      "text": "Alltså fyra tiondelar gånger tre niondelar."
     },
     {
-     "s": 269.32,
-     "e": 273.76,
+     "s": 271.18,
+     "e": 275.66,
      "text": "Först täljarna, talen överst: fyra gånger tre är tolv."
     },
     {
-     "s": 274.56,
-     "e": 279.04,
+     "s": 276.46,
+     "e": 281,
      "text": "Sen nämnarna, talen nederst: tio gånger nio är nittio."
     },
     {
-     "s": 279.84,
-     "e": 281.72,
+     "s": 281.8,
+     "e": 283.84,
      "text": "Det blir tolv nittiondelar."
     },
     {
-     "s": 282.52,
-     "e": 285.78,
+     "s": 284.64,
+     "e": 287.86,
      "text": "Det är ungefär tretton procent, så det händer inte så ofta."
     },
     {
-     "s": 286.88,
-     "e": 289.44,
+     "s": 288.96,
+     "e": 291.66,
      "text": "Nu tillbaka till frågan om minst ett ess."
     },
     {
-     "s": 290.26,
-     "e": 293.9,
+     "s": 292.54,
+     "e": 296.2,
      "text": "Minst ett ess betyder ett ess eller två ess."
     },
     {
-     "s": 294.7,
-     "e": 301.28,
+     "s": 297.04,
+     "e": 303.72,
      "text": "I trädet är det tre grenar: ess och ess, ess och inte ess, och inte ess och ess."
     },
     {
-     "s": 302.08,
-     "e": 306.48,
+     "s": 304.62,
+     "e": 309.18,
      "text": "Vi kunde räkna ut alla tre grenarna och lägga ihop dem med additionsprincipen."
     },
     {
-     "s": 307.94,
-     "e": 309.12,
+     "s": 310.64,
+     "e": 311.66,
      "text": "Oj, vad jobbigt."
     },
     {
-     "s": 309.92,
-     "e": 311.34,
+     "s": 312.46,
+     "e": 313.98,
      "text": "Det finns ett kortare sätt."
     },
     {
-     "s": 312.44,
-     "e": 317.26,
+     "s": 315.08,
+     "e": 319.96,
      "text": "Bara en gren saknar ess helt, och det är inte ess och inte ess."
     },
     {
-     "s": 318.06,
-     "e": 319.06,
+     "s": 320.76,
+     "e": 321.76,
      "text": "Den räknar vi ut."
     },
     {
-     "s": 319.76,
-     "e": 322.24,
+     "s": 322.38,
+     "e": 324.92,
      "text": "Sex tiondelar gånger fem niondelar."
     },
     {
-     "s": 323.04,
-     "e": 326.68,
+     "s": 325.72,
+     "e": 329.66,
      "text": "Sex gånger fem är trettio, och tio gånger nio är nittio."
     },
     {
-     "s": 327.48,
-     "e": 329.42,
+     "s": 330.46,
+     "e": 332.54,
      "text": "Så det blir trettio nittiondelar."
     },
     {
-     "s": 330.22,
-     "e": 335.42,
+     "s": 333.34,
+     "e": 338.74,
      "text": "Och trettio nittiondelar är en tredjedel, för trettio går tre gånger i nittio."
     },
     {
-     "s": 336.32,
-     "e": 341.18,
+     "s": 339.68,
+     "e": 344.86,
      "text": "Sannolikheten att Thorp inte får något ess alls är alltså en tredjedel."
     },
     {
-     "s": 342.28,
-     "e": 347.62,
+     "s": 345.96,
+     "e": 351.14,
      "text": "Nu får vi inte glömma att alla grenarna tillsammans är ett, för Thorp hamnar alltid på"
     },
     {
-     "s": 347.7,
-     "e": 348.7,
+     "s": 351.22,
+     "e": 352.22,
      "text": "någon av grenarna."
     },
     {
-     "s": 349.46,
-     "e": 354.04,
+     "s": 353.02,
+     "e": 357.56,
      "text": "Antingen får Thorp minst ett ess, eller så får han inget ess alls."
     },
     {
-     "s": 354.84,
-     "e": 357.14,
+     "s": 358.4,
+     "e": 360.56,
      "text": "Finns det något tredje? Nej."
     },
     {
-     "s": 358.04,
-     "e": 363,
+     "s": 361.54,
+     "e": 366.5,
      "text": "Två händelser som inte kan hända samtidigt, men som tillsammans är allt som kan hända,"
     },
     {
-     "s": 363.36,
-     "e": 365.7,
+     "s": 366.9,
+     "e": 369.12,
      "text": "kallas varandras komplementhändelser."
     },
     {
-     "s": 366.5,
-     "e": 370.12,
+     "s": 370,
+     "e": 373.74,
      "text": "Inget ess är alltså komplementhändelsen till minst ett ess."
     },
     {
-     "s": 370.92,
-     "e": 373.7,
+     "s": 374.54,
+     "e": 377.4,
      "text": "Deras sannolikheter är alltid ett tillsammans."
     },
     {
-     "s": 374.8,
-     "e": 376.22,
+     "s": 378.5,
+     "e": 379.98,
      "text": "Det skriver vi som en regel."
     },
     {
-     "s": 377.02,
-     "e": 381.38,
+     "s": 380.78,
+     "e": 385.22,
      "text": "Pe av minst ett ess plus pe av inget ess är ett."
     },
     {
-     "s": 382.26,
-     "e": 387.46,
+     "s": 386.12,
+     "e": 391.46,
      "text": "Då är pe av minst ett ess lika med ett minus pe av inget ess."
     },
     {
-     "s": 388.26,
-     "e": 390.64,
+     "s": 392.28,
+     "e": 394.64,
      "text": "Här blir det ett minus en tredjedel."
     },
     {
-     "s": 391.44,
-     "e": 396.52,
+     "s": 395.44,
+     "e": 400.58,
      "text": "Ett är tre tredjedelar, och tar vi bort en tredjedel är två tredjedelar kvar."
     },
     {
-     "s": 397.36,
-     "e": 400.92,
+     "s": 401.52,
+     "e": 405.16,
      "text": "Thorp får alltså minst ett ess i två fall av tre."
     },
     {
-     "s": 401.72,
-     "e": 402.72,
+     "s": 405.96,
+     "e": 406.96,
      "text": "Det är ganska ofta."
     },
     {
-     "s": 403.78,
-     "e": 405.6,
+     "s": 407.9,
+     "e": 409.62,
      "text": "Man kan också se det på det här sättet."
     },
     {
-     "s": 406.4,
-     "e": 410.08,
+     "s": 410.42,
+     "e": 413.98,
      "text": "Tänk om kortgivaren lade tillbaka varje kort och blandade igen."
     },
     {
-     "s": 410.88,
-     "e": 415.24,
+     "s": 414.78,
+     "e": 419.14,
      "text": "Det kallas med återläggning, och då är korten oberoende händelser."
     },
     {
-     "s": 416.14,
-     "e": 420.18,
+     "s": 419.94,
+     "e": 423.74,
      "text": "Sannolikheten för inget ess är sex tiondelar båda gångerna."
     },
     {
-     "s": 421,
-     "e": 425.82,
+     "s": 424.54,
+     "e": 429.36,
      "text": "Sex tiondelar gånger sex tiondelar: sex gånger sex är trettiosex,"
     },
     {
-     "s": 426.3,
-     "e": 428.28,
+     "s": 429.74,
+     "e": 431.74,
      "text": "och tio gånger tio är hundra."
     },
     {
-     "s": 429.08,
-     "e": 431.02,
+     "s": 432.54,
+     "e": 434.54,
      "text": "Det blir trettiosex hundradelar."
     },
     {
-     "s": 431.98,
-     "e": 436.96,
+     "s": 435.36,
+     "e": 440.14,
      "text": "Sannolikheten för minst ett ess blir ett minus trettiosex hundradelar."
     },
     {
-     "s": 437.76,
-     "e": 441.78,
+     "s": 440.94,
+     "e": 444.82,
      "text": "Ett är hundra hundradelar, så det blir sextiofyra hundradelar,"
     },
     {
-     "s": 442.14,
-     "e": 443.9,
+     "s": 445.22,
+     "e": 447.04,
      "text": "alltså sextiofyra procent."
     },
     {
-     "s": 445,
-     "e": 450.1,
+     "s": 448.14,
+     "e": 453.36,
      "text": "Utan återläggning var det två tredjedelar, alltså ungefär sextiosju procent."
     },
     {
-     "s": 450.9,
-     "e": 452.9,
+     "s": 454.16,
+     "e": 456.14,
      "text": "Det är lite mer. Varför då?"
     },
     {
-     "s": 453.82,
-     "e": 460.1,
+     "s": 456.94,
+     "e": 462.78,
      "text": "Jo, när ett kort som inte är ess försvinner, blir essen en större del av korten som är kvar."
     },
     {
-     "s": 460.9,
-     "e": 467.84,
+     "s": 463.58,
+     "e": 470.34,
      "text": "Regeln ett minus pe av inget ess fungerar alltså både med beroende och oberoende händelser."
     },
     {
-     "s": 468.94,
-     "e": 470.28,
+     "s": 471.3,
+     "e": 472.58,
      "text": "Nu går vi tillbaka till Thorp."
     },
     {
-     "s": 472.78,
-     "e": 474.9,
+     "s": 475.08,
+     "e": 477.2,
      "text": "Thorp spelar på just det här sättet."
     },
     {
-     "s": 475.7,
-     "e": 478,
+     "s": 478,
+     "e": 480.26,
      "text": "Han håller räkningen på korten som har kommit."
     },
     {
-     "s": 478.8,
-     "e": 482.6,
+     "s": 481.06,
+     "e": 484.74,
      "text": "När många ess och tior är kvar i leken, satsar han mycket."
     },
     {
-     "s": 483.4,
-     "e": 485.42,
+     "s": 485.54,
+     "e": 487.42,
      "text": "När de är slut, satsar han lite."
     },
     {
-     "s": 486.24,
-     "e": 490.62,
+     "s": 488.22,
+     "e": 492.46,
      "text": "På en enda helg vid sjön Tahoe vinner han elvatusen dollar."
     },
     {
-     "s": 491.8,
-     "e": 493.78,
+     "s": 493.56,
+     "e": 495.66,
      "text": "Men kasinona märker vad han gör."
     },
     {
-     "s": 494.58,
-     "e": 498.44,
+     "s": 496.46,
+     "e": 500.16,
      "text": "Kortgivarna börjar blanda om leken långt innan korten tar slut."
     },
     {
-     "s": 499.24,
-     "e": 503.08,
+     "s": 500.96,
+     "e": 504.74,
      "text": "Senare spelar många kasinon med flera kortlekar samtidigt."
     },
     {
-     "s": 503.9,
-     "e": 509.68,
-     "text": "Thorp blir igenkänd och får inte spela, så han klär ut sig med lösskägg och glasögon."
+     "s": 505.54,
+     "e": 508.28,
+     "text": "Thorp blir igenkänd och får inte spela längre."
     },
     {
-     "s": 510.48,
-     "e": 514.44,
-     "text": "För alla som inte räknar korten vinner kasinot i längden."
+     "s": 509.38,
+     "e": 510.86,
+     "text": "Så han klär ut sig."
     },
     {
-     "s": 515.54,
-     "e": 519.92,
+     "s": 511.66,
+     "e": 516.38,
+     "text": "Han sätter på sig ett lösskägg och andra glasögon och går tillbaka till spelbordet."
+    },
+    {
+     "s": 517.18,
+     "e": 518.2,
+     "text": "Det går bra för Thorp."
+    },
+    {
+     "s": 519,
+     "e": 524.68,
+     "text": "Men kasinot tjänar ändå pengar, eftersom de andra spelarna inte räknar korten som han gör."
+    },
+    {
+     "s": 525.78,
+     "e": 530.2,
      "text": "År nittonhundrasextiotvå ger Thorp ut en bok om hur man räknar korten,"
     },
     {
-     "s": 520.34,
-     "e": 523.16,
+     "s": 530.56,
+     "e": 533.46,
      "text": "och den säljs i hundratusentals exemplar."
     },
     {
-     "s": 523.98,
-     "e": 527.78,
+     "s": 534.26,
+     "e": 537.86,
      "text": "Senare slutar han spela och använder matten på börsen i stället."
     },
     {
-     "s": 528.6,
-     "e": 530.24,
+     "s": 538.66,
+     "e": 540.48,
      "text": "Men en fråga står kvar."
     },
     {
-     "s": 531.04,
-     "e": 535.62,
+     "s": 541.28,
+     "e": 545.88,
      "text": "Kan man räkna korten, om kortgivaren blandar leken efter varje runda?"
     },
     {
-     "s": 538.12,
-     "e": 539.3,
+     "s": 548.38,
+     "e": 549.48,
      "text": "Nu är det din tur."
     },
     {
-     "s": 540.1,
-     "e": 543.36,
+     "s": 550.28,
+     "e": 553.5,
      "text": "Fem kort är kvar i leken, och två av dem är ess."
     },
     {
-     "s": 544.16,
-     "e": 547.4,
+     "s": 554.3,
+     "e": 557.3,
      "text": "Du får två kort, och korten läggs inte tillbaka."
     },
     {
-     "s": 548.3,
-     "e": 552.4,
+     "s": 558.1,
+     "e": 562.14,
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 553.2,
-     "e": 558.14,
+     "s": 562.94,
+     "e": 567.7,
      "text": "Först: Hur stor är sannolikheten att inget av korten är ett ess?"
     },
     {
-     "s": 558.94,
-     "e": 563.9,
+     "s": 568.5,
+     "e": 573.38,
      "text": "Sen: Hur stor är sannolikheten att minst ett av korten är ett ess?"
     }
    ]
