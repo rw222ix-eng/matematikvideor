@@ -1,0 +1,7 @@
+# Dependabot håller de SHA-låsta åtgärderna i workflows/pages.yml uppdaterade (2026-10-25).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

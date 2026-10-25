@@ -13,6 +13,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 // Förhandsbilden måste ha en hel adress. Spegeln på GitHub Pages pekar också hit, och det gör inget.
 export const SAJT = "https://winterhalls-matte.vercel.app";
+// Samma policy som i vercel.json och index.html (2026-10-25), för GitHub Pages som inte skickar egna huvuden.
+const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.geogebra.org; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'";
 
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const kursKort = (kurs) => { const m = kurs.match(/(\d)\s*([a-c]*)$/i); return m ? `Ma ${m[1]}${m[2].toLowerCase()}` : kurs; };
@@ -25,6 +27,8 @@ function sida(v) {
 <html lang="sv">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="${CSP}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${attr(titel)}</title>
 <meta name="description" content="${attr(v.beskrivning)}">

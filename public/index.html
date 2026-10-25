@@ -2,6 +2,11 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
+<!-- Säkerhet (2026-10-25): samma policy som Content-Security-Policy i vercel.json, utan frame-ancestors
+     (fungerar inte i meta). Här för GitHub Pages, som inte kan skicka egna huvuden. Ändras den ena ska
+     den andra och mallen i verktyg/filmsidor.mjs ändras likadant, annars spärrar den strängaste. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.geogebra.org; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
 <meta name="description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och filmer som går igenom formelbladet för Matematik nivå 1 och 2. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
@@ -1435,9 +1440,22 @@
   const UPPH = { "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9" };
   const norm = (s) => s.toLowerCase().replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]/g, (c) => "^" + UPPH[c]).replace(/[.,!?:;"“”()]/g, " ").replace(/\s+/g, " ").trim();
   const tid = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
-  const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  // Allt som skrivs in i HTML går genom esc (2026-10-25: också citattecken, så att den räcker i ett attribut).
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const attr = (s) => esc(String(s)).replace(/"/g, "&quot;");
-  const markera = (text, re) => (re ? esc(text).replace(re, (m) => `<mark>${m}</mark>`) : esc(text));
+  // Träffarna letas i råtexten och varje bit escapas för sig: ett sökord som "amp" eller "lt" kan då inte
+  // klyva &amp; och &lt; i den escapade texten.
+  const markera = (text, re) => {
+    if (!re) return esc(text);
+    const g = new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g");
+    let ut = "", i = 0, m;
+    while ((m = g.exec(text))) {
+      if (!m[0]) { g.lastIndex++; continue; }
+      ut += esc(text.slice(i, m.index)) + `<mark>${esc(m[0])}</mark>`;
+      i = m.index + m[0].length;
+    }
+    return ut + esc(text.slice(i));
+  };
   const BOCK = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9.5 L10 3"/></svg>';
   const SAJTNAMN = "Matematikvideor av Rickard";
 
@@ -2769,7 +2787,7 @@
     <div class="post" style="--i:${i}">
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
         <span class="lyft"></span>
-        <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
+        <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina">${visaAr(v) ? `<span class="ar">År ${arText(v.ar)}</span>` : ""}</span>
         <span class="namn">${visaAr(v) ? `<span class="ar ar-lista" aria-hidden="true">År ${arText(v.ar)}</span>` : ""}
           <span class="rad1${arDelserie(v) ? "" : " stapel"}"><span class="kurs">${kortOverst(v, h)}</span><span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span></span>
@@ -3323,7 +3341,7 @@
     const b = a.omslagRen || a.omslag;
     const rad = stalle ? `<span class="stalle"><span class="tid">${tid(stalle.t)}</span><span class="utdrag">${stalleText(stalle, re, 90)}</span></span>` : "";
     return `
-        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${b}" alt="">` : '<span class="tom"></span>'}<span class="namn"><span class="meta">${metaRad(a)}</span><span class="titel">${esc(a.titel)}</span>${rad}<span class="antal">${under}</span></span></button></li>`;
+        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${attr(b)}" alt="">` : '<span class="tom"></span>'}<span class="namn"><span class="meta">${metaRad(a)}</span><span class="titel">${esc(a.titel)}</span>${rad}<span class="antal">${under}</span></span></button></li>`;
   };
 
   // Kursknapparna (Rickard 2026-10-03). Formelbladet Ma 1 räknas till Ma 1c och Formelbladet Ma 2
@@ -3447,7 +3465,7 @@
     const knapp = snart ? "Läs vad som sägs" : s0 ? `Spela från ${tid(s0.t)}` : "Spela filmen";
     lista.innerHTML = `${rattning}${kursval}
       <article class="basta">
-        <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${bild}" alt="">` : ""}</button>
+        <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${attr(bild)}" alt="">` : ""}</button>
         <div class="text">
           <p class="meta">${metaRad(v)}</p>
           <h3 class="titel"><button data-film="${v.id}" data-t="${t0}">${esc(v.titel)}</button></h3>
@@ -3569,7 +3587,7 @@
     const bild = v.omslagStor || v.omslagRen || v.omslag;
     dukEl.innerHTML = `
       <div class="halla"></div>
-      <div class="bild" style="${bild ? `background-image:url('${bild}')` : ""}"></div>
+      <div class="bild" style="${bild ? `background-image:url('${attr(bild)}')` : ""}"></div>
       <div class="lock" id="duk-lock" aria-hidden="true"></div>
       <div class="stor" aria-hidden="true"><span id="duk-stor">${IK.spela.replace('class="fyll" ', 'class="spela-ikon" ')}</span></div>
       <div class="spol" id="duk-spol" aria-hidden="true"></div>
@@ -4074,7 +4092,7 @@
     const bild = n.omslagRen || n.omslag;
     ruta.innerHTML = n.saknas
       ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar(v.serie)}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
-      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${bild}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${n.serie === "ma2a" ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${n.serie === "ma2a" && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
+      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${attr(bild)}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${n.serie === "ma2a" ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${n.serie === "ma2a" && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
   }
 
   async function laddaFilm(v, t) {
@@ -4111,7 +4129,7 @@
     kapitelAntal = kapitel.length; egnaKapitelNu = egnaKapitel;
     $("f-langd").textContent = langdRad(v.langd);
     // Varje kapitel visar sin sort (Historia, Matte, Din tur) ovanför rubriken, i sortens färg.
-    $("kapitel").innerHTML = kapitel.map((k) => `<li${k.typ ? ` class="typ-${k.typ}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${TYPNAMN[k.typ] || k.typ}</span>` : ""}<span class="rubrik">${esc(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join("");
+    $("kapitel").innerHTML = kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${esc(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join("");
     // Två spalter: första halvan av kapitlen till vänster, resten till höger.
     $("kapitel").style.setProperty("--rader", Math.max(1, Math.ceil(kapitel.length / 2)));
     aktuellaKapitel = kapitel;
@@ -4132,7 +4150,7 @@
       startaYoutube(v, start, !!start);
     } else {
       dukEl.classList.remove("igang", "paus");
-      dukEl.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${v.omslagRen || v.omslag}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
+      dukEl.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
       markeraNu(start);
       return;
     }

@@ -1,3 +1,7 @@
 __pycache__/
 verktyg/.venv/
 verktyg/.cache/
+# Hemligheter ska aldrig in i repot (2026-10-25).
+.env*
+*.pem
+*.key
