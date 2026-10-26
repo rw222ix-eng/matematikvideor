@@ -11,6 +11,11 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   (och gärna `"del": N`). De står inte på tidslinjen utan under fliken Formelbladet på filmvalet
   (`#formelbladet`), i delordning; filmsidan visar "Del N av 5", siffrorna 1–5 och nästa del.
   Glöms fältet känns serien igen på id:t (`formelbladet-N-…`), och delen på siffran i id:t.
+  Hyllorna på filmvalet: Matematik 1c (alla filmer utan `serie`, i årsordning), Matematik 2a
+  (`"serie": "ma2a"`, `#ma2a`), Matematik 2c (`"serie": "ma2c"`, `#ma2c`) och Formelbladet. Ma 2a- och
+  Ma 2c-filmerna är berättelser som Ma 1c-filmerna och står i årsordning; en flik syns när hyllan har
+  en film. Malthus och maten flyttades 2026-10-26 från Ma 1c till Ma 2c (exponentialekvation) med
+  id:t kvar, så den posten har `"serie": "ma2c"` och `"del": 1` utskrivna.
   Formelbladsdelarnas kort visar den del av formelbladet som filmen går igenom (utklipp tejpade på
   papper, som i videorna): `node verktyg/formelblad-kort.mjs` skriver `assets/kort/<id>.png`, och
   bygg.mjs använder den före omslaget till kortet, sökträffarna, Nästa del och affischen.
@@ -55,9 +60,9 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
-  förstoringsglaset (eller tangenten `/`). Sökningen har kursknappar (Alla kurser, Ma 1c, Ma 2a; kursen
-  eleven kom från är vald) och rättar stavfel mot orden i filmerna ("pytagoras" söks som Pythagoras,
-  med "Sök ändå på …" bredvid). Adresser: `#filmer` (berättelserna), `#formelbladet` (serien), `#<id>`, `#<id>&t=<sekund>`, och
+  förstoringsglaset (eller tangenten `/`). Sökningen har kursknappar (Alla kurser, Ma 1c, Ma 2a, Ma 2c; kursen
+  eleven kom från är vald; Ma 2c är filmerna med Matematik 2c som kurs eller i `kurser`) och rättar stavfel mot orden i filmerna ("pytagoras" söks som Pythagoras,
+  med "Sök ändå på …" bredvid). Adresser: `#filmer` (Ma 1c), `#ma2a`, `#ma2c`, `#formelbladet` (serien), `#provet`, `#<id>`, `#<id>&t=<sekund>`, och
   `film/<id>/?t=<sekund>` för länkar som delas. Typsnitt från Google Fonts (Jost + Cormorant
   Garamond); en accentfärg (`--accent`).
 - Sökningen (Rickard 2026-10-05: "den absolut mest relevanta filmen") rangordnar efter filmens

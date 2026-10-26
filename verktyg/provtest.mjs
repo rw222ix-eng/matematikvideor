@@ -27,7 +27,14 @@ const { provFilmer } = medVideor(videor);
   const { provFilmer: pf } = medVideor(nya);
   const hitta = (k, datum) => pf(prov.klasser.find((x) => x.namn === k).prov.find((p) => p.datum === datum)).map((v) => v.id);
   const na = hitta("NA26F", "2026-11-19"), te = hitta("TE26A", "2026-12-09"), np = hitta("IndA", "2027-05-19"), ind3 = hitta("IndA", "2027-02-16"), m2c = hitta("NA26F", "2027-03-08");
-  if (na.indexOf("ma1c-k4-07-prov") !== na.indexOf("ma1c-k4-06-grafisk-ekvationslosning") + 1) fel.push("prov: ny k4-film hamnar inte efter k4-06 i NA26F prov 2");
+  // Malthus (k4-06) står på Ma 2c-hyllan sedan 2026-10-26 och är "utom" i Ma 1c-proven, så en ny k4-film hamnar efter k4-05.
+  if (na.indexOf("ma1c-k4-07-prov") !== na.indexOf("ma1c-k4-05-exponentialfunktioner") + 1) fel.push("prov: ny k4-film hamnar inte efter k4-05 i NA26F prov 2");
+  const malthus = "ma1c-k4-06-grafisk-ekvationslosning";
+  for (const k of prov.klasser) for (const p of k.prov) {
+    const med = pf(p).some((v) => v.id === malthus);
+    if (p.kurs === "Matematik 1c" && med) fel.push(`prov: Malthus (Ma 2c) står i ${k.namn} ${p.namn} ${p.datum}, ett Ma 1c-prov`);
+    if (p.kurs === "Matematik 2c" && /exponentialekvationer/.test(p.innehall) && !med) fel.push(`prov: Malthus saknas i ${k.namn} ${p.namn} ${p.datum}`);
+  }
   if (!te.includes("ma1c-k4-07-prov") || te.includes("ma1c-k4-05-exponentialfunktioner")) fel.push("prov: TE26A prov 4 tar inte ny k4-film, eller tar med k4-05");
   if (np.indexOf("ma2a-08b-prov") !== np.indexOf("ma2a-08-substitution-och-addition") + 1) fel.push("prov: Ma 2a 08b hamnar inte direkt efter 08 i IndA:s nationella prov");
   if (np.indexOf("ma2a-09-prov") !== np.indexOf("ma2a-08b-prov") + 1) fel.push("prov: Ma 2a 09 hamnar inte efter 08b i IndA:s nationella prov");

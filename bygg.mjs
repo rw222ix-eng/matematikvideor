@@ -138,6 +138,8 @@ function omslagskurva(fil) {
 // nummer är "del", annars siffran i id:t eller i titeln. "ocksa": { "ma2a": 12.4 } lägger en film som
 // hör hemma någon annanstans också under en seriens flik, på den platsen (Kepler i Ma 2a).
 // formelbladet-ma2-N-… är formelbladet för Ma 2 (FORMELBLADET-MA2-SERIE.md) och prövas före formelbladet-.
+// "ma2c" är Ma 2c-hyllan (Rickard 2026-10-26: Malthus och maten flyttad dit från Ma 1c, för filmen löser en
+// exponentialekvation). Id:t står kvar (ma1c-k4-06-…), så posten har "serie": "ma2c" och "del" utskrivna.
 const serieAv = (v) => v.serie || (/^formelbladet-ma2-/.test(v.id) ? "formelbladet-ma2" : /^formelbladet-/.test(v.id) ? "formelbladet" : /^ma2a-/.test(v.id) ? "ma2a" : null);
 const delAv = (v) => {
   if (Number.isFinite(v.del)) return v.del;

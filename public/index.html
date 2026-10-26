@@ -392,6 +392,13 @@
   .flikar button:active { transform: scale(.93); transition-duration: .08s; }
   .flikar button:focus-visible { outline-offset: 1px; }
   @media (hover: hover) { .flikar button[aria-selected="false"]:hover { color: var(--accent); } }
+  /* Fem flikar (med Matematik 2c, 2026-10-26) ryms inte med de långa namnen under 1100 px: raden blev bredare
+     än fönstret och gick in under förstoringsglaset. Där står kurserna som Ma 1c, Ma 2a och Ma 2c, som på telefonen. */
+  @media (min-width: 701px) and (max-width: 1100px) {
+    .flikar.fem .lang { display: none; }
+    .flikar.fem .kort { display: inline; }
+    .flikar.fem button { padding: 0 16px; letter-spacing: .16em; }
+  }
   /* Bytet av flik: korten tonar ut, och de nya faller ner i linan ett i taget och gungar till. */
   .spar { transition: opacity .22s var(--lugn); }
   .tidslinje.byter .spar { opacity: 0; }
@@ -420,7 +427,7 @@
   .rattning strong { font-weight: 500; color: var(--accent); }
   .rattning button { min-height: 44px; font: 400 14px/1.5 var(--sans); color: var(--dis); text-decoration: underline; text-underline-offset: 3px; transition: color .3s; }
   .rattning button:hover { color: var(--ben); }
-  /* Kursknapparna: Alla kurser, Ma 1c, Ma 2a, med antalet filmer. Kursen eleven kom från är vald. */
+  /* Kursknapparna: Alla kurser, Ma 1c, Ma 2a, Ma 2c, med antalet filmer. Kursen eleven kom från är vald. */
   .kursval { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
   .kursval button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 1px solid var(--linje); border-radius: 999px; font: 500 15px/1 var(--sans); color: var(--ben); transition: border-color .3s, color .3s, background .3s; }
   .kursval .antal { font-weight: 400; color: var(--dis); }
@@ -1005,6 +1012,8 @@
     .formelval button, .provval button { padding: 0 11px; letter-spacing: .1em; }
     /* Fyra flikar (med Inför provet, som här heter Prov) på 375 px: ännu lite tätare. */
     .flikar.fyra button { padding: 0 9px; letter-spacing: .06em; }
+    /* Fem flikar (med Ma 2c, 2026-10-26): ännu tätare, så att raden har luft på sidorna ner till 360 px. */
+    .flikar.fem button { padding: 0 7px; letter-spacing: .04em; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .basta { grid-template-columns: 1fr; gap: 16px; }
@@ -1279,6 +1288,8 @@
     .post .rad1 .kurs { font-size: 18px; letter-spacing: .08em; }
     .post .rad1 .titel { font-size: 19px; }
   }
+  /* Fem flikar på de smalaste telefonerna (320 px): annars hamnade Prov utanför. */
+  @media (max-width: 340px) { .flikar.fem button { padding: 0 5px; letter-spacing: .02em; } }
 </style>
 </head>
 <body class="last">
@@ -1317,13 +1328,15 @@
       <button class="ikon sok-oppna" aria-label="Sök i det som sägs" data-tips="Sök i filmerna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg></button>
     </div>
   </header>
-  <!-- Flikarna överst, "Välj en film" under dem (Rickard 2026-09-25): berättelserna, formelbladets delar eller Ma 2a på linan. En flik syns när den har minst en film. -->
+  <!-- Flikarna överst, "Välj en film" under dem (Rickard 2026-09-25): berättelserna, formelbladets delar, Ma 2a eller Ma 2c på linan. En flik syns när den har minst en film. -->
   <div class="flikar" id="flikar" role="tablist" aria-label="Vilka filmer" data-hylla="berattelser">
     <span class="platta" aria-hidden="true"></span>
-    <!-- Ordningen och namnen (Rickard 2026-09-26): Matematik 1c, Matematik 2a, Formelbladet längst till
-         höger. På telefon står kurserna som Ma 1c och Ma 2a, för att raden ska få plats. -->
+    <!-- Ordningen och namnen (Rickard 2026-09-26): Matematik 1c, Matematik 2a, Matematik 2c, Formelbladet längst till
+         höger. På telefon står kurserna som Ma 1c, Ma 2a och Ma 2c, för att raden ska få plats. -->
     <button type="button" role="tab" data-hylla="berattelser" aria-selected="true" aria-controls="tidslinje"><span class="lang">Matematik nivå 1c</span><span class="kort">Ma 1c</span></button>
     <button type="button" role="tab" data-hylla="ma2a" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Matematik nivå 2a</span><span class="kort">Ma 2a</span></button>
+    <!-- Ma 2c (Rickard 2026-10-26): Malthus och maten flyttad hit från Ma 1c, för filmen löser en exponentialekvation. -->
+    <button type="button" role="tab" data-hylla="ma2c" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Matematik nivå 2c</span><span class="kort">Ma 2c</span></button>
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
     <!-- Inför provet (Rickard 2026-10-18): klassens nästa prov och filmerna till det. Syns när prov.json har klasser. -->
     <button type="button" role="tab" data-hylla="provet" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Inför provet</span><span class="kort">Prov</span></button>
@@ -1536,8 +1549,9 @@
     // Formelbladet finns för Matematik 1 och Matematik 2 (Rickard 2026-09-26): "för Matematik 1 och 2".
     const blad = [...new Set(videor.filter(formelblad).map((v) => (v.serie === "formelbladet-ma2" ? "2" : "1")))].sort();
     if (blad.length) $("intro-blad").textContent = `Matematik nivå ${blad.join(" och ")}`;
-    if (kurser.length) $("intro-kurser").textContent = kurser.length === 1 ? kurser[0]
-      : `${kurser.slice(0, -1).join(", ")} och ${kurser[kurser.length - 1].replace(/^Matematik nivå\s*/, "")}`;
+    // Med tre kurser (Ma 2c, 2026-10-26) står "Matematik nivå" bara först: "Matematik nivå 1c, 2a och 2c".
+    const k = kurser.map((x, i) => (i ? x.replace(/^Matematik nivå\s*/, "") : x));
+    if (k.length) $("intro-kurser").textContent = k.length === 1 ? k[0] : `${k.slice(0, -1).join(", ")} och ${k[k.length - 1]}`;
   }
 
   // ── Framsteg (2026-09-24) ─────────────────────────────
@@ -1598,7 +1612,14 @@
     "formelbladet-ma2": { namn: "Formelbladet Ma 2", kort: "Ma 2", delar: 6, platser: true, grupp: "formelbladet" },
     // Kapitlen i boken visas inte längre (Rickard 2026-09-26); filmerna står i tidsordning.
     ma2a: { namn: "Ma 2a", delar: 19 },
+    // Ma 2c (Rickard 2026-10-26): berättelser för Ma 2c, som Ma 2a. Malthus och maten (ma1c-k4-06-…) står här,
+    // för den löser exponentialekvationen 7 · 2ˣ = 7x + 7. Id:t är kvar, så registret har "serie": "ma2c".
+    ma2c: { namn: "Ma 2c", delar: 1 },
   };
+  // Kurshyllorna: serier som är en kurs berättelser (Ma 2a, Ma 2c), inte formelbladets numrerade delar.
+  // Korten, sökträffarna och filmsidan visar dem som berättelser med kursen överst.
+  const KURSSERIER = ["ma2a", "ma2c"];
+  const kursserie = (v) => !!v && KURSSERIER.includes(v.serie);
   // Längsta namnet först: formelbladet-ma2-3-… är Ma 2, inte formelbladet (Ma 1). Delen är siffran
   // direkt efter seriens namn i id:t, eller siffran före "–" i titeln.
   const serieNamnen = Object.keys(SERIER).sort((a, b) => b.length - a.length);
@@ -1610,7 +1631,7 @@
   const iSerie = (namn) => videor.filter((v) => v.serie === namn).sort((a, b) => (a.del ?? 99) - (b.del ?? 99));
   const formelblad = iSerie("formelbladet");
   // Flikarna: berättelserna, och en flik per serie som har minst en film.
-  // Samma ordning som flikarna står i: Matematik 1c, Matematik 2a, Formelbladet.
+  // Samma ordning som flikarna står i: Matematik 1c, Matematik 2a, Matematik 2c, Formelbladet.
   // ── Inför provet (Rickard 2026-10-18) ─────────────────
   // Eleven väljer sin klass och ser filmerna till klassens nästa prov. Klasserna läser i olika takt (NA26F
   // och TE26A Ma 1c, IndA Ma 2a), så varje klass har sina egna prov i prov.json. Provdagen visar provet,
@@ -1653,7 +1674,7 @@
   const MANAD = ["jan", "feb", "mars", "april", "maj", "juni", "juli", "aug", "sep", "okt", "nov", "dec"];
   const datumText = (s) => { const d = provDag(s); return `${VECKODAG[d.getDay()]} ${d.getDate()} ${MANAD[d.getMonth()]}${d.getFullYear() !== idag().getFullYear() ? ` ${d.getFullYear()}` : ""}`; };
   const kvarText = (s) => { const n = Math.round((provDag(s) - idag()) / 864e5); return n === 0 ? "i dag" : n === 1 ? "i morgon" : `om ${n} dagar`; };
-  const HYLLOR = ["berattelser", ...["ma2a", "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : [])];
+  const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie eller Inför provet.
   const arHylla = (h) => !!SERIER[h] || h === PROV;
   // Fliken en hylla står under: formelbladet-ma2 står under Formelbladet. Formelbladets hyllor (Ma 1 och
@@ -1704,12 +1725,12 @@
   };
   // Småord som inte gör en bit av momentet ny ("Pythagoras sats" är samma sak som "Pythagoras" i namnet).
   const MOMENT_FYLL = new Set(["och", "sats", "satsen", "i", "med", "en", "ett", "av", "för", "om", "på"]);
-  // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2" eller "Ma 2a · 1919".
-  const sortText = (v) => (v.serie === "ma2a" ? `Ma 2a${v.ar != null ? ` · ${arText(v.ar)}` : ""}`
+  // Vilken sort en film är, i sökningen: "Berättelse · 1618", "Formelbladet · del 2", "Ma 2a · 1919" eller "Ma 2c · 1798".
+  const sortText = (v) => (kursserie(v) ? `${SERIER[v.serie].namn}${v.ar != null ? ` · ${arText(v.ar)}` : ""}`
     : v.serie ? `${serieNamn(v.serie)} · del ${v.del ?? ""}`.trim() : `Berättelse${v.ar != null ? ` · ${arText(v.ar)}` : ""}`);
   // Kurs och moment på sökträffarna (Rickard 2026-10-03): en bricka med kursen och momentet i vanlig
   // text. Formelbladet får en guldbricka med delen och kurserna bredvid. Årtalet behövs inte i sökningen.
-  const metaRad = (v) => (v.serie && v.serie !== "ma2a"
+  const metaRad = (v) => (v.serie && !kursserie(v)
     ? `<span class="bricka serie">${esc(sortText(v))}</span><span class="moment">${kurserKort(v)}</span>`
     : `<span class="bricka">${kurserKort(v)}</span><span class="moment">${esc(v.moment)}</span>`);
   // Nästa film i serien: en film, en plats som inte är klar ({ saknas }), eller null efter sista delen.
@@ -1775,7 +1796,7 @@
     // En serie utan filmer har ingen flik att visa: adressen blir #filmer.
     if (arHylla(h) && !HYLLOR.includes(h)) { h = "filmer"; history.replaceState(null, "", "#filmer"); }
     const mal = !h ? "intro" : h === "filmer" || arHylla(h) ? "valj" : "film";
-    // Filmvalets flik följer adressen: #formelbladet och #ma2a är seriernas flikar, #provet Inför provet, #filmer berättelserna.
+    // Filmvalets flik följer adressen: #formelbladet, #ma2a och #ma2c är seriernas flikar, #provet Inför provet, #filmer berättelserna.
     // Den ritas innan övergången, så att kortet som spelaren krymper ner till redan finns på linan.
     if (mal === "valj") valjHylla(arHylla(h) ? h : "berattelser", aktivVy !== "valj");
     // Hopp inom samma film (kapitel, &t=), flikbyte och första laddningen: ingen övergång. Från en
@@ -2816,12 +2837,12 @@
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina">${visaAr(v) ? `<span class="ar">År ${arText(v.ar)}</span>` : ""}</span>
         <span class="namn">${visaAr(v) ? `<span class="ar ar-lista" aria-hidden="true">År ${arText(v.ar)}</span>` : ""}
-          <span class="rad1${arDelserie(v) ? "" : " stapel"}"><span class="kurs">${kortOverst(v, h)}</span><span class="titel">${esc(v.serie === "ma2a" ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span></span>
+          <span class="rad1${arDelserie(v) ? "" : " stapel"}"><span class="kurs">${kortOverst(v, h)}</span><span class="titel">${esc(kursserie(v) ? titelDelar(v)[0] : v.serie ? delNamn(v) : v.titel)}</span></span>
           <span class="moment">${kortMoment(v, h)}</span>
         </span>
       </button>
     </div>`;
-  // Vilken flik som visas: "berattelser" (den historiska tidslinjen), "formelbladet" eller "ma2a".
+  // Vilken flik som visas: "berattelser" (den historiska tidslinjen), "formelbladet", "ma2a" eller "ma2c".
   let hylla = "berattelser";
   $("vy-valj").classList.toggle("har-flikar", harFlikar);
   if (harFlikar) tidslinje.setAttribute("role", "tabpanel");
@@ -2830,6 +2851,7 @@
   $("flikar").querySelectorAll("[role=tab]").forEach((b) => { b.hidden = !HYLLOR.some((h) => flikAv(h) === b.dataset.hylla); });
   $("flikar").classList.toggle("tre", new Set(HYLLOR.map(flikAv)).size > 2);
   $("flikar").classList.toggle("fyra", new Set(HYLLOR.map(flikAv)).size > 3);
+  $("flikar").classList.toggle("fem", new Set(HYLLOR.map(flikAv)).size > 4);
   // Klassknapparna under Inför provet, en per klass i prov.json.
   $("provval").innerHTML = KLASSER.map((k) => `<button type="button" role="tab" data-klass="${attr(k.namn)}" aria-selected="false" aria-controls="tidslinje" tabindex="-1">${esc(k.namn)}</button>`).join("");
   function ritaProvval() {
@@ -2942,7 +2964,7 @@
     }, 230);
   }
   // Ett tryck på en flik byter adressen utan att lägga en ny rad i historiken (bakåt går till introt
-  // som förut), och en film som öppnas härifrån leder tillbaka hit med "Alla filmer", "Formelbladet" eller "Ma 2a".
+  // som förut), och en film som öppnas härifrån leder tillbaka hit med "Alla filmer", "Formelbladet", "Ma 2a" eller "Ma 2c".
   // Händelsen till Newton: "flik" för flikarna, "formelval" för växlaren Ma 1 · Ma 2 (annars tog guiden ett byte av
   // kurs under Formelbladet för ett byte av flik och hoppade över steget om flikarna).
   const bytHylla = (namn, hand = "flik") => {
@@ -3309,7 +3331,8 @@
       // ska till Beräkna vinklar, inte till Beräkna sidor i rätvinkliga trianglar.
       // Formelbladsfilmerna går igenom bladet rad för rad. Handlar en egen film om samma sak är den
       // mer relevant; finns saken bara på formelbladet vinner formelbladsfilmen ändå.
-      if (r.x.v.serie) r.poang *= 0.85;
+      // Ma 2c-hyllans filmer är vanliga berättelser (Malthus stod på Ma 1c när vikterna sattes) och vägs som förut.
+      if (r.x.v.serie && r.x.v.serie !== "ma2c") r.poang *= 0.85;
       if (huvud >= 0 && ![r.x.moment, r.x.titel, ...r.x.begrepp.slice(0, 3)].some((b) => passar(q.termer[huvud], b) >= 0.8)) r.poang *= 0.8;
       for (const t of q.valfria) r.poang += t.vikt * (t.amne ? Math.max(passar(t, r.x.moment), passar(t, r.x.titel)) : Math.min(1, r.x.repliker.reduce((s, y) => s + passar(t, y), 0)));
       // Hela frasen ("likformiga trianglar") där filmen säger vad den handlar om, eller i rösten.
@@ -3372,17 +3395,19 @@
 
   // Kursknapparna (Rickard 2026-10-03). Formelbladet Ma 1 räknas till Ma 1c och Formelbladet Ma 2
   // till Ma 2a. Vald från början är kursen eleven kom från: fliken på filmvalet eller filmen man
-  // tittar på. Väljer eleven själv gäller det tills sidan laddas om.
+  // tittar på. Väljer eleven själv gäller det tills sidan laddas om. Ma 2c (2026-10-26) är filmerna
+  // med Matematik 2c som kurs eller bland kurserna: Malthus, Kepler och Delos.
   const KURSVAL = [
     { id: "1c", namn: "Ma 1c", re: /^Matematik 1c?$/i },
     { id: "2a", namn: "Ma 2a", re: /^Matematik 2a?$/i },
+    { id: "2c", namn: "Ma 2c", re: /^Matematik 2c$/i },
   ];
   const kurserAv = (v) => (v.kurser && v.kurser.length ? v.kurser : [v.kurs]);
   const iKurs = (v, id) => id === "alla" || kurserAv(v).some((k) => KURSVAL.find((x) => x.id === id).re.test(k));
   let kursVal = null, sokKurs = "alla";
   function kursFranLaget() {
     if (aktivVy === "film" && aktuell) { const k = KURSVAL.filter((x) => iKurs(aktuell, x.id)); return k.length === 1 ? k[0].id : "alla"; }
-    if (aktivVy === "valj") return ["ma2a", "formelbladet-ma2"].includes(hylla) ? "2a" : "1c";
+    if (aktivVy === "valj") return hylla === "ma2c" ? "2c" : ["ma2a", "formelbladet-ma2"].includes(hylla) ? "2a" : "1c";
     return "alla";
   }
 
@@ -4118,7 +4143,7 @@
     const bild = n.omslagRen || n.omslag;
     ruta.innerHTML = n.saknas
       ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar(v.serie)}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
-      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${attr(bild)}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${n.serie === "ma2a" ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${n.serie === "ma2a" && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
+      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${attr(bild)}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${kursserie(n) ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${kursserie(n) && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
   }
 
   async function laddaFilm(v, t) {
@@ -4128,16 +4153,16 @@
     document.title = `${v.titel} · ${SAJTNAMN}`;
     // En formelbladsdel: "Formelbladet · Del 2 av 5" överst och delens namn som rubrik, siffrorna
     // 1–5 bredvid, nästa del efter Din tur, och tillbaka-länken leder till formelbladets flik.
-    // En Ma 2a-film är en berättelse: "Ma 2a · Kapitel 1 · 1856 · <moment>" överst och berättelsen som
+    // En Ma 2a- eller Ma 2c-film är en berättelse: "1856 · Matematik nivå 2a · <moment>" överst och berättelsen som
     // rubrik. Tillbaka leder till fliken filmen hör till, eller till Ma 2a om eleven kom därifrån
     // till en film som också ligger där (Kepler).
     const serie = v.serie ? SERIER[v.serie] : null;
     const hyllansFilmer = hylla === PROV ? provKlass() && provFilmer(nastaProv(provKlass())) : hylla !== "berattelser" && hyllaFilmer(hylla);
     const hem = hyllansFilmer && hyllansFilmer.some((x) => x.id === v.id) ? hylla : v.serie || "berattelser";
-    $("f-kurs").textContent = v.serie === "ma2a" ? `${v.ar ? `${arText(v.ar)} · ` : ""}${kurserLang(v)} · ${v.moment}`
+    $("f-kurs").textContent = kursserie(v) ? `${v.ar ? `${arText(v.ar)} · ` : ""}${kurserLang(v)} · ${v.moment}`
       : serie ? `${serieNamn(v.serie)} · Del ${v.del ?? "–"} av ${antalDelar(v.serie)} · ${kursNamn(v.kurs)}${serieMoment(v) ? ` · ${serieMoment(v)}` : ""}`
       : `${v.ar ? `${arText(v.ar)} · ` : ""}${kurserLang(v)} · ${v.moment}`;
-    $("f-titel").textContent = v.serie === "ma2a" ? titelDelar(v)[0] : serie ? delNamn(v) : v.titel;
+    $("f-titel").textContent = kursserie(v) ? titelDelar(v)[0] : serie ? delNamn(v) : v.titel;
     $("f-tillbaka").setAttribute("href", hem === "berattelser" ? "#filmer" : `#${hem}`);
     $("f-tillbaka-text").textContent = hem === "berattelser" ? "Alla filmer" : hem === PROV ? "Inför provet" : serieNamn(hem);
     ritaDelrad(v); ritaNastaDel(v);
@@ -5515,7 +5540,7 @@
       valj: () => [
         { id: "hej", lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
         { id: "tidslinje", vy: "valj", mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: harFlikar ? "Just så." : "Just så. Nu ska vi leta efter något i filmerna.",
-          text: `${SERIER[hylla] && SERIER[hylla].platser ? `Här ligger filmerna om formelbladet${hylla === "formelbladet-ma2" ? " för Ma 2" : ""}, från del 1 till del ${antalDelar(hylla)}.${ocksaDelar(hylla).length ? ` Efter dem ligger delarna från bladet för ${SERIER[ocksaDelar(hylla)[0].serie].kort}, för de står på bladet för ${SERIER[hylla].kort} också.` : ""}` : hylla === "ma2a" ? "Här ligger filmerna för Matematik 2a, i den ordning som de hände." : hylla === PROV ? "Här ligger filmerna till din klass nästa prov, i samma ordning som i boken." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+          text: `${SERIER[hylla] && SERIER[hylla].platser ? `Här ligger filmerna om formelbladet${hylla === "formelbladet-ma2" ? " för Ma 2" : ""}, från del 1 till del ${antalDelar(hylla)}.${ocksaDelar(hylla).length ? ` Efter dem ligger delarna från bladet för ${SERIER[ocksaDelar(hylla)[0].serie].kort}, för de står på bladet för ${SERIER[hylla].kort} också.` : ""}` : KURSSERIER.includes(hylla) ? (hyllaFilmer(hylla).length > 1 ? `Här ligger filmerna för Matematik ${hylla.slice(2)}, i den ordning som de hände.` : `Här ligger filmen för Matematik ${hylla.slice(2)}.`) : hylla === PROV ? "Här ligger filmerna till din klass nästa prov, i samma ordning som i boken." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
         // Växlaren under Formelbladet (Rickard 2026-09-26): bladen för Ma 1 och Ma 2 ligger var för sig, och Ma 1-delarna
         // står på bladet för Ma 2 också. Eleven byter kurs, och korten på den andra hyllan lyser.
         { id: "formelval", vy: "valj", mal: () => $("formelval"), ljus: () => [$("formelval").querySelector('[aria-selected="false"]'), ...synligaKort("#spar .post.bro .ram")].filter(Boolean),
@@ -5531,9 +5556,9 @@
           const annan = hylla === "berattelser" ? HYLLOR[1] : "berattelser", flik = () => $("flikar").querySelector(`[data-hylla="${annan}"]`);
           // Efter bytet lyser också de nya korten, medan han säger vad det är.
           return [{ id: "flik", vy: "valj", mal: () => $("flikar"), ljus: () => [flik(), ...(hylla === annan ? synligaKort("#spar .post:not(.kommer):not(.bro) .ram") : [])], lage: "pekar", nar: "flik", finns: () => harFlikar, hoppa: async () => { bytHylla(annan); await vila(700); },
-            svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : annan === "ma2a" ? "Här är filmerna för Matematik nivå 2a. Nu ska vi leta efter något i filmerna." : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
+            svar: annan === "formelbladet" ? "Här är formelbladets delar. Nu ska vi leta efter något i filmerna." : KURSSERIER.includes(annan) ? `Här är filmerna för Matematik nivå ${annan.slice(2)}. Nu ska vi leta efter något i filmerna.` : "Här är berättelserna. Nu ska vi leta efter något i filmerna.",
             text: annan === "formelbladet" ? "Det finns också filmer som går igenom formelbladet, del för del. De ligger för sig. Tryck på Formelbladet, så ser du dem."
-              : annan === "ma2a" ? "Det finns också filmer för Matematik nivå 2a. De ligger för sig. Tryck på Matematik nivå 2a, så ser du dem."
+              : KURSSERIER.includes(annan) ? `Det finns också filmer för Matematik nivå ${annan.slice(2)}. De ligger för sig. Tryck på Matematik nivå ${annan.slice(2)}, så ser du dem.`
               : "Berättelserna, där matten kommer ur historien, ligger under Matematik nivå 1c. Tryck på Matematik nivå 1c, så ser du dem." }];
         })(),
         { id: "sok", mal: () => aktivVyEl().querySelector(".sok-oppna"), lage: "pekar", nar: "sok", hoppaOm: sokOppen, hoppa: async () => { oppnaSok(); await vila(450); }, svar: "Där är sökrutan.",
@@ -5601,7 +5626,7 @@
           return [
             { id: "nasta", vy: "film", mal: () => $("f-nasta"), lage: n && n.saknas ? "fundersam" : "pekar",
               text: n && n.saknas ? "Nästa del om formelbladet är inte klar än. När den är klar kommer den upp här."
-                : s === "ma2a" ? "När du är klar med den här filmen ligger nästa film i Ma 2a här. Tryck på den, så fortsätter du." : "När du är klar med den här filmen ligger nästa del här. Tryck på den, så fortsätter du." },
+                : KURSSERIER.includes(s) ? `När du är klar med den här filmen ligger nästa film i ${SERIER[s].namn} här. Tryck på den, så fortsätter du.` : "När du är klar med den här filmen ligger nästa del här. Tryck på den, så fortsätter du." },
             // Siffrorna finns bara i formelbladet.
             ...(SERIER[s].platser ? [{ id: "delar", vy: "film", mal: () => $("f-delar"), lage: "pekar",
               text: `Den här filmen är del ${aktuell.del} av ${antalDelar(s)} om formelbladet. Siffrorna här uppe är alla delarna, och du byter del genom att trycka på en siffra.${saknas ? " De streckade är inte klara än." : ""}` }] : []),
