@@ -16,8 +16,9 @@ const HÄR = dirname(fileURLToPath(import.meta.url));
 const hash = (s) => `'sha256-${createHash("sha256").update(s, "utf8").digest("base64")}'`;
 const inline = (sida, tagg) => [...readFileSync(join(HÄR, "public", sida), "utf8").matchAll(new RegExp(`<${tagg}>([\\s\\S]*?)</${tagg}>`, "g"))].map((m) => hash(m[1]));
 
-// Bara videoteket får bädda in sidorna. 127.0.0.1 och localhost är för lokala prov av videoteket.
-const FORALDRAR = "https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io http://127.0.0.1:* http://localhost:*";
+// Bara videoteket får bädda in sidorna. Lokala prov (127.0.0.1, localhost) lägger till sina adresser på
+// vägen, i proven (_sakerhet/prov/inbaddat-vag.mjs), så att produktionen bara har https.
+const FORALDRAR = "https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io";
 const GRUND = ["default-src 'none'", "object-src 'none'", "base-uri 'none'", "form-action 'none'"];
 const AV = "accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()";
 

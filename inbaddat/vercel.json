@@ -47,7 +47,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-kFNULvfH6nkGDs4UAhwm0PCa0M1AFdNnAl5oyAxj03E=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'sha256-EMG1hlTFx81MGaEMGhz9A2cZnRYoLHu0v30w3knj6cA='; frame-src https://www.youtube.com; frame-ancestors https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io http://127.0.0.1:* http://localhost:*"
+          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-kFNULvfH6nkGDs4UAhwm0PCa0M1AFdNnAl5oyAxj03E=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'sha256-EMG1hlTFx81MGaEMGhz9A2cZnRYoLHu0v30w3knj6cA='; frame-src https://www.youtube.com; frame-ancestors https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io"
         },
         {
           "key": "Permissions-Policy",
@@ -60,7 +60,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-+SI5o3tvOV5OlTUfKCL1Ct5dsV0Amwkwhdybr+8hwW8=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'unsafe-inline' https://www.geogebra.org; font-src data:; img-src data:; connect-src https://www.geogebra.org; worker-src 'none'; frame-ancestors https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io http://127.0.0.1:* http://localhost:*"
+          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-+SI5o3tvOV5OlTUfKCL1Ct5dsV0Amwkwhdybr+8hwW8=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'unsafe-inline' https://www.geogebra.org; font-src data:; img-src data:; connect-src https://www.geogebra.org; worker-src 'none'; frame-ancestors https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io"
         },
         {
           "key": "Permissions-Policy",
