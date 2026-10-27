@@ -25,7 +25,7 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       # persist-credentials: false: checkout sparar inte sin token i klonen, så stegen efter kan inte pusha.
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       # Filmsidorna (förhandsbilden i Classroom) skrivs om ur videor.json vid varje publicering, så att
