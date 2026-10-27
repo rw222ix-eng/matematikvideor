@@ -82,9 +82,12 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   om filmen är sedd och om Din tur är löst. Korten i filmvalet visar det, och filmen fortsätter där
   eleven slutade.
 - Filmen spelas från egen fil (`fil` i registret): en 1080p-mp4 som ligger som GitHub-release i
-  det här repot (`gh release create <tag>` + `gh release upload <tag> <mp4>`, adress
+  det här repot (`gh release create <tag> <mp4> <alla andra filer>` i ett enda anrop, adress
   `https://github.com/rw222ix-eng/matematikvideor/releases/download/<tag>/<fil>`; stöder
-  delvisa hämtningar så hopp i filmen fungerar). Kodning ur 4K-exporten:
+  delvisa hämtningar så hopp i filmen fungerar). Releaserna är oföränderliga (2026-10-27): en publicerad
+  release kan inte få fler filer eller bytta filer (`gh release upload` och `--clobber` nekas), och
+  taggen kan aldrig användas igen, inte ens om releasen raderas. En fil som ska bytas får en ny tagg
+  (`<id>-v8`). `gh release verify <tag>` visar att filerna är de som publicerades. Kodning ur 4K-exporten:
   `ffmpeg -i <2160p.mp4> -vf scale=1920:1080 -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -movflags +faststart <1080p.mp4>`
   (filerna är 50–75 MB). Utan `fil` används YouTube (`youtube`-id) i stället.
 - Spelaren är sidans egen: `<video>` med egna kontroller; med YouTube körs inbäddningen med `controls=0` och styrs via IFrame API

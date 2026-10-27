@@ -65,6 +65,13 @@ Subresource Integrity kräver att filen är byte för byte densamma vid varje be
 
 `public/.well-known/security.txt` (RFC 9116) visar vart fel anmäls. Workflowet `security-txt.yml` faller en gång i månaden när det är under 60 dagar kvar till `Expires`, och då mejlar GitHub.
 
+## Repot
+
+- Rulesetet «Skydda main» nekar force-push och radering av main. «Skydda taggarna» nekar radering och flytt av alla taggar, så de 381 äldre releaserna ligger kvar på samma commit.
+- Releaserna är oföränderliga sedan 2026-10-27. En publicerad film kan inte bytas ut under samma adress, och varje release får en attestering (`gh release verify <tagg>`). Alla filer läggs upp i samma `gh release create <tagg> <filer>`.
+- Workflowen måste vara låsta på SHA (`sha_pinning_required`). Det gäller också åtgärder som en åtgärd anropar inuti.
+- Pages-bygget får härkomst (`actions/attest-build-provenance`). `gh attestation verify <fil> -R rw222ix-eng/matematikvideor` visar vilken commit en fil från Vercel eller Pages kommer från.
+
 ## Innan du ändrar sidan
 
 - En ny extern källa (bild, typsnitt, ram eller film från en annan värd) spärras tills den står i `verktyg/csp.mjs`, `vercel.json` och meta-taggen i `public/index.html`. Ett skript från en annan värd läggs in av sidans eget skript, aldrig med en egen `<script src>` i HTML. Lägg också in den i tabellen över externa värdar med skälet. Öppna sidan och läs konsolen efter CSP-fel innan du pushar.
