@@ -117,7 +117,7 @@ async function sidan(b, bas) {
   const sidfel = [], brott = [];
   p.on("pageerror", (e) => sidfel.push(String(e).slice(0, 200)));
   const samla = async () => { for (const f of p.frames()) brott.push(...((await f.evaluate(() => window.__brott.splice(0)).catch(() => null)) || []).map((x) => `${f === p.mainFrame() ? "sidan" : new URL(f.url()).pathname}: ${x}`)); };
-  const prov = async (namn, fn) => { try { ut[namn] = (await fn()) || "ok"; } catch (e) { ut[namn] = `FEL ${String(e).split("\n")[0].slice(0, 200)}`; } };
+  const prov = async (namn, fn) => { try { ut[namn] = (await fn()) || "ok"; } catch (e) { ut[namn] = `FEL ${String(e).split("\n")[0].slice(0, 400)}`; } };
 
   await prov("startsidan", async () => { await p.goto(bas, { waitUntil: "load" }); await vantaKort(p); });
   await prov("sökningen", async () => {
@@ -165,9 +165,20 @@ async function sidan(b, bas) {
   });
   await samla();
   await prov("formelbladet", async () => { await p.goto(bas + "#formelbladet", { waitUntil: "load" }); await vantaKort(p); });
+  // Frågetecknet startar guiden: Newton går fram och börjar prata. Ett tips som är på väg ut får gå undan
+  // först. Faller provet står Newtons läge i felet varje gång det ändrades (klasserna/tecknen i bubblan).
   await prov("Newton", async () => {
+    await p.waitForFunction(() => document.getElementById("newton").hidden, null, { timeout: 10000 }).catch(() => {});
+    const lage = () => p.evaluate(() => { const n = document.getElementById("newton"); return `${n.hidden ? "dold" : n.className.replace(/^newton\s*/, "") || "syns"}/${document.getElementById("newton-text").textContent.length}`; }).catch((e) => `? ${String(e).slice(0, 60)}`);
+    const t0 = Date.now(), logg = [];
     await p.click("#hjalp");
-    await p.waitForFunction(() => !document.getElementById("newton").hidden && document.getElementById("newton-text").textContent.length > 10, null, { timeout: 8000 });
+    for (let forra = ""; ;) {
+      const l = await lage(), s = ((Date.now() - t0) / 1000).toFixed(1);
+      if (l !== forra) { logg.push(`${s} s ${l}`); forra = l; }
+      if (!l.startsWith("dold") && Number(l.split("/").pop()) > 10) return Number(s) > 8 ? `ok efter ${s} s` : "ok";
+      if (Date.now() - t0 > 20000) throw new Error(`Newton pratade inte på 20 s: ${logg.join(", ")}`);
+      await p.waitForTimeout(250);
+    }
   });
   await samla();
   await prov("YouTube-reserven", async () => {
