@@ -174,7 +174,8 @@ async function sidan(b, bas) {
   await samla();
   await prov("formelbladet", async () => { await p.goto(bas + "#formelbladet", { waitUntil: "load" }); await vantaKort(p); });
   // Frågetecknet startar guiden: Newton går fram och börjar prata. Ett tips som är på väg ut får gå undan
-  // först. Faller provet står Newtons läge i felet varje gång det ändrades (klasserna/tecknen i bubblan).
+  // först. Lokalt tar det 2–4 s, på GitHubs maskin upp till 10,6 s (28/10), därför 30 s. Faller provet står
+  // Newtons läge i felet varje gång det ändrades (klasserna/tecknen i bubblan).
   await prov("Newton", async () => {
     await p.waitForFunction(() => document.getElementById("newton").hidden, null, { timeout: 10000 }).catch(() => {});
     const lage = () => p.evaluate(() => { const n = document.getElementById("newton"); return `${n.hidden ? "dold" : n.className.replace(/^newton\s*/, "") || "syns"}/${document.getElementById("newton-text").textContent.length}`; }).catch((e) => `? ${String(e).slice(0, 60)}`);
@@ -184,7 +185,7 @@ async function sidan(b, bas) {
       const l = await lage(), s = ((Date.now() - t0) / 1000).toFixed(1);
       if (l !== forra) { logg.push(`${s} s ${l}`); forra = l; }
       if (!l.startsWith("dold") && Number(l.split("/").pop()) > 10) return Number(s) > 8 ? `ok efter ${s} s` : "ok";
-      if (Date.now() - t0 > 20000) throw new Error(`Newton pratade inte på 20 s: ${logg.join(", ")}`);
+      if (Date.now() - t0 > 30000) throw new Error(`Newton pratade inte på 30 s: ${logg.join(", ")}`);
       await p.waitForTimeout(250);
     }
   });
