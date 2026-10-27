@@ -1,0 +1,9 @@
+{
+  "name": "videotek-kontroll",
+  "private": true,
+  "description": "Nattlig kontroll av videoteket (säkerhet C1). Körs av .github/workflows/nattlig.yml.",
+  "type": "module",
+  "dependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

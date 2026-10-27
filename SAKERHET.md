@@ -77,6 +77,8 @@ Subresource Integrity kräver att filen är byte för byte densamma vid varje be
 
 `public/.well-known/security.txt` (RFC 9116) visar vart fel anmäls. Workflowet `security-txt.yml` faller en gång i månaden när det är under 60 dagar kvar till `Expires`, och då mejlar GitHub.
 
+Workflowet `nattlig.yml` (C1, 2026-10-27) kör `kontroll/nattlig.mjs` varje natt. Det bygger HEAD som Vercel och Pages gör och jämför varje fil och varje huvud i `vercel.json` och `inbaddat/vercel.json` med det som serveras. Det provar också sidan i Chrome: startsidan, sökningen, en film, Din tur med GeoGebra, formelbladet, Newton och YouTube-reserven, utan CSP-brott i någon ram, och att Trusted Types nekar injicerad HTML. Sist kontrollerar det att Pages skickar vidare. Det som faller provas igen efter 4 minuter. Faller det igen mejlar GitHub. En fil som skiljer betyder att någon ändrat sidan utanför repot eller att en publicering inte gått igenom. Kontrollen stoppar aldrig en publicering. Den använder bara `playwright-core`, med version och kontrollsumma låsta i `kontroll/package-lock.json`, och Chrome som finns på GitHubs maskiner. Lokalt: `cd kontroll && npm ci --ignore-scripts && node nattlig.mjs`.
+
 ## Repot
 
 - Rulesetet «Skydda main» nekar force-push och radering av main. «Skydda taggarna» nekar radering och flytt av alla taggar, så de 381 äldre releaserna ligger kvar på samma commit.

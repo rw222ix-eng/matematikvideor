@@ -1,0 +1,27 @@
+# Nattlig kontroll av videoteket (säkerhet C1, 2026-10-27): bygger HEAD och jämför varje fil och varje
+# säkerhetshuvud med det som serveras hos Vercel, Pages och på inbäddningsadressen, och provar sidan i
+# Chrome (kontroll/nattlig.mjs). Faller den mejlar GitHub. Den stoppar aldrig en publicering.
+name: Nattlig kontroll
+on:
+  schedule:
+    - cron: "23 1 * * *"
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: nattlig
+  cancel-in-progress: false
+jobs:
+  kontrollera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      # Bara playwright-core, med version och kontrollsumma låsta i package-lock.json. --ignore-scripts:
+      # inget paket får köra kod vid installationen. Chrome är den som redan finns på GitHubs maskiner.
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: kontroll
+      - run: node kontroll/nattlig.mjs
