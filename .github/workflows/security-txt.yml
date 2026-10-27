@@ -1,0 +1,29 @@
+# Kontrollerar en gång i månaden att public/.well-known/security.txt inte går ut (RFC 9116, fältet
+# Expires) och att Vercel serverar samma fil som repot. Faller när det är under 60 dagar kvar, och då
+# mejlar GitHub. Flytta då fram Expires ett år (högst ett år framåt) och pusha.
+name: Kontrollera security.txt
+on:
+  schedule:
+    - cron: "17 6 1 * *"
+  workflow_dispatch:
+permissions: {}
+jobs:
+  kontrollera:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Expires och den serverade filen
+        run: |
+          fil=public/.well-known/security.txt
+          utgar=$(grep -i '^Expires:' "$fil" | cut -d' ' -f2)
+          kvar=$(( ( $(date -d "$utgar" +%s) - $(date +%s) ) / 86400 ))
+          echo "security.txt går ut $utgar, om $kvar dagar."
+          if [ "$kvar" -lt 60 ]; then
+            echo "::error file=$fil::Expires ($utgar) är om $kvar dagar. Flytta fram datumet ett år och pusha."
+            exit 1
+          fi
+          curl -fsS --retry 3 https://winterhalls-matte.vercel.app/.well-known/security.txt | diff - "$fil"
