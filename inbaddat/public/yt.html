@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube</title>
+<style>html, body { margin: 0; height: 100%; overflow: hidden; background: #000; } #spelare, iframe { position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 0; }</style>
+</head>
+<body>
+<div id="spelare"></div>
+<script>
+// YouTube-reserven för videoteket (säkerhet B3, 2026-10-27). YouTubes skript körs här, på en egen adress,
+// i stället för på videotekets sida. Sidan styr spelaren med postMessage, och båda sidor kontrollerar
+// avsändaren. Adressen: yt.html#v=<id>&o=<sidans ursprung>&start=<sekund>&autoplay=0|1
+(function () {
+  "use strict";
+  var TILLATNA = ["https://winterhalls-matte.vercel.app", "https://rw222ix-eng.github.io"];
+  var p = new URLSearchParams(location.hash.slice(1));
+  var o = p.get("o") || "";
+  // Lokala prov (127.0.0.1 och localhost) får också bädda in. Vem som får bädda in avgör frame-ancestors i vercel.json.
+  if (window.parent === window || !(TILLATNA.indexOf(o) >= 0 || /^http:\/\/(127\.0\.0\.1|localhost):\d{2,5}$/.test(o))) return;
+  var id = p.get("v") || "";
+  var tal = function (k, min, max) { var x = Math.floor(Number(p.get(k))); return isFinite(x) && x >= min && x <= max ? x : min; };
+  var skicka = function (hand, lage) { window.parent.postMessage({ videotek: 1, hand: hand, lage: lage }, o); };
+  if (!/^[\w-]{11}$/.test(id)) { skicka("fel"); return; }
+  skicka("start");
+  var spelare = null, slinga = null, sokMal = null, sokNar = 0;
+  var lage = function () {
+    try {
+      // Direkt efter en spolning svarar YouTube fortfarande med den gamla tiden. Då gäller målet, annars
+      // räknar sidans nästa tryck på «l» från fel ställe.
+      var t = spelare.getCurrentTime();
+      if (sokMal !== null && Date.now() - sokNar < 1500 && Math.abs(t - sokMal) > 0.5) t = sokMal; else sokMal = null;
+      return { s: spelare.getPlayerState(), t: t, d: spelare.getDuration(), m: spelare.isMuted(), v: spelare.getVolume(), f: spelare.getPlaybackRate() };
+    } catch (e) { return null; }
+  };
+  var rapportera = function (hand) {
+    skicka(hand, lage());
+    // Medan filmen spelas får sidan tiden fyra gånger i sekunden, så att tidslinjen följer med.
+    var s = spelare && spelare.getPlayerState ? spelare.getPlayerState() : -1;
+    if ((s === 1 || s === 3) && !slinga) slinga = setInterval(function () { skicka("info", lage()); }, 250);
+    else if (s !== 1 && s !== 3 && slinga) { clearInterval(slinga); slinga = null; }
+  };
+  window.addEventListener("message", function (e) {
+    if (e.origin !== o || e.source !== window.parent || !spelare || !e.data || e.data.videotek !== 1) return;
+    var v = Number(e.data.v);
+    switch (e.data.kom) {
+      case "spela": spelare.playVideo(); break;
+      case "pausa": spelare.pauseVideo(); break;
+      case "sok": if (isFinite(v) && v >= 0) { sokMal = v; sokNar = Date.now(); spelare.seekTo(v, true); } break;
+      case "tyst": spelare.mute(); break;
+      case "ljud": spelare.unMute(); break;
+      case "volym": if (isFinite(v) && v >= 0 && v <= 100) spelare.setVolume(v); break;
+      case "fart": if (isFinite(v) && v >= 0.25 && v <= 2) spelare.setPlaybackRate(v); break;
+      // YouTubes egna undertexter av: sidan ritar sina egna.
+      case "text-av": try { spelare.unloadModule("captions"); spelare.unloadModule("cc"); } catch (x) {} break;
+      default: return;
+    }
+    setTimeout(function () { rapportera("info"); }, 50);
+  });
+  window.onYouTubeIframeAPIReady = function () {
+    spelare = new YT.Player("spelare", {
+      videoId: id,
+      playerVars: { start: tal("start", 0, 86400), autoplay: tal("autoplay", 0, 1), controls: 0, disablekb: 1, rel: 0, fs: 0, iv_load_policy: 3, playsinline: 1, cc_load_policy: 0, modestbranding: 1, hl: "sv" },
+      events: {
+        onReady: function () { rapportera("klar"); },
+        onStateChange: function () { rapportera("lage"); },
+        onPlaybackRateChange: function () { rapportera("info"); },
+        onError: function () { skicka("fel"); }
+      }
+    });
+  };
+  var s = document.createElement("script");
+  s.src = "https://www.youtube.com/iframe_api";
+  s.onerror = function () { skicka("fel"); };
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>

@@ -4,10 +4,6 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
-        },
-        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
@@ -22,10 +18,58 @@
         {
           "key": "Cross-Origin-Resource-Policy",
           "value": "same-origin"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
+        },
+        {
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "source": "/((?!yt\\.html|ggb\\.html).*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    },
+    {
+      "source": "/yt.html",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-kFNULvfH6nkGDs4UAhwm0PCa0M1AFdNnAl5oyAxj03E=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'sha256-EMG1hlTFx81MGaEMGhz9A2cZnRYoLHu0v30w3knj6cA='; frame-src https://www.youtube.com; frame-ancestors https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io http://127.0.0.1:* http://localhost:*"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "autoplay=(self \"https://www.youtube.com\"), encrypted-media=(self \"https://www.youtube.com\"), fullscreen=(self \"https://www.youtube.com\"), accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()"
+        }
+      ]
+    },
+    {
+      "source": "/ggb.html",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-+SI5o3tvOV5OlTUfKCL1Ct5dsV0Amwkwhdybr+8hwW8=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'unsafe-inline' https://www.geogebra.org; font-src data:; img-src data:; connect-src https://www.geogebra.org; worker-src 'none'; frame-ancestors https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io http://127.0.0.1:* http://localhost:*"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "autoplay=(), encrypted-media=(), fullscreen=(self), accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()"
         }
       ]
     }
   ],
+  "buildCommand": "node huvuden.mjs --kontroll",
   "ignoreCommand": "[ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- .",
   "outputDirectory": "public",
   "framework": null

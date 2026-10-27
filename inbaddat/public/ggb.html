@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeoGebra</title>
+<style>html, body { margin: 0; overflow: hidden; background: #fff; }</style>
+</head>
+<body>
+<div id="ggb"></div>
+<script>
+// GeoGebras grafräknare i videotekets Din tur (säkerhet B3, 2026-10-27). GeoGebras skript körs här, på en
+// egen adress, i stället för på videotekets sida. Sidan får bara veta när räknaren är klar eller inte gick
+// att ladda. Adressen: ggb.html#o=<sidans ursprung>&app=graphing&b=<bredd>&h=<höjd>
+(function () {
+  "use strict";
+  var TILLATNA = ["https://winterhalls-matte.vercel.app", "https://rw222ix-eng.github.io"];
+  var APPAR = ["graphing", "geometry", "classic", "3d", "cas", "scientific", "suite"];
+  var p = new URLSearchParams(location.hash.slice(1));
+  var o = p.get("o") || "";
+  // Lokala prov (127.0.0.1 och localhost) får också bädda in. Vem som får bädda in avgör frame-ancestors i vercel.json.
+  if (window.parent === window || !(TILLATNA.indexOf(o) >= 0 || /^http:\/\/(127\.0\.0\.1|localhost):\d{2,5}$/.test(o))) return;
+  var tal = function (k, min, max, std) { var x = Math.round(Number(p.get(k))); return isFinite(x) && x >= min && x <= max ? x : std; };
+  var skicka = function (hand) { window.parent.postMessage({ videotek: 1, hand: hand }, o); };
+  var app = APPAR.indexOf(p.get("app")) >= 0 ? p.get("app") : "graphing";
+  skicka("start");
+  var s = document.createElement("script");
+  s.src = "https://www.geogebra.org/apps/deployggb.js";
+  s.onload = function () {
+    // preventFocus: räknaren tar inte fokus (och flyttar inte sidan) när den byggs utan att eleven bett om det.
+    new window.GGBApplet({ appName: app, language: "sv", width: tal("b", 300, 2400, 600), height: tal("h", 300, 1400, 400), showToolBar: true, showAlgebraInput: true, showMenuBar: false, enableShiftDragZoom: true, showResetIcon: true, showFullscreenButton: true, showKeyboardOnFocus: false, useBrowserForJS: false, preventFocus: true, appletOnLoad: function () { skicka("klar"); } }, true).inject("ggb");
+  };
+  s.onerror = function () { skicka("fel"); };
+  document.head.appendChild(s);
+})();
+</script>
+</body>
+</html>
