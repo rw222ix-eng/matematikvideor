@@ -32,9 +32,12 @@ jobs:
       # de aldrig pekar på ett gammalt omslag när en publicering återställt dem.
       - run: node verktyg/filmsidor.mjs
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
-      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+      # v5 låser sin egen upload-artifact på SHA, vilket repots krav på SHA-låsning kräver (2026-10-27).
+      # include-hidden-files: true tar med .well-known/ som v3 gjorde.
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: public
+          include-hidden-files: true
       - id: deploy
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
       # Härkomst (SLSA Build L2) för varje fil som publicerades: vilken commit och vilket workflow som
