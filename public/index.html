@@ -6,7 +6,7 @@
      skriptet nedan inline. Byggsteget (verktyg/publicera.mjs, hos Vercel och GitHub Pages) flyttar skriptet
      till app.<hash>.js och byter policyn mot den strikta i verktyg/csp.mjs. En ny extern värd läggs in här,
      i verktyg/csp.mjs och i vercel.json (bygget faller om de två sista skiljer sig). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://www.geogebra.org; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
@@ -806,6 +806,7 @@
   .ggb-text { margin: 0 0 12px; font-size: 17px; color: #CFC8BA; max-width: 760px; }
   .ggb-yta { margin-top: 14px; border-radius: 10px; overflow: hidden; background: #fff; }
   .ggb-yta:empty { display: none; }
+  .ggb-yta iframe { display: block; border: 0; }
   .dintur-delar { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; counter-reset: del; }
   .del-fraga { margin: 0 0 12px; font-size: 18px; color: #CFC8BA; }
   .dintur-delar.flera .del-fraga::before { counter-increment: del; content: counter(del, lower-alpha) ")  "; color: var(--accent); font-weight: 400; }
@@ -3579,20 +3580,52 @@
   const FARTER = [1, 1.25, 1.5, 1.75, 2, 0.75];
   let fart = 1; try { const f = Number(localStorage.getItem("fart")); if (FARTER.includes(f)) fart = f; } catch (e) {}
   const fartText = (f) => `${String(f).replace(".", ",")}×`;
-  // YouTube-skriptet kan spärras av skolans filter. Då ska spelaren säga det, inte vänta för evigt.
-  let ytLaddning = null;
-  function ytApi() {
-    if (window.YT && window.YT.Player) return Promise.resolve();
-    if (ytLaddning) return ytLaddning;
-    ytLaddning = new Promise((res, rej) => {
-      const misslyckat = (e) => { clearTimeout(vakt); ytLaddning = null; rej(e); };
-      const vakt = setTimeout(() => misslyckat(new Error("YouTube svarade inte")), 15000);
-      window.onYouTubeIframeAPIReady = () => { clearTimeout(vakt); res(); };
-      const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api";
-      s.onerror = () => misslyckat(new Error("YouTube gick inte att ladda"));
-      document.head.appendChild(s);
-    });
-    return ytLaddning;
+  // GeoGebra och YouTube körs på en egen adress (säkerhet B3, 2026-10-27), så att deras kod bara når sin
+  // egen ram och inte resten av sidan. Sidorna där är inbaddat/public/ggb.html och yt.html i repot. Svaren
+  // därifrån tas bara emot från den adressen och från just den ramen.
+  const INBADDAT = "https://matematikvideor-inbaddat.vercel.app";
+  const franRam = (e, ram) => e.origin === INBADDAT && e.source === ram.contentWindow && e.data && e.data.videotek === 1;
+  // YouTube-reserven i en ram från INBADDAT. Ger samma metoder som YT.Player, så att spelaren nedan
+  // fungerar som förut. Läget (tid, längd, ljud) kommer från ramen fyra gånger i sekunden medan filmen
+  // spelas, och tiden räknas fram däremellan. Kan skolans filter spärra YouTube ska spelaren säga det,
+  // inte vänta för evigt: utan svar inom 15 s räknas det som ett fel.
+  function ytRam(holder, { videoId, start, autoplay, events }) {
+    const ram = document.createElement("iframe");
+    ram.title = "YouTube";
+    ram.allow = "autoplay; encrypted-media; fullscreen";
+    ram.referrerPolicy = "strict-origin-when-cross-origin";
+    ram.src = `${INBADDAT}/yt.html#${new URLSearchParams({ v: videoId, o: location.origin, start: String(Math.floor(start)), autoplay: autoplay ? "1" : "0" })}`;
+    let lage = { s: -1, t: 0, d: 0, m: false, v: volym, f: 1 }, nar = performance.now(), klar = false, felat = false;
+    const fel = () => { if (felat) return; felat = true; clearTimeout(vakt); if (events.onError) events.onError(); };
+    const vakt = setTimeout(() => { if (!klar) fel(); }, 15000);
+    const skicka = (kom, v) => { if (ram.contentWindow) ram.contentWindow.postMessage({ videotek: 1, kom, v }, INBADDAT); };
+    const tal = (x, std) => (typeof x === "number" && Number.isFinite(x) ? x : std);
+    const ta = (e) => {
+      if (!franRam(e, ram)) return;
+      const d = e.data, l = d.lage;
+      if (l && typeof l === "object") { lage = { s: tal(l.s, lage.s), t: tal(l.t, lage.t), d: tal(l.d, lage.d), m: l.m === true, v: tal(l.v, lage.v), f: tal(l.f, lage.f) }; nar = performance.now(); }
+      if (d.hand === "klar" && !klar && !felat) { klar = true; clearTimeout(vakt); if (events.onReady) events.onReady(); }
+      else if (d.hand === "lage" && klar) { if (events.onStateChange) events.onStateChange(); }
+      else if (d.hand === "fel") fel();
+    };
+    window.addEventListener("message", ta);
+    holder.replaceWith(ram);
+    return {
+      getPlayerState: () => lage.s,
+      getCurrentTime: () => (lage.s === 1 ? Math.min(lage.d || Infinity, lage.t + ((performance.now() - nar) / 1000) * lage.f) : lage.t),
+      getDuration: () => lage.d,
+      isMuted: () => lage.m,
+      getVolume: () => lage.v,
+      playVideo: () => skicka("spela"),
+      pauseVideo: () => skicka("pausa"),
+      seekTo: (t) => { lage.t = t; nar = performance.now(); skicka("sok", t); },
+      mute: () => { lage.m = true; skicka("tyst"); },
+      unMute: () => { lage.m = false; skicka("ljud"); },
+      setVolume: (v) => { lage.v = v; skicka("volym", v); },
+      setPlaybackRate: (f) => skicka("fart", f),
+      unloadModule: () => skicka("text-av"),
+      destroy: () => { clearTimeout(vakt); window.removeEventListener("message", ta); ram.remove(); },
+    };
   }
   const iakttagare = lugnt ? null : new IntersectionObserver((poster) => {
     poster.forEach((p) => { if (p.isIntersecting) { p.target.classList.add("syns"); iakttagare.unobserve(p.target); } });
@@ -4085,11 +4118,11 @@
     dukEl.querySelector(".halla").appendChild(video); video.volume = volym / 100; video.currentTime = start;
     if (spela) sp.spela();
   }
-  async function startaYoutube(v, start, spela) {
-    try { await ytApi(); } catch (e) { console.warn(e); if (aktuell === v) visaFilmFel(); return; }
+  function startaYoutube(v, start, spela) {
     if (aktuell !== v) return;
     const holder = document.createElement("div"); dukEl.querySelector(".halla").appendChild(holder);
-    yt = new YT.Player(holder, { videoId: v.youtube, playerVars: { start: Math.floor(start), autoplay: spela ? 1 : 0, controls: 0, disablekb: 1, rel: 0, fs: 0, iv_load_policy: 3, playsinline: 1, cc_load_policy: 0, modestbranding: 1, hl: "sv" },
+    // Spelarens inställningar (inga YouTube-knappar, inga egna undertexter, svenska) står i yt.html.
+    yt = ytRam(holder, { videoId: v.youtube, start, autoplay: spela,
       events: {
         onReady: () => { stangYtText(); sp.satVolym(volym); sp.satFart(fart); uppdatera(); },
         onStateChange: () => { stangYtText(); uppdatera(); },
@@ -4649,9 +4682,9 @@
       </li>`).join("");
     // GeoGebra-rutan: ny för varje film, byggs när rutan närmar sig skärmen (ggbIakttagare).
     const ggb = d.geogebra;
-    ggbFilm++;
+    ggbRam = null; clearTimeout(ggbVakt);
     $("dintur-ggb").hidden = !ggb;
-    $("dintur-ggb-yta").innerHTML = "";
+    $("dintur-ggb-yta").replaceChildren();
     $("dintur-ggb-knapp").hidden = true;
     ggbIakttagare.unobserve($("dintur-ggb"));
     if (ggb) ggbIakttagare.observe($("dintur-ggb"));
@@ -4665,27 +4698,36 @@
     $("dintur-losning-knapp").hidden = !tidigare;
     $("dintur-losning").hidden = true; $("dintur-losning").innerHTML = "";
   }
-  // GeoGebras grafräknare i Din tur. deployggb.js hämtas en gång från geogebra.org; appleten byggs om
-  // för varje film. Tangenterna i GeoGebra stannar i rutan, annars spolar siffrorna filmen och "/" öppnar sökningen.
-  // Inbäddad direkt (2026-10-17): byggs när rutan är högst en skärmhöjd bort. ggbFilm räknas upp för varje
-  // film, så en laddning som blir klar efter filmbytet inte bygger den förra filmens räknare.
-  let ggbLaddad = null, ggbFilm = 0;
-  const laddaGgb = () => ggbLaddad || (ggbLaddad = new Promise((ja, nej) => { const sc = document.createElement("script"); sc.src = "https://www.geogebra.org/apps/deployggb.js"; sc.onload = ja; sc.onerror = () => { ggbLaddad = null; sc.remove(); nej(new Error("GeoGebra kunde inte laddas")); }; document.head.appendChild(sc); }));
-  async function byggGgb() {
-    const knapp = $("dintur-ggb-knapp"), yta = $("dintur-ggb-yta"), g = dt && dt.d.geogebra, film = ggbFilm;
+  // GeoGebras grafräknare i Din tur, i en ram från INBADDAT (säkerhet B3, 2026-10-27). Räknaren byggs om
+  // för varje film. Tangenterna i GeoGebra stannar i ramen, så siffrorna spolar inte filmen och "/" öppnar
+  // inte sökningen. Byggs när rutan är högst en skärmhöjd bort (2026-10-17). Ramen svarar «start» direkt och
+  // «fel» om GeoGebra inte gick att ladda. Kommer inget svar inom 20 s har adressen spärrats.
+  let ggbRam = null, ggbVakt = null;
+  const ggbFel = (ram) => {
+    if (ggbRam !== ram || !ram.isConnected) return;
+    clearTimeout(ggbVakt); ggbRam = null; ram.remove();
+    $("dintur-ggb-knapp").textContent = "Försök igen"; $("dintur-ggb-knapp").hidden = false;
+  };
+  window.addEventListener("message", (e) => {
+    if (!ggbRam || !franRam(e, ggbRam)) return;
+    if (e.data.hand === "start") clearTimeout(ggbVakt);
+    else if (e.data.hand === "fel") ggbFel(ggbRam);
+  });
+  function byggGgb() {
+    const knapp = $("dintur-ggb-knapp"), yta = $("dintur-ggb-yta"), g = dt && dt.d.geogebra;
     if (!g || yta.firstChild) return;
-    yta.innerHTML = '<div id="dintur-ggb-applet"></div>';
     knapp.hidden = true;
-    try {
-      await laddaGgb();
-      if (film !== ggbFilm) return;
-      const b = Math.max(300, yta.parentElement.clientWidth), h = b < 520 ? 600 : Math.round(Math.min(560, Math.max(380, b * 0.62))); // smal skärm: grafen hamnar ovanför algebrafältet och behöver höjden
-      // preventFocus: räknaren tar inte fokus (och flyttar inte sidan) när den byggs utan att eleven bett om det.
-      new window.GGBApplet({ appName: g.app || "graphing", language: "sv", width: b, height: h, showToolBar: true, showAlgebraInput: true, showMenuBar: false, enableShiftDragZoom: true, showResetIcon: true, showFullscreenButton: true, showKeyboardOnFocus: false, useBrowserForJS: false, preventFocus: true }, true).inject("dintur-ggb-applet");
-    } catch (e) {
-      if (film !== ggbFilm) return;
-      yta.innerHTML = ""; knapp.textContent = "Försök igen"; knapp.hidden = false;
-    }
+    const b = Math.max(300, yta.parentElement.clientWidth), h = b < 520 ? 600 : Math.round(Math.min(560, Math.max(380, b * 0.62))); // smal skärm: grafen hamnar ovanför algebrafältet och behöver höjden
+    const ram = document.createElement("iframe");
+    ram.title = "GeoGebra";
+    ram.allow = "fullscreen; clipboard-write";
+    ram.referrerPolicy = "strict-origin-when-cross-origin";
+    ram.width = String(b); ram.height = String(h);
+    ram.src = `${INBADDAT}/ggb.html#${new URLSearchParams({ o: location.origin, app: g.app || "graphing", b: String(b), h: String(h) })}`;
+    yta.appendChild(ram);
+    ggbRam = ram;
+    clearTimeout(ggbVakt);
+    ggbVakt = setTimeout(() => ggbFel(ram), 20000);
   }
   const ggbIakttagare = new IntersectionObserver((poster) => poster.forEach((p) => {
     if (!p.isIntersecting) return;

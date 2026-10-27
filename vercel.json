@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'none'; script-src 'sha256-ORn1z4MX4iD3/X8Cxj2zoKCxEO9BATi0eOJOt76WGQ0=' 'sha256-ZFXpuaKp0KX/X/eJi6cE9u6taeiGqCQc+W1GKvK7AYk=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://www.geogebra.org; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; frame-ancestors 'none'"
+          "value": "default-src 'none'; script-src 'sha256-ORn1z4MX4iD3/X8Cxj2zoKCxEO9BATi0eOJOt76WGQ0=' 'sha256-ZFXpuaKp0KX/X/eJi6cE9u6taeiGqCQc+W1GKvK7AYk=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; frame-ancestors 'none'"
         },
         {
           "key": "X-Content-Type-Options",
@@ -21,7 +21,7 @@
         },
         {
           "key": "Permissions-Policy",
-          "value": "accelerometer=(), autoplay=(self \"https://www.youtube.com\"), bluetooth=(), browsing-topics=(), camera=(), compute-pressure=(), display-capture=(), encrypted-media=(self \"https://www.youtube.com\"), fullscreen=(self \"https://www.youtube.com\"), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), storage-access=(), usb=(), window-management=(), xr-spatial-tracking=()"
+          "value": "accelerometer=(), autoplay=(self \"https://matematikvideor-inbaddat.vercel.app\"), bluetooth=(), browsing-topics=(), camera=(), compute-pressure=(), display-capture=(), encrypted-media=(self \"https://matematikvideor-inbaddat.vercel.app\"), fullscreen=(self \"https://matematikvideor-inbaddat.vercel.app\"), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), storage-access=(), usb=(), window-management=(), xr-spatial-tracking=()"
         },
         {
           "key": "Cross-Origin-Opener-Policy",

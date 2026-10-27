@@ -2,7 +2,7 @@
  * Content-Security-Policy för den publicerade sidan (2026-10-27, säkerhet B1).
  *
  * Skripten tillåts med hash och 'strict-dynamic', som Google gör: bara de två fasta skripten nedan får
- * köra, och de skript de själva lägger in (sidans app.<hash>.js, GeoGebra och YouTube). Ett injicerat
+ * köra, och de skript de själva lägger in (sidans app.<hash>.js). Ett injicerat
  * skript eller en injicerad <script src> kör inte. 'unsafe-inline' och https: gäller bara i mycket
  * gamla webbläsare, som inte känner hash eller 'strict-dynamic'.
  *
@@ -29,15 +29,19 @@ export const FILMSKRIPT = `var t=new URLSearchParams(location.search).get("t"),i
 
 export const hash = (s) => `'sha256-${createHash("sha256").update(s, "utf8").digest("base64")}'`;
 
+// GeoGebra och YouTube körs i ramar från en egen adress (säkerhet B3, inbaddat/ i repot). Deras skript,
+// stilar och anrop hör till den adressens policy (inbaddat/huvuden.mjs), inte till den här.
+export const INBADDAT = "https://matematikvideor-inbaddat.vercel.app";
+
 export const CSP = [
   "default-src 'none'",
   `script-src ${hash(LADDARE)} ${hash(FILMSKRIPT)} 'strict-dynamic' 'unsafe-inline' https:`,
-  "style-src 'self' 'unsafe-inline' https://www.geogebra.org",
+  "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",
   "img-src 'self' data:",
   "media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com",
-  "connect-src 'self' https://www.geogebra.org",
-  "frame-src https://www.youtube.com",
+  "connect-src 'self'",
+  `frame-src ${INBADDAT}`,
   "worker-src 'none'",
   "manifest-src 'none'",
   "object-src 'none'",

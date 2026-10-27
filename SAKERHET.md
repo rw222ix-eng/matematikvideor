@@ -20,7 +20,7 @@ Huvudena står i `vercel.json`. GitHub Pages kan inte skicka egna huvuden, så d
 | Strict-Transport-Security, 2 år, preload | att sidan öppnas utan https | huvud, och hela `.app` ligger i webbläsarnas preload-lista | 1 år, satt av GitHub |
 | X-Content-Type-Options: nosniff | att en fil tolkas som något annat än den är | huvud | saknas |
 | Referrer-Policy | att hela adressen skickas till andra värdar | huvud | meta-tagg |
-| Permissions-Policy | kamera, mikrofon, plats, sensorer, betalning och 19 funktioner till. Helskärm, autoplay och krypterad film gäller bara sidan och YouTube | huvud | saknas |
+| Permissions-Policy | kamera, mikrofon, plats, sensorer, betalning och 19 funktioner till. Helskärm, autoplay och krypterad film gäller bara sidan och inbäddningsadressen | huvud | saknas |
 | Cross-Origin-Opener-Policy: same-origin | att en sida som öppnat videoteket kommer åt fönstret | huvud | saknas |
 | Cross-Origin-Resource-Policy | att andra sidor läser in sidans filer i elevens webbläsare. Omslagen under `/omslag/` är undantagna, så att Classroom kan visa förhandsbilden | huvud | saknas |
 | X-Robots-Tag: noindex, nofollow | att sökmotorer listar filerna (sidan är olistad) | huvud, och meta-tagg i HTML | meta-tagg |
@@ -35,9 +35,17 @@ Policyn står i `verktyg/csp.mjs` (`CSP` för meta-taggarna, `CSP_HUVUD` för hu
 
 | Värd | Varför | Direktiv |
 | --- | --- | --- |
-| www.geogebra.org | grafräknaren i Din tur: `deployggb.js`, appens skript, stilar och anrop | skripten läggs in av sidans skript (`'strict-dynamic'`), style-src, connect-src |
-| www.youtube.com | reserven när filmfilen inte går att hämta | skriptet läggs in av sidans skript (`'strict-dynamic'`), frame-src |
+| matematikvideor-inbaddat.vercel.app | GeoGebra och YouTube-reserven, i ramar (se nedan) | frame-src |
 | github.com, release-assets.githubusercontent.com, objects.githubusercontent.com | filmerna, som ligger under Releases i det här repot | media-src |
+
+### GeoGebra och YouTube på en egen adress (B3, 2026-10-27)
+
+GeoGebras och YouTubes kod körs inte på videotekets sida. De ligger i ramar från Vercel-projektet `matematikvideor-inbaddat` (mappen `inbaddat/`, sidorna `ggb.html` och `yt.html`). Blir GeoGebra eller YouTube kapade, når deras kod bara sin egen ram, inte elevens framsteg eller resten av sidan.
+
+- Sidan och ramen pratar med postMessage. Båda kontrollerar avsändarens ursprung och fönster (ASVS 3.5.5). Ramen tar bara emot kommandon till spelaren (spela, pausa, spola, ljud, fart), och sidan tar bara emot läget och «klar», «start» eller «fel».
+- Ramarna går bara att bädda in från videoteket (`frame-ancestors`). En ram vars `o=` inte är videoteket kör ingenting.
+- Policyn för ramarna står i `inbaddat/huvuden.mjs`: www.geogebra.org i ggb.html, www.youtube.com i yt.html. Projektets bygge faller om `inbaddat/vercel.json` inte stämmer med sidorna.
+- Helskärm, autoplay och krypterad film delegeras till ramens adress i Permissions-Policy, och ramen delegerar dem vidare till YouTube.
 
 Typsnitten ligger i `public/fonts/`. Google Fonts används inte, så att Google inte ser elevernas adresser.
 
@@ -52,7 +60,7 @@ Typsnitten ligger i `public/fonts/`. Google Fonts används inte, så att Google 
 
 ### Varför GeoGebra och YouTube saknar SRI (3.6.1)
 
-Subresource Integrity kräver att filen är byte för byte densamma vid varje besök. `deployggb.js` och `iframe_api` ändras av GeoGebra och YouTube utan förvarning, och de laddar i sin tur fler skript. En hash skulle spärra Din tur och reserven nästa gång de ändras. I stället får de bara komma från sina egna värdar över https, och de ska flyttas till en egen adress, så att deras kod inte når resten av sidan.
+Subresource Integrity kräver att filen är byte för byte densamma vid varje besök. `deployggb.js` och `iframe_api` ändras av GeoGebra och YouTube utan förvarning, och de laddar i sin tur fler skript. En hash skulle spärra Din tur och reserven nästa gång de ändras. I stället får de bara komma från sina egna värdar över https, och de körs på en egen adress, så att deras kod inte når resten av sidan.
 
 ## Tidsgränser för larm (15.1.1)
 
@@ -74,7 +82,7 @@ Subresource Integrity kräver att filen är byte för byte densamma vid varje be
 
 ## Innan du ändrar sidan
 
-- En ny extern källa (bild, typsnitt, ram eller film från en annan värd) spärras tills den står i `verktyg/csp.mjs`, `vercel.json` och meta-taggen i `public/index.html`. Ett skript från en annan värd läggs in av sidans eget skript, aldrig med en egen `<script src>` i HTML. Lägg också in den i tabellen över externa värdar med skälet. Öppna sidan och läs konsolen efter CSP-fel innan du pushar.
+- En ny extern källa (bild, typsnitt, ram eller film från en annan värd) spärras tills den står i `verktyg/csp.mjs`, `vercel.json` och meta-taggen i `public/index.html`. Ett skript från en annan värd hör inte hemma på sidan. Lägg det i en egen sida under `inbaddat/public/`, med policyn i `inbaddat/huvuden.mjs`, och bädda in den som GeoGebra och YouTube. Lägg också in den i tabellen över externa värdar med skälet. Öppna sidan och läs konsolen efter CSP-fel innan du pushar.
 - Lägg aldrig tillbaka Google Fonts eller besöksmätning (Rickards beslut 2026-10-25).
 - Workflowen använder bara `actions/*` och `github/*`, låsta på SHA. En åtgärd från någon annan läggs inte in.
 - Inga hemligheter i repot. `.gitignore` spärrar `.env*`, `*.pem` och `*.key`.

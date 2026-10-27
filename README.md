@@ -91,6 +91,8 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   `ffmpeg -i <2160p.mp4> -vf scale=1920:1080 -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -movflags +faststart <1080p.mp4>`
   (filerna är 50–75 MB). Utan `fil` används YouTube (`youtube`-id) i stället.
 - Spelaren är sidans egen: `<video>` med egna kontroller; med YouTube körs inbäddningen med `controls=0` och styrs via IFrame API
+  i en ram från `https://matematikvideor-inbaddat.vercel.app` (`inbaddat/public/yt.html`, sedan 2026-10-27; GeoGebra i Din tur
+  ligger i `ggb.html` där). Sidan pratar med ramen med postMessage, se `SAKERHET.md`
   (spela/pausa, tidslinje, hastighet, kopiera länk hit, ljud, helskärm, tangenterna mellanslag/k,
   ←/→ 5 s, j/l 10 s, < och > hastighet, f, c, m). Tangenterna gäller när spelaren har fokus eller
   inget annat har det, så mellanslag på en knapp trycker på knappen.
