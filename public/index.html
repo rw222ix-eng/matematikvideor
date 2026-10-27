@@ -6,7 +6,7 @@
      skriptet nedan inline. Byggsteget (verktyg/publicera.mjs, hos Vercel och GitHub Pages) flyttar skriptet
      till app.<hash>.js och byter policyn mot den strikta i verktyg/csp.mjs. En ny extern värd läggs in här,
      i verktyg/csp.mjs och i vercel.json (bygget faller om de två sista skiljer sig). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
@@ -1455,6 +1455,16 @@
 <script>
 (async () => {
   const $ = (id) => document.getElementById(id);
+  // Trusted Types (säkerhet B2, 2026-10-27): webbläsaren tar bara emot HTML som gått genom html(). Den
+  // stoppar skript, ramar, stilmallar, händelseattribut och javascript:-länkar, så att ett fel i esc() eller
+  // en ny innerHTML utan html() inte kan köra kod. Kontrollen görs också i webbläsare utan Trusted Types.
+  // Lägg aldrig in HTML på annat sätt än med el.innerHTML = html(...). Töm med el.replaceChildren().
+  const FARLIG_HTML = /<\s*\/?\s*(script|iframe|frame|object|embed|base|link|meta|style)\b|<[^>]*\s(on[a-z]+|srcdoc|formaction)\s*=|javascript:/i;
+  const ttPolicy = window.trustedTypes ? window.trustedTypes.createPolicy("videotek", { createHTML: (s) => s }) : null;
+  const html = (s) => {
+    if (FARLIG_HTML.test(s)) throw new TypeError("videotek: HTML med skript, ram eller händelseattribut stoppad");
+    return ttPolicy ? ttPolicy.createHTML(s) : s;
+  };
   // Går videor.json inte att hämta (nätet, skolans filter) visas ett besked, inte en tom sida.
   let data;
   // På den publicerade sidan har laddaren (verktyg/csp.mjs) redan börjat hämta videor.json och prov.json,
@@ -1471,7 +1481,7 @@
     console.error(e);
     const fel = document.createElement("div");
     fel.className = "laddfel"; fel.setAttribute("role", "alert");
-    fel.innerHTML = `<div><p class="etikett">Filmerna gick inte att ladda</p><p class="brod">Kontrollera att du är ansluten till nätet och försök igen.</p><button type="button" class="kolla">Försök igen</button></div>`;
+    fel.innerHTML = html(`<div><p class="etikett">Filmerna gick inte att ladda</p><p class="brod">Kontrollera att du är ansluten till nätet och försök igen.</p><button type="button" class="kolla">Försök igen</button></div>`);
     fel.querySelector("button").addEventListener("click", () => location.reload());
     document.body.appendChild(fel);
     return;
@@ -2859,7 +2869,7 @@
   $("flikar").classList.toggle("fyra", new Set(HYLLOR.map(flikAv)).size > 3);
   $("flikar").classList.toggle("fem", new Set(HYLLOR.map(flikAv)).size > 4);
   // Klassknapparna under Inför provet, en per klass i prov.json.
-  $("provval").innerHTML = KLASSER.map((k) => `<button type="button" role="tab" data-klass="${attr(k.namn)}" aria-selected="false" aria-controls="tidslinje" tabindex="-1">${esc(k.namn)}</button>`).join("");
+  $("provval").innerHTML = html(KLASSER.map((k) => `<button type="button" role="tab" data-klass="${attr(k.namn)}" aria-selected="false" aria-controls="tidslinje" tabindex="-1">${esc(k.namn)}</button>`).join(""));
   function ritaProvval() {
     const k = provKlass(), knappar = [...$("provval").querySelectorAll("[role=tab]")];
     knappar.forEach((b, i) => { const ar = !!k && b.dataset.klass === k.namn; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar || (!k && i === 0) ? 0 : -1; });
@@ -2926,14 +2936,14 @@
     const filmer = hylla === "berattelser" ? berattelser : delar ? null : hyllaFilmer(hylla);
     const egna = delar ? delPlatser(hylla) : [];
     const lanade = delar ? ocksaDelar(hylla) : [];
-    spar.innerHTML = hylla === PROV ? provHtml() : delar
+    spar.innerHTML = html(hylla === PROV ? provHtml() : delar
       ? egna.map((p, i) => (p.saknas ? `
     <div class="post kommer del" style="--i:${i}">
       <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
       <span class="namn"><span class="rad1"><span class="kurs">Del ${p.del}</span></span><span class="moment">kommer snart</span></span>
     </div>` : kortHtml(p, i, hylla))).join("")
         + (lanade.length ? broHtml(hylla, lanade, egna.length) + lanade.map((v, k) => kortHtml(v, egna.length + 1 + k, hylla)).join("") : "")
-      : filmer.map((v, i) => kortHtml(v, i, hylla)).join("") + flerKommer(filmer.length);
+      : filmer.map((v, i) => kortHtml(v, i, hylla)).join("") + flerKommer(filmer.length));
     if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${flikAv(hylla)}"]`); flik.id = `flik-${flikAv(hylla)}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
   }
   ritaHylla();
@@ -3097,7 +3107,7 @@
       const v = videor.find((y) => y.id === b.dataset.film); if (!v) return;
       const f = framsteg[v.id] || {};
       const lagen = [f.sett ? "Sedd" : "", f.lost ? "Din tur löst" : ""].filter(Boolean);
-      b.querySelector(".status").innerHTML = lagen.length ? `${BOCK}${lagen.join(" · ")}` : "";
+      b.querySelector(".status").innerHTML = html(lagen.length ? `${BOCK}${lagen.join(" · ")}` : "");
       const andel = v.langd && f.max ? Math.min(1, f.max / v.langd) : 0;
       const linje = b.querySelector(".sett-linje");
       linje.hidden = !(andel > 0.02);
@@ -3490,7 +3500,7 @@
     const lista = $("sok-lista"), status = $("sok-status");
     if (!norm(falt.value)) {
       status.textContent = "";
-      lista.innerHTML = `<div class="forslag"><p class="etikett">Prova att söka på</p>${FORSLAG.map((f) => `<button type="button" data-forslag="${attr(f)}">${esc(f)}</button>`).join("")}</div>`;
+      lista.innerHTML = html(`<div class="forslag"><p class="etikett">Prova att söka på</p>${FORSLAG.map((f) => `<button type="button" data-forslag="${attr(f)}">${esc(f)}</button>`).join("")}</div>`);
       return;
     }
     // Stavfel rättas alltid (Rickard 2026-10-05: "det borde finnas automatiska rättningar om eleverna
@@ -3504,7 +3514,7 @@
     }
     if (!res.length) {
       status.textContent = "Ingen film tar upp det än.";
-      lista.innerHTML = `<section class="andra"><h4 class="etikett">Det här finns</h4><ul>${videor.map((a) => filmRad(a, "", "")).join("")}</ul></section>`;
+      lista.innerHTML = html(`<section class="andra"><h4 class="etikett">Det här finns</h4><ul>${videor.map((a) => filmRad(a, "", "")).join("")}</ul></section>`);
       return;
     }
     status.textContent = narmast ? "Inget ställe har alla orden. Här är det som ligger närmast." : "";
@@ -3520,7 +3530,7 @@
     const t0 = s0 ? s0.t : "";
     const bild = v.omslagRen || v.omslag, snart = !v.youtube && !v.fil;
     const knapp = snart ? "Läs vad som sägs" : s0 ? `Spela från ${tid(s0.t)}` : "Spela filmen";
-    lista.innerHTML = `${rattning}${kursval}
+    lista.innerHTML = html(`${rattning}${kursval}
       <article class="basta">
         <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${attr(bild)}" alt="">` : ""}</button>
         <div class="text">
@@ -3536,7 +3546,7 @@
         // Första stället visas med tidkod och utdrag; fler än ett ställe där ordet sägs står under.
         const rep = stallen.filter((s) => !s.kap).length;
         return filmRad(a, stallen[0] ? stallen[0].t : "", rep > 1 ? `Sägs på ${rep} ställen` : "", stallen[0], q.markRe);
-      }).join("")}</ul></section>` : ""}`;
+      }).join("")}</ul></section>` : ""}`);
   }
   // Sökningen är en modal dialog: bakom den går inget att nå med Tab (inert), och när den stängs
   // får knappen som öppnade den tillbaka fokus.
@@ -3674,7 +3684,7 @@
   function byggDuk(v) {
     // Affischen i spelaren: omslaget i hög upplösning när det finns (720 px blev suddigt).
     const bild = v.omslagStor || v.omslagRen || v.omslag;
-    dukEl.innerHTML = `
+    dukEl.innerHTML = html(`
       <div class="halla"></div>
       <div class="bild" style="${bild ? `background-image:url('${attr(bild)}')` : ""}"></div>
       <div class="lock" id="duk-lock" aria-hidden="true"></div>
@@ -3699,7 +3709,7 @@
           <span class="ljud"><button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button><span class="pop" id="duk-volym-pop"><span class="pop-ruta volym-ruta"><input class="volym" id="duk-volym" type="range" min="0" max="100" step="1" value="${volym}" aria-label="Volym" style="--niva:${volym}%"></span></span></span>
           <button class="knapp" id="duk-hel" type="button" aria-label="Helskärm">${IK.helIn}</button>
         </div>
-      </div>`;
+      </div>`);
     dukEl.classList.remove("igang"); dukEl.classList.add("paus");
   }
   function visaStyr() {
@@ -3712,7 +3722,7 @@
     const k = $("duk-ljud"); if (!k) return;
     const lage = v === 0 ? "av" : v < 50 ? "lag" : "hog";
     if (k.dataset.lage === lage) return;
-    k.innerHTML = lage === "av" ? IK.ljudAv : lage === "lag" ? IK.ljudLag : IK.ljudPa;
+    k.innerHTML = html(lage === "av" ? IK.ljudAv : lage === "lag" ? IK.ljudLag : IK.ljudPa);
     k.setAttribute("aria-label", lage === "av" ? "Ljud på" : "Ljud av"); k.dataset.lage = lage;
   }
   function uppdatera() {
@@ -3763,7 +3773,7 @@
     dukEl.classList.toggle("paus", !spelar); ritaMitt(spelar);
     if (sp.startad()) dukEl.classList.add("igang");
     const spelaK = $("duk-spela");
-    if (spelaK.dataset.lage !== String(spelar)) { spelaK.innerHTML = spelar ? IK.pausa : IK.spela; spelaK.setAttribute("aria-label", spelar ? "Pausa" : "Spela"); spelaK.dataset.lage = String(spelar); }
+    if (spelaK.dataset.lage !== String(spelar)) { spelaK.innerHTML = html(spelar ? IK.pausa : IK.spela); spelaK.setAttribute("aria-label", spelar ? "Pausa" : "Spela"); spelaK.dataset.lage = String(spelar); }
     const nuText = tid(Math.floor(nu)); const nuEl = $("duk-nu"); if (nuEl.textContent !== nuText) nuEl.textContent = nuText;
     if (langd) {
       const lt = tid(Math.floor(langd)); const le = $("duk-langd"); if (le.textContent !== lt) le.textContent = lt;
@@ -3807,7 +3817,7 @@
   function ritaMitt(spelar) {
     const m = $("duk-stor"); if (!m) return;
     if (m.dataset.lage === String(spelar)) return;
-    m.innerHTML = spelar ? IK.pausa.replace('class="fyll" ', "") : IK.spela.replace('class="fyll" ', 'class="spela-ikon" ');
+    m.innerHTML = html(spelar ? IK.pausa.replace('class="fyll" ', "") : IK.spela.replace('class="fyll" ', 'class="spela-ikon" '));
     m.dataset.lage = String(spelar);
   }
   function visaNyss() { dukEl.classList.add("nyss"); clearTimeout(nyssTimer); nyssTimer = setTimeout(() => dukEl.classList.remove("nyss"), 700); }
@@ -3843,7 +3853,7 @@
   function iHelskarm() { return aktaHelskarm() || dukEl.classList.contains("helskarm"); }
   function ritaHelKnapp() {
     const b = $("duk-hel"); if (!b) return;
-    b.innerHTML = iHelskarm() ? IK.helUt : IK.helIn; b.setAttribute("aria-label", iHelskarm() ? "Stäng helskärm" : "Helskärm");
+    b.innerHTML = html(iHelskarm() ? IK.helUt : IK.helIn); b.setAttribute("aria-label", iHelskarm() ? "Stäng helskärm" : "Helskärm");
   }
   function cssHelskarm(pa) {
     if (pa && Newton.visar !== "guide") Newton.gom();
@@ -4153,7 +4163,7 @@
     if ($("duk-fel")) return;
     const el = document.createElement("div");
     el.className = "fel"; el.id = "duk-fel"; el.setAttribute("role", "alert");
-    el.innerHTML = `<div><p class="etikett">Filmen gick inte att spela</p><p class="brod">Nätet släpper inte fram filmen just nu. Skolans nätverk kan spärra den. Kapitlen, texten och Din tur nedanför fungerar ändå.</p><button type="button" class="kolla" id="duk-igen">Försök igen</button></div>`;
+    el.innerHTML = html(`<div><p class="etikett">Filmen gick inte att spela</p><p class="brod">Nätet släpper inte fram filmen just nu. Skolans nätverk kan spärra den. Kapitlen, texten och Din tur nedanför fungerar ändå.</p><button type="button" class="kolla" id="duk-igen">Försök igen</button></div>`);
     dukEl.appendChild(el);
   }
 
@@ -4163,13 +4173,13 @@
     const nav = $("f-delar");
     const visas = !!(v.serie && SERIER[v.serie].platser);   // siffrorna bara i formelbladet (Ma 2a har 19)
     nav.hidden = !visas;
-    if (!visas) { nav.innerHTML = ""; return; }
-    nav.innerHTML = `<ol>${delPlatser(v.serie).map((p) => {
+    if (!visas) { nav.replaceChildren(); return; }
+    nav.innerHTML = html(`<ol>${delPlatser(v.serie).map((p) => {
       if (p.saknas) return `<li><span class="nr saknas" data-tips="Del ${p.del} · kommer snart"><span class="sr">Del ${p.del}, kommer snart</span><span aria-hidden="true">${p.del}</span></span></li>`;
       const namn = attr(`Del ${p.del} · ${delNamn(p)}`);
       return p.id === v.id ? `<li><span class="nr" aria-current="page" data-tips="${namn}"><span class="sr">Del ${p.del}, den här filmen</span><span aria-hidden="true">${p.del}</span></span></li>`
         : `<li><a class="nr" href="#${p.id}" data-tips="${namn}" aria-label="Del ${p.del}: ${attr(delNamn(p))}">${p.del}</a></li>`;
-    }).join("")}</ol>`;
+    }).join("")}</ol>`);
   }
   // Nästa del efter Din tur: omslaget och namnet, eller streckad om den inte är klar. Efter sista
   // delen finns ingen (siffrorna överst leder ändå till alla delar).
@@ -4177,11 +4187,11 @@
     const n = nastaDel(v), sek = $("f-nasta"), ruta = $("f-nasta-kort");
     sek.hidden = !n;
     $("f-nasta-rubrik").textContent = nastaOrd(v);
-    if (!n) { ruta.innerHTML = ""; return; }
+    if (!n) { ruta.replaceChildren(); return; }
     const bild = n.omslagRen || n.omslag;
-    ruta.innerHTML = n.saknas
+    ruta.innerHTML = html(n.saknas
       ? `<div class="nasta-kort kommer"><span class="omslag" aria-hidden="true">${n.del}</span><span class="text"><span class="etikett">Del ${n.del} av ${antalDelar(v.serie)}</span><span class="titel">Kommer snart</span><span class="brod">Nästa del är inte klar än. Den kommer upp här när den är klar.</span></span></div>`
-      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${attr(bild)}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${kursserie(n) ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${kursserie(n) && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`;
+      : `<button type="button" class="nasta-kort" data-film="${n.id}" aria-label="${attr(`${nastaOrd(v)}, ${nastaNamn(n)}`)}"><span class="omslag">${bild ? `<img src="${attr(bild)}" alt="" loading="lazy">` : ""}</span><span class="text"><span class="etikett">${kursserie(n) ? (n.ar != null ? arText(n.ar) : "") : `Del ${n.del} av ${antalDelar(n.serie)}`}${kursserie(n) && n.ar == null ? "" : " · "}${kursKort(n.kurs)}</span><span class="titel">${esc(delNamn(n))}</span><span class="brod">${esc(n.beskrivning.split(/(?<=\.)\s/)[0])}</span></span><span class="ring" aria-hidden="true">${SPELA}</span></button>`);
   }
 
   async function laddaFilm(v, t) {
@@ -4207,7 +4217,7 @@
     if (serie && serie.platser) Newton.efter(8000, () => aktivVy === "film" && aktuell === v && !sp.spelar() && synsIFonster($("f-delar"), 0.9), "delar", ...TIPS.delar, { markera: () => [$("f-delar")] });
     $("f-besk").textContent = v.beskrivning;
     // Begreppen är knappar: ett klick söker på ordet i alla filmer.
-    $("f-begrepp").innerHTML = v.begrepp.map((b) => `<li><button type="button" data-sok="${esc(b).replace(/"/g, "&quot;")}">${esc(b)}</button></li>`).join("");
+    $("f-begrepp").innerHTML = html(v.begrepp.map((b) => `<li><button type="button" data-sok="${esc(b).replace(/"/g, "&quot;")}">${esc(b)}</button></li>`).join(""));
     // Kapitlen ur kapitel.json. Saknas de (en ny film) delas filmen i högst sex jämna bitar, med
     // första meningen i varje bit som rubrik: en rad per replik (20–27 rader) blev överväldigande
     // (Rickard 2026-09-26). bygg.mjs varnar för en film utan kapitel.
@@ -4218,12 +4228,12 @@
     kapitelAntal = kapitel.length; egnaKapitelNu = egnaKapitel;
     $("f-langd").textContent = langdRad(v.langd);
     // Varje kapitel visar sin sort (Historia, Matte, Din tur) ovanför rubriken, i sortens färg.
-    $("kapitel").innerHTML = kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${esc(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join("");
+    $("kapitel").innerHTML = html(kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${esc(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join(""));
     // Två spalter: första halvan av kapitlen till vänster, resten till höger.
     $("kapitel").style.setProperty("--rader", Math.max(1, Math.ceil(kapitel.length / 2)));
     aktuellaKapitel = kapitel;
     $("allt").open = false;
-    $("helatext").innerHTML = v.repliker.map((r, i) => `<li${lugnt ? ' class="syns"' : ""}><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join("");
+    $("helatext").innerHTML = html(v.repliker.map((r, i) => `<li${lugnt ? ' class="syns"' : ""}><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join(""));
     if (iakttagare) $("helatext").querySelectorAll("li").forEach((li) => iakttagare.observe(li));
     ritaDinTur(v);
     const start = Number.isFinite(t) ? t : 0;
@@ -4239,7 +4249,7 @@
       startaYoutube(v, start, !!start);
     } else {
       dukEl.classList.remove("igang", "paus");
-      dukEl.innerHTML = `<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`;
+      dukEl.innerHTML = html(`<div class="snart">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="">` : ""}<div><p class="etikett">Publiceras snart</p><p class="brod">Kapitlen nedan visar vad som sägs, minut för minut. Sökningen fungerar redan.</p></div></div>`);
       markeraNu(start);
       return;
     }
@@ -4294,7 +4304,7 @@
     clearTimeout(vaktTimer); fortsatt = null;
     if (klocka) clearInterval(klocka); klocka = null;
     if (yt && yt.destroy) { try { yt.destroy(); } catch (e) {} }
-    dukEl.innerHTML = ""; dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; nuIndex = -1; nuKapitel = -1; kapitelKlickat = false; if (uppKnapp) uppKnapp.classList.remove("syns"); yt = null; video = null; aktuell = null;
+    dukEl.replaceChildren(); dukEl.classList.remove("igang", "paus", "visa", "drar", "helskarm", "nyss"); spelarForut = false; nuIndex = -1; nuKapitel = -1; kapitelKlickat = false; if (uppKnapp) uppKnapp.classList.remove("syns"); yt = null; video = null; aktuell = null;
   }
   // "Till filmen": syns när spelaren är ur bild efter ett kapitelklick (eller medan filmen spelar).
   const uppKnapp = $("upp");
@@ -4663,13 +4673,13 @@
     $("dintur-fraga").textContent = d.fraga;
     const fig = $("dintur-figur");
     fig.hidden = !d.figur;
-    fig.innerHTML = d.figur ? figur(d.figur) : "";
+    fig.innerHTML = html(d.figur ? figur(d.figur) : "");
     dtEl.classList.toggle("med-figur", !!d.figur && !d.figur.bild);
     if (d.figur) figurIakttagare.observe(fig.firstElementChild);
     $("dintur-lost").hidden = !tidigare;
     const delar = $("dintur-delar");
     delar.classList.toggle("flera", d.delar.length > 1);
-    delar.innerHTML = d.delar.map((del, i) => `
+    delar.innerHTML = html(d.delar.map((del, i) => `
       <li class="del">
         <p class="del-fraga" id="del-fraga-${i}">${esc(del.fraga)}</p>
         <form class="del-svar" data-del="${i}" novalidate>
@@ -4679,7 +4689,7 @@
         </form>
         ${del.tangenter ? `<div class="tangenter">${del.tangenter.map((t) => `<button type="button" data-tecken="${attr(t)}" aria-label="Skriv ${attr(TECKENNAMN[t] || t)}">${esc(t)}</button>`).join("")}</div>` : ""}
         <p class="del-svarstext" id="del-text-${i}" role="status" aria-live="polite"></p>
-      </li>`).join("");
+      </li>`).join(""));
     // GeoGebra-rutan: ny för varje film, byggs när rutan närmar sig skärmen (ggbIakttagare).
     const ggb = d.geogebra;
     ggbRam = null; clearTimeout(ggbVakt);
@@ -4691,12 +4701,12 @@
     $("dintur-ggb-text").textContent = (ggb && ggb.text) || "Lös uppgiften grafiskt i GeoGebra här, med samma steg som i filmen.";
     const ledtrad = $("dintur-ledtrad");
     ledtrad.hidden = true;
-    ledtrad.innerHTML = d.ledtrad ? `<p>${esc(d.ledtrad.text)}</p>${Number.isFinite(d.ledtrad.t) ? `<button type="button" class="kant" data-t="${d.ledtrad.t}">Se det i filmen, ${tid(d.ledtrad.t)}</button>` : ""}` : "";
+    ledtrad.innerHTML = html(d.ledtrad ? `<p>${esc(d.ledtrad.text)}</p>${Number.isFinite(d.ledtrad.t) ? `<button type="button" class="kant" data-t="${d.ledtrad.t}">Se det i filmen, ${tid(d.ledtrad.t)}</button>` : ""}` : "");
     $("dintur-ledtrad-knapp").hidden = !d.ledtrad;
     $("dintur-ledtrad-knapp").setAttribute("aria-expanded", "false");
     // Lösningen syns direkt för den som löst uppgiften förut, annars efter två fel eller rätt svar.
     $("dintur-losning-knapp").hidden = !tidigare;
-    $("dintur-losning").hidden = true; $("dintur-losning").innerHTML = "";
+    $("dintur-losning").hidden = true; $("dintur-losning").replaceChildren();
   }
   // GeoGebras grafräknare i Din tur, i en ram från INBADDAT (säkerhet B3, 2026-10-27). Räknaren byggs om
   // för varje film. Tangenterna i GeoGebra stannar i ramen, så siffrorna spolar inte filmen och "/" öppnar
@@ -4749,7 +4759,7 @@
     $("dintur-nasta").hidden = klar;
     if (klar && !$("losning-tallinje")) {
       const del = dt.d.delar.find((x) => x.typ === "intervall");
-      if (del) { const w = document.createElement("div"); w.id = "losning-tallinje"; w.innerHTML = tallinje(mangdUr(del.svar)); $("dintur-losning").appendChild(w); }
+      if (del) { const w = document.createElement("div"); w.id = "losning-tallinje"; w.innerHTML = html(tallinje(mangdUr(del.svar))); $("dintur-losning").appendChild(w); }
     }
   }
   const KRYSS = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3.2 3.2 L8.8 8.8 M8.8 3.2 L3.2 8.8"/></svg>';
@@ -4795,7 +4805,7 @@
     if (dom) {
       // "Rätt!" och "Inte riktigt." står redan i den stora raden, så de tas bort ur förklaringen.
       const forklaring = r.text.replace(/^Rätt!\s*/, "").replace(/^Inte riktigt\.\s*/, "");
-      text.innerHTML = `<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : KRYSS}</span><span class="dom-ord">${r.ok ? "Rätt!" : "Fel"}</span>${forklaring ? `<span class="dom-text">${esc(forklaring)}</span>` : ""}`;
+      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : KRYSS}</span><span class="dom-ord">${r.ok ? "Rätt!" : "Fel"}</span>${forklaring ? `<span class="dom-text">${esc(forklaring)}</span>` : ""}`);
       plask(text);
     } else text.textContent = r.text;
     li.classList.toggle("lost", r.ok);
@@ -4838,7 +4848,7 @@
     if (e.target.closest("#dintur-losning-knapp")) {
       const box = $("dintur-losning");
       box.hidden = false; $("dintur-losning-knapp").hidden = true;
-      box.innerHTML = `<h4 class="etikett">Lösning</h4><ol class="losning-steg" id="losning-steg" tabindex="-1" aria-live="polite"></ol><button type="button" class="kant" id="dintur-nasta">Nästa steg</button>`;
+      box.innerHTML = html(`<h4 class="etikett">Lösning</h4><ol class="losning-steg" id="losning-steg" tabindex="-1" aria-live="polite"></ol><button type="button" class="kant" id="dintur-nasta">Nästa steg</button>`);
       dt.steg = 0; nastaSteg();
       $("dintur-nasta").focus({ preventScroll: true });
       visaIFonstret(box);
@@ -5142,14 +5152,14 @@
     // Texten skrivs fram två tecken i taget. Hela texten ligger i bubblan från början (resten
     // osynlig), så bubblan har sin slutliga storlek direkt. Skärmläsare får hela texten på en gång.
     function prata(text, lista, raknare = "") {
-      knappar.innerHTML = "";
+      knappar.replaceChildren();
       for (const k of lista) {
         const b = document.createElement("button"); b.type = "button"; b.className = k.forst ? "forst" : "sedan"; b.textContent = k.text;
         b.addEventListener("click", (e) => { e.stopPropagation(); if (visar === "guide") skydda(e); k.gor(); });
         knappar.appendChild(b);
       }
       if (raknare) { const s = document.createElement("span"); s.className = "raknare"; s.textContent = raknare; knappar.appendChild(s); }
-      textEl.innerHTML = `<span class="sr">${esc(text)}</span><span aria-hidden="true"><span class="skrivet"></span><span class="rest">${esc(text)}</span></span>`;
+      textEl.innerHTML = html(`<span class="sr">${esc(text)}</span><span aria-hidden="true"><span class="skrivet"></span><span class="rest">${esc(text)}</span></span>`);
       const skrivet = textEl.querySelector(".skrivet"), rest = textEl.querySelector(".rest"), id = visar;
       let n = 0;
       clearTimeout(skrivTimer); stoppaLiv();
@@ -5759,7 +5769,7 @@
       guideNr = n; bekraftar = false; nuLista = null;
       const s = guideSteg[n], gang = guideGang;
       [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv();
-      el.classList.remove("talar", "pratar"); knappar.innerHTML = ""; stoppaRorelse();
+      el.classList.remove("talar", "pratar"); knappar.replaceChildren(); stoppaRorelse();
       // Ett steg som inte behövs hoppas över. Har Newton inte sagt något än i den här omgången tas det
       // bort i stället, så att räknaren börjar på 1 där han börjar prata.
       const forbi = () => { if (borjan && n === 0 && guideSteg.length > 1) { guideSteg.shift(); return visaSteg(0); } return visaSteg(n + 1); };
@@ -5827,7 +5837,7 @@
       (async () => {
         await satLage("glad");
         if (!samma()) return;
-        knappar.innerHTML = "";
+        knappar.replaceChildren();
         // Stegets egen reaktion, så länge att den hinner läsas.
         prata(svar, []);
         await vila(Math.max(1400, 500 + svar.length * 60));

@@ -22,7 +22,9 @@ import { pathToFileURL } from "node:url";
 // för varje version av sidan. Går filen inte att hämta försöker den en gång till. videor.json och
 // prov.json börjar hämtas samtidigt (window.videotekForhand), så att filmsidans omslag inte väntar på
 // skriptet först. catch() hindrar att ett nätfel syns som ett ohanterat fel innan skriptet tar emot svaret.
-export const LADDARE = `(function(){var d=document.currentScript.dataset.app,s=document.createElement("script"),f={};["videor.json","prov.json"].forEach(function(u){var p=fetch(u,{cache:"no-cache"});p.catch(function(){});f[u]=p});window.videotekForhand=f;s.src=d;s.fetchPriority="high";s.onerror=function(){var r=document.createElement("script");r.src=d+"?igen";document.head.appendChild(r)};document.head.appendChild(s)})()`;
+// Trusted Types (säkerhet B2): skriptadressen går genom policyn «laddare», som bara släpper igenom
+// app.<hash>.js. Webbläsare utan Trusted Types får adressen som vanlig text.
+export const LADDARE = `(function(){var d=document.currentScript.dataset.app,t=window.trustedTypes&&trustedTypes.createPolicy("laddare",{createScriptURL:function(u){if(/^app\\.[0-9a-f]{16}\\.js(\\?igen)?$/.test(u))return u;throw new TypeError("laddare: "+u)}}),a=function(u){return t?t.createScriptURL(u):u},s=document.createElement("script"),f={};["videor.json","prov.json"].forEach(function(u){var p=fetch(u,{cache:"no-cache"});p.catch(function(){});f[u]=p});window.videotekForhand=f;s.src=a(d);s.fetchPriority="high";s.onerror=function(){var r=document.createElement("script");r.src=a(d+"?igen");document.head.appendChild(r)};document.head.appendChild(s)})()`;
 
 // Filmsidorna (förhandsbilden i Classroom) skickar vidare till filmen. Filmens id står i data-film.
 export const FILMSKRIPT = `var t=new URLSearchParams(location.search).get("t"),id=document.currentScript.dataset.film;location.replace("../../#"+id+(t&&/^\\d+$/.test(t)?"&t="+t:""))`;
@@ -47,6 +49,10 @@ export const CSP = [
   "object-src 'none'",
   "base-uri 'none'",
   "form-action 'none'",
+  // Trusted Types (säkerhet B2, 2026-10-27): innerHTML och skriptadresser tar bara emot värden från
+  // sidans egna policyer, «videotek» (html() i index.html) och «laddare» (ovan). Ingen default-policy.
+  "require-trusted-types-for 'script'",
+  "trusted-types videotek laddare",
   "upgrade-insecure-requests",
 ].join("; ");
 

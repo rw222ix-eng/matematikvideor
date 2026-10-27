@@ -8,6 +8,7 @@ Skriven 2026-10-27. Ändra filen när ett skydd eller en extern källa ändras. 
 - Inga kakor, ingen inloggning och ingen besöksmätning.
 - Sidan sparar i elevens webbläsare (localStorage): `fart`, `formelbladKurs`, `framsteg`, `hjalpVisad`, `provKlass`, `textning`, `tips`, `tipsSedda` och `volym`. Inget av det är känsligt, och inget skickas härifrån (14.3.3).
 - Text från `videor.json` går genom `esc()` innan den läggs in som HTML (1.2.1). Sidan använder inte `eval` (1.3.2).
+- Trusted Types (B2, 2026-10-27): webbläsaren tar bara emot HTML och skriptadresser som gått genom sidans egna policyer, `videotek` (funktionen `html()` i `index.html`) och `laddare` (laddaren i `verktyg/csp.mjs`). `html()` stoppar HTML med skript, ramar, stilmallar, händelseattribut och `javascript:`, också i webbläsare utan Trusted Types. Ingen annan policy får skapas, och det finns ingen default-policy. Chrome och Edge sedan 2020, Safari 26 och Firefox 148 har stödet.
 
 ## Skydden i webbläsaren (3.1.1, 3.7.5)
 
@@ -30,6 +31,8 @@ En äldre webbläsare som inte känner ett skydd hoppar över det. Sidan fungera
 Policyn står i `verktyg/csp.mjs` (`CSP` för meta-taggarna, `CSP_HUVUD` för huvudet) och i `vercel.json`. Bygget faller om de två skiljer sig, och då ligger förra versionen kvar. `node verktyg/csp.mjs` skriver ut raden till `vercel.json`. Meta-taggen i repots `public/index.html` är mildare och gäller bara när `public/` provas lokalt med skriptet inline. Byggsteget byter den.
 
 `public/index.html` ska ha exakt ett `<script>` utan attribut. Bygget faller om det har fler. Händelseattribut (`onclick="…"`) och `javascript:`-länkar körs inte under den strikta policyn. Sätt lyssnare i skriptet i stället.
+
+HTML läggs bara in med `el.innerHTML = html(…)`. En vanlig sträng i `innerHTML`, `insertAdjacentHTML`, `outerHTML` eller `srcdoc` ger `TypeError` i webbläsare med Trusted Types. Töm ett element med `el.replaceChildren()`.
 
 ## Externa värdar (13.1.1)
 

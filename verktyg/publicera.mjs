@@ -49,6 +49,12 @@ if (skript.length !== 1) fel(`index.html ska ha exakt ett <script> utan attribut
 const meta = [...html.matchAll(/<meta http-equiv="Content-Security-Policy" content="[^"]*">/g)];
 if (meta.length !== 1) fel(`index.html ska ha exakt en CSP-meta-tagg, har ${meta.length}.`);
 if (!html.includes("</head>")) fel("index.html saknar </head>.");
+// Trusted Types (säkerhet B2): en vanlig sträng i innerHTML ger TypeError i elevens webbläsare, och då går
+// den delen av sidan sönder. Bygget faller hellre, så att förra versionen ligger kvar.
+const forsta = html.slice(0, skript[0].index).split("\n").length + 1;
+const osakra = [...skript[0][1].matchAll(/\.innerHTML\s*=(?!=)(?!\s*html\()|insertAdjacentHTML|\.outerHTML\s*=(?!=)|document\.write|\.srcdoc\s*=(?!=)/g)]
+  .map((m) => `rad ${forsta + skript[0][1].slice(0, m.index).split("\n").length - 1}: ${m[0]}`);
+if (osakra.length) fel(`index.html lägger in HTML utan html() (Trusted Types). Skriv el.innerHTML = html(…) eller el.replaceChildren():\n${osakra.join("\n")}`);
 
 // Laddaren lägger in skriptet asynkront, så det kan komma innan sidan är färdigläst. Koden väntar
 // därför på DOMContentLoaded, som skriptet sist i body gjorde av sig självt.
