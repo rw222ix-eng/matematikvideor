@@ -57,14 +57,18 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   eller lägg en venv i `verktyg/.venv`. Utan python behålls de gamla maskerna. Sist skriver
   `verktyg/filmsidor.mjs` en sida per film i `public/film/<id>/` med filmens titel och bild, så att
   en länk i Classroom får förhandsvisning. Sidan skickar vidare till `#<id>&t=<sekund>`.
+- Vid publiceringen kör Vercel och Pages `node verktyg/publicera.mjs`: filmsidorna skrivs, sidans
+  skript flyttas ur `index.html` till `app.<hash>.js` och policyn blir strikt (se `SAKERHET.md`).
+  Live-sidans `index.html` skiljer sig därför från repots. Jämför med
+  `node verktyg/publicera.mjs --public <kopia av public>`, aldrig med repots fil.
 - `public/` — det som publiceras: `index.html` + data. Formen följer `DESIGNBRIEF.md` (efter
   stgeorgescrypt.org.uk/then-and-now): intro i helskärm → vågrät tidslinje "Välj en film" (hjulet
   rullar i sidled; lodrät lista under 700 px) → filmens sida med spelare och kapitel. Sök via
   förstoringsglaset (eller tangenten `/`). Sökningen har kursknappar (Alla kurser, Ma 1c, Ma 2a, Ma 2c; kursen
   eleven kom från är vald; Ma 2c är filmerna med Matematik 2c som kurs eller i `kurser`) och rättar stavfel mot orden i filmerna ("pytagoras" söks som Pythagoras,
   med "Sök ändå på …" bredvid). Adresser: `#filmer` (Ma 1c), `#ma2a`, `#ma2c`, `#formelbladet` (serien), `#provet`, `#<id>`, `#<id>&t=<sekund>`, och
-  `film/<id>/?t=<sekund>` för länkar som delas. Typsnitt från Google Fonts (Jost + Cormorant
-  Garamond); en accentfärg (`--accent`).
+  `film/<id>/?t=<sekund>` för länkar som delas. Typsnitten ligger i `public/fonts/` (Jost,
+  Cormorant Garamond, Kalam), aldrig Google Fonts; en accentfärg (`--accent`).
 - Sökningen (Rickard 2026-10-05: "den absolut mest relevanta filmen") rangordnar efter filmens
   ÄMNE: momentet väger mest, sedan titeln, de första begreppen och kapitelrubrikerna, och sist hur
   ofta ordet sägs (med avtagande vikt). En rubrik som handlar om bara det man söker väger mer än en

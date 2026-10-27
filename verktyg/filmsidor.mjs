@@ -10,11 +10,13 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+// Policyn och vidarekopplingens skript står i csp.mjs (2026-10-27). Skriptet är detsamma på varje
+// filmsida, så att dess hash kan stå i policyn. Meta-taggen gäller också på GitHub Pages, som inte
+// skickar egna huvuden.
+import { CSP, FILMSKRIPT } from "./csp.mjs";
 
 // Förhandsbilden måste ha en hel adress. Spegeln på GitHub Pages pekar också hit, och det gör inget.
 export const SAJT = "https://winterhalls-matte.vercel.app";
-// Samma policy som i vercel.json och index.html (2026-10-25, skärpt 2026-10-27), för GitHub Pages som inte skickar egna huvuden.
-const CSP = "default-src 'none'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://www.geogebra.org; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests";
 
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const kursKort = (kurs) => { const m = kurs.match(/(\d)\s*([a-c]*)$/i); return m ? `Ma ${m[1]}${m[2].toLowerCase()}` : kurs; };
@@ -39,10 +41,7 @@ function sida(v) {
 <meta property="og:title" content="${attr(titel)}">
 <meta property="og:description" content="${attr(v.beskrivning)}">
 <meta property="og:url" content="${SAJT}/film/${v.id}/">
-${bild ? `<meta property="og:image" content="${SAJT}/${attr(bild)}">\n<meta name="twitter:card" content="summary_large_image">\n` : ""}<script>
-  var t = new URLSearchParams(location.search).get("t");
-  location.replace("../../#${v.id}" + (t && /^\\d+$/.test(t) ? "&t=" + t : ""));
-</script>
+${bild ? `<meta property="og:image" content="${SAJT}/${attr(bild)}">\n<meta name="twitter:card" content="summary_large_image">\n` : ""}<script data-film="${attr(v.id)}">${FILMSKRIPT}</script>
 <noscript><meta http-equiv="refresh" content="0; url=../../#${v.id}"></noscript>
 <style>html { background: #171414; color: #ECE6D8; font: 17px/1.7 system-ui, sans-serif; } a { color: #F2C572; }</style>
 </head>

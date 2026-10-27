@@ -2,9 +2,10 @@
 <html lang="sv">
 <head>
 <meta charset="utf-8">
-<!-- Säkerhet (2026-10-25, skärpt 2026-10-27): samma policy som Content-Security-Policy i vercel.json, utan frame-ancestors
-     (fungerar inte i meta). Här för GitHub Pages, som inte kan skicka egna huvuden. Ändras den ena ska
-     den andra och mallen i verktyg/filmsidor.mjs ändras likadant, annars spärrar den strängaste. -->
+<!-- Säkerhet (2026-10-25, skärpt 2026-10-27): den här policyn gäller bara när public/ provas lokalt, med
+     skriptet nedan inline. Byggsteget (verktyg/publicera.mjs, hos Vercel och GitHub Pages) flyttar skriptet
+     till app.<hash>.js och byter policyn mot den strikta i verktyg/csp.mjs. En ny extern värd läggs in här,
+     i verktyg/csp.mjs och i vercel.json (bygget faller om de två sista skiljer sig). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://www.geogebra.org; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1455,10 +1456,14 @@
   const $ = (id) => document.getElementById(id);
   // Går videor.json inte att hämta (nätet, skolans filter) visas ett besked, inte en tom sida.
   let data;
+  // På den publicerade sidan har laddaren (verktyg/csp.mjs) redan börjat hämta videor.json och prov.json,
+  // samtidigt som det här skriptet (2026-10-27). Annars kom filmsidans omslag senare än förut.
+  const forhand = window.videotekForhand || {};
+  const hamta = (fil) => forhand[fil] || fetch(fil, { cache: "no-cache" });
   // Klassernas prov för fliken Inför provet hämtas samtidigt. Går de inte att hämta syns fliken inte, resten fungerar.
-  const provLadd = fetch("prov.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const provLadd = hamta("prov.json").then((r) => (r.ok ? r.json() : null)).catch(() => null);
   try {
-    const svar = await fetch("videor.json", { cache: "no-cache" });
+    const svar = await hamta("videor.json");
     if (!svar.ok) throw new Error(`videor.json: ${svar.status}`);
     data = await svar.json();
   } catch (e) {

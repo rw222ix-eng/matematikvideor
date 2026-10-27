@@ -4,7 +4,7 @@ Skriven 2026-10-27. Ändra filen när ett skydd eller en extern källa ändras. 
 
 ## Sidan
 
-- Statisk sida. Vercel bygger med `node verktyg/filmsidor.mjs` och GitHub Pages med samma steg i `.github/workflows/pages.yml`. Bygget använder bara Node, inga npm-paket.
+- Statisk sida. Vercel bygger med `node verktyg/publicera.mjs` och GitHub Pages med samma steg i `.github/workflows/pages.yml`. Steget skriver filmsidorna, flyttar sidans skript ur `index.html` till `app.<hash>.js` och byter policyn mot den strikta i `verktyg/csp.mjs`. Bygget använder bara Node, inga npm-paket.
 - Inga kakor, ingen inloggning och ingen besöksmätning.
 - Sidan sparar i elevens webbläsare (localStorage): `fart`, `formelbladKurs`, `framsteg`, `hjalpVisad`, `provKlass`, `textning`, `tips`, `tipsSedda` och `volym`. Inget av det är känsligt, och inget skickas härifrån (14.3.3).
 - Text från `videor.json` går genom `esc()` innan den läggs in som HTML (1.2.1). Sidan använder inte `eval` (1.3.2).
@@ -15,7 +15,7 @@ Huvudena står i `vercel.json`. GitHub Pages kan inte skicka egna huvuden, så d
 
 | Skydd | Vad det stoppar | Vercel | Pages |
 | --- | --- | --- | --- |
-| Content-Security-Policy | skript, bilder, ramar och anrop från andra värdar än de i tabellen nedan, en injicerad `<base>`, formulär som skickas bort, plugins | huvud | meta-tagg |
+| Content-Security-Policy | skript som inte är sidans egna (hash och `'strict-dynamic'`: bara laddaren och filmsidornas vidarekoppling får köra, och de skript de själva lägger in), bilder, ramar och anrop från andra värdar än de i tabellen nedan, en injicerad `<base>`, formulär som skickas bort, plugins | huvud | meta-tagg |
 | `frame-ancestors 'none'` och X-Frame-Options: DENY | att en annan sida lägger videoteket i en ram (klickkapning) | huvud | saknas |
 | Strict-Transport-Security, 2 år, preload | att sidan öppnas utan https | huvud, och hela `.app` ligger i webbläsarnas preload-lista | 1 år, satt av GitHub |
 | X-Content-Type-Options: nosniff | att en fil tolkas som något annat än den är | huvud | saknas |
@@ -27,14 +27,16 @@ Huvudena står i `vercel.json`. GitHub Pages kan inte skicka egna huvuden, så d
 
 En äldre webbläsare som inte känner ett skydd hoppar över det. Sidan fungerar då som vanligt, men utan just det skyddet. CSP nivå 2, som policyn bygger på, finns i alla stora webbläsare sedan 2017.
 
-CSP står på tre ställen som ska vara lika: `vercel.json`, meta-taggen i `public/index.html` och konstanten `CSP` i `verktyg/filmsidor.mjs`. Ändras ett av dem utan de andra, spärrar den strängaste.
+Policyn står i `verktyg/csp.mjs` (`CSP` för meta-taggarna, `CSP_HUVUD` för huvudet) och i `vercel.json`. Bygget faller om de två skiljer sig, och då ligger förra versionen kvar. `node verktyg/csp.mjs` skriver ut raden till `vercel.json`. Meta-taggen i repots `public/index.html` är mildare och gäller bara när `public/` provas lokalt med skriptet inline. Byggsteget byter den.
+
+`public/index.html` ska ha exakt ett `<script>` utan attribut. Bygget faller om det har fler. Händelseattribut (`onclick="…"`) och `javascript:`-länkar körs inte under den strikta policyn. Sätt lyssnare i skriptet i stället.
 
 ## Externa värdar (13.1.1)
 
 | Värd | Varför | Direktiv |
 | --- | --- | --- |
-| www.geogebra.org | grafräknaren i Din tur: `deployggb.js`, appens skript, stilar och anrop | script-src, style-src, connect-src |
-| www.youtube.com | reserven när filmfilen inte går att hämta | script-src, frame-src |
+| www.geogebra.org | grafräknaren i Din tur: `deployggb.js`, appens skript, stilar och anrop | skripten läggs in av sidans skript (`'strict-dynamic'`), style-src, connect-src |
+| www.youtube.com | reserven när filmfilen inte går att hämta | skriptet läggs in av sidans skript (`'strict-dynamic'`), frame-src |
 | github.com, release-assets.githubusercontent.com, objects.githubusercontent.com | filmerna, som ligger under Releases i det här repot | media-src |
 
 Typsnitten ligger i `public/fonts/`. Google Fonts används inte, så att Google inte ser elevernas adresser.
@@ -65,7 +67,7 @@ Subresource Integrity kräver att filen är byte för byte densamma vid varje be
 
 ## Innan du ändrar sidan
 
-- En ny extern källa (skript, bild, typsnitt, ram eller film från en annan värd) spärras tills den står på alla tre CSP-ställena. Lägg också in den i tabellen över externa värdar med skälet. Öppna sidan och läs konsolen efter CSP-fel innan du pushar.
+- En ny extern källa (bild, typsnitt, ram eller film från en annan värd) spärras tills den står i `verktyg/csp.mjs`, `vercel.json` och meta-taggen i `public/index.html`. Ett skript från en annan värd läggs in av sidans eget skript, aldrig med en egen `<script src>` i HTML. Lägg också in den i tabellen över externa värdar med skälet. Öppna sidan och läs konsolen efter CSP-fel innan du pushar.
 - Lägg aldrig tillbaka Google Fonts eller besöksmätning (Rickards beslut 2026-10-25).
 - Workflowen använder bara `actions/*` och `github/*`, låsta på SHA. En åtgärd från någon annan läggs inte in.
 - Inga hemligheter i repot. `.gitignore` spärrar `.env*`, `*.pem` och `*.key`.
