@@ -9,11 +9,13 @@
  * 3. Meta-taggens policy byts mot den strikta i csp.mjs.
  * 4. Bygget faller om Content-Security-Policy i vercel.json inte är exakt CSP_HUVUD. Då ligger förra
  *    versionen kvar, och sidan fungerar som förut.
+ * 5. Med --vidarekoppla (bara Pages-workflowet) blir index.html en sida som skickar vidare till Vercel.
  *
  * Repots public/index.html ändras aldrig av det här: steget vägrar köra utanför Vercel och GitHub
  * Actions, om det inte får en kopia att arbeta i.
  *
- *   node verktyg/publicera.mjs                  (Vercel och Pages-workflowet)
+ *   node verktyg/publicera.mjs                  (Vercel)
+ *   node verktyg/publicera.mjs --vidarekoppla   (Pages-workflowet)
  *   node verktyg/publicera.mjs --public <mapp>   (en kopia av public/, för prov)
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync } from "node:fs";
@@ -21,7 +23,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { skrivFilmsidor } from "./filmsidor.mjs";
-import { CSP, CSP_HUVUD, LADDARE } from "./csp.mjs";
+import { CSP, CSP_HUVUD, LADDARE, VIDARE, VIDARE_CSP, VIDARE_STIL, VIDARE_TILL } from "./csp.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const i = process.argv.indexOf("--public");
@@ -69,3 +71,30 @@ html = html.replace("</head>", () => `<script data-app="${namn}">${LADDARE}</scr
 writeFileSync(indexFil, html, "utf8");
 if (!existsSync(join(publicDir, namn))) fel(`${namn} skrevs inte.`);
 console.log(`public/index.html: skriptet flyttat till ${namn} (${Math.round(app.length / 1024)} kB), policyn strikt.`);
+
+// 5. GitHub Pages (säkerhet 3a, 2026-10-27): --vidarekoppla byter index.html mot en sida som skickar
+// eleven vidare till samma ställe hos Vercel, med adressens # och det eleven sparat på Pages (VIDARE i
+// csp.mjs). Allt ovan körs ändå, så att Pages blir en full kopia igen om flaggan tas bort i pages.yml.
+if (process.argv.includes("--vidarekoppla")) {
+  if (process.env.VERCEL) fel("--vidarekoppla gäller bara GitHub Pages. Hos Vercel skulle sidan skicka vidare till sig själv.");
+  writeFileSync(indexFil, `<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="${VIDARE_CSP}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Matematikvideor av Rickard</title>
+<link rel="canonical" href="${VIDARE_TILL}/">
+<script>${VIDARE}</script>
+<noscript><meta http-equiv="refresh" content="0; url=${VIDARE_TILL}/"></noscript>
+<style>${VIDARE_STIL}</style>
+</head>
+<body>
+<p>Videoteket finns på <a href="${VIDARE_TILL}/">${VIDARE_TILL.replace("https://", "")}</a>.</p>
+</body>
+</html>
+`, "utf8");
+  console.log(`public/index.html: vidarekoppling till ${VIDARE_TILL} (GitHub Pages).`);
+}

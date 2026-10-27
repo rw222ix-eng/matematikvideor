@@ -103,7 +103,9 @@ Publicera: **https://winterhalls-matte.vercel.app** (Vercel-projektet `winterhal
 repot, bygger `public/` vid varje push till main — det är länken eleverna har, delad i Classroom
 2026-09-06 i Ma 1c/2c NA26F och TE26A). Reserv: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
 `rw222ix-eng/matematikvideor`. Arbetsflödet `.github/workflows/pages.yml` publicerar `public/` vid
-varje push till `main`, klart på ~1 min. Alltså: ändra register.json → `node bygg.mjs` → commit →
+varje push till `main`, klart på ~1 min. Sedan 2026-10-27 skickar Pages-kopians startsida vidare till
+samma ställe hos Vercel, med elevens sparade framsteg (`--vidarekoppla`, se SAKERHET.md). Ta bort
+flaggan i `pages.yml` så blir Pages en full kopia igen. Alltså: ändra register.json → `node bygg.mjs` → commit →
 `git push`. (Vercel-kopplingen saknade rättighet att skapa projekt 2026-09-04; vill man ha Vercel:
 importera repot i Vercels instrumentpanel.)
 

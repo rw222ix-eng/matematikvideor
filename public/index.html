@@ -1570,6 +1570,49 @@
     if (k.length) $("intro-kurser").textContent = k.length === 1 ? k[0] : `${k.slice(0, -1).join(", ")} och ${k[k.length - 1]}`;
   }
 
+  // ── Flytt från GitHub Pages (säkerhet 3a, 2026-10-27) ──
+  // Pages-kopian skickar vidare hit och tar med det eleven sparat där i #flytt=… (VIDARE i
+  // verktyg/csp.mjs), eftersom webbläsaren håller de två adressernas lagring isär. Det tas bara emot
+  // när eleven kommer från Pages, så att en länk från en annan sida inte kan ändra elevens framsteg.
+  // Det som redan finns här går före: en inställning skrivs bara om den saknas, och framstegen slås
+  // ihop som i sparaFramsteg. Adressen blir den eleven hade på Pages (#<film>&t=…).
+  if (location.hash.startsWith("#flytt=")) {
+    let flytt = null;
+    try { flytt = JSON.parse(decodeURIComponent(location.hash.slice(7))); } catch (e) {}
+    history.replaceState(null, "", flytt && typeof flytt.till === "string" && /^\/(\?[^#]*)?(#.*)?$/.test(flytt.till) ? flytt.till : "/");
+    const d = flytt && flytt.d;
+    if (d && typeof d === "object" && document.referrer === "https://rw222ix-eng.github.io/") {
+      const text = (k) => (typeof d[k] === "string" && d[k].length < 50000 ? d[k] : null);
+      const json = (s) => { try { return JSON.parse(s); } catch (e) { return null; } };
+      const objekt = (x) => (x && typeof x === "object" && !Array.isArray(x) ? x : null);
+      try {
+        for (const k of ["textning", "volym", "fart", "tips", "hjalpVisad", "provKlass", "formelbladKurs"]) if (text(k) !== null && localStorage.getItem(k) === null) localStorage.setItem(k, text(k));
+        const sedda = json(text("tipsSedda"));
+        if (Array.isArray(sedda)) {
+          const har = json(localStorage.getItem("tipsSedda"));
+          const alla = new Set(Array.isArray(har) ? har : []);
+          for (const x of sedda) if (typeof x === "string" && x.length < 200) alla.add(x);
+          localStorage.setItem("tipsSedda", JSON.stringify([...alla]));
+        }
+        const gamla = objekt(json(text("framsteg")));
+        if (gamla) {
+          const lagrat = objekt(json(localStorage.getItem("framsteg"))) || {};
+          const tal = (x) => (typeof x === "number" && Number.isFinite(x) && x >= 0 ? x : undefined);
+          for (const [id, f] of Object.entries(gamla)) {
+            if (!/^[a-z0-9-]{1,100}$/.test(id) || !objekt(f)) continue;
+            const g = { ...(objekt(lagrat[id]) || {}) };
+            if (g.pos == null && tal(f.pos) != null) g.pos = tal(f.pos);
+            g.max = Math.max(g.max || 0, tal(f.max) || 0);
+            g.sett = !!(g.sett || f.sett === true);
+            g.lost = !!(g.lost || f.lost === true);
+            lagrat[id] = g;
+          }
+          localStorage.setItem("framsteg", JSON.stringify(lagrat));
+        }
+      } catch (e) {}
+    }
+  }
+
   // ── Framsteg (2026-09-24) ─────────────────────────────
   // Per film: var eleven slutade (pos), hur långt den som längst kommit (max), om den är sedd
   // och om Din tur är löst. Sparas i webbläsaren, så det följer eleven på den egna datorn utan

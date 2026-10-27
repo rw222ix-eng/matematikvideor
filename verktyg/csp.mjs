@@ -29,7 +29,28 @@ export const LADDARE = `(function(){var d=document.currentScript.dataset.app,t=w
 // Filmsidorna (förhandsbilden i Classroom) skickar vidare till filmen. Filmens id står i data-film.
 export const FILMSKRIPT = `var t=new URLSearchParams(location.search).get("t"),id=document.currentScript.dataset.film;location.replace("../../#"+id+(t&&/^\\d+$/.test(t)?"&t="+t:""))`;
 
+// GitHub Pages-kopian skickar vidare till samma ställe hos Vercel (säkerhet 3a, 2026-10-27), eftersom
+// Pages inte kan skicka säkerhetshuvuden. Det eleven sparat i webbläsaren på Pages-adressen
+// (framsteg och inställningar) följer med i #flytt=…, eftersom webbläsaren håller de två adressernas
+// lagring isär. index.html tar bara emot det när eleven kommer från Pages, och slår ihop det med det
+// som redan finns där. Filmsidorna på Pages skickar som förut till ../../#<id>, alltså hit.
+export const VIDARE_TILL = "https://winterhalls-matte.vercel.app";
+export const VIDARE = `(function(){var t="/"+location.search+location.hash,d={},n=0;try{["framsteg","tipsSedda","textning","volym","fart","tips","hjalpVisad","provKlass","formelbladKurs"].forEach(function(k){var v=localStorage.getItem(k);if(v!==null&&v.length<50000){d[k]=v;n++}})}catch(e){}location.replace("${VIDARE_TILL}"+(n?"/#flytt="+encodeURIComponent(JSON.stringify({till:t,d:d})):t))})()`;
+
 export const hash = (s) => `'sha256-${createHash("sha256").update(s, "utf8").digest("base64")}'`;
+
+// Vidarekopplingens egen policy. Sidan har bara skriptet ovan, stilen nedan och en länk.
+export const VIDARE_STIL = "html { background: #171414; color: #ECE6D8; font: 17px/1.7 system-ui, sans-serif; } a { color: #F2C572; }";
+export const VIDARE_CSP = [
+  "default-src 'none'",
+  `script-src ${hash(VIDARE)}`,
+  `style-src ${hash(VIDARE_STIL)}`,
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'none'",
+  "require-trusted-types-for 'script'",
+  "trusted-types 'none'",
+].join("; ");
 
 // GeoGebra och YouTube körs i ramar från en egen adress (säkerhet B3, inbaddat/ i repot). Deras skript,
 // stilar och anrop hör till den adressens policy (inbaddat/huvuden.mjs), inte till den här.

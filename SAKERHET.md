@@ -5,6 +5,7 @@ Skriven 2026-10-27. Ändra filen när ett skydd eller en extern källa ändras. 
 ## Sidan
 
 - Statisk sida. Vercel bygger med `node verktyg/publicera.mjs` och GitHub Pages med samma steg i `.github/workflows/pages.yml`. Steget skriver filmsidorna, flyttar sidans skript ur `index.html` till `app.<hash>.js` och byter policyn mot den strikta i `verktyg/csp.mjs`. Bygget använder bara Node, inga npm-paket.
+- GitHub Pages skickar vidare till Vercel (2026-10-27), eftersom Pages inte kan skicka säkerhetshuvudena nedan. Pages-workflowet kör `publicera.mjs --vidarekoppla`, som byter startsidan mot en sida som skickar eleven till samma ställe hos Vercel: `#<film>&t=…` följer med, och filmsidorna på Pages går via startsidan dit. Det eleven sparat på Pages-adressen (localStorage, se nästa punkt) följer med i `#flytt=…`, eftersom webbläsaren håller de två adressernas lagring isär. Sidan hos Vercel tar bara emot det när eleven kommer från Pages (`document.referrer`), skriver en inställning bara om den saknas och slår ihop framstegen, och tar sedan bort `#flytt=…` ur adressen. Tas flaggan bort i `pages.yml` blir Pages en full kopia av videoteket igen, till exempel om Vercel ligger nere.
 - Inga kakor, ingen inloggning och ingen besöksmätning.
 - Sidan sparar i elevens webbläsare (localStorage): `fart`, `formelbladKurs`, `framsteg`, `hjalpVisad`, `provKlass`, `textning`, `tips`, `tipsSedda` och `volym`. Inget av det är känsligt, och inget skickas härifrån (14.3.3).
 - Text från `videor.json` går genom `esc()` innan den läggs in som HTML (1.2.1). Sidan använder inte `eval` (1.3.2).
@@ -12,7 +13,7 @@ Skriven 2026-10-27. Ändra filen när ett skydd eller en extern källa ändras. 
 
 ## Skydden i webbläsaren (3.1.1, 3.7.5)
 
-Huvudena står i `vercel.json`. GitHub Pages kan inte skicka egna huvuden, så där gäller bara det som går i meta-taggarna.
+Huvudena står i `vercel.json`. GitHub Pages kan inte skicka egna huvuden, så där gäller bara det som går i meta-taggarna. Kolumnen Pages gäller när Pages är en full kopia (utan `--vidarekoppla`). Vidarekopplingen har en egen policy (`VIDARE_CSP` i `verktyg/csp.mjs`) med bara sitt skript och sin stil.
 
 | Skydd | Vad det stoppar | Vercel | Pages |
 | --- | --- | --- | --- |
