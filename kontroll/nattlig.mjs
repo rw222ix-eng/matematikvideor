@@ -8,8 +8,8 @@
  * 2. Huvudena: varje huvud i vercel.json och inbaddat/vercel.json ska finnas live med samma värde.
  * 3. Sidan i Chrome: startsidan, sökningen, en film som spelas, Din tur med GeoGebra, formelbladet, Newton
  *    och YouTube-reserven, utan CSP-brott i någon ram. Trusted Types nekar rå HTML, srcdoc och nya
- *    policyer, och ett händelseattribut kör inte. Pages skickar vidare till Vercel, eller fungerar som
- *    full kopia om pages.yml bygger utan --vidarekoppla.
+ *    policyer, ett händelseattribut kör inte och ett stilattribut gör ingenting. Pages skickar vidare
+ *    till Vercel, eller fungerar som full kopia om pages.yml bygger utan --vidarekoppla.
  *
  * Det som faller provas igen efter några minuter, så att en publicering som pågår inte larmar. Har main
  * fått en ny commit under kontrollen jämförs inte filerna. Faller något igen slutar skriptet med kod 1, och
@@ -135,7 +135,15 @@ async function sidan(b, bas) {
         policy: !!window.trustedTypes && nekad(() => trustedTypes.createPolicy("angripare", { createHTML: (s) => s })),
         dubblett: !!window.trustedTypes && nekad(() => trustedTypes.createPolicy("videotek", { createHTML: (s) => s })),
       };
+      // B4: ett stilattribut gör ingenting, och data-stil sätter bara sidans egna egenskaper.
+      const a = document.createElement("div"), d = document.createElement("div");
+      a.setAttribute("style", "display:none");
+      d.setAttribute("data-stil", "position:fixed;--i:3");
+      document.body.append(a, d);
       await new Promise((k) => setTimeout(k, 1500));
+      r.stilattribut = getComputedStyle(a).display !== "none";
+      r.dataStil = getComputedStyle(d).position !== "fixed" && d.style.getPropertyValue("--i") === "3";
+      a.remove(); d.remove();
       r.korde = !!(window.__ett || window.__tva);
       return r;
     });

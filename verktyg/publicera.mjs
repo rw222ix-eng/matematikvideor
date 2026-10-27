@@ -57,6 +57,10 @@ const forsta = html.slice(0, skript[0].index).split("\n").length + 1;
 const osakra = [...skript[0][1].matchAll(/\.innerHTML\s*=(?!=)(?!\s*html\()|insertAdjacentHTML|\.outerHTML\s*=(?!=)|document\.write|\.srcdoc\s*=(?!=)/g)]
   .map((m) => `rad ${forsta + skript[0][1].slice(0, m.index).split("\n").length - 1}: ${m[0]}`);
 if (osakra.length) fel(`index.html lägger in HTML utan html() (Trusted Types). Skriv el.innerHTML = html(…) eller el.replaceChildren():\n${osakra.join("\n")}`);
+// Stilattribut (säkerhet B4): policyn har style-src-attr 'none', så style="…" gör ingenting hos eleven.
+const stilFel = [...html.matchAll(/\sstyle\s*=|setAttribute\(\s*["']style["']|\.style\.cssText\s*=(?!=)/g)]
+  .map((m) => `rad ${html.slice(0, m.index).split("\n").length}: ${m[0].trim()}`);
+if (stilFel.length) fel(`index.html har stilattribut, som policyn stoppar (style-src-attr 'none'). Skriv data-stil="egenskap:värde" och lägg egenskapen i STILAR, eller använd el.style.setProperty:\n${stilFel.join("\n")}`);
 
 // Laddaren lägger in skriptet asynkront, så det kan komma innan sidan är färdigläst. Koden väntar
 // därför på DOMContentLoaded, som skriptet sist i body gjorde av sig självt.

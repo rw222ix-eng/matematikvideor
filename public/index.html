@@ -6,7 +6,7 @@
      skriptet nedan inline. Byggsteget (verktyg/publicera.mjs, hos Vercel och GitHub Pages) flyttar skriptet
      till app.<hash>.js och byter policyn mot den strikta i verktyg/csp.mjs. En ny extern värd läggs in här,
      i verktyg/csp.mjs och i vercel.json (bygget faller om de två sista skiljer sig). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'none'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
@@ -1465,6 +1465,30 @@
     if (FARLIG_HTML.test(s)) throw new TypeError("videotek: HTML med skript, ram eller händelseattribut stoppad");
     return ttPolicy ? ttPolicy.createHTML(s) : s;
   };
+  // Stilattribut (säkerhet B4, 2026-10-27): policyn har style-src-attr 'none', så ett stilattribut i HTML
+  // gör ingenting, och ett injicerat stilattribut kan inte flytta, täcka eller dölja något. Sidans egna
+  // värden skrivs som data-stil="egenskap:värde;…" och sätts här med style.setProperty, som policyn
+  // släpper igenom. Bara egenskaperna i STILAR, och bara värden av rätt form. Observatören sätter dem
+  // innan sidan ritas, var HTML:en än läggs in. Stilattribut och style.cssText får bygget att falla.
+  const FARG = /^(#[0-9a-f]{3,8}|rgba?\([\d\s.,%]+\))$/i;
+  const STILAR = {
+    "--i": /^\d{1,4}$/, "--niva": /^\d{1,3}(\.\d+)?%$/, left: /^\d{1,3}(\.\d+)?%$/, width: /^\d{1,3}(\.\d+)?%$/,
+    // Bilden bara från sidans egna filer: en relativ sökväg, ingen värd och inget kolon (omslag/x.jpg?v=…).
+    "animation-delay": /^\d{1,3}(\.\d+)?s$/, "max-width": /^\d{1,5}px$/, "background-image": /^url\('[\w.%-][\w\/.%-]*(\?[\w=&.%-]*)?'\)$/,
+    "--blak": FARG, "--blak-svag": FARG, "--blak-accent": FARG, filter: /^(none|drop-shadow\(0 2px 6px (#[0-9a-f]{3,8}|rgba?\([\d\s.,%]+\))\))$/i,
+  };
+  const stil = (el) => {
+    for (const del of el.getAttribute("data-stil").split(";")) {
+      const i = del.indexOf(":"), k = del.slice(0, i).trim(), v = del.slice(i + 1).trim();
+      if (i > 0 && STILAR[k] && STILAR[k].test(v)) el.style.setProperty(k, v);
+    }
+  };
+  new MutationObserver((andringar) => {
+    for (const a of andringar) for (const n of a.addedNodes) if (n.nodeType === 1) {
+      if (n.hasAttribute("data-stil")) stil(n);
+      n.querySelectorAll("[data-stil]").forEach(stil);
+    }
+  }).observe(document.documentElement, { childList: true, subtree: true });
   // Går videor.json inte att hämta (nätet, skolans filter) visas ett besked, inte en tom sida.
   let data;
   // På den publicerade sidan har laddaren (verktyg/csp.mjs) redan börjat hämta videor.json och prov.json,
@@ -2890,7 +2914,7 @@
   const kortMoment = (v, h) => (h === PROV && arDelserie(v) ? `Formelbladet · ${kurserKort(v)}` : kurserKort(v));
   const visaAr = (v) => v.ar != null && !arDelserie(v);
   const kortHtml = (v, i, h = "berattelser") => `
-    <div class="post" style="--i:${i}">
+    <div class="post" data-stil="--i:${i}">
       <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
@@ -2921,7 +2945,7 @@
   ritaProvval();
   // Skylten först på linan under Inför provet. Pilen pekar mot filmerna, eller uppåt mot klassknapparna.
   const provSkylt = (liten, stor, text, namn, moment, upp = false) => `
-    <div class="post bro" role="note" style="--i:0">
+    <div class="post bro" role="note" data-stil="--i:0">
       <span class="lyft"></span>
       <span class="ram"><span class="bro-inre">
         <span class="bro-liten">${liten}</span>
@@ -2950,7 +2974,7 @@
   if (window.ResizeObserver) new ResizeObserver(placeraPlatta).observe($("flikar"));
   // Linan slutar med tre tomma kort: fler filmer kommer.
   const flerKommer = (fran) => [1, 2, 3].map((n) => `
-    <div class="post kommer" aria-hidden="true" style="--i:${fran + n - 1}">
+    <div class="post kommer" aria-hidden="true" data-stil="--i:${fran + n - 1}">
       <span class="lyft"></span><span class="ram"></span><span class="lina"></span>
       <span class="namn"><span class="rad1"><span class="kurs">· · ·</span></span><span class="moment">fler filmer kommer</span></span>
     </div>`).join("");
@@ -2963,7 +2987,7 @@
     const fran = SERIER[lanade[0].serie];
     const nr = lanade.map((v) => v.del).filter(Number.isFinite);
     return `
-    <div class="post bro" role="note" style="--i:${i}">
+    <div class="post bro" role="note" data-stil="--i:${i}">
       <span class="lyft"></span>
       <span class="ram"><span class="bro-inre">
         <span class="bro-liten">Från formelbladet för ${esc(fran.kort)}</span>
@@ -2981,7 +3005,7 @@
     const lanade = delar ? ocksaDelar(hylla) : [];
     spar.innerHTML = html(hylla === PROV ? provHtml() : delar
       ? egna.map((p, i) => (p.saknas ? `
-    <div class="post kommer del" style="--i:${i}">
+    <div class="post kommer del" data-stil="--i:${i}">
       <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
       <span class="namn"><span class="rad1"><span class="kurs">Del ${p.del}</span></span><span class="moment">kommer snart</span></span>
     </div>` : kortHtml(p, i, hylla))).join("")
@@ -3729,7 +3753,7 @@
     const bild = v.omslagStor || v.omslagRen || v.omslag;
     dukEl.innerHTML = html(`
       <div class="halla"></div>
-      <div class="bild" style="${bild ? `background-image:url('${attr(bild)}')` : ""}"></div>
+      <div class="bild" data-stil="${bild ? `background-image:url('${attr(bild)}')` : ""}"></div>
       <div class="lock" id="duk-lock" aria-hidden="true"></div>
       <div class="stor" aria-hidden="true"><span id="duk-stor">${IK.spela.replace('class="fyll" ', 'class="spela-ikon" ')}</span></div>
       <div class="spol" id="duk-spol" aria-hidden="true"></div>
@@ -3749,7 +3773,7 @@
           <span class="fartval"><button class="knapp fart" id="duk-fart" type="button" aria-label="Hastighet ${fartText(fart)}" aria-haspopup="menu">${fartText(fart)}</button><span class="pop" id="duk-fart-pop"><span class="pop-ruta fart-lista" role="menu" aria-label="Hastighet">${[...FARTER].sort((a, b) => b - a).map((f) => `<button type="button" role="menuitemradio" data-fart="${f}" aria-checked="${f === fart}">${fartText(f)}</button>`).join("")}</span></span></span>
           <button class="knapp" id="duk-dela" type="button" aria-label="Kopiera länk till den här stunden" data-tips="Kopiera länk till filmen">${IK.dela}</button>
           <button class="knapp" id="duk-cc" type="button" aria-label="Textning" aria-pressed="${textPa}"><span class="cc">CC</span></button>
-          <span class="ljud"><button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button><span class="pop" id="duk-volym-pop"><span class="pop-ruta volym-ruta"><input class="volym" id="duk-volym" type="range" min="0" max="100" step="1" value="${volym}" aria-label="Volym" style="--niva:${volym}%"></span></span></span>
+          <span class="ljud"><button class="knapp" id="duk-ljud" type="button" aria-label="Ljud av">${IK.ljudPa}</button><span class="pop" id="duk-volym-pop"><span class="pop-ruta volym-ruta"><input class="volym" id="duk-volym" type="range" min="0" max="100" step="1" value="${volym}" aria-label="Volym" data-stil="--niva:${volym}%"></span></span></span>
           <button class="knapp" id="duk-hel" type="button" aria-label="Helskärm">${IK.helIn}</button>
         </div>
       </div>`);
@@ -4308,7 +4332,7 @@
   function kapitelBand(langd) {
     return aktuellaKapitel.filter((k) => k.t < langd).map((k, i, a) => {
       const slut = Math.min(langd, a[i + 1] ? a[i + 1].t : langd);
-      return `<div class="kap-del${i ? "" : " forst"}${k.typ ? ` typ-${k.typ}` : ""}" style="left:${(k.t / langd * 100).toFixed(2)}%;width:${((slut - k.t) / langd * 100).toFixed(2)}%"></div>`;
+      return `<div class="kap-del${i ? "" : " forst"}${k.typ ? ` typ-${k.typ}` : ""}" data-stil="left:${(k.t / langd * 100).toFixed(2)}%;width:${((slut - k.t) / langd * 100).toFixed(2)}%"></div>`;
     }).join("");
   }
   const lys = (lista, forut, i) => {
@@ -4644,7 +4668,7 @@
     const kl = (e, bas) => [bas, ...["accent", "streckad", "tjock", "svag", "skugga", "liten"].filter((k) => e[k])].join(" ");
     let ordning = 0;
     // Hela streck ritas fram (pathLength 1), streckade och ytor tonas in. Ordningen ger fördröjningen.
-    const fordrojning = () => `style="animation-delay:${(0.12 * ordning++).toFixed(2)}s"`;
+    const fordrojning = () => `data-stil="animation-delay:${(0.12 * ordning++).toFixed(2)}s"`;
     const streck = (e, d) => e.streckad ? `<path class="${kl(e, "streck")} tona" ${fordrojning()} d="${d}"/>` : `<path class="${kl(e, "streck")} rita" pathLength="1" ${fordrojning()} d="${d}"/>`;
     const text = (p, t, e, ankare = "middle") => `<text class="${[kl(e, "tona"), /^[a-zA-Z]$/.test(t) ? "var" : ""].join(" ").trim()}" ${fordrojning()} x="${n(p[0])}" y="${n(p[1])}" text-anchor="${ankare}">${esc(t)}</text>`;
     const delar = f.delar.map((e) => {
@@ -4686,14 +4710,14 @@
     const etikett = attr(f.text || "Figur till uppgiften");
     // Eget bläck för en plåt, som i videon: `blak: { farg, skugga, accent }` (t.ex. ristat i sanden).
     const b = f.blak || {};
-    const eget = f.blak ? ` style="${attr([b.farg && `--blak:${b.farg}`, b.svag && `--blak-svag:${b.svag}`, b.accent && `--blak-accent:${b.accent}`, b.skugga && `filter:${b.skugga === "ingen" ? "none" : `drop-shadow(0 2px 6px ${b.skugga})`}`].filter(Boolean).join(";"))}"` : "";
+    const eget = f.blak ? ` data-stil="${attr([b.farg && `--blak:${b.farg}`, b.svag && `--blak-svag:${b.svag}`, b.accent && `--blak-accent:${b.accent}`, b.skugga && `filter:${b.skugga === "ingen" ? "none" : `drop-shadow(0 2px 6px ${b.skugga})`}`].filter(Boolean).join(";"))}"` : "";
     // Med plåt: bläcket som i videorna, vitt med skugga på en målning (tema "scen") och svart på
     // ett pappersuppslag (tema "papper"). Plåten fyller rutan som i filmen.
     // `utsnitt: [x, y, bredd, höjd]` visar bara en del av plåten (i 16:9), där ritningen ligger.
     if (f.bild) return `<svg class="dintur-figur plat tema-${f.tema || "scen"} vantar" viewBox="${(f.utsnitt || [0, 0, ...f.vy]).join(" ")}" role="img" aria-label="${etikett}">`
       + `<image href="${attr(f.bild)}" width="${f.vy[0]}" height="${f.vy[1]}" preserveAspectRatio="xMidYMid slice"/><g class="blak"${eget}>${delar}</g></svg>`;
     // Utan plåt: talen i figuren lika stora som i texten, så vyn visas högst 1,2 gånger sin bredd.
-    return `<svg class="dintur-figur vantar" viewBox="0 0 ${f.vy[0]} ${f.vy[1]}" style="max-width:${Math.round(f.vy[0] * 1.2)}px" role="img" aria-label="${etikett}">${delar}</svg>`;
+    return `<svg class="dintur-figur vantar" viewBox="0 0 ${f.vy[0]} ${f.vy[1]}" data-stil="max-width:${Math.round(f.vy[0] * 1.2)}px" role="img" aria-label="${etikett}">${delar}</svg>`;
   }
   const figurIakttagare = new IntersectionObserver((poster) => poster.forEach((p) => {
     if (!p.isIntersecting) return;

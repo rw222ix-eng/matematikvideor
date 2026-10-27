@@ -60,6 +60,9 @@ export const CSP = [
   "default-src 'none'",
   `script-src ${hash(LADDARE)} ${hash(FILMSKRIPT)} 'strict-dynamic' 'unsafe-inline' https:`,
   "style-src 'self' 'unsafe-inline'",
+  // Inga stilattribut (säkerhet B4, 2026-10-27). Stilblocken i <head> står kvar, så sidan ritas lika
+  // fort. Sidans egna värden sätts med style.setProperty (data-stil i index.html).
+  "style-src-attr 'none'",
   "font-src 'self' data:",
   "img-src 'self' data:",
   "media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com",

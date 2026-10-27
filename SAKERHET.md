@@ -35,6 +35,8 @@ Policyn står i `verktyg/csp.mjs` (`CSP` för meta-taggarna, `CSP_HUVUD` för hu
 
 HTML läggs bara in med `el.innerHTML = html(…)`. En vanlig sträng i `innerHTML`, `insertAdjacentHTML`, `outerHTML` eller `srcdoc` ger `TypeError` i webbläsare med Trusted Types. Töm ett element med `el.replaceChildren()`.
 
+Stilattribut gör ingenting (B4, 2026-10-27, `style-src-attr 'none'`), så ett injicerat stilattribut kan inte flytta, täcka eller dölja något. Stilblocken i `<head>` står kvar. Sidans egna värden skrivs som `data-stil="egenskap:värde;…"` och sätts med `style.setProperty`, som policyn släpper igenom. Bara egenskaperna i `STILAR` i `index.html` sätts, och bara värden av rätt form. En bild får bara komma från sidans egna filer. En ny egenskap läggs till i `STILAR` med en regel för värdet. `el.style.setProperty(…)` och `el.style.x = …` fungerar som vanligt. Bygget faller om `index.html` har ett stilattribut, `setAttribute("style", …)` eller `style.cssText = …`.
+
 ## Externa värdar (13.1.1)
 
 | Värd | Varför | Direktiv |
