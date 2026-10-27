@@ -13,8 +13,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 // Förhandsbilden måste ha en hel adress. Spegeln på GitHub Pages pekar också hit, och det gör inget.
 export const SAJT = "https://winterhalls-matte.vercel.app";
-// Samma policy som i vercel.json och index.html (2026-10-25), för GitHub Pages som inte skickar egna huvuden.
-const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://www.geogebra.org; font-src 'self' data:; img-src 'self' data:; media-src 'self' https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; object-src 'none'; base-uri 'self'; form-action 'self'";
+// Samma policy som i vercel.json och index.html (2026-10-25, skärpt 2026-10-27), för GitHub Pages som inte skickar egna huvuden.
+const CSP = "default-src 'none'; script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.geogebra.org; style-src 'self' 'unsafe-inline' https://www.geogebra.org; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self' https://www.geogebra.org; frame-src https://www.youtube.com; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests";
 
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const kursKort = (kurs) => { const m = kurs.match(/(\d)\s*([a-c]*)$/i); return m ? `Ma ${m[1]}${m[2].toLowerCase()}` : kurs; };
