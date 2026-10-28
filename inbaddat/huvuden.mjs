@@ -51,7 +51,7 @@ const vercel = {
     ...Object.entries(SIDOR).map(([source, s]) => ({ source, headers: [{ key: "Content-Security-Policy", value: s.csp.join("; ") }, { key: "Permissions-Policy", value: s.tillstand }] })),
   ],
   buildCommand: "node huvuden.mjs --kontroll",
-  ignoreCommand: "[ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- .",
+  ignoreCommand: "if [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git cat-file -e \"$VERCEL_GIT_PREVIOUS_SHA^{commit}\" 2>/dev/null && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- .; then exit 0; fi; exit 1",
   outputDirectory: "public",
   framework: null,
 };
