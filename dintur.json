@@ -1768,10 +1768,10 @@
   },
   "ma1c-k6-02-berakna-sidor": {
     "notisFran": "Nicolsons mätningar räknades igenom",
-    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp. Du ska svara på två frågor.",
+    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp. Hur högt är berget? Du ska svara på två frågor.",
     "slut": [
-      "Först: Vilken kvot ska du välja?",
-      "Sen: Hur högt är berget?"
+      "Först: Vilken kvot ska du använda för att ta reda på det?",
+      "Sen: Räkna ut hur högt berget är."
     ],
     "figur": {
       "vy": [1920, 1080],
@@ -1791,7 +1791,7 @@
     },
     "delar": [
       {
-        "fraga": "Först: Vilken kvot ska du välja?",
+        "fraga": "Först: Vilken kvot ska du använda för att ta reda på det?",
         "typ": "ord",
         "svar": ["tangens", "tan", "tangens v", "tan v", "tangens 20°", "tan 20°", "tangens 20", "tan 20", "tan(20)"],
         "exempel": "t.ex. cosinus",
@@ -1807,7 +1807,7 @@
         ]
       },
       {
-        "fraga": "Sen: Hur högt är berget? Svara i kilometer med en decimal.",
+        "fraga": "Sen: Räkna ut hur högt berget är. Svara i kilometer med en decimal.",
         "typ": "tal",
         "svar": 3.6397,
         "tolerans": 0.06,

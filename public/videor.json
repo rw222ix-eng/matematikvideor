@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-03T21:21:57.000Z",
+ "byggd": "2026-11-03T22:39:00.557Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -19344,7 +19344,7 @@
    "ocksa": null,
    "kurs": "Matematik 1c",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-02-berakna-sidor-v11/ma1c-k6-02-berakna-sidor-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma1c-k6-02-berakna-sidor-v12/ma1c-k6-02-berakna-sidor-1080p.mp4",
    "moment": "Beräkna sidor i en triangel då vinkeln är känd",
    "begrepp": [
     "sinus",
@@ -19358,7 +19358,7 @@
    ],
    "beskrivning": "Vintern 1849 står lantmätaren James Nicolson på slätten i norra Indien och ser en hög bergstopp i Nepal, dit han inte får gå. Med en vinkel och ett avstånd räknar vi ut hur högt berget är: vi namnger sidorna i en rätvinklig triangel, väljer rätt kvot bland sinus, cosinus och tangens och tar hänsyn till jordens rundning.",
    "youtube": null,
-   "langd": 846,
+   "langd": 852,
    "omslag": "omslag/ma1c-k6-02-berakna-sidor.jpg?v=78cfe39b",
    "omslagRen": "omslag/ma1c-k6-02-berakna-sidor-ren.jpg?v=08f3e34a",
    "omslagStor": null,
@@ -19513,7 +19513,7 @@
     },
     {
      "t": 828,
-     "text": "Nu är det din tur, med två frågor i Din tur-rutan längre ner på sidan. Du står tio kilometer från ett berg och ser toppen tjugo grader upp. Först: Vilken kvot ska du välja? Sen: Hur högt är berget?"
+     "text": "Nu är det din tur, med två frågor i Din tur-rutan längre ner på sidan. Du står tio kilometer från ett berg och ser toppen tjugo grader upp. Hur högt är berget? Först: Vilken kvot ska du använda för att ta reda på det? Sen: Räkna ut hur högt berget är."
     }
    ],
    "kapitel": [
@@ -19565,10 +19565,10 @@
    ],
    "dinTur": {
     "notisFran": 800,
-    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp. Du ska svara på två frågor.",
+    "fraga": "Du står 10 kilometer från ett berg och ser toppen 20 grader upp. Hur högt är berget? Du ska svara på två frågor.",
     "slut": [
-     "Först: Vilken kvot ska du välja?",
-     "Sen: Hur högt är berget?"
+     "Först: Vilken kvot ska du använda för att ta reda på det?",
+     "Sen: Räkna ut hur högt berget är."
     ],
     "figur": {
      "vy": [
@@ -19689,7 +19689,7 @@
     },
     "delar": [
      {
-      "fraga": "Först: Vilken kvot ska du välja?",
+      "fraga": "Först: Vilken kvot ska du använda för att ta reda på det?",
       "typ": "ord",
       "svar": [
        "tangens",
@@ -19735,7 +19735,7 @@
       ]
      },
      {
-      "fraga": "Sen: Hur högt är berget? Svara i kilometer med en decimal.",
+      "fraga": "Sen: Räkna ut hur högt berget är. Svara i kilometer med en decimal.",
       "typ": "tal",
       "svar": 3.6397,
       "tolerans": 0.06,
@@ -20855,23 +20855,28 @@
     },
     {
      "s": 828.94,
-     "e": 833.82,
+     "e": 833.9,
      "text": "Nu är det din tur, med två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 834.62,
-     "e": 839.18,
+     "s": 834.86,
+     "e": 840.14,
      "text": "Du står tio kilometer från ett berg och ser toppen tjugo grader upp."
     },
     {
-     "s": 839.98,
-     "e": 842.24,
-     "text": "Först: Vilken kvot ska du välja?"
+     "s": 840.94,
+     "e": 842.3,
+     "text": "Hur högt är berget?"
     },
     {
-     "s": 843.04,
-     "e": 845.16,
-     "text": "Sen: Hur högt är berget?"
+     "s": 843.26,
+     "e": 847.1,
+     "text": "Först: Vilken kvot ska du använda för att ta reda på det?"
+    },
+    {
+     "s": 847.9,
+     "e": 851.1,
+     "text": "Sen: Räkna ut hur högt berget är."
     }
    ]
   },
