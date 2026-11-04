@@ -1606,10 +1606,10 @@
     "notisFran": "Nu tar vi tre bitar"
   },
   "ma1c-k6-05-addera-vektorer": {
-    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7). Du ska svara på två frågor.",
+    "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7). Hur många rutor från starten ligger båten efter de två dagarna, om man mäter rakt? Du ska svara på två frågor.",
     "slut": [
       "Först: Skriv u + v i koordinatform.",
-      "Sen: Hur många rutor från starten ligger båten då, om man mäter rakt?"
+      "Sen: Räkna ut hur långt det är."
     ],
     "figur": {
       "vy": [1920, 1080],
@@ -1631,29 +1631,29 @@
     },
     "delar": [
       {
-        "fraga": "Först: Skriv u + v i koordinatform. Vad blir x-koordinaten?",
+        "fraga": "Först: Skriv u + v i koordinatform. Vad blir x-komposanten?",
         "typ": "tal",
         "svar": -6,
         "exempel": "t.ex. −3",
         "fel": [
-          { "svar": "6", "text": "Båda dagarna går västerut, åt vänster. Då blir x-koordinaten negativ." },
+          { "svar": "6", "text": "Båda dagarna går västerut, åt vänster. Då blir x-komposanten negativ." },
           { "svar": "-2", "text": "Det är bara v:s steg i x-led. Lägg ihop stegen i x-led: −4 + (−2)." },
           { "svar": "8", "text": "8 är stegen i y-led. x-led är öster–väster: −4 + (−2)." }
         ]
       },
       {
-        "fraga": "Vad blir y-koordinaten för u + v?",
+        "fraga": "Vad blir y-komposanten för u + v?",
         "typ": "tal",
         "svar": 8,
         "exempel": "t.ex. 5",
         "fel": [
-          { "svar": "-8", "text": "Norrut är uppåt. Då blir y-koordinaten positiv: 1 + 7." },
+          { "svar": "-8", "text": "Norrut är uppåt. Då blir y-komposanten positiv: 1 + 7." },
           { "svar": "7", "text": "Det är bara v:s steg i y-led. Lägg ihop stegen i y-led: 1 + 7." },
           { "svar": "-6", "text": "−6 är stegen i x-led. y-led är norrut: 1 + 7." }
         ]
       },
       {
-        "fraga": "Sen: Hur många rutor från starten ligger båten då, om man mäter rakt?",
+        "fraga": "Sen: Räkna ut hur långt det är.",
         "typ": "tal",
         "svar": 10,
         "enhet": "rutor",
@@ -1666,13 +1666,13 @@
       }
     ],
     "ledtrad": {
-      "fras": "Med koordinater lägger vi ihop",
+      "fras": "I koordinatform lägger vi ihop",
       "text": "Lägg ihop stegen i x-led för sig och stegen i y-led för sig. Räkna sedan längden med Pythagoras sats: x-steget i kvadrat plus y-steget i kvadrat, och sedan roten ur."
     },
     "losning": [
       "Regeln från formelbladet: u + v = (aₓ + bₓ, aᵧ + bᵧ). Här är aₓ = −4 och aᵧ = 1, bₓ = −2 och bᵧ = 7.",
       "Talen på samma ställen: u + v = (−4 + (−2), 1 + 7) = (−6, 8).",
-      "Regeln för längden: |u + v| = √(aₓ² + aᵧ²), med u + v:s koordinater −6 och 8.",
+      "Regeln för längden: |u + v| = √(aₓ² + aᵧ²), med u + v:s komposanter −6 och 8.",
       "|u + v| = √((−6)² + 8²) = √(36 + 64) = √100 = 10, så båten ligger 10 rutor från starten."
     ]
   },
@@ -2041,7 +2041,7 @@
           { "svar": "37", "tolerans": 0.6, "text": "Det är vinkeln från x-axeln. Vinkeln från norr har 40 mitt emot sig och 30 intill: tangens v = 40/30." },
           { "svar": "1.33", "tolerans": 0.01, "text": "Det är tangens v. Använd tangens invers på räknaren (tryck två gånger på tan) för att få vinkeln." } ] }
     ],
-    "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-koordinaten i kvadrat plus y-koordinaten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30. Vinkeln får du med tangens invers: tryck två gånger på tan." },
+    "ledtrad": { "fras": "Hur lång en vektor är", "text": "Vektorn är (−40, 30). Längden är roten ur x-komposanten i kvadrat plus y-komposanten i kvadrat. För vinkeln från norr: 40 ligger mitt emot vinkeln och 30 intill, så tangens v = 40/30. Vinkeln får du med tangens invers: tryck två gånger på tan." },
     "losning": [
       "Vektorn från Carpathia till Titanic är u = (−40, 30), alltså aₓ = −40 och aᵧ = 30.",
       "Längden med mallen |u| = √(aₓ² + aᵧ²): |u| = √((−40)² + 30²) = √(1 600 + 900) = √2 500 = 50. Det är 50 km.",
