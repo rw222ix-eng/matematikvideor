@@ -91,8 +91,9 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   `ffmpeg -i <2160p.mp4> -vf scale=1920:1080 -c:v libx264 -preset medium -crf 20 -c:a aac -b:a 192k -movflags +faststart <1080p.mp4>`
   (filerna är 50–75 MB). Utan `fil` används YouTube (`youtube`-id) i stället.
 - Efter en publicering städar `verktyg/stada-publicering.mjs` på datorn, startad av push-hooken `vt-push`: filmens
-  `utgar-*`, äldre `cache/release-v*` och klonen, när publiceringen är kontrollerad och inget annat arbetar med filmen.
-  Slutfilen och cacherna som kostat krediter rörs inte. `torr <id>` visar vad som skulle tas bort, och loggen ligger i
+  `utgar-*`, mellansteg i `assets/export` som går att bygga om, äldre `cache/release-v*` och klonen, när publiceringen är
+  kontrollerad och inget annat arbetar med filmen. Slutfilen, den publicerade filens kopia, `-svans*` och cacherna som
+  kostat krediter rörs inte. `torr <id>` visar vad som skulle tas bort, och loggen ligger i
   `E:/Matematikvideos/_stadning/stadning.log`.
 - Spelaren är sidans egen: `<video>` med egna kontroller; med YouTube körs inbäddningen med `controls=0` och styrs via IFrame API
   i en ram från `https://matematikvideor-inbaddat.vercel.app` (`inbaddat/public/yt.html`, sedan 2026-10-27; GeoGebra i Din tur

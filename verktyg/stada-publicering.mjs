@@ -6,6 +6,7 @@
  * vilka filmer som fått en ny `fil` i public/videor.json, lägger dem i kön _stadning/ko.json och arbetar sedan
  * av kön i en egen process. För just de filmerna tas det här bort, och inget annat:
  *   - filerna utgar-* i assets/export
+ *   - mellansteg i assets/export som går att bygga om (arMellansteg nedan, Rickard: «Ja, också mellanstegen»)
  *   - cache/release-v<N>-mappar äldre än den publicerade versionen, utom den nyaste
  *   - klonen som publicerade, när den är ren, helt pushad och orörd i 2 timmar
  *
@@ -107,6 +108,63 @@ export function valjReleaseMappar(mappar, tagg) {
   return { bort, kvar, okand };
 }
 
+// Mellansteg i assets/export, <projekt>-1080p-<ord>.mp4. Bara ord som står här tas bort, så ett nytt namn står kvar
+// tills någon sett vad det är. Varje ord går att bygga om: kedjan utgår från <projekt>-1080p.mp4 och klippen i cachen,
+// och den publicerade filen finns kvar som release. Står kvar: -svans* (din-tur-bygg --utan-svans och skarva.py läser
+// den, och den kräver en appexport), -hybrid, -fore-svans och -fore-fonster (svans-export.mjs återställer
+// -1080p.mp4 ur dem), -misslyckad, -master, -release, -film, -slut, -musik* och allt som inte är .mp4.
+const ORD = /^(?:ingang|klipp|filmiskt|topaz|omni\d*|blandad|ljud|svalj|tyst|utan|utanvarg|hl\d*[a-z]*|[vo]\d+[a-z]*|fore\d+|pub|publicerad|test|slutfraga|fonster|komposant|a|lagad)$/;
+const KRAVER_KLIPP = { ingang: ["ingang"], topaz: ["ingang"], klipp: ["klipp"], omni: ["klipp", "omni"], blandad: ["klipp", "omni"] };
+
+// Svar: orden i namnet, eller null när filen inte är ett känt mellansteg.
+export function arMellansteg(namn, projekt) {
+  const fore = `${projekt}-1080p-`;
+  if (!namn.startsWith(fore) || !namn.endsWith(".mp4")) return null;
+  const ord = namn.slice(fore.length, -4).split("-");
+  return ord.every((o) => ORD.test(o)) ? ord : null;
+}
+
+function harVideo(p) {
+  const s = lst(p);
+  if (!s || s.isSymbolicLink()) return false;
+  if (!s.isDirectory()) return /\.(mp4|mov)$/i.test(p) && s.size > 0;
+  return fs.readdirSync(p).some((n) => harVideo(path.join(p, n)));
+}
+
+// Klippen som kostat krediter ska finnas i cachen innan filmen de ligger i tas bort. Annars går den inte att bygga om.
+function kanByggasOm(ord, projekt) {
+  for (const o of ord) {
+    const krav = KRAVER_KLIPP[o.replace(/\d+$/, "")];
+    if (krav && !krav.some((d) => harVideo(path.join(projekt, "cache", d)))) return `klippen till -${o} saknas i cachen`;
+    if (o === "filmiskt" && !lst(path.join(projekt, "verktyg", "filmiskt.py"))) return "verktyg/filmiskt.py saknas";
+  }
+  return null;
+}
+
+// Filer som listorna i _scratch pekar på för den publicerade versionen. Skarva.py och hack-mätningen läser dem.
+// Går en lista inte att läsa är svaret null, och då rörs inga mellansteg.
+export function namnIListor(film, fil, m) {
+  const namn = new Set();
+  const lagg = (x) => { for (const f of [x?.lokal, x?.kalla]) if (f) namn.add(path.basename(String(f).replace(/\\/g, "/"))); };
+  try {
+    const pub = path.join(m.rot, "_scratch", "slutfragan", "publicerat.json");
+    if (lst(pub)) {
+      const post = JSON.parse(fs.readFileSync(pub, "utf8"))[film.id];
+      if (post?.url === fil) lagg(post);
+    }
+    const karta = path.join(m.rot, "_scratch", "hack-utlagda", "karta.json");
+    if (lst(karta)) for (const x of JSON.parse(fs.readFileSync(karta, "utf8"))) if (x.id === film.id && x.fil === fil) lagg(x);
+    return namn;
+  } catch { return null; }
+}
+
+// Sökvägar eller mappar som någon annan har hand om, en per rad i _stadning/rors-inte.txt.
+function rorsInte(m) {
+  try { return fs.readFileSync(path.join(m.mapp, "rors-inte.txt"), "utf8").split(/\r?\n/).map(normal).filter(Boolean); }
+  catch { return []; }
+}
+const skyddad = (p, lista) => { const n = normal(path.resolve(p)); return lista.some((r) => n === r || n.startsWith(`${r}/`)); };
+
 const projektVag = (film, m) => path.join(m.rot, film.projekt);
 const verkligKedja = (rot, ...delar) => { let p = rot; for (const d of delar) { p = path.join(p, d); if (lst(p) && !enDir(p)) return false; } return true; };
 
@@ -116,16 +174,31 @@ export function planera(film, kontroll, m) {
   const kvar = [];
   const projekt = projektVag(film, m);
   if (!enDir(projekt)) return { poster, kvar: [`${projekt} är ingen vanlig mapp, inget rörs`] };
+  const andras = rorsInte(m);
+  const listade = namnIListor(film, kontroll.fil, m);
+  if (!listade) kvar.push("listorna i _scratch gick inte att läsa, mellanstegen rörs inte");
   const exp = path.join(projekt, "assets", "export");
   if (!verkligKedja(projekt, "assets", "export")) kvar.push("assets/export är en länk eller junction, rörs inte");
   else if (enDir(exp)) {
     for (const n of fs.readdirSync(exp)) {
-      if (!n.startsWith("utgar-")) continue;
+      if (n === `${film.projekt}-1080p.mp4` || !n.endsWith(".mp4")) continue;
       const p = path.join(exp, n);
       const s = lst(p);
+      const utgar = n.startsWith("utgar-");
+      const ord = utgar ? null : arMellansteg(n, film.projekt);
+      if (!utgar && !ord) { kvar.push(`${n} är inget känt mellansteg, står kvar`); continue; }
       if (!s.isFile()) kvar.push(`${n} är ingen vanlig fil, rörs inte`);
-      else if (s.size === kontroll.storlek) kvar.push(`${n} är lika stor som den publicerade filen, rörs inte`);
-      else poster.push({ sokvag: p, byte: s.size, sort: "utgar" });
+      else if (s.size === kontroll.storlek) kvar.push(`${n} är lika stor som den publicerade filen, står kvar`);
+      else if (skyddad(p, andras)) kvar.push(`${n} står i rors-inte.txt, rörs inte`);
+      else if (utgar) poster.push({ sokvag: p, byte: s.size, sort: "utgar" });
+      else if (!listade) continue;
+      else if (listade.has(n)) kvar.push(`${n} står i en lista i _scratch, står kvar`);
+      else if (!(s.mtimeMs < kontroll.publicerad)) kvar.push(`${n} är nyare än publiceringen, står kvar`);
+      else {
+        const hinder = kanByggasOm(ord, projekt);
+        if (hinder) kvar.push(`${n}: ${hinder}, står kvar`);
+        else poster.push({ sokvag: p, byte: s.size, sort: "mellansteg" });
+      }
     }
   }
   const cache = path.join(projekt, "cache");
@@ -141,6 +214,7 @@ export function planera(film, kontroll, m) {
       // En mapp vars film är lika stor som den publicerade kan vara den publicerade, vad den än heter.
       const film1 = lst(path.join(p, kontroll.namn));
       if (film1?.size === kontroll.storlek) kvar.push(`cache/${n} har den publicerade filen, rörs inte`);
+      else if (skyddad(p, andras)) kvar.push(`cache/${n} står i rors-inte.txt, rörs inte`);
       else poster.push({ sokvag: p, byte: storlek(p), sort: "release" });
     }
     for (const n of val.kvar) kvar.push(`cache/${n} är aktuell, nyast eller nyare, står kvar`);
@@ -195,7 +269,7 @@ export async function kontrollera(film, m) {
   if (!lokalKopia(film, namn, asset.size, tagg, m)) return nej(`ingen lokal fil har releasens storlek ${asset.size}`);
   const slut = lst(path.join(projektVag(film, m), "assets", "export", `${film.projekt}-1080p.mp4`));
   if (!slut?.isFile() || !slut.size) return nej(`slutfilen ${film.projekt}-1080p.mp4 saknas i assets/export`);
-  return { ok: true, tagg, namn, storlek: asset.size };
+  return { ok: true, fil, tagg, namn, storlek: asset.size, publicerad: Date.parse(rel.published_at) };
 }
 
 function senasteAndring(p, gans) {
@@ -260,6 +334,7 @@ export function klonLage(klon, m) {
   if (!nam.startsWith("vt-") || normal(path.dirname(path.resolve(klon))) !== normal(path.resolve(m.rot))) return nej(`${klon} är ingen vt-klon direkt under ${m.rot}`);
   if (!lst(klon)) return { ok: false, borta: true, skal: "klonen finns inte längre" };
   if (!enDir(klon)) return nej("klonen är en länk eller junction");
+  if (skyddad(klon, rorsInte(m))) return nej("klonen står i rors-inte.txt");
   const gitdir = path.join(klon, ".git");
   if (!enDir(gitdir)) return nej("klonen har ingen egen .git-mapp");
   const url = gitK(klon, "remote", "get-url", "origin");
@@ -544,7 +619,9 @@ async function torr(id, klon, m) {
   let summa = 0;
   for (const p of plan.poster) { summa += p.byte; console.log(`tas bort  ${gb(p.byte).padStart(9)}  ${path.relative(m.rot, p.sokvag).replace(/\\/g, "/")}`); }
   for (const t of plan.kvar) console.log(`kvar      ${t}`);
-  console.log(`Summa ur projektet: ${gb(summa)}. ${id}-1080p.mp4 står kvar.`);
+  const per = {};
+  for (const p of plan.poster) per[p.sort] = (per[p.sort] ?? 0) + p.byte;
+  console.log(`Summa ur projektet: ${gb(summa)} (${Object.entries(per).map(([s, b]) => `${s} ${gb(b)}`).join(", ")}). ${id}-1080p.mp4 står kvar.`);
   if (klon) {
     const l = klonLage(klon, m);
     console.log(`Klonen ${path.basename(klon)}: ${l.ok ? `skulle tas bort (${gb(storlek(klon))})` : `står kvar: ${l.skal}`}`);
@@ -609,7 +686,7 @@ async function prov() {
       nu() { return this.tid; },
       videorOrigin: () => [{ id: "film-a", fil: FIL }],
       videorLive: () => [{ id: "film-a", fil: FIL }],
-      release: () => ({ draft: false, assets: [{ name: "film-a-1080p.mp4", state: "uploaded", size: STORLEK }] }),
+      release: () => ({ draft: false, published_at: new Date(nu0 - TIMME).toISOString(), assets: [{ name: "film-a-1080p.mp4", state: "uploaded", size: STORLEK }] }),
       filSvar: () => ({ status: 206, total: STORLEK }),
       processer: () => [],
     };
@@ -663,7 +740,7 @@ async function prov() {
       const { exp, cache, proj } = e;
       kolla("utgar-filerna är borta", !finns(path.join(exp, "utgar-111-film-a-1080p.mp4")) && !finns(path.join(exp, "utgar-222-film-a-1080p.mp4")));
       kolla("slutfilen står kvar", lst(path.join(exp, "film-a-1080p.mp4"))?.size === 500);
-      kolla("aktuella mellansteg står kvar", finns(path.join(exp, "film-a-1080p-klipp.mp4")));
+      kolla("mellansteg utan sina klipp i cachen står kvar", finns(path.join(exp, "film-a-1080p-klipp.mp4")));
       kolla("äldre release-versioner är borta", !finns(path.join(cache, "release-v5")) && !finns(path.join(cache, "release-v11")) && !finns(path.join(cache, "release-v12-fore")));
       kolla("den aktuella release-mappen står kvar", finns(path.join(cache, "release-v12", "film-a-1080p.mp4")));
       kolla("release med annan form står kvar", finns(path.join(cache, "release-o5")) && finns(path.join(cache, "release-v11-krock.log")));
@@ -671,6 +748,53 @@ async function prov() {
       kolla("posten lämnar kön", r.bort === true);
       const l = logg(e.m);
       kolla("loggen säger vad som togs bort och hur mycket", /tog bort film-a\/assets\/export\/utgar-111/.test(l) && /tog bort film-a\/cache\/release-v5 \(0,00 GB\)/.test(l) && /klart för film-a-v12/.test(l));
+    }
+    // 1b. Mellanstegen.
+    {
+      const e = nyMiljo();
+      const g1 = (n) => path.join(e.exp, `film-a-1080p${n}`);
+      const bort = ["-klipp", "-klipp-filmiskt", "-ingang-klipp", "-ingang-klipp-ljud", "-filmiskt", "-ingang", "-ingang-o5", "-ingang-v8", "-ingang-ljud-svalj", "-ingang-topaz", "-omni", "-omni-v3-ingang-hl", "-hl9d", "-v5", "-o6a", "-pub-v6", "-test-v9", "-slutfraga", "-fonster", "-a-lagad", "-komposant"];
+      const kvar = ["-svans", "-svans-filmiskt", "-svans-klipp", "-hybrid", "-fore-svans", "-fore-fonster", "-misslyckad-svans", "-v12-master", "-release", "-film", "-musik3", "-nytt-namn"];
+      for (const n of [...bort, ...kvar]) skriv(g1(`${n}.mp4`), 200);
+      skriv(g1("-svans.json"), 5);
+      skriv(g1("-fonster.json"), 5);
+      skriv(path.join(e.exp, "film-a-1080p-kopia.txt"), 5);
+      skriv(path.join(e.proj, "cache", "ingang", "veo.mp4"), 90);
+      skriv(path.join(e.proj, "cache", "klipp", "klipp", "1-topaz.mp4"), 90);
+      skriv(path.join(e.proj, "verktyg", "filmiskt.py"), 9);
+      aldra(e.proj, nu0 - dag);
+      const r = await behandla(e.film, e.m);
+      kolla("mellanstegen som går att bygga om är borta", r.bort === true && bort.every((n) => !finns(g1(`${n}.mp4`))));
+      kolla("-svans, -fore-*, -master och okända namn står kvar", kvar.every((n) => finns(g1(`${n}.mp4`))));
+      kolla("json och annat än mp4 står kvar", finns(g1("-svans.json")) && finns(g1("-fonster.json")) && finns(path.join(e.exp, "film-a-1080p-kopia.txt")));
+      kolla("slutfilen och klippen i cachen står kvar", lst(g1(".mp4"))?.size === 500 && finns(path.join(e.proj, "cache", "ingang", "veo.mp4")) && finns(path.join(e.proj, "cache", "klipp", "klipp", "1-topaz.mp4")));
+      kolla("loggen säger att okända namn står kvar", /film-a-1080p-nytt-namn.mp4 är inget känt mellansteg/.test(logg(e.m)));
+    }
+    {
+      kolla("namn utan projektet är inget mellansteg", !arMellansteg("annan-1080p-ingang.mp4", "film-a") && !arMellansteg("v12-film-a-1080p-ingang.mp4", "film-a"));
+      kolla("exakt slutfilens namn är inget mellansteg", !arMellansteg("film-a-1080p.mp4", "film-a"));
+      const fall = async (namn, gor, sant) => {
+        const e = nyMiljo();
+        const f = path.join(e.exp, "film-a-1080p-ingang.mp4");
+        skriv(f, 200);
+        skriv(path.join(e.proj, "cache", "ingang", "veo.mp4"), 90);
+        aldra(e.proj, nu0 - dag);
+        gor(e, f);
+        await behandla(e.film, e.m);
+        kolla(namn, sant(finns(f), e));
+      };
+      const lista = (e, rel, innehall) => { skriv(path.join(e.rot, rel), 1); fs.writeFileSync(path.join(e.rot, rel), innehall); };
+      await fall("kontrollfilen utan hinder: mellansteget borta", () => {}, (f) => !f);
+      await fall("kontrollen fallerar: mellansteget står kvar", (e) => { e.m.release = () => null; }, (f) => f);
+      await fall("publiceringstiden saknas: mellansteget står kvar, utgar borta", (e) => { e.m.release = () => ({ draft: false, assets: [{ name: "film-a-1080p.mp4", state: "uploaded", size: STORLEK }] }); }, (f, e) => f && !finns(path.join(e.exp, "utgar-111-film-a-1080p.mp4")));
+      await fall("nyare än publiceringen, kommande omgång: står kvar", (e, f) => { fs.utimesSync(f, (nu0 - 30 * MINUT) / 1000, (nu0 - 30 * MINUT) / 1000); }, (f) => f);
+      await fall("lika stor som den publicerade: står kvar", (e, f) => { fs.writeFileSync(f, Buffer.alloc(STORLEK)); fs.utimesSync(f, (nu0 - dag) / 1000, (nu0 - dag) / 1000); }, (f) => f);
+      await fall("klippet saknas i cachen: står kvar", (e) => { fs.unlinkSync(path.join(e.proj, "cache", "ingang", "veo.mp4")); fs.utimesSync(path.join(e.proj, "cache", "ingang"), (nu0 - dag) / 1000, (nu0 - dag) / 1000); fs.utimesSync(path.join(e.proj, "cache"), (nu0 - dag) / 1000, (nu0 - dag) / 1000); }, (f) => f);
+      await fall("publicerat.json pekar på filen: står kvar", (e) => { lista(e, "_scratch/slutfragan/publicerat.json", JSON.stringify({ "film-a": { url: FIL, lokal: "film-a/assets/export/film-a-1080p-ingang.mp4" } })); }, (f) => f);
+      await fall("publicerat.json gäller en äldre version: skyddar inte", (e) => { lista(e, "_scratch/slutfragan/publicerat.json", JSON.stringify({ "film-a": { url: "gammal", lokal: "film-a/assets/export/film-a-1080p-ingang.mp4" } })); }, (f) => !f);
+      await fall("karta.json har filen som källa: står kvar", (e) => { lista(e, "_scratch/hack-utlagda/karta.json", JSON.stringify([{ id: "film-a", fil: FIL, kalla: "E:/x/film-a-1080p-ingang.mp4" }])); }, (f) => f);
+      await fall("en lista går inte att läsa: mellansteget står kvar, utgar borta", (e) => { lista(e, "_scratch/hack-utlagda/karta.json", "{trasig"); }, (f, e) => f && !finns(path.join(e.exp, "utgar-111-film-a-1080p.mp4")));
+      await fall("rors-inte.txt: filer och mappar som någon annan flyttar rörs inte", (e, f) => { skriv(path.join(e.m.mapp, "rors-inte.txt"), 1); fs.writeFileSync(path.join(e.m.mapp, "rors-inte.txt"), `${f}\r\n${path.join(e.exp, "utgar-111-film-a-1080p.mp4")}\n${path.join(e.cache, "release-v5")}\n`); }, (f, e) => f && finns(path.join(e.exp, "utgar-111-film-a-1080p.mp4")) && finns(path.join(e.cache, "release-v5")) && !finns(path.join(e.exp, "utgar-222-film-a-1080p.mp4")));
     }
     // 2. Valet av release-mappar.
     {
@@ -686,7 +810,7 @@ async function prov() {
       ["releasen är ett utkast", (m) => { m.release = () => ({ draft: true, assets: [] }); }],
       ["filen saknas i releasen", (m) => { m.release = () => ({ draft: false, assets: [] }); }],
       ["filen är inte färdig", (m) => { m.release = () => ({ draft: false, assets: [{ name: "film-a-1080p.mp4", state: "starter", size: STORLEK }] }); }],
-      ["releasen har fel storlek mot den lokala filen", (m) => { m.release = () => ({ draft: false, assets: [{ name: "film-a-1080p.mp4", state: "uploaded", size: 999 }] }); m.filSvar = () => ({ status: 206, total: 999 }); }],
+      ["releasen har fel storlek mot den lokala filen", (m) => { m.release = () => ({ draft: false, published_at: new Date(nu0).toISOString(), assets: [{ name: "film-a-1080p.mp4", state: "uploaded", size: 999 }] }); m.filSvar = () => ({ status: 206, total: 999 }); }],
       ["adressen svarar med fel storlek", (m) => { m.filSvar = () => ({ status: 206, total: 7 }); }],
       ["adressen svarar 404", (m) => { m.filSvar = () => ({ status: 404 }); }],
       ["videor.json på main pekar fel", (m) => { m.videorOrigin = () => [{ id: "film-a", fil: FIL.replace("-v12", "-v11") }]; }],
