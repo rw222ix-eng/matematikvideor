@@ -16721,6 +16721,7 @@
     }
    ],
    "dinTur": {
+    "notisFran": 860,
     "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7). Hur många rutor från starten ligger båten efter de två dagarna, om man mäter rakt? Du ska svara på två frågor.",
     "slut": [
      "Först: Skriv u + v i koordinatform.",
@@ -16900,8 +16901,7 @@
      "Talen på samma ställen: u + v = (−4 + (−2), 1 + 7) = (−6, 8).",
      "Regeln för längden: |u + v| = √(aₓ² + aᵧ²), med u + v:s komposanter −6 och 8.",
      "|u + v| = √((−6)² + 8²) = √(36 + 64) = √100 = 10, så båten ligger 10 rutor från starten."
-    ],
-    "notisFran": 396
+    ]
    },
    "undertext": [
     {
@@ -24569,7 +24569,7 @@
      "tema": "papper",
      "utsnitt": [
       470,
-      30,
+      70,
       1440,
       810
      ],
@@ -24633,7 +24633,7 @@
        "typ": "text",
        "vid": [
         1170,
-        794
+        806
        ],
        "text": "40 km"
       },
@@ -24693,10 +24693,22 @@
        ]
       },
       {
+       "typ": "pil",
+       "accent": true,
+       "fran": [
+        1150,
+        430
+       ],
+       "till": [
+        1100,
+        505
+       ]
+      },
+      {
        "typ": "text",
        "vid": [
-        1100,
-        662
+        1200,
+        360
        ],
        "text": "? km",
        "accent": true

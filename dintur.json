@@ -1606,6 +1606,7 @@
     "notisFran": "Nu tar vi tre bitar"
   },
   "ma1c-k6-05-addera-vektorer": {
+    "notisFran": "Nu är det din tur",
     "fraga": "En dag seglar båten enligt vektorn u = (−4, 1). Dagen efter seglar den enligt vektorn v = (−2, 7). Hur många rutor från starten ligger båten efter de två dagarna, om man mäter rakt? Du ska svara på två frågor.",
     "slut": [
       "Först: Skriv u + v i koordinatform.",
@@ -2012,7 +2013,7 @@
       "vy": [1920, 1080],
       "bild": "b01-uppslag-koordinater",
       "tema": "papper",
-      "utsnitt": [470, 30, 1440, 810],
+      "utsnitt": [470, 70, 1440, 810],
       "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 40 km västerut och 30 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
       "delar": [
         { "typ": "pil", "svag": true, "fran": [734, 710], "till": [1497, 710] },
@@ -2020,13 +2021,14 @@
         { "typ": "pil", "svag": true, "fran": [1350, 759], "till": [1350, 213] },
         { "typ": "text", "vid": [1350, 157], "text": "N" },
         { "typ": "linje", "svag": true, "p": [[1350, 750], [990, 750]] },
-        { "typ": "text", "vid": [1170, 794], "text": "40 km" },
+        { "typ": "text", "vid": [1170, 806], "text": "40 km" },
         { "typ": "linje", "streckad": true, "p": [[990, 710], [990, 440]] },
         { "typ": "text", "vid": [960, 575], "text": "30 km", "ankare": "end" },
         { "typ": "prick", "vid": [990, 440], "r": 8 },
         { "typ": "text", "vid": [960, 432], "text": "Titanic", "ankare": "end" },
         { "typ": "linje", "streckad": true, "accent": true, "p": [[1350, 710], [990, 440]] },
-        { "typ": "text", "vid": [1100, 662], "text": "? km", "accent": true },
+        {"typ": "pil", "accent": true, "fran": [1150, 430], "till": [1100, 505]},
+        { "typ": "text", "vid": [1200, 360], "text": "? km", "accent": true },
         { "typ": "vinkel", "vid": [1350, 710], "mot": [[1350, 510], [990, 440]], "r": 150, "text": "v", "avstand": 65 }
       ]
     },
