@@ -68,7 +68,7 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   eleven kom från är vald; Ma 2c är filmerna med Matematik 2c som kurs eller i `kurser`) och rättar stavfel mot orden i filmerna ("pytagoras" söks som Pythagoras,
   med "Sök ändå på …" bredvid). Adresser: `#filmer` (Ma 1c), `#ma2a`, `#ma2c`, `#formelbladet` (serien), `#provet`, `#<id>`, `#<id>&t=<sekund>`, och
   `film/<id>/?t=<sekund>` för länkar som delas. Typsnitten ligger i `public/fonts/` (Jost,
-  Cormorant Garamond, Kalam), aldrig Google Fonts; en accentfärg (`--accent`).
+  Cormorant Garamond, Kalam, Playpen Sans), aldrig Google Fonts; en accentfärg (`--accent`).
 - Sökningen (Rickard 2026-10-05: "den absolut mest relevanta filmen") rangordnar efter filmens
   ÄMNE: momentet väger mest, sedan titeln, de första begreppen och kapitelrubrikerna, och sist hur
   ofta ordet sägs (med avtagande vikt). En rubrik som handlar om bara det man söker väger mer än en

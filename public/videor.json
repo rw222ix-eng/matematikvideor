@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-03T22:39:00.557Z",
+ "byggd": "2026-11-04T11:17:07.000Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -186,10 +186,10 @@
      "bild": "dintur/ma1c-k6-01-sinus-cosinus-tangens.jpg?v=3a0ef559",
      "tema": "scen",
      "blak": {
-      "farg": "#3A2314",
-      "skugga": "rgba(255,228,184,.6)",
-      "accent": "#3A2314",
-      "svag": "rgba(58,35,20,.8)"
+      "farg": "#2A170B",
+      "skugga": "rgba(255,232,196,.75)",
+      "accent": "#2A170B",
+      "svag": "rgba(42,23,11,.85)"
      },
      "utsnitt": [
       787,
@@ -255,7 +255,7 @@
        ],
        "text": "4 m",
        "sida": -1,
-       "avstand": 44
+       "avstand": 56
       },
       {
        "typ": "linje",
@@ -7308,7 +7308,7 @@
        "typ": "text",
        "vid": [
         465,
-        690
+        676
        ],
        "text": "u"
       },
@@ -16734,10 +16734,10 @@
      "bild": "dintur/ma1c-k6-05-addera-vektorer.jpg?v=c14d715f",
      "tema": "papper",
      "utsnitt": [
-      200,
+      150,
       100,
-      1300,
-      731.3
+      1280,
+      720
      ],
      "text": "Rutat papper med start i origo nere till höger. Vektorn u går från start fyra rutor åt vänster och en ruta uppåt. Vektorn v börjar där u slutar och går två rutor åt vänster och sju rutor uppåt.",
      "delar": [
@@ -16764,11 +16764,10 @@
       {
        "typ": "text",
        "vid": [
-        1265,
-        710
+        1272,
+        716
        ],
-       "text": "start",
-       "ankare": "start"
+       "text": "start"
       },
       {
        "typ": "pil",
@@ -19642,7 +19641,7 @@
        ],
        "r": 170,
        "text": "20°",
-       "avstand": 120
+       "avstand": 170
       },
       {
        "typ": "linje",
@@ -24560,7 +24559,7 @@
      "tema": "papper",
      "utsnitt": [
       470,
-      50,
+      30,
       1440,
       810
      ],
@@ -24624,7 +24623,7 @@
        "typ": "text",
        "vid": [
         1170,
-        796
+        794
        ],
        "text": "40 km"
       },
@@ -24645,10 +24644,11 @@
       {
        "typ": "text",
        "vid": [
-        880,
+        960,
         575
        ],
-       "text": "30 km"
+       "text": "30 km",
+       "ankare": "end"
       },
       {
        "typ": "prick",
@@ -24685,8 +24685,8 @@
       {
        "typ": "text",
        "vid": [
-        1095,
-        668
+        1100,
+        662
        ],
        "text": "? km",
        "accent": true
@@ -27229,7 +27229,7 @@
       {
        "typ": "text",
        "vid": [
-        344,
+        328,
         165
        ],
        "text": "y"
@@ -31699,7 +31699,8 @@
      "bild": "dintur/ma1c-k6-03-berakna-vinklar.jpg?v=bc96f971",
      "tema": "scen",
      "blak": {
-      "skugga": "rgba(6, 14, 26, .92)"
+      "skugga": "rgba(6, 14, 26, .92)",
+      "accent": "#FFFFFF"
      },
      "text": "Ett torn som lutar. Från foten upp längs tornet till kanten är det 10 meter. Ett snöre med en tyngd hänger rakt ner från kanten. Det når marken 1 meter från tornets fot. Vinkeln uppe vid kanten och vinkeln vid tornets fot är okända.",
      "delar": [
@@ -31755,7 +31756,7 @@
        "typ": "text",
        "vid": [
         626,
-        1040
+        1030
        ],
        "text": "1 m"
       },
@@ -31797,10 +31798,22 @@
        "accent": true
       },
       {
+       "typ": "pil",
+       "accent": true,
+       "fran": [
+        745,
+        378
+       ],
+       "till": [
+        664,
+        350
+       ]
+      },
+      {
        "typ": "text",
        "vid": [
-        688,
-        362
+        778,
+        385
        ],
        "text": "?",
        "accent": true
@@ -31825,10 +31838,22 @@
        "accent": true
       },
       {
+       "typ": "pil",
+       "accent": true,
+       "fran": [
+        745,
+        888
+       ],
+       "till": [
+        634,
+        930
+       ]
+      },
+      {
        "typ": "text",
        "vid": [
-        628,
-        905
+        778,
+        880
        ],
        "text": "?",
        "accent": true
@@ -38986,9 +39011,9 @@
    "beskrivning": "Vi går igenom nedersta delen av formelbladet till nationella provet i matematik 1: Pythagoras sats, sinus, cosinus och tangens, och vektorerna. Varje formel förklaras med enkel svenska och ett enkelt exempel, som en stege mot en vägg och en promenad på en karta.",
    "youtube": "nPIDruLmhqw",
    "langd": 861,
-   "omslag": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer.jpg?v=905ce387",
-   "omslagRen": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer-ren.jpg?v=6a61d724",
-   "omslagStor": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer-stor.jpg?v=41b68805",
+   "omslag": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer.jpg?v=0b13d61a",
+   "omslagRen": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer-ren.jpg?v=1c367edc",
+   "omslagStor": "omslag/formelbladet-5-pythagoras-trigonometri-vektorer-stor.jpg?v=1ba2cffb",
    "repliker": [
     {
      "t": 0,
@@ -39431,7 +39456,7 @@
        ],
        "text": "8 m",
        "sida": 1,
-       "avstand": 90
+       "avstand": 40
       },
       {
        "typ": "sida",
@@ -45446,7 +45471,7 @@
        ],
        "text": "1 m",
        "sida": -1,
-       "avstand": 80
+       "avstand": 40
       },
       {
        "typ": "sida",
@@ -46838,7 +46863,7 @@
        "svag": true,
        "text": "?",
        "accent": true,
-       "avstand": 50
+       "avstand": 72
       },
       {
        "typ": "vinkel",
@@ -49088,7 +49113,7 @@
        "typ": "text",
        "vid": [
         434,
-        920
+        930
        ],
        "text": "52",
        "liten": false
@@ -49134,7 +49159,7 @@
        "typ": "text",
        "vid": [
         738,
-        920
+        930
        ],
        "text": "60",
        "liten": false

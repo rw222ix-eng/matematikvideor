@@ -619,7 +619,7 @@
         { "typ": "ratvinkel", "vid": [740, 960], "mot": [[740, 240], [200, 960]] },
         { "typ": "vinkel", "vid": [200, 960], "mot": [[740, 960], [740, 240]], "r": 110, "text": "v", "avstand": 50 },
         { "typ": "sida", "p": [[200, 960], [740, 960]], "text": "6 m", "sida": 1, "avstand": 64 },
-        { "typ": "sida", "p": [[740, 960], [740, 240]], "text": "8 m", "sida": 1, "avstand": 90 },
+        { "typ": "sida", "p": [[740, 960], [740, 240]], "text": "8 m", "sida": 1, "avstand": 40 },
         { "typ": "sida", "p": [[200, 960], [740, 240]], "text": "?", "sida": -1, "avstand": 70, "accent": true }
       ]
     },
@@ -1319,7 +1319,7 @@
         { "typ": "linje", "p": [[1060, 720], [1380, 880]], "streckad": true, "svag": true },
         { "typ": "sida", "p": [[240, 880], [240, 544]], "text": "?", "sida": -1, "accent": true },
         { "typ": "sida", "p": [[240, 880], [912, 880]], "text": "12 m" },
-        { "typ": "sida", "p": [[1060, 880], [1060, 720]], "text": "1 m", "sida": -1, "avstand": 80 },
+        { "typ": "sida", "p": [[1060, 880], [1060, 720]], "text": "1 m", "sida": -1, "avstand": 40 },
         { "typ": "sida", "p": [[1060, 880], [1380, 880]], "text": "2 m" }
       ]
     },
@@ -1416,7 +1416,7 @@
       "delar": [
         { "typ": "yta", "p": [[640, 190], [1001.4, 452.6], [863.4, 877.4], [416.6, 877.4], [278.6, 452.6]] },
         { "typ": "linje", "p": [[640, 190], [1001.4, 452.6], [863.4, 877.4], [416.6, 877.4], [278.6, 452.6], [640, 190]] },
-        { "typ": "vinkel", "vid": [640, 190], "mot": [[278.6, 452.6], [1001.4, 452.6]], "r": 64, "svag": true, "text": "?", "accent": true, "avstand": 50 },
+        { "typ": "vinkel", "vid": [640, 190], "mot": [[278.6, 452.6], [1001.4, 452.6]], "r": 64, "svag": true, "text": "?", "accent": true, "avstand": 72 },
         { "typ": "vinkel", "vid": [1001.4, 452.6], "mot": [[640, 190], [863.4, 877.4]], "r": 64, "svag": true },
         { "typ": "vinkel", "vid": [863.4, 877.4], "mot": [[1001.4, 452.6], [416.6, 877.4]], "r": 64, "svag": true },
         { "typ": "vinkel", "vid": [416.6, 877.4], "mot": [[863.4, 877.4], [278.6, 452.6]], "r": 64, "svag": true },
@@ -1508,11 +1508,11 @@
         { "typ": "linje", "p": [[282, 850], [282, 876]], "svag": true },
         { "typ": "text", "vid": [282, 920], "text": "48", "liten": true },
         { "typ": "linje", "p": [[434, 850], [434, 876]], "svag": true },
-        { "typ": "text", "vid": [434, 920], "text": "52", "liten": false },
+        { "typ": "text", "vid": [434, 930], "text": "52", "liten": false },
         { "typ": "linje", "p": [[586, 850], [586, 876]], "svag": true },
         { "typ": "text", "vid": [586, 920], "text": "56", "liten": true },
         { "typ": "linje", "p": [[738, 850], [738, 876]], "svag": true },
-        { "typ": "text", "vid": [738, 920], "text": "60", "liten": false },
+        { "typ": "text", "vid": [738, 930], "text": "60", "liten": false },
         { "typ": "linje", "p": [[890, 850], [890, 876]], "svag": true },
         { "typ": "text", "vid": [890, 920], "text": "64", "liten": true },
         { "typ": "linje", "p": [[1042, 850], [1042, 876]], "svag": true },
@@ -1615,12 +1615,12 @@
       "vy": [1920, 1080],
       "bild": "b01-uppslag-kompass",
       "tema": "papper",
-      "utsnitt": [200, 100, 1300, 731.3],
+      "utsnitt": [150, 100, 1280, 720],
       "text": "Rutat papper med start i origo nere till höger. Vektorn u går från start fyra rutor åt vänster och en ruta uppåt. Vektorn v börjar där u slutar och går två rutor åt vänster och sju rutor uppåt.",
       "delar": [
         { "typ": "rutnat", "fran": [830, 180], "till": [1250, 660], "steg": 60 },
         { "typ": "prick", "vid": [1250, 660], "r": 7 },
-        { "typ": "text", "vid": [1265, 710], "text": "start", "ankare": "start" },
+        { "typ": "text", "vid": [1272, 716], "text": "start" },
         { "typ": "pil", "fran": [1250, 660], "till": [1010, 600] },
         { "typ": "text", "vid": [1130, 670], "text": "u" },
         { "typ": "pil", "fran": [1010, 600], "till": [890, 180] },
@@ -1687,19 +1687,21 @@
       "vy": [1920, 1080],
       "bild": "p07-annat-torn",
       "tema": "scen",
-      "blak": { "skugga": "rgba(6, 14, 26, .92)" },
+      "blak": { "skugga": "rgba(6, 14, 26, .92)", "accent": "#FFFFFF" },
       "text": "Ett torn som lutar. Från foten upp längs tornet till kanten är det 10 meter. Ett snöre med en tyngd hänger rakt ner från kanten. Det når marken 1 meter från tornets fot. Vinkeln uppe vid kanten och vinkeln vid tornets fot är okända.",
       "delar": [
         { "typ": "linje", "p": [[591, 957], [660, 193]] },
         { "typ": "text", "vid": [598, 575], "text": "10 m", "ankare": "end" },
         { "typ": "linje", "p": [[660, 193], [660, 957]] },
         { "typ": "linje", "p": [[591, 957], [660, 957]] },
-        { "typ": "text", "vid": [626, 1040], "text": "1 m" },
+        { "typ": "text", "vid": [626, 1030], "text": "1 m" },
         { "typ": "ratvinkel", "vid": [660, 957], "mot": [[660, 193], [591, 957]], "storlek": 22 },
         { "typ": "vinkel", "vid": [660, 193], "mot": [[591, 957], [660, 957]], "r": 150, "accent": true },
-        { "typ": "text", "vid": [688, 362], "text": "?", "accent": true },
+        { "typ": "pil", "accent": true, "fran": [745, 378], "till": [664, 350] },
+        { "typ": "text", "vid": [778, 385], "text": "?", "accent": true },
         { "typ": "vinkel", "vid": [591, 957], "mot": [[660, 957], [660, 193]], "r": 40, "accent": true },
-        { "typ": "text", "vid": [628, 905], "text": "?", "accent": true }
+        { "typ": "pil", "accent": true, "fran": [745, 888], "till": [634, 930] },
+        { "typ": "text", "vid": [778, 880], "text": "?", "accent": true }
       ]
     },
     "delar": [
@@ -1783,7 +1785,7 @@
         { "typ": "linje", "p": [[100, 960], [1468, 778]] },
         { "typ": "sida", "p": [[100, 960], [1468, 778]], "text": "10 km", "sida": 1, "avstand": 74 },
         { "typ": "linje", "p": [[100, 960], [1460.9, 234.8]] },
-        { "typ": "vinkel", "vid": [100, 960], "mot": [[1468, 778], [1468, 231]], "r": 170, "text": "20°", "avstand": 120 },
+        { "typ": "vinkel", "vid": [100, 960], "mot": [[1468, 778], [1468, 231]], "r": 170, "text": "20°", "avstand": 170 },
         { "typ": "linje", "p": [[1468, 239], [1468, 778]], "streckad": true, "accent": true },
         { "typ": "ratvinkel", "vid": [1468, 778], "mot": [[100, 960], [1468, 231]] },
         { "typ": "text", "vid": [1522, 620], "text": "?", "accent": true }
@@ -1868,14 +1870,14 @@
       "vy": [1920, 1080],
       "bild": "p06-elevens-pyramid",
       "tema": "scen",
-      "blak": { "farg": "#3A2314", "skugga": "rgba(255,228,184,.6)", "accent": "#3A2314", "svag": "rgba(58,35,20,.8)" },
+      "blak": { "farg": "#2A170B", "skugga": "rgba(255,232,196,.75)", "accent": "#2A170B", "svag": "rgba(42,23,11,.85)" },
       "utsnitt": [787, 600, 853, 480],
       "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 3 m, halva bredden 4 m och sidan från toppen ner till kanten 5 m. Vinkeln v ligger nere vid marken.",
       "delar": [
         { "typ": "linje", "p": [[1259, 758], [1259, 968]] },
         { "typ": "sida", "p": [[1259, 758], [1259, 968]], "text": "3 m", "sida": -1, "avstand": 44 },
         { "typ": "linje", "p": [[1259, 968], [979, 968]] },
-        { "typ": "sida", "p": [[1259, 968], [979, 968]], "text": "4 m", "sida": -1, "avstand": 44 },
+        { "typ": "sida", "p": [[1259, 968], [979, 968]], "text": "4 m", "sida": -1, "avstand": 56 },
         { "typ": "linje", "p": [[979, 968], [1259, 758]] },
         { "typ": "sida", "p": [[979, 968], [1259, 758]], "text": "5 m", "sida": -1, "avstand": 50 },
         { "typ": "ratvinkel", "vid": [1259, 968], "mot": [[979, 968], [1259, 758]], "storlek": 24 },
@@ -1961,7 +1963,7 @@
       "delar": [
         { "typ": "rutnat", "fran": [240, 360], "till": [1140, 810], "steg": 90 },
         { "typ": "pil", "fran": [330, 720], "till": [600, 720] },
-        { "typ": "text", "vid": [465, 690], "text": "u" },
+        { "typ": "text", "vid": [465, 676], "text": "u" },
         { "typ": "pil", "fran": [780, 720], "till": [870, 540] },
         { "typ": "text", "vid": [790, 615], "text": "v" }
       ]
@@ -2010,7 +2012,7 @@
       "vy": [1920, 1080],
       "bild": "b01-uppslag-koordinater",
       "tema": "papper",
-      "utsnitt": [470, 50, 1440, 810],
+      "utsnitt": [470, 30, 1440, 810],
       "text": "Ett koordinatsystem med Carpathia i origo, x-axeln mot öster (Ö) och y-axeln mot norr (N). Titanic är en punkt 40 km västerut och 30 km norrut. En streckad linje från Carpathia till Titanic är märkt ? km, och vinkeln v mäts från norr till den linjen.",
       "delar": [
         { "typ": "pil", "svag": true, "fran": [734, 710], "till": [1497, 710] },
@@ -2018,13 +2020,13 @@
         { "typ": "pil", "svag": true, "fran": [1350, 759], "till": [1350, 213] },
         { "typ": "text", "vid": [1350, 157], "text": "N" },
         { "typ": "linje", "svag": true, "p": [[1350, 750], [990, 750]] },
-        { "typ": "text", "vid": [1170, 796], "text": "40 km" },
+        { "typ": "text", "vid": [1170, 794], "text": "40 km" },
         { "typ": "linje", "streckad": true, "p": [[990, 710], [990, 440]] },
-        { "typ": "text", "vid": [880, 575], "text": "30 km" },
+        { "typ": "text", "vid": [960, 575], "text": "30 km", "ankare": "end" },
         { "typ": "prick", "vid": [990, 440], "r": 8 },
         { "typ": "text", "vid": [960, 432], "text": "Titanic", "ankare": "end" },
         { "typ": "linje", "streckad": true, "accent": true, "p": [[1350, 710], [990, 440]] },
-        { "typ": "text", "vid": [1095, 668], "text": "? km", "accent": true },
+        { "typ": "text", "vid": [1100, 662], "text": "? km", "accent": true },
         { "typ": "vinkel", "vid": [1350, 710], "mot": [[1350, 510], [990, 440]], "r": 150, "text": "v", "avstand": 65 }
       ]
     },
@@ -2195,7 +2197,7 @@
         { "typ": "pil", "svag": true, "fran": [380, 920], "till": [1055, 920] },
         { "typ": "text", "vid": [1085, 960], "text": "x" },
         { "typ": "pil", "svag": true, "fran": [380, 920], "till": [380, 155] },
-        { "typ": "text", "vid": [344, 165], "text": "y" },
+        { "typ": "text", "vid": [328, 165], "text": "y" },
         { "typ": "prick", "vid": [560, 830], "r": 8 },
         { "typ": "text", "vid": [620, 808], "text": "(2, 1)", "ankare": "start" },
         { "typ": "prick", "vid": [830, 290], "r": 8 },

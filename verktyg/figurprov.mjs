@@ -26,6 +26,8 @@ if (a < 0 || b < 0) throw new Error("hittar inte figur() i public/index.html");
 const figurKod = html.slice(a, b).trim();
 // Figurens CSS: raderna om .dintur-figur och deras keyframes. Utan klassen "vantar" står allt ritat.
 const css = html.split("\n").filter((r) => /^\s*(\.dintur-figur|@keyframes (rita-fram|tona-in))/.test(r)).join("\n");
+// Etiketternas typsnitt, från sidans egna filer, så att provbilden ritas som på sidan.
+const typsnitt = html.split("\n").filter((r) => /@font-face/.test(r) && /playpen-sans/.test(r)).join("\n").replaceAll("url(fonts/", `url(file://${join(HÄR, "public", "fonts")}/`);
 const dintur = JSON.parse(readFileSync(join(HÄR, "dintur.json"), "utf8"));
 const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
 
@@ -45,6 +47,7 @@ for (const id of arg) {
   }
   const bredd = f.bild ? 1920 : Math.round(f.vy[0] * 1.2);
   const sida = `<!doctype html><meta charset="utf-8"><style>
+    ${typsnitt}
     body { margin: 0; background: #171414; font-family: Jost, sans-serif; }
     :root { --bg: #171414; --ben: #ECE6D8; --ben2: #B5AE9F; --accent: #F2C572; --sans: Jost, sans-serif; --skrift: "Cormorant Garamond", Georgia, serif; --lugn: ease; }
     ${css}

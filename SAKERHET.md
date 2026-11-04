@@ -61,7 +61,7 @@ Typsnitten ligger i `public/fonts/`. Google Fonts används inte, så att Google 
 | --- | --- | --- | --- |
 | GeoGebra (`deployggb.js` och grafräknaren) | den GeoGebra serverar just då | GeoGebras villkor | av GeoGebra, utan att repot ändras |
 | YouTube IFrame API | den YouTube serverar just då | YouTubes villkor | av YouTube, utan att repot ändras |
-| Cormorant Garamond, Jost, Kalam | fasta filer i `public/fonts/` | SIL Open Font License 1.1 (`OFL-*.txt`) | bara med en commit |
+| Cormorant Garamond, Jost, Kalam, Playpen Sans | fasta filer i `public/fonts/` | SIL Open Font License 1.1 (`OFL-*.txt`) | bara med en commit |
 | actions/checkout, configure-pages, upload-pages-artifact, deploy-pages | låsta på SHA i workflowen | MIT | Dependabot varje vecka (`.github/dependabot.yml`) |
 
 ### Varför GeoGebra och YouTube saknar SRI (3.6.1)
