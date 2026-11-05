@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-05T21:04:35.447Z",
+ "byggd": "2026-11-05T22:01:27.046Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -50297,7 +50297,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-01-kvadreringsreglerna-v11/ma2a-01-kvadreringsreglerna-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-01-kvadreringsreglerna-v12/ma2a-01-kvadreringsreglerna-1080p.mp4",
    "moment": "Kvadreringsreglerna och konjugatregeln",
    "begrepp": [
     "kvadreringsreglerna",
@@ -50316,7 +50316,7 @@
    ],
    "beskrivning": "I Los Alamos 1943 räknade fysikern Hans Bethe ut 48 i kvadrat i huvudet snabbare än räknemaskinen, för att han tänkte på 48 som 50 minus 2. Vi visar med vanlig räkning varför kvadreringsreglerna och konjugatregeln på formelbladet stämmer, använder dem med x och visar det vanligaste felet, och räknar i huvudet som Bethe.",
    "youtube": null,
-   "langd": 861,
+   "langd": 871,
    "omslag": "omslag/ma2a-01-kvadreringsreglerna.jpg?v=cde60473",
    "omslagRen": "omslag/ma2a-01-kvadreringsreglerna-ren.jpg?v=d31cb2ba",
    "omslagStor": null,
@@ -50447,7 +50447,7 @@
     },
     {
      "t": 839,
-     "text": "Nu är det din tur. När Bethe förklarade sitt knep för Feynman, tog han fyrtiosju som exempel. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Fyrtiosju är femtio minus vad? Sen: Räkna fyrtiosju i kvadrat i huvudet, som Bethe."
+     "text": "Nu är det din tur. När Bethe förklarade sitt knep för Feynman, tog han fyrtiosju som exempel. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Hur mycket är fyrtiosju i kvadrat, om du räknar i huvudet som Bethe? Först: Fyrtiosju är femtio minus vad? Det behöver du för knepet. Sen: Använd knepet och räkna ut fyrtiosju i kvadrat."
     }
    ],
    "kapitel": [
@@ -50493,14 +50493,15 @@
     }
    ],
    "dinTur": {
-    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel. Du ska svara på två frågor.",
+    "notisFran": 839,
+    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel. Hur mycket är 47 i kvadrat, om du räknar i huvudet som Bethe? Du ska svara på två frågor.",
     "slut": [
-     "Först: 47 är 50 minus vad?",
-     "Sen: Räkna 47 i kvadrat i huvudet, som Bethe."
+     "Först: 47 är 50 minus vad? Det behöver du för knepet.",
+     "Sen: Använd knepet och räkna ut 47 i kvadrat."
     ],
     "delar": [
      {
-      "fraga": "Först: 47 är 50 minus vad?",
+      "fraga": "Först: 47 är 50 minus vad? Det behöver du för knepet.",
       "typ": "tal",
       "svar": 3,
       "exempel": "t.ex. 2",
@@ -50516,7 +50517,7 @@
       ]
      },
      {
-      "fraga": "Sen: Räkna 47 i kvadrat i huvudet, som Bethe.",
+      "fraga": "Sen: Använd knepet och räkna ut 47 i kvadrat.",
       "typ": "tal",
       "svar": 2209,
       "exempel": "t.ex. 2304",
@@ -50563,7 +50564,38 @@
      "3² = 9, som alltid är plus.",
      "2500 − 300 + 9 = 2209."
     ],
-    "notisFran": 503
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-01-kvadreringsreglerna.jpg?v=175cb26f",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "Två män går på en väg mellan tallar i Los Alamos. Talet 47 i kvadrat och formeln för kvadreringsregeln, a minus b i kvadrat, ska användas.",
+     "delar": [
+      {
+       "typ": "text",
+       "vid": [
+        360,
+        440
+       ],
+       "text": "47²",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        140,
+        620
+       ],
+       "text": "(a − b)² = a² − 2ab + b²",
+       "ankare": "start"
+      }
+     ]
+    }
    },
    "undertext": [
     {
@@ -51702,14 +51734,24 @@
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 851.72,
-     "e": 855.24,
+     "s": 851.67,
+     "e": 856.55,
+     "text": "Hur mycket är fyrtiosju i kvadrat, om du räknar i huvudet som Bethe?"
+    },
+    {
+     "s": 857.35,
+     "e": 862.15,
      "text": "Först: Fyrtiosju är femtio minus vad?"
     },
     {
-     "s": 856.04,
-     "e": 859.98,
-     "text": "Sen: Räkna fyrtiosju i kvadrat i huvudet, som Bethe."
+     "s": 862.95,
+     "e": 864.87,
+     "text": "Det behöver du för knepet."
+    },
+    {
+     "s": 865.67,
+     "e": 870.15,
+     "text": "Sen: Använd knepet och räkna ut fyrtiosju i kvadrat."
     }
    ]
   },
@@ -51933,6 +51975,7 @@
     }
    ],
    "dinTur": {
+    "notisFran": 819,
     "fraga": "Hur faktoriserar du 9x² + 18x? Du ska svara på två frågor.",
     "slut": [
      "Först: Vad är den största gemensamma faktorn?",
@@ -52018,8 +52061,7 @@
        "ankare": "start"
       }
      ]
-    },
-    "notisFran": 466
+    }
    },
    "undertext": [
     {
@@ -55045,7 +55087,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-04-pq-formeln-v10/ma2a-04-pq-formeln-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-04-pq-formeln-v11/ma2a-04-pq-formeln-1080p.mp4",
    "moment": "Lösa andragradsekvationer med pq-formeln",
    "begrepp": [
     "pq-formeln",
@@ -55068,7 +55110,7 @@
    ],
    "beskrivning": "I Bagdad på 820-talet skrev al-Khwarizmi en regel i ord för att lösa ekvationer som x i kvadrat plus tio x är lika med 39, och den regeln är pq-formeln på formelbladet. Vi skriver ekvationen så att det står noll på ena sidan, läser av p och q, ställer upp ekvationer ur textuppgifter och väljer det svar som är rimligt.",
    "youtube": null,
-   "langd": 890,
+   "langd": 894,
    "omslag": "omslag/ma2a-04-pq-formeln.jpg?v=c871101d",
    "omslagRen": "omslag/ma2a-04-pq-formeln-ren.jpg?v=720c135f",
    "omslagStor": null,
@@ -55263,7 +55305,7 @@
     },
     {
      "t": 863,
-     "text": "Nu är det din tur. I samma arv får mannens dotter en åker. Åkern är sex meter längre än den är bred, och arean är sjuttiotvå kvadratmeter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Ställ upp en ekvation, med x för bredden. Sen: Lös den med pq-formeln. Hur bred är åkern?"
+     "text": "Nu är det din tur. I samma arv får mannens dotter en åker. Åkern är sex meter längre än den är bred, och arean är sjuttiotvå kvadratmeter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Hur bred är åkern? Först: Ställ upp en ekvation för att ta reda på det, med x för bredden. Sen: Lös ekvationen med pq-formeln."
     }
    ],
    "kapitel": [
@@ -55310,14 +55352,14 @@
    ],
    "dinTur": {
     "notisFran": 845,
-    "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Du ska svara på två frågor.",
+    "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Hur bred är åkern? Du ska svara på två frågor.",
     "slut": [
-     "Först: Ställ upp en ekvation, med x för bredden.",
-     "Sen: Lös den med pq-formeln. Hur bred är åkern?"
+     "Först: Ställ upp en ekvation för att ta reda på det, med x för bredden.",
+     "Sen: Lös ekvationen med pq-formeln."
     ],
     "delar": [
      {
-      "fraga": "Först: Ställ upp en ekvation, med x för bredden.",
+      "fraga": "Först: Ställ upp en ekvation för att ta reda på det, med x för bredden.",
       "typ": "ekvation",
       "svar": "x*(x + 6) = 72",
       "exempel": "t.ex. x(x + 4) = 96",
@@ -55344,7 +55386,7 @@
       ]
      },
      {
-      "fraga": "Sen: Lös den med pq-formeln. Hur bred är åkern?",
+      "fraga": "Sen: Lös ekvationen med pq-formeln.",
       "typ": "tal",
       "svar": 6,
       "tolerans": 0.001,
@@ -55375,7 +55417,116 @@
      "Multiplicera in: x² + 6x = 72. Dra bort 72 från båda leden: x² + 6x − 72 = 0. Då är p = 6 och q = −72.",
      "pq-formeln: x = −3 ± √(9 + 72) = −3 ± √81 = −3 ± 9.",
      "x = 6 eller x = −12. En bredd kan inte vara negativ, så åkern är 6 meter bred (och 12 meter lång). Kontroll: 6 · 12 = 72."
-    ]
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-04-pq-formeln.jpg?v=b68bb619",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "En kvinna går längs en åker med ett rep. Åkern är en rektangel med arean 72 kvadratmeter. Längden är 6 meter mer än bredden, och bredden är okänd.",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         190,
+         240
+        ],
+        [
+         610,
+         240
+        ],
+        [
+         610,
+         470
+        ],
+        [
+         190,
+         470
+        ],
+        [
+         190,
+         240
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        400,
+        375
+       ],
+       "text": "72 m²"
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        400,
+        205
+       ],
+       "till": [
+        190,
+        205
+       ]
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        400,
+        205
+       ],
+       "till": [
+        610,
+        205
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        400,
+        150
+       ],
+       "text": "? + 6",
+       "accent": true
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        150,
+        355
+       ],
+       "till": [
+        150,
+        240
+       ]
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        150,
+        355
+       ],
+       "till": [
+        150,
+        470
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        95,
+        375
+       ],
+       "text": "?",
+       "accent": true
+      }
+     ]
+    }
    },
    "undertext": [
     {
@@ -56554,19 +56705,19 @@
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 880.06,
-     "e": 883.64,
-     "text": "Först: Ställ upp en ekvation, med x för bredden."
-    },
-    {
-     "s": 884.44,
-     "e": 886.92,
-     "text": "Sen: Lös den med pq-formeln."
-    },
-    {
-     "s": 887.72,
-     "e": 889.1,
+     "s": 880.01,
+     "e": 882.17,
      "text": "Hur bred är åkern?"
+    },
+    {
+     "s": 882.97,
+     "e": 888.09,
+     "text": "Först: Ställ upp en ekvation för att ta reda på det, med x för bredden."
+    },
+    {
+     "s": 888.89,
+     "e": 892.49,
+     "text": "Sen: Lös ekvationen med pq-formeln."
     }
    ]
   },

@@ -667,14 +667,15 @@
     "notisFran": "Nu är det din tur"
   },
   "ma2a-01-kvadreringsreglerna": {
-    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel. Du ska svara på två frågor.",
+    "notisFran": "Nu är det din tur",
+    "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel. Hur mycket är 47 i kvadrat, om du räknar i huvudet som Bethe? Du ska svara på två frågor.",
     "slut": [
-      "Först: 47 är 50 minus vad?",
-      "Sen: Räkna 47 i kvadrat i huvudet, som Bethe."
+      "Först: 47 är 50 minus vad? Det behöver du för knepet.",
+      "Sen: Använd knepet och räkna ut 47 i kvadrat."
     ],
     "delar": [
       {
-        "fraga": "Först: 47 är 50 minus vad?",
+        "fraga": "Först: 47 är 50 minus vad? Det behöver du för knepet.",
         "typ": "tal",
         "svar": 3,
         "exempel": "t.ex. 2",
@@ -690,11 +691,13 @@
         ]
       },
       {
-        "fraga": "Sen: Räkna 47 i kvadrat i huvudet, som Bethe.",
+        "fraga": "Sen: Använd knepet och räkna ut 47 i kvadrat.",
         "typ": "tal",
         "svar": 2209,
         "exempel": "t.ex. 2304",
-        "tangenter": ["·"],
+        "tangenter": [
+          "·"
+        ],
         "fel": [
           {
             "svar": "2491",
@@ -734,9 +737,42 @@
       "Dubbla produkten: 2 · 50 · 3 = 300, med minus.",
       "3² = 9, som alltid är plus.",
       "2500 − 300 + 9 = 2209."
-    ]
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p09-mannen-pa-vagen",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "Två män går på en väg mellan tallar i Los Alamos. Talet 47 i kvadrat och formeln för kvadreringsregeln, a minus b i kvadrat, ska användas.",
+      "delar": [
+        {
+          "typ": "text",
+          "vid": [
+            360,
+            440
+          ],
+          "text": "47²",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            140,
+            620
+          ],
+          "text": "(a − b)² = a² − 2ab + b²",
+          "ankare": "start"
+        }
+      ]
+    }
   },
   "ma2a-02-faktorisera": {
+    "notisFran": "Nu är det din tur",
     "fraga": "Hur faktoriserar du 9x² + 18x? Du ska svara på två frågor.",
     "slut": [
       "Först: Vad är den största gemensamma faktorn?",
@@ -1035,11 +1071,14 @@
   },
   "ma2a-04-pq-formeln": {
     "notisFran": "Omkring trehundra år senare",
-    "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Du ska svara på två frågor.",
-    "slut": ["Först: Ställ upp en ekvation, med x för bredden.", "Sen: Lös den med pq-formeln. Hur bred är åkern?"],
+    "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Hur bred är åkern? Du ska svara på två frågor.",
+    "slut": [
+      "Först: Ställ upp en ekvation för att ta reda på det, med x för bredden.",
+      "Sen: Lös ekvationen med pq-formeln."
+    ],
     "delar": [
       {
-        "fraga": "Först: Ställ upp en ekvation, med x för bredden.",
+        "fraga": "Först: Ställ upp en ekvation för att ta reda på det, med x för bredden.",
         "typ": "ekvation",
         "svar": "x*(x + 6) = 72",
         "exempel": "t.ex. x(x + 4) = 96",
@@ -1066,7 +1105,7 @@
         ]
       },
       {
-        "fraga": "Sen: Lös den med pq-formeln. Hur bred är åkern?",
+        "fraga": "Sen: Lös ekvationen med pq-formeln.",
         "typ": "tal",
         "svar": 6,
         "tolerans": 0.001,
@@ -1097,7 +1136,116 @@
       "Multiplicera in: x² + 6x = 72. Dra bort 72 från båda leden: x² + 6x − 72 = 0. Då är p = 6 och q = −72.",
       "pq-formeln: x = −3 ± √(9 + 72) = −3 ± √81 = −3 ± 9.",
       "x = 6 eller x = −12. En bredd kan inte vara negativ, så åkern är 6 meter bred (och 12 meter lång). Kontroll: 6 · 12 = 72."
-    ]
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p06-dottern-pa-akern",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "En kvinna går längs en åker med ett rep. Åkern är en rektangel med arean 72 kvadratmeter. Längden är 6 meter mer än bredden, och bredden är okänd.",
+      "delar": [
+        {
+          "typ": "linje",
+          "p": [
+            [
+              190,
+              240
+            ],
+            [
+              610,
+              240
+            ],
+            [
+              610,
+              470
+            ],
+            [
+              190,
+              470
+            ],
+            [
+              190,
+              240
+            ]
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            400,
+            375
+          ],
+          "text": "72 m²"
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            400,
+            205
+          ],
+          "till": [
+            190,
+            205
+          ]
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            400,
+            205
+          ],
+          "till": [
+            610,
+            205
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            400,
+            150
+          ],
+          "text": "? + 6",
+          "accent": true
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            150,
+            355
+          ],
+          "till": [
+            150,
+            240
+          ]
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            150,
+            355
+          ],
+          "till": [
+            150,
+            470
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            95,
+            375
+          ],
+          "text": "?",
+          "accent": true
+        }
+      ]
+    }
   },
   "formelbladet-ma2-1-algebra": {
     "fraga": "Lös ekvationen x² − 8x + 12 = 0 med pq-formeln. Du ska svara på två frågor.",
