@@ -737,10 +737,10 @@
     ]
   },
   "ma2a-02-faktorisera": {
-    "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "fraga": "Hur faktoriserar du 9x² + 18x? Du ska svara på två frågor.",
     "slut": [
-      "Först: Vad är den största gemensamma faktorn i 9x² + 18x?",
-      "Sen: Faktorisera 9x² + 18x."
+      "Först: Vad är den största gemensamma faktorn?",
+      "Sen: Bryt ut den och faktorisera uttrycket."
     ],
     "delar": [
       {
@@ -775,7 +775,7 @@
         ]
       },
       {
-        "fraga": "Sen: Faktorisera 9x² + 18x.",
+        "fraga": "Sen: Bryt ut den och faktorisera 9x² + 18x.",
         "typ": "uttryck",
         "svar": "9x^2 + 18x",
         "visa": "9x² + 18x",
@@ -799,22 +799,47 @@
       "9x² delat med 9x är x, och 18x delat med 9x är 2.",
       "9x² + 18x = 9x(x + 2)",
       "Kontroll: 9x · x = 9x² och 9x · 2 = 18x."
-    ]
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p10-eleven-vid-tavlan",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "En elev skriver på en tavla vid fönstret. Uttrycket 9x² + 18x ska faktoriseras.",
+      "delar": [
+        {
+          "typ": "text",
+          "vid": [
+            140,
+            470
+          ],
+          "text": "9x² + 18x",
+          "ankare": "start"
+        }
+      ]
+    }
   },
   "ma2a-03-x2-och-nollprodukt": {
     "notisFran": "Nu är det din tur",
-    "fraga": "En kula släpps från ett torn som är 80 meter högt. På t sekunder faller den 5t² meter. Du ska svara på två frågor.",
+    "fraga": "En kula släpps från ett torn som är 80 meter högt. På t sekunder faller den 5t² meter. Hur många sekunder tar det innan kulan slår i marken? Du ska svara på två frågor.",
     "slut": [
-      "Först: Vad är t² när kulan har fallit 80 meter?",
-      "Sen: Hur många sekunder tar det innan kulan slår i marken?"
+      "Först: Vad är t² när kulan har fallit 80 meter? Det behöver du för att ta reda på det.",
+      "Sen: Räkna ut hur många sekunder det tar."
     ],
     "delar": [
       {
-        "fraga": "Först: Vad är t² när kulan har fallit 80 meter?",
+        "fraga": "Först: Vad är t² när kulan har fallit 80 meter? Det behöver du för att ta reda på det.",
         "typ": "tal",
         "svar": 16,
         "exempel": "t.ex. 9",
-        "tangenter": ["/"],
+        "tangenter": [
+          "/"
+        ],
         "fel": [
           {
             "svar": "400",
@@ -827,7 +852,7 @@
         ]
       },
       {
-        "fraga": "Sen: Hur många sekunder tar det innan kulan slår i marken?",
+        "fraga": "Sen: Räkna ut hur många sekunder det tar.",
         "typ": "tal",
         "svar": 4,
         "tolerans": 0.001,
@@ -858,7 +883,89 @@
       "Dela båda leden med 5: t² = 16.",
       "Vilket tal gånger sig självt blir 16? 4, och −4.",
       "En tid kan inte vara negativ, så det tar 4 sekunder."
-    ]
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p11-kulan-i-tornet",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "En tjänare står på ett torn som är 80 meter högt och håller en kula. På t sekunder faller kulan 5t² meter. Tiden t är okänd.",
+      "delar": [
+        {
+          "typ": "pil",
+          "fran": [
+            1360,
+            575
+          ],
+          "till": [
+            1360,
+            205
+          ]
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            1360,
+            575
+          ],
+          "till": [
+            1360,
+            945
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            1320,
+            470
+          ],
+          "text": "80 m",
+          "ankare": "end"
+        },
+        {
+          "typ": "prick",
+          "vid": [
+            1477,
+            135
+          ],
+          "r": 13
+        },
+        {
+          "typ": "text",
+          "vid": [
+            120,
+            190
+          ],
+          "text": "5t²",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            120,
+            340
+          ],
+          "text": "t² = ?",
+          "ankare": "start",
+          "accent": true
+        },
+        {
+          "typ": "text",
+          "vid": [
+            420,
+            340
+          ],
+          "text": "t = ?",
+          "ankare": "start",
+          "accent": true
+        }
+      ]
+    }
   },
   "ma2a-03b-nollproduktmetoden": {
     "notisFran": "Nu är det din tur",
@@ -2642,10 +2749,10 @@
       "text": "Skriv y=2x+40 och y=3x+10. Klicka på en av linjerna och sedan på den grå punkten där de möts."
     },
     "notisFran": "Nu är det din tur",
-    "fraga": "På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Du ska svara på två frågor.",
+    "fraga": "På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Hur mycket varor måste järnvägen frakta innan repen blir billigare? Du ska svara på två frågor.",
     "slut": [
       "Först: Skriv repens ekvation.",
-      "Sen: Rita båda linjerna. Hur mycket varor innan repen blir billigare?"
+      "Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret."
     ],
     "delar": [
       {
@@ -2673,7 +2780,7 @@
         ]
       },
       {
-        "fraga": "Sen: Rita båda linjerna i samma koordinatsystem. Hur mycket varor måste järnvägen frakta innan repen blir billigare? Svara i tusen ton.",
+        "fraga": "Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret. Svara i tusen ton.",
         "typ": "tal",
         "svar": 30,
         "tolerans": 0.001,
@@ -2708,7 +2815,89 @@
       "Rita båda linjerna. De skär varandra i punkten (30, 100).",
       "Kontroll: 2 · 30 + 40 = 100 och 3 · 30 + 10 = 100. Båda stämmer.",
       "Till vänster om 30 är loken billigast, och efter 30 000 ton är repen billigare."
-    ]
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p07-jarnvagen-i-dalen",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "Ett lok drar vagnar i en dal under ett maskinhus på berget. Repen kostar 40 och 2 för varje tusen ton. Loken kostar 10 och 3 för varje tusen ton. Ett tomt koordinatsystem med x i tusen ton och y i tusen pund. Skärningspunkten är okänd.",
+      "delar": [
+        {
+          "typ": "text",
+          "vid": [
+            110,
+            120
+          ],
+          "text": "rep: 40 + 2 per tusen ton",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            110,
+            220
+          ],
+          "text": "lok: 10 + 3 per tusen ton",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            110,
+            360
+          ],
+          "text": "x = ?",
+          "ankare": "start",
+          "accent": true
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            130,
+            960
+          ],
+          "till": [
+            130,
+            565
+          ]
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            130,
+            960
+          ],
+          "till": [
+            550,
+            960
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            165,
+            595
+          ],
+          "text": "y (tusen pund)",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            265,
+            850
+          ],
+          "text": "x (tusen ton)",
+          "ankare": "start"
+        }
+      ]
+    }
   },
   "ma2a-08-substitution-och-addition": {
     "geogebra": { "text": "Kontrollera svaret grafiskt här i GeoGebra: skriv x + y = 6 och x = 2y. Klicka på en av linjerna och sedan på den grå punkten där de möts. x är strömmen i tråden med 1 ohm och y strömmen i tråden med 2 ohm." },

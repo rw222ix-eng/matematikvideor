@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-04T18:34:26.000Z",
+ "byggd": "2026-11-05T21:04:35.447Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -51722,7 +51722,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-02-faktorisera-v9/ma2a-02-faktorisera-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-02-faktorisera-v10/ma2a-02-faktorisera-1080p.mp4",
    "moment": "Faktorisera med kvadrerings- och konjugatregeln",
    "begrepp": [
     "faktorisera",
@@ -51741,7 +51741,7 @@
    ],
    "beskrivning": "Eugène Carissan visade 1920 i Paris en vevad maskin som delade upp stora tal i faktorer. Vi faktoriserar genom att bryta ut den största gemensamma faktorn, och i enkla fall med konjugatregeln och kvadreringsregeln på formelbladet.",
    "youtube": null,
-   "langd": 839,
+   "langd": 840,
    "omslag": "omslag/ma2a-02-faktorisera.jpg?v=dea494ac",
    "omslagRen": "omslag/ma2a-02-faktorisera-ren.jpg?v=8d22554d",
    "omslagStor": null,
@@ -51892,7 +51892,7 @@
     },
     {
      "t": 819,
-     "text": "Nu är det din tur. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vad är den största gemensamma faktorn i nio X i kvadrat plus arton X? Sen: Faktorisera nio X i kvadrat plus arton X."
+     "text": "Nu är det din tur. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Hur faktoriserar du nio X i kvadrat plus arton X? Först: Vad är den största gemensamma faktorn? Sen: Bryt ut den och faktorisera uttrycket."
     }
    ],
    "kapitel": [
@@ -51933,10 +51933,10 @@
     }
    ],
    "dinTur": {
-    "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "fraga": "Hur faktoriserar du 9x² + 18x? Du ska svara på två frågor.",
     "slut": [
-     "Först: Vad är den största gemensamma faktorn i 9x² + 18x?",
-     "Sen: Faktorisera 9x² + 18x."
+     "Först: Vad är den största gemensamma faktorn?",
+     "Sen: Bryt ut den och faktorisera uttrycket."
     ],
     "delar": [
      {
@@ -51971,7 +51971,7 @@
       ]
      },
      {
-      "fraga": "Sen: Faktorisera 9x² + 18x.",
+      "fraga": "Sen: Bryt ut den och faktorisera 9x² + 18x.",
       "typ": "uttryck",
       "svar": "9x^2 + 18x",
       "visa": "9x² + 18x",
@@ -51996,6 +51996,29 @@
      "9x² + 18x = 9x(x + 2)",
      "Kontroll: 9x · x = 9x² och 9x · 2 = 18x."
     ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-02-faktorisera.jpg?v=89107f7b",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "En elev skriver på en tavla vid fönstret. Uttrycket 9x² + 18x ska faktoriseras.",
+     "delar": [
+      {
+       "typ": "text",
+       "vid": [
+        140,
+        470
+       ],
+       "text": "9x² + 18x",
+       "ankare": "start"
+      }
+     ]
+    },
     "notisFran": 466
    },
    "undertext": [
@@ -53050,14 +53073,19 @@
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 825.9,
-     "e": 832.48,
-     "text": "Först: Vad är den största gemensamma faktorn i nio X i kvadrat plus arton X?"
+     "s": 825.85,
+     "e": 830.17,
+     "text": "Hur faktoriserar du nio X i kvadrat plus arton X?"
     },
     {
-     "s": 833.28,
-     "e": 837.9,
-     "text": "Sen: Faktorisera nio X i kvadrat plus arton X."
+     "s": 830.97,
+     "e": 834.65,
+     "text": "Först: Vad är den största gemensamma faktorn?"
+    },
+    {
+     "s": 835.45,
+     "e": 839.13,
+     "text": "Sen: Bryt ut den och faktorisera uttrycket."
     }
    ]
   },
@@ -53070,7 +53098,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-03-x2-och-nollprodukt-v8/ma2a-03-x2-och-nollprodukt-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-03-x2-och-nollprodukt-v9/ma2a-03-x2-och-nollprodukt-1080p.mp4",
    "moment": "Lösa x² = a",
    "begrepp": [
     "andragradsekvation",
@@ -53085,7 +53113,7 @@
    ],
    "beskrivning": "Omkring år 1600 släpps kulor från taket på ett stort hus vid Themsen, och matematikern Thomas Harriot räknar sina pulsslag tills de slår i marken. Rutorna i hans mätningar bildar kvadrater, och med hans regel räknar vi ut hur länge fallet tar genom att dra roten ur.",
    "youtube": null,
-   "langd": 591,
+   "langd": 599,
    "omslag": "omslag/ma2a-03-x2-och-nollprodukt.jpg?v=39d9ee0c",
    "omslagRen": "omslag/ma2a-03-x2-och-nollprodukt-ren.jpg?v=aadc1663",
    "omslagStor": null,
@@ -53168,7 +53196,7 @@
     },
     {
      "t": 562,
-     "text": "Nu är det din tur. Tänk dig att tjänaren släpper en kula från ett torn som är åttio meter högt. På t sekunder faller kulan fem gånger t i kvadrat meter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vad är t i kvadrat, när kulan har fallit åttio meter? Sen: Hur många sekunder tar det innan kulan slår i marken?"
+     "text": "Nu är det din tur. Tänk dig att tjänaren släpper en kula från ett torn som är åttio meter högt. På t sekunder faller kulan fem gånger t i kvadrat meter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Hur många sekunder tar det innan kulan slår i marken? Först: Vad är t i kvadrat, när kulan har fallit åttio meter? Det behöver du för att ta reda på det. Sen: Räkna ut hur många sekunder det tar."
     }
    ],
    "kapitel": [
@@ -53220,14 +53248,14 @@
    ],
    "dinTur": {
     "notisFran": 562,
-    "fraga": "En kula släpps från ett torn som är 80 meter högt. På t sekunder faller den 5t² meter. Du ska svara på två frågor.",
+    "fraga": "En kula släpps från ett torn som är 80 meter högt. På t sekunder faller den 5t² meter. Hur många sekunder tar det innan kulan slår i marken? Du ska svara på två frågor.",
     "slut": [
-     "Först: Vad är t² när kulan har fallit 80 meter?",
-     "Sen: Hur många sekunder tar det innan kulan slår i marken?"
+     "Först: Vad är t² när kulan har fallit 80 meter? Det behöver du för att ta reda på det.",
+     "Sen: Räkna ut hur många sekunder det tar."
     ],
     "delar": [
      {
-      "fraga": "Först: Vad är t² när kulan har fallit 80 meter?",
+      "fraga": "Först: Vad är t² när kulan har fallit 80 meter? Det behöver du för att ta reda på det.",
       "typ": "tal",
       "svar": 16,
       "exempel": "t.ex. 9",
@@ -53246,7 +53274,7 @@
       ]
      },
      {
-      "fraga": "Sen: Hur många sekunder tar det innan kulan slår i marken?",
+      "fraga": "Sen: Räkna ut hur många sekunder det tar.",
       "typ": "tal",
       "svar": 4,
       "tolerans": 0.001,
@@ -53277,7 +53305,89 @@
      "Dela båda leden med 5: t² = 16.",
      "Vilket tal gånger sig självt blir 16? 4, och −4.",
      "En tid kan inte vara negativ, så det tar 4 sekunder."
-    ]
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-03-x2-och-nollprodukt.jpg?v=a6ebf95b",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "En tjänare står på ett torn som är 80 meter högt och håller en kula. På t sekunder faller kulan 5t² meter. Tiden t är okänd.",
+     "delar": [
+      {
+       "typ": "pil",
+       "fran": [
+        1360,
+        575
+       ],
+       "till": [
+        1360,
+        205
+       ]
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        1360,
+        575
+       ],
+       "till": [
+        1360,
+        945
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1320,
+        470
+       ],
+       "text": "80 m",
+       "ankare": "end"
+      },
+      {
+       "typ": "prick",
+       "vid": [
+        1477,
+        135
+       ],
+       "r": 13
+      },
+      {
+       "typ": "text",
+       "vid": [
+        120,
+        190
+       ],
+       "text": "5t²",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        120,
+        340
+       ],
+       "text": "t² = ?",
+       "ankare": "start",
+       "accent": true
+      },
+      {
+       "typ": "text",
+       "vid": [
+        420,
+        340
+       ],
+       "text": "t = ?",
+       "ankare": "start",
+       "accent": true
+      }
+     ]
+    }
    },
    "undertext": [
     {
@@ -53981,14 +54091,24 @@
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 580.24,
-     "e": 585.02,
+     "s": 580.19,
+     "e": 584.27,
+     "text": "Hur många sekunder tar det innan kulan slår i marken?"
+    },
+    {
+     "s": 585.07,
+     "e": 590.59,
      "text": "Först: Vad är t i kvadrat, när kulan har fallit åttio meter?"
     },
     {
-     "s": 585.82,
-     "e": 589.98,
-     "text": "Sen: Hur många sekunder tar det innan kulan slår i marken?"
+     "s": 591.39,
+     "e": 593.63,
+     "text": "Det behöver du för att ta reda på det."
+    },
+    {
+     "s": 594.43,
+     "e": 597.79,
+     "text": "Sen: Räkna ut hur många sekunder det tar."
     }
    ]
   },
@@ -54001,7 +54121,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-03b-nollproduktmetoden-v1/ma2a-03b-nollproduktmetoden-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-03b-nollproduktmetoden-v2/ma2a-03b-nollproduktmetoden-1080p.mp4",
    "moment": "Lösa andragradsekvationer med nollproduktmetoden",
    "begrepp": [
     "andragradsekvation",
@@ -56459,7 +56579,7 @@
    "ocksa": null,
    "kurs": "Matematik 2a",
    "kurser": null,
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-07-ekvationssystem-grafiskt-v7/ma2a-07-ekvationssystem-grafiskt-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-07-ekvationssystem-grafiskt-v8/ma2a-07-ekvationssystem-grafiskt-1080p.mp4",
    "moment": "Lösa ekvationssystem grafiskt",
    "begrepp": [
     "ekvationssystem",
@@ -56485,7 +56605,7 @@
    ],
    "beskrivning": "År 1829 skulle järnvägen mellan Liverpool och Manchester välja mellan fasta ångmaskiner med rep och lok, och ingenjören James Walker jämförde kostnaderna. Vi skriver kostnaderna som två räta linjer, läser av skärningspunkten, ser när ett ekvationssystem har en, ingen eller oändligt många lösningar och löser det i GeoGebra.",
    "youtube": null,
-   "langd": 744,
+   "langd": 747,
    "omslag": "omslag/ma2a-07-ekvationssystem-grafiskt.jpg?v=8c473218",
    "omslagRen": "omslag/ma2a-07-ekvationssystem-grafiskt-ren.jpg?v=ad708d79",
    "omslagStor": null,
@@ -56608,7 +56728,7 @@
     },
     {
      "t": 707,
-     "text": "Nu är det din tur. På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar fyrtio att bygga och sedan två för varje tusen ton. Loken kostar tio att köpa och sedan tre för varje tusen ton. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Skriv repens ekvation. Sen: Rita båda linjerna i samma koordinatsystem. Hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+     "text": "Nu är det din tur. På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar fyrtio att bygga och sedan två för varje tusen ton. Loken kostar tio att köpa och sedan tre för varje tusen ton. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Hur mycket varor måste järnvägen frakta innan repen blir billigare? Först: Skriv repens ekvation. Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret."
     }
    ],
    "kapitel": [
@@ -56653,10 +56773,10 @@
      "text": "Skriv y=2x+40 och y=3x+10. Klicka på en av linjerna och sedan på den grå punkten där de möts."
     },
     "notisFran": 707,
-    "fraga": "På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Du ska svara på två frågor.",
+    "fraga": "På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Hur mycket varor måste järnvägen frakta innan repen blir billigare? Du ska svara på två frågor.",
     "slut": [
      "Först: Skriv repens ekvation.",
-     "Sen: Rita båda linjerna. Hur mycket varor innan repen blir billigare?"
+     "Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret."
     ],
     "delar": [
      {
@@ -56684,7 +56804,7 @@
       ]
      },
      {
-      "fraga": "Sen: Rita båda linjerna i samma koordinatsystem. Hur mycket varor måste järnvägen frakta innan repen blir billigare? Svara i tusen ton.",
+      "fraga": "Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret. Svara i tusen ton.",
       "typ": "tal",
       "svar": 30,
       "tolerans": 0.001,
@@ -56719,13 +56839,95 @@
      "Rita båda linjerna. De skär varandra i punkten (30, 100).",
      "Kontroll: 2 · 30 + 40 = 100 och 3 · 30 + 10 = 100. Båda stämmer.",
      "Till vänster om 30 är loken billigast, och efter 30 000 ton är repen billigare."
-    ]
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-07-ekvationssystem-grafiskt.jpg?v=3c8e9abb",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "Ett lok drar vagnar i en dal under ett maskinhus på berget. Repen kostar 40 och 2 för varje tusen ton. Loken kostar 10 och 3 för varje tusen ton. Ett tomt koordinatsystem med x i tusen ton och y i tusen pund. Skärningspunkten är okänd.",
+     "delar": [
+      {
+       "typ": "text",
+       "vid": [
+        110,
+        120
+       ],
+       "text": "rep: 40 + 2 per tusen ton",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        110,
+        220
+       ],
+       "text": "lok: 10 + 3 per tusen ton",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        110,
+        360
+       ],
+       "text": "x = ?",
+       "ankare": "start",
+       "accent": true
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        130,
+        960
+       ],
+       "till": [
+        130,
+        565
+       ]
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        130,
+        960
+       ],
+       "till": [
+        550,
+        960
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        165,
+        595
+       ],
+       "text": "y (tusen pund)",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        265,
+        850
+       ],
+       "text": "x (tusen ton)",
+       "ankare": "start"
+      }
+     ]
+    }
    },
    "undertext": [
     {
      "s": 9.5,
      "e": 13.46,
-     "text": "Vi är i Liverpool i England, vintern 1828."
+     "text": "Vi är i Liverpool i England, vintern artonhundratjugoåtta."
     },
     {
      "s": 14.26,
@@ -56735,7 +56937,7 @@
     {
      "s": 16.82,
      "e": 20.94,
-     "text": "Bomullen ska till fabrikerna i staden Manchester, 50 kilometer bort."
+     "text": "Bomullen ska till fabrikerna i staden Manchester, femtio kilometer bort."
     },
     {
      "s": 21.74,
@@ -56955,7 +57157,7 @@
     {
      "s": 177.48,
      "e": 183.3,
-     "text": "Samma sak skrivet med bokstäver blir y = 3x + 60."
+     "text": "Samma sak skrivet med bokstäver blir y är lika med tre X plus sextio."
     },
     {
      "s": 184.4,
@@ -56965,7 +57167,7 @@
     {
      "s": 187,
      "e": 189.02,
-     "text": "Loken kostar 20 att köpa."
+     "text": "Loken kostar tjugo att köpa."
     },
     {
      "s": 189.82,
@@ -56985,7 +57187,7 @@
     {
      "s": 200.92,
      "e": 205.54,
-     "text": "Med bokstäver blir det y = 4x + 20."
+     "text": "Med bokstäver blir det y är lika med fyra X plus tjugo."
     },
     {
      "s": 206.64,
@@ -57070,7 +57272,7 @@
     {
      "s": 258.92,
      "e": 260.62,
-     "text": "Den börjar lägre, på 20."
+     "text": "Den börjar lägre, på tjugo."
     },
     {
      "s": 261.42,
@@ -57125,7 +57327,7 @@
     {
      "s": 298.72,
      "e": 305.14,
-     "text": "För repen är k tre och m sextio, precis som i y = 3x + 60."
+     "text": "För repen är k tre och m sextio, precis som i y är lika med tre X plus sextio."
     },
     {
      "s": 306.24,
@@ -57285,12 +57487,12 @@
     {
      "s": 417.66,
      "e": 423.2,
-     "text": "Vid 40 000 ton kostar repen och loken lika mycket, 180 000 pund."
+     "text": "Vid fyrtiotusen ton kostar repen och loken lika mycket, hundraåttiotusen pund."
     },
     {
      "s": 424,
      "e": 426.76,
-     "text": "Före 40 000 ton är loken billigast."
+     "text": "Före fyrtiotusen ton är loken billigast."
     },
     {
      "s": 427.56,
@@ -57310,7 +57512,7 @@
     {
      "s": 438.52,
      "e": 442.22,
-     "text": "Men efter 40 000 ton ligger repens linje lägst."
+     "text": "Men efter fyrtiotusen ton ligger repens linje lägst."
     },
     {
      "s": 443.02,
@@ -57355,7 +57557,7 @@
     {
      "s": 471.34,
      "e": 473.4,
-     "text": "Svaret är 40 000 ton."
+     "text": "Svaret är fyrtiotusen ton."
     },
     {
      "s": 474.5,
@@ -57385,17 +57587,17 @@
     {
      "s": 491.56,
      "e": 495.52,
-     "text": "Tänk dig två lok som båda kostar 4 för varje tusen ton."
+     "text": "Tänk dig två lok som båda kostar fyra för varje tusen ton."
     },
     {
      "s": 496.32,
      "e": 499.68,
-     "text": "Det ena kostar 20 att köpa, och det andra 30."
+     "text": "Det ena kostar tjugo att köpa, och det andra trettio."
     },
     {
      "s": 500.78,
      "e": 503.88,
-     "text": "Båda linjerna går upp 4 för varje tusen ton."
+     "text": "Båda linjerna går upp fyra för varje tusen ton."
     },
     {
      "s": 504.68,
@@ -57430,7 +57632,7 @@
     {
      "s": 529.52,
      "e": 532.74,
-     "text": "Ta y − 20 = 4x."
+     "text": "Ta y minus tjugo är lika med fyra X."
     },
     {
      "s": 533.54,
@@ -57440,7 +57642,7 @@
     {
      "s": 535.92,
      "e": 540.2,
-     "text": "Så vi lägger till 20, för minus tjugo plus tjugo är noll."
+     "text": "Så vi lägger till tjugo, för minus tjugo plus tjugo är noll."
     },
     {
      "s": 541,
@@ -57450,7 +57652,7 @@
     {
      "s": 546,
      "e": 549.7,
-     "text": "Då står det y = 4x + 20."
+     "text": "Då står det y är lika med fyra X plus tjugo."
     },
     {
      "s": 550.5,
@@ -57480,12 +57682,12 @@
     {
      "s": 570.26,
      "e": 574.14,
-     "text": "Säg att ett bättre lok kostar 3,6 för varje tusen ton,"
+     "text": "Säg att ett bättre lok kostar tre komma sex för varje tusen ton,"
     },
     {
      "s": 574.34,
      "e": 575.34,
-     "text": "i stället för 4."
+     "text": "i stället för fyra."
     },
     {
      "s": 577.06,
@@ -57530,7 +57732,7 @@
     {
      "s": 601.82,
      "e": 605.62,
-     "text": "Skriv y = 3x + 60."
+     "text": "Skriv y är lika med tre X plus sextio."
     },
     {
      "s": 606.42,
@@ -57545,7 +57747,7 @@
     {
      "s": 611.46,
      "e": 615.96,
-     "text": "Sen skriver du y = 3,6x + 20."
+     "text": "Sen skriver du y är lika med tre komma sex X plus tjugo."
     },
     {
      "s": 617.06,
@@ -57590,7 +57792,7 @@
     {
      "s": 642.38,
      "e": 647.36,
-     "text": "Då visar GeoGebra punkten 66,67, 260."
+     "text": "Då visar GeoGebra punkten sextiosex komma sextiosju, tvåhundrasextio."
     },
     {
      "s": 648.16,
@@ -57605,7 +57807,7 @@
     {
      "s": 656.74,
      "e": 663.26,
-     "text": "Med det bättre loket måste järnvägen alltså frakta nästan 67 000 ton innan repen blir billigare."
+     "text": "Med det bättre loket måste järnvägen alltså frakta nästan sextiosjutusen ton innan repen blir billigare."
     },
     {
      "s": 664.06,
@@ -57620,7 +57822,7 @@
     {
      "s": 672.94,
      "e": 676.08,
-     "text": "Walkers rapport blev klar i mars 1829."
+     "text": "Walkers rapport blev klar i mars artonhundratjugonio."
     },
     {
      "s": 676.88,
@@ -57640,7 +57842,7 @@
     {
      "s": 689.66,
      "e": 691.4,
-     "text": "Priset var 500 pund."
+     "text": "Priset var femhundra pund."
     },
     {
      "s": 692.5,
@@ -57650,7 +57852,7 @@
     {
      "s": 697.6,
      "e": 700.12,
-     "text": "Järnvägen öppnade år 1830."
+     "text": "Järnvägen öppnade år artonhundratrettio."
     },
     {
      "s": 700.92,
@@ -57670,12 +57872,12 @@
     {
      "s": 715.96,
      "e": 720.32,
-     "text": "Repen kostar 40 att bygga och sedan 2 för varje tusen ton."
+     "text": "Repen kostar fyrtio att bygga och sedan två för varje tusen ton."
     },
     {
      "s": 721.12,
      "e": 725.54,
-     "text": "Loken kostar 10 att köpa och sedan 3 för varje tusen ton."
+     "text": "Loken kostar tio att köpa och sedan tre för varje tusen ton."
     },
     {
      "s": 726.34,
@@ -57683,19 +57885,19 @@
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 731,
-     "e": 733.54,
+     "s": 730.95,
+     "e": 736.15,
+     "text": "Hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+    },
+    {
+     "s": 736.95,
+     "e": 739.71,
      "text": "Först: Skriv repens ekvation."
     },
     {
-     "s": 734.34,
-     "e": 737.94,
-     "text": "Sen: Rita båda linjerna i samma koordinatsystem."
-    },
-    {
-     "s": 738.74,
-     "e": 742.74,
-     "text": "Hur mycket varor måste järnvägen frakta innan repen blir billigare?"
+     "s": 740.51,
+     "e": 746.03,
+     "text": "Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret."
     }
    ]
   },
