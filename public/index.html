@@ -68,6 +68,10 @@
   @font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-matte.woff2) format('woff2'); unicode-range: U+25A1; }
   @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-matte.woff2) format('woff2'); unicode-range: U+03BC, U+03C0, U+221A, U+221E, U+2248, U+2264-2265, U+25A1; }
   @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; size-adjust: 88%; src: url(fonts/noto-serif-matte.woff2) format('woff2'); unicode-range: U+03C3; }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 300; font-display: swap; src: url(fonts/noto-sans-math-matte.woff2) format('woff2'); unicode-range: U+21D4; }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/noto-sans-math-matte.woff2) format('woff2'); unicode-range: U+21D4; }
+  @font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/noto-sans-math-matte.woff2) format('woff2'); unicode-range: U+21D4; }
+  @font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/noto-sans-math-matte.woff2) format('woff2'); unicode-range: U+21D4; }
   @font-face { font-family: 'Playpen Sans'; font-style: normal; font-weight: 500; font-display: swap; size-adjust: 92%; src: url(fonts/playpen-sans-500-latin.woff2) format('woff2'); }
 </style>
 <style>
@@ -730,11 +734,14 @@
   /* "Dölj texten" mitt i den klistrade toppraden (Rickard 2026-09-26): när hela texten är utfälld och
      knappen ovanför den har rullat ur bild. Där är raden tom, så den skymmer ingenting. Osynlig är
      den också borta för Tab (visibility). På en telefon bara pilen, för att få plats. */
+  /* Med id, så att den går före position: relative i :is(.kolla, .kant, …). Annars stod knappen efter tillbakalänken och gjorde formelbladsfilmerna för breda på telefon (2026-11-06). */
+  #dolj-text { position: absolute; }
   .film .dolj-text { position: absolute; left: 50%; top: 50%; min-height: 38px; padding: 0 16px; gap: 10px; font-size: 11px; letter-spacing: .22em; background: rgba(23, 20, 20, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transform: translate(-50%, calc(-50% - 8px)); transition: opacity .4s var(--lugn), transform .4s var(--lugn), visibility 0s .4s, color .3s, border-color .3s, box-shadow .4s var(--lugn); }
   .film .dolj-text.syns { opacity: 1; visibility: visible; transform: translate(-50%, -50%); transition: opacity .4s var(--lugn), transform .4s var(--lugn), visibility 0s, color .3s, border-color .3s, box-shadow .4s var(--lugn); }
   .film .dolj-text:active { transform: translate(-50%, -50%) scale(.94); }
   .film .dolj-text svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
-  @media (max-width: 700px) { .film .dolj-text { width: 40px; min-height: 40px; padding: 0; } .film .dolj-text span { display: none; } }
+  /* Telefon: mitt emellan tillbakalänken och sökknappen, eftersom «Formelbladet Ma 1» når förbi mitten. */
+  @media (max-width: 700px) { .film .dolj-text { left: calc(100% - 96px); width: 40px; min-height: 40px; padding: 0; } .film .dolj-text span { display: none; } }
   .visa-allt .dolj, .visa-allt.oppen .visa { display: none; }
   .visa-allt.oppen .dolj { display: inline; }
   .visa-allt.oppen svg { transform: rotate(180deg); }
@@ -810,8 +817,11 @@
   .dintur-lost[hidden] { display: none; }
   .dintur-lost svg { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
   .dintur-fraga { margin: 0 0 24px; max-width: 760px; font: 500 clamp(22px, 2.4vw, 28px)/1.35 var(--skrift); color: var(--ben); }
-  /* Formler (matte() i skriptet, 2026-11-06). En formel flyttar hel till nästa rad, och är den bredare än rutan bryts den inuti i stället för att sticka ut. */
-  .matte { display: inline-block; max-width: 100%; vertical-align: top; overflow-wrap: anywhere; }
+  /* Formler (matte() i skriptet, 2026-11-06). En formel flyttar hel till nästa rad, och är den bredare än rutan bryts den inuti i stället för att sticka ut. inline-table har första radens baslinje, så numret i lösningen står vid första raden. */
+  .matte { display: inline-table; max-width: 100%; overflow-wrap: anywhere; text-transform: none; }
+  .brak { display: inline-flex; flex-direction: column; vertical-align: middle; margin: 0 .1em; font-size: .82em; line-height: 1.2; text-align: center; white-space: nowrap; }
+  .brak > :first-child { border-bottom: 1px solid currentColor; padding: 0 .16em .05em; }
+  .kap-namn .matte { display: inline; }   /* raden avkortas med …, som inte går i ett inline-block */
   sup, sub { font-size: .72em; line-height: 0; }
   /* GeoGebra i Din tur (Rickard 2026-10-04): uppgifter som ska lösas grafiskt får GeoGebras grafräknare här,
      samma verktyg som filmen visar. dintur.json: "geogebra". Sedan 2026-10-17 inbäddad direkt (Rickard: "har inte
@@ -869,7 +879,7 @@
   .losning-steg li { font: 500 21px/1.45 var(--skrift); color: var(--ben); animation: fram .6s var(--lugn) both; }
   .losning-steg li::marker { font: 500 12px var(--sans); color: var(--accent); }
   /* Cormorants gamla siffror (1 som I, 3 under raden) går dåligt ihop med matte. Står efter font-reglerna, som annars nollställer den. */
-  .dintur-fraga, .losning-steg li, .duk .slut-fraga { font-variant-numeric: lining-nums; }
+  .dintur-fraga, .losning-steg li, .duk .slut-fraga, .kapitel .rubrik { font-variant-numeric: lining-nums; }
   .dintur-losning .kant { margin-top: 16px; }
   .dintur-losning .kant[hidden] { display: none; }
   .tallinje { display: block; width: 100%; max-width: 460px; height: auto; margin-top: 18px; overflow: visible; }
@@ -1547,17 +1557,23 @@
   // upphöjt, och en formel hålls ihop i .matte (bryts den ändå, så före ett likhetstecken). Unicodes små siffror saknas i typsnitten och sågs i ett
   // reservtypsnitt, så också de blir <sup> och <sub>. dintur.json står kvar som den är, så frågorna är
   // ordagrant rösten. Bara svarsrutans exempel skrivs som förut, med ^, eftersom eleven skriver så.
-  const UPPHOJT = { "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9", "⁻": "−", "⁺": "+", "ⁿ": "n", "ˣ": "x", "ᵖ": "p" };
+  const UPPHOJT = { "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9", "⁻": "−", "⁺": "+", "ⁿ": "n", "ˣ": "x", "ᵖ": "p", "ᵃ": "a" };
   const NEDSANKT = { "₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4", "ₓ": "x", "ᵧ": "y" };
   const smaTecken = (tabell) => new RegExp(`[${Object.keys(tabell).join("")}]+`, "g");
   const MATTE_UPP = smaTecken(UPPHOJT), MATTE_NER = smaTecken(NEDSANKT);
   // En term är allt utan mellanslag, plus parenteser med mellanslag i, två nivåer: √((p/2)² − q).
   const TERM = String.raw`(?:(?:sin|cos|tan|lg|log|ln) )?(?:[^ ()]|\((?:[^()]|\([^()]*\))*\))+`;
   const FORMEL_RE = new RegExp(`${TERM}(?: (?:=|≈|≤|≥|·|±|−|\\+|/|÷|&lt;|&gt;) ${TERM})+`, "g");
-  const matte = (s) => esc(s)
+  // Bråk staplas i Din tur, som på formelbladet (Rickard 2026-11-06), också räkningar som 360 / 8. Bråk i en
+  // exponent står kvar med snedstreck, och kapitelrubrikerna staplas inte, för de står på en rad.
+  const BRAK_TERM = String.raw`(?:lg[ \u00A0])?(?:\((?:[^()]|\([^()]*\))*\)|\d+(?:\u00A0\d{3})*(?:,\d+)?°?|[a-zA-Z](?![a-zA-Zåäö]))`;
+  const BRAK_RE = new RegExp(String.raw`\^\((?:[^()]|\([^()]*\))*\)|(?<![\wåäöÅÄÖ,])(${BRAK_TERM})[ \u00A0]?/[ \u00A0]?(${BRAK_TERM})`, "g");
+  const iBrak = (t) => t[0] === "(" ? t.slice(1, -1) : t;
+  const stapla = (s) => s.replace(BRAK_RE, (m, a, b) => a ? `<span class="brak"><span>${iBrak(a)}</span><span class="sr">/</span><span>${iBrak(b)}</span></span>` : m);
+  const matte = (s, brak = false) => (brak ? stapla : String)(esc(s)
     .replace(/(\d) (mm|cm|dm|m|km|kr|kg|g|dl|l|%)(?![\wåäö])/g, "$1\u00A0$2")
     .replace(/(\d) (?=\d{3}(?!\d))/g, "$1\u00A0")
-    .replace(FORMEL_RE, (m) => `<span class="matte">${m.replace(/ (?![=≈≤≥])/g, "\u00A0")}</span>`)
+    .replace(FORMEL_RE, (m) => `<span class="matte">${m.replace(/ (?![=≈≤≥])/g, "\u00A0")}</span>`))
     .replace(/∛/g, "<sup>3</sup>√")
     .replace(MATTE_UPP, (m) => `<sup>${[...m].map((c) => UPPHOJT[c]).join("")}</sup>`)
     .replace(MATTE_NER, (m) => `<sub>${[...m].map((c) => NEDSANKT[c]).join("")}</sub>`)
@@ -3781,7 +3797,7 @@
   function stangYtText() { if (yt && yt.unloadModule) { try { yt.unloadModule("captions"); yt.unloadModule("cc"); } catch (e) {} } }
   // När filmen är slut: Din tur-frågan och vägen till svaret, och i en formelbladsdel också Nästa del.
   // `slut` i dintur.json (en rad per fråga) visar alla frågorna kort; utan den visas första delens fråga.
-  const slutFraga = (d) => [].concat(d.slut || d.delar[0].fraga).map(matte).join("<br>");
+  const slutFraga = (d) => [].concat(d.slut || d.delar[0].fraga).map((t) => matte(t, true)).join("<br>");
   function slutHtml(v) {
     const n = nastaDel(v), nasta = n && !n.saknas ? n : null;
     if (!v.dinTur && !nasta) return "";
@@ -4139,7 +4155,7 @@
     const t = andel * langd; let kap = null;
     aktuellaKapitel.forEach((c) => { if (c.t <= t) kap = c; });
     tips.querySelector(".t").textContent = `${tid(Math.floor(t))}${kap && kap.typ ? ` · ${TYPNAMN[kap.typ] || ""}` : ""}`;
-    tips.querySelector(".n").textContent = kap ? kap.rubrik : "";
+    tips.querySelector(".n").innerHTML = html(kap ? matte(kap.rubrik) : "");
     const halv = tips.offsetWidth / 2;
     tips.style.left = Math.min(r.width - halv, Math.max(halv, andel * r.width)) + "px";
   }
@@ -4337,7 +4353,7 @@
     kapitelAntal = kapitel.length; egnaKapitelNu = egnaKapitel;
     $("f-langd").textContent = langdRad(v.langd);
     // Varje kapitel visar sin sort (Historia, Matte, Din tur) ovanför rubriken, i sortens färg.
-    $("kapitel").innerHTML = html(kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${esc(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join(""));
+    $("kapitel").innerHTML = html(kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${matte(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join(""));
     // Två spalter: första halvan av kapitlen till vänster, resten till höger.
     $("kapitel").style.setProperty("--rader", Math.max(1, Math.ceil(kapitel.length / 2)));
     aktuellaKapitel = kapitel;
@@ -4392,7 +4408,7 @@
       lys($("kapitel"), nuKapitel, k); nuKapitel = k;
       // Kapitlen före det som spelas tonas ner lite, och kapitlets namn står i spelaren.
       [...$("kapitel").children].forEach((li, n) => li.classList.toggle("forbi", n < k));
-      const kn = $("duk-kap"); if (kn) kn.textContent = aktuellaKapitel[k] ? aktuellaKapitel[k].rubrik : "";
+      const kn = $("duk-kap"); if (kn) kn.innerHTML = html(aktuellaKapitel[k] ? matte(aktuellaKapitel[k].rubrik) : "");
     }
     // Guldlinjen under kapitlet: hur långt in i det man har kommit.
     const li = $("kapitel").children[k], c = aktuellaKapitel[k];
@@ -4782,7 +4798,7 @@
     if (!d) { dt = null; return; }
     dt = { v, d, lost: new Set(), fel: 0, steg: 0 };
     const tidigare = !!(framsteg[v.id] && framsteg[v.id].lost);
-    $("dintur-fraga").innerHTML = html(matte(d.fraga));
+    $("dintur-fraga").innerHTML = html(matte(d.fraga, true));
     const fig = $("dintur-figur");
     fig.hidden = !d.figur;
     fig.innerHTML = html(d.figur ? figur(d.figur) : "");
@@ -4793,7 +4809,7 @@
     delar.classList.toggle("flera", d.delar.length > 1);
     delar.innerHTML = html(d.delar.map((del, i) => `
       <li class="del">
-        <p class="del-fraga" id="del-fraga-${i}">${matte(del.fraga)}</p>
+        <p class="del-fraga" id="del-fraga-${i}">${matte(del.fraga, true)}</p>
         <form class="del-svar" data-del="${i}" novalidate>
           <input id="del-svar-${i}" aria-labelledby="del-fraga-${i}" aria-describedby="del-text-${i}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" inputmode="${del.typ === "tal" ? "decimal" : "text"}" placeholder="${attr(del.exempel || "")}">
           ${del.enhet ? `<span class="enhet">${esc(del.enhet)}</span>` : ""}
@@ -4810,10 +4826,10 @@
     $("dintur-ggb-knapp").hidden = true;
     ggbIakttagare.unobserve($("dintur-ggb"));
     if (ggb) ggbIakttagare.observe($("dintur-ggb"));
-    $("dintur-ggb-text").innerHTML = html(matte((ggb && ggb.text) || "Lös uppgiften grafiskt i GeoGebra här, med samma steg som i filmen."));
+    $("dintur-ggb-text").innerHTML = html(matte((ggb && ggb.text) || "Lös uppgiften grafiskt i GeoGebra här, med samma steg som i filmen.", true));
     const ledtrad = $("dintur-ledtrad");
     ledtrad.hidden = true;
-    ledtrad.innerHTML = html(d.ledtrad ? `<p>${matte(d.ledtrad.text)}</p>${Number.isFinite(d.ledtrad.t) ? `<button type="button" class="kant" data-t="${d.ledtrad.t}">Se det i filmen, ${tid(d.ledtrad.t)}</button>` : ""}` : "");
+    ledtrad.innerHTML = html(d.ledtrad ? `<p>${matte(d.ledtrad.text, true)}</p>${Number.isFinite(d.ledtrad.t) ? `<button type="button" class="kant" data-t="${d.ledtrad.t}">Se det i filmen, ${tid(d.ledtrad.t)}</button>` : ""}` : "");
     $("dintur-ledtrad-knapp").hidden = !d.ledtrad;
     $("dintur-ledtrad-knapp").setAttribute("aria-expanded", "false");
     // Lösningen syns direkt för den som löst uppgiften förut, annars efter två fel eller rätt svar.
@@ -4866,7 +4882,7 @@
   }
   function nastaSteg() {
     const steg = dt.d.losning || [], ol = $("losning-steg");
-    if (dt.steg < steg.length) { const li = document.createElement("li"); li.innerHTML = html(matte(steg[dt.steg++])); ol.appendChild(li); }
+    if (dt.steg < steg.length) { const li = document.createElement("li"); li.innerHTML = html(matte(steg[dt.steg++], true)); ol.appendChild(li); }
     const klar = dt.steg >= steg.length;
     $("dintur-nasta").hidden = klar;
     if (klar && !$("losning-tallinje")) {
@@ -4917,7 +4933,7 @@
     if (dom) {
       // "Rätt!" och "Inte riktigt." står redan i den stora raden, så de tas bort ur förklaringen.
       const forklaring = r.text.replace(/^Rätt!\s*/, "").replace(/^Inte riktigt\.\s*/, "");
-      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : KRYSS}</span><span class="dom-ord">${r.ok ? "Rätt!" : "Fel"}</span>${forklaring ? `<span class="dom-text">${matte(forklaring)}</span>` : ""}`);
+      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : KRYSS}</span><span class="dom-ord">${r.ok ? "Rätt!" : "Fel"}</span>${forklaring ? `<span class="dom-text">${matte(forklaring, true)}</span>` : ""}`);
       plask(text);
     } else text.textContent = r.text;
     li.classList.toggle("lost", r.ok);
