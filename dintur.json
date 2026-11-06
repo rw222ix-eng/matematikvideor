@@ -385,7 +385,7 @@
         "fraga": "Sen: Vilket prefix står för den tiopotensen?",
         "typ": "ord",
         "svar": ["giga", "G"],
-        "exempel": "t.ex. mega",
+        "exempel": "t.ex. kilo",
         "fel": [
           { "svar": ["mega", "M"], "text": "Mega är 10⁶. Leta upp tiopotensen från den första frågan i tabellen." },
           { "svar": ["tera", "T"], "text": "Tera är 10¹². Exponenterna ska läggas ihop, och 4 + 5 är 9." },
@@ -2052,7 +2052,7 @@
         "fraga": "Först: Vilken kvot ska du använda för att ta reda på det?",
         "typ": "ord",
         "svar": ["tangens", "tan", "tangens v", "tan v", "tangens 20°", "tan 20°", "tangens 20", "tan 20", "tan(20)"],
-        "exempel": "t.ex. cosinus",
+        "exempel": "t.ex. hypotenusa",
         "fel": [
           {
             "svar": ["sinus", "sin", "sinus v", "sin v", "sinus 20°", "sin 20°", "sinus 20", "sin 20", "sin(20)"],
@@ -2147,7 +2147,7 @@
         "typ": "tal",
         "svar": 0.6,
         "tolerans": 0.006,
-        "exempel": "t.ex. 8/10",
+        "exempel": "t.ex. 2/7",
         "tangenter": [
           "/"
         ],
@@ -2174,7 +2174,7 @@
         "typ": "tal",
         "svar": 0.75,
         "tolerans": 0.006,
-        "exempel": "t.ex. 8/6",
+        "exempel": "t.ex. 7/9",
         "tangenter": [
           "/"
         ],
