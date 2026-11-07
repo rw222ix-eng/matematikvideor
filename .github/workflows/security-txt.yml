@@ -1,5 +1,5 @@
 # Kontrollerar en gång i månaden att public/.well-known/security.txt inte går ut (RFC 9116, fältet
-# Expires) och att Vercel serverar samma fil som repot. Faller när det är under 60 dagar kvar, och då
+# Expires) och att Cloudflare Pages serverar samma fil som repot. Faller när det är under 60 dagar kvar, och då
 # mejlar GitHub. Flytta då fram Expires ett år (högst ett år framåt) och pusha.
 name: Kontrollera security.txt
 on:
@@ -26,4 +26,4 @@ jobs:
             echo "::error file=$fil::Expires ($utgar) är om $kvar dagar. Flytta fram datumet ett år och pusha."
             exit 1
           fi
-          curl -fsS --retry 3 https://winterhalls-matte.vercel.app/.well-known/security.txt | diff - "$fil"
+          curl -fsS --retry 3 https://winterhalls-matte.pages.dev/.well-known/security.txt | diff - "$fil"

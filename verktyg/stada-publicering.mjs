@@ -31,7 +31,7 @@ import { fileURLToPath } from "node:url";
 const ROT = "E:/Matematikvideos";
 const REPO = "rw222ix-eng/matematikvideor";
 const ADRESS = /^https:\/\/github\.com\/rw222ix-eng\/matematikvideor\/releases\/download\/([^/]+)\/([^/]+)$/;
-const LIVE = ["https://winterhalls-matte.vercel.app/videor.json", "https://rw222ix-eng.github.io/matematikvideor/videor.json"];
+const LIVE = ["https://winterhalls-matte.pages.dev/videor.json", "https://rw222ix-eng.github.io/matematikvideor/videor.json"];
 const MINUT = 60_000;
 const TIMME = 60 * MINUT;
 const STILLA_PROJEKT = 15 * MINUT;

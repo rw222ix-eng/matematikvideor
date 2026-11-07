@@ -16,7 +16,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { CSP, FILMSKRIPT } from "./csp.mjs";
 
 // Förhandsbilden måste ha en hel adress. Spegeln på GitHub Pages pekar också hit, och det gör inget.
-export const SAJT = "https://winterhalls-matte.vercel.app";
+export const SAJT = "https://winterhalls-matte.pages.dev";
 
 const attr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const kursKort = (kurs) => { const m = kurs.match(/(\d)\s*([a-c]*)$/i); return m ? `Ma ${m[1]}${m[2].toLowerCase()}` : kurs; };

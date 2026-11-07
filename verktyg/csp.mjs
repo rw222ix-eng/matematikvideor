@@ -29,12 +29,12 @@ export const LADDARE = `(function(){var d=document.currentScript.dataset.app,t=w
 // Filmsidorna (förhandsbilden i Classroom) skickar vidare till filmen. Filmens id står i data-film.
 export const FILMSKRIPT = `var t=new URLSearchParams(location.search).get("t"),id=document.currentScript.dataset.film;location.replace("../../#"+id+(t&&/^\\d+$/.test(t)?"&t="+t:""))`;
 
-// GitHub Pages-kopian skickar vidare till samma ställe hos Vercel (säkerhet 3a, 2026-10-27), eftersom
-// Pages inte kan skicka säkerhetshuvuden. Det eleven sparat i webbläsaren på Pages-adressen
+// GitHub Pages-kopian skickar vidare till samma ställe hos Cloudflare Pages (säkerhet 3a, 2026-10-27), eftersom
+// GitHub Pages inte kan skicka säkerhetshuvuden. Vercel gör likadant sedan flytten 2026-11-07. Det eleven sparat i webbläsaren på Pages-adressen
 // (framsteg och inställningar) följer med i #flytt=…, eftersom webbläsaren håller de två adressernas
 // lagring isär. index.html tar bara emot det när eleven kommer från Pages, och slår ihop det med det
 // som redan finns där. Filmsidorna på Pages skickar som förut till ../../#<id>, alltså hit.
-export const VIDARE_TILL = "https://winterhalls-matte.vercel.app";
+export const VIDARE_TILL = "https://winterhalls-matte.pages.dev";
 export const VIDARE = `(function(){var t="/"+location.search+location.hash,d={},n=0;try{["framsteg","tipsSedda","textning","volym","fart","tips","hjalpVisad","provKlass","formelbladKurs"].forEach(function(k){var v=localStorage.getItem(k);if(v!==null&&v.length<50000){d[k]=v;n++}})}catch(e){}location.replace("${VIDARE_TILL}"+(n?"/#flytt="+encodeURIComponent(JSON.stringify({till:t,d:d})):t))})()`;
 
 export const hash = (s) => `'sha256-${createHash("sha256").update(s, "utf8").digest("base64")}'`;
@@ -54,7 +54,7 @@ export const VIDARE_CSP = [
 
 // GeoGebra och YouTube körs i ramar från en egen adress (säkerhet B3, inbaddat/ i repot). Deras skript,
 // stilar och anrop hör till den adressens policy (inbaddat/huvuden.mjs), inte till den här.
-export const INBADDAT = "https://matematikvideor-inbaddat.vercel.app";
+export const INBADDAT = "https://matematikvideor-inbaddat.pages.dev";
 
 export const CSP = [
   "default-src 'none'",

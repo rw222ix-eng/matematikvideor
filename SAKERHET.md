@@ -41,7 +41,7 @@ Stilattribut gör ingenting (B4, 2026-10-27, `style-src-attr 'none'`), så ett i
 
 | Värd | Varför | Direktiv |
 | --- | --- | --- |
-| matematikvideor-inbaddat.vercel.app | GeoGebra och YouTube-reserven, i ramar (se nedan) | frame-src |
+| matematikvideor-inbaddat.pages.dev | GeoGebra och YouTube-reserven, i ramar (se nedan) | frame-src |
 | github.com, release-assets.githubusercontent.com, objects.githubusercontent.com | filmerna, som ligger under Releases i det här repot | media-src |
 
 ### GeoGebra och YouTube på en egen adress (B3, 2026-10-27)

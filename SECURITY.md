@@ -1,6 +1,6 @@
 # Säkerhet
 
-Videoteket är en statisk webbsida med matematikfilmer: https://winterhalls-matte.vercel.app. Den har inga konton, ingen inloggning och ingen databas. Sidan samlar inte in något: framsteg och inställningar sparas bara i elevens egen webbläsare.
+Videoteket är en statisk webbsida med matematikfilmer: https://winterhalls-matte.pages.dev. Den har inga konton, ingen inloggning och ingen databas. Sidan samlar inte in något: framsteg och inställningar sparas bara i elevens egen webbläsare.
 
 ## Anmäl ett säkerhetsfel
 
@@ -10,7 +10,7 @@ Skriv vilken adress det gäller, vad som går att göra och hur det går till. S
 
 ## Vad som gäller
 
-- winterhalls-matte.vercel.app och kopian på rw222ix-eng.github.io/matematikvideor
+- winterhalls-matte.pages.dev och kopian på rw222ix-eng.github.io/matematikvideor
 - koden i det här repot och workflowen i `.github/`
 - filerna under Releases (filmerna)
 

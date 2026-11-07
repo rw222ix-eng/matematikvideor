@@ -2,14 +2,14 @@
  * Nattlig kontroll av videoteket (säkerhet C1, 2026-10-27). .github/workflows/nattlig.yml kör den varje
  * natt. Lokalt: cd kontroll && npm ci --ignore-scripts && node nattlig.mjs
  *
- * 1. Filerna: HEAD byggs som hos Vercel och Pages (verktyg/publicera.mjs), och varje fil jämförs med den
+ * 1. Filerna: HEAD byggs som hos Cloudflare och GitHub Pages (verktyg/publicera.mjs), och varje fil jämförs med den
  *    som serveras. Skiljer en fil har någon ändrat sidan utanför repot, eller så har en publicering inte
  *    gått igenom. Inbäddningssidorna (inbaddat/public) jämförs på samma sätt.
  * 2. Huvudena: varje huvud i vercel.json och inbaddat/vercel.json ska finnas live med samma värde.
  * 3. Sidan i Chrome: startsidan, sökningen, en film som spelas, Din tur med GeoGebra, formelbladet, Newton
  *    och YouTube-reserven, utan CSP-brott i någon ram. Trusted Types nekar rå HTML, srcdoc och nya
  *    policyer, ett händelseattribut kör inte och ett stilattribut gör ingenting. Pages skickar vidare
- *    till Vercel, eller fungerar som full kopia om pages.yml bygger utan --vidarekoppla.
+ *    till Cloudflare, eller fungerar som full kopia om pages.yml bygger utan --vidarekoppla.
  *
  * Det som faller provas igen efter några minuter, så att en publicering som pågår inte larmar. Har main
  * fått en ny commit under kontrollen jämförs inte filerna. Faller något igen slutar skriptet med kod 1, och
@@ -23,11 +23,13 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
+import { VIDARE_TILL } from "../verktyg/csp.mjs";
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const V = "https://winterhalls-matte.vercel.app/";
+// Cloudflare Pages sedan flytten 2026-11-07 (V hette Vercel förut).
+const V = "https://winterhalls-matte.pages.dev/";
 const P = "https://rw222ix-eng.github.io/matematikvideor/";
-const I = "https://matematikvideor-inbaddat.vercel.app/";
+const I = "https://matematikvideor-inbaddat.pages.dev/";
 const VANTA_MS = Number(process.env.KONTROLL_VANTA_MS ?? 240000);
 const vila = (ms) => new Promise((r) => setTimeout(r, ms));
 const rapport = [];
@@ -88,12 +90,13 @@ function monster(source) {
   }
   return new RegExp("^" + re + "$");
 }
-async function huvuden(bas, vercelJson, sokvagar) {
+// byt: hos Cloudflare står videotekets egen adress i stället för Vercels (verktyg/cloudflare.mjs).
+async function huvuden(bas, vercelJson, sokvagar, byt = (v) => v) {
   const regler = JSON.parse(readFileSync(vercelJson, "utf8")).headers.map((r) => ({ re: monster(r.source), huvuden: r.headers }));
   const fel = [];
   for (const s of sokvagar) {
     const vantat = {};
-    for (const r of regler) if (r.re.test(s)) for (const h of r.huvuden) vantat[h.key.toLowerCase()] = h.value;
+    for (const r of regler) if (r.re.test(s)) for (const h of r.huvuden) vantat[h.key.toLowerCase()] = byt(h.value);
     const r = await hamta(bas + s.slice(1));
     if (r.status !== 200) { fel.push(`${s}: svarade ${r.status}`); continue; }
     for (const [k, v] of Object.entries(vantat)) if (r.huvuden.get(k) !== v) fel.push(`${s}: ${k} är ${JSON.stringify(r.huvuden.get(k))}, ska vara ${JSON.stringify(v.slice(0, 80))}`);
@@ -102,7 +105,7 @@ async function huvuden(bas, vercelJson, sokvagar) {
 }
 
 // ---- Sidan i Chrome ----
-const ggbRam = (p) => p.frames().find((f) => /\/ggb\.html/.test(f.url()));
+const ggbRam = (p) => p.frames().find((f) => /\/ggb(\.html)?(#|$)/.test(f.url()));
 const vantaKort = (p) => p.waitForFunction(() => document.querySelectorAll("#spar [data-film]").length > 3, null, { timeout: 20000 });
 const FILM = /release-assets\.githubusercontent\.com|objects\.githubusercontent\.com|github\.com\/.*\/releases\/download\//;
 
@@ -208,7 +211,7 @@ async function sidan(b, bas) {
   return ut;
 }
 
-// Pages skickar vidare till samma ställe hos Vercel.
+// Pages skickar vidare till samma ställe hos Cloudflare.
 async function vidarekopplingen(b) {
   const ut = {};
   for (const [fran, till] of [[P, V], [P + "#filmer", V + "#filmer"], [P + "film/arkimedes-och-cirkeln/?t=42", V + "#arkimedes-och-cirkeln&t=42"]]) {
@@ -229,7 +232,7 @@ async function webblasaren() {
   const b = await chromium.launch({ channel: "chrome", headless: true, args: ["--autoplay-policy=no-user-gesture-required"] });
   try {
     const ut = {};
-    for (const [k, v] of Object.entries(await sidan(b, V))) ut[`Vercel: ${k}`] = v;
+    for (const [k, v] of Object.entries(await sidan(b, V))) ut[`Cloudflare: ${k}`] = v;
     if (VIDARE) Object.assign(ut, await vidarekopplingen(b));
     else for (const [k, v] of Object.entries(await sidan(b, P))) ut[`Pages: ${k}`] = v;
     return ut;
@@ -237,16 +240,17 @@ async function webblasaren() {
 }
 
 // ---- Körningen ----
-skriv(`# Nattlig kontroll av videoteket\n\nHEAD ${HEAD.slice(0, 7)}, Pages ${VIDARE ? "skickar vidare till Vercel" : "är en full kopia"}.\n`);
+skriv(`# Nattlig kontroll av videoteket\n\nHEAD ${HEAD.slice(0, 7)}, Pages ${VIDARE ? "skickar vidare till Cloudflare" : "är en full kopia"}.\n`);
 const vercelBygge = bygg(false), pagesBygge = bygg(VIDARE);
 const inbaddatRot = join(ROT, "inbaddat", "public");
 const app = filer(vercelBygge).find((f) => /^app\.[0-9a-f]{16}\.js$/.test(f));
 const omslag = filer(vercelBygge).find((f) => f.startsWith("omslag/"));
 const delar = {
-  "filer hos Vercel": () => jamfor(V, vercelBygge, filer(vercelBygge)),
+  // 404.html serveras bara som svar på en adress som saknas, aldrig som sig själv.
+  "filer hos Cloudflare": () => jamfor(V, vercelBygge, filer(vercelBygge).filter((f) => f !== "404.html")),
   "filer hos Pages": () => jamfor(P, pagesBygge, filer(pagesBygge)),
   "filer på inbäddningsadressen": () => jamfor(I, inbaddatRot, filer(inbaddatRot)),
-  "huvuden hos Vercel": () => huvuden(V, join(ROT, "vercel.json"), ["/", "/videor.json", `/${app}`, `/${omslag}`, "/film/arkimedes-och-cirkeln/"]),
+  "huvuden hos Cloudflare": () => huvuden(V, join(ROT, "vercel.json"), ["/", "/videor.json", `/${app}`, `/${omslag}`, "/film/arkimedes-och-cirkeln/"], (v) => v.replace("https://winterhalls-matte.vercel.app", VIDARE_TILL)),
   "huvuden på inbäddningsadressen": () => huvuden(I, join(ROT, "inbaddat", "vercel.json"), ["/", "/ggb.html", "/yt.html"]),
 };
 const filDelar = (namn) => namn.startsWith("filer");

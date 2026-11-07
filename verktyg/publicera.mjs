@@ -9,13 +9,15 @@
  * 3. Meta-taggens policy byts mot den strikta i csp.mjs.
  * 4. Bygget faller om Content-Security-Policy i vercel.json inte är exakt CSP_HUVUD. Då ligger förra
  *    versionen kvar, och sidan fungerar som förut.
- * 5. Med --vidarekoppla (bara Pages-workflowet) blir index.html en sida som skickar vidare till Vercel.
+ * 5. Med --vidarekoppla (bara GitHub Pages-workflowet) blir index.html en sida som skickar vidare till Cloudflare Pages.
+ * 6. Med --cloudflare skrivs public/_headers ur vercel.json, så att huvudena hos Cloudflare Pages är desamma.
  *
  * Repots public/index.html ändras aldrig av det här: steget vägrar köra utanför Vercel och GitHub
  * Actions, om det inte får en kopia att arbeta i.
  *
  *   node verktyg/publicera.mjs                  (Vercel)
- *   node verktyg/publicera.mjs --vidarekoppla   (Pages-workflowet)
+ *   node verktyg/publicera.mjs --vidarekoppla   (GitHub Pages-workflowet)
+ *   node verktyg/publicera.mjs --cloudflare     (Cloudflare Pages)
  *   node verktyg/publicera.mjs --public <mapp>   (en kopia av public/, för prov)
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync } from "node:fs";
@@ -24,6 +26,7 @@ import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { skrivFilmsidor } from "./filmsidor.mjs";
 import { CSP, CSP_HUVUD, LADDARE, VIDARE, VIDARE_CSP, VIDARE_STIL, VIDARE_TILL } from "./csp.mjs";
+import { skrivCloudflareHuvuden } from "./cloudflare.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const i = process.argv.indexOf("--public");
@@ -79,6 +82,7 @@ console.log(`public/index.html: skriptet flyttat till ${namn} (${Math.round(app.
 // 5. GitHub Pages (säkerhet 3a, 2026-10-27): --vidarekoppla byter index.html mot en sida som skickar
 // eleven vidare till samma ställe hos Vercel, med adressens # och det eleven sparat på Pages (VIDARE i
 // csp.mjs). Allt ovan körs ändå, så att Pages blir en full kopia igen om flaggan tas bort i pages.yml.
+if (process.argv.includes("--cloudflare")) skrivCloudflareHuvuden(vercel, publicDir);
 if (process.argv.includes("--vidarekoppla")) {
   if (process.env.VERCEL) fel("--vidarekoppla gäller bara GitHub Pages. Hos Vercel skulle sidan skicka vidare till sig själv.");
   writeFileSync(indexFil, `<!doctype html>

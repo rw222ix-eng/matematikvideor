@@ -6,7 +6,7 @@
      skriptet nedan inline. Byggsteget (verktyg/publicera.mjs, hos Vercel och GitHub Pages) flyttar skriptet
      till app.<hash>.js och byter policyn mot den strikta i verktyg/csp.mjs. En ny extern värd läggs in här,
      i verktyg/csp.mjs och i vercel.json (bygget faller om de två sista skiljer sig). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'none'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.vercel.app; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'none'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.pages.dev; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
@@ -20,8 +20,8 @@
 <meta property="og:site_name" content="Matematikvideor av Rickard">
 <meta property="og:title" content="Matematikvideor av Rickard">
 <meta property="og:description" content="Korta filmer om matematik på gymnasiet, berättade genom historien, och filmer som går igenom formelbladet för Matematik nivå 1 och 2. Sök på det du tycker är svårt och hoppa direkt till stället i filmen.">
-<meta property="og:url" content="https://winterhalls-matte.vercel.app/">
-<meta property="og:image" content="https://winterhalls-matte.vercel.app/omslag/intro.jpg?v=c3643a64">
+<meta property="og:url" content="https://winterhalls-matte.pages.dev/">
+<meta property="og:image" content="https://winterhalls-matte.pages.dev/omslag/intro.jpg?v=c3643a64">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
 <!-- Typsnitten ligger på sidans egen server (Rickard 2026-10-25: "egen server"), så att Google inte ser elevernas
@@ -1652,10 +1652,10 @@
     if (k.length) $("intro-kurser").textContent = k.length === 1 ? k[0] : `${k.slice(0, -1).join(", ")} och ${k[k.length - 1]}`;
   }
 
-  // ── Flytt från GitHub Pages (säkerhet 3a, 2026-10-27) ──
+  // ── Flytt från GitHub Pages och Vercel (säkerhet 3a, 2026-10-27, Vercel 2026-11-07) ──
   // Pages-kopian skickar vidare hit och tar med det eleven sparat där i #flytt=… (VIDARE i
   // verktyg/csp.mjs), eftersom webbläsaren håller de två adressernas lagring isär. Det tas bara emot
-  // när eleven kommer från Pages, så att en länk från en annan sida inte kan ändra elevens framsteg.
+  // när eleven kommer från de adresserna, så att en länk från en annan sida inte kan ändra elevens framsteg.
   // Det som redan finns här går före: en inställning skrivs bara om den saknas, och framstegen slås
   // ihop som i sparaFramsteg. Adressen blir den eleven hade på Pages (#<film>&t=…).
   if (location.hash.startsWith("#flytt=")) {
@@ -1663,7 +1663,7 @@
     try { flytt = JSON.parse(decodeURIComponent(location.hash.slice(7))); } catch (e) {}
     history.replaceState(null, "", flytt && typeof flytt.till === "string" && /^\/(\?[^#]*)?(#.*)?$/.test(flytt.till) ? flytt.till : "/");
     const d = flytt && flytt.d;
-    if (d && typeof d === "object" && document.referrer === "https://rw222ix-eng.github.io/") {
+    if (d && typeof d === "object" && ["https://rw222ix-eng.github.io/", "https://winterhalls-matte.vercel.app/"].includes(document.referrer)) {
       const text = (k) => (typeof d[k] === "string" && d[k].length < 50000 ? d[k] : null);
       const json = (s) => { try { return JSON.parse(s); } catch (e) { return null; } };
       const objekt = (x) => (x && typeof x === "object" && !Array.isArray(x) ? x : null);
@@ -3718,7 +3718,7 @@
   // GeoGebra och YouTube körs på en egen adress (säkerhet B3, 2026-10-27), så att deras kod bara når sin
   // egen ram och inte resten av sidan. Sidorna där är inbaddat/public/ggb.html och yt.html i repot. Svaren
   // därifrån tas bara emot från den adressen och från just den ramen.
-  const INBADDAT = "https://matematikvideor-inbaddat.vercel.app";
+  const INBADDAT = "https://matematikvideor-inbaddat.pages.dev";
   const franRam = (e, ram) => e.origin === INBADDAT && e.source === ram.contentWindow && e.data && e.data.videotek === 1;
   // YouTube-reserven i en ram från INBADDAT. Ger samma metoder som YT.Player, så att spelaren nedan
   // fungerar som förut. Läget (tid, längd, ljud) kommer från ramen fyra gånger i sekunden medan filmen
@@ -3729,7 +3729,7 @@
     ram.title = "YouTube";
     ram.allow = "autoplay; encrypted-media; fullscreen";
     ram.referrerPolicy = "strict-origin-when-cross-origin";
-    ram.src = `${INBADDAT}/yt.html#${new URLSearchParams({ v: videoId, o: location.origin, start: String(Math.floor(start)), autoplay: autoplay ? "1" : "0" })}`;
+    ram.src = `${INBADDAT}/yt#${new URLSearchParams({ v: videoId, o: location.origin, start: String(Math.floor(start)), autoplay: autoplay ? "1" : "0" })}`;
     let lage = { s: -1, t: 0, d: 0, m: false, v: volym, f: 1 }, nar = performance.now(), klar = false, felat = false;
     const fel = () => { if (felat) return; felat = true; clearTimeout(vakt); if (events.onError) events.onError(); };
     const vakt = setTimeout(() => { if (!klar) fel(); }, 15000);
@@ -4861,7 +4861,7 @@
     ram.allow = "fullscreen; clipboard-write";
     ram.referrerPolicy = "strict-origin-when-cross-origin";
     ram.width = String(b); ram.height = String(h);
-    ram.src = `${INBADDAT}/ggb.html#${new URLSearchParams({ o: location.origin, app: g.app || "graphing", b: String(b), h: String(h) })}`;
+    ram.src = `${INBADDAT}/ggb#${new URLSearchParams({ o: location.origin, app: g.app || "graphing", b: String(b), h: String(h) })}`;
     yta.appendChild(ram);
     ggbRam = ram;
     clearTimeout(ggbVakt);

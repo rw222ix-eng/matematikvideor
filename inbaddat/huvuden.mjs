@@ -4,6 +4,7 @@
  *
  *   node huvuden.mjs            skriver vercel.json
  *   node huvuden.mjs --kontroll  faller om vercel.json inte stämmer (Vercels buildCommand)
+ *   node huvuden.mjs --cloudflare  skriver public/_headers (Cloudflare Pages)
  *
  * Ändras ett skript eller en stil i en sida, ändras hashen: kör node huvuden.mjs och committa vercel.json.
  */
@@ -18,7 +19,7 @@ const inline = (sida, tagg) => [...readFileSync(join(HÄR, "public", sida), "utf
 
 // Bara videoteket får bädda in sidorna. Lokala prov (127.0.0.1, localhost) lägger till sina adresser på
 // vägen, i proven (_sakerhet/prov/inbaddat-vag.mjs), så att produktionen bara har https.
-const FORALDRAR = "https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io";
+const FORALDRAR = "https://winterhalls-matte.pages.dev https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io";
 const GRUND = ["default-src 'none'", "object-src 'none'", "base-uri 'none'", "form-action 'none'"];
 const AV = "accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()";
 
@@ -55,6 +56,19 @@ const vercel = {
   outputDirectory: "public",
   framework: null,
 };
+
+// Cloudflare Pages: _headers har ingen «allt utom», så sidorna tar bort den strikta policyn från /* (raderna med !).
+// Pages skickar /yt.html vidare till /yt, och där står policyn.
+if (process.argv.includes("--cloudflare")) {
+  const rad = (h) => `  ${h.key}: ${h.value}`;
+  const regler = [
+    ["/*", [...lika, ...vercel.headers[1].headers].map(rad)],
+    ...Object.entries(SIDOR).map(([s, v]) => [s.replace(/\.html$/, ""), ["  ! Content-Security-Policy", "  ! X-Frame-Options", rad({ key: "Content-Security-Policy", value: v.csp.join("; ") }), rad({ key: "Permissions-Policy", value: v.tillstand })]]),
+  ];
+  writeFileSync(join(HÄR, "public", "_headers"), regler.map(([s, r]) => [s, ...r].join("\n")).join("\n") + "\n", "utf8");
+  console.log("Skrev inbaddat/public/_headers.");
+  process.exit(0);
+}
 
 const text = JSON.stringify(vercel, null, 2) + "\n";
 const fil = join(HÄR, "vercel.json");

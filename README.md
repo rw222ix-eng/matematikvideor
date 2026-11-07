@@ -1,7 +1,7 @@
 # Videoteket
 
 Statisk webbsida där eleverna hittar alla matematikvideor och kan söka i det som sägs, med hopp
-direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Vercel.
+direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Cloudflare Pages.
 
 - `register.json` — en post per video: titel, `ar` (året berättelsen utspelar sig; tidslinjen
   sorteras kronologiskt efter det), kurs, moment, begrepp, beskrivning, sökväg till projektet, `youtube` (video-id, tomt tills filmen är uppladdad), `omslag`. Valfritt `fil`
@@ -57,7 +57,7 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   eller lägg en venv i `verktyg/.venv`. Utan python behålls de gamla maskerna. Sist skriver
   `verktyg/filmsidor.mjs` en sida per film i `public/film/<id>/` med filmens titel och bild, så att
   en länk i Classroom får förhandsvisning. Sidan skickar vidare till `#<id>&t=<sekund>`.
-- Vid publiceringen kör Vercel och Pages `node verktyg/publicera.mjs`: filmsidorna skrivs, sidans
+- Vid publiceringen kör Cloudflare- och Pages-jobben `node verktyg/publicera.mjs`: filmsidorna skrivs, sidans
   skript flyttas ur `index.html` till `app.<hash>.js` och policyn blir strikt (se `SAKERHET.md`).
   Live-sidans `index.html` skiljer sig därför från repots. Jämför med
   `node verktyg/publicera.mjs --public <kopia av public>`, aldrig med repots fil.
@@ -96,7 +96,7 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   kostat krediter rörs inte. `torr <id>` visar vad som skulle tas bort, och loggen ligger i
   `E:/Matematikvideos/_stadning/stadning.log`.
 - Spelaren är sidans egen: `<video>` med egna kontroller; med YouTube körs inbäddningen med `controls=0` och styrs via IFrame API
-  i en ram från `https://matematikvideor-inbaddat.vercel.app` (`inbaddat/public/yt.html`, sedan 2026-10-27; GeoGebra i Din tur
+  i en ram från `https://matematikvideor-inbaddat.pages.dev` (`inbaddat/public/yt.html`, sedan 2026-10-27; GeoGebra i Din tur
   ligger i `ggb.html` där). Sidan pratar med ramen med postMessage, se `SAKERHET.md`
   (spela/pausa, tidslinje, hastighet, kopiera länk hit, ljud, helskärm, tangenterna mellanslag/k,
   ←/→ 5 s, j/l 10 s, < och > hastighet, f, c, m). Tangenterna gäller när spelaren har fokus eller
@@ -104,15 +104,15 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Ve
   Undertexterna ritas av sidan ur projektets `assets/tal.srt` (fältet `undertext` i videor.json,
   Charter som i filmen); YouTubes egna textremsor stängs av. Valet textning på/av sparas i webbläsaren.
 
-Publicera: **https://winterhalls-matte.vercel.app** (Vercel-projektet `winterhalls-matte`, kopplat till
-repot, bygger `public/` vid varje push till main — det är länken eleverna har, delad i Classroom
-2026-09-06 i Ma 1c/2c NA26F och TE26A). Reserv: **https://rw222ix-eng.github.io/matematikvideor/** — GitHub Pages ur repot
-`rw222ix-eng/matematikvideor`. Arbetsflödet `.github/workflows/pages.yml` publicerar `public/` vid
-varje push till `main`, klart på ~1 min. Sedan 2026-10-27 skickar Pages-kopians startsida vidare till
-samma ställe hos Vercel, med elevens sparade framsteg (`--vidarekoppla`, se SAKERHET.md). Ta bort
-flaggan i `pages.yml` så blir Pages en full kopia igen. Alltså: ändra register.json → `node bygg.mjs` → commit →
-`git push`. (Vercel-kopplingen saknade rättighet att skapa projekt 2026-09-04; vill man ha Vercel:
-importera repot i Vercels instrumentpanel.)
+Publicera: **https://winterhalls-matte.pages.dev** (Cloudflare Pages sedan 2026-11-07, projektet `winterhalls-matte`).
+Jobbet `cloudflare` i `.github/workflows/pages.yml` laddar upp `public/` och inbäddningen (`inbaddat/public/` till
+https://matematikvideor-inbaddat.pages.dev) vid varje push till `main`, klart på ~1 min. Cloudflares Git-koppling används
+inte, eftersom gratisplanen har 500 byggen i månaden. Samma workflow publicerar reserven
+**https://rw222ix-eng.github.io/matematikvideor/** (GitHub Pages), vars startsida skickar vidare till samma ställe hos
+Cloudflare med elevens sparade framsteg (`--vidarekoppla`, se SAKERHET.md). Ta bort flaggan i `pages.yml` så blir
+GitHub Pages en full kopia igen. Den gamla adressen winterhalls-matte.vercel.app (länken i Classroom sedan 2026-09-06)
+skickar vidare till Cloudflare när flytten är kontrollerad. Alltså: ändra register.json → `node bygg.mjs` → commit →
+`git push`.
 
 Ny video: lägg en post i `register.json` (youtube-id från den olistade uppladdningen), kör
 `node bygg.mjs`, commit, push. Stoppar bygget på en fras (finns inte, eller finns flera gånger)

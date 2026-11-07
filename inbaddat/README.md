@@ -1,6 +1,6 @@
 # inbaddat
 
-Vercel-projektet `matematikvideor-inbaddat` (https://matematikvideor-inbaddat.vercel.app, rotmapp `inbaddat/`) för GeoGebra och YouTube-reserven. De körs på en egen adress, så att deras kod bara når sin egen ram och inte resten av videoteket (säkerhet B3, `SAKERHET.md`).
+Cloudflare Pages-projektet `matematikvideor-inbaddat` (https://matematikvideor-inbaddat.pages.dev, mappen `inbaddat/public/`, sedan 2026-11-07, förut på Vercel) för GeoGebra och YouTube-reserven. De körs på en egen adress, så att deras kod bara når sin egen ram och inte resten av videoteket (säkerhet B3, `SAKERHET.md`).
 
 - `public/ggb.html`: GeoGebras grafräknare i Din tur. `ggb.html#o=<videotekets ursprung>&app=graphing&b=<bredd>&h=<höjd>`. Svarar sidan «start», «klar» eller «fel».
 - `public/yt.html`: YouTube-reserven. `yt.html#v=<id>&o=<ursprung>&start=<sekund>&autoplay=0|1`. Tar emot spela, pausa, sok, tyst, ljud, volym, fart och text-av, och svarar med spelarens läge.
