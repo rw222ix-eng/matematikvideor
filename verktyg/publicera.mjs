@@ -1,22 +1,21 @@
 /**
- * Byggsteget för Vercel och GitHub Pages (2026-10-27, säkerhet B1). Körs i stället för filmsidor.mjs
- * (buildCommand i vercel.json och steget i .github/workflows/pages.yml).
+ * Byggsteget för Cloudflare Pages, GitHub Pages och Vercel (2026-10-27, säkerhet B1). Körs i stället för filmsidor.mjs
+ * (stegen i .github/workflows/pages.yml och buildCommand i vercel.json).
  *
  * 1. Filmsidorna skrivs ur videor.json (skrivFilmsidor, som förut).
  * 2. Sidans skript flyttas ur index.html till app.<hash>.js, och i dess ställe läggs laddaren ur csp.mjs
  *    i <head>. Laddarens text är alltid densamma, så dess hash står fast i policyn. Skriptfilens namn
  *    byts när koden ändras, så den kan sparas i ett år i elevens webbläsare.
  * 3. Meta-taggens policy byts mot den strikta i csp.mjs.
- * 4. Bygget faller om Content-Security-Policy i vercel.json inte är exakt CSP_HUVUD. Då ligger förra
+ * 4. Bygget faller om Content-Security-Policy i verktyg/huvuden.json inte är exakt CSP_HUVUD. Då ligger förra
  *    versionen kvar, och sidan fungerar som förut.
- * 5. Med --vidarekoppla (bara GitHub Pages-workflowet) blir index.html en sida som skickar vidare till Cloudflare Pages.
- * 6. Med --cloudflare skrivs public/_headers ur vercel.json, så att huvudena hos Cloudflare Pages är desamma.
+ * 5. Med --vidarekoppla (GitHub Pages och Vercel) blir index.html en sida som skickar vidare till Cloudflare Pages.
+ * 6. Med --cloudflare skrivs public/_headers ur verktyg/huvuden.json.
  *
  * Repots public/index.html ändras aldrig av det här: steget vägrar köra utanför Vercel och GitHub
  * Actions, om det inte får en kopia att arbeta i.
  *
- *   node verktyg/publicera.mjs                  (Vercel)
- *   node verktyg/publicera.mjs --vidarekoppla   (GitHub Pages-workflowet)
+ *   node verktyg/publicera.mjs --vidarekoppla   (GitHub Pages-workflowet och Vercel)
  *   node verktyg/publicera.mjs --cloudflare     (Cloudflare Pages)
  *   node verktyg/publicera.mjs --public <mapp>   (en kopia av public/, för prov)
  */
@@ -37,10 +36,11 @@ if (i < 0 && !process.env.VERCEL && !process.env.GITHUB_ACTIONS) {
 }
 const fel = (s) => { console.error(`publicera.mjs: ${s}`); process.exit(1); };
 
-// 4. Policyn i vercel.json måste vara exakt den i csp.mjs.
-const vercel = JSON.parse(readFileSync(join(HÄR, "..", "vercel.json"), "utf8"));
-const huvud = vercel.headers.flatMap((r) => r.headers).filter((h) => h.key === "Content-Security-Policy").map((h) => h.value);
-if (huvud.length !== 1 || huvud[0] !== CSP_HUVUD) fel(`Content-Security-Policy i vercel.json är inte densamma som CSP_HUVUD i verktyg/csp.mjs. Rätt värde:\n${CSP_HUVUD}`);
+// 4. Policyn i huvuden.json måste vara exakt den i csp.mjs. huvuden.json var headers i vercel.json före flytten
+// till Cloudflare 2026-11-07, och Vercel har nu bara vidarekopplingens huvuden.
+const huvuden = JSON.parse(readFileSync(join(HÄR, "huvuden.json"), "utf8"));
+const huvud = huvuden.headers.flatMap((r) => r.headers).filter((h) => h.key === "Content-Security-Policy").map((h) => h.value);
+if (huvud.length !== 1 || huvud[0] !== CSP_HUVUD) fel(`Content-Security-Policy i verktyg/huvuden.json är inte densamma som CSP_HUVUD i verktyg/csp.mjs. Rätt värde:\n${CSP_HUVUD}`);
 
 // 1. Filmsidorna.
 skrivFilmsidor(JSON.parse(readFileSync(join(publicDir, "videor.json"), "utf8")).videor, publicDir);
@@ -79,12 +79,11 @@ writeFileSync(indexFil, html, "utf8");
 if (!existsSync(join(publicDir, namn))) fel(`${namn} skrevs inte.`);
 console.log(`public/index.html: skriptet flyttat till ${namn} (${Math.round(app.length / 1024)} kB), policyn strikt.`);
 
-// 5. GitHub Pages (säkerhet 3a, 2026-10-27): --vidarekoppla byter index.html mot en sida som skickar
-// eleven vidare till samma ställe hos Vercel, med adressens # och det eleven sparat på Pages (VIDARE i
+// 5. GitHub Pages (säkerhet 3a, 2026-10-27) och Vercel (flytten 2026-11-07): --vidarekoppla byter index.html mot en sida som skickar
+// eleven vidare till samma ställe hos Cloudflare, med adressens # och det eleven sparat på Pages (VIDARE i
 // csp.mjs). Allt ovan körs ändå, så att Pages blir en full kopia igen om flaggan tas bort i pages.yml.
-if (process.argv.includes("--cloudflare")) skrivCloudflareHuvuden(vercel, publicDir);
+if (process.argv.includes("--cloudflare")) skrivCloudflareHuvuden(huvuden, publicDir);
 if (process.argv.includes("--vidarekoppla")) {
-  if (process.env.VERCEL) fel("--vidarekoppla gäller bara GitHub Pages. Hos Vercel skulle sidan skicka vidare till sig själv.");
   writeFileSync(indexFil, `<!doctype html>
 <html lang="sv">
 <head>
@@ -104,5 +103,5 @@ if (process.argv.includes("--vidarekoppla")) {
 </body>
 </html>
 `, "utf8");
-  console.log(`public/index.html: vidarekoppling till ${VIDARE_TILL} (GitHub Pages).`);
+  console.log(`public/index.html: vidarekoppling till ${VIDARE_TILL}.`);
 }

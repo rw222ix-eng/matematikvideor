@@ -2,11 +2,12 @@
  * Huvudena för inbäddningarna (säkerhet B3, 2026-10-27). Policyn per sida står här, och hasharna för
  * sidornas egna <script> och <style> räknas ur filerna i public/.
  *
- *   node huvuden.mjs            skriver vercel.json
- *   node huvuden.mjs --kontroll  faller om vercel.json inte stämmer (Vercels buildCommand)
+ *   node huvuden.mjs            skriver huvuden.json
+ *   node huvuden.mjs --kontroll  faller om huvuden.json inte stämmer (publiceringen till Cloudflare)
  *   node huvuden.mjs --cloudflare  skriver public/_headers (Cloudflare Pages)
  *
- * Ändras ett skript eller en stil i en sida, ändras hashen: kör node huvuden.mjs och committa vercel.json.
+ * Ändras ett skript eller en stil i en sida, ändras hashen: kör node huvuden.mjs och committa huvuden.json.
+ * huvuden.json var vercel.json före flytten till Cloudflare 2026-11-07. Vercel skickar nu bara vidare (vercel.json).
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -43,7 +44,7 @@ const lika = [
   { key: "Origin-Agent-Cluster", value: "?1" },
   { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
 ];
-const vercel = {
+const huvuden = {
   headers: [
     { source: "/(.*)", headers: lika },
     // Allt annat (index.html, okända adresser) får inte bäddas in och får inte köra något. Reglerna
@@ -51,10 +52,6 @@ const vercel = {
     { source: "/((?!yt\\.html|ggb\\.html).*)", headers: [{ key: "Content-Security-Policy", value: "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" }, { key: "X-Frame-Options", value: "DENY" }] },
     ...Object.entries(SIDOR).map(([source, s]) => ({ source, headers: [{ key: "Content-Security-Policy", value: s.csp.join("; ") }, { key: "Permissions-Policy", value: s.tillstand }] })),
   ],
-  buildCommand: "node huvuden.mjs --kontroll",
-  ignoreCommand: "if [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git cat-file -e \"$VERCEL_GIT_PREVIOUS_SHA^{commit}\" 2>/dev/null && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- .; then exit 0; fi; exit 1",
-  outputDirectory: "public",
-  framework: null,
 };
 
 // Cloudflare Pages: _headers har ingen «allt utom», så sidorna tar bort den strikta policyn från /* (raderna med !).
@@ -62,7 +59,7 @@ const vercel = {
 if (process.argv.includes("--cloudflare")) {
   const rad = (h) => `  ${h.key}: ${h.value}`;
   const regler = [
-    ["/*", [...lika, ...vercel.headers[1].headers].map(rad)],
+    ["/*", [...lika, ...huvuden.headers[1].headers].map(rad)],
     ...Object.entries(SIDOR).map(([s, v]) => [s.replace(/\.html$/, ""), ["  ! Content-Security-Policy", "  ! X-Frame-Options", rad({ key: "Content-Security-Policy", value: v.csp.join("; ") }), rad({ key: "Permissions-Policy", value: v.tillstand })]]),
   ];
   writeFileSync(join(HÄR, "public", "_headers"), regler.map(([s, r]) => [s, ...r].join("\n")).join("\n") + "\n", "utf8");
@@ -70,12 +67,12 @@ if (process.argv.includes("--cloudflare")) {
   process.exit(0);
 }
 
-const text = JSON.stringify(vercel, null, 2) + "\n";
-const fil = join(HÄR, "vercel.json");
+const text = JSON.stringify(huvuden, null, 2) + "\n";
+const fil = join(HÄR, "huvuden.json");
 if (process.argv.includes("--kontroll")) {
-  if (readFileSync(fil, "utf8").replace(/\r\n/g, "\n") !== text) { console.error("inbaddat/vercel.json stämmer inte med sidorna. Kör: node inbaddat/huvuden.mjs"); process.exit(1); }
-  console.log("inbaddat/vercel.json stämmer med sidorna.");
+  if (readFileSync(fil, "utf8").replace(/\r\n/g, "\n") !== text) { console.error("inbaddat/huvuden.json stämmer inte med sidorna. Kör: node inbaddat/huvuden.mjs"); process.exit(1); }
+  console.log("inbaddat/huvuden.json stämmer med sidorna.");
 } else {
   writeFileSync(fil, text, "utf8");
-  console.log("Skrev inbaddat/vercel.json.");
+  console.log("Skrev inbaddat/huvuden.json.");
 }

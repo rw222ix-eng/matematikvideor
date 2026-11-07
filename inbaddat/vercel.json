@@ -1,75 +1,8 @@
 {
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        },
-        {
-          "key": "Cross-Origin-Resource-Policy",
-          "value": "same-origin"
-        },
-        {
-          "key": "Origin-Agent-Cluster",
-          "value": "?1"
-        },
-        {
-          "key": "X-Permitted-Cross-Domain-Policies",
-          "value": "none"
-        }
-      ]
-    },
-    {
-      "source": "/((?!yt\\.html|ggb\\.html).*)",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        }
-      ]
-    },
-    {
-      "source": "/yt.html",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-R9tcAKSuZAJ0p43I+hJ2FQ7f1OcJJvKRnyO8Hsdn/0s=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'sha256-EMG1hlTFx81MGaEMGhz9A2cZnRYoLHu0v30w3knj6cA='; frame-src https://www.youtube.com; frame-ancestors https://winterhalls-matte.pages.dev https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "autoplay=(self \"https://www.youtube.com\"), encrypted-media=(self \"https://www.youtube.com\"), fullscreen=(self \"https://www.youtube.com\"), accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()"
-        }
-      ]
-    },
-    {
-      "source": "/ggb.html",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-vWdQnuumkg8p9LL+PjYE57EYTod0jcBxtSJ/JFJxbgg=' 'strict-dynamic' 'unsafe-inline' https:; style-src 'unsafe-inline' https://www.geogebra.org; font-src data:; img-src data:; connect-src https://www.geogebra.org; worker-src 'none'; frame-ancestors https://winterhalls-matte.pages.dev https://winterhalls-matte.vercel.app https://rw222ix-eng.github.io"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "autoplay=(), encrypted-media=(), fullscreen=(self), accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), usb=(), xr-spatial-tracking=()"
-        }
-      ]
-    }
+  "redirects": [
+    { "source": "/:path*", "destination": "https://matematikvideor-inbaddat.pages.dev/:path*", "statusCode": 308 }
   ],
-  "buildCommand": "node huvuden.mjs --kontroll",
+  "buildCommand": "echo Vercel skickar vidare till Cloudflare Pages",
   "ignoreCommand": "if [ -n \"$VERCEL_GIT_PREVIOUS_SHA\" ] && git cat-file -e \"$VERCEL_GIT_PREVIOUS_SHA^{commit}\" 2>/dev/null && git diff --quiet \"$VERCEL_GIT_PREVIOUS_SHA\" HEAD -- .; then exit 0; fi; exit 1",
   "outputDirectory": "public",
   "framework": null

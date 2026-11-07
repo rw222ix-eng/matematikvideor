@@ -5,11 +5,12 @@
  * 1. Filerna: HEAD byggs som hos Cloudflare och GitHub Pages (verktyg/publicera.mjs), och varje fil jämförs med den
  *    som serveras. Skiljer en fil har någon ändrat sidan utanför repot, eller så har en publicering inte
  *    gått igenom. Inbäddningssidorna (inbaddat/public) jämförs på samma sätt.
- * 2. Huvudena: varje huvud i vercel.json och inbaddat/vercel.json ska finnas live med samma värde.
+ * 2. Huvudena: varje huvud i verktyg/huvuden.json och inbaddat/huvuden.json ska finnas live med samma värde.
  * 3. Sidan i Chrome: startsidan, sökningen, en film som spelas, Din tur med GeoGebra, formelbladet, Newton
  *    och YouTube-reserven, utan CSP-brott i någon ram. Trusted Types nekar rå HTML, srcdoc och nya
  *    policyer, ett händelseattribut kör inte och ett stilattribut gör ingenting. Pages skickar vidare
- *    till Cloudflare, eller fungerar som full kopia om pages.yml bygger utan --vidarekoppla.
+ *    till Cloudflare, eller fungerar som full kopia om pages.yml bygger utan --vidarekoppla. Vercel skickar
+ *    vidare till Cloudflare, både videoteket och inbäddningen.
  *
  * Det som faller provas igen efter några minuter, så att en publicering som pågår inte larmar. Har main
  * fått en ny commit under kontrollen jämförs inte filerna. Faller något igen slutar skriptet med kod 1, och
@@ -30,6 +31,9 @@ const ROT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const V = "https://winterhalls-matte.pages.dev/";
 const P = "https://rw222ix-eng.github.io/matematikvideor/";
 const I = "https://matematikvideor-inbaddat.pages.dev/";
+// De gamla adresserna hos Vercel, som skickar vidare sedan 2026-11-07.
+const GV = "https://winterhalls-matte.vercel.app/";
+const GI = "https://matematikvideor-inbaddat.vercel.app/";
 const VANTA_MS = Number(process.env.KONTROLL_VANTA_MS ?? 240000);
 const vila = (ms) => new Promise((r) => setTimeout(r, ms));
 const rapport = [];
@@ -43,7 +47,7 @@ const VIDARE = /publicera\.mjs --vidarekoppla/.test(readFileSync(join(ROT, ".git
 
 function bygg(vidare) {
   const mapp = mkdtempSync(join(tmpdir(), "videotek-"));
-  for (const d of ["public", "verktyg", "vercel.json"]) cpSync(join(ROT, d), join(mapp, d), { recursive: true });
+  for (const d of ["public", "verktyg"]) cpSync(join(ROT, d), join(mapp, d), { recursive: true });
   execFileSync(process.execPath, [join(mapp, "verktyg", "publicera.mjs"), "--public", join(mapp, "public"), ...(vidare ? ["--vidarekoppla"] : [])], { stdio: ["ignore", "ignore", "inherit"] });
   return join(mapp, "public");
 }
@@ -78,7 +82,7 @@ async function jamfor(bas, rot, lista) {
   return skiljer;
 }
 
-// ---- Huvudena ur vercel.json ----
+// ---- Huvudena ur huvuden.json ----
 // "source" läses som Vercel gör: (…) är ett reguljärt uttryck, :namn en del av sökvägen, resten bokstavligt.
 function monster(source) {
   let re = "";
@@ -90,13 +94,12 @@ function monster(source) {
   }
   return new RegExp("^" + re + "$");
 }
-// byt: hos Cloudflare står videotekets egen adress i stället för Vercels (verktyg/cloudflare.mjs).
-async function huvuden(bas, vercelJson, sokvagar, byt = (v) => v) {
-  const regler = JSON.parse(readFileSync(vercelJson, "utf8")).headers.map((r) => ({ re: monster(r.source), huvuden: r.headers }));
+async function huvuden(bas, fil, sokvagar) {
+  const regler = JSON.parse(readFileSync(fil, "utf8")).headers.map((r) => ({ re: monster(r.source), huvuden: r.headers }));
   const fel = [];
   for (const s of sokvagar) {
     const vantat = {};
-    for (const r of regler) if (r.re.test(s)) for (const h of r.huvuden) vantat[h.key.toLowerCase()] = byt(h.value);
+    for (const r of regler) if (r.re.test(s)) for (const h of r.huvuden) vantat[h.key.toLowerCase()] = h.value;
     const r = await hamta(bas + s.slice(1));
     if (r.status !== 200) { fel.push(`${s}: svarade ${r.status}`); continue; }
     for (const [k, v] of Object.entries(vantat)) if (r.huvuden.get(k) !== v) fel.push(`${s}: ${k} är ${JSON.stringify(r.huvuden.get(k))}, ska vara ${JSON.stringify(v.slice(0, 80))}`);
@@ -211,21 +214,36 @@ async function sidan(b, bas) {
   return ut;
 }
 
-// Pages skickar vidare till samma ställe hos Cloudflare.
-async function vidarekopplingen(b) {
+// Pages och Vercel skickar vidare till samma ställe hos Cloudflare.
+async function vidarekopplingen(b, namn, F) {
   const ut = {};
-  for (const [fran, till] of [[P, V], [P + "#filmer", V + "#filmer"], [P + "film/arkimedes-och-cirkeln/?t=42", V + "#arkimedes-och-cirkeln&t=42"]]) {
+  for (const [fran, till] of [[F, V], [F + "#filmer", V + "#filmer"], [F + "film/arkimedes-och-cirkeln/?t=42", V + "#arkimedes-och-cirkeln&t=42"]]) {
     const ctx = await b.newContext();
     const p = await ctx.newPage();
     try {
       await p.goto(fran);
       await p.waitForURL((u) => u.href.startsWith(V), { timeout: 20000 });
       await p.waitForFunction(() => document.querySelector(".vy.aktiv"), null, { timeout: 20000 });
-      ut[`Pages ${fran.slice(P.length) || "/"}`] = p.url() === till ? "ok" : `FEL hamnade på ${p.url()}`;
-    } catch (e) { ut[`Pages ${fran.slice(P.length) || "/"}`] = `FEL ${String(e).split("\n")[0].slice(0, 200)}`; }
+      ut[`${namn} ${fran.slice(F.length) || "/"}`] = p.url() === till ? "ok" : `FEL hamnade på ${p.url()}`;
+    } catch (e) { ut[`${namn} ${fran.slice(F.length) || "/"}`] = `FEL ${String(e).split("\n")[0].slice(0, 200)}`; }
     await ctx.close();
   }
   return ut;
+}
+
+// Vercels svar utan att följa dem: startsidan och filmsidorna är vidaresidor, allt annat 308 till Cloudflare med
+// sökväg och fråga.
+async function vercelVidare() {
+  const fel = [], q = "nattlig=" + Math.random().toString(36).slice(2);
+  for (const [fran, till] of [[GV + "videor.json?" + q, V + "videor.json?" + q], [GV + "omslag/?" + q, V + "omslag/?" + q], [GI + "ggb.html?" + q, I + "ggb.html?" + q], [GI + "?" + q, I + "?" + q]]) {
+    const r = await fetch(fran, { redirect: "manual" });
+    if (r.status !== 308 || r.headers.get("location") !== till) fel.push(`${fran}: ${r.status} till ${r.headers.get("location")}, ska vara 308 till ${till}`);
+  }
+  for (const s of ["", "film/arkimedes-och-cirkeln/?t=42"]) {
+    const r = await fetch(GV + s, { redirect: "manual" }), t = await r.text();
+    if (r.status !== 200 || !t.includes(s ? "../../#" : VIDARE_TILL)) fel.push(`${GV + s}: ${r.status}, ska vara 200 med ${s ? "filmsidan" : "vidaresidan"}`);
+  }
+  return fel;
 }
 
 async function webblasaren() {
@@ -233,8 +251,9 @@ async function webblasaren() {
   try {
     const ut = {};
     for (const [k, v] of Object.entries(await sidan(b, V))) ut[`Cloudflare: ${k}`] = v;
-    if (VIDARE) Object.assign(ut, await vidarekopplingen(b));
+    if (VIDARE) Object.assign(ut, await vidarekopplingen(b, "Pages", P));
     else for (const [k, v] of Object.entries(await sidan(b, P))) ut[`Pages: ${k}`] = v;
+    Object.assign(ut, await vidarekopplingen(b, "Vercel", GV));
     return ut;
   } finally { await b.close(); }
 }
@@ -250,8 +269,9 @@ const delar = {
   "filer hos Cloudflare": () => jamfor(V, vercelBygge, filer(vercelBygge).filter((f) => f !== "404.html")),
   "filer hos Pages": () => jamfor(P, pagesBygge, filer(pagesBygge)),
   "filer på inbäddningsadressen": () => jamfor(I, inbaddatRot, filer(inbaddatRot)),
-  "huvuden hos Cloudflare": () => huvuden(V, join(ROT, "vercel.json"), ["/", "/videor.json", `/${app}`, `/${omslag}`, "/film/arkimedes-och-cirkeln/"], (v) => v.replace("https://winterhalls-matte.vercel.app", VIDARE_TILL)),
-  "huvuden på inbäddningsadressen": () => huvuden(I, join(ROT, "inbaddat", "vercel.json"), ["/", "/ggb.html", "/yt.html"]),
+  "huvuden hos Cloudflare": () => huvuden(V, join(ROT, "verktyg", "huvuden.json"), ["/", "/videor.json", `/${app}`, `/${omslag}`, "/film/arkimedes-och-cirkeln/"]),
+  "huvuden på inbäddningsadressen": () => huvuden(I, join(ROT, "inbaddat", "huvuden.json"), ["/", "/ggb.html", "/yt.html"]),
+  "Vercel skickar vidare": () => vercelVidare(),
 };
 const filDelar = (namn) => namn.startsWith("filer");
 

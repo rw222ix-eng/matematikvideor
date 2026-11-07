@@ -1,5 +1,5 @@
 # Nattlig kontroll av videoteket (säkerhet C1, 2026-10-27): bygger HEAD och jämför varje fil och varje
-# säkerhetshuvud med det som serveras hos Vercel, Pages och på inbäddningsadressen, och provar sidan i
+# säkerhetshuvud med det som serveras hos Cloudflare, Pages och på inbäddningsadressen, ser att Vercel skickar vidare, och provar sidan i
 # Chrome (kontroll/nattlig.mjs). Faller den mejlar GitHub. Den stoppar aldrig en publicering.
 name: Nattlig kontroll
 on:

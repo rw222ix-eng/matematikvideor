@@ -7,13 +7,13 @@
  * gamla webbläsare, som inte känner hash eller 'strict-dynamic'.
  *
  * Policyn står på två ställen som byggsteget (verktyg/publicera.mjs) kontrollerar mot varandra:
- * CSP_HUVUD här och Content-Security-Policy i vercel.json. Är de olika faller bygget, och den förra
+ * CSP_HUVUD här och Content-Security-Policy i verktyg/huvuden.json. Är de olika faller bygget, och den förra
  * versionen ligger kvar. Meta-taggen i public/index.html har en mildare policy för lokala prov
  * (skriptet ligger inline där), och byggsteget byter den mot CSP.
  *
- * En ny extern källa: lägg in värden här, i vercel.json och i meta-taggen i public/index.html, och
+ * En ny extern källa: lägg in värden här, i verktyg/huvuden.json och i meta-taggen i public/index.html, och
  * skriv den i SAKERHET.md. Ändras ett av skripten nedan, ändras hashen: kör
- * node verktyg/csp.mjs och klistra in raden i vercel.json.
+ * node verktyg/csp.mjs och klistra in raden i verktyg/huvuden.json.
  */
 import { createHash } from "node:crypto";
 import { pathToFileURL } from "node:url";

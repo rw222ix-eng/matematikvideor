@@ -31,7 +31,7 @@ jobs:
           persist-credentials: false
       # Filmsidorna (förhandsbilden i Classroom) skrivs om ur videor.json vid varje publicering, så att
       # de aldrig pekar på ett gammalt omslag när en publicering återställt dem. Sidans skript flyttas
-      # till app.<hash>.js och policyn blir strikt (verktyg/publicera.mjs, samma steg som hos Vercel).
+      # till app.<hash>.js och policyn blir strikt (verktyg/publicera.mjs, samma steg som hos Cloudflare och Vercel).
       # --vidarekoppla (säkerhet 3a, 2026-10-27): Pages kan inte skicka säkerhetshuvuden, så startsidan
       # här skickar eleven vidare till samma ställe hos Cloudflare, med det eleven sparat. Ta bort flaggan
       # så blir Pages en full kopia av videoteket igen, till exempel om Cloudflare ligger nere.
@@ -55,7 +55,7 @@ jobs:
 
   # Cloudflare Pages (flytten från Vercel 2026-11-07, Rickard: "Flytta båda"). Uppladdning härifrån räknas inte mot
   # gratisplanens 500 byggen i månaden. Hemligheten CLOUDFLARE_API_TOKEN får bara ändra Pages på kontot.
-  # Huvudena skrivs ur vercel.json och inbaddat/huvuden.mjs till _headers, så att policyn står på samma ställen som förut.
+  # Huvudena skrivs ur verktyg/huvuden.json och inbaddat/huvuden.mjs till _headers, så att policyn står på samma ställen som förut.
   # Inbäddningen går ut först, eftersom sidan bäddar in den och den måste tillåta sidans adress.
   cloudflare:
     runs-on: ubuntu-latest
