@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/", "destination": "https://matematikvideor-inbaddat.pages.dev/", "statusCode": 308 },
     { "source": "/:path*", "destination": "https://matematikvideor-inbaddat.pages.dev/:path*", "statusCode": 308 }
   ],
   "buildCommand": "echo Vercel skickar vidare till Cloudflare Pages",
