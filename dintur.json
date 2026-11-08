@@ -3562,14 +3562,14 @@
   },
   "ma1c-k3-02-lan-ranta-amortering": {
     "notisFran": "Nu är det din tur",
-    "fraga": "Sufia lånar 500 taka av Yunus. Hon amorterar lika mycket varje vecka i 50 veckor, och räntesatsen är 0,4 % per vecka. Du ska svara på två frågor.",
+    "fraga": "Sufia lånar 500 taka av Yunus. Hon amorterar lika mycket varje vecka i 50 veckor, och räntesatsen är 0,4 % per vecka. Du ska svara på två frågor. Hur mycket betalar Sufia första veckan, när hon betalar både amortering och ränta?",
     "slut": [
-      "Först: Hur stor är amorteringen varje vecka?",
-      "Sen: Hur mycket betalar Sufia första veckan, när hon betalar både amortering och ränta?"
+      "Först: Hur stor är amorteringen varje vecka? Det behöver du för att ta reda på det.",
+      "Sen: Räkna ut vad hon betalar första veckan."
     ],
     "delar": [
       {
-        "fraga": "Först: Hur stor är amorteringen varje vecka?",
+        "fraga": "Först: Hur stor är amorteringen varje vecka? Det behöver du för att ta reda på det.",
         "typ": "tal",
         "svar": 10,
         "tolerans": 0.01,
@@ -3606,7 +3606,7 @@
         ]
       },
       {
-        "fraga": "Sen: Hur mycket betalar Sufia första veckan, när hon betalar både amortering och ränta?",
+        "fraga": "Sen: Räkna ut vad hon betalar första veckan.",
         "typ": "tal",
         "svar": 12,
         "tolerans": 0.01,
