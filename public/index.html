@@ -1383,7 +1383,7 @@
     <!-- Inför provet (Rickard 2026-10-18): klassens nästa prov och filmerna till det. Syns när prov.json har klasser. -->
     <button type="button" role="tab" data-hylla="provet" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Inför provet</span><span class="kort">Prov</span></button>
     <!-- Spel (Rickard 2026-11-09: spelen ligger «Inne i videoteket»): korten länkar till /spel/, som har en egen policy.
-         Gömd tills alla spel har flerspelarläge (SPEL_SYNS i skriptet). -->
+         Gömd tills skriptet visar den, när SPEL_SYNS är true (som Inför provet ovan). -->
     <button type="button" role="tab" data-hylla="spel" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden>Spel</button>
   </div>
   <!-- Under fliken Inför provet: klassen. Knapparna skrivs ur prov.json, och valet sparas i webbläsaren ("provKlass"). -->
@@ -1849,8 +1849,9 @@
   const SPEL = "spel";
   // Fliken Spel är gömd tills alla tre spelen har flerspelarläge (Rickard 2026-11-09: «Vi gömmer alla spel än så länge
   // i videoteket tills vi har fixat flerspelarläge för samtliga spel»). true visar den. Klasslänken sparas ändå, så att
-  // klassen redan finns när spelen syns. Gömd går #spel till #filmer som en serie utan filmer.
-  const SPEL_SYNS = false;
+  // klassen redan finns när spelen syns. Gömd går #spel till #filmer som en serie utan filmer. Sedan 9/11 har alla tre
+  // flerspelarläge (spelserverns grenar, guidens spel-delning), och fliken syns när videoteket publiceras med spelen.
+  const SPEL_SYNS = true;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
@@ -3099,8 +3100,8 @@
   // Raden under säger vilken topplista poängen hamnar på: klassens när eleven kommit via klasslänken.
   const SPELEN = [
     { id: "tron", namn: "Tron", sida: "/spel/tron", bild: "omslag/spel-tron.webp", overst: "Online · upp till 8" },
-    { id: "skepp", namn: "Skeppet" },
-    { id: "pacman", namn: "Pac-Man" },
+    { id: "skepp", namn: "Skeppet", sida: "/spel/skepp", bild: "omslag/spel-skepp.webp", overst: "Online · upp till 8" },
+    { id: "pacman", namn: "Pac-Man", sida: "/spel/pacman", bild: "omslag/spel-pacman.webp", overst: "Online · upp till 8" },
   ];
   function spelHtml() {
     const klass = spelKlass();

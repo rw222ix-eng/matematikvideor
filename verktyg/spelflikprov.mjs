@@ -66,8 +66,9 @@ prov("rubriken säger Välj ett spel", (await p.locator("#valj-rubrik").textCont
 const kort = p.locator('#spar a[data-spel="tron"]');
 // Cloudflare skickar /spel/tron.html vidare till /spel/tron, så kortet länkar dit direkt.
 prov("Tron-kortet länkar till /spel/tron", (await kort.getAttribute("href")) === "/spel/tron");
-prov("skeppet och Pac-Man står som kommer snart", (await p.locator("#spar .post.kommer.spel").count()) === 2);
-prov("Tron-kortets bild laddas", await p.locator('#spar a[data-spel="tron"] img').evaluate((i) => i.complete && i.naturalWidth > 0));
+prov("skeppet och Pac-Man länkar till /spel/skepp och /spel/pacman", (await p.locator('#spar a[data-spel="skepp"]').getAttribute("href")) === "/spel/skepp" && (await p.locator('#spar a[data-spel="pacman"]').getAttribute("href")) === "/spel/pacman");
+prov("inget spel står som kommer snart", (await p.locator("#spar .post.kommer.spel").count()) === 0);
+for (const id of ["tron", "skepp", "pacman"]) prov(`${id}-kortets bild laddas`, await p.locator(`#spar a[data-spel="${id}"] img`).evaluate((i) => i.complete && i.naturalWidth > 0));
 await p.mouse.move(10, 10);
 await p.screenshot({ path: `${SKARM}/vt-spelflik-dator.png` });
 prov("policyn stoppar inget under fliken Spel", (await p.evaluate(() => window.__brott)).length === 0, (await p.evaluate(() => window.__brott)).slice(0, 5).join(" | "));

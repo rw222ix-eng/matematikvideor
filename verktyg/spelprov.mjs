@@ -3,7 +3,8 @@
  * Cloudflare) med spelservern i wrangler dev bredvid:
  *  - /spel/tron.html får spelens policy och inte sidans, och Tron startar utan att policyn stoppar något,
  *  - startsidan har kvar sin strikta policy,
- *  - /spel/halsa och en WebSocket till /spel/rum går genom funktionen till spelservern.
+ *  - /spel/halsa och en WebSocket till /spel/rum går genom funktionen till spelservern,
+ *  - skeppet och Pac-Man (/spel/skepp, /spel/pacman) laddar och spelar mot datorn under samma policy.
  *
  *   (i geogebra-guiden, server/) npx --yes wrangler@4.158.0 dev --port 8792 --ip 127.0.0.1
  *   node verktyg/spel.mjs --public <kopia> --kalla http://localhost:8191 && node verktyg/publicera.mjs --public <kopia> --cloudflare
@@ -58,6 +59,32 @@ prov("topplistan svarar en fetch från spelsidan", lista === 200, lista);
 const brott = await p.evaluate(() => window.__brott);
 prov("policyn stoppar inget", brott.length === 0, brott.slice(0, 5).join(" | "));
 prov("inga JS-fel", jsFel.length === 0, jsFel.slice(0, 3).join(" | "));
+
+// Skeppet och Pac-Man: sidan under spelens policy, Spela mot datorn i några sekunder, och ett rum genom funktionen.
+for (const [namn, sida, spel, krok] of [["skeppet", "skepp", "skepp", "__skeppSida"], ["Pac-Man", "pacman", "pac", "__pacSida"]]) {
+  const h = await fetch(`${BAS}/spel/${sida}.html`);
+  prov(`${namn}: sidan har spelens policy`, /worker-src 'self'/.test(h.headers.get("content-security-policy") || ""));
+  const q = await ctx.newPage(), qFel = [];
+  q.on("pageerror", (e) => qFel.push(String(e)));
+  await q.goto(`${BAS}/spel/${sida}`, { waitUntil: "load" });
+  prov(`${namn}: sidan och dess skript laddas`, await q.waitForFunction((k) => !!window[k], krok, { timeout: 30000 }).then(() => true, () => false));
+  await q.click("#spela");
+  await q.waitForTimeout(8000);
+  prov(`${namn}: menyn har gått undan för spelet`, await q.locator("#start").isHidden());
+  await q.screenshot({ path: `E:/tmp-three/vt-spel-${sida}.png` });
+  const kod = await q.evaluate((spel) => new Promise((ok) => {
+    const w = new WebSocket(`${location.origin.replace(/^http/, "ws")}/spel/rum?spel=${spel}&hur=ny`);
+    w.onopen = () => w.send(JSON.stringify({ typ: "hej", v: 1, namn: "Prov" }));
+    w.onmessage = (e) => { const m = JSON.parse(e.data); if (m.typ === "valkommen") { w.close(); ok(m.kod); } };
+    w.onerror = () => ok(null);
+    setTimeout(() => ok(null), 8000);
+  }), spel);
+  prov(`${namn}: WebSocketen når ett rum`, typeof kod === "string" && kod.length === 4, kod);
+  const b = await q.evaluate(() => window.__brott);
+  prov(`${namn}: policyn stoppar inget`, b.length === 0, b.slice(0, 5).join(" | "));
+  prov(`${namn}: inga JS-fel`, qFel.length === 0, qFel.slice(0, 3).join(" | "));
+  await q.close();
+}
 await webb.close();
 console.log(`\n${ok} ok, ${fel} FEL`);
 process.exit(fel ? 1 : 0);

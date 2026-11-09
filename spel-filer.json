@@ -1071,6 +1071,11 @@
      "sha256": "02b05bf446724d2d419c1dd2d9998f2d8d48573872b619ec3c0e206eb8dcb003"
     },
     {
+     "vag": "ljud/tron-skrik.json",
+     "storlek": 1483,
+     "sha256": "e2881b0337ab096fa7ca0da46e992d9997365b9d93f00aeb9caeb77e84c75b81"
+    },
+    {
      "vag": "ljud/tron-sprang.mp3",
      "storlek": 49571,
      "sha256": "4e0dd357b0ef92a4ba7009f602e4663b861f7b7781ef1ab3f02b37d9f418543c"
@@ -1101,6 +1106,16 @@
      "sha256": "52df0de15bb50f4cc30fb8ed819abae39689a8b8c2e2f86408dc6bcbf72e5ded"
     },
     {
+     "vag": "server/src/delat.js",
+     "storlek": 1863,
+     "sha256": "a40799a121532ff6cc70e08bc7ea28c210a60b82b6b0fd1f6a16f619534d371e"
+    },
+    {
+     "vag": "server/src/match-tron.js",
+     "storlek": 8663,
+     "sha256": "435d2de136fa1524497522347295862c34c85a167d8d53b566c16b13fcb50738"
+    },
+    {
      "vag": "three-tron.js",
      "storlek": 614021,
      "sha256": "0d9296023f2e4865bdbcd8733c9c56f564185fb7bf8da7fb7aa325542d0972e3"
@@ -1122,8 +1137,8 @@
     },
     {
      "vag": "tron-bossbana.js",
-     "storlek": 56714,
-     "sha256": "75ff401d359d99f005c3e6ab44a6968ae865199f4fe65aa4515ac529c718cb29"
+     "storlek": 56911,
+     "sha256": "7e236be3d2670886a2e3f00113bea1364a2d5378b0c97c7d21e6dc56a7960a52"
     },
     {
      "vag": "tron-display.js",
@@ -1152,8 +1167,2163 @@
     },
     {
      "vag": "tron-forvarm.js",
-     "storlek": 9612,
-     "sha256": "adc08c85f8bad5898ead6f22984ae48589c7a975f9bb1f3aab0ef9d2a722dd13"
+     "storlek": 10448,
+     "sha256": "5dd5878d678ddeb19e44a43d3fdbf2e06bdb3d3c96defdea153cac2c603fa7ff"
+    },
+    {
+     "vag": "tron-intro.js",
+     "storlek": 33673,
+     "sha256": "a6aa9c2f8af9812423afa6c8f9bae96f8d7bab00f02e830251f1f586557e4e55"
+    },
+    {
+     "vag": "tron-klyv-worker.js",
+     "storlek": 811,
+     "sha256": "fb32292667bd92db553b00ea2506ce6e9927ed8552c6658b52311a3d31b6f91c"
+    },
+    {
+     "vag": "tron-klyv.js",
+     "storlek": 13676,
+     "sha256": "de7ecba87dcfcb16f28d7750c8d53588a57889eab699ffe8c14cd46de6c1c4cb"
+    },
+    {
+     "vag": "tron-krasch.js",
+     "storlek": 6281,
+     "sha256": "4e7a62e8f9aba76db506ae88fae621c705daf6da9a714f9f8dbe1f4696dc9f46"
+    },
+    {
+     "vag": "tron-laser.js",
+     "storlek": 12952,
+     "sha256": "c37f64edc6b6766fe4f38aa5fdfebdbe7e1dde3bd5428a8e36eb0a6fd02c22c3"
+    },
+    {
+     "vag": "tron-modell.js",
+     "storlek": 12369,
+     "sha256": "b2c9fba9a315b9f60d98765dfbdd137fabff75f5fa9cf93d25dece21e8bd2d5c"
+    },
+    {
+     "vag": "tron-natet.js",
+     "storlek": 12539,
+     "sha256": "fa485e567ba3a3cc9adcc0e3febe3461969ebb3ab2d31414ae3e006c9d4c4122"
+    },
+    {
+     "vag": "tron-ovning-rost.js",
+     "storlek": 3611,
+     "sha256": "e5507bbc213cf50b7679028cb747ae1952ea31b988e5474ff6aae85c281f8a6a"
+    },
+    {
+     "vag": "tron-scen.js",
+     "storlek": 35769,
+     "sha256": "f1314d0e57aeaf9344f1f70b50ec2f3a3d01740a5821f3a342a3651fee8e8a40"
+    },
+    {
+     "vag": "tron-sida.css",
+     "storlek": 6981,
+     "sha256": "3758e7c73d6b6a32060df49d798e1e7355d67a8767a04012b6f1e1190e59fd68"
+    },
+    {
+     "vag": "tron-sida.js",
+     "storlek": 20559,
+     "sha256": "1793571055248643df0ca2f3710c1f4ef829333723077900ebf1af0145a73b2f"
+    },
+    {
+     "vag": "tron-sim.js",
+     "storlek": 121545,
+     "sha256": "a1381c2345b41e1346ae2d0f6c2874218419fd847983129c047d1f4104085bad"
+    },
+    {
+     "vag": "tron-spelledare.js",
+     "storlek": 19462,
+     "sha256": "67db0b3622c02b4bf396282ef8be7f50e0a300b62325ec8df13dd1a52695b9a6"
+    },
+    {
+     "vag": "tron-stad.js",
+     "storlek": 36410,
+     "sha256": "898ea07d70c7b0bafbd7b1a0994aafdd28f7dbd43034840fcfdbec75bbe33b09"
+    },
+    {
+     "vag": "tron-turnering.js",
+     "storlek": 22472,
+     "sha256": "6f86853f153cf6c2dc6204ee22a8e6b2954fa938e150a8cacbd2da0fe61246cb"
+    },
+    {
+     "vag": "tron.html",
+     "storlek": 3131,
+     "sha256": "2b263c4ffec8640f5e33b1bc1cdca2d3e3fd3a6cec348bf5f477da2f9d915f3b"
+    },
+    {
+     "vag": "tron.js",
+     "storlek": 106125,
+     "sha256": "8b987f81bb06b1636a47e7999379ae0c9c440058173372730b21be35f8416b78"
+    },
+    {
+     "vag": "utropare.js",
+     "storlek": 12338,
+     "sha256": "179e9c1b441ad9ef29d46087a1fe0f7ca59e9397c39f7b92af2f7dc08f9fd783"
+    }
+   ]
+  },
+  "skepp": {
+   "sida": "skepp.html",
+   "filer": [
+    {
+     "vag": "figur/fly-knapp.webp",
+     "storlek": 23226,
+     "sha256": "9ed40c358e2a57533b9d6bd12d7e6fa84eca55ed27f6d889d88965c0f7aaaa4f"
+    },
+    {
+     "vag": "figur/newton-cigarr-01.webp",
+     "storlek": 59196,
+     "sha256": "5bef4f9d564753341e21e96f148e8ee5d9c31a67b230dbaaf09f9b5137d529c6"
+    },
+    {
+     "vag": "figur/newton-cigarr-02.webp",
+     "storlek": 60778,
+     "sha256": "37cd31a8c162442f2f36a5e9a0d8a2995cfccebc9f66e97ab9776e09ad6bd946"
+    },
+    {
+     "vag": "figur/newton-cigarr-03.webp",
+     "storlek": 73484,
+     "sha256": "05e916e3aab9dab3df3c449d219715563fd8684874007804c3c43c75550d3bb8"
+    },
+    {
+     "vag": "figur/newton-cigarr-04.webp",
+     "storlek": 72800,
+     "sha256": "e3602f419e9fef4c3088ba83bae040cbd9847a79eeb57758e783948ea5e2460d"
+    },
+    {
+     "vag": "figur/newton-cigarr-05.webp",
+     "storlek": 74174,
+     "sha256": "5059cc0706baf048cabb2e1fc7dc15b34965e455b6ccdd4fc88db8084029cb9b"
+    },
+    {
+     "vag": "figur/newton-cigarr-06.webp",
+     "storlek": 76330,
+     "sha256": "3f2c16628898b6232d20db29e5bbcc3cc63e440f2cb6fd348f83925641f53f21"
+    },
+    {
+     "vag": "figur/newton-cigarr-07.webp",
+     "storlek": 70580,
+     "sha256": "69a47a8f15441492654f2b9ec7998566a9edf1768e219570ba657844487289f1"
+    },
+    {
+     "vag": "figur/newton-cigarr-08.webp",
+     "storlek": 78550,
+     "sha256": "3dfe16247ca648cdbf26f215ecb5b94a4f8f5112be92f609ea47f4f49debab0d"
+    },
+    {
+     "vag": "figur/newton-cigarr-09.webp",
+     "storlek": 74698,
+     "sha256": "083773bfb313b966efe1a0dc24a4debf26aab01b0fc289ea037a0c08c204be4a"
+    },
+    {
+     "vag": "figur/newton-cigarr-10.webp",
+     "storlek": 65264,
+     "sha256": "63600a9685f21e41980d7464d6db04d75cbdd3429d9d19848272641a677c50d7"
+    },
+    {
+     "vag": "figur/newton-cigarr-11.webp",
+     "storlek": 53324,
+     "sha256": "ff8aec2ba876530bbd105e37edd8e35781c62a3cffdf3c3711a39af700188ed2"
+    },
+    {
+     "vag": "figur/newton-cigarr-12.webp",
+     "storlek": 70138,
+     "sha256": "873beb37065f93d3a25f469400dee1aa97d07bfa65e167d86aa43bb4738e136d"
+    },
+    {
+     "vag": "figur/newton-kodare-1.webp",
+     "storlek": 223164,
+     "sha256": "6bce0dbfad192d3f8f00e812700ded18eeb693d1e5565cfee6c16aa0581c481a"
+    },
+    {
+     "vag": "figur/newton-kodare-2.webp",
+     "storlek": 234314,
+     "sha256": "1af820d6399b2c7a02197c50edef00c213154b8af0dd453de45cee098c14d334"
+    },
+    {
+     "vag": "figur/newton-kodare-cigarr-1.webp",
+     "storlek": 222822,
+     "sha256": "110a3b7fc3992c2c52c379ad4cd762e168e93ef3dc46e2d90f6f561d7df2067b"
+    },
+    {
+     "vag": "figur/newton-kodare-cigarr-2.webp",
+     "storlek": 227902,
+     "sha256": "7c70b31f802fd6424f40a53642c6e98853922ecbbcbaec8dbc7ffd0f98848327"
+    },
+    {
+     "vag": "figur/spel/boss-arm-h-oppen.webp",
+     "storlek": 25890,
+     "sha256": "9679802f644b0c8de288c494189f8d66d67646f63e92810d3948f064283c66ba"
+    },
+    {
+     "vag": "figur/spel/boss-arm-h.webp",
+     "storlek": 22856,
+     "sha256": "b0addecf56ff6ede67c6bb01a53b04ea4051f3fe3595a25d445b7afcbfbde304"
+    },
+    {
+     "vag": "figur/spel/boss-arm-v-oppen.webp",
+     "storlek": 25942,
+     "sha256": "91347b672b0414bf8e2097967879c362a39b848feab5cad4eabc899c3647ec7a"
+    },
+    {
+     "vag": "figur/spel/boss-arm-v.webp",
+     "storlek": 23078,
+     "sha256": "0708d621b011868fee10bd704a34484a27fe1016809c372850a9526ac9b48165"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-h-oppen.webp",
+     "storlek": 26202,
+     "sha256": "c0f5231edb969696a30c275307a62309164fdfadddbbce0b7932e532d722aa36"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-h.webp",
+     "storlek": 21990,
+     "sha256": "be5f14f7d1febb65dfbfeddfa5382697dfa231560be4532b0ce0e6c6d7fff87f"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-v-oppen.webp",
+     "storlek": 26408,
+     "sha256": "ef6ce07b77be69297b406fa4f71a27b77fe84fb36597d24804bc6169e417467f"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-v.webp",
+     "storlek": 21782,
+     "sha256": "99c0456253c04e8caabe9d158bdc58b08cdca0b5d9245807b0ad0382d6d0eb6f"
+    },
+    {
+     "vag": "figur/spel/boss-skadad.webp",
+     "storlek": 178604,
+     "sha256": "82b6ca555f88f5bd2a826bd642860714745ff74543da5ff0ee34043a088a59ac"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-h-oppen.webp",
+     "storlek": 25776,
+     "sha256": "49e9b90f3b63b1b83442f6a428ebac1419f2db149ea93f6f81ef35420f754ea9"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-h.webp",
+     "storlek": 20860,
+     "sha256": "d3365cc7b7bb5ae143b9b8c97d72930656f4081c12a4b9b4a4b8cb21db6dd659"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-v-oppen.webp",
+     "storlek": 26250,
+     "sha256": "c4f442c9eb64ebbc46de3deb32e3d980107b0ec8fe8451845c241dfd8ca93e95"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-v.webp",
+     "storlek": 21540,
+     "sha256": "181289048397409d2012b794a8651b7010bfc72c82e9df67345d1443d4dd3687"
+    },
+    {
+     "vag": "figur/spel/boss-svart.webp",
+     "storlek": 170582,
+     "sha256": "a407cff9c970fb79bb3d71d61fca3a253dde7b49387e3a6b8c9860978d03fb56"
+    },
+    {
+     "vag": "figur/spel/boss.webp",
+     "storlek": 174898,
+     "sha256": "010b50048582e31222d0c3e6bd78f696fc334a60f62abd4d820cd8d7a04dc143"
+    },
+    {
+     "vag": "figur/spel/demon-1a0.webp",
+     "storlek": 70410,
+     "sha256": "100384b7fcd49703784f63029daea7956425c9cc1720d8309499d28023f526b9"
+    },
+    {
+     "vag": "figur/spel/demon-1a1.webp",
+     "storlek": 71276,
+     "sha256": "6d2aa606c95e98b56874d6a974dd9cdbf059df0d6bd9bb8f6e9933ab10cc24e1"
+    },
+    {
+     "vag": "figur/spel/demon-1a2.webp",
+     "storlek": 73044,
+     "sha256": "fd60d86179c6a9f7a8351cad721a25e79d3141bfa3020d7a444ae432bec59106"
+    },
+    {
+     "vag": "figur/spel/demon-1b0.webp",
+     "storlek": 58990,
+     "sha256": "92932835efaabd209d292645ba92ebe970bedcd57ac69eafd9aa8eee429a8fcf"
+    },
+    {
+     "vag": "figur/spel/demon-1b1.webp",
+     "storlek": 58742,
+     "sha256": "f5b6031f068c850d0cfd79036fcf988b39871a9c263b928e5e6e4d0e1b88238f"
+    },
+    {
+     "vag": "figur/spel/demon-1b2.webp",
+     "storlek": 58752,
+     "sha256": "4ac5fc393c2e04cd61f74340ccd521368d2c6c83df4376ce58e74f0c51c5b5bf"
+    },
+    {
+     "vag": "figur/spel/demon-2a0.webp",
+     "storlek": 87650,
+     "sha256": "dc8e769cc91b6693ff965109625634de4e02404ce23aa447bef3be16ad95fea0"
+    },
+    {
+     "vag": "figur/spel/demon-2a1.webp",
+     "storlek": 89094,
+     "sha256": "54031e0332a0b68bacd8e4d4e1604913c7d21b551d261bb37c7b7bfd78a06d44"
+    },
+    {
+     "vag": "figur/spel/demon-2a2.webp",
+     "storlek": 91616,
+     "sha256": "a0197714911d194f328b59b3959e5e8f90bb16fdf2cb62def452b2821a462596"
+    },
+    {
+     "vag": "figur/spel/demon-2b0.webp",
+     "storlek": 77758,
+     "sha256": "850f93809b36dfc25c1e35e7471de46a96ff979802ca90cf8de47322eb0e9d9f"
+    },
+    {
+     "vag": "figur/spel/demon-2b1.webp",
+     "storlek": 80360,
+     "sha256": "7bd90cac3500eeafd0db1c2a7645c8d922b37f7776c45ad2b11ff0547337f259"
+    },
+    {
+     "vag": "figur/spel/demon-2b2.webp",
+     "storlek": 80316,
+     "sha256": "bd1fc64f0b79e32d3346c0968476ddd42269e0bd8a30258c29f8d034fa50f458"
+    },
+    {
+     "vag": "figur/spel/demon-3a0.webp",
+     "storlek": 108804,
+     "sha256": "6e94c4cfa996bccb1002d44c12929b13b2ea9ee3f741f7391706b117f830489f"
+    },
+    {
+     "vag": "figur/spel/demon-3a1.webp",
+     "storlek": 110362,
+     "sha256": "02b28f15506dcf50992490566359dca081ea9581cbc7cde017881ead7fab1365"
+    },
+    {
+     "vag": "figur/spel/demon-3a2.webp",
+     "storlek": 110868,
+     "sha256": "d77201968b87d26ba87c4d2d3c1c9b4d38228793b0db9a1a27cc47222d09d7ca"
+    },
+    {
+     "vag": "figur/spel/demon-3b0.webp",
+     "storlek": 93458,
+     "sha256": "1ddffa3121b85dab87a951f65300fed472c1962453c7823472eec92b9ef13525"
+    },
+    {
+     "vag": "figur/spel/demon-3b1.webp",
+     "storlek": 93522,
+     "sha256": "fd92c5b552150bea53b69215f660c86e96080f2827c25c8dca6c07e73aad8af1"
+    },
+    {
+     "vag": "figur/spel/demon-3b2.webp",
+     "storlek": 93428,
+     "sha256": "6dd22c5ffdcaa8fcba608870ad8bfdba00142df789742263059932d7dd11a1f1"
+    },
+    {
+     "vag": "figur/spel/demon-4a0.webp",
+     "storlek": 102814,
+     "sha256": "647522102342a573097b42c004d661f75e9f48374492ba304b349e40be18564b"
+    },
+    {
+     "vag": "figur/spel/demon-4a1.webp",
+     "storlek": 103048,
+     "sha256": "479df61bd6f08fef1750ccebfbefede6338e9a96be9e24edaef20ccc4d592bbd"
+    },
+    {
+     "vag": "figur/spel/demon-4a2.webp",
+     "storlek": 105620,
+     "sha256": "95397a026d685a2310c67e0043aaeeeab591b7634337403bb0d1e40c0d00fd5c"
+    },
+    {
+     "vag": "figur/spel/demon-4b0.webp",
+     "storlek": 93064,
+     "sha256": "0ec0d6395c028db93639b22fb9bc137e67551cbb071a3dff7edb4e73557e5a2a"
+    },
+    {
+     "vag": "figur/spel/demon-4b1.webp",
+     "storlek": 92690,
+     "sha256": "78a5c5d39849249d07ad7cb7ecae2798d1c0b3a76f30bdbd9968a479f3e048bb"
+    },
+    {
+     "vag": "figur/spel/demon-4b2.webp",
+     "storlek": 93514,
+     "sha256": "1c39d7653f14304e80fe7a597d71fed7c8d947f86dc43ec8f62fdc1131580fae"
+    },
+    {
+     "vag": "figur/spel/eldboll.webp",
+     "storlek": 39820,
+     "sha256": "4769c87311d62753a3f51b4215f6164065284e78f31cc78e28a65634fd47afa2"
+    },
+    {
+     "vag": "figur/spel/fiende-1.png",
+     "storlek": 84356,
+     "sha256": "b6201ca3369549b78c877393108854c25d0490c9848c408b48e229c174fa8f84"
+    },
+    {
+     "vag": "figur/spel/fiende-2.png",
+     "storlek": 85892,
+     "sha256": "7ed9d6959bbcc65b6aa127a7378fc58e5092c3456c1bbcc6e40c0d878fa05824"
+    },
+    {
+     "vag": "figur/spel/kraft.png",
+     "storlek": 30556,
+     "sha256": "944aacb9789951492797f508884a68a72bc6624f3aced01a99fd29e9b2d8b1ea"
+    },
+    {
+     "vag": "figur/spel/moln-1.webp",
+     "storlek": 32584,
+     "sha256": "9cfa620b82bb5c843641114dd90129eb5a3e4bd1cbee08f8c48f8bcc77aaf9e5"
+    },
+    {
+     "vag": "figur/spel/moln-2.webp",
+     "storlek": 30020,
+     "sha256": "4e9eef3349916686f2c30ff959c97eeb8b444b2933155695d9dbfdbe29b073c7"
+    },
+    {
+     "vag": "figur/spel/moln-3.webp",
+     "storlek": 35528,
+     "sha256": "7243435e810a4d29f5adca133068c3f4fbcf5389e2ab2fe9c35495e1384a70f7"
+    },
+    {
+     "vag": "figur/spel/moln-4.webp",
+     "storlek": 21086,
+     "sha256": "3ee140a33167820eaf42e015067fbf0d89f90e6be5aa600163922d959cb08db7"
+    },
+    {
+     "vag": "figur/spel/pacman-halv.png",
+     "storlek": 33912,
+     "sha256": "142bb618b21511db47af977a963424bb9d69e5b10266903b7eed064b428fb0b6"
+    },
+    {
+     "vag": "figur/spel/pacman-oppen.png",
+     "storlek": 31860,
+     "sha256": "76cb0072354f7867c3f98b29dbaf4e39be92b54384ce0e266b06675c51516384"
+    },
+    {
+     "vag": "figur/spel/pacman-stangd.png",
+     "storlek": 35518,
+     "sha256": "038045feee70edbf0dc5bc251cf0b6cc1341a067d428b211f03e099d1e2d3401"
+    },
+    {
+     "vag": "figur/spel/retro-bakgrund.webp",
+     "storlek": 153292,
+     "sha256": "7781e12ba81b4a017d0ddd9ccb9c2dbadaa8af58f17e96af24e8af63e158cee5"
+    },
+    {
+     "vag": "figur/spel/retro-kraft.webp",
+     "storlek": 15230,
+     "sha256": "9fc76b009e2b7a9061e752e50bb9fe863fcb6d5f93a08c7bb4e7dd5f8c321f06"
+    },
+    {
+     "vag": "figur/spel/skepp-sport.webp",
+     "storlek": 113794,
+     "sha256": "be940e9562fd621d5eb6847b4b9c363047af30f95bdedcfd77bd80e4a7ba1d64"
+    },
+    {
+     "vag": "figur/spel/skepp.webp",
+     "storlek": 124616,
+     "sha256": "c47717d9fa515ffbd32d1ebd15e6b515fcbeb8fcb65973fe429fe055a1ac8195"
+    },
+    {
+     "vag": "figur/spel/spoke-bla.png",
+     "storlek": 52828,
+     "sha256": "3892649ffeb36b82950be18fc7bcfed3cabb105b0a1fd175e1f9f8262bac605e"
+    },
+    {
+     "vag": "figur/spel/spoke-vit.png",
+     "storlek": 50473,
+     "sha256": "215f5564c3e0d6b7bb943ac1d768a48475b49058c3b14e20906152903787b758"
+    },
+    {
+     "vag": "figur/spel/spoke.png",
+     "storlek": 49298,
+     "sha256": "48eb0b29f7fa697ab8f6abfe3779010164bbcce0e643e28f41f52c5a2b30f61c"
+    },
+    {
+     "vag": "figur/spel/superkraft-dubbel.webp",
+     "storlek": 50062,
+     "sha256": "d760d7e7563794705daf02f2298bc8de720e6362dcf350353fd0b8c2a33487f3"
+    },
+    {
+     "vag": "figur/spel/superkraft-skepp.webp",
+     "storlek": 58048,
+     "sha256": "1737cbb6e1016f8fa8a703e31b9dd2c522b49e3a14e0d42ae94645111c020fbb"
+    },
+    {
+     "vag": "figur/spel/superkraft-skold.webp",
+     "storlek": 61356,
+     "sha256": "28899d84d86620742da88e8fa9206631c857791f759f3ba7c66d43de03c43349"
+    },
+    {
+     "vag": "figur/spel/superkraft-tid.webp",
+     "storlek": 65630,
+     "sha256": "6e4de36f28e061a700fc4590994d1efe786a1908161377e2123db2ee46693ed1"
+    },
+    {
+     "vag": "filmrutor.js",
+     "storlek": 2117,
+     "sha256": "0c97556926ec6d0a4145b1bb951796bbcbfea157b75f8e614cd88bbefe07d6cc"
+    },
+    {
+     "vag": "fly-kedja.js",
+     "storlek": 217592,
+     "sha256": "3c5b15f42b626c88bae184bc256744c6a1b7442cc177895793226640b60c0064"
+    },
+    {
+     "vag": "fly-knapp.js",
+     "storlek": 9849,
+     "sha256": "72173d7eec8d2b6778ab5dcfeaf0a7916c19bb854e567c5795970e83411116cd"
+    },
+    {
+     "vag": "font/OFL.txt",
+     "storlek": 4429,
+     "sha256": "9d96f445b6e9c701428811d0177f894874f8d6f07ecc30d568c506542368f3ff"
+    },
+    {
+     "vag": "font/ShareTechMono-Regular.ttf",
+     "storlek": 43272,
+     "sha256": "9ceab1f87414829af259c0f537573ae03ef7dd3147c0b27a36a1a0beb6732677"
+    },
+    {
+     "vag": "fro.js",
+     "storlek": 487,
+     "sha256": "7a3ec5735fa7100ec8c52e634188108604e55f32c27fb6afa618c7afa0ec5d80"
+    },
+    {
+     "vag": "ggb.js",
+     "storlek": 42791,
+     "sha256": "8eefe84f769149d391494e9887f1ef1b862c1c49d26d22ac6ea7a81c979bd663"
+    },
+    {
+     "vag": "idescen.css",
+     "storlek": 5504,
+     "sha256": "8434b9cbfc3b2a6f6b2e92fad6cec7d315436368f3b3bd22fc28c34decc814a9"
+    },
+    {
+     "vag": "idescen.js",
+     "storlek": 40497,
+     "sha256": "ea5d9cdc4c94525cb6177d3535d10ecb25f550431f7d1af5523ac59325e2fcc0"
+    },
+    {
+     "vag": "ljud-tak.js",
+     "storlek": 818,
+     "sha256": "061a5eef1a93e5acf572c8676faf65643f00cd779443acbbef4333b4cd7f5d8a"
+    },
+    {
+     "vag": "ljud/boss-dor.mp3",
+     "storlek": 60648,
+     "sha256": "36d5ee7a05179547ef5818f03ecac4ffa08a6664001a6de349bff8727b35aad3"
+    },
+    {
+     "vag": "ljud/boss-flyr.mp3",
+     "storlek": 30868,
+     "sha256": "edfbdcf1f922da05c30d800953abb84e52f76dc8e63ec29dad7663698e01885a"
+    },
+    {
+     "vag": "ljud/boss-in.mp3",
+     "storlek": 50721,
+     "sha256": "433e940dd1b44e47862e90630941a730c38d4a94629e8de22608de957bb7fdc2"
+    },
+    {
+     "vag": "ljud/boss-studs.mp3",
+     "storlek": 6313,
+     "sha256": "57a2ba49762a1eebdffe532723647ce7ace66badb39c5bfe3ea8a3b30b441ce3"
+    },
+    {
+     "vag": "ljud/cigarr-blos.mp3",
+     "storlek": 16230,
+     "sha256": "ca37abffb1560d812ac8d5342871391452f93f34d030c7ae6d6a2e378189ba35"
+    },
+    {
+     "vag": "ljud/cigarr-tand.mp3",
+     "storlek": 7210,
+     "sha256": "43c7479f0eb56b3de1f3f371c07746d8b22a7c0c3a9e950575f28dd50936c1ab"
+    },
+    {
+     "vag": "ljud/cigarr-upp.mp3",
+     "storlek": 20267,
+     "sha256": "95cdb473301e91517b200e0951265d9896253dd61e898d355752d7711956442c"
+    },
+    {
+     "vag": "ljud/effekt-klick.mp3",
+     "storlek": 2968,
+     "sha256": "3ed6c0512c7859a2bc644e0609f2a3f4e134bf08074608d82aa83e93aa6fca8e"
+    },
+    {
+     "vag": "ljud/eldboll.mp3",
+     "storlek": 18515,
+     "sha256": "b1228f45ce4622559e2325edc86e7ea4b34f024ed01f3161705b6a2c16a6ca66"
+    },
+    {
+     "vag": "ljud/fel.mp3",
+     "storlek": 12163,
+     "sha256": "86b84268b41b32015f121b84468122713debc05bee04790526947da501541f57"
+    },
+    {
+     "vag": "ljud/fiende.mp3",
+     "storlek": 30281,
+     "sha256": "feb47d8432ad78a03b60006187a6d93c965e962d5159b3f660e029095e6435b4"
+    },
+    {
+     "vag": "ljud/genom-bygg.mp3",
+     "storlek": 60856,
+     "sha256": "b763c5a5db937efa5af16d5b3c32a00267a14734f23393a25342f42ceb934d03"
+    },
+    {
+     "vag": "ljud/genom-puls.mp3",
+     "storlek": 13208,
+     "sha256": "c2fe09a45a20ce63090adf84baf0d339a64dbbed588fc205093a6eb875b1b084"
+    },
+    {
+     "vag": "ljud/genom-small.mp3",
+     "storlek": 60856,
+     "sha256": "2e334e97b378c946c7ac3b47f76735a214623b10af07ae4cd9d275d15aa6fad6"
+    },
+    {
+     "vag": "ljud/genombrott.mp3",
+     "storlek": 40585,
+     "sha256": "1f3bb664ddba4b1c793e3b72f1a86119d7081d35325c0581c05e08c847edf037"
+    },
+    {
+     "vag": "ljud/hem-flyg.mp3",
+     "storlek": 62736,
+     "sha256": "dc87d57f3b63a39da51dd181ab8e50ac7cafe65f074d7c32dd688f42070298bb"
+    },
+    {
+     "vag": "ljud/hem-kamera.mp3",
+     "storlek": 49571,
+     "sha256": "2076f2d719666d40a9e1cafab0fc8d2314c01d34b6fb81da45960f45741bcd32"
+    },
+    {
+     "vag": "ljud/hem-landa.mp3",
+     "storlek": 73394,
+     "sha256": "ee2bde7d727b24a355b325f83a0728b43a2307678bbebeb6516efefa35de8ad6"
+    },
+    {
+     "vag": "ljud/inbrott.mp3",
+     "storlek": 63407,
+     "sha256": "88ba0bf55211a45bc4065816e1d7cb4687a002fe972e0c55d8a66daf7565929c"
+    },
+    {
+     "vag": "ljud/kombo-full.mp3",
+     "storlek": 21464,
+     "sha256": "fdc9552c4dd4f39c0b99d7c41b02d7a12d2a39da0d1d3718a2bbc7ea2215ee78"
+    },
+    {
+     "vag": "ljud/kraft.mp3",
+     "storlek": 24702,
+     "sha256": "2339b2791a84d546560aa1b577696e9f4612c7afc56224546b105af94cb2199b"
+    },
+    {
+     "vag": "ljud/krasch.mp3",
+     "storlek": 40585,
+     "sha256": "20fc9c93d32d445705f26b91e6615c4ef96dd52f810151b8ad3afbb348fac255"
+    },
+    {
+     "vag": "ljud/laser-dubbel.mp3",
+     "storlek": 3040,
+     "sha256": "b1fd6e63ffbbc2d5adbaecd0860a7309be07ca7dffa9fc8c1f199e00e6d8a069"
+    },
+    {
+     "vag": "ljud/laser.mp3",
+     "storlek": 5937,
+     "sha256": "5cef2d106cb9de027f5545204fcd2573b3c23921f44e8323037f4833662b3334"
+    },
+    {
+     "vag": "ljud/latar-skepp/1.json",
+     "storlek": 6158,
+     "sha256": "02d21e026e1430fe61c865f66e944fe17e02a163b82375c3dfd1fb80ecd37fce"
+    },
+    {
+     "vag": "ljud/latar-skepp/1.mp3",
+     "storlek": 4475777,
+     "sha256": "a758a178392da7eeeb742daaf7a6b408bc16b18bf6378853bdc493e9a32da197"
+    },
+    {
+     "vag": "ljud/latar-skepp/2.json",
+     "storlek": 4795,
+     "sha256": "ee077392884e64552adca3359905298184193135e9e2b0c33266753fa37d14ca"
+    },
+    {
+     "vag": "ljud/latar-skepp/2.mp3",
+     "storlek": 4018988,
+     "sha256": "870fc984447e8ab0db57cf98a5f82cb25c76a13eec297e640f38985ce329d041"
+    },
+    {
+     "vag": "ljud/latar-skepp/3.json",
+     "storlek": 7928,
+     "sha256": "26cf0f717c3edac389fc0e9cdf71c5a14bbb5087d0f0bef79d7f954443c2e6f9"
+    },
+    {
+     "vag": "ljud/latar-skepp/3.mp3",
+     "storlek": 4664108,
+     "sha256": "2f4ec7ebbfdade3d048c9c631e54cd730e713b8e25c632db1a7a443423c0f00a"
+    },
+    {
+     "vag": "ljud/latar-skepp/latar.json",
+     "storlek": 119,
+     "sha256": "667036425bb41ffba1cf6f9d9edb1c8e56265907d8a18610f2c15fa9e42d74bf"
+    },
+    {
+     "vag": "ljud/liv.mp3",
+     "storlek": 5509,
+     "sha256": "2b23d9abca9b86e867a605947d931c30f6fc5ae3364e3bd7a301880ca31cf523"
+    },
+    {
+     "vag": "ljud/musik-newton.mp3",
+     "storlek": 2823317,
+     "sha256": "7ef8b5acc870c7a728241826e4c0086be3c14fcdc92db33bdcf3a231c50d2a18"
+    },
+    {
+     "vag": "ljud/pac-at.mp3",
+     "storlek": 15195,
+     "sha256": "7255ecd9bf1cdf9c4a29b01b2fe8ffce7380f7028578a8a67c4ba8038332cc64"
+    },
+    {
+     "vag": "ljud/pac-dod.mp3",
+     "storlek": 33480,
+     "sha256": "812fef50fa494771c8adb23fabd774f52d566246d5c64841a3468f14db0d608c"
+    },
+    {
+     "vag": "ljud/pac-fel.mp3",
+     "storlek": 7358,
+     "sha256": "1faa4c6dbe233a544e3e1ceeafaf1196b514bb16c084ceba7bbfa002d9235891"
+    },
+    {
+     "vag": "ljud/pac-glitch.mp3",
+     "storlek": 12582,
+     "sha256": "3369058412e49bb235399e3c33f470286d7d59ae1e7e4f0d109cdd6779a40ad1"
+    },
+    {
+     "vag": "ljud/pac-kraft.mp3",
+     "storlek": 17284,
+     "sha256": "642728e32977255ceac1b3c8e28643136fc808e9eaeb4ef6c046ad2901c75881"
+    },
+    {
+     "vag": "ljud/pac-linje.mp3",
+     "storlek": 8925,
+     "sha256": "a13340e1809714556fa26d976f16c2dbfa9bba95639c1d25dcb09b2d6e24313c"
+    },
+    {
+     "vag": "ljud/pac-rekord.mp3",
+     "storlek": 19374,
+     "sha256": "fd8c737b7b31766ad0368ab39b2f8e216d4fdef39e7c9435c3af26b396b4ae8c"
+    },
+    {
+     "vag": "ljud/pac-start.mp3",
+     "storlek": 27733,
+     "sha256": "ea24578b9bb5a696b06eae73412205d74fd3c5c07e76dab7f3c107e47bb2c8d6"
+    },
+    {
+     "vag": "ljud/pac-tunnel.mp3",
+     "storlek": 7358,
+     "sha256": "d71dea0c6cfd6b3183ba0f588dcfae189345cb6552d715c2aab9926a6a06051d"
+    },
+    {
+     "vag": "ljud/pac-waka.mp3",
+     "storlek": 4746,
+     "sha256": "259cc779eaee97c843e1bef772b18b25112e93858c6906a7fce68afc92c94da3"
+    },
+    {
+     "vag": "ljud/ratt.mp3",
+     "storlek": 6507,
+     "sha256": "f989b87ae1409be5b7fdd8073d7e83d3d3fd2f8ed706995bfd4f4d56dc2174bf"
+    },
+    {
+     "vag": "ljud/rekord-skepp.mp3",
+     "storlek": 25121,
+     "sha256": "b7919cc72e0cfb345c8d61a1ebe4489579358ced917fa240d044354b800ad06d"
+    },
+    {
+     "vag": "ljud/skepp-byte.mp3",
+     "storlek": 14617,
+     "sha256": "ba57597a67c8fc88fd7876ba3e5824db16742d7fe95569cebff9c8c2fea54121"
+    },
+    {
+     "vag": "ljud/skold-spricker.mp3",
+     "storlek": 8432,
+     "sha256": "ab073d150cdd2c30f174623fb2000a84745eb4cf91c4c8018c2a69e8dc4524fb"
+    },
+    {
+     "vag": "ljud/skold-upp.mp3",
+     "storlek": 8467,
+     "sha256": "b2d6a7f2f97107c23a7e97c0d9aa10fae4e8c96df031f72713a891b83a51fd1c"
+    },
+    {
+     "vag": "ljud/skrik-1a.mp3",
+     "storlek": 32497,
+     "sha256": "e08df596171a1c191a74ae3e863a0325685913471901f696d691e8a49b56c363"
+    },
+    {
+     "vag": "ljud/skrik-1b.mp3",
+     "storlek": 34277,
+     "sha256": "781e9338fd26154103cf7d849429164bcfb042e8c9e79d416be75082f7cef8a8"
+    },
+    {
+     "vag": "ljud/skrik-1c.mp3",
+     "storlek": 22952,
+     "sha256": "5ccdc6031c748eaee8c145ed052f0828bd9300b9f6e51b73030bc8510db06199"
+    },
+    {
+     "vag": "ljud/skrik-2a.mp3",
+     "storlek": 31846,
+     "sha256": "de27334fdcc1fabbfac33957cd987322e1e2ab65fad9a9c14672e80a4e9a9b14"
+    },
+    {
+     "vag": "ljud/skrik-2b.mp3",
+     "storlek": 29498,
+     "sha256": "d7b6e0d469c0fadb0c8a11f802653856589c2ffd2fcb0513f729626d94905ecf"
+    },
+    {
+     "vag": "ljud/skrik-2c.mp3",
+     "storlek": 24099,
+     "sha256": "677396860739699ead16bce22f53d6327dc617b191d0ec50d62987c2c955b746"
+    },
+    {
+     "vag": "ljud/skrik-3a.mp3",
+     "storlek": 37658,
+     "sha256": "a4d05b74d3c13f819624a1ab210e0ce42918558f355b99db0522f96e4f3188bf"
+    },
+    {
+     "vag": "ljud/skrik-3b.mp3",
+     "storlek": 37662,
+     "sha256": "711bfc310a89847d789109da45ea092b96df7dc04cc24718807fcc54560db142"
+    },
+    {
+     "vag": "ljud/skrik-3c.mp3",
+     "storlek": 21954,
+     "sha256": "3559b67a45e25d01553bcf7f0af67f9964e28ce01e02b15678f3585b571100a3"
+    },
+    {
+     "vag": "ljud/skrik-4a.mp3",
+     "storlek": 39106,
+     "sha256": "24206fb57bf96314d6d191a74d0c591eb212b620507395d4b7f26b91885de620"
+    },
+    {
+     "vag": "ljud/skrik-4b.mp3",
+     "storlek": 37867,
+     "sha256": "94608669e839206d1d277da99924d7b7e8368985a166373cb45ae49e409b6554"
+    },
+    {
+     "vag": "ljud/skrik-4c.mp3",
+     "storlek": 25633,
+     "sha256": "f9f0a8ca94356843ebd4ed2d4cc713b08025015aeda4b8c53e56cc43826d7b46"
+    },
+    {
+     "vag": "ljud/storta.mp3",
+     "storlek": 49684,
+     "sha256": "c5acf57c7c3d4f151c5f7d84e1ea57412275cd095ba8b31d4f55615fd41e2300"
+    },
+    {
+     "vag": "ljud/sudda.mp3",
+     "storlek": 10492,
+     "sha256": "efe490bafc86500858ea8ab2fa764680a2307f0535baf5477d5d2e5ed3314718"
+    },
+    {
+     "vag": "ljud/superkraft-slut.mp3",
+     "storlek": 8609,
+     "sha256": "4318d4a10e21d87b16f47d9df4aeac0f52a8ce31526c885b83274d492ff66974"
+    },
+    {
+     "vag": "ljud/superkraft-tagen.mp3",
+     "storlek": 8131,
+     "sha256": "5fd790d5b956638883cbcfe9b174379ded69e4e61e7257170e9fd096fbeae7df"
+    },
+    {
+     "vag": "ljud/tangenter.mp3",
+     "storlek": 48944,
+     "sha256": "ea3c79e6eb6f86ee7f1c969db9ebff2f126fd6b942f92270f2d909d3311c702e"
+    },
+    {
+     "vag": "ljud/tid-in.mp3",
+     "storlek": 25121,
+     "sha256": "b312e43efa1f0cb9da4bb96156e6c4cc704ed74df06b7e0acfcbf6d61490d500"
+    },
+    {
+     "vag": "ljud/tid-ut.mp3",
+     "storlek": 18329,
+     "sha256": "45f50ec3f886f0a2eba08108210cd95ac3a1ad6152718d3b7feb6bba6f5b6bbd"
+    },
+    {
+     "vag": "ljud/traff.mp3",
+     "storlek": 8967,
+     "sha256": "508c4fbe416b523c1484a3967bc17f6a3345a0191d2ad80015ce4c033f1a1699"
+    },
+    {
+     "vag": "ljud/utrop-aj.mp3",
+     "storlek": 21776,
+     "sha256": "4e5bd4b562fc56dec7badb963855f897dd05649b5156ce19d3932b23e58ac382"
+    },
+    {
+     "vag": "ljud/utrop-aldrig.mp3",
+     "storlek": 62736,
+     "sha256": "b5b761caf7adf1e5d3f035ae91f82f6f4bb4a4f6eb0b01a1de5d39a3f8a579a3"
+    },
+    {
+     "vag": "ljud/utrop-allvarligt.mp3",
+     "storlek": 14671,
+     "sha256": "45587ec7e1f017a54df0d142f83db52b24be357396238ba1038fc396e4a01f4b"
+    },
+    {
+     "vag": "ljud/utrop-andra-chans.mp3",
+     "storlek": 44764,
+     "sha256": "88b8945fb2cda14f43ec1055cc4f19ab2c15aa48b7304ac598bd539f8413f205"
+    },
+    {
+     "vag": "ljud/utrop-andra-sabba.mp3",
+     "storlek": 38495,
+     "sha256": "8401ffbe71fbdda79327d2dc16d6ae17d02cd3740facf5d7ed24beb98c3f3083"
+    },
+    {
+     "vag": "ljud/utrop-armbage.mp3",
+     "storlek": 34315,
+     "sha256": "52e77d579403a0eb7cd3fe40b99c084fe3990791e63834bed7ffc90c7548cf1b"
+    },
+    {
+     "vag": "ljud/utrop-asna.mp3",
+     "storlek": 23866,
+     "sha256": "e7ec73c2ec412ed8c9f6b98d2519d566e74f59f75ec875eb94d3ebc8550f3174"
+    },
+    {
+     "vag": "ljud/utrop-besoksforbud.mp3",
+     "storlek": 43092,
+     "sha256": "6450d3b066c99eb38840be1e459e2a730e83b70d5cd258c64688a6c675117db5"
+    },
+    {
+     "vag": "ljud/utrop-blundar.mp3",
+     "storlek": 40167,
+     "sha256": "56e380fac30832b9b9e7682a1823cd3c211555ccd899aa9fec04d8a76e3abd2e"
+    },
+    {
+     "vag": "ljud/utrop-boss-arg.mp3",
+     "storlek": 53959,
+     "sha256": "98291ab26fcf081f5fcfae2e433aef258756aba96e8d29ca6d68b4d739a7c338"
+    },
+    {
+     "vag": "ljud/utrop-boss-filma.mp3",
+     "storlek": 41421,
+     "sha256": "691eb3be7d1488af52385bedcb47890e57d04a81bbbded393cd406e680fe7946"
+    },
+    {
+     "vag": "ljud/utrop-boss-grata.mp3",
+     "storlek": 43928,
+     "sha256": "35940ac79c6c5e1a1750f9d88fde6cf12ae8eac44dfec8241bb566f47b5384bb"
+    },
+    {
+     "vag": "ljud/utrop-boss-kande.mp3",
+     "storlek": 20941,
+     "sha256": "28dd7d5d4370f93ffe43256c492cd4a6e38f083faa4e5115350d94f10779c20b"
+    },
+    {
+     "vag": "ljud/utrop-boss-larde.mp3",
+     "storlek": 39749,
+     "sha256": "c025c765c6db79cc898df970c245606e4060887cdceb79c10813af459ff779a2"
+    },
+    {
+     "vag": "ljud/utrop-boss-lys.mp3",
+     "storlek": 31807,
+     "sha256": "22ba5e173da8857e689db1e614a252316415fd876f6c925ca69076d65b9d637a"
+    },
+    {
+     "vag": "ljud/utrop-boss-nu.mp3",
+     "storlek": 30972,
+     "sha256": "8f6a1902e400fc8fae1d62a171b2888a6c3733032eb7889d29d7b7839967ebc3"
+    },
+    {
+     "vag": "ljud/utrop-boss-ont.mp3",
+     "storlek": 27628,
+     "sha256": "77b6a630e13bef7a7d7bf3df16566d2f587bd40e3b156c565de2c61aac75b414"
+    },
+    {
+     "vag": "ljud/utrop-boss-tro.mp3",
+     "storlek": 42674,
+     "sha256": "fcfe6131541d225d9e940135eaf6c7122a0195e14b5497b98854408a5da5dd66"
+    },
+    {
+     "vag": "ljud/utrop-boss-uttrakad.mp3",
+     "storlek": 32643,
+     "sha256": "aeaee1584ce490cc2d4ca9d1bcc54797c5082176d3d7d12c16ba8fc8ec107684"
+    },
+    {
+     "vag": "ljud/utrop-bra-skott.mp3",
+     "storlek": 41421,
+     "sha256": "bd01925b40e775ae6b5b3fa8a343d6edcdc0631550f733028dc3120f26ddfd6d"
+    },
+    {
+     "vag": "ljud/utrop-brollop.mp3",
+     "storlek": 39331,
+     "sha256": "22ba604a9e37122295da7c6919260ebf48c5792b5ba6782ec2e3c73aeda52deb"
+    },
+    {
+     "vag": "ljud/utrop-byta-plats.mp3",
+     "storlek": 37241,
+     "sha256": "ea0c6f1fe86699acf9eba994c05d403228de1ab75b6a96039db12c642a4a025c"
+    },
+    {
+     "vag": "ljud/utrop-chockad.mp3",
+     "storlek": 36823,
+     "sha256": "96b079c029fa5615e23bd259a294b7ee1d06f9f1ba092c920cc46b8f1842bbbb"
+    },
+    {
+     "vag": "ljud/utrop-dags.mp3",
+     "storlek": 32225,
+     "sha256": "f07c8e4bc8aeaca305b1c94f7dc1511cb428abbf65d685cff9b788db514737da"
+    },
+    {
+     "vag": "ljud/utrop-datum.mp3",
+     "storlek": 42256,
+     "sha256": "db30a907cde878ceec43dd4118c55189871404e8f8e05f1d02fb08ef22228a3a"
+    },
+    {
+     "vag": "ljud/utrop-djarvt.mp3",
+     "storlek": 63572,
+     "sha256": "d5b2318dd1d7c2450e22b09af03957f8e0c91220d37a884ec6356bd8252bc945"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-hande.mp3",
+     "storlek": 32225,
+     "sha256": "c09d1dd70cb97f1776eb18ad5fdf84c70dd4be507a1f6498d2068abadfec7e95"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-ner.mp3",
+     "storlek": 15089,
+     "sha256": "0414e7df4c6357ab140b9e9fa4733659e3278d9b7a7f76b0ef8bd1e2f313965d"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-pa-en.mp3",
+     "storlek": 18015,
+     "sha256": "546930dc535e518479f0c83375e322c57a6c8e3f5b08ecf09a9728a21b1d58ef"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-pang.mp3",
+     "storlek": 26792,
+     "sha256": "fbcb05f296ecb47fb7cb0e92d533360e6548e48634561fae8bf74c54364a7da0"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-par.mp3",
+     "storlek": 42256,
+     "sha256": "69ac73f4a75ddda5041567646b31d29955c965355e5b72a7e5a94781c6b27991"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-pris.mp3",
+     "storlek": 22194,
+     "sha256": "677ba8379ea6c900191e82b68bb6dd3583090445597ed7199e4b9d6d54a2ee78"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-raknas.mp3",
+     "storlek": 37659,
+     "sha256": "765e392dbb5718dffa526abb8a01794ff2d89a048990c83af076a167961ce7eb"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-snabb.mp3",
+     "storlek": 29718,
+     "sha256": "22bcbe6c4c904765c321e6c17d0a236c2f27134b8a67b5309a0f64167792780c"
+    },
+    {
+     "vag": "ljud/utrop-dubbel.mp3",
+     "storlek": 22612,
+     "sha256": "7d7df4ee5a27cc14f4eace66a197ad363e2bc7f98fd3b1c3ed4119a4bc3b521e"
+    },
+    {
+     "vag": "ljud/utrop-dubbelskada.mp3",
+     "storlek": 20523,
+     "sha256": "648e675d9ab042e369f701724690b0a2375b88fdc1de5e88e548fa9f878cef23"
+    },
+    {
+     "vag": "ljud/utrop-enda-traff.mp3",
+     "storlek": 39749,
+     "sha256": "37d3a056f7c23a13bf8842ff6994f2cc4066597a7479451876d86a5236e4f883"
+    },
+    {
+     "vag": "ljud/utrop-fel-andas.mp3",
+     "storlek": 55213,
+     "sha256": "9e15ce2dc4f02738d9b5d459853c83717f84548e90611e7cc55a08808a7c1636"
+    },
+    {
+     "vag": "ljud/utrop-fel-gissar.mp3",
+     "storlek": 23030,
+     "sha256": "ebc1da5c9f1fc28485efa252f68efb12a6a1779e9978cd9f1c76eb5348064784"
+    },
+    {
+     "vag": "ljud/utrop-fel-igen.mp3",
+     "storlek": 54795,
+     "sha256": "37a15c5b6ec73031a804fa9272228e4b9a74f4bae6099c64b0c3c06260dcf798"
+    },
+    {
+     "vag": "ljud/utrop-fel-imponerad.mp3",
+     "storlek": 51870,
+     "sha256": "bdcd016d297f2e01f586067ac96ddd5c0336d1fa7f376ad42dd175c316c9fdf4"
+    },
+    {
+     "vag": "ljud/utrop-fel-mal.mp3",
+     "storlek": 33897,
+     "sha256": "80e1bc82099f84e00a0c0497567d1442086b83a7e051813b5a3688901d605872"
+    },
+    {
+     "vag": "ljud/utrop-fel-meningen.mp3",
+     "storlek": 43092,
+     "sha256": "55da8a93c021547de4ec5740622482a5ef0570bae45c2acbfa1d9a83cbd1a40a"
+    },
+    {
+     "vag": "ljud/utrop-fel-mynt.mp3",
+     "storlek": 30136,
+     "sha256": "dcb591c6452b614d7d0248f1479b2710a28ccf83ce8e778d97294e8893013ac8"
+    },
+    {
+     "vag": "ljud/utrop-fel-strike.mp3",
+     "storlek": 32643,
+     "sha256": "b1e899e2bf408cee187d279483876af30b7acacf6c7a0ca8ea9866209fea8dc7"
+    },
+    {
+     "vag": "ljud/utrop-fel-svar.mp3",
+     "storlek": 27210,
+     "sha256": "947c4e5d2762c1da041e64f18aa0c588f1e2990351b0321c755594b7cb14c53c"
+    },
+    {
+     "vag": "ljud/utrop-fel-talang.mp3",
+     "storlek": 48526,
+     "sha256": "410bb119d8cd08488a8bc72a8c83d144ca731c60ddd93879e1342746c9f2af6d"
+    },
+    {
+     "vag": "ljud/utrop-felfri-inget.mp3",
+     "storlek": 38495,
+     "sha256": "e17cff09656ad30b81b350afee884ae005f607c0d98b7e5d1d902d71316d405c"
+    },
+    {
+     "vag": "ljud/utrop-felfri.mp3",
+     "storlek": 18015,
+     "sha256": "5679c739b02ef8ca1e4114d47f79d2c151e578c2beecc84a32fd5eaeda83bebb"
+    },
+    {
+     "vag": "ljud/utrop-fem-glas.mp3",
+     "storlek": 43928,
+     "sha256": "64cb5c7be4a8219ac78d60677986318850e417b7c674462991b4d32069420ad5"
+    },
+    {
+     "vag": "ljud/utrop-fem-haka.mp3",
+     "storlek": 48526,
+     "sha256": "db1525bc039792e8e492109570cbf05e0c0a9b4a273896d091af7fad70131214"
+    },
+    {
+     "vag": "ljud/utrop-fem-high.mp3",
+     "storlek": 49780,
+     "sha256": "0cf00e8c9be9210b15b367d34ad0d775df65796645d046e1c251df603303632e"
+    },
+    {
+     "vag": "ljud/utrop-fem-hjalp.mp3",
+     "storlek": 40585,
+     "sha256": "3c949b2042fb66bd101ebdd13eb737b22f086cd251581bda8b980d47b6e28875"
+    },
+    {
+     "vag": "ljud/utrop-fem-laxa.mp3",
+     "storlek": 48944,
+     "sha256": "6e3e079501ac5a4df9d2016cdde3616a06b8bc9aa8f95929cce7e03186f82459"
+    },
+    {
+     "vag": "ljud/utrop-fem-ser.mp3",
+     "storlek": 50198,
+     "sha256": "8fa8222c6f5cab79d262583a37e291620c46ce75371034c5f4bb8864a5e364c9"
+    },
+    {
+     "vag": "ljud/utrop-fem-stoppa.mp3",
+     "storlek": 48108,
+     "sha256": "6bf92e2b20988cc652084223d8d14115eced3b343e1f8c176899cab309358a22"
+    },
+    {
+     "vag": "ljud/utrop-for-latt.mp3",
+     "storlek": 17179,
+     "sha256": "45aeffd2106aa570d0c64b00f278a9f868386572a3c77717d2a342d154b2b756"
+    },
+    {
+     "vag": "ljud/utrop-forlorat.mp3",
+     "storlek": 58139,
+     "sha256": "283e85935492df4cda40fb022105f6b906af524cbebdb150619baded7e531820"
+    },
+    {
+     "vag": "ljud/utrop-forsakring.mp3",
+     "storlek": 37241,
+     "sha256": "11ea199f77393798611adc64e803a235045d1a01f9da637965269a43162fad56"
+    },
+    {
+     "vag": "ljud/utrop-forsokte.mp3",
+     "storlek": 40585,
+     "sha256": "eac93f5fcb096706ea2bbcda94ab8449feb636ae8b1e2fc9d373256aae7272c0"
+    },
+    {
+     "vag": "ljud/utrop-fuskar.mp3",
+     "storlek": 41838,
+     "sha256": "817c583210d5c2e5dc6b4997a6efb8df57c049fc4aed9b36366a8b0be5c81c92"
+    },
+    {
+     "vag": "ljud/utrop-game-over.mp3",
+     "storlek": 28046,
+     "sha256": "a340083e9e90a2cf48193a83345d170d0c1e3149112a0a72c55aaafbfab50e81"
+    },
+    {
+     "vag": "ljud/utrop-geni.mp3",
+     "storlek": 25120,
+     "sha256": "1449b0002ab175c588f1e79aca5a400dbe438bba7304002296261277aca94225"
+    },
+    {
+     "vag": "ljud/utrop-gor-ont.mp3",
+     "storlek": 26792,
+     "sha256": "0864104be6a47b193fbd53f2a8818b4722013127c7b4958a6fe030035d9cc191"
+    },
+    {
+     "vag": "ljud/utrop-grip-fingrar.mp3",
+     "storlek": 39749,
+     "sha256": "3c82bc0f300ec1ab436e036dc7f0f4674eb63aaf2631014a9fe5de718638a20b"
+    },
+    {
+     "vag": "ljud/utrop-grip-flytta.mp3",
+     "storlek": 28464,
+     "sha256": "eabfc4ecb573056b0ef920d2f79761144e72a83996fc8ade09a6644597b1c67d"
+    },
+    {
+     "vag": "ljud/utrop-grip-hand.mp3",
+     "storlek": 20941,
+     "sha256": "53dd136504d066c14c0d3d31850d9ee1f45e68545843d69b0d91d5af9fc5cd96"
+    },
+    {
+     "vag": "ljud/utrop-halften.mp3",
+     "storlek": 36823,
+     "sha256": "99e7c8a5b04e13f8f662453ac397f6801155fc8a4d513b02fbb01e0ed9e84b4f"
+    },
+    {
+     "vag": "ljud/utrop-haller-inte.mp3",
+     "storlek": 39749,
+     "sha256": "66b4f0959e0d317d7b053fb80cf8163ffe27ba657d7e8897084c39909b8fa0bd"
+    },
+    {
+     "vag": "ljud/utrop-har-vi.mp3",
+     "storlek": 30136,
+     "sha256": "30cba951cd57235787285a431fc944aef7e9129055c24471396f213c8a7fce24"
+    },
+    {
+     "vag": "ljud/utrop-hjarna.mp3",
+     "storlek": 18015,
+     "sha256": "15fd969f363877bafedf67b2b168a3d6b9f22ed216593137854eae2087882018"
+    },
+    {
+     "vag": "ljud/utrop-hjarnceller.mp3",
+     "storlek": 61065,
+     "sha256": "293d132a5ff2b58bfad4749fdde3d7aac8c8321fb07445597e5ff91c03c39c39"
+    },
+    {
+     "vag": "ljud/utrop-hund.mp3",
+     "storlek": 57303,
+     "sha256": "495b71ef9177237778b9762dbfe221d96678303db7c4fda53ee73e26340b4ec5"
+    },
+    {
+     "vag": "ljud/utrop-inte-illa.mp3",
+     "storlek": 37241,
+     "sha256": "a78ef2339e769983d447474784e4f1028812f05640b244a56de553399dcd1efc"
+    },
+    {
+     "vag": "ljud/utrop-inte-nara.mp3",
+     "storlek": 33061,
+     "sha256": "ff35671d9e207c6ae5e8aad21a3a4917269460f369a15adf1d7fc8aa97c5790f"
+    },
+    {
+     "vag": "ljud/utrop-ja.mp3",
+     "storlek": 12999,
+     "sha256": "1c103719368e78bbbf1d9077a3d33190d81e7a3dc522cb37de943f6727cea621"
+    },
+    {
+     "vag": "ljud/utrop-kan-lasa.mp3",
+     "storlek": 43092,
+     "sha256": "f841650cea310af628fda4b1f1763eccd0938242d6c6c02115a5fe845b26f943"
+    },
+    {
+     "vag": "ljud/utrop-kanoner-miss.mp3",
+     "storlek": 39331,
+     "sha256": "b8eecb1ace648fe9a4bcd4f991385e3601c1f8635968bab29344af4d6945c2fd"
+    },
+    {
+     "vag": "ljud/utrop-kanoner.mp3",
+     "storlek": 21776,
+     "sha256": "a3bc3d7a7da57a4068b263a4664d3af37971547f7b1b9f671957fd597437d521"
+    },
+    {
+     "vag": "ljud/utrop-kaxig.mp3",
+     "storlek": 38077,
+     "sha256": "50cd48f101f0c096a91e02c99cb6d916ded4eaf99412e66686bdc73d21432ba6"
+    },
+    {
+     "vag": "ljud/utrop-klanta.mp3",
+     "storlek": 39749,
+     "sha256": "6c1470b112f69635322ab5a125641e55d899c9b90284244de40706295bc851b7"
+    },
+    {
+     "vag": "ljud/utrop-klistermarke.mp3",
+     "storlek": 29718,
+     "sha256": "bd763362b70c0f0f3408cf5718cc369d6d15a3ea1c092eb89c58f7bcaf1010c0"
+    },
+    {
+     "vag": "ljud/utrop-klocka.mp3",
+     "storlek": 45182,
+     "sha256": "056fcbad89819626d5f6da1882ebc7ba3199d528c11f1f0e2e4b23564befce26"
+    },
+    {
+     "vag": "ljud/utrop-kombo-eld.mp3",
+     "storlek": 35569,
+     "sha256": "2216ede67840f9fa13d4b56600618319dafd4ea6e125136e8fe4590e430897e2"
+    },
+    {
+     "vag": "ljud/utrop-kombo-kedja.mp3",
+     "storlek": 44764,
+     "sha256": "6698f8a56ddbc23c9e1e3ae4a8f98a20ffef4f51e1d3a36be2fc6411b195d7b9"
+    },
+    {
+     "vag": "ljud/utrop-kombo-matare.mp3",
+     "storlek": 43928,
+     "sha256": "3a2152ae6e99f25968806d275a8551ae95251ae4da891b3bd80b889ed8f086a1"
+    },
+    {
+     "vag": "ljud/utrop-kombo-present.mp3",
+     "storlek": 40585,
+     "sha256": "7938f9eb2b03481a77431d8aba0004a0b29c6c6d5457115507629b204182ee8a"
+    },
+    {
+     "vag": "ljud/utrop-kombo-slosa.mp3",
+     "storlek": 37659,
+     "sha256": "65336ca408925cbdb629f4463dbf98f5b3062f405eec77d44ff8b9cde3c74ed2"
+    },
+    {
+     "vag": "ljud/utrop-kombo-tomte.mp3",
+     "storlek": 42674,
+     "sha256": "8ef641066c9157a456d494c4f1f4246bbb81b5501f761f507188c2f21fd1b39e"
+    },
+    {
+     "vag": "ljud/utrop-kontor.mp3",
+     "storlek": 31807,
+     "sha256": "56ffb39a609dfd1b0a672ec0759ad37676a0000d6decd3724636428811eb102a"
+    },
+    {
+     "vag": "ljud/utrop-kor-nu.mp3",
+     "storlek": 16761,
+     "sha256": "432ad42bc5c18e5f603c4311bfea217b14bce39dc864cea9fbfdf8672b100fc1"
+    },
+    {
+     "vag": "ljud/utrop-kor.mp3",
+     "storlek": 10910,
+     "sha256": "54b439baa3a331308daecf1c42ea4331b51b095d83005d4fb73acb1ee7d96f84"
+    },
+    {
+     "vag": "ljud/utrop-korkort.mp3",
+     "storlek": 32225,
+     "sha256": "8510571c5cb3e8e64ac1531a571c04b8cbce81791d97a1901830abc4a2f340cb"
+    },
+    {
+     "vag": "ljud/utrop-kraft-farlig.mp3",
+     "storlek": 40585,
+     "sha256": "d5290d7670cfdb08c680b82e8ee7d9f5cc2cf329e14aabd594a60da96db1babc"
+    },
+    {
+     "vag": "ljud/utrop-kraft-fusk.mp3",
+     "storlek": 38495,
+     "sha256": "d8660d36a3839654c9a5b620d913976536a1d15daecc092a1338c5972cbf20fb"
+    },
+    {
+     "vag": "ljud/utrop-kraft-glans.mp3",
+     "storlek": 41838,
+     "sha256": "48e46249cdbddad6cc1b9e5733834259a59d8b1a61a3918411fdfc5f5ac488a1"
+    },
+    {
+     "vag": "ljud/utrop-kraft-gratis.mp3",
+     "storlek": 30554,
+     "sha256": "1a680e11a3ce6387b06c3bf11a91ef2216cea041d221b01b691ea1329251e8bc"
+    },
+    {
+     "vag": "ljud/utrop-kraft-laddad.mp3",
+     "storlek": 34315,
+     "sha256": "25cd898f540ed37b3206d7536da88f87e74513660ac8c5aaaf325c5eeca128cb"
+    },
+    {
+     "vag": "ljud/utrop-kraft-radd.mp3",
+     "storlek": 30136,
+     "sha256": "9af6b0fe613e76335419b5a664f41f50935e61e5ab4d0f8074416bb7174b9838"
+    },
+    {
+     "vag": "ljud/utrop-kraft-springer.mp3",
+     "storlek": 18015,
+     "sha256": "85999a30fea0f1a6a7aba234716048d464cc3af0d04b95055e02814373aa5c8e"
+    },
+    {
+     "vag": "ljud/utrop-kraft-trott.mp3",
+     "storlek": 19687,
+     "sha256": "0b269bc9eff9953119727c6245c1b7785bdce8bfd97c6d82c1ead0710e47848f"
+    },
+    {
+     "vag": "ljud/utrop-kraft.mp3",
+     "storlek": 14253,
+     "sha256": "c3c29eda95ab62252ed84880758c321bf5695ed1ee763c2a55dbeed287f224ca"
+    },
+    {
+     "vag": "ljud/utrop-krama.mp3",
+     "storlek": 43928,
+     "sha256": "59f87fa8ca140d935cc22b153f01cb667b0a3ef3e8af0c45487cfef57acb576a"
+    },
+    {
+     "vag": "ljud/utrop-krossad-burk.mp3",
+     "storlek": 29718,
+     "sha256": "3915a661eec97f19f2051c96a78acfe4c96c5ade53fa4c949804cf3ea15196b5"
+    },
+    {
+     "vag": "ljud/utrop-krossad-insekt.mp3",
+     "storlek": 34315,
+     "sha256": "f472949d22ce99d5b621c963db7281038db073ffc28b68798d8b8510f56e97e3"
+    },
+    {
+     "vag": "ljud/utrop-kul.mp3",
+     "storlek": 48526,
+     "sha256": "0f1adb5527fb988c27869ec353789f00eed7eae461ce6f75744f8a4e599a59ea"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-karta.mp3",
+     "storlek": 33479,
+     "sha256": "9e94d32e75a6482adacc4be36153142c92fb2d421726e6495e67000c00361745"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-ror.mp3",
+     "storlek": 23866,
+     "sha256": "eeb3acb6e886a42303df0c8a8d7fdeb6628e39b5c39cd9b414ff272c05cbb36c"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-samma.mp3",
+     "storlek": 32225,
+     "sha256": "5ca457628e2b5f543ab92d8e6676b34440dadb777c515f85667ba604b59c79bc"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-steg.mp3",
+     "storlek": 36405,
+     "sha256": "610df33d290c3c7fd2e96dbf46cfb54e051a8e94e975b05d9f46636d1fe15752"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-utgang.mp3",
+     "storlek": 41838,
+     "sha256": "ff8b05b0708b35b94ad3b520e1f048340180000ad6a7bcbd81ac21a476ae2a91"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-vaggar.mp3",
+     "storlek": 32643,
+     "sha256": "fa994ec56370d52609918133c055fc93b7a22f139a65e9592e3bcac4869aaa1e"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-vandning.mp3",
+     "storlek": 38495,
+     "sha256": "5d5bfdce270a8f758adf5cdcbd65eb46a6dbffd7ba2c0ed953be5708df94310e"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-vilse.mp3",
+     "storlek": 44764,
+     "sha256": "43ff56fbca8d10be2e3eb291f52cf787e70acb758090e16cbf8cfca4be94b642"
+    },
+    {
+     "vag": "ljud/utrop-lada.mp3",
+     "storlek": 49780,
+     "sha256": "2a49155958becb206ab064ac40a3e930484912bdc1b93ef3be4c72f2812c280a"
+    },
+    {
+     "vag": "ljud/utrop-lara.mp3",
+     "storlek": 35569,
+     "sha256": "1e98f825edd685ee7a0b79017dfb2c35d5fa7a1aac05ed1b10b91d7ebbc9a664"
+    },
+    {
+     "vag": "ljud/utrop-lasa.mp3",
+     "storlek": 46018,
+     "sha256": "f44497818e3419944cbc54b559c486fcff804e5e187c1c128ef9682f092df565"
+    },
+    {
+     "vag": "ljud/utrop-matdags.mp3",
+     "storlek": 27628,
+     "sha256": "cd20e4b5d70565cec42ac8b18da35212a622c66fb959a3c3164487b99353d2da"
+    },
+    {
+     "vag": "ljud/utrop-matte.mp3",
+     "storlek": 37241,
+     "sha256": "189a5e6ec8e51b0cbcd93f9b9d0ecc2828bbf34cb5719b2cb7a185f4b9238e84"
+    },
+    {
+     "vag": "ljud/utrop-miniraknare.mp3",
+     "storlek": 35987,
+     "sha256": "1491ba77730f7241ead32734d6c11165f26dfeb1fcda47b7c23c301a46dc0b73"
+    },
+    {
+     "vag": "ljud/utrop-mitt-i.mp3",
+     "storlek": 15925,
+     "sha256": "be57075b028ec6fb11497b87cdf4092e7c3daba07eb4e09950008f4e3a033670"
+    },
+    {
+     "vag": "ljud/utrop-mormor-gick.mp3",
+     "storlek": 43092,
+     "sha256": "c297dbd495315c280874876f14b9b4ffa595921bc546398087819d712ba61304"
+    },
+    {
+     "vag": "ljud/utrop-mormor.mp3",
+     "storlek": 75275,
+     "sha256": "c1c28db42a08195d7fd3189cc7a51545fff6b564cd474d6f21050a39130c3424"
+    },
+    {
+     "vag": "ljud/utrop-nara-for.mp3",
+     "storlek": 35987,
+     "sha256": "cf46f9281e0baa1e32c17596eb2699ddf96f49f0ccdfbfc7e2d184a20e4d1ba8"
+    },
+    {
+     "vag": "ljud/utrop-nara-har.mp3",
+     "storlek": 24284,
+     "sha256": "daa34140f748bf13af2ce11c2d30745e4390cc2db1dcd2f65832463a2918eb80"
+    },
+    {
+     "vag": "ljud/utrop-nara-ogonbryn.mp3",
+     "storlek": 41003,
+     "sha256": "4c45b083752162890493d356d3ac2bc1f86e044960f084c896026a9fdb7bb2f7"
+    },
+    {
+     "vag": "ljud/utrop-nasta-niva.mp3",
+     "storlek": 19687,
+     "sha256": "fe0cd077a4187b0cf99a32e076eabbea2c638b7d73144b8d92ebda13312a9f22"
+    },
+    {
+     "vag": "ljud/utrop-nej.mp3",
+     "storlek": 9238,
+     "sha256": "144546ad7a8213e6b255697e74d6222ba44f960e4d44fb8d28a72f8a6e475042"
+    },
+    {
+     "vag": "ljud/utrop-niva.mp3",
+     "storlek": 30972,
+     "sha256": "ad37681c57d4eae16e39cabf45dd291b53ecd404e84abece352eb29d2f745860"
+    },
+    {
+     "vag": "ljud/utrop-noll.mp3",
+     "storlek": 46436,
+     "sha256": "dcf357957a85d718e4a8d556d8ddcdabdbf221db954ce02443fa6c20d0ebbcef"
+    },
+    {
+     "vag": "ljud/utrop-nysa.mp3",
+     "storlek": 40585,
+     "sha256": "68eba08e1b5103d14f397dc3e41783bb04d5788f6ac9574907455897be1c8ff4"
+    },
+    {
+     "vag": "ljud/utrop-omojligt.mp3",
+     "storlek": 41003,
+     "sha256": "7541d9866bc192133d12aa17b3f8707db3e46ab2dbdcb5b549ee2ea0b4a3924f"
+    },
+    {
+     "vag": "ljud/utrop-ordning.mp3",
+     "storlek": 56049,
+     "sha256": "77ed4a215d4470741c0c13419c58706b9eb428a1dd0567fb01a48c3b44afeab0"
+    },
+    {
+     "vag": "ljud/utrop-orord.mp3",
+     "storlek": 22612,
+     "sha256": "32253b3d7099774bd64be7fd9ea02d78a98af2f0d170cdb951e351c5345046db"
+    },
+    {
+     "vag": "ljud/utrop-oskyldig.mp3",
+     "storlek": 45600,
+     "sha256": "54de25da46e0a8ea3349235efe3bc620f229917f43490231dad292b7fc045b79"
+    },
+    {
+     "vag": "ljud/utrop-ostoppbar.mp3",
+     "storlek": 23448,
+     "sha256": "6d45e45fba4d6ca538b05f27840d52c116d96c59c4fa770ae71c5afd2325e143"
+    },
+    {
+     "vag": "ljud/utrop-overkill-doda.mp3",
+     "storlek": 31807,
+     "sha256": "1bbe4b173116b5f06c6680813b7d1e48b93187b78fd43e09b4dfd5835eb468d9"
+    },
+    {
+     "vag": "ljud/utrop-overkill.mp3",
+     "storlek": 25120,
+     "sha256": "33c90cdbccd740aaa66816e9d23d429e2a7df2a78cfddbe4c05710d339e041d5"
+    },
+    {
+     "vag": "ljud/utrop-overlevde.mp3",
+     "storlek": 46436,
+     "sha256": "111f97ae4abfa5a623bcf1b30c78c0ff3572bb8ea012644470735ba87d5d09b4"
+    },
+    {
+     "vag": "ljud/utrop-packraft-bord.mp3",
+     "storlek": 33061,
+     "sha256": "dbb4f3afb3f7618192ba95401a7ab23f66be6bb4289e6054df435853300c56b3"
+    },
+    {
+     "vag": "ljud/utrop-packraft-hungrig.mp3",
+     "storlek": 34315,
+     "sha256": "b2a2b629e215d3b3686c66dbe79d1373be13c190c9bc41b656cafa90adb74031"
+    },
+    {
+     "vag": "ljud/utrop-packraft-jakt.mp3",
+     "storlek": 11327,
+     "sha256": "90accd74eb3cea7e13c31f71c30e0d7e4d2a65adc891cb2f6a8e42e575afc48b"
+    },
+    {
+     "vag": "ljud/utrop-packraft-spring.mp3",
+     "storlek": 26374,
+     "sha256": "ccc948aac44729a9a87f5d2ffb23808918c1cf86074f507c626b090e7dfdfe06"
+    },
+    {
+     "vag": "ljud/utrop-patetiskt.mp3",
+     "storlek": 20105,
+     "sha256": "61c2cab5a7f9800e642a8493403fce65ed3e3fb05efc69500fb5919684817ab1"
+    },
+    {
+     "vag": "ljud/utrop-pennan.mp3",
+     "storlek": 48944,
+     "sha256": "3030d21c872e009da2da7ab258cc17ec05098d483c56105f286b6f340572fb73"
+    },
+    {
+     "vag": "ljud/utrop-perfekt.mp3",
+     "storlek": 10074,
+     "sha256": "026132d06c319eba0bd4fa87c64cd2db961dfdbe10102aaa247e6ca351330a54"
+    },
+    {
+     "vag": "ljud/utrop-pinsamt.mp3",
+     "storlek": 59393,
+     "sha256": "07b5d838cd26c9fb42e5c492b627c8d1e3746d6733202bc2824adade163f7d70"
+    },
+    {
+     "vag": "ljud/utrop-rakt-in.mp3",
+     "storlek": 36405,
+     "sha256": "c8928d6ebfb522493ea40fc7c0264b7fbabaff17d1a5a25f50b575bdcc758d55"
+    },
+    {
+     "vag": "ljud/utrop-rampage.mp3",
+     "storlek": 23030,
+     "sha256": "366071c5e7a102d63032f7914081382776284c1dcc2a57cd2988c6ca3838b8c8"
+    },
+    {
+     "vag": "ljud/utrop-ratt.mp3",
+     "storlek": 13835,
+     "sha256": "c838fc024360b0b4414fefb890f14b46363ac15f8217899ce1e91f72067ee64e"
+    },
+    {
+     "vag": "ljud/utrop-rekord-bild.mp3",
+     "storlek": 36823,
+     "sha256": "af06213711f0719ec1f06c606d0a98a55bec51c67722b5a747fd580535ef5671"
+    },
+    {
+     "vag": "ljud/utrop-rekord-mamma.mp3",
+     "storlek": 52287,
+     "sha256": "370d515312940c26844a354de3eae5cd428c0f5422c15d9c4ded7f3b587295ae"
+    },
+    {
+     "vag": "ljud/utrop-sabba-inte.mp3",
+     "storlek": 17597,
+     "sha256": "c85375cea903499504c77f5552bc222934e31c69826c64cf83f2fc914b5f1c1c"
+    },
+    {
+     "vag": "ljud/utrop-seger-forvanad.mp3",
+     "storlek": 39331,
+     "sha256": "93d99cc25603039f3b73eede025db0a3c7e8512ec66db36f905784300dc8db07"
+    },
+    {
+     "vag": "ljud/utrop-seger-newton.mp3",
+     "storlek": 32643,
+     "sha256": "208878b6700140f9d3a1636d0b0fdcfe1433f8aae0d2625d26ddc73d1349b5f2"
+    },
+    {
+     "vag": "ljud/utrop-seger.mp3",
+     "storlek": 36823,
+     "sha256": "05c07d8af7ed504a3786a0944396e16e738b5ec20fed2c054cca545d34c7e5d2"
+    },
+    {
+     "vag": "ljud/utrop-serie.mp3",
+     "storlek": 23448,
+     "sha256": "27d8007bb11d0918844376ca01639cfc225ed393ab0d9cee8d08c48a870599ba"
+    },
+    {
+     "vag": "ljud/utrop-sikte-rov.mp3",
+     "storlek": 43510,
+     "sha256": "0fda8aa06253167097349767e60882c46253ec0e5b0b33a2eaf5b4c238dbd063"
+    },
+    {
+     "vag": "ljud/utrop-sista-liv.mp3",
+     "storlek": 20941,
+     "sha256": "bb6c24760af4eb50a2265ba82576e22f97dc15b1b2222d9f5e8e08ecdfaa120c"
+    },
+    {
+     "vag": "ljud/utrop-skamten.mp3",
+     "storlek": 49780,
+     "sha256": "aa86b61f33ffc0b3f998de96cc6a1eba8630c6c395bf1534f552468c8b0c48cb"
+    },
+    {
+     "vag": "ljud/utrop-skelar.mp3",
+     "storlek": 43928,
+     "sha256": "691434b941501a22564e823a852d8864dc0ef0bd1ef7f31d689aeb2f6b64478e"
+    },
+    {
+     "vag": "ljud/utrop-skiljas.mp3",
+     "storlek": 45600,
+     "sha256": "2cfa8f424fcba93df58ded306c59af4db42aaa281ce36b00cbaa381f051f6a3e"
+    },
+    {
+     "vag": "ljud/utrop-skill.mp3",
+     "storlek": 23448,
+     "sha256": "e69ed75337b81abb3b12d84de6102cf422f85500c8bb425387fe15909ee1a157"
+    },
+    {
+     "vag": "ljud/utrop-skolbok.mp3",
+     "storlek": 14253,
+     "sha256": "919373c111262f34dcd15cfd4aade2ce1ca6e40cc073c4ac040e815ac1ed9764"
+    },
+    {
+     "vag": "ljud/utrop-skold-gratis.mp3",
+     "storlek": 43092,
+     "sha256": "c45f3b879265448fbd98bfe06ed046e77564e1ae2270ea04ee7c4ecee68c0bb7"
+    },
+    {
+     "vag": "ljud/utrop-skold.mp3",
+     "storlek": 16761,
+     "sha256": "01f749a1ba6638da36f96b28d3b94c5f4b29b811bbb18f3ef1b56531f9849f16"
+    },
+    {
+     "vag": "ljud/utrop-skuld.mp3",
+     "storlek": 48108,
+     "sha256": "04832bf0e64f428609c848d2193d6f32d2de2c7e764af9f13b679b1bbbd64026"
+    },
+    {
+     "vag": "ljud/utrop-slant.mp3",
+     "storlek": 33479,
+     "sha256": "023e1682eddb2b03bdc48196bee33ca607191fabaf4760b8f742e168c41788e3"
+    },
+    {
+     "vag": "ljud/utrop-slut-pa.mp3",
+     "storlek": 49362,
+     "sha256": "b4caaa9d81a54809549845734c4b1186e736b0f43fc3252c26d28c7dbf9aeabc"
+    },
+    {
+     "vag": "ljud/utrop-snigel.mp3",
+     "storlek": 41421,
+     "sha256": "d066c6bd2e47050529ec0304495ff66d2f170c605cc0829eff7ad54894341a62"
+    },
+    {
+     "vag": "ljud/utrop-som-vanligt.mp3",
+     "storlek": 61483,
+     "sha256": "bbbcb99298cbb536d13de0e77287296f38c10106b60a246270dbcb3e038df958"
+    },
+    {
+     "vag": "ljud/utrop-spoke-alla.mp3",
+     "storlek": 15507,
+     "sha256": "fbd718e28d3e64ba3370e36ed85f56053a9189253a759e264976884cf68286b6"
+    },
+    {
+     "vag": "ljud/utrop-spoke-boo.mp3",
+     "storlek": 29718,
+     "sha256": "8167d3373e944f3d80083d0c944d3a67c8fc2fccbd2eaa2878ae03888d8e8dc5"
+    },
+    {
+     "vag": "ljud/utrop-spoke-chomp.mp3",
+     "storlek": 10910,
+     "sha256": "d552dd5cf921d2e475a06f14e87581b04ad34a928a174ed963f92fe453310f8e"
+    },
+    {
+     "vag": "ljud/utrop-spoke-gotcha.mp3",
+     "storlek": 12581,
+     "sha256": "7263e808f72cb22301a66ffcea03d44affca5232cd99a028a69f348cf2ef44c9"
+    },
+    {
+     "vag": "ljud/utrop-spoke-hejda.mp3",
+     "storlek": 20105,
+     "sha256": "f2ad82812562eeba82da4f39980c952aaf9a2f915a30cd76ced711d57fec9ce9"
+    },
+    {
+     "vag": "ljud/utrop-spoke-kalori.mp3",
+     "storlek": 43510,
+     "sha256": "63f6ee80666327f3521994f7cf28dd0114c69805d8bd030114fb3f6a4ac92563"
+    },
+    {
+     "vag": "ljud/utrop-spoke-mage.mp3",
+     "storlek": 32225,
+     "sha256": "170aad9c45696a7a9bad473fd581083e689686b44a4e787871c77162668571c5"
+    },
+    {
+     "vag": "ljud/utrop-spoke-matte.mp3",
+     "storlek": 33479,
+     "sha256": "3815b249cb0d9a76fcbaef6aa1ea82131f52a2b91fbec3624ed7c1a820ecefd9"
+    },
+    {
+     "vag": "ljud/utrop-stang.mp3",
+     "storlek": 49362,
+     "sha256": "ba398438ee82941096b57dc4d2802e63b3ffb7363483c7c8bda1956e647a6dcd"
+    },
+    {
+     "vag": "ljud/utrop-stolt.mp3",
+     "storlek": 62736,
+     "sha256": "a0fa20ce4b274dc84a126b00abb6d2a64b7b007b05b3a1b2f8a4b331f52943c0"
+    },
+    {
+     "vag": "ljud/utrop-stycken.mp3",
+     "storlek": 26792,
+     "sha256": "b6adcfdc4f646bdc9ee8d25d6ee080f04e67792149065d69a4763878434f0e69"
+    },
+    {
+     "vag": "ljud/utrop-suger-inte.mp3",
+     "storlek": 43510,
+     "sha256": "3ade5a5ca4a8f188e9d6a21850af462ddf67beb17ba7719d42a2a2965f84419e"
+    },
+    {
+     "vag": "ljud/utrop-tack.mp3",
+     "storlek": 46436,
+     "sha256": "c007555e865f2985211027447587528a47bfacf1722fa7783c81eaf6ce89e231"
+    },
+    {
+     "vag": "ljud/utrop-tar-tillbaka.mp3",
+     "storlek": 53959,
+     "sha256": "b83f99eb3b262dfa633e212e8dcee82dc76954fb5c28ac0a5b78aa124bf8fe05"
+    },
+    {
+     "vag": "ljud/utrop-tid-flott.mp3",
+     "storlek": 38495,
+     "sha256": "252fb9451a6601fd3523563f27ea5c401acad7d861680cf0c8d76f83abbfeca8"
+    },
+    {
+     "vag": "ljud/utrop-tid-undvika.mp3",
+     "storlek": 48108,
+     "sha256": "51baf719d92c75e3af030d704cc56cce6abc5e724ef148d1608589490c058fa7"
+    },
+    {
+     "vag": "ljud/utrop-tio-hander.mp3",
+     "storlek": 38495,
+     "sha256": "008dfc23453ce9c66bf94ba271938a9f5fcd02fdbdb4cd0b19bda46a4828c756"
+    },
+    {
+     "vag": "ljud/utrop-tio-ingen.mp3",
+     "storlek": 45600,
+     "sha256": "c7935c76ed00bf60d0263ed92e8820fc08121051df4599f25c10a9099ee4d5ac"
+    },
+    {
+     "vag": "ljud/utrop-tio-lagligt.mp3",
+     "storlek": 41003,
+     "sha256": "26f400e284192b264a067d3f6c57bf9dd2b85aa22c3e142ad30352957a104adb"
+    },
+    {
+     "vag": "ljud/utrop-tio-larare.mp3",
+     "storlek": 58557,
+     "sha256": "2aaa46754a6d7b4dda740314d254b1e25e69ad79546e9023e3ef916d05961902"
+    },
+    {
+     "vag": "ljud/utrop-tio-legend.mp3",
+     "storlek": 50616,
+     "sha256": "499342291a67981a9f1def868a78956d42b9594371048d620ed79cf6ade5b629"
+    },
+    {
+     "vag": "ljud/utrop-tio-polis.mp3",
+     "storlek": 43928,
+     "sha256": "9e43c64a2715f8f91c889ae35103d0fe649dfc799853c275f357d4841c912998"
+    },
+    {
+     "vag": "ljud/utrop-tio-robot.mp3",
+     "storlek": 36823,
+     "sha256": "8ea4369e33cd9dba0f04bcb42db3372dbf5dd479557fdfee61f8da53b5a14f8f"
+    },
+    {
+     "vag": "ljud/utrop-toalett.mp3",
+     "storlek": 51870,
+     "sha256": "f2e6367ffa857c86d5bcf98ade562e51d5fddf67032165b196a5e6d6bce195d0"
+    },
+    {
+     "vag": "ljud/utrop-tre-fortsatt.mp3",
+     "storlek": 33061,
+     "sha256": "94438c8eb57a81a86b35450793868629c7221a6ef064d6d1e34f9a56380232ff"
+    },
+    {
+     "vag": "ljud/utrop-tre-hey.mp3",
+     "storlek": 44346,
+     "sha256": "b42253c2df8dc17fe5eba1bc7b7d5cb320faf1ce05e858c70ed764cb103953f5"
+    },
+    {
+     "vag": "ljud/utrop-tre-misstankt.mp3",
+     "storlek": 49362,
+     "sha256": "7f7f7003a353adbe398afa0c5346cde622e38545ec148e5ac75ae8c5018896a9"
+    },
+    {
+     "vag": "ljud/utrop-tre-skriv.mp3",
+     "storlek": 58557,
+     "sha256": "30d33a55b5c54f0337fa81afb378af8a2dfc45b0221ae9e94aa23c1046a213ed"
+    },
+    {
+     "vag": "ljud/utrop-tre-tur.mp3",
+     "storlek": 50616,
+     "sha256": "148aebab4811215adc99032031247cc471735a3be5acb8b03276ea46b6e21bdc"
+    },
+    {
+     "vag": "ljud/utrop-tre-vaknade.mp3",
+     "storlek": 41838,
+     "sha256": "cb4bbdddaf1435771b5ad370ab41220c098fc3ff2e299b8fa1f0cd31ab561f44"
+    },
+    {
+     "vag": "ljud/utrop-tre-vana.mp3",
+     "storlek": 43510,
+     "sha256": "b6607f8d9563a096be8d7f3e6fc8af7bee799a35ecf953d7b57e2591d4e8d1aa"
+    },
+    {
+     "vag": "ljud/utrop-tre-varm.mp3",
+     "storlek": 57721,
+     "sha256": "b17c9f773fe9691fed2d79d1aeec6fa83348c12278769e9fdd65ce1529e099b1"
+    },
+    {
+     "vag": "ljud/utrop-trippel-andetag.mp3",
+     "storlek": 31807,
+     "sha256": "8f6c4c3a9baef3858761a7db72f0a8ddd5828de103521e5fe7ee9e500b00149f"
+    },
+    {
+     "vag": "ljud/utrop-trippel-arg.mp3",
+     "storlek": 39749,
+     "sha256": "a82e764b5ee8a6ad61f3a2e40f51d2bf54b82102d4c12b237fb9111941543c0e"
+    },
+    {
+     "vag": "ljud/utrop-trippel-hatt.mp3",
+     "storlek": 35151,
+     "sha256": "1da7ce83ca46b9f57193f84766d0f5f7fd63458797e9dc92900e0a43b7f009b8"
+    },
+    {
+     "vag": "ljud/utrop-trippel-kagel.mp3",
+     "storlek": 52705,
+     "sha256": "bb8a4076a15742642751dabf95657735b6cc28489023ff34f573714c65fddd7f"
+    },
+    {
+     "vag": "ljud/utrop-trippel-lamna.mp3",
+     "storlek": 43510,
+     "sha256": "0c90e4c73185dc3eb94ff43a9e8050d80e61c1f797a1a69a227319681ef3ae92"
+    },
+    {
+     "vag": "ljud/utrop-trippel-lugn.mp3",
+     "storlek": 46436,
+     "sha256": "b3b87e9d0dfda177c730921c93db15c1513493fafe30b35b2fc8dfcf4639a7ae"
+    },
+    {
+     "vag": "ljud/utrop-trippel-ner.mp3",
+     "storlek": 28882,
+     "sha256": "82d6f36713d07c8cb24baab8dfa1a3c488f09256186ad0b1c54c6a51e9823a74"
+    },
+    {
+     "vag": "ljud/utrop-trippel.mp3",
+     "storlek": 22612,
+     "sha256": "741c0c8a8f09c224d57516b9b82636469711f736a69b81880bb3bd7b2b502c52"
+    },
+    {
+     "vag": "ljud/utrop-tur.mp3",
+     "storlek": 35987,
+     "sha256": "9fa94f34bdbb71e1654ce13b3aca54986ef588594623821af396c1b45736939c"
+    },
+    {
+     "vag": "ljud/utrop-undvika.mp3",
+     "storlek": 36823,
+     "sha256": "9738edc581867584f0a81d0342be30c482c5f927179f1a6902955ccfb7a28f6f"
+    },
+    {
+     "vag": "ljud/utrop-ur-rov.mp3",
+     "storlek": 37241,
+     "sha256": "029f697ef050eabe6489a2fb2b8ec998473f4297743faf9587bb5bd958a7a1cf"
+    },
+    {
+     "vag": "ljud/utrop-vad.mp3",
+     "storlek": 49780,
+     "sha256": "95e3508d8a6d7824356d71876f47604fed144d3e30d3d51880dd9fa50cff8f65"
+    },
+    {
+     "vag": "ljud/utrop-vadet.mp3",
+     "storlek": 43510,
+     "sha256": "c63d4863556637896c877b86b4acc46495370f439d29e0cf6c566034c998f91a"
+    },
+    {
+     "vag": "ljud/utrop-vaken-dar.mp3",
+     "storlek": 24284,
+     "sha256": "fddb977bcd6e79f9a7defd589b66a4247e52eca868e09987a6673c41f6243959"
+    },
+    {
+     "vag": "ljud/utrop-vaken-somna.mp3",
+     "storlek": 18015,
+     "sha256": "5c7e3552b90324e400c81315475005afa86a03e3415a9cd8a46b7ac0a58591f1"
+    },
+    {
+     "vag": "ljud/utrop-vaken.mp3",
+     "storlek": 33897,
+     "sha256": "4b4fb7bdefcf35d524f522dcb06c49f02c4c4f2370ad72e888cd648a451b0042"
+    },
+    {
+     "vag": "ljud/utrop-vatten.mp3",
+     "storlek": 45182,
+     "sha256": "20c2364798ffa85335c18ea205490d3e4ebada95b743b70da4579cce0f89bf14"
+    },
+    {
+     "vag": "ljud/utrop-vem.mp3",
+     "storlek": 46436,
+     "sha256": "be06ed85a30bae3a10ce963ee4bf67247ede41ce4d15845e1c8e3899b12212c1"
+    },
+    {
+     "vag": "ljud/utrop-visar-sig.mp3",
+     "storlek": 35569,
+     "sha256": "946a11b59503c8dfd64d30b4bdcc0a67703489fd55949e5b30ef418dde1840d7"
+    },
+    {
+     "vag": "ljud/utrop-viska.mp3",
+     "storlek": 40167,
+     "sha256": "27bafcdd91f9d595ff4a19e2fb07abf8520380ecd3b20a006f5fbbfe4add4b27"
+    },
+    {
+     "vag": "ljud/vhs-in.mp3",
+     "storlek": 60938,
+     "sha256": "64f1099db37a87df678e461a38072793e194ec111afeb6f1119f605931a9619c"
+    },
+    {
+     "vag": "ljud/vhs-ut.mp3",
+     "storlek": 65184,
+     "sha256": "4bae877a9aa737d140ea1dc0a9336946248cba63520e12694440819be53fe87d"
+    },
+    {
+     "vag": "matrix-fragor.js",
+     "storlek": 7010,
+     "sha256": "904193f69e4bc04ae9f1775fc58600c82d33d1b41fa565b4e940e5a4f48afbc5"
+    },
+    {
+     "vag": "matrix-ritningar.js",
+     "storlek": 23828,
+     "sha256": "472ef17c2340ca5d75f4e4921807ad75714bb5c51ac922c935c9f1bb1d9c0e64"
+    },
+    {
+     "vag": "matrix.css",
+     "storlek": 87164,
+     "sha256": "b0bf7b415d8155bb2e8c60165d0af86346ad16fea333321177c402ffefba7637"
+    },
+    {
+     "vag": "matrixtext.js",
+     "storlek": 10149,
+     "sha256": "8600b7649cd5d83add958708a1ebfb279a5e066344dbbb5857b1713e05cfd757"
+    },
+    {
+     "vag": "pac-banor.js",
+     "storlek": 12711,
+     "sha256": "a0c8ab27914c7c771a11d39966dcabe9202470453b3e38738e2be7b2de0e58a4"
+    },
+    {
+     "vag": "pac-ljud.js",
+     "storlek": 1274,
+     "sha256": "b32edf1330da1d48851cf2a8c6df11b1febb2113c1e42ffd7e307b3e9fbad99a"
+    },
+    {
+     "vag": "pac-retro.js",
+     "storlek": 46310,
+     "sha256": "1c9b5567bf7ffef28a95ac157042d39ffc178d8e9522a54fe6cf462f9762b943"
+    },
+    {
+     "vag": "pac-sim.js",
+     "storlek": 21872,
+     "sha256": "72edd52871df34b178a384f77744e613727385fddcde799d7f00806b738bdae1"
+    },
+    {
+     "vag": "pac.js",
+     "storlek": 93933,
+     "sha256": "74e3d945f0d0de564467da39cd006a72e7bc6ded12c7f96cdc127c4b711de1d6"
+    },
+    {
+     "vag": "prat.js",
+     "storlek": 11885,
+     "sha256": "9c5956e62ee0265b98f75e46b6cd5c16665373c3a331a909ff06f05cfcfe4c63"
+    },
+    {
+     "vag": "server/src/delat.js",
+     "storlek": 1863,
+     "sha256": "a40799a121532ff6cc70e08bc7ea28c210a60b82b6b0fd1f6a16f619534d371e"
+    },
+    {
+     "vag": "server/src/match-skepp.js",
+     "storlek": 9899,
+     "sha256": "805c0bb425a58c4e2273fcea318150d74d0fec56edf50fb2eda84912f5547554"
+    },
+    {
+     "vag": "skepp-natet.js",
+     "storlek": 7529,
+     "sha256": "7d6c5167f0c220688c097d63277a33ce87d967002325e82f8eeb0aa2b5c2077e"
+    },
+    {
+     "vag": "skepp-sida.css",
+     "storlek": 8513,
+     "sha256": "a14bb7f19310f1c66634bbe376051bb3af85d934781ba15a9981aefd4ccd9410"
+    },
+    {
+     "vag": "skepp-sida.js",
+     "storlek": 12778,
+     "sha256": "7d765074c9b7c71258747fa90d0c8b4781d524b477f237255a6faf79904d009f"
+    },
+    {
+     "vag": "skepp-sim.js",
+     "storlek": 86976,
+     "sha256": "60741bee506bc5e0baa48d2783d01609febc69f7eeece9989e09eb7fc09acf88"
+    },
+    {
+     "vag": "skepp.html",
+     "storlek": 3435,
+     "sha256": "ca0d92f3c49f3bbd46f34755bc41d9d3e3421e1c5418c6ed88621154cfbb693f"
+    },
+    {
+     "vag": "skepp.js",
+     "storlek": 185425,
+     "sha256": "e1e292c60fc0b369c2ddc4c3ef491ae50a9204bf519b61e7120f069e264794d7"
+    },
+    {
+     "vag": "spel-delar.js",
+     "storlek": 17383,
+     "sha256": "c56c689f28d1dc3e81644d76543106e00beec0dc1461e58c7867fb983ee882cf"
+    },
+    {
+     "vag": "spel-karna.js",
+     "storlek": 96697,
+     "sha256": "cfd369cd8bed7028a705a8b53b088b1d40ac98114b099834d1d8fa5acceabfaf"
+    },
+    {
+     "vag": "three-tron.js",
+     "storlek": 614021,
+     "sha256": "0d9296023f2e4865bdbcd8733c9c56f564185fb7bf8da7fb7aa325542d0972e3"
+    },
+    {
+     "vag": "tron-bana.js",
+     "storlek": 11523,
+     "sha256": "03fa7ea701406da3cbba55250386561fb6e552eb3ccafca4238a1ef9c27312ca"
+    },
+    {
+     "vag": "tron-bild.js",
+     "storlek": 12711,
+     "sha256": "8954148be6f7a86c79186465b0163bc1616408d94a4e07949de76211f0ab23e2"
+    },
+    {
+     "vag": "tron-boss-entre.js",
+     "storlek": 38318,
+     "sha256": "c8825d17fdcc292973783b6205e57a5ad775e679e1e23611995a6f266e51edcb"
+    },
+    {
+     "vag": "tron-bossbana.js",
+     "storlek": 56911,
+     "sha256": "7e236be3d2670886a2e3f00113bea1364a2d5378b0c97c7d21e6dc56a7960a52"
+    },
+    {
+     "vag": "tron-display.js",
+     "storlek": 16225,
+     "sha256": "ec56717ddf3b7e72d84c3c1a675230c831f936f9b9eaa25245ec31ac54196803"
+    },
+    {
+     "vag": "tron-dodsljud.js",
+     "storlek": 25520,
+     "sha256": "61e4f27eb9117002b2bb630b312af5eb07f898a5b70496181ed3a48f640f90a7"
+    },
+    {
+     "vag": "tron-dronare.js",
+     "storlek": 17313,
+     "sha256": "4d928d4e33696ff185d62a0718454fdf939225af4c21a13d2ed12777d4c02c25"
+    },
+    {
+     "vag": "tron-effekt.js",
+     "storlek": 23537,
+     "sha256": "65e7510a4fc35067fa720c769dc199a0f578bc7b1e7137c69ef4599bf1acaa9f"
+    },
+    {
+     "vag": "tron-forare.js",
+     "storlek": 14644,
+     "sha256": "f36a50889e266d835b810080e54b4a71bd5f87f7934c4bc9f2d7f6abc0329941"
+    },
+    {
+     "vag": "tron-forvarm.js",
+     "storlek": 10448,
+     "sha256": "5dd5878d678ddeb19e44a43d3fdbf2e06bdb3d3c96defdea153cac2c603fa7ff"
     },
     {
      "vag": "tron-intro.js",
@@ -1196,24 +3366,14 @@
      "sha256": "f1314d0e57aeaf9344f1f70b50ec2f3a3d01740a5821f3a342a3651fee8e8a40"
     },
     {
-     "vag": "tron-sida.css",
-     "storlek": 3440,
-     "sha256": "b58b951dfb1a2208906e23b5cf1a9f0545ae1674f2566eddd62cf783173de0db"
-    },
-    {
-     "vag": "tron-sida.js",
-     "storlek": 9771,
-     "sha256": "80f69f35fa1bb4476dcc37465ee31831f8668e571a3a4300761f82644cc83fb7"
-    },
-    {
      "vag": "tron-sim.js",
-     "storlek": 111225,
-     "sha256": "1ec5c1d0b5cb9a4a204cc06d2ecf2ec8037714da21cab0780d90878c31d3888a"
+     "storlek": 121545,
+     "sha256": "a1381c2345b41e1346ae2d0f6c2874218419fd847983129c047d1f4104085bad"
     },
     {
      "vag": "tron-spelledare.js",
-     "storlek": 18477,
-     "sha256": "b6060706e552db990d15d77c0acd57acf2c69cdc3ace17dab8b053759ad07f9e"
+     "storlek": 19462,
+     "sha256": "67db0b3622c02b4bf396282ef8be7f50e0a300b62325ec8df13dd1a52695b9a6"
     },
     {
      "vag": "tron-stad.js",
@@ -1222,18 +3382,2003 @@
     },
     {
      "vag": "tron-turnering.js",
-     "storlek": 21252,
-     "sha256": "af912f75f6c941b25490947eb1e3141f469ad98970b858ae23c4ec04c585f3c5"
-    },
-    {
-     "vag": "tron.html",
-     "storlek": 1408,
-     "sha256": "f3ad6821edd149589f3c28390ed8350c1ff9502cbedfa8d599a7ee5ec2f27e66"
+     "storlek": 22472,
+     "sha256": "6f86853f153cf6c2dc6204ee22a8e6b2954fa938e150a8cacbd2da0fe61246cb"
     },
     {
      "vag": "tron.js",
-     "storlek": 98434,
-     "sha256": "f6ca85f94aacb276bd2fd6dda9825ddacd8a612a7cb1b4b660d46d925c2e7edf"
+     "storlek": 106125,
+     "sha256": "8b987f81bb06b1636a47e7999379ae0c9c440058173372730b21be35f8416b78"
+    },
+    {
+     "vag": "typsnitt/OFL.txt",
+     "storlek": 4386,
+     "sha256": "7f95a8eeecc6904ffc81cd10cc8ebc7fcee72a67922924bf45f02dff03b88127"
+    },
+    {
+     "vag": "typsnitt/exo2-kursiv.woff2",
+     "storlek": 44688,
+     "sha256": "d8f3493d9c1d4325bca32511522f57c2ad0d60f48aea9f8c6146ce477c525898"
+    },
+    {
+     "vag": "utropare.js",
+     "storlek": 12338,
+     "sha256": "179e9c1b441ad9ef29d46087a1fe0f7ca59e9397c39f7b92af2f7dc08f9fd783"
+    },
+    {
+     "vag": "visning-bak.js",
+     "storlek": 24558,
+     "sha256": "9799a6dcb5ff484c47fe441d994f495aef2d95d7299b135c59af50c5864946e8"
+    }
+   ]
+  },
+  "pac": {
+   "sida": "pacman.html",
+   "filer": [
+    {
+     "vag": "figur/fly-knapp.webp",
+     "storlek": 23226,
+     "sha256": "9ed40c358e2a57533b9d6bd12d7e6fa84eca55ed27f6d889d88965c0f7aaaa4f"
+    },
+    {
+     "vag": "figur/newton-cigarr-01.webp",
+     "storlek": 59196,
+     "sha256": "5bef4f9d564753341e21e96f148e8ee5d9c31a67b230dbaaf09f9b5137d529c6"
+    },
+    {
+     "vag": "figur/newton-cigarr-02.webp",
+     "storlek": 60778,
+     "sha256": "37cd31a8c162442f2f36a5e9a0d8a2995cfccebc9f66e97ab9776e09ad6bd946"
+    },
+    {
+     "vag": "figur/newton-cigarr-03.webp",
+     "storlek": 73484,
+     "sha256": "05e916e3aab9dab3df3c449d219715563fd8684874007804c3c43c75550d3bb8"
+    },
+    {
+     "vag": "figur/newton-cigarr-04.webp",
+     "storlek": 72800,
+     "sha256": "e3602f419e9fef4c3088ba83bae040cbd9847a79eeb57758e783948ea5e2460d"
+    },
+    {
+     "vag": "figur/newton-cigarr-05.webp",
+     "storlek": 74174,
+     "sha256": "5059cc0706baf048cabb2e1fc7dc15b34965e455b6ccdd4fc88db8084029cb9b"
+    },
+    {
+     "vag": "figur/newton-cigarr-06.webp",
+     "storlek": 76330,
+     "sha256": "3f2c16628898b6232d20db29e5bbcc3cc63e440f2cb6fd348f83925641f53f21"
+    },
+    {
+     "vag": "figur/newton-cigarr-07.webp",
+     "storlek": 70580,
+     "sha256": "69a47a8f15441492654f2b9ec7998566a9edf1768e219570ba657844487289f1"
+    },
+    {
+     "vag": "figur/newton-cigarr-08.webp",
+     "storlek": 78550,
+     "sha256": "3dfe16247ca648cdbf26f215ecb5b94a4f8f5112be92f609ea47f4f49debab0d"
+    },
+    {
+     "vag": "figur/newton-cigarr-09.webp",
+     "storlek": 74698,
+     "sha256": "083773bfb313b966efe1a0dc24a4debf26aab01b0fc289ea037a0c08c204be4a"
+    },
+    {
+     "vag": "figur/newton-cigarr-10.webp",
+     "storlek": 65264,
+     "sha256": "63600a9685f21e41980d7464d6db04d75cbdd3429d9d19848272641a677c50d7"
+    },
+    {
+     "vag": "figur/newton-cigarr-11.webp",
+     "storlek": 53324,
+     "sha256": "ff8aec2ba876530bbd105e37edd8e35781c62a3cffdf3c3711a39af700188ed2"
+    },
+    {
+     "vag": "figur/newton-cigarr-12.webp",
+     "storlek": 70138,
+     "sha256": "873beb37065f93d3a25f469400dee1aa97d07bfa65e167d86aa43bb4738e136d"
+    },
+    {
+     "vag": "figur/newton-kodare-1.webp",
+     "storlek": 223164,
+     "sha256": "6bce0dbfad192d3f8f00e812700ded18eeb693d1e5565cfee6c16aa0581c481a"
+    },
+    {
+     "vag": "figur/newton-kodare-2.webp",
+     "storlek": 234314,
+     "sha256": "1af820d6399b2c7a02197c50edef00c213154b8af0dd453de45cee098c14d334"
+    },
+    {
+     "vag": "figur/newton-kodare-cigarr-1.webp",
+     "storlek": 222822,
+     "sha256": "110a3b7fc3992c2c52c379ad4cd762e168e93ef3dc46e2d90f6f561d7df2067b"
+    },
+    {
+     "vag": "figur/newton-kodare-cigarr-2.webp",
+     "storlek": 227902,
+     "sha256": "7c70b31f802fd6424f40a53642c6e98853922ecbbcbaec8dbc7ffd0f98848327"
+    },
+    {
+     "vag": "figur/spel/boss-arm-h-oppen.webp",
+     "storlek": 25890,
+     "sha256": "9679802f644b0c8de288c494189f8d66d67646f63e92810d3948f064283c66ba"
+    },
+    {
+     "vag": "figur/spel/boss-arm-h.webp",
+     "storlek": 22856,
+     "sha256": "b0addecf56ff6ede67c6bb01a53b04ea4051f3fe3595a25d445b7afcbfbde304"
+    },
+    {
+     "vag": "figur/spel/boss-arm-v-oppen.webp",
+     "storlek": 25942,
+     "sha256": "91347b672b0414bf8e2097967879c362a39b848feab5cad4eabc899c3647ec7a"
+    },
+    {
+     "vag": "figur/spel/boss-arm-v.webp",
+     "storlek": 23078,
+     "sha256": "0708d621b011868fee10bd704a34484a27fe1016809c372850a9526ac9b48165"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-h-oppen.webp",
+     "storlek": 26202,
+     "sha256": "c0f5231edb969696a30c275307a62309164fdfadddbbce0b7932e532d722aa36"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-h.webp",
+     "storlek": 21990,
+     "sha256": "be5f14f7d1febb65dfbfeddfa5382697dfa231560be4532b0ce0e6c6d7fff87f"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-v-oppen.webp",
+     "storlek": 26408,
+     "sha256": "ef6ce07b77be69297b406fa4f71a27b77fe84fb36597d24804bc6169e417467f"
+    },
+    {
+     "vag": "figur/spel/boss-skadad-arm-v.webp",
+     "storlek": 21782,
+     "sha256": "99c0456253c04e8caabe9d158bdc58b08cdca0b5d9245807b0ad0382d6d0eb6f"
+    },
+    {
+     "vag": "figur/spel/boss-skadad.webp",
+     "storlek": 178604,
+     "sha256": "82b6ca555f88f5bd2a826bd642860714745ff74543da5ff0ee34043a088a59ac"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-h-oppen.webp",
+     "storlek": 25776,
+     "sha256": "49e9b90f3b63b1b83442f6a428ebac1419f2db149ea93f6f81ef35420f754ea9"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-h.webp",
+     "storlek": 20860,
+     "sha256": "d3365cc7b7bb5ae143b9b8c97d72930656f4081c12a4b9b4a4b8cb21db6dd659"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-v-oppen.webp",
+     "storlek": 26250,
+     "sha256": "c4f442c9eb64ebbc46de3deb32e3d980107b0ec8fe8451845c241dfd8ca93e95"
+    },
+    {
+     "vag": "figur/spel/boss-svart-arm-v.webp",
+     "storlek": 21540,
+     "sha256": "181289048397409d2012b794a8651b7010bfc72c82e9df67345d1443d4dd3687"
+    },
+    {
+     "vag": "figur/spel/boss-svart.webp",
+     "storlek": 170582,
+     "sha256": "a407cff9c970fb79bb3d71d61fca3a253dde7b49387e3a6b8c9860978d03fb56"
+    },
+    {
+     "vag": "figur/spel/boss.webp",
+     "storlek": 174898,
+     "sha256": "010b50048582e31222d0c3e6bd78f696fc334a60f62abd4d820cd8d7a04dc143"
+    },
+    {
+     "vag": "figur/spel/demon-1a0.webp",
+     "storlek": 70410,
+     "sha256": "100384b7fcd49703784f63029daea7956425c9cc1720d8309499d28023f526b9"
+    },
+    {
+     "vag": "figur/spel/demon-1a1.webp",
+     "storlek": 71276,
+     "sha256": "6d2aa606c95e98b56874d6a974dd9cdbf059df0d6bd9bb8f6e9933ab10cc24e1"
+    },
+    {
+     "vag": "figur/spel/demon-1a2.webp",
+     "storlek": 73044,
+     "sha256": "fd60d86179c6a9f7a8351cad721a25e79d3141bfa3020d7a444ae432bec59106"
+    },
+    {
+     "vag": "figur/spel/demon-1b0.webp",
+     "storlek": 58990,
+     "sha256": "92932835efaabd209d292645ba92ebe970bedcd57ac69eafd9aa8eee429a8fcf"
+    },
+    {
+     "vag": "figur/spel/demon-1b1.webp",
+     "storlek": 58742,
+     "sha256": "f5b6031f068c850d0cfd79036fcf988b39871a9c263b928e5e6e4d0e1b88238f"
+    },
+    {
+     "vag": "figur/spel/demon-1b2.webp",
+     "storlek": 58752,
+     "sha256": "4ac5fc393c2e04cd61f74340ccd521368d2c6c83df4376ce58e74f0c51c5b5bf"
+    },
+    {
+     "vag": "figur/spel/demon-2a0.webp",
+     "storlek": 87650,
+     "sha256": "dc8e769cc91b6693ff965109625634de4e02404ce23aa447bef3be16ad95fea0"
+    },
+    {
+     "vag": "figur/spel/demon-2a1.webp",
+     "storlek": 89094,
+     "sha256": "54031e0332a0b68bacd8e4d4e1604913c7d21b551d261bb37c7b7bfd78a06d44"
+    },
+    {
+     "vag": "figur/spel/demon-2a2.webp",
+     "storlek": 91616,
+     "sha256": "a0197714911d194f328b59b3959e5e8f90bb16fdf2cb62def452b2821a462596"
+    },
+    {
+     "vag": "figur/spel/demon-2b0.webp",
+     "storlek": 77758,
+     "sha256": "850f93809b36dfc25c1e35e7471de46a96ff979802ca90cf8de47322eb0e9d9f"
+    },
+    {
+     "vag": "figur/spel/demon-2b1.webp",
+     "storlek": 80360,
+     "sha256": "7bd90cac3500eeafd0db1c2a7645c8d922b37f7776c45ad2b11ff0547337f259"
+    },
+    {
+     "vag": "figur/spel/demon-2b2.webp",
+     "storlek": 80316,
+     "sha256": "bd1fc64f0b79e32d3346c0968476ddd42269e0bd8a30258c29f8d034fa50f458"
+    },
+    {
+     "vag": "figur/spel/demon-3a0.webp",
+     "storlek": 108804,
+     "sha256": "6e94c4cfa996bccb1002d44c12929b13b2ea9ee3f741f7391706b117f830489f"
+    },
+    {
+     "vag": "figur/spel/demon-3a1.webp",
+     "storlek": 110362,
+     "sha256": "02b28f15506dcf50992490566359dca081ea9581cbc7cde017881ead7fab1365"
+    },
+    {
+     "vag": "figur/spel/demon-3a2.webp",
+     "storlek": 110868,
+     "sha256": "d77201968b87d26ba87c4d2d3c1c9b4d38228793b0db9a1a27cc47222d09d7ca"
+    },
+    {
+     "vag": "figur/spel/demon-3b0.webp",
+     "storlek": 93458,
+     "sha256": "1ddffa3121b85dab87a951f65300fed472c1962453c7823472eec92b9ef13525"
+    },
+    {
+     "vag": "figur/spel/demon-3b1.webp",
+     "storlek": 93522,
+     "sha256": "fd92c5b552150bea53b69215f660c86e96080f2827c25c8dca6c07e73aad8af1"
+    },
+    {
+     "vag": "figur/spel/demon-3b2.webp",
+     "storlek": 93428,
+     "sha256": "6dd22c5ffdcaa8fcba608870ad8bfdba00142df789742263059932d7dd11a1f1"
+    },
+    {
+     "vag": "figur/spel/demon-4a0.webp",
+     "storlek": 102814,
+     "sha256": "647522102342a573097b42c004d661f75e9f48374492ba304b349e40be18564b"
+    },
+    {
+     "vag": "figur/spel/demon-4a1.webp",
+     "storlek": 103048,
+     "sha256": "479df61bd6f08fef1750ccebfbefede6338e9a96be9e24edaef20ccc4d592bbd"
+    },
+    {
+     "vag": "figur/spel/demon-4a2.webp",
+     "storlek": 105620,
+     "sha256": "95397a026d685a2310c67e0043aaeeeab591b7634337403bb0d1e40c0d00fd5c"
+    },
+    {
+     "vag": "figur/spel/demon-4b0.webp",
+     "storlek": 93064,
+     "sha256": "0ec0d6395c028db93639b22fb9bc137e67551cbb071a3dff7edb4e73557e5a2a"
+    },
+    {
+     "vag": "figur/spel/demon-4b1.webp",
+     "storlek": 92690,
+     "sha256": "78a5c5d39849249d07ad7cb7ecae2798d1c0b3a76f30bdbd9968a479f3e048bb"
+    },
+    {
+     "vag": "figur/spel/demon-4b2.webp",
+     "storlek": 93514,
+     "sha256": "1c39d7653f14304e80fe7a597d71fed7c8d947f86dc43ec8f62fdc1131580fae"
+    },
+    {
+     "vag": "figur/spel/eldboll.webp",
+     "storlek": 39820,
+     "sha256": "4769c87311d62753a3f51b4215f6164065284e78f31cc78e28a65634fd47afa2"
+    },
+    {
+     "vag": "figur/spel/fiende-1.png",
+     "storlek": 84356,
+     "sha256": "b6201ca3369549b78c877393108854c25d0490c9848c408b48e229c174fa8f84"
+    },
+    {
+     "vag": "figur/spel/fiende-2.png",
+     "storlek": 85892,
+     "sha256": "7ed9d6959bbcc65b6aa127a7378fc58e5092c3456c1bbcc6e40c0d878fa05824"
+    },
+    {
+     "vag": "figur/spel/kraft.png",
+     "storlek": 30556,
+     "sha256": "944aacb9789951492797f508884a68a72bc6624f3aced01a99fd29e9b2d8b1ea"
+    },
+    {
+     "vag": "figur/spel/moln-1.webp",
+     "storlek": 32584,
+     "sha256": "9cfa620b82bb5c843641114dd90129eb5a3e4bd1cbee08f8c48f8bcc77aaf9e5"
+    },
+    {
+     "vag": "figur/spel/moln-2.webp",
+     "storlek": 30020,
+     "sha256": "4e9eef3349916686f2c30ff959c97eeb8b444b2933155695d9dbfdbe29b073c7"
+    },
+    {
+     "vag": "figur/spel/moln-3.webp",
+     "storlek": 35528,
+     "sha256": "7243435e810a4d29f5adca133068c3f4fbcf5389e2ab2fe9c35495e1384a70f7"
+    },
+    {
+     "vag": "figur/spel/moln-4.webp",
+     "storlek": 21086,
+     "sha256": "3ee140a33167820eaf42e015067fbf0d89f90e6be5aa600163922d959cb08db7"
+    },
+    {
+     "vag": "figur/spel/pacman-halv.png",
+     "storlek": 33912,
+     "sha256": "142bb618b21511db47af977a963424bb9d69e5b10266903b7eed064b428fb0b6"
+    },
+    {
+     "vag": "figur/spel/pacman-oppen.png",
+     "storlek": 31860,
+     "sha256": "76cb0072354f7867c3f98b29dbaf4e39be92b54384ce0e266b06675c51516384"
+    },
+    {
+     "vag": "figur/spel/pacman-stangd.png",
+     "storlek": 35518,
+     "sha256": "038045feee70edbf0dc5bc251cf0b6cc1341a067d428b211f03e099d1e2d3401"
+    },
+    {
+     "vag": "figur/spel/retro-bakgrund.webp",
+     "storlek": 153292,
+     "sha256": "7781e12ba81b4a017d0ddd9ccb9c2dbadaa8af58f17e96af24e8af63e158cee5"
+    },
+    {
+     "vag": "figur/spel/retro-kraft.webp",
+     "storlek": 15230,
+     "sha256": "9fc76b009e2b7a9061e752e50bb9fe863fcb6d5f93a08c7bb4e7dd5f8c321f06"
+    },
+    {
+     "vag": "figur/spel/skepp-sport.webp",
+     "storlek": 113794,
+     "sha256": "be940e9562fd621d5eb6847b4b9c363047af30f95bdedcfd77bd80e4a7ba1d64"
+    },
+    {
+     "vag": "figur/spel/skepp.webp",
+     "storlek": 124616,
+     "sha256": "c47717d9fa515ffbd32d1ebd15e6b515fcbeb8fcb65973fe429fe055a1ac8195"
+    },
+    {
+     "vag": "figur/spel/spoke-bla.png",
+     "storlek": 52828,
+     "sha256": "3892649ffeb36b82950be18fc7bcfed3cabb105b0a1fd175e1f9f8262bac605e"
+    },
+    {
+     "vag": "figur/spel/spoke-vit.png",
+     "storlek": 50473,
+     "sha256": "215f5564c3e0d6b7bb943ac1d768a48475b49058c3b14e20906152903787b758"
+    },
+    {
+     "vag": "figur/spel/spoke.png",
+     "storlek": 49298,
+     "sha256": "48eb0b29f7fa697ab8f6abfe3779010164bbcce0e643e28f41f52c5a2b30f61c"
+    },
+    {
+     "vag": "figur/spel/superkraft-dubbel.webp",
+     "storlek": 50062,
+     "sha256": "d760d7e7563794705daf02f2298bc8de720e6362dcf350353fd0b8c2a33487f3"
+    },
+    {
+     "vag": "figur/spel/superkraft-skepp.webp",
+     "storlek": 58048,
+     "sha256": "1737cbb6e1016f8fa8a703e31b9dd2c522b49e3a14e0d42ae94645111c020fbb"
+    },
+    {
+     "vag": "figur/spel/superkraft-skold.webp",
+     "storlek": 61356,
+     "sha256": "28899d84d86620742da88e8fa9206631c857791f759f3ba7c66d43de03c43349"
+    },
+    {
+     "vag": "figur/spel/superkraft-tid.webp",
+     "storlek": 65630,
+     "sha256": "6e4de36f28e061a700fc4590994d1efe786a1908161377e2123db2ee46693ed1"
+    },
+    {
+     "vag": "fly-knapp.js",
+     "storlek": 9849,
+     "sha256": "72173d7eec8d2b6778ab5dcfeaf0a7916c19bb854e567c5795970e83411116cd"
+    },
+    {
+     "vag": "font/OFL.txt",
+     "storlek": 4429,
+     "sha256": "9d96f445b6e9c701428811d0177f894874f8d6f07ecc30d568c506542368f3ff"
+    },
+    {
+     "vag": "font/ShareTechMono-Regular.ttf",
+     "storlek": 43272,
+     "sha256": "9ceab1f87414829af259c0f537573ae03ef7dd3147c0b27a36a1a0beb6732677"
+    },
+    {
+     "vag": "fro.js",
+     "storlek": 487,
+     "sha256": "7a3ec5735fa7100ec8c52e634188108604e55f32c27fb6afa618c7afa0ec5d80"
+    },
+    {
+     "vag": "ljud-tak.js",
+     "storlek": 818,
+     "sha256": "061a5eef1a93e5acf572c8676faf65643f00cd779443acbbef4333b4cd7f5d8a"
+    },
+    {
+     "vag": "ljud/boss-dor.mp3",
+     "storlek": 60648,
+     "sha256": "36d5ee7a05179547ef5818f03ecac4ffa08a6664001a6de349bff8727b35aad3"
+    },
+    {
+     "vag": "ljud/boss-flyr.mp3",
+     "storlek": 30868,
+     "sha256": "edfbdcf1f922da05c30d800953abb84e52f76dc8e63ec29dad7663698e01885a"
+    },
+    {
+     "vag": "ljud/boss-in.mp3",
+     "storlek": 50721,
+     "sha256": "433e940dd1b44e47862e90630941a730c38d4a94629e8de22608de957bb7fdc2"
+    },
+    {
+     "vag": "ljud/boss-studs.mp3",
+     "storlek": 6313,
+     "sha256": "57a2ba49762a1eebdffe532723647ce7ace66badb39c5bfe3ea8a3b30b441ce3"
+    },
+    {
+     "vag": "ljud/cigarr-blos.mp3",
+     "storlek": 16230,
+     "sha256": "ca37abffb1560d812ac8d5342871391452f93f34d030c7ae6d6a2e378189ba35"
+    },
+    {
+     "vag": "ljud/cigarr-tand.mp3",
+     "storlek": 7210,
+     "sha256": "43c7479f0eb56b3de1f3f371c07746d8b22a7c0c3a9e950575f28dd50936c1ab"
+    },
+    {
+     "vag": "ljud/cigarr-upp.mp3",
+     "storlek": 20267,
+     "sha256": "95cdb473301e91517b200e0951265d9896253dd61e898d355752d7711956442c"
+    },
+    {
+     "vag": "ljud/effekt-klick.mp3",
+     "storlek": 2968,
+     "sha256": "3ed6c0512c7859a2bc644e0609f2a3f4e134bf08074608d82aa83e93aa6fca8e"
+    },
+    {
+     "vag": "ljud/eldboll.mp3",
+     "storlek": 18515,
+     "sha256": "b1228f45ce4622559e2325edc86e7ea4b34f024ed01f3161705b6a2c16a6ca66"
+    },
+    {
+     "vag": "ljud/fel.mp3",
+     "storlek": 12163,
+     "sha256": "86b84268b41b32015f121b84468122713debc05bee04790526947da501541f57"
+    },
+    {
+     "vag": "ljud/fiende.mp3",
+     "storlek": 30281,
+     "sha256": "feb47d8432ad78a03b60006187a6d93c965e962d5159b3f660e029095e6435b4"
+    },
+    {
+     "vag": "ljud/genom-bygg.mp3",
+     "storlek": 60856,
+     "sha256": "b763c5a5db937efa5af16d5b3c32a00267a14734f23393a25342f42ceb934d03"
+    },
+    {
+     "vag": "ljud/genom-puls.mp3",
+     "storlek": 13208,
+     "sha256": "c2fe09a45a20ce63090adf84baf0d339a64dbbed588fc205093a6eb875b1b084"
+    },
+    {
+     "vag": "ljud/genom-small.mp3",
+     "storlek": 60856,
+     "sha256": "2e334e97b378c946c7ac3b47f76735a214623b10af07ae4cd9d275d15aa6fad6"
+    },
+    {
+     "vag": "ljud/genombrott.mp3",
+     "storlek": 40585,
+     "sha256": "1f3bb664ddba4b1c793e3b72f1a86119d7081d35325c0581c05e08c847edf037"
+    },
+    {
+     "vag": "ljud/hem-flyg.mp3",
+     "storlek": 62736,
+     "sha256": "dc87d57f3b63a39da51dd181ab8e50ac7cafe65f074d7c32dd688f42070298bb"
+    },
+    {
+     "vag": "ljud/hem-kamera.mp3",
+     "storlek": 49571,
+     "sha256": "2076f2d719666d40a9e1cafab0fc8d2314c01d34b6fb81da45960f45741bcd32"
+    },
+    {
+     "vag": "ljud/hem-landa.mp3",
+     "storlek": 73394,
+     "sha256": "ee2bde7d727b24a355b325f83a0728b43a2307678bbebeb6516efefa35de8ad6"
+    },
+    {
+     "vag": "ljud/inbrott.mp3",
+     "storlek": 63407,
+     "sha256": "88ba0bf55211a45bc4065816e1d7cb4687a002fe972e0c55d8a66daf7565929c"
+    },
+    {
+     "vag": "ljud/kombo-full.mp3",
+     "storlek": 21464,
+     "sha256": "fdc9552c4dd4f39c0b99d7c41b02d7a12d2a39da0d1d3718a2bbc7ea2215ee78"
+    },
+    {
+     "vag": "ljud/kraft.mp3",
+     "storlek": 24702,
+     "sha256": "2339b2791a84d546560aa1b577696e9f4612c7afc56224546b105af94cb2199b"
+    },
+    {
+     "vag": "ljud/krasch.mp3",
+     "storlek": 40585,
+     "sha256": "20fc9c93d32d445705f26b91e6615c4ef96dd52f810151b8ad3afbb348fac255"
+    },
+    {
+     "vag": "ljud/laser-dubbel.mp3",
+     "storlek": 3040,
+     "sha256": "b1fd6e63ffbbc2d5adbaecd0860a7309be07ca7dffa9fc8c1f199e00e6d8a069"
+    },
+    {
+     "vag": "ljud/laser.mp3",
+     "storlek": 5937,
+     "sha256": "5cef2d106cb9de027f5545204fcd2573b3c23921f44e8323037f4833662b3334"
+    },
+    {
+     "vag": "ljud/latar-pacman/1.json",
+     "storlek": 5721,
+     "sha256": "4031a53b1bbc2dea95d0da223bb7bec56222d29be7ef966425cf5e3ff05ed530"
+    },
+    {
+     "vag": "ljud/latar-pacman/1.mp3",
+     "storlek": 4164473,
+     "sha256": "95be679312c7d2f15f4c270ae1fc3f4df954204fb779a92494dae821284ae0ef"
+    },
+    {
+     "vag": "ljud/latar-pacman/2.json",
+     "storlek": 7027,
+     "sha256": "1e9f4597aa2003797c043e4885d26f0f93a8411890128ffb6f35d9ad387e749f"
+    },
+    {
+     "vag": "ljud/latar-pacman/2.mp3",
+     "storlek": 4058540,
+     "sha256": "fa81005c24ea3790511b9596ad0ed09a0821a07243e8082e96862d58f7f6e2f1"
+    },
+    {
+     "vag": "ljud/latar-pacman/latar.json",
+     "storlek": 82,
+     "sha256": "d87eb18e4b28ab212c466e04175703cfb51660fce62ce540303cb1a76ea148aa"
+    },
+    {
+     "vag": "ljud/liv.mp3",
+     "storlek": 5509,
+     "sha256": "2b23d9abca9b86e867a605947d931c30f6fc5ae3364e3bd7a301880ca31cf523"
+    },
+    {
+     "vag": "ljud/musik-newton.mp3",
+     "storlek": 2823317,
+     "sha256": "7ef8b5acc870c7a728241826e4c0086be3c14fcdc92db33bdcf3a231c50d2a18"
+    },
+    {
+     "vag": "ljud/pac-at.mp3",
+     "storlek": 15195,
+     "sha256": "7255ecd9bf1cdf9c4a29b01b2fe8ffce7380f7028578a8a67c4ba8038332cc64"
+    },
+    {
+     "vag": "ljud/pac-dod.mp3",
+     "storlek": 33480,
+     "sha256": "812fef50fa494771c8adb23fabd774f52d566246d5c64841a3468f14db0d608c"
+    },
+    {
+     "vag": "ljud/pac-fel.mp3",
+     "storlek": 7358,
+     "sha256": "1faa4c6dbe233a544e3e1ceeafaf1196b514bb16c084ceba7bbfa002d9235891"
+    },
+    {
+     "vag": "ljud/pac-glitch.mp3",
+     "storlek": 12582,
+     "sha256": "3369058412e49bb235399e3c33f470286d7d59ae1e7e4f0d109cdd6779a40ad1"
+    },
+    {
+     "vag": "ljud/pac-kraft.mp3",
+     "storlek": 17284,
+     "sha256": "642728e32977255ceac1b3c8e28643136fc808e9eaeb4ef6c046ad2901c75881"
+    },
+    {
+     "vag": "ljud/pac-linje.mp3",
+     "storlek": 8925,
+     "sha256": "a13340e1809714556fa26d976f16c2dbfa9bba95639c1d25dcb09b2d6e24313c"
+    },
+    {
+     "vag": "ljud/pac-rekord.mp3",
+     "storlek": 19374,
+     "sha256": "fd8c737b7b31766ad0368ab39b2f8e216d4fdef39e7c9435c3af26b396b4ae8c"
+    },
+    {
+     "vag": "ljud/pac-start.mp3",
+     "storlek": 27733,
+     "sha256": "ea24578b9bb5a696b06eae73412205d74fd3c5c07e76dab7f3c107e47bb2c8d6"
+    },
+    {
+     "vag": "ljud/pac-tunnel.mp3",
+     "storlek": 7358,
+     "sha256": "d71dea0c6cfd6b3183ba0f588dcfae189345cb6552d715c2aab9926a6a06051d"
+    },
+    {
+     "vag": "ljud/pac-waka.mp3",
+     "storlek": 4746,
+     "sha256": "259cc779eaee97c843e1bef772b18b25112e93858c6906a7fce68afc92c94da3"
+    },
+    {
+     "vag": "ljud/ratt.mp3",
+     "storlek": 6507,
+     "sha256": "f989b87ae1409be5b7fdd8073d7e83d3d3fd2f8ed706995bfd4f4d56dc2174bf"
+    },
+    {
+     "vag": "ljud/rekord-skepp.mp3",
+     "storlek": 25121,
+     "sha256": "b7919cc72e0cfb345c8d61a1ebe4489579358ced917fa240d044354b800ad06d"
+    },
+    {
+     "vag": "ljud/skepp-byte.mp3",
+     "storlek": 14617,
+     "sha256": "ba57597a67c8fc88fd7876ba3e5824db16742d7fe95569cebff9c8c2fea54121"
+    },
+    {
+     "vag": "ljud/skold-spricker.mp3",
+     "storlek": 8432,
+     "sha256": "ab073d150cdd2c30f174623fb2000a84745eb4cf91c4c8018c2a69e8dc4524fb"
+    },
+    {
+     "vag": "ljud/skold-upp.mp3",
+     "storlek": 8467,
+     "sha256": "b2d6a7f2f97107c23a7e97c0d9aa10fae4e8c96df031f72713a891b83a51fd1c"
+    },
+    {
+     "vag": "ljud/skrik-1a.mp3",
+     "storlek": 32497,
+     "sha256": "e08df596171a1c191a74ae3e863a0325685913471901f696d691e8a49b56c363"
+    },
+    {
+     "vag": "ljud/skrik-1b.mp3",
+     "storlek": 34277,
+     "sha256": "781e9338fd26154103cf7d849429164bcfb042e8c9e79d416be75082f7cef8a8"
+    },
+    {
+     "vag": "ljud/skrik-1c.mp3",
+     "storlek": 22952,
+     "sha256": "5ccdc6031c748eaee8c145ed052f0828bd9300b9f6e51b73030bc8510db06199"
+    },
+    {
+     "vag": "ljud/skrik-2a.mp3",
+     "storlek": 31846,
+     "sha256": "de27334fdcc1fabbfac33957cd987322e1e2ab65fad9a9c14672e80a4e9a9b14"
+    },
+    {
+     "vag": "ljud/skrik-2b.mp3",
+     "storlek": 29498,
+     "sha256": "d7b6e0d469c0fadb0c8a11f802653856589c2ffd2fcb0513f729626d94905ecf"
+    },
+    {
+     "vag": "ljud/skrik-2c.mp3",
+     "storlek": 24099,
+     "sha256": "677396860739699ead16bce22f53d6327dc617b191d0ec50d62987c2c955b746"
+    },
+    {
+     "vag": "ljud/skrik-3a.mp3",
+     "storlek": 37658,
+     "sha256": "a4d05b74d3c13f819624a1ab210e0ce42918558f355b99db0522f96e4f3188bf"
+    },
+    {
+     "vag": "ljud/skrik-3b.mp3",
+     "storlek": 37662,
+     "sha256": "711bfc310a89847d789109da45ea092b96df7dc04cc24718807fcc54560db142"
+    },
+    {
+     "vag": "ljud/skrik-3c.mp3",
+     "storlek": 21954,
+     "sha256": "3559b67a45e25d01553bcf7f0af67f9964e28ce01e02b15678f3585b571100a3"
+    },
+    {
+     "vag": "ljud/skrik-4a.mp3",
+     "storlek": 39106,
+     "sha256": "24206fb57bf96314d6d191a74d0c591eb212b620507395d4b7f26b91885de620"
+    },
+    {
+     "vag": "ljud/skrik-4b.mp3",
+     "storlek": 37867,
+     "sha256": "94608669e839206d1d277da99924d7b7e8368985a166373cb45ae49e409b6554"
+    },
+    {
+     "vag": "ljud/skrik-4c.mp3",
+     "storlek": 25633,
+     "sha256": "f9f0a8ca94356843ebd4ed2d4cc713b08025015aeda4b8c53e56cc43826d7b46"
+    },
+    {
+     "vag": "ljud/storta.mp3",
+     "storlek": 49684,
+     "sha256": "c5acf57c7c3d4f151c5f7d84e1ea57412275cd095ba8b31d4f55615fd41e2300"
+    },
+    {
+     "vag": "ljud/sudda.mp3",
+     "storlek": 10492,
+     "sha256": "efe490bafc86500858ea8ab2fa764680a2307f0535baf5477d5d2e5ed3314718"
+    },
+    {
+     "vag": "ljud/superkraft-slut.mp3",
+     "storlek": 8609,
+     "sha256": "4318d4a10e21d87b16f47d9df4aeac0f52a8ce31526c885b83274d492ff66974"
+    },
+    {
+     "vag": "ljud/superkraft-tagen.mp3",
+     "storlek": 8131,
+     "sha256": "5fd790d5b956638883cbcfe9b174379ded69e4e61e7257170e9fd096fbeae7df"
+    },
+    {
+     "vag": "ljud/tangenter.mp3",
+     "storlek": 48944,
+     "sha256": "ea3c79e6eb6f86ee7f1c969db9ebff2f126fd6b942f92270f2d909d3311c702e"
+    },
+    {
+     "vag": "ljud/tid-in.mp3",
+     "storlek": 25121,
+     "sha256": "b312e43efa1f0cb9da4bb96156e6c4cc704ed74df06b7e0acfcbf6d61490d500"
+    },
+    {
+     "vag": "ljud/tid-ut.mp3",
+     "storlek": 18329,
+     "sha256": "45f50ec3f886f0a2eba08108210cd95ac3a1ad6152718d3b7feb6bba6f5b6bbd"
+    },
+    {
+     "vag": "ljud/traff.mp3",
+     "storlek": 8967,
+     "sha256": "508c4fbe416b523c1484a3967bc17f6a3345a0191d2ad80015ce4c033f1a1699"
+    },
+    {
+     "vag": "ljud/utrop-aj.mp3",
+     "storlek": 21776,
+     "sha256": "4e5bd4b562fc56dec7badb963855f897dd05649b5156ce19d3932b23e58ac382"
+    },
+    {
+     "vag": "ljud/utrop-aldrig.mp3",
+     "storlek": 62736,
+     "sha256": "b5b761caf7adf1e5d3f035ae91f82f6f4bb4a4f6eb0b01a1de5d39a3f8a579a3"
+    },
+    {
+     "vag": "ljud/utrop-allvarligt.mp3",
+     "storlek": 14671,
+     "sha256": "45587ec7e1f017a54df0d142f83db52b24be357396238ba1038fc396e4a01f4b"
+    },
+    {
+     "vag": "ljud/utrop-andra-chans.mp3",
+     "storlek": 44764,
+     "sha256": "88b8945fb2cda14f43ec1055cc4f19ab2c15aa48b7304ac598bd539f8413f205"
+    },
+    {
+     "vag": "ljud/utrop-andra-sabba.mp3",
+     "storlek": 38495,
+     "sha256": "8401ffbe71fbdda79327d2dc16d6ae17d02cd3740facf5d7ed24beb98c3f3083"
+    },
+    {
+     "vag": "ljud/utrop-armbage.mp3",
+     "storlek": 34315,
+     "sha256": "52e77d579403a0eb7cd3fe40b99c084fe3990791e63834bed7ffc90c7548cf1b"
+    },
+    {
+     "vag": "ljud/utrop-asna.mp3",
+     "storlek": 23866,
+     "sha256": "e7ec73c2ec412ed8c9f6b98d2519d566e74f59f75ec875eb94d3ebc8550f3174"
+    },
+    {
+     "vag": "ljud/utrop-besoksforbud.mp3",
+     "storlek": 43092,
+     "sha256": "6450d3b066c99eb38840be1e459e2a730e83b70d5cd258c64688a6c675117db5"
+    },
+    {
+     "vag": "ljud/utrop-blundar.mp3",
+     "storlek": 40167,
+     "sha256": "56e380fac30832b9b9e7682a1823cd3c211555ccd899aa9fec04d8a76e3abd2e"
+    },
+    {
+     "vag": "ljud/utrop-boss-arg.mp3",
+     "storlek": 53959,
+     "sha256": "98291ab26fcf081f5fcfae2e433aef258756aba96e8d29ca6d68b4d739a7c338"
+    },
+    {
+     "vag": "ljud/utrop-boss-filma.mp3",
+     "storlek": 41421,
+     "sha256": "691eb3be7d1488af52385bedcb47890e57d04a81bbbded393cd406e680fe7946"
+    },
+    {
+     "vag": "ljud/utrop-boss-grata.mp3",
+     "storlek": 43928,
+     "sha256": "35940ac79c6c5e1a1750f9d88fde6cf12ae8eac44dfec8241bb566f47b5384bb"
+    },
+    {
+     "vag": "ljud/utrop-boss-kande.mp3",
+     "storlek": 20941,
+     "sha256": "28dd7d5d4370f93ffe43256c492cd4a6e38f083faa4e5115350d94f10779c20b"
+    },
+    {
+     "vag": "ljud/utrop-boss-larde.mp3",
+     "storlek": 39749,
+     "sha256": "c025c765c6db79cc898df970c245606e4060887cdceb79c10813af459ff779a2"
+    },
+    {
+     "vag": "ljud/utrop-boss-lys.mp3",
+     "storlek": 31807,
+     "sha256": "22ba5e173da8857e689db1e614a252316415fd876f6c925ca69076d65b9d637a"
+    },
+    {
+     "vag": "ljud/utrop-boss-nu.mp3",
+     "storlek": 30972,
+     "sha256": "8f6a1902e400fc8fae1d62a171b2888a6c3733032eb7889d29d7b7839967ebc3"
+    },
+    {
+     "vag": "ljud/utrop-boss-ont.mp3",
+     "storlek": 27628,
+     "sha256": "77b6a630e13bef7a7d7bf3df16566d2f587bd40e3b156c565de2c61aac75b414"
+    },
+    {
+     "vag": "ljud/utrop-boss-tro.mp3",
+     "storlek": 42674,
+     "sha256": "fcfe6131541d225d9e940135eaf6c7122a0195e14b5497b98854408a5da5dd66"
+    },
+    {
+     "vag": "ljud/utrop-boss-uttrakad.mp3",
+     "storlek": 32643,
+     "sha256": "aeaee1584ce490cc2d4ca9d1bcc54797c5082176d3d7d12c16ba8fc8ec107684"
+    },
+    {
+     "vag": "ljud/utrop-bra-skott.mp3",
+     "storlek": 41421,
+     "sha256": "bd01925b40e775ae6b5b3fa8a343d6edcdc0631550f733028dc3120f26ddfd6d"
+    },
+    {
+     "vag": "ljud/utrop-brollop.mp3",
+     "storlek": 39331,
+     "sha256": "22ba604a9e37122295da7c6919260ebf48c5792b5ba6782ec2e3c73aeda52deb"
+    },
+    {
+     "vag": "ljud/utrop-byta-plats.mp3",
+     "storlek": 37241,
+     "sha256": "ea0c6f1fe86699acf9eba994c05d403228de1ab75b6a96039db12c642a4a025c"
+    },
+    {
+     "vag": "ljud/utrop-chockad.mp3",
+     "storlek": 36823,
+     "sha256": "96b079c029fa5615e23bd259a294b7ee1d06f9f1ba092c920cc46b8f1842bbbb"
+    },
+    {
+     "vag": "ljud/utrop-dags.mp3",
+     "storlek": 32225,
+     "sha256": "f07c8e4bc8aeaca305b1c94f7dc1511cb428abbf65d685cff9b788db514737da"
+    },
+    {
+     "vag": "ljud/utrop-datum.mp3",
+     "storlek": 42256,
+     "sha256": "db30a907cde878ceec43dd4118c55189871404e8f8e05f1d02fb08ef22228a3a"
+    },
+    {
+     "vag": "ljud/utrop-djarvt.mp3",
+     "storlek": 63572,
+     "sha256": "d5b2318dd1d7c2450e22b09af03957f8e0c91220d37a884ec6356bd8252bc945"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-hande.mp3",
+     "storlek": 32225,
+     "sha256": "c09d1dd70cb97f1776eb18ad5fdf84c70dd4be507a1f6498d2068abadfec7e95"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-ner.mp3",
+     "storlek": 15089,
+     "sha256": "0414e7df4c6357ab140b9e9fa4733659e3278d9b7a7f76b0ef8bd1e2f313965d"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-pa-en.mp3",
+     "storlek": 18015,
+     "sha256": "546930dc535e518479f0c83375e322c57a6c8e3f5b08ecf09a9728a21b1d58ef"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-pang.mp3",
+     "storlek": 26792,
+     "sha256": "fbcb05f296ecb47fb7cb0e92d533360e6548e48634561fae8bf74c54364a7da0"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-par.mp3",
+     "storlek": 42256,
+     "sha256": "69ac73f4a75ddda5041567646b31d29955c965355e5b72a7e5a94781c6b27991"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-pris.mp3",
+     "storlek": 22194,
+     "sha256": "677ba8379ea6c900191e82b68bb6dd3583090445597ed7199e4b9d6d54a2ee78"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-raknas.mp3",
+     "storlek": 37659,
+     "sha256": "765e392dbb5718dffa526abb8a01794ff2d89a048990c83af076a167961ce7eb"
+    },
+    {
+     "vag": "ljud/utrop-dubbel-snabb.mp3",
+     "storlek": 29718,
+     "sha256": "22bcbe6c4c904765c321e6c17d0a236c2f27134b8a67b5309a0f64167792780c"
+    },
+    {
+     "vag": "ljud/utrop-dubbel.mp3",
+     "storlek": 22612,
+     "sha256": "7d7df4ee5a27cc14f4eace66a197ad363e2bc7f98fd3b1c3ed4119a4bc3b521e"
+    },
+    {
+     "vag": "ljud/utrop-dubbelskada.mp3",
+     "storlek": 20523,
+     "sha256": "648e675d9ab042e369f701724690b0a2375b88fdc1de5e88e548fa9f878cef23"
+    },
+    {
+     "vag": "ljud/utrop-enda-traff.mp3",
+     "storlek": 39749,
+     "sha256": "37d3a056f7c23a13bf8842ff6994f2cc4066597a7479451876d86a5236e4f883"
+    },
+    {
+     "vag": "ljud/utrop-fel-andas.mp3",
+     "storlek": 55213,
+     "sha256": "9e15ce2dc4f02738d9b5d459853c83717f84548e90611e7cc55a08808a7c1636"
+    },
+    {
+     "vag": "ljud/utrop-fel-gissar.mp3",
+     "storlek": 23030,
+     "sha256": "ebc1da5c9f1fc28485efa252f68efb12a6a1779e9978cd9f1c76eb5348064784"
+    },
+    {
+     "vag": "ljud/utrop-fel-igen.mp3",
+     "storlek": 54795,
+     "sha256": "37a15c5b6ec73031a804fa9272228e4b9a74f4bae6099c64b0c3c06260dcf798"
+    },
+    {
+     "vag": "ljud/utrop-fel-imponerad.mp3",
+     "storlek": 51870,
+     "sha256": "bdcd016d297f2e01f586067ac96ddd5c0336d1fa7f376ad42dd175c316c9fdf4"
+    },
+    {
+     "vag": "ljud/utrop-fel-mal.mp3",
+     "storlek": 33897,
+     "sha256": "80e1bc82099f84e00a0c0497567d1442086b83a7e051813b5a3688901d605872"
+    },
+    {
+     "vag": "ljud/utrop-fel-meningen.mp3",
+     "storlek": 43092,
+     "sha256": "55da8a93c021547de4ec5740622482a5ef0570bae45c2acbfa1d9a83cbd1a40a"
+    },
+    {
+     "vag": "ljud/utrop-fel-mynt.mp3",
+     "storlek": 30136,
+     "sha256": "dcb591c6452b614d7d0248f1479b2710a28ccf83ce8e778d97294e8893013ac8"
+    },
+    {
+     "vag": "ljud/utrop-fel-strike.mp3",
+     "storlek": 32643,
+     "sha256": "b1e899e2bf408cee187d279483876af30b7acacf6c7a0ca8ea9866209fea8dc7"
+    },
+    {
+     "vag": "ljud/utrop-fel-svar.mp3",
+     "storlek": 27210,
+     "sha256": "947c4e5d2762c1da041e64f18aa0c588f1e2990351b0321c755594b7cb14c53c"
+    },
+    {
+     "vag": "ljud/utrop-fel-talang.mp3",
+     "storlek": 48526,
+     "sha256": "410bb119d8cd08488a8bc72a8c83d144ca731c60ddd93879e1342746c9f2af6d"
+    },
+    {
+     "vag": "ljud/utrop-felfri-inget.mp3",
+     "storlek": 38495,
+     "sha256": "e17cff09656ad30b81b350afee884ae005f607c0d98b7e5d1d902d71316d405c"
+    },
+    {
+     "vag": "ljud/utrop-felfri.mp3",
+     "storlek": 18015,
+     "sha256": "5679c739b02ef8ca1e4114d47f79d2c151e578c2beecc84a32fd5eaeda83bebb"
+    },
+    {
+     "vag": "ljud/utrop-fem-glas.mp3",
+     "storlek": 43928,
+     "sha256": "64cb5c7be4a8219ac78d60677986318850e417b7c674462991b4d32069420ad5"
+    },
+    {
+     "vag": "ljud/utrop-fem-haka.mp3",
+     "storlek": 48526,
+     "sha256": "db1525bc039792e8e492109570cbf05e0c0a9b4a273896d091af7fad70131214"
+    },
+    {
+     "vag": "ljud/utrop-fem-high.mp3",
+     "storlek": 49780,
+     "sha256": "0cf00e8c9be9210b15b367d34ad0d775df65796645d046e1c251df603303632e"
+    },
+    {
+     "vag": "ljud/utrop-fem-hjalp.mp3",
+     "storlek": 40585,
+     "sha256": "3c949b2042fb66bd101ebdd13eb737b22f086cd251581bda8b980d47b6e28875"
+    },
+    {
+     "vag": "ljud/utrop-fem-laxa.mp3",
+     "storlek": 48944,
+     "sha256": "6e3e079501ac5a4df9d2016cdde3616a06b8bc9aa8f95929cce7e03186f82459"
+    },
+    {
+     "vag": "ljud/utrop-fem-ser.mp3",
+     "storlek": 50198,
+     "sha256": "8fa8222c6f5cab79d262583a37e291620c46ce75371034c5f4bb8864a5e364c9"
+    },
+    {
+     "vag": "ljud/utrop-fem-stoppa.mp3",
+     "storlek": 48108,
+     "sha256": "6bf92e2b20988cc652084223d8d14115eced3b343e1f8c176899cab309358a22"
+    },
+    {
+     "vag": "ljud/utrop-for-latt.mp3",
+     "storlek": 17179,
+     "sha256": "45aeffd2106aa570d0c64b00f278a9f868386572a3c77717d2a342d154b2b756"
+    },
+    {
+     "vag": "ljud/utrop-forlorat.mp3",
+     "storlek": 58139,
+     "sha256": "283e85935492df4cda40fb022105f6b906af524cbebdb150619baded7e531820"
+    },
+    {
+     "vag": "ljud/utrop-forsakring.mp3",
+     "storlek": 37241,
+     "sha256": "11ea199f77393798611adc64e803a235045d1a01f9da637965269a43162fad56"
+    },
+    {
+     "vag": "ljud/utrop-forsokte.mp3",
+     "storlek": 40585,
+     "sha256": "eac93f5fcb096706ea2bbcda94ab8449feb636ae8b1e2fc9d373256aae7272c0"
+    },
+    {
+     "vag": "ljud/utrop-fuskar.mp3",
+     "storlek": 41838,
+     "sha256": "817c583210d5c2e5dc6b4997a6efb8df57c049fc4aed9b36366a8b0be5c81c92"
+    },
+    {
+     "vag": "ljud/utrop-game-over.mp3",
+     "storlek": 28046,
+     "sha256": "a340083e9e90a2cf48193a83345d170d0c1e3149112a0a72c55aaafbfab50e81"
+    },
+    {
+     "vag": "ljud/utrop-geni.mp3",
+     "storlek": 25120,
+     "sha256": "1449b0002ab175c588f1e79aca5a400dbe438bba7304002296261277aca94225"
+    },
+    {
+     "vag": "ljud/utrop-gor-ont.mp3",
+     "storlek": 26792,
+     "sha256": "0864104be6a47b193fbd53f2a8818b4722013127c7b4958a6fe030035d9cc191"
+    },
+    {
+     "vag": "ljud/utrop-grip-fingrar.mp3",
+     "storlek": 39749,
+     "sha256": "3c82bc0f300ec1ab436e036dc7f0f4674eb63aaf2631014a9fe5de718638a20b"
+    },
+    {
+     "vag": "ljud/utrop-grip-flytta.mp3",
+     "storlek": 28464,
+     "sha256": "eabfc4ecb573056b0ef920d2f79761144e72a83996fc8ade09a6644597b1c67d"
+    },
+    {
+     "vag": "ljud/utrop-grip-hand.mp3",
+     "storlek": 20941,
+     "sha256": "53dd136504d066c14c0d3d31850d9ee1f45e68545843d69b0d91d5af9fc5cd96"
+    },
+    {
+     "vag": "ljud/utrop-halften.mp3",
+     "storlek": 36823,
+     "sha256": "99e7c8a5b04e13f8f662453ac397f6801155fc8a4d513b02fbb01e0ed9e84b4f"
+    },
+    {
+     "vag": "ljud/utrop-haller-inte.mp3",
+     "storlek": 39749,
+     "sha256": "66b4f0959e0d317d7b053fb80cf8163ffe27ba657d7e8897084c39909b8fa0bd"
+    },
+    {
+     "vag": "ljud/utrop-har-vi.mp3",
+     "storlek": 30136,
+     "sha256": "30cba951cd57235787285a431fc944aef7e9129055c24471396f213c8a7fce24"
+    },
+    {
+     "vag": "ljud/utrop-hjarna.mp3",
+     "storlek": 18015,
+     "sha256": "15fd969f363877bafedf67b2b168a3d6b9f22ed216593137854eae2087882018"
+    },
+    {
+     "vag": "ljud/utrop-hjarnceller.mp3",
+     "storlek": 61065,
+     "sha256": "293d132a5ff2b58bfad4749fdde3d7aac8c8321fb07445597e5ff91c03c39c39"
+    },
+    {
+     "vag": "ljud/utrop-hund.mp3",
+     "storlek": 57303,
+     "sha256": "495b71ef9177237778b9762dbfe221d96678303db7c4fda53ee73e26340b4ec5"
+    },
+    {
+     "vag": "ljud/utrop-inte-illa.mp3",
+     "storlek": 37241,
+     "sha256": "a78ef2339e769983d447474784e4f1028812f05640b244a56de553399dcd1efc"
+    },
+    {
+     "vag": "ljud/utrop-inte-nara.mp3",
+     "storlek": 33061,
+     "sha256": "ff35671d9e207c6ae5e8aad21a3a4917269460f369a15adf1d7fc8aa97c5790f"
+    },
+    {
+     "vag": "ljud/utrop-ja.mp3",
+     "storlek": 12999,
+     "sha256": "1c103719368e78bbbf1d9077a3d33190d81e7a3dc522cb37de943f6727cea621"
+    },
+    {
+     "vag": "ljud/utrop-kan-lasa.mp3",
+     "storlek": 43092,
+     "sha256": "f841650cea310af628fda4b1f1763eccd0938242d6c6c02115a5fe845b26f943"
+    },
+    {
+     "vag": "ljud/utrop-kanoner-miss.mp3",
+     "storlek": 39331,
+     "sha256": "b8eecb1ace648fe9a4bcd4f991385e3601c1f8635968bab29344af4d6945c2fd"
+    },
+    {
+     "vag": "ljud/utrop-kanoner.mp3",
+     "storlek": 21776,
+     "sha256": "a3bc3d7a7da57a4068b263a4664d3af37971547f7b1b9f671957fd597437d521"
+    },
+    {
+     "vag": "ljud/utrop-kaxig.mp3",
+     "storlek": 38077,
+     "sha256": "50cd48f101f0c096a91e02c99cb6d916ded4eaf99412e66686bdc73d21432ba6"
+    },
+    {
+     "vag": "ljud/utrop-klanta.mp3",
+     "storlek": 39749,
+     "sha256": "6c1470b112f69635322ab5a125641e55d899c9b90284244de40706295bc851b7"
+    },
+    {
+     "vag": "ljud/utrop-klistermarke.mp3",
+     "storlek": 29718,
+     "sha256": "bd763362b70c0f0f3408cf5718cc369d6d15a3ea1c092eb89c58f7bcaf1010c0"
+    },
+    {
+     "vag": "ljud/utrop-klocka.mp3",
+     "storlek": 45182,
+     "sha256": "056fcbad89819626d5f6da1882ebc7ba3199d528c11f1f0e2e4b23564befce26"
+    },
+    {
+     "vag": "ljud/utrop-kombo-eld.mp3",
+     "storlek": 35569,
+     "sha256": "2216ede67840f9fa13d4b56600618319dafd4ea6e125136e8fe4590e430897e2"
+    },
+    {
+     "vag": "ljud/utrop-kombo-kedja.mp3",
+     "storlek": 44764,
+     "sha256": "6698f8a56ddbc23c9e1e3ae4a8f98a20ffef4f51e1d3a36be2fc6411b195d7b9"
+    },
+    {
+     "vag": "ljud/utrop-kombo-matare.mp3",
+     "storlek": 43928,
+     "sha256": "3a2152ae6e99f25968806d275a8551ae95251ae4da891b3bd80b889ed8f086a1"
+    },
+    {
+     "vag": "ljud/utrop-kombo-present.mp3",
+     "storlek": 40585,
+     "sha256": "7938f9eb2b03481a77431d8aba0004a0b29c6c6d5457115507629b204182ee8a"
+    },
+    {
+     "vag": "ljud/utrop-kombo-slosa.mp3",
+     "storlek": 37659,
+     "sha256": "65336ca408925cbdb629f4463dbf98f5b3062f405eec77d44ff8b9cde3c74ed2"
+    },
+    {
+     "vag": "ljud/utrop-kombo-tomte.mp3",
+     "storlek": 42674,
+     "sha256": "8ef641066c9157a456d494c4f1f4246bbb81b5501f761f507188c2f21fd1b39e"
+    },
+    {
+     "vag": "ljud/utrop-kontor.mp3",
+     "storlek": 31807,
+     "sha256": "56ffb39a609dfd1b0a672ec0759ad37676a0000d6decd3724636428811eb102a"
+    },
+    {
+     "vag": "ljud/utrop-kor-nu.mp3",
+     "storlek": 16761,
+     "sha256": "432ad42bc5c18e5f603c4311bfea217b14bce39dc864cea9fbfdf8672b100fc1"
+    },
+    {
+     "vag": "ljud/utrop-kor.mp3",
+     "storlek": 10910,
+     "sha256": "54b439baa3a331308daecf1c42ea4331b51b095d83005d4fb73acb1ee7d96f84"
+    },
+    {
+     "vag": "ljud/utrop-korkort.mp3",
+     "storlek": 32225,
+     "sha256": "8510571c5cb3e8e64ac1531a571c04b8cbce81791d97a1901830abc4a2f340cb"
+    },
+    {
+     "vag": "ljud/utrop-kraft-farlig.mp3",
+     "storlek": 40585,
+     "sha256": "d5290d7670cfdb08c680b82e8ee7d9f5cc2cf329e14aabd594a60da96db1babc"
+    },
+    {
+     "vag": "ljud/utrop-kraft-fusk.mp3",
+     "storlek": 38495,
+     "sha256": "d8660d36a3839654c9a5b620d913976536a1d15daecc092a1338c5972cbf20fb"
+    },
+    {
+     "vag": "ljud/utrop-kraft-glans.mp3",
+     "storlek": 41838,
+     "sha256": "48e46249cdbddad6cc1b9e5733834259a59d8b1a61a3918411fdfc5f5ac488a1"
+    },
+    {
+     "vag": "ljud/utrop-kraft-gratis.mp3",
+     "storlek": 30554,
+     "sha256": "1a680e11a3ce6387b06c3bf11a91ef2216cea041d221b01b691ea1329251e8bc"
+    },
+    {
+     "vag": "ljud/utrop-kraft-laddad.mp3",
+     "storlek": 34315,
+     "sha256": "25cd898f540ed37b3206d7536da88f87e74513660ac8c5aaaf325c5eeca128cb"
+    },
+    {
+     "vag": "ljud/utrop-kraft-radd.mp3",
+     "storlek": 30136,
+     "sha256": "9af6b0fe613e76335419b5a664f41f50935e61e5ab4d0f8074416bb7174b9838"
+    },
+    {
+     "vag": "ljud/utrop-kraft-springer.mp3",
+     "storlek": 18015,
+     "sha256": "85999a30fea0f1a6a7aba234716048d464cc3af0d04b95055e02814373aa5c8e"
+    },
+    {
+     "vag": "ljud/utrop-kraft-trott.mp3",
+     "storlek": 19687,
+     "sha256": "0b269bc9eff9953119727c6245c1b7785bdce8bfd97c6d82c1ead0710e47848f"
+    },
+    {
+     "vag": "ljud/utrop-kraft.mp3",
+     "storlek": 14253,
+     "sha256": "c3c29eda95ab62252ed84880758c321bf5695ed1ee763c2a55dbeed287f224ca"
+    },
+    {
+     "vag": "ljud/utrop-krama.mp3",
+     "storlek": 43928,
+     "sha256": "59f87fa8ca140d935cc22b153f01cb667b0a3ef3e8af0c45487cfef57acb576a"
+    },
+    {
+     "vag": "ljud/utrop-krossad-burk.mp3",
+     "storlek": 29718,
+     "sha256": "3915a661eec97f19f2051c96a78acfe4c96c5ade53fa4c949804cf3ea15196b5"
+    },
+    {
+     "vag": "ljud/utrop-krossad-insekt.mp3",
+     "storlek": 34315,
+     "sha256": "f472949d22ce99d5b621c963db7281038db073ffc28b68798d8b8510f56e97e3"
+    },
+    {
+     "vag": "ljud/utrop-kul.mp3",
+     "storlek": 48526,
+     "sha256": "0f1adb5527fb988c27869ec353789f00eed7eae461ce6f75744f8a4e599a59ea"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-karta.mp3",
+     "storlek": 33479,
+     "sha256": "9e94d32e75a6482adacc4be36153142c92fb2d421726e6495e67000c00361745"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-ror.mp3",
+     "storlek": 23866,
+     "sha256": "eeb3acb6e886a42303df0c8a8d7fdeb6628e39b5c39cd9b414ff272c05cbb36c"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-samma.mp3",
+     "storlek": 32225,
+     "sha256": "5ca457628e2b5f543ab92d8e6676b34440dadb777c515f85667ba604b59c79bc"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-steg.mp3",
+     "storlek": 36405,
+     "sha256": "610df33d290c3c7fd2e96dbf46cfb54e051a8e94e975b05d9f46636d1fe15752"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-utgang.mp3",
+     "storlek": 41838,
+     "sha256": "ff8b05b0708b35b94ad3b520e1f048340180000ad6a7bcbd81ac21a476ae2a91"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-vaggar.mp3",
+     "storlek": 32643,
+     "sha256": "fa994ec56370d52609918133c055fc93b7a22f139a65e9592e3bcac4869aaa1e"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-vandning.mp3",
+     "storlek": 38495,
+     "sha256": "5d5bfdce270a8f758adf5cdcbd65eb46a6dbffd7ba2c0ed953be5708df94310e"
+    },
+    {
+     "vag": "ljud/utrop-labyrint-vilse.mp3",
+     "storlek": 44764,
+     "sha256": "43ff56fbca8d10be2e3eb291f52cf787e70acb758090e16cbf8cfca4be94b642"
+    },
+    {
+     "vag": "ljud/utrop-lada.mp3",
+     "storlek": 49780,
+     "sha256": "2a49155958becb206ab064ac40a3e930484912bdc1b93ef3be4c72f2812c280a"
+    },
+    {
+     "vag": "ljud/utrop-lara.mp3",
+     "storlek": 35569,
+     "sha256": "1e98f825edd685ee7a0b79017dfb2c35d5fa7a1aac05ed1b10b91d7ebbc9a664"
+    },
+    {
+     "vag": "ljud/utrop-lasa.mp3",
+     "storlek": 46018,
+     "sha256": "f44497818e3419944cbc54b559c486fcff804e5e187c1c128ef9682f092df565"
+    },
+    {
+     "vag": "ljud/utrop-matdags.mp3",
+     "storlek": 27628,
+     "sha256": "cd20e4b5d70565cec42ac8b18da35212a622c66fb959a3c3164487b99353d2da"
+    },
+    {
+     "vag": "ljud/utrop-matte.mp3",
+     "storlek": 37241,
+     "sha256": "189a5e6ec8e51b0cbcd93f9b9d0ecc2828bbf34cb5719b2cb7a185f4b9238e84"
+    },
+    {
+     "vag": "ljud/utrop-miniraknare.mp3",
+     "storlek": 35987,
+     "sha256": "1491ba77730f7241ead32734d6c11165f26dfeb1fcda47b7c23c301a46dc0b73"
+    },
+    {
+     "vag": "ljud/utrop-mitt-i.mp3",
+     "storlek": 15925,
+     "sha256": "be57075b028ec6fb11497b87cdf4092e7c3daba07eb4e09950008f4e3a033670"
+    },
+    {
+     "vag": "ljud/utrop-mormor-gick.mp3",
+     "storlek": 43092,
+     "sha256": "c297dbd495315c280874876f14b9b4ffa595921bc546398087819d712ba61304"
+    },
+    {
+     "vag": "ljud/utrop-mormor.mp3",
+     "storlek": 75275,
+     "sha256": "c1c28db42a08195d7fd3189cc7a51545fff6b564cd474d6f21050a39130c3424"
+    },
+    {
+     "vag": "ljud/utrop-nara-for.mp3",
+     "storlek": 35987,
+     "sha256": "cf46f9281e0baa1e32c17596eb2699ddf96f49f0ccdfbfc7e2d184a20e4d1ba8"
+    },
+    {
+     "vag": "ljud/utrop-nara-har.mp3",
+     "storlek": 24284,
+     "sha256": "daa34140f748bf13af2ce11c2d30745e4390cc2db1dcd2f65832463a2918eb80"
+    },
+    {
+     "vag": "ljud/utrop-nara-ogonbryn.mp3",
+     "storlek": 41003,
+     "sha256": "4c45b083752162890493d356d3ac2bc1f86e044960f084c896026a9fdb7bb2f7"
+    },
+    {
+     "vag": "ljud/utrop-nasta-niva.mp3",
+     "storlek": 19687,
+     "sha256": "fe0cd077a4187b0cf99a32e076eabbea2c638b7d73144b8d92ebda13312a9f22"
+    },
+    {
+     "vag": "ljud/utrop-nej.mp3",
+     "storlek": 9238,
+     "sha256": "144546ad7a8213e6b255697e74d6222ba44f960e4d44fb8d28a72f8a6e475042"
+    },
+    {
+     "vag": "ljud/utrop-niva.mp3",
+     "storlek": 30972,
+     "sha256": "ad37681c57d4eae16e39cabf45dd291b53ecd404e84abece352eb29d2f745860"
+    },
+    {
+     "vag": "ljud/utrop-noll.mp3",
+     "storlek": 46436,
+     "sha256": "dcf357957a85d718e4a8d556d8ddcdabdbf221db954ce02443fa6c20d0ebbcef"
+    },
+    {
+     "vag": "ljud/utrop-nysa.mp3",
+     "storlek": 40585,
+     "sha256": "68eba08e1b5103d14f397dc3e41783bb04d5788f6ac9574907455897be1c8ff4"
+    },
+    {
+     "vag": "ljud/utrop-omojligt.mp3",
+     "storlek": 41003,
+     "sha256": "7541d9866bc192133d12aa17b3f8707db3e46ab2dbdcb5b549ee2ea0b4a3924f"
+    },
+    {
+     "vag": "ljud/utrop-ordning.mp3",
+     "storlek": 56049,
+     "sha256": "77ed4a215d4470741c0c13419c58706b9eb428a1dd0567fb01a48c3b44afeab0"
+    },
+    {
+     "vag": "ljud/utrop-orord.mp3",
+     "storlek": 22612,
+     "sha256": "32253b3d7099774bd64be7fd9ea02d78a98af2f0d170cdb951e351c5345046db"
+    },
+    {
+     "vag": "ljud/utrop-oskyldig.mp3",
+     "storlek": 45600,
+     "sha256": "54de25da46e0a8ea3349235efe3bc620f229917f43490231dad292b7fc045b79"
+    },
+    {
+     "vag": "ljud/utrop-ostoppbar.mp3",
+     "storlek": 23448,
+     "sha256": "6d45e45fba4d6ca538b05f27840d52c116d96c59c4fa770ae71c5afd2325e143"
+    },
+    {
+     "vag": "ljud/utrop-overkill-doda.mp3",
+     "storlek": 31807,
+     "sha256": "1bbe4b173116b5f06c6680813b7d1e48b93187b78fd43e09b4dfd5835eb468d9"
+    },
+    {
+     "vag": "ljud/utrop-overkill.mp3",
+     "storlek": 25120,
+     "sha256": "33c90cdbccd740aaa66816e9d23d429e2a7df2a78cfddbe4c05710d339e041d5"
+    },
+    {
+     "vag": "ljud/utrop-overlevde.mp3",
+     "storlek": 46436,
+     "sha256": "111f97ae4abfa5a623bcf1b30c78c0ff3572bb8ea012644470735ba87d5d09b4"
+    },
+    {
+     "vag": "ljud/utrop-packraft-bord.mp3",
+     "storlek": 33061,
+     "sha256": "dbb4f3afb3f7618192ba95401a7ab23f66be6bb4289e6054df435853300c56b3"
+    },
+    {
+     "vag": "ljud/utrop-packraft-hungrig.mp3",
+     "storlek": 34315,
+     "sha256": "b2a2b629e215d3b3686c66dbe79d1373be13c190c9bc41b656cafa90adb74031"
+    },
+    {
+     "vag": "ljud/utrop-packraft-jakt.mp3",
+     "storlek": 11327,
+     "sha256": "90accd74eb3cea7e13c31f71c30e0d7e4d2a65adc891cb2f6a8e42e575afc48b"
+    },
+    {
+     "vag": "ljud/utrop-packraft-spring.mp3",
+     "storlek": 26374,
+     "sha256": "ccc948aac44729a9a87f5d2ffb23808918c1cf86074f507c626b090e7dfdfe06"
+    },
+    {
+     "vag": "ljud/utrop-patetiskt.mp3",
+     "storlek": 20105,
+     "sha256": "61c2cab5a7f9800e642a8493403fce65ed3e3fb05efc69500fb5919684817ab1"
+    },
+    {
+     "vag": "ljud/utrop-pennan.mp3",
+     "storlek": 48944,
+     "sha256": "3030d21c872e009da2da7ab258cc17ec05098d483c56105f286b6f340572fb73"
+    },
+    {
+     "vag": "ljud/utrop-perfekt.mp3",
+     "storlek": 10074,
+     "sha256": "026132d06c319eba0bd4fa87c64cd2db961dfdbe10102aaa247e6ca351330a54"
+    },
+    {
+     "vag": "ljud/utrop-pinsamt.mp3",
+     "storlek": 59393,
+     "sha256": "07b5d838cd26c9fb42e5c492b627c8d1e3746d6733202bc2824adade163f7d70"
+    },
+    {
+     "vag": "ljud/utrop-rakt-in.mp3",
+     "storlek": 36405,
+     "sha256": "c8928d6ebfb522493ea40fc7c0264b7fbabaff17d1a5a25f50b575bdcc758d55"
+    },
+    {
+     "vag": "ljud/utrop-rampage.mp3",
+     "storlek": 23030,
+     "sha256": "366071c5e7a102d63032f7914081382776284c1dcc2a57cd2988c6ca3838b8c8"
+    },
+    {
+     "vag": "ljud/utrop-ratt.mp3",
+     "storlek": 13835,
+     "sha256": "c838fc024360b0b4414fefb890f14b46363ac15f8217899ce1e91f72067ee64e"
+    },
+    {
+     "vag": "ljud/utrop-rekord-bild.mp3",
+     "storlek": 36823,
+     "sha256": "af06213711f0719ec1f06c606d0a98a55bec51c67722b5a747fd580535ef5671"
+    },
+    {
+     "vag": "ljud/utrop-rekord-mamma.mp3",
+     "storlek": 52287,
+     "sha256": "370d515312940c26844a354de3eae5cd428c0f5422c15d9c4ded7f3b587295ae"
+    },
+    {
+     "vag": "ljud/utrop-sabba-inte.mp3",
+     "storlek": 17597,
+     "sha256": "c85375cea903499504c77f5552bc222934e31c69826c64cf83f2fc914b5f1c1c"
+    },
+    {
+     "vag": "ljud/utrop-seger-forvanad.mp3",
+     "storlek": 39331,
+     "sha256": "93d99cc25603039f3b73eede025db0a3c7e8512ec66db36f905784300dc8db07"
+    },
+    {
+     "vag": "ljud/utrop-seger-newton.mp3",
+     "storlek": 32643,
+     "sha256": "208878b6700140f9d3a1636d0b0fdcfe1433f8aae0d2625d26ddc73d1349b5f2"
+    },
+    {
+     "vag": "ljud/utrop-seger.mp3",
+     "storlek": 36823,
+     "sha256": "05c07d8af7ed504a3786a0944396e16e738b5ec20fed2c054cca545d34c7e5d2"
+    },
+    {
+     "vag": "ljud/utrop-serie.mp3",
+     "storlek": 23448,
+     "sha256": "27d8007bb11d0918844376ca01639cfc225ed393ab0d9cee8d08c48a870599ba"
+    },
+    {
+     "vag": "ljud/utrop-sikte-rov.mp3",
+     "storlek": 43510,
+     "sha256": "0fda8aa06253167097349767e60882c46253ec0e5b0b33a2eaf5b4c238dbd063"
+    },
+    {
+     "vag": "ljud/utrop-sista-liv.mp3",
+     "storlek": 20941,
+     "sha256": "bb6c24760af4eb50a2265ba82576e22f97dc15b1b2222d9f5e8e08ecdfaa120c"
+    },
+    {
+     "vag": "ljud/utrop-skamten.mp3",
+     "storlek": 49780,
+     "sha256": "aa86b61f33ffc0b3f998de96cc6a1eba8630c6c395bf1534f552468c8b0c48cb"
+    },
+    {
+     "vag": "ljud/utrop-skelar.mp3",
+     "storlek": 43928,
+     "sha256": "691434b941501a22564e823a852d8864dc0ef0bd1ef7f31d689aeb2f6b64478e"
+    },
+    {
+     "vag": "ljud/utrop-skiljas.mp3",
+     "storlek": 45600,
+     "sha256": "2cfa8f424fcba93df58ded306c59af4db42aaa281ce36b00cbaa381f051f6a3e"
+    },
+    {
+     "vag": "ljud/utrop-skill.mp3",
+     "storlek": 23448,
+     "sha256": "e69ed75337b81abb3b12d84de6102cf422f85500c8bb425387fe15909ee1a157"
+    },
+    {
+     "vag": "ljud/utrop-skolbok.mp3",
+     "storlek": 14253,
+     "sha256": "919373c111262f34dcd15cfd4aade2ce1ca6e40cc073c4ac040e815ac1ed9764"
+    },
+    {
+     "vag": "ljud/utrop-skold-gratis.mp3",
+     "storlek": 43092,
+     "sha256": "c45f3b879265448fbd98bfe06ed046e77564e1ae2270ea04ee7c4ecee68c0bb7"
+    },
+    {
+     "vag": "ljud/utrop-skold.mp3",
+     "storlek": 16761,
+     "sha256": "01f749a1ba6638da36f96b28d3b94c5f4b29b811bbb18f3ef1b56531f9849f16"
+    },
+    {
+     "vag": "ljud/utrop-skuld.mp3",
+     "storlek": 48108,
+     "sha256": "04832bf0e64f428609c848d2193d6f32d2de2c7e764af9f13b679b1bbbd64026"
+    },
+    {
+     "vag": "ljud/utrop-slant.mp3",
+     "storlek": 33479,
+     "sha256": "023e1682eddb2b03bdc48196bee33ca607191fabaf4760b8f742e168c41788e3"
+    },
+    {
+     "vag": "ljud/utrop-slut-pa.mp3",
+     "storlek": 49362,
+     "sha256": "b4caaa9d81a54809549845734c4b1186e736b0f43fc3252c26d28c7dbf9aeabc"
+    },
+    {
+     "vag": "ljud/utrop-snigel.mp3",
+     "storlek": 41421,
+     "sha256": "d066c6bd2e47050529ec0304495ff66d2f170c605cc0829eff7ad54894341a62"
+    },
+    {
+     "vag": "ljud/utrop-som-vanligt.mp3",
+     "storlek": 61483,
+     "sha256": "bbbcb99298cbb536d13de0e77287296f38c10106b60a246270dbcb3e038df958"
+    },
+    {
+     "vag": "ljud/utrop-spoke-alla.mp3",
+     "storlek": 15507,
+     "sha256": "fbd718e28d3e64ba3370e36ed85f56053a9189253a759e264976884cf68286b6"
+    },
+    {
+     "vag": "ljud/utrop-spoke-boo.mp3",
+     "storlek": 29718,
+     "sha256": "8167d3373e944f3d80083d0c944d3a67c8fc2fccbd2eaa2878ae03888d8e8dc5"
+    },
+    {
+     "vag": "ljud/utrop-spoke-chomp.mp3",
+     "storlek": 10910,
+     "sha256": "d552dd5cf921d2e475a06f14e87581b04ad34a928a174ed963f92fe453310f8e"
+    },
+    {
+     "vag": "ljud/utrop-spoke-gotcha.mp3",
+     "storlek": 12581,
+     "sha256": "7263e808f72cb22301a66ffcea03d44affca5232cd99a028a69f348cf2ef44c9"
+    },
+    {
+     "vag": "ljud/utrop-spoke-hejda.mp3",
+     "storlek": 20105,
+     "sha256": "f2ad82812562eeba82da4f39980c952aaf9a2f915a30cd76ced711d57fec9ce9"
+    },
+    {
+     "vag": "ljud/utrop-spoke-kalori.mp3",
+     "storlek": 43510,
+     "sha256": "63f6ee80666327f3521994f7cf28dd0114c69805d8bd030114fb3f6a4ac92563"
+    },
+    {
+     "vag": "ljud/utrop-spoke-mage.mp3",
+     "storlek": 32225,
+     "sha256": "170aad9c45696a7a9bad473fd581083e689686b44a4e787871c77162668571c5"
+    },
+    {
+     "vag": "ljud/utrop-spoke-matte.mp3",
+     "storlek": 33479,
+     "sha256": "3815b249cb0d9a76fcbaef6aa1ea82131f52a2b91fbec3624ed7c1a820ecefd9"
+    },
+    {
+     "vag": "ljud/utrop-stang.mp3",
+     "storlek": 49362,
+     "sha256": "ba398438ee82941096b57dc4d2802e63b3ffb7363483c7c8bda1956e647a6dcd"
+    },
+    {
+     "vag": "ljud/utrop-stolt.mp3",
+     "storlek": 62736,
+     "sha256": "a0fa20ce4b274dc84a126b00abb6d2a64b7b007b05b3a1b2f8a4b331f52943c0"
+    },
+    {
+     "vag": "ljud/utrop-stycken.mp3",
+     "storlek": 26792,
+     "sha256": "b6adcfdc4f646bdc9ee8d25d6ee080f04e67792149065d69a4763878434f0e69"
+    },
+    {
+     "vag": "ljud/utrop-suger-inte.mp3",
+     "storlek": 43510,
+     "sha256": "3ade5a5ca4a8f188e9d6a21850af462ddf67beb17ba7719d42a2a2965f84419e"
+    },
+    {
+     "vag": "ljud/utrop-tack.mp3",
+     "storlek": 46436,
+     "sha256": "c007555e865f2985211027447587528a47bfacf1722fa7783c81eaf6ce89e231"
+    },
+    {
+     "vag": "ljud/utrop-tar-tillbaka.mp3",
+     "storlek": 53959,
+     "sha256": "b83f99eb3b262dfa633e212e8dcee82dc76954fb5c28ac0a5b78aa124bf8fe05"
+    },
+    {
+     "vag": "ljud/utrop-tid-flott.mp3",
+     "storlek": 38495,
+     "sha256": "252fb9451a6601fd3523563f27ea5c401acad7d861680cf0c8d76f83abbfeca8"
+    },
+    {
+     "vag": "ljud/utrop-tid-undvika.mp3",
+     "storlek": 48108,
+     "sha256": "51baf719d92c75e3af030d704cc56cce6abc5e724ef148d1608589490c058fa7"
+    },
+    {
+     "vag": "ljud/utrop-tio-hander.mp3",
+     "storlek": 38495,
+     "sha256": "008dfc23453ce9c66bf94ba271938a9f5fcd02fdbdb4cd0b19bda46a4828c756"
+    },
+    {
+     "vag": "ljud/utrop-tio-ingen.mp3",
+     "storlek": 45600,
+     "sha256": "c7935c76ed00bf60d0263ed92e8820fc08121051df4599f25c10a9099ee4d5ac"
+    },
+    {
+     "vag": "ljud/utrop-tio-lagligt.mp3",
+     "storlek": 41003,
+     "sha256": "26f400e284192b264a067d3f6c57bf9dd2b85aa22c3e142ad30352957a104adb"
+    },
+    {
+     "vag": "ljud/utrop-tio-larare.mp3",
+     "storlek": 58557,
+     "sha256": "2aaa46754a6d7b4dda740314d254b1e25e69ad79546e9023e3ef916d05961902"
+    },
+    {
+     "vag": "ljud/utrop-tio-legend.mp3",
+     "storlek": 50616,
+     "sha256": "499342291a67981a9f1def868a78956d42b9594371048d620ed79cf6ade5b629"
+    },
+    {
+     "vag": "ljud/utrop-tio-polis.mp3",
+     "storlek": 43928,
+     "sha256": "9e43c64a2715f8f91c889ae35103d0fe649dfc799853c275f357d4841c912998"
+    },
+    {
+     "vag": "ljud/utrop-tio-robot.mp3",
+     "storlek": 36823,
+     "sha256": "8ea4369e33cd9dba0f04bcb42db3372dbf5dd479557fdfee61f8da53b5a14f8f"
+    },
+    {
+     "vag": "ljud/utrop-toalett.mp3",
+     "storlek": 51870,
+     "sha256": "f2e6367ffa857c86d5bcf98ade562e51d5fddf67032165b196a5e6d6bce195d0"
+    },
+    {
+     "vag": "ljud/utrop-tre-fortsatt.mp3",
+     "storlek": 33061,
+     "sha256": "94438c8eb57a81a86b35450793868629c7221a6ef064d6d1e34f9a56380232ff"
+    },
+    {
+     "vag": "ljud/utrop-tre-hey.mp3",
+     "storlek": 44346,
+     "sha256": "b42253c2df8dc17fe5eba1bc7b7d5cb320faf1ce05e858c70ed764cb103953f5"
+    },
+    {
+     "vag": "ljud/utrop-tre-misstankt.mp3",
+     "storlek": 49362,
+     "sha256": "7f7f7003a353adbe398afa0c5346cde622e38545ec148e5ac75ae8c5018896a9"
+    },
+    {
+     "vag": "ljud/utrop-tre-skriv.mp3",
+     "storlek": 58557,
+     "sha256": "30d33a55b5c54f0337fa81afb378af8a2dfc45b0221ae9e94aa23c1046a213ed"
+    },
+    {
+     "vag": "ljud/utrop-tre-tur.mp3",
+     "storlek": 50616,
+     "sha256": "148aebab4811215adc99032031247cc471735a3be5acb8b03276ea46b6e21bdc"
+    },
+    {
+     "vag": "ljud/utrop-tre-vaknade.mp3",
+     "storlek": 41838,
+     "sha256": "cb4bbdddaf1435771b5ad370ab41220c098fc3ff2e299b8fa1f0cd31ab561f44"
+    },
+    {
+     "vag": "ljud/utrop-tre-vana.mp3",
+     "storlek": 43510,
+     "sha256": "b6607f8d9563a096be8d7f3e6fc8af7bee799a35ecf953d7b57e2591d4e8d1aa"
+    },
+    {
+     "vag": "ljud/utrop-tre-varm.mp3",
+     "storlek": 57721,
+     "sha256": "b17c9f773fe9691fed2d79d1aeec6fa83348c12278769e9fdd65ce1529e099b1"
+    },
+    {
+     "vag": "ljud/utrop-trippel-andetag.mp3",
+     "storlek": 31807,
+     "sha256": "8f6c4c3a9baef3858761a7db72f0a8ddd5828de103521e5fe7ee9e500b00149f"
+    },
+    {
+     "vag": "ljud/utrop-trippel-arg.mp3",
+     "storlek": 39749,
+     "sha256": "a82e764b5ee8a6ad61f3a2e40f51d2bf54b82102d4c12b237fb9111941543c0e"
+    },
+    {
+     "vag": "ljud/utrop-trippel-hatt.mp3",
+     "storlek": 35151,
+     "sha256": "1da7ce83ca46b9f57193f84766d0f5f7fd63458797e9dc92900e0a43b7f009b8"
+    },
+    {
+     "vag": "ljud/utrop-trippel-kagel.mp3",
+     "storlek": 52705,
+     "sha256": "bb8a4076a15742642751dabf95657735b6cc28489023ff34f573714c65fddd7f"
+    },
+    {
+     "vag": "ljud/utrop-trippel-lamna.mp3",
+     "storlek": 43510,
+     "sha256": "0c90e4c73185dc3eb94ff43a9e8050d80e61c1f797a1a69a227319681ef3ae92"
+    },
+    {
+     "vag": "ljud/utrop-trippel-lugn.mp3",
+     "storlek": 46436,
+     "sha256": "b3b87e9d0dfda177c730921c93db15c1513493fafe30b35b2fc8dfcf4639a7ae"
+    },
+    {
+     "vag": "ljud/utrop-trippel-ner.mp3",
+     "storlek": 28882,
+     "sha256": "82d6f36713d07c8cb24baab8dfa1a3c488f09256186ad0b1c54c6a51e9823a74"
+    },
+    {
+     "vag": "ljud/utrop-trippel.mp3",
+     "storlek": 22612,
+     "sha256": "741c0c8a8f09c224d57516b9b82636469711f736a69b81880bb3bd7b2b502c52"
+    },
+    {
+     "vag": "ljud/utrop-tur.mp3",
+     "storlek": 35987,
+     "sha256": "9fa94f34bdbb71e1654ce13b3aca54986ef588594623821af396c1b45736939c"
+    },
+    {
+     "vag": "ljud/utrop-undvika.mp3",
+     "storlek": 36823,
+     "sha256": "9738edc581867584f0a81d0342be30c482c5f927179f1a6902955ccfb7a28f6f"
+    },
+    {
+     "vag": "ljud/utrop-ur-rov.mp3",
+     "storlek": 37241,
+     "sha256": "029f697ef050eabe6489a2fb2b8ec998473f4297743faf9587bb5bd958a7a1cf"
+    },
+    {
+     "vag": "ljud/utrop-vad.mp3",
+     "storlek": 49780,
+     "sha256": "95e3508d8a6d7824356d71876f47604fed144d3e30d3d51880dd9fa50cff8f65"
+    },
+    {
+     "vag": "ljud/utrop-vadet.mp3",
+     "storlek": 43510,
+     "sha256": "c63d4863556637896c877b86b4acc46495370f439d29e0cf6c566034c998f91a"
+    },
+    {
+     "vag": "ljud/utrop-vaken-dar.mp3",
+     "storlek": 24284,
+     "sha256": "fddb977bcd6e79f9a7defd589b66a4247e52eca868e09987a6673c41f6243959"
+    },
+    {
+     "vag": "ljud/utrop-vaken-somna.mp3",
+     "storlek": 18015,
+     "sha256": "5c7e3552b90324e400c81315475005afa86a03e3415a9cd8a46b7ac0a58591f1"
+    },
+    {
+     "vag": "ljud/utrop-vaken.mp3",
+     "storlek": 33897,
+     "sha256": "4b4fb7bdefcf35d524f522dcb06c49f02c4c4f2370ad72e888cd648a451b0042"
+    },
+    {
+     "vag": "ljud/utrop-vatten.mp3",
+     "storlek": 45182,
+     "sha256": "20c2364798ffa85335c18ea205490d3e4ebada95b743b70da4579cce0f89bf14"
+    },
+    {
+     "vag": "ljud/utrop-vem.mp3",
+     "storlek": 46436,
+     "sha256": "be06ed85a30bae3a10ce963ee4bf67247ede41ce4d15845e1c8e3899b12212c1"
+    },
+    {
+     "vag": "ljud/utrop-visar-sig.mp3",
+     "storlek": 35569,
+     "sha256": "946a11b59503c8dfd64d30b4bdcc0a67703489fd55949e5b30ef418dde1840d7"
+    },
+    {
+     "vag": "ljud/utrop-viska.mp3",
+     "storlek": 40167,
+     "sha256": "27bafcdd91f9d595ff4a19e2fb07abf8520380ecd3b20a006f5fbbfe4add4b27"
+    },
+    {
+     "vag": "ljud/vhs-in.mp3",
+     "storlek": 60938,
+     "sha256": "64f1099db37a87df678e461a38072793e194ec111afeb6f1119f605931a9619c"
+    },
+    {
+     "vag": "ljud/vhs-ut.mp3",
+     "storlek": 65184,
+     "sha256": "4bae877a9aa737d140ea1dc0a9336946248cba63520e12694440819be53fe87d"
+    },
+    {
+     "vag": "matrix-fragor.js",
+     "storlek": 7010,
+     "sha256": "904193f69e4bc04ae9f1775fc58600c82d33d1b41fa565b4e940e5a4f48afbc5"
+    },
+    {
+     "vag": "matrix.css",
+     "storlek": 87164,
+     "sha256": "b0bf7b415d8155bb2e8c60165d0af86346ad16fea333321177c402ffefba7637"
+    },
+    {
+     "vag": "matrixtext.js",
+     "storlek": 10149,
+     "sha256": "8600b7649cd5d83add958708a1ebfb279a5e066344dbbb5857b1713e05cfd757"
+    },
+    {
+     "vag": "pac-banor.js",
+     "storlek": 12711,
+     "sha256": "a0c8ab27914c7c771a11d39966dcabe9202470453b3e38738e2be7b2de0e58a4"
+    },
+    {
+     "vag": "pac-flera.js",
+     "storlek": 17938,
+     "sha256": "c3e42a3cedab934d5a6c91627cdfaf781d1309ce5885745570a050d6df92545b"
+    },
+    {
+     "vag": "pac-ljud.js",
+     "storlek": 1274,
+     "sha256": "b32edf1330da1d48851cf2a8c6df11b1febb2113c1e42ffd7e307b3e9fbad99a"
+    },
+    {
+     "vag": "pac-natet.js",
+     "storlek": 19956,
+     "sha256": "b5b6c4f42f201947cbe0c08e76947e93693291abbebae103551a9061d1c78e8f"
+    },
+    {
+     "vag": "pac-retro.js",
+     "storlek": 46310,
+     "sha256": "1c9b5567bf7ffef28a95ac157042d39ffc178d8e9522a54fe6cf462f9762b943"
+    },
+    {
+     "vag": "pac-sida.css",
+     "storlek": 6455,
+     "sha256": "12963522a12be78e45b165e428a4742925b1c1e204457e8b02ce26ba7677a57f"
+    },
+    {
+     "vag": "pac-sida.js",
+     "storlek": 13070,
+     "sha256": "537459688f73144805858718334eff5a410fd0ca412a41113b678569afeafd59"
+    },
+    {
+     "vag": "pac-sim.js",
+     "storlek": 21872,
+     "sha256": "72edd52871df34b178a384f77744e613727385fddcde799d7f00806b738bdae1"
+    },
+    {
+     "vag": "pac.js",
+     "storlek": 93933,
+     "sha256": "74e3d945f0d0de564467da39cd006a72e7bc6ded12c7f96cdc127c4b711de1d6"
+    },
+    {
+     "vag": "pacman.html",
+     "storlek": 3317,
+     "sha256": "0dda1facb85ef754166a27e9512924fdc76b6d9269aeb97092de88cada2b15e9"
+    },
+    {
+     "vag": "server/src/delat.js",
+     "storlek": 1863,
+     "sha256": "a40799a121532ff6cc70e08bc7ea28c210a60b82b6b0fd1f6a16f619534d371e"
+    },
+    {
+     "vag": "server/src/match-pac.js",
+     "storlek": 5758,
+     "sha256": "f66b2d25bc48e6de51da0249b72a0d555fd92ac9eb6cc2fe18ee9674ee0d7f57"
+    },
+    {
+     "vag": "spel-delar.js",
+     "storlek": 17383,
+     "sha256": "c56c689f28d1dc3e81644d76543106e00beec0dc1461e58c7867fb983ee882cf"
+    },
+    {
+     "vag": "spel-karna.js",
+     "storlek": 96697,
+     "sha256": "cfd369cd8bed7028a705a8b53b088b1d40ac98114b099834d1d8fa5acceabfaf"
+    },
+    {
+     "vag": "typsnitt/OFL.txt",
+     "storlek": 4386,
+     "sha256": "7f95a8eeecc6904ffc81cd10cc8ebc7fcee72a67922924bf45f02dff03b88127"
+    },
+    {
+     "vag": "typsnitt/exo2-kursiv.woff2",
+     "storlek": 44688,
+     "sha256": "d8f3493d9c1d4325bca32511522f57c2ad0d60f48aea9f8c6146ce477c525898"
     },
     {
      "vag": "utropare.js",
