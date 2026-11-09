@@ -80,6 +80,26 @@ export const CSP = [
   "upgrade-insecure-requests",
 ].join("; ");
 
+// Spelen under /spel/ (Rickard 2026-11-09: spelen ligger «Inne i videoteket»). De kommer från geogebra-guidens repo
+// (verktyg/spel.mjs) och kör three.js, en worker och ljud från sidans egen adress, och sätter stilar från skript. Därför
+// en egen policy, mildare än sidans men utan något från andra värdar: allt är 'self', och anslutningen till spelservern
+// går till samma adress (/spel/rum, functions/spel/). cloudflare.mjs tar bort sidans policy för /spel/* med en !-rad.
+export const SPEL_CSP = [
+  "default-src 'none'",
+  "script-src 'self'",
+  "worker-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self'",
+  "img-src 'self' data: blob:",
+  "media-src 'self' blob:",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'none'",
+  "upgrade-insecure-requests",
+  "frame-ancestors 'none'",
+].join("; ");
+
 // Huvudet har också frame-ancestors, som inte fungerar i en meta-tagg.
 export const CSP_HUVUD = `${CSP}; frame-ancestors 'none'`;
 

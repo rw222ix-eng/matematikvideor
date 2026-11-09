@@ -24,7 +24,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { skrivFilmsidor } from "./filmsidor.mjs";
-import { CSP, CSP_HUVUD, LADDARE, VIDARE, VIDARE_CSP, VIDARE_STIL, VIDARE_TILL } from "./csp.mjs";
+import { CSP, CSP_HUVUD, LADDARE, SPEL_CSP, VIDARE, VIDARE_CSP, VIDARE_STIL, VIDARE_TILL } from "./csp.mjs";
 import { skrivCloudflareHuvuden } from "./cloudflare.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
@@ -39,8 +39,11 @@ const fel = (s) => { console.error(`publicera.mjs: ${s}`); process.exit(1); };
 // 4. Policyn i huvuden.json måste vara exakt den i csp.mjs. huvuden.json var headers i vercel.json före flytten
 // till Cloudflare 2026-11-07, och Vercel har nu bara vidarekopplingens huvuden.
 const huvuden = JSON.parse(readFileSync(join(HÄR, "huvuden.json"), "utf8"));
-const huvud = huvuden.headers.flatMap((r) => r.headers).filter((h) => h.key === "Content-Security-Policy").map((h) => h.value);
+// Spelen under /spel/ har en egen policy (SPEL_CSP), som också måste stämma.
+const csp = (spel) => huvuden.headers.filter((r) => (r.source === "/spel/(.*)") === spel).flatMap((r) => r.headers).filter((h) => h.key === "Content-Security-Policy").map((h) => h.value);
+const huvud = csp(false), spelHuvud = csp(true);
 if (huvud.length !== 1 || huvud[0] !== CSP_HUVUD) fel(`Content-Security-Policy i verktyg/huvuden.json är inte densamma som CSP_HUVUD i verktyg/csp.mjs. Rätt värde:\n${CSP_HUVUD}`);
+if (spelHuvud.length !== 1 || spelHuvud[0] !== SPEL_CSP) fel(`Content-Security-Policy för /spel/ i verktyg/huvuden.json är inte densamma som SPEL_CSP i verktyg/csp.mjs. Rätt värde:\n${SPEL_CSP}`);
 
 // 1. Filmsidorna.
 skrivFilmsidor(JSON.parse(readFileSync(join(publicDir, "videor.json"), "utf8")).videor, publicDir);

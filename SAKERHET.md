@@ -37,6 +37,14 @@ HTML läggs bara in med `el.innerHTML = html(…)`. En vanlig sträng i `innerHT
 
 Stilattribut gör ingenting (B4, 2026-10-27, `style-src-attr 'none'`), så ett injicerat stilattribut kan inte flytta, täcka eller dölja något. Stilblocken i `<head>` står kvar. Sidans egna värden skrivs som `data-stil="egenskap:värde;…"` och sätts med `style.setProperty`, som policyn släpper igenom. Bara egenskaperna i `STILAR` i `index.html` sätts, och bara värden av rätt form. En bild får bara komma från sidans egna filer. En ny egenskap läggs till i `STILAR` med en regel för värdet. `el.style.setProperty(…)` och `el.style.x = …` fungerar som vanligt. Bygget faller om `index.html` har ett stilattribut, `setAttribute("style", …)` eller `style.cssText = …`.
 
+## Spelen under /spel/ (2026-11-09)
+
+- Rickard valde 2026-11-09 att spelen ska ligga «Inne i videoteket». De byggs och provas i geogebra-guidens repo (privat). `verktyg/spel.mjs` hämtar filerna i `spel-filer.json` från geogebra-guiden.pages.dev till `public/spel/` vid publiceringen hos Cloudflare och kontrollerar varje sha256. En fil som inte stämmer stoppar publiceringen.
+- `/spel/*` har en egen policy, `SPEL_CSP` i `verktyg/csp.mjs`: allt från sidans egen adress (skript, worker, ljud, bilder, anslutningar), inget från andra värdar, inga ramar. Spelen kör three.js, en worker och stilar från skript, och de klarar inte sidans Trusted Types och `style-src-attr 'none'`. `cloudflare.mjs` tar bort sidans policy för `/spel/*` med en !-rad, och bygget faller om policyn i `huvuden.json` inte är `SPEL_CSP`.
+- `/spel/rum`, `/spel/topplista` och `/spel/halsa` går genom `functions/spel/` till spelservern (Workern spel-server, service bindingen SPEL i `wrangler.toml`). `public/_routes.json` gör att inga andra adresser kör funktionerna.
+- Spelservern tar bara emot anslutningar från videotekets adress. Den sparar elevens namn (eget, utan filter, Rickards val), klassen när klasslänkens nyckel stämmer, och poängen på veckans topplista. Inga IP-adresser och inga kakor.
+- `verktyg/spelprov.mjs` provar policyn, funktionerna och Tron lokalt i wrangler pages dev.
+
 ## Externa värdar (13.1.1)
 
 | Värd | Varför | Direktiv |

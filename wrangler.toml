@@ -1,0 +1,11 @@
+# Cloudflare Pages-projektet winterhalls-matte (videoteket). Filen behövs för service bindingen SPEL, som skickar
+# /spel/rum, /spel/topplista och /spel/halsa till spelservern (geogebra-guidens repo, server/, Workern spel-server).
+# Med en wrangler.toml är filen källan för projektets inställningar hos Cloudflare. Kontrollera i Cloudflares panel att
+# projektet inte har andra variabler eller bindningar innan första publiceringen med filen, annars försvinner de.
+name = "winterhalls-matte"
+pages_build_output_dir = "public"
+compatibility_date = "2026-11-01"
+
+[[services]]
+binding = "SPEL"
+service = "spel-server"

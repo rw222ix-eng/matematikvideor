@@ -74,9 +74,15 @@ jobs:
         with:
           persist-credentials: false
       - run: node inbaddat/huvuden.mjs --kontroll && node inbaddat/huvuden.mjs --cloudflare
+      # Spelen (2026-11-09, «Inne i videoteket»): filerna i spel-filer.json hämtas från geogebra-guiden.pages.dev till
+      # public/spel/, och varje hash kontrolleras (verktyg/spel.mjs).
+      - run: node verktyg/spel.mjs
       - run: node verktyg/publicera.mjs --cloudflare
       # Finns projektet redan svarar kommandot med ett fel, och det gör inget.
       - run: npx --yes wrangler@4.158.0 pages project create matematikvideor-inbaddat --production-branch main || true
-      - run: npx --yes wrangler@4.158.0 pages deploy inbaddat/public --project-name matematikvideor-inbaddat --branch main --commit-dirty=true
+      # Inbäddningen publiceras från sin egen mapp, så att videotekets functions/ och wrangler.toml i roten inte följer med.
+      - run: npx --yes wrangler@4.158.0 pages deploy public --project-name matematikvideor-inbaddat --branch main --commit-dirty=true
+        working-directory: inbaddat
       - run: npx --yes wrangler@4.158.0 pages project create winterhalls-matte --production-branch main || true
+      # Från roten: functions/spel/ (spelservern) och wrangler.toml (service bindingen SPEL) följer med.
       - run: npx --yes wrangler@4.158.0 pages deploy public --project-name winterhalls-matte --branch main --commit-dirty=true
