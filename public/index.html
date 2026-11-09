@@ -301,9 +301,9 @@
   }
   /* Kortet är en riktig knapp (2026-09-24). Med display: contents gick den inte att nå med Tab,
      så enda vägen till en film utan mus var sökningen. */
-  .post > button { all: unset; display: flex; flex-direction: column; align-items: inherit; width: 100%; height: 100%; cursor: pointer; }
-  .post > button:focus-visible { outline: none; }
-  .post > button:focus-visible .ram { outline: 2px solid var(--accent); outline-offset: 6px; }
+  .post > button, .post > a { all: unset; display: flex; flex-direction: column; align-items: inherit; width: 100%; height: 100%; cursor: pointer; }
+  .post > button:focus-visible, .post > a:focus-visible { outline: none; }
+  .post > button:focus-visible .ram, .post > a:focus-visible .ram { outline: 2px solid var(--accent); outline-offset: 6px; }
   /* Framsteg på kortet: hur långt eleven kommit (guldlinjen) och om filmen är sedd och Din tur löst. */
   .post .status { position: absolute; top: 10px; right: 10px; z-index: 1; display: inline-flex; align-items: center; gap: 7px; padding: 7px 11px 6px; border-radius: 999px; background: rgba(23, 20, 20, .8); font: 500 10px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ben); text-shadow: none; }
   .post .status:empty { display: none; }
@@ -425,6 +425,13 @@
   /* En formelbladsdel som inte är klar: streckad ram med delens siffra. */
   .post.kommer.del .ram { border-color: rgba(236, 230, 216, .26); background: rgba(23, 20, 20, .18); }
   .post.kommer .ram .nr { display: grid; place-items: center; height: 100%; font: 500 76px/1 var(--skrift); font-variant-numeric: lining-nums; color: rgba(236, 230, 216, .3); text-shadow: 0 2px 12px rgba(0, 0, 0, .6); }
+  /* Spelen under fliken Spel (2026-11-09): ett spelkort är en länk med en spelknapp mitt på bilden, i samma ring som
+     introts Utforska. Spelen som kommer står streckade med namnet i skrivstil, som formelbladets delar som kommer. */
+  .post.spel .ram { position: relative; }
+  .spela-ikon { position: absolute; left: 50%; top: 50%; width: 58px; height: 58px; margin: -29px 0 0 -29px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--accent); background: rgba(23, 20, 20, .5); box-shadow: 0 0 24px rgba(242, 197, 114, .25); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: transform .45s var(--fjader), background .45s var(--lugn); }
+  .spela-ikon svg { width: 20px; height: 20px; margin-left: 3px; fill: var(--accent); }
+  @media (hover: hover) { .post.spel > a:hover .spela-ikon { transform: scale(1.1); background: rgba(242, 197, 114, .16); } }
+  .post.kommer.spel .ram .nr { font-size: 46px; }
 
   /* ── Sök ──────────────────────────────────────────────── */
   /* Sökningen enklare (Rickard 2026-10-03): helt täckande bakgrund, så att filmvalet inte syns
@@ -1046,6 +1053,8 @@
     .flikar.fyra button { padding: 0 9px; letter-spacing: .06em; }
     /* Fem flikar (med Ma 2c, 2026-10-26): ännu tätare, så att raden har luft på sidorna ner till 360 px. */
     .flikar.fem button { padding: 0 7px; letter-spacing: .04em; }
+    /* Sex flikar (med Spel, 2026-11-09): raden gick 9 px utanför på 360 px. */
+    .flikar.sex button { padding: 0 5px; letter-spacing: .03em; }
     .valj .aterstall, .valj .hint { display: none; }
     .sok .inre { padding-top: 110px; }
     .basta { grid-template-columns: 1fr; gap: 16px; }
@@ -1322,7 +1331,7 @@
     .post .rad1 .titel { font-size: 19px; }
   }
   /* Fem flikar på de smalaste telefonerna (320 px): annars hamnade Prov utanför. */
-  @media (max-width: 340px) { .flikar.fem button { padding: 0 5px; letter-spacing: .02em; } }
+  @media (max-width: 340px) { .flikar.fem button { padding: 0 5px; letter-spacing: .02em; } .flikar.sex button { padding: 0 3px; letter-spacing: 0; } }
 </style>
 </head>
 <body class="last">
@@ -1373,6 +1382,8 @@
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
     <!-- Inför provet (Rickard 2026-10-18): klassens nästa prov och filmerna till det. Syns när prov.json har klasser. -->
     <button type="button" role="tab" data-hylla="provet" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Inför provet</span><span class="kort">Prov</span></button>
+    <!-- Spel (Rickard 2026-11-09: spelen ligger «Inne i videoteket»): korten länkar till /spel/, som har en egen policy. -->
+    <button type="button" role="tab" data-hylla="spel" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Spel</button>
   </div>
   <!-- Under fliken Inför provet: klassen. Knapparna skrivs ur prov.json, och valet sparas i webbläsaren ("provKlass"). -->
   <div class="provval" id="provval" role="tablist" aria-label="Vilken klass du går i"></div>
@@ -1815,9 +1826,29 @@
   const MANAD = ["jan", "feb", "mars", "april", "maj", "juni", "juli", "aug", "sep", "okt", "nov", "dec"];
   const datumText = (s) => { const d = provDag(s); return `${VECKODAG[d.getDay()]} ${d.getDate()} ${MANAD[d.getMonth()]}${d.getFullYear() !== idag().getFullYear() ? ` ${d.getFullYear()}` : ""}`; };
   const kvarText = (s) => { const n = Math.round((provDag(s) - idag()) / 864e5); return n === 0 ? "i dag" : n === 1 ? "i morgon" : `om ${n} dagar`; };
-  const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : [])];
-  // En hylla som adressen kan visa: berättelserna (#filmer), en serie eller Inför provet.
-  const arHylla = (h) => !!SERIER[h] || h === PROV;
+  // ── Klasslänken till spelen (Rickard 2026-11-09: «Klasslänk i Classroom») ──
+  // Classroom har ?klass=TE26A&k=<nyckel>. Den sparas som spelKlass, som spelsidan under /spel/ läser och skickar till
+  // spelservern, och servern avgör om nyckeln stämmer. Här kontrolleras bara formen. Klass och nyckel tas bort ur
+  // adressen direkt, så att nyckeln inte står kvar eller delas vidare. Utan länk rörs en sparad spelKlass inte, och en
+  // länk med en annan klass skriver över den gamla.
+  {
+    const s = new URLSearchParams(location.search);
+    if (s.has("klass") || s.has("k")) {
+      const klass = s.get("klass"), k = s.get("k");
+      const namn = provData && Array.isArray(provData.klasser) ? provData.klasser.map((x) => x && x.namn) : [];
+      if (klass && namn.includes(klass) && /^[A-Za-z0-9_-]{4,64}$/.test(k || "")) {
+        try { localStorage.setItem("spelKlass", JSON.stringify({ klass, k })); } catch (e) {}
+      }
+      s.delete("klass"); s.delete("k");
+      const rest = s.toString();
+      history.replaceState(null, "", `${location.pathname}${rest ? `?${rest}` : ""}${location.hash}`);
+    }
+  }
+  const spelKlass = () => { try { const x = JSON.parse(localStorage.getItem("spelKlass")); return x && typeof x.klass === "string" ? x.klass : null; } catch (e) { return null; } };
+  const SPEL = "spel";
+  const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), SPEL];
+  // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
+  const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
   // Fliken en hylla står under: formelbladet-ma2 står under Formelbladet. Formelbladets hyllor (Ma 1 och
   // Ma 2) väljs med växlaren under fliken, och fliken minns vilken eleven valde senast ("formelbladKurs").
   const flikAv = (namn) => (SERIER[namn] && SERIER[namn].grupp) || namn;
@@ -1902,7 +1933,7 @@
     if (namn !== "film") stangSpelare();
     // Filmens titel sätts i laddaFilm, när filmen är känd.
     if (namn === "intro") document.title = SAJTNAMN;
-    if (namn === "valj") { document.title = `Välj en film · ${SAJTNAMN}`; ritaFramstegKort(); }
+    if (namn === "valj") { document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`; ritaFramstegKort(); }
     // Fokus flyttas till vyns rubrik, så att skärmläsare och Tab börjar i den nya vyn. Inte vid
     // första laddningen: då börjar sidan från början som vanligt.
     if (!forstaVyn) { const h = { intro: $("intro-rubrik"), valj: $("valj-rubrik"), film: $("f-titel") }[namn]; if (h) h.focus({ preventScroll: true }); }
@@ -2993,6 +3024,7 @@
   $("flikar").classList.toggle("tre", new Set(HYLLOR.map(flikAv)).size > 2);
   $("flikar").classList.toggle("fyra", new Set(HYLLOR.map(flikAv)).size > 3);
   $("flikar").classList.toggle("fem", new Set(HYLLOR.map(flikAv)).size > 4);
+  $("flikar").classList.toggle("sex", new Set(HYLLOR.map(flikAv)).size > 5);
   // Klassknapparna under Inför provet, en per klass i prov.json.
   $("provval").innerHTML = html(KLASSER.map((k) => `<button type="button" role="tab" data-klass="${attr(k.namn)}" aria-selected="false" aria-controls="tidslinje" tabindex="-1">${esc(k.namn)}</button>`).join(""));
   function ritaProvval() {
@@ -3056,12 +3088,38 @@
       <span class="namn"><span class="rad1"><span class="kurs">${esc(fran.kort)} · del ${nr.length ? `${Math.min(...nr)}–${Math.max(...nr)}` : ""}</span></span><span class="moment">gäller också ${esc(SERIER[namn].kort)}</span></span>
     </div>`;
   };
+  // Spelen under fliken Spel. Ett spel som finns är en länk till sin sida under /spel/ (som har en egen policy och
+  // laddar sina 60 MB först där). Cloudflare skickar /spel/tron.html vidare till /spel/tron, så länken går dit direkt.
+  // Ett spel som inte finns än står streckat som formelbladets delar som kommer.
+  // Raden under säger vilken topplista poängen hamnar på: klassens när eleven kommit via klasslänken.
+  const SPELEN = [
+    { id: "tron", namn: "Tron", sida: "/spel/tron", bild: "omslag/spel-tron.webp", overst: "Online · upp till 8" },
+    { id: "skepp", namn: "Skeppet" },
+    { id: "pacman", namn: "Pac-Man" },
+  ];
+  function spelHtml() {
+    const klass = spelKlass();
+    return SPELEN.map((s, i) => (s.sida ? `
+    <div class="post spel" data-stil="--i:${i}">
+      <a href="${attr(s.sida)}" data-spel="${attr(s.id)}" draggable="false" aria-label="${attr(`${s.namn}. Spela online, upp till åtta i samma match, lag mot lag${klass ? `. Topplista för ${klass}` : ""}`)}">
+        <span class="lyft"></span>
+        <span class="ram"><img src="${attr(s.bild)}" alt="" loading="lazy" draggable="false"><span class="spela-ikon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5 L19 12 L8 19 Z"/></svg></span></span>
+        <span class="lina"></span>
+        <span class="namn"><span class="rad1 stapel"><span class="kurs">${esc(s.overst)}</span><span class="titel">${esc(s.namn)}</span></span>
+          <span class="moment">${klass ? `Lag mot lag · topplista för ${esc(klass)}` : "Lag mot lag · mot klasskompisar"}</span></span>
+      </a>
+    </div>` : `
+    <div class="post kommer del spel" data-stil="--i:${i}">
+      <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${esc(s.namn)}</span></span><span class="lina"></span>
+      <span class="namn"><span class="rad1"><span class="kurs">${esc(s.namn)}</span></span><span class="moment">kommer snart</span></span>
+    </div>`)).join("");
+  }
   function ritaHylla() {
     const delar = !!(SERIER[hylla] && SERIER[hylla].platser);
-    const filmer = hylla === "berattelser" ? berattelser : delar ? null : hyllaFilmer(hylla);
+    const filmer = hylla === "berattelser" ? berattelser : delar ? null : hylla === SPEL ? [] : hyllaFilmer(hylla);
     const egna = delar ? delPlatser(hylla) : [];
     const lanade = delar ? ocksaDelar(hylla) : [];
-    spar.innerHTML = html(hylla === PROV ? provHtml() : delar
+    spar.innerHTML = html(hylla === PROV ? provHtml() : hylla === SPEL ? spelHtml() : delar
       ? egna.map((p, i) => (p.saknas ? `
     <div class="post kommer del" data-stil="--i:${i}">
       <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${p.del}</span></span><span class="lina"></span>
@@ -3083,6 +3141,8 @@
     // Växlaren Ma 1 · Ma 2 under Formelbladet: bara där, och bara när båda bladen har filmer.
     $("vy-valj").classList.toggle("formelval-syns", flik === "formelbladet" && FORMEL.length > 1);
     $("vy-valj").classList.toggle("provval-syns", flik === PROV);
+    $("valj-rubrik").textContent = flik === SPEL ? "Välj ett spel" : "Välj en film";
+    if (aktivVy === "valj") document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`;
     $("formelval").querySelectorAll("[role=tab]").forEach((b) => { const ar = b.dataset.hylla === namn; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar ? 0 : -1; });
     if (flik === "formelbladet") { try { localStorage.setItem("formelbladKurs", namn); } catch (e) {} }
     placeraPlatta();
@@ -3206,9 +3266,9 @@
       if (annan) { valjKlass(annan.dataset.klass); annan.focus(); }
       return;
     }
-    const kort = e.target.closest && e.target.closest(".post > button");
+    const kort = e.target.closest && e.target.closest(".post > button, .post > a");
     if (kort) {
-      const alla = [...spar.querySelectorAll(".post > button")];
+      const alla = [...spar.querySelectorAll(".post > button, .post > a")];
       const nasta = alla[alla.indexOf(kort) + (e.key === "ArrowRight" ? 1 : -1)];
       if (nasta) { e.preventDefault(); nasta.focus(); }
       return;
@@ -5725,7 +5785,7 @@
       valj: () => [
         { id: "hej", lage: "prata", rorelse: "vinka", text: "Hej, jag heter Isaac Newton! Jag visar dig runt på sidan. Gör det jag säger, så går vi vidare tillsammans. Tryck på Nästa när du är redo." },
         { id: "tidslinje", vy: "valj", mal: () => $("tidslinje"), lage: "pekar", nar: "tidslinje", hoppa: () => { if (!smal()) knuffa(520); }, svar: harFlikar ? "Just så." : "Just så. Nu ska vi leta efter något i filmerna.",
-          text: `${SERIER[hylla] && SERIER[hylla].platser ? `Här ligger filmerna om formelbladet${hylla === "formelbladet-ma2" ? " för Ma 2" : ""}, från del 1 till del ${antalDelar(hylla)}.${ocksaDelar(hylla).length ? ` Efter dem ligger delarna från bladet för ${SERIER[ocksaDelar(hylla)[0].serie].kort}, för de står på bladet för ${SERIER[hylla].kort} också.` : ""}` : KURSSERIER.includes(hylla) ? (hyllaFilmer(hylla).length > 1 ? `Här ligger filmerna för Matematik ${hylla.slice(2)}, i den ordning som de hände.` : `Här ligger filmen för Matematik ${hylla.slice(2)}.`) : hylla === PROV ? "Här ligger filmerna till din klass nästa prov, i samma ordning som i boken." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
+          text: `${SERIER[hylla] && SERIER[hylla].platser ? `Här ligger filmerna om formelbladet${hylla === "formelbladet-ma2" ? " för Ma 2" : ""}, från del 1 till del ${antalDelar(hylla)}.${ocksaDelar(hylla).length ? ` Efter dem ligger delarna från bladet för ${SERIER[ocksaDelar(hylla)[0].serie].kort}, för de står på bladet för ${SERIER[hylla].kort} också.` : ""}` : KURSSERIER.includes(hylla) ? (hyllaFilmer(hylla).length > 1 ? `Här ligger filmerna för Matematik ${hylla.slice(2)}, i den ordning som de hände.` : `Här ligger filmen för Matematik ${hylla.slice(2)}.`) : hylla === PROV ? "Här ligger filmerna till din klass nästa prov, i samma ordning som i boken." : hylla === SPEL ? "Här ligger spelen. Du spelar online mot dina klasskompisar, upp till åtta i samma match." : harFlikar ? "Här ligger berättelserna, i den ordning som de hände." : "Här ligger alla filmer, i den ordning som historierna hände."} ${smal() ? "Scrolla neråt, så ser du fler." : "Scrolla eller dra lite åt sidan, så ser du fler."}` },
         // Växlaren under Formelbladet (Rickard 2026-09-26): bladen för Ma 1 och Ma 2 ligger var för sig, och Ma 1-delarna
         // står på bladet för Ma 2 också. Eleven byter kurs, och korten på den andra hyllan lyser.
         { id: "formelval", vy: "valj", mal: () => $("formelval"), ljus: () => [$("formelval").querySelector('[aria-selected="false"]'), ...synligaKort("#spar .post.bro .ram")].filter(Boolean),
