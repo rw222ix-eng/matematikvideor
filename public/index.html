@@ -1382,8 +1382,9 @@
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Formelbladet</button>
     <!-- Inför provet (Rickard 2026-10-18): klassens nästa prov och filmerna till det. Syns när prov.json har klasser. -->
     <button type="button" role="tab" data-hylla="provet" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden><span class="lang">Inför provet</span><span class="kort">Prov</span></button>
-    <!-- Spel (Rickard 2026-11-09: spelen ligger «Inne i videoteket»): korten länkar till /spel/, som har en egen policy. -->
-    <button type="button" role="tab" data-hylla="spel" aria-selected="false" aria-controls="tidslinje" tabindex="-1">Spel</button>
+    <!-- Spel (Rickard 2026-11-09: spelen ligger «Inne i videoteket»): korten länkar till /spel/, som har en egen policy.
+         Gömd tills alla spel har flerspelarläge (SPEL_SYNS i skriptet). -->
+    <button type="button" role="tab" data-hylla="spel" aria-selected="false" aria-controls="tidslinje" tabindex="-1" hidden>Spel</button>
   </div>
   <!-- Under fliken Inför provet: klassen. Knapparna skrivs ur prov.json, och valet sparas i webbläsaren ("provKlass"). -->
   <div class="provval" id="provval" role="tablist" aria-label="Vilken klass du går i"></div>
@@ -1846,7 +1847,11 @@
   }
   const spelKlass = () => { try { const x = JSON.parse(localStorage.getItem("spelKlass")); return x && typeof x.klass === "string" ? x.klass : null; } catch (e) { return null; } };
   const SPEL = "spel";
-  const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), SPEL];
+  // Fliken Spel är gömd tills alla tre spelen har flerspelarläge (Rickard 2026-11-09: «Vi gömmer alla spel än så länge
+  // i videoteket tills vi har fixat flerspelarläge för samtliga spel»). true visar den. Klasslänken sparas ändå, så att
+  // klassen redan finns när spelen syns. Gömd går #spel till #filmer som en serie utan filmer.
+  const SPEL_SYNS = false;
+  const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
   // Fliken en hylla står under: formelbladet-ma2 står under Formelbladet. Formelbladets hyllor (Ma 1 och

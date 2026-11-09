@@ -5,6 +5,8 @@
  *  - ?klass=…&k=… sparas som spelKlass och försvinner ur adressen, en felaktig länk rör inte det sparade,
  *    en annan klass skriver över, och spelsidan ser spelKlass,
  *  - skärmbilder av fliken på dator och telefon (SKARM, standard E:/tmp-three).
+ * Med SPEL_SYNS = false i public/index.html (fliken gömd tills alla spel har flerspelarläge) provas i stället att fliken
+ * inte syns och att #spel går till #filmer. Klasslänken provas i båda lägena.
  *
  *   BAS=http://127.0.0.1:8797 node verktyg/spelflikprov.mjs
  */
@@ -24,6 +26,8 @@ const csp = start.headers.get("content-security-policy") || "";
 prov("startsidan har kvar sin strikta policy", csp.split(", ")[0].startsWith(CSP) && /require-trusted-types-for 'script'/.test(csp), csp.slice(0, 160));
 const klasser = JSON.parse(readFileSync(new URL("../public/prov.json", import.meta.url), "utf8")).klasser.map((k) => k.namn);
 const [K1, K2] = klasser;
+const SYNS = /const SPEL_SYNS = true;/.test(readFileSync(new URL("../public/index.html", import.meta.url), "utf8"));
+console.log(`  (fliken Spel ${SYNS ? "syns" : "är gömd"}: SPEL_SYNS i public/index.html)`);
 
 const webb = await chromium.launch({ channel: "chrome", headless: !process.env.VISA });
 const brottVakt = () => {
@@ -36,6 +40,19 @@ const sida = async (ctx) => { const p = await ctx.newPage(); p.jsFel = []; p.on(
 const spelKlass = (p) => p.evaluate(() => localStorage.getItem("spelKlass"));
 
 // 1. Dator: fliken, kortet och länken.
+if (!SYNS) {
+  const ctx = await webb.newContext({ viewport: { width: 1366, height: 768 } });
+  await ctx.addInitScript(brottVakt);
+  const p = await sida(ctx);
+  await p.goto(`${BAS}/#spel`, { waitUntil: "load" });
+  await p.waitForFunction(() => location.hash === "#filmer", null, { timeout: 15000 }).catch(() => {});
+  prov("gömd: #spel går till #filmer", new URL(p.url()).hash === "#filmer", p.url());
+  prov("gömd: fliken Spel syns inte", (await p.locator('#flikar [data-hylla="spel"]').isHidden()) && (await p.locator('#flikar [data-hylla="provet"]').isVisible()));
+  prov("gömd: inga spelkort på linan", (await p.locator("#spar .post.spel").count()) === 0);
+  prov("gömd: policyn stoppar inget", (await p.evaluate(() => window.__brott)).length === 0);
+  prov("gömd: inga JS-fel", p.jsFel.length === 0, p.jsFel.slice(0, 3).join(" | "));
+  await ctx.close();
+} else {
 const ctx = await webb.newContext({ viewport: { width: 1366, height: 768 } });
 await ctx.addInitScript(brottVakt);
 const p = await sida(ctx);
@@ -60,16 +77,17 @@ prov("kortet öppnar spelsidan", new URL(p.url()).pathname === "/spel/tron", p.u
 prov("spelsidan laddas", await p.locator("#spela").isVisible({ timeout: 15000 }).catch(() => false));
 prov("inga JS-fel på startsidan", p.jsFel.length === 0, p.jsFel.slice(0, 3).join(" | "));
 await ctx.close();
+}
 
 // 2. Klasslänken.
 const ctx2 = await webb.newContext({ viewport: { width: 1366, height: 768 } });
 await ctx2.addInitScript(brottVakt);
 const q = await sida(ctx2);
 await q.goto(`${BAS}/?klass=${K1}&k=prov-nyckel-123#spel`, { waitUntil: "load" });
-await q.waitForSelector('#spar a[data-spel="tron"]', { timeout: 15000 }).catch(() => {});
+await q.waitForFunction(() => location.search === "", null, { timeout: 15000 }).catch(() => {});
 prov("klasslänken sparas som spelKlass", (await spelKlass(q)) === JSON.stringify({ klass: K1, k: "prov-nyckel-123" }), await spelKlass(q));
-prov("klass och k tas bort ur adressen, fliken står kvar", new URL(q.url()).search === "" && new URL(q.url()).hash === "#spel", q.url());
-prov("kortet säger klassens topplista", (await q.locator('#spar a[data-spel="tron"] .moment').textContent()).includes(K1));
+prov("klass och k tas bort ur adressen", new URL(q.url()).search === "" && new URL(q.url()).hash === (SYNS ? "#spel" : "#filmer"), q.url());
+if (SYNS) prov("kortet säger klassens topplista", (await q.locator('#spar a[data-spel="tron"] .moment').textContent()).includes(K1));
 await q.goto(`${BAS}/?klass=${K1}&k=prov-nyckel-123&x=1#filmer`, { waitUntil: "load" });
 await q.waitForFunction(() => !location.search.includes("klass"), null, { timeout: 15000 }).catch(() => {});
 prov("andra parametrar står kvar i adressen", new URL(q.url()).search === "?x=1", q.url());
@@ -90,6 +108,7 @@ prov("spelsidan ser spelKlass", JSON.parse((await spelKlass(q)) || "{}").klass =
 await ctx2.close();
 
 // 3. Telefon: fliken ryms och kortet syns.
+if (SYNS) {
 const ctx3 = await webb.newContext({ viewport: { width: 375, height: 812 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 await ctx3.addInitScript(brottVakt);
 const t = await sida(ctx3);
@@ -102,6 +121,7 @@ prov("Tron-kortet syns på telefonen", await t.locator('#spar a[data-spel="tron"
 await t.screenshot({ path: `${SKARM}/vt-spelflik-telefon.png` });
 prov("policyn stoppar inget på telefonen", (await t.evaluate(() => window.__brott)).length === 0);
 prov("inga JS-fel på telefonen", t.jsFel.length === 0, t.jsFel.slice(0, 3).join(" | "));
+}
 await webb.close();
 console.log(`\n${ok} ok, ${fel} FEL`);
 process.exit(fel ? 1 : 0);
