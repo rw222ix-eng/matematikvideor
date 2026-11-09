@@ -3654,5 +3654,206 @@
       "1 % av 500 är 5, så 0,4 % är fyra tiondelar av 5, alltså 2 taka i ränta.",
       "Första veckan betalar hon amorteringen plus räntan: 10 + 2 = 12 taka."
     ]
+  },
+  "ma2a-12-potensreglerna": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Skriv a⁵ · a³ som en enda potens.",
+      "Sen: Skriv a³/a⁵ som en enda potens."
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Skriv a⁵ · a³ som en enda potens.",
+        "typ": "uttryck",
+        "svar": "a^8",
+        "variabler": [
+          "a"
+        ],
+        "exempel": "t.ex. a^4",
+        "tangenter": [
+          "^",
+          "(",
+          ")"
+        ],
+        "fel": [
+          {
+            "svar": "a^15",
+            "text": "Exponenterna ska inte multipliceras. När potenserna multipliceras läggs exponenterna ihop: 5 + 3."
+          },
+          {
+            "svar": "a^2",
+            "text": "Det är gånger mellan potenserna, så exponenterna läggs ihop: 5 + 3. Dra bort gör man när det är delat med."
+          },
+          {
+            "svar": "2a^8",
+            "text": "Exponenten 8 stämmer. Men a⁵ · a³ är bara en enda a-potens, ingen tvåa framför."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Skriv a³/a⁵ som en enda potens.",
+        "typ": "uttryck",
+        "svar": "a^(-2)",
+        "variabler": [
+          "a"
+        ],
+        "exempel": "t.ex. a^-4",
+        "tangenter": [
+          "^",
+          "(",
+          ")",
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "a^2",
+            "text": "Exponenten är täljarens minus nämnarens: 3 − 5. Det blir ett negativt tal."
+          },
+          {
+            "svar": "a^8",
+            "text": "Det är delat med, så exponenterna dras ifrån varandra: 3 − 5."
+          },
+          {
+            "svar": "a^(3/5)",
+            "text": "Exponenterna ska inte delas med varandra. Vid division drar man bort: 3 − 5."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "På formelbladet står samma regel med bokstäver",
+      "text": "Formelbladet: a^x · a^y = a^(x+y), och a^(x)/a^(y) = a^(x−y). Lägg ihop exponenterna vid gånger, dra bort dem vid delat med."
+    },
+    "losning": [
+      "Gånger: a^x · a^y = a^(x+y), så exponenterna läggs ihop.",
+      "a⁵ · a³ = a⁵⁺³ = a⁸.",
+      "Delat med: a^(x)/a^(y) = a^(x−y), så exponenterna dras ifrån varandra.",
+      "a³/a⁵ = a³⁻⁵ = a⁻².",
+      "a⁻² är samma sak som 1/(a^2), för a⁻ˣ = 1/(a^x).",
+      "Svar: a⁸ och a⁻²."
+    ]
+  },
+  "ma2a-09-exponentialekvationer": {
+    "geogebra": {
+      "text": "Lös ekvationen här i GeoGebra, med samma steg som i filmen: skriv 12,5 · 0,89^x med punkt i stället för komma, en stjärna för gånger och ett tak för upphöjt till. Skriv y = 9,2 på nästa rad. Klicka på kurvan och sedan på den grå punkten där de möts. Det första talet är x, antalet tusen år."
+    },
+    "notisFran": "Nu är det din tur",
+    "fraga": "Libby mätte också träet från golvet i palatset i Syrien. Där klickade räknaren 9,2 gånger i minuten för varje gram. När trädet levde klickade det 12,5 gånger, och varje tusen år finns 89 procent kvar. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vilken exponentialekvation ska du lösa?",
+      "Sen: Hur gammalt är träet? Lös ekvationen med GeoGebra och svara i år, avrundat till hundratal."
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p06-palatset",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "Utgrävningen av palatset i Syrien. En hand lyfter en svart bit trä från golvet. Träet klickar 9,2 gånger i minuten för varje gram. Åldern är okänd.",
+      "delar": [
+        {
+          "typ": "text",
+          "vid": [
+            110,
+            200
+          ],
+          "text": "Syrien",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            110,
+            300
+          ],
+          "text": "9,2 klick/min",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            110,
+            400
+          ],
+          "text": "? år",
+          "ankare": "start",
+          "accent": true
+        }
+      ]
+    },
+    "delar": [
+      {
+        "fraga": "Först: Vilken exponentialekvation ska du lösa?",
+        "typ": "ekvation",
+        "svar": "12,5 · 0,89^x = 9,2",
+        "exempel": "t.ex. 10 · 0,75^x = 6",
+        "tangenter": [
+          "^",
+          "·",
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "12,5 · 0,89^x = 8",
+            "text": "8 klick var plankan från båten i filmen. Träet från palatset klickar 9,2 gånger i minuten."
+          },
+          {
+            "svar": "9,2 · 0,89^x = 12,5",
+            "text": "C är antalet klick från början, när trädet levde: 12,5. Det står först. 9,2 är antalet klick nu, och det står till höger om likhetstecknet."
+          },
+          {
+            "svar": "12,5 · 0,11^x = 9,2",
+            "text": "Elva procent försvinner, så 89 procent finns kvar. Förändringsfaktorn är 0,89."
+          },
+          {
+            "svar": "12,5 · 0,89 · x = 9,2",
+            "text": "x ska stå i exponenten, upphöjt till. Skriv 0,89^x."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur gammalt är träet? Lös ekvationen med GeoGebra och svara i år, avrundat till hundratal.",
+        "typ": "tal",
+        "svar": 2600,
+        "tolerans": 100,
+        "enhet": "år",
+        "exempel": "t.ex. 3800",
+        "tangenter": [
+          "·"
+        ],
+        "fel": [
+          {
+            "svar": "2.63",
+            "tolerans": 0.05,
+            "text": "Rätt x, men x räknar tusen år. 2,63 tusen år är ungefär 2 600 år."
+          },
+          {
+            "svar": "3800",
+            "tolerans": 100,
+            "text": "3 800 år var båten. Träet från palatset klickar mer, 9,2 gånger i stället för 8, så det är yngre."
+          },
+          {
+            "svar": "9.2",
+            "tolerans": 0.01,
+            "text": "9,2 är y-värdet, antalet klick. Åldern är x-värdet i skärningspunkten."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Öppna GeoGebras grafräknare",
+      "text": "Gör som med plankan: skriv 12,5 · 0,89^x i GeoGebra, med punkt i stället för komma, en stjärna för gånger och ett tak för upphöjt till. Skriv y = 9,2 på nästa rad. Klicka på kurvan och sedan på den grå punkten där kurvan och linjen möts. Det första talet är x, antalet tusen år."
+    },
+    "losning": [
+      "När trädet levde klickade det 12,5 gånger, och varje tusen år finns 89 procent kvar. Så y = 12,5 · 0,89ˣ.",
+      "Träet klickar 9,2 gånger, så ekvationen är 12,5 · 0,89ˣ = 9,2.",
+      "I GeoGebra skär kurvan linjen y = 9,2 där x ≈ 2,63.",
+      "x räknar tusen år, så 2,63 tusen år ≈ 2 600 år."
+    ]
   }
 }
