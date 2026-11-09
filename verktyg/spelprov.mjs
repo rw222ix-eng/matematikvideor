@@ -3,7 +3,7 @@
  * Cloudflare) med spelservern i wrangler dev bredvid:
  *  - /spel/tron.html får spelens policy och inte sidans, och Tron startar utan att policyn stoppar något,
  *  - startsidan har kvar sin strikta policy,
- *  - /spel/halsa och en WebSocket till /spel/rum går genom funktionen till spelservern,
+ *  - /spel/halsa, /spel/rapport och en WebSocket till /spel/rum går genom funktionen till spelservern,
  *  - skeppet och Pac-Man (/spel/skepp, /spel/pacman) laddar och spelar mot datorn under samma policy.
  *
  *   (i geogebra-guiden, server/) npx --yes wrangler@4.158.0 dev --port 8792 --ip 127.0.0.1
@@ -44,6 +44,9 @@ prov("spelsidan har spelens policy", /worker-src 'self'/.test(csp) && !/trusted-
 prov("spelsidan har bara en policy", !csp.includes(", default-src"), csp.length);
 const halsa = await fetch(`${BAS}/spel/halsa`).then((r) => r.json()).catch(() => null);
 prov("/spel/halsa går genom funktionen till spelservern", halsa?.ok === true && halsa.version >= 1, JSON.stringify(halsa));
+// Buggrapportens väg: läsningen utan nyckel ska nekas av spelservern (401 «nyckel»), inte av sidan (404 eller startsidan).
+const rapport = await fetch(`${BAS}/spel/rapport`).then(async (r) => ({ kod: r.status, svar: (await r.text()).slice(0, 80) })).catch((e) => ({ kod: 0, svar: String(e) }));
+prov("/spel/rapport går genom funktionen, och läsningen är stängd utan nyckel", rapport.kod === 401 && /"fel":"nyckel"/.test(rapport.svar), JSON.stringify(rapport));
 
 const webb = await chromium.launch({ channel: "chrome", headless: !process.env.VISA, args: ["--autoplay-policy=no-user-gesture-required"] });
 const ctx = await webb.newContext({ viewport: { width: 1366, height: 768 } });

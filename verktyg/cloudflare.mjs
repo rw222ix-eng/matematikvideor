@@ -31,7 +31,7 @@ export function huvudText(huvuden) {
 
 // Pages-funktionerna (functions/spel/) körs bara för spelserverns adresser. Utan _routes.json skulle varje fil under
 // /spel/ gå genom en funktion och kosta ett anrop i Workers-kvoten.
-export const RUTTER = { version: 1, include: ["/spel/rum", "/spel/topplista", "/spel/halsa"], exclude: [] };
+export const RUTTER = { version: 1, include: ["/spel/rum", "/spel/topplista", "/spel/halsa", "/spel/rapport"], exclude: [] };
 
 export function skrivCloudflareHuvuden(huvuden, publicDir) {
   writeFileSync(join(publicDir, "_headers"), huvudText(huvuden), "utf8");
