@@ -3723,12 +3723,12 @@
     ],
     "ledtrad": {
       "fras": "På formelbladet står samma regel med bokstäver",
-      "text": "Formelbladet: aˣ · aʸ = aˣ⁺ʸ, och aˣ/aʸ = aˣ⁻ʸ. Lägg ihop exponenterna vid gånger, dra bort dem vid delat med."
+      "text": "Formelbladet: a^x · a^y = a^(x+y), och a^(x)/a^(y) = a^(x−y). Lägg ihop exponenterna vid gånger, dra bort dem vid delat med."
     },
     "losning": [
-      "Gånger: aˣ · aʸ = aˣ⁺ʸ, så exponenterna läggs ihop.",
+      "Gånger: a^x · a^y = a^(x+y), så exponenterna läggs ihop.",
       "a⁵ · a³ = a⁵⁺³ = a⁸.",
-      "Delat med: aˣ/aʸ = aˣ⁻ʸ, så exponenterna dras ifrån varandra.",
+      "Delat med: a^(x)/a^(y) = a^(x−y), så exponenterna dras ifrån varandra.",
       "a³/a⁵ = a³⁻⁵ = a⁻².",
       "a⁻² är samma sak som 1/a², för a⁻ˣ = 1/aˣ.",
       "Svar: a⁸ och a⁻²."
