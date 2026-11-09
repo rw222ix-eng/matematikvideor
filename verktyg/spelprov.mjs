@@ -10,12 +10,29 @@
  *   node verktyg/spel.mjs --public <kopia> --kalla http://localhost:8191 && node verktyg/publicera.mjs --public <kopia> --cloudflare
  *   npx --yes wrangler@4.158.0 pages dev <kopia> --port 8797 --ip 127.0.0.1
  *   BAS=http://127.0.0.1:8797 node verktyg/spelprov.mjs
+ *
+ * Kör någon annan wrangler dev på datorn, ge båda dina samma egna WRANGLER_REGISTRY_PATH. Alla spelservrar heter
+ * spel-server i wranglers gemensamma lista, och funktionen når annars ibland en annans, äldre server.
  */
 import { createRequire } from "node:module";
 const require = createRequire(process.env.E2E || "file:///E:/Transkribera/e2e/");
 const { chromium } = require("playwright");
 
 const BAS = (process.env.BAS || "http://127.0.0.1:8797").replace(/\/$/, "");
+// Lokalt tar spelsidorna spelservern på 127.0.0.1:8792 om inget annat sägs. På pages.dev tar de sidans egen adress, och
+// det är den vägen provet gäller: genom funktionen, under connect-src 'self'. ?server= ger samma väg här.
+const SERVER = `?server=${BAS.replace(/^https?:\/\//, "")}`;
+// Ett rum genom funktionen, från sidan. Svarar med koden, eller med varför det inte gick: samma adress hämtad utan
+// WebSocket visar serverns svar (426 «websocket» när vägen fungerar, annars felet).
+const rum = (sida, spel) => sida.evaluate((spel) => new Promise((klar) => {
+  const adress = `${location.origin}/spel/rum?spel=${spel}&hur=ny`;
+  const varfor = async (vad) => klar({ kod: null, varfor: `${vad}: ${await fetch(adress).then(async (r) => `${r.status} ${(await r.text()).slice(0, 120)}`, (e) => String(e))}` });
+  const w = new WebSocket(adress.replace(/^http/, "ws"));
+  w.onopen = () => w.send(JSON.stringify({ typ: "hej", v: 1, namn: "Prov" }));
+  w.onmessage = (e) => { const m = JSON.parse(e.data); if (m.typ === "valkommen") { w.close(); klar({ kod: m.kod }); } else if (m.typ === "fel") varfor(`fel ${m.fel}`); };
+  w.onerror = () => varfor("WebSocketen föll");
+  setTimeout(() => varfor("inget svar på 15 s"), 15000);
+}), spel);
 let fel = 0, ok = 0;
 const prov = (namn, villkor, info = "") => { if (villkor) { ok++; console.log(`  ok   ${namn}`); } else { fel++; console.log(`  FEL  ${namn} ${info}`); } };
 
@@ -38,21 +55,15 @@ await ctx.addInitScript(() => {
 const p = await ctx.newPage();
 const jsFel = [];
 p.on("pageerror", (e) => jsFel.push(String(e)));
-await p.goto(`${BAS}/spel/tron.html`, { waitUntil: "load" });
+await p.goto(`${BAS}/spel/tron.html${SERVER}`, { waitUntil: "load" });
 await p.click("#spela");
 const igang = await p.waitForFunction(() => window.__tronSida?.lage.tron?.lage.igang, null, { timeout: 60000 }).then(() => true, () => false);
 prov("Tron startar under spelens policy", igang);
 await p.waitForTimeout(3000);
 await p.screenshot({ path: "E:/tmp-three/vt-spel-tron.png" });
 // WebSocket till spelservern från spelsidan, genom funktionen.
-const ws = await p.evaluate(() => new Promise((ok) => {
-  const w = new WebSocket(`${location.origin.replace(/^http/, "ws")}/spel/rum?spel=tron&hur=ny`);
-  w.onopen = () => w.send(JSON.stringify({ typ: "hej", v: 1, namn: "Prov" }));
-  w.onmessage = (e) => { const m = JSON.parse(e.data); if (m.typ === "valkommen") { w.close(); ok(m.kod); } };
-  w.onerror = () => ok(null);
-  setTimeout(() => ok(null), 8000);
-}));
-prov("WebSocketen från spelsidan når ett rum", typeof ws === "string" && ws.length === 4, ws);
+const ws = await rum(p, "tron");
+prov("WebSocketen från spelsidan når ett rum", typeof ws.kod === "string" && ws.kod.length === 4, ws.varfor);
 // Topplistan med fetch från samma adress: webbläsaren skickar ingen Origin, och servern ska ändå svara.
 const lista = await p.evaluate(() => fetch("/spel/topplista?spel=tron").then((r) => r.status).catch(() => 0));
 prov("topplistan svarar en fetch från spelsidan", lista === 200, lista);
@@ -66,20 +77,14 @@ for (const [namn, sida, spel, krok] of [["skeppet", "skepp", "skepp", "__skeppSi
   prov(`${namn}: sidan har spelens policy`, /worker-src 'self'/.test(h.headers.get("content-security-policy") || ""));
   const q = await ctx.newPage(), qFel = [];
   q.on("pageerror", (e) => qFel.push(String(e)));
-  await q.goto(`${BAS}/spel/${sida}`, { waitUntil: "load" });
+  await q.goto(`${BAS}/spel/${sida}${SERVER}`, { waitUntil: "load" });
   prov(`${namn}: sidan och dess skript laddas`, await q.waitForFunction((k) => !!window[k], krok, { timeout: 30000 }).then(() => true, () => false));
   await q.click("#spela");
   await q.waitForTimeout(8000);
   prov(`${namn}: menyn har gått undan för spelet`, await q.locator("#start").isHidden());
   await q.screenshot({ path: `E:/tmp-three/vt-spel-${sida}.png` });
-  const kod = await q.evaluate((spel) => new Promise((ok) => {
-    const w = new WebSocket(`${location.origin.replace(/^http/, "ws")}/spel/rum?spel=${spel}&hur=ny`);
-    w.onopen = () => w.send(JSON.stringify({ typ: "hej", v: 1, namn: "Prov" }));
-    w.onmessage = (e) => { const m = JSON.parse(e.data); if (m.typ === "valkommen") { w.close(); ok(m.kod); } };
-    w.onerror = () => ok(null);
-    setTimeout(() => ok(null), 8000);
-  }), spel);
-  prov(`${namn}: WebSocketen når ett rum`, typeof kod === "string" && kod.length === 4, kod);
+  const r = await rum(q, spel);
+  prov(`${namn}: WebSocketen når ett rum`, typeof r.kod === "string" && r.kod.length === 4, r.varfor);
   const b = await q.evaluate(() => window.__brott);
   prov(`${namn}: policyn stoppar inget`, b.length === 0, b.slice(0, 5).join(" | "));
   prov(`${namn}: inga JS-fel`, qFel.length === 0, qFel.slice(0, 3).join(" | "));
