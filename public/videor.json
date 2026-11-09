@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-07T15:32:38.055Z",
+ "byggd": "2026-11-09T19:10:38.744Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -59110,6 +59110,900 @@
      "s": 577.2,
      "e": 580.72,
      "text": "Sen: Hur många ampere går i tråden med två ohm?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-12-potensreglerna",
+   "titel": "Stifels tabell – Potensreglerna",
+   "ar": 1544,
+   "serie": "ma2a",
+   "del": 12,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-12-potensreglerna-v1/ma2a-12-potensreglerna-1080p.mp4",
+   "moment": "Potensreglerna med bokstäver",
+   "begrepp": [
+    "potens",
+    "bas",
+    "exponent",
+    "upphöjt till",
+    "potensregler",
+    "multiplikation av potenser",
+    "division av potenser",
+    "exponenten noll",
+    "negativ exponent",
+    "potens av en potens",
+    "produkt upphöjt till",
+    "kvot upphöjt till",
+    "formelbladet",
+    "logaritmer",
+    "Michael Stifel",
+    "Arithmetica integra",
+    "Holzdorf",
+    "John Napier"
+   ],
+   "beskrivning": "I början av 1540-talet skriver prästen Michael Stifel i Holzdorf en stor räknebok och ställer upp två rader med tal: exponenterna och potenserna av två. Med raderna blir multiplikation addition och division subtraktion. Vi härleder alla sju potensreglerna på formelbladet, också exponenten noll och negativa exponenter, och använder dem med bokstäver.",
+   "youtube": null,
+   "langd": 585,
+   "omslag": "omslag/ma2a-12-potensreglerna.jpg?v=49728381",
+   "omslagRen": "omslag/ma2a-12-potensreglerna-ren.jpg?v=b33891ec",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Vi är i Holzdorf, en liten by i Tyskland, i början av femtonhundrafyrtiotalet. Här bor prästen Michael Stifel. På söndagarna predikar han i byns kyrka. Resten av veckan sitter han vid skrivbordet och räknar."
+    },
+    {
+     "t": 25,
+     "text": "Stifel skriver en stor bok på latin, med all räknekonst som man kan på hans tid. I boken finns många stora tal. Stifel räknar för hand, med penna och papper. Att multiplicera två stora tal tar lång tid, och det är lätt att räkna fel. Finns det ett snabbare sätt? Stifel skriver två rader med tal, den ena ovanför den andra. Hur hjälper raderna honom? Det tar vi reda på nu."
+    },
+    {
+     "t": 58,
+     "text": "Först behöver vi ordet potens. Två gånger två gånger två kan vi skriva kortare, som två upphöjt till tre. Det kallas en potens. Tvåan är basen, alltså talet som multipliceras. Trean är exponenten. Den säger hur många tvåor som multipliceras. Det var faktiskt Stifel som började använda ordet exponent."
+    },
+    {
+     "t": 84,
+     "text": "I Stifels nedre rad står två, fyra, åtta, sexton och så vidare. Varje tal är dubbelt så stort som talet före. I den övre raden står ett, två, tre, fyra. Det övre talet är exponenten för talet under. Åtta står under trean, för åtta är två upphöjt till tre."
+    },
+    {
+     "t": 108,
+     "text": "Vi tar åtta gånger trettiotvå. Åtta står under trean, och trettiotvå under femman. Stifel lägger ihop de övre talen. Tre plus fem är åtta, och under åttan står tvåhundrafemtiosex. Alltså är åtta gånger trettiotvå lika med tvåhundrafemtiosex. Multiplikationen nere blev en addition uppe."
+    },
+    {
+     "t": 133,
+     "text": "Varför fungerar det? Åtta är tre tvåor gånger varandra, och trettiotvå är fem tvåor. Tillsammans blir det åtta tvåor, för tre plus fem är åtta."
+    },
+    {
+     "t": 146,
+     "text": "På formelbladet står samma regel med bokstäver. A upphöjt till X gånger A upphöjt till Y är lika med A upphöjt till X plus Y. A är basen, och den ska vara samma i båda potenserna. X och Y är exponenterna, och de läggs ihop. Bokstäverna betyder att regeln gäller för alla baser, inte bara för tvåan. Till exempel blir A upphöjt till fyra gånger A upphöjt till tre lika med A upphöjt till sju, för fyra plus tre är sju."
+    },
+    {
+     "t": 180,
+     "text": "Men en sak blandar många ihop. Regeln gäller bara när potenserna multipliceras. Två upphöjt till tre plus två upphöjt till två är åtta plus fyra, alltså tolv. Det är inte två upphöjt till fem, för det är trettiotvå. För addition finns ingen regel, så då räknar vi ut varje potens för sig."
+    },
+    {
+     "t": 204,
+     "text": "Om multiplikation blir addition, vad blir då division? Vi tar tvåhundrafemtiosex delat med åtta. Talen står under åttan och trean. Åtta minus tre är fem, och under femman står trettiotvå. Divisionen blev en subtraktion."
+    },
+    {
+     "t": 224,
+     "text": "Varför då? Ovanför bråkstrecket står åtta tvåor, och under står tre. En tvåa delat med en tvåa är ett, så vi stryker tre tvåor ovanför och tre under. Kvar är fem tvåor, för åtta minus tre är fem. På formelbladet står A upphöjt till X delat med A upphöjt till Y är lika med A upphöjt till X minus Y."
+    },
+    {
+     "t": 251,
+     "text": "Nu går Stifel åt vänster i sina rader. Varje steg åt höger i den nedre raden är gånger två, så varje steg åt vänster är delat med två. Till vänster om tvåan kommer två delat med två, alltså ett. Ovanför ettan står noll. Så två upphöjt till noll är lika med ett."
+    },
+    {
+     "t": 272,
+     "text": "Stämmer det med regeln för division? Åtta delat med åtta är ett. Med regeln blir två upphöjt till tre delat med två upphöjt till tre lika med två upphöjt till noll, för tre minus tre är noll. Vad nice, båda sätten ger ett. På formelbladet står A upphöjt till noll är lika med ett."
+    },
+    {
+     "t": 296,
+     "text": "Stifel fortsätter åt vänster. Ett delat med två är en halv, och ovanför står minus ett. En halv delat med två är en fjärdedel, och ovanför står minus två. Så två upphöjt till minus två är en fjärdedel. Exponenterna till vänster om nollan kallas negativa exponenter."
+    },
+    {
+     "t": 318,
+     "text": "Regeln för division ger samma sak. Två upphöjt till tre delat med två upphöjt till fem blir två upphöjt till minus två, för tre minus fem är minus två. Och åtta delat med trettiotvå är just en fjärdedel. En fjärdedel är ett delat med fyra, alltså ett delat med två upphöjt till två."
+    },
+    {
+     "t": 341,
+     "text": "På formelbladet står A upphöjt till minus X är lika med ett delat med A upphöjt till X. Minustecknet i exponenten blir ett bråkstreck. Nu får vi inte glömma att talet inte blir negativt. En fjärdedel är ju större än noll."
+    },
+    {
+     "t": 358,
+     "text": "Vi tar A upphöjt till två delat med A upphöjt till fem. Två minus fem är minus tre, så det blir A upphöjt till minus tre. Man kan också se det så här. Ovanför bråkstrecket står två A, och under står fem. Vi stryker två ovanför och två under. Kvar är tre A under bråkstrecket, alltså ett delat med A upphöjt till tre."
+    },
+    {
+     "t": 386,
+     "text": "Stifel såg en sak till i sina rader. Vi tar åtta upphöjt till två. Åtta är två upphöjt till tre, så vi har två upphöjt till tre, inom parentes, upphöjt till två. Det är två upphöjt till tre gånger två upphöjt till tre, alltså två upphöjt till sex. Tre plus tre är samma sak som tre gånger två. Och sextiofyra står mycket riktigt under sexan."
+    },
+    {
+     "t": 414,
+     "text": "På formelbladet står A upphöjt till X, inom parentes, upphöjt till Y är lika med A upphöjt till X gånger Y. Men när läggs exponenterna ihop, och när multipliceras de? Står potenserna bredvid varandra med ett gångertecken, läggs exponenterna ihop. Står det en parentes med en exponent utanför, multipliceras de."
+    },
+    {
+     "t": 439,
+     "text": "Stifels rader har bara en bas. Formelbladet har två regler till, för en parentes med flera tal eller bokstäver. Vi tar två A, inom parentes, upphöjt till tre. Det är två A gånger två A gånger två A. När vi bara multiplicerar spelar ordningen ingen roll. Två gånger två gånger två är åtta, och A gånger A gånger A är A upphöjt till tre. Så det blir åtta A upphöjt till tre."
+    },
+    {
+     "t": 472,
+     "text": "På formelbladet står A upphöjt till X gånger B upphöjt till X är lika med A gånger B, inom parentes, upphöjt till X. Varje tal och bokstav i parentesen får exponenten. Det är lätt att glömma tvåan, så svaret är inte två A upphöjt till tre. Samma sak gäller ett bråk i parentesen. A delat med tre, inom parentes, upphöjt till två blir A upphöjt till två delat med nio."
+    },
+    {
+     "t": 503,
+     "text": "Nu har vi alla sju reglerna för potenser på formelbladet, och fem av dem såg Stifel i sina rader. Nu går vi tillbaka till Stifel."
+    },
+    {
+     "t": 514,
+     "text": "Elva år innan boken hade Stifel räknat på något helt annat. Han räknade fram att världen skulle gå under klockan åtta en morgon i oktober, år femtonhundratrettiotre. Världen gick inte under. Stifel förlorade sin tjänst som präst, och därför hamnade han till slut i Holzdorf."
+    },
+    {
+     "t": 535,
+     "text": "Boken trycktes år femtonhundrafyrtiofyra. Om sina två rader skrev Stifel att man nästan kunde skriva en hel ny bok om dem. Sjuttio år senare skrev skotten John Napier den boken. Hans tabeller fungerade som Stifels rader, men med mycket fler tal. De kallas logaritmer, och i över trehundra år multiplicerade ingenjörer och sjömän med dem."
+    },
+    {
+     "t": 563,
+     "text": "Nu är det din tur. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Skriv A upphöjt till fem gånger A upphöjt till tre som en enda potens. Sen: Skriv A upphöjt till tre delat med A upphöjt till fem som en enda potens."
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Holzdorf 1544: Stifels två rader",
+     "typ": "historia"
+    },
+    {
+     "t": 58,
+     "rubrik": "Potens, bas och exponent",
+     "typ": "matte"
+    },
+    {
+     "t": 84,
+     "rubrik": "Multiplikation: exponenterna läggs ihop",
+     "typ": "matte"
+    },
+    {
+     "t": 204,
+     "rubrik": "Division: exponenterna dras ifrån",
+     "typ": "matte"
+    },
+    {
+     "t": 251,
+     "rubrik": "Exponenten noll och negativa exponenter",
+     "typ": "matte"
+    },
+    {
+     "t": 386,
+     "rubrik": "Potens av en potens",
+     "typ": "matte"
+    },
+    {
+     "t": 439,
+     "rubrik": "Produkt och kvot upphöjt till",
+     "typ": "matte"
+    },
+    {
+     "t": 514,
+     "rubrik": "Domedagen och logaritmerna",
+     "typ": "historia"
+    },
+    {
+     "t": 563,
+     "rubrik": "Två potenser med a",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 563,
+    "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Skriv a⁵ · a³ som en enda potens.",
+     "Sen: Skriv a³/a⁵ som en enda potens."
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Skriv a⁵ · a³ som en enda potens.",
+      "typ": "uttryck",
+      "svar": "a^8",
+      "variabler": [
+       "a"
+      ],
+      "exempel": "t.ex. a^4",
+      "tangenter": [
+       "^",
+       "(",
+       ")"
+      ],
+      "fel": [
+       {
+        "svar": "a^15",
+        "text": "Exponenterna ska inte multipliceras. När potenserna multipliceras läggs exponenterna ihop: 5 + 3."
+       },
+       {
+        "svar": "a^2",
+        "text": "Det är gånger mellan potenserna, så exponenterna läggs ihop: 5 + 3. Dra bort gör man när det är delat med."
+       },
+       {
+        "svar": "2a^8",
+        "text": "Exponenten 8 stämmer. Men a⁵ · a³ är bara en enda a-potens, ingen tvåa framför."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Skriv a³/a⁵ som en enda potens.",
+      "typ": "uttryck",
+      "svar": "a^(-2)",
+      "variabler": [
+       "a"
+      ],
+      "exempel": "t.ex. a^-4",
+      "tangenter": [
+       "^",
+       "(",
+       ")",
+       "−"
+      ],
+      "fel": [
+       {
+        "svar": "a^2",
+        "text": "Exponenten är täljarens minus nämnarens: 3 − 5. Det blir ett negativt tal."
+       },
+       {
+        "svar": "a^8",
+        "text": "Det är delat med, så exponenterna dras ifrån varandra: 3 − 5."
+       },
+       {
+        "svar": "a^(3/5)",
+        "text": "Exponenterna ska inte delas med varandra. Vid division drar man bort: 3 − 5."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Formelbladet: aˣ · aʸ = aˣ⁺ʸ, och aˣ/aʸ = aˣ⁻ʸ. Lägg ihop exponenterna vid gånger, dra bort dem vid delat med.",
+     "t": 146
+    },
+    "losning": [
+     "Gånger: aˣ · aʸ = aˣ⁺ʸ, så exponenterna läggs ihop.",
+     "a⁵ · a³ = a⁵⁺³ = a⁸.",
+     "Delat med: aˣ/aʸ = aˣ⁻ʸ, så exponenterna dras ifrån varandra.",
+     "a³/a⁵ = a³⁻⁵ = a⁻².",
+     "a⁻² är samma sak som 1/a², för a⁻ˣ = 1/aˣ.",
+     "Svar: a⁸ och a⁻²."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 14.82,
+     "text": "Vi är i Holzdorf, en liten by i Tyskland, i början av femtonhundrafyrtiotalet."
+    },
+    {
+     "s": 15.62,
+     "e": 17.64,
+     "text": "Här bor prästen Michael Stifel."
+    },
+    {
+     "s": 18.44,
+     "e": 20.96,
+     "text": "På söndagarna predikar han i byns kyrka."
+    },
+    {
+     "s": 21.76,
+     "e": 24.78,
+     "text": "Resten av veckan sitter han vid skrivbordet och räknar."
+    },
+    {
+     "s": 25.88,
+     "e": 31.26,
+     "text": "Stifel skriver en stor bok på latin, med all räknekonst som man kan på hans tid."
+    },
+    {
+     "s": 32.06,
+     "e": 34.36,
+     "text": "I boken finns många stora tal."
+    },
+    {
+     "s": 35.16,
+     "e": 38.1,
+     "text": "Stifel räknar för hand, med penna och papper."
+    },
+    {
+     "s": 38.92,
+     "e": 43.72,
+     "text": "Att multiplicera två stora tal tar lång tid, och det är lätt att räkna fel."
+    },
+    {
+     "s": 45.54,
+     "e": 47.12,
+     "text": "Finns det ett snabbare sätt?"
+    },
+    {
+     "s": 48.2,
+     "e": 52.28,
+     "text": "Stifel skriver två rader med tal, den ena ovanför den andra."
+    },
+    {
+     "s": 53.08,
+     "e": 54.4,
+     "text": "Hur hjälper raderna honom?"
+    },
+    {
+     "s": 55.2,
+     "e": 56.28,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 58.78,
+     "e": 60.78,
+     "text": "Först behöver vi ordet potens."
+    },
+    {
+     "s": 61.58,
+     "e": 66.72,
+     "text": "Två gånger två gånger två kan vi skriva kortare, som två upphöjt till tre."
+    },
+    {
+     "s": 67.52,
+     "e": 68.92,
+     "text": "Det kallas en potens."
+    },
+    {
+     "s": 69.78,
+     "e": 73.32,
+     "text": "Tvåan är basen, alltså talet som multipliceras."
+    },
+    {
+     "s": 74.12,
+     "e": 75.8,
+     "text": "Trean är exponenten."
+    },
+    {
+     "s": 76.6,
+     "e": 79.42,
+     "text": "Den säger hur många tvåor som multipliceras."
+    },
+    {
+     "s": 80.22,
+     "e": 83.64,
+     "text": "Det var faktiskt Stifel som började använda ordet exponent."
+    },
+    {
+     "s": 84.76,
+     "e": 90.06,
+     "text": "I Stifels nedre rad står två, fyra, åtta, sexton och så vidare."
+    },
+    {
+     "s": 90.86,
+     "e": 93.76,
+     "text": "Varje tal är dubbelt så stort som talet före."
+    },
+    {
+     "s": 94.56,
+     "e": 98.18,
+     "text": "I den övre raden står ett, två, tre, fyra."
+    },
+    {
+     "s": 98.98,
+     "e": 102.08,
+     "text": "Det övre talet är exponenten för talet under."
+    },
+    {
+     "s": 102.88,
+     "e": 107.28,
+     "text": "Åtta står under trean, för åtta är två upphöjt till tre."
+    },
+    {
+     "s": 108.38,
+     "e": 110.38,
+     "text": "Vi tar åtta gånger trettiotvå."
+    },
+    {
+     "s": 111.18,
+     "e": 114.86,
+     "text": "Åtta står under trean, och trettiotvå under femman."
+    },
+    {
+     "s": 115.9,
+     "e": 118.08,
+     "text": "Stifel lägger ihop de övre talen."
+    },
+    {
+     "s": 118.88,
+     "e": 123.62,
+     "text": "Tre plus fem är åtta, och under åttan står tvåhundrafemtiosex."
+    },
+    {
+     "s": 124.42,
+     "e": 128.84,
+     "text": "Alltså är åtta gånger trettiotvå lika med tvåhundrafemtiosex."
+    },
+    {
+     "s": 129.64,
+     "e": 132.62,
+     "text": "Multiplikationen nere blev en addition uppe."
+    },
+    {
+     "s": 133.72,
+     "e": 134.72,
+     "text": "Varför fungerar det?"
+    },
+    {
+     "s": 135.66,
+     "e": 140.3,
+     "text": "Åtta är tre tvåor gånger varandra, och trettiotvå är fem tvåor."
+    },
+    {
+     "s": 141.1,
+     "e": 145.1,
+     "text": "Tillsammans blir det åtta tvåor, för tre plus fem är åtta."
+    },
+    {
+     "s": 146.2,
+     "e": 149.28,
+     "text": "På formelbladet står samma regel med bokstäver."
+    },
+    {
+     "s": 150.08,
+     "e": 156.22,
+     "text": "A upphöjt till X gånger A upphöjt till Y är lika med A upphöjt till X plus Y."
+    },
+    {
+     "s": 157.16,
+     "e": 160.62,
+     "text": "A är basen, och den ska vara samma i båda potenserna."
+    },
+    {
+     "s": 161.54,
+     "e": 164.44,
+     "text": "X och Y är exponenterna, och de läggs ihop."
+    },
+    {
+     "s": 165.28,
+     "e": 169.82,
+     "text": "Bokstäverna betyder att regeln gäller för alla baser, inte bara för tvåan."
+    },
+    {
+     "s": 170.62,
+     "e": 176.82,
+     "text": "Till exempel blir A upphöjt till fyra gånger A upphöjt till tre lika med A upphöjt till"
+    },
+    {
+     "s": 176.92,
+     "e": 179.34,
+     "text": "sju, för fyra plus tre är sju."
+    },
+    {
+     "s": 180.56,
+     "e": 182.9,
+     "text": "Men en sak blandar många ihop."
+    },
+    {
+     "s": 183.7,
+     "e": 186.86,
+     "text": "Regeln gäller bara när potenserna multipliceras."
+    },
+    {
+     "s": 187.66,
+     "e": 193.86,
+     "text": "Två upphöjt till tre plus två upphöjt till två är åtta plus fyra, alltså tolv."
+    },
+    {
+     "s": 194.66,
+     "e": 198.22,
+     "text": "Det är inte två upphöjt till fem, för det är trettiotvå."
+    },
+    {
+     "s": 199.02,
+     "e": 203.44,
+     "text": "För addition finns ingen regel, så då räknar vi ut varje potens för sig."
+    },
+    {
+     "s": 204.54,
+     "e": 208.42,
+     "text": "Om multiplikation blir addition, vad blir då division?"
+    },
+    {
+     "s": 209.98,
+     "e": 212.86,
+     "text": "Vi tar tvåhundrafemtiosex delat med åtta."
+    },
+    {
+     "s": 213.66,
+     "e": 215.92,
+     "text": "Talen står under åttan och trean."
+    },
+    {
+     "s": 216.72,
+     "e": 220.84,
+     "text": "Åtta minus tre är fem, och under femman står trettiotvå."
+    },
+    {
+     "s": 221.64,
+     "e": 223.6,
+     "text": "Divisionen blev en subtraktion."
+    },
+    {
+     "s": 224.7,
+     "e": 230.2,
+     "text": "Varför då? Ovanför bråkstrecket står åtta tvåor, och under står tre."
+    },
+    {
+     "s": 231,
+     "e": 237,
+     "text": "En tvåa delat med en tvåa är ett, så vi stryker tre tvåor ovanför och tre under."
+    },
+    {
+     "s": 237.8,
+     "e": 241.54,
+     "text": "Kvar är fem tvåor, för åtta minus tre är fem."
+    },
+    {
+     "s": 242.34,
+     "e": 248.86,
+     "text": "På formelbladet står A upphöjt till X delat med A upphöjt till Y är lika med A upphöjt"
+    },
+    {
+     "s": 248.9,
+     "e": 250.26,
+     "text": "till X minus Y."
+    },
+    {
+     "s": 251.36,
+     "e": 253.74,
+     "text": "Nu går Stifel åt vänster i sina rader."
+    },
+    {
+     "s": 254.54,
+     "e": 261.08,
+     "text": "Varje steg åt höger i den nedre raden är gånger två, så varje steg åt vänster är delat med två."
+    },
+    {
+     "s": 261.88,
+     "e": 265.92,
+     "text": "Till vänster om tvåan kommer två delat med två, alltså ett."
+    },
+    {
+     "s": 266.72,
+     "e": 268.28,
+     "text": "Ovanför ettan står noll."
+    },
+    {
+     "s": 269.08,
+     "e": 271.66,
+     "text": "Så två upphöjt till noll är lika med ett."
+    },
+    {
+     "s": 272.76,
+     "e": 274.32,
+     "text": "Stämmer det med regeln för division?"
+    },
+    {
+     "s": 275.12,
+     "e": 277.18,
+     "text": "Åtta delat med åtta är ett."
+    },
+    {
+     "s": 277.98,
+     "e": 284.08,
+     "text": "Med regeln blir två upphöjt till tre delat med två upphöjt till tre lika med två upphöjt"
+    },
+    {
+     "s": 284.12,
+     "e": 287.12,
+     "text": "till noll, för tre minus tre är noll."
+    },
+    {
+     "s": 288.16,
+     "e": 290.38,
+     "text": "Vad nice, båda sätten ger ett."
+    },
+    {
+     "s": 291.18,
+     "e": 294.96,
+     "text": "På formelbladet står A upphöjt till noll är lika med ett."
+    },
+    {
+     "s": 296.06,
+     "e": 297.66,
+     "text": "Stifel fortsätter åt vänster."
+    },
+    {
+     "s": 298.46,
+     "e": 302.76,
+     "text": "Ett delat med två är en halv, och ovanför står minus ett."
+    },
+    {
+     "s": 303.56,
+     "e": 308.54,
+     "text": "En halv delat med två är en fjärdedel, och ovanför står minus två."
+    },
+    {
+     "s": 309.34,
+     "e": 312.42,
+     "text": "Så två upphöjt till minus två är en fjärdedel."
+    },
+    {
+     "s": 313.22,
+     "e": 317.02,
+     "text": "Exponenterna till vänster om nollan kallas negativa exponenter."
+    },
+    {
+     "s": 318.12,
+     "e": 320.12,
+     "text": "Regeln för division ger samma sak."
+    },
+    {
+     "s": 320.92,
+     "e": 326.6,
+     "text": "Två upphöjt till tre delat med två upphöjt till fem blir två upphöjt till minus två,"
+    },
+    {
+     "s": 327.02,
+     "e": 329.38,
+     "text": "för tre minus fem är minus två."
+    },
+    {
+     "s": 330.18,
+     "e": 333.46,
+     "text": "Och åtta delat med trettiotvå är just en fjärdedel."
+    },
+    {
+     "s": 334.26,
+     "e": 339.9,
+     "text": "En fjärdedel är ett delat med fyra, alltså ett delat med två upphöjt till två."
+    },
+    {
+     "s": 341,
+     "e": 347.44,
+     "text": "På formelbladet står A upphöjt till minus X är lika med ett delat med A upphöjt till X."
+    },
+    {
+     "s": 348.24,
+     "e": 351,
+     "text": "Minustecknet i exponenten blir ett bråkstreck."
+    },
+    {
+     "s": 351.8,
+     "e": 354.7,
+     "text": "Nu får vi inte glömma att talet inte blir negativt."
+    },
+    {
+     "s": 355.5,
+     "e": 357.48,
+     "text": "En fjärdedel är ju större än noll."
+    },
+    {
+     "s": 358.58,
+     "e": 362.54,
+     "text": "Vi tar A upphöjt till två delat med A upphöjt till fem."
+    },
+    {
+     "s": 363.34,
+     "e": 368.34,
+     "text": "Två minus fem är minus tre, så det blir A upphöjt till minus tre."
+    },
+    {
+     "s": 369.14,
+     "e": 370.38,
+     "text": "Man kan också se det så här."
+    },
+    {
+     "s": 371.18,
+     "e": 375.16,
+     "text": "Ovanför bråkstrecket står två A, och under står fem."
+    },
+    {
+     "s": 375.96,
+     "e": 378.74,
+     "text": "Vi stryker två ovanför och två under."
+    },
+    {
+     "s": 379.54,
+     "e": 385.08,
+     "text": "Kvar är tre A under bråkstrecket, alltså ett delat med A upphöjt till tre."
+    },
+    {
+     "s": 386.18,
+     "e": 388.46,
+     "text": "Stifel såg en sak till i sina rader."
+    },
+    {
+     "s": 389.26,
+     "e": 391.1,
+     "text": "Vi tar åtta upphöjt till två."
+    },
+    {
+     "s": 391.9,
+     "e": 396.12,
+     "text": "Åtta är två upphöjt till tre, så vi har två upphöjt till tre,"
+    },
+    {
+     "s": 396.48,
+     "e": 398.56,
+     "text": "inom parentes, upphöjt till två."
+    },
+    {
+     "s": 399.36,
+     "e": 405.3,
+     "text": "Det är två upphöjt till tre gånger två upphöjt till tre, alltså två upphöjt till sex."
+    },
+    {
+     "s": 406.1,
+     "e": 409.38,
+     "text": "Tre plus tre är samma sak som tre gånger två."
+    },
+    {
+     "s": 410.18,
+     "e": 413.08,
+     "text": "Och sextiofyra står mycket riktigt under sexan."
+    },
+    {
+     "s": 414.18,
+     "e": 421.02,
+     "text": "På formelbladet står A upphöjt till X, inom parentes, upphöjt till Y är lika med A upphöjt"
+    },
+    {
+     "s": 421.06,
+     "e": 422.48,
+     "text": "till X gånger Y."
+    },
+    {
+     "s": 423.62,
+     "e": 428.02,
+     "text": "Men när läggs exponenterna ihop, och när multipliceras de?"
+    },
+    {
+     "s": 428.82,
+     "e": 433.4,
+     "text": "Står potenserna bredvid varandra med ett gångertecken, läggs exponenterna ihop."
+    },
+    {
+     "s": 434.2,
+     "e": 438.14,
+     "text": "Står det en parentes med en exponent utanför, multipliceras de."
+    },
+    {
+     "s": 439.24,
+     "e": 441.58,
+     "text": "Stifels rader har bara en bas."
+    },
+    {
+     "s": 442.44,
+     "e": 447.6,
+     "text": "Formelbladet har två regler till, för en parentes med flera tal eller bokstäver."
+    },
+    {
+     "s": 448.4,
+     "e": 452.08,
+     "text": "Vi tar två A, inom parentes, upphöjt till tre."
+    },
+    {
+     "s": 452.88,
+     "e": 456.36,
+     "text": "Det är två A gånger två A gånger två A."
+    },
+    {
+     "s": 457.16,
+     "e": 460.28,
+     "text": "När vi bara multiplicerar spelar ordningen ingen roll."
+    },
+    {
+     "s": 461.08,
+     "e": 467.86,
+     "text": "Två gånger två gånger två är åtta, och A gånger A gånger A är A upphöjt till tre."
+    },
+    {
+     "s": 468.66,
+     "e": 471.26,
+     "text": "Så det blir åtta A upphöjt till tre."
+    },
+    {
+     "s": 472.36,
+     "e": 479.06,
+     "text": "På formelbladet står A upphöjt till X gånger B upphöjt till X är lika med A gånger B,"
+    },
+    {
+     "s": 479.34,
+     "e": 481.44,
+     "text": "inom parentes, upphöjt till X."
+    },
+    {
+     "s": 482.24,
+     "e": 485.6,
+     "text": "Varje tal och bokstav i parentesen får exponenten."
+    },
+    {
+     "s": 486.4,
+     "e": 491.32,
+     "text": "Det är lätt att glömma tvåan, så svaret är inte två A upphöjt till tre."
+    },
+    {
+     "s": 492.12,
+     "e": 494.36,
+     "text": "Samma sak gäller ett bråk i parentesen."
+    },
+    {
+     "s": 495.16,
+     "e": 501.9,
+     "text": "A delat med tre, inom parentes, upphöjt till två blir A upphöjt till två delat med nio."
+    },
+    {
+     "s": 503,
+     "e": 509.2,
+     "text": "Nu har vi alla sju reglerna för potenser på formelbladet, och fem av dem såg Stifel i sina rader."
+    },
+    {
+     "s": 510,
+     "e": 511.5,
+     "text": "Nu går vi tillbaka till Stifel."
+    },
+    {
+     "s": 514,
+     "e": 517.88,
+     "text": "Elva år innan boken hade Stifel räknat på något helt annat."
+    },
+    {
+     "s": 518.68,
+     "e": 525.38,
+     "text": "Han räknade fram att världen skulle gå under klockan åtta en morgon i oktober, år femtonhundratrettiotre."
+    },
+    {
+     "s": 526.94,
+     "e": 528.36,
+     "text": "Världen gick inte under."
+    },
+    {
+     "s": 529.16,
+     "e": 534.14,
+     "text": "Stifel förlorade sin tjänst som präst, och därför hamnade han till slut i Holzdorf."
+    },
+    {
+     "s": 535.24,
+     "e": 537.94,
+     "text": "Boken trycktes år femtonhundrafyrtiofyra."
+    },
+    {
+     "s": 538.74,
+     "e": 543.94,
+     "text": "Om sina två rader skrev Stifel att man nästan kunde skriva en hel ny bok om dem."
+    },
+    {
+     "s": 544.74,
+     "e": 548.54,
+     "text": "Sjuttio år senare skrev skotten John Napier den boken."
+    },
+    {
+     "s": 549.34,
+     "e": 553.6,
+     "text": "Hans tabeller fungerade som Stifels rader, men med mycket fler tal."
+    },
+    {
+     "s": 554.4,
+     "e": 560.72,
+     "text": "De kallas logaritmer, och i över trehundra år multiplicerade ingenjörer och sjömän med dem."
+    },
+    {
+     "s": 563.22,
+     "e": 564.24,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 565.04,
+     "e": 569.52,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 570.32,
+     "e": 576.74,
+     "text": "Först: Skriv A upphöjt till fem gånger A upphöjt till tre som en enda potens."
+    },
+    {
+     "s": 577.54,
+     "e": 583.86,
+     "text": "Sen: Skriv A upphöjt till tre delat med A upphöjt till fem som en enda potens."
     }
    ]
   },
