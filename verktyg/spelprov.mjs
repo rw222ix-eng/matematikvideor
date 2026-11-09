@@ -52,6 +52,9 @@ const ws = await p.evaluate(() => new Promise((ok) => {
   setTimeout(() => ok(null), 8000);
 }));
 prov("WebSocketen från spelsidan når ett rum", typeof ws === "string" && ws.length === 4, ws);
+// Topplistan med fetch från samma adress: webbläsaren skickar ingen Origin, och servern ska ändå svara.
+const lista = await p.evaluate(() => fetch("/spel/topplista?spel=tron").then((r) => r.status).catch(() => 0));
+prov("topplistan svarar en fetch från spelsidan", lista === 200, lista);
 const brott = await p.evaluate(() => window.__brott);
 prov("policyn stoppar inget", brott.length === 0, brott.slice(0, 5).join(" | "));
 prov("inga JS-fel", jsFel.length === 0, jsFel.slice(0, 3).join(" | "));
