@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-09T19:10:38.744Z",
+ "byggd": "2026-11-09T19:15:47.455Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -59110,6 +59110,990 @@
      "s": 577.2,
      "e": 580.72,
      "text": "Sen: Hur många ampere går i tråden med två ohm?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-09-exponentialekvationer",
+   "titel": "Libby och båten – Exponentialekvationer med GeoGebra",
+   "ar": 1949,
+   "serie": "ma2a",
+   "del": 9,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-09-exponentialekvationer-v1/ma2a-09-exponentialekvationer-1080p.mp4",
+   "moment": "Lösa exponentialekvationer grafiskt med GeoGebra",
+   "begrepp": [
+    "exponentialekvation",
+    "exponentialfunktion",
+    "förändringsfaktor",
+    "procentuell minskning",
+    "startvärde",
+    "y = C · aˣ",
+    "vänster led",
+    "höger led",
+    "skärningspunkt",
+    "lösa grafiskt",
+    "GeoGebra",
+    "grafräknare",
+    "ingen lösning",
+    "modell",
+    "kol-14",
+    "kol-14-metoden",
+    "Chicago",
+    "Sesostris III",
+    "Willard Libby"
+   ],
+   "beskrivning": "År 1949 testar kemisten Willard Libby i Chicago om klicken från kol-14 kan avslöja hur gammalt trä är. En planka från farao Sesostris III:s båt ger en exponentialekvation, och vi löser den grafiskt med GeoGebra.",
+   "youtube": null,
+   "langd": 600,
+   "omslag": "omslag/ma2a-09-exponentialekvationer.jpg?v=b4d4af91",
+   "omslagRen": "omslag/ma2a-09-exponentialekvationer-ren.jpg?v=f770b4a5",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 4,
+     "text": "Det är år nittonhundrafyrtionio, i staden Chicago i USA. Willard Libby är kemist vid universitetet där. På hans bord i laboratoriet står en räknare, och den klickar. Varje klick betyder att en liten bit kol har försvunnit. Den sortens kol heter kol fjorton."
+    },
+    {
+     "t": 25,
+     "text": "Allt som lever, som träd och människor, tar in kol från luften. En liten del av det kolet är kol fjorton. Så länge trädet lever, får det nytt kol fjorton hela tiden. Därför klickar ett gram kol från ett levande träd ungefär tolv komma fem gånger i minuten. Men när trädet har huggits ner, kommer inget nytt kol fjorton. Då klickar träet mindre och mindre, ju äldre det blir. Libbys idé är att räkna klicken och få ut hur gammalt träet är."
+    },
+    {
+     "t": 60,
+     "text": "Men fungerar idén? Det måste Libby testa på trä där man redan vet åldern. På museet för naturhistoria i Chicago står en båt av trä. Den kommer från Egypten, från graven till en kung som hette Sesostris den tredje. Forskare som studerar det gamla Egypten vet redan hur gammal båten är, ungefär tre tusen åttahundra år. Museet låter Libby få en bit av en planka från båtens däck."
+    },
+    {
+     "t": 90,
+     "text": "Libby gör om träbiten till rent kol, ett svart pulver. Kolet lägger han i räknaren. Räknaren klickar åtta gånger i minuten för varje gram. Hur gammal är plankan då, enligt klicken? Blir svaret tre tusen åttahundra år, så fungerar idén."
+    },
+    {
+     "t": 113,
+     "text": "För att svara behöver vi veta hur fort kol fjorton försvinner. Libby vet att det minskar med elva procent på tusen år. Om elva procent försvinner, är hundra minus elva kvar. Det är åttionio procent, och åttionio procent skrivs noll komma åttionio. Talet noll komma åttionio kallas förändringsfaktorn. Den säger hur stor del som finns kvar efter tusen år."
+    },
+    {
+     "t": 142,
+     "text": "Nu följer vi klicken från ett levande träd. Från början är det tolv komma fem klick i minuten. Efter tusen år finns åttionio procent kvar, så vi tar tolv komma fem gånger noll komma åttionio. Det blir ungefär elva komma ett klick. Efter två tusen år multiplicerar vi med noll komma åttionio en gång till. Det blir tolv komma fem gånger noll komma åttionio gånger noll komma åttionio, alltså ungefär nio komma nio klick."
+    },
+    {
+     "t": 176,
+     "text": "Oj, det blir långt om vi ska skriva noll komma åttionio många gånger. Det finns ett kortare sätt. Noll komma åttionio gånger noll komma åttionio skrivs noll komma åttionio upphöjt till två. Den lilla tvåan kallas exponent. Den säger hur många gånger vi multiplicerar med noll komma åttionio. Efter X tusen år har vi alltså tolv komma fem gånger noll komma åttionio upphöjt till X."
+    },
+    {
+     "t": 207,
+     "text": "Det här är en funktion, för varje ålder X ger exakt ett antal klick. Vi kallar antalet klick för Y. Så Y är lika med tolv komma fem gånger noll komma åttionio upphöjt till X. En funktion där X står i exponenten kallas en exponentialfunktion."
+    },
+    {
+     "t": 227,
+     "text": "Den står också på formelbladet, på sidan två till höger. Där står Y är lika med C gånger A upphöjt till X. C är värdet från början, här tolv komma fem klick. A är förändringsfaktorn, här noll komma åttionio. Och X är tiden, här antalet tusen år. Ökar något i stället, är A större än ett, men vi räknar på precis samma sätt."
+    },
+    {
+     "t": 256,
+     "text": "Nu tillbaka till plankan. Plankan klickar åtta gånger i minuten. Vi vill veta vilket X som ger åtta klick. Så vi sätter funktionen lika med åtta. Tolv komma fem gånger noll komma åttionio upphöjt till X är lika med åtta. Det är en ekvation där X står i exponenten. En sådan ekvation kallas en exponentialekvation."
+    },
+    {
+     "t": 282,
+     "text": "Men funktionen och ekvationen är lätta att blanda ihop. Funktionen ger antalet klick för varje ålder, vilket X vi än sätter in. Ekvationen frågar efter en enda ålder, den som ger precis åtta klick."
+    },
+    {
+     "t": 298,
+     "text": "Vi kan prova oss fram. Hur många klick blir det efter tre tusen år? På räknaren skriver vi tolv komma fem gånger noll komma åttionio, trycker på knappen för upphöjt till och skriver tre. Det blir ungefär åtta komma åtta klick, alltså fler än åtta. Efter fyra tusen år blir det ungefär sju komma åtta klick, alltså färre än åtta. Så X ligger mellan tre och fyra. Men att prova med decimaler tar lång tid. Vi behöver ett snabbare sätt."
+    },
+    {
+     "t": 332,
+     "text": "Därför ritar vi ekvationen som två grafer. Det som står till vänster om likhetstecknet kallas vänster led. Vänster led, tolv komma fem gånger noll komma åttionio upphöjt till X, blir en kurva som sakta sjunker. Höger led är åtta, och åtta är samma tal vad X än är. Så höger led blir en vågrät linje på höjden åtta. Där kurvan och linjen skär varandra är båda leden lika. Den punkten kallas skärningspunkten."
+    },
+    {
+     "t": 365,
+     "text": "Lösningen är X-värdet i skärningspunkten, alltså åldern. Y-värdet är bara åtta, antalet klick, och det visste vi redan. Som vi ser ligger skärningspunkten mellan tre och fyra, närmare fyra. Men exakt var är svårt att se. Därför tar vi hjälp av GeoGebra."
+    },
+    {
+     "t": 387,
+     "text": "Öppna GeoGebras grafräknare. Klicka i rutan längst upp till vänster. Där skriver man det som ska ritas. Skriv tolv komma fem gånger noll komma åttionio upphöjt till X. I GeoGebra skriver man punkt i stället för komma. För gånger skriver man en stjärna, och för upphöjt till ett litet tak. Tryck på Enter. Då ritar GeoGebra kurvan och kallar den f."
+    },
+    {
+     "t": 414,
+     "text": "Sen skriver du Y är lika med åtta på nästa rad. Tryck på Enter. Då ritar GeoGebra den vågräta linjen."
+    },
+    {
+     "t": 423,
+     "text": "Nu letar vi upp punkten där kurvan och linjen möts. Klicka på kurvan. Då visar GeoGebra några grå punkter. Klicka på den grå punkten där kurvan möter linjen. Då står det tre komma åttiotre och åtta. Det första talet är X. Så X är ungefär tre komma åttiotre."
+    },
+    {
+     "t": 446,
+     "text": "Vad betyder tre komma åttiotre? X är antalet tusen år, och tre komma åttiotre tusen år är ungefär tre tusen åttahundra år. Om vi går tillbaka till frågan, så ser vi att klicken säger att plankan är ungefär tre tusen åttahundra år gammal. Vad nice, det är ju samma ålder som forskarna sa."
+    },
+    {
+     "t": 469,
+     "text": "Libby provade också med stenkol, som är många miljoner år gammalt. För det kolet klickade räknaren inte alls. Kan klicken bli noll i vår funktion? Då är ekvationen tolv komma fem gånger noll komma åttionio upphöjt till X är lika med noll. Linjen Y är lika med noll är X-axeln. Men kurvan kommer bara närmare och närmare X-axeln. Varje tusen år försvinner elva procent, men åttionio procent av det som fanns finns alltid kvar. Kurvan och X-axeln skär alltså aldrig varandra. Den här ekvationen har ingen lösning."
+    },
+    {
+     "t": 511,
+     "text": "Nu får vi inte glömma att funktionen är en modell. Efter ungefär femtio tusen år finns så lite kol fjorton kvar att räknaren inte kan höra det. Där slutar modellen att fungera. Nu går vi tillbaka till Libby."
+    },
+    {
+     "t": 528,
+     "text": "Libby testar fler bitar trä där åldern redan är känd. En bit av ett jätteträd från Kalifornien, en kista från Egypten och golvet i ett palats i Syrien. Varje gång hamnar åldern från klicken nära den kända åldern. I december nittonhundrafyrtionio skriver Libby om testerna i tidskriften Science."
+    },
+    {
+     "t": 550,
+     "text": "Sen börjar forskare över hela världen räkna klick. Med metoden tar de reda på hur gamla trä, ben och tyg är. Metoden kallas i dag kol fjorton-metoden. År nittonhundrasextio får Libby nobelpriset i kemi för den."
+    },
+    {
+     "t": 569,
+     "text": "Nu är det din tur. Libby mätte också träet från golvet i palatset i Syrien. Där klickade räknaren nio komma två gånger i minuten för varje gram. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vilken exponentialekvation ska du lösa? Sen: Hur gammalt är träet? Lös ekvationen med GeoGebra, och svara i år, avrundat till hundratal."
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 4,
+     "rubrik": "Chicago 1949: räknaren som klickar",
+     "typ": "historia"
+    },
+    {
+     "t": 113,
+     "rubrik": "Elva procent på tusen år",
+     "typ": "matte"
+    },
+    {
+     "t": 207,
+     "rubrik": "Exponentialfunktionen y = C · aˣ",
+     "typ": "matte"
+    },
+    {
+     "t": 256,
+     "rubrik": "Exponentialekvationen",
+     "typ": "matte"
+    },
+    {
+     "t": 332,
+     "rubrik": "Lösa grafiskt",
+     "typ": "matte"
+    },
+    {
+     "t": 387,
+     "rubrik": "Lösa med GeoGebra",
+     "typ": "matte"
+    },
+    {
+     "t": 469,
+     "rubrik": "När det inte finns någon lösning",
+     "typ": "matte"
+    },
+    {
+     "t": 528,
+     "rubrik": "Kol-14-metoden",
+     "typ": "historia"
+    },
+    {
+     "t": 569,
+     "rubrik": "Träet från palatset i Syrien",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "geogebra": {
+     "text": "Lös ekvationen här i GeoGebra, med samma steg som i filmen: skriv 12,5 · 0,89^x med punkt i stället för komma, en stjärna för gånger och ett tak för upphöjt till. Skriv y = 9,2 på nästa rad. Klicka på kurvan och sedan på den grå punkten där de möts. Det första talet är x, antalet tusen år."
+    },
+    "notisFran": 569,
+    "fraga": "Libby mätte också träet från golvet i palatset i Syrien. Där klickade räknaren 9,2 gånger i minuten för varje gram. När trädet levde klickade det 12,5 gånger, och varje tusen år finns 89 procent kvar. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vilken exponentialekvation ska du lösa?",
+     "Sen: Hur gammalt är träet? Lös ekvationen med GeoGebra och svara i år, avrundat till hundratal."
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-09-exponentialekvationer.jpg?v=62b4572d",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "Utgrävningen av palatset i Syrien. En hand lyfter en svart bit trä från golvet. Träet klickar 9,2 gånger i minuten för varje gram. Åldern är okänd.",
+     "delar": [
+      {
+       "typ": "text",
+       "vid": [
+        110,
+        200
+       ],
+       "text": "Syrien",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        110,
+        300
+       ],
+       "text": "9,2 klick/min",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        110,
+        400
+       ],
+       "text": "? år",
+       "ankare": "start",
+       "accent": true
+      }
+     ]
+    },
+    "delar": [
+     {
+      "fraga": "Först: Vilken exponentialekvation ska du lösa?",
+      "typ": "ekvation",
+      "svar": "12,5 · 0,89^x = 9,2",
+      "exempel": "t.ex. 10 · 0,75^x = 6",
+      "tangenter": [
+       "^",
+       "·",
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "12,5 · 0,89^x = 8",
+        "text": "8 klick var plankan från båten i filmen. Träet från palatset klickar 9,2 gånger i minuten."
+       },
+       {
+        "svar": "9,2 · 0,89^x = 12,5",
+        "text": "C är antalet klick från början, när trädet levde: 12,5. Det står först. 9,2 är antalet klick nu, och det står till höger om likhetstecknet."
+       },
+       {
+        "svar": "12,5 · 0,11^x = 9,2",
+        "text": "Elva procent försvinner, så 89 procent finns kvar. Förändringsfaktorn är 0,89."
+       },
+       {
+        "svar": "12,5 · 0,89 · x = 9,2",
+        "text": "x ska stå i exponenten, upphöjt till. Skriv 0,89^x."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Hur gammalt är träet? Lös ekvationen med GeoGebra och svara i år, avrundat till hundratal.",
+      "typ": "tal",
+      "svar": 2600,
+      "tolerans": 100,
+      "enhet": "år",
+      "exempel": "t.ex. 3800",
+      "tangenter": [
+       "·"
+      ],
+      "fel": [
+       {
+        "svar": "2.63",
+        "tolerans": 0.05,
+        "text": "Rätt x, men x räknar tusen år. 2,63 tusen år är ungefär 2 600 år."
+       },
+       {
+        "svar": "3800",
+        "tolerans": 100,
+        "text": "3 800 år var båten. Träet från palatset klickar mer, 9,2 gånger i stället för 8, så det är yngre."
+       },
+       {
+        "svar": "9.2",
+        "tolerans": 0.01,
+        "text": "9,2 är y-värdet, antalet klick. Åldern är x-värdet i skärningspunkten."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med plankan: skriv 12,5 · 0,89^x i GeoGebra, med punkt i stället för komma, en stjärna för gånger och ett tak för upphöjt till. Skriv y = 9,2 på nästa rad. Klicka på kurvan och sedan på den grå punkten där kurvan och linjen möts. Det första talet är x, antalet tusen år.",
+     "t": 387
+    },
+    "losning": [
+     "När trädet levde klickade det 12,5 gånger, och varje tusen år finns 89 procent kvar. Så y = 12,5 · 0,89ˣ.",
+     "Träet klickar 9,2 gånger, så ekvationen är 12,5 · 0,89ˣ = 9,2.",
+     "I GeoGebra skär kurvan linjen y = 9,2 där x ≈ 2,63.",
+     "x räknar tusen år, så 2,63 tusen år ≈ 2 600 år."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 4,
+     "e": 8.24,
+     "text": "Det är år nittonhundrafyrtionio, i staden Chicago i USA."
+    },
+    {
+     "s": 9.12,
+     "e": 11.74,
+     "text": "Willard Libby är kemist vid universitetet där."
+    },
+    {
+     "s": 12.54,
+     "e": 16.56,
+     "text": "På hans bord i laboratoriet står en räknare, och den klickar."
+    },
+    {
+     "s": 17.36,
+     "e": 21,
+     "text": "Varje klick betyder att en liten bit kol har försvunnit."
+    },
+    {
+     "s": 21.8,
+     "e": 24.12,
+     "text": "Den sortens kol heter kol fjorton."
+    },
+    {
+     "s": 25.22,
+     "e": 29.5,
+     "text": "Allt som lever, som träd och människor, tar in kol från luften."
+    },
+    {
+     "s": 30.3,
+     "e": 33.24,
+     "text": "En liten del av det kolet är kol fjorton."
+    },
+    {
+     "s": 34.04,
+     "e": 37.82,
+     "text": "Så länge trädet lever, får det nytt kol fjorton hela tiden."
+    },
+    {
+     "s": 38.62,
+     "e": 44.74,
+     "text": "Därför klickar ett gram kol från ett levande träd ungefär tolv komma fem gånger i minuten."
+    },
+    {
+     "s": 45.54,
+     "e": 49.02,
+     "text": "Men när trädet har huggits ner, kommer inget nytt kol fjorton."
+    },
+    {
+     "s": 49.82,
+     "e": 53.38,
+     "text": "Då klickar träet mindre och mindre, ju äldre det blir."
+    },
+    {
+     "s": 54.34,
+     "e": 58.94,
+     "text": "Libbys idé är att räkna klicken och få ut hur gammalt träet är."
+    },
+    {
+     "s": 60.04,
+     "e": 61.46,
+     "text": "Men fungerar idén?"
+    },
+    {
+     "s": 62.36,
+     "e": 65.44,
+     "text": "Det måste Libby testa på trä där man redan vet åldern."
+    },
+    {
+     "s": 66.24,
+     "e": 70.38,
+     "text": "På museet för naturhistoria i Chicago står en båt av trä."
+    },
+    {
+     "s": 71.18,
+     "e": 76.46,
+     "text": "Den kommer från Egypten, från graven till en kung som hette Sesostris den tredje."
+    },
+    {
+     "s": 77.32,
+     "e": 81.46,
+     "text": "Forskare som studerar det gamla Egypten vet redan hur gammal båten är,"
+    },
+    {
+     "s": 82.02,
+     "e": 84.5,
+     "text": "ungefär tre tusen åttahundra år."
+    },
+    {
+     "s": 85.38,
+     "e": 89.16,
+     "text": "Museet låter Libby få en bit av en planka från båtens däck."
+    },
+    {
+     "s": 90.26,
+     "e": 94.34,
+     "text": "Libby gör om träbiten till rent kol, ett svart pulver."
+    },
+    {
+     "s": 95.14,
+     "e": 96.96,
+     "text": "Kolet lägger han i räknaren."
+    },
+    {
+     "s": 98.8,
+     "e": 102.42,
+     "text": "Räknaren klickar åtta gånger i minuten för varje gram."
+    },
+    {
+     "s": 103.22,
+     "e": 105.58,
+     "text": "Hur gammal är plankan då, enligt klicken?"
+    },
+    {
+     "s": 106.38,
+     "e": 110.54,
+     "text": "Blir svaret tre tusen åttahundra år, så fungerar idén."
+    },
+    {
+     "s": 113.04,
+     "e": 116.78,
+     "text": "För att svara behöver vi veta hur fort kol fjorton försvinner."
+    },
+    {
+     "s": 117.58,
+     "e": 121.1,
+     "text": "Libby vet att det minskar med elva procent på tusen år."
+    },
+    {
+     "s": 121.9,
+     "e": 125.88,
+     "text": "Om elva procent försvinner, är hundra minus elva kvar."
+    },
+    {
+     "s": 126.68,
+     "e": 132.32,
+     "text": "Det är åttionio procent, och åttionio procent skrivs noll komma åttionio."
+    },
+    {
+     "s": 133.2,
+     "e": 137,
+     "text": "Talet noll komma åttionio kallas förändringsfaktorn."
+    },
+    {
+     "s": 137.8,
+     "e": 141.52,
+     "text": "Den säger hur stor del som finns kvar efter tusen år."
+    },
+    {
+     "s": 142.62,
+     "e": 145.02,
+     "text": "Nu följer vi klicken från ett levande träd."
+    },
+    {
+     "s": 145.82,
+     "e": 148.8,
+     "text": "Från början är det tolv komma fem klick i minuten."
+    },
+    {
+     "s": 149.6,
+     "e": 156.62,
+     "text": "Efter tusen år finns åttionio procent kvar, så vi tar tolv komma fem gånger noll komma åttionio."
+    },
+    {
+     "s": 157.42,
+     "e": 160.02,
+     "text": "Det blir ungefär elva komma ett klick."
+    },
+    {
+     "s": 160.86,
+     "e": 165.48,
+     "text": "Efter två tusen år multiplicerar vi med noll komma åttionio en gång till."
+    },
+    {
+     "s": 166.28,
+     "e": 171.84,
+     "text": "Det blir tolv komma fem gånger noll komma åttionio gånger noll komma åttionio,"
+    },
+    {
+     "s": 172.4,
+     "e": 174.94,
+     "text": "alltså ungefär nio komma nio klick."
+    },
+    {
+     "s": 176.62,
+     "e": 181.2,
+     "text": "Oj, det blir långt om vi ska skriva noll komma åttionio många gånger."
+    },
+    {
+     "s": 182,
+     "e": 183.24,
+     "text": "Det finns ett kortare sätt."
+    },
+    {
+     "s": 184.04,
+     "e": 190.6,
+     "text": "Noll komma åttionio gånger noll komma åttionio skrivs noll komma åttionio upphöjt till två."
+    },
+    {
+     "s": 191.4,
+     "e": 193.72,
+     "text": "Den lilla tvåan kallas exponent."
+    },
+    {
+     "s": 194.52,
+     "e": 198.52,
+     "text": "Den säger hur många gånger vi multiplicerar med noll komma åttionio."
+    },
+    {
+     "s": 199.38,
+     "e": 206.16,
+     "text": "Efter X tusen år har vi alltså tolv komma fem gånger noll komma åttionio upphöjt till X."
+    },
+    {
+     "s": 207.26,
+     "e": 212.42,
+     "text": "Det här är en funktion, för varje ålder X ger exakt ett antal klick."
+    },
+    {
+     "s": 213.22,
+     "e": 215.04,
+     "text": "Vi kallar antalet klick för Y."
+    },
+    {
+     "s": 215.84,
+     "e": 221.02,
+     "text": "Så Y är lika med tolv komma fem gånger noll komma åttionio upphöjt till X."
+    },
+    {
+     "s": 221.84,
+     "e": 226.5,
+     "text": "En funktion där X står i exponenten kallas en exponentialfunktion."
+    },
+    {
+     "s": 227.55,
+     "e": 231.31,
+     "text": "Den står också på formelbladet, på sidan två till höger."
+    },
+    {
+     "s": 232.26,
+     "e": 236.58,
+     "text": "Där står Y är lika med C gånger A upphöjt till X."
+    },
+    {
+     "s": 237.42,
+     "e": 240.94,
+     "text": "C är värdet från början, här tolv komma fem klick."
+    },
+    {
+     "s": 241.74,
+     "e": 245.22,
+     "text": "A är förändringsfaktorn, här noll komma åttionio."
+    },
+    {
+     "s": 246.02,
+     "e": 249.42,
+     "text": "Och X är tiden, här antalet tusen år."
+    },
+    {
+     "s": 250.22,
+     "e": 255.58,
+     "text": "Ökar något i stället, är A större än ett, men vi räknar på precis samma sätt."
+    },
+    {
+     "s": 256.41,
+     "e": 257.79,
+     "text": "Nu tillbaka till plankan."
+    },
+    {
+     "s": 258.59,
+     "e": 260.99,
+     "text": "Plankan klickar åtta gånger i minuten."
+    },
+    {
+     "s": 261.79,
+     "e": 264.63,
+     "text": "Vi vill veta vilket X som ger åtta klick."
+    },
+    {
+     "s": 265.43,
+     "e": 267.81,
+     "text": "Så vi sätter funktionen lika med åtta."
+    },
+    {
+     "s": 268.61,
+     "e": 273.21,
+     "text": "Tolv komma fem gånger noll komma åttionio upphöjt till X är lika med åtta."
+    },
+    {
+     "s": 274.01,
+     "e": 277.05,
+     "text": "Det är en ekvation där X står i exponenten."
+    },
+    {
+     "s": 277.85,
+     "e": 281.09,
+     "text": "En sådan ekvation kallas en exponentialekvation."
+    },
+    {
+     "s": 282.19,
+     "e": 285.53,
+     "text": "Men funktionen och ekvationen är lätta att blanda ihop."
+    },
+    {
+     "s": 286.33,
+     "e": 291.11,
+     "text": "Funktionen ger antalet klick för varje ålder, vilket X vi än sätter in."
+    },
+    {
+     "s": 291.91,
+     "e": 296.95,
+     "text": "Ekvationen frågar efter en enda ålder, den som ger precis åtta klick."
+    },
+    {
+     "s": 298.05,
+     "e": 299.05,
+     "text": "Vi kan prova oss fram."
+    },
+    {
+     "s": 299.81,
+     "e": 302.25,
+     "text": "Hur många klick blir det efter tre tusen år?"
+    },
+    {
+     "s": 303.05,
+     "e": 306.85,
+     "text": "På räknaren skriver vi tolv komma fem gånger noll komma åttionio,"
+    },
+    {
+     "s": 307.27,
+     "e": 310.19,
+     "text": "trycker på knappen för upphöjt till och skriver tre."
+    },
+    {
+     "s": 311.83,
+     "e": 316.29,
+     "text": "Det blir ungefär åtta komma åtta klick, alltså fler än åtta."
+    },
+    {
+     "s": 317.09,
+     "e": 322.47,
+     "text": "Efter fyra tusen år blir det ungefär sju komma åtta klick, alltså färre än åtta."
+    },
+    {
+     "s": 323.27,
+     "e": 325.71,
+     "text": "Så X ligger mellan tre och fyra."
+    },
+    {
+     "s": 326.51,
+     "e": 329.13,
+     "text": "Men att prova med decimaler tar lång tid."
+    },
+    {
+     "s": 329.93,
+     "e": 331.35,
+     "text": "Vi behöver ett snabbare sätt."
+    },
+    {
+     "s": 332.45,
+     "e": 335.33,
+     "text": "Därför ritar vi ekvationen som två grafer."
+    },
+    {
+     "s": 336.13,
+     "e": 339.85,
+     "text": "Det som står till vänster om likhetstecknet kallas vänster led."
+    },
+    {
+     "s": 340.65,
+     "e": 345.13,
+     "text": "Vänster led, tolv komma fem gånger noll komma åttionio upphöjt till X,"
+    },
+    {
+     "s": 345.55,
+     "e": 347.67,
+     "text": "blir en kurva som sakta sjunker."
+    },
+    {
+     "s": 348.47,
+     "e": 353.05,
+     "text": "Höger led är åtta, och åtta är samma tal vad X än är."
+    },
+    {
+     "s": 353.85,
+     "e": 357.23,
+     "text": "Så höger led blir en vågrät linje på höjden åtta."
+    },
+    {
+     "s": 358.03,
+     "e": 361.61,
+     "text": "Där kurvan och linjen skär varandra är båda leden lika."
+    },
+    {
+     "s": 362.41,
+     "e": 364.67,
+     "text": "Den punkten kallas skärningspunkten."
+    },
+    {
+     "s": 365.77,
+     "e": 369.89,
+     "text": "Lösningen är X-värdet i skärningspunkten, alltså åldern."
+    },
+    {
+     "s": 370.69,
+     "e": 374.69,
+     "text": "Y-värdet är bara åtta, antalet klick, och det visste vi redan."
+    },
+    {
+     "s": 375.49,
+     "e": 380.25,
+     "text": "Som vi ser ligger skärningspunkten mellan tre och fyra, närmare fyra."
+    },
+    {
+     "s": 381.05,
+     "e": 383.21,
+     "text": "Men exakt var är svårt att se."
+    },
+    {
+     "s": 384.01,
+     "e": 385.97,
+     "text": "Därför tar vi hjälp av GeoGebra."
+    },
+    {
+     "s": 387.07,
+     "e": 388.91,
+     "text": "Öppna GeoGebras grafräknare."
+    },
+    {
+     "s": 389.71,
+     "e": 391.81,
+     "text": "Klicka i rutan längst upp till vänster."
+    },
+    {
+     "s": 392.61,
+     "e": 394.51,
+     "text": "Där skriver man det som ska ritas."
+    },
+    {
+     "s": 395.31,
+     "e": 399.53,
+     "text": "Skriv tolv komma fem gånger noll komma åttionio upphöjt till X."
+    },
+    {
+     "s": 400.33,
+     "e": 403.31,
+     "text": "I GeoGebra skriver man punkt i stället för komma."
+    },
+    {
+     "s": 404.11,
+     "e": 408.29,
+     "text": "För gånger skriver man en stjärna, och för upphöjt till ett litet tak."
+    },
+    {
+     "s": 409.09,
+     "e": 410.09,
+     "text": "Tryck på Enter."
+    },
+    {
+     "s": 410.81,
+     "e": 413.69,
+     "text": "Då ritar GeoGebra kurvan och kallar den f."
+    },
+    {
+     "s": 414.79,
+     "e": 418.03,
+     "text": "Sen skriver du Y är lika med åtta på nästa rad."
+    },
+    {
+     "s": 418.83,
+     "e": 419.83,
+     "text": "Tryck på Enter."
+    },
+    {
+     "s": 420.43,
+     "e": 422.85,
+     "text": "Då ritar GeoGebra den vågräta linjen."
+    },
+    {
+     "s": 423.95,
+     "e": 427.11,
+     "text": "Nu letar vi upp punkten där kurvan och linjen möts."
+    },
+    {
+     "s": 427.91,
+     "e": 428.91,
+     "text": "Klicka på kurvan."
+    },
+    {
+     "s": 429.63,
+     "e": 431.95,
+     "text": "Då visar GeoGebra några grå punkter."
+    },
+    {
+     "s": 432.75,
+     "e": 435.79,
+     "text": "Klicka på den grå punkten där kurvan möter linjen."
+    },
+    {
+     "s": 436.59,
+     "e": 439.21,
+     "text": "Då står det tre komma åttiotre och åtta."
+    },
+    {
+     "s": 440.05,
+     "e": 441.57,
+     "text": "Det första talet är X."
+    },
+    {
+     "s": 442.37,
+     "e": 445.35,
+     "text": "Så X är ungefär tre komma åttiotre."
+    },
+    {
+     "s": 446.45,
+     "e": 448.31,
+     "text": "Vad betyder tre komma åttiotre?"
+    },
+    {
+     "s": 449.25,
+     "e": 456.29,
+     "text": "X är antalet tusen år, och tre komma åttiotre tusen år är ungefär tre tusen åttahundra år."
+    },
+    {
+     "s": 457.09,
+     "e": 462.19,
+     "text": "Om vi går tillbaka till frågan, så ser vi att klicken säger att plankan är ungefär tre"
+    },
+    {
+     "s": 462.31,
+     "e": 464.17,
+     "text": "tusen åttahundra år gammal."
+    },
+    {
+     "s": 465.37,
+     "e": 468.09,
+     "text": "Vad nice, det är ju samma ålder som forskarna sa."
+    },
+    {
+     "s": 469.19,
+     "e": 473.25,
+     "text": "Libby provade också med stenkol, som är många miljoner år gammalt."
+    },
+    {
+     "s": 474.05,
+     "e": 476.55,
+     "text": "För det kolet klickade räknaren inte alls."
+    },
+    {
+     "s": 478.29,
+     "e": 480.41,
+     "text": "Kan klicken bli noll i vår funktion?"
+    },
+    {
+     "s": 481.21,
+     "e": 487.35,
+     "text": "Då är ekvationen tolv komma fem gånger noll komma åttionio upphöjt till X är lika med noll."
+    },
+    {
+     "s": 488.15,
+     "e": 491.13,
+     "text": "Linjen Y är lika med noll är X-axeln."
+    },
+    {
+     "s": 491.93,
+     "e": 495.33,
+     "text": "Men kurvan kommer bara närmare och närmare X-axeln."
+    },
+    {
+     "s": 496.13,
+     "e": 502.93,
+     "text": "Varje tusen år försvinner elva procent, men åttionio procent av det som fanns finns alltid kvar."
+    },
+    {
+     "s": 503.73,
+     "e": 506.75,
+     "text": "Kurvan och X-axeln skär alltså aldrig varandra."
+    },
+    {
+     "s": 507.55,
+     "e": 509.99,
+     "text": "Den här ekvationen har ingen lösning."
+    },
+    {
+     "s": 511.09,
+     "e": 513.91,
+     "text": "Nu får vi inte glömma att funktionen är en modell."
+    },
+    {
+     "s": 514.71,
+     "e": 520.95,
+     "text": "Efter ungefär femtio tusen år finns så lite kol fjorton kvar att räknaren inte kan höra det."
+    },
+    {
+     "s": 521.75,
+     "e": 523.63,
+     "text": "Där slutar modellen att fungera."
+    },
+    {
+     "s": 524.43,
+     "e": 525.61,
+     "text": "Nu går vi tillbaka till Libby."
+    },
+    {
+     "s": 528.11,
+     "e": 531.51,
+     "text": "Libby testar fler bitar trä där åldern redan är känd."
+    },
+    {
+     "s": 532.31,
+     "e": 538.91,
+     "text": "En bit av ett jätteträd från Kalifornien, en kista från Egypten och golvet i ett palats i Syrien."
+    },
+    {
+     "s": 539.71,
+     "e": 543.65,
+     "text": "Varje gång hamnar åldern från klicken nära den kända åldern."
+    },
+    {
+     "s": 544.45,
+     "e": 549.75,
+     "text": "I december nittonhundrafyrtionio skriver Libby om testerna i tidskriften Science."
+    },
+    {
+     "s": 550.85,
+     "e": 553.99,
+     "text": "Sen börjar forskare över hela världen räkna klick."
+    },
+    {
+     "s": 554.79,
+     "e": 558.89,
+     "text": "Med metoden tar de reda på hur gamla trä, ben och tyg är."
+    },
+    {
+     "s": 559.69,
+     "e": 562.47,
+     "text": "Metoden kallas i dag kol fjorton-metoden."
+    },
+    {
+     "s": 563.27,
+     "e": 567.19,
+     "text": "År nittonhundrasextio får Libby nobelpriset i kemi för den."
+    },
+    {
+     "s": 569.69,
+     "e": 570.77,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 571.57,
+     "e": 575.05,
+     "text": "Libby mätte också träet från golvet i palatset i Syrien."
+    },
+    {
+     "s": 575.85,
+     "e": 580.57,
+     "text": "Där klickade räknaren nio komma två gånger i minuten för varje gram."
+    },
+    {
+     "s": 581.37,
+     "e": 585.39,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 586.19,
+     "e": 589.67,
+     "text": "Först: Vilken exponentialekvation ska du lösa?"
+    },
+    {
+     "s": 590.47,
+     "e": 592.61,
+     "text": "Sen: Hur gammalt är träet?"
+    },
+    {
+     "s": 593.41,
+     "e": 598.41,
+     "text": "Lös ekvationen med GeoGebra, och svara i år, avrundat till hundratal."
     }
    ]
   },
