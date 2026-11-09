@@ -1850,8 +1850,10 @@
   // Fliken Spel är gömd tills alla tre spelen har flerspelarläge (Rickard 2026-11-09: «Vi gömmer alla spel än så länge
   // i videoteket tills vi har fixat flerspelarläge för samtliga spel»). true visar den. Klasslänken sparas ändå, så att
   // klassen redan finns när spelen syns. Gömd går #spel till #filmer som en serie utan filmer. Sedan 9/11 har alla tre
-  // flerspelarläge (spelserverns grenar, guidens spel-delning), och fliken syns när videoteket publiceras med spelen.
-  const SPEL_SYNS = true;
+  // flerspelarläge (spelserverns grenar, guidens spel-delning). Fliken syntes en stund 9/11 och gömdes igen samma kväll
+  // (Rickard: «Göm fliken»), tills spelens buggrapport och datainlämning är ute. Spelen nås ändå på /spel/tron,
+  // /spel/skepp och /spel/pacman.
+  const SPEL_SYNS = false;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
