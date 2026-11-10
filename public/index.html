@@ -1853,7 +1853,7 @@
   // flerspelarläge (spelserverns grenar, guidens spel-delning). Fliken syntes en stund 9/11 och gömdes igen samma kväll
   // (Rickard: «Göm fliken»), tills spelens buggrapport och datainlämning är ute. Spelen nås ändå på /spel/tron,
   // /spel/skepp och /spel/pacman.
-  const SPEL_SYNS = false;
+  const SPEL_SYNS = true;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
