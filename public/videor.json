@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-10T17:51:56.031Z",
+ "byggd": "2026-11-10T18:03:01.048Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -60094,6 +60094,1091 @@
      "s": 593.41,
      "e": 598.41,
      "text": "Lös ekvationen med GeoGebra, och svara i år, avrundat till hundratal."
+    }
+   ]
+  },
+  {
+   "id": "ma2a-11-storsta-och-minsta-varde",
+   "titel": "Fermat och den största rektangeln – Största och minsta värde",
+   "ar": 1636,
+   "serie": "ma2a",
+   "del": 11,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-11-storsta-och-minsta-varde-v1/ma2a-11-storsta-och-minsta-varde-1080p.mp4",
+   "moment": "Största och minsta värde",
+   "begrepp": [
+    "andragradsfunktion",
+    "största värde",
+    "minsta värde",
+    "maximipunkt",
+    "minimipunkt",
+    "extrempunkt",
+    "symmetrilinje",
+    "parabel",
+    "nollställen",
+    "nollproduktmetoden",
+    "pq-formeln",
+    "kvadreringsregeln",
+    "konstant",
+    "konstantbestämning",
+    "formelbladet",
+    "produkt",
+    "rektangel",
+    "area",
+    "derivata",
+    "Pierre de Fermat",
+    "Marin Mersenne",
+    "René Descartes",
+    "Toulouse"
+   ],
+   "beskrivning": "År 1636 skickar domaren Pierre de Fermat i Toulouse en metod till matematikerna i Paris. Hans första exempel är en sträcka som ska delas så att produkten av delarna blir så stor som möjligt. Vi skriver arean som en andragradsfunktion, hittar symmetrilinjen mitt emellan nollställena och räknar ut det största värdet. Sedan hittar vi ett minsta värde med pq-formeln när nollställen saknas, och bestämmer en konstant ur ett känt värde.",
+   "youtube": null,
+   "langd": 657,
+   "omslag": "omslag/ma2a-11-storsta-och-minsta-varde.jpg?v=1c09e974",
+   "omslagRen": "omslag/ma2a-11-storsta-och-minsta-varde-ren.jpg?v=92b6fa44",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är år sextonhundratrettiosex i Toulouse, en stad i södra Frankrike. Pierre de Fermat arbetar som domare i stadens domstol. På dagarna läser han papper från rättegångar och dömer i målen. Men på kvällarna sitter han hemma vid skrivbordet och räknar."
+    },
+    {
+     "t": 28,
+     "text": "Det året får Fermat ett brev från Paris. Det kommer från Marin Mersenne, en munk som skriver brev med matematiker i hela Europa. Mersenne har hört att Fermat har räknat på hur saker faller, och han vill veta mer. Fermat svarar, och snart skriver de ofta till varandra."
+    },
+    {
+     "t": 49,
+     "text": "Matematikerna i Paris ber Fermat berätta hur han räknar. Då skickar han en text med en metod för att hitta det största och det minsta värdet. Hans första exempel är en sträcka. Sträckan ska delas i två delar, och delarna ska multipliceras med varandra. Det man får när man multiplicerar kallas produkten. Var ska man dela sträckan, för att produkten ska bli så stor som möjligt?"
+    },
+    {
+     "t": 78,
+     "text": "Om man delar nära ena änden blir den ena delen pytteliten, och då blir produkten också liten. Men var någonstans blir den störst? Det tar vi reda på nu."
+    },
+    {
+     "t": 92,
+     "text": "Säg att sträckan är tio centimeter lång. Vi kallar den ena delen för x. Då är den andra delen tio minus x, för tillsammans ska de bli tio. Fermat ritar delarna som sidorna i en rektangel. Då är produkten av delarna lika med rektangelns area, alltså basen gånger höjden."
+    },
+    {
+     "t": 115,
+     "text": "Arean beror på var vi delar, alltså på x. Därför skriver vi arean som en funktion. A av x är lika med x gånger parentesen tio minus x. Vi provar några värden. Om x är två, blir den andra delen åtta, och två gånger åtta är sexton. Om x är fyra, blir det fyra gånger sex, alltså tjugofyra."
+    },
+    {
+     "t": 142,
+     "text": "Om x är sex, blir det sex gånger fyra. Det är också tjugofyra, precis som när x var fyra. Och om x är åtta, blir det åtta gånger två, alltså sexton igen. Värdena kommer alltså i par. Det syns tydligt när vi ritar punkterna i ett koordinatsystem."
+    },
+    {
+     "t": 162,
+     "text": "Punkterna går upp och sen ner igen, som en båge. Om vi multiplicerar in x i parentesen, får vi tio X minus x i kvadrat. På formelbladet står andragradsfunktionen som y är lika med a X i kvadrat plus b X plus c. Här är a minus ett, för det står minus x i kvadrat. När a är negativt, öppnar sig grafen nedåt. Grafen har alltså en högsta punkt, och den kallas maximipunkt."
+    },
+    {
+     "t": 195,
+     "text": "Grafen till en andragradsfunktion kallas parabel, och den är symmetrisk. Det betyder att den ena halvan är som en spegelbild av den andra. Spegeln är en lodrät linje rakt genom maximipunkten, och den kallas symmetrilinje. Det var därför värdena kom i par. Fyra och sex ligger lika långt från symmetrilinjen."
+    },
+    {
+     "t": 220,
+     "text": "Så var går symmetrilinjen? Den går mitt emellan nollställena. Nollställena är de x där funktionen är noll, alltså där parabeln skär x-axeln. Så vi löser ekvationen x gånger parentesen tio minus x är lika med noll."
+    },
+    {
+     "t": 239,
+     "text": "En produkt är noll bara om en av faktorerna är noll. Det kallas nollproduktmetoden. Antingen är x noll, eller så är tio minus x noll, och det är det när x är tio. Det stämmer med sträckan också. Om vi delar i ena änden, blir den ena delen noll, och då blir arean noll."
+    },
+    {
+     "t": 260,
+     "text": "Mitt emellan noll och tio ligger fem. Det räknar vi som medelvärdet. Noll plus tio är tio, och tio delat med två är fem. Symmetrilinjen är alltså x är lika med fem. Det största värdet får vi när vi sätter in fem i funktionen. Fem gånger parentesen tio minus fem är fem gånger fem, alltså tjugofem."
+    },
+    {
+     "t": 285,
+     "text": "Vad nice, det är precis Fermats svar. Man ska dela sträckan mitt itu, och då blir rektangeln en kvadrat. Men maximipunkten och det största värdet är lätta att blanda ihop. Maximipunkten är en punkt med två koordinater, fem och tjugofem. Det största värdet är bara y-värdet, alltså tjugofem."
+    },
+    {
+     "t": 308,
+     "text": "Nu ställer vi en fråga till om samma sträcka. På varje del ritar vi en kvadrat, och vi lägger ihop kvadraternas areor. Var ska vi dela nu, för att summan ska bli så liten som möjligt? Det här är det svåraste vi gör i dag, så vi tar ett steg i taget."
+    },
+    {
+     "t": 326,
+     "text": "Den ena kvadraten har sidan x, så dess area är x i kvadrat. Den andra har sidan tio minus x, och dess area är parentesen tio minus x i kvadrat. Den parentesen skriver vi om med kvadreringsregeln från formelbladet. Den blir hundra minus tjugo X plus x i kvadrat."
+    },
+    {
+     "t": 349,
+     "text": "Summan blir alltså x i kvadrat plus hundra minus tjugo X plus x i kvadrat. Vi har x i kvadrat två gånger, och det blir två X i kvadrat. Funktionen blir två X i kvadrat minus tjugo X plus hundra. Nu är a två, alltså positivt. Då öppnar sig parabeln uppåt, som en skål. Den har en lägsta punkt, som kallas minimipunkt. Maximipunkter och minimipunkter kallas med ett gemensamt ord för extrempunkter."
+    },
+    {
+     "t": 384,
+     "text": "Vi letar efter nollställena igen, så vi sätter funktionen lika med noll. För att kunna använda pq-formeln måste det stå bara x i kvadrat först. Därför delar vi båda leden med två. Då får vi x i kvadrat minus tio X plus femtio är lika med noll. Här är p minus tio och q femtio."
+    },
+    {
+     "t": 407,
+     "text": "På formelbladet står pq-formeln. x är lika med minus p halva, plus eller minus roten ur p halva i kvadrat minus q. p halva är minus fem, så minus p halva är fem. Under rottecknet får vi minus fem i kvadrat, alltså tjugofem, minus femtio. Det blir minus tjugofem."
+    },
+    {
+     "t": 435,
+     "text": "Men roten ur ett negativt tal finns inte, för inget tal gånger sig självt blir negativt. Funktionen har alltså inga nollställen, och parabeln skär aldrig x-axeln. Hur hittar vi då symmetrilinjen? Jo, pq-formeln ger två svar, fem plus något och fem minus något. De ligger alltid lika långt åt varsitt håll från fem. Symmetrilinjen är därför talet före rottecknet, x är lika med fem, också när nollställena saknas."
+    },
+    {
+     "t": 471,
+     "text": "Nu sätter vi in fem i funktionen. Två gånger fem i kvadrat är två gånger tjugofem, alltså femtio. Tjugo gånger fem är hundra. Femtio minus hundra plus hundra är femtio. Det minsta värdet är alltså femtio, och vi får det också när vi delar sträckan mitt itu. Två kvadrater med sidan fem har ju arean tjugofem var."
+    },
+    {
+     "t": 498,
+     "text": "Ibland vet vi inte alla tal i funktionen. Säg att Fermat ritar en ny sträcka, men vi vet inte hur lång den är. Vi kallar längden för k. Då är arean A av x lika med x gånger parentesen k minus x. Talet k kallas en konstant, för det ändrar sig inte när x ändras."
+    },
+    {
+     "t": 522,
+     "text": "Men vi vet en sak. När ena sidan är två, är arean tjugofyra. Det betyder att A av två är tjugofyra. Vi sätter in två där det står x. Två gånger parentesen k minus två är lika med tjugofyra. Nu är k det enda tal vi inte vet, och då kan vi lösa ekvationen. Det kallas konstantbestämning."
+    },
+    {
+     "t": 549,
+     "text": "Gånger två tar vi bort genom att dela båda leden med två. Då är k minus två lika med tolv. Sen lägger vi till två i båda leden, och då är k lika med fjorton. Sträckan är alltså fjorton centimeter. Nollställena är noll och fjorton, och mitt emellan ligger sju. Sju gånger sju är fyrtionio, så det största värdet är fyrtionio. Nu går vi tillbaka till Fermat."
+    },
+    {
+     "t": 580,
+     "text": "Mersenne skickar Fermats text vidare. I början av år sextonhundratrettioåtta läser René Descartes den. Descartes är en av tidens mest kända matematiker, och han bor i Holland. Han skriver att metoden inte fungerar."
+    },
+    {
+     "t": 598,
+     "text": "Fermat svarar med fler exempel, som visar att metoden fungerar. Breven går fram och tillbaka genom Mersenne i flera månader. Till slut skriver Descartes att metoden är mycket bra. Fermats sätt att hitta det största och det minsta värdet blev början på något som i dag kallas derivata. Det kommer du att läsa om i en senare kurs."
+    },
+    {
+     "t": 623,
+     "text": "Nu är det din tur. Fermat ritar en ny sträcka som är sexton centimeter lång. Den delas i två delar, x och sexton minus x, och delarna blir sidorna i en rektangel. Arean är A av x lika med x gånger parentesen sexton minus x. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Var går symmetrilinjen? Sen: Vilket är funktionens största värde?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Toulouse 1636: Fermats sträcka",
+     "typ": "historia"
+    },
+    {
+     "t": 92,
+     "rubrik": "Arean som en funktion",
+     "typ": "matte"
+    },
+    {
+     "t": 162,
+     "rubrik": "Andragradsfunktionen och maximipunkten",
+     "typ": "matte"
+    },
+    {
+     "t": 195,
+     "rubrik": "Symmetrilinjen och största värdet",
+     "typ": "matte"
+    },
+    {
+     "t": 308,
+     "rubrik": "Minsta värde: två kvadrater",
+     "typ": "matte"
+    },
+    {
+     "t": 384,
+     "rubrik": "Symmetrilinjen när nollställen saknas",
+     "typ": "matte"
+    },
+    {
+     "t": 498,
+     "rubrik": "Konstantbestämning",
+     "typ": "matte"
+    },
+    {
+     "t": 580,
+     "rubrik": "Descartes och början på derivatan",
+     "typ": "historia"
+    },
+    {
+     "t": 623,
+     "rubrik": "Sträckan på sexton centimeter",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 623,
+    "fraga": "Fermat ritar en ny sträcka som är 16 centimeter lång. Den delas i två delar, x och 16 − x, och delarna blir sidorna i en rektangel. Arean är A(x) = x(16 − x). Du ska svara på två frågor.",
+    "slut": [
+     "Först: Var går symmetrilinjen?",
+     "Sen: Vilket är funktionens största värde?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-11-storsta-och-minsta-varde.jpg?v=ece565bc",
+     "tema": "papper",
+     "text": "Ett papper på Fermats skrivbord. En sträcka på 16 centimeter är delad i två delar, x och 16 − x. Under den finns en rektangel med sidorna x och 16 − x, och funktionen A(x) = x(16 − x).",
+     "delar": [
+      {
+       "typ": "linje",
+       "p": [
+        [
+         200,
+         230
+        ],
+        [
+         1000,
+         230
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        600,
+        152
+       ],
+       "text": "16 cm"
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         450,
+         208
+        ],
+        [
+         450,
+         252
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        325,
+        292
+       ],
+       "text": "x"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        725,
+        292
+       ],
+       "text": "16 − x"
+      },
+      {
+       "typ": "linje",
+       "p": [
+        [
+         200,
+         420
+        ],
+        [
+         750,
+         420
+        ],
+        [
+         750,
+         670
+        ],
+        [
+         200,
+         670
+        ],
+        [
+         200,
+         420
+        ]
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        475,
+        728
+       ],
+       "text": "16 − x"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        165,
+        559
+       ],
+       "text": "x"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        200,
+        860
+       ],
+       "text": "A(x) = x(16 − x)",
+       "ankare": "start"
+      }
+     ]
+    },
+    "delar": [
+     {
+      "fraga": "Först: Var går symmetrilinjen?",
+      "typ": "tal",
+      "svar": 8,
+      "tolerans": 0.001,
+      "exempel": "t.ex. x = 3",
+      "tangenter": [
+       "=",
+       "/"
+      ],
+      "fel": [
+       {
+        "svar": "16",
+        "text": "16 är det ena nollstället. Symmetrilinjen går mitt emellan nollställena 0 och 16."
+       },
+       {
+        "svar": "0",
+        "text": "0 är det ena nollstället. Symmetrilinjen går mitt emellan nollställena 0 och 16."
+       },
+       {
+        "svar": "5",
+        "text": "5 var symmetrilinjen när sträckan var 10 centimeter. Nu är den 16, så nollställena är 0 och 16."
+       },
+       {
+        "svar": "64",
+        "text": "64 är det största värdet, alltså svaret på nästa fråga. Symmetrilinjen är x-värdet mitt emellan nollställena."
+       },
+       {
+        "svar": "4",
+        "text": "Räkna medelvärdet av nollställena 0 och 16: lägg ihop dem och dela med två."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Vilket är funktionens största värde?",
+      "typ": "tal",
+      "svar": 64,
+      "tolerans": 0.001,
+      "exempel": "t.ex. 36",
+      "tangenter": [
+       "·",
+       "="
+      ],
+      "fel": [
+       {
+        "svar": "8",
+        "text": "8 är symmetrilinjen, alltså x-värdet. Det största värdet får du när du sätter in 8 i funktionen."
+       },
+       {
+        "svar": "25",
+        "text": "25 var det största värdet när sträckan var 10 centimeter. Sätt in x = 8 i A(x) = x(16 − x)."
+       },
+       {
+        "svar": "128",
+        "text": "Den andra sidan är 16 − 8, alltså 8. Räkna 8 · 8, inte 8 · 16."
+       },
+       {
+        "svar": "16",
+        "text": "Sätt in x = 8 i funktionen: 8 · (16 − 8). Det är gånger mellan sidorna."
+       },
+       {
+        "svar": "0",
+        "text": "0 är värdet i nollställena. Det största värdet finns på symmetrilinjen, där x = 8."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med sträckan på tio centimeter. Hitta först nollställena genom att lösa x(16 − x) = 0. Symmetrilinjen går mitt emellan dem. Sätt sedan in det x-värdet i funktionen.",
+     "t": 220
+    },
+    "losning": [
+     "Nollställena: x(16 − x) = 0. En produkt är noll bara om en av faktorerna är noll, så x = 0 eller x = 16.",
+     "Symmetrilinjen går mitt emellan nollställena: (0 + 16)/2 = 8. Symmetrilinjen är x = 8.",
+     "Det största värdet får du när du sätter in 8 i funktionen: A(8) = 8 · (16 − 8) = 8 · 8 = 64.",
+     "Svar: Symmetrilinjen är x = 8, och det största värdet är 64."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 14.42,
+     "text": "Det är år sextonhundratrettiosex i Toulouse, en stad i södra Frankrike."
+    },
+    {
+     "s": 15.22,
+     "e": 18.8,
+     "text": "Pierre de Fermat arbetar som domare i stadens domstol."
+    },
+    {
+     "s": 19.6,
+     "e": 23.22,
+     "text": "På dagarna läser han papper från rättegångar och dömer i målen."
+    },
+    {
+     "s": 24.02,
+     "e": 27.78,
+     "text": "Men på kvällarna sitter han hemma vid skrivbordet och räknar."
+    },
+    {
+     "s": 28.88,
+     "e": 31.58,
+     "text": "Det året får Fermat ett brev från Paris."
+    },
+    {
+     "s": 32.38,
+     "e": 37.98,
+     "text": "Det kommer från Marin Mersenne, en munk som skriver brev med matematiker i hela Europa."
+    },
+    {
+     "s": 38.96,
+     "e": 42.48,
+     "text": "Mersenne har hört att Fermat har räknat på hur saker faller,"
+    },
+    {
+     "s": 42.82,
+     "e": 43.98,
+     "text": "och han vill veta mer."
+    },
+    {
+     "s": 44.78,
+     "e": 48.08,
+     "text": "Fermat svarar, och snart skriver de ofta till varandra."
+    },
+    {
+     "s": 49.18,
+     "e": 53.02,
+     "text": "Matematikerna i Paris ber Fermat berätta hur han räknar."
+    },
+    {
+     "s": 53.82,
+     "e": 58.74,
+     "text": "Då skickar han en text med en metod för att hitta det största och det minsta värdet."
+    },
+    {
+     "s": 59.54,
+     "e": 61.74,
+     "text": "Hans första exempel är en sträcka."
+    },
+    {
+     "s": 62.54,
+     "e": 67.52,
+     "text": "Sträckan ska delas i två delar, och delarna ska multipliceras med varandra."
+    },
+    {
+     "s": 68.32,
+     "e": 71.54,
+     "text": "Det man får när man multiplicerar kallas produkten."
+    },
+    {
+     "s": 72.5,
+     "e": 76.56,
+     "text": "Var ska man dela sträckan, för att produkten ska bli så stor som möjligt?"
+    },
+    {
+     "s": 78.54,
+     "e": 85,
+     "text": "Om man delar nära ena änden blir den ena delen pytteliten, och då blir produkten också liten."
+    },
+    {
+     "s": 85.8,
+     "e": 87.9,
+     "text": "Men var någonstans blir den störst?"
+    },
+    {
+     "s": 88.7,
+     "e": 90.1,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 92.6,
+     "e": 95.2,
+     "text": "Säg att sträckan är tio centimeter lång."
+    },
+    {
+     "s": 96,
+     "e": 98.06,
+     "text": "Vi kallar den ena delen för x."
+    },
+    {
+     "s": 98.86,
+     "e": 103.82,
+     "text": "Då är den andra delen tio minus x, för tillsammans ska de bli tio."
+    },
+    {
+     "s": 104.86,
+     "e": 107.92,
+     "text": "Fermat ritar delarna som sidorna i en rektangel."
+    },
+    {
+     "s": 108.72,
+     "e": 114.46,
+     "text": "Då är produkten av delarna lika med rektangelns area, alltså basen gånger höjden."
+    },
+    {
+     "s": 115.56,
+     "e": 118.76,
+     "text": "Arean beror på var vi delar, alltså på x."
+    },
+    {
+     "s": 119.56,
+     "e": 122.08,
+     "text": "Därför skriver vi arean som en funktion."
+    },
+    {
+     "s": 122.88,
+     "e": 127.66,
+     "text": "A av x är lika med x gånger parentesen tio minus x."
+    },
+    {
+     "s": 128.62,
+     "e": 129.72,
+     "text": "Vi provar några värden."
+    },
+    {
+     "s": 130.52,
+     "e": 135.88,
+     "text": "Om x är två, blir den andra delen åtta, och två gånger åtta är sexton."
+    },
+    {
+     "s": 136.68,
+     "e": 140.92,
+     "text": "Om x är fyra, blir det fyra gånger sex, alltså tjugofyra."
+    },
+    {
+     "s": 142.02,
+     "e": 144.74,
+     "text": "Om x är sex, blir det sex gånger fyra."
+    },
+    {
+     "s": 145.54,
+     "e": 148.38,
+     "text": "Det är också tjugofyra, precis som när x var fyra."
+    },
+    {
+     "s": 149.18,
+     "e": 153.92,
+     "text": "Och om x är åtta, blir det åtta gånger två, alltså sexton igen."
+    },
+    {
+     "s": 154.74,
+     "e": 156.56,
+     "text": "Värdena kommer alltså i par."
+    },
+    {
+     "s": 157.36,
+     "e": 160.96,
+     "text": "Det syns tydligt när vi ritar punkterna i ett koordinatsystem."
+    },
+    {
+     "s": 162.06,
+     "e": 165.14,
+     "text": "Punkterna går upp och sen ner igen, som en båge."
+    },
+    {
+     "s": 166.08,
+     "e": 171.82,
+     "text": "Om vi multiplicerar in x i parentesen, får vi tio X minus x i kvadrat."
+    },
+    {
+     "s": 172.62,
+     "e": 180.66,
+     "text": "På formelbladet står andragradsfunktionen som y är lika med a X i kvadrat plus b X plus c."
+    },
+    {
+     "s": 181.74,
+     "e": 185.92,
+     "text": "Här är a minus ett, för det står minus x i kvadrat."
+    },
+    {
+     "s": 186.72,
+     "e": 189.74,
+     "text": "När a är negativt, öppnar sig grafen nedåt."
+    },
+    {
+     "s": 190.54,
+     "e": 194.78,
+     "text": "Grafen har alltså en högsta punkt, och den kallas maximipunkt."
+    },
+    {
+     "s": 195.88,
+     "e": 200.68,
+     "text": "Grafen till en andragradsfunktion kallas parabel, och den är symmetrisk."
+    },
+    {
+     "s": 201.48,
+     "e": 205.34,
+     "text": "Det betyder att den ena halvan är som en spegelbild av den andra."
+    },
+    {
+     "s": 206.2,
+     "e": 212.32,
+     "text": "Spegeln är en lodrät linje rakt genom maximipunkten, och den kallas symmetrilinje."
+    },
+    {
+     "s": 213.12,
+     "e": 215.16,
+     "text": "Det var därför värdena kom i par."
+    },
+    {
+     "s": 215.96,
+     "e": 218.98,
+     "text": "Fyra och sex ligger lika långt från symmetrilinjen."
+    },
+    {
+     "s": 220.08,
+     "e": 222.04,
+     "text": "Så var går symmetrilinjen?"
+    },
+    {
+     "s": 223.14,
+     "e": 225.28,
+     "text": "Den går mitt emellan nollställena."
+    },
+    {
+     "s": 226.08,
+     "e": 231.68,
+     "text": "Nollställena är de x där funktionen är noll, alltså där parabeln skär x-axeln."
+    },
+    {
+     "s": 232.48,
+     "e": 238.02,
+     "text": "Så vi löser ekvationen x gånger parentesen tio minus x är lika med noll."
+    },
+    {
+     "s": 239.12,
+     "e": 242.5,
+     "text": "En produkt är noll bara om en av faktorerna är noll."
+    },
+    {
+     "s": 243.3,
+     "e": 245.2,
+     "text": "Det kallas nollproduktmetoden."
+    },
+    {
+     "s": 246,
+     "e": 251.78,
+     "text": "Antingen är x noll, eller så är tio minus x noll, och det är det när x är tio."
+    },
+    {
+     "s": 252.58,
+     "e": 253.98,
+     "text": "Det stämmer med sträckan också."
+    },
+    {
+     "s": 254.78,
+     "e": 259.48,
+     "text": "Om vi delar i ena änden, blir den ena delen noll, och då blir arean noll."
+    },
+    {
+     "s": 260.58,
+     "e": 263.08,
+     "text": "Mitt emellan noll och tio ligger fem."
+    },
+    {
+     "s": 263.88,
+     "e": 265.48,
+     "text": "Det räknar vi som medelvärdet."
+    },
+    {
+     "s": 266.28,
+     "e": 270.24,
+     "text": "Noll plus tio är tio, och tio delat med två är fem."
+    },
+    {
+     "s": 271.04,
+     "e": 274.2,
+     "text": "Symmetrilinjen är alltså x är lika med fem."
+    },
+    {
+     "s": 275,
+     "e": 278.28,
+     "text": "Det största värdet får vi när vi sätter in fem i funktionen."
+    },
+    {
+     "s": 279.08,
+     "e": 284.82,
+     "text": "Fem gånger parentesen tio minus fem är fem gånger fem, alltså tjugofem."
+    },
+    {
+     "s": 285.92,
+     "e": 288.42,
+     "text": "Vad nice, det är precis Fermats svar."
+    },
+    {
+     "s": 289.22,
+     "e": 293.26,
+     "text": "Man ska dela sträckan mitt itu, och då blir rektangeln en kvadrat."
+    },
+    {
+     "s": 294.32,
+     "e": 298.32,
+     "text": "Men maximipunkten och det största värdet är lätta att blanda ihop."
+    },
+    {
+     "s": 299.12,
+     "e": 303.38,
+     "text": "Maximipunkten är en punkt med två koordinater, fem och tjugofem."
+    },
+    {
+     "s": 304.18,
+     "e": 307.66,
+     "text": "Det största värdet är bara y-värdet, alltså tjugofem."
+    },
+    {
+     "s": 308.76,
+     "e": 311.14,
+     "text": "Nu ställer vi en fråga till om samma sträcka."
+    },
+    {
+     "s": 311.94,
+     "e": 316.14,
+     "text": "På varje del ritar vi en kvadrat, och vi lägger ihop kvadraternas areor."
+    },
+    {
+     "s": 316.94,
+     "e": 320.48,
+     "text": "Var ska vi dela nu, för att summan ska bli så liten som möjligt?"
+    },
+    {
+     "s": 321.28,
+     "e": 325.08,
+     "text": "Det här är det svåraste vi gör i dag, så vi tar ett steg i taget."
+    },
+    {
+     "s": 326.18,
+     "e": 330.96,
+     "text": "Den ena kvadraten har sidan x, så dess area är x i kvadrat."
+    },
+    {
+     "s": 331.76,
+     "e": 338.28,
+     "text": "Den andra har sidan tio minus x, och dess area är parentesen tio minus x i kvadrat."
+    },
+    {
+     "s": 339.08,
+     "e": 343.02,
+     "text": "Den parentesen skriver vi om med kvadreringsregeln från formelbladet."
+    },
+    {
+     "s": 343.82,
+     "e": 347.9,
+     "text": "Den blir hundra minus tjugo X plus x i kvadrat."
+    },
+    {
+     "s": 349,
+     "e": 355.46,
+     "text": "Summan blir alltså x i kvadrat plus hundra minus tjugo X plus x i kvadrat."
+    },
+    {
+     "s": 356.26,
+     "e": 360.6,
+     "text": "Vi har x i kvadrat två gånger, och det blir två X i kvadrat."
+    },
+    {
+     "s": 361.4,
+     "e": 366.22,
+     "text": "Funktionen blir två X i kvadrat minus tjugo X plus hundra."
+    },
+    {
+     "s": 367.02,
+     "e": 369.7,
+     "text": "Nu är a två, alltså positivt."
+    },
+    {
+     "s": 370.5,
+     "e": 373.04,
+     "text": "Då öppnar sig parabeln uppåt, som en skål."
+    },
+    {
+     "s": 373.84,
+     "e": 376.92,
+     "text": "Den har en lägsta punkt, som kallas minimipunkt."
+    },
+    {
+     "s": 377.72,
+     "e": 383.12,
+     "text": "Maximipunkter och minimipunkter kallas med ett gemensamt ord för extrempunkter."
+    },
+    {
+     "s": 384.22,
+     "e": 388.32,
+     "text": "Vi letar efter nollställena igen, så vi sätter funktionen lika med noll."
+    },
+    {
+     "s": 389.12,
+     "e": 393.8,
+     "text": "För att kunna använda pq-formeln måste det stå bara x i kvadrat först."
+    },
+    {
+     "s": 394.6,
+     "e": 396.64,
+     "text": "Därför delar vi båda leden med två."
+    },
+    {
+     "s": 397.44,
+     "e": 402.46,
+     "text": "Då får vi x i kvadrat minus tio X plus femtio är lika med noll."
+    },
+    {
+     "s": 403.26,
+     "e": 406.36,
+     "text": "Här är p minus tio och q femtio."
+    },
+    {
+     "s": 407.46,
+     "e": 410.08,
+     "text": "På formelbladet står pq-formeln."
+    },
+    {
+     "s": 410.88,
+     "e": 418.66,
+     "text": "x är lika med minus p halva, plus eller minus roten ur p halva i kvadrat minus q."
+    },
+    {
+     "s": 419.6,
+     "e": 423.92,
+     "text": "p halva är minus fem, så minus p halva är fem."
+    },
+    {
+     "s": 424.86,
+     "e": 431.2,
+     "text": "Under rottecknet får vi minus fem i kvadrat, alltså tjugofem, minus femtio."
+    },
+    {
+     "s": 432,
+     "e": 433.72,
+     "text": "Det blir minus tjugofem."
+    },
+    {
+     "s": 435.34,
+     "e": 441.6,
+     "text": "Men roten ur ett negativt tal finns inte, för inget tal gånger sig självt blir negativt."
+    },
+    {
+     "s": 442.4,
+     "e": 447.6,
+     "text": "Funktionen har alltså inga nollställen, och parabeln skär aldrig x-axeln."
+    },
+    {
+     "s": 448.4,
+     "e": 450.26,
+     "text": "Hur hittar vi då symmetrilinjen?"
+    },
+    {
+     "s": 452.08,
+     "e": 458.46,
+     "text": "Jo, pq-formeln ger två svar, fem plus något och fem minus något."
+    },
+    {
+     "s": 459.26,
+     "e": 462.58,
+     "text": "De ligger alltid lika långt åt varsitt håll från fem."
+    },
+    {
+     "s": 463.44,
+     "e": 468.18,
+     "text": "Symmetrilinjen är därför talet före rottecknet, x är lika med fem,"
+    },
+    {
+     "s": 468.66,
+     "e": 470.72,
+     "text": "också när nollställena saknas."
+    },
+    {
+     "s": 471.82,
+     "e": 473.92,
+     "text": "Nu sätter vi in fem i funktionen."
+    },
+    {
+     "s": 474.72,
+     "e": 479.48,
+     "text": "Två gånger fem i kvadrat är två gånger tjugofem, alltså femtio."
+    },
+    {
+     "s": 480.28,
+     "e": 482.06,
+     "text": "Tjugo gånger fem är hundra."
+    },
+    {
+     "s": 482.86,
+     "e": 486.24,
+     "text": "Femtio minus hundra plus hundra är femtio."
+    },
+    {
+     "s": 487.04,
+     "e": 492.48,
+     "text": "Det minsta värdet är alltså femtio, och vi får det också när vi delar sträckan mitt itu."
+    },
+    {
+     "s": 493.28,
+     "e": 497.36,
+     "text": "Två kvadrater med sidan fem har ju arean tjugofem var."
+    },
+    {
+     "s": 498.46,
+     "e": 501.06,
+     "text": "Ibland vet vi inte alla tal i funktionen."
+    },
+    {
+     "s": 501.86,
+     "e": 506.1,
+     "text": "Säg att Fermat ritar en ny sträcka, men vi vet inte hur lång den är."
+    },
+    {
+     "s": 506.9,
+     "e": 508.48,
+     "text": "Vi kallar längden för k."
+    },
+    {
+     "s": 509.3,
+     "e": 515.6,
+     "text": "Då är arean A av x lika med x gånger parentesen k minus x."
+    },
+    {
+     "s": 516.5,
+     "e": 521,
+     "text": "Talet k kallas en konstant, för det ändrar sig inte när x ändras."
+    },
+    {
+     "s": 522.1,
+     "e": 523.54,
+     "text": "Men vi vet en sak."
+    },
+    {
+     "s": 524.34,
+     "e": 527.7,
+     "text": "När ena sidan är två, är arean tjugofyra."
+    },
+    {
+     "s": 528.5,
+     "e": 531.52,
+     "text": "Det betyder att A av två är tjugofyra."
+    },
+    {
+     "s": 532.32,
+     "e": 534.32,
+     "text": "Vi sätter in två där det står x."
+    },
+    {
+     "s": 535.12,
+     "e": 539.74,
+     "text": "Två gånger parentesen k minus två är lika med tjugofyra."
+    },
+    {
+     "s": 540.6,
+     "e": 545.2,
+     "text": "Nu är k det enda tal vi inte vet, och då kan vi lösa ekvationen."
+    },
+    {
+     "s": 546,
+     "e": 547.92,
+     "text": "Det kallas konstantbestämning."
+    },
+    {
+     "s": 549.02,
+     "e": 552.64,
+     "text": "Gånger två tar vi bort genom att dela båda leden med två."
+    },
+    {
+     "s": 553.44,
+     "e": 556.3,
+     "text": "Då är k minus två lika med tolv."
+    },
+    {
+     "s": 557.1,
+     "e": 561.84,
+     "text": "Sen lägger vi till två i båda leden, och då är k lika med fjorton."
+    },
+    {
+     "s": 562.64,
+     "e": 565.26,
+     "text": "Sträckan är alltså fjorton centimeter."
+    },
+    {
+     "s": 566.08,
+     "e": 570.28,
+     "text": "Nollställena är noll och fjorton, och mitt emellan ligger sju."
+    },
+    {
+     "s": 571.08,
+     "e": 575.78,
+     "text": "Sju gånger sju är fyrtionio, så det största värdet är fyrtionio."
+    },
+    {
+     "s": 576.62,
+     "e": 578.3,
+     "text": "Nu går vi tillbaka till Fermat."
+    },
+    {
+     "s": 580.8,
+     "e": 583.32,
+     "text": "Mersenne skickar Fermats text vidare."
+    },
+    {
+     "s": 584.12,
+     "e": 588.5,
+     "text": "I början av år sextonhundratrettioåtta läser René Descartes den."
+    },
+    {
+     "s": 589.3,
+     "e": 593.78,
+     "text": "Descartes är en av tidens mest kända matematiker, och han bor i Holland."
+    },
+    {
+     "s": 594.74,
+     "e": 597.24,
+     "text": "Han skriver att metoden inte fungerar."
+    },
+    {
+     "s": 598.34,
+     "e": 602.48,
+     "text": "Fermat svarar med fler exempel, som visar att metoden fungerar."
+    },
+    {
+     "s": 603.3,
+     "e": 606.98,
+     "text": "Breven går fram och tillbaka genom Mersenne i flera månader."
+    },
+    {
+     "s": 607.78,
+     "e": 611.18,
+     "text": "Till slut skriver Descartes att metoden är mycket bra."
+    },
+    {
+     "s": 612.2,
+     "e": 618.84,
+     "text": "Fermats sätt att hitta det största och det minsta värdet blev början på något som i dag kallas derivata."
+    },
+    {
+     "s": 619.64,
+     "e": 621.72,
+     "text": "Det kommer du att läsa om i en senare kurs."
+    },
+    {
+     "s": 623.3,
+     "e": 624.3,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 625.08,
+     "e": 628.98,
+     "text": "Fermat ritar en ny sträcka som är sexton centimeter lång."
+    },
+    {
+     "s": 629.78,
+     "e": 636.84,
+     "text": "Den delas i två delar, x och sexton minus x, och delarna blir sidorna i en rektangel."
+    },
+    {
+     "s": 637.64,
+     "e": 643.26,
+     "text": "Arean är A av x lika med x gånger parentesen sexton minus x."
+    },
+    {
+     "s": 644.06,
+     "e": 648.1,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 648.9,
+     "e": 651.42,
+     "text": "Först: Var går symmetrilinjen?"
+    },
+    {
+     "s": 652.22,
+     "e": 655.34,
+     "text": "Sen: Vilket är funktionens största värde?"
     }
    ]
   },

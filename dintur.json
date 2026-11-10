@@ -3995,5 +3995,202 @@
       "Höj båda leden till en fjärdedel: x = 16^(1/4) = 2, eftersom 2 · 2 · 2 · 2 = 16. Exponenten är jämn, så −2 löser också ekvationen, men en förändringsfaktor kan inte vara negativ.",
       "Förändringsfaktorn 2 betyder en fördubbling. Det som är över 1 är ökningen: 2 − 1 = 1 = 100 %. Antalet ökade med 100 % varje år."
     ]
+  },
+  "ma2a-11-storsta-och-minsta-varde": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Fermat ritar en ny sträcka som är 16 centimeter lång. Den delas i två delar, x och 16 − x, och delarna blir sidorna i en rektangel. Arean är A(x) = x(16 − x). Du ska svara på två frågor.",
+    "slut": [
+      "Först: Var går symmetrilinjen?",
+      "Sen: Vilket är funktionens största värde?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p06-din-tur",
+      "tema": "papper",
+      "text": "Ett papper på Fermats skrivbord. En sträcka på 16 centimeter är delad i två delar, x och 16 − x. Under den finns en rektangel med sidorna x och 16 − x, och funktionen A(x) = x(16 − x).",
+      "delar": [
+        {
+          "typ": "linje",
+          "p": [
+            [
+              200,
+              230
+            ],
+            [
+              1000,
+              230
+            ]
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            600,
+            152
+          ],
+          "text": "16 cm"
+        },
+        {
+          "typ": "linje",
+          "p": [
+            [
+              450,
+              208
+            ],
+            [
+              450,
+              252
+            ]
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            325,
+            292
+          ],
+          "text": "x"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            725,
+            292
+          ],
+          "text": "16 − x"
+        },
+        {
+          "typ": "linje",
+          "p": [
+            [
+              200,
+              420
+            ],
+            [
+              750,
+              420
+            ],
+            [
+              750,
+              670
+            ],
+            [
+              200,
+              670
+            ],
+            [
+              200,
+              420
+            ]
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            475,
+            728
+          ],
+          "text": "16 − x"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            165,
+            559
+          ],
+          "text": "x"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            200,
+            860
+          ],
+          "text": "A(x) = x(16 − x)",
+          "ankare": "start"
+        }
+      ]
+    },
+    "delar": [
+      {
+        "fraga": "Först: Var går symmetrilinjen?",
+        "typ": "tal",
+        "svar": 8,
+        "tolerans": 0.001,
+        "exempel": "t.ex. x = 3",
+        "tangenter": [
+          "=",
+          "/"
+        ],
+        "fel": [
+          {
+            "svar": "16",
+            "text": "16 är det ena nollstället. Symmetrilinjen går mitt emellan nollställena 0 och 16."
+          },
+          {
+            "svar": "0",
+            "text": "0 är det ena nollstället. Symmetrilinjen går mitt emellan nollställena 0 och 16."
+          },
+          {
+            "svar": "5",
+            "text": "5 var symmetrilinjen när sträckan var 10 centimeter. Nu är den 16, så nollställena är 0 och 16."
+          },
+          {
+            "svar": "64",
+            "text": "64 är det största värdet, alltså svaret på nästa fråga. Symmetrilinjen är x-värdet mitt emellan nollställena."
+          },
+          {
+            "svar": "4",
+            "text": "Räkna medelvärdet av nollställena 0 och 16: lägg ihop dem och dela med två."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Vilket är funktionens största värde?",
+        "typ": "tal",
+        "svar": 64,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 36",
+        "tangenter": [
+          "·",
+          "="
+        ],
+        "fel": [
+          {
+            "svar": "8",
+            "text": "8 är symmetrilinjen, alltså x-värdet. Det största värdet får du när du sätter in 8 i funktionen."
+          },
+          {
+            "svar": "25",
+            "text": "25 var det största värdet när sträckan var 10 centimeter. Sätt in x = 8 i A(x) = x(16 − x)."
+          },
+          {
+            "svar": "128",
+            "text": "Den andra sidan är 16 − 8, alltså 8. Räkna 8 · 8, inte 8 · 16."
+          },
+          {
+            "svar": "16",
+            "text": "Sätt in x = 8 i funktionen: 8 · (16 − 8). Det är gånger mellan sidorna."
+          },
+          {
+            "svar": "0",
+            "text": "0 är värdet i nollställena. Det största värdet finns på symmetrilinjen, där x = 8."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Så var går symmetrilinjen",
+      "text": "Gör som med sträckan på tio centimeter. Hitta först nollställena genom att lösa x(16 − x) = 0. Symmetrilinjen går mitt emellan dem. Sätt sedan in det x-värdet i funktionen."
+    },
+    "losning": [
+      "Nollställena: x(16 − x) = 0. En produkt är noll bara om en av faktorerna är noll, så x = 0 eller x = 16.",
+      "Symmetrilinjen går mitt emellan nollställena: (0 + 16)/2 = 8. Symmetrilinjen är x = 8.",
+      "Det största värdet får du när du sätter in 8 i funktionen: A(8) = 8 · (16 − 8) = 8 · 8 = 64.",
+      "Svar: Symmetrilinjen är x = 8, och det största värdet är 64."
+    ]
   }
 }
