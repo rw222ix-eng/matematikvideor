@@ -1852,8 +1852,9 @@
   // klassen redan finns när spelen syns. Gömd går #spel till #filmer som en serie utan filmer. Sedan 9/11 har alla tre
   // flerspelarläge (spelserverns grenar, guidens spel-delning). Fliken syntes en stund 9/11 och gömdes igen samma kväll
   // (Rickard: «Göm fliken»), tills spelens buggrapport och datainlämning är ute. Spelen nås ändå på /spel/tron,
-  // /spel/skepp och /spel/pacman.
-  const SPEL_SYNS = true;
+  // /spel/skepp och /spel/pacman. 10/11 syntes fliken igen och gömdes samma dag (Rickard: «vi måste dölja spelen på
+  // videotek sidan så länge…. de är inte färdigbyggda»). Sätt inte true förrän Rickard säger till.
+  const SPEL_SYNS = false;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
