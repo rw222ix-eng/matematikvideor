@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-10T18:03:01.048Z",
+ "byggd": "2026-11-10T18:24:26.520Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -60094,6 +60094,1129 @@
      "s": 593.41,
      "e": 598.41,
      "text": "Lös ekvationen med GeoGebra, och svara i år, avrundat till hundratal."
+    }
+   ]
+  },
+  {
+   "id": "ma2a-10-andragradsfunktionen",
+   "titel": "Reber och skålen – Andragradsfunktionens graf",
+   "ar": 1937,
+   "serie": "ma2a",
+   "del": 10,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-10-andragradsfunktionen-v1/ma2a-10-andragradsfunktionen-1080p.mp4",
+   "moment": "Andragradsfunktionens graf: parabel, symmetrilinje, extrempunkt och nollställen",
+   "begrepp": [
+    "andragradsfunktion",
+    "parabel",
+    "värdetabell",
+    "graf",
+    "symmetrilinje",
+    "minimipunkt",
+    "maximipunkt",
+    "extrempunkt",
+    "vertex",
+    "minsta värde",
+    "största värde",
+    "nollställe",
+    "y = ax² + bx + c",
+    "koefficienterna a, b och c",
+    "nollproduktmetoden",
+    "pq-formeln",
+    "parabolantenn",
+    "radioteleskop",
+    "Grote Reber",
+    "Wheaton",
+    "Green Bank"
+   ],
+   "beskrivning": "År 1937 bygger radioingenjören Grote Reber en nästan tio meter bred skål i sin mammas trädgård i Wheaton, för att lyssna på bruset från Vintergatan. Skålens form är en parabel. Vi räknar ut bjälkarnas höjder med en värdetabell, ritar grafen och ser vad a, b och c gör med den. Sedan hittar vi nollställena, symmetrilinjen och extrempunkten.",
+   "youtube": null,
+   "langd": 743,
+   "omslag": "omslag/ma2a-10-andragradsfunktionen.jpg?v=0d6fca18",
+   "omslagRen": "omslag/ma2a-10-andragradsfunktionen-ren.jpg?v=c2c074cd",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 4,
+     "text": "Det är år nittonhundratrettiosju, i Wheaton, en liten stad utanför Chicago i USA. Grote Reber är tjugosex år och radioingenjör. På dagarna bygger han radioapparater på ett företag i Chicago. På kvällarna och helgerna bygger han något helt annat, i trädgården vid sin mammas hus. Det är en jättestor skål av trä och plåt, nästan tio meter bred."
+    },
+    {
+     "t": 31,
+     "text": "Vad ska han med skålen till? Några år tidigare har en annan ingenjör, Karl Jansky, hört ett svagt brus i sin radio. Bruset kom inte från jorden. Det kom från Vintergatan, långt ute i rymden. Reber vill höra bruset mycket tydligare. Radiovågor som kommer rakt in i skålen studsar mot plåten och möts i en enda punkt, sex meter ovanför botten. Där ska mottagaren sitta."
+    },
+    {
+     "t": 62,
+     "text": "Men vågorna möts bara i en punkt om skålen har exakt rätt form. Skålen byggs av sjuttiotvå bjälkar som går från mitten ut till kanten, som ekrarna i ett cykelhjul. Varje bjälke ska sågas med samma böj, och felet får vara högst en halv centimeter. Hur vet Reber var han ska såga?"
+    },
+    {
+     "t": 87,
+     "text": "Reber använder en formel. Han mäter X meter rakt ut från skålens mitt. Och Y är hur högt bjälken ska vara över skålens botten, också i meter. Formeln är Y är lika med noll komma noll fyra X i kvadrat. Varje X ger exakt ett Y, så höjden är en funktion av X."
+    },
+    {
+     "t": 111,
+     "text": "Nu räknar vi ut några höjder och skriver dem i en värdetabell. En meter ut: ett i kvadrat är ett, och noll komma noll fyra gånger ett är noll komma noll fyra. Det är fyra centimeter. Två meter ut: två i kvadrat är fyra, och noll komma noll fyra gånger fyra är noll komma sexton, alltså sexton centimeter. Tre meter ut ger trettiosex centimeter, och fyra meter ut ger sextiofyra. Fem meter ut: fem i kvadrat är tjugofem. Fyra gånger tjugofem är hundra, så noll komma noll fyra gånger tjugofem är ett, en hel meter. De höjderna märker Reber ut på varje bjälke innan han sågar."
+    },
+    {
+     "t": 160,
+     "text": "Vi sätter ut punkterna i ett koordinatsystem och drar en mjuk kurva genom dem. Kurvan är bjälkens form, från mitten ut till högra kanten. Men skålen har ju en vänstra sida också, och där är X negativt. Om X är minus tre, blir minus tre i kvadrat lika med nio, eftersom minus gånger minus blir plus. Höjden blir alltså trettiosex centimeter, precis som när X är tre."
+    },
+    {
+     "t": 190,
+     "text": "Vänster och höger halva blir spegelbilder av varandra. En sådan båge kallas parabel, och funktionen kallas andragradsfunktion, eftersom X är upphöjt till två. Den lodräta linjen som delar grafen i två likadana halvor kallas symmetrilinje. Här är det Y-axeln, alltså linjen X är lika med noll. I skålen är det mittlinjen, där mottagaren sitter. Två punkter på samma höjd ligger alltid lika långt från symmetrilinjen, på var sin sida."
+    },
+    {
+     "t": 225,
+     "text": "Grafens lägsta punkt är punkten noll, noll. Den kallas minimipunkt. Funktionens minsta värde är Y-värdet där, alltså noll. Minimipunkt och minsta värde är lätta att blanda ihop. Minimipunkten är en punkt med två koordinater. Minsta värdet är bara ett tal, Y-värdet i punkten. Grafens lägsta eller högsta punkt kallas extrempunkt, eller vertex, och den ligger alltid på symmetrilinjen."
+    },
+    {
+     "t": 256,
+     "text": "Varje andragradsfunktion kan skrivas på samma sätt, och det står på formelbladet: Y är lika med A X i kvadrat plus B X plus C, där A inte får vara noll. A är talet framför X i kvadrat, B är talet framför X, och C är talet som står ensamt. I Rebers formel är A lika med noll komma noll fyra. Där finns ingen X-term och inget ensamt tal, så B och C är noll."
+    },
+    {
+     "t": 287,
+     "text": "Vad gör A med grafen? Hos Reber är A positivt, så grafen är öppen uppåt, som en skål. Då har den en minimipunkt. Om A vore negativt, till exempel minus noll komma noll fyra, skulle grafen vända och bli öppen nedåt, som en bro med en båge. Då har grafen en högsta punkt, en maximipunkt, och funktionen har ett största värde. Man kan se det på det här sättet: ett positivt A ger en glad mun, och ett negativt A ger en ledsen mun."
+    },
+    {
+     "t": 320,
+     "text": "Storleken på A spelar också roll. Med ett större A, till exempel noll komma ett, växer Y snabbare. Då blir skålen smalare och djupare, och punkten där vågorna möts hamnar närmare botten. Reber ville ha mottagaren sex meter upp, för så långa var de längsta brädorna han kunde köpa. Därför blev A så litet som noll komma noll fyra."
+    },
+    {
+     "t": 346,
+     "text": "Tänk dig nu att vi lägger en rak planka tvärs över skålen, från kant till kant. Plankan ligger en meter ovanför botten. Om vi mäter höjden från plankan i stället, blir varje höjd en meter lägre. Funktionen blir Y är lika med noll komma noll fyra X i kvadrat minus ett, och här är C lika med minus ett."
+    },
+    {
+     "t": 370,
+     "text": "C talar om var grafen skär Y-axeln. Där är X lika med noll, och noll komma noll fyra gånger noll i kvadrat är noll. Kvar blir bara C, alltså minus ett. Grafen skär Y-axeln i punkten noll, minus ett, en meter under plankan, mitt i skålen. Det gäller alla andragradsfunktioner: grafen skär Y-axeln där Y är lika med C."
+    },
+    {
+     "t": 398,
+     "text": "Var möter plankan skålen? Där är höjden noll, alltså Y är lika med noll. Vi löser ekvationen noll komma noll fyra X i kvadrat minus ett är lika med noll. Först lägger vi till ett på båda sidor, så att X-termen står ensam: noll komma noll fyra X i kvadrat är lika med ett. Sedan delar vi båda leden med noll komma noll fyra, för att få bort talet framför X i kvadrat: X i kvadrat är lika med tjugofem. Vilka tal blir tjugofem i kvadrat? Fem och minus fem."
+    },
+    {
+     "t": 438,
+     "text": "De två X-värdena kallas funktionens nollställen. Det är där grafen skär X-axeln, och i skålen är det de två kanterna, fem meter åt var sitt håll. Mellan kanterna är det alltså tio meter, och det är skålens bredd. Symmetrilinjen ligger mitt emellan nollställena: minus fem plus fem är noll, och noll delat med två är noll. Symmetrilinjen är X är lika med noll, som förut."
+    },
+    {
+     "t": 468,
+     "text": "Om plankan i stället ligger precis vid botten, som i den första formeln, möter den skålen bara i en punkt. Då har funktionen ett nollställe. Ligger plankan under botten, möts de aldrig, och då har funktionen inga nollställen. Grafen fortsätter förstås uppåt efter fem meter, men där finns ingen skål. Formeln beskriver bara skålen mellan kanterna."
+    },
+    {
+     "t": 495,
+     "text": "Nu ska vi se vad B gör. Tänk dig att vi mäter X från vänstra kanten i stället för från mitten. Då blir funktionen Y är lika med noll komma noll fyra X i kvadrat minus noll komma fyra X. Här är B lika med minus noll komma fyra och C lika med noll. Kanterna är nollställena, så vi sätter Y lika med noll. Båda termerna har ett X, så vi bryter ut X: X gånger parentesen noll komma noll fyra X minus noll komma fyra är lika med noll. En produkt blir noll bara när en av faktorerna är noll. Antingen är X lika med noll. Eller så är noll komma noll fyra X minus noll komma fyra lika med noll. Då är noll komma noll fyra X lika med noll komma fyra, och X är lika med tio."
+    },
+    {
+     "t": 551,
+     "text": "Nollställena är noll och tio. Symmetrilinjen ligger mitt emellan: noll plus tio är tio, och tio delat med två är fem. Symmetrilinjen är X är lika med fem, alltså fem meter från vänstra kanten, mitt i skålen. Det är samma skål som förut. Men när B inte är noll, har symmetrilinjen flyttat bort från Y-axeln."
+    },
+    {
+     "t": 578,
+     "text": "Det finns ett snabbare sätt att hitta symmetrilinjen, med pq-formeln på formelbladet. Formeln kräver att X i kvadrat står ensamt först, så vi delar alla termer med noll komma noll fyra. Noll komma noll fyra X i kvadrat delat med noll komma noll fyra är X i kvadrat. Noll komma fyra X delat med noll komma noll fyra är tio X, eftersom noll komma noll fyra får plats tio gånger i noll komma fyra. Ekvationen blir X i kvadrat minus tio X är lika med noll. Här är p lika med minus tio och q lika med noll."
+    },
+    {
+     "t": 619,
+     "text": "pq-formeln säger att lösningarna ligger lika långt åt var sitt håll från minus p delat med två. Därför är X är lika med minus p delat med två alltid symmetrilinjen, också när funktionen saknar nollställen. Minus minus tio är tio, och tio delat med två är fem. Samma svar som förut, så det stämmer. I den andra formeln på formelbladet syns samma sak: lösningarna ligger runt minus B delat med två A. Nu går vi tillbaka till Reber i trädgården."
+    },
+    {
+     "t": 656,
+     "text": "Hösten nittonhundratrettiosju är skålen klar. Reber har sågat alla sjuttiotvå bjälkarna efter sin tabell och spikat plåt över dem, och han har betalat allt själv. Han lyssnar mest mellan midnatt och gryning, eftersom bilarnas tändning stör radion på dagen. Men i början hör han ingenting från rymden. Han bygger om mottagaren två gånger."
+    },
+    {
+     "t": 681,
+     "text": "Våren nittonhundratrettionio hör han det till slut: ett svagt brus från Vintergatan. Natt efter natt riktar han skålen mot nya delar av himlen och skriver ner hur starkt bruset är. Det blir den första kartan över himlen i radiovågor. I dag står hans skål i Green Bank i USA, på samma plats som ett radioteleskop som är hundra meter brett. Det är också en parabel."
+    },
+    {
+     "t": 710,
+     "text": "Nu får du två frågor att svara på i Din tur-rutan längre ner på sidan. En liten parabolantenn på ett hustak har formen Y är lika med noll komma ett X i kvadrat minus noll komma sex X. Här är X och Y i decimeter, och X mäts från antennens vänstra kant. Funktionen har ett nollställe i X är lika med noll. Först: vilket är det andra nollstället? Sedan: vilken ekvation har symmetrilinjen?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 4,
+     "rubrik": "Wheaton 1937: Rebers skål",
+     "typ": "historia"
+    },
+    {
+     "t": 87,
+     "rubrik": "Formeln y = 0,04x² och värdetabellen",
+     "typ": "matte"
+    },
+    {
+     "t": 160,
+     "rubrik": "Grafen: parabel och symmetrilinje",
+     "typ": "matte"
+    },
+    {
+     "t": 225,
+     "rubrik": "Minimipunkt och extrempunkt",
+     "typ": "matte"
+    },
+    {
+     "t": 256,
+     "rubrik": "Formelbladet: y = ax² + bx + c",
+     "typ": "matte"
+    },
+    {
+     "t": 287,
+     "rubrik": "Vad a gör med grafen",
+     "typ": "matte"
+    },
+    {
+     "t": 346,
+     "rubrik": "Vad c gör: grafen flyttas i höjdled",
+     "typ": "matte"
+    },
+    {
+     "t": 398,
+     "rubrik": "Nollställen",
+     "typ": "matte"
+    },
+    {
+     "t": 495,
+     "rubrik": "Vad b gör: nollställen och symmetrilinje",
+     "typ": "matte"
+    },
+    {
+     "t": 578,
+     "rubrik": "Symmetrilinjen med pq-formeln",
+     "typ": "matte"
+    },
+    {
+     "t": 656,
+     "rubrik": "Bruset från Vintergatan",
+     "typ": "historia"
+    },
+    {
+     "t": 710,
+     "rubrik": "En parabolantenn på taket",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 710,
+    "fraga": "En liten parabolantenn på ett hustak har formen y = 0,1x² − 0,6x. Här är x och y i decimeter, och x mäts från antennens vänstra kant. Funktionen har ett nollställe i x = 0. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vilket är det andra nollstället?",
+     "Sedan: Vilken ekvation har symmetrilinjen?"
+    ],
+    "delar": [
+     {
+      "fraga": "Först: Vilket är det andra nollstället?",
+      "typ": "tal",
+      "svar": 6,
+      "tolerans": 0.001,
+      "exempel": "t.ex. 4",
+      "tangenter": [
+       ",",
+       "−"
+      ],
+      "fel": [
+       {
+        "svar": "0",
+        "text": "x = 0 är det första nollstället. Bryt ut x: x(0,1x − 0,6) = 0. När blir parentesen noll?"
+       },
+       {
+        "svar": "0,6",
+        "text": "Parentesen är 0,1x − 0,6. Den blir noll när 0,1x = 0,6, alltså när x är tio gånger så stort som 0,6."
+       },
+       {
+        "svar": "-6",
+        "text": "Sätt in −6: 0,1 · 36 + 3,6 = 7,2, inte noll. Parentesen 0,1x − 0,6 blir noll när 0,1x = 0,6."
+       },
+       {
+        "svar": "3",
+        "text": "3 ligger mitt emellan nollställena. Det är symmetrilinjen, alltså nästa fråga."
+       }
+      ]
+     },
+     {
+      "fraga": "Sedan: Vilken ekvation har symmetrilinjen?",
+      "typ": "ekvation",
+      "svar": "x = 3",
+      "exempel": "t.ex. x = 5",
+      "tangenter": [
+       "=",
+       ",",
+       "−"
+      ],
+      "fel": [
+       {
+        "svar": "x = 6",
+        "text": "x = 6 är det andra nollstället. Symmetrilinjen går mitt emellan nollställena 0 och 6."
+       },
+       {
+        "svar": "x = 0",
+        "text": "x = 0 är ett nollställe. Symmetrilinjen går mitt emellan nollställena 0 och 6."
+       },
+       {
+        "svar": "y = 3",
+        "text": "Symmetrilinjen är lodrät, så dess ekvation börjar med x =, inte y =."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med Rebers kant i filmen. Bryt ut x, så att det står x gånger en parentes. Produkten är noll när x = 0 eller när parentesen är noll. Symmetrilinjen går sedan mitt emellan de två nollställena.",
+     "t": 710
+    },
+    "losning": [
+     "Nollställena är där y = 0: 0,1x² − 0,6x = 0.",
+     "Bryt ut x: x(0,1x − 0,6) = 0. Produkten är noll när x = 0 eller när 0,1x − 0,6 = 0.",
+     "0,1x = 0,6, så x = 6. Det andra nollstället är x = 6.",
+     "Symmetrilinjen går mitt emellan nollställena: (0 + 6) / 2 = 3. Ekvationen är x = 3."
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-10-andragradsfunktionen.jpg?v=8fb591a3",
+     "tema": "scen",
+     "blak": {
+      "skugga": "rgba(6,14,26,.92)"
+     },
+     "text": "En liten parabolantenn på ett hustak. Formen är y = 0,1x² − 0,6x, med x och y i decimeter. Ett nollställe är x = 0. Det andra nollstället och symmetrilinjen är okända.",
+     "delar": [
+      {
+       "typ": "pil",
+       "fran": [
+        1050,
+        300
+       ],
+       "till": [
+        1300,
+        420
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        150,
+        230
+       ],
+       "text": "y = 0,1x² − 0,6x",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        150,
+        330
+       ],
+       "text": "x och y i dm",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        150,
+        470
+       ],
+       "text": "x = 0",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        420,
+        470
+       ],
+       "text": "x = ?",
+       "ankare": "start"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        150,
+        600
+       ],
+       "text": "symmetrilinje: x = ?",
+       "ankare": "start"
+      }
+     ]
+    }
+   },
+   "undertext": [
+    {
+     "s": 4,
+     "e": 9.9,
+     "text": "Det är år nittonhundratrettiosju, i Wheaton, en liten stad utanför Chicago i USA."
+    },
+    {
+     "s": 10.74,
+     "e": 13.94,
+     "text": "Grote Reber är tjugosex år och radioingenjör."
+    },
+    {
+     "s": 14.74,
+     "e": 18.3,
+     "text": "På dagarna bygger han radioapparater på ett företag i Chicago."
+    },
+    {
+     "s": 19.1,
+     "e": 24.18,
+     "text": "På kvällarna och helgerna bygger han något helt annat, i trädgården vid sin mammas hus."
+    },
+    {
+     "s": 24.98,
+     "e": 30.02,
+     "text": "Det är en jättestor skål av trä och plåt, nästan tio meter bred."
+    },
+    {
+     "s": 31.12,
+     "e": 32.4,
+     "text": "Vad ska han med skålen till?"
+    },
+    {
+     "s": 33.76,
+     "e": 39.6,
+     "text": "Några år tidigare har en annan ingenjör, Karl Jansky, hört ett svagt brus i sin radio."
+    },
+    {
+     "s": 40.4,
+     "e": 42.18,
+     "text": "Bruset kom inte från jorden."
+    },
+    {
+     "s": 42.98,
+     "e": 46.28,
+     "text": "Det kom från Vintergatan, långt ute i rymden."
+    },
+    {
+     "s": 47.2,
+     "e": 49.84,
+     "text": "Reber vill höra bruset mycket tydligare."
+    },
+    {
+     "s": 50.82,
+     "e": 56.58,
+     "text": "Radiovågor som kommer rakt in i skålen studsar mot plåten och möts i en enda punkt,"
+    },
+    {
+     "s": 56.98,
+     "e": 58.66,
+     "text": "sex meter ovanför botten."
+    },
+    {
+     "s": 59.46,
+     "e": 61.16,
+     "text": "Där ska mottagaren sitta."
+    },
+    {
+     "s": 62.26,
+     "e": 67.08,
+     "text": "Men vågorna möts bara i en punkt om skålen har exakt rätt form."
+    },
+    {
+     "s": 68.2,
+     "e": 72.66,
+     "text": "Skålen byggs av sjuttiotvå bjälkar som går från mitten ut till kanten,"
+    },
+    {
+     "s": 73.02,
+     "e": 74.74,
+     "text": "som ekrarna i ett cykelhjul."
+    },
+    {
+     "s": 75.58,
+     "e": 81.26,
+     "text": "Varje bjälke ska sågas med samma böj, och felet får vara högst en halv centimeter."
+    },
+    {
+     "s": 83.18,
+     "e": 85.26,
+     "text": "Hur vet Reber var han ska såga?"
+    },
+    {
+     "s": 87.76,
+     "e": 89.48,
+     "text": "Reber använder en formel."
+    },
+    {
+     "s": 90.28,
+     "e": 93.68,
+     "text": "Han mäter X meter rakt ut från skålens mitt."
+    },
+    {
+     "s": 94.48,
+     "e": 99.14,
+     "text": "Och Y är hur högt bjälken ska vara över skålens botten, också i meter."
+    },
+    {
+     "s": 99.94,
+     "e": 104.9,
+     "text": "Formeln är Y är lika med noll komma noll fyra X i kvadrat."
+    },
+    {
+     "s": 105.7,
+     "e": 110.8,
+     "text": "Varje X ger exakt ett Y, så höjden är en funktion av X."
+    },
+    {
+     "s": 111.9,
+     "e": 115.02,
+     "text": "Nu räknar vi ut några höjder och skriver dem i en värdetabell."
+    },
+    {
+     "s": 116.06,
+     "e": 123.46,
+     "text": "En meter ut: ett i kvadrat är ett, och noll komma noll fyra gånger ett är noll komma noll fyra."
+    },
+    {
+     "s": 124.26,
+     "e": 125.56,
+     "text": "Det är fyra centimeter."
+    },
+    {
+     "s": 126.58,
+     "e": 133.2,
+     "text": "Två meter ut: två i kvadrat är fyra, och noll komma noll fyra gånger fyra är noll komma"
+    },
+    {
+     "s": 133.28,
+     "e": 135.88,
+     "text": "sexton, alltså sexton centimeter."
+    },
+    {
+     "s": 136.84,
+     "e": 142.34,
+     "text": "Tre meter ut ger trettiosex centimeter, och fyra meter ut ger sextiofyra."
+    },
+    {
+     "s": 143.32,
+     "e": 146.64,
+     "text": "Fem meter ut: fem i kvadrat är tjugofem."
+    },
+    {
+     "s": 147.44,
+     "e": 152.94,
+     "text": "Fyra gånger tjugofem är hundra, så noll komma noll fyra gånger tjugofem är ett,"
+    },
+    {
+     "s": 153.36,
+     "e": 154.44,
+     "text": "en hel meter."
+    },
+    {
+     "s": 155.38,
+     "e": 159.42,
+     "text": "De höjderna märker Reber ut på varje bjälke innan han sågar."
+    },
+    {
+     "s": 160.52,
+     "e": 165.34,
+     "text": "Vi sätter ut punkterna i ett koordinatsystem och drar en mjuk kurva genom dem."
+    },
+    {
+     "s": 166.14,
+     "e": 170.42,
+     "text": "Kurvan är bjälkens form, från mitten ut till högra kanten."
+    },
+    {
+     "s": 171.28,
+     "e": 175.96,
+     "text": "Men skålen har ju en vänstra sida också, och där är X negativt."
+    },
+    {
+     "s": 176.9,
+     "e": 184.6,
+     "text": "Om X är minus tre, blir minus tre i kvadrat lika med nio, eftersom minus gånger minus blir plus."
+    },
+    {
+     "s": 185.44,
+     "e": 189.84,
+     "text": "Höjden blir alltså trettiosex centimeter, precis som när X är tre."
+    },
+    {
+     "s": 190.94,
+     "e": 194.4,
+     "text": "Vänster och höger halva blir spegelbilder av varandra."
+    },
+    {
+     "s": 195.34,
+     "e": 200.4,
+     "text": "En sådan båge kallas parabel, och funktionen kallas andragradsfunktion,"
+    },
+    {
+     "s": 200.78,
+     "e": 202.6,
+     "text": "eftersom X är upphöjt till två."
+    },
+    {
+     "s": 203.4,
+     "e": 209.12,
+     "text": "Den lodräta linjen som delar grafen i två likadana halvor kallas symmetrilinje."
+    },
+    {
+     "s": 209.92,
+     "e": 214.18,
+     "text": "Här är det Y-axeln, alltså linjen X är lika med noll."
+    },
+    {
+     "s": 214.98,
+     "e": 217.92,
+     "text": "I skålen är det mittlinjen, där mottagaren sitter."
+    },
+    {
+     "s": 218.72,
+     "e": 222.92,
+     "text": "Två punkter på samma höjd ligger alltid lika långt från symmetrilinjen,"
+    },
+    {
+     "s": 223.16,
+     "e": 224.16,
+     "text": "på var sin sida."
+    },
+    {
+     "s": 225.22,
+     "e": 228.34,
+     "text": "Grafens lägsta punkt är punkten noll, noll."
+    },
+    {
+     "s": 229.14,
+     "e": 230.68,
+     "text": "Den kallas minimipunkt."
+    },
+    {
+     "s": 231.5,
+     "e": 235.4,
+     "text": "Funktionens minsta värde är Y-värdet där, alltså noll."
+    },
+    {
+     "s": 236.54,
+     "e": 239.62,
+     "text": "Minimipunkt och minsta värde är lätta att blanda ihop."
+    },
+    {
+     "s": 240.42,
+     "e": 243.1,
+     "text": "Minimipunkten är en punkt med två koordinater."
+    },
+    {
+     "s": 243.9,
+     "e": 247.32,
+     "text": "Minsta värdet är bara ett tal, Y-värdet i punkten."
+    },
+    {
+     "s": 248.3,
+     "e": 253.3,
+     "text": "Grafens lägsta eller högsta punkt kallas extrempunkt, eller vertex,"
+    },
+    {
+     "s": 253.74,
+     "e": 255.86,
+     "text": "och den ligger alltid på symmetrilinjen."
+    },
+    {
+     "s": 256.96,
+     "e": 262.66,
+     "text": "Varje andragradsfunktion kan skrivas på samma sätt, och det står på formelbladet: Y är"
+    },
+    {
+     "s": 262.7,
+     "e": 269.1,
+     "text": "lika med A X i kvadrat plus B X plus C, där A inte får vara noll."
+    },
+    {
+     "s": 269.98,
+     "e": 276.66,
+     "text": "A är talet framför X i kvadrat, B är talet framför X, och C är talet som står ensamt."
+    },
+    {
+     "s": 277.46,
+     "e": 281.08,
+     "text": "I Rebers formel är A lika med noll komma noll fyra."
+    },
+    {
+     "s": 281.88,
+     "e": 286.62,
+     "text": "Där finns ingen X-term och inget ensamt tal, så B och C är noll."
+    },
+    {
+     "s": 287.72,
+     "e": 289.06,
+     "text": "Vad gör A med grafen?"
+    },
+    {
+     "s": 289.86,
+     "e": 294.32,
+     "text": "Hos Reber är A positivt, så grafen är öppen uppåt, som en skål."
+    },
+    {
+     "s": 295.12,
+     "e": 296.76,
+     "text": "Då har den en minimipunkt."
+    },
+    {
+     "s": 297.56,
+     "e": 301.48,
+     "text": "Om A vore negativt, till exempel minus noll komma noll fyra,"
+    },
+    {
+     "s": 301.88,
+     "e": 305.86,
+     "text": "skulle grafen vända och bli öppen nedåt, som en bro med en båge."
+    },
+    {
+     "s": 306.66,
+     "e": 312.08,
+     "text": "Då har grafen en högsta punkt, en maximipunkt, och funktionen har ett största värde."
+    },
+    {
+     "s": 312.88,
+     "e": 317.04,
+     "text": "Man kan se det på det här sättet: ett positivt A ger en glad mun,"
+    },
+    {
+     "s": 317.44,
+     "e": 319.78,
+     "text": "och ett negativt A ger en ledsen mun."
+    },
+    {
+     "s": 320.88,
+     "e": 322.78,
+     "text": "Storleken på A spelar också roll."
+    },
+    {
+     "s": 323.58,
+     "e": 327.94,
+     "text": "Med ett större A, till exempel noll komma ett, växer Y snabbare."
+    },
+    {
+     "s": 328.74,
+     "e": 334.42,
+     "text": "Då blir skålen smalare och djupare, och punkten där vågorna möts hamnar närmare botten."
+    },
+    {
+     "s": 335.22,
+     "e": 340.76,
+     "text": "Reber ville ha mottagaren sex meter upp, för så långa var de längsta brädorna han kunde köpa."
+    },
+    {
+     "s": 341.56,
+     "e": 344.82,
+     "text": "Därför blev A så litet som noll komma noll fyra."
+    },
+    {
+     "s": 346,
+     "e": 350.82,
+     "text": "Tänk dig nu att vi lägger en rak planka tvärs över skålen, från kant till kant."
+    },
+    {
+     "s": 351.62,
+     "e": 354.04,
+     "text": "Plankan ligger en meter ovanför botten."
+    },
+    {
+     "s": 354.84,
+     "e": 359.34,
+     "text": "Om vi mäter höjden från plankan i stället, blir varje höjd en meter lägre."
+    },
+    {
+     "s": 360.14,
+     "e": 365.96,
+     "text": "Funktionen blir Y är lika med noll komma noll fyra X i kvadrat minus ett,"
+    },
+    {
+     "s": 366.44,
+     "e": 368.92,
+     "text": "och här är C lika med minus ett."
+    },
+    {
+     "s": 370.02,
+     "e": 372.9,
+     "text": "C talar om var grafen skär Y-axeln."
+    },
+    {
+     "s": 373.7,
+     "e": 378.94,
+     "text": "Där är X lika med noll, och noll komma noll fyra gånger noll i kvadrat är noll."
+    },
+    {
+     "s": 379.74,
+     "e": 382.5,
+     "text": "Kvar blir bara C, alltså minus ett."
+    },
+    {
+     "s": 383.32,
+     "e": 388.82,
+     "text": "Grafen skär Y-axeln i punkten noll, minus ett, en meter under plankan,"
+    },
+    {
+     "s": 389.2,
+     "e": 390.2,
+     "text": "mitt i skålen."
+    },
+    {
+     "s": 390.9,
+     "e": 396.5,
+     "text": "Det gäller alla andragradsfunktioner: grafen skär Y-axeln där Y är lika med C."
+    },
+    {
+     "s": 398.34,
+     "e": 400.5,
+     "text": "Var möter plankan skålen?"
+    },
+    {
+     "s": 401.3,
+     "e": 404.64,
+     "text": "Där är höjden noll, alltså Y är lika med noll."
+    },
+    {
+     "s": 405.44,
+     "e": 411.2,
+     "text": "Vi löser ekvationen noll komma noll fyra X i kvadrat minus ett är lika med noll."
+    },
+    {
+     "s": 412,
+     "e": 418.2,
+     "text": "Först lägger vi till ett på båda sidor, så att X-termen står ensam: noll komma noll fyra"
+    },
+    {
+     "s": 418.54,
+     "e": 420.44,
+     "text": "X i kvadrat är lika med ett."
+    },
+    {
+     "s": 421.46,
+     "e": 426.32,
+     "text": "Sedan delar vi båda leden med noll komma noll fyra, för att få bort talet framför X i"
+    },
+    {
+     "s": 426.36,
+     "e": 429.84,
+     "text": "kvadrat: X i kvadrat är lika med tjugofem."
+    },
+    {
+     "s": 431.06,
+     "e": 433.26,
+     "text": "Vilka tal blir tjugofem i kvadrat?"
+    },
+    {
+     "s": 435.36,
+     "e": 436.78,
+     "text": "Fem och minus fem."
+    },
+    {
+     "s": 438.04,
+     "e": 441.32,
+     "text": "De två X-värdena kallas funktionens nollställen."
+    },
+    {
+     "s": 442.12,
+     "e": 447,
+     "text": "Det är där grafen skär X-axeln, och i skålen är det de två kanterna,"
+    },
+    {
+     "s": 447.48,
+     "e": 449.1,
+     "text": "fem meter åt var sitt håll."
+    },
+    {
+     "s": 449.92,
+     "e": 454.2,
+     "text": "Mellan kanterna är det alltså tio meter, och det är skålens bredd."
+    },
+    {
+     "s": 455.18,
+     "e": 460.64,
+     "text": "Symmetrilinjen ligger mitt emellan nollställena: minus fem plus fem är noll,"
+    },
+    {
+     "s": 461.14,
+     "e": 463.22,
+     "text": "och noll delat med två är noll."
+    },
+    {
+     "s": 464.02,
+     "e": 467.78,
+     "text": "Symmetrilinjen är X är lika med noll, som förut."
+    },
+    {
+     "s": 468.88,
+     "e": 472.92,
+     "text": "Om plankan i stället ligger precis vid botten, som i den första formeln,"
+    },
+    {
+     "s": 473.4,
+     "e": 475.46,
+     "text": "möter den skålen bara i en punkt."
+    },
+    {
+     "s": 476.26,
+     "e": 478.36,
+     "text": "Då har funktionen ett nollställe."
+    },
+    {
+     "s": 479.22,
+     "e": 484.6,
+     "text": "Ligger plankan under botten, möts de aldrig, och då har funktionen inga nollställen."
+    },
+    {
+     "s": 485.42,
+     "e": 490.02,
+     "text": "Grafen fortsätter förstås uppåt efter fem meter, men där finns ingen skål."
+    },
+    {
+     "s": 490.82,
+     "e": 493.86,
+     "text": "Formeln beskriver bara skålen mellan kanterna."
+    },
+    {
+     "s": 495.08,
+     "e": 496.62,
+     "text": "Nu ska vi se vad B gör."
+    },
+    {
+     "s": 497.58,
+     "e": 501.76,
+     "text": "Tänk dig att vi mäter X från vänstra kanten i stället för från mitten."
+    },
+    {
+     "s": 502.56,
+     "e": 509.74,
+     "text": "Då blir funktionen Y är lika med noll komma noll fyra X i kvadrat minus noll komma fyra X."
+    },
+    {
+     "s": 510.78,
+     "e": 515.52,
+     "text": "Här är B lika med minus noll komma fyra och C lika med noll."
+    },
+    {
+     "s": 516.38,
+     "e": 520.26,
+     "text": "Kanterna är nollställena, så vi sätter Y lika med noll."
+    },
+    {
+     "s": 521.24,
+     "e": 528.26,
+     "text": "Båda termerna har ett X, så vi bryter ut X: X gånger parentesen noll komma noll fyra"
+    },
+    {
+     "s": 528.58,
+     "e": 531.38,
+     "text": "X minus noll komma fyra är lika med noll."
+    },
+    {
+     "s": 532.28,
+     "e": 535.52,
+     "text": "En produkt blir noll bara när en av faktorerna är noll."
+    },
+    {
+     "s": 536.32,
+     "e": 538.22,
+     "text": "Antingen är X lika med noll."
+    },
+    {
+     "s": 539.02,
+     "e": 543.86,
+     "text": "Eller så är noll komma noll fyra X minus noll komma fyra lika med noll."
+    },
+    {
+     "s": 544.74,
+     "e": 550.46,
+     "text": "Då är noll komma noll fyra X lika med noll komma fyra, och X är lika med tio."
+    },
+    {
+     "s": 551.56,
+     "e": 553.76,
+     "text": "Nollställena är noll och tio."
+    },
+    {
+     "s": 554.56,
+     "e": 561.48,
+     "text": "Symmetrilinjen ligger mitt emellan: noll plus tio är tio, och tio delat med två är fem."
+    },
+    {
+     "s": 562.36,
+     "e": 567.94,
+     "text": "Symmetrilinjen är X är lika med fem, alltså fem meter från vänstra kanten,"
+    },
+    {
+     "s": 568.3,
+     "e": 569.3,
+     "text": "mitt i skålen."
+    },
+    {
+     "s": 570.02,
+     "e": 571.68,
+     "text": "Det är samma skål som förut."
+    },
+    {
+     "s": 572.48,
+     "e": 577.44,
+     "text": "Men när B inte är noll, har symmetrilinjen flyttat bort från Y-axeln."
+    },
+    {
+     "s": 578.7,
+     "e": 584.16,
+     "text": "Det finns ett snabbare sätt att hitta symmetrilinjen, med pq-formeln på formelbladet."
+    },
+    {
+     "s": 585,
+     "e": 591.72,
+     "text": "Formeln kräver att X i kvadrat står ensamt först, så vi delar alla termer med noll komma noll fyra."
+    },
+    {
+     "s": 592.58,
+     "e": 598.12,
+     "text": "Noll komma noll fyra X i kvadrat delat med noll komma noll fyra är X i kvadrat."
+    },
+    {
+     "s": 599,
+     "e": 605.38,
+     "text": "Noll komma fyra X delat med noll komma noll fyra är tio X, eftersom noll komma noll fyra"
+    },
+    {
+     "s": 605.44,
+     "e": 607.84,
+     "text": "får plats tio gånger i noll komma fyra."
+    },
+    {
+     "s": 609.02,
+     "e": 613.66,
+     "text": "Ekvationen blir X i kvadrat minus tio X är lika med noll."
+    },
+    {
+     "s": 614.46,
+     "e": 618.26,
+     "text": "Här är p lika med minus tio och q lika med noll."
+    },
+    {
+     "s": 619.36,
+     "e": 625.48,
+     "text": "pq-formeln säger att lösningarna ligger lika långt åt var sitt håll från minus p delat med två."
+    },
+    {
+     "s": 626.28,
+     "e": 631.52,
+     "text": "Därför är X är lika med minus p delat med två alltid symmetrilinjen,"
+    },
+    {
+     "s": 631.94,
+     "e": 634.2,
+     "text": "också när funktionen saknar nollställen."
+    },
+    {
+     "s": 635.12,
+     "e": 639.76,
+     "text": "Minus minus tio är tio, och tio delat med två är fem."
+    },
+    {
+     "s": 640.88,
+     "e": 643.06,
+     "text": "Samma svar som förut, så det stämmer."
+    },
+    {
+     "s": 643.86,
+     "e": 650,
+     "text": "I den andra formeln på formelbladet syns samma sak: lösningarna ligger runt minus B delat"
+    },
+    {
+     "s": 650.04,
+     "e": 651.04,
+     "text": "med två A."
+    },
+    {
+     "s": 651.88,
+     "e": 653.96,
+     "text": "Nu går vi tillbaka till Reber i trädgården."
+    },
+    {
+     "s": 656.46,
+     "e": 659.28,
+     "text": "Hösten nittonhundratrettiosju är skålen klar."
+    },
+    {
+     "s": 660.08,
+     "e": 665,
+     "text": "Reber har sågat alla sjuttiotvå bjälkarna efter sin tabell och spikat plåt över dem,"
+    },
+    {
+     "s": 665.44,
+     "e": 667.06,
+     "text": "och han har betalat allt själv."
+    },
+    {
+     "s": 667.86,
+     "e": 673.46,
+     "text": "Han lyssnar mest mellan midnatt och gryning, eftersom bilarnas tändning stör radion på dagen."
+    },
+    {
+     "s": 674.58,
+     "e": 677.16,
+     "text": "Men i början hör han ingenting från rymden."
+    },
+    {
+     "s": 677.96,
+     "e": 680.04,
+     "text": "Han bygger om mottagaren två gånger."
+    },
+    {
+     "s": 681.14,
+     "e": 686.92,
+     "text": "Våren nittonhundratrettionio hör han det till slut: ett svagt brus från Vintergatan."
+    },
+    {
+     "s": 687.88,
+     "e": 693.78,
+     "text": "Natt efter natt riktar han skålen mot nya delar av himlen och skriver ner hur starkt bruset är."
+    },
+    {
+     "s": 694.62,
+     "e": 697.96,
+     "text": "Det blir den första kartan över himlen i radiovågor."
+    },
+    {
+     "s": 698.76,
+     "e": 704.56,
+     "text": "I dag står hans skål i Green Bank i USA, på samma plats som ett radioteleskop som är"
+    },
+    {
+     "s": 704.66,
+     "e": 705.84,
+     "text": "hundra meter brett."
+    },
+    {
+     "s": 706.64,
+     "e": 708.24,
+     "text": "Det är också en parabel."
+    },
+    {
+     "s": 710.74,
+     "e": 715.1,
+     "text": "Nu får du två frågor att svara på i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 715.94,
+     "e": 722.36,
+     "text": "En liten parabolantenn på ett hustak har formen Y är lika med noll komma ett X i kvadrat"
+    },
+    {
+     "s": 722.66,
+     "e": 724.32,
+     "text": "minus noll komma sex X."
+    },
+    {
+     "s": 725.12,
+     "e": 730.38,
+     "text": "Här är X och Y i decimeter, och X mäts från antennens vänstra kant."
+    },
+    {
+     "s": 731.18,
+     "e": 734.48,
+     "text": "Funktionen har ett nollställe i X är lika med noll."
+    },
+    {
+     "s": 735.36,
+     "e": 738.14,
+     "text": "Först: vilket är det andra nollstället?"
+    },
+    {
+     "s": 738.94,
+     "e": 742.12,
+     "text": "Sedan: vilken ekvation har symmetrilinjen?"
     }
    ]
   },

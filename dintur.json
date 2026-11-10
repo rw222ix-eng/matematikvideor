@@ -4192,5 +4192,149 @@
       "Det största värdet får du när du sätter in 8 i funktionen: A(8) = 8 · (16 − 8) = 8 · 8 = 64.",
       "Svar: Symmetrilinjen är x = 8, och det största värdet är 64."
     ]
+  },
+  "ma2a-10-andragradsfunktionen": {
+    "notisFran": "Nu får du två frågor",
+    "fraga": "En liten parabolantenn på ett hustak har formen y = 0,1x² − 0,6x. Här är x och y i decimeter, och x mäts från antennens vänstra kant. Funktionen har ett nollställe i x = 0. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vilket är det andra nollstället?",
+      "Sedan: Vilken ekvation har symmetrilinjen?"
+    ],
+    "delar": [
+      {
+        "fraga": "Först: Vilket är det andra nollstället?",
+        "typ": "tal",
+        "svar": 6,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 4",
+        "tangenter": [
+          ",",
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "0",
+            "text": "x = 0 är det första nollstället. Bryt ut x: x(0,1x − 0,6) = 0. När blir parentesen noll?"
+          },
+          {
+            "svar": "0,6",
+            "text": "Parentesen är 0,1x − 0,6. Den blir noll när 0,1x = 0,6, alltså när x är tio gånger så stort som 0,6."
+          },
+          {
+            "svar": "-6",
+            "text": "Sätt in −6: 0,1 · 36 + 3,6 = 7,2, inte noll. Parentesen 0,1x − 0,6 blir noll när 0,1x = 0,6."
+          },
+          {
+            "svar": "3",
+            "text": "3 ligger mitt emellan nollställena. Det är symmetrilinjen, alltså nästa fråga."
+          }
+        ]
+      },
+      {
+        "fraga": "Sedan: Vilken ekvation har symmetrilinjen?",
+        "typ": "ekvation",
+        "svar": "x = 3",
+        "exempel": "t.ex. x = 5",
+        "tangenter": [
+          "=",
+          ",",
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "x = 6",
+            "text": "x = 6 är det andra nollstället. Symmetrilinjen går mitt emellan nollställena 0 och 6."
+          },
+          {
+            "svar": "x = 0",
+            "text": "x = 0 är ett nollställe. Symmetrilinjen går mitt emellan nollställena 0 och 6."
+          },
+          {
+            "svar": "y = 3",
+            "text": "Symmetrilinjen är lodrät, så dess ekvation börjar med x =, inte y =."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu får du två frågor",
+      "text": "Gör som med Rebers kant i filmen. Bryt ut x, så att det står x gånger en parentes. Produkten är noll när x = 0 eller när parentesen är noll. Symmetrilinjen går sedan mitt emellan de två nollställena."
+    },
+    "losning": [
+      "Nollställena är där y = 0: 0,1x² − 0,6x = 0.",
+      "Bryt ut x: x(0,1x − 0,6) = 0. Produkten är noll när x = 0 eller när 0,1x − 0,6 = 0.",
+      "0,1x = 0,6, så x = 6. Det andra nollstället är x = 6.",
+      "Symmetrilinjen går mitt emellan nollställena: (0 + 6) / 2 = 3. Ekvationen är x = 3."
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p06-antennen",
+      "tema": "scen",
+      "blak": {
+        "skugga": "rgba(6,14,26,.92)"
+      },
+      "text": "En liten parabolantenn på ett hustak. Formen är y = 0,1x² − 0,6x, med x och y i decimeter. Ett nollställe är x = 0. Det andra nollstället och symmetrilinjen är okända.",
+      "delar": [
+        {
+          "typ": "pil",
+          "fran": [
+            1050,
+            300
+          ],
+          "till": [
+            1300,
+            420
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            150,
+            230
+          ],
+          "text": "y = 0,1x² − 0,6x",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            150,
+            330
+          ],
+          "text": "x och y i dm",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            150,
+            470
+          ],
+          "text": "x = 0",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            420,
+            470
+          ],
+          "text": "x = ?",
+          "ankare": "start"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            150,
+            600
+          ],
+          "text": "symmetrilinje: x = ?",
+          "ankare": "start"
+        }
+      ]
+    }
   }
 }
