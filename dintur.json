@@ -3855,5 +3855,145 @@
       "I GeoGebra skär kurvan linjen y = 9,2 där x ≈ 2,63.",
       "x räknar tusen år, så 2,63 tusen år ≈ 2 600 år."
     ]
+  },
+  "ma2a-13-potensekvationer": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En krets har 200 komponenter. Fyra år senare har en ny krets 3 200 komponenter. Antalet har ökat lika mycket varje år. Du ska svara på två frågor. Hur mycket ökade antalet varje år?",
+    "slut": [
+      "Först: Ställ upp en potensekvation och räkna ut förändringsfaktorn.",
+      "Sen: Hur många procent ökade antalet varje år?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p06-din-tur",
+      "tema": "scen",
+      "text": "Två kretsar på ett bord. Den vänstra har 200 komponenter och den högra 3 200. En pil från den vänstra till den högra visar att det har gått 4 år.",
+      "delar": [
+        {
+          "typ": "text",
+          "vid": [
+            1050,
+            480
+          ],
+          "text": "200"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            1540,
+            480
+          ],
+          "text": "3 200"
+        },
+        {
+          "typ": "bana",
+          "d": "M1140 428 Q1295 360 1450 428"
+        },
+        {
+          "typ": "pil",
+          "fran": [
+            1420,
+            412
+          ],
+          "till": [
+            1450,
+            428
+          ]
+        },
+        {
+          "typ": "text",
+          "vid": [
+            1295,
+            310
+          ],
+          "text": "4 år"
+        }
+      ]
+    },
+    "delar": [
+      {
+        "fraga": "Först: Ställ upp en potensekvation och räkna ut förändringsfaktorn.",
+        "typ": "tal",
+        "svar": 2,
+        "tolerans": 0.001,
+        "exempel": "t.ex. x = 1,5",
+        "tangenter": [
+          "=",
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "16",
+            "text": "16 är 3 200 delat med 200, alltså x⁴. Vilket tal blir 16 när du multiplicerar det med sig självt fyra gånger?"
+          },
+          {
+            "svar": "4",
+            "text": "4 är antalet år, alltså exponenten. Ekvationen är 200 · x⁴ = 3 200. Dela först båda leden med 200."
+          },
+          {
+            "svar": "-2",
+            "text": "−2 löser ekvationen x⁴ = 16, men en förändringsfaktor kan inte vara negativ. Vilken är den andra lösningen?"
+          },
+          {
+            "svar": "100",
+            "text": "100 är ökningen i procent, alltså svaret på nästa fråga. Förändringsfaktorn är talet som antalet multipliceras med varje år."
+          },
+          {
+            "svar": "750",
+            "text": "Antalet ökar inte med lika många komponenter varje år. Det multipliceras med samma tal varje år: 200 · x⁴ = 3 200."
+          },
+          {
+            "svar": "8",
+            "text": "8 · 8 är 64, inte 16. Du ska hitta talet som blir 16 när det multipliceras med sig självt fyra gånger."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur många procent ökade antalet varje år?",
+        "typ": "tal",
+        "svar": 100,
+        "tolerans": 0.01,
+        "enhet": "%",
+        "exempel": "t.ex. 50",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "2",
+            "text": "2 är förändringsfaktorn. Förändringsfaktorn 1 betyder att ingenting ändras, och det som är över 1 är ökningen."
+          },
+          {
+            "svar": "200",
+            "text": "200 % är hela det nya värdet jämfört med det gamla. Ökningen är det som är över 1: 2 − 1 = 1."
+          },
+          {
+            "svar": "1",
+            "text": "2 − 1 = 1 stämmer. Skriv nu 1 som procent."
+          },
+          {
+            "svar": "1500",
+            "text": "Det är ökningen på alla fyra åren. Frågan gäller ett år, och där är förändringsfaktorn 2."
+          },
+          {
+            "svar": "375",
+            "text": "Antalet ökar inte med lika många procent av startvärdet varje år. Använd förändringsfaktorn 2: det som är över 1 är ökningen."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Ekvationen blir alltså",
+      "text": "Gör som med Moores kretsar. Kalla förändringsfaktorn x. Efter fyra år har antalet multiplicerats med x fyra gånger, så 200 · x⁴ = 3 200. Dela båda leden med 200 först."
+    },
+    "losning": [
+      "Kalla förändringsfaktorn x. Efter fyra år: 200 · x⁴ = 3 200.",
+      "Dela båda leden med 200: x⁴ = 16.",
+      "Höj båda leden till en fjärdedel: x = 16^(1/4) = 2, eftersom 2 · 2 · 2 · 2 = 16. Exponenten är jämn, så −2 löser också ekvationen, men en förändringsfaktor kan inte vara negativ.",
+      "Förändringsfaktorn 2 betyder en fördubbling. Det som är över 1 är ökningen: 2 − 1 = 1 = 100 %. Antalet ökade med 100 % varje år."
+    ]
   }
 }

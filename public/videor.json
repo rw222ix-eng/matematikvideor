@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-09T19:15:47.455Z",
+ "byggd": "2026-11-10T17:51:56.031Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -60988,6 +60988,1021 @@
      "s": 577.54,
      "e": 583.86,
      "text": "Sen: Skriv A upphöjt till tre delat med A upphöjt till fem som en enda potens."
+    }
+   ]
+  },
+  {
+   "id": "ma2a-13-potensekvationer",
+   "titel": "Moore och kretsarna – Potensekvationer",
+   "ar": 1965,
+   "serie": "ma2a",
+   "del": 13,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": null,
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-13-potensekvationer-v1/ma2a-13-potensekvationer-1080p.mp4",
+   "moment": "Potensekvationer och potensfunktioner",
+   "begrepp": [
+    "potensekvation",
+    "potens",
+    "bas",
+    "exponent",
+    "förändringsfaktor",
+    "procentuell förändring",
+    "upphöjt till en tiondel",
+    "n-te roten",
+    "rationell exponent",
+    "potens av en potens",
+    "jämn exponent",
+    "udda exponent",
+    "två lösningar",
+    "potensfunktion",
+    "exponentialfunktion",
+    "y = C · xᵃ",
+    "y = C · aˣ",
+    "formelbladet",
+    "räknaren",
+    "Gordon Moore",
+    "Moores lag",
+    "Fairchild",
+    "Intel",
+    "Robert Noyce"
+   ],
+   "beskrivning": "Våren 1965 skriver Gordon Moore att en krets om tio år kan ha 65 000 komponenter i stället för 50. Hur många procent måste antalet då öka varje år? Vi ställer upp potensekvationen 50 · x¹⁰ = 65 000, löser den med potensreglerna på formelbladet och räknaren, och ser varför en jämn exponent ger två lösningar. Sedan gör vi samma sak med priset, och skiljer potensfunktioner från exponentialfunktioner.",
+   "youtube": null,
+   "langd": 618,
+   "omslag": "omslag/ma2a-13-potensekvationer.jpg?v=ea9f7e4b",
+   "omslagRen": "omslag/ma2a-13-potensekvationer-ren.jpg?v=58e4185e",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är våren nittonhundrasextiofem, i Kalifornien i USA. Gordon Moore är chef för forskningen på företaget Fairchild, som tillverkar elektronik. Där gör de integrerade kretsar. En sådan krets är en liten bit kisel, mindre än en nagel. På biten görs många små delar på en gång, till exempel transistorer och motstånd. Delarna kallas komponenter."
+    },
+    {
+     "t": 37,
+     "text": "Tidningen Electronics fyller trettiofem år. Därför ber den Moore att skriva vad som kommer att hända med elektroniken de närmaste tio åren. Vid den här tiden tror många att kretsarna aldrig kommer att bli något stort."
+    },
+    {
+     "t": 51,
+     "text": "Moore tar fram sina siffror från nittonhundrafemtionio och framåt. Den billigaste kretsen har i dag ungefär femtio komponenter. Och varje år har antalet komponenter ungefär fördubblats. Moore ritar in siffrorna i ett diagram och fortsätter mönstret tio år framåt."
+    },
+    {
+     "t": 71,
+     "text": "Den nittonde april står hans artikel i tidningen. Där skriver han att en krets år nittonhundrasjuttiofem kan ha sextiofemtusen komponenter. Han skriver också att kretsarna en dag kommer att ge oss datorer i hemmet."
+    },
+    {
+     "t": 87,
+     "text": "Från femtio till sextiofemtusen på tio år. Hur mycket måste antalet då öka varje år, i procent? Och stämmer det med Moores fördubbling? Det tar vi reda på nu."
+    },
+    {
+     "t": 102,
+     "text": "Vi börjar med Moores fördubbling. Femtio komponenter blir hundra efter ett år. Sen blir det tvåhundra, fyrahundra och åttahundra. Om vi fördubblar tio gånger, så blir det femtioentusen tvåhundra. Det är nära sextiofemtusen, men lite för lite. Antalet måste alltså öka lite mer än en fördubbling varje år."
+    },
+    {
+     "t": 127,
+     "text": "Hur mycket mer? Det räknar vi ut med förändringsfaktorn. Förändringsfaktorn är talet som antalet multipliceras med varje år. Vid en fördubbling är förändringsfaktorn två. Nu vet vi inte förändringsfaktorn, så vi kallar den x."
+    },
+    {
+     "t": 144,
+     "text": "Efter ett år har kretsen femtio gånger x komponenter. Efter två år multiplicerar vi med x en gång till. Det blir femtio gånger x gånger x, alltså femtio gånger x upphöjt till två. Exponenten säger hur många gånger vi har multiplicerat med x. Efter tio år blir det femtio gånger x upphöjt till tio, och det ska vara sextiofemtusen."
+    },
+    {
+     "t": 172,
+     "text": "Ekvationen blir alltså femtio gånger x upphöjt till tio är lika med sextiofemtusen. En sådan ekvation kallas en potensekvation, för det okända talet x står i en potens. x är basen, och exponenten tio vet vi redan."
+    },
+    {
+     "t": 190,
+     "text": "Hur får vi x ensamt? Först ska potensen stå ensam. Gånger femtio tar vi bort genom att dela med femtio. Och för att likheten ska gälla delar vi båda leden. Oj, sextiofemtusen delat med femtio är jobbigt i huvudet. Det kan vi räkna enklare så här. Sextiofemtusen delat med hundra är sexhundrafemtio. Femtio är hälften av hundra, så svaret blir dubbelt så stort, alltså ettusen trehundra. Nu står det x upphöjt till tio är lika med ettusen trehundra."
+    },
+    {
+     "t": 227,
+     "text": "Nu ska exponenten tio bort, och då hjälper formelbladet oss. Där står a upphöjt till x, inom parentes, upphöjt till y, är lika med a upphöjt till x y. Har vi en potens inom parentes upphöjd till något, så multiplicerar vi exponenterna."
+    },
+    {
+     "t": 246,
+     "text": "Vi vill att exponenten tio blir en etta, för x upphöjt till ett är bara x. Vad ska vi multiplicera tio med för att få ett? En tiondel. Tio tiondelar är ju en hel. Därför höjer vi båda leden till en tiondel."
+    },
+    {
+     "t": 265,
+     "text": "Vi skriver av regeln som en mall och sätter in våra tal. Basen är vårt x. Exponenten inne i parentesen är tio, och exponenten utanför är en tiondel. Tio gånger en tiondel är ett, så kvar i vänster led står x upphöjt till ett, alltså bara x."
+    },
+    {
+     "t": 286,
+     "text": "I höger led står ettusen trehundra upphöjt till en tiondel. Det står också på formelbladet: a upphöjt till ett delat med n är n-te roten ur a. Här är a ettusen trehundra och n tio, så x är tionde roten ur ettusen trehundra. Det kan vi inte räkna i huvudet, så vi tar fram räknaren. Vi skriver ettusen trehundra, trycker på upphöjt till och skriver ett delat med tio inom parentes. Det blir ungefär två komma noll fem."
+    },
+    {
+     "t": 323,
+     "text": "Men exponenten tio är ett jämnt tal. Då finns det en lösning till, minus två komma noll fem. Tio minustecken blir nämligen fem par, och minus gånger minus är plus. Men en förändringsfaktor kan inte vara negativ, för då skulle antalet komponenter bli negativt. Därför stryker vi minus två komma noll fem."
+    },
+    {
+     "t": 347,
+     "text": "Vad betyder förändringsfaktorn två komma noll fem? Förändringsfaktorn ett betyder att ingenting ändras. Det som är över ett är ökningen. Två komma noll fem minus ett är ett komma noll fem, och det är hundrafem procent. Antalet måste alltså öka med ungefär hundrafem procent varje år. Det är lite mer än en fördubbling, precis som vi såg nyss. Vad nice, Moores fördubbling stämmer nästan."
+    },
+    {
+     "t": 378,
+     "text": "Moore skrev också om priset. Om fem år, skrev han, kostar varje komponent bara en tiondel av vad den kostar i dag. Hur många procent billigare blir den då varje år? Säg att en komponent kostar tio cent i dag. Om fem år kostar den en cent. Vi kallar förändringsfaktorn x igen, och ekvationen blir tio gånger x upphöjt till fem är lika med ett."
+    },
+    {
+     "t": 405,
+     "text": "Nu går det fort, för det är samma väg. Vi delar båda leden med tio, och får x upphöjt till fem är lika med noll komma ett. Fem gånger en femtedel är ett, så vi höjer båda leden till en femtedel. På räknaren blir noll komma ett upphöjt till en femtedel ungefär noll komma sextiotre. Exponenten fem är udda, så här finns det bara en lösning."
+    },
+    {
+     "t": 432,
+     "text": "Förändringsfaktorn är mindre än ett, och det betyder att priset minskar. Noll komma sextiotre betyder att sextiotre procent av priset är kvar efter ett år. Hundra minus sextiotre är trettiosju. Priset för en komponent sjunker alltså med ungefär trettiosju procent varje år."
+    },
+    {
+     "t": 453,
+     "text": "På formelbladet står två formler som är lätta att blanda ihop, och båda finns i Moores kretsar. Om antalet fördubblas varje år, så är antalet efter x år femtio gånger två upphöjt till x. Där står variabeln x i exponenten. Det är en exponentialfunktion, y är lika med C gånger a upphöjt till x."
+    },
+    {
+     "t": 476,
+     "text": "Men i vår ekvation var det förändringsfaktorn vi inte visste. Nu är x förändringsfaktorn. Antalet efter tio år är femtio gånger x upphöjt till tio. Där står variabeln x i basen, och exponenten är ett fast tal. Det är en potensfunktion, y är lika med C gånger x upphöjt till a. Här är C femtio och a tio."
+    },
+    {
+     "t": 503,
+     "text": "Med en graf ser vi lättare varför det blev två lösningar. Vi ritar potensfunktionen y är lika med x upphöjt till tio. Grafen ser ut som en djup skål, och den är likadan på båda sidor om y-axeln, eftersom exponenten är jämn. Linjen y är lika med ettusen trehundra skär skålen i två punkter, vid två komma noll fem och minus två komma noll fem. En linje under x-axeln når aldrig skålen, och då finns det ingen lösning. Nu går vi tillbaka till Moore."
+    },
+    {
+     "t": 539,
+     "text": "Tre år efter artikeln lämnar Moore Fairchild. Tillsammans med Robert Noyce startar han ett nytt företag, som heter Intel. År nittonhundrasjuttiofem gör Intel minneskretsar med ungefär trettiotvåtusen komponenter. Det är hälften av Moores sextiofemtusen. Samma år ändrar Moore sin regel. Från och med nu, säger han, fördubblas antalet vartannat år."
+    },
+    {
+     "t": 567,
+     "text": "Den regeln kallas i dag Moores lag, och den höll i nästan femtio år. Kretsen i en dyr mobiltelefon i dag har runt tjugo miljarder transistorer. Och nästan alla har i dag en dator hemma, precis som Moore skrev."
+    },
+    {
+     "t": 585,
+     "text": "Nu är det din tur. En krets har tvåhundra komponenter. Fyra år senare har en ny krets tretusentvåhundra komponenter. Antalet har ökat lika mycket varje år. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Hur mycket ökade antalet varje år? Först: Ställ upp en potensekvation och räkna ut förändringsfaktorn. Sen: Hur många procent ökade antalet varje år?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Kalifornien 1965: Moores förutsägelse",
+     "typ": "historia"
+    },
+    {
+     "t": 102,
+     "rubrik": "Fördubbling varje år räcker inte",
+     "typ": "matte"
+    },
+    {
+     "t": 127,
+     "rubrik": "Förändringsfaktorn x och potensekvationen",
+     "typ": "matte"
+    },
+    {
+     "t": 190,
+     "rubrik": "Potensen ensam: dela båda leden",
+     "typ": "matte"
+    },
+    {
+     "t": 227,
+     "rubrik": "Formelbladet: höj båda leden till en tiondel",
+     "typ": "matte"
+    },
+    {
+     "t": 286,
+     "rubrik": "Tionde roten på räknaren",
+     "typ": "matte"
+    },
+    {
+     "t": 323,
+     "rubrik": "Jämn exponent ger två lösningar",
+     "typ": "matte"
+    },
+    {
+     "t": 347,
+     "rubrik": "Från förändringsfaktor till procent",
+     "typ": "matte"
+    },
+    {
+     "t": 378,
+     "rubrik": "Priset: en ekvation med udda exponent",
+     "typ": "matte"
+    },
+    {
+     "t": 453,
+     "rubrik": "Potensfunktion eller exponentialfunktion",
+     "typ": "matte"
+    },
+    {
+     "t": 503,
+     "rubrik": "Grafen till y = x¹⁰",
+     "typ": "matte"
+    },
+    {
+     "t": 539,
+     "rubrik": "Intel och Moores lag",
+     "typ": "historia"
+    },
+    {
+     "t": 585,
+     "rubrik": "Från 200 till 3 200 på fyra år",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 585,
+    "fraga": "En krets har 200 komponenter. Fyra år senare har en ny krets 3 200 komponenter. Antalet har ökat lika mycket varje år. Du ska svara på två frågor. Hur mycket ökade antalet varje år?",
+    "slut": [
+     "Först: Ställ upp en potensekvation och räkna ut förändringsfaktorn.",
+     "Sen: Hur många procent ökade antalet varje år?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-13-potensekvationer.jpg?v=e2574287",
+     "tema": "scen",
+     "text": "Två kretsar på ett bord. Den vänstra har 200 komponenter och den högra 3 200. En pil från den vänstra till den högra visar att det har gått 4 år.",
+     "delar": [
+      {
+       "typ": "text",
+       "vid": [
+        1050,
+        480
+       ],
+       "text": "200"
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1540,
+        480
+       ],
+       "text": "3 200"
+      },
+      {
+       "typ": "bana",
+       "d": "M1140 428 Q1295 360 1450 428"
+      },
+      {
+       "typ": "pil",
+       "fran": [
+        1420,
+        412
+       ],
+       "till": [
+        1450,
+        428
+       ]
+      },
+      {
+       "typ": "text",
+       "vid": [
+        1295,
+        310
+       ],
+       "text": "4 år"
+      }
+     ]
+    },
+    "delar": [
+     {
+      "fraga": "Först: Ställ upp en potensekvation och räkna ut förändringsfaktorn.",
+      "typ": "tal",
+      "svar": 2,
+      "tolerans": 0.001,
+      "exempel": "t.ex. x = 1,5",
+      "tangenter": [
+       "=",
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "16",
+        "text": "16 är 3 200 delat med 200, alltså x⁴. Vilket tal blir 16 när du multiplicerar det med sig självt fyra gånger?"
+       },
+       {
+        "svar": "4",
+        "text": "4 är antalet år, alltså exponenten. Ekvationen är 200 · x⁴ = 3 200. Dela först båda leden med 200."
+       },
+       {
+        "svar": "-2",
+        "text": "−2 löser ekvationen x⁴ = 16, men en förändringsfaktor kan inte vara negativ. Vilken är den andra lösningen?"
+       },
+       {
+        "svar": "100",
+        "text": "100 är ökningen i procent, alltså svaret på nästa fråga. Förändringsfaktorn är talet som antalet multipliceras med varje år."
+       },
+       {
+        "svar": "750",
+        "text": "Antalet ökar inte med lika många komponenter varje år. Det multipliceras med samma tal varje år: 200 · x⁴ = 3 200."
+       },
+       {
+        "svar": "8",
+        "text": "8 · 8 är 64, inte 16. Du ska hitta talet som blir 16 när det multipliceras med sig självt fyra gånger."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Hur många procent ökade antalet varje år?",
+      "typ": "tal",
+      "svar": 100,
+      "tolerans": 0.01,
+      "enhet": "%",
+      "exempel": "t.ex. 50",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "2",
+        "text": "2 är förändringsfaktorn. Förändringsfaktorn 1 betyder att ingenting ändras, och det som är över 1 är ökningen."
+       },
+       {
+        "svar": "200",
+        "text": "200 % är hela det nya värdet jämfört med det gamla. Ökningen är det som är över 1: 2 − 1 = 1."
+       },
+       {
+        "svar": "1",
+        "text": "2 − 1 = 1 stämmer. Skriv nu 1 som procent."
+       },
+       {
+        "svar": "1500",
+        "text": "Det är ökningen på alla fyra åren. Frågan gäller ett år, och där är förändringsfaktorn 2."
+       },
+       {
+        "svar": "375",
+        "text": "Antalet ökar inte med lika många procent av startvärdet varje år. Använd förändringsfaktorn 2: det som är över 1 är ökningen."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med Moores kretsar. Kalla förändringsfaktorn x. Efter fyra år har antalet multiplicerats med x fyra gånger, så 200 · x⁴ = 3 200. Dela båda leden med 200 först.",
+     "t": 172
+    },
+    "losning": [
+     "Kalla förändringsfaktorn x. Efter fyra år: 200 · x⁴ = 3 200.",
+     "Dela båda leden med 200: x⁴ = 16.",
+     "Höj båda leden till en fjärdedel: x = 16^(1/4) = 2, eftersom 2 · 2 · 2 · 2 = 16. Exponenten är jämn, så −2 löser också ekvationen, men en förändringsfaktor kan inte vara negativ.",
+     "Förändringsfaktorn 2 betyder en fördubbling. Det som är över 1 är ökningen: 2 − 1 = 1 = 100 %. Antalet ökade med 100 % varje år."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 13.5,
+     "text": "Det är våren nittonhundrasextiofem, i Kalifornien i USA."
+    },
+    {
+     "s": 14.46,
+     "e": 18,
+     "text": "Gordon Moore är chef för forskningen på företaget Fairchild,"
+    },
+    {
+     "s": 18.24,
+     "e": 19.68,
+     "text": "som tillverkar elektronik."
+    },
+    {
+     "s": 20.48,
+     "e": 22.58,
+     "text": "Där gör de integrerade kretsar."
+    },
+    {
+     "s": 23.38,
+     "e": 27.3,
+     "text": "En sådan krets är en liten bit kisel, mindre än en nagel."
+    },
+    {
+     "s": 28.1,
+     "e": 33.48,
+     "text": "På biten görs många små delar på en gång, till exempel transistorer och motstånd."
+    },
+    {
+     "s": 34.28,
+     "e": 36.2,
+     "text": "Delarna kallas komponenter."
+    },
+    {
+     "s": 37.3,
+     "e": 40.08,
+     "text": "Tidningen Electronics fyller trettiofem år."
+    },
+    {
+     "s": 40.88,
+     "e": 46.2,
+     "text": "Därför ber den Moore att skriva vad som kommer att hända med elektroniken de närmaste tio åren."
+    },
+    {
+     "s": 47,
+     "e": 50.78,
+     "text": "Vid den här tiden tror många att kretsarna aldrig kommer att bli något stort."
+    },
+    {
+     "s": 51.88,
+     "e": 55.64,
+     "text": "Moore tar fram sina siffror från nittonhundrafemtionio och framåt."
+    },
+    {
+     "s": 56.54,
+     "e": 60.08,
+     "text": "Den billigaste kretsen har i dag ungefär femtio komponenter."
+    },
+    {
+     "s": 60.88,
+     "e": 64.54,
+     "text": "Och varje år har antalet komponenter ungefär fördubblats."
+    },
+    {
+     "s": 65.58,
+     "e": 70.3,
+     "text": "Moore ritar in siffrorna i ett diagram och fortsätter mönstret tio år framåt."
+    },
+    {
+     "s": 71.4,
+     "e": 74.22,
+     "text": "Den nittonde april står hans artikel i tidningen."
+    },
+    {
+     "s": 75.02,
+     "e": 81.12,
+     "text": "Där skriver han att en krets år nittonhundrasjuttiofem kan ha sextiofemtusen komponenter."
+    },
+    {
+     "s": 82.16,
+     "e": 86.8,
+     "text": "Han skriver också att kretsarna en dag kommer att ge oss datorer i hemmet."
+    },
+    {
+     "s": 87.9,
+     "e": 91.36,
+     "text": "Från femtio till sextiofemtusen på tio år."
+    },
+    {
+     "s": 92.16,
+     "e": 95.54,
+     "text": "Hur mycket måste antalet då öka varje år, i procent?"
+    },
+    {
+     "s": 96.34,
+     "e": 98.34,
+     "text": "Och stämmer det med Moores fördubbling?"
+    },
+    {
+     "s": 99.14,
+     "e": 100.4,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 102.9,
+     "e": 104.68,
+     "text": "Vi börjar med Moores fördubbling."
+    },
+    {
+     "s": 105.48,
+     "e": 108.3,
+     "text": "Femtio komponenter blir hundra efter ett år."
+    },
+    {
+     "s": 109.1,
+     "e": 112.5,
+     "text": "Sen blir det tvåhundra, fyrahundra och åttahundra."
+    },
+    {
+     "s": 113.3,
+     "e": 117.56,
+     "text": "Om vi fördubblar tio gånger, så blir det femtioentusen tvåhundra."
+    },
+    {
+     "s": 118.36,
+     "e": 121.84,
+     "text": "Det är nära sextiofemtusen, men lite för lite."
+    },
+    {
+     "s": 122.64,
+     "e": 126.54,
+     "text": "Antalet måste alltså öka lite mer än en fördubbling varje år."
+    },
+    {
+     "s": 127.64,
+     "e": 128.64,
+     "text": "Hur mycket mer?"
+    },
+    {
+     "s": 129.1,
+     "e": 131.4,
+     "text": "Det räknar vi ut med förändringsfaktorn."
+    },
+    {
+     "s": 132.2,
+     "e": 136.82,
+     "text": "Förändringsfaktorn är talet som antalet multipliceras med varje år."
+    },
+    {
+     "s": 137.62,
+     "e": 140.02,
+     "text": "Vid en fördubbling är förändringsfaktorn två."
+    },
+    {
+     "s": 140.82,
+     "e": 143.84,
+     "text": "Nu vet vi inte förändringsfaktorn, så vi kallar den x."
+    },
+    {
+     "s": 144.94,
+     "e": 148.36,
+     "text": "Efter ett år har kretsen femtio gånger x komponenter."
+    },
+    {
+     "s": 149.16,
+     "e": 152.26,
+     "text": "Efter två år multiplicerar vi med x en gång till."
+    },
+    {
+     "s": 153.06,
+     "e": 159.3,
+     "text": "Det blir femtio gånger x gånger x, alltså femtio gånger x upphöjt till två."
+    },
+    {
+     "s": 160.1,
+     "e": 163.84,
+     "text": "Exponenten säger hur många gånger vi har multiplicerat med x."
+    },
+    {
+     "s": 164.84,
+     "e": 170.94,
+     "text": "Efter tio år blir det femtio gånger x upphöjt till tio, och det ska vara sextiofemtusen."
+    },
+    {
+     "s": 172.04,
+     "e": 178.08,
+     "text": "Ekvationen blir alltså femtio gånger x upphöjt till tio är lika med sextiofemtusen."
+    },
+    {
+     "s": 179.26,
+     "e": 185.28,
+     "text": "En sådan ekvation kallas en potensekvation, för det okända talet x står i en potens."
+    },
+    {
+     "s": 186.2,
+     "e": 189.26,
+     "text": "x är basen, och exponenten tio vet vi redan."
+    },
+    {
+     "s": 190.36,
+     "e": 191.96,
+     "text": "Hur får vi x ensamt?"
+    },
+    {
+     "s": 192.8,
+     "e": 194.76,
+     "text": "Först ska potensen stå ensam."
+    },
+    {
+     "s": 195.56,
+     "e": 198.42,
+     "text": "Gånger femtio tar vi bort genom att dela med femtio."
+    },
+    {
+     "s": 199.22,
+     "e": 202.2,
+     "text": "Och för att likheten ska gälla delar vi båda leden."
+    },
+    {
+     "s": 203.26,
+     "e": 207.54,
+     "text": "Oj, sextiofemtusen delat med femtio är jobbigt i huvudet."
+    },
+    {
+     "s": 208.34,
+     "e": 209.78,
+     "text": "Det kan vi räkna enklare så här."
+    },
+    {
+     "s": 210.58,
+     "e": 214.12,
+     "text": "Sextiofemtusen delat med hundra är sexhundrafemtio."
+    },
+    {
+     "s": 214.92,
+     "e": 218.8,
+     "text": "Femtio är hälften av hundra, så svaret blir dubbelt så stort,"
+    },
+    {
+     "s": 219.12,
+     "e": 220.92,
+     "text": "alltså ettusen trehundra."
+    },
+    {
+     "s": 221.94,
+     "e": 226.3,
+     "text": "Nu står det x upphöjt till tio är lika med ettusen trehundra."
+    },
+    {
+     "s": 227.4,
+     "e": 231.12,
+     "text": "Nu ska exponenten tio bort, och då hjälper formelbladet oss."
+    },
+    {
+     "s": 231.92,
+     "e": 239.5,
+     "text": "Där står a upphöjt till x, inom parentes, upphöjt till y, är lika med a upphöjt till x y."
+    },
+    {
+     "s": 240.48,
+     "e": 245.48,
+     "text": "Har vi en potens inom parentes upphöjd till något, så multiplicerar vi exponenterna."
+    },
+    {
+     "s": 246.58,
+     "e": 251.96,
+     "text": "Vi vill att exponenten tio blir en etta, för x upphöjt till ett är bara x."
+    },
+    {
+     "s": 252.96,
+     "e": 258.32,
+     "text": "Vad ska vi multiplicera tio med för att få ett? En tiondel."
+    },
+    {
+     "s": 259.12,
+     "e": 261.2,
+     "text": "Tio tiondelar är ju en hel."
+    },
+    {
+     "s": 262,
+     "e": 264.8,
+     "text": "Därför höjer vi båda leden till en tiondel."
+    },
+    {
+     "s": 265.9,
+     "e": 269.08,
+     "text": "Vi skriver av regeln som en mall och sätter in våra tal."
+    },
+    {
+     "s": 269.88,
+     "e": 271.16,
+     "text": "Basen är vårt x."
+    },
+    {
+     "s": 271.96,
+     "e": 277.54,
+     "text": "Exponenten inne i parentesen är tio, och exponenten utanför är en tiondel."
+    },
+    {
+     "s": 278.34,
+     "e": 284.14,
+     "text": "Tio gånger en tiondel är ett, så kvar i vänster led står x upphöjt till ett,"
+    },
+    {
+     "s": 284.52,
+     "e": 285.74,
+     "text": "alltså bara x."
+    },
+    {
+     "s": 286.84,
+     "e": 291.06,
+     "text": "I höger led står ettusen trehundra upphöjt till en tiondel."
+    },
+    {
+     "s": 291.88,
+     "e": 297.9,
+     "text": "Det står också på formelbladet: a upphöjt till ett delat med n är n-te roten ur a."
+    },
+    {
+     "s": 298.7,
+     "e": 305.96,
+     "text": "Här är a ettusen trehundra och n tio, så x är tionde roten ur ettusen trehundra."
+    },
+    {
+     "s": 306.76,
+     "e": 309.98,
+     "text": "Det kan vi inte räkna i huvudet, så vi tar fram räknaren."
+    },
+    {
+     "s": 310.78,
+     "e": 317.62,
+     "text": "Vi skriver ettusen trehundra, trycker på upphöjt till och skriver ett delat med tio inom parentes."
+    },
+    {
+     "s": 318.42,
+     "e": 321.1,
+     "text": "Det blir ungefär två komma noll fem."
+    },
+    {
+     "s": 323.34,
+     "e": 326.08,
+     "text": "Men exponenten tio är ett jämnt tal."
+    },
+    {
+     "s": 326.88,
+     "e": 330.72,
+     "text": "Då finns det en lösning till, minus två komma noll fem."
+    },
+    {
+     "s": 331.52,
+     "e": 336.58,
+     "text": "Tio minustecken blir nämligen fem par, och minus gånger minus är plus."
+    },
+    {
+     "s": 337.38,
+     "e": 343.3,
+     "text": "Men en förändringsfaktor kan inte vara negativ, för då skulle antalet komponenter bli negativt."
+    },
+    {
+     "s": 344.1,
+     "e": 346.6,
+     "text": "Därför stryker vi minus två komma noll fem."
+    },
+    {
+     "s": 347.7,
+     "e": 350.54,
+     "text": "Vad betyder förändringsfaktorn två komma noll fem?"
+    },
+    {
+     "s": 351.34,
+     "e": 354.46,
+     "text": "Förändringsfaktorn ett betyder att ingenting ändras."
+    },
+    {
+     "s": 355.26,
+     "e": 357.28,
+     "text": "Det som är över ett är ökningen."
+    },
+    {
+     "s": 358.08,
+     "e": 364.06,
+     "text": "Två komma noll fem minus ett är ett komma noll fem, och det är hundrafem procent."
+    },
+    {
+     "s": 364.9,
+     "e": 369.16,
+     "text": "Antalet måste alltså öka med ungefär hundrafem procent varje år."
+    },
+    {
+     "s": 369.96,
+     "e": 373.2,
+     "text": "Det är lite mer än en fördubbling, precis som vi såg nyss."
+    },
+    {
+     "s": 374.54,
+     "e": 377.48,
+     "text": "Vad nice, Moores fördubbling stämmer nästan."
+    },
+    {
+     "s": 378.58,
+     "e": 380.34,
+     "text": "Moore skrev också om priset."
+    },
+    {
+     "s": 381.14,
+     "e": 386.74,
+     "text": "Om fem år, skrev han, kostar varje komponent bara en tiondel av vad den kostar i dag."
+    },
+    {
+     "s": 387.54,
+     "e": 390.24,
+     "text": "Hur många procent billigare blir den då varje år?"
+    },
+    {
+     "s": 391.18,
+     "e": 393.8,
+     "text": "Säg att en komponent kostar tio cent i dag."
+    },
+    {
+     "s": 394.6,
+     "e": 396.68,
+     "text": "Om fem år kostar den en cent."
+    },
+    {
+     "s": 397.48,
+     "e": 403.56,
+     "text": "Vi kallar förändringsfaktorn x igen, och ekvationen blir tio gånger x upphöjt till fem"
+    },
+    {
+     "s": 403.78,
+     "e": 404.78,
+     "text": "är lika med ett."
+    },
+    {
+     "s": 405.76,
+     "e": 407.86,
+     "text": "Nu går det fort, för det är samma väg."
+    },
+    {
+     "s": 408.66,
+     "e": 414.02,
+     "text": "Vi delar båda leden med tio, och får x upphöjt till fem är lika med noll komma ett."
+    },
+    {
+     "s": 414.82,
+     "e": 419.82,
+     "text": "Fem gånger en femtedel är ett, så vi höjer båda leden till en femtedel."
+    },
+    {
+     "s": 420.62,
+     "e": 426.46,
+     "text": "På räknaren blir noll komma ett upphöjt till en femtedel ungefär noll komma sextiotre."
+    },
+    {
+     "s": 427.26,
+     "e": 430.98,
+     "text": "Exponenten fem är udda, så här finns det bara en lösning."
+    },
+    {
+     "s": 432.08,
+     "e": 436.52,
+     "text": "Förändringsfaktorn är mindre än ett, och det betyder att priset minskar."
+    },
+    {
+     "s": 437.32,
+     "e": 442.72,
+     "text": "Noll komma sextiotre betyder att sextiotre procent av priset är kvar efter ett år."
+    },
+    {
+     "s": 443.52,
+     "e": 446.3,
+     "text": "Hundra minus sextiotre är trettiosju."
+    },
+    {
+     "s": 447.1,
+     "e": 451.92,
+     "text": "Priset för en komponent sjunker alltså med ungefär trettiosju procent varje år."
+    },
+    {
+     "s": 453.24,
+     "e": 456.8,
+     "text": "På formelbladet står två formler som är lätta att blanda ihop,"
+    },
+    {
+     "s": 457.1,
+     "e": 459.02,
+     "text": "och båda finns i Moores kretsar."
+    },
+    {
+     "s": 459.82,
+     "e": 466.62,
+     "text": "Om antalet fördubblas varje år, så är antalet efter x år femtio gånger två upphöjt till x."
+    },
+    {
+     "s": 467.42,
+     "e": 469.84,
+     "text": "Där står variabeln x i exponenten."
+    },
+    {
+     "s": 470.64,
+     "e": 475.74,
+     "text": "Det är en exponentialfunktion, y är lika med C gånger a upphöjt till x."
+    },
+    {
+     "s": 476.84,
+     "e": 480.02,
+     "text": "Men i vår ekvation var det förändringsfaktorn vi inte visste."
+    },
+    {
+     "s": 480.82,
+     "e": 482.82,
+     "text": "Nu är x förändringsfaktorn."
+    },
+    {
+     "s": 483.62,
+     "e": 487.92,
+     "text": "Antalet efter tio år är femtio gånger x upphöjt till tio."
+    },
+    {
+     "s": 488.72,
+     "e": 493.08,
+     "text": "Där står variabeln x i basen, och exponenten är ett fast tal."
+    },
+    {
+     "s": 493.88,
+     "e": 499.04,
+     "text": "Det är en potensfunktion, y är lika med C gånger x upphöjt till a."
+    },
+    {
+     "s": 499.84,
+     "e": 502.56,
+     "text": "Här är C femtio och a tio."
+    },
+    {
+     "s": 503.66,
+     "e": 506.96,
+     "text": "Med en graf ser vi lättare varför det blev två lösningar."
+    },
+    {
+     "s": 507.76,
+     "e": 511.74,
+     "text": "Vi ritar potensfunktionen y är lika med x upphöjt till tio."
+    },
+    {
+     "s": 512.54,
+     "e": 517.54,
+     "text": "Grafen ser ut som en djup skål, och den är likadan på båda sidor om y-axeln,"
+    },
+    {
+     "s": 517.82,
+     "e": 519.46,
+     "text": "eftersom exponenten är jämn."
+    },
+    {
+     "s": 520.26,
+     "e": 525.1,
+     "text": "Linjen y är lika med ettusen trehundra skär skålen i två punkter,"
+    },
+    {
+     "s": 525.48,
+     "e": 528.84,
+     "text": "vid två komma noll fem och minus två komma noll fem."
+    },
+    {
+     "s": 529.64,
+     "e": 534.44,
+     "text": "En linje under x-axeln når aldrig skålen, och då finns det ingen lösning."
+    },
+    {
+     "s": 535.24,
+     "e": 536.52,
+     "text": "Nu går vi tillbaka till Moore."
+    },
+    {
+     "s": 539.02,
+     "e": 542.22,
+     "text": "Tre år efter artikeln lämnar Moore Fairchild."
+    },
+    {
+     "s": 543.02,
+     "e": 547.56,
+     "text": "Tillsammans med Robert Noyce startar han ett nytt företag, som heter Intel."
+    },
+    {
+     "s": 548.36,
+     "e": 554.66,
+     "text": "År nittonhundrasjuttiofem gör Intel minneskretsar med ungefär trettiotvåtusen komponenter."
+    },
+    {
+     "s": 555.46,
+     "e": 558.24,
+     "text": "Det är hälften av Moores sextiofemtusen."
+    },
+    {
+     "s": 559.04,
+     "e": 561.16,
+     "text": "Samma år ändrar Moore sin regel."
+    },
+    {
+     "s": 561.96,
+     "e": 566,
+     "text": "Från och med nu, säger han, fördubblas antalet vartannat år."
+    },
+    {
+     "s": 567.1,
+     "e": 571.84,
+     "text": "Den regeln kallas i dag Moores lag, och den höll i nästan femtio år."
+    },
+    {
+     "s": 572.64,
+     "e": 577.76,
+     "text": "Kretsen i en dyr mobiltelefon i dag har runt tjugo miljarder transistorer."
+    },
+    {
+     "s": 578.56,
+     "e": 582.9,
+     "text": "Och nästan alla har i dag en dator hemma, precis som Moore skrev."
+    },
+    {
+     "s": 585.4,
+     "e": 586.42,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 587.22,
+     "e": 589.54,
+     "text": "En krets har tvåhundra komponenter."
+    },
+    {
+     "s": 590.34,
+     "e": 594.74,
+     "text": "Fyra år senare har en ny krets tretusentvåhundra komponenter."
+    },
+    {
+     "s": 595.54,
+     "e": 598.32,
+     "text": "Antalet har ökat lika mycket varje år."
+    },
+    {
+     "s": 599.12,
+     "e": 603.16,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 603.96,
+     "e": 606.62,
+     "text": "Hur mycket ökade antalet varje år?"
+    },
+    {
+     "s": 607.42,
+     "e": 611.98,
+     "text": "Först: Ställ upp en potensekvation och räkna ut förändringsfaktorn."
+    },
+    {
+     "s": 612.78,
+     "e": 616.54,
+     "text": "Sen: Hur många procent ökade antalet varje år?"
     }
    ]
   },
