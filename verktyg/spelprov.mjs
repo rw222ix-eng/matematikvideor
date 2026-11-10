@@ -23,16 +23,17 @@ const BAS = (process.env.BAS || "http://127.0.0.1:8797").replace(/\/$/, "");
 // det är den vägen provet gäller: genom funktionen, under connect-src 'self'. ?server= ger samma väg här.
 const SERVER = `?server=${BAS.replace(/^https?:\/\//, "")}`;
 // Ett rum genom funktionen, från sidan. Svarar med koden, eller med varför det inte gick: samma adress hämtad utan
-// WebSocket visar serverns svar (426 «websocket» när vägen fungerar, annars felet).
-const rum = (sida, spel) => sida.evaluate((spel) => new Promise((klar) => {
+// WebSocket visar serverns svar (426 «websocket» när vägen fungerar, annars felet). Protokollets version tas ur
+// /spel/halsa, så att provet följer servern (med v: 1 mot en server på version 2 svarar rummet «fel version»).
+const rum = (sida, spel) => sida.evaluate(([spel, v]) => new Promise((klar) => {
   const adress = `${location.origin}/spel/rum?spel=${spel}&hur=ny`;
   const varfor = async (vad) => klar({ kod: null, varfor: `${vad}: ${await fetch(adress).then(async (r) => `${r.status} ${(await r.text()).slice(0, 120)}`, (e) => String(e))}` });
   const w = new WebSocket(adress.replace(/^http/, "ws"));
-  w.onopen = () => w.send(JSON.stringify({ typ: "hej", v: 1, namn: "Prov" }));
+  w.onopen = () => w.send(JSON.stringify({ typ: "hej", v, namn: "Prov" }));
   w.onmessage = (e) => { const m = JSON.parse(e.data); if (m.typ === "valkommen") { w.close(); klar({ kod: m.kod }); } else if (m.typ === "fel") varfor(`fel ${m.fel}`); };
   w.onerror = () => varfor("WebSocketen föll");
   setTimeout(() => varfor("inget svar på 15 s"), 15000);
-}), spel);
+}), [spel, halsa?.version ?? 1]);
 let fel = 0, ok = 0;
 const prov = (namn, villkor, info = "") => { if (villkor) { ok++; console.log(`  ok   ${namn}`); } else { fel++; console.log(`  FEL  ${namn} ${info}`); } };
 
