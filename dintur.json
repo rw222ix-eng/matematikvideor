@@ -7,25 +7,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "p02-delos-apollons-altare",
+      "bild": "filmens-slutbild",
       "tema": "scen",
-      "blak": { "farg": "#FFFDF5", "skugga": "rgba(6,14,26,.92)" },
-      "utsnitt": [720, 260, 1000, 562.5],
-      "text": "Apollons altare på Delos, en kub med sidan x. Det nya altaret ska rymma 3 block.",
-      "delar": [
-        { "typ": "linje", "p": [[1143.4, 594], [1143, 734]] },
-        { "typ": "linje", "p": [[1143.4, 594], [1323.5, 605]] },
-        { "typ": "linje", "p": [[1323.5, 605], [1460, 595.5]] },
-        { "typ": "linje", "p": [[1460, 595.5], [1460, 732]] },
-        { "typ": "linje", "p": [[1460, 732], [1323, 756]] },
-        { "typ": "linje", "p": [[1323, 756], [1143, 734]] },
-        { "typ": "linje", "p": [[1323.5, 605], [1323, 756]] },
-        { "typ": "linje", "p": [[1113, 594], [1113, 734]] },
-        { "typ": "linje", "p": [[1097, 594], [1129, 594]] },
-        { "typ": "linje", "p": [[1097, 734], [1129, 734]] },
-        { "typ": "text", "vid": [1066, 664], "text": "x" },
-        { "typ": "text", "vid": [1040, 530], "text": "×3" }
-      ]
+      "text": "Två män skjuter ett stenblock på en vagn mot templet på Delos. Blockets sida är x. I himlen står ×3, x³ = 3 och x ≈ med tomma platser för två decimaler.",
+      "delar": []
     },
     "delar": [
       {
@@ -71,23 +56,10 @@
     "fraga": "Ett annat romerskt skepp ligger 400 meter från muren. Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare. Kastmaskinen når 200 meter. Nu får du två frågor att svara på. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
     "figur": {
       "vy": [1920, 1080],
-      "bild": "p10-skeppet-i-skymningen",
+      "bild": "filmens-slutbild",
       "tema": "scen",
-      "blak": { "farg": "#FFFDF5", "skugga": "rgba(6,14,26,.92)" },
-      "utsnitt": [860, 470, 1060, 596.25],
-      "text": "Muren nere till höger och skeppet ute på havet. Skeppet ligger 400 meter från muren och ror in mot den med 5 meter i sekunden. Kastmaskinerna når 200 meter ut från muren.",
-      "delar": [
-        { "typ": "linje", "p": [[1446, 923.4], [1446, 657.8]] },
-        { "typ": "linje", "p": [[1424, 923.4], [1468, 923.4]] },
-        { "typ": "linje", "p": [[1424, 657.8], [1468, 657.8]] },
-        { "typ": "text", "vid": [1478, 790.6], "text": "400 m", "ankare": "start" },
-        { "typ": "pil", "fran": [1350, 600], "till": [1350, 715] },
-        { "typ": "text", "vid": [1318, 655], "text": "5 m/s", "ankare": "end" },
-        { "typ": "linje", "p": [[1370, 923.4], [1370, 790.6]] },
-        { "typ": "linje", "p": [[1348, 923.4], [1392, 923.4]] },
-        { "typ": "linje", "p": [[1290, 790.6], [1446, 790.6]], "streckad": true },
-        { "typ": "text", "vid": [1340, 857], "text": "200 m", "ankare": "end" }
-      ]
+      "text": "En romersk soldat och en kastmaskin på muren. Ett skepp ligger 400 m ut och kommer 5 m närmare varje sekund. Kastbanan når 200 m. I himlen står 400 − 5t ≤ 200 och ? s.",
+      "delar": []
     },
     "delar": [
       {
@@ -136,6 +108,13 @@
   },
   "viete-och-chiffret": {
     "fraga": "Du ska svara på två frågor. Uttrycket är 10a²b + 15ab². Hur bryter du ut så mycket som möjligt ur uttrycket?",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Viète skriver vid ett bord framför fönstret, med ett tänt ljus. På väggen står 10a²b + 15ab² = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är den största gemensamma faktorn?",
@@ -185,6 +164,13 @@
       "Först: Hur många steg längre bort står varje märke än kvadrattalet? Det behöver du för att ta reda på det.",
       "Sen: Skriv formeln för märke nummer n."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Galilei står vid en lutande ränna på en regnvåt gård. Märkena längs rännan står vid 5, 8, 13 och 20, och längst ner står n.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur många steg längre bort står varje märke än kvadrattalet? Det behöver du för att ta reda på det.",
@@ -224,6 +210,13 @@
   },
   "kepler-och-planeterna": {
     "fraga": "En planet behöver 125 år för ett varv runt solen. Du ska svara på två frågor. Hur många jordavstånd från solen ligger planeten?",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Kepler tittar i ett teleskop på ett tak om natten. I himlen står 125 år, a = 125 upphöjt till två tredjedelar = ? och tredje roten ur 125 = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är tredje roten ur 125? Det behöver du för att ta reda på det.",
@@ -323,6 +316,13 @@
       "Först: Skriv intervallet med hakparenteser.",
       "Sen: Skriv samma intervall som en olikhet."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett segelfartyg nära en kust i solnedgången. I himlen står 5 000 £, > 110 km, ≤ 150 km och ett stort frågetecken.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv intervallet med hakparenteser.",
@@ -368,6 +368,13 @@
       "Först: Skriv 10⁴ · 10⁵ som en enda potens.",
       "Sen: Vilket prefix står för den tiopotensen?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med ett papper och en vattenflaska på bänken. På väggen står 10⁴ · 10⁵ = ? och prefix?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv 10⁴ · 10⁵ som en enda potens.",
@@ -411,6 +418,13 @@
       "Först: Vad är k, alltså priset per kilometer?",
       "Sen: Vad är m, alltså startavgiften?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med ett papper på bänken. På väggen är en taxi och två kvitton ritade: 2 km kostar 80 kr och 6 km kostar 180 kr. Under står k = ? och m = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är k, alltså priset per kilometer?",
@@ -462,25 +476,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "d01-pizza",
-      "tema": "papper",
-      "text": "En rund pizza med omkretsen 62,8 centimeter, delad i åtta lika stora bitar. Vinkeln i spetsen och den böjda kanten på en bit är okända.",
-      "delar": [
-        { "typ": "yta", "d": "M560 540 L560 160 A380 380 0 0 1 828.7 271.3 Z", "accent": true },
-        { "typ": "cirkel", "mitt": [560, 540], "r": 380 },
-        { "typ": "linje", "p": [[560, 540], [560, 160]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [828.7, 271.3]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [940, 540]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [828.7, 808.7]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [560, 920]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [291.3, 808.7]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [180, 540]], "svag": true },
-        { "typ": "linje", "p": [[560, 540], [291.3, 271.3]], "svag": true },
-        { "typ": "bana", "d": "M560 160 A380 380 0 0 1 828.7 271.3", "accent": true, "tjock": true },
-        { "typ": "vinkel", "vid": [560, 540], "mot": [[560, 160], [828.7, 271.3]], "r": 110, "text": "?", "accent": true, "avstand": 50 },
-        { "typ": "text", "vid": [728.4, 133.5], "text": "?", "accent": true },
-        { "typ": "text", "vid": [990, 900], "text": "omkrets 62,8 cm", "ankare": "start" }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med en passare på bänken. På väggen är en cirkel delad i åtta bitar ritad, och bredvid står O = 62,8 cm, v = ? och b₁ = ?.",
+      "delar": []
     },
     "delar": [
       {
@@ -533,25 +532,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "d02-modellen",
-      "tema": "papper",
-      "text": "En liten modell av klassrummet bredvid det riktiga klassrummet, som är 5 gånger så långt åt alla håll.",
-      "delar": [
-        { "typ": "yta", "p": [[140, 824], [172, 800], [268, 800], [236, 824]], "svag": true },
-        { "typ": "yta", "p": [[236, 824], [268, 800], [268, 856], [236, 880]] },
-        { "typ": "linje", "p": [[140, 880], [236, 880], [236, 824], [140, 824], [140, 880]] },
-        { "typ": "linje", "p": [[140, 824], [172, 800], [268, 800], [236, 824]] },
-        { "typ": "linje", "p": [[268, 800], [268, 856], [236, 880]] },
-        { "typ": "yta", "p": [[460, 600], [620, 480], [1100, 480], [940, 600]], "svag": true },
-        { "typ": "yta", "p": [[940, 600], [1100, 480], [1100, 760], [940, 880]] },
-        { "typ": "linje", "p": [[460, 880], [940, 880], [940, 600], [460, 600], [460, 880]] },
-        { "typ": "linje", "p": [[460, 600], [620, 480], [1100, 480], [940, 600]] },
-        { "typ": "linje", "p": [[1100, 480], [1100, 760], [940, 880]] },
-        { "typ": "sida", "p": [[140, 880], [236, 880]], "text": "1" },
-        { "typ": "sida", "p": [[460, 880], [940, 880]], "text": "5" },
-        { "typ": "text", "vid": [188, 1010], "text": "modell", "liten": true },
-        { "typ": "text", "vid": [700, 1010], "text": "klassrum", "liten": true }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med ett papper och en penna på bänken. På väggen står skala 1 : 5, golvyta ? och volym ?.",
+      "delar": []
     },
     "delar": [
       {
@@ -602,26 +586,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "b01-stegen",
-      "tema": "papper",
-      "text": "En stege lutar mot en vägg. Foten står 6 m från väggen och toppen når 8 m upp. Vinkeln v ligger vid foten, mellan stegen och marken. Stegens längd är okänd.",
-      "delar": [
-        { "typ": "linje", "p": [[120, 960], [880, 960]], "svag": true },
-        { "typ": "linje", "p": [[740, 960], [740, 180]] },
-        { "typ": "linje", "p": [[200, 960], [740, 240]], "tjock": true },
-        { "typ": "linje", "p": [[253.1, 859.2], [281.9, 880.8]], "svag": true },
-        { "typ": "linje", "p": [[320.6, 769.2], [349.4, 790.8]], "svag": true },
-        { "typ": "linje", "p": [[388.1, 679.2], [416.9, 700.8]], "svag": true },
-        { "typ": "linje", "p": [[455.6, 589.2], [484.4, 610.8]], "svag": true },
-        { "typ": "linje", "p": [[523.1, 499.2], [551.9, 520.8]], "svag": true },
-        { "typ": "linje", "p": [[590.6, 409.2], [619.4, 430.8]], "svag": true },
-        { "typ": "linje", "p": [[658.1, 319.2], [686.9, 340.8]], "svag": true },
-        { "typ": "ratvinkel", "vid": [740, 960], "mot": [[740, 240], [200, 960]] },
-        { "typ": "vinkel", "vid": [200, 960], "mot": [[740, 960], [740, 240]], "r": 110, "text": "v", "avstand": 50 },
-        { "typ": "sida", "p": [[200, 960], [740, 960]], "text": "6 m", "sida": 1, "avstand": 64 },
-        { "typ": "sida", "p": [[740, 960], [740, 240]], "text": "8 m", "sida": 1, "avstand": 40 },
-        { "typ": "sida", "p": [[200, 960], [740, 240]], "text": "?", "sida": -1, "avstand": 70, "accent": true }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med en vinkelhake på bänken. På väggen är en stege ritad mot en vägg: 6 m längs marken, 8 m upp, stegens längd är ett frågetecken och vinkeln v ligger vid foten. Bredvid står sin v = ?.",
+      "delar": []
     },
     "delar": [
       {
@@ -1010,6 +978,13 @@
       "Först: Hur högt upp är kulan efter en sekund?",
       "Sen: Använd nollproduktmetoden. Efter hur många sekunder är kulan nere igen?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En kanon på en strand i solnedgången och en kula högt uppe i luften. I himlen står höjd = 30t − 5t², 1 s: höjd = ? och höjd = 0, t = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur högt upp är kulan efter en sekund?",
@@ -1253,6 +1228,13 @@
       "Först: Vad är p och vad är q?",
       "Sen: Vilka är lösningarna?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med ett papper och en vattenflaska på bänken. På väggen står x² − 8x + 12 = 0 och pq-formeln.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är p?",
@@ -1357,20 +1339,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "b01-boll",
-      "tema": "papper",
-      "text": "Bollens höjd y över handen mot tiden x. Kurvan går upp från handen och ner igen. Den högsta höjden och tiden när bollen är tillbaka i handen är okända.",
-      "delar": [
-        { "typ": "pil", "fran": [230, 950], "till": [1480, 950], "svag": true },
-        { "typ": "pil", "fran": [258, 978], "till": [258, 190], "svag": true },
-        { "typ": "text", "vid": [1508, 950], "text": "x", "ankare": "start" },
-        { "typ": "text", "vid": [292, 200], "text": "y", "ankare": "start" },
-        { "typ": "bana", "d": "M258 950 Q783 -350 1308 950" },
-        { "typ": "linje", "p": [[783, 300], [783, 950]], "streckad": true, "accent": true },
-        { "typ": "text", "vid": [818, 625], "text": "?", "accent": true, "ankare": "start" },
-        { "typ": "prick", "vid": [1308, 950], "accent": true },
-        { "typ": "text", "vid": [1308, 1028], "text": "?", "accent": true }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med en vattenflaska på bänken. På väggen står y = −5x² + 30x, ? s och ? m, och en liten boll är ritad.",
+      "delar": []
     },
     "delar": [
       {
@@ -1464,6 +1436,13 @@
   },
   "formelbladet-ma2-3-logaritmer": {
     "fraga": "Tänk dig ett sparkonto med 2 procent ränta. Hur många år tar det innan 1000 kronor har blivit 2000 kronor? Du får två frågor att svara på.",
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett klassrum med ett papper och en vattenflaska på bänken. På väggen står 1000 kr, en pil med + 2 % till 2000 kr, och under pilen ? år.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är förändringsfaktorn?",
@@ -1559,24 +1538,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "d03-lyktstolpen",
-      "tema": "papper",
-      "text": "En lyktstolpe med en skugga som är 12 meter lång, och en pinne som är 1 meter hög med en skugga som är 2 meter lång. Solens strålar kommer in lika snett mot båda. Lyktstolpens höjd är okänd.",
-      "delar": [
-        { "typ": "linje", "p": [[90, 880], [1420, 880]], "svag": true },
-        { "typ": "linje", "p": [[240, 880], [912, 880]], "skugga": true },
-        { "typ": "linje", "p": [[1060, 880], [1380, 880]], "skugga": true },
-        { "typ": "linje", "p": [[240, 880], [240, 544]], "tjock": true },
-        { "typ": "bana", "d": "M240 544 Q240 504 280 504 L304 504" },
-        { "typ": "prick", "vid": [304, 522], "r": 12 },
-        { "typ": "linje", "p": [[240, 544], [912, 880]], "streckad": true, "svag": true },
-        { "typ": "linje", "p": [[1060, 880], [1060, 720]], "tjock": true },
-        { "typ": "linje", "p": [[1060, 720], [1380, 880]], "streckad": true, "svag": true },
-        { "typ": "sida", "p": [[240, 880], [240, 544]], "text": "?", "sida": -1, "accent": true },
-        { "typ": "sida", "p": [[240, 880], [912, 880]], "text": "12 m" },
-        { "typ": "sida", "p": [[1060, 880], [1060, 720]], "text": "1 m", "sida": -1, "avstand": 40 },
-        { "typ": "sida", "p": [[1060, 880], [1380, 880]], "text": "2 m" }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En pojke håller en pinne bredvid en lyktstolpe i kvällssol. Ritat över häcken: pinnen är 1 m hög med en skugga på 2 m, lyktstolpens skugga är 12 m och dess höjd är ett frågetecken.",
+      "delar": []
     },
     "delar": [
       {
@@ -1665,18 +1630,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "d04-fotbollen",
-      "tema": "papper",
-      "text": "En bit med fem hörn, där alla vinklar är lika stora. Vinklarnas storlek är okänd.",
-      "delar": [
-        { "typ": "yta", "p": [[640, 190], [1001.4, 452.6], [863.4, 877.4], [416.6, 877.4], [278.6, 452.6]] },
-        { "typ": "linje", "p": [[640, 190], [1001.4, 452.6], [863.4, 877.4], [416.6, 877.4], [278.6, 452.6], [640, 190]] },
-        { "typ": "vinkel", "vid": [640, 190], "mot": [[278.6, 452.6], [1001.4, 452.6]], "r": 64, "svag": true, "text": "?", "accent": true, "avstand": 72 },
-        { "typ": "vinkel", "vid": [1001.4, 452.6], "mot": [[640, 190], [863.4, 877.4]], "r": 64, "svag": true },
-        { "typ": "vinkel", "vid": [863.4, 877.4], "mot": [[1001.4, 452.6], [416.6, 877.4]], "r": 64, "svag": true },
-        { "typ": "vinkel", "vid": [416.6, 877.4], "mot": [[863.4, 877.4], [278.6, 452.6]], "r": 64, "svag": true },
-        { "typ": "vinkel", "vid": [278.6, 452.6], "mot": [[416.6, 877.4], [640, 190]], "r": 64, "svag": true }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En pojke lägger en fotboll på gräset framför ett mål. Över träden är en bit med fem hörn ritad, med ett frågetecken i en vinkel, och bredvid står S = ?.",
+      "delar": []
     },
     "delar": [
       {
@@ -1753,30 +1710,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "d05-aggen",
-      "tema": "papper",
-      "text": "En normalfördelningskurva för äggens vikt, med medelvärdet 60 gram och standardavvikelsen 4 gram. Andelen mellan 52 och 60 gram är skuggad och okänd.",
-      "delar": [
-        { "typ": "yta", "p": [[434, 850], [434, 774.2], [443.5, 764.3], [453, 753.4], [462.5, 741.7], [472, 728.9], [481.5, 715.2], [491, 700.5], [500.5, 684.8], [510, 668.2], [519.5, 650.7], [529, 632.4], [538.5, 613.3], [548, 593.6], [557.5, 573.3], [567, 552.6], [576.5, 531.5], [586, 510.3], [595.5, 489.1], [605, 468.1], [614.5, 447.4], [624, 427.3], [633.5, 407.9], [643, 389.4], [652.5, 371.9], [662, 355.8], [671.5, 341.1], [681, 328], [690.5, 316.7], [700, 307.2], [709.5, 299.8], [719, 294.4], [728.5, 291.1], [738, 290], [738, 850]], "accent": true },
-        { "typ": "linje", "p": [[90, 850], [1420, 850]], "svag": true },
-        { "typ": "linje", "p": [[130, 849.8], [139.5, 849.8], [149, 849.7], [158.5, 849.6], [168, 849.5], [177.5, 849.4], [187, 849.2], [196.5, 849], [206, 848.8], [215.5, 848.5], [225, 848.1], [234.5, 847.7], [244, 847.2], [253.5, 846.5], [263, 845.8], [272.5, 844.9], [282, 843.8], [291.5, 842.5], [301, 841], [310.5, 839.3], [320, 837.2], [329.5, 834.9], [339, 832.1], [348.5, 829], [358, 825.4], [367.5, 821.3], [377, 816.6], [386.5, 811.4], [396, 805.4], [405.5, 798.8], [415, 791.4], [424.5, 783.2], [434, 774.2], [443.5, 764.3], [453, 753.4], [462.5, 741.7], [472, 728.9], [481.5, 715.2], [491, 700.5], [500.5, 684.8], [510, 668.2], [519.5, 650.7], [529, 632.4], [538.5, 613.3], [548, 593.6], [557.5, 573.3], [567, 552.6], [576.5, 531.5], [586, 510.3], [595.5, 489.1], [605, 468.1], [614.5, 447.4], [624, 427.3], [633.5, 407.9], [643, 389.4], [652.5, 371.9], [662, 355.8], [671.5, 341.1], [681, 328], [690.5, 316.7], [700, 307.2], [709.5, 299.8], [719, 294.4], [728.5, 291.1], [738, 290], [747.5, 291.1], [757, 294.4], [766.5, 299.8], [776, 307.2], [785.5, 316.7], [795, 328], [804.5, 341.1], [814, 355.8], [823.5, 371.9], [833, 389.4], [842.5, 407.9], [852, 427.3], [861.5, 447.4], [871, 468.1], [880.5, 489.1], [890, 510.3], [899.5, 531.5], [909, 552.6], [918.5, 573.3], [928, 593.6], [937.5, 613.3], [947, 632.4], [956.5, 650.7], [966, 668.2], [975.5, 684.8], [985, 700.5], [994.5, 715.2], [1004, 728.9], [1013.5, 741.7], [1023, 753.4], [1032.5, 764.3], [1042, 774.2], [1051.5, 783.2], [1061, 791.4], [1070.5, 798.8], [1080, 805.4], [1089.5, 811.4], [1099, 816.6], [1108.5, 821.3], [1118, 825.4], [1127.5, 829], [1137, 832.1], [1146.5, 834.9], [1156, 837.2], [1165.5, 839.3], [1175, 841], [1184.5, 842.5], [1194, 843.8], [1203.5, 844.9], [1213, 845.8], [1222.5, 846.5], [1232, 847.2], [1241.5, 847.7], [1251, 848.1], [1260.5, 848.5], [1270, 848.8], [1279.5, 849], [1289, 849.2], [1298.5, 849.4], [1308, 849.5], [1317.5, 849.6], [1327, 849.7], [1336.5, 849.8], [1346, 849.8]] },
-        { "typ": "linje", "p": [[282, 850], [282, 876]], "svag": true },
-        { "typ": "text", "vid": [282, 920], "text": "48", "liten": true },
-        { "typ": "linje", "p": [[434, 850], [434, 876]], "svag": true },
-        { "typ": "text", "vid": [434, 930], "text": "52", "liten": false },
-        { "typ": "linje", "p": [[586, 850], [586, 876]], "svag": true },
-        { "typ": "text", "vid": [586, 920], "text": "56", "liten": true },
-        { "typ": "linje", "p": [[738, 850], [738, 876]], "svag": true },
-        { "typ": "text", "vid": [738, 930], "text": "60", "liten": false },
-        { "typ": "linje", "p": [[890, 850], [890, 876]], "svag": true },
-        { "typ": "text", "vid": [890, 920], "text": "64", "liten": true },
-        { "typ": "linje", "p": [[1042, 850], [1042, 876]], "svag": true },
-        { "typ": "text", "vid": [1042, 920], "text": "68", "liten": true },
-        { "typ": "linje", "p": [[1194, 850], [1194, 876]], "svag": true },
-        { "typ": "text", "vid": [1194, 920], "text": "72", "liten": true },
-        { "typ": "text", "vid": [608.8000000000001, 770], "text": "?", "accent": true },
-        { "typ": "text", "vid": [1376, 920], "text": "gram", "liten": true, "ankare": "start" }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En kvinna plockar ägg bland hönsen vid en röd lada. På ladans vägg står μ = 60 g, σ = 4 g, 52–60 g och ? %, bredvid en normalfördelningskurva med området mellan 52 och 60 skuggat.",
+      "delar": []
     },
     "delar": [
       {
@@ -1869,21 +1806,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "b01-uppslag-kompass",
-      "tema": "papper",
-      "utsnitt": [150, 100, 1280, 720],
-      "text": "Rutat papper med start i origo nere till höger. Vektorn u går från start fyra rutor åt vänster och en ruta uppåt. Vektorn v börjar där u slutar och går två rutor åt vänster och sju rutor uppåt.",
-      "delar": [
-        { "typ": "rutnat", "fran": [830, 180], "till": [1250, 660], "steg": 60 },
-        { "typ": "prick", "vid": [1250, 660], "r": 7 },
-        { "typ": "text", "vid": [1272, 716], "text": "start" },
-        { "typ": "pil", "fran": [1250, 660], "till": [1010, 600] },
-        { "typ": "text", "vid": [1130, 670], "text": "u" },
-        { "typ": "pil", "fran": [1010, 600], "till": [890, 180] },
-        { "typ": "text", "vid": [905, 430], "text": "v", "ankare": "end" },
-        { "typ": "text", "vid": [780, 330], "text": "u = (−4, 1)", "ankare": "end" },
-        { "typ": "text", "vid": [780, 420], "text": "v = (−2, 7)", "ankare": "end" }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En båt med segel på öppet hav. I himlen står u = (−4, 1), v = (−2, 7), u + v med tomma platser och längden av u + v med ett frågetecken. Ett rutnät visar de två pilarna från start.",
+      "delar": []
     },
     "delar": [
       {
@@ -2124,22 +2050,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "p06-elevens-pyramid",
+      "bild": "filmens-slutbild",
       "tema": "scen",
-      "blak": { "farg": "#2A170B", "skugga": "rgba(255,232,196,.75)", "accent": "#2A170B", "svag": "rgba(42,23,11,.85)" },
-      "utsnitt": [787, 600, 853, 480],
-      "text": "En rätvinklig triangel ristad i sanden vid Nilen. Höjden är 3 m, halva bredden 4 m och sidan från toppen ner till kanten 5 m. Vinkeln v ligger nere vid marken.",
-      "delar": [
-        { "typ": "linje", "p": [[1259, 758], [1259, 968]] },
-        { "typ": "sida", "p": [[1259, 758], [1259, 968]], "text": "3 m", "sida": -1, "avstand": 44 },
-        { "typ": "linje", "p": [[1259, 968], [979, 968]] },
-        { "typ": "sida", "p": [[1259, 968], [979, 968]], "text": "4 m", "sida": -1, "avstand": 56 },
-        { "typ": "linje", "p": [[979, 968], [1259, 758]] },
-        { "typ": "sida", "p": [[979, 968], [1259, 758]], "text": "5 m", "sida": -1, "avstand": 50 },
-        { "typ": "ratvinkel", "vid": [1259, 968], "mot": [[979, 968], [1259, 758]], "storlek": 24 },
-        { "typ": "vinkel", "vid": [979, 968], "mot": [[1259, 968], [1259, 758]], "r": 60 },
-        { "typ": "text", "vid": [939, 960], "text": "v" }
-      ]
+      "text": "En pojke ritar en rätvinklig triangel i sanden vid Nilen. Sidorna är 3 m, 4 m och 5 m, och vinkeln v ligger nere till vänster. Bredvid står sin v = och tan v = utan svar.",
+      "delar": []
     },
     "delar": [
       {
@@ -2313,6 +2227,13 @@
       "Först: Vad är f(20)?",
       "Sen: Vilken är funktionens värdemängd? Skriv den som en olikhet."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett pappersark med en liten ritad ballong. Där står f(t) = 150t, 0 ≤ t ≤ 40, f(20) = ? och värdemängd: ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är f(20)?",
@@ -2379,6 +2300,13 @@
       "Först: Skriv sambandet på formen y = kx + m.",
       "Sen: Använd sambandet och räkna ut längden."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En hand hänger en vikt i en fjäder på en ställning, bredvid en lampa. Vid fjädern står 8 cm och +2 cm. Till vänster står y = kx + m, och fem vikter med en pil till ? cm.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv sambandet på formen y = kx + m.",
@@ -2446,22 +2374,10 @@
     ],
     "figur": {
       "vy": [1920, 1080],
-      "bild": "b02-din-tur",
-      "tema": "papper",
-      "utsnitt": [280, 100, 1000, 920],
-      "text": "Ett rutnät med x-axel och y-axel. Punkten (2, 1) och punkten (5, 7) är utsatta, och ett plan flyger rakt mellan dem. Bredvid står y = ?.",
-      "delar": [
-        { "typ": "pil", "svag": true, "fran": [380, 920], "till": [1055, 920] },
-        { "typ": "text", "vid": [1085, 960], "text": "x" },
-        { "typ": "pil", "svag": true, "fran": [380, 920], "till": [380, 155] },
-        { "typ": "text", "vid": [328, 165], "text": "y" },
-        { "typ": "prick", "vid": [560, 830], "r": 8 },
-        { "typ": "text", "vid": [620, 808], "text": "(2, 1)", "ankare": "start" },
-        { "typ": "prick", "vid": [830, 290], "r": 8 },
-        { "typ": "text", "vid": [890, 308], "text": "(5, 7)", "ankare": "start" },
-        { "typ": "linje", "streckad": true, "accent": true, "p": [[560, 830], [830, 290]] },
-        { "typ": "text", "vid": [1150, 640], "text": "y = ?", "accent": true }
-      ]
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett plan över molnen om natten. Ett rutnät med x-axel och y-axel har punkterna (2, 1) och (5, 7). Bredvid står k = ? och y = ?.",
+      "delar": []
     },
     "delar": [
       {
@@ -2539,6 +2455,13 @@
       "Först: Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund. Börja med förändringsfaktorn.",
       "Sen: Räkna ut pengarna efter tio år. Avrunda till hela pund."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En ung man räknar mynt vid ett bord i ett tryckeri. På väggen står 1000 pund, + 4 % med en pil till ett frågetecken, 10 år och ? pund.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund. Börja med förändringsfaktorn.",
@@ -2618,6 +2541,13 @@
       "Först: Skriv funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck. Se upp, 30 är inte C. Börja med att räkna ut C, alltså trycket gånger strecken.",
       "Sen: Använd funktionen och räkna ut antalet streck."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En hand trycker in kolven i ett glasrör på ett bord, i skenet av en lampa. Vid röret står 30 streck. Till vänster står tryck 2, 1. y = C · x⁻¹ med x = tryck och y = streck, och 2. tryck 3: ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck. Se upp, 30 är inte C. Börja med att räkna ut C, alltså trycket gånger strecken.",
@@ -2688,6 +2618,13 @@
       "Först: Skriv en modell, y = C · aˣ. x är antalet perioder, inte antalet år. y är antalet miljoner invånare.",
       "Sen: Lös det grafiskt. Läs av antalet perioder i grafen och räkna om dem till år. En period är 25 år."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En roddbåt på väg mot en ö med hus och segelbåtar. I himlen står 3 miljoner, · 2 per 25 år, 25 år = 1 period, y = C · aˣ, x = perioder och y = miljoner. Till höger står 24 miljoner, x = ? och år = ?, över ett tomt koordinatsystem.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv en modell, y = C · aˣ. x är antalet perioder, inte antalet år. y är antalet miljoner invånare.",
@@ -2767,6 +2704,13 @@
       "Först: Lös ekvationen 6x + 9 = 45. Vad är x?",
       "Sen: Kontrollera svaret. Sätt in x i vänster led. Vad blir 6x + 9?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett pappersark med en liten bild av en våg. Där står 6x + 9 = 45, x = ? och 6x + 9 = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Lös ekvationen 6x + 9 = 45. Vad är x?",
@@ -2824,6 +2768,13 @@
       "Först: Skriv en formel för hur många streck L som är kvar efter t timmar.",
       "Sen: Använd formeln och räkna ut hur länge ljuset har brunnit."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En munk skriver vid ett bord i skenet av ett ljus med streck. På väggen står 10 streck, 2 streck per timme, t = ?, 4 streck kvar och L = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv en formel för hur många streck L som är kvar efter t timmar.",
@@ -3055,6 +3006,13 @@
       "Först: Hur många ampere går i tråden med 1 ohm?",
       "Sen: Hur många ampere går i tråden med 2 ohm?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett pappersark med en liten bild av en kompass. En ström på 6 A kommer in till en punkt och delar sig i två trådar. Den övre har 1 ohm och strömmen x, den undre 2 ohm och strömmen y. Under står x = ? och y = ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur många ampere går i tråden med 1 ohm?",
@@ -3126,6 +3084,13 @@
       "Först: Vad är den totala förändringsfaktorn för de två dagarna? Det behöver du för att ta reda på det.",
       "Sen: Räkna ut vad aktien kostar."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En hand håller en pappersremsa ur en börstelegraf under en glaskupa. På väggen står 200 dollar, en pil ner med − 10 %, en pil upp med + 10 %, 1. total förändringsfaktor ? och 2. priset ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Vad är den totala förändringsfaktorn för de två dagarna? Det behöver du för att ta reda på det.",
@@ -3211,6 +3176,13 @@
       "Först: Hur stor är sannolikheten att en ärta blir grön och rund?",
       "Sen: Mendel har 160 ärtor. Hur många av dem blir troligen gröna och runda?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Mendel plockar ärtor vid klostrets mur. På muren står gul 3/4, grön 1/4, rund 3/4 och skrynklig 1/4, och under det 1. P(grön och rund) = ? och 2. av 160 ärtor: ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur stor är sannolikheten att en ärta blir grön och rund?",
@@ -3308,6 +3280,13 @@
       "Först: Hur stor är sannolikheten att inget av korten är ett ess? Det behöver du för att ta reda på det.",
       "Sen: Räkna ut sannolikheten för minst ett ess."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Händer lägger ut spelkort på ett köksbord under en lampa. På väggen är fem kort ritade, två av dem märkta A. Under står utan återläggning, 1. P(inget ess)? och 2. P(minst 1 ess)?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur stor är sannolikheten att inget av korten är ett ess? Det behöver du för att ta reda på det.",
@@ -3402,6 +3381,13 @@
       "Först: Hur stor andel av lungcancerpatienterna röker mycket?",
       "Sen: Är korrelationen mellan att röka mycket och att ha lungcancer positiv eller negativ?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En sjuksköterska bland patienter i en sjukhussal. På väggen står en tabell: lungcancer 50 och andra 200, röker mycket 20 och 40. Under står 1. andel ? och 2. positiv eller negativ ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur stor andel av lungcancerpatienterna röker mycket?",
@@ -3478,6 +3464,13 @@
       "Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal.",
       "Sen: Hur stor vinkel får sjukdom i ett cirkeldiagram?"
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Florence Nightingale läser ett papper vid ett skrivbord, bredvid en lampa. På väggen står 400, 300: sjukdom, en tom cirkel, 1. andel ? och 2. vinkel ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur stor andel dog av sjukdom? Svara med ett decimaltal.",
@@ -3567,6 +3560,13 @@
       "Först: Hur stor är amorteringen varje vecka? Det behöver du för att ta reda på det.",
       "Sen: Räkna ut vad hon betalar första veckan."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En kvinna bär pallar på huvudet längs en stig mellan risfält mot byn. I bilden står lån: 500 taka, 50 veckor, 0,4 % per vecka, 1. amortering ? och 2. första veckan ?.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Hur stor är amorteringen varje vecka? Det behöver du för att ta reda på det.",
@@ -3662,6 +3662,13 @@
       "Först: Skriv a⁵ · a³ som en enda potens.",
       "Sen: Skriv a³/a⁵ som en enda potens."
     ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett pappersark med en liten bild av en gammal bok. Där står a⁵ · a³ och a³ delat med a⁵, utan svar.",
+      "delar": []
+    },
     "delar": [
       {
         "fraga": "Först: Skriv a⁵ · a³ som en enda potens.",
@@ -3864,53 +3871,18 @@
       "Sen: Hur många procent ökade antalet varje år?"
     ],
     "figur": {
-      "vy": [
-        1920,
-        1080
-      ],
+      "vy": [1920, 1080],
       "bild": "p06-din-tur",
       "tema": "scen",
-      "text": "Två kretsar på ett bord. Den vänstra har 200 komponenter och den högra 3 200. En pil från den vänstra till den högra visar att det har gått 4 år.",
+      "text": "Två kretsar på ett bord. Den vänstra har 200 komponenter och den högra 3 200. En pil från den vänstra till den högra visar att det har gått 4 år. Uppe till vänster står x = ? och ? %.",
       "delar": [
-        {
-          "typ": "text",
-          "vid": [
-            1050,
-            480
-          ],
-          "text": "200"
-        },
-        {
-          "typ": "text",
-          "vid": [
-            1540,
-            480
-          ],
-          "text": "3 200"
-        },
-        {
-          "typ": "bana",
-          "d": "M1140 428 Q1295 360 1450 428"
-        },
-        {
-          "typ": "pil",
-          "fran": [
-            1420,
-            412
-          ],
-          "till": [
-            1450,
-            428
-          ]
-        },
-        {
-          "typ": "text",
-          "vid": [
-            1295,
-            310
-          ],
-          "text": "4 år"
-        }
+        {"typ": "text", "vid": [1050, 480], "text": "200"},
+        {"typ": "text", "vid": [1540, 480], "text": "3 200"},
+        {"typ": "bana", "d": "M1140 428 Q1295 360 1450 428"},
+        {"typ": "pil", "fran": [1420, 412], "till": [1450, 428]},
+        {"typ": "text", "vid": [1295, 310], "text": "4 år"},
+        {"typ": "text", "vid": [200, 240], "text": "x = ?", "ankare": "start"},
+        {"typ": "text", "vid": [200, 380], "text": "? %", "ankare": "start"}
       ]
     },
     "delar": [
@@ -4267,73 +4239,17 @@
       "Symmetrilinjen går mitt emellan nollställena: (0 + 6) / 2 = 3. Ekvationen är x = 3."
     ],
     "figur": {
-      "vy": [
-        1920,
-        1080
-      ],
+      "vy": [1920, 1080],
       "bild": "p06-antennen",
       "tema": "scen",
-      "blak": {
-        "skugga": "rgba(6,14,26,.92)"
-      },
+      "blak": {"skugga": "rgba(6,14,26,.92)"},
       "text": "En liten parabolantenn på ett hustak. Formen är y = 0,1x² − 0,6x, med x och y i decimeter. Ett nollställe är x = 0. Det andra nollstället och symmetrilinjen är okända.",
       "delar": [
-        {
-          "typ": "pil",
-          "fran": [
-            1050,
-            300
-          ],
-          "till": [
-            1300,
-            420
-          ]
-        },
-        {
-          "typ": "text",
-          "vid": [
-            150,
-            230
-          ],
-          "text": "y = 0,1x² − 0,6x",
-          "ankare": "start"
-        },
-        {
-          "typ": "text",
-          "vid": [
-            150,
-            330
-          ],
-          "text": "x och y i dm",
-          "ankare": "start"
-        },
-        {
-          "typ": "text",
-          "vid": [
-            150,
-            470
-          ],
-          "text": "x = 0",
-          "ankare": "start"
-        },
-        {
-          "typ": "text",
-          "vid": [
-            420,
-            470
-          ],
-          "text": "x = ?",
-          "ankare": "start"
-        },
-        {
-          "typ": "text",
-          "vid": [
-            150,
-            600
-          ],
-          "text": "symmetrilinje: x = ?",
-          "ankare": "start"
-        }
+        {"typ": "text", "vid": [150, 230], "text": "y = 0,1x² − 0,6x", "ankare": "start"},
+        {"typ": "text", "vid": [150, 330], "text": "x och y i dm", "ankare": "start"},
+        {"typ": "text", "vid": [150, 470], "text": "x = 0", "ankare": "start"},
+        {"typ": "text", "vid": [420, 470], "text": "x = ?", "ankare": "start"},
+        {"typ": "text", "vid": [150, 600], "text": "symmetrilinje: x = ?", "ankare": "start"}
       ]
     }
   }
