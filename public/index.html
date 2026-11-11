@@ -432,6 +432,22 @@
   .spela-ikon svg { width: 20px; height: 20px; margin-left: 3px; fill: var(--accent); }
   @media (hover: hover) { .post.spel > a:hover .spela-ikon { transform: scale(1.1); background: rgba(242, 197, 114, .16); } }
   .post.kommer.spel .ram .nr { font-size: 46px; }
+  /* Listorna efter spelkorten (2026-11-11): dagens utmaning i Tron och Skeppet och Klassen mot klassen, som kort i samma
+     rad. Rutan står där bilden står på ett spelkort. */
+  .post.spellista .ram { box-sizing: border-box; padding: 10px 14px; border: 1px solid var(--linje2); background: rgba(23, 20, 20, .74); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: var(--ben); font: 300 14px/1.3 var(--sans); text-align: left; text-shadow: none; }
+  .spellista ol { list-style: none; margin: 0; padding: 0; }
+  .spellista li { display: grid; grid-template-columns: 1.6em minmax(0, 1fr) auto; gap: 8px; padding: 3px 0; border-bottom: 1px solid var(--linje2); }
+  .spellista li span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .spellista li span:last-child, .spellista td { font-variant-numeric: tabular-nums; }
+  .spellista table { width: 100%; border-collapse: collapse; }
+  .spellista th { padding: 0 0 5px; font: 400 11px/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ben2); text-align: right; }
+  .spellista th:first-child, .spellista td:first-child { text-align: left; }
+  .spellista td { padding: 4px 0; border-top: 1px solid var(--linje2); text-align: right; }
+  .spellista .egen, .spellista .egen td:first-child { color: var(--accent); }
+  .spellista td.bast { color: var(--accent); font-weight: 500; }
+  .spellista td.ute { color: var(--dis); }
+  .spellista .tom { margin: 0; color: var(--dis); font-style: italic; }
+  .spellista .not { margin: 6px 0 0; font-size: 11px; color: var(--dis); }
 
   /* ── Sök ──────────────────────────────────────────────── */
   /* Sökningen enklare (Rickard 2026-10-03): helt täckande bakgrund, så att filmvalet inte syns
@@ -3114,6 +3130,72 @@
     { id: "skepp", namn: "Skeppet", sida: "/spel/skepp", bild: "omslag/spel-skepp.webp", overst: "Online · upp till 8" },
     { id: "pacman", namn: "Pac-Man", sida: "/spel/pacman", bild: "omslag/spel-pacman.webp", overst: "Online · upp till 8" },
   ];
+  // Dagens utmaning och Klassen mot klassen (2026-11-11): tre kort efter spelen, som skriptet fyller ur spelserverns
+  // /spel/utmaning och /spel/klasser (fyllSpellistor). Dagens lista är klassens när eleven kommit via klasslänken
+  // (spelKlass med nyckeln), annars den allmänna. Klassen mot klassen är veckans snitt per spelare i varje spel, så att en
+  // stor klass inte vinner bara för att den är stor, och en klass med färre spelare än min rankas inte (servern räknar).
+  // Det som kommer från servern skrivs med textContent och blir aldrig html.
+  const SPELLISTOR = [
+    { id: "tron", kurs: "Dagens utmaning", titel: "Tron" },
+    { id: "skepp", kurs: "Dagens utmaning", titel: "Skeppet" },
+    { id: "klasser", kurs: "Klassen mot klassen", titel: "Veckans snitt" },
+  ];
+  const spellistorHtml = (fran, klass) => SPELLISTOR.map((l, i) => `
+    <div class="post spellista" data-stil="--i:${fran + i}" id="spellista-${l.id}">
+      <span class="lyft"></span>
+      <span class="ram"><span class="lista-inne"><span class="tom">Hämtar …</span></span></span>
+      <span class="lina"></span>
+      <span class="namn"><span class="rad1 stapel"><span class="kurs">${esc(l.kurs)}</span><span class="titel">${esc(l.titel)}</span></span>
+        <span class="moment">${l.id === "klasser" ? "Snitt per spelare i veckan" : `Samma bana i dag${klass ? ` · ${esc(klass)}` : ""}`}</span></span>
+    </div>`).join("");
+  let spellistor = null, spellistorTid = 0;
+  async function ritaSpellistor() {
+    if (Date.now() - spellistorTid < 30000 && spellistor) return fyllSpellistor();
+    spellistorTid = Date.now();
+    let kl = null;
+    try { const x = JSON.parse(localStorage.getItem("spelKlass")); if (x && typeof x.klass === "string" && typeof x.k === "string") kl = x; } catch (e) {}
+    const hamta = (spel, vag, q = {}) => fetch(`/spel/${vag}?${new URLSearchParams({ spel, ...q })}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    const dagens = async (spel) => (kl && await hamta(spel, "utmaning", { lista: "1", klass: kl.klass, k: kl.k })) || hamta(spel, "utmaning", { lista: "1" });
+    const [tron, skepp, ...klasser] = await Promise.all([dagens("tron"), dagens("skepp"), hamta("tron", "klasser"), hamta("skepp", "klasser"), hamta("pac", "klasser")]);
+    spellistor = { tron, skepp, klasser, egen: kl ? kl.klass : null };
+    fyllSpellistor();
+  }
+  function fyllSpellistor() {
+    if (!spellistor) return;
+    const ny = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
+    const fyll = (id, ...delar) => { const r = document.querySelector(`#spellista-${id} .lista-inne`); if (r) r.replaceChildren(...delar); };
+    for (const spel of ["tron", "skepp"]) {
+      const l = spellistor[spel];
+      if (!l) { fyll(spel, ny("p", "Listan går inte att hämta just nu.", "tom")); continue; }
+      if (!l.rader.length) { fyll(spel, ny("p", "Ingen har spelat dagens utmaning än. Öppna spelet och välj Dagens utmaning.", "tom")); continue; }
+      const ol = ny("ol");
+      l.rader.slice(0, 6).forEach((r, i) => { const li = ny("li"); li.append(ny("span", `${i + 1}.`), ny("span", r.namn), ny("span", String(r.poang))); ol.append(li); });
+      fyll(spel, ol);
+    }
+    // Klassen mot klassen: en rad per klass och en kolumn per spel. Bästa snittet i varje spel lyser.
+    const SPEL3 = [["tron", "Tron"], ["skepp", "Skeppet"], ["pac", "Pac-Man"]], k = spellistor.klasser;
+    if (!k.some(Boolean)) { fyll("klasser", ny("p", "Går inte att hämta just nu.", "tom")); return; }
+    const klassnamn = [...new Set(k.flatMap((x) => (x ? x.klasser.map((y) => y.klass) : [])))];
+    const min = (k.find(Boolean) || {}).min || 3;
+    if (!k.some((x) => x && x.klasser.some((y) => y.antal > 0))) { fyll("klasser", ny("p", "Ingen klass har spelat än den här veckan.", "tom"), ny("p", `En klass räknas när minst ${min} har spelat.`, "not")); return; }
+    const tabell = ny("table"), huvud = ny("tr");
+    huvud.append(ny("th", "Klass"), ...SPEL3.map(([, namn]) => ny("th", namn)));
+    tabell.append(huvud);
+    const bast = k.map((x) => (x ? Math.max(-1, ...x.klasser.filter((y) => y.antal >= x.min).map((y) => y.snitt)) : -1));
+    for (const namn of klassnamn) {
+      const tr = ny("tr", null, namn === spellistor.egen ? "egen" : "");
+      tr.append(ny("td", namn));
+      k.forEach((x, i) => {
+        const y = x && x.klasser.find((z) => z.klass === namn);
+        const rankad = y && y.antal >= x.min;
+        const td = ny("td", !y || !y.antal ? "–" : String(y.snitt), rankad && y.snitt === bast[i] && bast[i] > 0 ? "bast" : rankad ? "" : "ute");
+        td.title = y && y.antal ? `${y.antal} spelare${rankad ? "" : `, minst ${x.min} för att räknas`}` : "Ingen har spelat";
+        tr.append(td);
+      });
+      tabell.append(tr);
+    }
+    fyll("klasser", tabell, ny("p", `Grått: färre än ${min} spelare, räknas inte än.`, "not"));
+  }
   function spelHtml() {
     const klass = spelKlass();
     return SPELEN.map((s, i) => (s.sida ? `
@@ -3129,7 +3211,7 @@
     <div class="post kommer del spel" data-stil="--i:${i}">
       <span class="lyft"></span><span class="ram" aria-hidden="true"><span class="nr">${esc(s.namn)}</span></span><span class="lina"></span>
       <span class="namn"><span class="rad1"><span class="kurs">${esc(s.namn)}</span></span><span class="moment">kommer snart</span></span>
-    </div>`)).join("");
+    </div>`)).join("") + spellistorHtml(SPELEN.length, klass);
   }
   function ritaHylla() {
     const delar = !!(SERIER[hylla] && SERIER[hylla].platser);
@@ -3144,6 +3226,7 @@
     </div>` : kortHtml(p, i, hylla))).join("")
         + (lanade.length ? broHtml(hylla, lanade, egna.length) + lanade.map((v, k) => kortHtml(v, egna.length + 1 + k, hylla)).join("") : "")
       : filmer.map((v, i) => kortHtml(v, i, hylla)).join("") + flerKommer(filmer.length));
+    if (hylla === SPEL) fyllSpellistor();
     if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${flikAv(hylla)}"]`); flik.id = `flik-${flikAv(hylla)}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
   }
   ritaHylla();
@@ -3158,6 +3241,7 @@
     // Växlaren Ma 1 · Ma 2 under Formelbladet: bara där, och bara när båda bladen har filmer.
     $("vy-valj").classList.toggle("formelval-syns", flik === "formelbladet" && FORMEL.length > 1);
     $("vy-valj").classList.toggle("provval-syns", flik === PROV);
+    if (flik === SPEL) ritaSpellistor();
     $("valj-rubrik").textContent = flik === SPEL ? "Välj ett spel" : "Välj en film";
     if (aktivVy === "valj") document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`;
     $("formelval").querySelectorAll("[role=tab]").forEach((b) => { const ar = b.dataset.hylla === namn; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar ? 0 : -1; });
