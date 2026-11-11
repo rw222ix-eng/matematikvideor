@@ -861,7 +861,12 @@
      ur cirkeln: ringar på vattnet och droppar som stänker upp och faller tillbaka (plask() i skriptet). */
   .del-svarstext.ratt { --dom: #6FD08C; }
   .del-svarstext.fel { --dom: #F2766B; }
-  .del-svarstext.ratt, .del-svarstext.fel { display: grid; grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; align-items: center; margin-top: 18px; }
+  /* Ett svar sidan inte kan läsa, eller ett tomt fält, får samma slags besked i guld, med ett frågetecken
+     (Rickard 2026-11-11: "det måste alltid hända något"). Förut var det en liten grå rad som syntes dåligt. */
+  .del-svarstext.oklart { --dom: #F2C572; }
+  .del-svarstext.ratt, .del-svarstext.fel, .del-svarstext.oklart { display: grid; grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; align-items: center; margin-top: 18px; }
+  .del-svarstext.oklart .dom-ord { font-size: 21px; }
+  .dom-ikon .fragetecken { font: 600 21px/1 var(--sans); }
   .dom-ikon { position: relative; z-index: 1; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--dom); color: #171414; box-shadow: 0 0 0 5px color-mix(in srgb, var(--dom) 18%, transparent), 0 0 24px color-mix(in srgb, var(--dom) 45%, transparent); animation: dom-pop .55s var(--fjader) both; }
   .dom-ikon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
   .dom-ord { font: 500 26px/1.15 var(--sans); letter-spacing: .02em; color: var(--dom); animation: dom-in .45s .08s var(--lugn) both; }
@@ -870,6 +875,7 @@
   @keyframes dom-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
   .del.lost .del-svar input { border-color: #6FD08C; box-shadow: 0 0 0 3px rgba(111, 208, 140, .18); }
   .del.fel .del-svar input { border-color: #F2766B; box-shadow: 0 0 0 3px rgba(242, 118, 107, .18); }
+  .del.oklart .del-svar input { border-color: #F2C572; box-shadow: 0 0 0 3px rgba(242, 197, 114, .22); }
   /* Plasket: lagret sitter mitt i cirkeln och syns utanför rutan. */
   .plask { position: absolute; left: 19px; top: 19px; width: 0; height: 0; pointer-events: none; z-index: 2; }
   .plask-ring { position: absolute; left: 0; top: 0; width: 44px; height: 18px; border: 2px solid var(--dom); border-radius: 50%; opacity: 0; }
@@ -1633,7 +1639,9 @@
       requestAnimationFrame(steg);
     });
   }
-  ["wheel", "touchstart", "keydown"].forEach((h) => addEventListener(h, () => { glidning++; }, { passive: true }));
+  // Skrivande i ett fält släpper den inte: Din tur-fältet får fokus redan när sidan börjar glida dit. Ett
+  // musklick släpper den, så att knappen eleven siktar på inte glider undan under pekaren (2026-11-11).
+  ["wheel", "touchstart", "mousedown", "keydown"].forEach((h) => addEventListener(h, (e) => { if (h === "keydown" && e.target.matches && e.target.matches("input, textarea")) return; glidning++; }, { passive: true }));
   // Glid så att elementet syns: "start" lägger det överst (under den klistrade toppraden), "nearest"
   // rullar bara så långt som behövs. Marginalerna är elementets scroll-margin, annars 110 och 40 px.
   function glidFram(el, block = "nearest") {
@@ -4571,12 +4579,45 @@
       const m = /^(\d+(?:[.,]\d+)?|[.,]\d+)/.exec(s.slice(i));
       if (m) { i += m[0].length; return { typ: "tal", v: parseFloat(m[0].replace(",", ".")) }; }
       if (/[a-zåäö]/.test(c)) { i++; return { typ: "var", n: c }; }
-      throw new Error("tecken");
+      // Felet säger vilket tecken det gällde, så att beskedet kan säga vad som är fel (orsak()).
+      throw new Error(c === undefined ? "slut" : `tecken:${c}`);
     };
     if (!s) throw new Error("tomt");
     const ast = uttryck();
-    if (i !== s.length) throw new Error("rest");
+    if (i !== s.length) throw new Error(`tecken:${s[i]}`);
     return ast;
+  }
+  // Ord i stället för tecken (Rickard 2026-11-11 skrev på Delos "x upphöjt i tre är lika med tre"): de vanliga
+  // räkneorden och talen upp till tolv blir tecken och siffror innan svaret tolkas. Ord som inte finns här
+  // ger beskedet att svaret inte går att läsa, med ordet utskrivet, och räknas inte som bokstäver (u·p·p·…).
+  const SVARSTAL = { noll: 0, ett: 1, två: 2, tre: 3, fyra: 4, fem: 5, sex: 6, sju: 7, åtta: 8, nio: 9, tio: 10, elva: 11, tolv: 12 };
+  const ORD_FORE = "(?<![a-zåäö])", ORD_EFTER = "(?![a-zåäö])";
+  const ORDTECKEN = [
+    [`är\\s+(?=mindre|större)`, ""],
+    [`mindre\\s+än\\s+eller\\s+lika\\s+med`, " ≤ "], [`större\\s+än\\s+eller\\s+lika\\s+med`, " ≥ "],
+    [`mindre\\s+än`, " < "], [`större\\s+än`, " > "],
+    [`(?:är\\s+)?lika\\s+med`, " = "], [`är`, " = "],
+    [`upphöj[dt]a?\\s+(?:till|i|med)`, "^"], [`upphöj[dt]a?`, "^"], [`i\\s+kvadrat`, "^2"], [`i\\s+kubik`, "^3"],
+    [`gånger`, " * "], [`(?:delat|dividerat)\\s+med`, " / "], [`plus`, " + "], [`minus`, " - "],
+    [`(?:kvadrat)?roten\\s+ur`, " √"], [`kubikroten\\s+ur`, " ∛"],
+    [Object.keys(SVARSTAL).join("|"), (m) => String(SVARSTAL[m])],
+  ].map(([m, t]) => [new RegExp(`${ORD_FORE}(?:${m})${ORD_EFTER}`, "g"), t]);
+  const ordTillTecken = (s) => ORDTECKEN.reduce((a, [m, t]) => a.replace(m, t), s.toLowerCase());
+  // Första ordet (två bokstäver eller fler) som inte är uppgiftens bokstäver eller sqrt, cbrt och pi.
+  const okantOrd = (s, vars) => (stada(s).match(/[a-zåäö]{2,}/g) || []).find((w) => !["sqrt", "cbrt", "pi"].includes(w) && ![...w].every((c) => vars.has(c)));
+  // Varför svaret inte gick att läsa, ur felet som tolkningen kastade.
+  function orsak(e, svar = "", del = {}) {
+    const m = String((e && e.message) || "");
+    if (m === "inget ord") return "Svaret ska vara ett ord. ";
+    if (m.startsWith("ord:")) return `Ordet «${m.slice(4)}» går inte att räkna med. ${del.typ === "ekvation" || del.typ === "uttryck" ? "Skriv med tecken, som ^ för upphöjt till och = för lika med. " : ""}`;
+    if (m === "likhetstecken0") return "Det saknas ett likhetstecken. En ekvation har = mellan två sidor. ";
+    if (m === "likhetstecken2") return "Det står mer än ett likhetstecken. Skriv bara ett. ";
+    if (m === "tomt") return /[=<>≤≥]/.test(svar) ? "Det står inget på ena sidan. " : "";
+    if (m === "slut") return "Svaret slutar mitt i, efter ett räknetecken. ";
+    if (m === "parentes") return "En parentes saknar sin slutparentes. ";
+    if (m === "tecken:)") return "Det står en slutparentes för mycket. ";
+    if (m.startsWith("tecken:")) { const c = m.slice(7); return /[a-zåäö]/.test(c) ? "" : `Tecknet ${c} går inte att räkna med. `; }
+    return "";
   }
   function rakna(n, env) {
     switch (n.typ) {
@@ -4624,7 +4665,7 @@
   // Gradtecknet räknas inte: "60°" är 60 (formelbladet 3, vinkeln i pizzabiten). Inte heller
   // procenttecknet: "47,7 %" är 47,7 när posten har "enhet": "%" (formelbladet Ma 2, del 6).
   const talUr = (svar) => rakna(tolka(stada(svar).replace(/[°%]/g, "").replace(/^.*[=≈]/, "").replace(/[a-zåäö]+\.?$/, "")), {});
-  const ekvUr = (svar) => { const d = stada(svar).split("="); if (d.length !== 2) throw new Error("likhetstecken"); return { typ: "-", a: tolka(d[0]), b: tolka(d[1]) }; };
+  const ekvUr = (svar) => { const d = stada(svar).split("="); if (d.length !== 2) throw new Error(d.length < 2 ? "likhetstecken0" : "likhetstecken2"); return { typ: "-", a: tolka(d[0]), b: tolka(d[1]) }; };
   // "a_n = n^2 + 4" och "f(n) = …": det som står före = är ett namn, inte en del av svaret.
   const uttrUr = (svar) => { let s = stada(svar); const d = s.split("="); if (d.length === 2) s = /^[a-zåäö_()0-9]*$/.test(d[0]) ? d[1] : d[0]; return tolka(s); };
   // Olikheter och intervall blir samma sak, en mängd med ändpunkter: t ≥ 40 är [40, ∞[.
@@ -4671,11 +4712,27 @@
   const INTE = "Inte riktigt. Pröva igen, eller ta en ledtråd.";
   const fel = (text) => ({ ok: false, forstod: true, text });
   function ratta(del, svar) {
+    let varfor = null;
+    const original = svar;
     try {
+      if (del.typ !== "ord") {
+        // Punkt sist ("x^3 = 3.") hör till meningen, inte till svaret.
+        svar = ordTillTecken(svar).replace(/[.!]+\s*$/, "");
+        // Ett tecken som inget svar har (?, !, #, &) nämns i beskedet.
+        const udda = /[^0-9a-zåäö+\-*/^().,;=√∛π≈≤≥<>[\]°%∞_₀-₉]/.exec(stada(svar));
+        if (udda) throw new Error(`tecken:${udda[0]}`);
+        // I en ekvation eller ett uttryck skulle ett ord annars läsas som bokstäver gånger varandra.
+        if (del.typ === "ekvation" || del.typ === "uttryck") {
+          const vars = new Set([...variabler(del.typ === "ekvation" ? ekvUr(del.svar) : tolka(stada(del.svar))), ...(del.variabler || [])]);
+          const w = okantOrd(svar, vars);
+          if (w) throw new Error(`ord:${w}`);
+        }
+      }
       // Ett ord (formelbladet: prefixet, sorten av funktion). Stora och små bokstäver och accenter
       // spelar ingen roll, utom för en ensam bokstav: M (mega) och m (milli) är olika prefix.
       if (del.typ === "ord") {
         const du = svar.trim().replace(/[.!]+$/, "").replace(/\s+/g, " ");
+        if (!/[\p{L}]/u.test(du)) throw new Error("inget ord");
         const sammaOrd = (s) => [].concat(s).some((x) => (x.length === 1 ? du === x : fold(du.toLowerCase()) === fold(x.toLowerCase())));
         if (sammaOrd(del.svar)) return { ok: true, text: "Rätt!" };
         for (const f of del.fel || []) if (sammaOrd(f.svar)) return fel(f.text);
@@ -4759,9 +4816,15 @@
         if (nara(du.lo, mal.lo) && nara(du.hi, mal.hi)) return fel(del.typ === "intervall" ? "Talen stämmer. Kolla åt vilket håll parenteserna ska vara vända." : "Talet stämmer. Kolla olikhetstecknet.");
         return fel("Inte riktigt. Kolla talen i uppgiften, eller ta en ledtråd.");
       }
-    } catch (e) { /* svaret gick inte att tolka */ }
+    } catch (e) {
+      varfor = orsak(e, original, del);
+      // Ett ord där det skulle stå ett tal ("hej", "ungefär 40"): ordet nämns. En enhet sist läses redan bort.
+      const w = !varfor && del.typ !== "ord" && (stada(svar).match(/[a-zåäö]{2,}/g) || []).find((x) => !["sqrt", "cbrt", "pi"].includes(x));
+      if (w) varfor = orsak(new Error(`ord:${w}`), original, del);
+    }
+    // Hit kommer också en typ som rättningen inte känner till, och då blir det samma besked.
     const ex = (del.exempel || "").replace(/^t\.ex\.\s*/, "");
-    return { ok: false, forstod: false, text: `Svaret gick inte att läsa. ${ex ? `Skriv till exempel ${ex}` : "Skriv bara svaret"}.` };
+    return { ok: false, forstod: false, text: `Svaret gick inte att läsa. ${varfor || ""}${ex ? `Skriv till exempel ${ex}` : "Skriv bara svaret"}.` };
   }
   // Tallinjen i lösningen till ett intervall: ring där talet inte räknas med, fylld prick där det gör det.
   function tallinje(m) {
@@ -4946,8 +5009,11 @@
   function tillDinTur() {
     if (iHelskarm()) vaxlaHelskarm();
     requestAnimationFrame(() => glidFram(dtEl, "start"));
+    // Fältet får fokus direkt, inte efter glidningen: det eleven skrev under den första halvsekunden hamnade
+    // förut på sidan (siffrorna spolade filmen, Enter gjorde ingenting) och fältet stod tomt (2026-11-11).
     const forsta = [...dtEl.querySelectorAll(".del")].find((li) => !li.classList.contains("lost"));
-    setTimeout(() => { const inp = (forsta || dtEl).querySelector("input"); if (inp) inp.focus({ preventScroll: true }); }, 450);
+    const inp = (forsta || dtEl).querySelector("input");
+    if (inp) inp.focus({ preventScroll: true });
   }
   function nastaSteg() {
     const steg = dt.d.losning || [], ol = $("losning-steg");
@@ -4988,40 +5054,69 @@
     }
     setTimeout(() => lager.remove(), 1500);
   }
-  dtEl.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!dt) return;
-    const form = e.target, i = Number(form.dataset.del), del = dt.d.delar[i];
-    const inp = form.querySelector("input"), text = $(`del-text-${i}`), li = form.closest(".del");
-    if (!inp.value.trim()) { text.className = "del-svarstext"; text.textContent = "Skriv ditt svar först."; inp.focus(); return; }
-    const r = ratta(del, inp.value);
-    Newton.hande("dintur");
-    // Ett svar sidan inte kunde läsa är varken rätt eller fel: då bara texten, som förut.
-    const dom = r.ok ? "ratt" : r.forstod ? "fel" : "";
-    text.className = "del-svarstext" + (dom ? ` ${dom}` : "");
-    if (dom) {
-      // "Rätt!" och "Inte riktigt." står redan i den stora raden, så de tas bort ur förklaringen.
-      const forklaring = r.text.replace(/^Rätt!\s*/, "").replace(/^Inte riktigt\.\s*/, "");
-      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : KRYSS}</span><span class="dom-ord">${r.ok ? "Rätt!" : "Fel"}</span>${forklaring ? `<span class="dom-text">${matte(forklaring, true)}</span>` : ""}`);
-      plask(text);
-    } else text.textContent = r.text;
+  // Varje försök att skicka ger ett synligt besked under fältet (Rickard 2026-11-11: "det måste alltid hända
+  // något och det måste alltid stå vad som är fel eller vad som är rätt"): Rätt!, Fel med förklaring, eller
+  // "Svaret gick inte att läsa" med orsaken och ett exempel. Beskedet ritas om vid varje tryck, också när det
+  // är samma text som förut, så att det märks att sidan svarat. Kastar något oväntat blir det ändå ett besked.
+  // Ett tomt fält ger "Skriv ett svar först". Hamnar beskedet utanför fönstret glider sidan fram till det.
+  const FRAGETECKEN = '<span class="fragetecken" aria-hidden="true">?</span>';
+  const TRASIGT = { ok: false, forstod: false, text: "Svaret gick inte att läsa. Något gick fel när svaret skulle rättas. Pröva igen, eller skriv svaret på ett annat sätt." };
+  let senastSkickat = { i: -1, varde: null, tid: -1e9 };
+  function visaBesked(text, li, inp, r) {
+    const dom = r.ok ? "ratt" : r.forstod ? "fel" : "oklart";
+    text.className = `del-svarstext ${dom}`;
     li.classList.toggle("lost", r.ok);
     li.classList.toggle("fel", dom === "fel");
-    if (r.ok) dt.lost.add(i); else { dt.lost.delete(i); if (r.forstod) dt.fel++; }
-    const allt = dt.lost.size === dt.d.delar.length;
-    if (allt) {
-      const f = framstegFor(dt.v.id);
-      if (!f.lost) { f.lost = true; sparaFramsteg(); }
-      $("dintur-lost").hidden = false;
-    }
-    if ((dt.fel >= 2 || allt) && $("dintur-losning").hidden) $("dintur-losning-knapp").hidden = false;
-    // Newton: två svar sidan inte kan läsa, två fel, eller hela uppgiften löst.
-    // Tipsen lyser på det de handlar om: svarsraden med tecknen, ledtrådsknappen, lösningen.
-    if (!r.ok && !r.forstod) { dt.oforstatt = (dt.oforstatt || 0) + 1; if (dt.oforstatt >= 2) Newton.visa("format", ...TIPS.format, { direkt: true, markera: () => [li] }); }
-    if (!r.ok && r.forstod && dt.fel >= 2) Newton.visa("ledtrad", ...TIPS.ledtrad, { direkt: true, markera: () => [$("dintur-ledtrad-knapp")] });
-    if (allt) Newton.visa(`lost-${dt.v.id}`, ...TIPS.lost, { direkt: true, rorelse: "kasta", markera: () => [$("dintur-losning-knapp")] });
-    // Rätt på en del: nästa olösta del får fokus.
-    if (r.ok && !allt) { const nasta = [...dtEl.querySelectorAll(".del")].find((x) => !x.classList.contains("lost")); if (nasta) nasta.querySelector("input").focus(); }
+    li.classList.toggle("oklart", dom === "oklart");
+    // Rubriken står redan i den stora raden, så den tas bort ur förklaringen.
+    const ord = r.ok ? "Rätt!" : r.forstod ? "Fel" : r.tomt ? "Skriv ett svar först" : "Svaret gick inte att läsa";
+    const forklaring = r.text.replace(/^(Rätt!|Inte riktigt\.|Svaret gick inte att läsa\.|Skriv ett svar först\.)\s*/, "");
+    try {
+      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : r.forstod ? KRYSS : FRAGETECKEN}</span><span class="dom-ord">${ord}</span>${forklaring ? `<span class="dom-text">${matte(forklaring, true)}</span>` : ""}`);
+    } catch (x) { text.textContent = r.text; }
+    try {
+      if (dom === "oklart") inp.animate([{ transform: "none" }, { transform: "translateX(-7px)" }, { transform: "translateX(6px)" }, { transform: "translateX(-3px)" }, { transform: "none" }], { duration: 320, easing: "ease-out" });
+      else plask(text);
+    } catch (x) { /* bara rörelsen */ }
+  }
+  dtEl.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = e.target.closest && e.target.closest("form.del-svar");
+    if (!dt || !form) return;
+    const i = Number(form.dataset.del), del = dt.d.delar[i];
+    const inp = form.querySelector("input"), text = $(`del-text-${i}`), li = form.closest(".del");
+    const varde = inp.value;
+    let r;
+    if (!varde.trim()) r = { ok: false, forstod: false, tomt: true, text: "Skriv ett svar först." };
+    else { try { r = ratta(del, varde); } catch (x) { console.error(x); } }
+    if (!r || typeof r.text !== "string" || !r.text) r = TRASIGT;
+    // Två tryck på Enter med samma svar inom en halv sekund: beskedet ritas om, men svaret räknas en gång.
+    const igen = senastSkickat.i === i && senastSkickat.varde === varde && e.timeStamp - senastSkickat.tid < 500;
+    senastSkickat = { i, varde, tid: e.timeStamp };
+    visaBesked(text, li, inp, r);
+    let allt = false;
+    try {
+      if (!igen && !r.tomt) {
+        if (r.ok) dt.lost.add(i); else { dt.lost.delete(i); if (r.forstod) dt.fel++; }
+        allt = dt.lost.size === dt.d.delar.length;
+        if (allt) {
+          const f = framstegFor(dt.v.id);
+          if (!f.lost) { f.lost = true; sparaFramsteg(); }
+          $("dintur-lost").hidden = false;
+        }
+        if ((dt.fel >= 2 || allt) && $("dintur-losning").hidden) $("dintur-losning-knapp").hidden = false;
+        Newton.hande("dintur");
+        // Newton: två svar sidan inte kan läsa, två fel, eller hela uppgiften löst.
+        // Tipsen lyser på det de handlar om: svarsraden med tecknen, ledtrådsknappen, lösningen.
+        if (!r.ok && !r.forstod) { dt.oforstatt = (dt.oforstatt || 0) + 1; if (dt.oforstatt >= 2) Newton.visa("format", ...TIPS.format, { direkt: true, markera: () => [li] }); }
+        if (!r.ok && r.forstod && dt.fel >= 2) Newton.visa("ledtrad", ...TIPS.ledtrad, { direkt: true, markera: () => [$("dintur-ledtrad-knapp")] });
+        if (allt) Newton.visa(`lost-${dt.v.id}`, ...TIPS.lost, { direkt: true, rorelse: "kasta", markera: () => [$("dintur-losning-knapp")] });
+      }
+    } catch (x) { console.error(x); }
+    // Rätt på en del: nästa olösta del får fokus. Annars stannar fokus i fältet, så att eleven kan rätta svaret.
+    const nasta = r.ok && !allt && [...dtEl.querySelectorAll(".del")].find((x) => !x.classList.contains("lost"));
+    if (nasta) nasta.querySelector("input").focus({ preventScroll: true }); else if (!r.ok) inp.focus({ preventScroll: true });
+    visaIFonstret(text);
   });
   // Det som fälls ut under knapparna (ledtråden, lösningen, nästa steg) hamnade ofta under
   // fönstrets nederkant, och då såg det ut som att knappen inte gjorde något (Rickard 2026-09-26).
