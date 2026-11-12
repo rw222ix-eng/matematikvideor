@@ -4427,5 +4427,182 @@
       "Den övre halvan är 550, 560 och 600, och mitten är 560. Det är övre kvartilen.",
       "Kvartilavståndet är 560 − 530 = 30 kg."
     ]
+  },
+  "ma2a-16-standardavvikelse": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En ny sort korn sås på 5 fält, och det är alla fält med den nya sorten. Skördarna blir 144, 148, 150, 152 och 156 stone. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vad är medelvärdet?",
+      "Sen: Vad är standardavvikelsen σ?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Fem kornfält i rad under en grå himmel, bakom en stenmur. Över fälten står skördarna 144, 148, 150, 152 och 156 stone. Uppe till vänster står 5 fält och totalundersökning, och bredvid x̄ = ? och σ = ?.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: Vad är medelvärdet?",
+        "typ": "tal",
+        "svar": 150,
+        "tolerans": 0.01,
+        "enhet": "stone",
+        "exempel": "t.ex. 140",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "750",
+            "text": "750 är summan av skördarna. Medelvärdet är summan delad med antalet fält, alltså 750 / 5."
+          },
+          {
+            "svar": "5",
+            "text": "5 är antalet fält. Lägg ihop skördarna och dela summan med 5."
+          },
+          {
+            "svar": "12",
+            "text": "12 är skillnaden mellan största och minsta skörden. Medelvärdet får du om du lägger ihop alla skördar och delar med 5."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Vad är standardavvikelsen σ?",
+        "typ": "tal",
+        "svar": 4,
+        "tolerans": 0.01,
+        "enhet": "stone",
+        "exempel": "t.ex. 3,5",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "16",
+            "text": "16 är variansen, medelvärdet av kvadraterna. Standardavvikelsen är roten ur variansen."
+          },
+          {
+            "svar": "80",
+            "text": "80 är summan av kvadraterna. Dela först med antalet fält, 5, och ta sedan roten."
+          },
+          {
+            "svar": "0",
+            "text": "Avvikelserna tar ut varandra, så deras summa blir 0. Kvadrera varje avvikelse först, så försvinner minustecknen."
+          },
+          {
+            "svar": "20",
+            "text": "Du delade med n − 1 = 4. Alla fält är med, så dela med n = 5. Glöm inte roten på slutet."
+          },
+          {
+            "svar": "4,47",
+            "text": "Du delade med n − 1 = 4, som man gör i ett stickprov. Här är alla fält med, så dela med n = 5."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Alla stegen kan vi skriva som en formel",
+      "text": "Gör som med Gossets fem gårdar. Räkna ut medelvärdet, sedan varje avvikelse från det. Kvadrera avvikelserna, lägg ihop dem och dela med 5. Ta roten till sist."
+    },
+    "losning": [
+      "Medelvärdet: 144 + 148 + 150 + 152 + 156 = 750, och 750 / 5 = 150 stone.",
+      "Avvikelserna från 150 är −6, −2, 0, 2 och 6.",
+      "Kvadraterna: 36 + 4 + 0 + 4 + 36 = 80.",
+      "Alla fält är med, så vi delar med n = 5: 80 / 5 = 16. Det är variansen.",
+      "σ = √16 = 4 stone."
+    ]
+  },
+  "ma2a-17-normalfordelning": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "I ett annat regemente finns 1 000 soldater. Deras bröstmått är normalfördelade med medelvärdet 100 centimeter och standardavvikelsen 4 centimeter. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Hur många procent av soldaterna har ett bröstmått mellan 100 och 108 centimeter?",
+      "Sen: Hur många soldater är det?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Soldater i en lång rad på en kasernplan. Uppe till vänster står 1 000 soldater, μ = 100 cm, σ = 4 cm, % = ? och antal = ?. Till höger en normalfördelningskurva med 100 i mitten och 108 till höger, och ytan mellan dem skuggad.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: Hur många procent av soldaterna har ett bröstmått mellan 100 och 108 centimeter?",
+        "typ": "tal",
+        "svar": 47.7,
+        "tolerans": 0.01,
+        "enhet": "%",
+        "exempel": "t.ex. 50",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "34,1",
+            "text": "34,1 % är biten från 100 till 104, alltså från μ till μ + σ. 108 är μ + 2σ, så biten från 104 till 108 ska med också."
+          },
+          {
+            "svar": "68,2",
+            "text": "68,2 % är de två mittbitarna, från 96 till 104. Här börjar intervallet vid 100, så bara bitarna till höger om mitten räknas."
+          },
+          {
+            "svar": "95,4",
+            "text": "95,4 % går från 92 till 108, på båda sidorna. Intervallet börjar vid 100, mitt i kurvan."
+          },
+          {
+            "svar": "13,6",
+            "text": "13,6 % är bara biten från 104 till 108. Biten från 100 till 104 ska med också."
+          },
+          {
+            "svar": "50",
+            "text": "50 % är hela högra halvan. Soldaterna över 108 centimeter ska inte med, och de är 2,3 %."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur många soldater är det?",
+        "typ": "tal",
+        "svar": 477,
+        "tolerans": 0.6,
+        "enhet": "soldater",
+        "exempel": "t.ex. 300",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "47,7",
+            "text": "47,7 är procenten. Skriv den som decimaltal, 0,477, och multiplicera med 1 000."
+          },
+          {
+            "svar": "341",
+            "text": "341 är 34,1 % av 1 000. Biten från 104 till 108, 13,6 %, ska med också."
+          },
+          {
+            "svar": "682",
+            "text": "682 är 68,2 % av 1 000, de två mittbitarna. Här räknas bara bitarna från 100 till 108."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu går vi ett steg längre ut",
+      "text": "Rita formelbladets figur med regementets tal: μ = 100 och σ = 4. Då är μ + σ = 104 och μ + 2σ = 108. Lägg ihop bitarna mellan 100 och 108."
+    },
+    "losning": [
+      "μ = 100 och σ = 4, så μ + σ = 104 och μ + 2σ = 108.",
+      "Mellan 100 och 108 ligger två bitar ur formelbladet: 34,1 % och 13,6 %.",
+      "34,1 + 13,6 = 47,7 %.",
+      "47,7 % är 0,477, och 0,477 · 1 000 = 477 soldater."
+    ]
   }
 }

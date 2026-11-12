@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-12T07:00:24.723Z",
+ "byggd": "2026-11-12T07:47:35.658Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -63541,6 +63541,1828 @@
      "s": 482.66,
      "e": 485.54,
      "text": "Sen: Hur stort är kvartilavståndet?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-16-standardavvikelse",
+   "titel": "Gosset och kornet – Standardavvikelse",
+   "ar": 1904,
+   "serie": "ma2a",
+   "del": 16,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": [
+    "Matematik 2a",
+    "Matematik 2c"
+   ],
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-16-standardavvikelse-v1/ma2a-16-standardavvikelse-1080p.mp4",
+   "moment": "Standardavvikelse",
+   "begrepp": [
+    "standardavvikelse",
+    "σ",
+    "spridning",
+    "medelvärde",
+    "x̄",
+    "avvikelse",
+    "kvadrera",
+    "varians",
+    "kvadratrot",
+    "summatecken",
+    "Σ",
+    "formeln för standardavvikelse",
+    "stickprov",
+    "totalundersökning",
+    "s",
+    "n − 1",
+    "GeoGebra",
+    "envariabelanalys",
+    "räknaren",
+    "William Gosset",
+    "Guinness",
+    "Student"
+   ],
+   "beskrivning": "År 1904 i Dublin får William Gosset, kemist på bryggeriet Guinness, skördarna från gårdar som provar två sorter korn. Archer ger mest i medel, men vilken sort ger jämnast skörd? Vi räknar avvikelser från medelvärdet, kvadrerar dem, tar medelvärdet och roten, skriver stegen som formeln med summatecknet, skiljer på stickprov och totalundersökning och låter GeoGebra räkna standardavvikelsen.",
+   "youtube": null,
+   "langd": 593,
+   "omslag": "omslag/ma2a-16-standardavvikelse.jpg?v=f45e54cd",
+   "omslagRen": "omslag/ma2a-16-standardavvikelse-ren.jpg?v=78fb9f12",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är år nittonhundrafyra, i Dublin på Irland. Här ligger bryggeriet Guinness, som gör öl av korn. William Gosset är tjugoåtta år och har läst kemi och matematik i Oxford. Guinness har anställt honom för att göra ölen bättre med hjälp av vetenskap."
+    },
+    {
+     "t": 29,
+     "text": "Kornet köper Guinness av bönder runt om på Irland. Irlands jordbruksdepartement provar därför två sorter korn, Archer och Goldthorpe. På varje gård i försöket sår bonden båda sorterna, på lika stora fält bredvid varandra. Gosset får siffrorna från skörden."
+    },
+    {
+     "t": 49,
+     "text": "Skörden räknas i stone, en gammal vikt på ungefär sex kilo. Från hösten nittonhundratre har Gosset siffror från åtta gårdar. Archer gav i medel hundrafyrtioåtta stone. Goldthorpe gav i medel hundratrettioett. Archer gav alltså mest."
+    },
+    {
+     "t": 69,
+     "text": "Men Gosset ser något mer i siffrorna. På en gård gav Archer hundranittionio stone, och på en annan bara åttiofem. Goldthorpe gav ungefär lika mycket på alla gårdarna. Bryggeriet vill veta hur mycket korn det kan räkna med. Så frågan är: Hur mycket skiljer sig skörden från medelvärdet, och vilken sort ger jämnast skörd? Det tar vi reda på nu."
+    },
+    {
+     "t": 97,
+     "text": "Hur utspridda värdena är kallas spridning. Ett sätt att mäta spridningen är variationsbredden, alltså det största värdet minus det minsta. Men variationsbredden använder bara två av värdena. Nu ska vi mäta spridningen med alla värdena. Det måttet heter standardavvikelse."
+    },
+    {
+     "t": 119,
+     "text": "Vi börjar med fem av gårdarna med Goldthorpe, så att vi ser hur man räknar. Skördarna är hundrasexton, hundrasjutton, hundratjugotre, hundratrettiofem och hundrafemtionio stone. Vi sätter en punkt för varje skörd på en tallinje."
+    },
+    {
+     "t": 136,
+     "text": "Först behöver vi medelvärdet. Vi lägger ihop skördarna och delar med antalet. Summan är sexhundrafemtio, och sexhundrafemtio delat med fem är hundratrettio. Medelvärdet skrivs som ett x med ett streck över, och vi säger x streck. x streck är alltså hundratrettio."
+    },
+    {
+     "t": 158,
+     "text": "Nu tittar vi på hur långt varje skörd ligger från medelvärdet. Det kallas avvikelsen, och vi räknar den som skörden minus medelvärdet. Hundrasexton minus hundratrettio är minus fjorton. Skörden ligger fjorton under medelvärdet, och därför blir avvikelsen negativ. På samma sätt blir de andra avvikelserna minus tretton, minus sju, fem och tjugonio."
+    },
+    {
+     "t": 187,
+     "text": "Kan vi inte bara ta medelvärdet av avvikelserna? Vi provar att lägga ihop dem. Minus fjorton, minus tretton och minus sju blir minus trettiofyra tillsammans. Fem plus tjugonio är trettiofyra. Summan blir alltså noll. Avvikelserna under och över medelvärdet tar ut varandra, och det gör de alltid. Så den summan säger ingenting om spridningen."
+    },
+    {
+     "t": 216,
+     "text": "Därför tar vi bort minustecknen. Vi kvadrerar varje avvikelse, alltså multiplicerar den med sig själv. Minus gånger minus är plus, så alla kvadraterna blir positiva. Minus fjorton i kvadrat är hundranittiosex. Sen blir det hundrasextionio, fyrtionio, tjugofem och åttahundrafyrtioett."
+    },
+    {
+     "t": 239,
+     "text": "Nu tar vi medelvärdet av kvadraterna. Vi lägger ihop dem och får ettusen tvåhundraåttio. Det är fem gårdar, så vi delar med fem. Ettusen tvåhundraåttio delat med fem är tvåhundrafemtiosex. Det talet heter variansen."
+    },
+    {
+     "t": 258,
+     "text": "Men tvåhundrafemtiosex är mycket större än avvikelserna vi började med. Det beror på att vi kvadrerade. Kvadraten tar vi tillbaka med kvadratroten. Roten ur tvåhundrafemtiosex är sexton, för sexton gånger sexton är tvåhundrafemtiosex. Standardavvikelsen är alltså sexton stone."
+    },
+    {
+     "t": 281,
+     "text": "Vad betyder sexton? Skörden ligger i genomsnitt ungefär sexton stone från medelvärdet, över eller under. På tallinjen ritar vi sexton åt varje håll från hundratrettio, alltså från hundrafjorton till hundrafyrtiosex. Fyra av de fem skördarna ligger där."
+    },
+    {
+     "t": 301,
+     "text": "Alla stegen kan vi skriva som en formel. Standardavvikelsen skrivs med den grekiska bokstaven sigma. Under rottecknet står ett stort sigma. Det betyder summa, alltså att vi lägger ihop. Det vi lägger ihop står efter, x minus x streck i kvadrat, avvikelsen i kvadrat. Under bråkstrecket står n, antalet värden."
+    },
+    {
+     "t": 328,
+     "text": "Vi läser formeln inifrån och ut, i samma ordning som vi räknade. x minus x streck är avvikelserna. Kvadraten tar bort minustecknen. Summatecknet lägger ihop kvadraterna till ettusen tvåhundraåttio. Delat med n, alltså fem, blir det variansen tvåhundrafemtiosex. Och roten ger standardavvikelsen sexton. Ibland står det k är lika med ett under summatecknet och n över. Det betyder att vi lägger ihop från det första värdet till det sista."
+    },
+    {
+     "t": 364,
+     "text": "Men nu kommer något som är lätt att missa. Vi räknade bara på fem av gårdarna. Ett sådant urval kallas ett stickprov. Räknar man på alla, kallas det en totalundersökning. I ett stickprov delar man med n minus ett i stället för med n. Statistiker har visat att det ger en bättre bild av spridningen hos alla gårdarna. Standardavvikelsen i ett stickprov skrivs med bokstaven s."
+    },
+    {
+     "t": 393,
+     "text": "Vi räknar s för de fem gårdarna. Summan av kvadraterna är fortfarande ettusen tvåhundraåttio. Fem minus ett är fyra, så vi delar med fyra och får trehundratjugo. Det är variansen i stickprovet, och den skrivs s i kvadrat. Roten ur trehundratjugo tar vi på räknaren. Vi trycker på second-knappen och sen på x i kvadrat, så får vi rottecknet. Svaret blir ungefär sjutton komma nio. s är alltså sjutton komma nio stone, lite mer än sigma."
+    },
+    {
+     "t": 430,
+     "text": "Att räkna så här för hand tar tid, och det är sexton skördar. Det går fortare med GeoGebra. Vi öppnar kalkylbladet. Där skriver vi Archers åtta skördar i kolumn A, och Goldthorpes åtta skördar i kolumn B."
+    },
+    {
+     "t": 447,
+     "text": "Först provar vi med våra fem gårdar. Vi markerar dem, väljer Envariabelanalys och klickar på summa x, Visa statistik. Då kommer en lista. I listan står sigma sexton och s sjutton komma nio. Vad nice, samma som vi räknade för hand."
+    },
+    {
+     "t": 468,
+     "text": "Nu markerar vi Archers åtta skördar och gör likadant. Medelvärdet är hundrafyrtioåtta. Gårdarna är ett stickprov av alla gårdar på Irland, så vi läser av s. Den är ungefär fyrtio. Sen gör vi samma sak med Goldthorpe. Medelvärdet är ungefär hundratrettioett, och s är ungefär femton."
+    },
+    {
+     "t": 492,
+     "text": "Nu kan vi svara på frågan. Archer gav i medel hundrafyrtioåtta stone, men skörden låg i genomsnitt ungefär fyrtio stone från medelvärdet. Goldthorpe gav i medel hundratrettioett, och låg bara ungefär femton från medelvärdet. En hög standardavvikelse betyder stor spridning. Archer ger alltså mest korn, men Goldthorpe ger jämnast skörd. Nu går vi tillbaka till Gosset."
+    },
+    {
+     "t": 523,
+     "text": "Gosset fortsätter med kornet i flera år. Archer ger mer än Goldthorpe i medel varje år. Men från gård till gård skiljer sig skörden mycket. Och Gosset har nästan alltid bara några få gårdar att räkna på."
+    },
+    {
+     "t": 539,
+     "text": "Därför tar han fram egna metoder för små stickprov. Men Guinness vill inte att andra bryggerier ska få veta vad bryggeriet håller på med. Så när Gosset ger ut sina metoder år nittonhundraåtta, skriver han under namnet Student. Hans metoder används än i dag, till exempel när man provar en ny medicin på några få personer."
+    },
+    {
+     "t": 564,
+     "text": "Nu är det din tur. En ny sort korn sås på fem fält, och det är alla fält med den nya sorten. Skördarna blir hundrafyrtiofyra, hundrafyrtioåtta, hundrafemtio, hundrafemtiotvå och hundrafemtiosex stone. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vad är medelvärdet? Sen: Vad är standardavvikelsen sigma?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Dublin 1904: Gosset och kornet",
+     "typ": "historia"
+    },
+    {
+     "t": 97,
+     "rubrik": "Spridning",
+     "typ": "matte"
+    },
+    {
+     "t": 119,
+     "rubrik": "Fem gårdar och medelvärdet",
+     "typ": "matte"
+    },
+    {
+     "t": 158,
+     "rubrik": "Avvikelsen från medelvärdet",
+     "typ": "matte"
+    },
+    {
+     "t": 216,
+     "rubrik": "Kvadrera avvikelserna",
+     "typ": "matte"
+    },
+    {
+     "t": 239,
+     "rubrik": "Variansen och roten",
+     "typ": "matte"
+    },
+    {
+     "t": 301,
+     "rubrik": "Formeln för standardavvikelsen σ",
+     "typ": "matte"
+    },
+    {
+     "t": 364,
+     "rubrik": "Stickprov: s i stället för σ",
+     "typ": "matte"
+    },
+    {
+     "t": 430,
+     "rubrik": "GeoGebra räknar åt oss",
+     "typ": "matte"
+    },
+    {
+     "t": 492,
+     "rubrik": "Vilken sort ger jämnast skörd?",
+     "typ": "matte"
+    },
+    {
+     "t": 523,
+     "rubrik": "Gosset blir Student",
+     "typ": "historia"
+    },
+    {
+     "t": 564,
+     "rubrik": "Fem fält med en ny sort",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 564,
+    "fraga": "En ny sort korn sås på 5 fält, och det är alla fält med den nya sorten. Skördarna blir 144, 148, 150, 152 och 156 stone. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vad är medelvärdet?",
+     "Sen: Vad är standardavvikelsen σ?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-16-standardavvikelse.jpg?v=f1ce7838",
+     "tema": "scen",
+     "text": "Fem kornfält i rad under en grå himmel, bakom en stenmur. Över fälten står skördarna 144, 148, 150, 152 och 156 stone. Uppe till vänster står 5 fält och totalundersökning, och bredvid x̄ = ? och σ = ?.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: Vad är medelvärdet?",
+      "typ": "tal",
+      "svar": 150,
+      "tolerans": 0.01,
+      "enhet": "stone",
+      "exempel": "t.ex. 140",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "750",
+        "text": "750 är summan av skördarna. Medelvärdet är summan delad med antalet fält, alltså 750 / 5."
+       },
+       {
+        "svar": "5",
+        "text": "5 är antalet fält. Lägg ihop skördarna och dela summan med 5."
+       },
+       {
+        "svar": "12",
+        "text": "12 är skillnaden mellan största och minsta skörden. Medelvärdet får du om du lägger ihop alla skördar och delar med 5."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Vad är standardavvikelsen σ?",
+      "typ": "tal",
+      "svar": 4,
+      "tolerans": 0.01,
+      "enhet": "stone",
+      "exempel": "t.ex. 3,5",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "16",
+        "text": "16 är variansen, medelvärdet av kvadraterna. Standardavvikelsen är roten ur variansen."
+       },
+       {
+        "svar": "80",
+        "text": "80 är summan av kvadraterna. Dela först med antalet fält, 5, och ta sedan roten."
+       },
+       {
+        "svar": "0",
+        "text": "Avvikelserna tar ut varandra, så deras summa blir 0. Kvadrera varje avvikelse först, så försvinner minustecknen."
+       },
+       {
+        "svar": "20",
+        "text": "Du delade med n − 1 = 4. Alla fält är med, så dela med n = 5. Glöm inte roten på slutet."
+       },
+       {
+        "svar": "4,47",
+        "text": "Du delade med n − 1 = 4, som man gör i ett stickprov. Här är alla fält med, så dela med n = 5."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med Gossets fem gårdar. Räkna ut medelvärdet, sedan varje avvikelse från det. Kvadrera avvikelserna, lägg ihop dem och dela med 5. Ta roten till sist.",
+     "t": 301
+    },
+    "losning": [
+     "Medelvärdet: 144 + 148 + 150 + 152 + 156 = 750, och 750 / 5 = 150 stone.",
+     "Avvikelserna från 150 är −6, −2, 0, 2 och 6.",
+     "Kvadraterna: 36 + 4 + 0 + 4 + 36 = 80.",
+     "Alla fält är med, så vi delar med n = 5: 80 / 5 = 16. Det är variansen.",
+     "σ = √16 = 4 stone."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 13.06,
+     "text": "Det är år nittonhundrafyra, i Dublin på Irland."
+    },
+    {
+     "s": 13.86,
+     "e": 17,
+     "text": "Här ligger bryggeriet Guinness, som gör öl av korn."
+    },
+    {
+     "s": 18.04,
+     "e": 22.78,
+     "text": "William Gosset är tjugoåtta år och har läst kemi och matematik i Oxford."
+    },
+    {
+     "s": 23.68,
+     "e": 28,
+     "text": "Guinness har anställt honom för att göra ölen bättre med hjälp av vetenskap."
+    },
+    {
+     "s": 29.1,
+     "e": 32.32,
+     "text": "Kornet köper Guinness av bönder runt om på Irland."
+    },
+    {
+     "s": 33.12,
+     "e": 38.5,
+     "text": "Irlands jordbruksdepartement provar därför två sorter korn, Archer och Goldthorpe."
+    },
+    {
+     "s": 39.3,
+     "e": 45.04,
+     "text": "På varje gård i försöket sår bonden båda sorterna, på lika stora fält bredvid varandra."
+    },
+    {
+     "s": 46.02,
+     "e": 47.96,
+     "text": "Gosset får siffrorna från skörden."
+    },
+    {
+     "s": 49.06,
+     "e": 53.48,
+     "text": "Skörden räknas i stone, en gammal vikt på ungefär sex kilo."
+    },
+    {
+     "s": 54.36,
+     "e": 58.44,
+     "text": "Från hösten nittonhundratre har Gosset siffror från åtta gårdar."
+    },
+    {
+     "s": 59.24,
+     "e": 62,
+     "text": "Archer gav i medel hundrafyrtioåtta stone."
+    },
+    {
+     "s": 62.8,
+     "e": 65.28,
+     "text": "Goldthorpe gav i medel hundratrettioett."
+    },
+    {
+     "s": 66.08,
+     "e": 67.54,
+     "text": "Archer gav alltså mest."
+    },
+    {
+     "s": 69.36,
+     "e": 71.8,
+     "text": "Men Gosset ser något mer i siffrorna."
+    },
+    {
+     "s": 72.6,
+     "e": 77.62,
+     "text": "På en gård gav Archer hundranittionio stone, och på en annan bara åttiofem."
+    },
+    {
+     "s": 78.46,
+     "e": 81.6,
+     "text": "Goldthorpe gav ungefär lika mycket på alla gårdarna."
+    },
+    {
+     "s": 82.48,
+     "e": 85.6,
+     "text": "Bryggeriet vill veta hur mycket korn det kan räkna med."
+    },
+    {
+     "s": 86.4,
+     "e": 90.42,
+     "text": "Så frågan är: Hur mycket skiljer sig skörden från medelvärdet,"
+    },
+    {
+     "s": 90.78,
+     "e": 92.84,
+     "text": "och vilken sort ger jämnast skörd?"
+    },
+    {
+     "s": 93.64,
+     "e": 94.88,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 97.38,
+     "e": 100.46,
+     "text": "Hur utspridda värdena är kallas spridning."
+    },
+    {
+     "s": 101.26,
+     "e": 107.72,
+     "text": "Ett sätt att mäta spridningen är variationsbredden, alltså det största värdet minus det minsta."
+    },
+    {
+     "s": 108.52,
+     "e": 111.7,
+     "text": "Men variationsbredden använder bara två av värdena."
+    },
+    {
+     "s": 112.5,
+     "e": 115.14,
+     "text": "Nu ska vi mäta spridningen med alla värdena."
+    },
+    {
+     "s": 115.94,
+     "e": 118.42,
+     "text": "Det måttet heter standardavvikelse."
+    },
+    {
+     "s": 119.52,
+     "e": 123.54,
+     "text": "Vi börjar med fem av gårdarna med Goldthorpe, så att vi ser hur man räknar."
+    },
+    {
+     "s": 124.46,
+     "e": 132.08,
+     "text": "Skördarna är hundrasexton, hundrasjutton, hundratjugotre, hundratrettiofem och hundrafemtionio stone."
+    },
+    {
+     "s": 132.88,
+     "e": 135.72,
+     "text": "Vi sätter en punkt för varje skörd på en tallinje."
+    },
+    {
+     "s": 136.82,
+     "e": 138.58,
+     "text": "Först behöver vi medelvärdet."
+    },
+    {
+     "s": 139.38,
+     "e": 142.14,
+     "text": "Vi lägger ihop skördarna och delar med antalet."
+    },
+    {
+     "s": 142.94,
+     "e": 148.66,
+     "text": "Summan är sexhundrafemtio, och sexhundrafemtio delat med fem är hundratrettio."
+    },
+    {
+     "s": 149.46,
+     "e": 154.58,
+     "text": "Medelvärdet skrivs som ett x med ett streck över, och vi säger x streck."
+    },
+    {
+     "s": 155.46,
+     "e": 157.6,
+     "text": "x streck är alltså hundratrettio."
+    },
+    {
+     "s": 158.7,
+     "e": 162.76,
+     "text": "Nu tittar vi på hur långt varje skörd ligger från medelvärdet."
+    },
+    {
+     "s": 163.56,
+     "e": 168.76,
+     "text": "Det kallas avvikelsen, och vi räknar den som skörden minus medelvärdet."
+    },
+    {
+     "s": 169.56,
+     "e": 173.1,
+     "text": "Hundrasexton minus hundratrettio är minus fjorton."
+    },
+    {
+     "s": 173.9,
+     "e": 179.1,
+     "text": "Skörden ligger fjorton under medelvärdet, och därför blir avvikelsen negativ."
+    },
+    {
+     "s": 179.9,
+     "e": 184.5,
+     "text": "På samma sätt blir de andra avvikelserna minus tretton, minus sju,"
+    },
+    {
+     "s": 185.06,
+     "e": 186.5,
+     "text": "fem och tjugonio."
+    },
+    {
+     "s": 187.6,
+     "e": 190.22,
+     "text": "Kan vi inte bara ta medelvärdet av avvikelserna?"
+    },
+    {
+     "s": 191.76,
+     "e": 193.22,
+     "text": "Vi provar att lägga ihop dem."
+    },
+    {
+     "s": 194.02,
+     "e": 199.56,
+     "text": "Minus fjorton, minus tretton och minus sju blir minus trettiofyra tillsammans."
+    },
+    {
+     "s": 200.36,
+     "e": 202.88,
+     "text": "Fem plus tjugonio är trettiofyra."
+    },
+    {
+     "s": 203.68,
+     "e": 205.34,
+     "text": "Summan blir alltså noll."
+    },
+    {
+     "s": 206.14,
+     "e": 211.32,
+     "text": "Avvikelserna under och över medelvärdet tar ut varandra, och det gör de alltid."
+    },
+    {
+     "s": 212.12,
+     "e": 215.02,
+     "text": "Så den summan säger ingenting om spridningen."
+    },
+    {
+     "s": 216.12,
+     "e": 218.02,
+     "text": "Därför tar vi bort minustecknen."
+    },
+    {
+     "s": 218.82,
+     "e": 223.32,
+     "text": "Vi kvadrerar varje avvikelse, alltså multiplicerar den med sig själv."
+    },
+    {
+     "s": 224.12,
+     "e": 228.56,
+     "text": "Minus gånger minus är plus, så alla kvadraterna blir positiva."
+    },
+    {
+     "s": 229.36,
+     "e": 232.26,
+     "text": "Minus fjorton i kvadrat är hundranittiosex."
+    },
+    {
+     "s": 233.06,
+     "e": 238.5,
+     "text": "Sen blir det hundrasextionio, fyrtionio, tjugofem och åttahundrafyrtioett."
+    },
+    {
+     "s": 239.6,
+     "e": 242.04,
+     "text": "Nu tar vi medelvärdet av kvadraterna."
+    },
+    {
+     "s": 242.84,
+     "e": 245.96,
+     "text": "Vi lägger ihop dem och får ettusen tvåhundraåttio."
+    },
+    {
+     "s": 246.76,
+     "e": 249.38,
+     "text": "Det är fem gårdar, så vi delar med fem."
+    },
+    {
+     "s": 250.18,
+     "e": 254.42,
+     "text": "Ettusen tvåhundraåttio delat med fem är tvåhundrafemtiosex."
+    },
+    {
+     "s": 255.22,
+     "e": 257.18,
+     "text": "Det talet heter variansen."
+    },
+    {
+     "s": 258.28,
+     "e": 262.86,
+     "text": "Men tvåhundrafemtiosex är mycket större än avvikelserna vi började med."
+    },
+    {
+     "s": 263.66,
+     "e": 265.34,
+     "text": "Det beror på att vi kvadrerade."
+    },
+    {
+     "s": 266.14,
+     "e": 268.86,
+     "text": "Kvadraten tar vi tillbaka med kvadratroten."
+    },
+    {
+     "s": 269.66,
+     "e": 275.98,
+     "text": "Roten ur tvåhundrafemtiosex är sexton, för sexton gånger sexton är tvåhundrafemtiosex."
+    },
+    {
+     "s": 276.8,
+     "e": 279.94,
+     "text": "Standardavvikelsen är alltså sexton stone."
+    },
+    {
+     "s": 281.04,
+     "e": 282.3,
+     "text": "Vad betyder sexton?"
+    },
+    {
+     "s": 283.6,
+     "e": 287.9,
+     "text": "Skörden ligger i genomsnitt ungefär sexton stone från medelvärdet,"
+    },
+    {
+     "s": 288.24,
+     "e": 289.3,
+     "text": "över eller under."
+    },
+    {
+     "s": 290.1,
+     "e": 294.08,
+     "text": "På tallinjen ritar vi sexton åt varje håll från hundratrettio,"
+    },
+    {
+     "s": 294.64,
+     "e": 297.6,
+     "text": "alltså från hundrafjorton till hundrafyrtiosex."
+    },
+    {
+     "s": 298.4,
+     "e": 300.6,
+     "text": "Fyra av de fem skördarna ligger där."
+    },
+    {
+     "s": 301.7,
+     "e": 303.94,
+     "text": "Alla stegen kan vi skriva som en formel."
+    },
+    {
+     "s": 304.76,
+     "e": 308.46,
+     "text": "Standardavvikelsen skrivs med den grekiska bokstaven sigma."
+    },
+    {
+     "s": 309.26,
+     "e": 311.66,
+     "text": "Under rottecknet står ett stort sigma."
+    },
+    {
+     "s": 312.46,
+     "e": 315.3,
+     "text": "Det betyder summa, alltså att vi lägger ihop."
+    },
+    {
+     "s": 316.1,
+     "e": 322.86,
+     "text": "Det vi lägger ihop står efter, x minus x streck i kvadrat, avvikelsen i kvadrat."
+    },
+    {
+     "s": 323.66,
+     "e": 326.98,
+     "text": "Under bråkstrecket står n, antalet värden."
+    },
+    {
+     "s": 328.08,
+     "e": 332.36,
+     "text": "Vi läser formeln inifrån och ut, i samma ordning som vi räknade."
+    },
+    {
+     "s": 333.24,
+     "e": 335.88,
+     "text": "x minus x streck är avvikelserna."
+    },
+    {
+     "s": 336.68,
+     "e": 338.72,
+     "text": "Kvadraten tar bort minustecknen."
+    },
+    {
+     "s": 339.52,
+     "e": 343.72,
+     "text": "Summatecknet lägger ihop kvadraterna till ettusen tvåhundraåttio."
+    },
+    {
+     "s": 344.52,
+     "e": 349.26,
+     "text": "Delat med n, alltså fem, blir det variansen tvåhundrafemtiosex."
+    },
+    {
+     "s": 350.06,
+     "e": 353.16,
+     "text": "Och roten ger standardavvikelsen sexton."
+    },
+    {
+     "s": 353.96,
+     "e": 358.86,
+     "text": "Ibland står det k är lika med ett under summatecknet och n över."
+    },
+    {
+     "s": 359.66,
+     "e": 363.34,
+     "text": "Det betyder att vi lägger ihop från det första värdet till det sista."
+    },
+    {
+     "s": 364.68,
+     "e": 366.72,
+     "text": "Men nu kommer något som är lätt att missa."
+    },
+    {
+     "s": 367.52,
+     "e": 369.66,
+     "text": "Vi räknade bara på fem av gårdarna."
+    },
+    {
+     "s": 370.46,
+     "e": 373.02,
+     "text": "Ett sådant urval kallas ett stickprov."
+    },
+    {
+     "s": 373.82,
+     "e": 377.14,
+     "text": "Räknar man på alla, kallas det en totalundersökning."
+    },
+    {
+     "s": 377.94,
+     "e": 381.98,
+     "text": "I ett stickprov delar man med n minus ett i stället för med n."
+    },
+    {
+     "s": 382.78,
+     "e": 387.54,
+     "text": "Statistiker har visat att det ger en bättre bild av spridningen hos alla gårdarna."
+    },
+    {
+     "s": 388.34,
+     "e": 392.04,
+     "text": "Standardavvikelsen i ett stickprov skrivs med bokstaven s."
+    },
+    {
+     "s": 393.14,
+     "e": 395.34,
+     "text": "Vi räknar s för de fem gårdarna."
+    },
+    {
+     "s": 396.14,
+     "e": 399.94,
+     "text": "Summan av kvadraterna är fortfarande ettusen tvåhundraåttio."
+    },
+    {
+     "s": 400.74,
+     "e": 405.76,
+     "text": "Fem minus ett är fyra, så vi delar med fyra och får trehundratjugo."
+    },
+    {
+     "s": 406.56,
+     "e": 410.76,
+     "text": "Det är variansen i stickprovet, och den skrivs s i kvadrat."
+    },
+    {
+     "s": 411.62,
+     "e": 414.42,
+     "text": "Roten ur trehundratjugo tar vi på räknaren."
+    },
+    {
+     "s": 415.22,
+     "e": 420.28,
+     "text": "Vi trycker på second-knappen och sen på x i kvadrat, så får vi rottecknet."
+    },
+    {
+     "s": 421.08,
+     "e": 423.78,
+     "text": "Svaret blir ungefär sjutton komma nio."
+    },
+    {
+     "s": 424.66,
+     "e": 428.84,
+     "text": "s är alltså sjutton komma nio stone, lite mer än sigma."
+    },
+    {
+     "s": 430.62,
+     "e": 434.6,
+     "text": "Att räkna så här för hand tar tid, och det är sexton skördar."
+    },
+    {
+     "s": 435.4,
+     "e": 437.08,
+     "text": "Det går fortare med GeoGebra."
+    },
+    {
+     "s": 437.88,
+     "e": 439.42,
+     "text": "Vi öppnar kalkylbladet."
+    },
+    {
+     "s": 440.22,
+     "e": 446.24,
+     "text": "Där skriver vi Archers åtta skördar i kolumn A, och Goldthorpes åtta skördar i kolumn B."
+    },
+    {
+     "s": 447.4,
+     "e": 449.48,
+     "text": "Först provar vi med våra fem gårdar."
+    },
+    {
+     "s": 450.28,
+     "e": 456.94,
+     "text": "Vi markerar dem, väljer Envariabelanalys och klickar på summa x, Visa statistik."
+    },
+    {
+     "s": 457.74,
+     "e": 458.84,
+     "text": "Då kommer en lista."
+    },
+    {
+     "s": 459.64,
+     "e": 463.82,
+     "text": "I listan står sigma sexton och s sjutton komma nio."
+    },
+    {
+     "s": 464.82,
+     "e": 467.4,
+     "text": "Vad nice, samma som vi räknade för hand."
+    },
+    {
+     "s": 468.5,
+     "e": 471.68,
+     "text": "Nu markerar vi Archers åtta skördar och gör likadant."
+    },
+    {
+     "s": 472.48,
+     "e": 474.66,
+     "text": "Medelvärdet är hundrafyrtioåtta."
+    },
+    {
+     "s": 475.46,
+     "e": 480,
+     "text": "Gårdarna är ett stickprov av alla gårdar på Irland, så vi läser av s."
+    },
+    {
+     "s": 480.8,
+     "e": 482.44,
+     "text": "Den är ungefär fyrtio."
+    },
+    {
+     "s": 483.24,
+     "e": 485.34,
+     "text": "Sen gör vi samma sak med Goldthorpe."
+    },
+    {
+     "s": 486.14,
+     "e": 490.96,
+     "text": "Medelvärdet är ungefär hundratrettioett, och s är ungefär femton."
+    },
+    {
+     "s": 492.06,
+     "e": 493.6,
+     "text": "Nu kan vi svara på frågan."
+    },
+    {
+     "s": 494.4,
+     "e": 500.52,
+     "text": "Archer gav i medel hundrafyrtioåtta stone, men skörden låg i genomsnitt ungefär fyrtio"
+    },
+    {
+     "s": 500.6,
+     "e": 502.14,
+     "text": "stone från medelvärdet."
+    },
+    {
+     "s": 502.94,
+     "e": 508.9,
+     "text": "Goldthorpe gav i medel hundratrettioett, och låg bara ungefär femton från medelvärdet."
+    },
+    {
+     "s": 509.7,
+     "e": 513.08,
+     "text": "En hög standardavvikelse betyder stor spridning."
+    },
+    {
+     "s": 513.88,
+     "e": 518.26,
+     "text": "Archer ger alltså mest korn, men Goldthorpe ger jämnast skörd."
+    },
+    {
+     "s": 519.14,
+     "e": 520.64,
+     "text": "Nu går vi tillbaka till Gosset."
+    },
+    {
+     "s": 523.14,
+     "e": 525.66,
+     "text": "Gosset fortsätter med kornet i flera år."
+    },
+    {
+     "s": 526.46,
+     "e": 529.88,
+     "text": "Archer ger mer än Goldthorpe i medel varje år."
+    },
+    {
+     "s": 530.68,
+     "e": 533.7,
+     "text": "Men från gård till gård skiljer sig skörden mycket."
+    },
+    {
+     "s": 534.5,
+     "e": 538.16,
+     "text": "Och Gosset har nästan alltid bara några få gårdar att räkna på."
+    },
+    {
+     "s": 539.26,
+     "e": 542.66,
+     "text": "Därför tar han fram egna metoder för små stickprov."
+    },
+    {
+     "s": 543.82,
+     "e": 548.54,
+     "text": "Men Guinness vill inte att andra bryggerier ska få veta vad bryggeriet håller på med."
+    },
+    {
+     "s": 549.34,
+     "e": 555.16,
+     "text": "Så när Gosset ger ut sina metoder år nittonhundraåtta, skriver han under namnet Student."
+    },
+    {
+     "s": 555.96,
+     "e": 561.82,
+     "text": "Hans metoder används än i dag, till exempel när man provar en ny medicin på några få personer."
+    },
+    {
+     "s": 564.32,
+     "e": 565.44,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 566.24,
+     "e": 571.3,
+     "text": "En ny sort korn sås på fem fält, och det är alla fält med den nya sorten."
+    },
+    {
+     "s": 572.1,
+     "e": 576.64,
+     "text": "Skördarna blir hundrafyrtiofyra, hundrafyrtioåtta, hundrafemtio,"
+    },
+    {
+     "s": 577,
+     "e": 580.04,
+     "text": "hundrafemtiotvå och hundrafemtiosex stone."
+    },
+    {
+     "s": 580.84,
+     "e": 585,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 585.8,
+     "e": 588.1,
+     "text": "Först: Vad är medelvärdet?"
+    },
+    {
+     "s": 588.9,
+     "e": 592.08,
+     "text": "Sen: Vad är standardavvikelsen sigma?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-17-normalfordelning",
+   "titel": "Quetelet och soldaterna – Normalfördelning",
+   "ar": 1846,
+   "serie": "ma2a",
+   "del": 17,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": [
+    "Matematik 2a",
+    "Matematik 2c"
+   ],
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-17-normalfordelning-v1/ma2a-17-normalfordelning-1080p.mp4",
+   "moment": "Normalfördelning",
+   "begrepp": [
+    "normalfördelning",
+    "klockkurva",
+    "medelvärde",
+    "median",
+    "standardavvikelse",
+    "μ",
+    "σ",
+    "ytan under kurvan",
+    "andel",
+    "procent",
+    "34,1 %",
+    "13,6 %",
+    "2,3 %",
+    "68,2 %",
+    "95,4 %",
+    "modell",
+    "formelbladet",
+    "Adolphe Quetelet",
+    "bröstmått",
+    "BMI"
+   ],
+   "beskrivning": "År 1846 i Bryssel har astronomen Adolphe Quetelet en tabell med bröstmåttet på 5 738 skotska soldater. Staplarna liknar astronomernas kurva för mätfel. Stämmer kurvan med soldaterna? Vi lär oss normalfördelningen, ytan under kurvan och formelbladets figur med μ och σ, räknar ut hur många soldater som borde ha ett visst bröstmått och jämför med Quetelets tabell.",
+   "youtube": null,
+   "langd": 515,
+   "omslag": "omslag/ma2a-17-normalfordelning.jpg?v=0c29ac75",
+   "omslagRen": "omslag/ma2a-17-normalfordelning-ren.jpg?v=6c62b644",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är år artonhundrafyrtiosex, i Bryssel i Belgien. Adolphe Quetelet är astronom och chef för stjärnobservatoriet i staden. På nätterna mäter han var stjärnorna står på himlen. Han mäter samma stjärna många gånger, och varje gång blir det lite olika."
+    },
+    {
+     "t": 29,
+     "text": "Mätningarna hamnar tätt kring ett mittvärde. De flesta ligger nära, och bara några få hamnar långt ifrån. Astronomerna vet att mätfelen följer en kurva som ser ut som en kyrkklocka. Mitt i kurvan ligger medelvärdet av mätningarna."
+    },
+    {
+     "t": 47,
+     "text": "Nu har Quetelet en helt annan tabell framför sig. Den kommer från Skottland, och där står bröstmåttet på femtusen sjuhundratrettioåtta soldater. Bröstmåttet är hur långt det är runt bröstet. Måtten står i tum, men vi räknar om dem till centimeter. Medelvärdet är ungefär hundraett centimeter."
+    },
+    {
+     "t": 70,
+     "text": "Quetelet ritar soldaterna som staplar. De flesta har ett bröstmått nära medelvärdet. Ju längre bort från medelvärdet, desto färre soldater. Staplarna liknar ju astronomens kurva. Följer bröstmåtten samma kurva som mätfelen? Kurvan säger hur många soldater som borde ha ett visst mått. Så frågan är: Stämmer kurvan med soldaterna i tabellen? Det tar vi reda på nu."
+    },
+    {
+     "t": 102,
+     "text": "En sådan kurva kallas en normalfördelning. Om vi gör staplarna smalare och smalare, så blir toppen av staplarna till slut en mjuk kurva. Kurvan är högst vid medelvärdet. Och den är likadan på båda sidorna, som en spegelbild."
+    },
+    {
+     "t": 120,
+     "text": "Alla femtusen sjuhundratrettioåtta soldater finns under kurvan, alltså hundra procent. Ytan under kurvan visar hur många som har ett visst mått. Andelen soldater mellan två mått är lika stor som andelen av ytan mellan måtten. En stor yta betyder många soldater."
+    },
+    {
+     "t": 142,
+     "text": "Kurvan är symmetrisk kring medelvärdet. Därför har hälften av soldaterna ett bröstmått under medelvärdet, och hälften över. I en normalfördelning är medelvärdet och medianen alltså samma tal, här hundraett centimeter."
+    },
+    {
+     "t": 159,
+     "text": "Hur bred kurvan är beror på spridningen. Spridningen mäter vi med standardavvikelsen. Standardavvikelsen säger hur långt från medelvärdet måtten ligger i genomsnitt. För soldaterna är standardavvikelsen ungefär fem centimeter."
+    },
+    {
+     "t": 177,
+     "text": "Nu tar vi fram formelbladet. Där finns en figur som heter normalfördelning, och den ska vi använda som mall. Mitt under kurvan står den grekiska bokstaven my. My betyder medelvärdet. Den grekiska bokstaven sigma betyder standardavvikelsen."
+    },
+    {
+     "t": 197,
+     "text": "Under figuren står my plus sigma och my minus sigma. Det betyder medelvärdet plus en standardavvikelse, och medelvärdet minus en standardavvikelse. Mellan strecken står hur stor andel av ytan som ligger där. Mellan my och my plus sigma ligger till exempel trettiofyra komma ett procent."
+    },
+    {
+     "t": 221,
+     "text": "Vi ritar samma figur med soldaternas tal. My är hundraett och sigma är fem. Så my plus sigma är hundraett plus fem, alltså hundrasex. Och my minus sigma är hundraett minus fem, alltså nittiosex. Ett steg längre ut står my plus två sigma. Två standardavvikelser är två gånger fem, alltså tio, så my plus två sigma blir hundraelva. På samma sätt blir my minus två sigma nittioett."
+    },
+    {
+     "t": 257,
+     "text": "Hur många procent av soldaterna har ett bröstmått mellan nittiosex och hundrasex centimeter? Det är de två bitarna i mitten. Vi lägger ihop dem. Trettiofyra komma ett plus trettiofyra komma ett är sextioåtta komma två. Alltså har sextioåtta komma två procent av soldaterna ett bröstmått mellan nittiosex och hundrasex centimeter. Det är ungefär två av tre."
+    },
+    {
+     "t": 284,
+     "text": "Hur många soldater är det? Vi räknar sextioåtta komma två procent av femtusen sjuhundratrettioåtta. Procent betyder hundradelar, så sextioåtta komma två procent är noll komma sex åtta två. Vi multiplicerar noll komma sex åtta två gånger femtusen sjuhundratrettioåtta på räknaren och får ungefär tretusen niohundra. Kurvan säger alltså att ungefär tretusen niohundra soldater borde ha ett bröstmått mellan nittiosex och hundrasex centimeter."
+    },
+    {
+     "t": 319,
+     "text": "Stämmer det med Quetelets tabell? I tabellen räknar vi soldaterna mellan nittiosex och hundrasex centimeter. De är ungefär tretusen åttahundra. Kurvan sa ungefär tretusen niohundra. Vad nice, det är nästan samma."
+    },
+    {
+     "t": 337,
+     "text": "Nu går vi ett steg längre ut, till mellan nittioett och hundraelva centimeter. Till de sextioåtta komma två procenten lägger vi de två bitarna med tretton komma sex procent. Sextioåtta komma två plus tretton komma sex är åttioett komma åtta. Och åttioett komma åtta plus tretton komma sex är nittiofem komma fyra. Kurvan säger alltså att nittiofem komma fyra procent av soldaterna har ett bröstmått mellan nittioett och hundraelva centimeter. I tabellen är det nittiofem komma tre procent. Nästan exakt samma."
+    },
+    {
+     "t": 374,
+     "text": "Hur många har ett bröstmått över hundraelva centimeter? Det är biten längst ut till höger på formelbladet, två komma tre procent. Två komma tre procent är noll komma noll två tre, och noll komma noll två tre gånger femtusen sjuhundratrettioåtta är ungefär hundratrettio. Kurvan säger alltså att ungefär hundratrettio soldater har ett bröstmått över hundraelva centimeter."
+    },
+    {
+     "t": 402,
+     "text": "Men kurvan har en sak som är lätt att missa. Kurvan fortsätter åt båda hållen och når aldrig riktigt ner till axeln. Ingen soldat har ändå ett bröstmått på femtio eller hundrafemtio centimeter. Kurvan är en modell. Den stämmer bra nära mitten, men längst ut i kanterna ska vi inte lita på den."
+    },
+    {
+     "t": 424,
+     "text": "En normalfördelning bestäms alltså av två tal. My säger var kurvans topp ligger. Sigma säger hur bred kurvan är. Med ett större sigma blir kurvan lägre och bredare, för måtten är mer utspridda. Men ytan under kurvan är alltid hundra procent. Nu går vi tillbaka till Quetelet."
+    },
+    {
+     "t": 449,
+     "text": "Quetelet skriver om soldaterna i en bok med brev till en hertig i Tyskland, som han en gång var lärare åt. Han tror att naturen siktar på en medelmänniska. Alla vi andra är som mätfel kring henne, skriver han."
+    },
+    {
+     "t": 464,
+     "text": "Quetelet mäter människor hela livet. Han räknar till exempel ut vikten delat med längden i kvadrat, och det talet kallas i dag BMI. Och när skolsköterskan jämför din längd med en kurva, så är det en normalfördelning hon använder."
+    },
+    {
+     "t": 484,
+     "text": "Nu är det din tur. I ett annat regemente finns tusen soldater. Deras bröstmått är normalfördelade med medelvärdet hundra centimeter och standardavvikelsen fyra centimeter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Hur många procent av soldaterna har ett bröstmått mellan hundra och hundraåtta centimeter? Sen: Hur många soldater är det?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Bryssel 1846: Quetelet och stjärnorna",
+     "typ": "historia"
+    },
+    {
+     "t": 47,
+     "rubrik": "Soldaternas bröstmått",
+     "typ": "historia"
+    },
+    {
+     "t": 102,
+     "rubrik": "Normalfördelningen",
+     "typ": "matte"
+    },
+    {
+     "t": 120,
+     "rubrik": "Ytan under kurvan",
+     "typ": "matte"
+    },
+    {
+     "t": 142,
+     "rubrik": "Medelvärde och median",
+     "typ": "matte"
+    },
+    {
+     "t": 159,
+     "rubrik": "Standardavvikelsen",
+     "typ": "matte"
+    },
+    {
+     "t": 177,
+     "rubrik": "Formelbladet: μ och σ",
+     "typ": "matte"
+    },
+    {
+     "t": 221,
+     "rubrik": "Soldaternas tal i figuren",
+     "typ": "matte"
+    },
+    {
+     "t": 257,
+     "rubrik": "Mellan 96 och 106 cm",
+     "typ": "matte"
+    },
+    {
+     "t": 319,
+     "rubrik": "Kurvan mot tabellen",
+     "typ": "matte"
+    },
+    {
+     "t": 337,
+     "rubrik": "Mellan 91 och 111 cm",
+     "typ": "matte"
+    },
+    {
+     "t": 374,
+     "rubrik": "Över 111 cm",
+     "typ": "matte"
+    },
+    {
+     "t": 402,
+     "rubrik": "Kurvan är en modell",
+     "typ": "matte"
+    },
+    {
+     "t": 424,
+     "rubrik": "μ och σ bestämmer kurvan",
+     "typ": "matte"
+    },
+    {
+     "t": 449,
+     "rubrik": "Medelmänniskan och BMI",
+     "typ": "historia"
+    },
+    {
+     "t": 484,
+     "rubrik": "1 000 soldater, μ = 100 och σ = 4",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 484,
+    "fraga": "I ett annat regemente finns 1 000 soldater. Deras bröstmått är normalfördelade med medelvärdet 100 centimeter och standardavvikelsen 4 centimeter. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Hur många procent av soldaterna har ett bröstmått mellan 100 och 108 centimeter?",
+     "Sen: Hur många soldater är det?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-17-normalfordelning.jpg?v=84b00e51",
+     "tema": "scen",
+     "text": "Soldater i en lång rad på en kasernplan. Uppe till vänster står 1 000 soldater, μ = 100 cm, σ = 4 cm, % = ? och antal = ?. Till höger en normalfördelningskurva med 100 i mitten och 108 till höger, och ytan mellan dem skuggad.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: Hur många procent av soldaterna har ett bröstmått mellan 100 och 108 centimeter?",
+      "typ": "tal",
+      "svar": 47.7,
+      "tolerans": 0.01,
+      "enhet": "%",
+      "exempel": "t.ex. 50",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "34,1",
+        "text": "34,1 % är biten från 100 till 104, alltså från μ till μ + σ. 108 är μ + 2σ, så biten från 104 till 108 ska med också."
+       },
+       {
+        "svar": "68,2",
+        "text": "68,2 % är de två mittbitarna, från 96 till 104. Här börjar intervallet vid 100, så bara bitarna till höger om mitten räknas."
+       },
+       {
+        "svar": "95,4",
+        "text": "95,4 % går från 92 till 108, på båda sidorna. Intervallet börjar vid 100, mitt i kurvan."
+       },
+       {
+        "svar": "13,6",
+        "text": "13,6 % är bara biten från 104 till 108. Biten från 100 till 104 ska med också."
+       },
+       {
+        "svar": "50",
+        "text": "50 % är hela högra halvan. Soldaterna över 108 centimeter ska inte med, och de är 2,3 %."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Hur många soldater är det?",
+      "typ": "tal",
+      "svar": 477,
+      "tolerans": 0.6,
+      "enhet": "soldater",
+      "exempel": "t.ex. 300",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "47,7",
+        "text": "47,7 är procenten. Skriv den som decimaltal, 0,477, och multiplicera med 1 000."
+       },
+       {
+        "svar": "341",
+        "text": "341 är 34,1 % av 1 000. Biten från 104 till 108, 13,6 %, ska med också."
+       },
+       {
+        "svar": "682",
+        "text": "682 är 68,2 % av 1 000, de två mittbitarna. Här räknas bara bitarna från 100 till 108."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Rita formelbladets figur med regementets tal: μ = 100 och σ = 4. Då är μ + σ = 104 och μ + 2σ = 108. Lägg ihop bitarna mellan 100 och 108.",
+     "t": 337
+    },
+    "losning": [
+     "μ = 100 och σ = 4, så μ + σ = 104 och μ + 2σ = 108.",
+     "Mellan 100 och 108 ligger två bitar ur formelbladet: 34,1 % och 13,6 %.",
+     "34,1 + 13,6 = 47,7 %.",
+     "47,7 % är 0,477, och 0,477 · 1 000 = 477 soldater."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 13.22,
+     "text": "Det är år artonhundrafyrtiosex, i Bryssel i Belgien."
+    },
+    {
+     "s": 14.06,
+     "e": 18.54,
+     "text": "Adolphe Quetelet är astronom och chef för stjärnobservatoriet i staden."
+    },
+    {
+     "s": 19.34,
+     "e": 22.48,
+     "text": "På nätterna mäter han var stjärnorna står på himlen."
+    },
+    {
+     "s": 23.28,
+     "e": 28.24,
+     "text": "Han mäter samma stjärna många gånger, och varje gång blir det lite olika."
+    },
+    {
+     "s": 29.34,
+     "e": 31.9,
+     "text": "Mätningarna hamnar tätt kring ett mittvärde."
+    },
+    {
+     "s": 32.7,
+     "e": 36.44,
+     "text": "De flesta ligger nära, och bara några få hamnar långt ifrån."
+    },
+    {
+     "s": 37.24,
+     "e": 42.24,
+     "text": "Astronomerna vet att mätfelen följer en kurva som ser ut som en kyrkklocka."
+    },
+    {
+     "s": 43.04,
+     "e": 46.08,
+     "text": "Mitt i kurvan ligger medelvärdet av mätningarna."
+    },
+    {
+     "s": 47.18,
+     "e": 50.26,
+     "text": "Nu har Quetelet en helt annan tabell framför sig."
+    },
+    {
+     "s": 51.06,
+     "e": 57.38,
+     "text": "Den kommer från Skottland, och där står bröstmåttet på femtusen sjuhundratrettioåtta soldater."
+    },
+    {
+     "s": 58.18,
+     "e": 60.9,
+     "text": "Bröstmåttet är hur långt det är runt bröstet."
+    },
+    {
+     "s": 61.7,
+     "e": 65.18,
+     "text": "Måtten står i tum, men vi räknar om dem till centimeter."
+    },
+    {
+     "s": 65.98,
+     "e": 68.92,
+     "text": "Medelvärdet är ungefär hundraett centimeter."
+    },
+    {
+     "s": 70.02,
+     "e": 72.58,
+     "text": "Quetelet ritar soldaterna som staplar."
+    },
+    {
+     "s": 73.38,
+     "e": 76.22,
+     "text": "De flesta har ett bröstmått nära medelvärdet."
+    },
+    {
+     "s": 77.02,
+     "e": 80.3,
+     "text": "Ju längre bort från medelvärdet, desto färre soldater."
+    },
+    {
+     "s": 82.4,
+     "e": 85.08,
+     "text": "Staplarna liknar ju astronomens kurva."
+    },
+    {
+     "s": 85.88,
+     "e": 88.94,
+     "text": "Följer bröstmåtten samma kurva som mätfelen?"
+    },
+    {
+     "s": 89.76,
+     "e": 93.44,
+     "text": "Kurvan säger hur många soldater som borde ha ett visst mått."
+    },
+    {
+     "s": 94.24,
+     "e": 97.9,
+     "text": "Så frågan är: Stämmer kurvan med soldaterna i tabellen?"
+    },
+    {
+     "s": 98.7,
+     "e": 99.96,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 102.46,
+     "e": 105.48,
+     "text": "En sådan kurva kallas en normalfördelning."
+    },
+    {
+     "s": 106.28,
+     "e": 112.18,
+     "text": "Om vi gör staplarna smalare och smalare, så blir toppen av staplarna till slut en mjuk kurva."
+    },
+    {
+     "s": 112.98,
+     "e": 115.12,
+     "text": "Kurvan är högst vid medelvärdet."
+    },
+    {
+     "s": 115.92,
+     "e": 119.24,
+     "text": "Och den är likadan på båda sidorna, som en spegelbild."
+    },
+    {
+     "s": 120.34,
+     "e": 124.84,
+     "text": "Alla femtusen sjuhundratrettioåtta soldater finns under kurvan,"
+    },
+    {
+     "s": 125.28,
+     "e": 126.78,
+     "text": "alltså hundra procent."
+    },
+    {
+     "s": 127.62,
+     "e": 131.42,
+     "text": "Ytan under kurvan visar hur många som har ett visst mått."
+    },
+    {
+     "s": 132.22,
+     "e": 138.12,
+     "text": "Andelen soldater mellan två mått är lika stor som andelen av ytan mellan måtten."
+    },
+    {
+     "s": 138.92,
+     "e": 141.58,
+     "text": "En stor yta betyder många soldater."
+    },
+    {
+     "s": 142.68,
+     "e": 145.22,
+     "text": "Kurvan är symmetrisk kring medelvärdet."
+    },
+    {
+     "s": 146.02,
+     "e": 149.72,
+     "text": "Därför har hälften av soldaterna ett bröstmått under medelvärdet,"
+    },
+    {
+     "s": 150.02,
+     "e": 151.08,
+     "text": "och hälften över."
+    },
+    {
+     "s": 151.88,
+     "e": 156.56,
+     "text": "I en normalfördelning är medelvärdet och medianen alltså samma tal,"
+    },
+    {
+     "s": 156.92,
+     "e": 158.54,
+     "text": "här hundraett centimeter."
+    },
+    {
+     "s": 159.64,
+     "e": 162.64,
+     "text": "Hur bred kurvan är beror på spridningen."
+    },
+    {
+     "s": 163.44,
+     "e": 166.16,
+     "text": "Spridningen mäter vi med standardavvikelsen."
+    },
+    {
+     "s": 166.96,
+     "e": 171.84,
+     "text": "Standardavvikelsen säger hur långt från medelvärdet måtten ligger i genomsnitt."
+    },
+    {
+     "s": 172.64,
+     "e": 176.48,
+     "text": "För soldaterna är standardavvikelsen ungefär fem centimeter."
+    },
+    {
+     "s": 177.58,
+     "e": 179.3,
+     "text": "Nu tar vi fram formelbladet."
+    },
+    {
+     "s": 180.1,
+     "e": 185.08,
+     "text": "Där finns en figur som heter normalfördelning, och den ska vi använda som mall."
+    },
+    {
+     "s": 185.88,
+     "e": 189.34,
+     "text": "Mitt under kurvan står den grekiska bokstaven my."
+    },
+    {
+     "s": 190.14,
+     "e": 192.22,
+     "text": "My betyder medelvärdet."
+    },
+    {
+     "s": 193.02,
+     "e": 196.88,
+     "text": "Den grekiska bokstaven sigma betyder standardavvikelsen."
+    },
+    {
+     "s": 197.98,
+     "e": 202.9,
+     "text": "Under figuren står my plus sigma och my minus sigma."
+    },
+    {
+     "s": 203.7,
+     "e": 210.3,
+     "text": "Det betyder medelvärdet plus en standardavvikelse, och medelvärdet minus en standardavvikelse."
+    },
+    {
+     "s": 211.1,
+     "e": 214.88,
+     "text": "Mellan strecken står hur stor andel av ytan som ligger där."
+    },
+    {
+     "s": 215.68,
+     "e": 220.7,
+     "text": "Mellan my och my plus sigma ligger till exempel trettiofyra komma ett procent."
+    },
+    {
+     "s": 221.8,
+     "e": 224.12,
+     "text": "Vi ritar samma figur med soldaternas tal."
+    },
+    {
+     "s": 224.92,
+     "e": 227.62,
+     "text": "My är hundraett och sigma är fem."
+    },
+    {
+     "s": 228.42,
+     "e": 233.36,
+     "text": "Så my plus sigma är hundraett plus fem, alltså hundrasex."
+    },
+    {
+     "s": 234.16,
+     "e": 239.26,
+     "text": "Och my minus sigma är hundraett minus fem, alltså nittiosex."
+    },
+    {
+     "s": 240.2,
+     "e": 243.48,
+     "text": "Ett steg längre ut står my plus två sigma."
+    },
+    {
+     "s": 244.28,
+     "e": 251.78,
+     "text": "Två standardavvikelser är två gånger fem, alltså tio, så my plus två sigma blir hundraelva."
+    },
+    {
+     "s": 252.58,
+     "e": 256.18,
+     "text": "På samma sätt blir my minus två sigma nittioett."
+    },
+    {
+     "s": 257.28,
+     "e": 262.98,
+     "text": "Hur många procent av soldaterna har ett bröstmått mellan nittiosex och hundrasex centimeter?"
+    },
+    {
+     "s": 264.7,
+     "e": 266.44,
+     "text": "Det är de två bitarna i mitten."
+    },
+    {
+     "s": 267.24,
+     "e": 268.24,
+     "text": "Vi lägger ihop dem."
+    },
+    {
+     "s": 268.82,
+     "e": 273.52,
+     "text": "Trettiofyra komma ett plus trettiofyra komma ett är sextioåtta komma två."
+    },
+    {
+     "s": 274.32,
+     "e": 279.78,
+     "text": "Alltså har sextioåtta komma två procent av soldaterna ett bröstmått mellan nittiosex"
+    },
+    {
+     "s": 279.88,
+     "e": 281.24,
+     "text": "och hundrasex centimeter."
+    },
+    {
+     "s": 282.04,
+     "e": 283.6,
+     "text": "Det är ungefär två av tre."
+    },
+    {
+     "s": 284.7,
+     "e": 285.88,
+     "text": "Hur många soldater är det?"
+    },
+    {
+     "s": 286.68,
+     "e": 291.78,
+     "text": "Vi räknar sextioåtta komma två procent av femtusen sjuhundratrettioåtta."
+    },
+    {
+     "s": 292.6,
+     "e": 299.36,
+     "text": "Procent betyder hundradelar, så sextioåtta komma två procent är noll komma sex åtta två."
+    },
+    {
+     "s": 300.3,
+     "e": 306.42,
+     "text": "Vi multiplicerar noll komma sex åtta två gånger femtusen sjuhundratrettioåtta på räknaren"
+    },
+    {
+     "s": 306.84,
+     "e": 309.34,
+     "text": "och får ungefär tretusen niohundra."
+    },
+    {
+     "s": 310.24,
+     "e": 316.32,
+     "text": "Kurvan säger alltså att ungefär tretusen niohundra soldater borde ha ett bröstmått mellan"
+    },
+    {
+     "s": 316.36,
+     "e": 318.4,
+     "text": "nittiosex och hundrasex centimeter."
+    },
+    {
+     "s": 319.74,
+     "e": 321.28,
+     "text": "Stämmer det med Quetelets tabell?"
+    },
+    {
+     "s": 322.12,
+     "e": 326.72,
+     "text": "I tabellen räknar vi soldaterna mellan nittiosex och hundrasex centimeter."
+    },
+    {
+     "s": 327.52,
+     "e": 329.82,
+     "text": "De är ungefär tretusen åttahundra."
+    },
+    {
+     "s": 330.62,
+     "e": 333.36,
+     "text": "Kurvan sa ungefär tretusen niohundra."
+    },
+    {
+     "s": 334.36,
+     "e": 336.04,
+     "text": "Vad nice, det är nästan samma."
+    },
+    {
+     "s": 337.14,
+     "e": 341.92,
+     "text": "Nu går vi ett steg längre ut, till mellan nittioett och hundraelva centimeter."
+    },
+    {
+     "s": 342.8,
+     "e": 348.18,
+     "text": "Till de sextioåtta komma två procenten lägger vi de två bitarna med tretton komma sex procent."
+    },
+    {
+     "s": 348.98,
+     "e": 353.6,
+     "text": "Sextioåtta komma två plus tretton komma sex är åttioett komma åtta."
+    },
+    {
+     "s": 354.4,
+     "e": 359.18,
+     "text": "Och åttioett komma åtta plus tretton komma sex är nittiofem komma fyra."
+    },
+    {
+     "s": 360.04,
+     "e": 364.98,
+     "text": "Kurvan säger alltså att nittiofem komma fyra procent av soldaterna har ett bröstmått"
+    },
+    {
+     "s": 365.16,
+     "e": 367.68,
+     "text": "mellan nittioett och hundraelva centimeter."
+    },
+    {
+     "s": 368.48,
+     "e": 371.2,
+     "text": "I tabellen är det nittiofem komma tre procent."
+    },
+    {
+     "s": 372,
+     "e": 373.18,
+     "text": "Nästan exakt samma."
+    },
+    {
+     "s": 374.28,
+     "e": 377.5,
+     "text": "Hur många har ett bröstmått över hundraelva centimeter?"
+    },
+    {
+     "s": 378.94,
+     "e": 383.5,
+     "text": "Det är biten längst ut till höger på formelbladet, två komma tre procent."
+    },
+    {
+     "s": 384.32,
+     "e": 390.56,
+     "text": "Två komma tre procent är noll komma noll två tre, och noll komma noll två tre gånger"
+    },
+    {
+     "s": 390.7,
+     "e": 394.56,
+     "text": "femtusen sjuhundratrettioåtta är ungefär hundratrettio."
+    },
+    {
+     "s": 395.36,
+     "e": 401.54,
+     "text": "Kurvan säger alltså att ungefär hundratrettio soldater har ett bröstmått över hundraelva centimeter."
+    },
+    {
+     "s": 402.66,
+     "e": 405.48,
+     "text": "Men kurvan har en sak som är lätt att missa."
+    },
+    {
+     "s": 406.28,
+     "e": 410.62,
+     "text": "Kurvan fortsätter åt båda hållen och når aldrig riktigt ner till axeln."
+    },
+    {
+     "s": 411.42,
+     "e": 415.76,
+     "text": "Ingen soldat har ändå ett bröstmått på femtio eller hundrafemtio centimeter."
+    },
+    {
+     "s": 416.56,
+     "e": 417.86,
+     "text": "Kurvan är en modell."
+    },
+    {
+     "s": 418.66,
+     "e": 423.68,
+     "text": "Den stämmer bra nära mitten, men längst ut i kanterna ska vi inte lita på den."
+    },
+    {
+     "s": 424.78,
+     "e": 427.78,
+     "text": "En normalfördelning bestäms alltså av två tal."
+    },
+    {
+     "s": 428.58,
+     "e": 430.8,
+     "text": "My säger var kurvans topp ligger."
+    },
+    {
+     "s": 431.6,
+     "e": 433.86,
+     "text": "Sigma säger hur bred kurvan är."
+    },
+    {
+     "s": 434.66,
+     "e": 439.72,
+     "text": "Med ett större sigma blir kurvan lägre och bredare, för måtten är mer utspridda."
+    },
+    {
+     "s": 440.52,
+     "e": 443.9,
+     "text": "Men ytan under kurvan är alltid hundra procent."
+    },
+    {
+     "s": 445.04,
+     "e": 446.66,
+     "text": "Nu går vi tillbaka till Quetelet."
+    },
+    {
+     "s": 449.16,
+     "e": 453.54,
+     "text": "Quetelet skriver om soldaterna i en bok med brev till en hertig i Tyskland,"
+    },
+    {
+     "s": 453.84,
+     "e": 455.3,
+     "text": "som han en gång var lärare åt."
+    },
+    {
+     "s": 456.1,
+     "e": 459.38,
+     "text": "Han tror att naturen siktar på en medelmänniska."
+    },
+    {
+     "s": 460.18,
+     "e": 463.82,
+     "text": "Alla vi andra är som mätfel kring henne, skriver han."
+    },
+    {
+     "s": 464.92,
+     "e": 467.36,
+     "text": "Quetelet mäter människor hela livet."
+    },
+    {
+     "s": 468.38,
+     "e": 472.14,
+     "text": "Han räknar till exempel ut vikten delat med längden i kvadrat,"
+    },
+    {
+     "s": 472.54,
+     "e": 475.5,
+     "text": "och det talet kallas i dag BMI."
+    },
+    {
+     "s": 476.3,
+     "e": 481.74,
+     "text": "Och när skolsköterskan jämför din längd med en kurva, så är det en normalfördelning hon använder."
+    },
+    {
+     "s": 484.24,
+     "e": 485.38,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 486.4,
+     "e": 489.26,
+     "text": "I ett annat regemente finns tusen soldater."
+    },
+    {
+     "s": 490.06,
+     "e": 497.34,
+     "text": "Deras bröstmått är normalfördelade med medelvärdet hundra centimeter och standardavvikelsen fyra centimeter."
+    },
+    {
+     "s": 498.24,
+     "e": 502.38,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 503.18,
+     "e": 510.04,
+     "text": "Först: Hur många procent av soldaterna har ett bröstmått mellan hundra och hundraåtta centimeter?"
+    },
+    {
+     "s": 510.84,
+     "e": 513.5,
+     "text": "Sen: Hur många soldater är det?"
     }
    ]
   },
