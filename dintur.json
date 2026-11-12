@@ -4613,85 +4613,11 @@
       "Sen: hur långt är det från pennan till punkten?"
     ],
     "figur": {
-      "vy": [
-        1920,
-        1080
-      ],
-      "bild": "p06-din-tur",
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
       "tema": "scen",
-      "text": "Ett litet koordinatsystem på skärmen. Pennan pekar på punkten (−2, 0) och en punkt ligger i (1, 4).",
-      "delar": [
-        {
-          "typ": "rutnat",
-          "fran": [
-            395,
-            365
-          ],
-          "till": [
-            670,
-            695
-          ],
-          "steg": 55
-        },
-        {
-          "typ": "linje",
-          "p": [
-            [
-              395,
-              640
-            ],
-            [
-              700,
-              640
-            ]
-          ]
-        },
-        {
-          "typ": "linje",
-          "p": [
-            [
-              560,
-              695
-            ],
-            [
-              560,
-              335
-            ]
-          ]
-        },
-        {
-          "typ": "prick",
-          "vid": [
-            450,
-            640
-          ],
-          "r": 11
-        },
-        {
-          "typ": "prick",
-          "vid": [
-            615,
-            420
-          ],
-          "r": 11
-        },
-        {
-          "typ": "text",
-          "vid": [
-            450,
-            740
-          ],
-          "text": "(−2, 0)"
-        },
-        {
-          "typ": "text",
-          "vid": [
-            745,
-            420
-          ],
-          "text": "(1, 4)"
-        }
-      ]
+      "text": "En rund grön skärm i en grå konsol från 1962. På skärmen ett rutnät med en ljuspenna i punkten (−2, 0) och en punkt i (1, 4), med en streckad linje mellan dem. Bredvid står (1, 4), (−2, 0), x₂ − x₁ = ? och d = ?.",
+      "delar": []
     },
     "delar": [
       {
@@ -4761,6 +4687,103 @@
       "x-delen: x₂ − x₁ = 1 − (−2) = 3, eftersom minus minus blir plus.",
       "y-delen: y₂ − y₁ = 4 − 0 = 4.",
       "d = √(3² + 4²) = √(9 + 16) = √25 = 5. Det är 5 rutor från pennan till punkten."
+    ]
+  },
+  "ma2a-18-pythagoras": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "En rätvinklig triangel har hypotenusan 25 cm. Den ena kateten är 7 cm. Du ska svara på två frågor. Hur lång är den andra kateten?",
+    "slut": [
+      "Först: vad blir den andra kateten i kvadrat?",
+      "Sen: hur lång är den andra kateten?"
+    ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Ett tomt papper på ett skrivbord av mahogny med en oljelampa, en linjal, ett bläckhorn och en penna. På papperet en rätvinklig triangel med hypotenusan 25 cm och ena kateten 7 cm. Bredvid står a² = ? och a = ?.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: vad blir den andra kateten i kvadrat?",
+        "typ": "tal",
+        "svar": 576,
+        "tolerans": 0.5,
+        "enhet": "cm²",
+        "exempel": "t.ex. 100",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "674",
+            "text": "674 är 625 + 49. Men hypotenusan står ensam i höger led, så när du söker en katet blir det minus: 625 − 49."
+          },
+          {
+            "svar": "18",
+            "text": "18 är 25 − 7. Ta talen i kvadrat först: 25² = 625 och 7² = 49."
+          },
+          {
+            "svar": "24",
+            "text": "24 är kateten själv. Frågan gäller kateten i kvadrat, alltså a²."
+          },
+          {
+            "svar": "625",
+            "text": "625 är hypotenusan i kvadrat. Ta bort den kända kateten i kvadrat, 7² = 49."
+          },
+          {
+            "svar": "49",
+            "text": "49 är den kända kateten i kvadrat. Ställ upp a² + 49 = 625."
+          },
+          {
+            "svar": "36",
+            "text": "Ta talen i kvadrat: 25 · 25 = 625 och 7 · 7 = 49. Sedan 625 − 49."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: hur lång är den andra kateten?",
+        "typ": "tal",
+        "svar": 24,
+        "tolerans": 0.05,
+        "enhet": "cm",
+        "exempel": "t.ex. 12",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "576",
+            "text": "576 är kateten i kvadrat. Vilket tal gånger sig självt blir 576?"
+          },
+          {
+            "svar": "25,96",
+            "text": "Det är roten ur 674. Du lade ihop 625 och 49, men när du söker en katet blir det minus."
+          },
+          {
+            "svar": "18",
+            "text": "18 är 25 − 7. Räkna med kvadraterna: a² = 625 − 49 = 576."
+          },
+          {
+            "svar": "-24",
+            "text": "−24 gånger −24 blir också 576, men en sida kan inte vara negativ."
+          },
+          {
+            "svar": "288",
+            "text": "288 är 576 delat med 2. Ta roten ur 576 i stället: vilket tal gånger sig självt blir 576?"
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Vi skriver formeln som en mall",
+      "text": "Gör som med Garfields triangel med 27 och 23. Skriv a² + b² = c² och sätt in talen: a² + 7² = 25². Hypotenusan 25 står ensam i höger led."
+    },
+    "losning": [
+      "Skriv mallen a² + b² = c² och sätt in talen: a² + 7² = 25².",
+      "25² = 625 och 7² = 49, så a² + 49 = 625.",
+      "Ta minus 49 i båda leden: a² = 625 − 49 = 576.",
+      "Vilket tal gånger sig självt blir 576? a = √576 = 24, eftersom 24 · 24 = 576. En sida kan inte vara negativ, så den andra kateten är 24 cm."
     ]
   }
 }
