@@ -4604,5 +4604,163 @@
       "34,1 + 13,6 = 47,7 %.",
       "47,7 % är 0,477, och 0,477 · 1 000 = 477 soldater."
     ]
+  },
+  "ma2a-19-avstandsformeln": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Pennan pekar på punkten (−2, 0). En punkt ligger i (1, 4). Du ska svara på två frågor. Hur långt är det från pennan till punkten?",
+    "slut": [
+      "Först: vad blir x två minus x ett?",
+      "Sen: hur långt är det från pennan till punkten?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "p06-din-tur",
+      "tema": "scen",
+      "text": "Ett litet koordinatsystem på skärmen. Pennan pekar på punkten (−2, 0) och en punkt ligger i (1, 4).",
+      "delar": [
+        {
+          "typ": "rutnat",
+          "fran": [
+            395,
+            365
+          ],
+          "till": [
+            670,
+            695
+          ],
+          "steg": 55
+        },
+        {
+          "typ": "linje",
+          "p": [
+            [
+              395,
+              640
+            ],
+            [
+              700,
+              640
+            ]
+          ]
+        },
+        {
+          "typ": "linje",
+          "p": [
+            [
+              560,
+              695
+            ],
+            [
+              560,
+              335
+            ]
+          ]
+        },
+        {
+          "typ": "prick",
+          "vid": [
+            450,
+            640
+          ],
+          "r": 11
+        },
+        {
+          "typ": "prick",
+          "vid": [
+            615,
+            420
+          ],
+          "r": 11
+        },
+        {
+          "typ": "text",
+          "vid": [
+            450,
+            740
+          ],
+          "text": "(−2, 0)"
+        },
+        {
+          "typ": "text",
+          "vid": [
+            745,
+            420
+          ],
+          "text": "(1, 4)"
+        }
+      ]
+    },
+    "delar": [
+      {
+        "fraga": "Först: vad blir x två minus x ett?",
+        "typ": "tal",
+        "svar": 3,
+        "tolerans": 0.001,
+        "exempel": "t.ex. 5",
+        "tangenter": [
+          "−",
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "-1",
+            "text": "−1 är 1 + (−2). Du ska ta minus: x₂ − x₁ = 1 − (−2). Minus minus blir plus."
+          },
+          {
+            "svar": "-3",
+            "text": "−3 är −2 − 1. Kalla pennan punkt ett, som i filmen: x₂ − x₁ = 1 − (−2)."
+          },
+          {
+            "svar": "4",
+            "text": "4 är y-delen, 4 − 0. x-delen är x₂ − x₁ = 1 − (−2)."
+          },
+          {
+            "svar": "1",
+            "text": "1 är x för punkten. Dra bort pennans x: 1 − (−2)."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: hur långt är det från pennan till punkten?",
+        "typ": "tal",
+        "svar": 5,
+        "tolerans": 0.01,
+        "exempel": "t.ex. 10",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "7",
+            "text": "7 är 3 + 4, vägen längs hjälplinjerna runt hörnet. Den raka vägen är √(3² + 4²)."
+          },
+          {
+            "svar": "25",
+            "text": "25 är 3² + 4². Ta roten ur 25."
+          },
+          {
+            "svar": "4,12",
+            "text": "Det är √17. Kolla x-delen: 1 − (−2) = 3, inte −1."
+          },
+          {
+            "svar": "3",
+            "text": "3 är x-delen. Avståndet är d = √(3² + 4²)."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Vi skriver formeln igen",
+      "text": "Gör som med pennan och B. Kalla pennan punkt ett: x₁ = −2 och y₁ = 0. Punkten är punkt två: x₂ = 1 och y₂ = 4. Sätt in talen i avståndsformeln."
+    },
+    "losning": [
+      "Pennan är punkt ett: (x₁, y₁) = (−2, 0). Punkten är punkt två: (x₂, y₂) = (1, 4).",
+      "x-delen: x₂ − x₁ = 1 − (−2) = 3, eftersom minus minus blir plus.",
+      "y-delen: y₂ − y₁ = 4 − 0 = 4.",
+      "d = √(3² + 4²) = √(9 + 16) = √25 = 5. Det är 5 rutor från pennan till punkten."
+    ]
   }
 }
