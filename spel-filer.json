@@ -121,6 +121,11 @@
      "sha256": "9ceab1f87414829af259c0f537573ae03ef7dd3147c0b27a36a1a0beb6732677"
     },
     {
+     "vag": "fro.js",
+     "storlek": 487,
+     "sha256": "7a3ec5735fa7100ec8c52e634188108604e55f32c27fb6afa618c7afa0ec5d80"
+    },
+    {
      "vag": "ljud-tak.js",
      "storlek": 818,
      "sha256": "061a5eef1a93e5acf572c8676faf65643f00cd779443acbbef4333b4cd7f5d8a"
@@ -1121,14 +1126,39 @@
      "sha256": "52df0de15bb50f4cc30fb8ed819abae39689a8b8c2e2f86408dc6bcbf72e5ded"
     },
     {
+     "vag": "matrix-fragor.js",
+     "storlek": 21338,
+     "sha256": "e3e793d7d283693e0a29766591c981fece569962891884d34f3d42fe054cd14e"
+    },
+    {
      "vag": "server/src/delat.js",
      "storlek": 3797,
-     "sha256": "d7ca75b857dd09372871f6c033d00badf6bf74ed1303131497c538f412783036"
+     "sha256": "8a82a13af5be33f64626b8631f104a422d2666cdbe293500983be9db267cb4ab"
+    },
+    {
+     "vag": "server/src/match-skepp.js",
+     "storlek": 29380,
+     "sha256": "b128ed611f82f746d183b6bc6a0bbe2a297111f11149d81e0e121aa426bf7d3a"
     },
     {
      "vag": "server/src/match-tron.js",
-     "storlek": 12525,
-     "sha256": "43021f4380870ec9c36bc0ea225d9543d5c9d263ff39cac7a7c2ab70d55195ed"
+     "storlek": 12662,
+     "sha256": "078154a63776cc51e1fe5e4e512a21b6fe00c86b0fe90b713ed395c6e0d0d86e"
+    },
+    {
+     "vag": "server/src/utmaning-skepp.js",
+     "storlek": 2129,
+     "sha256": "f6efa610396979c0f5404c0e96f290aa4da3ebc3a7e87e9aa6ee4b7ebeccc669"
+    },
+    {
+     "vag": "server/src/utmaning-tron.js",
+     "storlek": 1958,
+     "sha256": "d6dbce516f8513c80bb8847e5a0748dad72441e2aa1357f9f348c5ea1e2d4d13"
+    },
+    {
+     "vag": "skepp-sim.js",
+     "storlek": 108478,
+     "sha256": "6e19012e1b822bb2ae9ddf3e778054ec38275f8d0ffe37f0fd7800b38c3d4f71"
     },
     {
      "vag": "spel-ater.js",
@@ -1144,6 +1174,16 @@
      "vag": "spel-rapport.js",
      "storlek": 40410,
      "sha256": "5c6de80bd87a173e5c4006faddc7e737de39e50b7b28c610845052759e2e33bf"
+    },
+    {
+     "vag": "spel-rekord.js",
+     "storlek": 11274,
+     "sha256": "1c90748d1a11a55c66a49367364430e1aff2077a55c4e0cbce745c03ee04fe04"
+    },
+    {
+     "vag": "spel-utmaning.js",
+     "storlek": 10317,
+     "sha256": "893ddf8f7d9377363c6cf8e8408cbc28bb19136c23522b8d334c46286a9a4ffe"
     },
     {
      "vag": "spel-vantrum.js",
@@ -1207,8 +1247,8 @@
     },
     {
      "vag": "tron-forvarm.js",
-     "storlek": 14793,
-     "sha256": "a1df07d35b4dd39db3be06f4854c8e276c2319548fd5d90b1343835d8cbc9f29"
+     "storlek": 14924,
+     "sha256": "13b5a8703bb060fb95a0415c6946f4525ccda895a2a4b3c5ea64a509d95986c3"
     },
     {
      "vag": "tron-intro.js",
@@ -1237,8 +1277,8 @@
     },
     {
      "vag": "tron-lagen.js",
-     "storlek": 22663,
-     "sha256": "3aa9c0d932d4cbd449eaefb8ec175ab9304bc44ae93f5c0e2e744b5c08eebb41"
+     "storlek": 23070,
+     "sha256": "aff60ea60d2d449386938f04dc80d6c3876fe4618abbefb9918d181bacc4207e"
     },
     {
      "vag": "tron-laser.js",
@@ -1252,8 +1292,8 @@
     },
     {
      "vag": "tron-natet.js",
-     "storlek": 15614,
-     "sha256": "730867c1a8e12d10275120addf36e13ae7b4094274568af31f21bf5d8f897eba"
+     "storlek": 15932,
+     "sha256": "68d2549943e600d405750cf2bb532b8f2cb231df49232dee8736361505028210"
     },
     {
      "vag": "tron-ovning-rost.js",
@@ -1272,18 +1312,18 @@
     },
     {
      "vag": "tron-sida.css",
-     "storlek": 8320,
-     "sha256": "d72c6cd56187b7818529dcfa2256ff457528d499c2faba40412ff0ea86cbad5b"
+     "storlek": 8576,
+     "sha256": "6e4aae6a901ec9f781d2e25ea141493ba74d246a06e3f347d14128818a956da5"
     },
     {
      "vag": "tron-sida.js",
-     "storlek": 32175,
-     "sha256": "01edaf71043f65a7d8d0c7366d413bf7813049453dee3d6120d81ec01432eb75"
+     "storlek": 35404,
+     "sha256": "8f7b09c03ad0a22367cb632e0069a5096fb9b5bc66c7564af0a6716125592170"
     },
     {
      "vag": "tron-sim.js",
-     "storlek": 122931,
-     "sha256": "b1c1bb930819906bf60d1d19f1cf7f30b77a512093e046efde36d944f47994de"
+     "storlek": 126094,
+     "sha256": "8c911d01b27b7f781c2c6233e77396b68a62d0b57b8bf66ff2ddad8422d33501"
     },
     {
      "vag": "tron-spelledare.js",
@@ -1297,18 +1337,18 @@
     },
     {
      "vag": "tron-turnering.js",
-     "storlek": 25556,
-     "sha256": "5413056f83cd281a1b0a62976fe9e307e80917c0afed00abbe12f04f9081713c"
+     "storlek": 26190,
+     "sha256": "ae666f2f7ade946986f72e802354eb2d45229359568f465fc94651b611a47987"
     },
     {
      "vag": "tron.html",
-     "storlek": 3510,
-     "sha256": "a67adc4a6b95ce59333163af1af065c1b1be9356d81e87ec4a1fa1dc74c0c148"
+     "storlek": 3722,
+     "sha256": "5539baabbb6955b563b782e5b592e983c275652caf39525f67a009c97b55e20e"
     },
     {
      "vag": "tron.js",
-     "storlek": 127888,
-     "sha256": "f8e9ee346561d871af10d9344d519dee1c24424eb44d0b65a7c49a9b622a0281"
+     "storlek": 130393,
+     "sha256": "099df54b4e7d2610ee6a2d7a21e8dbf0a219724db7c9a00aab8c17e6c3446ebf"
     },
     {
      "vag": "utropare.js",
@@ -3293,27 +3333,42 @@
     {
      "vag": "server/src/delat.js",
      "storlek": 3797,
-     "sha256": "d7ca75b857dd09372871f6c033d00badf6bf74ed1303131497c538f412783036"
+     "sha256": "8a82a13af5be33f64626b8631f104a422d2666cdbe293500983be9db267cb4ab"
     },
     {
      "vag": "server/src/match-skepp.js",
-     "storlek": 27174,
-     "sha256": "84991c212037cd750d02785002fcc8ed9359f2d28fcdf2655d40eaa8e0fb7480"
+     "storlek": 29380,
+     "sha256": "b128ed611f82f746d183b6bc6a0bbe2a297111f11149d81e0e121aa426bf7d3a"
+    },
+    {
+     "vag": "server/src/match-tron.js",
+     "storlek": 12662,
+     "sha256": "078154a63776cc51e1fe5e4e512a21b6fe00c86b0fe90b713ed395c6e0d0d86e"
+    },
+    {
+     "vag": "server/src/utmaning-skepp.js",
+     "storlek": 2129,
+     "sha256": "f6efa610396979c0f5404c0e96f290aa4da3ebc3a7e87e9aa6ee4b7ebeccc669"
+    },
+    {
+     "vag": "server/src/utmaning-tron.js",
+     "storlek": 1958,
+     "sha256": "d6dbce516f8513c80bb8847e5a0748dad72441e2aa1357f9f348c5ea1e2d4d13"
     },
     {
      "vag": "skepp-natet.js",
-     "storlek": 22545,
-     "sha256": "3a08d7871a1c059b2c0dc1303bd0d23ce31ff37bcdf4957b6c76060acce3aada"
+     "storlek": 22864,
+     "sha256": "56c879868b8ee915ecc2678e663e8c15de6c1a0fc477312fee58f5ed126eecc8"
     },
     {
      "vag": "skepp-sida.css",
-     "storlek": 13038,
-     "sha256": "31ded188a4db7ee6f952f8920ba0e6714c8a66fe79326feb9dfc959486967ec7"
+     "storlek": 13212,
+     "sha256": "bc9aa1c15ec0533b3506ba8954b7e48dd48533a08307329b4f57ea523fd02491"
     },
     {
      "vag": "skepp-sida.js",
-     "storlek": 35508,
-     "sha256": "67f401e5235fd4cb295b0edb0d69905c9e56578347158ac646c5e0cbf7c46cfb"
+     "storlek": 37460,
+     "sha256": "2aa441c11ba195d3e5a0c71a55e460e8974712f2eced3434a4517e9f1983924f"
     },
     {
      "vag": "skepp-sim.js",
@@ -3322,8 +3377,8 @@
     },
     {
      "vag": "skepp.html",
-     "storlek": 4229,
-     "sha256": "53e278970e11786eeb986bec6a90524f0256058f64b89cc8d7657b7371100bfd"
+     "storlek": 4441,
+     "sha256": "aa59bcb0963b91ff8e87df41e13e98e7ae1b92439ee57973b90cfffcd320836d"
     },
     {
      "vag": "skepp.js",
@@ -3359,6 +3414,16 @@
      "vag": "spel-rapport.js",
      "storlek": 40410,
      "sha256": "5c6de80bd87a173e5c4006faddc7e737de39e50b7b28c610845052759e2e33bf"
+    },
+    {
+     "vag": "spel-rekord.js",
+     "storlek": 11274,
+     "sha256": "1c90748d1a11a55c66a49367364430e1aff2077a55c4e0cbce745c03ee04fe04"
+    },
+    {
+     "vag": "spel-utmaning.js",
+     "storlek": 10317,
+     "sha256": "893ddf8f7d9377363c6cf8e8408cbc28bb19136c23522b8d334c46286a9a4ffe"
     },
     {
      "vag": "spel-vantrum.js",
@@ -3422,8 +3487,8 @@
     },
     {
      "vag": "tron-forvarm.js",
-     "storlek": 14793,
-     "sha256": "a1df07d35b4dd39db3be06f4854c8e276c2319548fd5d90b1343835d8cbc9f29"
+     "storlek": 14924,
+     "sha256": "13b5a8703bb060fb95a0415c6946f4525ccda895a2a4b3c5ea64a509d95986c3"
     },
     {
      "vag": "tron-intro.js",
@@ -3452,8 +3517,8 @@
     },
     {
      "vag": "tron-lagen.js",
-     "storlek": 22663,
-     "sha256": "3aa9c0d932d4cbd449eaefb8ec175ab9304bc44ae93f5c0e2e744b5c08eebb41"
+     "storlek": 23070,
+     "sha256": "aff60ea60d2d449386938f04dc80d6c3876fe4618abbefb9918d181bacc4207e"
     },
     {
      "vag": "tron-laser.js",
@@ -3482,8 +3547,8 @@
     },
     {
      "vag": "tron-sim.js",
-     "storlek": 122931,
-     "sha256": "b1c1bb930819906bf60d1d19f1cf7f30b77a512093e046efde36d944f47994de"
+     "storlek": 126094,
+     "sha256": "8c911d01b27b7f781c2c6233e77396b68a62d0b57b8bf66ff2ddad8422d33501"
     },
     {
      "vag": "tron-spelledare.js",
@@ -3497,13 +3562,13 @@
     },
     {
      "vag": "tron-turnering.js",
-     "storlek": 25556,
-     "sha256": "5413056f83cd281a1b0a62976fe9e307e80917c0afed00abbe12f04f9081713c"
+     "storlek": 26190,
+     "sha256": "ae666f2f7ade946986f72e802354eb2d45229359568f465fc94651b611a47987"
     },
     {
      "vag": "tron.js",
-     "storlek": 127888,
-     "sha256": "f8e9ee346561d871af10d9344d519dee1c24424eb44d0b65a7c49a9b622a0281"
+     "storlek": 130393,
+     "sha256": "099df54b4e7d2610ee6a2d7a21e8dbf0a219724db7c9a00aab8c17e6c3446ebf"
     },
     {
      "vag": "typsnitt/OFL.txt",
@@ -5437,13 +5502,13 @@
     },
     {
      "vag": "pac-figurval.js",
-     "storlek": 5598,
-     "sha256": "6db968a3b43d963b59d465daef5036596eec269da27b14f1fa765a690df9f9fc"
+     "storlek": 7502,
+     "sha256": "2d392bb7c61afa18adb21c7bed1898c571a85ba276b835f9cb4e8f2ecf25cf45"
     },
     {
      "vag": "pac-flera.js",
-     "storlek": 34524,
-     "sha256": "82593798b3efe5651c3c3e987d146595a29b5cdb651f1157e01bbb8b157372fc"
+     "storlek": 37228,
+     "sha256": "37d00b78be1c31faa5abde3deedc27a30c39d9a2a79519c4edbf738a3a34f5b5"
     },
     {
      "vag": "pac-ljud.js",
@@ -5462,13 +5527,13 @@
     },
     {
      "vag": "pac-sida.css",
-     "storlek": 14476,
-     "sha256": "437f7b310a3ab45c841551e155b5474e396f80d5517bb31813d52bd77b01ea9a"
+     "storlek": 14895,
+     "sha256": "2217af4a91c9b335f709e974c1dc0409b2ce1a39caf12231b8f988230bb6053c"
     },
     {
      "vag": "pac-sida.js",
-     "storlek": 25651,
-     "sha256": "1eb7ad01bbe88945f24c55511b95f6ec149f0fa00f8ecd048ffe21c2871b8006"
+     "storlek": 26406,
+     "sha256": "ffd3d467a8fbb6828aa5e0e3cbe0d657b2dbf017c79f7dabd65872001f2bc70e"
     },
     {
      "vag": "pac-sim.js",
@@ -5488,7 +5553,7 @@
     {
      "vag": "server/src/delat.js",
      "storlek": 3797,
-     "sha256": "d7ca75b857dd09372871f6c033d00badf6bf74ed1303131497c538f412783036"
+     "sha256": "8a82a13af5be33f64626b8631f104a422d2666cdbe293500983be9db267cb4ab"
     },
     {
      "vag": "server/src/match-pac.js",
@@ -5524,6 +5589,11 @@
      "vag": "spel-rapport.js",
      "storlek": 40410,
      "sha256": "5c6de80bd87a173e5c4006faddc7e737de39e50b7b28c610845052759e2e33bf"
+    },
+    {
+     "vag": "spel-rekord.js",
+     "storlek": 11274,
+     "sha256": "1c90748d1a11a55c66a49367364430e1aff2077a55c4e0cbce745c03ee04fe04"
     },
     {
      "vag": "spel-vantrum.js",
