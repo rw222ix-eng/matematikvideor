@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-10T18:24:26.520Z",
+ "byggd": "2026-11-12T07:00:24.723Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -61889,6 +61889,1658 @@
      "s": 612.78,
      "e": 616.54,
      "text": "Sen: Hur många procent ökade antalet varje år?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-14-lagesmatt",
+   "titel": "Quetelet och soldaterna – Lägesmått",
+   "ar": 1846,
+   "serie": "ma2a",
+   "del": 14,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": [
+    "Matematik 2a",
+    "Matematik 2c"
+   ],
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-14-lagesmatt-v1/ma2a-14-lagesmatt-1080p.mp4",
+   "moment": "Lägesmått och histogram",
+   "begrepp": [
+    "lägesmått",
+    "medelvärde",
+    "median",
+    "typvärde",
+    "observation",
+    "storleksordning",
+    "median vid jämnt antal",
+    "extremvärde",
+    "klass",
+    "klassbredd",
+    "histogram",
+    "stapel",
+    "klassmitt",
+    "uppskattat medelvärde",
+    "statistik",
+    "Adolphe Quetelet",
+    "Bryssel",
+    "skotska soldater",
+    "bröstmått",
+    "medelmänniskan",
+    "BMI"
+   ],
+   "beskrivning": "År 1846 läser Adolphe Quetelet bröstmåtten för 5 738 skotska soldater. Vilket enda tal beskriver dem bäst? Vi räknar medelvärde, median och typvärde för sju soldater, ser hur ett extremvärde drar upp medelvärdet, och delar sedan in hela tabellen i klasser och ritar ett histogram. Till sist uppskattar vi medelvärdet med klassmitterna.",
+   "youtube": null,
+   "langd": 538,
+   "omslag": "omslag/ma2a-14-lagesmatt.jpg?v=68f13db2",
+   "omslagRen": "omslag/ma2a-14-lagesmatt-ren.jpg?v=2869b522",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är år artonhundrafyrtiosex, i Bryssel i Belgien. Adolphe Quetelet är chef för observatoriet, där man tittar på stjärnorna genom stora kikare. När en astronom mäter samma stjärna många gånger, så blir mätningarna lite olika varje gång. Därför räknar astronomerna fram ett enda tal som ligger mitt bland alla mätningarna."
+    },
+    {
+     "t": 34,
+     "text": "Quetelet undrar om det är likadant med människor. Är vi alla lite olika varianter av en vanlig människa? I en skotsk läkartidning från artonhundrasjutton hittar han en tabell. Där står bröstmåttet för femtusen sjuhundratrettioåtta skotska soldater, uppmätt med ett måttband runt bröstet."
+    },
+    {
+     "t": 56,
+     "text": "Måtten står i tum, men vi räknar om dem till centimeter. De flesta soldaterna mäter ungefär en meter runt bröstet. Men några är mycket smalare, och några är mycket bredare. Hur stor är då en vanlig skotsk soldat runt bröstet? Vilket enda tal beskriver alla femtusen sjuhundratrettioåtta soldaterna bäst? Det tar vi reda på nu."
+    },
+    {
+     "t": 86,
+     "text": "Ett tal som visar ungefär var mitten av alla värden ligger kallas ett lägesmått. Det finns tre vanliga lägesmått: medelvärde, median och typvärde. Vi börjar med bara sju soldater, så att det blir lätt att räkna. Deras bröstmått är nittiosex, nittionio, hundraett, hundraett, hundrafyra, hundrafem och hundratjugotvå centimeter. Den sjunde är den bredaste soldaten i hela tabellen. Varje sådant mått kallas en observation."
+    },
+    {
+     "t": 122,
+     "text": "Först medelvärdet. Vi lägger ihop alla sju måtten, och sen delar vi med antalet mått, alltså sju. Summan blir sjuhundratjugoåtta. Hur mycket är sjuhundratjugoåtta delat med sju? sjuhundra delat med sju är hundra, och tjugoåtta delat med sju är fyra. Medelvärdet är alltså hundrafyra centimeter."
+    },
+    {
+     "t": 150,
+     "text": "Sen medianen. Då ställer vi måtten i storleksordning, från det minsta till det största. Det har vi redan gjort. Medianen är värdet i mitten. Med sju mått är det det fjärde måttet, för då står det tre mått på varje sida. Medianen är hundraett centimeter."
+    },
+    {
+     "t": 171,
+     "text": "Typvärdet är det värde som är vanligast. Här finns hundraett två gånger, och alla andra mått bara en gång. Typvärdet är alltså också hundraett centimeter. Typvärdet fungerar också när observationerna inte är tal, till exempel för den vanligaste färgen på soldaternas jackor."
+    },
+    {
+     "t": 192,
+     "text": "Men vilket lägesmått beskriver de sju soldaterna bäst? Medelvärdet, hundrafyra, är större än fyra av de sju måtten. Det beror på en enda soldat, den bredaste med hundratjugotvå centimeter. Ett värde som ligger långt ifrån de andra kallas ett extremvärde. Extremvärdet drar upp medelvärdet."
+    },
+    {
+     "t": 219,
+     "text": "Man kan se det på det här sättet. Vi tar bort soldaten med hundratjugotvå centimeter. Då blir summan sexhundrasex, och sexhundrasex delat med sex är hundraett. Medelvärdet sjunker alltså från hundrafyra till hundraett. Men hur blir det med medianen? Nu är det sex mått. Sex är ett jämnt tal, så det står två mått i mitten, hundraett och hundraett. Då är medianen medelvärdet av de två måtten, alltså hundraett igen. Medianen ändras inte."
+    },
+    {
+     "t": 256,
+     "text": "När det finns ett extremvärde beskriver alltså medianen de flesta värdena bättre än medelvärdet. Det är lätt att tro att medelvärdet alltid är bäst, men så är det inte. Nu tar vi Quetelets stora tabell."
+    },
+    {
+     "t": 272,
+     "text": "Oj, att lägga ihop femtusen sjuhundratrettioåtta mått ett och ett skulle ta väldigt lång tid. Det finns ett enklare sätt. Vi delar in måtten i grupper, som kallas klasser. Den första klassen är alla mått från åttio till nittio centimeter. Nästa klass är från nittio till hundra, och så vidare. Varje klass är tio centimeter bred, och det kallas klassbredden. Ett mått som är precis nittio hör till klassen från nittio till hundra."
+    },
+    {
+     "t": 306,
+     "text": "För att få enklare tal räknar vi hur många av varje hundra soldater som hamnar i varje klass. Från åttio till nittio är det ungefär två soldater, och från nittio till hundra är det fyrtiotvå. Från hundra till hundratio är det femtiotre, och från hundratio till hundratjugo är det tre. Varje klass blir en stapel, och stapelns höjd är antalet soldater. Staplarna står tätt intill varandra, eftersom klasserna går över i varandra. Ett sådant diagram kallas ett histogram."
+    },
+    {
+     "t": 341,
+     "text": "Som vi ser är stapeln från hundra till hundratio centimeter högst. Där finns flest soldater. Det vanligaste bröstmåttet ligger alltså mellan hundra och hundratio centimeter."
+    },
+    {
+     "t": 355,
+     "text": "Men hur räknar vi ut medelvärdet, när vi inte vet varje soldats exakta mått? Vi vet bara vilken klass han hör till. Därför låtsas vi att alla i en klass har måttet mitt i klassen. Det måttet kallas klassmitten. Mitt mellan åttio och nittio är åttiofem. Klassmitterna är alltså åttiofem, nittiofem, hundrafem och hundrafemton."
+    },
+    {
+     "t": 387,
+     "text": "Nu räknar vi som förut. två soldater har åttiofem centimeter, så de ger två gånger åttiofem. fyrtiotvå soldater ger fyrtiotvå gånger nittiofem, femtiotre soldater ger femtiotre gånger hundrafem, och tre soldater ger tre gånger hundrafemton. Vi lägger ihop allt och delar med antalet soldater, alltså hundra. Det knappar vi in på räknaren, och vi får ungefär hundra komma sju. Medelvärdet är alltså ungefär hundraett centimeter."
+    },
+    {
+     "t": 420,
+     "text": "Det är en uppskattning, eftersom vi räknade med klassmitterna. Quetelet räknade med alla soldaternas egna mått, och han fick nästan fyrtio tum. Det är också ungefär hundraett centimeter. Vad nice, uppskattningen hamnar på samma tal."
+    },
+    {
+     "t": 437,
+     "text": "Och var ligger medianen? Med hundra soldater ligger mitten mellan den femtionde och den femtioförsta soldaten. I de två första staplarna finns två och fyrtiotvå soldater, alltså fyrtiofyra. Den femtionde soldaten står därför i den tredje stapeln. Medianen ligger mellan hundra och hundratio centimeter, precis som medelvärdet. Här drar inget extremvärde iväg medelvärdet. Den bredaste soldaten är en enda av femtusen sjuhundratrettioåtta, och han flyttar nästan inte medelvärdet alls. Nu går vi tillbaka till Quetelet."
+    },
+    {
+     "t": 477,
+     "text": "Quetelet skriver om soldaterna i en bok samma år. Den vanliga soldaten mäter ungefär fyrtio tum runt bröstet, och de flesta soldaterna ligger nära honom. Ju längre ifrån mitten, desto färre soldater. Quetelet kallar den tänkta vanliga människan för medelmänniskan."
+    },
+    {
+     "t": 497,
+     "text": "Quetelets idéer blev början på den statistik som används i dag. Han kom också på ett sätt att jämföra vikten med längden. Det talet kallas i dag B M I, och läkare använder det fortfarande."
+    },
+    {
+     "t": 513,
+     "text": "Nu är det din tur. Sju andra soldater har bröstmåtten nittiofyra, nittioåtta, hundra, hundra, hundratvå, hundrafem och hundrafemton centimeter. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vilken är medianen? Sen: Vilket är medelvärdet?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Bryssel 1846: Quetelet och stjärnorna",
+     "typ": "historia"
+    },
+    {
+     "t": 34,
+     "rubrik": "Bröstmåtten för 5 738 soldater",
+     "typ": "historia"
+    },
+    {
+     "t": 86,
+     "rubrik": "Lägesmått: sju soldater",
+     "typ": "matte"
+    },
+    {
+     "t": 122,
+     "rubrik": "Medelvärdet",
+     "typ": "matte"
+    },
+    {
+     "t": 150,
+     "rubrik": "Medianen",
+     "typ": "matte"
+    },
+    {
+     "t": 171,
+     "rubrik": "Typvärdet",
+     "typ": "matte"
+    },
+    {
+     "t": 192,
+     "rubrik": "Extremvärdet drar upp medelvärdet",
+     "typ": "matte"
+    },
+    {
+     "t": 219,
+     "rubrik": "Medianen vid ett jämnt antal",
+     "typ": "matte"
+    },
+    {
+     "t": 273,
+     "rubrik": "Klasser och klassbredd",
+     "typ": "matte"
+    },
+    {
+     "t": 306,
+     "rubrik": "Histogrammet",
+     "typ": "matte"
+    },
+    {
+     "t": 355,
+     "rubrik": "Klassmitten och medelvärdet ur histogrammet",
+     "typ": "matte"
+    },
+    {
+     "t": 437,
+     "rubrik": "Medianen i histogrammet",
+     "typ": "matte"
+    },
+    {
+     "t": 477,
+     "rubrik": "Medelmänniskan och BMI",
+     "typ": "historia"
+    },
+    {
+     "t": 513,
+     "rubrik": "Sju andra soldater",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 513,
+    "fraga": "Sju andra soldater har bröstmåtten 94, 98, 100, 100, 102, 105 och 115 centimeter. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vilken är medianen?",
+     "Sen: Vilket är medelvärdet?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-14-lagesmatt.jpg?v=813d880d",
+     "tema": "scen",
+     "text": "Sju skotska soldater i röda jackor står på rad framför en stenmur. Ovanför dem står deras bröstmått: 94, 98, 100, 100, 102, 105 och 115. Till vänster står median = ? och medelvärde = ?.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: Vilken är medianen?",
+      "typ": "tal",
+      "svar": 100,
+      "tolerans": 0.01,
+      "enhet": "cm",
+      "exempel": "t.ex. 97",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "102",
+        "text": "102 cm är medelvärdet, alltså svaret på nästa fråga. Medianen är måttet i mitten när måtten står i storleksordning."
+       },
+       {
+        "svar": "4",
+        "text": "4 är platsen i mitten: det fjärde måttet. Vilket mått står på fjärde plats?"
+       },
+       {
+        "svar": "714",
+        "text": "714 är summan av alla sju måtten. Medianen räknas inte ut, den läses av: måttet i mitten."
+       },
+       {
+        "svar": "104.5",
+        "text": "Det är mitten mellan det minsta och det största måttet. Medianen är måttet i mitten av alla sju, med tre mått på varje sida."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Vilket är medelvärdet?",
+      "typ": "tal",
+      "svar": 102,
+      "tolerans": 0.01,
+      "enhet": "cm",
+      "exempel": "t.ex. 97,5",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "100",
+        "text": "100 cm är medianen. Medelvärdet får du när du lägger ihop alla sju måtten och delar med sju."
+       },
+       {
+        "svar": "714",
+        "text": "714 är summan av måtten. Dela den nu med antalet mått, alltså sju."
+       },
+       {
+        "svar": "119",
+        "text": "Du delade summan med sex. Det är sju soldater, så summan ska delas med sju."
+       },
+       {
+        "svar": "101",
+        "text": "Lägg ihop måtten en gång till: 94 + 98 + 100 + 100 + 102 + 105 + 115 = 714. Dela sedan med sju."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med Quetelets sju soldater. Måtten står redan i storleksordning, så medianen är det fjärde måttet. För medelvärdet lägger du ihop alla sju måtten och delar med sju.",
+     "t": 122
+    },
+    "losning": [
+     "Måtten står redan i storleksordning: 94, 98, 100, 100, 102, 105, 115.",
+     "Med sju mått är medianen det fjärde måttet, för då står det tre mått på varje sida. Medianen är 100 cm.",
+     "Summan är 94 + 98 + 100 + 100 + 102 + 105 + 115 = 714.",
+     "Medelvärdet är 714 / 7. 700 / 7 = 100 och 14 / 7 = 2, så medelvärdet är 102 cm. Soldaten med 115 cm drar upp medelvärdet en bit över medianen."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 13.34,
+     "text": "Det är år artonhundrafyrtiosex, i Bryssel i Belgien."
+    },
+    {
+     "s": 14.14,
+     "e": 19.94,
+     "text": "Adolphe Quetelet är chef för observatoriet, där man tittar på stjärnorna genom stora kikare."
+    },
+    {
+     "s": 20.98,
+     "e": 26.98,
+     "text": "När en astronom mäter samma stjärna många gånger, så blir mätningarna lite olika varje gång."
+    },
+    {
+     "s": 27.78,
+     "e": 33.18,
+     "text": "Därför räknar astronomerna fram ett enda tal som ligger mitt bland alla mätningarna."
+    },
+    {
+     "s": 34.28,
+     "e": 37.18,
+     "text": "Quetelet undrar om det är likadant med människor."
+    },
+    {
+     "s": 37.98,
+     "e": 41.54,
+     "text": "Är vi alla lite olika varianter av en vanlig människa?"
+    },
+    {
+     "s": 42.84,
+     "e": 47.04,
+     "text": "I en skotsk läkartidning från artonhundrasjutton hittar han en tabell."
+    },
+    {
+     "s": 47.84,
+     "e": 52.84,
+     "text": "Där står bröstmåttet för femtusen sjuhundratrettioåtta skotska soldater,"
+    },
+    {
+     "s": 53.32,
+     "e": 55.5,
+     "text": "uppmätt med ett måttband runt bröstet."
+    },
+    {
+     "s": 56.6,
+     "e": 60.2,
+     "text": "Måtten står i tum, men vi räknar om dem till centimeter."
+    },
+    {
+     "s": 61.22,
+     "e": 65,
+     "text": "De flesta soldaterna mäter ungefär en meter runt bröstet."
+    },
+    {
+     "s": 65.8,
+     "e": 69.94,
+     "text": "Men några är mycket smalare, och några är mycket bredare."
+    },
+    {
+     "s": 71.8,
+     "e": 75.52,
+     "text": "Hur stor är då en vanlig skotsk soldat runt bröstet?"
+    },
+    {
+     "s": 76.36,
+     "e": 81.62,
+     "text": "Vilket enda tal beskriver alla femtusen sjuhundratrettioåtta soldaterna bäst?"
+    },
+    {
+     "s": 82.42,
+     "e": 83.82,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 86.32,
+     "e": 92.1,
+     "text": "Ett tal som visar ungefär var mitten av alla värden ligger kallas ett lägesmått."
+    },
+    {
+     "s": 92.9,
+     "e": 98.54,
+     "text": "Det finns tre vanliga lägesmått: medelvärde, median och typvärde."
+    },
+    {
+     "s": 99.44,
+     "e": 102.82,
+     "text": "Vi börjar med bara sju soldater, så att det blir lätt att räkna."
+    },
+    {
+     "s": 103.62,
+     "e": 108.82,
+     "text": "Deras bröstmått är nittiosex, nittionio, hundraett, hundraett,"
+    },
+    {
+     "s": 109.18,
+     "e": 113.16,
+     "text": "hundrafyra, hundrafem och hundratjugotvå centimeter."
+    },
+    {
+     "s": 113.98,
+     "e": 117.5,
+     "text": "Den sjunde är den bredaste soldaten i hela tabellen."
+    },
+    {
+     "s": 118.44,
+     "e": 121.4,
+     "text": "Varje sådant mått kallas en observation."
+    },
+    {
+     "s": 122.5,
+     "e": 130.22,
+     "text": "Först medelvärdet. Vi lägger ihop alla sju måtten, och sen delar vi med antalet mått, alltså sju."
+    },
+    {
+     "s": 131.02,
+     "e": 133.34,
+     "text": "Summan blir sjuhundratjugoåtta."
+    },
+    {
+     "s": 134.14,
+     "e": 137.46,
+     "text": "Hur mycket är sjuhundratjugoåtta delat med sju?"
+    },
+    {
+     "s": 140.06,
+     "e": 145.46,
+     "text": "sjuhundra delat med sju är hundra, och tjugoåtta delat med sju är fyra."
+    },
+    {
+     "s": 146.26,
+     "e": 149.38,
+     "text": "Medelvärdet är alltså hundrafyra centimeter."
+    },
+    {
+     "s": 150.48,
+     "e": 156.78,
+     "text": "Sen medianen. Då ställer vi måtten i storleksordning, från det minsta till det största."
+    },
+    {
+     "s": 157.58,
+     "e": 158.58,
+     "text": "Det har vi redan gjort."
+    },
+    {
+     "s": 159.26,
+     "e": 161.36,
+     "text": "Medianen är värdet i mitten."
+    },
+    {
+     "s": 162.16,
+     "e": 167.22,
+     "text": "Med sju mått är det det fjärde måttet, för då står det tre mått på varje sida."
+    },
+    {
+     "s": 168.02,
+     "e": 170.38,
+     "text": "Medianen är hundraett centimeter."
+    },
+    {
+     "s": 171.48,
+     "e": 174.38,
+     "text": "Typvärdet är det värde som är vanligast."
+    },
+    {
+     "s": 175.18,
+     "e": 179.46,
+     "text": "Här finns hundraett två gånger, och alla andra mått bara en gång."
+    },
+    {
+     "s": 180.26,
+     "e": 183.22,
+     "text": "Typvärdet är alltså också hundraett centimeter."
+    },
+    {
+     "s": 184.28,
+     "e": 189.88,
+     "text": "Typvärdet fungerar också när observationerna inte är tal, till exempel för den vanligaste"
+    },
+    {
+     "s": 189.96,
+     "e": 191.74,
+     "text": "färgen på soldaternas jackor."
+    },
+    {
+     "s": 192.79,
+     "e": 197.35,
+     "text": "Men vilket lägesmått beskriver de sju soldaterna bäst?"
+    },
+    {
+     "s": 198.15,
+     "e": 203.19,
+     "text": "Medelvärdet, hundrafyra, är större än fyra av de sju måtten."
+    },
+    {
+     "s": 203.99,
+     "e": 209.75,
+     "text": "Det beror på en enda soldat, den bredaste med hundratjugotvå centimeter."
+    },
+    {
+     "s": 210.55,
+     "e": 215.23,
+     "text": "Ett värde som ligger långt ifrån de andra kallas ett extremvärde."
+    },
+    {
+     "s": 216.03,
+     "e": 218.91,
+     "text": "Extremvärdet drar upp medelvärdet."
+    },
+    {
+     "s": 219.89,
+     "e": 221.35,
+     "text": "Man kan se det på det här sättet."
+    },
+    {
+     "s": 222.15,
+     "e": 225.05,
+     "text": "Vi tar bort soldaten med hundratjugotvå centimeter."
+    },
+    {
+     "s": 225.85,
+     "e": 231.59,
+     "text": "Då blir summan sexhundrasex, och sexhundrasex delat med sex är hundraett."
+    },
+    {
+     "s": 232.39,
+     "e": 236.23,
+     "text": "Medelvärdet sjunker alltså från hundrafyra till hundraett."
+    },
+    {
+     "s": 237.03,
+     "e": 238.79,
+     "text": "Men hur blir det med medianen?"
+    },
+    {
+     "s": 239.59,
+     "e": 240.79,
+     "text": "Nu är det sex mått."
+    },
+    {
+     "s": 241.59,
+     "e": 247.27,
+     "text": "Sex är ett jämnt tal, så det står två mått i mitten, hundraett och hundraett."
+    },
+    {
+     "s": 248.07,
+     "e": 253.21,
+     "text": "Då är medianen medelvärdet av de två måtten, alltså hundraett igen."
+    },
+    {
+     "s": 254.01,
+     "e": 255.49,
+     "text": "Medianen ändras inte."
+    },
+    {
+     "s": 256.59,
+     "e": 262.67,
+     "text": "När det finns ett extremvärde beskriver alltså medianen de flesta värdena bättre än medelvärdet."
+    },
+    {
+     "s": 263.57,
+     "e": 267.83,
+     "text": "Det är lätt att tro att medelvärdet alltid är bäst, men så är det inte."
+    },
+    {
+     "s": 268.63,
+     "e": 270.59,
+     "text": "Nu tar vi Quetelets stora tabell."
+    },
+    {
+     "s": 272.21,
+     "e": 279.27,
+     "text": "Oj, att lägga ihop femtusen sjuhundratrettioåtta mått ett och ett skulle ta väldigt lång tid."
+    },
+    {
+     "s": 280.07,
+     "e": 281.51,
+     "text": "Det finns ett enklare sätt."
+    },
+    {
+     "s": 282.31,
+     "e": 285.57,
+     "text": "Vi delar in måtten i grupper, som kallas klasser."
+    },
+    {
+     "s": 286.41,
+     "e": 290.55,
+     "text": "Den första klassen är alla mått från åttio till nittio centimeter."
+    },
+    {
+     "s": 291.35,
+     "e": 294.57,
+     "text": "Nästa klass är från nittio till hundra, och så vidare."
+    },
+    {
+     "s": 295.37,
+     "e": 299.81,
+     "text": "Varje klass är tio centimeter bred, och det kallas klassbredden."
+    },
+    {
+     "s": 300.61,
+     "e": 304.99,
+     "text": "Ett mått som är precis nittio hör till klassen från nittio till hundra."
+    },
+    {
+     "s": 306.09,
+     "e": 312.07,
+     "text": "För att få enklare tal räknar vi hur många av varje hundra soldater som hamnar i varje klass."
+    },
+    {
+     "s": 312.87,
+     "e": 319.13,
+     "text": "Från åttio till nittio är det ungefär två soldater, och från nittio till hundra är det fyrtiotvå."
+    },
+    {
+     "s": 319.93,
+     "e": 325.95,
+     "text": "Från hundra till hundratio är det femtiotre, och från hundratio till hundratjugo är det tre."
+    },
+    {
+     "s": 326.89,
+     "e": 331.73,
+     "text": "Varje klass blir en stapel, och stapelns höjd är antalet soldater."
+    },
+    {
+     "s": 332.61,
+     "e": 336.95,
+     "text": "Staplarna står tätt intill varandra, eftersom klasserna går över i varandra."
+    },
+    {
+     "s": 337.75,
+     "e": 340.33,
+     "text": "Ett sådant diagram kallas ett histogram."
+    },
+    {
+     "s": 341.43,
+     "e": 345.81,
+     "text": "Som vi ser är stapeln från hundra till hundratio centimeter högst."
+    },
+    {
+     "s": 346.61,
+     "e": 348.09,
+     "text": "Där finns flest soldater."
+    },
+    {
+     "s": 348.89,
+     "e": 353.83,
+     "text": "Det vanligaste bröstmåttet ligger alltså mellan hundra och hundratio centimeter."
+    },
+    {
+     "s": 355.46,
+     "e": 361.46,
+     "text": "Men hur räknar vi ut medelvärdet, när vi inte vet varje soldats exakta mått?"
+    },
+    {
+     "s": 362.26,
+     "e": 364.9,
+     "text": "Vi vet bara vilken klass han hör till."
+    },
+    {
+     "s": 365.7,
+     "e": 370.82,
+     "text": "Därför låtsas vi att alla i en klass har måttet mitt i klassen."
+    },
+    {
+     "s": 371.62,
+     "e": 374.5,
+     "text": "Det måttet kallas klassmitten."
+    },
+    {
+     "s": 375.3,
+     "e": 379.14,
+     "text": "Mitt mellan åttio och nittio är åttiofem."
+    },
+    {
+     "s": 379.94,
+     "e": 386.22,
+     "text": "Klassmitterna är alltså åttiofem, nittiofem, hundrafem och hundrafemton."
+    },
+    {
+     "s": 387.19,
+     "e": 388.59,
+     "text": "Nu räknar vi som förut."
+    },
+    {
+     "s": 389.39,
+     "e": 394.05,
+     "text": "två soldater har åttiofem centimeter, så de ger två gånger åttiofem."
+    },
+    {
+     "s": 394.85,
+     "e": 401.19,
+     "text": "fyrtiotvå soldater ger fyrtiotvå gånger nittiofem, femtiotre soldater ger femtiotre gånger"
+    },
+    {
+     "s": 401.25,
+     "e": 405.39,
+     "text": "hundrafem, och tre soldater ger tre gånger hundrafemton."
+    },
+    {
+     "s": 406.19,
+     "e": 410.49,
+     "text": "Vi lägger ihop allt och delar med antalet soldater, alltså hundra."
+    },
+    {
+     "s": 411.29,
+     "e": 415.49,
+     "text": "Det knappar vi in på räknaren, och vi får ungefär hundra komma sju."
+    },
+    {
+     "s": 416.29,
+     "e": 419.61,
+     "text": "Medelvärdet är alltså ungefär hundraett centimeter."
+    },
+    {
+     "s": 420.71,
+     "e": 423.83,
+     "text": "Det är en uppskattning, eftersom vi räknade med klassmitterna."
+    },
+    {
+     "s": 424.63,
+     "e": 429.63,
+     "text": "Quetelet räknade med alla soldaternas egna mått, och han fick nästan fyrtio tum."
+    },
+    {
+     "s": 430.43,
+     "e": 432.55,
+     "text": "Det är också ungefär hundraett centimeter."
+    },
+    {
+     "s": 433.35,
+     "e": 436.19,
+     "text": "Vad nice, uppskattningen hamnar på samma tal."
+    },
+    {
+     "s": 437.29,
+     "e": 438.71,
+     "text": "Och var ligger medianen?"
+    },
+    {
+     "s": 439.81,
+     "e": 444.85,
+     "text": "Med hundra soldater ligger mitten mellan den femtionde och den femtioförsta soldaten."
+    },
+    {
+     "s": 445.65,
+     "e": 450.77,
+     "text": "I de två första staplarna finns två och fyrtiotvå soldater, alltså fyrtiofyra."
+    },
+    {
+     "s": 451.57,
+     "e": 454.99,
+     "text": "Den femtionde soldaten står därför i den tredje stapeln."
+    },
+    {
+     "s": 455.79,
+     "e": 460.91,
+     "text": "Medianen ligger mellan hundra och hundratio centimeter, precis som medelvärdet."
+    },
+    {
+     "s": 461.71,
+     "e": 464.83,
+     "text": "Här drar inget extremvärde iväg medelvärdet."
+    },
+    {
+     "s": 465.63,
+     "e": 470.23,
+     "text": "Den bredaste soldaten är en enda av femtusen sjuhundratrettioåtta,"
+    },
+    {
+     "s": 470.69,
+     "e": 472.87,
+     "text": "och han flyttar nästan inte medelvärdet alls."
+    },
+    {
+     "s": 473.83,
+     "e": 475.31,
+     "text": "Nu går vi tillbaka till Quetelet."
+    },
+    {
+     "s": 477.81,
+     "e": 480.77,
+     "text": "Quetelet skriver om soldaterna i en bok samma år."
+    },
+    {
+     "s": 481.57,
+     "e": 486.91,
+     "text": "Den vanliga soldaten mäter ungefär fyrtio tum runt bröstet, och de flesta soldaterna"
+    },
+    {
+     "s": 486.95,
+     "e": 487.95,
+     "text": "ligger nära honom."
+    },
+    {
+     "s": 488.69,
+     "e": 491.51,
+     "text": "Ju längre ifrån mitten, desto färre soldater."
+    },
+    {
+     "s": 492.31,
+     "e": 496.75,
+     "text": "Quetelet kallar den tänkta vanliga människan för medelmänniskan."
+    },
+    {
+     "s": 497.85,
+     "e": 501.69,
+     "text": "Quetelets idéer blev början på den statistik som används i dag."
+    },
+    {
+     "s": 502.49,
+     "e": 505.67,
+     "text": "Han kom också på ett sätt att jämföra vikten med längden."
+    },
+    {
+     "s": 506.47,
+     "e": 511.11,
+     "text": "Det talet kallas i dag B M I, och läkare använder det fortfarande."
+    },
+    {
+     "s": 513.61,
+     "e": 514.61,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 515.35,
+     "e": 520.51,
+     "text": "Sju andra soldater har bröstmåtten nittiofyra, nittioåtta, hundra,"
+    },
+    {
+     "s": 520.99,
+     "e": 525.53,
+     "text": "hundra, hundratvå, hundrafem och hundrafemton centimeter."
+    },
+    {
+     "s": 526.33,
+     "e": 530.25,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 531.05,
+     "e": 533.39,
+     "text": "Först: Vilken är medianen?"
+    },
+    {
+     "s": 534.19,
+     "e": 536.59,
+     "text": "Sen: Vilket är medelvärdet?"
+    }
+   ]
+  },
+  {
+   "id": "ma2a-15-kvartiler-och-percentiler",
+   "titel": "Galton och oxen – Kvartiler och lådagram",
+   "ar": 1906,
+   "serie": "ma2a",
+   "del": 15,
+   "ocksa": null,
+   "kurs": "Matematik 2a",
+   "kurser": [
+    "Matematik 2a",
+    "Matematik 2c"
+   ],
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-15-kvartiler-och-percentiler-v1/ma2a-15-kvartiler-och-percentiler-1080p.mp4",
+   "moment": "Spridningsmått, kvartiler, lådagram och percentiler",
+   "begrepp": [
+    "spridning",
+    "spridningsmått",
+    "variationsbredd",
+    "median",
+    "kvartil",
+    "nedre kvartil",
+    "övre kvartil",
+    "kvartilavstånd",
+    "lådagram",
+    "formelbladet",
+    "storleksordning",
+    "percentil",
+    "en fjärdedel",
+    "andel",
+    "Francis Galton",
+    "Plymouth",
+    "boskapsmässa",
+    "Nature",
+    "folkets röst",
+    "folkmassans visdom"
+   ],
+   "beskrivning": "På boskapsmässan i Plymouth 1906 gissar besökarna vad en oxe väger, och Francis Galton lånar alla korten. Vi ordnar korten och tar fram medianen, variationsbredden, kvartilerna och kvartilavståndet, och ritar ett lådagram med formelbladets lådagram som mall. Sedan ser vi att kvartilerna också är percentiler.",
+   "youtube": null,
+   "langd": 487,
+   "omslag": "omslag/ma2a-15-kvartiler-och-percentiler.jpg?v=03ebcf64",
+   "omslagRen": "omslag/ma2a-15-kvartiler-och-percentiler-ren.jpg?v=505bec57",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är år nittonhundrasex, i Plymouth i England. På stadens boskapsmässa står en fet oxe i en fålla. Besökarna får gissa vad köttet kommer att väga när oxen är slaktad. Varje gissning skrivs på ett kort, som kostar sex pence, och den som gissar närmast vinner ett pris. Bönder och slaktare gissar, men också vanliga besökare som aldrig har vägt en oxe."
+    },
+    {
+     "t": 35,
+     "text": "Efter mässan lånar en forskare alla korten. Han heter Francis Galton och är åttiofyra år gammal. Galtons motto är: räkna, när du kan. Ungefär åttahundra kort har kommit in, och sjuhundraåttiosju av dem går att läsa. Oxen väger femhundrafyrtiotre kilo efter slakten."
+    },
+    {
+     "t": 58,
+     "text": "Galton undrar två saker. Kan en hel folkmassa tillsammans gissa rätt, fast de flesta inte är experter? Och hur mycket skiljer sig gissningarna åt? Det tar vi reda på nu."
+    },
+    {
+     "t": 73,
+     "text": "Galton lägger alla korten i storleksordning, från den minsta gissningen till den största. Sen tar han kortet i mitten. Det kallas medianen, och för sjuhundraåttiosju kort är det det trehundranittiofjärde kortet. Då ligger det trehundranittiotre kort på varje sida. Medianen är femhundrafyrtiosju kilo. Det är bara fyra kilo från oxens riktiga vikt."
+    },
+    {
+     "t": 101,
+     "text": "Galton kallar medianen för folkets röst. Varje kort är en röst, och hälften av korten gissar lägre än medianen, och hälften högre. Men hur mycket skiljer sig korten åt? Det säger medianen ingenting om. Hur mycket värdena skiljer sig åt kallas spridningen, och ett tal som visar spridningen kallas ett spridningsmått."
+    },
+    {
+     "t": 126,
+     "text": "Vi tar bara elva kort ur högen, så att det blir lätt att räkna. I storleksordning är de fyrahundranittio, femhundratolv, femhundratjugosju, femhundratrettioåtta, femhundrafyrtiofyra, femhundrafyrtiosju, femhundrafemtioett, femhundrafemtiosex, femhundrasextioett, femhundrasjuttio och sexhundratio kilo. Det enklaste spridningsmåttet är variationsbredden. Det är det största värdet minus det minsta. sexhundratio minus fyrahundranittio är hundratjugo. Variationsbredden är alltså hundratjugo kilo."
+    },
+    {
+     "t": 167,
+     "text": "Men variationsbredden luras lätt. Den bygger bara på två kort, det största och det minsta. Ett enda kort med en vild gissning, som sexhundratio, gör variationsbredden mycket större. Därför delar vi i stället korten i fyra lika stora delar."
+    },
+    {
+     "t": 186,
+     "text": "Först medianen. Med elva kort är det det sjätte kortet, femhundrafyrtiosju, för då ligger det fem kort på varje sida. Medianen räknas inte med i någon av halvorna. Den undre halvan är de fem minsta korten. Mitten av dem är det tredje kortet, femhundratjugosju. Det kallas den nedre kvartilen. Den övre halvan är de fem största korten, och mitten av dem är femhundrasextioett. Det kallas den övre kvartilen."
+    },
+    {
+     "t": 218,
+     "text": "Nedre kvartilen, medianen och övre kvartilen delar korten i fyra delar, med ungefär lika många kort i varje del. Skillnaden mellan övre och nedre kvartilen kallas kvartilavståndet. Det är också ett spridningsmått. Hur mycket är femhundrasextioett minus femhundratjugosju? Från femhundratjugosju till femhundratrettio är det tre, och från femhundratrettio till femhundrasextioett är det trettioett. Kvartilavståndet är alltså trettiofyra kilo."
+    },
+    {
+     "t": 251,
+     "text": "Med kvartilerna kan vi rita en bild av spridningen, och den bilden står på formelbladet. Den heter ett lådagram. Längst till vänster står det minsta värdet och längst till höger det största. Lådan går från den nedre kvartilen till den övre, och strecket i lådan är medianen. Lådans bredd är kvartilavståndet."
+    },
+    {
+     "t": 275,
+     "text": "Vi skriver av formelbladets lådagram som en mall och sätter in våra kort. Vi ritar en tallinje i kilo. Minsta värdet är fyrahundranittio, nedre kvartilen femhundratjugosju, medianen femhundrafyrtiosju, övre kvartilen femhundrasextioett och största värdet sexhundratio. Lådan blir smal, men strecket ut till sexhundratio blir långt. Där ser vi den vilda gissningen."
+    },
+    {
+     "t": 304,
+     "text": "Ungefär en fjärdedel av korten ligger under nedre kvartilen, och en fjärdedel ligger över övre kvartilen. Då är resten, ungefär hälften av korten, inne i lådan. Det gäller för alla sjuhundraåttiosju korten också. Hur många kort är en fjärdedel av sjuhundraåttiosju? åttahundra delat med fyra är tvåhundra, så det blir lite mindre, ungefär hundranittiosju. Ungefär hundranittiosju kort gissar alltså lägre än nedre kvartilen."
+    },
+    {
+     "t": 337,
+     "text": "Nu tar vi Galtons alla sjuhundraåttiosju kort igen. Galton räknade själv ut kvartilerna. Nedre kvartilen är femhundratjugosju kilo, och övre kvartilen är femhundrasextioett. Oxens riktiga vikt, femhundrafyrtiotre, ligger alltså inne i lådan. Hälften av alla gissningarna ligger inom ett kvartilavstånd på trettiofyra kilo. Vad nice, de flesta besökarna gissade ganska bra."
+    },
+    {
+     "t": 366,
+     "text": "Galton delade också in korten i ännu fler delar. När man delar in i hundra lika stora delar, så kallas gränserna percentiler. I Galtons tabell är den nittionde percentilen femhundrasjuttiofem kilo. Det betyder att ungefär nittio procent av korten gissar lägre än femhundrasjuttiofem kilo, och tio procent gissar högre."
+    },
+    {
+     "t": 390,
+     "text": "Kvartilerna är faktiskt också percentiler. Medianen är den femtionde percentilen. Nedre kvartilen är den tjugofemte percentilen, och övre kvartilen är den sjuttiofemte. Nu får vi inte glömma vad de betyder. Den tjugofemte percentilen, femhundratjugosju kilo, betyder att tjugofem procent av korten gissar lägre än femhundratjugosju. Nu går vi tillbaka till Galton."
+    },
+    {
+     "t": 419,
+     "text": "I mars nittonhundrasju skriver Galton om oxen i tidningen Nature. Han kallar artikeln Folkets röst. Folkmassan missade med mindre än en procent, skriver han. En vecka senare skriver han ett brev till tidningen. Medelvärdet av alla sjuhundraåttiosju gissningar är femhundrafyrtiotre kilo, alltså precis oxens vikt."
+    },
+    {
+     "t": 445,
+     "text": "I dag kallas det här för folkmassans visdom. När många personer gissar var för sig, så hamnar mitten av gissningarna ofta nära det rätta svaret."
+    },
+    {
+     "t": 457,
+     "text": "Nu är det din tur. Sju besökare gissar vad en annan oxe väger. De gissar femhundratjugo, femhundratrettio, femhundrafyrtio, femhundrafyrtiofem, femhundrafemtio, femhundrasextio och sexhundra kilo. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: Vilken är medianen? Sen: Hur stort är kvartilavståndet?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Plymouth 1906: gissa oxens vikt",
+     "typ": "historia"
+    },
+    {
+     "t": 35,
+     "rubrik": "Galton lånar korten",
+     "typ": "historia"
+    },
+    {
+     "t": 73,
+     "rubrik": "Medianen: folkets röst",
+     "typ": "matte"
+    },
+    {
+     "t": 126,
+     "rubrik": "Variationsbredden",
+     "typ": "matte"
+    },
+    {
+     "t": 167,
+     "rubrik": "En vild gissning",
+     "typ": "matte"
+    },
+    {
+     "t": 186,
+     "rubrik": "Nedre och övre kvartilen",
+     "typ": "matte"
+    },
+    {
+     "t": 218,
+     "rubrik": "Kvartilavståndet",
+     "typ": "matte"
+    },
+    {
+     "t": 251,
+     "rubrik": "Formelbladet: lådagrammet",
+     "typ": "matte"
+    },
+    {
+     "t": 275,
+     "rubrik": "Lådagrammet för elva kort",
+     "typ": "matte"
+    },
+    {
+     "t": 304,
+     "rubrik": "En fjärdedel i varje del",
+     "typ": "matte"
+    },
+    {
+     "t": 337,
+     "rubrik": "Galtons kvartiler",
+     "typ": "matte"
+    },
+    {
+     "t": 366,
+     "rubrik": "Percentiler",
+     "typ": "matte"
+    },
+    {
+     "t": 419,
+     "rubrik": "Folkets röst i Nature",
+     "typ": "historia"
+    },
+    {
+     "t": 457,
+     "rubrik": "Sju gissningar på en annan oxe",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 457,
+    "fraga": "Sju besökare gissar vad en annan oxe väger. De gissar 520, 530, 540, 545, 550, 560 och 600 kilo. Du ska svara på två frågor.",
+    "slut": [
+     "Först: Vilken är medianen?",
+     "Sen: Hur stort är kvartilavståndet?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2a-15-kvartiler-och-percentiler.jpg?v=8df0e5c9",
+     "tema": "scen",
+     "text": "En svartvit oxe står bakom ett staket i en boskapshall. På staketet hänger sju kort med gissningarna 520, 530, 540, 545, 550, 560 och 600. Till vänster står median = ? och kvartilavstånd = ?.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: Vilken är medianen?",
+      "typ": "tal",
+      "svar": 545,
+      "tolerans": 0.01,
+      "enhet": "kg",
+      "exempel": "t.ex. 525",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "4",
+        "text": "4 är platsen i mitten: den fjärde gissningen. Vilken gissning står på fjärde plats?"
+       },
+       {
+        "svar": "560",
+        "text": "560 är mitten mellan den minsta och den största gissningen, och den övre kvartilen. Medianen är gissningen i mitten av alla sju, med tre på varje sida."
+       },
+       {
+        "svar": "549.3",
+        "text": "Det är medelvärdet. Medianen räknas inte ut, den läses av: gissningen i mitten när de står i storleksordning."
+       },
+       {
+        "svar": "550",
+        "text": "550 är den femte gissningen. Med sju gissningar står den fjärde i mitten, med tre gissningar på varje sida."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: Hur stort är kvartilavståndet?",
+      "typ": "tal",
+      "svar": 30,
+      "tolerans": 0.01,
+      "enhet": "kg",
+      "exempel": "t.ex. 25",
+      "tangenter": [
+       ","
+      ],
+      "fel": [
+       {
+        "svar": "80",
+        "text": "80 är variationsbredden, största minus minsta gissningen. Kvartilavståndet är övre kvartilen minus nedre kvartilen."
+       },
+       {
+        "svar": "20",
+        "text": "Medianen räknas inte med i någon av halvorna. Den undre halvan är 520, 530 och 540, och den övre är 550, 560 och 600."
+       },
+       {
+        "svar": "530",
+        "text": "530 är den nedre kvartilen. Ta nu den övre kvartilen minus den nedre."
+       },
+       {
+        "svar": "560",
+        "text": "560 är den övre kvartilen. Ta nu den övre kvartilen minus den nedre."
+       },
+       {
+        "svar": "-30",
+        "text": "Ta den övre kvartilen minus den nedre, så blir svaret positivt."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med Galtons elva kort. Medianen är gissningen i mitten. Den räknas inte med i halvorna. Mitten av den undre halvan är nedre kvartilen och mitten av den övre halvan är övre kvartilen.",
+     "t": 186
+    },
+    "losning": [
+     "Gissningarna står redan i storleksordning: 520, 530, 540, 545, 550, 560, 600.",
+     "Med sju gissningar är medianen den fjärde, för då står det tre på varje sida. Medianen är 545 kg.",
+     "Medianen räknas inte med i halvorna. Den undre halvan är 520, 530 och 540, och mitten är 530. Det är nedre kvartilen.",
+     "Den övre halvan är 550, 560 och 600, och mitten är 560. Det är övre kvartilen.",
+     "Kvartilavståndet är 560 − 530 = 30 kg."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 12.84,
+     "text": "Det är år nittonhundrasex, i Plymouth i England."
+    },
+    {
+     "s": 13.64,
+     "e": 17.34,
+     "text": "På stadens boskapsmässa står en fet oxe i en fålla."
+    },
+    {
+     "s": 18.14,
+     "e": 21.88,
+     "text": "Besökarna får gissa vad köttet kommer att väga när oxen är slaktad."
+    },
+    {
+     "s": 22.68,
+     "e": 28.94,
+     "text": "Varje gissning skrivs på ett kort, som kostar sex pence, och den som gissar närmast vinner ett pris."
+    },
+    {
+     "s": 29.86,
+     "e": 34.84,
+     "text": "Bönder och slaktare gissar, men också vanliga besökare som aldrig har vägt en oxe."
+    },
+    {
+     "s": 35.94,
+     "e": 38.56,
+     "text": "Efter mässan lånar en forskare alla korten."
+    },
+    {
+     "s": 39.36,
+     "e": 42.84,
+     "text": "Han heter Francis Galton och är åttiofyra år gammal."
+    },
+    {
+     "s": 43.64,
+     "e": 46.52,
+     "text": "Galtons motto är: räkna, när du kan."
+    },
+    {
+     "s": 47.54,
+     "e": 52.66,
+     "text": "Ungefär åttahundra kort har kommit in, och sjuhundraåttiosju av dem går att läsa."
+    },
+    {
+     "s": 53.5,
+     "e": 57.18,
+     "text": "Oxen väger femhundrafyrtiotre kilo efter slakten."
+    },
+    {
+     "s": 58.94,
+     "e": 60.72,
+     "text": "Galton undrar två saker."
+    },
+    {
+     "s": 61.52,
+     "e": 66.24,
+     "text": "Kan en hel folkmassa tillsammans gissa rätt, fast de flesta inte är experter?"
+    },
+    {
+     "s": 67.04,
+     "e": 69.38,
+     "text": "Och hur mycket skiljer sig gissningarna åt?"
+    },
+    {
+     "s": 70.18,
+     "e": 71.46,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 73.96,
+     "e": 79.28,
+     "text": "Galton lägger alla korten i storleksordning, från den minsta gissningen till den största."
+    },
+    {
+     "s": 80.08,
+     "e": 81.7,
+     "text": "Sen tar han kortet i mitten."
+    },
+    {
+     "s": 82.5,
+     "e": 88.8,
+     "text": "Det kallas medianen, och för sjuhundraåttiosju kort är det det trehundranittiofjärde kortet."
+    },
+    {
+     "s": 89.6,
+     "e": 92.66,
+     "text": "Då ligger det trehundranittiotre kort på varje sida."
+    },
+    {
+     "s": 93.52,
+     "e": 96.26,
+     "text": "Medianen är femhundrafyrtiosju kilo."
+    },
+    {
+     "s": 97.06,
+     "e": 99.9,
+     "text": "Det är bara fyra kilo från oxens riktiga vikt."
+    },
+    {
+     "s": 101,
+     "e": 104.06,
+     "text": "Galton kallar medianen för folkets röst."
+    },
+    {
+     "s": 104.86,
+     "e": 109.52,
+     "text": "Varje kort är en röst, och hälften av korten gissar lägre än medianen,"
+    },
+    {
+     "s": 109.86,
+     "e": 111.02,
+     "text": "och hälften högre."
+    },
+    {
+     "s": 112.62,
+     "e": 114.96,
+     "text": "Men hur mycket skiljer sig korten åt?"
+    },
+    {
+     "s": 115.76,
+     "e": 117.62,
+     "text": "Det säger medianen ingenting om."
+    },
+    {
+     "s": 118.42,
+     "e": 123.82,
+     "text": "Hur mycket värdena skiljer sig åt kallas spridningen, och ett tal som visar spridningen"
+    },
+    {
+     "s": 124.02,
+     "e": 125.68,
+     "text": "kallas ett spridningsmått."
+    },
+    {
+     "s": 126.78,
+     "e": 129.86,
+     "text": "Vi tar bara elva kort ur högen, så att det blir lätt att räkna."
+    },
+    {
+     "s": 130.66,
+     "e": 136,
+     "text": "I storleksordning är de fyrahundranittio, femhundratolv, femhundratjugosju,"
+    },
+    {
+     "s": 136.5,
+     "e": 140.9,
+     "text": "femhundratrettioåtta, femhundrafyrtiofyra, femhundrafyrtiosju,"
+    },
+    {
+     "s": 141.38,
+     "e": 149.88,
+     "text": "femhundrafemtioett, femhundrafemtiosex, femhundrasextioett, femhundrasjuttio och sexhundratio kilo."
+    },
+    {
+     "s": 150.78,
+     "e": 154,
+     "text": "Det enklaste spridningsmåttet är variationsbredden."
+    },
+    {
+     "s": 154.8,
+     "e": 157.48,
+     "text": "Det är det största värdet minus det minsta."
+    },
+    {
+     "s": 158.28,
+     "e": 162.12,
+     "text": "sexhundratio minus fyrahundranittio är hundratjugo."
+    },
+    {
+     "s": 162.92,
+     "e": 165.92,
+     "text": "Variationsbredden är alltså hundratjugo kilo."
+    },
+    {
+     "s": 167.28,
+     "e": 169.68,
+     "text": "Men variationsbredden luras lätt."
+    },
+    {
+     "s": 170.48,
+     "e": 174.06,
+     "text": "Den bygger bara på två kort, det största och det minsta."
+    },
+    {
+     "s": 174.86,
+     "e": 180.94,
+     "text": "Ett enda kort med en vild gissning, som sexhundratio, gör variationsbredden mycket större."
+    },
+    {
+     "s": 181.74,
+     "e": 185.56,
+     "text": "Därför delar vi i stället korten i fyra lika stora delar."
+    },
+    {
+     "s": 186.66,
+     "e": 193.96,
+     "text": "Först medianen. Med elva kort är det det sjätte kortet, femhundrafyrtiosju, för då ligger det fem kort"
+    },
+    {
+     "s": 194,
+     "e": 195,
+     "text": "på varje sida."
+    },
+    {
+     "s": 195.6,
+     "e": 198.5,
+     "text": "Medianen räknas inte med i någon av halvorna."
+    },
+    {
+     "s": 199.3,
+     "e": 201.86,
+     "text": "Den undre halvan är de fem minsta korten."
+    },
+    {
+     "s": 202.66,
+     "e": 205.74,
+     "text": "Mitten av dem är det tredje kortet, femhundratjugosju."
+    },
+    {
+     "s": 206.54,
+     "e": 208.4,
+     "text": "Det kallas den nedre kvartilen."
+    },
+    {
+     "s": 209.2,
+     "e": 214.48,
+     "text": "Den övre halvan är de fem största korten, och mitten av dem är femhundrasextioett."
+    },
+    {
+     "s": 215.28,
+     "e": 217.06,
+     "text": "Det kallas den övre kvartilen."
+    },
+    {
+     "s": 218.16,
+     "e": 223.16,
+     "text": "Nedre kvartilen, medianen och övre kvartilen delar korten i fyra delar,"
+    },
+    {
+     "s": 223.52,
+     "e": 225.98,
+     "text": "med ungefär lika många kort i varje del."
+    },
+    {
+     "s": 226.78,
+     "e": 231.08,
+     "text": "Skillnaden mellan övre och nedre kvartilen kallas kvartilavståndet."
+    },
+    {
+     "s": 231.88,
+     "e": 233.24,
+     "text": "Det är också ett spridningsmått."
+    },
+    {
+     "s": 234.18,
+     "e": 237.6,
+     "text": "Hur mycket är femhundrasextioett minus femhundratjugosju?"
+    },
+    {
+     "s": 239.52,
+     "e": 244.7,
+     "text": "Från femhundratjugosju till femhundratrettio är det tre, och från femhundratrettio till"
+    },
+    {
+     "s": 244.74,
+     "e": 246.9,
+     "text": "femhundrasextioett är det trettioett."
+    },
+    {
+     "s": 247.7,
+     "e": 250.58,
+     "text": "Kvartilavståndet är alltså trettiofyra kilo."
+    },
+    {
+     "s": 251.68,
+     "e": 256.9,
+     "text": "Med kvartilerna kan vi rita en bild av spridningen, och den bilden står på formelbladet."
+    },
+    {
+     "s": 257.7,
+     "e": 259.48,
+     "text": "Den heter ett lådagram."
+    },
+    {
+     "s": 260.3,
+     "e": 264.56,
+     "text": "Längst till vänster står det minsta värdet och längst till höger det största."
+    },
+    {
+     "s": 265.36,
+     "e": 270.74,
+     "text": "Lådan går från den nedre kvartilen till den övre, och strecket i lådan är medianen."
+    },
+    {
+     "s": 271.54,
+     "e": 273.9,
+     "text": "Lådans bredd är kvartilavståndet."
+    },
+    {
+     "s": 275,
+     "e": 279.46,
+     "text": "Vi skriver av formelbladets lådagram som en mall och sätter in våra kort."
+    },
+    {
+     "s": 280.26,
+     "e": 282.3,
+     "text": "Vi ritar en tallinje i kilo."
+    },
+    {
+     "s": 283.1,
+     "e": 287.78,
+     "text": "Minsta värdet är fyrahundranittio, nedre kvartilen femhundratjugosju,"
+    },
+    {
+     "s": 288.42,
+     "e": 295.72,
+     "text": "medianen femhundrafyrtiosju, övre kvartilen femhundrasextioett och största värdet sexhundratio."
+    },
+    {
+     "s": 296.52,
+     "e": 300.5,
+     "text": "Lådan blir smal, men strecket ut till sexhundratio blir långt."
+    },
+    {
+     "s": 301.3,
+     "e": 303.16,
+     "text": "Där ser vi den vilda gissningen."
+    },
+    {
+     "s": 304.26,
+     "e": 308.1,
+     "text": "Ungefär en fjärdedel av korten ligger under nedre kvartilen,"
+    },
+    {
+     "s": 308.5,
+     "e": 311.32,
+     "text": "och en fjärdedel ligger över övre kvartilen."
+    },
+    {
+     "s": 312.12,
+     "e": 315.74,
+     "text": "Då är resten, ungefär hälften av korten, inne i lådan."
+    },
+    {
+     "s": 316.54,
+     "e": 319.32,
+     "text": "Det gäller för alla sjuhundraåttiosju korten också."
+    },
+    {
+     "s": 320.26,
+     "e": 323.62,
+     "text": "Hur många kort är en fjärdedel av sjuhundraåttiosju?"
+    },
+    {
+     "s": 325.14,
+     "e": 331.48,
+     "text": "åttahundra delat med fyra är tvåhundra, så det blir lite mindre, ungefär hundranittiosju."
+    },
+    {
+     "s": 332.28,
+     "e": 336.78,
+     "text": "Ungefär hundranittiosju kort gissar alltså lägre än nedre kvartilen."
+    },
+    {
+     "s": 337.88,
+     "e": 340.98,
+     "text": "Nu tar vi Galtons alla sjuhundraåttiosju kort igen."
+    },
+    {
+     "s": 341.78,
+     "e": 343.92,
+     "text": "Galton räknade själv ut kvartilerna."
+    },
+    {
+     "s": 344.72,
+     "e": 350.24,
+     "text": "Nedre kvartilen är femhundratjugosju kilo, och övre kvartilen är femhundrasextioett."
+    },
+    {
+     "s": 351.04,
+     "e": 355.64,
+     "text": "Oxens riktiga vikt, femhundrafyrtiotre, ligger alltså inne i lådan."
+    },
+    {
+     "s": 356.44,
+     "e": 361.32,
+     "text": "Hälften av alla gissningarna ligger inom ett kvartilavstånd på trettiofyra kilo."
+    },
+    {
+     "s": 362.48,
+     "e": 365.64,
+     "text": "Vad nice, de flesta besökarna gissade ganska bra."
+    },
+    {
+     "s": 366.74,
+     "e": 369.76,
+     "text": "Galton delade också in korten i ännu fler delar."
+    },
+    {
+     "s": 370.56,
+     "e": 375.62,
+     "text": "När man delar in i hundra lika stora delar, så kallas gränserna percentiler."
+    },
+    {
+     "s": 376.42,
+     "e": 380.98,
+     "text": "I Galtons tabell är den nittionde percentilen femhundrasjuttiofem kilo."
+    },
+    {
+     "s": 381.78,
+     "e": 386.72,
+     "text": "Det betyder att ungefär nittio procent av korten gissar lägre än femhundrasjuttiofem"
+    },
+    {
+     "s": 386.82,
+     "e": 389.38,
+     "text": "kilo, och tio procent gissar högre."
+    },
+    {
+     "s": 390.48,
+     "e": 392.78,
+     "text": "Kvartilerna är faktiskt också percentiler."
+    },
+    {
+     "s": 393.58,
+     "e": 396.2,
+     "text": "Medianen är den femtionde percentilen."
+    },
+    {
+     "s": 397,
+     "e": 402.82,
+     "text": "Nedre kvartilen är den tjugofemte percentilen, och övre kvartilen är den sjuttiofemte."
+    },
+    {
+     "s": 403.62,
+     "e": 405.36,
+     "text": "Nu får vi inte glömma vad de betyder."
+    },
+    {
+     "s": 406.16,
+     "e": 412.42,
+     "text": "Den tjugofemte percentilen, femhundratjugosju kilo, betyder att tjugofem procent av korten"
+    },
+    {
+     "s": 412.58,
+     "e": 414.9,
+     "text": "gissar lägre än femhundratjugosju."
+    },
+    {
+     "s": 415.7,
+     "e": 417.28,
+     "text": "Nu går vi tillbaka till Galton."
+    },
+    {
+     "s": 419.78,
+     "e": 424.02,
+     "text": "I mars nittonhundrasju skriver Galton om oxen i tidningen Nature."
+    },
+    {
+     "s": 424.82,
+     "e": 427.22,
+     "text": "Han kallar artikeln Folkets röst."
+    },
+    {
+     "s": 428.02,
+     "e": 431.96,
+     "text": "Folkmassan missade med mindre än en procent, skriver han."
+    },
+    {
+     "s": 432.76,
+     "e": 435.4,
+     "text": "En vecka senare skriver han ett brev till tidningen."
+    },
+    {
+     "s": 436.2,
+     "e": 441.56,
+     "text": "Medelvärdet av alla sjuhundraåttiosju gissningar är femhundrafyrtiotre kilo,"
+    },
+    {
+     "s": 442,
+     "e": 444.06,
+     "text": "alltså precis oxens vikt."
+    },
+    {
+     "s": 445.16,
+     "e": 448.36,
+     "text": "I dag kallas det här för folkmassans visdom."
+    },
+    {
+     "s": 449.16,
+     "e": 455.3,
+     "text": "När många personer gissar var för sig, så hamnar mitten av gissningarna ofta nära det rätta svaret."
+    },
+    {
+     "s": 457.8,
+     "e": 458.8,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 459.6,
+     "e": 462.44,
+     "text": "Sju besökare gissar vad en annan oxe väger."
+    },
+    {
+     "s": 463.24,
+     "e": 467.74,
+     "text": "De gissar femhundratjugo, femhundratrettio, femhundrafyrtio,"
+    },
+    {
+     "s": 468.28,
+     "e": 473.96,
+     "text": "femhundrafyrtiofem, femhundrafemtio, femhundrasextio och sexhundra kilo."
+    },
+    {
+     "s": 474.76,
+     "e": 478.74,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 479.54,
+     "e": 481.86,
+     "text": "Först: Vilken är medianen?"
+    },
+    {
+     "s": 482.66,
+     "e": 485.54,
+     "text": "Sen: Hur stort är kvartilavståndet?"
     }
    ]
   },

@@ -4252,5 +4252,180 @@
         {"typ": "text", "vid": [150, 600], "text": "symmetrilinje: x = ?", "ankare": "start"}
       ]
     }
+  },
+  "ma2a-14-lagesmatt": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Sju andra soldater har bröstmåtten 94, 98, 100, 100, 102, 105 och 115 centimeter. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vilken är medianen?",
+      "Sen: Vilket är medelvärdet?"
+    ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "Sju skotska soldater i röda jackor står på rad framför en stenmur. Ovanför dem står deras bröstmått: 94, 98, 100, 100, 102, 105 och 115. Till vänster står median = ? och medelvärde = ?.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: Vilken är medianen?",
+        "typ": "tal",
+        "svar": 100,
+        "tolerans": 0.01,
+        "enhet": "cm",
+        "exempel": "t.ex. 97",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "102",
+            "text": "102 cm är medelvärdet, alltså svaret på nästa fråga. Medianen är måttet i mitten när måtten står i storleksordning."
+          },
+          {
+            "svar": "4",
+            "text": "4 är platsen i mitten: det fjärde måttet. Vilket mått står på fjärde plats?"
+          },
+          {
+            "svar": "714",
+            "text": "714 är summan av alla sju måtten. Medianen räknas inte ut, den läses av: måttet i mitten."
+          },
+          {
+            "svar": "104.5",
+            "text": "Det är mitten mellan det minsta och det största måttet. Medianen är måttet i mitten av alla sju, med tre mått på varje sida."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Vilket är medelvärdet?",
+        "typ": "tal",
+        "svar": 102,
+        "tolerans": 0.01,
+        "enhet": "cm",
+        "exempel": "t.ex. 97,5",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "100",
+            "text": "100 cm är medianen. Medelvärdet får du när du lägger ihop alla sju måtten och delar med sju."
+          },
+          {
+            "svar": "714",
+            "text": "714 är summan av måtten. Dela den nu med antalet mått, alltså sju."
+          },
+          {
+            "svar": "119",
+            "text": "Du delade summan med sex. Det är sju soldater, så summan ska delas med sju."
+          },
+          {
+            "svar": "101",
+            "text": "Lägg ihop måtten en gång till: 94 + 98 + 100 + 100 + 102 + 105 + 115 = 714. Dela sedan med sju."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Först medelvärdet",
+      "text": "Gör som med Quetelets sju soldater. Måtten står redan i storleksordning, så medianen är det fjärde måttet. För medelvärdet lägger du ihop alla sju måtten och delar med sju."
+    },
+    "losning": [
+      "Måtten står redan i storleksordning: 94, 98, 100, 100, 102, 105, 115.",
+      "Med sju mått är medianen det fjärde måttet, för då står det tre mått på varje sida. Medianen är 100 cm.",
+      "Summan är 94 + 98 + 100 + 100 + 102 + 105 + 115 = 714.",
+      "Medelvärdet är 714 / 7. 700 / 7 = 100 och 14 / 7 = 2, så medelvärdet är 102 cm. Soldaten med 115 cm drar upp medelvärdet en bit över medianen."
+    ]
+  },
+  "ma2a-15-kvartiler-och-percentiler": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Sju besökare gissar vad en annan oxe väger. De gissar 520, 530, 540, 545, 550, 560 och 600 kilo. Du ska svara på två frågor.",
+    "slut": [
+      "Först: Vilken är medianen?",
+      "Sen: Hur stort är kvartilavståndet?"
+    ],
+    "figur": {
+      "vy": [1920, 1080],
+      "bild": "filmens-slutbild",
+      "tema": "scen",
+      "text": "En svartvit oxe står bakom ett staket i en boskapshall. På staketet hänger sju kort med gissningarna 520, 530, 540, 545, 550, 560 och 600. Till vänster står median = ? och kvartilavstånd = ?.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: Vilken är medianen?",
+        "typ": "tal",
+        "svar": 545,
+        "tolerans": 0.01,
+        "enhet": "kg",
+        "exempel": "t.ex. 525",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "4",
+            "text": "4 är platsen i mitten: den fjärde gissningen. Vilken gissning står på fjärde plats?"
+          },
+          {
+            "svar": "560",
+            "text": "560 är mitten mellan den minsta och den största gissningen, och den övre kvartilen. Medianen är gissningen i mitten av alla sju, med tre på varje sida."
+          },
+          {
+            "svar": "549.3",
+            "text": "Det är medelvärdet. Medianen räknas inte ut, den läses av: gissningen i mitten när de står i storleksordning."
+          },
+          {
+            "svar": "550",
+            "text": "550 är den femte gissningen. Med sju gissningar står den fjärde i mitten, med tre gissningar på varje sida."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: Hur stort är kvartilavståndet?",
+        "typ": "tal",
+        "svar": 30,
+        "tolerans": 0.01,
+        "enhet": "kg",
+        "exempel": "t.ex. 25",
+        "tangenter": [
+          ","
+        ],
+        "fel": [
+          {
+            "svar": "80",
+            "text": "80 är variationsbredden, största minus minsta gissningen. Kvartilavståndet är övre kvartilen minus nedre kvartilen."
+          },
+          {
+            "svar": "20",
+            "text": "Medianen räknas inte med i någon av halvorna. Den undre halvan är 520, 530 och 540, och den övre är 550, 560 och 600."
+          },
+          {
+            "svar": "530",
+            "text": "530 är den nedre kvartilen. Ta nu den övre kvartilen minus den nedre."
+          },
+          {
+            "svar": "560",
+            "text": "560 är den övre kvartilen. Ta nu den övre kvartilen minus den nedre."
+          },
+          {
+            "svar": "-30",
+            "text": "Ta den övre kvartilen minus den nedre, så blir svaret positivt."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Först medianen",
+      "text": "Gör som med Galtons elva kort. Medianen är gissningen i mitten. Den räknas inte med i halvorna. Mitten av den undre halvan är nedre kvartilen och mitten av den övre halvan är övre kvartilen."
+    },
+    "losning": [
+      "Gissningarna står redan i storleksordning: 520, 530, 540, 545, 550, 560, 600.",
+      "Med sju gissningar är medianen den fjärde, för då står det tre på varje sida. Medianen är 545 kg.",
+      "Medianen räknas inte med i halvorna. Den undre halvan är 520, 530 och 540, och mitten är 530. Det är nedre kvartilen.",
+      "Den övre halvan är 550, 560 och 600, och mitten är 560. Det är övre kvartilen.",
+      "Kvartilavståndet är 560 − 530 = 30 kg."
+    ]
   }
 }
