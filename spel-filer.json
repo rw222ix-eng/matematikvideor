@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-12",
+ "byggd": "2026-11-13",
  "kalla": "https://geogebra-guiden.pages.dev",
  "spel": {
   "tron": {
@@ -184,6 +184,26 @@
      "vag": "ljud/latar-tron/latar.json",
      "storlek": 117,
      "sha256": "9ea6849edc01d3d521965cae5ae9ca9e1300a3367feacd0299d60405ddd602db"
+    },
+    {
+     "vag": "ljud/meny-tron/botten.mp3",
+     "storlek": 366593,
+     "sha256": "3928e8d09a34a65653a86fb1dbd74fd2515c49fe13ee19aaf7f38c312a440929"
+    },
+    {
+     "vag": "ljud/meny-tron/lager.json",
+     "storlek": 146,
+     "sha256": "50aad00c2b0448acd7920d7452ba1c887458135b23d083bf77ec9ae253cc5e7f"
+    },
+    {
+     "vag": "ljud/meny-tron/puls.mp3",
+     "storlek": 366593,
+     "sha256": "27648a6af0be9cdf6601025331afce74d9cc2c55d6b3e294262ec65554b8b4e3"
+    },
+    {
+     "vag": "ljud/meny-tron/topp.mp3",
+     "storlek": 366593,
+     "sha256": "62e0f8e0057cf8699cc82364f912c19bc57f5887080e555d29bc63cd718c21f6"
     },
     {
      "vag": "ljud/tron-berattare.mp3",
@@ -1196,6 +1216,11 @@
      "sha256": "4f6b341f071453ab0e677eecf9a36bcfa5f0f78897153b484eb2c9837a38dd1a"
     },
     {
+     "vag": "spel-menymusik.js",
+     "storlek": 9899,
+     "sha256": "feb1fee0baa4b8f8162b04d05ffd0be4dcae82ef7d5b1cbfc41ef32906e8d452"
+    },
+    {
      "vag": "spel-rapport.css",
      "storlek": 2795,
      "sha256": "dd5dfd217ed3cda1b3435b7e85d979eea1f639ef0d0582b001eed982ddcad2f2"
@@ -1237,8 +1262,8 @@
     },
     {
      "vag": "tron-bild.js",
-     "storlek": 13072,
-     "sha256": "89ed29f39b16b275fdb0c901599d68d8c1f76139e64713cede00c2f3bd36c753"
+     "storlek": 16980,
+     "sha256": "4e8ef3d1df2e35afef1c2d1734d379d5348b4b516578f2a702b703e5e6c93759"
     },
     {
      "vag": "tron-bla.js",
@@ -1257,8 +1282,8 @@
     },
     {
      "vag": "tron-display.js",
-     "storlek": 16225,
-     "sha256": "ec56717ddf3b7e72d84c3c1a675230c831f936f9b9eaa25245ec31ac54196803"
+     "storlek": 22581,
+     "sha256": "773babda2e8762bae02ee5b3606887c403cd2dc7a8060f92daa732222a5fd84d"
     },
     {
      "vag": "tron-dodsljud.js",
@@ -1342,8 +1367,8 @@
     },
     {
      "vag": "tron-prestanda.js",
-     "storlek": 4003,
-     "sha256": "c880cc97d3d9007c5390f28cf07eb0aeb7204af49e57499b51e6d42f2c244b39"
+     "storlek": 3889,
+     "sha256": "9886f9bbec1b7c264af14dd58dbae9185fa2a7922f10023d7892c34f379c5a48"
     },
     {
      "vag": "tron-repris.js",
@@ -1357,13 +1382,13 @@
     },
     {
      "vag": "tron-sida.css",
-     "storlek": 8733,
-     "sha256": "c6d9725449e68ac71359f726d796b67e406e06ccbd76a7986db390cd2360c960"
+     "storlek": 9133,
+     "sha256": "fcf610693734bce279488e91d8d762842824f5d1c3f6396266ef876e4c6039f8"
     },
     {
      "vag": "tron-sida.js",
-     "storlek": 36767,
-     "sha256": "2c0df4eb9421685434b41414f92cc3b1d379f0198273bffd51def14b5449ca90"
+     "storlek": 37178,
+     "sha256": "abb7f780f23c17fc3053ebdf754a75961030ecc7ce696c2808364a7df773dbfd"
     },
     {
      "vag": "tron-sim.js",
@@ -1377,13 +1402,13 @@
     },
     {
      "vag": "tron-stad.js",
-     "storlek": 36655,
-     "sha256": "4bd30796bfbfdc05652b9bef9c9d8884ecc4efd043c308cef57cc734cf3e101a"
+     "storlek": 36599,
+     "sha256": "cd19e7a633a8cca821bd30bae26aff31e7ce80d136c003ec1a1108b1aa7b6392"
     },
     {
      "vag": "tron-turnering.js",
-     "storlek": 28627,
-     "sha256": "38c1e7ae041e7e7d7802ddabb1be56dd102b37c79c2947dccf26044423149f75"
+     "storlek": 28655,
+     "sha256": "4ec360eb17a7224c992920a8770aed7567b4f85dfd0e4ce35ec6038ed18519e7"
     },
     {
      "vag": "tron.html",
@@ -3507,8 +3532,8 @@
     },
     {
      "vag": "tron-bild.js",
-     "storlek": 13072,
-     "sha256": "89ed29f39b16b275fdb0c901599d68d8c1f76139e64713cede00c2f3bd36c753"
+     "storlek": 16980,
+     "sha256": "4e8ef3d1df2e35afef1c2d1734d379d5348b4b516578f2a702b703e5e6c93759"
     },
     {
      "vag": "tron-bla.js",
@@ -3527,8 +3552,8 @@
     },
     {
      "vag": "tron-display.js",
-     "storlek": 16225,
-     "sha256": "ec56717ddf3b7e72d84c3c1a675230c831f936f9b9eaa25245ec31ac54196803"
+     "storlek": 22581,
+     "sha256": "773babda2e8762bae02ee5b3606887c403cd2dc7a8060f92daa732222a5fd84d"
     },
     {
      "vag": "tron-dodsljud.js",
@@ -3607,8 +3632,8 @@
     },
     {
      "vag": "tron-prestanda.js",
-     "storlek": 4003,
-     "sha256": "c880cc97d3d9007c5390f28cf07eb0aeb7204af49e57499b51e6d42f2c244b39"
+     "storlek": 3889,
+     "sha256": "9886f9bbec1b7c264af14dd58dbae9185fa2a7922f10023d7892c34f379c5a48"
     },
     {
      "vag": "tron-repris.js",
@@ -3632,13 +3657,13 @@
     },
     {
      "vag": "tron-stad.js",
-     "storlek": 36655,
-     "sha256": "4bd30796bfbfdc05652b9bef9c9d8884ecc4efd043c308cef57cc734cf3e101a"
+     "storlek": 36599,
+     "sha256": "cd19e7a633a8cca821bd30bae26aff31e7ce80d136c003ec1a1108b1aa7b6392"
     },
     {
      "vag": "tron-turnering.js",
-     "storlek": 28627,
-     "sha256": "38c1e7ae041e7e7d7802ddabb1be56dd102b37c79c2947dccf26044423149f75"
+     "storlek": 28655,
+     "sha256": "4ec360eb17a7224c992920a8770aed7567b4f85dfd0e4ce35ec6038ed18519e7"
     },
     {
      "vag": "tron.js",
