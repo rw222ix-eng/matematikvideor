@@ -6,9 +6,9 @@ Skriven 2026-10-27. Ändra filen när ett skydd eller en extern källa ändras. 
 
 - Statisk sida. Cloudflare Pages och GitHub Pages bygger med `node verktyg/publicera.mjs` i `.github/workflows/pages.yml`, och Vercel med `--vidarekoppla` (`vercel.json`). Steget skriver filmsidorna, flyttar sidans skript ur `index.html` till `app.<hash>.js` och byter policyn mot den strikta i `verktyg/csp.mjs`. Bygget använder bara Node, inga npm-paket.
 - GitHub Pages (sedan 2026-10-27) och Vercel (sedan flytten 2026-11-07) skickar vidare till Cloudflare Pages, eftersom Pages inte kan skicka säkerhetshuvudena nedan och Vercels gratisplan inte gäller arbete i tjänsten. Båda kör `publicera.mjs --vidarekoppla`, som byter startsidan mot en sida som skickar eleven till samma ställe hos Cloudflare: `#<film>&t=…` följer med, och filmsidorna på Pages går via startsidan dit. Det eleven sparat på Pages-adressen (localStorage, se nästa punkt) följer med i `#flytt=…`, eftersom webbläsaren håller de två adressernas lagring isär. Sidan hos Cloudflare tar bara emot det när eleven kommer från Pages eller Vercel (`document.referrer`), skriver en inställning bara om den saknas och slår ihop framstegen, och tar sedan bort `#flytt=…` ur adressen. Tas flaggan bort i `pages.yml` blir Pages en full kopia av videoteket igen, till exempel om Cloudflare ligger nere. Hos Vercel skickar `vercel.json` allt utom startsidan och filmsidorna vidare med 308.
-- Inga kakor, ingen inloggning och ingen besöksmätning.
-- Sidan sparar i elevens webbläsare (localStorage): `fart`, `formelbladKurs`, `framsteg`, `hjalpVisad`, `provKlass`, `spelKlass`, `textning`, `tips`, `tipsSedda` och `volym`. Inget av det är känsligt, och inget utom `spelKlass` skickas härifrån (14.3.3).
-- `spelKlass` är klassen och klassens nyckel ur klasslänken i Classroom (`?klass=TE26A&k=…`), som `{ klass, k }`. Startsidan kontrollerar bara formen (klassen finns i `prov.json`, nyckeln är 4–64 tecken av `A–Z a–z 0–9 _ -`) och tar bort båda ur adressen direkt med `history.replaceState`, så att nyckeln inte står kvar eller delas vidare. Spelsidan under `/spel/` läser den och skickar den till spelservern, som avgör om nyckeln stämmer och då lägger poängen på klassens topplista. En felaktig länk rör inte det som redan är sparat, och en länk med en annan klass skriver över.
+- Ingen besöksmätning. Filmerna kräver ingen inloggning och sätter inga kakor. Spelen har en frivillig inloggning med skolans Google-konto, med en kaka från spelservern (se «Inloggningen till spelen» nedan).
+- Sidan sparar i elevens webbläsare (localStorage): `fart`, `formelbladKurs`, `framsteg`, `hjalpVisad`, `provKlass`, `textning`, `tips`, `tipsSedda` och `volym`. Inget av det är känsligt, och inget av det skickas härifrån (14.3.3). I sessionStorage ligger `spelInlogg`, spelserverns senaste svar `{ inloggad, klass }`, bara för att raden under fliken Spel ska ritas direkt. Det avgör ingenting: servern läser kakan.
+- Klasslänken med klassens nyckel (`?klass=TE26A&k=…`, `spelKlass`, 2026-11-09) är borta sedan 2026-11-14. En gammal länk fungerar som en vanlig länk: startsidan tar bort `klass` och `k` ur adressen med `history.replaceState` och raderar en sparad `spelKlass`.
 - Text från `videor.json` går genom `esc()` innan den läggs in som HTML (1.2.1). Sidan använder inte `eval` (1.3.2).
 - Trusted Types (B2, 2026-10-27): webbläsaren tar bara emot HTML och skriptadresser som gått genom sidans egna policyer, `videotek` (funktionen `html()` i `index.html`) och `laddare` (laddaren i `verktyg/csp.mjs`). `html()` stoppar HTML med skript, ramar, stilmallar, händelseattribut och `javascript:`, också i webbläsare utan Trusted Types. Ingen annan policy får skapas, och det finns ingen default-policy. Chrome och Edge sedan 2020, Safari 26 och Firefox 148 har stödet.
 
@@ -42,9 +42,23 @@ Stilattribut gör ingenting (B4, 2026-10-27, `style-src-attr 'none'`), så ett i
 
 - Rickard valde 2026-11-09 att spelen ska ligga «Inne i videoteket». De byggs och provas i geogebra-guidens repo (privat). `verktyg/spel.mjs` hämtar filerna i `spel-filer.json` från geogebra-guiden.pages.dev till `public/spel/` vid publiceringen hos Cloudflare och kontrollerar varje sha256. En fil som inte stämmer stoppar publiceringen.
 - `/spel/*` har en egen policy, `SPEL_CSP` i `verktyg/csp.mjs`: allt från sidans egen adress (skript, worker, ljud, bilder, anslutningar), inget från andra värdar, inga ramar. Spelen kör three.js, en worker och stilar från skript, och de klarar inte sidans Trusted Types och `style-src-attr 'none'`. `cloudflare.mjs` tar bort sidans policy för `/spel/*` med en !-rad, och bygget faller om policyn i `huvuden.json` inte är `SPEL_CSP`.
-- `/spel/rum`, `/spel/topplista` och `/spel/halsa` går genom `functions/spel/` till spelservern (Workern spel-server, service bindingen SPEL i `wrangler.toml`). `public/_routes.json` gör att inga andra adresser kör funktionerna.
-- Spelservern tar bara emot anslutningar från videotekets adress. Den sparar elevens namn (eget, utan filter, Rickards val), klassen när klasslänkens nyckel stämmer, och poängen på veckans topplista. Inga IP-adresser och inga kakor.
+- `/spel/rum`, `/spel/topplista`, `/spel/halsa`, `/spel/inlogg` och de andra vägarna i `RUTTER` (`verktyg/cloudflare.mjs`) går genom `functions/spel/` till spelservern (Workern spel-server, service bindingen SPEL i `wrangler.toml`). `public/_routes.json` gör att inga andra adresser kör funktionerna.
+- Spelservern tar bara emot anslutningar från videotekets adress. Den sparar elevens spelnamn (eget, utan filter, Rickards val) och poängen på veckans topplista, för inloggade elever under kontots kod. Inga IP-adresser. Gäster skrivs inte på någon lista.
 - `verktyg/spelprov.mjs` provar policyn, funktionerna och Tron lokalt i wrangler pages dev.
+
+## Inloggningen till spelen (2026-11-14)
+
+Rickard valde 2026-11-14 att eleven loggar in med skolans Google-konto i stället för klasslänkens nyckel, som var en delad hemlighet per klass. Förbundets it har godkänt det (hans besked samma dag).
+
+- Googles skript (Google Identity Services) laddas bara på `/inlogg/`, en egen sida med en egen policy, `INLOGG_CSP` i `verktyg/csp.mjs`. Startsidans policy och spelens `SPEL_CSP` släpper inte in Google. `cloudflare.mjs` tar bort sidans policy och `Cross-Origin-Opener-Policy` för `/inlogg/*` med !-rader, och bygget faller om värdena i `huvuden.json` inte är `INLOGG_CSP` och `INLOGG_COOP`.
+- `/inlogg/*` har `Cross-Origin-Opener-Policy: same-origin-allow-popups`, eftersom Googles inloggningsfönster svarar med postMessage. Resten av sidan har kvar `same-origin`.
+- Policyn för `/inlogg/*` har `'unsafe-inline'` för stilar, eftersom Googles skript sätter stilar på knappens behållare. Skript tillåts bara från sidans egen adress och `https://accounts.google.com/gsi/client`.
+- Sidan får ett id-token av Google och skickar det till `/spel/inlogg` på sin egen adress. Spelservern kontrollerar signaturen, mottagaren (appens klient-id), utfärdaren, giltighetstiden, skolans domän (fältet `hd`) och en nonce som är bunden till webbläsaren med en kaka. Sidan sparar varken token, adress eller namn.
+- Servern svarar med en kaka som skript inte kan läsa (HttpOnly, Secure, SameSite=Strict, `__Host-`), giltig terminen ut. Den bär två koder för kontot, ingen adress och ingen klass. Klassen slås upp ur lärarens klasslista vid varje anslutning. Listan ligger på servern som kod och klass, utan adresser.
+- Vägen tillbaka efter inloggningen (`?till=`) tar bara emot en väg på sidans egen adress. Allt annat blir `/#spel`.
+- Appen ber bara om det som krävs för inloggning (namn, adress, profilbild) och får ingen åtkomst till elevens Drive, mejl eller Classroom.
+- Texten på `/inlogg/` och `/inlogg/personuppgifter.html` säger vad som sparas och hur länge. Ändras det, ändra texten.
+- `verktyg/spelflikprov.mjs` provar policyn för `/inlogg/`, raden under fliken Spel och, med spelserverns provkonton lokalt, en hel inloggning.
 
 ## Externa värdar (13.1.1)
 
@@ -52,6 +66,7 @@ Stilattribut gör ingenting (B4, 2026-10-27, `style-src-attr 'none'`), så ett i
 | --- | --- | --- |
 | matematikvideor-inbaddat.pages.dev | GeoGebra och YouTube-reserven, i ramar (se nedan) | frame-src |
 | github.com, release-assets.githubusercontent.com, objects.githubusercontent.com | filmerna, som ligger under Releases i det här repot | media-src |
+| accounts.google.com/gsi/ | Googles inloggningsknapp, bara på `/inlogg/*` (se ovan) | script-src, style-src, connect-src, frame-src i `INLOGG_CSP` |
 
 ### GeoGebra och YouTube på en egen adress (B3, 2026-10-27)
 

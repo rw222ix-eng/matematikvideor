@@ -4,14 +4,15 @@
  *
  * _headers har ingen «allt utom», och två regler för samma huvud slås ihop med komma. Därför tar /omslag/* bort
  * Cross-Origin-Resource-Policy från /* med en !-rad innan den sätter sitt eget värde, och /spel/* tar bort sidans
- * Content-Security-Policy innan spelens egen (SPEL_CSP i csp.mjs) sätts.
+ * Content-Security-Policy innan spelens egen (SPEL_CSP i csp.mjs) sätts. /inlogg/* gör likadant med sin policy (INLOGG_CSP)
+ * och med Cross-Origin-Opener-Policy, som Googles inloggningsfönster kräver som same-origin-allow-popups.
  */
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const VAG = { "/(.*)": "/*", "/((?!omslag/).*)": "/*", "/videor.json": "/videor.json", "/app.(.*).js": "/app.*", "/omslag/(.*)": "/omslag/*", "/spel/(.*)": "/spel/*" };
+const VAG = { "/(.*)": "/*", "/((?!omslag/).*)": "/*", "/videor.json": "/videor.json", "/app.(.*).js": "/app.*", "/omslag/(.*)": "/omslag/*", "/spel/(.*)": "/spel/*", "/inlogg/(.*)": "/inlogg/*" };
 // Huvuden som en regel tar bort från /* innan den sätter sitt eget värde.
-const BORT = { "/omslag/*": ["Cross-Origin-Resource-Policy"], "/spel/*": ["Content-Security-Policy"] };
+const BORT = { "/omslag/*": ["Cross-Origin-Resource-Policy"], "/spel/*": ["Content-Security-Policy"], "/inlogg/*": ["Content-Security-Policy", "Cross-Origin-Opener-Policy"] };
 
 export function huvudText(huvuden) {
   const regler = new Map();
@@ -32,7 +33,7 @@ export function huvudText(huvuden) {
 // Pages-funktionerna (functions/spel/) körs bara för spelserverns adresser och menyns filmer. Utan _routes.json skulle
 // varje fil under /spel/ gå genom en funktion och kosta ett anrop i Workers-kvoten. /spel/figur/meny/* ger Range (206)
 // på menyns filmer, som Safari kräver (functions/spel/figur/meny/[[fil]].js, 14/11).
-export const RUTTER = { version: 1, include: ["/spel/rum", "/spel/topplista", "/spel/halsa", "/spel/rapport", "/spel/utmaning", "/spel/klasser", "/spel/figur/meny/*"], exclude: [] };
+export const RUTTER = { version: 1, include: ["/spel/rum", "/spel/inlogg", "/spel/inlogg/*", "/spel/larare", "/spel/topplista", "/spel/halsa", "/spel/rapport", "/spel/utmaning", "/spel/klasser", "/spel/figur/meny/*"], exclude: [] };
 
 export function skrivCloudflareHuvuden(huvuden, publicDir) {
   writeFileSync(join(publicDir, "_headers"), huvudText(huvuden), "utf8");

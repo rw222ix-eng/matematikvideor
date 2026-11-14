@@ -387,16 +387,28 @@
   @media (hover: hover) { .formelval button[aria-selected="false"]:hover, .provval button[aria-selected="false"]:hover { color: var(--ben); } }
   /* Ingen klass vald än: knapparna lyser svagt, så att det syns var man ska trycka. */
   .provval.ingen button { color: var(--ben); }
-  .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik { top: 160px; }
-  .valj.formelval-syns .hint, .valj.provval-syns .hint { top: 202px; }
-  .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje { top: 206px; }
+  .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik, .valj.spelval-syns .rubrik { top: 160px; }
+  .valj.formelval-syns .hint, .valj.provval-syns .hint, .valj.spelval-syns .hint { top: 202px; }
+  .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje, .valj.spelval-syns .tidslinje { top: 206px; }
   @media (min-width: 701px) and (max-height: 660px) {
-    .valj.formelval-syns .formelval, .valj.provval-syns .provval { top: 106px; }
-    .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik { top: 144px; }
-    .valj.formelval-syns .hint, .valj.provval-syns .hint { top: 178px; }
-    .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje { top: 182px; }
-    .valj.formelval-syns .post .lyft, .valj.provval-syns .post .lyft { min-height: 56px; }
+    .valj.formelval-syns .formelval, .valj.provval-syns .provval, .valj.spelval-syns .spelval { top: 106px; }
+    .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik, .valj.spelval-syns .rubrik { top: 144px; }
+    .valj.formelval-syns .hint, .valj.provval-syns .hint, .valj.spelval-syns .hint { top: 178px; }
+    .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje, .valj.spelval-syns .tidslinje { top: 182px; }
+    .valj.formelval-syns .post .lyft, .valj.provval-syns .post .lyft, .valj.spelval-syns .post .lyft { min-height: 56px; }
   }
+  /* Inloggningen under fliken Spel (Rickard 2026-11-14: skolans Google-konto i stället för klassnyckeln). Raden står som
+     klassväljaren och säger vem eleven spelar som: gäst utan topplista, eller inloggad med sin klass. Knappen går till
+     /inlogg/, den enda sidan som laddar Googles skript (INLOGG_CSP i verktyg/csp.mjs). */
+  .valj .spelval { position: absolute; top: 118px; left: 50%; transform: translateX(-50%); z-index: 6; display: none; align-items: center; gap: 12px; padding: 3px 3px 3px 16px; border-radius: 999px; background: rgba(23, 20, 20, .55); border: 1px solid rgba(236, 230, 216, .16); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); white-space: nowrap; max-width: calc(100vw - 20px); }
+  .valj.spelval-syns .spelval { display: flex; }
+  .spelval .lage { font: 500 11px/1.2 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ben2); overflow: hidden; text-overflow: ellipsis; }
+  .spelval .lage b { font-weight: 500; color: var(--ben); }
+  .spelval a, .spelval button { flex: none; display: inline-flex; align-items: center; min-height: 28px; padding: 0 15px; border-radius: 999px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; text-decoration: none; color: var(--accent); background: rgba(242, 197, 114, .14); box-shadow: inset 0 0 0 1px rgba(242, 197, 114, .6); transition: transform .4s var(--fjader), background .3s; }
+  .spelval button.tyst { color: var(--ben2); background: none; box-shadow: inset 0 0 0 1px rgba(236, 230, 216, .22); }
+  .spelval a:active, .spelval button:active { transform: scale(.93); transition-duration: .08s; }
+  .spelval a:focus-visible, .spelval button:focus-visible { outline-offset: 1px; }
+  .spelval button:disabled { opacity: .5; }
   /* Provets skylt först på linan: kursen och hur långt det är kvar, kapitlen stort, sedan vad provet tar upp.
      Samma skylt säger "välj din klass" (pilen uppåt mot knapparna) och "inga fler prov". */
   .bro-text { font: 400 14px/1.45 var(--sans); color: var(--ben); text-shadow: 0 1px 6px rgba(0, 0, 0, .6); }
@@ -1060,9 +1072,12 @@
     .valj.har-flikar .rubrik { padding-top: 22px; }
     .valj.har-flikar .tidslinje { top: 150px; }
     /* Växlaren Ma 1 · Ma 2 står i flödet under flikarna, och rubriken och linan har samma läge som utan den. */
-    .valj .formelval, .valj .provval { position: static; transform: none; width: max-content; margin: 10px auto 0; }
-    .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik { top: auto; padding-top: 14px; }
-    .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje { top: 150px; }
+    .valj .formelval, .valj .provval, .valj .spelval { position: static; transform: none; width: max-content; margin: 10px auto 0; }
+    .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik, .valj.spelval-syns .rubrik { top: auto; padding-top: 14px; }
+    .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje, .valj.spelval-syns .tidslinje { top: 150px; }
+    .spelval { gap: 8px; padding-left: 12px; }
+    .spelval .lage { letter-spacing: .06em; font-size: 10.5px; }
+    .spelval a, .spelval button { padding: 0 11px; letter-spacing: .1em; }
     .flikar button { padding: 0 16px; letter-spacing: .16em; }
     /* Tre flikar (Matematik 1c, Matematik 2a, Formelbladet) ryms inte lika breda på en telefon:
        där står kurserna som Ma 1c och Ma 2a. */
@@ -1410,6 +1425,8 @@
   </div>
   <!-- Under fliken Inför provet: klassen. Knapparna skrivs ur prov.json, och valet sparas i webbläsaren ("provKlass"). -->
   <div class="provval" id="provval" role="tablist" aria-label="Vilken klass du går i"></div>
+  <!-- Under fliken Spel: vem eleven spelar som. Skriptet fyller raden ur spelserverns /spel/inlogg (ritaSpelval). -->
+  <div class="spelval" id="spelval" role="group" aria-label="Inloggning till spelen"></div>
   <!-- Under fliken Formelbladet: formelbladet för Ma 1 eller för Ma 2 (Rickard 2026-09-26). Syns när båda har filmer.
        Knapparna säger att bladen gäller alla tre spåren, 1a/1b/1c och 2a/2b/2c (Rickard 2026-09-26). -->
   <div class="formelval" id="formelval" role="tablist" aria-label="Formelbladet för vilken kurs">
@@ -1851,25 +1868,28 @@
   const MANAD = ["jan", "feb", "mars", "april", "maj", "juni", "juli", "aug", "sep", "okt", "nov", "dec"];
   const datumText = (s) => { const d = provDag(s); return `${VECKODAG[d.getDay()]} ${d.getDate()} ${MANAD[d.getMonth()]}${d.getFullYear() !== idag().getFullYear() ? ` ${d.getFullYear()}` : ""}`; };
   const kvarText = (s) => { const n = Math.round((provDag(s) - idag()) / 864e5); return n === 0 ? "i dag" : n === 1 ? "i morgon" : `om ${n} dagar`; };
-  // ── Klasslänken till spelen (Rickard 2026-11-09: «Klasslänk i Classroom») ──
-  // Classroom har ?klass=TE26A&k=<nyckel>. Den sparas som spelKlass, som spelsidan under /spel/ läser och skickar till
-  // spelservern, och servern avgör om nyckeln stämmer. Här kontrolleras bara formen. Klass och nyckel tas bort ur
-  // adressen direkt, så att nyckeln inte står kvar eller delas vidare. Utan länk rörs en sparad spelKlass inte, och en
-  // länk med en annan klass skriver över den gamla.
+  // ── Inloggningen till spelen (Rickard 2026-11-14) ──
+  // Klasslänken med klassens nyckel (?klass=TE26A&k=…, 2026-11-09) är borta: eleven loggar in med skolans Google-konto
+  // på /inlogg/, och spelservern slår upp klassen ur kontot. Servern sätter en kaka som skriptet inte kan läsa, så
+  // sidan frågar /spel/inlogg vem eleven är: { inloggad, klass }. klass är null för en elev som inte står i någon
+  // klasslista. Svaret sparas i minnet och i sessionStorage, bara för att raden ska kunna ritas direkt nästa gång.
+  // Det avgör ingenting: servern läser kakan själv vid varje match och varje lista.
+  // En gammal klasslänk fungerar som en vanlig länk till sidan. Klass och nyckel tas bort ur adressen, och den sparade
+  // nyckeln (spelKlass) raderas ur webbläsaren.
   {
     const s = new URLSearchParams(location.search);
     if (s.has("klass") || s.has("k")) {
-      const klass = s.get("klass"), k = s.get("k");
-      const namn = provData && Array.isArray(provData.klasser) ? provData.klasser.map((x) => x && x.namn) : [];
-      if (klass && namn.includes(klass) && /^[A-Za-z0-9_-]{4,64}$/.test(k || "")) {
-        try { localStorage.setItem("spelKlass", JSON.stringify({ klass, k })); } catch (e) {}
-      }
       s.delete("klass"); s.delete("k");
       const rest = s.toString();
       history.replaceState(null, "", `${location.pathname}${rest ? `?${rest}` : ""}${location.hash}`);
     }
+    try { localStorage.removeItem("spelKlass"); } catch (e) {}
   }
-  const spelKlass = () => { try { const x = JSON.parse(localStorage.getItem("spelKlass")); return x && typeof x.klass === "string" ? x.klass : null; } catch (e) { return null; } };
+  const INLOGG_MINNE = "spelInlogg";
+  const lasInlogg = () => { try { const x = JSON.parse(sessionStorage.getItem(INLOGG_MINNE)); return x && typeof x.inloggad === "boolean" ? { inloggad: x.inloggad, klass: typeof x.klass === "string" ? x.klass : null } : null; } catch (e) { return null; } };
+  // null: inte frågat än, eller servern svarar inte. Då står eleven som gäst.
+  let spelInlogg = lasInlogg();
+  const spelKlass = () => (spelInlogg && spelInlogg.inloggad && spelInlogg.klass) || null;
   const SPEL = "spel";
   // Fliken Spel är gömd tills alla tre spelen har flerspelarläge (Rickard 2026-11-09: «Vi gömmer alla spel än så länge
   // i videoteket tills vi har fixat flerspelarläge för samtliga spel»). true visar den. Klasslänken sparas ändå, så att
@@ -3133,8 +3153,8 @@
     { id: "pacman", namn: "Pac-Man", sida: "/spel/pacman", bild: "omslag/spel-pacman.webp", overst: "Online · upp till 8" },
   ];
   // Dagens utmaning och Klassen mot klassen (2026-11-11): tre kort efter spelen, som skriptet fyller ur spelserverns
-  // /spel/utmaning och /spel/klasser (fyllSpellistor). Dagens lista är klassens när eleven kommit via klasslänken
-  // (spelKlass med nyckeln), annars den allmänna. Klassen mot klassen är veckans snitt per spelare i varje spel, så att en
+  // /spel/utmaning och /spel/klasser (fyllSpellistor). Dagens lista är klassens för en inloggad elev
+  // med klass (servern läser kakan), annars den allmänna. Klassen mot klassen är veckans snitt per spelare i varje spel, så att en
   // stor klass inte vinner bara för att den är stor, och en klass med färre spelare än min rankas inte (servern räknar).
   // Det som kommer från servern skrivs med textContent och blir aldrig html.
   const SPELLISTOR = [
@@ -3154,12 +3174,11 @@
   async function ritaSpellistor() {
     if (Date.now() - spellistorTid < 30000 && spellistor) return fyllSpellistor();
     spellistorTid = Date.now();
-    let kl = null;
-    try { const x = JSON.parse(localStorage.getItem("spelKlass")); if (x && typeof x.klass === "string" && typeof x.k === "string") kl = x; } catch (e) {}
-    const hamta = (spel, vag, q = {}) => fetch(`/spel/${vag}?${new URLSearchParams({ spel, ...q })}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
-    const dagens = async (spel) => (kl && await hamta(spel, "utmaning", { lista: "1", klass: kl.klass, k: kl.k })) || hamta(spel, "utmaning", { lista: "1" });
+    // Servern väljer listan ur kakan: klassens för en inloggad elev med klass, annars den allmänna.
+    const hamta = (spel, vag, q = {}) => fetch(`/spel/${vag}?${new URLSearchParams({ spel, ...q })}`, { cache: "no-store", credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    const dagens = (spel) => hamta(spel, "utmaning", { lista: "1" });
     const [tron, skepp, ...klasser] = await Promise.all([dagens("tron"), dagens("skepp"), hamta("tron", "klasser"), hamta("skepp", "klasser"), hamta("pac", "klasser")]);
-    spellistor = { tron, skepp, klasser, egen: kl ? kl.klass : null };
+    spellistor = { tron, skepp, klasser };
     fyllSpellistor();
   }
   function fyllSpellistor() {
@@ -3185,7 +3204,7 @@
     tabell.append(huvud);
     const bast = k.map((x) => (x ? Math.max(-1, ...x.klasser.filter((y) => y.antal >= x.min).map((y) => y.snitt)) : -1));
     for (const namn of klassnamn) {
-      const tr = ny("tr", null, namn === spellistor.egen ? "egen" : "");
+      const tr = ny("tr", null, namn === spelKlass() ? "egen" : "");
       tr.append(ny("td", namn));
       k.forEach((x, i) => {
         const y = x && x.klasser.find((z) => z.klass === namn);
@@ -3198,6 +3217,53 @@
     }
     fyll("klasser", tabell, ny("p", `Grått: färre än ${min} spelare, räknas inte än.`, "not"));
   }
+  // Raden under fliken Spel. Tre lägen: gäst, inloggad med klass, och inloggad utan klass i listan.
+  // Allt skrivs med textContent. Länken bär vart eleven ska tillbaka, och /inlogg/ tar bara emot vägar på sidan.
+  function ritaSpelval() {
+    const ruta = $("spelval"), ny = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
+    const lage = ny("span", null, "lage");
+    if (spelInlogg && spelInlogg.inloggad) {
+      const ut = ny("button", "Logga ut", "tyst"); ut.type = "button"; ut.id = "spel-ut";
+      if (spelInlogg.klass) lage.append("Inloggad · ", ny("b", spelInlogg.klass));
+      else lage.append("Inloggad · ", ny("b", "din klass finns inte med än"));
+      lage.title = spelInlogg.klass ? `Dina poäng räknas för ${spelInlogg.klass}.` : "Du spelar och står på den allmänna listan. Säg till din lärare, så läggs klassen in.";
+      ruta.replaceChildren(lage, ut);
+    } else {
+      const in_ = ny("a", "Logga in"); in_.href = "/inlogg/?till=%2F%23spel"; in_.id = "spel-in"; in_.draggable = false;
+      in_.setAttribute("aria-label", "Logga in med skolkontot, så räknas dina poäng på topplistan");
+      lage.append("Gäst · ", ny("b", "utan topplista"));
+      lage.title = "Du kan spela allt, också online. Poängen sparas inte på någon topplista förrän du loggat in med skolkontot.";
+      ruta.replaceChildren(lage, in_);
+    }
+  }
+  let inloggFragad = 0, inloggNr = 0;
+  async function fragaInlogg(tvinga = false) {
+    if (!tvinga && Date.now() - inloggFragad < 30000) return;
+    inloggFragad = Date.now();
+    const nr = ++inloggNr;
+    const svar = await fetch("/spel/inlogg", { cache: "no-store", credentials: "same-origin" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    if (nr !== inloggNr) return;
+    const fore = JSON.stringify(spelInlogg);
+    spelInlogg = svar && typeof svar.inloggad === "boolean" ? { inloggad: svar.inloggad, klass: typeof svar.klass === "string" ? svar.klass : null } : null;
+    try { if (spelInlogg) sessionStorage.setItem(INLOGG_MINNE, JSON.stringify(spelInlogg)); else sessionStorage.removeItem(INLOGG_MINNE); } catch (e) {}
+    if (JSON.stringify(spelInlogg) === fore) return;
+    ritaSpelval();
+    // Korten och listorna säger klassen: rita om dem om eleven står på fliken.
+    if (hylla === SPEL) { spellistorTid = 0; ritaHylla(); ritaSpellistor(); }
+  }
+  // Logga ut: servern tar bort kakan. Två tryck i rad gör inget extra, knappen är av tills svaret kommit.
+  async function loggaUtSpel(knapp) {
+    if (knapp.disabled) return;
+    knapp.disabled = true;
+    const ok = await fetch("/spel/inlogg/ut", { method: "POST", cache: "no-store", credentials: "same-origin" }).then((r) => r.ok).catch(() => false);
+    if (ok) { try { sessionStorage.removeItem(INLOGG_MINNE); } catch (e) {} }
+    await fragaInlogg(true);
+    if (!ok) { knapp.disabled = false; }
+    const lank = $("spel-in"); if (lank) lank.focus();
+  }
+  $("spelval").addEventListener("click", (e) => { const b = e.target.closest && e.target.closest("#spel-ut"); if (b) loggaUtSpel(b); });
+  // Eleven kommer tillbaka från /inlogg/ eller från en spelsida, där hen kan ha loggat in eller ut.
+  addEventListener("pageshow", () => { if (hylla === SPEL) fragaInlogg(true); });
   function spelHtml() {
     const klass = spelKlass();
     return SPELEN.map((s, i) => (s.sida ? `
@@ -3207,7 +3273,7 @@
         <span class="ram"><img src="${attr(s.bild)}" alt="" loading="lazy" draggable="false"><span class="spela-ikon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5 L19 12 L8 19 Z"/></svg></span></span>
         <span class="lina"></span>
         <span class="namn"><span class="rad1 stapel"><span class="kurs">${esc(s.overst)}</span><span class="titel">${esc(s.namn)}</span></span>
-          <span class="moment">${klass ? `Lag mot lag · topplista för ${esc(klass)}` : "Lag mot lag · mot klasskompisar"}</span></span>
+          <span class="moment">${klass ? `Lag mot lag · topplista för ${esc(klass)}` : spelInlogg && spelInlogg.inloggad ? "Lag mot lag · mot klasskompisar" : "Lag mot lag · logga in för topplistan"}</span></span>
       </a>
     </div>` : `
     <div class="post kommer del spel" data-stil="--i:${i}">
@@ -3243,7 +3309,8 @@
     // Växlaren Ma 1 · Ma 2 under Formelbladet: bara där, och bara när båda bladen har filmer.
     $("vy-valj").classList.toggle("formelval-syns", flik === "formelbladet" && FORMEL.length > 1);
     $("vy-valj").classList.toggle("provval-syns", flik === PROV);
-    if (flik === SPEL) ritaSpellistor();
+    $("vy-valj").classList.toggle("spelval-syns", flik === SPEL);
+    if (flik === SPEL) { ritaSpelval(); fragaInlogg(); ritaSpellistor(); }
     $("valj-rubrik").textContent = flik === SPEL ? "Välj ett spel" : "Välj en film";
     if (aktivVy === "valj") document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`;
     $("formelval").querySelectorAll("[role=tab]").forEach((b) => { const ar = b.dataset.hylla === namn; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar ? 0 : -1; });
