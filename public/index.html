@@ -1878,7 +1878,9 @@
   // (Rickard: «Göm fliken»), tills spelens buggrapport och datainlämning är ute. Spelen nås ändå på /spel/tron,
   // /spel/skepp och /spel/pacman. 10/11 syntes fliken igen och gömdes samma dag (Rickard: «vi måste dölja spelen på
   // videotek sidan så länge…. de är inte färdigbyggda»). Sätt inte true förrän Rickard säger till.
-  const SPEL_SYNS = false;
+  // 14/11 syns den på grenen spel-flik-synlig-1411 (Rickard: guidens Fly-knapp «skall ta eleverna till dessa tre onlinespel ...
+  // i en ny tab på videoteket som heter spel», utlagd «Med första versionen»). Läggs ut av samlaren efter hans ja.
+  const SPEL_SYNS = true;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
