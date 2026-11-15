@@ -9,7 +9,7 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const VAG = { "/(.*)": "/*", "/((?!omslag/).*)": "/*", "/videor.json": "/videor.json", "/app.(.*).js": "/app.*", "/sw.js": "/sw.js", "/manifest.webmanifest": "/manifest.webmanifest","/omslag/(.*)": "/omslag/*", "/spel/(.*)": "/spel/*" };
+const VAG = { "/(.*)": "/*", "/((?!omslag/).*)": "/*", "/videor.json": "/videor.json", "/app.(.*).js": "/app.*", "/omslag/(.*)": "/omslag/*", "/spel/(.*)": "/spel/*" };
 // Huvuden som en regel tar bort från /* innan den sätter sitt eget värde.
 const BORT = { "/omslag/*": ["Cross-Origin-Resource-Policy"], "/spel/*": ["Content-Security-Policy"] };
 
@@ -39,3 +39,6 @@ export function skrivCloudflareHuvuden(huvuden, publicDir) {
   writeFileSync(join(publicDir, "_routes.json"), JSON.stringify(RUTTER, null, 2) + "\n", "utf8");
   console.log("public/_headers: skrivet ur verktyg/huvuden.json. public/_routes.json: bara spelserverns adresser och menyns filmer går till funktionerna.");
 }
+
+// Spelens webbapp (Installera-knappen, 15/11): sw.js och manifestet har egna regler (Cache-Control: no-cache).
+Object.assign(VAG, { "/sw.js": "/sw.js", "/manifest.webmanifest": "/manifest.webmanifest" });
