@@ -1,0 +1,66 @@
+/* Inloggningen till spelen och sidan om personuppgifter. Samma färger och typsnitt som videoteket (public/index.html).
+   Inga stilattribut och inga inline-stilar: sidans policy (INLOGG_CSP) tar bara stilar från filer. */
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 300 600; font-display: swap; src: url(../fonts/jost-normal-latin.woff2) format("woff2"); }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/cormorant-garamond-normal-latin.woff2) format("woff2"); }
+:root {
+  --bg: #171414; --bg2: #201c1c; --ben: #ECE6D8; --ben2: #B5AE9F; --accent: #F2C572; --rod: #E8907A;
+  --linje: rgba(236, 230, 216, .22); --linje2: rgba(236, 230, 216, .1);
+  --sans: "Jost", "Josefin Sans", "Futura", "Avenir Next", "Helvetica Neue", sans-serif;
+  --serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--ben); font: 400 17px/1.6 var(--sans); -webkit-text-size-adjust: 100%; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 28px 16px; }
+.kort { width: 100%; max-width: 560px; padding: 34px 34px 30px; border: 1px solid var(--linje2); border-radius: 18px; background: var(--bg2); }
+.kort.bred { max-width: 680px; }
+.over { margin: 0 0 14px; font: 500 11px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--ben2); }
+h1 { margin: 0 0 10px; font: 500 38px/1.1 var(--serif); letter-spacing: .01em; }
+h2 { margin: 0 0 8px; font: 500 12px/1.2 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+p { margin: 0 0 14px; }
+.ingress { color: var(--ben2); }
+b { font-weight: 500; color: var(--ben); }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.vet { margin: 22px 0 20px; padding: 18px 20px 14px; border-radius: 12px; border: 1px solid var(--linje2); background: rgba(236, 230, 216, .03); }
+.vet ul { margin: 0; padding: 0 0 0 18px; color: var(--ben2); font-size: 16px; }
+.vet li { margin: 0 0 8px; }
+.vet .mer { margin: 10px 0 0; font-size: 15px; }
+
+.lage { min-height: 26px; margin: 0 0 12px; font-size: 17px; }
+.lage:empty { display: none; }
+.lage.klart { padding: 14px 18px; border-radius: 12px; background: rgba(242, 197, 114, .1); box-shadow: inset 0 0 0 1px rgba(242, 197, 114, .45); }
+.lage .stor { display: block; font: 500 24px/1.2 var(--serif); }
+.google { min-height: 44px; margin: 0 0 14px; }
+.google[hidden], .prov[hidden], [hidden] { display: none !important; }
+.prov { margin: 0 0 14px; padding: 12px 14px; border: 1px dashed var(--linje); border-radius: 12px; }
+.prov label { display: block; margin: 0 0 6px; font: 500 11px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ben2); }
+.rad { display: flex; gap: 8px; }
+input { flex: 1; min-width: 0; min-height: 44px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--linje); background: var(--bg); color: var(--ben); font: 400 16px/1 var(--sans); }
+.fel { min-height: 0; margin: 0 0 12px; color: var(--rod); }
+.fel:empty { display: none; }
+
+.knappar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 12px; }
+.knapp, button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; border: 0; border-radius: 999px; font: 500 12px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; text-decoration: none; cursor: pointer; color: var(--accent); background: rgba(242, 197, 114, .14); box-shadow: inset 0 0 0 1px rgba(242, 197, 114, .6); transition: transform .12s, background .3s; }
+.knapp:active, button:active { transform: scale(.96); }
+button.tyst { color: var(--ben2); background: none; box-shadow: inset 0 0 0 1px var(--linje); }
+button:disabled { opacity: .5; cursor: default; }
+.gast { margin: 0; font-size: 15px; color: var(--ben2); }
+
+/* Sidan om personuppgifter. */
+.text h2 { margin-top: 26px; }
+.text p, .text li { color: var(--ben2); font-size: 16px; }
+.text ul { margin: 0 0 14px; padding-left: 18px; }
+.text li { margin-bottom: 6px; }
+.text .tillbaka { margin-top: 26px; }
+
+@media (max-width: 520px) {
+  html { font-size: 16px; }
+  body { padding: 12px 10px; align-items: flex-start; }
+  .kort { padding: 24px 20px 22px; border-radius: 14px; }
+  h1 { font-size: 31px; }
+  .vet { padding: 14px 14px 10px; }
+  .knappar { flex-direction: column; align-items: stretch; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

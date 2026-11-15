@@ -100,6 +100,33 @@ export const SPEL_CSP = [
   "frame-ancestors 'none'",
 ].join("; ");
 
+// Inloggningen under /inlogg/ (Rickard 2026-11-14: eleven loggar in med skolans Google-konto i stället för klassnyckeln).
+// Googles skript (Google Identity Services) körs bara här, på en egen sida med en egen policy, så att startsidans strikta
+// policy och spelens 'self' står orörda. Sidan släpper in det Google kräver för knappen och inget mer:
+// https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid#content_security_policy
+// Skriptet, knappens ram, anropen och knappens stil kommer från accounts.google.com/gsi/. Sidans egna skript och stilar är
+// filer ('self'). Tokenet skickas till /spel/inlogg på sidans egen adress (functions/spel/inlogg.js).
+// Knappen öppnar Googles fönster, och svaret kommer tillbaka med postMessage: därför har /inlogg/* också
+// Cross-Origin-Opener-Policy same-origin-allow-popups i huvuden.json (INLOGG_COOP), i stället för sidans same-origin.
+export const GOOGLE_GSI = "https://accounts.google.com/gsi/";
+export const INLOGG_CSP = [
+  "default-src 'none'",
+  `script-src 'self' ${GOOGLE_GSI}client`,
+  // Googles skript sätter stilar direkt på knappens behållare, så 'unsafe-inline' krävs för stilar (provat 2026-11-14:
+  // utan den ritas knappen inte). Det gäller bara stilar, aldrig skript.
+  `style-src 'self' 'unsafe-inline' ${GOOGLE_GSI}style`,
+  "font-src 'self'",
+  "img-src 'self' data:",
+  `connect-src 'self' ${GOOGLE_GSI}`,
+  `frame-src ${GOOGLE_GSI}`,
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'none'",
+  "upgrade-insecure-requests",
+  "frame-ancestors 'none'",
+].join("; ");
+export const INLOGG_COOP = "same-origin-allow-popups";
+
 // Huvudet har också frame-ancestors, som inte fungerar i en meta-tagg.
 export const CSP_HUVUD = `${CSP}; frame-ancestors 'none'`;
 

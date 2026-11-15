@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Logga in till spelen · Winterhalls matte</title>
+<link rel="stylesheet" href="inlogg.css">
+</head>
+<body>
+<!-- Inloggningen till spelen (Rickard 2026-11-14: skolans Google-konto i stället för klassnyckeln). Det här är den enda
+     sidan som laddar Googles skript, och den har en egen policy (INLOGG_CSP i verktyg/csp.mjs). Sidan fungerar utan
+     skript som en text med två länkar: eleven kan alltid gå tillbaka och spela som gäst. -->
+<main class="kort">
+  <p class="over">Winterhalls matte · spelen</p>
+  <h1>Logga in med skolkontot</h1>
+  <p class="ingress">Då vet spelen vilken klass du går i, och dina poäng räknas på klassens topplista. Spelnamnet väljer du själv.</p>
+
+  <section class="vet" aria-labelledby="vet-rubrik">
+    <h2 id="vet-rubrik">Det här händer med dina uppgifter</h2>
+    <ul>
+      <li>Din adress används bara för att hitta din klass. <b>Den sparas inte.</b></li>
+      <li>Det som sparas är en kod för ditt konto, dina spelnamn och dina poäng. Poängen ligger kvar i <b>28 dagar</b> och spelnamnen i <b>180 dagar</b>.</li>
+      <li><b>Din lärare kan alltid se vem som har vilket spelnamn.</b> Ingen annan kan det.</li>
+      <li>Frågor, eller vill du att det som sparats om dig tas bort? Säg till Rickard Winterhall på lektionen eller i Classroom.</li>
+    </ul>
+    <p class="mer"><a href="personuppgifter.html">Mer om personuppgifterna</a></p>
+  </section>
+
+  <div class="lage" id="lage" role="status" aria-live="polite"><noscript>Inloggningen kräver att skript är påslagna. Du kan spela som gäst ändå.</noscript></div>
+  <div class="google" id="google" hidden></div>
+  <!-- Bara lokalt, när spelservern tar emot provkonton: provar flödet utan Google. Syns aldrig på den utlagda sidan. -->
+  <form class="prov" id="prov" hidden>
+    <label for="provkonto">Provkonto, bara lokalt</label>
+    <div class="rad"><input id="provkonto" autocomplete="off" spellcheck="false" maxlength="40"><button type="submit">Logga in</button></div>
+  </form>
+  <p class="fel" id="fel" role="alert"></p>
+
+  <div class="knappar">
+    <button type="button" class="tyst" id="ut" hidden>Logga ut</button>
+    <a class="knapp" id="tillbaka" href="/#spel">Spela som gäst</a>
+  </div>
+  <p class="gast" id="gast">Stoppar Google dig, eller har du inget skolkonto på den här datorn? Spela som gäst. Du kan spela allt, också online, men poängen hamnar inte på någon topplista.</p>
+</main>
+<script src="inlogg.js"></script>
+</body>
+</html>
