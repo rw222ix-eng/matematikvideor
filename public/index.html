@@ -1878,7 +1878,9 @@
   // (Rickard: «Göm fliken»), tills spelens buggrapport och datainlämning är ute. Spelen nås ändå på /spel/tron,
   // /spel/skepp och /spel/pacman. 10/11 syntes fliken igen och gömdes samma dag (Rickard: «vi måste dölja spelen på
   // videotek sidan så länge…. de är inte färdigbyggda»). Sätt inte true förrän Rickard säger till.
-  const SPEL_SYNS = false;
+  // 14/11 syns den på grenen spel-flik-synlig-1411 (Rickard: guidens Fly-knapp «skall ta eleverna till dessa tre onlinespel ...
+  // i en ny tab på videoteket som heter spel», utlagd «Med första versionen»). Läggs ut av samlaren efter hans ja.
+  const SPEL_SYNS = true;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
@@ -3126,9 +3128,9 @@
   // Ett spel som inte finns än står streckat som formelbladets delar som kommer.
   // Raden under säger vilken topplista poängen hamnar på: klassens när eleven kommit via klasslänken.
   const SPELEN = [
-    { id: "tron", namn: "Tron", sida: "/spel/tron", bild: "omslag/spel-tron.webp", overst: "Online · upp till 8" },
-    { id: "skepp", namn: "Skeppet", sida: "/spel/skepp", bild: "omslag/spel-skepp.webp", overst: "Online · upp till 8" },
-    { id: "pacman", namn: "Pac-Man", sida: "/spel/pacman", bild: "omslag/spel-pacman.webp", overst: "Online · upp till 8" },
+    { id: "tron", namn: "Tron", sida: "/spel/tron", bild: "omslag/spel-tron.webp", under: "Ensam eller online" },
+    { id: "skepp", namn: "Skeppet", sida: "/spel/skepp", bild: "omslag/spel-skepp.webp", under: "Ensam eller online" },
+    { id: "pacman", namn: "Pac-Man", sida: "/spel/pacman", bild: "omslag/spel-pacman.webp", under: "Ensam eller online" },
   ];
   // Dagens utmaning och Klassen mot klassen (2026-11-11): tre kort efter spelen, som skriptet fyller ur spelserverns
   // /spel/utmaning och /spel/klasser (fyllSpellistor). Dagens lista är klassens när eleven kommit via klasslänken
@@ -3200,12 +3202,12 @@
     const klass = spelKlass();
     return SPELEN.map((s, i) => (s.sida ? `
     <div class="post spel" data-stil="--i:${i}">
-      <a href="${attr(s.sida)}" data-spel="${attr(s.id)}" draggable="false" aria-label="${attr(`${s.namn}. Spela online, upp till åtta i samma match, lag mot lag${klass ? `. Topplista för ${klass}` : ""}`)}">
+      <a href="${attr(s.sida)}" data-spel="${attr(s.id)}" draggable="false" aria-label="${attr(`${s.namn}. Spela ensam mot datorn eller online, upp till åtta i samma match, lag mot lag${klass ? `. Topplista för ${klass}` : ""}`)}">
         <span class="lyft"></span>
         <span class="ram"><img src="${attr(s.bild)}" alt="" loading="lazy" draggable="false"><span class="spela-ikon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5 L19 12 L8 19 Z"/></svg></span></span>
         <span class="lina"></span>
-        <span class="namn"><span class="rad1 stapel"><span class="kurs">${esc(s.overst)}</span><span class="titel">${esc(s.namn)}</span></span>
-          <span class="moment">${klass ? `Lag mot lag · topplista för ${esc(klass)}` : "Lag mot lag · mot klasskompisar"}</span></span>
+        <span class="namn"><span class="rad1 stapel"><span class="kurs">${esc(s.namn)}</span><span class="titel">${esc(s.under)}</span></span>
+          <span class="moment">${klass ? `Upp till 8 · topplista för ${esc(klass)}` : "Upp till 8 · lag mot lag"}</span></span>
       </a>
     </div>` : `
     <div class="post kommer del spel" data-stil="--i:${i}">
