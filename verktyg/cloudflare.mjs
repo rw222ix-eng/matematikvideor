@@ -9,7 +9,7 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const VAG = { "/(.*)": "/*", "/((?!omslag/).*)": "/*", "/videor.json": "/videor.json", "/app.(.*).js": "/app.*", "/omslag/(.*)": "/omslag/*", "/spel/(.*)": "/spel/*" };
+const VAG = { "/(.*)": "/*", "/((?!omslag/).*)": "/*", "/videor.json": "/videor.json", "/app.(.*).js": "/app.*", "/sw.js": "/sw.js", "/manifest.webmanifest": "/manifest.webmanifest","/omslag/(.*)": "/omslag/*", "/spel/(.*)": "/spel/*" };
 // Huvuden som en regel tar bort från /* innan den sätter sitt eget värde.
 const BORT = { "/omslag/*": ["Cross-Origin-Resource-Policy"], "/spel/*": ["Content-Security-Policy"] };
 

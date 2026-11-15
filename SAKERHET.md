@@ -46,6 +46,14 @@ Stilattribut gör ingenting (B4, 2026-10-27, `style-src-attr 'none'`), så ett i
 - Spelservern tar bara emot anslutningar från videotekets adress. Den sparar elevens namn (eget, utan filter, Rickards val), klassen när klasslänkens nyckel stämmer, och poängen på veckans topplista. Inga IP-adresser och inga kakor.
 - `verktyg/spelprov.mjs` provar policyn, funktionerna och Tron lokalt i wrangler pages dev.
 
+## Spelen som app (2026-11-15)
+
+- Rickard valde 2026-11-15 «Webben, med Installera-knapp». `public/manifest.webmanifest` gör videoteket installerbart som en app som börjar på fliken Spel, och knappen under fliken visas där webbläsaren erbjuder installation (`beforeinstallprompt`). Laddaren i `verktyg/csp.mjs` tar emot händelsen, eftersom den kan komma innan skriptet laddats.
+- Policyn har `worker-src 'self'` och `manifest-src 'self'` (förut `'none'`). Inget från andra värdar.
+- `public/sw.js` är en service worker som inte sparar något. Den svarar bara på sidbyten, med nätets svar (navigation preload), och tar bort varje cache när den startar. Bara utan nät svarar den med en egen kort sida. Skript, bilder, spelens filer, filmer, spelservern och `/inlogg/` går förbi den. En ny utläggning syns alltså direkt, också i appen. `sw.js` och manifestet har `Cache-Control: no-cache`, och registreringen har `updateViaCache: 'none'`.
+- Registreringen går genom Trusted Types-policyn `videotek`, vars `createScriptURL` bara släpper igenom `/sw.js`.
+- Ta bort service workern: lägg ut en `sw.js` som avregistrerar sig. En `sw.js` som saknas (404) tar inte bort en som redan är installerad.
+
 ## Externa värdar (13.1.1)
 
 | Värd | Varför | Direktiv |
