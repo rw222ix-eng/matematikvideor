@@ -24,7 +24,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { skrivFilmsidor } from "./filmsidor.mjs";
-import { CSP, CSP_HUVUD, LADDARE, SPEL_CSP, VIDARE, VIDARE_CSP, VIDARE_STIL, VIDARE_TILL } from "./csp.mjs";
+import { CSP, CSP_HUVUD, INLOGG_COOP, INLOGG_CSP, LADDARE, SPEL_CSP, VIDARE, VIDARE_CSP, VIDARE_STIL, VIDARE_TILL } from "./csp.mjs";
 import { skrivCloudflareHuvuden } from "./cloudflare.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
@@ -40,10 +40,15 @@ const fel = (s) => { console.error(`publicera.mjs: ${s}`); process.exit(1); };
 // till Cloudflare 2026-11-07, och Vercel har nu bara vidarekopplingens huvuden.
 const huvuden = JSON.parse(readFileSync(join(HÄR, "huvuden.json"), "utf8"));
 // Spelen under /spel/ har en egen policy (SPEL_CSP), som också måste stämma.
-const csp = (spel) => huvuden.headers.filter((r) => (r.source === "/spel/(.*)") === spel).flatMap((r) => r.headers).filter((h) => h.key === "Content-Security-Policy").map((h) => h.value);
-const huvud = csp(false), spelHuvud = csp(true);
+const UNDER = ["/spel/(.*)", "/inlogg/(.*)"];
+const varde = (kalla, nyckel) => huvuden.headers.filter((r) => (kalla ? r.source === kalla : !UNDER.includes(r.source))).flatMap((r) => r.headers).filter((h) => h.key === nyckel).map((h) => h.value);
+const huvud = varde(null, "Content-Security-Policy"), spelHuvud = varde("/spel/(.*)", "Content-Security-Policy");
+// Inloggningen under /inlogg/ har också en egen policy (INLOGG_CSP), den enda som släpper in Googles skript.
+const inloggHuvud = varde("/inlogg/(.*)", "Content-Security-Policy"), inloggCoop = varde("/inlogg/(.*)", "Cross-Origin-Opener-Policy");
 if (huvud.length !== 1 || huvud[0] !== CSP_HUVUD) fel(`Content-Security-Policy i verktyg/huvuden.json är inte densamma som CSP_HUVUD i verktyg/csp.mjs. Rätt värde:\n${CSP_HUVUD}`);
 if (spelHuvud.length !== 1 || spelHuvud[0] !== SPEL_CSP) fel(`Content-Security-Policy för /spel/ i verktyg/huvuden.json är inte densamma som SPEL_CSP i verktyg/csp.mjs. Rätt värde:\n${SPEL_CSP}`);
+if (inloggHuvud.length !== 1 || inloggHuvud[0] !== INLOGG_CSP) fel(`Content-Security-Policy för /inlogg/ i verktyg/huvuden.json är inte densamma som INLOGG_CSP i verktyg/csp.mjs. Rätt värde:\n${INLOGG_CSP}`);
+if (inloggCoop.length !== 1 || inloggCoop[0] !== INLOGG_COOP) fel(`Cross-Origin-Opener-Policy för /inlogg/ i verktyg/huvuden.json ska vara ${INLOGG_COOP}.`);
 
 // 1. Filmsidorna.
 skrivFilmsidor(JSON.parse(readFileSync(join(publicDir, "videor.json"), "utf8")).videor, publicDir);
