@@ -62,4 +62,13 @@ async function hamta(f) {
 const ko = [...unika];
 await Promise.all(Array.from({ length: 8 }, async () => { while (ko.length) await hamta(ko.shift()); }));
 for (const [namn, s] of Object.entries(lista.spel)) if (!existsSync(join(spelDir, s.sida))) fel(`${namn}: ${s.sida} saknas`);
+// Appens fillista (public/spel-app.json, Rickard 15/11 «Spara filerna i appen»): service workern sparar spelens filer i
+// den installerade appen under deras sha256, och lämnar bara ut filer som står i den här listan. Versionen är listans
+// egen hash, så den byts när en enda fil gör det.
+{
+  const filer = Object.fromEntries(unika.map((f) => [f.vag, [f.sha256, f.storlek]]).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)));
+  const version = createHash("sha256").update(JSON.stringify(filer)).digest("hex").slice(0, 16);
+  writeFileSync(join(publicDir, "spel-app.json"), JSON.stringify({ version, byggd: lista.byggd, filer }) + "\n", "utf8");
+  console.log(`public/spel-app.json: version ${version}, ${unika.length} filer.`);
+}
 console.log(`public/spel/: ${klara} filer, ${(byte / 1048576).toFixed(1)} MB, spelen ${Object.keys(lista.spel).join(", ")} (spel-filer.json ${lista.byggd}).`);

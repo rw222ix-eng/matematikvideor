@@ -81,9 +81,19 @@ Subresource Integrity kräver att filen är byte för byte densamma vid varje be
 
 - Rickard valde 2026-11-15 «Webben, med Installera-knapp». `public/manifest.webmanifest` gör videoteket installerbart som en app som börjar på fliken Spel, och knappen under fliken visas där webbläsaren erbjuder installation (`beforeinstallprompt`). Laddaren i `verktyg/csp.mjs` tar emot händelsen, eftersom den kan komma innan skriptet laddats.
 - Policyn har `worker-src 'self'` och `manifest-src 'self'` (förut `'none'`). Inget från andra värdar.
-- `public/sw.js` är en service worker som inte sparar något. Den svarar bara på sidbyten, med nätets svar (navigation preload), och tar bort varje cache när den startar. Bara utan nät svarar den med en egen kort sida. Skript, bilder, spelens filer, filmer, spelservern och `/inlogg/` går förbi den. En ny utläggning syns alltså direkt, också i appen. `sw.js` och manifestet har `Cache-Control: no-cache`, och registreringen har `updateViaCache: 'none'`.
+- `public/sw.js` svarar på sidbyten med nätets svar (navigation preload). Bara utan nät svarar den med en egen kort sida. `sw.js`, manifestet och `spel-app.json` har `Cache-Control: no-cache`, och registreringen har `updateViaCache: 'none'`.
+- Spelens filer i appen (Rickard 2026-11-15 «Spara filerna i appen»): i den installerade appen sparar `sw.js` spelens bilder, ljud och skript under /spel/ i Cache Storage, en post per fils sha256. Den lämnar bara ut en fil som står i fillistan `public/spel-app.json` (skrivs av `verktyg/spel.mjs` ur `spel-filer.json`), och sparar bara det vars innehåll stämmer med listans sha256 och storlek. Listan hämtas på nytt vid varje start, så en ny utläggning syns vid nästa start. En fil från en annan version eller en avbruten nedladdning lämnas aldrig ut i stället för rätt fil. Det gamla tas bort när den nya versionens ändrade filer är hämtade.
+- Bara appen: appen startar på `/?app=1#spel`, och sidan håller kvar `?app=1` när den visas fristående. En vanlig flik går aldrig genom det sparade. Inloggningen (`/inlogg/`), spelserverns vägar, filmerna (mp4 och allt med Range), arbetstrådar och allt utanför /spel/ går förbi.
+- Inget sparas om `navigator.storage.estimate()` visar att mindre än 128 MB skulle stå ledigt, eller om webbläsaren säger att det är fullt. Då går spelet som i en flik.
 - Registreringen går genom Trusted Types-policyn `videotek`, vars `createScriptURL` bara släpper igenom `/sw.js`.
-- Ta bort service workern: lägg ut en `sw.js` som avregistrerar sig. En `sw.js` som saknas (404) tar inte bort en som redan är installerad.
+- Ta bort service workern: se checklistan nedan. En `sw.js` som saknas (404) tar inte bort en som redan är installerad.
+
+### Utläggningens checklista för appen
+
+1. `public/spel-app.json` finns i bygget (`spel.mjs` skriver den) och har samma antal filer som `spel-filer.json`.
+2. `/sw.js`, `/manifest.webmanifest` och `/spel-app.json` svarar med `Cache-Control: no-cache` på den utlagda sidan.
+3. Måste service workern bort hos alla elever: kopiera `verktyg/sw-bort.js` till `public/sw.js`, ta bort `navigator.serviceWorker.register` i blocket «Installera spelen» i `public/index.html` och lägg ut. Den tar bort allt sparat och avregistrerar sig vid elevens nästa besök. Ta inte bort `sw.js` (404 tar inte bort en installerad worker).
+4. Ändras sättet filerna sparas på: byt namnen `spel-filer-1` och `spel-lage-1` i `sw.js`. Det gamla tas då bort när den nya workern startar.
 
 ## Tidsgränser för larm (15.1.1)
 
