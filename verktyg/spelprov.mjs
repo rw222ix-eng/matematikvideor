@@ -61,7 +61,9 @@ const jsFel = [];
 p.on("pageerror", (e) => jsFel.push(String(e)));
 await p.goto(`${BAS}/spel/tron.html${SERVER}`, { waitUntil: "load" });
 await p.click("#spela");
-const igang = await p.waitForFunction(() => window.__tronSida?.lage.tron?.lage.igang, null, { timeout: 60000 }).then(() => true, () => false);
+// Nya menyn (omgång 15): «Mot datorn» öppnar miljövalet, och Starta börjar spelet.
+await p.click(".rm-solohuvud .rm-stor", { timeout: 5000 }).catch(() => { });
+const igang =await p.waitForFunction(() => window.__tronSida?.lage.tron?.lage.igang, null, { timeout: 60000 }).then(() => true, () => false);
 prov("Tron startar under spelens policy", igang);
 await p.waitForTimeout(3000);
 await p.screenshot({ path: "E:/tmp-three/vt-spel-tron.png" });
