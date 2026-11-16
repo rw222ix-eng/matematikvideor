@@ -92,6 +92,14 @@ Typsnitten ligger i `public/fonts/`. Google Fonts används inte, så att Google 
 
 Subresource Integrity kräver att filen är byte för byte densamma vid varje besök. `deployggb.js` och `iframe_api` ändras av GeoGebra och YouTube utan förvarning, och de laddar i sin tur fler skript. En hash skulle spärra Din tur och reserven nästa gång de ändras. I stället får de bara komma från sina egna värdar över https, och de körs på en egen adress, så att deras kod inte når resten av sidan.
 
+## Spelen som app (2026-11-15)
+
+- Rickard valde 2026-11-15 «Webben, med Installera-knapp». `public/manifest.webmanifest` gör videoteket installerbart som en app som börjar på fliken Spel, och knappen under fliken visas där webbläsaren erbjuder installation (`beforeinstallprompt`). Laddaren i `verktyg/csp.mjs` tar emot händelsen, eftersom den kan komma innan skriptet laddats.
+- Policyn har `worker-src 'self'` och `manifest-src 'self'` (förut `'none'`). Inget från andra värdar.
+- `public/sw.js` är en service worker som inte sparar något. Den svarar bara på sidbyten, med nätets svar (navigation preload), och tar bort varje cache när den startar. Bara utan nät svarar den med en egen kort sida. Skript, bilder, spelens filer, filmer, spelservern och `/inlogg/` går förbi den. En ny utläggning syns alltså direkt, också i appen. `sw.js` och manifestet har `Cache-Control: no-cache`, och registreringen har `updateViaCache: 'none'`.
+- Registreringen går genom Trusted Types-policyn `videotek`, vars `createScriptURL` bara släpper igenom `/sw.js`.
+- Ta bort service workern: lägg ut en `sw.js` som avregistrerar sig. En `sw.js` som saknas (404) tar inte bort en som redan är installerad.
+
 ## Tidsgränser för larm (15.1.1)
 
 | Larm | Åtgärdas inom |

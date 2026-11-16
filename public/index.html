@@ -6,7 +6,7 @@
      skriptet nedan inline. Byggsteget (verktyg/publicera.mjs, hos Vercel och GitHub Pages) flyttar skriptet
      till app.<hash>.js och byter policyn mot den strikta i verktyg/csp.mjs. En ny extern värd läggs in här,
      i verktyg/csp.mjs och i vercel.json (bygget faller om de två sista skiljer sig). -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'none'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.pages.dev; worker-src 'none'; manifest-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'none'; font-src 'self' data:; img-src 'self' data:; media-src https://github.com https://release-assets.githubusercontent.com https://objects.githubusercontent.com; connect-src 'self'; frame-src https://matematikvideor-inbaddat.pages.dev; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types videotek laddare; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matematikvideor av Rickard</title>
@@ -24,6 +24,11 @@
 <meta property="og:image" content="https://winterhalls-matte.pages.dev/omslag/intro.jpg?v=c3643a64">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%23ECE6D8' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23ECE6D8'/%3E%3Ccircle cx='82' cy='34' r='6' fill='%23F2C572'/%3E%3C/svg%3E">
+<!-- Spelens webbapp (Installera-knappen under fliken Spel, Rickard 15/11). -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/ikon/spel-apple-180.png">
+<meta name="apple-mobile-web-app-title" content="Spelen">
+<meta name="mobile-web-app-capable" content="yes">
 <!-- Typsnitten ligger på sidans egen server (Rickard 2026-10-25: "egen server"), så att Google inte ser elevernas
      IP-adresser. Samma snitt och unicode-range som Google Fonts gav för Jost, Cormorant Garamond och Kalam. Playpen Sans (Din tur-bilderna) är gjord med fonttools.
      Licensen är OFL, se public/fonts/OFL-*.txt. -->
@@ -1369,6 +1374,51 @@
   }
   /* Fem flikar på de smalaste telefonerna (320 px): annars hamnade Prov utanför. */
   @media (max-width: 340px) { .flikar.fem button { padding: 0 5px; letter-spacing: .02em; } .flikar.sex button { padding: 0 3px; letter-spacing: 0; } }
+  /* Installera-knappen under fliken Spel (Rickard 15/11: «Webben, med Installera-knapp»). Den står som växlaren under
+     Formelbladet, med en pil ner och samma guld som en vald knapp. På iPhone och iPad står en rad om Dela i samma ram.
+     Med raden finns flyttas rubriken, pilen och linan ner som med växlaren (.installval-syns). Står inloggningens rad
+     (#spelval) också där, står knappen en rad under den. */
+  .valj .installval { position: absolute; top: 118px; left: 50%; transform: translateX(-50%); z-index: 6; display: none; gap: 4px; padding: 3px; border-radius: 999px; background: rgba(23, 20, 20, .55); border: 1px solid rgba(236, 230, 216, .16); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .valj.installval-syns .installval { display: flex; }
+  .installval [hidden] { display: none; }
+  .installval button { display: inline-flex; align-items: center; gap: 8px; min-height: 28px; padding: 0 16px 0 13px; border-radius: 999px; font: 500 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--accent); background: rgba(242, 197, 114, .14); box-shadow: inset 0 0 0 1px rgba(242, 197, 114, .6); transition: color .3s, background .3s, transform .4s var(--fjader); }
+  .installval button svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .installval button:active { transform: scale(.93); transition-duration: .08s; }
+  .installval button:focus-visible { outline-offset: 1px; }
+  .installval button:disabled { opacity: .55; }
+  @media (hover: hover) { .installval button:hover { color: var(--ben); background: rgba(242, 197, 114, .24); } }
+  .installval p { margin: 0; padding: 6px 14px; white-space: nowrap; font: 400 12px/1.4 var(--sans); letter-spacing: .03em; color: var(--ben2); text-align: center; }
+  .installval p b { font-weight: 500; color: var(--ben); }
+  .installval p svg { width: 14px; height: 14px; margin: 0 1px; vertical-align: -2px; fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .valj.installval-syns .rubrik { top: 160px; }
+  .valj.installval-syns .hint { top: 202px; }
+  .valj.installval-syns .tidslinje { top: 206px; }
+  .valj.spelval-syns.installval-syns .installval { top: 160px; }
+  .valj.spelval-syns.installval-syns .rubrik { top: 202px; }
+  .valj.spelval-syns.installval-syns .hint { top: 244px; }
+  .valj.spelval-syns.installval-syns .tidslinje { top: 248px; }
+  @media (min-width: 701px) and (max-height: 660px) {
+    .valj.installval-syns .installval { top: 106px; }
+    .valj.installval-syns .rubrik { top: 144px; }
+    .valj.installval-syns .hint { top: 178px; }
+    .valj.installval-syns .tidslinje { top: 182px; }
+    .valj.installval-syns .post .lyft { min-height: 56px; }
+    .valj.spelval-syns.installval-syns .installval { top: 144px; }
+    .valj.spelval-syns.installval-syns .rubrik { top: 182px; }
+    .valj.spelval-syns.installval-syns .hint { top: 216px; }
+    .valj.spelval-syns.installval-syns .tidslinje { top: 220px; }
+  }
+  /* Telefonen: raden står i flödet under flikarna (och under inloggningens rad), och texten om Dela får brytas. */
+  @media (max-width: 700px) {
+    .valj .installval { position: static; transform: none; width: max-content; max-width: calc(100vw - 32px); box-sizing: border-box; margin: 10px auto 0; }
+    .valj.installval-syns .rubrik { top: auto; padding-top: 14px; }
+    .valj.installval-syns .tidslinje { top: 150px; }
+    .valj.spelval-syns.installval-syns .installval { top: auto; }
+    .valj.spelval-syns.installval-syns .rubrik { top: auto; }
+    .valj.spelval-syns.installval-syns .tidslinje { top: 150px; }
+    .installval p { white-space: normal; }
+    .valj .installval:has(p:not([hidden])) { border-radius: 20px; }
+  }
 </style>
 </head>
 <body class="last">
@@ -1432,6 +1482,12 @@
   <div class="formelval" id="formelval" role="tablist" aria-label="Formelbladet för vilken kurs">
     <button type="button" role="tab" data-hylla="formelbladet" aria-selected="true" aria-controls="tidslinje" aria-label="Formelbladet för Matematik nivå 1a, 1b och 1c">Ma 1a · 1b · 1c</button>
     <button type="button" role="tab" data-hylla="formelbladet-ma2" aria-selected="false" aria-controls="tidslinje" tabindex="-1" aria-label="Formelbladet för Matematik nivå 2a, 2b och 2c">Ma 2a · 2b · 2c</button>
+  </div>
+  <!-- Under fliken Spel (Rickard 15/11: «Webben, med Installera-knapp»): installera spelen som en app. Skriptet visar
+       knappen där webbläsaren kan installera, och raden om Dela på iPhone och iPad. -->
+  <div class="installval" id="installval">
+    <button type="button" id="installera" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 V15 M6.5 9.5 L12 15 L17.5 9.5 M4 20 H20"/></svg>Installera spelen</button>
+    <p id="installera-ios" hidden>Spelen som app: tryck på <b>Dela</b> <svg viewBox="0 0 24 24" role="img" aria-label="(rutan med pilen uppåt)"><path d="M12 3 V14 M8 7 L12 3 L16 7 M7 10 H5 V21 H19 V10 H17"/></svg> och sedan <b>Lägg till på hemskärmen</b>.</p>
   </div>
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
@@ -1542,7 +1598,8 @@
   // en ny innerHTML utan html() inte kan köra kod. Kontrollen görs också i webbläsare utan Trusted Types.
   // Lägg aldrig in HTML på annat sätt än med el.innerHTML = html(...). Töm med el.replaceChildren().
   const FARLIG_HTML = /<\s*\/?\s*(script|iframe|frame|object|embed|base|link|meta|style)\b|<[^>]*\s(on[a-z]+|srcdoc|formaction)\s*=|javascript:/i;
-  const ttPolicy = window.trustedTypes ? window.trustedTypes.createPolicy("videotek", { createHTML: (s) => s }) : null;
+  // createScriptURL släpper bara igenom service workern för Installera-knappen (sw.js), inget annat skript.
+  const ttPolicy = window.trustedTypes ? window.trustedTypes.createPolicy("videotek", { createHTML: (s) => s, createScriptURL: (u) => { if (u === "/sw.js") return u; throw new TypeError(`videotek: ${u}`); } }) : null;
   const html = (s) => {
     if (FARLIG_HTML.test(s)) throw new TypeError("videotek: HTML med skript, ram eller händelseattribut stoppad");
     return ttPolicy ? ttPolicy.createHTML(s) : s;
@@ -1909,6 +1966,45 @@
   const flikAv = (namn) => (SERIER[namn] && SERIER[namn].grupp) || namn;
   const FORMEL = HYLLOR.filter((namn) => flikAv(namn) === "formelbladet");
   const formelVal = () => { let k = null; try { k = localStorage.getItem("formelbladKurs"); } catch (e) {} return FORMEL.includes(k) ? k : FORMEL[0]; };
+  // ── Installera spelen (Rickard 15/11: «Webben, med Installera-knapp») ──
+  // Videoteket kan installeras som en app som börjar på fliken Spel (manifest.webmanifest). Knappen under fliken Spel
+  // syns bara där webbläsaren kan installera (beforeinstallprompt i Chrome och Edge, också på Chromebook och Android).
+  // På iPhone och iPad finns ingen sådan knapp, och där står i stället en rad om Dela och Lägg till på hemskärmen. I den
+  // installerade appen syns ingetdera. Händelsen kan komma innan skriptet laddats, så laddaren i csp.mjs tar emot den
+  // och lägger den i window.videotekInstallera. Service workern (sw.js) sparar ingenting och finns för att appen ska
+  // gå att installera: varje sida hämtas från nätet, så en ny utläggning syns direkt också i appen.
+  // Vilken flik som är vald läses ur #flikar[data-hylla], som valjHylla sätter vid varje byte.
+  {
+    const knapp = $("installera"), ios = $("installera-ios"), flikar = $("flikar");
+    const fristaende = () => ["standalone", "minimal-ui", "fullscreen", "window-controls-overlay"].some((d) => matchMedia(`(display-mode: ${d})`).matches) || navigator.standalone === true;
+    const arIos = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    let fraga = null;
+    const visa = () => {
+      if (window.videotekInstallera) { fraga = window.videotekInstallera; window.videotekInstallera = null; }
+      const app = fristaende(), kan = !app && !!fraga, tips = !app && !fraga && arIos;
+      knapp.hidden = !kan; ios.hidden = !tips;
+      $("vy-valj").classList.toggle("installval-syns", flikar.dataset.hylla === SPEL && (kan || tips));
+    };
+    new MutationObserver(visa).observe(flikar, { attributes: true, attributeFilter: ["data-hylla"] });
+    addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); fraga = e; window.videotekInstallera = null; visa(); });
+    addEventListener("appinstalled", () => { fraga = null; window.videotekInstallera = null; visa(); });
+    knapp.addEventListener("click", async () => {
+      const f = fraga;
+      if (!f || knapp.disabled) return;
+      knapp.disabled = true;
+      // Händelsen går bara att använda en gång. Säger eleven nej kommer en ny nästa gång sidan laddas.
+      fraga = null;
+      try { await f.prompt(); await f.userChoice; } catch (e) {}
+      knapp.disabled = false;
+      visa();
+    });
+    visa();
+    // Service workern: bara i en säker miljö (https eller localhost), och bara sidans egen sw.js (Trusted Types).
+    if ("serviceWorker" in navigator && window.isSecureContext) {
+      const registrera = () => navigator.serviceWorker.register(ttPolicy ? ttPolicy.createScriptURL("/sw.js") : "/sw.js", { scope: "/", updateViaCache: "none" }).catch(() => {});
+      if (document.readyState === "complete") registrera(); else addEventListener("load", registrera, { once: true });
+    }
+  }
   // En serie med numrerade delar (formelbladet för Ma 1 och Ma 2): "Del N av M", siffrorna och "Nästa del".
   const arDelserie = (v) => !!(v && v.serie && SERIER[v.serie] && SERIER[v.serie].platser);
   // Seriens namn i text: finns formelbladet för både Ma 1 och Ma 2 heter Ma 1-delarna "Formelbladet Ma 1".

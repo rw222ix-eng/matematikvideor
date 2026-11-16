@@ -40,3 +40,6 @@ export function skrivCloudflareHuvuden(huvuden, publicDir) {
   writeFileSync(join(publicDir, "_routes.json"), JSON.stringify(RUTTER, null, 2) + "\n", "utf8");
   console.log("public/_headers: skrivet ur verktyg/huvuden.json. public/_routes.json: bara spelserverns adresser och menyns filmer går till funktionerna.");
 }
+
+// Spelens webbapp (Installera-knappen, 15/11): sw.js och manifestet har egna regler (Cache-Control: no-cache).
+Object.assign(VAG, { "/sw.js": "/sw.js", "/manifest.webmanifest": "/manifest.webmanifest" });
