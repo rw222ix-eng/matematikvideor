@@ -87,9 +87,11 @@ export const CSP = [
 // (verktyg/spel.mjs) och kör three.js, en worker och ljud från sidans egen adress, och sätter stilar från skript. Därför
 // en egen policy, mildare än sidans men utan något från andra värdar: allt är 'self', och anslutningen till spelservern
 // går till samma adress (/spel/rum, functions/spel/). cloudflare.mjs tar bort sidans policy för /spel/* med en !-rad.
+// 'wasm-unsafe-eval' släpper bara in WebAssembly, inte eval: Tron packar upp sina KTX2-bilder med Basis transkodare
+// (spel-ktx2-worker.js och basis/ i guiden), som är en WebAssembly-modul. Utan den faller Tron tillbaka på webp.
 export const SPEL_CSP = [
   "default-src 'none'",
-  "script-src 'self'",
+  "script-src 'self' 'wasm-unsafe-eval'",
   "worker-src 'self'",
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
