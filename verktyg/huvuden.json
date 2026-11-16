@@ -91,6 +91,15 @@
       ]
     },
     {
+      "source": "/spel-app.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
       "source": "/omslag/(.*)",
       "headers": [
         {

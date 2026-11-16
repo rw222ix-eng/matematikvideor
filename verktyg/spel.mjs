@@ -62,4 +62,17 @@ async function hamta(f) {
 const ko = [...unika];
 await Promise.all(Array.from({ length: 8 }, async () => { while (ko.length) await hamta(ko.shift()); }));
 for (const [namn, s] of Object.entries(lista.spel)) if (!existsSync(join(spelDir, s.sida))) fel(`${namn}: ${s.sida} saknas`);
+// Appens fillista (public/spel-app.json, Rickard 15/11 «Spara filerna i appen»): service workern sparar spelens filer i
+// den installerade appen under deras sha256, och lämnar bara ut filer som står i den här listan. Versionen är listans
+// egen hash, så den byts när en enda fil gör det. Rader med reserv: true (Trons webp-bilder bredvid de packade .ktx2,
+// som spelet bara hämtar när de packade inte går att använda) står inte i listan. De läggs ut, men appen sparar dem
+// inte, och sidan hämtar dem från nätet när den behöver dem. En väg är reserv bara om varje rad för den är det.
+{
+  const reserv = new Set(unika.map((f) => f.vag).filter((v) => filer.filter((f) => f.vag === v).every((f) => f.reserv === true)));
+  const appens = unika.filter((f) => !reserv.has(f.vag));
+  const lista2 = Object.fromEntries(appens.map((f) => [f.vag, [f.sha256, f.storlek]]).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)));
+  const version = createHash("sha256").update(JSON.stringify(lista2)).digest("hex").slice(0, 16);
+  writeFileSync(join(publicDir, "spel-app.json"), JSON.stringify({ version, byggd: lista.byggd, filer: lista2 }) + "\n", "utf8");
+  console.log(`public/spel-app.json: version ${version}, ${appens.length} filer (${reserv.size} reserver utanför).`);
+}
 console.log(`public/spel/: ${klara} filer, ${(byte / 1048576).toFixed(1)} MB, spelen ${Object.keys(lista.spel).join(", ")} (spel-filer.json ${lista.byggd}).`);
