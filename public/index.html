@@ -1880,7 +1880,10 @@
   // videotek sidan så länge…. de är inte färdigbyggda»). Sätt inte true förrän Rickard säger till.
   // 14/11 syns den på grenen spel-flik-synlig-1411 (Rickard: guidens Fly-knapp «skall ta eleverna till dessa tre onlinespel ...
   // i en ny tab på videoteket som heter spel», utlagd «Med första versionen»). Läggs ut av samlaren efter hans ja.
-  const SPEL_SYNS = true;
+  // 16/11 gömd igen tills omgång 16 läggs ut (Rickard: «Jag tänker vi avvaktar med att ha spelen uppe på videoteket just nu.
+  // Och sen när vi är klara med... Omgång 16 lägger vi ut istället.»). #spel visar då filmerna med en rad om spelen.
+  // Omgång 16:s samlingsgren tar in den här ändringen och vänder den med git revert.
+  const SPEL_SYNS = false;
   const HYLLOR = ["berattelser", ...[...KURSSERIER, "formelbladet", "formelbladet-ma2"].filter((namn) => SERIER[namn] && iSerie(namn).length), ...(KLASSER.length ? [PROV] : []), ...(SPEL_SYNS ? [SPEL] : [])];
   // En hylla som adressen kan visa: berättelserna (#filmer), en serie, Inför provet eller Spel.
   const arHylla = (h) => !!SERIER[h] || h === PROV || h === SPEL;
@@ -2001,11 +2004,14 @@
     let h = location.hash.slice(1);
     try { h = decodeURIComponent(h); } catch (e) { /* trasig adress: använd den som den är */ }
     // En serie utan filmer har ingen flik att visa: adressen blir #filmer.
+    const spelGomda = h === SPEL && !SPEL_SYNS;
     if (arHylla(h) && !HYLLOR.includes(h)) { h = "filmer"; history.replaceState(null, "", "#filmer"); }
     const mal = !h ? "intro" : h === "filmer" || arHylla(h) ? "valj" : "film";
     // Filmvalets flik följer adressen: #formelbladet, #ma2a och #ma2c är seriernas flikar, #provet Inför provet, #filmer berättelserna.
     // Den ritas innan övergången, så att kortet som spelaren krymper ner till redan finns på linan.
     if (mal === "valj") valjHylla(arHylla(h) ? h : "berattelser", aktivVy !== "valj");
+    // Guidens knapp till spelen går till #spel. När spelen är gömda säger rubriken det, tills eleven byter flik.
+    if (spelGomda) $("valj-rubrik").textContent = "Spelen kommer tillbaka snart. Välj en film så länge";
     // Hopp inom samma film (kapitel, &t=), flikbyte och första laddningen: ingen övergång. Från en
     // film till en annan tonar sidan som vid andra vybyten.
     const annanFilm = mal === "film" && aktivVy === "film" && !!aktuell && h.split("&")[0] !== aktuell.id;
