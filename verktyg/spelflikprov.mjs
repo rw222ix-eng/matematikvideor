@@ -116,8 +116,9 @@ prov("startsidan släpper inte in Google", !/accounts\.google\.com/.test(csp));
 const spelCsp = (await fetch(`${BAS}/spel/tron.html`)).headers.get("content-security-policy") || "";
 prov("spelsidorna släpper inte in Google", !/accounts\.google\.com/.test(spelCsp) && /script-src 'self'/.test(spelCsp), spelCsp.slice(0, 120));
 // /spel/inlogg går genom funktionen till spelservern, och sidan säger vem eleven är. Utan klient-id och utan provkonton
-// finns ingen knapp, och eleven kan spela som gäst.
-const lage = await fetch(`${BAS}/spel/inlogg`).then((r) => r.json()).catch(() => null);
+// finns ingen knapp, och eleven kan spela som gäst. Sidans egen fråga har Sec-Fetch-Site: same-origin, och utan den
+// svarar servern ute {"fel":"adress"} (lokalt släpper LOKALT=1 igenom).
+const lage = await fetch(`${BAS}/spel/inlogg`, { headers: { "Sec-Fetch-Site": "same-origin" } }).then((r) => r.json()).catch(() => null);
 prov("/spel/inlogg svarar genom funktionen", !!lage && lage.inloggad === false && lage.klass === null, JSON.stringify(lage));
 await q.goto(`${BAS}/inlogg/?till=%2F%23spel`, { waitUntil: "load" });
 await q.waitForFunction(() => document.getElementById("lage").textContent !== "Hämtar …", null, { timeout: 15000 }).catch(() => {});
