@@ -43,3 +43,5 @@ export function skrivCloudflareHuvuden(huvuden, publicDir) {
 
 // Spelens webbapp (Installera-knappen, 15/11): sw.js, manifestet och appens fillista har egna regler (Cache-Control: no-cache).
 Object.assign(VAG, { "/sw.js": "/sw.js", "/manifest.webmanifest": "/manifest.webmanifest", "/spel-app.json": "/spel-app.json" });
+// Typsnitten (18/11 2026) har ?v=<innehållshash> i adressen (verktyg/publicera.mjs) och sparas i ett år.
+Object.assign(VAG, { "/fonts/(.*)": "/fonts/*" });

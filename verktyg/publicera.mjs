@@ -53,6 +53,21 @@ if (inloggCoop.length !== 1 || inloggCoop[0] !== INLOGG_COOP) fel(`Cross-Origin-
 // 1. Filmsidorna.
 skrivFilmsidor(JSON.parse(readFileSync(join(publicDir, "videor.json"), "utf8")).videor, publicDir);
 
+// ?v=<innehållshash> för filerna nedan: md5, 8 tecken, som filhash i bygg.mjs.
+const kort = (s) => createHash("md5").update(s).digest("hex").slice(0, 8);
+
+// 1c. Typsnitten sparas (Rickard 18/11 2026): varje url(fonts/….woff2) får ?v=<innehållshash>, och /fonts/* sparas i ett
+// år (verktyg/huvuden.json). Utan versionen frågade webbläsaren efter typsnitten vid varje besök.
+const medTypsnittsVersion = (text, fran) => text.replace(/url\(((?:\.\.\/)?fonts\/[\w.-]+\.woff2)\)/g, (hela, url) => {
+  const f = join(fran, url);
+  if (!existsSync(f)) fel(`${url} finns inte (${f}).`);
+  return `url(${url}?v=${kort(readFileSync(f))})`;
+});
+{
+  const css = join(publicDir, "inlogg", "inlogg.css");
+  if (existsSync(css)) writeFileSync(css, medTypsnittsVersion(readFileSync(css, "utf8"), join(publicDir, "inlogg")), "utf8");
+}
+
 // 2 och 3. index.html.
 const indexFil = join(publicDir, "index.html");
 let html = readFileSync(indexFil, "utf8");
@@ -81,6 +96,7 @@ for (const f of readdirSync(publicDir)) if (/^app\.[0-9a-f]{16}\.js$/.test(f) &&
 writeFileSync(join(publicDir, namn), app, "utf8");
 
 html = html.replace(skript[0][0], () => "");
+html = medTypsnittsVersion(html, publicDir);
 html = html.replace(meta[0][0], () => `<meta http-equiv="Content-Security-Policy" content="${CSP}">`);
 html = html.replace("</head>", () => `<script data-app="${namn}">${LADDARE}</script>\n</head>`);
 writeFileSync(indexFil, html, "utf8");
