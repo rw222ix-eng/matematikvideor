@@ -1650,6 +1650,28 @@
     return;
   }
   const videor = data.videor;
+  // Vad som sägs i filmerna (repliker och undertext). På den publicerade sidan står det inte i videor.json, utan i
+  // text/<id>.json och sok.json (verktyg/publicera.mjs, Rickard 18/11 «Mindre lista först»): filmkorten behöver bara
+  // en tiondel av filen. Filmsidan hämtar sin films text och sökningen allas, först när de behövs. I repots public/
+  // (lokala prov, soktest.mjs) står texten kvar i videor.json, och då hämtas inget.
+  const harText = (v) => Array.isArray(v.repliker);
+  const textLadd = new Map();
+  const laddaText = (v) => {
+    if (harText(v) || !v.text) return Promise.resolve();
+    if (!textLadd.has(v.id)) {
+      textLadd.set(v.id, fetch(v.text).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${v.text}: ${r.status}`))))
+        .then((d) => { if (!harText(v)) Object.assign(v, d); })
+        .catch((e) => { textLadd.delete(v.id); throw e; }));
+    }
+    return textLadd.get(v.id);
+  };
+  let allText = null;
+  const laddaAllText = () => {
+    if (videor.every(harText) || !data.sok) return Promise.resolve();
+    return allText || (allText = fetch(data.sok).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${data.sok}: ${r.status}`))))
+      .then((d) => { for (const v of videor) if (!harText(v) && d[v.id]) Object.assign(v, d[v.id]); })
+      .catch((e) => { allText = null; throw e; }));
+  };
   // Alltid animera — systemets "reducera rörelse" följs inte (Rickard 2026-09-06).
   const lugnt = false;
   const smal = () => matchMedia("(max-width: 700px)").matches;
@@ -3683,9 +3705,12 @@
   }
   // Ord i en text: små bokstäver, utan prickar, bindestreck bort ("pq-formeln" blir pqformeln) men
   // delarna finns också med ("pq", "formeln"), så både "pq formeln" och "pq-formeln" hittar den.
-  function ordI(s) {
+  function ordI(s) { return ordIVikt(fold(norm(s))); }
+  // Samma för en text som redan är vikad (fold(norm(…))), så att indexet inte vikar varje replik två gånger.
+  function ordIVikt(vikt) {
     const ut = [];
-    for (const o of fold(norm(s)).split(/[^\p{L}\p{N}^-]+/u)) {
+    for (const o of vikt.split(/[^\p{L}\p{N}^-]+/u)) {
+      if (!o.includes("-")) { if (o) ut.push(o); continue; }
       const hel = o.replace(/^-+|-+$/g, "");
       if (!hel) continue;
       if (hel.includes("-")) { ut.push(hel.replace(/-/g, "")); hel.split("-").filter(Boolean).forEach((d) => ut.push(d)); }
@@ -3779,18 +3804,39 @@
     return { termer, valfria, fras, markRe: mark.length ? new RegExp(mark.map((r) => r.source).join("|"), "giu") : null, ord };
   }
   // En textbit i indexet: texten (för fraser), dess stammar och den vikade texten.
-  const bit = (text) => ({ text, f: fold(norm(text)), stammar: [...new Set(ordI(text).map(stam))] });
-  // Sökindexet byggs en gång: titel, moment, begrepp, beskrivning, kapitel, repliker och undertextrader.
+  // Stammarna sparas per ord, eftersom samma ord kommer igen i nästan varje replik. Med det och en vikning per textbit
+  // byggs indexet en knapp tredjedel fortare (18/11), med exakt samma innehåll.
+  const stamMinne = new Map();
+  const stamFor = (o) => { let s = stamMinne.get(o); if (s === undefined) stamMinne.set(o, (s = stam(o))); return s; };
+  const bit = (text) => { const f = fold(norm(text)); return { text, f, stammar: [...new Set(ordIVikt(f).map(stamFor))] }; };
+  // Sökindexet byggs en gång: titel, moment, begrepp, beskrivning, kapitel, repliker och undertextrader. Det byggs först
+  // när sökningen behövs (Rickard 18/11 «Sökningen vid behov»): förut tog det 1,6 s av en strypt dators start, innan
+  // någon sökt. byggIndex() bygger det och stavningens ordlista i bitar om högst cirka 30 ms från det att pekaren når
+  // förstoringsglaset, så att sidan svarar på tangenterna under tiden. ritaSok väntar på det, och index() bygger det
+  // som är kvar på en gång (soktest.mjs).
   // Lektionens namn ur planeringen står i filmens id (ma1c-k2-02-formler-och-modeller). Det räknas bara
   // som hel fras, och bara för filmer som redan har alla orden: "formler och modeller" går till
   // Alfred och ljusklockan och inte till Malthus, som säger modell oftare (2026-10-18).
   const lektion = (id) => id.replace(/^(ma\d[a-c]?-k\d+-\d+|ma2a-\d+|formelbladet(-ma2)?-\d+)-/, "").replace(/-/g, " ");
-  const INDEX = videor.map((v) => ({
+  const indexPost = (v) => ({
     v, titel: bit(v.titel), moment: bit(v.moment), lektion: bit(lektion(v.id)), begrepp: v.begrepp.map(bit), besk: bit(v.beskrivning),
     kapitel: (v.kapitel || []).map((k) => ({ t: k.t, text: k.rubrik, kap: true, ...bit(`${k.typ === "uppgift" ? "din tur " : ""}${k.rubrik}`), text: k.rubrik })),
-    repliker: v.repliker.map((r, i) => ({ t: r.t, slut: v.repliker[i + 1] && v.repliker[i + 1].t != null ? v.repliker[i + 1].t : Infinity, ...bit(r.text) })),
+    repliker: (v.repliker || []).map((r, i) => ({ t: r.t, slut: v.repliker[i + 1] && v.repliker[i + 1].t != null ? v.repliker[i + 1].t : Infinity, ...bit(r.text) })),
     rader: (v.undertext || []).map((u) => ({ t: u.s, ...bit(u.text) })),
-  }));
+  });
+  let INDEX = null;
+  const indexDelar = [];
+  const index = () => INDEX || (INDEX = videor.map((v, i) => indexDelar[i] || indexPost(v)));
+  let indexBygge = null, indexKlart = false;
+  const byggIndex = () => indexBygge || (indexBygge = (async () => {
+    let t = performance.now();
+    const paus = async () => { if (performance.now() - t > 30) { await new Promise((klar) => setTimeout(klar, 0)); t = performance.now(); } };
+    for (let i = 0; i < videor.length && !INDEX; i++) { if (!indexDelar[i]) indexDelar[i] = indexPost(videor[i]); await paus(); }
+    const lista = new Map();
+    for (const x of index()) { if (ORDLISTA) break; ordFran(lista, x); await paus(); }
+    if (!ORDLISTA) ORDLISTA = lista;
+    indexKlart = true;
+  })());
   // Hur väl ett sökord passar en textbit, 0–1. Likheten per stam sparas, för samma stammar kommer igen.
   function passar(term, b) {
     let basta = 0;
@@ -3830,9 +3876,10 @@
   function sok(fraga) {
     const q = tolkaFraga(fraga);
     if (!q.termer.length) return { q, res: [], narmast: false };
-    const rader = INDEX.map((x) => ({ x, per: poangFor(x, q) }));
+    const IX = index();
+    const rader = IX.map((x) => ({ x, per: poangFor(x, q) }));
     const df = q.termer.map((_, i) => rader.filter((r) => r.per[i] > 0).length);
-    const idf = df.map((d) => Math.log(1 + INDEX.length / Math.max(1, d)));
+    const idf = df.map((d) => Math.log(1 + IX.length / Math.max(1, d)));
     // Huvudordet, det eleven letar efter: ett namn eller ord som bara finns i en eller två filmer
     // ("avstånd till Titanic"), annars det första ämnesordet ("en vinkel i en rätvinklig triangel").
     const sallsynt = df.findIndex((d) => d > 0 && d <= 2);
@@ -3931,25 +3978,27 @@
   // fel för ord på fyra–fem bokstäver, två för längre), och det står vilket ord som söktes. Ordlistan
   // byggs första gången den behövs, ur samma text som sökningen.
   let ORDLISTA = null;
-  function ordlista() {
-    if (ORDLISTA) return ORDLISTA;
-    ORDLISTA = new Map();
+  // En films ord i ordlistan (byggIndex lägger dem en film i taget).
+  function ordFran(lista, x) {
     // Ord som filmerna HANDLAR om (titel, moment, begrepp, kapitelrubriker) väger som 30 ord ur
     // talet: "mönter" är ett fel ett steg från både mönster och möter, och eleven söker på mönster.
     const lagg = (text, vikt = 1) => {
       for (const w of String(text || "").match(/\p{L}{4,}/gu) || []) {
-        const k = fold(w.toLowerCase()), e = ORDLISTA.get(k);
+        const k = fold(w.toLowerCase()), e = lista.get(k);
         // Formen som visas: gemener om ordet någon gång står med gemener (cosinus), annars som det
         // står (Pythagoras).
-        if (!e) ORDLISTA.set(k, { n: vikt, form: w });
+        if (!e) lista.set(k, { n: vikt, form: w });
         else { e.n += vikt; if (w === w.toLowerCase()) e.form = w; }
       }
     };
-    INDEX.forEach((x) => {
-      lagg(x.v.titel, 30); lagg(x.v.moment, 30); x.v.begrepp.forEach((b) => lagg(b, 30)); x.kapitel.forEach((k) => lagg(k.text, 30));
-      lagg(x.v.beskrivning); x.repliker.forEach((r) => lagg(r.text));
-    });
-    return ORDLISTA;
+    lagg(x.v.titel, 30); lagg(x.v.moment, 30); x.v.begrepp.forEach((b) => lagg(b, 30)); x.kapitel.forEach((k) => lagg(k.text, 30));
+    lagg(x.v.beskrivning); x.repliker.forEach((r) => lagg(r.text));
+  }
+  function ordlista() {
+    if (ORDLISTA) return ORDLISTA;
+    const lista = new Map();
+    index().forEach((x) => ordFran(lista, x));
+    return (ORDLISTA = lista);
   }
   // Antal ändringar (byte, borttaget, tillagt, två grannar som bytt plats) mellan a och b, högst max+1.
   function avstand(a, b, max) {
@@ -4000,6 +4049,14 @@
     if (!norm(falt.value)) {
       status.textContent = "";
       lista.innerHTML = html(`<div class="forslag"><p class="etikett">Prova att söka på</p>${FORSLAG.map((f) => `<button type="button" data-forslag="${attr(f)}">${esc(f)}</button>`).join("")}</div>`);
+      return;
+    }
+    // Sökningen behöver allt som sägs i filmerna (laddaAllText) och indexet (byggIndex). Är de inte klara står det i
+    // statusraden, och träffarna ritas när de är det. Går texten inte att hämta försöker nästa tangenttryck igen.
+    if (!indexKlart) {
+      status.textContent = "Hämtar det som sägs i filmerna …";
+      laddaAllText().then(byggIndex).then(() => { if (sokRuta.classList.contains("oppen")) ritaSok(); },
+        () => { if (sokRuta.classList.contains("oppen")) status.textContent = "Sökningen gick inte att hämta. Kontrollera nätet och skriv igen."; });
       return;
     }
     // Stavfel rättas alltid (Rickard 2026-10-05: "det borde finnas automatiska rättningar om eleverna
@@ -4057,6 +4114,8 @@
     if (!sokRuta.classList.contains("oppen")) { fokusForeSok = document.activeElement; sokKurs = kursVal ?? kursFranLaget(); }
     sokRuta.classList.add("oppen"); document.body.classList.add("last");
     document.querySelectorAll(".vy").forEach((el) => { el.inert = true; });
+    // Texten hämtas och indexet byggs i bitar medan eleven börjar skriva (Rickard 18/11 «Sökningen vid behov»).
+    laddaAllText().then(byggIndex).catch(() => {});
     ritaSok(); setTimeout(() => falt.focus(), 50);
   }
   function stangSok() {
@@ -4066,7 +4125,12 @@
     fokusForeSok = null;
     Newton.hande("sokStangd");
   }
-  document.querySelectorAll(".sok-oppna").forEach((b) => b.addEventListener("click", oppnaSok));
+  document.querySelectorAll(".sok-oppna").forEach((b) => {
+    b.addEventListener("click", oppnaSok);
+    // Pekaren på förstoringsglaset: texten börjar hämtas och indexet byggas redan då, så att de oftast är klara när
+    // rutan öppnas.
+    for (const typ of ["pointerenter", "focus"]) b.addEventListener(typ, () => laddaAllText().then(byggIndex).catch(() => {}), { passive: true });
+  });
   $("sok-stang").addEventListener("click", stangSok);
   falt.addEventListener("input", ritaSok);
   falt.addEventListener("input", () => { if (falt.value.trim().length >= 3) Newton.hande("sokt"); });
@@ -4720,20 +4784,11 @@
     // Kapitlen ur kapitel.json. Saknas de (en ny film) delas filmen i högst sex jämna bitar, med
     // första meningen i varje bit som rubrik: en rad per replik (20–27 rader) blev överväldigande
     // (Rickard 2026-09-26). bygg.mjs varnar för en film utan kapitel.
-    const egnaKapitel = !!(v.kapitel && v.kapitel.length);
-    const medTid = v.repliker.filter((r) => r.t != null), bitar = Math.min(6, medTid.length);
-    const kapitel = egnaKapitel ? v.kapitel
-      : Array.from({ length: bitar }, (_, i) => medTid[Math.floor((i * medTid.length) / bitar)]).map((r) => ({ t: r.t, rubrik: r.text.split(/(?<=[.?!])\s/)[0] }));
-    kapitelAntal = kapitel.length; egnaKapitelNu = egnaKapitel;
-    $("f-langd").textContent = langdRad(v.langd);
-    // Varje kapitel visar sin sort (Historia, Matte, Din tur) ovanför rubriken, i sortens färg.
-    $("kapitel").innerHTML = html(kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${matte(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join(""));
-    // Två spalter: första halvan av kapitlen till vänster, resten till höger.
-    $("kapitel").style.setProperty("--rader", Math.max(1, Math.ceil(kapitel.length / 2)));
-    aktuellaKapitel = kapitel;
     $("allt").open = false;
-    $("helatext").innerHTML = html(v.repliker.map((r, i) => `<li${lugnt ? ' class="syns"' : ""}><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join(""));
-    if (iakttagare) $("helatext").querySelectorAll("li").forEach((li) => iakttagare.observe(li));
+    ritaText(v);
+    // Filmens text (repliker och undertext) hämtas på den publicerade sidan när filmen öppnas (laddaText). Kapitlen ur
+    // kapitel.json står redan i videor.json, så bara hela texten och undertexten väntar på den.
+    if (!harText(v)) laddaText(v).then(() => { if (aktuell === v) { ritaText(v, true); markeraNu(sp.nu()); } }).catch((e) => console.warn("Filmens text kom inte:", e));
     ritaDinTur(v);
     const start = Number.isFinite(t) ? t : 0;
     // Utan tid i adressen fortsätter filmen där eleven slutade, om det inte var i början eller slutet.
@@ -4756,6 +4811,27 @@
     markeraNu(start);
     klocka = setInterval(uppdatera, 200);
   }
+  // Kapitlen och hela texten. Ritas när filmen öppnas, och hela texten igen när filmens text kommit (laddaText, baraText). Kapitlen ur
+  // kapitel.json. Saknas de (en ny film) delas filmen i högst sex jämna bitar, med första meningen i varje bit som
+  // rubrik: en rad per replik (20–27 rader) blev överväldigande (Rickard 2026-09-26). bygg.mjs varnar för en film utan kapitel.
+  function ritaText(v, baraText = false) {
+    const egnaKapitel = !!(v.kapitel && v.kapitel.length), repliker = v.repliker || [];
+    const medTid = repliker.filter((r) => r.t != null), bitar = Math.min(6, medTid.length);
+    const kapitel = egnaKapitel ? v.kapitel
+      : Array.from({ length: bitar }, (_, i) => medTid[Math.floor((i * medTid.length) / bitar)]).map((r) => ({ t: r.t, rubrik: r.text.split(/(?<=[.?!])\s/)[0] }));
+    if (!baraText || !egnaKapitel) {
+      kapitelAntal = kapitel.length; egnaKapitelNu = egnaKapitel;
+      $("f-langd").textContent = langdRad(v.langd);
+      // Varje kapitel visar sin sort (Historia, Matte, Din tur) ovanför rubriken, i sortens färg.
+      $("kapitel").innerHTML = html(kapitel.map((k) => `<li${k.typ ? ` class="typ-${attr(k.typ)}"` : ""}><button data-t="${k.t}"><span class="tid">${tid(k.t)}</span><span class="kap-text">${k.typ ? `<span class="kap-typ">${esc(TYPNAMN[k.typ] || k.typ)}</span>` : ""}<span class="rubrik">${matte(k.rubrik)}</span></span><svg class="pil" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></button></li>`).join(""));
+      // Två spalter: första halvan av kapitlen till vänster, resten till höger.
+      $("kapitel").style.setProperty("--rader", Math.max(1, Math.ceil(kapitel.length / 2)));
+      aktuellaKapitel = kapitel; nuKapitel = -1;
+    }
+    $("helatext").innerHTML = html(repliker.map((r, i) => `<li${lugnt ? ' class="syns"' : ""}><button data-t="${r.t ?? ""}" data-i="${i}"><span class="tid">${r.t != null ? tid(r.t) : "–"}</span><span class="snutt">${esc(r.text)}</span></button></li>`).join(""));
+    nuIndex = -1;
+    if (iakttagare) $("helatext").querySelectorAll("li").forEach((li) => iakttagare.observe(li));
+  }
   // Det som spelas nu lyser, både kapitlet och repliken i hela texten.
   let nuIndex = -1, nuKapitel = -1, aktuellaKapitel = [];
   // Kapitlens sorter och banden under tidslinjen: ett band per kapitel, i sortens färg, från
@@ -4775,7 +4851,7 @@
   function markeraNu(s) {
     if (!aktuell) return;
     let i = -1, k = -1;
-    aktuell.repliker.forEach((r, n) => { if (r.t != null && r.t <= s + 0.2) i = n; });
+    (aktuell.repliker || []).forEach((r, n) => { if (r.t != null && r.t <= s + 0.2) i = n; });
     aktuellaKapitel.forEach((c, n) => { if (c.t <= s + 0.2) k = n; });
     if (i !== nuIndex) { lys($("helatext"), nuIndex, i); nuIndex = i; }
     if (k !== nuKapitel) {
@@ -5473,7 +5549,7 @@
   const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
   const takt = (t) => 150 * t + 80 * t * t;   // antal tecken efter t sekunder
   const raderna = () => [...$("helatext").children].map((li) => ({ li, s: li.querySelector(".snutt") }));
-  const radText = (li) => { const b = li.querySelector("[data-i]"), r = aktuell && b ? aktuell.repliker[Number(b.dataset.i)] : null; return r ? r.text : ""; };
+  const radText = (li) => { const b = li.querySelector("[data-i]"), r = aktuell && b && aktuell.repliker ? aktuell.repliker[Number(b.dataset.i)] : null; return r ? r.text : ""; };
   // Efteråt står varje rad med hela sin text igen, synlig, utan block.
   function aterstallText() {
     const ol = $("helatext");

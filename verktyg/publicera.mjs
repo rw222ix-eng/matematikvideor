@@ -19,7 +19,7 @@
  *   node verktyg/publicera.mjs --cloudflare     (Cloudflare Pages)
  *   node verktyg/publicera.mjs --public <mapp>   (en kopia av public/, för prov)
  */
-import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync, mkdirSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
@@ -55,6 +55,36 @@ skrivFilmsidor(JSON.parse(readFileSync(join(publicDir, "videor.json"), "utf8")).
 
 // ?v=<innehållshash> för filerna nedan: md5, 8 tecken, som filhash i bygg.mjs.
 const kort = (s) => createHash("md5").update(s).digest("hex").slice(0, 8);
+
+// 1b. Mindre lista först (Rickard 18/11 2026). Det som sägs i filmerna, repliker och undertext, är fem sjättedelar av
+// videor.json men behövs först på filmsidan och i sökningen. Det flyttas till text/<id>.json (filmsidan, laddaText i
+// index.html) och sok.json (sökningen, laddaAllText), som får ?v=<innehållshash> och sparas i ett år (verktyg/huvuden.json).
+// Repots videor.json ändras aldrig, och står texten redan utflyttad (data.sok finns) görs inget.
+{
+  const fil = join(publicDir, "videor.json");
+  const data = JSON.parse(readFileSync(fil, "utf8"));
+  if (!data.sok) {
+    const textDir = join(publicDir, "text");
+    rmSync(textDir, { recursive: true, force: true });
+    mkdirSync(textDir);
+    const sok = {};
+    for (const v of data.videor) {
+      if (!/^[a-z0-9-]+$/.test(v.id)) fel(`filmens id ${JSON.stringify(v.id)} går inte att använda som filnamn i text/.`);
+      const text = { repliker: v.repliker || [], undertext: v.undertext ?? null };
+      const json = JSON.stringify(text);
+      writeFileSync(join(textDir, `${v.id}.json`), json, "utf8");
+      sok[v.id] = text;
+      delete v.repliker; delete v.undertext;
+      v.text = `text/${v.id}.json?v=${kort(json)}`;
+    }
+    const sokJson = JSON.stringify(sok);
+    writeFileSync(join(publicDir, "sok.json"), sokJson, "utf8");
+    data.sok = `sok.json?v=${kort(sokJson)}`;
+    const fore = statSync(fil).size;
+    writeFileSync(fil, JSON.stringify(data), "utf8");
+    console.log(`public/videor.json: texten flyttad till text/ och sok.json (${Math.round(fore / 1024)} kB blev ${Math.round(statSync(fil).size / 1024)} kB).`);
+  }
+}
 
 // 1c. Typsnitten sparas (Rickard 18/11 2026): varje url(fonts/….woff2) får ?v=<innehållshash>, och /fonts/* sparas i ett
 // år (verktyg/huvuden.json). Utan versionen frågade webbläsaren efter typsnitten vid varje besök.
