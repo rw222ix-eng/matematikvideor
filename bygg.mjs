@@ -273,6 +273,18 @@ for (const [namn, behall] of [["hitta-scen.py", "public/omslag/intro-lager.webp"
   }
   if (!kord) console.warn(`  varning: ${namn} kunde inte köras (python med numpy/scipy/Pillow saknas) — behåller ${behall}.`);
 }
+// Sidan hämtar maskerna som förlustfri WebP (18/11 2026): samma pixlar som skriptens PNG, 35–45 % mindre filer.
+// En ny WebP görs bara när pixlarna skiljer sig, så att en annan ffmpeg-version inte ger en ny fil och ett nytt ?v=
+// för samma bild. PNG-filerna står kvar, eftersom de är skriptens utfiler.
+if (harFfmpeg) {
+  const pixlar = (fil) => createHash("md5").update(execFileSync("ffmpeg", ["-v", "error", "-i", fil, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], { maxBuffer: 1 << 28 })).digest("hex");
+  for (const [png, webp] of [["valj-glimt.png", "valj-glimt.webp"], ["valj-himmel.png", "valj-himmel.webp"], ["intro-glimt.png", "intro-glimt.webp"], ["intro-lager.png", "intro-lager-mask.webp"]]) {
+    const kalla = join(HÄR, "public", "omslag", png), mal = join(HÄR, "public", "omslag", webp);
+    if (!existsSync(kalla) || (existsSync(mal) && pixlar(kalla) === pixlar(mal))) continue;
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", kalla, "-c:v", "libwebp", "-lossless", "1", "-compression_level", "6", mal], { stdio: "ignore" });
+    console.log(`public/omslag/${webp}: ny ur ${png}.`);
+  }
+}
 
 // Fonderna och logotypen ligger i index.html, inte i videor.json. Deras ?v= skrivs om
 // här efter bakningen, så inga versionsnummer behöver hållas för hand.
@@ -280,7 +292,7 @@ for (const [namn, behall] of [["hitta-scen.py", "public/omslag/intro-lager.webp"
   const indexFil = join(HÄR, "public", "index.html");
   let html = readFileSync(indexFil, "utf8");
   const fore = html;
-  for (const namn of ["intro.jpg", "intro-glimt.png", "intro-lager.webp", "intro-lager.png", "intro-scen.json", "valj-fond.jpg", "valj-glimt.png", "valj-himmel.png", "film-fond.jpg", "logo.jpg"]) {
+  for (const namn of ["intro.jpg", "intro-glimt.webp", "intro-lager.webp", "intro-lager-mask.webp", "intro-scen.json", "valj-fond.jpg", "valj-glimt.webp", "valj-himmel.webp", "film-fond.jpg", "logo.jpg"]) {
     const fil = join(HÄR, "public", "omslag", namn);
     if (!existsSync(fil)) continue;
     const v = filhash(fil);
