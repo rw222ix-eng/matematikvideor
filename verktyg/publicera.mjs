@@ -59,7 +59,8 @@ const kort = (s) => createHash("md5").update(s).digest("hex").slice(0, 8);
 // 1b. Mindre lista först (Rickard 18/11 2026). Det som sägs i filmerna, repliker och undertext, är fem sjättedelar av
 // videor.json men behövs först på filmsidan och i sökningen. Det flyttas till text/<id>.json (filmsidan, laddaText i
 // index.html) och sok.json (sökningen, laddaAllText), som får ?v=<innehållshash> och sparas i ett år (verktyg/huvuden.json).
-// Repots videor.json ändras aldrig, och står texten redan utflyttad (data.sok finns) görs inget.
+// Sökträffarnas miniatyrer (verktyg/smabilder.mjs) läggs i omslagLiten. Repots videor.json ändras aldrig, och står
+// texten redan utflyttad (data.sok finns) görs inget.
 {
   const fil = join(publicDir, "videor.json");
   const data = JSON.parse(readFileSync(fil, "utf8"));
@@ -76,13 +77,15 @@ const kort = (s) => createHash("md5").update(s).digest("hex").slice(0, 8);
       sok[v.id] = text;
       delete v.repliker; delete v.undertext;
       v.text = `text/${v.id}.json?v=${kort(json)}`;
+      const liten = join(publicDir, "omslag", `${v.id}-liten.webp`);
+      if (existsSync(liten)) v.omslagLiten = `omslag/${v.id}-liten.webp?v=${kort(readFileSync(liten))}`;
     }
     const sokJson = JSON.stringify(sok);
     writeFileSync(join(publicDir, "sok.json"), sokJson, "utf8");
     data.sok = `sok.json?v=${kort(sokJson)}`;
     const fore = statSync(fil).size;
     writeFileSync(fil, JSON.stringify(data), "utf8");
-    console.log(`public/videor.json: texten flyttad till text/ och sok.json (${Math.round(fore / 1024)} kB blev ${Math.round(statSync(fil).size / 1024)} kB).`);
+    console.log(`public/videor.json: texten flyttad till text/ och sok.json (${Math.round(fore / 1024)} kB blev ${Math.round(statSync(fil).size / 1024)} kB), ${data.videor.filter((v) => v.omslagLiten).length} miniatyrer.`);
   }
 }
 

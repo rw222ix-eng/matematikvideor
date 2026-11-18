@@ -19,6 +19,7 @@ import { createHash } from "node:crypto";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { skrivFilmsidor } from "./verktyg/filmsidor.mjs";
+import { skrivSmabilder } from "./verktyg/smabilder.mjs";
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const register = JSON.parse(readFileSync(join(HÄR, "register.json"), "utf8"));
@@ -309,3 +310,5 @@ if (byggfel.length) {
 writeFileSync(join(HÄR, "public", "videor.json"), JSON.stringify({ byggd: new Date().toISOString(), videor }, null, 1), "utf8");
 console.log(`public/videor.json: ${videor.length} video(r), ${videor.reduce((a, v) => a + v.repliker.length, 0)} repliker.`);
 skrivFilmsidor(videor, join(HÄR, "public"));
+// Miniatyrerna i sökträffarna (verktyg/smabilder.mjs), ur omslagen som just skrivits.
+skrivSmabilder(join(HÄR, "public"));

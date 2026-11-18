@@ -3948,11 +3948,14 @@
   const FORSLAG = [...new Set([...(harFlikar ? ["formelbladet"] : []), ...berattelser.flatMap((v) => v.begrepp.slice(0, 2))])].slice(0, 10);
   const SPELA = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg>';
   // En film i en lista: omslag, kurs och moment, titel, och för sökträffar stället där ordet sägs.
+  // Träffraderna visar omslaget 120 px brett: miniatyren (omslagLiten, 320 px WebP ur verktyg/smabilder.mjs, som
+  // publicera.mjs lägger i videor.json) och lat laddning, så att första bokstaven inte hämtar alla filmers 720 px-omslag
+  // (Rickard 18/11 «Små bilder i träffarna»). Saknas miniatyren används omslaget som förut.
   const filmRad = (a, t, under, stalle, re) => {
-    const b = a.omslagRen || a.omslag;
+    const b = a.omslagLiten || a.omslagRen || a.omslag;
     const rad = stalle ? `<span class="stalle"><span class="tid">${tid(stalle.t)}</span><span class="utdrag">${stalleText(stalle, re, 90)}</span></span>` : "";
     return `
-        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${attr(b)}" alt="">` : '<span class="tom"></span>'}<span class="namn"><span class="meta">${metaRad(a)}</span><span class="titel">${esc(a.titel)}</span>${rad}<span class="antal">${under}</span></span></button></li>`;
+        <li><button data-film="${a.id}" data-t="${t ?? ""}">${b ? `<img src="${attr(b)}" alt="" loading="lazy" decoding="async">` : '<span class="tom"></span>'}<span class="namn"><span class="meta">${metaRad(a)}</span><span class="titel">${esc(a.titel)}</span>${rad}<span class="antal">${under}</span></span></button></li>`;
   };
 
   // Kursknapparna (Rickard 2026-10-03). Formelbladet Ma 1 räknas till Ma 1c och Formelbladet Ma 2
