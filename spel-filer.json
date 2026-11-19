@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-18",
+ "byggd": "2026-11-19",
  "kalla": "https://geogebra-guiden.pages.dev",
  "spel": {
   "tron": {
@@ -956,6 +956,26 @@
      "sha256": "6d98a366ecc5553b11bd40e034558f3c9f0b8e82de043a26d38a745c59f00081"
     },
     {
+     "vag": "figur/tron/flagga.bin",
+     "storlek": 405184,
+     "sha256": "963701787e9ae242912769734b61c7deb69169148e2de03ffa8805fc46c3d065"
+    },
+    {
+     "vag": "figur/tron/flagga.binz",
+     "storlek": 336330,
+     "sha256": "cbc278eb1301455713239763c6975965c645022aad9321c0373911a46af3cf1f"
+    },
+    {
+     "vag": "figur/tron/krasch-cykel.bin",
+     "storlek": 655448,
+     "sha256": "27d6a649c27e7ee1baf0a0d8a6a5cc5eff21b2452dd9cb35d19e284a867c6ba5"
+    },
+    {
+     "vag": "figur/tron/krasch-cykel.binz",
+     "storlek": 385972,
+     "sha256": "a16c11adf8265698f339bb6f9fc44afb1ac7fb56de4598a972ef9e0d46bc3d4d"
+    },
+    {
      "vag": "figur/tron/miljo-kobolt-dag/malning/form.binz",
      "storlek": 80690,
      "sha256": "3aab15b76d300013e4363fecf903962e9c4f195b79a51ca52a74caf5f3e3d079"
@@ -972,36 +992,69 @@
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/mid1.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid1-lag.ktx2",
      "storlek": 425619,
      "sha256": "fc87932631bd013a73ccdd7b71399f4f5876547459ada3ff3402bbfef3d6d1aa"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/mid1.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid1-lag.webp",
      "storlek": 429782,
      "sha256": "51f33917e9882018005fb950a7d0d5036053b8e8425962fa69dcf5c753749e0e",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/mid2.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid1.ktx2",
+     "storlek": 1397870,
+     "sha256": "304ad171355685e35664a6be4e07982a089745bd2421940a2d0a6a5e4c19a415"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid1.webp",
+     "storlek": 1338778,
+     "sha256": "02b0613fec9bfab0f76b8ca9d8cb89b4f160d2435d3a751318c63f9fd1493287",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid2-lag.ktx2",
      "storlek": 413210,
      "sha256": "cbad7b583c206398c56882d5a5628ba008092534faceda7e5510ed74953d8579"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/mid2.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid2-lag.webp",
      "storlek": 426308,
      "sha256": "cd548acf525e46f0c54b084cd852e4dba0b35cc8fa9c2c5a24a02e63bf7cfa55",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/mid3.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid2.ktx2",
+     "storlek": 1360108,
+     "sha256": "ea206d27640ccdb932161a561db8d123b9a445acf4a2bd43d00d4c5614fb497a"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid2.webp",
+     "storlek": 1356804,
+     "sha256": "69f3fd61eaba3a002611629347f21247768b0c88d91bddcd803d742c4a4cf14f",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid3-lag.ktx2",
      "storlek": 411979,
      "sha256": "bb00fd03f94c9290177bf84639f78f839a5a911bebf001c2fc98bc4e741b97a1"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/mid3.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid3-lag.webp",
      "storlek": 405064,
      "sha256": "4c0c0de3e18ad6c80bee4193afcc0a03a10f62c8ed882c21876ac659195bd078",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid3.ktx2",
+     "storlek": 1302434,
+     "sha256": "8c0d92381da5221f2b55b81f58784937e7e09f13affd2b244897a57eadd5a3e2"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/mid3.webp",
+     "storlek": 1154742,
+     "sha256": "b86e1ccf48d2770c32fd111350757acaaa5bd599f99090ea2c2fe36676f37d7f",
      "reserv": true
     },
     {
@@ -1016,58 +1069,113 @@
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/start.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/start-lag.ktx2",
      "storlek": 424826,
      "sha256": "8ed1c63b48bf8cf137efe1943daef59602effdd24d3f90c5288b360b7c3348ea"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/start.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/start-lag.webp",
      "storlek": 473922,
      "sha256": "f189a72f59e8b22a2ccffb6e5c102d49d130e2511a9ac39ffc40c7e7aae45262",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut1.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/start.ktx2",
+     "storlek": 1423278,
+     "sha256": "894bb0384d0053f7ad9c2917fe92487fb1a8beaab44a6aefbd77552699aff51e"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/start.webp",
+     "storlek": 1518004,
+     "sha256": "1caf6f2712aecf4a11f24805ac1e10a16a8a4cfae51b94701f3141c424abc00e",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut1-lag.ktx2",
      "storlek": 405431,
      "sha256": "0add56ca4ee70e785a3c18f7c830ee0bd3d062334546f6559f29c02821f345fd"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut1.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut1-lag.webp",
      "storlek": 441232,
      "sha256": "f31566031b08a46d5d85af60c6f21e89095e52b610785a3f78bb84e849641485",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut2.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut1.ktx2",
+     "storlek": 1364393,
+     "sha256": "a9ed62c86e57958e349ebe0baff5bbdd9e80dd2847fff3fc77db5e692e84761f"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut1.webp",
+     "storlek": 1412814,
+     "sha256": "b5bb4d5b5f3ee1c0990459419b392e608102dd4f639b4caa1a3f5f1bc01127fa",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut2-lag.ktx2",
      "storlek": 403175,
      "sha256": "a1df974f535f17586c4493b9223bb573f66d1b2679326a850d5ec87512cf14f0"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut2.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut2-lag.webp",
      "storlek": 441206,
      "sha256": "604d67514fb272c54da22dc32fa5edae1623cd3e1436796920d50ffbc0604e64",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut3.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut2.ktx2",
+     "storlek": 1369887,
+     "sha256": "fae01e56a3722810538b0f9e33eb97c851eb8c098805078d4a4a011c3c6bc1a9"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut2.webp",
+     "storlek": 1398914,
+     "sha256": "fff7129c915e3be0a8e64e85fc50c15175eec35bab5c88ae80a5934a7cded137",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut3-lag.ktx2",
      "storlek": 399446,
      "sha256": "2e3b196913f005a8107e01df6b93ab553f5602e9ebbbe44b3816f04b5aacecb4"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut3.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut3-lag.webp",
      "storlek": 438508,
      "sha256": "34a5a17bb11f83c64b131d1913ffe864417b087910c8dbdc5f9ee26d72dbd8d0",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut4.ktx2",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut3.ktx2",
+     "storlek": 1327762,
+     "sha256": "9df314e138889c82df1a7d1cc59e0cf8d383d973b64d8815401d31e5464dbf90"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut3.webp",
+     "storlek": 1304678,
+     "sha256": "aea3475e231cdb95237ec7b2efead8b0506d650dafde251e697b8fc8d827b74c",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut4-lag.ktx2",
      "storlek": 404381,
      "sha256": "83168595215007e28751d27ab8a97ddd283d0237d6e02c8a91c650cef2137841"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-dag/malning/ut4.webp",
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut4-lag.webp",
      "storlek": 433036,
      "sha256": "c9edd60e3adeb9daafcdd78111ae8ba9975062547539ac8e99ba6b9c06846dec",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut4.ktx2",
+     "storlek": 1319818,
+     "sha256": "0e19bc91fe4090c6ab5c203cf9ce51ce209e5f027c120cc6365e0d361ee0b1d6"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-dag/malning/ut4.webp",
+     "storlek": 1256412,
+     "sha256": "caa715d3eac94b6a520f0fd0d35b20e59766721f6b7c740b5f51a55edc527686",
      "reserv": true
     },
     {
@@ -1081,19 +1189,70 @@
      "sha256": "05a8a6df200542e49f607d69741f2d64974e1da35bf35cd0299e5feb23fe43e9"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-sno/malning/mid1.webp",
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid1-lag.ktx2",
+     "storlek": 419203,
+     "sha256": "a0e5944867a6be56e47877512ed3dccfdd0800d678a06d3913ad8ecb3d45bfcd"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid1-lag.webp",
      "storlek": 455430,
-     "sha256": "b324231261728471dff76905b64077b4577764bcca440ad709fb32132e4bea2c"
+     "sha256": "b324231261728471dff76905b64077b4577764bcca440ad709fb32132e4bea2c",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid1.ktx2",
+     "storlek": 1385174,
+     "sha256": "e75e26704a3e2ef0df254d0fbcf77066896a45d4526f190b544ffd0dade3e7d2"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid1.webp",
+     "storlek": 1458832,
+     "sha256": "a68daa28069989b51032f26f663704cbe998b68e551937db88a04fd95ec8f9a4",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid2-lag.ktx2",
+     "storlek": 410504,
+     "sha256": "335f465eb60d707c137ab572c8b70606e3162deecea89e48f382cfbacc7c2f5d"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid2-lag.webp",
+     "storlek": 397058,
+     "sha256": "c10907cf1385fed6c547a14cbe7dc3227ed7a9e3a337080fdca177b55f51ce91",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid2.ktx2",
+     "storlek": 1327414,
+     "sha256": "37482db72e400a2e452e9df0f9d430e7d3b6ddc839852a9711a3ea9bf5c9abb1"
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/mid2.webp",
-     "storlek": 397058,
-     "sha256": "c10907cf1385fed6c547a14cbe7dc3227ed7a9e3a337080fdca177b55f51ce91"
+     "storlek": 1194992,
+     "sha256": "b084fa774b6c95d13f3568597c9a79c9d18292d779597dd4cae5594a82b825df",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid3-lag.ktx2",
+     "storlek": 415468,
+     "sha256": "e1905dd66cead6de58a9a91252b5850eeba2a6642a77b8b6e8f47796eceb8e02"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid3-lag.webp",
+     "storlek": 422360,
+     "sha256": "60f5abba7c961cd396068fee27c7d73823c2aea40133d173d0bc7a112677ea69",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/mid3.ktx2",
+     "storlek": 1331741,
+     "sha256": "e463a87bbcbc1558dbd1fcc988342b6916c32d49f578d2614d625375c9445160"
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/mid3.webp",
-     "storlek": 422360,
-     "sha256": "60f5abba7c961cd396068fee27c7d73823c2aea40133d173d0bc7a112677ea69"
+     "storlek": 1203508,
+     "sha256": "c7ba8d0631546b2049d070e61bdab4d785418193857244f2509bae5abcd11e19",
+     "reserv": true
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/rorelse.webp",
@@ -1101,29 +1260,114 @@
      "sha256": "1b991d10a9798aee7eb69751c89605224231ad49adbf02e9c5783578972aa9f3"
     },
     {
-     "vag": "figur/tron/miljo-kobolt-sno/malning/start.webp",
+     "vag": "figur/tron/miljo-kobolt-sno/malning/start-lag.ktx2",
+     "storlek": 438516,
+     "sha256": "d1ef1944128fa7f7c596b1d2c3b37f2fd98f5fe959e84cef85eddb509e1ac5cf"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/start-lag.webp",
      "storlek": 556160,
-     "sha256": "51c1d1b3658eed6fad1f35df86847d66c3175f8d6a69958ec48f56a4710257e2"
+     "sha256": "51c1d1b3658eed6fad1f35df86847d66c3175f8d6a69958ec48f56a4710257e2",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/start.ktx2",
+     "storlek": 1489302,
+     "sha256": "f0db1713cba906a1716f75d24fc8279897ed9fb6c8ab2d5debe52928d199fe2e"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/start.webp",
+     "storlek": 1733464,
+     "sha256": "6da52d2026c2d97953c2930531b62c0325c19df954c87c2d407504769b439a54",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut1-lag.ktx2",
+     "storlek": 399408,
+     "sha256": "1121cf2c054b15fa36aaee1865315ce9a84528821d3b63bb9cf758b1d8ef4e8f"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut1-lag.webp",
+     "storlek": 457620,
+     "sha256": "59592be7984636e02df4e43c64117c5cda86968abcedae23862aa960a12ae7af",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut1.ktx2",
+     "storlek": 1352429,
+     "sha256": "b402913f4ed194da3e26f8c60a76d7ce964ad970a352b0e59f3a27ed8051bbf6"
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/ut1.webp",
-     "storlek": 457620,
-     "sha256": "59592be7984636e02df4e43c64117c5cda86968abcedae23862aa960a12ae7af"
+     "storlek": 1364342,
+     "sha256": "be002b226f77780a8c122f7a214f291cec766b7c2add651eb7d6c7d09ad0d0b3",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut2-lag.ktx2",
+     "storlek": 400377,
+     "sha256": "94353851edb7472d00625e02e8237c6115f34f9c5999aeeba7f1e715075cebff"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut2-lag.webp",
+     "storlek": 422072,
+     "sha256": "cf563bbca300cb394c61378ed9d532dcaf8432304855284ea2ddce2325fb0989",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut2.ktx2",
+     "storlek": 1337781,
+     "sha256": "cc933a482e91aae219dbbfa966efd0548217126ec090c91e1bc8c35d0279c19e"
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/ut2.webp",
-     "storlek": 422072,
-     "sha256": "cf563bbca300cb394c61378ed9d532dcaf8432304855284ea2ddce2325fb0989"
+     "storlek": 1180176,
+     "sha256": "f0eb4ad9c66ab2a7120dbc1846cbae5e187b332eb5170bdc4225b677f23d133e",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut3-lag.ktx2",
+     "storlek": 392591,
+     "sha256": "3e94b99e9b3ceb209d130361d951e03314f96ef048114884bd91475ad5364f52"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut3-lag.webp",
+     "storlek": 399592,
+     "sha256": "ca7cbc33e54ac1773ee975057962b3807bbb2626886a55c47e56930e63f354ae",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut3.ktx2",
+     "storlek": 1332690,
+     "sha256": "531b82e79462b29e7e84765fba0d6e217cf27b0355c46d5867b3b910e35537af"
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/ut3.webp",
-     "storlek": 399592,
-     "sha256": "ca7cbc33e54ac1773ee975057962b3807bbb2626886a55c47e56930e63f354ae"
+     "storlek": 1198808,
+     "sha256": "94cb150519ce06d6b4436b6e37b0c3b2ee85497a95cda745f26992138e617547",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut4-lag.ktx2",
+     "storlek": 410968,
+     "sha256": "77a2e130e58aebf11dfaba080164699730e948858b4ea6e18ac8f29dcc9dc5e1"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut4-lag.webp",
+     "storlek": 467128,
+     "sha256": "0f6abba575151b6f1880d68f848e2cfec3b35b03fe5e5dd5e076c88aa93e156d",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt-sno/malning/ut4.ktx2",
+     "storlek": 1397789,
+     "sha256": "7039883f930faa2fab83bd1564324e9a3e15d2b9c81695330449766684e82ef8"
     },
     {
      "vag": "figur/tron/miljo-kobolt-sno/malning/ut4.webp",
-     "storlek": 467128,
-     "sha256": "0f6abba575151b6f1880d68f848e2cfec3b35b03fe5e5dd5e076c88aa93e156d"
+     "storlek": 1357136,
+     "sha256": "2892ee5ec6221b741e7fd6b32ce65087d667fd75622a0015738c73b7eb4d1f71",
+     "reserv": true
     },
     {
      "vag": "figur/tron/miljo-kobolt/blixtar.bin",
@@ -1147,36 +1391,69 @@
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/mid1.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/mid1-lag.ktx2",
      "storlek": 422568,
      "sha256": "1e59ee86d43404f83029d8bdda2a3f4560ae9b412fed01b765b0212339b1225e"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/mid1.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/mid1-lag.webp",
      "storlek": 452322,
      "sha256": "3709004826296c9e18242c87381e0394d145ed1d5f18aa38d85dd35114232bd4",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/mid2.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/mid1.ktx2",
+     "storlek": 1346066,
+     "sha256": "d6627ca52694f0407de48b524e29459eed24c10ce0fcef529db3d4a13d3519f2"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/mid1.webp",
+     "storlek": 1389760,
+     "sha256": "5463cef9431dfd8e413c435fde8a6af70b0e9dbc58f6cae90aa93e77c86810ed",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/mid2-lag.ktx2",
      "storlek": 418775,
      "sha256": "b39ceb071b8a409ee170de3e95f61e62e0fa6d43e44cdded6845e531c8b6f5ba"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/mid2.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/mid2-lag.webp",
      "storlek": 408006,
      "sha256": "10f7d7e68b3d1e6e557d88c9bd6b66ad4ed592b5854ec0ea3af185507a44b779",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/mid3.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/mid2.ktx2",
+     "storlek": 1354013,
+     "sha256": "f0a6efcaf1fe052bdf6da970703a770d14dffd6ecd58bcd8807fd7d4a3c7e25e"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/mid2.webp",
+     "storlek": 1331254,
+     "sha256": "63b37273ff13e58d79756e1c235a1cfbbe8ee76469b895e219cfeb14556e1743",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/mid3-lag.ktx2",
      "storlek": 425076,
      "sha256": "7e442ab107030203d9689b8521b0dd208b9d8dd64991690da5be60b4526ba7c2"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/mid3.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/mid3-lag.webp",
      "storlek": 435096,
      "sha256": "f5538c5fe77f0e437ec6b00c040d18816a6eea7c8af567adbe1b4073b4c9fbc3",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/mid3.ktx2",
+     "storlek": 1362784,
+     "sha256": "71087847a34730ea12e4d055f0132f949414d17c8400b39eb8bdc0b52b0ad715"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/mid3.webp",
+     "storlek": 1299346,
+     "sha256": "3e03344ee9b870b8edd83d1250335b8947b3c284680bb84dc109a82cd9da00f2",
      "reserv": true
     },
     {
@@ -1191,58 +1468,113 @@
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/start.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/start-lag.ktx2",
      "storlek": 415069,
      "sha256": "7b6e5881ff193b01f249a354ab47d81462494b6a37861257b77a165e680ba87e"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/start.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/start-lag.webp",
      "storlek": 469914,
      "sha256": "0048c2f23bfb9002a3e927fb5967d077b791974dfc2f5d98cff1bf5b322575dc",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut1.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/start.ktx2",
+     "storlek": 1371025,
+     "sha256": "422a5146ff18fe63972b9e28ef2f264878b16044ba724517926eeed37772d07c"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/start.webp",
+     "storlek": 1590640,
+     "sha256": "662f903d4a1d8d07c52dc27945f8fce3d84f49bb8875b061b357f4f25d0dfb7d",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut1-lag.ktx2",
      "storlek": 390610,
      "sha256": "2a91398053a680723916b0c03a7e3389562325e879bf4dd101285a63f57bdc90"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut1.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/ut1-lag.webp",
      "storlek": 395016,
      "sha256": "6007b5ab1df336df60ea2743287ca1a3c132b6912ef87ab62563b7f146c7b224",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut2.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/ut1.ktx2",
+     "storlek": 1285961,
+     "sha256": "8a8852ad3fc81525ec3d5fc28cc4d18bc69e9c2f8ac21b54db7117125c2ffd1d"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut1.webp",
+     "storlek": 1275884,
+     "sha256": "3ae4681579c8c7d62595aa76087b65dd1e7ac3e1b4cd5a99352c909fadf5523d",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut2-lag.ktx2",
      "storlek": 395271,
      "sha256": "5e430cd39d78f44f720819be4b31873426026782a3264f24f04499f9635b61ab"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut2.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/ut2-lag.webp",
      "storlek": 416840,
      "sha256": "2dd4317e09c5c0806bbbfda4bac9088c7275649e40a629e936e124b22593b945",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut3.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/ut2.ktx2",
+     "storlek": 1285342,
+     "sha256": "424a363c87bfc9e4233e3746108a9f85aac59d7e6a626e858c75afa1bcd40000"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut2.webp",
+     "storlek": 1301852,
+     "sha256": "d6fcbcfa6ce7140398408a21958829a39f35d81a5f36d5aa9de30e747ffead5e",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut3-lag.ktx2",
      "storlek": 356127,
      "sha256": "0345d035331fb37b0e5abdeb5cf386168a5d6af96bd5e3ec1c2f51b3d3018e78"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut3.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/ut3-lag.webp",
      "storlek": 333254,
      "sha256": "1a02b6c0108d8a32d747e1f44fb362c49e359c0e403ded283a4c154528fd64c2",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut4.ktx2",
+     "vag": "figur/tron/miljo-kobolt/malning/ut3.ktx2",
+     "storlek": 1134254,
+     "sha256": "f2279149f64be96f9098dbd0e3cf45920453d0a811c437b0a89bb388b3f2abd2"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut3.webp",
+     "storlek": 1098380,
+     "sha256": "37b9a53e4971ed6afe5f14d36fea3d4bc8a090a33ddd85dde528fbd92334a3b0",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut4-lag.ktx2",
      "storlek": 408675,
      "sha256": "6bcc5040f7fe0a1258950cdc4ad9af40cfb77dee4692621ffa998795add9cc53"
     },
     {
-     "vag": "figur/tron/miljo-kobolt/malning/ut4.webp",
+     "vag": "figur/tron/miljo-kobolt/malning/ut4-lag.webp",
      "storlek": 456554,
      "sha256": "b2e7fc2b47f4f5d8555700db05dcc5a2e66e477f43ea8078215c18d87ed17c03",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut4.ktx2",
+     "storlek": 1341170,
+     "sha256": "5e88c9566f3b2fddac7cc3a79ad6deecc6e8681d6b4091c2cf1dc288ce84ccb1"
+    },
+    {
+     "vag": "figur/tron/miljo-kobolt/malning/ut4.webp",
+     "storlek": 1410378,
+     "sha256": "3ea62a790658d76a7e7e08e2f09dc2092a3d3f09387a05b595467e7b85709fa8",
      "reserv": true
     },
     {
@@ -1262,102 +1594,201 @@
      "sha256": "b2d635f5f8b481a3926e8a6fba995d6373555ef33ed37beac91fab053a53dd80"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv1.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/golv1-lag.ktx2",
      "storlek": 365051,
      "sha256": "990dd3040bc0bbc34090e20ce9daf6599770ed3a7c9c71d9b245f6a801879771"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv1.webp",
+     "vag": "figur/tron/miljo-oken/malning/golv1-lag.webp",
      "storlek": 292006,
      "sha256": "abe96e218d2e0aebfe188a96a2addd8112c6a03f96036ecbc28e36794becc31d",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv2.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/golv1.ktx2",
+     "storlek": 1135070,
+     "sha256": "4c616478965bd14710ad2eff8e7079b0c5f5b5cbf572d0e27dfef6ca42d1c0c5"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv1.webp",
+     "storlek": 863954,
+     "sha256": "8ad6c3010b0e9a1e374850fa36c49ef7d01e878103ae46d06113a3b52c1c575a",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv2-lag.ktx2",
      "storlek": 336148,
      "sha256": "deede9263be35e1c2abff491cc3adce9d3a59a51b2b62967d88895d34fc7adb1"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv2.webp",
+     "vag": "figur/tron/miljo-oken/malning/golv2-lag.webp",
      "storlek": 270962,
      "sha256": "522c35c5d7ed3419455fd98b45b64e5e7be6d3ee835035c8b73fbb5e50e972e0",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv3.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/golv2.ktx2",
+     "storlek": 1022594,
+     "sha256": "cca5c83539aa6a3abd216d9bfd1dd9e8e37473e59c7153627a632f6e89d6ea30"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv2.webp",
+     "storlek": 785886,
+     "sha256": "fd911df1833859d380faab176dff8682e87a4ab71e44649e3624c960bcc2298a",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv3-lag.ktx2",
      "storlek": 308613,
      "sha256": "21687f9ae3d1e33108f573b314f9b5d9d13ae561ba8fbc01cc0c848f245003a5"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv3.webp",
+     "vag": "figur/tron/miljo-oken/malning/golv3-lag.webp",
      "storlek": 225824,
      "sha256": "2c238fbf04bcb8293edaf0781663463587c5a0a3419de34830e17cbd8d6502a7",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv4.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/golv3.ktx2",
+     "storlek": 924846,
+     "sha256": "72dd9552af92ffaac4fa9d55e6400d3a1bd581d3c0d36ed53bb0f4a3fccd8166"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv3.webp",
+     "storlek": 696426,
+     "sha256": "ec6400c93e0f53117c96ab15e401f0940ebbd4d97db6008209f2413dd48d7d30",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv4-lag.ktx2",
      "storlek": 368379,
      "sha256": "889e00172841ddf642ea82d538fab932ab6d5967ec88a76191b5c84ff9f78fcb"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/golv4.webp",
+     "vag": "figur/tron/miljo-oken/malning/golv4-lag.webp",
      "storlek": 305300,
      "sha256": "9719e8b78cff29f63532a61112f24c00abadf77726a9cc5e41c3d91744258976",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/start.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/golv4.ktx2",
+     "storlek": 1149980,
+     "sha256": "a8c625bb3cfa4dc10be96a8434100cc6eb7da8fe58e62bcf2ff41c4c71681143"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/golv4.webp",
+     "storlek": 890228,
+     "sha256": "454219fcde4344a35b8cda00729da7dd01f01c237ea42475df6db680f1f1c140",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/start-lag.ktx2",
      "storlek": 439087,
      "sha256": "894ef565ac8c365a81820c0c1e20f182c0de4a1f697c7120c794bf6ed5cbd66d"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/start.webp",
+     "vag": "figur/tron/miljo-oken/malning/start-lag.webp",
      "storlek": 586424,
      "sha256": "a22db6881c9ef06e64b3c3e13df86119915ff8f5aaaafaa0d344a94e14d1c4bd",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut1.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/start.ktx2",
+     "storlek": 1479052,
+     "sha256": "cbed573a637e110ab87231f8e6ad3cf6a13691263aec8cf10a1a88d7e4568a50"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/start.webp",
+     "storlek": 1769666,
+     "sha256": "729d8a09bb91633791d0d805952a7cc208936cbac0b67014f42aea484e5a270e",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut1-lag.ktx2",
      "storlek": 423813,
      "sha256": "c3196ae5e19425aeb6e42a66283de9165dad0d0cce69f9138980c8df28cabb49"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut1.webp",
+     "vag": "figur/tron/miljo-oken/malning/ut1-lag.webp",
      "storlek": 524070,
      "sha256": "b8944df68c7a5db94c32754b65883725a691596840720eb96cd7beb3392d574b",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut2.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/ut1.ktx2",
+     "storlek": 1408691,
+     "sha256": "78d5d1ad3563b14fe3f18eec99467cebc39f576c510232c06a525a914f6e2418"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut1.webp",
+     "storlek": 1580824,
+     "sha256": "0b2a03941d2dd5d434fd63b480ac4f167d7e2beaefb0562283634e7a7153867b",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut2-lag.ktx2",
      "storlek": 427229,
      "sha256": "73758c710be2d1992b01adc9395773fbc7a632cadfa6106f0bf51fb863779a81"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut2.webp",
+     "vag": "figur/tron/miljo-oken/malning/ut2-lag.webp",
      "storlek": 537236,
      "sha256": "98ade900c826da120f8e765c6deb6b987a23bb0882ca31fb149de1392f4c72c5",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut3.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/ut2.ktx2",
+     "storlek": 1447323,
+     "sha256": "a84914f27a9c8a917d030ed95a8f151017d14bfced8733c4cee1a5ffdc8d7665"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut2.webp",
+     "storlek": 1651364,
+     "sha256": "d67f859886e307bce28980771030490fe50b8606b68ad5df873c7b18b4d5ed21",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut3-lag.ktx2",
      "storlek": 428059,
      "sha256": "8bcd34b4afdb4bcd941c484e354396b225638495c4ec1e64aa8739b2431f2374"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut3.webp",
+     "vag": "figur/tron/miljo-oken/malning/ut3-lag.webp",
      "storlek": 516948,
      "sha256": "beb4f43d51cc16318d2aa1c750633ed6f7ea89f7789090ebcbece6ca62eb2d88",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut4.ktx2",
+     "vag": "figur/tron/miljo-oken/malning/ut3.ktx2",
+     "storlek": 1442081,
+     "sha256": "532d9f8398a4b30492f06ed9d3bf1b158c3f2e5b8a455e01ca3bf9eea0c3f065"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut3.webp",
+     "storlek": 1605222,
+     "sha256": "b288104f7e1642b9c55015bb7419fbc6bb4dc27fc28116c0b3114bb889fa5b5d",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut4-lag.ktx2",
      "storlek": 439497,
      "sha256": "84afc5ad4af3f0100aba1532cc0c137460a8eb3493a1ef90f9bd04023ed67c09"
     },
     {
-     "vag": "figur/tron/miljo-oken/malning/ut4.webp",
+     "vag": "figur/tron/miljo-oken/malning/ut4-lag.webp",
      "storlek": 542408,
      "sha256": "1f0f8291e6e2034fc412eedffd1fe76218d825b186f09ae35fa6de217eb2d314",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut4.ktx2",
+     "storlek": 1504595,
+     "sha256": "faf63d441284febf2b776473cee2e01252d2315e51f0b4522eef952b4cc060fc"
+    },
+    {
+     "vag": "figur/tron/miljo-oken/malning/ut4.webp",
+     "storlek": 1727888,
+     "sha256": "9cb6c6a3a14ab32a9996b90966fddb98cfbaba615c3711c902105817c1190319",
      "reserv": true
     },
     {
@@ -1650,47 +2081,91 @@
      "sha256": "8f28e5222a402b2fbb0214537f841b684fc9c9ed9803b23b2cd8773c4f3d8814"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv1.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/golv1-lag.ktx2",
      "storlek": 311997,
      "sha256": "f8366f0a8012e5a0a01e504915a7ccf1c4f207194660694ee7b6ea37b42ce0b9"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv1.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/golv1-lag.webp",
      "storlek": 191282,
      "sha256": "956e6bc0164b8937e6c281d43b2cc09e88b08dd403652b60448a99e2b4fa36c4",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv2.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/golv1.ktx2",
+     "storlek": 967427,
+     "sha256": "2e9a72fe738d9a8f35cc8204ac1dc719c1b1d54134e19594e6d013021b5da0b6"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv1.webp",
+     "storlek": 607718,
+     "sha256": "a5e0497e391067c399120dae0ce2c076ef0e540e9ec6a47c8f78d79f141dbb45",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv2-lag.ktx2",
      "storlek": 342562,
      "sha256": "69fda05fee4a14f9caae54abe0c15bb0d70d68766aef549cc67ae97f1e3a7c19"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv2.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/golv2-lag.webp",
      "storlek": 237548,
      "sha256": "a632e7719aafdc283983b87faa0d9ddbbe95a43a61d396711145ce0297800185",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv3.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/golv2.ktx2",
+     "storlek": 1109456,
+     "sha256": "d314caf0b8d7baf22c348296791c36cc654aff8045a826c527b0c533ae9eb72b"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv2.webp",
+     "storlek": 782928,
+     "sha256": "2413dfeb52ec5075fb2a0756abef12f340ee18479d0d9a509771d8408efecad0",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv3-lag.ktx2",
      "storlek": 363374,
      "sha256": "ef5f013cdbb2a3be84f2811b1459de9ea96f384cfcdc536330a4923d783811ab"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv3.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/golv3-lag.webp",
      "storlek": 275902,
      "sha256": "90d72f82aa5580b934cc920d68f2704840d1bd06fae9094396e586e36454c660",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv4.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/golv3.ktx2",
+     "storlek": 1159002,
+     "sha256": "c5bd97756d8d0706ace17eb86f07706882e9829f6a76be285b0a4c69b495fa5b"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv3.webp",
+     "storlek": 838762,
+     "sha256": "823939e979c320b82f67cef8455951f47cb257fccf2df9351b299af24fbb295e",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv4-lag.ktx2",
      "storlek": 360554,
      "sha256": "c00ecc21dc291455795ca0c621bc84779f9138a5e1ceac47b826ad2d989f5f0c"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/golv4.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/golv4-lag.webp",
      "storlek": 270816,
      "sha256": "56fee1ce924b2452f719153ea2a87479351506931c9364acb4868ed621e79e7e",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv4.ktx2",
+     "storlek": 1129246,
+     "sha256": "964cb96a749cb11e5bbc4a679071759ca1fcb595fbfdeb2eb2763be5e62932b8"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/golv4.webp",
+     "storlek": 801592,
+     "sha256": "b69f0c63287cea7779c4436c2b81de68b809c77dfdf46fe14c5eb962c7b63ee9",
      "reserv": true
     },
     {
@@ -1716,69 +2191,135 @@
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/start.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/start-lag.ktx2",
      "storlek": 395985,
      "sha256": "f6e1df6344707bbee62a5852a3fae02823a6c5cf27d428b110699aca66a5dc71"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/start.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/start-lag.webp",
      "storlek": 406640,
      "sha256": "c2b30d7fb04b42952fa7656ef94b3d56320e1fc92cff86ac566e92b8eeb816e5",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut1.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/start.ktx2",
+     "storlek": 1291777,
+     "sha256": "96056e15c1ca7fd9e74dc039c374333eeef4c0347855f6fb168eee2931fc3903"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/start.webp",
+     "storlek": 1223682,
+     "sha256": "30f41c919a6c24ffccec0e2e50bc589e2555b48673d1c29689c4d416bbe7361a",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut1-lag.ktx2",
      "storlek": 418836,
      "sha256": "694a9f3539ebc547dc74471d55e120272398252ca4170497cac10bc338fdfd13"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut1.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/ut1-lag.webp",
      "storlek": 527284,
      "sha256": "b4c8552066c55f40e5a5205f519dc3b5b526f8585d094a61e76f69f888ffe689",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut2.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/ut1.ktx2",
+     "storlek": 1374651,
+     "sha256": "5a881fdec88b3aaa971ddb6364e3c78017249167c2bbbc83402852160d9ed156"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut1.webp",
+     "storlek": 1559748,
+     "sha256": "d3fd772f576c95dbb0249b2dd3b76cc455b0567622f25d2ffd8b6adfdcb0bba2",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut2-lag.ktx2",
      "storlek": 424909,
      "sha256": "785b178a877597a9cbe4aa12ed9c08a0f25566a71beeee4d38605db14bad815f"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut2.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/ut2-lag.webp",
      "storlek": 496180,
      "sha256": "96d285be14d43b3913b54af670ce4b898335fa74fbad32dad7bdb4c990caa042",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut3.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/ut2.ktx2",
+     "storlek": 1396801,
+     "sha256": "056210fc0057e2590c83e76225ad8552590165d4d8bb34a74c7a22459396c498"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut2.webp",
+     "storlek": 1416160,
+     "sha256": "9be26ce5b5de4f03e646c7ac8ae0aecbc411196cd684695880887f4103062ba8",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut3-lag.ktx2",
      "storlek": 435585,
      "sha256": "1fa691ebf557722f577a1f685bfa50e25e253ea1a35160ebdc0a57f967f91af9"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut3.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/ut3-lag.webp",
      "storlek": 544330,
      "sha256": "8ee30551a471f2d80b8dd84a24b218a9eb93079688842309f77b775b192f34b1",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut4.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/ut3.ktx2",
+     "storlek": 1464579,
+     "sha256": "f964577fc8c9a485e00764eb0715f5071f3352f4974b027fe54c5ed878de423e"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut3.webp",
+     "storlek": 1616498,
+     "sha256": "a7199703aecfb4bc2d014d7b037f462e29cd4d193be69f7d2d37436697eb7ff8",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut4-lag.ktx2",
      "storlek": 432338,
      "sha256": "3ba4c0541808c26fc61b3830965ed8b5fb97ed3dc263df458894e266ab953877"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut4.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/ut4-lag.webp",
      "storlek": 551832,
      "sha256": "46262cf7638c7e93c427b36396dcfc9937bf22924e27d20f5423be2120768d53",
      "reserv": true
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut5.ktx2",
+     "vag": "figur/tron/miljo-vulkan/malning/ut4.ktx2",
+     "storlek": 1460761,
+     "sha256": "e68852335389fa86600c83678a0bd4d73bcfa23c65b94cfd993684807b5d660f"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut4.webp",
+     "storlek": 1721604,
+     "sha256": "6fb55e1409dc6235e723873475fe4468b0cac253322b37b830ea6666a2f23dde",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut5-lag.ktx2",
      "storlek": 346608,
      "sha256": "d32d664d9366545f595c5679733db3f374b8e53e2420b12445e809dbc60b78cb"
     },
     {
-     "vag": "figur/tron/miljo-vulkan/malning/ut5.webp",
+     "vag": "figur/tron/miljo-vulkan/malning/ut5-lag.webp",
      "storlek": 301620,
      "sha256": "f3c5cc0a92f6ba9dce456caa46ed08ae6fd24c9bd17223a15c007693d9852d0d",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut5.ktx2",
+     "storlek": 1139374,
+     "sha256": "097dd465f7fff65f792fcc6bbff8caf1617e17756e2427deefdc09c8427da0c0"
+    },
+    {
+     "vag": "figur/tron/miljo-vulkan/malning/ut5.webp",
+     "storlek": 941722,
+     "sha256": "b38ee139fda3531f39c008217c89dc27ec6b2bb7623e545296fcffd54eeca8a8",
      "reserv": true
     },
     {
@@ -1896,6 +2437,36 @@
      "reserv": true
     },
     {
+     "vag": "figur/tron/plat-ny.bin",
+     "storlek": 156976,
+     "sha256": "29b9abac8321fab5c11365253c73764c1685dc0ec2b361714249838c30046dda"
+    },
+    {
+     "vag": "figur/tron/plat-ny.binz",
+     "storlek": 38751,
+     "sha256": "8ca6c6f047cd140f1e3da5607812fb0d48e144ae03306c7b8e897ae2a264839f"
+    },
+    {
+     "vag": "figur/tron/plat-rockan.bin",
+     "storlek": 159572,
+     "sha256": "86d1fb7e8a456c03f067462d79451d3656e7e07066f1b391484c35c0506774d6"
+    },
+    {
+     "vag": "figur/tron/plat-rockan.binz",
+     "storlek": 41407,
+     "sha256": "bf0652b31a71939841bc29745174359f8252eeb365d4262adb21a9fe35662bbd"
+    },
+    {
+     "vag": "figur/tron/plat-sagen.bin",
+     "storlek": 157944,
+     "sha256": "b370635a370f2448ddd6bd7ffad5a5e2d80ae8190920535ff7a2a97a15593afd"
+    },
+    {
+     "vag": "figur/tron/plat-sagen.binz",
+     "storlek": 38130,
+     "sha256": "aca4f164f54c4ee04100e48a96ab2eb04e44b20911db530cbb99043313c4edce"
+    },
+    {
      "vag": "figur/tron/skepp-ny-farg.ktx2",
      "storlek": 2411091,
      "sha256": "8580cb33a96ca13c14d23442068dbd032c2063b34e13dafeaa956cd2e6000da3"
@@ -1942,6 +2513,44 @@
      "vag": "figur/tron/skepp-ny.glb",
      "storlek": 1961036,
      "sha256": "7a2f7cc5cade4ae57b9de79f22fc325182711b718d950231d0e2094f06f3dcb6"
+    },
+    {
+     "vag": "figur/tron/ytor/KALLA.txt",
+     "storlek": 779,
+     "sha256": "e9655a3ae59a664686fb48784b45b0b96cd12be0a55632ffbfa1428da5c917b7"
+    },
+    {
+     "vag": "figur/tron/ytor/betong.ktx2",
+     "storlek": 157188,
+     "sha256": "09253189babd2384d6c2badabdd365e549b32d75f343eb7d690cbc301522e0be"
+    },
+    {
+     "vag": "figur/tron/ytor/betong.webp",
+     "storlek": 277564,
+     "sha256": "da20daca968fcc8e7006dca6d366ea895e9cfa0c5dc07479eedf2ae49e3a5ba8",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/ytor/sand.ktx2",
+     "storlek": 136479,
+     "sha256": "23b56997776c24d5f5cd3e336db42796b31df33003bdc9af1e72827f5d97bba4"
+    },
+    {
+     "vag": "figur/tron/ytor/sand.webp",
+     "storlek": 179886,
+     "sha256": "a320023c6ed3616e48b8164677f5fe697ab4a6900f7b64e03ad3ddce54a975c5",
+     "reserv": true
+    },
+    {
+     "vag": "figur/tron/ytor/sten.ktx2",
+     "storlek": 144556,
+     "sha256": "1a743e158547c4b360ef7cae1bd29bbb8cc7977f981d8dca5dcf3f6bd546f5e6"
+    },
+    {
+     "vag": "figur/tron/ytor/sten.webp",
+     "storlek": 178210,
+     "sha256": "5833551d750eeaeb719b2eac53d6540be61c67a44007a6f6a975563823a51b4a",
+     "reserv": true
     },
     {
      "vag": "font/OFL.txt",
@@ -4120,8 +4729,8 @@
     },
     {
      "vag": "nyheter/nyheter.json",
-     "storlek": 11572,
-     "sha256": "55842ffa45944ba63d0f1d457327ef6e6c66526c93452ebb93740af11bbee522"
+     "storlek": 13575,
+     "sha256": "16bfaaea2d3ef79d6b4bfdbe18273863e3e6d7ba4e94a7eaf5bc75ad5ac7cb10"
     },
     {
      "vag": "nyheter/o1-pac.mp4",
@@ -4239,6 +4848,26 @@
      "sha256": "b83476efabd1ebee40145d9821ff98476a94543e89683129d3f5f00ab17e20bd"
     },
     {
+     "vag": "nyheter/o18-kross.webp",
+     "storlek": 62048,
+     "sha256": "412a80eb2a6097f791b105f57e2ed6bb2ae60ef8aa4c56aca117bb105bb5621f"
+    },
+    {
+     "vag": "nyheter/o18-malning.webp",
+     "storlek": 57988,
+     "sha256": "68e0ab4bba57d55aba010d5d2d449c87980b604c8c2d4cc9ddb593f61dddbce4"
+    },
+    {
+     "vag": "nyheter/o18-pac.webp",
+     "storlek": 37498,
+     "sha256": "5dab4193b289ea789becaa0f93def598c837e2e1aa400395ec96eefe98220713"
+    },
+    {
+     "vag": "nyheter/o18-ytor.webp",
+     "storlek": 59730,
+     "sha256": "31c791e5071a96c5bfc99f5303cb646c386a7f8b1826c926df951a30d5d69d79"
+    },
+    {
      "vag": "nyheter/o8-duell.webp",
      "storlek": 55318,
      "sha256": "178b19939c99f4bce466b267c748bab62538bd53d9f43f266936fe10598c72a4"
@@ -4330,8 +4959,8 @@
     },
     {
      "vag": "spel-ktx2-lista.js",
-     "storlek": 4027,
-     "sha256": "8d5480feaa4fecf3a882c1d4c5c47fbe1155162c200a8109dc9a47d855e54ca8"
+     "storlek": 6758,
+     "sha256": "8f75fc44640796b9579415b5903f9bddf8c56bcbe42f4b0c384f81f5191f8047"
     },
     {
      "vag": "spel-ktx2-worker.js",
@@ -4365,8 +4994,8 @@
     },
     {
      "vag": "spel-matdata.js",
-     "storlek": 14529,
-     "sha256": "471106c3a694a0634dc15c0d9fcdd891d6cfe6ac20b77046397984cdf1f54583"
+     "storlek": 15120,
+     "sha256": "06ba0d5c6829c35adb5bbb71f1d2edfff5a011bc02ce0c89a55f8cf6cae76c5d"
     },
     {
      "vag": "spel-meny.css",
@@ -4390,8 +5019,8 @@
     },
     {
      "vag": "spel-nyheter.js",
-     "storlek": 18781,
-     "sha256": "ae564c066b2e0a1bb16f9a9f30edbffcdba976e85ef7f6d2e92a5246ded311e3"
+     "storlek": 22818,
+     "sha256": "c05137abc8a7501f7aea1a2da3e9eef0903cda9afc6e59bce84dd8fae818d653"
     },
     {
      "vag": "spel-online.js",
@@ -4420,8 +5049,8 @@
     },
     {
      "vag": "spel-remsa.js",
-     "storlek": 22979,
-     "sha256": "b35e74607c961f4929255cfcadd33cfef5332a1d99a2f9d90dcb367d939daa36"
+     "storlek": 23213,
+     "sha256": "a922bd08f321975ad4962c754325f39f1da6ea357f42363f7ba645994ae30e5a"
     },
     {
      "vag": "spel-rost.js",
@@ -4465,13 +5094,13 @@
     },
     {
      "vag": "tron-bild-gpu.js",
-     "storlek": 29128,
-     "sha256": "887ec797790e7a77cb0c9f0bbc5e2df7e5c3f3d2396f01b548037d87b21b0d63"
+     "storlek": 31430,
+     "sha256": "70a6ddbba9b25ebec8fa60586ea5e697944ee7022339ebe1933a56dbc53ac49e"
     },
     {
      "vag": "tron-bild.js",
-     "storlek": 31997,
-     "sha256": "a2b6eb346aac38ba3be6f0e257f61d3f1dcdbb6f3a280896235e247048b0fa6e"
+     "storlek": 34959,
+     "sha256": "fcb93c14c7d773aa52aa6e4213b153a73cb9e2fbcd728d18b8429036ae506ca6"
     },
     {
      "vag": "tron-bla.js",
@@ -4480,8 +5109,8 @@
     },
     {
      "vag": "tron-blixtar.js",
-     "storlek": 15773,
-     "sha256": "0437d5855808e9cc62f43583cdbd2c2ca5630239b12386c81cf0f5b392cb09db"
+     "storlek": 15899,
+     "sha256": "4dce640d37dd00b798d88cc3268fc6ff0c4c8c474a6344811fec83ba9cd380a2"
     },
     {
      "vag": "tron-boll-bild.js",
@@ -4502,6 +5131,11 @@
      "vag": "tron-bossbana.js",
      "storlek": 65267,
      "sha256": "b4c9feac7d7fad8db6a393cd66eef82437099e2a92ad91b7532a24a42c0d466e"
+    },
+    {
+     "vag": "tron-cpu-tid.js",
+     "storlek": 7101,
+     "sha256": "636b75bfc407a06e366058e606eda6416102a6e8ba63cf5f766fc801ff6760a9"
     },
     {
      "vag": "tron-cykel.js",
@@ -4525,8 +5159,8 @@
     },
     {
      "vag": "tron-effekt.js",
-     "storlek": 28235,
-     "sha256": "489f1dc88b44f9c1eff3d939409cbccd0f1b9155cf0a4515de6e2465cd133cf1"
+     "storlek": 28242,
+     "sha256": "1b9abd2425490ec44ff6d588ce5a3c54ecf09bad0d03ef4b7a05037568c0c4fb"
     },
     {
      "vag": "tron-eko-bild.js",
@@ -4540,8 +5174,13 @@
     },
     {
      "vag": "tron-flagga.js",
-     "storlek": 15009,
-     "sha256": "7ff85c3e6ab2c5c6e15ee774605a1e8b5e83aca217b0467c794c005717f8e2b3"
+     "storlek": 15719,
+     "sha256": "39694c33471e2c6c8f27bdf2aa2ce23448ac68a72f10bb1579bd7b0fc11e2579"
+    },
+    {
+     "vag": "tron-flaggtyg.js",
+     "storlek": 7166,
+     "sha256": "3860d6e39fa77be70f011682615ec90f8e8841752b0a23ad930399a99e0e7ad4"
     },
     {
      "vag": "tron-forare.js",
@@ -4550,13 +5189,18 @@
     },
     {
      "vag": "tron-forvarm-gpu.js",
-     "storlek": 8349,
-     "sha256": "fb77f167eb2e3e0d330fc73bacb795ef91316ffaba1007c7792de5385fbe73c7"
+     "storlek": 8480,
+     "sha256": "89e628ea7fd689e05f9d7e0f7ae0dcc900beb7827d51edd82db277bca73ca5a5"
     },
     {
      "vag": "tron-forvarm.js",
-     "storlek": 29674,
-     "sha256": "74edb1fe1a3438b862df5b34dfd730f37cb144b47ac7c318360793194390a648"
+     "storlek": 30281,
+     "sha256": "325b37f8b239f4a767b836f63b4f724e1749f7e59d25eda903e51e80a13141b7"
+    },
+    {
+     "vag": "tron-fsr1.js",
+     "storlek": 13088,
+     "sha256": "5afe5bcc7151b44685d3be30cd1c7a704f29c3bd6a2dc5ebbdad491b1eafed8e"
     },
     {
      "vag": "tron-fyrverkeri.js",
@@ -4575,8 +5219,8 @@
     },
     {
      "vag": "tron-handelser.js",
-     "storlek": 27968,
-     "sha256": "abbf1a1c4a65c0f0e11119526661ba006c14369b267754cf2aa4d2b55979af3f"
+     "storlek": 28346,
+     "sha256": "7fb2837ac0456d65b16291b287b39aa3d5f2b736045773b73c185f3d7d18f051"
     },
     {
      "vag": "tron-himlen.js",
@@ -4620,8 +5264,8 @@
     },
     {
      "vag": "tron-killcam.js",
-     "storlek": 9121,
-     "sha256": "a808e8c35ce097f096e19283858a5f7db3e8590258135df47b9c09a80834b1cf"
+     "storlek": 9197,
+     "sha256": "25b519146c2da15f75c0d9d1777fc738e713175915bc8cc9c69d061c45dd84e6"
     },
     {
      "vag": "tron-klyv-worker.js",
@@ -4655,18 +5299,18 @@
     },
     {
      "vag": "tron-laser.js",
-     "storlek": 29542,
-     "sha256": "34f29e9333b3b963dd4235771ef25fa9367503b54f308125246d6ecad0978052"
+     "storlek": 54588,
+     "sha256": "b59afdecdd87cc730d3413d3decc4a581f246bb180c4d04b1b958a7193073455"
     },
     {
      "vag": "tron-malning.js",
-     "storlek": 74084,
-     "sha256": "fac4c5cd7a62aab58f6923e7ce6345da5ee9485232b33691f98a38ec6e7f5de9"
+     "storlek": 74490,
+     "sha256": "b676fa2b49b5b3a854caaf12c1f344f324e36ea19f737943f39cb496e6374a87"
     },
     {
      "vag": "tron-matchintro.js",
-     "storlek": 8266,
-     "sha256": "2c7d80967a151a0b1c107a516f80392d5cdb79effa41a99fdffbc1f901221c10"
+     "storlek": 8326,
+     "sha256": "bc42a8bbcfb2319675bd381faaf1405aafffaf960e544f20a3cff9c2357f3ac5"
     },
     {
      "vag": "tron-matchlogg.js",
@@ -4695,13 +5339,13 @@
     },
     {
      "vag": "tron-miljo-kobolt.js",
-     "storlek": 45878,
-     "sha256": "8c14fd4f04ed2bb62dd8d8194a5d7c1fabd77a54659d72465ef07b1fe33dcfb1"
+     "storlek": 45944,
+     "sha256": "08804ecff2e41ba5d84573ff2a2b634f506394f83324eb923aad0c0c181e5076"
     },
     {
      "vag": "tron-miljo-oken.js",
-     "storlek": 101966,
-     "sha256": "0bfd64b62984bbd47c1923546bd834047c7c3bcfa6473bf9759088e181bab6dd"
+     "storlek": 104211,
+     "sha256": "eb2c82b6bb5d80252fc69ed8d72f3f11e0eceff6b47b38426f7b75dfd3d48def"
     },
     {
      "vag": "tron-miljo-rymd.js",
@@ -4710,8 +5354,8 @@
     },
     {
      "vag": "tron-miljo-vulkan.js",
-     "storlek": 132470,
-     "sha256": "bb327101437a5fe840641584870fe73153efdbd4d0d6fa4d6a100770460c608d"
+     "storlek": 133565,
+     "sha256": "7795211426f98c2d6b98e054d01e235333eb2d1c8d9a982e0216dcefbf5fe0a9"
     },
     {
      "vag": "tron-miljo.js",
@@ -4720,8 +5364,8 @@
     },
     {
      "vag": "tron-miljoer.js",
-     "storlek": 3373,
-     "sha256": "aae2991de9063b127a6c1eacfef0909f8d50f5588b851d50e4e567af07bad243"
+     "storlek": 4085,
+     "sha256": "4b162869225ff86223706c05fbcb17a7cf250dfb9930d23a60bac6823a77cd49"
     },
     {
      "vag": "tron-modell.js",
@@ -4750,8 +5394,8 @@
     },
     {
      "vag": "tron-oppning.js",
-     "storlek": 21606,
-     "sha256": "0f5978fc7d7ab1d9f3ad01d812bb91cc3a365e2ad41423728deee1832f41805c"
+     "storlek": 21943,
+     "sha256": "84ace504562d0457632c3eb9a441df3d2ed8b7c01e780e90d72c79644c0582f4"
     },
     {
      "vag": "tron-ovning-rost.js",
@@ -4780,8 +5424,8 @@
     },
     {
      "vag": "tron-prestanda.js",
-     "storlek": 5466,
-     "sha256": "8c838f6872b97d42016796d50d584886acd73f547d0b146b7bbf03f8bf8f4bad"
+     "storlek": 5944,
+     "sha256": "925c99211928005ccec9ac91ba3e3998ee9b9ba7f2a020ce9d3bf732c5f6a5a8"
     },
     {
      "vag": "tron-publik-data.js",
@@ -4789,9 +5433,14 @@
      "sha256": "91ede820db9c3f6f877b52f88c4680add21d9db25957ffe97174adf83b890273"
     },
     {
+     "vag": "tron-publik-jubel.js",
+     "storlek": 31406,
+     "sha256": "83bd57f5fa06332d3af28b9c0e1f51540298dfea5dde4e3dfa1e29463dcc2cab"
+    },
+    {
      "vag": "tron-publik.js",
-     "storlek": 66484,
-     "sha256": "f98891dbfd11c0fdba38e65f60bd907bdf0d85e8b9c41bb319bc525eb260dc8f"
+     "storlek": 73180,
+     "sha256": "3789c82012ade82fb7b74ecfc91b4915b8d18e44bf23792ca8e69792162ded81"
     },
     {
      "vag": "tron-repris.js",
@@ -4810,8 +5459,8 @@
     },
     {
      "vag": "tron-scen.js",
-     "storlek": 119701,
-     "sha256": "57cb22ee84864ec43565528906f44f72dc5f6469f706df1091836c16a3a4a92c"
+     "storlek": 121099,
+     "sha256": "ecf09b49f721b404e77e6576980c077be6a559dadbc31306f4d7c4f900131f3f"
     },
     {
      "vag": "tron-sida.css",
@@ -4820,8 +5469,8 @@
     },
     {
      "vag": "tron-sida.js",
-     "storlek": 58324,
-     "sha256": "e76ad931a0e59d71b5a1140d9350b2d7f7482bb20c53459cdeb304284fc25366"
+     "storlek": 59238,
+     "sha256": "45fc1f4a2be6f3f6722fd082f05ffe975d85e8516c414e7cf2dcf957c12eb57d"
     },
     {
      "vag": "tron-sim.js",
@@ -4830,8 +5479,8 @@
     },
     {
      "vag": "tron-skarv.js",
-     "storlek": 22533,
-     "sha256": "c1ffe36c6536f7c34a455caf3428300a12f9cab21fb29ec6ac2a5dc6eb3d9b15"
+     "storlek": 23734,
+     "sha256": "05f63f2b32e85a62505d828de62e958a9c119be3caa2e587654da647fa63b997"
     },
     {
      "vag": "tron-spela.js",
@@ -4870,8 +5519,8 @@
     },
     {
      "vag": "tron-tsl.js",
-     "storlek": 10896,
-     "sha256": "9672888766cad1b552061811a30d8c49086ce19059b926160c3b16687a806781"
+     "storlek": 11012,
+     "sha256": "5c037363c43fab59c3fb773d4bc4db4ae73933568cde2ae42c875d05a85b3d6b"
     },
     {
      "vag": "tron-turnering.js",
@@ -4884,9 +5533,14 @@
      "sha256": "10b0dd2faf9093e9dc643536471eefca38b98237d35ac8fe926088840302e3a0"
     },
     {
+     "vag": "tron-vat.js",
+     "storlek": 27500,
+     "sha256": "19c54a02f9218dbe980de0b567e62ad1916f4ff620947fde555be61e2df84e19"
+    },
+    {
      "vag": "tron-ytdetalj.js",
-     "storlek": 8413,
-     "sha256": "b0b4a09522f99919675cb65abc33231f37da2b7e4dd06800556e6e277ef71862"
+     "storlek": 12512,
+     "sha256": "ae264dd5e88d19b63d5c8c48b4a23c68135be8a485fa90fa93c7e0e6521a4727"
     },
     {
      "vag": "tron.html",
@@ -4895,8 +5549,8 @@
     },
     {
      "vag": "tron.js",
-     "storlek": 103427,
-     "sha256": "0ec580885888b9fc8f88d96b9a46650597a8926a9a26a1b2eddd84db5fe76f05"
+     "storlek": 109289,
+     "sha256": "6f3e40bdfd90b093181466a99797ca9b45ad1a55cd41732751c99c7829545713"
     },
     {
      "vag": "utropare.js",
@@ -7000,8 +7654,8 @@
     },
     {
      "vag": "nyheter/nyheter.json",
-     "storlek": 11572,
-     "sha256": "55842ffa45944ba63d0f1d457327ef6e6c66526c93452ebb93740af11bbee522"
+     "storlek": 13575,
+     "sha256": "16bfaaea2d3ef79d6b4bfdbe18273863e3e6d7ba4e94a7eaf5bc75ad5ac7cb10"
     },
     {
      "vag": "nyheter/o1-pac.mp4",
@@ -7117,6 +7771,26 @@
      "vag": "nyheter/o17-sno.webp",
      "storlek": 63348,
      "sha256": "b83476efabd1ebee40145d9821ff98476a94543e89683129d3f5f00ab17e20bd"
+    },
+    {
+     "vag": "nyheter/o18-kross.webp",
+     "storlek": 62048,
+     "sha256": "412a80eb2a6097f791b105f57e2ed6bb2ae60ef8aa4c56aca117bb105bb5621f"
+    },
+    {
+     "vag": "nyheter/o18-malning.webp",
+     "storlek": 57988,
+     "sha256": "68e0ab4bba57d55aba010d5d2d449c87980b604c8c2d4cc9ddb593f61dddbce4"
+    },
+    {
+     "vag": "nyheter/o18-pac.webp",
+     "storlek": 37498,
+     "sha256": "5dab4193b289ea789becaa0f93def598c837e2e1aa400395ec96eefe98220713"
+    },
+    {
+     "vag": "nyheter/o18-ytor.webp",
+     "storlek": 59730,
+     "sha256": "31c791e5071a96c5bfc99f5303cb646c386a7f8b1826c926df951a30d5d69d79"
     },
     {
      "vag": "nyheter/o8-duell.webp",
@@ -7295,8 +7969,8 @@
     },
     {
      "vag": "spel-ktx2-lista.js",
-     "storlek": 4027,
-     "sha256": "8d5480feaa4fecf3a882c1d4c5c47fbe1155162c200a8109dc9a47d855e54ca8"
+     "storlek": 6758,
+     "sha256": "8f75fc44640796b9579415b5903f9bddf8c56bcbe42f4b0c384f81f5191f8047"
     },
     {
      "vag": "spel-ktx2-worker.js",
@@ -7335,8 +8009,8 @@
     },
     {
      "vag": "spel-matdata.js",
-     "storlek": 14529,
-     "sha256": "471106c3a694a0634dc15c0d9fcdd891d6cfe6ac20b77046397984cdf1f54583"
+     "storlek": 15120,
+     "sha256": "06ba0d5c6829c35adb5bbb71f1d2edfff5a011bc02ce0c89a55f8cf6cae76c5d"
     },
     {
      "vag": "spel-meny.css",
@@ -7360,8 +8034,8 @@
     },
     {
      "vag": "spel-nyheter.js",
-     "storlek": 18781,
-     "sha256": "ae564c066b2e0a1bb16f9a9f30edbffcdba976e85ef7f6d2e92a5246ded311e3"
+     "storlek": 22818,
+     "sha256": "c05137abc8a7501f7aea1a2da3e9eef0903cda9afc6e59bce84dd8fae818d653"
     },
     {
      "vag": "spel-online.js",
@@ -7390,8 +8064,8 @@
     },
     {
      "vag": "spel-remsa.js",
-     "storlek": 22979,
-     "sha256": "b35e74607c961f4929255cfcadd33cfef5332a1d99a2f9d90dcb367d939daa36"
+     "storlek": 23213,
+     "sha256": "a922bd08f321975ad4962c754325f39f1da6ea357f42363f7ba645994ae30e5a"
     },
     {
      "vag": "spel-rost.js",
@@ -7440,13 +8114,13 @@
     },
     {
      "vag": "tron-bild-gpu.js",
-     "storlek": 29128,
-     "sha256": "887ec797790e7a77cb0c9f0bbc5e2df7e5c3f3d2396f01b548037d87b21b0d63"
+     "storlek": 31430,
+     "sha256": "70a6ddbba9b25ebec8fa60586ea5e697944ee7022339ebe1933a56dbc53ac49e"
     },
     {
      "vag": "tron-bild.js",
-     "storlek": 31997,
-     "sha256": "a2b6eb346aac38ba3be6f0e257f61d3f1dcdbb6f3a280896235e247048b0fa6e"
+     "storlek": 34959,
+     "sha256": "fcb93c14c7d773aa52aa6e4213b153a73cb9e2fbcd728d18b8429036ae506ca6"
     },
     {
      "vag": "tron-bla.js",
@@ -7455,8 +8129,8 @@
     },
     {
      "vag": "tron-blixtar.js",
-     "storlek": 15773,
-     "sha256": "0437d5855808e9cc62f43583cdbd2c2ca5630239b12386c81cf0f5b392cb09db"
+     "storlek": 15899,
+     "sha256": "4dce640d37dd00b798d88cc3268fc6ff0c4c8c474a6344811fec83ba9cd380a2"
     },
     {
      "vag": "tron-boll-bild.js",
@@ -7477,6 +8151,11 @@
      "vag": "tron-bossbana.js",
      "storlek": 65267,
      "sha256": "b4c9feac7d7fad8db6a393cd66eef82437099e2a92ad91b7532a24a42c0d466e"
+    },
+    {
+     "vag": "tron-cpu-tid.js",
+     "storlek": 7101,
+     "sha256": "636b75bfc407a06e366058e606eda6416102a6e8ba63cf5f766fc801ff6760a9"
     },
     {
      "vag": "tron-cykel.js",
@@ -7500,8 +8179,8 @@
     },
     {
      "vag": "tron-effekt.js",
-     "storlek": 28235,
-     "sha256": "489f1dc88b44f9c1eff3d939409cbccd0f1b9155cf0a4515de6e2465cd133cf1"
+     "storlek": 28242,
+     "sha256": "1b9abd2425490ec44ff6d588ce5a3c54ecf09bad0d03ef4b7a05037568c0c4fb"
     },
     {
      "vag": "tron-eko-bild.js",
@@ -7515,8 +8194,13 @@
     },
     {
      "vag": "tron-flagga.js",
-     "storlek": 15009,
-     "sha256": "7ff85c3e6ab2c5c6e15ee774605a1e8b5e83aca217b0467c794c005717f8e2b3"
+     "storlek": 15719,
+     "sha256": "39694c33471e2c6c8f27bdf2aa2ce23448ac68a72f10bb1579bd7b0fc11e2579"
+    },
+    {
+     "vag": "tron-flaggtyg.js",
+     "storlek": 7166,
+     "sha256": "3860d6e39fa77be70f011682615ec90f8e8841752b0a23ad930399a99e0e7ad4"
     },
     {
      "vag": "tron-forare.js",
@@ -7525,13 +8209,18 @@
     },
     {
      "vag": "tron-forvarm-gpu.js",
-     "storlek": 8349,
-     "sha256": "fb77f167eb2e3e0d330fc73bacb795ef91316ffaba1007c7792de5385fbe73c7"
+     "storlek": 8480,
+     "sha256": "89e628ea7fd689e05f9d7e0f7ae0dcc900beb7827d51edd82db277bca73ca5a5"
     },
     {
      "vag": "tron-forvarm.js",
-     "storlek": 29674,
-     "sha256": "74edb1fe1a3438b862df5b34dfd730f37cb144b47ac7c318360793194390a648"
+     "storlek": 30281,
+     "sha256": "325b37f8b239f4a767b836f63b4f724e1749f7e59d25eda903e51e80a13141b7"
+    },
+    {
+     "vag": "tron-fsr1.js",
+     "storlek": 13088,
+     "sha256": "5afe5bcc7151b44685d3be30cd1c7a704f29c3bd6a2dc5ebbdad491b1eafed8e"
     },
     {
      "vag": "tron-fyrverkeri.js",
@@ -7550,8 +8239,8 @@
     },
     {
      "vag": "tron-handelser.js",
-     "storlek": 27968,
-     "sha256": "abbf1a1c4a65c0f0e11119526661ba006c14369b267754cf2aa4d2b55979af3f"
+     "storlek": 28346,
+     "sha256": "7fb2837ac0456d65b16291b287b39aa3d5f2b736045773b73c185f3d7d18f051"
     },
     {
      "vag": "tron-himlen.js",
@@ -7590,8 +8279,8 @@
     },
     {
      "vag": "tron-killcam.js",
-     "storlek": 9121,
-     "sha256": "a808e8c35ce097f096e19283858a5f7db3e8590258135df47b9c09a80834b1cf"
+     "storlek": 9197,
+     "sha256": "25b519146c2da15f75c0d9d1777fc738e713175915bc8cc9c69d061c45dd84e6"
     },
     {
      "vag": "tron-klyv-worker.js",
@@ -7625,18 +8314,18 @@
     },
     {
      "vag": "tron-laser.js",
-     "storlek": 29542,
-     "sha256": "34f29e9333b3b963dd4235771ef25fa9367503b54f308125246d6ecad0978052"
+     "storlek": 54588,
+     "sha256": "b59afdecdd87cc730d3413d3decc4a581f246bb180c4d04b1b958a7193073455"
     },
     {
      "vag": "tron-malning.js",
-     "storlek": 74084,
-     "sha256": "fac4c5cd7a62aab58f6923e7ce6345da5ee9485232b33691f98a38ec6e7f5de9"
+     "storlek": 74490,
+     "sha256": "b676fa2b49b5b3a854caaf12c1f344f324e36ea19f737943f39cb496e6374a87"
     },
     {
      "vag": "tron-matchintro.js",
-     "storlek": 8266,
-     "sha256": "2c7d80967a151a0b1c107a516f80392d5cdb79effa41a99fdffbc1f901221c10"
+     "storlek": 8326,
+     "sha256": "bc42a8bbcfb2319675bd381faaf1405aafffaf960e544f20a3cff9c2357f3ac5"
     },
     {
      "vag": "tron-matchlogg.js",
@@ -7660,13 +8349,13 @@
     },
     {
      "vag": "tron-miljo-kobolt.js",
-     "storlek": 45878,
-     "sha256": "8c14fd4f04ed2bb62dd8d8194a5d7c1fabd77a54659d72465ef07b1fe33dcfb1"
+     "storlek": 45944,
+     "sha256": "08804ecff2e41ba5d84573ff2a2b634f506394f83324eb923aad0c0c181e5076"
     },
     {
      "vag": "tron-miljo-oken.js",
-     "storlek": 101966,
-     "sha256": "0bfd64b62984bbd47c1923546bd834047c7c3bcfa6473bf9759088e181bab6dd"
+     "storlek": 104211,
+     "sha256": "eb2c82b6bb5d80252fc69ed8d72f3f11e0eceff6b47b38426f7b75dfd3d48def"
     },
     {
      "vag": "tron-miljo-rymd.js",
@@ -7675,8 +8364,8 @@
     },
     {
      "vag": "tron-miljo-vulkan.js",
-     "storlek": 132470,
-     "sha256": "bb327101437a5fe840641584870fe73153efdbd4d0d6fa4d6a100770460c608d"
+     "storlek": 133565,
+     "sha256": "7795211426f98c2d6b98e054d01e235333eb2d1c8d9a982e0216dcefbf5fe0a9"
     },
     {
      "vag": "tron-miljo.js",
@@ -7685,8 +8374,8 @@
     },
     {
      "vag": "tron-miljoer.js",
-     "storlek": 3373,
-     "sha256": "aae2991de9063b127a6c1eacfef0909f8d50f5588b851d50e4e567af07bad243"
+     "storlek": 4085,
+     "sha256": "4b162869225ff86223706c05fbcb17a7cf250dfb9930d23a60bac6823a77cd49"
     },
     {
      "vag": "tron-modell.js",
@@ -7730,8 +8419,8 @@
     },
     {
      "vag": "tron-prestanda.js",
-     "storlek": 5466,
-     "sha256": "8c838f6872b97d42016796d50d584886acd73f547d0b146b7bbf03f8bf8f4bad"
+     "storlek": 5944,
+     "sha256": "925c99211928005ccec9ac91ba3e3998ee9b9ba7f2a020ce9d3bf732c5f6a5a8"
     },
     {
      "vag": "tron-publik-data.js",
@@ -7739,9 +8428,14 @@
      "sha256": "91ede820db9c3f6f877b52f88c4680add21d9db25957ffe97174adf83b890273"
     },
     {
+     "vag": "tron-publik-jubel.js",
+     "storlek": 31406,
+     "sha256": "83bd57f5fa06332d3af28b9c0e1f51540298dfea5dde4e3dfa1e29463dcc2cab"
+    },
+    {
      "vag": "tron-publik.js",
-     "storlek": 66484,
-     "sha256": "f98891dbfd11c0fdba38e65f60bd907bdf0d85e8b9c41bb319bc525eb260dc8f"
+     "storlek": 73180,
+     "sha256": "3789c82012ade82fb7b74ecfc91b4915b8d18e44bf23792ca8e69792162ded81"
     },
     {
      "vag": "tron-repris.js",
@@ -7760,8 +8454,8 @@
     },
     {
      "vag": "tron-scen.js",
-     "storlek": 119701,
-     "sha256": "57cb22ee84864ec43565528906f44f72dc5f6469f706df1091836c16a3a4a92c"
+     "storlek": 121099,
+     "sha256": "ecf09b49f721b404e77e6576980c077be6a559dadbc31306f4d7c4f900131f3f"
     },
     {
      "vag": "tron-sim.js",
@@ -7770,8 +8464,8 @@
     },
     {
      "vag": "tron-skarv.js",
-     "storlek": 22533,
-     "sha256": "c1ffe36c6536f7c34a455caf3428300a12f9cab21fb29ec6ac2a5dc6eb3d9b15"
+     "storlek": 23734,
+     "sha256": "05f63f2b32e85a62505d828de62e958a9c119be3caa2e587654da647fa63b997"
     },
     {
      "vag": "tron-spela.js",
@@ -7810,8 +8504,8 @@
     },
     {
      "vag": "tron-tsl.js",
-     "storlek": 10896,
-     "sha256": "9672888766cad1b552061811a30d8c49086ce19059b926160c3b16687a806781"
+     "storlek": 11012,
+     "sha256": "5c037363c43fab59c3fb773d4bc4db4ae73933568cde2ae42c875d05a85b3d6b"
     },
     {
      "vag": "tron-turnering.js",
@@ -7824,14 +8518,19 @@
      "sha256": "10b0dd2faf9093e9dc643536471eefca38b98237d35ac8fe926088840302e3a0"
     },
     {
+     "vag": "tron-vat.js",
+     "storlek": 27500,
+     "sha256": "19c54a02f9218dbe980de0b567e62ad1916f4ff620947fde555be61e2df84e19"
+    },
+    {
      "vag": "tron-ytdetalj.js",
-     "storlek": 8413,
-     "sha256": "b0b4a09522f99919675cb65abc33231f37da2b7e4dd06800556e6e277ef71862"
+     "storlek": 12512,
+     "sha256": "ae264dd5e88d19b63d5c8c48b4a23c68135be8a485fa90fa93c7e0e6521a4727"
     },
     {
      "vag": "tron.js",
-     "storlek": 103427,
-     "sha256": "0ec580885888b9fc8f88d96b9a46650597a8926a9a26a1b2eddd84db5fe76f05"
+     "storlek": 109289,
+     "sha256": "6f3e40bdfd90b093181466a99797ca9b45ad1a55cd41732751c99c7829545713"
     },
     {
      "vag": "typsnitt/OFL.txt",
@@ -9900,8 +10599,8 @@
     },
     {
      "vag": "nyheter/nyheter.json",
-     "storlek": 11572,
-     "sha256": "55842ffa45944ba63d0f1d457327ef6e6c66526c93452ebb93740af11bbee522"
+     "storlek": 13575,
+     "sha256": "16bfaaea2d3ef79d6b4bfdbe18273863e3e6d7ba4e94a7eaf5bc75ad5ac7cb10"
     },
     {
      "vag": "nyheter/o1-pac.mp4",
@@ -10017,6 +10716,26 @@
      "vag": "nyheter/o17-sno.webp",
      "storlek": 63348,
      "sha256": "b83476efabd1ebee40145d9821ff98476a94543e89683129d3f5f00ab17e20bd"
+    },
+    {
+     "vag": "nyheter/o18-kross.webp",
+     "storlek": 62048,
+     "sha256": "412a80eb2a6097f791b105f57e2ed6bb2ae60ef8aa4c56aca117bb105bb5621f"
+    },
+    {
+     "vag": "nyheter/o18-malning.webp",
+     "storlek": 57988,
+     "sha256": "68e0ab4bba57d55aba010d5d2d449c87980b604c8c2d4cc9ddb593f61dddbce4"
+    },
+    {
+     "vag": "nyheter/o18-pac.webp",
+     "storlek": 37498,
+     "sha256": "5dab4193b289ea789becaa0f93def598c837e2e1aa400395ec96eefe98220713"
+    },
+    {
+     "vag": "nyheter/o18-ytor.webp",
+     "storlek": 59730,
+     "sha256": "31c791e5071a96c5bfc99f5303cb646c386a7f8b1826c926df951a30d5d69d79"
     },
     {
      "vag": "nyheter/o8-duell.webp",
@@ -10205,8 +10924,8 @@
     },
     {
      "vag": "spel-matdata.js",
-     "storlek": 14529,
-     "sha256": "471106c3a694a0634dc15c0d9fcdd891d6cfe6ac20b77046397984cdf1f54583"
+     "storlek": 15120,
+     "sha256": "06ba0d5c6829c35adb5bbb71f1d2edfff5a011bc02ce0c89a55f8cf6cae76c5d"
     },
     {
      "vag": "spel-meny.css",
@@ -10230,8 +10949,8 @@
     },
     {
      "vag": "spel-nyheter.js",
-     "storlek": 18781,
-     "sha256": "ae564c066b2e0a1bb16f9a9f30edbffcdba976e85ef7f6d2e92a5246ded311e3"
+     "storlek": 22818,
+     "sha256": "c05137abc8a7501f7aea1a2da3e9eef0903cda9afc6e59bce84dd8fae818d653"
     },
     {
      "vag": "spel-online.js",
@@ -10260,8 +10979,8 @@
     },
     {
      "vag": "spel-remsa.js",
-     "storlek": 22979,
-     "sha256": "b35e74607c961f4929255cfcadd33cfef5332a1d99a2f9d90dcb367d939daa36"
+     "storlek": 23213,
+     "sha256": "a922bd08f321975ad4962c754325f39f1da6ea357f42363f7ba645994ae30e5a"
     },
     {
      "vag": "spel-rost.js",
