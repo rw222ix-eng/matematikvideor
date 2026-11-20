@@ -33,7 +33,7 @@ export function huvudText(huvuden) {
 // Pages-funktionerna (functions/spel/) körs bara för spelserverns adresser och menyns filmer. Utan _routes.json skulle
 // varje fil under /spel/ gå genom en funktion och kosta ett anrop i Workers-kvoten. /spel/figur/meny/* ger Range (206)
 // på menyns filmer, som Safari kräver (functions/spel/figur/meny/[[fil]].js, 14/11).
-export const RUTTER = { version: 1, include: ["/spel/rum", "/spel/inlogg", "/spel/inlogg/*", "/spel/larare", "/spel/topplista", "/spel/halsa", "/spel/rapport", "/spel/utmaning", "/spel/klasser", "/spel/figur/meny/*"], exclude: [] };
+export const RUTTER = { version: 1, include: ["/spel/rum", "/spel/inlogg", "/spel/inlogg/*", "/spel/larare", "/spel/rost", "/spel/topplista", "/spel/halsa", "/spel/rapport", "/spel/utmaning", "/spel/klasser", "/spel/figur/meny/*"], exclude: [] };
 
 export function skrivCloudflareHuvuden(huvuden, publicDir) {
   writeFileSync(join(publicDir, "_headers"), huvudText(huvuden), "utf8");
