@@ -102,6 +102,7 @@ const NYA = [
   // Ma 1c kap 3 och 5 och Ma 2a 8 (2026-10-18). "nollproduktmetoden" är borttagen: ma2a-03 handlar
   // sedan omgörningen bara om x² = a, och ingen film tar upp metoden.
   ["procentuell förändring", "k301"], ["förändring i flera steg", "k301"], ["minskning i procent", "k301"],
+  ["%", "k301"], ["ökning med 5 %", "k301"],
   ["amortering", "k302"], ["räntekostnad", "k302"], ["lån", "k302"],
   ["sannolikhet i flera steg", "k303"], ["utfallsrum", "k303"], ["gynnsamma utfall", "k303"],
   ["komplementhändelse", "k304"], ["utan återläggning", "k304"], ["beroende händelser", "k304"], ["träddiagram", "k304 k303"],

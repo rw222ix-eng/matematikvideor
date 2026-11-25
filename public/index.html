@@ -554,6 +554,9 @@
   .film .tillbaka { font: 400 10px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ben2); display: inline-flex; align-items: center; gap: 12px; transition: color .4s; }
   .film .tillbaka:hover { color: var(--ben); }
   .film .tillbaka svg { width: 30px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; transition: transform .5s var(--lugn); }
+  /* Länken är bara 12 px hög (10 px text): en osynlig yta runt den gör den lätt att träffa med fingret, 44 px hög. */
+  .film .tillbaka { position: relative; }
+  .film .tillbaka::before { content: ""; position: absolute; inset: -16px -10px; }
   .film .tillbaka:hover svg { transform: translateX(-4px); }
   /* Kvällsljus (Rickard 2026-09-24): huvudet vänsterställt i samma spalt som filmen och
      kapitlen, längd och antal kapitel till höger. */
@@ -1520,7 +1523,7 @@
     <!-- Spelaren tar fokus när man klickar i den; snabbtangenterna gäller där (se tangentlyssnaren). -->
     <div class="duk" id="duk" tabindex="0" role="region" aria-label="Filmspelare"></div>
     <div class="kap-rubrik">
-      <h3 class="etikett">Kapitel</h3>
+      <h3 class="etikett" aria-level="2">Kapitel</h3>
     </div>
     <ol class="kapitel" id="kapitel"></ol>
     <!-- Knappen står direkt ovanför texten den fäller ut, så att man ser vad som händer (Rickard 2026-09-25). -->
@@ -1533,7 +1536,7 @@
     </details>
     <section class="dintur" id="dintur" aria-labelledby="dintur-rubrik" hidden>
       <div class="dintur-huvud">
-        <h3 class="etikett" id="dintur-rubrik">Din tur</h3>
+        <h3 class="etikett" id="dintur-rubrik" aria-level="2">Din tur</h3>
         <span class="dintur-lost" id="dintur-lost" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5 L5 9.5 L10 3"/></svg>Löst</span>
       </div>
       <p class="dintur-fraga" id="dintur-fraga"></p>
@@ -1548,7 +1551,7 @@
       <div class="dintur-losning" id="dintur-losning" hidden></div>
     </section>
     <section class="nasta-del" id="f-nasta" aria-labelledby="f-nasta-rubrik" hidden>
-      <h3 class="etikett" id="f-nasta-rubrik">Nästa del</h3>
+      <h3 class="etikett" id="f-nasta-rubrik" aria-level="2">Nästa del</h3>
       <div id="f-nasta-kort"></div>
     </section>
     <!-- Om filmen och begreppen syns inte längre (Rickard 2026-09-26: onödigt längst ner). Datan
@@ -2354,6 +2357,23 @@
       .then((b) => createImageBitmap(b, { colorSpaceConversion: rak ? "none" : "default", premultiplyAlpha: "none" }));
   };
   const bildBredd = (b) => b.naturalWidth || b.width, bildHojd = (b) => b.naturalHeight || b.height;
+  // Shadern kompileras medan bilderna hämtas, och huvudtråden frågar först när bilderna är här (program()), med
+  // KHR_parallel_shader_compile om den är klar. Förut stod sidan still i getShaderParameter och getProgramParameter medan grafikkortet
+  // översatte shadern (introts scen ~1 s på en snabb Windows-dator, filmvalets ~0,1 s). Utan tillägget väntar den som förut.
+  const programKlart = (gl, horn, yta) => {
+    const del = (typ, kod) => { const s = gl.createShader(typ); gl.shaderSource(s, kod); gl.compileShader(s); return s; };
+    const hs = del(gl.VERTEX_SHADER, horn), ys = del(gl.FRAGMENT_SHADER, yta), p = gl.createProgram();
+    gl.attachShader(p, hs); gl.attachShader(p, ys); gl.linkProgram(p);
+    const par = gl.getExtension("KHR_parallel_shader_compile");
+    return () => new Promise((ok, fel) => {
+      const titta = () => {
+        if (par && !gl.getProgramParameter(p, par.COMPLETION_STATUS_KHR)) { setTimeout(titta, 20); return; }
+        if (gl.getProgramParameter(p, gl.LINK_STATUS)) ok(p);
+        else fel(new Error(gl.getProgramInfoLog(p) || gl.getShaderInfoLog(ys) || gl.getShaderInfoLog(hs)));
+      };
+      titta();
+    });
+  };
   const levandeMalning = (a) => narVynBehovs(a.vy, () => {
     if (a.img.dataset.src && !a.img.getAttribute("src")) a.img.src = a.img.dataset.src;
     levandeMalningNu(a);
@@ -2361,11 +2381,7 @@
   const levandeMalningNu = ({ vy, duk, img, mask, himmel = null, fastTopp = false }) => {
     const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
     if (!gl) { duk.remove(); return; }
-    const kompilera = (typ, kod) => {
-      const s = gl.createShader(typ); gl.shaderSource(s, kod); gl.compileShader(s);
-      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
-      return s;
-    };
+    const program = programKlart(gl, HORN, YTA);
     let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1;
 
     // Duken har bildens ruta (på datorn) eller hela fönstret (mobilen);
@@ -2410,12 +2426,8 @@
       if (mip) gl.generateMipmap(gl.TEXTURE_2D);
     };
 
-    Promise.all([laddadImg(img).then(() => laddaBild(img.currentSrc || img.src, false)), laddaBild(mask, true), himmel && laddaBild(himmel, true)]).then(([bild, maskBild, himmelBild]) => {
-      prog = gl.createProgram();
-      gl.attachShader(prog, kompilera(gl.VERTEX_SHADER, HORN));
-      gl.attachShader(prog, kompilera(gl.FRAGMENT_SHADER, YTA));
-      gl.linkProgram(prog);
-      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+    Promise.all([laddadImg(img).then(() => laddaBild(img.currentSrc || img.src, false)), laddaBild(mask, true), himmel && laddaBild(himmel, true)]).then((r) => program().then((p) => [...r, p])).then(([bild, maskBild, himmelBild, p]) => {
+      prog = p;
       gl.useProgram(prog);
       const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);   // en triangel över hela duken
@@ -2693,11 +2705,7 @@
   const levandeScenNu = ({ vy, duk, img, fokus }) => {
     const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
     if (!gl) { duk.remove(); return; }
-    const kompilera = (typ, kod) => {
-      const s = gl.createShader(typ); gl.shaderSource(s, kod); gl.compileShader(s);
-      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
-      return s;
-    };
+    const program = programKlart(gl, HORN, SCEN);
     let prog = null, U = {}, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1, scen = null;
     let synlig = [0, 0, 1672, 941];   // den del av målningen som syns, i bildens px
 
@@ -3119,13 +3127,9 @@
     const typsnitt = document.fonts ? document.fonts.load('400 64px "Kalam"').catch(() => null) : Promise.resolve();
     Promise.all([laddadImg(img).then(() => laddaBild(img.currentSrc || img.src, false)), laddaBild("omslag/intro-lager.webp?v=06293caf", false), laddaBild("omslag/intro-lager-mask.webp?v=c570bf78", true),
                  laddaBild("omslag/intro-glimt.webp?v=c60409dd", true), fetch("omslag/intro-scen.json?v=c0ce57c2").then((r) => r.json()), typsnitt])
-      .then(([bild, lager, lagerM, glimt, data]) => {
+      .then((r) => program().then((p) => [...r, p])).then(([bild, lager, lagerM, glimt, data, , p]) => {
         scen = data; bygg();
-        prog = gl.createProgram();
-        gl.attachShader(prog, kompilera(gl.VERTEX_SHADER, HORN));
-        gl.attachShader(prog, kompilera(gl.FRAGMENT_SHADER, SCEN));
-        gl.linkProgram(prog);
-        if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+        prog = p;
         gl.useProgram(prog);
         const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
@@ -3546,29 +3550,47 @@
     if (lugnt) { mal = x + d; } else { vx += d * 0.12; }
     if (!rullar) { rullar = true; requestAnimationFrame(loop); }
   }
+  // Styrplattan skickar många små steg i rad och har redan egen tröghet: de flyttar linan direkt, i takt med
+  // fingrarna. Förut gick också de genom knuffa(), och linan låg efter fingrarna och gled vidare en sekund
+  // när styrplattans egen tröghet var slut (2026-11-25). Ett ensamt stort hack från ett mushjul, eller
+  // ett hjul som räknar i rader, glider som förut, och resten av den snurren också. Vilket det är avgörs av
+  // första steget efter en paus. deltaX och deltaY läses före deltaMode: då ger Firefox pixlar.
+  let hjulForra = 0, hjulHack = false;
   $("vy-valj").addEventListener("wheel", (e) => {
     if (smal()) return;
     e.preventDefault();
-    knuffa(Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY);
+    let d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (e.deltaMode === 1) d *= 40; else if (e.deltaMode === 2) d *= tidslinje.clientWidth;
+    const nu = performance.now();
+    if (nu - hjulForra > 50) hjulHack = e.deltaMode !== 0 || Math.abs(d) >= 50;
+    hjulForra = nu;
+    if (hjulHack) knuffa(d);
+    else { malX = null; x = Math.min(maxX(), Math.max(0, x + d)); rita(); }
     Newton.hande("tidslinje");
   }, { passive: false });
   addEventListener("scroll", () => { if (aktivVy === "valj" && smal() && scrollY > 60) Newton.hande("tidslinje"); }, { passive: true });
-  let pekX = null, pekStartX = 0;
+  let pekX = null, pekStartX = 0, pekStartY = 0;
   // Pekaren tas i beslag först när man verkligen drar — annars hamnar klicket
   // på tidslinjen i stället för på omslaget.
   // Vänster eller höger knapp drar. Klick utan rörelse går som vanligt till omslaget.
-  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; drog = false; vx = 0; malX = null; getSelection()?.removeAllRanges(); });
+  // Rörelsen räknas åt alla håll: ett drag snett nedåt med under 7 px i sidled öppnade förut filmen (2026-11-25).
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; pekStartY = e.clientY; drog = false; vx = 0; malX = null; getSelection()?.removeAllRanges(); });
   tidslinje.addEventListener("selectstart", (e) => { if (!smal()) e.preventDefault(); });
   tidslinje.addEventListener("pointermove", (e) => {
     if (pekX == null) return;
-    if (!drog) { if (Math.abs(e.clientX - pekStartX) <= 6) return; drog = true; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); }
+    if (!drog) { if (Math.hypot(e.clientX - pekStartX, e.clientY - pekStartY) <= 6) return; drog = true; tidslinje.classList.add("drar"); tidslinje.setPointerCapture(e.pointerId); }
     const dx = pekX - e.clientX; pekX = e.clientX;
     x = Math.min(maxX(), Math.max(0, x + dx)); vx = dx * 0.6; rita();
     if (Math.abs(e.clientX - pekStartX) > 40) Newton.hande("tidslinje");
   });
   const slapp = () => { if (pekX == null) return; pekX = null; tidslinje.classList.remove("drar"); if (!lugnt && Math.abs(vx) > 0.5 && !rullar) { rullar = true; requestAnimationFrame(loop); } };
   tidslinje.addEventListener("pointerup", slapp); tidslinje.addEventListener("pointercancel", slapp);
-  tidslinje.addEventListener("click", (e) => { if (drog) { e.stopPropagation(); e.preventDefault(); } drog = false; }, true);
+  // Ett tryck medan linan glider (efter ett kast, ett hjulhack eller en pil) stoppar den och öppnar ingen film,
+  // eftersom kortet under pekaren har glidit dit (2026-11-25). Lyssnaren i fångstfasen läser farten innan
+  // pointerdown ovan nollställer den. Enter på ett kort (detail 0) öppnar alltid filmen.
+  let bromsade = false;
+  tidslinje.addEventListener("pointerdown", () => { bromsade = !smal() && (Math.abs(vx) > 1 || (malX != null && Math.abs(malX - x) > 2)); }, true);
+  tidslinje.addEventListener("click", (e) => { if ((drog || bromsade) && e.detail) { e.stopPropagation(); e.preventDefault(); } drog = false; bromsade = false; }, true);
   tidslinje.addEventListener("contextmenu", (e) => { if (drog || pekX != null) { e.preventDefault(); drog = false; } });
   $("aterstall").addEventListener("click", () => {
     if (lugnt) { mal = 0; x = 0; rita(); return; }
@@ -3617,6 +3639,9 @@
     if (smal()) return;
     const post = e.target.closest(".post"); if (!post) return;
     tidslinje.scrollLeft = 0; requestAnimationFrame(() => { tidslinje.scrollLeft = 0; });
+    // Fokus från musen eller fingret (pekaren är nere på linan) flyttar inte linan. Förut fick kortet fokus när
+    // eleven tryckte ner för att dra, och linan gled mot det kortet och drog emot handen (2026-11-25).
+    if (pekX != null) return;
     malX = Math.min(maxX(), Math.max(0, post.offsetLeft + post.offsetWidth / 2 - tidslinje.clientWidth / 2)); vx = 0;
     if (!rullar) { rullar = true; requestAnimationFrame(loop); }
   });
@@ -3760,6 +3785,8 @@
     [/\(\s*[a-z0-9]+\s*[+-]\s*[a-z0-9]+\s*\)\s*\^\s*2/g, " kvadreringsreglerna "],
     [/\(\s*[a-z0-9]+\s*\+\s*[a-z0-9]+\s*\)\s*\(\s*[a-z0-9]+\s*-\s*[a-z0-9]+\s*\)/g, " konjugatregeln "],
     [/(?:räta\s+)?linjens\s+ekvation/g, " räta linjen "],
+    // Procenttecknet är ordet procent: "%" och "5 %" gav "Ingen film tar upp det än".
+    [/%/g, " procent "],
     [/\b(sin|cos|tan)\s*(?:\^\s*\(?\s*[-−]\s*1\s*\)?|⁻¹|[-−]\s*1)/g, (_, f) => ` arcus${{ sin: "sinus", cos: "cosinus", tan: "tangens" }[f]} `],
   ];
   function tolkaFraga(fraga) {
@@ -4109,12 +4136,12 @@
   }
   // Sökningen är en modal dialog: bakom den går inget att nå med Tab (inert), och när den stängs
   // får knappen som öppnade den tillbaka fokus.
-  let fokusForeSok = null;
+  let fokusForeSok = null, sokOppnad = -Infinity;
   function oppnaSok() {
     if (Newton.visar !== "guide") Newton.gom();
     Newton.markera("sok");   // den som hittat sökningen behöver inte tipset om den
     Newton.hande("sok");
-    if (!sokRuta.classList.contains("oppen")) { fokusForeSok = document.activeElement; sokKurs = kursVal ?? kursFranLaget(); }
+    if (!sokRuta.classList.contains("oppen")) { fokusForeSok = document.activeElement; sokKurs = kursVal ?? kursFranLaget(); sokOppnad = performance.now(); }
     sokRuta.classList.add("oppen"); document.body.classList.add("last");
     document.querySelectorAll(".vy").forEach((el) => { el.inert = true; });
     // Texten hämtas och indexet byggs i bitar medan eleven börjar skriva (Rickard 18/11 «Sökningen vid behov»).
@@ -4134,7 +4161,9 @@
     // rutan öppnas.
     for (const typ of ["pointerenter", "focus"]) b.addEventListener(typ, () => laddaAllText().then(byggIndex).catch(() => {}), { passive: true });
   });
-  $("sok-stang").addEventListener("click", stangSok);
+  // Dubbelklick på förstoringsglaset (2026-11-25): det andra klicket landade på krysset, som står på samma ställe, och
+  // sökningen stängdes direkt. Krysset tar inte emot klick den första halvsekunden; Esc stänger som förut.
+  $("sok-stang").addEventListener("click", () => { if (performance.now() - sokOppnad > 500) stangSok(); });
   falt.addEventListener("input", ritaSok);
   falt.addEventListener("input", () => { if (falt.value.trim().length >= 3) Newton.hande("sokt"); });
   // Ett förslag fyller i fältet och söker direkt.
@@ -5300,6 +5329,10 @@
   const TECKENNAMN = { "^": "upphöjt till", "²": "i kvadrat", "³": "upphöjt till tre", "=": "lika med", "(": "vänsterparentes", ")": "högerparentes", "/": "delat med",
     "·": "gånger", "+": "plus", "-": "minus", "−": "minus",
     "≤": "mindre än eller lika med", "≥": "större än eller lika med", "<": "mindre än", ">": "större än", "[": "vänster hakparentes", "]": "höger hakparentes", "∞": "oändligheten" };
+  // iPhonens decimaltangentbord (inputmode decimal) har inget minus. Är svaret negativt får delen
+  // därför alltid en minusknapp, också när dintur.json inte har någon (vektorerna, svaret −6).
+  const tangenterFor = (del) => (del.typ === "tal" && del.svar < 0 && !(del.tangenter || []).some((t) => t === "-" || t === "−")
+    ? ["-", ...(del.tangenter || [])] : del.tangenter);
   function ritaDinTur(v) {
     const d = v.dinTur;
     dtEl.hidden = !d;
@@ -5323,7 +5356,7 @@
           ${del.enhet ? `<span class="enhet">${esc(del.enhet)}</span>` : ""}
           <button type="submit" class="kolla">Kolla</button>
         </form>
-        ${del.tangenter ? `<div class="tangenter">${del.tangenter.map((t) => `<button type="button" data-tecken="${attr(t)}" aria-label="Skriv ${attr(TECKENNAMN[t] || t)}">${esc(t === "-" ? "−" : t)}</button>`).join("")}</div>` : ""}
+        ${tangenterFor(del) ? `<div class="tangenter">${tangenterFor(del).map((t) => `<button type="button" data-tecken="${attr(t)}" aria-label="Skriv ${attr(TECKENNAMN[t] || t)}">${esc(t === "-" ? "−" : t)}</button>`).join("")}</div>` : ""}
         <p class="del-svarstext" id="del-text-${i}" role="status" aria-live="polite"></p>
       </li>`).join(""));
     // GeoGebra-rutan: ny för varje film, byggs när rutan närmar sig skärmen (ggbIakttagare).
@@ -5384,6 +5417,8 @@
   for (const typ of ["keydown", "keyup", "keypress"]) $("dintur-ggb-yta").addEventListener(typ, (e) => e.stopPropagation());
   function tillDinTur() {
     if (iHelskarm()) vaxlaHelskarm();
+    // Tipset «Tryck på Din tur» är gjort när eleven tryckt: annars står det kvar med dämpningen i flera sekunder.
+    if (Newton.visar === "notis") Newton.gom();
     requestAnimationFrame(() => glidFram(dtEl, "start"));
     // Fältet får fokus direkt, inte efter glidningen: det eleven skrev under den första halvsekunden hamnade
     // förut på sidan (siffrorna spolade filmen, Enter gjorde ingenting) och fältet stod tomt (2026-11-11).
@@ -5869,6 +5904,8 @@
     function gom() {
       if (!visar) return;
       const id = visar; visar = null; senast = performance.now(); $("vy-intro").style.removeProperty("--lyft");
+      // Stod fokus på en knapp i guidens bubbla (Nästa, Avsluta) försvinner det med bubblan: frågetecknet tar det.
+      const fokusIBubblan = id === "guide" && el.contains(document.activeElement);
       [skrivTimer, gomTimer, blinkTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv();
       el.classList.add("gar"); el.classList.remove("pratar", "blinkar");
       if (id === "guide") {
@@ -5884,6 +5921,7 @@
         helskarm();
         el.style.transform = ""; uttryck.classList.remove("syns"); ljus.classList.remove("latt");
         document.body.classList.remove("newton-syns", "guidar");
+        if (fokusIBubblan && (!document.activeElement || document.activeElement === document.body || el.contains(document.activeElement)) && !iHelskarm()) (sokRuta.classList.contains("oppen") ? $("sok-falt") : $("hjalp")).focus({ preventScroll: true });
       }, 460);
       return id;
     }
@@ -6446,7 +6484,7 @@
       if (s.vy === "valj" && aktivVy === "intro") { await tillValj(); if (visar !== "guide" || guideGang !== gang || guideNr !== n || bekraftar) return; }
       const mal = s.mal ? s.mal() : null;
       if (s.mal && !synlig(mal)) return forbi();   // finns inte här just nu
-      if (senHandelse) { const h = senHandelse; senHandelse = null; if (stegFor(h) >= 0) return hande(h); }
+      if (senHandelse) { const h = senHandelse; senHandelse = null; if (stegFor(h) >= 0 || (h === "sok" && sokOppen() && !s.sok)) return hande(h); }
       sjalv = true; try { stallIOrdning(s); } finally { sjalv = false; }
       // Guiden lyssnar från första stund: en snabb elev kan göra uppgiften medan Newton går dit.
       const lever = () => visar === "guide" && guideGang === gang && guideNr === n && !bekraftar;
@@ -6495,7 +6533,20 @@
       // kommer tillbaka).
       const nu = guideSteg[guideNr], under = nu && nu.under && nu.under[namn];
       if (under && nuLista) { prata(typeof under === "function" ? under() : under, nuLista, nuRaknare); return; }
-      const k = stegFor(namn); if (k < 0) return;
+      const k = stegFor(namn);
+      // Sökrutan öppnad när guiden inte har något söksteg kvar (/ eller förstoringsglaset i filmen, eller vid
+      // "Välj nu en film"): Newton fortsatte då prata om spelaren eller filmkorten bakom sökrutan, och guldramen
+      // lyste på en tom yta i den. Guiden tar sökningen först, som när den startar med sökrutan öppen (planera),
+      // och fortsätter sedan med steget den var på. oppnaSok anropar hande innan rutan är öppen: därav setTimeout.
+      if (k < 0 && namn === "sok" && !guideSteg.some((s, i) => i >= guideNr && s.sok)) {
+        const n = guideNr, gang = guideGang;
+        setTimeout(() => {
+          if (visar !== "guide" || guideGang !== gang || guideNr !== n || bekraftar || !sokOppen()) return;
+          guideSteg.splice(n, 0, ...losa(["sokt", "sokStangd"])); visaSteg(n);
+        });
+        return;
+      }
+      if (k < 0) return;
       hall = null;
       bekraftar = true; nastaNr = k + 1;
       const n = guideNr, s = guideSteg[k], gang = guideGang, samma = () => visar === "guide" && guideGang === gang && guideNr === n;
