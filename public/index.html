@@ -887,7 +887,6 @@
   .del-svar .enhet { color: var(--ben2); font-size: 17px; }
   .tangenter { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .tangenter button { min-width: 42px; height: 38px; padding: 0 10px; border: 1px solid var(--linje2); border-radius: 8px; font: 400 18px/1 var(--sans); color: var(--ben2); background: rgba(236, 230, 216, .03); transition: border-color .3s, color .3s, transform .3s var(--fjader); }
-  .tangenter button[data-tecken="·"] { font-size: 30px; }
   .tangenter button:active { transform: scale(.9); transition-duration: .08s; }
   @media (hover: hover) { .tangenter button:hover { border-color: var(--accent); color: var(--ben); } }
   .del-svarstext { position: relative; margin: 12px 0 0; min-height: 1.6em; max-width: 680px; font-size: 16px; line-height: 1.6; color: var(--ben2); }
@@ -5228,7 +5227,7 @@
       if (w) varfor = orsak(new Error(`ord:${w}`), original, del);
     }
     // Hit kommer också en typ som rättningen inte känner till, och då blir det samma besked.
-    const ex = (del.exempel || "").replace(/^t\.ex\.\s*/, "");
+    const ex = (del.exempel || "").replace(/^t\.ex\.\s*/, "").replace(/·/g, "×");
     return { ok: false, forstod: false, text: `Svaret gick inte att läsa. ${varfor || ""}${ex ? `Skriv till exempel ${ex}` : "Skriv bara svaret"}.` };
   }
   // Tallinjen i lösningen till ett intervall: ring där talet inte räknas med, fylld prick där det gör det.
@@ -5327,12 +5326,19 @@
   const dtEl = $("dintur");
   let dt = null;   // { v, d, lost: Set av delar, fel: antal fel svar, steg: visade lösningssteg }
   const TECKENNAMN = { "^": "upphöjt till", "²": "i kvadrat", "³": "upphöjt till tre", "=": "lika med", "(": "vänsterparentes", ")": "högerparentes", "/": "delat med",
-    "·": "gånger", "+": "plus", "-": "minus", "−": "minus",
+    "·": "gånger", "×": "gånger", "+": "plus", "-": "minus", "−": "minus",
     "≤": "mindre än eller lika med", "≥": "större än eller lika med", "<": "mindre än", ">": "större än", "[": "vänster hakparentes", "]": "höger hakparentes", "∞": "oändligheten" };
   // iPhonens decimaltangentbord (inputmode decimal) har inget minus. Är svaret negativt får delen
   // därför alltid en minusknapp, också när dintur.json inte har någon (vektorerna, svaret −6).
-  const tangenterFor = (del) => (del.typ === "tal" && del.svar < 0 && !(del.tangenter || []).some((t) => t === "-" || t === "−")
-    ? ["-", ...(del.tangenter || [])] : del.tangenter);
+  // Gångerknappen «·» såg ut som ett decimaltecken, och «0·99» rättades som 0 gånger 99 (2026-11-25). Den
+  // visas och skriver nu ×, som rättningen läser som gånger (stada). Är svaret ett decimaltal finns den inte.
+  // Svarsrutans exempel och beskedet «Skriv till exempel …» visar också ×, så att eleven ser samma tecken.
+  const tangenterFor = (del) => {
+    const decimal = del.typ === "tal" && !Number.isInteger(Number(del.svar));
+    const t = (del.tangenter || []).flatMap((x) => (x === "·" ? (decimal ? [] : ["×"]) : [x]));
+    if (del.typ === "tal" && del.svar < 0 && !t.some((x) => x === "-" || x === "−")) t.unshift("-");
+    return t.length ? t : null;
+  };
   function ritaDinTur(v) {
     const d = v.dinTur;
     dtEl.hidden = !d;
@@ -5352,7 +5358,7 @@
       <li class="del">
         <p class="del-fraga" id="del-fraga-${i}">${matte(del.fraga, true)}</p>
         <form class="del-svar" data-del="${i}" novalidate>
-          <input id="del-svar-${i}" aria-labelledby="del-fraga-${i}" aria-describedby="del-text-${i}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" inputmode="${del.typ === "tal" ? "decimal" : "text"}" placeholder="${attr(del.exempel || "")}">
+          <input id="del-svar-${i}" aria-labelledby="del-fraga-${i}" aria-describedby="del-text-${i}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" inputmode="${del.typ === "tal" ? "decimal" : "text"}" placeholder="${attr((del.exempel || "").replace(/·/g, "×"))}">
           ${del.enhet ? `<span class="enhet">${esc(del.enhet)}</span>` : ""}
           <button type="submit" class="kolla">Kolla</button>
         </form>
