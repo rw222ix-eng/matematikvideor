@@ -2,6 +2,7 @@
  * Prov för spelen i videoteket, lokalt i wrangler pages dev (samma _headers, _routes.json och funktioner som hos
  * Cloudflare) med spelservern i wrangler dev bredvid:
  *  - /spel/tron.html får spelens policy och inte sidans, och Tron startar utan att policyn stoppar något,
+ *  - Tron packar upp sina KTX2-bilder i workern (minst en, inget fel och inget EvalError),
  *  - startsidan har kvar sin strikta policy,
  *  - /spel/halsa, /spel/rapport och en WebSocket till /spel/rum går genom funktionen till spelservern,
  *  - skeppet och Pac-Man (/spel/skepp, /spel/pacman) laddar och spelar mot datorn under samma policy.
@@ -55,10 +56,25 @@ await ctx.addInitScript(() => {
   window.__brott = [];
   addEventListener("securitypolicyviolation", (e) => window.__brott.push(`${e.violatedDirective} ${e.blockedURI}`));
   try { localStorage.setItem("ggbguiden:ovning", JSON.stringify(["tron"])); } catch { }
+  // KTX2-workern räknas här, eftersom policyns brott och fel i en worker inte når sidans händelser ovan. Sedan omgång 17
+  // föll transkodaren med EvalError under spelens policy (new Function i basis/basis_transcoder.js), och Tron tog tyst
+  // webp-reserven, så provet var grönt ändå (lagat i guidens e6775c01). Varje svar med nivåer är en uppackad bild.
+  window.__ktx2 = { ok: 0, fel: [] };
+  const W = window.Worker;
+  if (W) window.Worker = class extends W {
+    constructor(url, opt) {
+      super(url, opt);
+      if (!/spel-ktx2-worker/.test(String(url))) return;
+      this.addEventListener("message", (e) => { if (e.data?.fel) window.__ktx2.fel.push(String(e.data.fel)); else if (e.data?.nivaer) window.__ktx2.ok++; });
+      this.addEventListener("error", (e) => window.__ktx2.fel.push(`workern föll: ${e.message}`));
+    }
+  };
 });
 const p = await ctx.newPage();
-const jsFel = [];
+const jsFel = [], evalFel = [];
 p.on("pageerror", (e) => jsFel.push(String(e)));
+// Chrome skriver policyns nej till eval i konsolen, också från en worker.
+p.on("console", (m) => { if (/EvalError|unsafe-eval/.test(m.text())) evalFel.push(m.text().slice(0, 160)); });
 await p.goto(`${BAS}/spel/tron.html${SERVER}`, { waitUntil: "load" });
 await p.click("#spela");
 // Nya menyn (omgång 15): «Mot datorn» öppnar miljövalet, och Starta börjar spelet.
@@ -66,6 +82,10 @@ await p.click(".rm-solohuvud .rm-stor", { timeout: 5000 }).catch(() => { });
 const igang =await p.waitForFunction(() => window.__tronSida?.lage.tron?.lage.igang, null, { timeout: 60000 }).then(() => true, () => false);
 prov("Tron startar under spelens policy", igang);
 await p.waitForTimeout(3000);
+const ktx2 = await p.evaluate(() => window.__ktx2);
+prov("Tron packar upp sina KTX2-bilder i workern", ktx2.ok > 0 && !ktx2.fel.length && !evalFel.length,
+  `${ktx2.ok} uppackade, ${ktx2.fel.length} fel: ${[...ktx2.fel, ...evalFel].slice(0, 2).join(" | ") || (ktx2.ok ? "" : "workern fick ingen bild")}`);
+console.log(`       KTX2: ${ktx2.ok} uppackade`);
 await p.screenshot({ path: "E:/tmp-three/vt-spel-tron.png" });
 // WebSocket till spelservern från spelsidan, genom funktionen.
 const ws = await rum(p, "tron");
