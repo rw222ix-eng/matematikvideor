@@ -235,8 +235,10 @@
       radial-gradient(ellipse 80% 70% at 50% 30%, rgba(23, 20, 20, 0) 0%, rgba(23, 20, 20, .03) 60%, rgba(23, 20, 20, .16) 100%),
       linear-gradient(rgba(23, 20, 20, .09), rgba(23, 20, 20, 0) 25%, rgba(23, 20, 20, 0) 60%, rgba(23, 20, 20, .38) 88%); }
   /* Samma målning ritad i WebGL, med glimrande stjärnor och ljus och rörligt vatten (se
-     levandeMalning i skriptet). Duken har exakt fondens ruta och syns när första bilden är ritad. */
-  .valj .levande { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: max(100%, 240vh); width: max(100%, 240dvh); height: auto; aspect-ratio: 3120 / 1300; z-index: 0; opacity: 0; pointer-events: none; }
+     levandeMalning i skriptet). Duken syns när första bilden är ritad. Den täcker bara vyn, alltså det
+     som syns av fonden, och skriptet lägger målningen i den precis som fonden ligger. Förut hade duken
+     fondens hela ruta, 240vh bred, och en tredjedel av pixlarna ritades utanför skärmen (2026-11-26). */
+  .valj .levande { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0; pointer-events: none; }
   .valj .levande.klar { opacity: 1; }
   .valj .tidslinje { z-index: 2; }
   /* "Välj en film" syntes dåligt mot himlen i 11 px (Rickard 2026-09-23): större, ljusare, med skugga. */
@@ -1034,7 +1036,7 @@
     /* I porträtt går hela målningen inte att visa utan en tunn remsa; här fyller den skärmen som förut. */
     .valj .fond { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; object-fit: cover; object-position: center top; -webkit-mask-image: none; mask-image: none; }
     .valj .vinjett { position: fixed; height: 100vh; }
-    .valj .levande { position: fixed; top: 0; left: 0; transform: none; width: 100%; height: 100vh; aspect-ratio: auto; }
+    .valj .levande { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; }
     .valj .rubrik, .valj .tidslinje { position: relative; z-index: 2; }
     /* relative, inte static: en statisk rubrik målades under den fasta målningen och syntes inte på
        mobilen (upptäckt 2026-09-25). */
@@ -1855,7 +1857,14 @@
   // koden som frågar efter den.
   const stilla = false;
   try { localStorage.removeItem("rorelse"); } catch (e) {}
+  // Målningarnas starta: de anropas när något som dolde målningen går undan (sökningen stängs).
   const malningar = [];
+  // Sökningen täcker hela fönstret när den tonat in, och då står målningarna bakom den still. Medan
+  // den tonar in syns målningen igenom och rör sig som vanligt.
+  const sokTacker = () => {
+    const s = document.getElementById("sok");
+    return !!s && s.classList.contains("oppen") && !(s.getAnimations && s.getAnimations().some((a) => a.playState === "running"));
+  };
   // Året berättelsen utspelar sig. Negativa år är före Kristus: −212 → "212 f.Kr."
   // Hårt mellanslag som tecken (inte &nbsp;) — används även i textContent.
   const arText = (ar) => (ar < 0 ? `${-ar} f.Kr.` : String(ar));
@@ -2373,6 +2382,19 @@
       titta();
     });
   };
+  // Målningens klocka (ms) står still medan målningen inte ritas (annan vy, sökningen, dold flik, duken utanför
+  // skärmen, eller en bildruta som dröjer), så att rörelsen fortsätter där den slutade när den syns igen, utan hopp.
+  // Den får tiden för varje bild som ritas (performance.now() eller bildrutans tid): ett uppehåll längre än 0,25 s
+  // räknas som en bildruta. Utan uppehåll går den som tiden den får.
+  const malningsKlocka = () => {
+    let tid = 0, forra = -1;
+    return (t) => {
+      if (forra < 0) tid = t;
+      else { const d = t - forra; tid += d > 250 ? 33 : Math.max(0, d); }
+      forra = t;
+      return tid;
+    };
+  };
   const levandeMalning = (a) => narVynBehovs(a.vy, () => {
     if (a.img.dataset.src && !a.img.getAttribute("src")) a.img.src = a.img.dataset.src;
     levandeMalningNu(a);
@@ -2381,30 +2403,37 @@
     const gl = duk.getContext("webgl2", { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
     if (!gl) { duk.remove(); return; }
     const program = programKlart(gl, HORN, YTA);
-    let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1;
+    let prog = null, uT, uSkala, uForskj, redo = false, forlorad = false, kor = false, senast = 0, BW = 1, BH = 1, iBild = true;
+    const klocka = malningsKlocka();
 
-    // Duken har bildens ruta (på datorn) eller hela fönstret (mobilen);
-    // bilden läggs i den som object-fit: cover, i mitten eller fäst i överkanten.
+    // Duken täcker det som syns av vyn (på datorn hela vyn, på mobilen hela fönstret). Bilden ligger som fonden
+    // ligger: object-fit: cover i fondens ruta, i mitten eller fäst i överkanten, och duken visar sin del av den.
+    // Upplösningen följer skärmen men aldrig tätare än målningens egna pixlar: fler pixlar i duken ger ingen
+    // skärpa som syns, bara mer att rita (jämfört i förstorade bilder 2026-11-26).
     const mat = () => {
       const b = duk.clientWidth, h = duk.clientHeight;
       if (!b || !h || !prog) return;
-      const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)));   // högst ~4 miljoner pixlar
+      const r = duk.getBoundingClientRect(), f = img.getBoundingClientRect();
+      if (!f.width || !f.height) return;
+      const s = Math.max(f.width / BW, f.height / BH);   // skärmens px per målningens px
+      const x0 = f.left + (f.width - BW * s) / 2, y0 = f.top + (fastTopp ? 0 : (f.height - BH * s) / 2);
+      const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)), 1 / s);   // högst ~4 miljoner pixlar
       duk.width = Math.round(b * k); duk.height = Math.round(h * k);
       gl.viewport(0, 0, duk.width, duk.height);
-      const s = Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
-      gl.uniform2f(uSkala, sx, sy); gl.uniform2f(uForskj, (1 - sx) / 2, fastTopp ? 0 : (1 - sy) / 2);
+      gl.uniform2f(uSkala, r.width / (BW * s), r.height / (BH * s)); gl.uniform2f(uForskj, (r.left - x0) / (BW * s), (r.top - y0) / (BH * s));
       // Ny storlek tömmer duken: rita direkt, annars blinkar den svart en bildruta.
-      gl.uniform1f(uT, performance.now() / 1000); gl.drawArrays(gl.TRIANGLES, 0, 3);
+      gl.uniform1f(uT, klocka(performance.now()) / 1000); gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
     // Stoppad rörelse: den bild som redan är ritad står kvar. Stoppades den innan första bilden
-    // ritades syns den vanliga <img> under, samma målning utan rörelse.
-    const levande = () => redo && !forlorad && !stilla && !document.hidden && vy.classList.contains("aktiv");
+    // ritades syns den vanliga <img> under, samma målning utan rörelse. Målningen står också still
+    // när sökningen täcker den och när duken är utanför skärmen.
+    const levande = () => redo && !forlorad && !stilla && !document.hidden && iBild && vy.classList.contains("aktiv") && !sokTacker();
     const rita = (nu) => {
       if (!levande()) { kor = false; return; }
       requestAnimationFrame(rita);
       if (nu - senast < 32) return;   // 30 bilder i sekunden räcker
       senast = nu;
-      gl.uniform1f(uT, nu / 1000);
+      gl.uniform1f(uT, klocka(nu) / 1000);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       duk.classList.add("klar");
     };
@@ -2444,6 +2473,7 @@
     duk.addEventListener("webglcontextlost", (e) => { e.preventDefault(); forlorad = true; duk.classList.remove("klar"); });
     new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
     document.addEventListener("visibilitychange", starta);
+    if (window.IntersectionObserver) new IntersectionObserver((p) => { iBild = p[p.length - 1].isIntersecting; starta(); }).observe(duk);
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
   };
@@ -2710,14 +2740,17 @@
 
     // Duken täcker fönstret som fondens object-fit: cover (fokus är bildens punkt 0..1 som ska synas),
     // eller visar hela höjden i ett brett fönster (introFokus).
+    // Upplösningen följer skärmen men högst 1,5 duk-px per målningens px. Kritan på tavlan (4 px per målningens px)
+    // och stjärnfallet är skarpare än målningen, så taket ligger över filmvalets: vid 1 blev kritan synbart mjukare,
+    // vid 1,5 ser den ut som förut (jämfört i förstorade bilder 2026-11-26).
     const mat = () => {
       const b = duk.clientWidth, h = duk.clientHeight;
       if (!b || !h || !prog) return;
-      const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)));
-      duk.width = Math.round(b * k); duk.height = Math.round(h * k);
-      gl.viewport(0, 0, duk.width, duk.height);
       const [fx, fy, bred] = fokus();
       const s = bred ? h / BH : Math.max(b / BW, h / BH), sx = b / (BW * s), sy = h / (BH * s);
+      const k = Math.min(devicePixelRatio || 1, 2, Math.sqrt(4.2e6 / (b * h)), 1.5 / s);
+      duk.width = Math.round(b * k); duk.height = Math.round(h * k);
+      gl.viewport(0, 0, duk.width, duk.height);
       const ox = bred ? 1 - sx : (1 - sx) * fx, oy = bred ? 0 : (1 - sy) * fy;
       gl.uniform2f(U.uSkala, sx, sy); gl.uniform2f(U.uForskj, ox, oy); gl.uniform1f(U.uKantTon, bred ? 1 : 0);
       const E = scen.utvidgning || 0;
@@ -3092,14 +3125,18 @@
       gl.uniform2f(U.uSpricka, spricka, sprickStyrka);
     };
 
-    const levande = () => redo && !forlorad && !stilla && !document.hidden && vy.classList.contains("aktiv");
+    // Som filmvalets målning: står still bakom sökningen och utanför skärmen, och klockan står still under tiden.
+    let iBild = true;
+    const klocka = malningsKlocka();
+    const levande = () => redo && !forlorad && !stilla && !document.hidden && iBild && vy.classList.contains("aktiv") && !sokTacker();
     let forra = 0;
-    const rita1 = (nu) => {
-      const t = nu / 1000 - T0, dt = forra ? Math.min(.1, Math.max(0, t - forra)) : 1 / 30;
+    const ritaVid = (t) => {   // t: sekunder sedan scenen startade
+      const dt = forra ? Math.min(.1, Math.max(0, t - forra)) : 1 / 30;
       forra = t;
       gl.uniform1f(U.uT, t); styr(t, dt);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
+    const rita1 = (nu) => ritaVid(klocka(nu) / 1000 - T0);
     const rita = (nu) => {
       if (!levande()) { kor = false; return; }
       requestAnimationFrame(rita);
@@ -3159,10 +3196,11 @@
     duk.addEventListener("webglcontextlost", (e) => { e.preventDefault(); forlorad = true; duk.classList.remove("klar"); });
     new MutationObserver(starta).observe(vy, { attributes: true, attributeFilter: ["class"] });
     document.addEventListener("visibilitychange", starta);
+    if (window.IntersectionObserver) new IntersectionObserver((p) => { iBild = p[p.length - 1].isIntersecting; starta(); }).observe(duk);
     addEventListener("resize", () => { if (redo) mat(); });
     malningar.push(starta);
     // För granskningen (bildrutor i fast takt): stoppa den egna loopen och rita en given tid.
-    duk.scen = { rita1: (t) => rita1((t + T0) * 1000), pausa: () => { redo = false; }, sl, mt, met, fig, as, ma, slot: (...x) => { tNu = x.pop(); return slot(...x); } };
+    duk.scen = { rita1: ritaVid, pausa: () => { redo = false; }, sl, mt, met, fig, as, ma, slot: (...x) => { tNu = x.pop(); return slot(...x); } };
   };
   // Var målningen ligger i fönstret. Målningen är 2272x941: originalet (1672 bred) med 600 px utvidgning till vänster
   // (Rickard 2026-09-27: aldrig suddiga eller tomma partier på sidorna). På datorn: originalet i mitten, men inte så att
@@ -4150,6 +4188,7 @@
   function stangSok() {
     sokRuta.classList.remove("oppen"); document.body.classList.toggle("last", aktivVy === "intro" || (aktivVy === "valj" && !smal()));
     document.querySelectorAll(".vy").forEach((el) => { el.inert = false; });
+    malningar.forEach((starta) => starta());   // målningen som sökningen täckte rör sig igen
     if (fokusForeSok && fokusForeSok.isConnected && fokusForeSok.offsetParent !== null) fokusForeSok.focus({ preventScroll: true });
     fokusForeSok = null;
     Newton.hande("sokStangd");
