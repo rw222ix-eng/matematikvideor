@@ -345,6 +345,26 @@
   /* Osynlig är den också borta för Tab (visibility), inte bara genomskinlig. */
   .valj .aterstall { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .6s, visibility 0s .6s; }
   .valj .aterstall.syns { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .6s, visibility 0s; }
+  /* Pilarna vid linans kanter (Rickard 2026-11-26: «Pilar vid kanterna», skissen design/q-kap-pilar.png). De bläddrar en
+     skärm och syns bara när det finns mer åt det hållet (skriptet sätter .syns). De står mitt i bandet där korten hänger,
+     ovanför linjen, och ligger i tidslinjen, så att de följer med när flikraden, växlarna eller ett lågt fönster flyttar
+     linan. Osynliga är de borta också för Tab. Telefonen har inget sidled: där står korten under varandra. */
+  .bladdra { position: absolute; z-index: 5; top: max(8px, calc((100% - 168px) / 2 - 24px)); width: 48px; height: 48px; padding: 0; display: grid; place-items: center; border-radius: 50%; color: #FFFBF2; background: rgba(23, 20, 20, .62); border: 1px solid rgba(236, 230, 216, .22); box-shadow: 0 10px 26px -10px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); cursor: pointer; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .3s, visibility 0s .3s, background .3s, transform .45s var(--fjader); }
+  .bladdra.syns { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .3s, visibility 0s, background .3s, transform .45s var(--fjader); }
+  .bladdra.bak { left: 26px; }
+  .bladdra.fram { right: 26px; }
+  .bladdra svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .bladdra:active { transform: scale(.92); transition-duration: .08s; }
+  .bladdra:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (hover: hover) { .bladdra:hover { background: rgba(23, 20, 20, .86); transform: scale(1.06); } }
+  @media (max-width: 700px) { .bladdra { display: none; } }
+  /* En textruta på linan (spellistorna under Spel, skyltarna under Inför provet och formelbladet) som står delvis utanför
+     fönstret tonas bort i stället för att stå avklippt mitt i sin text, och tonar fram när den ryms (ritaKanter,
+     2026-11-26). Pilen visar att det finns mer. */
+  .post.spellista, .post.bro { transition: opacity .3s var(--lugn); }
+  @media (min-width: 701px) { .post.kant { opacity: 0; pointer-events: none; } }
+  /* Kapitlet på kortet, «· Kapitel 3», bryts aldrig mitt i (2026-11-26). */
+  .post .moment .kap { white-space: nowrap; }
   /* ── Flikarna: Berättelser och Formelbladet (Rickard 2026-09-25) ──
      Formelbladets filmer är ingen historia och hör inte hemma på den historiska tidslinjen. Två
      flikar under "Välj en film" byter vad som hänger på linan: berättelserna i årsordning eller
@@ -1553,7 +1573,13 @@
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
   <!-- Sökrutan under rubriken, bara på telefonen (se .valj-sok). -->
   <button type="button" class="sokpill sok-oppna valj-sok"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg><span class="text">Sök, t.ex. procent</span></button>
-  <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
+  <!-- Pilarna vid kanterna (Rickard 2026-11-26) bläddrar en skärm. Skriptet visar en pil när det finns mer åt det hållet
+       (ritaKanter). De står före korten, så att Nästa filmer nås med Tab direkt efter flikarna. -->
+  <div class="tidslinje" id="tidslinje">
+    <button type="button" class="bladdra bak" id="bladdra-bak" aria-label="Föregående filmer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5 L7.5 12 L14.5 19"/></svg></button>
+    <button type="button" class="bladdra fram" id="bladdra-fram" aria-label="Nästa filmer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5 L16.5 12 L9.5 19"/></svg></button>
+    <div class="spar" id="spar"></div>
+  </div>
   <div class="hint" id="hint" aria-hidden="true"><svg viewBox="0 0 64 12"><path d="M1 6 H63 M6 1 L1 6 L6 11 M58 1 L63 6 L58 11"/></svg><span>Scrolla eller dra i sidled</span></div>
 </section>
 
@@ -1953,7 +1979,7 @@
     // Formelbladet för Ma 2 (FORMELBLADET-MA2-SERIE.md, 6 delar) står under samma flik som Ma 1, med
     // växlaren Ma 1 · Ma 2 (grupp = fliken den står under; Rickard 2026-09-26).
     "formelbladet-ma2": { namn: "Formelbladet Ma 2", kort: "Ma 2", delar: 6, platser: true, grupp: "formelbladet" },
-    // Kapitlen i boken visas inte längre (Rickard 2026-09-26); filmerna står i tidsordning.
+    // Filmerna står i tidsordning (Rickard 2026-09-26). Kapitlet i boken står på kortet sedan 2026-11-26 (bokKapitel).
     ma2a: { namn: "Ma 2a", delar: 19 },
     // Ma 2c (Rickard 2026-10-26): berättelser för Ma 2c, som Ma 2a. Malthus och maten (ma1c-k4-06-…) står här,
     // för den löser exponentialekvationen 7 · 2ˣ = 7x + 7. Id:t är kvar, så registret har "serie": "ma2c".
@@ -2182,7 +2208,8 @@
     if (namn !== "film") stangSpelare();
     // Filmens titel sätts i laddaFilm, när filmen är känd.
     if (namn === "intro") document.title = SAJTNAMN;
-    if (namn === "valj") { document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`; ritaFramstegKort(); }
+    // Pilarna vid kanterna mäts när filmvalet syns: dolt har linan ingen bredd (ritaKanter).
+    if (namn === "valj") { document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`; ritaFramstegKort(); ritaKanter(); }
     // Fokus flyttas till vyns rubrik, så att skärmläsare och Tab börjar i den nya vyn. Inte vid
     // första laddningen: då börjar sidan från början som vanligt.
     if (!forstaVyn) { const h = { intro: $("intro-rubrik"), valj: $("valj-rubrik"), film: $("f-titel") }[namn]; if (h) h.focus({ preventScroll: true }); }
@@ -3298,10 +3325,15 @@
 
   // ── Tidslinjen ────────────────────────────────────────
   const spar = $("spar"), tidslinje = $("tidslinje");
+  // Pilarna vid kanterna och linans textrutor (spellistorna och skyltarna), se ritaKanter. Rutorna läses in när
+  // fliken ritas, i ritaHylla.
+  const pilBak = $("bladdra-bak"), pilFram = $("bladdra-fram");
+  let textrutor = [];
   // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
   // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
   // det säger något mer än namnet. Under fliken Matematik 2a ser korten ut som under Matematik 1c
-  // (Rickard 2026-09-26: kapitlen i boken bort helt): året överst, sedan kursen och momentet
+  // (Rickard 2026-09-26: kapitlen i boken bort ur ordningen, och 2026-11-26 tillbaka som en rad på kortet,
+  // se bokKapitel): året överst, sedan kursen och momentet
   // ("Ma 2a · Faktorisera"), störst berättelsen ("Carissans maskin"). Kepler och Delos har alla sina
   // kurser: "Ma 1c / Ma 2a / Ma 2c · Potensekvationer".
   // En formelbladsdel som står på en annan kurs hylla (Ma 1-delarna under Ma 2) säger vilken serie den hör till.
@@ -3322,11 +3354,21 @@
   // Formelbladet: bara kurserna — rubriken ("Del 2  Parabler, linjer och avstånd") ska själv säga vad hela delen tar
   // upp, på en rad (Rickard 2026-09-26). Det som delen tar upp i detalj står på filmsidan.
   // Under Inför provet står formelbladets delar bland berättelserna, så raden under säger att det är formelbladet.
-  const kortMoment = (v, h) => (h === PROV && arDelserie(v) ? `Formelbladet · ${kurserKort(v)}` : kurserKort(v));
+  // Kapitlet i boken (Rickard 2026-11-26: «Kapitlet på korten»). Raden under namnet säger «Ma 1c · Kapitel 3», så att den
+  // som läser kapitel 3 ser vilka filmer som hör dit, fast linan står i årtalsordning. Det är kapitlet för kursen på fliken
+  // eleven står på (bokkapitel i register.json, ur grovplaneringen): Kepler är kapitel 1 under Matematik 1c och kapitel 3
+  // under Ma 2a. Under Inför provet gäller provets kurs. Formelbladet har inga kapitel, och en film utan kapitel för
+  // kursen står som förut. «· Kapitel 3» bryts aldrig mitt i.
+  const HYLLANS_KURS = { berattelser: "Matematik 1c", ma2a: "Matematik 2a", ma2c: "Matematik 2c" };
+  const hyllansKurs = (h) => (h === PROV ? ((provKlass() && nastaProv(provKlass())) || {}).kurs : HYLLANS_KURS[h]);
+  const bokKapitel = (v, h) => { const k = v.bokkapitel && v.bokkapitel[hyllansKurs(h)]; return Number.isInteger(k) && k > 0 ? k : null; };
+  const kapitelLang = (v, h) => (bokKapitel(v, h) ? `, kapitel ${bokKapitel(v, h)}` : "");
+  const kortMoment = (v, h) => (h === PROV && arDelserie(v) ? `Formelbladet · ${kurserKort(v)}`
+    : `${kurserKort(v)}${bokKapitel(v, h) ? ` <span class="kap">· Kapitel ${bokKapitel(v, h)}</span>` : ""}`);
   const visaAr = (v) => v.ar != null && !arDelserie(v);
   const kortHtml = (v, i, h = "berattelser") => `
     <div class="post" data-stil="--i:${i}">
-      <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}, ${v.moment}`)}">
+      <button type="button" data-film="${v.id}" aria-label="${attr(`${v.titel} — ${kurserLang(v)}${kapitelLang(v, h)}, ${v.moment}`)}">
         <span class="lyft"></span>
         <span class="ram">${(v.omslagRen || v.omslag) ? `<img src="${attr(v.omslagRen || v.omslag)}" alt="" loading="lazy" draggable="false">` : ""}<span class="status"></span><span class="sett-linje" hidden><span></span></span></span>
         <span class="lina">${visaAr(v) ? `<span class="ar">År ${arText(v.ar)}</span>` : ""}</span>
@@ -3516,7 +3558,7 @@
     if (JSON.stringify(spelInlogg) === fore) return;
     ritaSpelval();
     // Korten och listorna säger klassen: rita om dem om eleven står på fliken.
-    if (hylla === SPEL) { spellistorTid = 0; ritaHylla(); ritaSpellistor(); }
+    if (hylla === SPEL) { spellistorTid = 0; ritaHylla(); ritaKanter(); ritaSpellistor(); }
   }
   // Logga ut: servern tar bort kakan. Två tryck i rad gör inget extra, knappen är av tills svaret kommit.
   async function loggaUtSpel(knapp) {
@@ -3563,6 +3605,10 @@
       : filmer.map((v, i) => kortHtml(v, i, hylla)).join("") + flerKommer(filmer.length));
     if (hylla === SPEL) fyllSpellistor();
     if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${flikAv(hylla)}"]`); flik.id = `flik-${flikAv(hylla)}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
+    textrutor = [...spar.querySelectorAll(".post.spellista, .post.bro")];
+    // Under Spel står spel och topplistor på raden, inga filmer.
+    pilBak.setAttribute("aria-label", hylla === SPEL ? "Bläddra bakåt" : "Föregående filmer");
+    pilFram.setAttribute("aria-label", hylla === SPEL ? "Bläddra framåt" : "Nästa filmer");
   }
   ritaHylla();
   // Byt flik. Syns filmvalet tonar korten ut och de nya faller ner i linan; annars (sidan laddas,
@@ -3622,12 +3668,57 @@
   $("provval").addEventListener("click", (e) => { const b = e.target.closest("[role=tab]"); if (b) valjKlass(b.dataset.klass); });
 
   let x = 0, vx = 0, mal = 0, rullar = false, drog = false;
-  const maxX = () => Math.max(0, spar.scrollWidth - tidslinje.clientWidth);
+  // Hur långt linan går att rulla. Ryms alla kort i fönstret går den inte att rulla alls, också när luften vid kanterna
+  // (12vw på var sida) gör raden lite bredare än fönstret. Förut gick den då att rulla en bit, och raden «Scrolla eller
+  // dra i sidled» stod kvar fast allt syntes (2026-11-26).
+  const maxX = () => { const s = spar.lastElementChild; return !s || s.offsetLeft + s.offsetWidth <= tidslinje.clientWidth ? 0 : Math.max(0, spar.scrollWidth - tidslinje.clientWidth); };
+  // Läsningarna i ritaKanter görs före skrivningen av transform, så att webbläsaren inte räknar om sidan mitt i bilden.
   function rita() {
+    ritaKanter();
     spar.style.transform = `translate3d(${-x}px,0,0)`;
-    $("hint").classList.toggle("borta", x > 40);
     $("aterstall").classList.toggle("syns", x > 40);
   }
+  // Pilarna, raden «Scrolla eller dra i sidled» och textrutorna vid kanterna följer linans läge (2026-11-26). En pil syns
+  // bara när ett kort åt det hållet inte syns helt, och raden bara när linan går att rulla. En textruta (spellistorna,
+  // skyltarna) som står delvis utanför fönstret tonas bort i stället för att stå avklippt mitt i sin text, och tonar
+  // fram när den ryms. Bilderna på filmkorten får stå avklippta vid kanten, som i skissen. Allt läses ur korten själva,
+  // så det stämmer efter ny flik, ny klass och ny fönsterstorlek. På telefonen står korten under varandra, och där
+  // gör den ingenting.
+  function ritaKanter() {
+    const w = tidslinje.clientWidth;
+    if (aktivVy !== "valj" || smal() || !w) return;
+    const forst = spar.firstElementChild, sist = spar.lastElementChild;
+    const vanster = !!forst && forst.offsetLeft - x < -1;
+    const hoger = !!sist && sist.offsetLeft + sist.offsetWidth - x > w + 1;
+    $("hint").classList.toggle("borta", x > 40 || maxX() <= 0);
+    for (const r of textrutor) { const v = r.offsetLeft - x; r.classList.toggle("kant", v < -1 || v + r.offsetWidth > w + 1); }
+    const fokus = document.activeElement;
+    pilBak.classList.toggle("syns", vanster);
+    pilFram.classList.toggle("syns", hoger);
+    // Når linan slutet medan pilen har fokus, går fokus till den andra pilen och inte ut till sidan.
+    if ((fokus === pilBak && !vanster) || (fokus === pilFram && !hoger)) { const annan = fokus === pilBak ? pilFram : pilBak; if (annan.classList.contains("syns")) annan.focus({ preventScroll: true }); }
+  }
+  // Pilarna och piltangenterna bläddrar en skärm (Rickard 2026-11-26: «Pilar vid kanterna», förebilden 1.5 i
+  // _utredning-vt/forebilder/RAPPORT.md). Korten som syns helt flyttas ut, och kortet som stod delvis utanför hamnar
+  // först. Medan linan glider räknas nästa mål från förra målet, så att snabba klick och dubbelklick bläddrar ett steg per
+  // klick i stället för att börja om eller fastna. Linan stannar vid början och slutet.
+  function bladdra(steg) {
+    if (smal()) return;
+    const poster = [...spar.children];
+    if (!poster.length) return;
+    const fran = malX != null ? malX : x, w = tidslinje.clientWidth, luft = poster[0].offsetLeft, bredd = poster[0].offsetWidth;
+    const avstand = poster.length > 1 ? poster[1].offsetLeft - luft : bredd;
+    const n = Math.max(1, Math.floor((w - luft - bredd) / Math.max(1, avstand)) + 1);
+    let i = 0;   // kortet närmast vänsterkanten nu
+    poster.forEach((p, j) => { if (Math.abs(p.offsetLeft - luft - fran) < Math.abs(poster[i].offsetLeft - luft - fran)) i = j; });
+    const malet = Math.min(maxX(), Math.max(0, poster[Math.min(poster.length - 1, Math.max(0, i + steg * n))].offsetLeft - luft));
+    vx = 0;
+    if (lugnt) { mal = malet; x = malet; rita(); return; }
+    malX = malet;
+    if (!rullar) { rullar = true; requestAnimationFrame(loop); }
+  }
+  pilBak.addEventListener("click", () => { bladdra(-1); Newton.hande("tidslinje"); });
+  pilFram.addEventListener("click", () => { bladdra(1); Newton.hande("tidslinje"); });
   let malX = null; // sätts när tidslinjen ska glida till en bestämd punkt (t.ex. hela vägen till början)
   function loop() {
     if (lugnt) { x = Math.min(maxX(), Math.max(0, mal)); rita(); rullar = false; return; }
@@ -3671,7 +3762,9 @@
   // på tidslinjen i stället för på omslaget.
   // Vänster eller höger knapp drar. Klick utan rörelse går som vanligt till omslaget.
   // Rörelsen räknas åt alla håll: ett drag snett nedåt med under 7 px i sidled öppnade förut filmen (2026-11-25).
-  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; pekStartY = e.clientY; drog = false; vx = 0; malX = null; getSelection()?.removeAllRanges(); });
+  // Pilarna vid kanterna ligger i tidslinjen men är knappar: ett tryck på dem drar inte linan och bromsar den inte.
+  const paPil = (e) => !!(e.target.closest && e.target.closest(".bladdra"));
+  tidslinje.addEventListener("pointerdown", (e) => { if (smal() || paPil(e) || (e.button !== 0 && e.button !== 2)) return; pekX = e.clientX; pekStartX = e.clientX; pekStartY = e.clientY; drog = false; vx = 0; malX = null; getSelection()?.removeAllRanges(); });
   tidslinje.addEventListener("selectstart", (e) => { if (!smal()) e.preventDefault(); });
   tidslinje.addEventListener("pointermove", (e) => {
     if (pekX == null) return;
@@ -3686,15 +3779,17 @@
   // eftersom kortet under pekaren har glidit dit (2026-11-25). Lyssnaren i fångstfasen läser farten innan
   // pointerdown ovan nollställer den. Enter på ett kort (detail 0) öppnar alltid filmen.
   let bromsade = false;
-  tidslinje.addEventListener("pointerdown", () => { bromsade = !smal() && (Math.abs(vx) > 1 || (malX != null && Math.abs(malX - x) > 2)); }, true);
-  tidslinje.addEventListener("click", (e) => { if ((drog || bromsade) && e.detail) { e.stopPropagation(); e.preventDefault(); } drog = false; bromsade = false; }, true);
+  tidslinje.addEventListener("pointerdown", (e) => { bromsade = !smal() && !paPil(e) && (Math.abs(vx) > 1 || (malX != null && Math.abs(malX - x) > 2)); }, true);
+  tidslinje.addEventListener("click", (e) => { if ((drog || bromsade) && e.detail && !paPil(e)) { e.stopPropagation(); e.preventDefault(); } drog = false; bromsade = false; }, true);
   tidslinje.addEventListener("contextmenu", (e) => { if (drog || pekX != null) { e.preventDefault(); drog = false; } });
   $("aterstall").addEventListener("click", () => {
     if (lugnt) { mal = 0; x = 0; rita(); return; }
     malX = 0; vx = 0; if (!rullar) { rullar = true; requestAnimationFrame(loop); }
   });
-  window.addEventListener("resize", () => { x = Math.min(x, maxX()); rita(); });
-  // Pilarna rullar tidslinjen, eller flyttar mellan korten när ett kort har fokus.
+  // Ändras fönstret medan linan glider mot ett mål, stannar den vid det nya slutet och inte bortom det.
+  window.addEventListener("resize", () => { x = Math.min(x, maxX()); if (malX != null) malX = Math.min(malX, maxX()); rita(); });
+  // Piltangenterna bläddrar en skärm som pilarna vid kanterna, eller flyttar mellan korten när ett kort har fokus.
+  // En tangent som hålls nere bläddrar igen först när linan stannat.
   document.addEventListener("keydown", (e) => {
     if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
@@ -3728,7 +3823,11 @@
       if (nasta) { e.preventDefault(); nasta.focus(); }
       return;
     }
-    knuffa(e.key === "ArrowRight" ? 240 : -240);
+    if (smal() || e.altKey || e.ctrlKey || e.metaKey) return;   // Alt+vänster är webbläsarens Bakåt
+    if (e.target.closest && e.target.closest("input, textarea, select, [contenteditable]")) return;   // markören i ett fält
+    e.preventDefault();
+    if (e.repeat && malX != null) return;
+    bladdra(e.key === "ArrowRight" ? 1 : -1);
   });
   // Ett kort som får fokus med Tab rullas fram till mitten. Webbläsaren rullar annars själva
   // rutan (scrollLeft) för att visa det, och då hamnar tidslinjen ur takt med translateX.
@@ -3755,7 +3854,7 @@
       const linje = b.querySelector(".sett-linje");
       linje.hidden = !(andel > 0.02);
       linje.style.setProperty("--andel", (f.sett ? 1 : andel).toFixed(3));
-      b.setAttribute("aria-label", `${v.titel} — ${kurserLang(v)}, ${v.moment}${lagen.length ? `. ${lagen.join(", ")}` : ""}`);
+      b.setAttribute("aria-label", `${v.titel} — ${kurserLang(v)}${kapitelLang(v, hylla)}, ${v.moment}${lagen.length ? `. ${lagen.join(", ")}` : ""}`);
     });
   }
 

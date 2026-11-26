@@ -149,6 +149,25 @@ const delAv = (v) => {
   const m = (serie && v.id.startsWith(`${serie}-`) ? v.id.slice(serie.length + 1).match(/^(\d+)-/) : v.id.match(/^[a-z0-9]+-(\d+)-/)) || String(v.titel).match(/(\d+)\s*[–-]/);
   return m ? Number(m[1]) : null;
 };
+// Kapitlet i boken, per kurs (Rickard 2026-11-26: «Kapitlet på korten»): "bokkapitel": { "Matematik 1c": 4 } i
+// registret, ur klassernas grovplanering. Kortet visar kapitlet för kursen på fliken eleven står på, så en film på flera
+// kurser har ett kapitel per kurs (Kepler: 1 i Ma 1c, 3 i Ma 2a och 3 i Ma 2c). En film med kapitlet i id:t
+// (ma1c-k4-…) får Ma 1c-kapitlet därifrån när registret inte har det. Bygget stoppar vid en kurs som filmen inte står
+// på, ett kapitel som inte är ett heltal, och ett Ma 1c-kapitel som inte stämmer med id:t.
+const bokkapitelAv = (v) => {
+  const kurser = v.kurser && v.kurser.length ? v.kurser : [v.kurs];
+  const ut = { ...(v.bokkapitel || {}) };
+  const m = v.id.match(/^ma1c-k(\d+)-/);
+  if (m && kurser.includes("Matematik 1c")) {
+    if (ut["Matematik 1c"] == null) ut["Matematik 1c"] = Number(m[1]);
+    else if (ut["Matematik 1c"] !== Number(m[1])) byggfel.push(`${v.id}: bokkapitel ${ut["Matematik 1c"]} för Matematik 1c, men id:t säger kapitel ${m[1]}.`);
+  }
+  for (const [kurs, kap] of Object.entries(ut)) {
+    if (!kurser.includes(kurs)) byggfel.push(`${v.id}: bokkapitel för ${kurs}, men filmen står inte på den kursen (kurs och kurser i register.json).`);
+    if (!Number.isInteger(kap) || kap < 1) byggfel.push(`${v.id}: bokkapitel ${JSON.stringify(kap)} för ${kurs} är inget kapitelnummer.`);
+  }
+  return Object.keys(ut).length ? ut : null;
+};
 // Tidslinjen är kronologisk: `ar` i registret är året berättelsen utspelar sig. Serierna kommer
 // efter berättelserna, var serie för sig och i delordning.
 const ordning = (a, b) => {
@@ -243,7 +262,7 @@ const videor = [...register].sort(ordning).map((v) => {
     notisRader.push(`  ${g.varning ? "varning: " : ""}${v.id.padEnd(24)} ${tidText(g.t)}${langd ? ` (${Math.round(g.t / langd * 100)} %)` : ""}  ${g.kalla}`);
   }
   const serie = serieAv(v);
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, serie, del: serie ? delAv(v) : null, ocksa: v.ocksa || null, kurs: v.kurs, kurser: v.kurser || null, fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, serie, del: serie ? delAv(v) : null, ocksa: v.ocksa || null, kurs: v.kurs, kurser: v.kurser || null, bokkapitel: bokkapitelAv(v), fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
 });
 
 // Introbilden (startsidans levande scen, 2026-09-26) skrivs av verktyg/hitta-scen.py tillsammans med
