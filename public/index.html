@@ -365,7 +365,9 @@
      fönstret tonas bort i stället för att stå avklippt mitt i sin text, och tonar fram när den ryms (ritaKanter,
      2026-11-26). Pilen visar att det finns mer. */
   .post.spellista, .post.bro { transition: opacity .3s var(--lugn); }
-  @media (min-width: 701px) { .post.kant { opacity: 0; pointer-events: none; } }
+  /* Klassen heter vid-kanten och inte kant: .kant är knappstilen (kantlinje, versaler och svepet), och en textruta som
+     tonades bort blev förut en rundad knapp med versaler medan den tonade (2026-11-26). */
+  @media (min-width: 701px) { .post.vid-kanten { opacity: 0; pointer-events: none; } }
   /* Kapitlet på kortet, «· Kapitel 3», bryts aldrig mitt i (2026-11-26). */
   .post .moment .kap { white-space: nowrap; }
   /* ── Flikarna: Berättelser och Formelbladet (Rickard 2026-09-25) ──
@@ -1543,7 +1545,7 @@
     /* Med ikonerna 12 px ner hamnade tipset ovanför dem utanför fönstret. Här står det under ikonen, som .tips-under.
        Ikonen med tipset ligger då över raden under flikarna, som annars kunde täcka tipsets början i ett smalt fönster
        (inloggad utan klass under Spel). Därför har ikonerna z-index själva i stället för toppraden, och bara den
-       hovrade ikonen lyfts, så att "Till början" står kvar under flikarna där de går ihop (701 till 760 px brett). */
+       hovrade ikonen lyfts. Mellan 701 och 760 px bredd står "Till början" i övre vänstra hörnet, se nedan. */
     .valj .topp { z-index: auto; }
     .valj .topp .ikon { z-index: 5; }
     @media (hover: hover) {
@@ -1554,6 +1556,17 @@
       .valj .topp .ikon[data-tips]:hover::after, .valj .topp .ikon[data-tips]:focus-visible::after { transform: translate(-50%, 0); }
       .valj .topp .hoger .ikon[data-tips]:last-child::after { left: auto; right: 0; transform: translate(0, -5px); }
       .valj .topp .hoger .ikon[data-tips]:last-child:hover::after, .valj .topp .hoger .ikon[data-tips]:last-child:focus-visible::after { transform: translate(0, 0); }
+    }
+    /* Mellan 701 och 760 px bredd gick "Till början" ihop med flikraden: vid 720 px låg ikonen på x 596-640 och fliken
+       Spel på 552-619, och ett klick mitt på ikonen bytte till Spel. Ovanför flikraden skulle den täcka slutet av
+       ordet SPEL. Här står den därför i övre vänstra hörnet, som är tomt (flikraden börjar vid x 87 i 701 px), och
+       tipset går åt höger från ikonen (2026-11-26). */
+    @media (max-width: 760px) {
+      .valj .topp .aterstall { position: absolute; left: 32px; top: 12px; }
+      @media (hover: hover) {
+        .valj .topp .aterstall[data-tips]::after { left: 0; right: auto; transform: translate(0, -5px); }
+        .valj .topp .aterstall[data-tips]:hover::after, .valj .topp .aterstall[data-tips]:focus-visible::after { transform: translate(0, 0); }
+      }
     }
     .valj.har-flikar .flikar { top: 14px; }
     .valj.har-flikar .rubrik { top: 64px; font-size: 13px; }
@@ -1910,7 +1923,7 @@
   };
   // Alltid animera — systemets "reducera rörelse" följs inte (Rickard 2026-09-06).
   const lugnt = false;
-  const smal = () => matchMedia("(max-width: 700px)").matches;
+  const smalFonster = matchMedia("(max-width: 700px)"), smal = () => smalFonster.matches;
 
   // Upphöjda siffror (x³) skrivs som ^3 överallt där text jämförs: i sökningen och i rättningen.
   const UPPH = { "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9" };
@@ -2356,7 +2369,7 @@
     // Filmens titel sätts i laddaFilm, när filmen är känd.
     if (namn === "intro") document.title = SAJTNAMN;
     // Pilarna vid kanterna mäts när filmvalet syns: dolt har linan ingen bredd (ritaKanter).
-    if (namn === "valj") { document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`; ritaFramstegKort(); ritaKanter(); }
+    if (namn === "valj") { document.title = `${$("valj-rubrik").textContent} · ${SAJTNAMN}`; ritaFramstegKort(); nyttMatt(); ritaKanter(); }
     // Fokus flyttas till vyns rubrik, så att skärmläsare och Tab börjar i den nya vyn. Inte vid
     // första laddningen: då börjar sidan från början som vanligt.
     if (!forstaVyn) { const h = { intro: $("intro-rubrik"), valj: $("valj-rubrik"), film: $("f-titel") }[namn]; if (h) h.focus({ preventScroll: true }); }
@@ -3476,6 +3489,7 @@
   // fliken ritas, i ritaHylla.
   const pilBak = $("bladdra-bak"), pilFram = $("bladdra-fram");
   let textrutor = [], pilTangent = null;   // pilen som har fokus från tangentbordet (Tab, Enter eller mellanslag)
+  let linMatt = null;   // linans sparade mått, se matt()
   // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
   // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
   // det säger något mer än namnet. Under fliken Matematik 2a ser korten ut som under Matematik 1c
@@ -3755,6 +3769,7 @@
     if (hylla === SPEL) fyllSpellistor();
     if (harFlikar) { const flik = document.querySelector(`#flikar [data-hylla="${flikAv(hylla)}"]`); flik.id = `flik-${flikAv(hylla)}`; tidslinje.setAttribute("aria-labelledby", flik.id); }
     textrutor = [...spar.querySelectorAll(".post.spellista, .post.bro")];
+    nyttMatt();
     // Under Spel står spel och topplistor på raden, inga filmer.
     pilBak.setAttribute("aria-label", hylla === SPEL ? "Bläddra bakåt" : "Föregående filmer");
     pilFram.setAttribute("aria-label", hylla === SPEL ? "Bläddra framåt" : "Nästa filmer");
@@ -3821,8 +3836,34 @@
   // Hur långt linan går att rulla. Ryms alla kort i fönstret går den inte att rulla alls, också när luften vid kanterna
   // (12vw på var sida) gör raden lite bredare än fönstret. Förut gick den då att rulla en bit, och raden «Scrolla eller
   // dra i sidled» stod kvar fast allt syntes (2026-11-26).
-  const maxX = () => { const s = spar.lastElementChild; return !s || s.offsetLeft + s.offsetWidth <= tidslinje.clientWidth ? 0 : Math.max(0, spar.scrollWidth - tidslinje.clientWidth); };
-  // Läsningarna i ritaKanter görs före skrivningen av transform, så att webbläsaren inte räknar om sidan mitt i bilden.
+  // Linans mått: fönstrets bredd, var första kortet börjar, var sista slutar, hur långt linan går att rulla och var
+  // textrutorna står. De mäts en gång och sparas, och sedan räknar varje bildruta bara med transformen. Förut läste
+  // varje bildruta offsetLeft och offsetWidth för korten och textrutorna, och rullningen kostade 7 % mer än förut
+  // (samordnaren 2026-11-26). Måtten mäts om när fliken ritas (ritaHylla), när filmvalet visas, när
+  // fönstret ändras och när linan eller raden byter storlek (typsnittet laddas, spellistorna fylls). Dold har linan
+  // ingen bredd, och då sparas inget.
+  function matt() {
+    if (linMatt) return linMatt;
+    const w = tidslinje.clientWidth, forst = spar.firstElementChild, sist = spar.lastElementChild;
+    const sistHoger = sist ? sist.offsetLeft + sist.offsetWidth : 0;
+    const m = {
+      w, forstVanster: forst ? forst.offsetLeft : null, sistHoger: sist ? sistHoger : null,
+      maxX: !sist || sistHoger <= w ? 0 : Math.max(0, spar.scrollWidth - w),
+      rutor: textrutor.map((r) => [r, r.offsetLeft, r.offsetWidth]),
+    };
+    if (w) linMatt = m;
+    return m;
+  }
+  function nyttMatt() { linMatt = null; }
+  let mattRuta = 0;
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => {
+      nyttMatt();
+      if (!mattRuta) mattRuta = requestAnimationFrame(() => { mattRuta = 0; ritaKanter(); });
+    });
+    ro.observe(spar); ro.observe(tidslinje);
+  }
+  const maxX = () => matt().maxX;
   function rita() {
     ritaKanter();
     spar.style.transform = `translate3d(${-x}px,0,0)`;
@@ -3835,13 +3876,13 @@
   // så det stämmer efter ny flik, ny klass och ny fönsterstorlek. På telefonen står korten under varandra, och där
   // gör den ingenting.
   function ritaKanter() {
-    const w = tidslinje.clientWidth;
-    if (aktivVy !== "valj" || smal() || !w) return;
-    const forst = spar.firstElementChild, sist = spar.lastElementChild;
-    const vanster = !!forst && forst.offsetLeft - x < -1;
-    const hoger = !!sist && sist.offsetLeft + sist.offsetWidth - x > w + 1;
-    $("hint").classList.toggle("borta", x > 40 || maxX() <= 0);
-    for (const r of textrutor) { const v = r.offsetLeft - x; r.classList.toggle("kant", v < -1 || v + r.offsetWidth > w + 1); }
+    if (aktivVy !== "valj" || smal()) return;
+    const m = matt(), w = m.w;
+    if (!w) return;
+    const vanster = m.forstVanster != null && m.forstVanster - x < -1;
+    const hoger = m.sistHoger != null && m.sistHoger - x > w + 1;
+    $("hint").classList.toggle("borta", x > 40 || m.maxX <= 0);
+    for (const [r, vanst, bredd] of m.rutor) { const v = vanst - x; r.classList.toggle("vid-kanten", v < -1 || v + bredd > w + 1); }
     const fokus = document.activeElement;
     // En pil som har fokus från tangentbordet står kvar, nedtonad, när linan nått slutet åt det hållet, och Enter och
     // mellanslag gör då ingenting. Förut gick fokus till den andra pilen, och nästa Enter, eller en nedhållen Enter,
@@ -3955,7 +3996,7 @@
     malX = 0; vx = 0; if (!rullar) { rullar = true; requestAnimationFrame(loop); }
   });
   // Ändras fönstret medan linan glider mot ett mål, stannar den vid det nya slutet och inte bortom det.
-  window.addEventListener("resize", () => { x = Math.min(x, maxX()); if (malX != null) malX = Math.min(malX, maxX()); rita(); });
+  window.addEventListener("resize", () => { nyttMatt(); x = Math.min(x, maxX()); if (malX != null) malX = Math.min(malX, maxX()); rita(); });
   // Piltangenterna bläddrar en skärm som pilarna vid kanterna, eller flyttar mellan korten när ett kort har fokus.
   // En tangent som hålls nere bläddrar igen först när linan stannat.
   document.addEventListener("keydown", (e) => {
