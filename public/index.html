@@ -5662,6 +5662,8 @@
       if (del.typ === "uttryck") {
         const mal = tolka(stada(del.svar)), vars = del.variabler || [...variabler(mal)], du = anpassa(uttrUr(svar), vars);
         if (lika(du, mal, vars)) {
+          // «utvecklat»: uppgiften är att multiplicera ihop, så samma uttryck med parenteser kvar är inte klart (Ma 2c 2).
+          if (del.utvecklat && /[()]/.test(stada(svar))) return fel("Multiplicera ihop parenteserna först.");
           if (!del.utanfor) return { ok: true, text: "Rätt!" };
           const { utanfor, summor } = utbrutet(du), ut = tolka(stada(del.utanfor));
           if (!summor || lika(utanfor, ETT, vars)) return fel("Det är samma uttryck som i uppgiften. Bryt ut det som finns i båda termerna och sätt resten inom parentes.");

@@ -35,6 +35,8 @@ function forsok(del) {
   // Ett uttryck som ska faktoriseras har uppgiften som svar, och ett tal som ska delas upp har talet: där är svaret inte det eleven skriver.
   if (!del.utanfor && del.typ !== "faktorer") ut.push(["rätt", somText(del.svar, del)], ["rätt, två Enter", somText(del.svar, del), 2]);
   if (del.fel && del.fel[0]) ut.push(["vanligt fel", somText(del.fel[0].svar, del)]);
+  // «utvecklat» (uppgiften i parentesform) ska ge «Multiplicera ihop parenteserna först», aldrig Rätt!.
+  if (typeof del.utvecklat === "string") ut.push(["parenteser", del.utvecklat]);
   ut.push(["tomt", ""], ["hej", "hej"], ["???", "???"], ["bara =", "="]);
   return ut;
 }
@@ -65,13 +67,14 @@ for (const v of filmer) {
       const vem = `${v.id} del ${i + 1} (${del.typ}), ${namn}: ${JSON.stringify(svar)} → ${JSON.stringify(r.text)}`;
       if (!r.text || !r.syns) tysta.push(vem);
       else if (namn.startsWith("rätt") && !r.text.startsWith("Rätt")) inteRatt.push(vem);
+      else if (namn === "parenteser" && !r.text.includes("Multiplicera ihop parenteserna först")) inteRatt.push(vem);
       if (process.env.ALLT) console.log(vem);
     }
   }
 }
 await webb.close(); if (server) server.close();
 console.log(`${filmer.length} filmer, ${antal} försök mot ${BAS}.`);
-for (const [rubrik, lista] of [["Inget besked", tysta], ["Rätt svar som inte gav Rätt!", inteRatt], ["Fel i sidan", jsFel]]) {
+for (const [rubrik, lista] of [["Inget besked", tysta], ["Rätt svar som inte gav Rätt!, eller parenteser som inte stoppades", inteRatt], ["Fel i sidan", jsFel]]) {
   console.log(`${rubrik}: ${lista.length}`); lista.forEach((x) => console.log(`  ${x}`));
 }
 process.exit(tysta.length || inteRatt.length || jsFel.length ? 1 : 0);
