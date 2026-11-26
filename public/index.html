@@ -5603,10 +5603,11 @@
       // spelar ingen roll, utom för en ensam bokstav: M (mega) och m (milli) är olika prefix.
       if (del.typ === "ord") {
         const du = svar.trim().replace(/[.!]+$/, "").replace(/\s+/g, " ");
-        if (!/[\p{L}]/u.test(du)) throw new Error("inget ord");
         const sammaOrd = (s) => [].concat(s).some((x) => (x.length === 1 ? du === x : fold(du.toLowerCase()) === fold(x.toLowerCase())));
+        // Listade svar jämförs först, så att ett svar utan bokstäver (pilarna ⇒ ⇐ ⇔ i Ma 2c 1) kan bli rätt.
         if (sammaOrd(del.svar)) return { ok: true, text: "Rätt!" };
         for (const f of del.fel || []) if (sammaOrd(f.svar)) return fel(f.text);
+        if (!/[\p{L}]/u.test(du)) throw new Error("inget ord");
         return fel(INTE);
       }
       // Ett tal skrivet som produkt (Matematik 2a, faktorisera 899): "31 · 29", "29 * 31" eller
