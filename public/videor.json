@@ -68254,6 +68254,765 @@
    ]
   },
   {
+   "id": "ma2c-02-polynom",
+   "titel": "Babbage och maskinen – Polynom",
+   "ar": 1822,
+   "serie": "ma2c",
+   "del": 0.2,
+   "ocksa": null,
+   "kurs": "Matematik 2c",
+   "kurser": [
+    "Matematik 2c"
+   ],
+   "bokkapitel": {
+    "Matematik 2c": 2
+   },
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2c-02-polynom-v1/ma2c-02-polynom-1080p.mp4",
+   "moment": "Polynom",
+   "begrepp": [
+    "polynom",
+    "term",
+    "konstantterm",
+    "exponent",
+    "gradtal",
+    "fullständigt polynom",
+    "binom",
+    "produkt",
+    "multiplicera två binom",
+    "(a + b)(c + d)",
+    "plus gånger minus",
+    "förenkla",
+    "Charles Babbage",
+    "räknemaskin",
+    "London",
+    "Science Museum"
+   ],
+   "beskrivning": "Sommaren 1822 har Charles Babbage byggt en liten räknemaskin av mässing i sitt hem i London. Den räknar ut värdena av x² + x + 41. Vi tar reda på vilka uttryck maskinen klarar: termer, konstantterm, polynom, gradtal, fullständiga polynom och binom. Sedan multiplicerar vi ut (x + 2)(x − 5) med en rektangel och mallen (a + b)(c + d).",
+   "youtube": null,
+   "langd": 404,
+   "omslag": "omslag/ma2c-02-polynom.jpg?v=02cccca0",
+   "omslagRen": "omslag/ma2c-02-polynom-ren.jpg?v=18614b6b",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är sommaren artonhundratjugotvå, i London. Charles Babbage är trettio år och matematiker. Hemma hos honom står en liten maskin av mässing på bordet. Den är full av kugghjul, och han har byggt den för att räkna."
+    },
+    {
+     "t": 25,
+     "text": "Varför behövs en sån maskin? Sjömän hittar rätt på havet med hjälp av tabeller, långa listor med tal. Tabellerna räknas ut för hand, och människor gör fel. Ett fel i en tabell kan få ett skepp att hamna fel. Babbage vill att en maskin ska räkna i stället, för en maskin blir inte trött."
+    },
+    {
+     "t": 48,
+     "text": "Men maskinen kan bara en sak. Den kan lägga ihop tal. Babbage vevar, och kugghjulen snurrar. Talen fyrtioett, fyrtiotre, fyrtiosju och femtiotre kommer fram. Det är värdena av x i kvadrat plus x plus fyrtioett, när x är noll, ett, två och tre."
+    },
+    {
+     "t": 70,
+     "text": "Babbage skriver ett brev till Humphry Davy, som leder forskarnas sällskap i London. I brevet förklarar han vilka uttryck maskinen klarar. Vilka är det? Det tar vi reda på nu."
+    },
+    {
+     "t": 84,
+     "text": "Vi tittar på uttrycket x i kvadrat plus x plus fyrtioett. Det består av tre delar som läggs ihop. Varje del kallas en term. Den första termen är x i kvadrat. Den andra är x. Den tredje är fyrtioett. Den termen har inget x, så den ändras aldrig. Därför kallas den konstantterm."
+    },
+    {
+     "t": 110,
+     "text": "Ett uttryck som är en summa av termer kallas ett polynom. Men det finns ett krav. Exponenterna på x ska vara positiva heltal, alltså ett, två, tre och så vidare. I x i kvadrat är exponenten två. I x står det en osynlig etta, för x är detsamma som x upphöjt till ett. Alltså är det här ett polynom."
+    },
+    {
+     "t": 137,
+     "text": "Den högsta exponenten kallas polynomets gradtal. Här är den högsta exponenten två, så gradtalet är två. Och det är svaret på frågan. Babbages maskin klarar polynom med gradtal två eller lägre."
+    },
+    {
+     "t": 156,
+     "text": "Polynomet är också fullständigt. Det betyder att ingen exponent saknas, från den högsta ner till konstanttermen. Här finns x i kvadrat, x och fyrtioett. Om termen x saknades, skulle polynomet inte vara fullständigt."
+    },
+    {
+     "t": 175,
+     "text": "Ett polynom med bara två termer kallas ett binom. Bi betyder två. x plus två är ett binom. x minus fem är också ett binom."
+    },
+    {
+     "t": 187,
+     "text": "Tänk dig nu att Babbage får uttrycket x plus två, gånger x minus fem. Det står inom parenteser. Klarar maskinen det? Det är ingen summa av termer, utan en produkt. Så vi kan inte se gradtalet direkt. Vi måste multiplicera ut det först. Det här är det svåraste vi gör i dag."
+    },
+    {
+     "t": 210,
+     "text": "Vi börjar med en bild, en rektangel. Den ena sidan är x plus två. Den andra sidan är x plus tre. Arean är sidorna gånger varandra, alltså x plus två gånger x plus tre. Nu delar vi rektangeln i fyra rutor."
+    },
+    {
+     "t": 230,
+     "text": "Den stora rutan är x gånger x, alltså x i kvadrat. Rutan bredvid är x gånger tre, alltså tre x. Rutan under är två gånger x, alltså två x. Den lilla rutan är två gånger tre, alltså sex. Hela arean är x i kvadrat plus tre x plus två x plus sex. Tre x och två x är fem x. Så svaret är x i kvadrat plus fem x plus sex."
+    },
+    {
+     "t": 265,
+     "text": "Ser du vad vi gjorde? Varje term i den ena parentesen gångrade vi med varje term i den andra. Samma sak skrivet med bokstäver ser ut så här. Parentesen a plus b, gånger parentesen c plus d, är lika med a c plus a d plus b c plus b d. Fyra rutor, alltså fyra produkter."
+    },
+    {
+     "t": 290,
+     "text": "Nu tar vi Babbages uttryck, x plus två gånger x minus fem. Här är a lika med x, b är två, c är x och d är minus fem. Först a c, x gånger x, alltså x i kvadrat. Sen a d, x gånger minus fem, alltså minus fem x. Sen b c, två gånger x, alltså två x. Sist b d, två gånger minus fem. Plus gånger minus blir minus, så det blir minus tio."
+    },
+    {
+     "t": 329,
+     "text": "Nu lägger vi ihop. Minus fem x plus två x blir minus tre x. Tänk dig att du går fem steg bakåt och sen två steg framåt. Då har du kommit tre steg bakåt. Så svaret är x i kvadrat minus tre x minus tio. Den högsta exponenten är två. Gradtalet är två, så maskinen klarar det. Nu går vi tillbaka till London."
+    },
+    {
+     "t": 359,
+     "text": "Humphry Davy läser brevet. Året efter får Babbage pengar av staten för att bygga en stor maskin. Han arbetar med den i tio år, men den blir aldrig färdig."
+    },
+    {
+     "t": 372,
+     "text": "Långt senare, år nittonhundranittioett, byggde Science Museum i London en av hans maskiner efter hans egna ritningar. Den räknar rätt, och i dag står den i museet."
+    },
+    {
+     "t": 385,
+     "text": "Nu är det din tur. Uttrycket är x plus fyra, gånger x minus två. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: multiplicera ut och förenkla. Sen: vilken är konstanttermen?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "London 1822: Babbages maskin",
+     "typ": "historia"
+    },
+    {
+     "t": 84,
+     "rubrik": "Term och konstantterm",
+     "typ": "matte"
+    },
+    {
+     "t": 110,
+     "rubrik": "Polynom",
+     "typ": "matte"
+    },
+    {
+     "t": 137,
+     "rubrik": "Gradtal",
+     "typ": "matte"
+    },
+    {
+     "t": 156,
+     "rubrik": "Fullständigt polynom och binom",
+     "typ": "matte"
+    },
+    {
+     "t": 187,
+     "rubrik": "Två binom: rektangeln",
+     "typ": "matte"
+    },
+    {
+     "t": 265,
+     "rubrik": "Mallen (a + b)(c + d)",
+     "typ": "matte"
+    },
+    {
+     "t": 290,
+     "rubrik": "(x + 2)(x − 5) = x² − 3x − 10",
+     "typ": "matte"
+    },
+    {
+     "t": 359,
+     "rubrik": "Den stora maskinen",
+     "typ": "historia"
+    },
+    {
+     "t": 385,
+     "rubrik": "(x + 4)(x − 2)",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 385,
+    "fraga": "Uttrycket är (x + 4)(x − 2). Du ska svara på två frågor.",
+    "slut": [
+     "Först: multiplicera ut och förenkla.",
+     "Sen: vilken är konstanttermen?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2c-02-polynom.jpg?v=32f02903",
+     "tema": "papper",
+     "text": "Ett papper på ett skrivbord med Babbages lilla räknemaskin av mässing, ett ljus, ett bläckhorn och en gåspenna. På papperet står (x + 4)(x − 2) = ? och under det konstantterm = ?.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: multiplicera ut och förenkla.",
+      "typ": "uttryck",
+      "svar": "x^2 + 2x - 8",
+      "visa": "x² + 2x − 8",
+      "utvecklat": "(x + 4)(x - 2)",
+      "variabler": [
+       "x"
+      ],
+      "prova": [
+       1,
+       2,
+       3,
+       5
+      ],
+      "exempel": "t.ex. x² + 5x + 6",
+      "tangenter": [
+       "^",
+       "²",
+       "(",
+       ")",
+       "−"
+      ],
+      "fel": [
+       {
+        "svar": "x^2 - 8",
+        "text": "x · x och 4 · (−2) är rätt. Men x · (−2) och 4 · x saknas. Fyra rutor, alltså fyra produkter."
+       },
+       {
+        "svar": "x^2 + 2x + 8",
+        "text": "Titta på 4 · (−2). Plus gånger minus blir minus, så det blir −8."
+       },
+       {
+        "svar": "x^2 - 2x - 8",
+        "text": "Lägg ihop −2x och 4x. Gå två steg bakåt och sen fyra steg framåt. Då har du kommit två steg framåt, alltså +2x."
+       },
+       {
+        "svar": "x^2 + 6x - 8",
+        "text": "Titta på x · (−2). Plus gånger minus blir minus, så det blir −2x, inte +2x."
+       },
+       {
+        "svar": "x^2 - 6x - 8",
+        "text": "x · (−2) blir −2x och 4 · x blir +4x. Lägg ihop dem: −2x + 4x = 2x."
+       },
+       {
+        "svar": "2x + 2",
+        "text": "Det här är x + 4 plus x − 2. Men parenteserna ska multipliceras, inte läggas ihop."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: vilken är konstanttermen?",
+      "typ": "tal",
+      "svar": -8,
+      "exempel": "t.ex. 6",
+      "tangenter": [
+       "−"
+      ],
+      "fel": [
+       {
+        "svar": "8",
+        "text": "Konstanttermen är 4 · (−2). Plus gånger minus blir minus."
+       },
+       {
+        "svar": "2",
+        "text": "2x har ett x. Konstanttermen är termen utan x."
+       },
+       {
+        "svar": "4",
+        "text": "4 står i den första parentesen. Konstanttermen i svaret är 4 · (−2)."
+       },
+       {
+        "svar": "-2",
+        "text": "−2 står i den andra parentesen. Konstanttermen i svaret är 4 · (−2)."
+       },
+       {
+        "svar": "1",
+        "text": "1 är talet framför x². Konstanttermen är termen utan x."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med (x + 2)(x − 5). Här är a = x, b = 4, c = x och d = −2. Räkna a c, a d, b c och b d, och lägg sedan ihop termerna med x.",
+     "t": 290
+    },
+    "losning": [
+     "a = x, b = 4, c = x och d = −2.",
+     "a c = x · x = x².",
+     "a d = x · (−2) = −2x.",
+     "b c = 4 · x = 4x.",
+     "b d = 4 · (−2) = −8, för plus gånger minus blir minus.",
+     "(x + 4)(x − 2) = x² − 2x + 4x − 8.",
+     "−2x + 4x = 2x, så svaret är x² + 2x − 8.",
+     "Konstanttermen är −8, termen utan x."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 12.54,
+     "text": "Det är sommaren artonhundratjugotvå, i London."
+    },
+    {
+     "s": 13.34,
+     "e": 16.14,
+     "text": "Charles Babbage är trettio år och matematiker."
+    },
+    {
+     "s": 16.94,
+     "e": 20.26,
+     "text": "Hemma hos honom står en liten maskin av mässing på bordet."
+    },
+    {
+     "s": 21.06,
+     "e": 24.86,
+     "text": "Den är full av kugghjul, och han har byggt den för att räkna."
+    },
+    {
+     "s": 25.96,
+     "e": 27.46,
+     "text": "Varför behövs en sån maskin?"
+    },
+    {
+     "s": 28.52,
+     "e": 33.46,
+     "text": "Sjömän hittar rätt på havet med hjälp av tabeller, långa listor med tal."
+    },
+    {
+     "s": 34.26,
+     "e": 37.74,
+     "text": "Tabellerna räknas ut för hand, och människor gör fel."
+    },
+    {
+     "s": 38.54,
+     "e": 41.7,
+     "text": "Ett fel i en tabell kan få ett skepp att hamna fel."
+    },
+    {
+     "s": 42.5,
+     "e": 46.92,
+     "text": "Babbage vill att en maskin ska räkna i stället, för en maskin blir inte trött."
+    },
+    {
+     "s": 48.02,
+     "e": 50.54,
+     "text": "Men maskinen kan bara en sak."
+    },
+    {
+     "s": 51.34,
+     "e": 52.8,
+     "text": "Den kan lägga ihop tal."
+    },
+    {
+     "s": 53.7,
+     "e": 56.2,
+     "text": "Babbage vevar, och kugghjulen snurrar."
+    },
+    {
+     "s": 57,
+     "e": 61.52,
+     "text": "Talen fyrtioett, fyrtiotre, fyrtiosju och femtiotre kommer fram."
+    },
+    {
+     "s": 62.32,
+     "e": 67.86,
+     "text": "Det är värdena av x i kvadrat plus x plus fyrtioett, när x är noll,"
+    },
+    {
+     "s": 68.32,
+     "e": 69.88,
+     "text": "ett, två och tre."
+    },
+    {
+     "s": 70.98,
+     "e": 75.88,
+     "text": "Babbage skriver ett brev till Humphry Davy, som leder forskarnas sällskap i London."
+    },
+    {
+     "s": 76.68,
+     "e": 81.3,
+     "text": "I brevet förklarar han vilka uttryck maskinen klarar. Vilka är det?"
+    },
+    {
+     "s": 82.1,
+     "e": 83.1,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 84.14,
+     "e": 88.34,
+     "text": "Vi tittar på uttrycket x i kvadrat plus x plus fyrtioett."
+    },
+    {
+     "s": 89.14,
+     "e": 91.58,
+     "text": "Det består av tre delar som läggs ihop."
+    },
+    {
+     "s": 92.38,
+     "e": 94.44,
+     "text": "Varje del kallas en term."
+    },
+    {
+     "s": 95.24,
+     "e": 97.56,
+     "text": "Den första termen är x i kvadrat."
+    },
+    {
+     "s": 98.36,
+     "e": 99.7,
+     "text": "Den andra är x."
+    },
+    {
+     "s": 100.5,
+     "e": 102.1,
+     "text": "Den tredje är fyrtioett."
+    },
+    {
+     "s": 102.9,
+     "e": 105.94,
+     "text": "Den termen har inget x, så den ändras aldrig."
+    },
+    {
+     "s": 106.74,
+     "e": 109.14,
+     "text": "Därför kallas den konstantterm."
+    },
+    {
+     "s": 110.24,
+     "e": 114.1,
+     "text": "Ett uttryck som är en summa av termer kallas ett polynom."
+    },
+    {
+     "s": 114.9,
+     "e": 116.52,
+     "text": "Men det finns ett krav."
+    },
+    {
+     "s": 117.32,
+     "e": 122.58,
+     "text": "Exponenterna på x ska vara positiva heltal, alltså ett, två,"
+    },
+    {
+     "s": 122.94,
+     "e": 123.96,
+     "text": "tre och så vidare."
+    },
+    {
+     "s": 124.8,
+     "e": 127.5,
+     "text": "I x i kvadrat är exponenten två."
+    },
+    {
+     "s": 128.3,
+     "e": 134.22,
+     "text": "I x står det en osynlig etta, för x är detsamma som x upphöjt till ett."
+    },
+    {
+     "s": 135.02,
+     "e": 136.9,
+     "text": "Alltså är det här ett polynom."
+    },
+    {
+     "s": 137.95,
+     "e": 142.11,
+     "text": "Den högsta exponenten kallas polynomets gradtal."
+    },
+    {
+     "s": 142.91,
+     "e": 147.35,
+     "text": "Här är den högsta exponenten två, så gradtalet är två."
+    },
+    {
+     "s": 148.15,
+     "e": 150.35,
+     "text": "Och det är svaret på frågan."
+    },
+    {
+     "s": 151.15,
+     "e": 155.71,
+     "text": "Babbages maskin klarar polynom med gradtal två eller lägre."
+    },
+    {
+     "s": 156.6,
+     "e": 158.74,
+     "text": "Polynomet är också fullständigt."
+    },
+    {
+     "s": 159.54,
+     "e": 165.16,
+     "text": "Det betyder att ingen exponent saknas, från den högsta ner till konstanttermen."
+    },
+    {
+     "s": 165.96,
+     "e": 169.18,
+     "text": "Här finns x i kvadrat, x och fyrtioett."
+    },
+    {
+     "s": 169.98,
+     "e": 174.24,
+     "text": "Om termen x saknades, skulle polynomet inte vara fullständigt."
+    },
+    {
+     "s": 175.34,
+     "e": 178.92,
+     "text": "Ett polynom med bara två termer kallas ett binom."
+    },
+    {
+     "s": 179.72,
+     "e": 181,
+     "text": "Bi betyder två."
+    },
+    {
+     "s": 181.96,
+     "e": 183.88,
+     "text": "x plus två är ett binom."
+    },
+    {
+     "s": 184.68,
+     "e": 186.82,
+     "text": "x minus fem är också ett binom."
+    },
+    {
+     "s": 187.92,
+     "e": 192.88,
+     "text": "Tänk dig nu att Babbage får uttrycket x plus två, gånger x minus fem."
+    },
+    {
+     "s": 193.68,
+     "e": 195.06,
+     "text": "Det står inom parenteser."
+    },
+    {
+     "s": 195.86,
+     "e": 196.88,
+     "text": "Klarar maskinen det?"
+    },
+    {
+     "s": 197.78,
+     "e": 200.54,
+     "text": "Det är ingen summa av termer, utan en produkt."
+    },
+    {
+     "s": 201.34,
+     "e": 203.4,
+     "text": "Så vi kan inte se gradtalet direkt."
+    },
+    {
+     "s": 204.2,
+     "e": 206.26,
+     "text": "Vi måste multiplicera ut det först."
+    },
+    {
+     "s": 207.06,
+     "e": 209.24,
+     "text": "Det här är det svåraste vi gör i dag."
+    },
+    {
+     "s": 210.34,
+     "e": 212.68,
+     "text": "Vi börjar med en bild, en rektangel."
+    },
+    {
+     "s": 213.48,
+     "e": 215.76,
+     "text": "Den ena sidan är x plus två."
+    },
+    {
+     "s": 216.56,
+     "e": 218.88,
+     "text": "Den andra sidan är x plus tre."
+    },
+    {
+     "s": 219.76,
+     "e": 225.74,
+     "text": "Arean är sidorna gånger varandra, alltså x plus två gånger x plus tre."
+    },
+    {
+     "s": 226.54,
+     "e": 228.92,
+     "text": "Nu delar vi rektangeln i fyra rutor."
+    },
+    {
+     "s": 230.02,
+     "e": 234.54,
+     "text": "Den stora rutan är x gånger x, alltså x i kvadrat."
+    },
+    {
+     "s": 235.34,
+     "e": 239.26,
+     "text": "Rutan bredvid är x gånger tre, alltså tre x."
+    },
+    {
+     "s": 240.08,
+     "e": 244.08,
+     "text": "Rutan under är två gånger x, alltså två x."
+    },
+    {
+     "s": 244.88,
+     "e": 248.62,
+     "text": "Den lilla rutan är två gånger tre, alltså sex."
+    },
+    {
+     "s": 249.44,
+     "e": 255.48,
+     "text": "Hela arean är x i kvadrat plus tre x plus två x plus sex."
+    },
+    {
+     "s": 256.34,
+     "e": 258.9,
+     "text": "Tre x och två x är fem x."
+    },
+    {
+     "s": 259.7,
+     "e": 264.02,
+     "text": "Så svaret är x i kvadrat plus fem x plus sex."
+    },
+    {
+     "s": 265.12,
+     "e": 266.12,
+     "text": "Ser du vad vi gjorde?"
+    },
+    {
+     "s": 266.72,
+     "e": 271.42,
+     "text": "Varje term i den ena parentesen gångrade vi med varje term i den andra."
+    },
+    {
+     "s": 272.22,
+     "e": 274.86,
+     "text": "Samma sak skrivet med bokstäver ser ut så här."
+    },
+    {
+     "s": 275.66,
+     "e": 285.92,
+     "text": "Parentesen a plus b, gånger parentesen c plus d, är lika med a c plus a d plus b c plus b d."
+    },
+    {
+     "s": 286.72,
+     "e": 289.54,
+     "text": "Fyra rutor, alltså fyra produkter."
+    },
+    {
+     "s": 290.68,
+     "e": 295.28,
+     "text": "Nu tar vi Babbages uttryck, x plus två gånger x minus fem."
+    },
+    {
+     "s": 296.16,
+     "e": 303.02,
+     "text": "Här är a lika med x, b är två, c är x och d är minus fem."
+    },
+    {
+     "s": 304,
+     "e": 308.58,
+     "text": "Först a c, x gånger x, alltså x i kvadrat."
+    },
+    {
+     "s": 309.38,
+     "e": 314.48,
+     "text": "Sen a d, x gånger minus fem, alltså minus fem x."
+    },
+    {
+     "s": 315.28,
+     "e": 319.5,
+     "text": "Sen b c, två gånger x, alltså två x."
+    },
+    {
+     "s": 320.3,
+     "e": 323.58,
+     "text": "Sist b d, två gånger minus fem."
+    },
+    {
+     "s": 324.44,
+     "e": 328.5,
+     "text": "Plus gånger minus blir minus, så det blir minus tio."
+    },
+    {
+     "s": 329.6,
+     "e": 330.6,
+     "text": "Nu lägger vi ihop."
+    },
+    {
+     "s": 331.4,
+     "e": 335.72,
+     "text": "Minus fem x plus två x blir minus tre x."
+    },
+    {
+     "s": 336.6,
+     "e": 341,
+     "text": "Tänk dig att du går fem steg bakåt och sen två steg framåt."
+    },
+    {
+     "s": 341.8,
+     "e": 343.84,
+     "text": "Då har du kommit tre steg bakåt."
+    },
+    {
+     "s": 344.64,
+     "e": 349.28,
+     "text": "Så svaret är x i kvadrat minus tre x minus tio."
+    },
+    {
+     "s": 350.08,
+     "e": 351.98,
+     "text": "Den högsta exponenten är två."
+    },
+    {
+     "s": 352.78,
+     "e": 355.76,
+     "text": "Gradtalet är två, så maskinen klarar det."
+    },
+    {
+     "s": 356.92,
+     "e": 358.38,
+     "text": "Nu går vi tillbaka till London."
+    },
+    {
+     "s": 359.48,
+     "e": 361.28,
+     "text": "Humphry Davy läser brevet."
+    },
+    {
+     "s": 362.08,
+     "e": 366.38,
+     "text": "Året efter får Babbage pengar av staten för att bygga en stor maskin."
+    },
+    {
+     "s": 367.18,
+     "e": 370.94,
+     "text": "Han arbetar med den i tio år, men den blir aldrig färdig."
+    },
+    {
+     "s": 372.04,
+     "e": 378.16,
+     "text": "Långt senare, år nittonhundranittioett, byggde Science Museum i London en av hans maskiner"
+    },
+    {
+     "s": 378.22,
+     "e": 379.66,
+     "text": "efter hans egna ritningar."
+    },
+    {
+     "s": 380.46,
+     "e": 383.46,
+     "text": "Den räknar rätt, och i dag står den i museet."
+    },
+    {
+     "s": 385.02,
+     "e": 386.02,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 386.82,
+     "e": 390.82,
+     "text": "Uttrycket är x plus fyra, gånger x minus två."
+    },
+    {
+     "s": 391.68,
+     "e": 395.66,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 396.46,
+     "e": 399.06,
+     "text": "Först: multiplicera ut och förenkla."
+    },
+    {
+     "s": 399.86,
+     "e": 402.44,
+     "text": "Sen: vilken är konstanttermen?"
+    }
+   ]
+  },
+  {
    "id": "ma1c-k4-06-grafisk-ekvationslosning",
    "titel": "Malthus och maten",
    "ar": 1798,

@@ -4895,5 +4895,120 @@
       "Alltså enkel pil: x = 7 ⇒ x² = 49.",
       "Lösningarna till x² = 49 är x = 7 och x = −7."
     ]
+  },
+  "ma2c-02-polynom": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Uttrycket är (x + 4)(x − 2). Du ska svara på två frågor.",
+    "slut": [
+      "Först: multiplicera ut och förenkla.",
+      "Sen: vilken är konstanttermen?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett papper på ett skrivbord med Babbages lilla räknemaskin av mässing, ett ljus, ett bläckhorn och en gåspenna. På papperet står (x + 4)(x − 2) = ? och under det konstantterm = ?.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: multiplicera ut och förenkla.",
+        "typ": "uttryck",
+        "svar": "x^2 + 2x - 8",
+        "visa": "x² + 2x − 8",
+        "utvecklat": "(x + 4)(x - 2)",
+        "variabler": [
+          "x"
+        ],
+        "prova": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "exempel": "t.ex. x² + 5x + 6",
+        "tangenter": [
+          "^",
+          "²",
+          "(",
+          ")",
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "x^2 - 8",
+            "text": "x · x och 4 · (−2) är rätt. Men x · (−2) och 4 · x saknas. Fyra rutor, alltså fyra produkter."
+          },
+          {
+            "svar": "x^2 + 2x + 8",
+            "text": "Titta på 4 · (−2). Plus gånger minus blir minus, så det blir −8."
+          },
+          {
+            "svar": "x^2 - 2x - 8",
+            "text": "Lägg ihop −2x och 4x. Gå två steg bakåt och sen fyra steg framåt. Då har du kommit två steg framåt, alltså +2x."
+          },
+          {
+            "svar": "x^2 + 6x - 8",
+            "text": "Titta på x · (−2). Plus gånger minus blir minus, så det blir −2x, inte +2x."
+          },
+          {
+            "svar": "x^2 - 6x - 8",
+            "text": "x · (−2) blir −2x och 4 · x blir +4x. Lägg ihop dem: −2x + 4x = 2x."
+          },
+          {
+            "svar": "2x + 2",
+            "text": "Det här är x + 4 plus x − 2. Men parenteserna ska multipliceras, inte läggas ihop."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: vilken är konstanttermen?",
+        "typ": "tal",
+        "svar": -8,
+        "exempel": "t.ex. 6",
+        "tangenter": [
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": "8",
+            "text": "Konstanttermen är 4 · (−2). Plus gånger minus blir minus."
+          },
+          {
+            "svar": "2",
+            "text": "2x har ett x. Konstanttermen är termen utan x."
+          },
+          {
+            "svar": "4",
+            "text": "4 står i den första parentesen. Konstanttermen i svaret är 4 · (−2)."
+          },
+          {
+            "svar": "-2",
+            "text": "−2 står i den andra parentesen. Konstanttermen i svaret är 4 · (−2)."
+          },
+          {
+            "svar": "1",
+            "text": "1 är talet framför x². Konstanttermen är termen utan x."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Nu tar vi Babbages uttryck",
+      "text": "Gör som med (x + 2)(x − 5). Här är a = x, b = 4, c = x och d = −2. Räkna a c, a d, b c och b d, och lägg sedan ihop termerna med x."
+    },
+    "losning": [
+      "a = x, b = 4, c = x och d = −2.",
+      "a c = x · x = x².",
+      "a d = x · (−2) = −2x.",
+      "b c = 4 · x = 4x.",
+      "b d = 4 · (−2) = −8, för plus gånger minus blir minus.",
+      "(x + 4)(x − 2) = x² − 2x + 4x − 8.",
+      "−2x + 4x = 2x, så svaret är x² + 2x − 8.",
+      "Konstanttermen är −8, termen utan x."
+    ]
   }
 }
