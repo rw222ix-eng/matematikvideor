@@ -4785,5 +4785,109 @@
       "Ta minus 49 i båda leden: a² = 625 − 49 = 576.",
       "Vilket tal gånger sig självt blir 576? a = √576 = 24, eftersom 24 · 24 = 576. En sida kan inte vara negativ, så den andra kateten är 24 cm."
     ]
+  },
+  "ma2c-01-implikation-och-ekvivalens": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Det första påståendet är x = 7. Det andra är x² = 49. Du ska svara på två frågor.",
+    "slut": [
+      "Först: vilken pil ska stå mellan påståendena?",
+      "Sen: vilka är lösningarna till x² = 49?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett tomt papper på ett skrivbord med ett ljus, ett bläckhorn och en gåspenna. På papperet står x = 7, ett frågetecken och x² = 49, och under dem x = ?.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: vilken pil ska stå mellan påståendena?",
+        "typ": "ord",
+        "svar": [
+          "⇒",
+          "=>",
+          "medför",
+          "implikation",
+          "enkel pil",
+          "implikationspil"
+        ],
+        "exempel": "t.ex. ⇔",
+        "tangenter": [
+          "⇒",
+          "⇐",
+          "⇔"
+        ],
+        "fel": [
+          {
+            "svar": [
+              "⇔",
+              "<=>",
+              "dubbelpil",
+              "ekvivalens"
+            ],
+            "text": "Prova baklänges. Om x² = 49 kan x också vara −7, för (−7) · (−7) = 49. Då är det inte säkert att x = 7, så pilen gäller bara åt ett håll."
+          },
+          {
+            "svar": [
+              "⇐",
+              "<="
+            ],
+            "text": "Pilen pekar åt fel håll. Om x = 7 så är x² = 7 · 7 = 49. Pilen går alltså från x = 7 till x² = 49."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: vilka är lösningarna till x² = 49?",
+        "typ": "losningar",
+        "svar": [
+          7,
+          -7
+        ],
+        "exempel": "t.ex. 3 och −3",
+        "tangenter": [
+          "−"
+        ],
+        "fel": [
+          {
+            "svar": [
+              7
+            ],
+            "text": "7 är en lösning. Men (−7) · (−7) blir också 49, för minus gånger minus är plus."
+          },
+          {
+            "svar": [
+              -7
+            ],
+            "text": "−7 är en lösning. Men 7 · 7 = 49, så 7 är också en lösning."
+          },
+          {
+            "svar": [
+              49
+            ],
+            "text": "49 är x i kvadrat. Vilket tal gånger sig självt blir 49?"
+          },
+          {
+            "svar": [
+              24.5
+            ],
+            "text": "24,5 är 49 delat med två. Men x² betyder x · x, inte 2 · x."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Men det finns ett steg som inte",
+      "text": "Gör som med x = 5 och x² = 25. Ställ de två frågorna: om x = 7, är x² = 49 då? Och om x² = 49, är x = 7 då?"
+    },
+    "losning": [
+      "Om x = 7 så är x² = 7 · 7 = 49. Pilen gäller åt höger.",
+      "Om x² = 49 kan x vara 7, men också −7, för (−7) · (−7) = 49. Pilen gäller inte baklänges.",
+      "Alltså enkel pil: x = 7 ⇒ x² = 49.",
+      "Lösningarna till x² = 49 är x = 7 och x = −7."
+    ]
   }
 }

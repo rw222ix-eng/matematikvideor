@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-12T10:50:56.235Z",
+ "byggd": "2026-11-26T07:11:53.522Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -67510,6 +67510,740 @@
      "s": 488.4,
      "e": 491.52,
      "text": "Sen: hur långt är det från pennan till punkten?"
+    }
+   ]
+  },
+  {
+   "id": "ma2c-01-implikation-och-ekvivalens",
+   "titel": "Descartes och tvivlet – Implikation och ekvivalens",
+   "ar": 1637,
+   "serie": "ma2c",
+   "del": 0.1,
+   "ocksa": null,
+   "kurs": "Matematik 2c",
+   "kurser": [
+    "Matematik 2c"
+   ],
+   "bokkapitel": {
+    "Matematik 2c": 1
+   },
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2c-01-implikation-och-ekvivalens-v1/ma2c-01-implikation-och-ekvivalens-1080p.mp4",
+   "moment": "Implikation och ekvivalens",
+   "begrepp": [
+    "implikation",
+    "ekvivalens",
+    "påstående",
+    "medför",
+    "⇒",
+    "⇔",
+    "dubbelpil",
+    "omvändning",
+    "ekvationslösning",
+    "båda leden",
+    "kvadrera båda leden",
+    "falsk rot",
+    "kolla svaren",
+    "René Descartes",
+    "jag tänker, alltså finns jag",
+    "Leiden",
+    "koordinatsystem"
+   ],
+   "beskrivning": "Våren 1637 står René Descartes i ett tryckeri i Leiden, där hans bok med meningen «jag tänker, alltså finns jag» trycks. Ordet alltså blir en pil. Vi ser när pilen bara pekar åt ett håll och när den pekar åt båda, löser 2x + 5 = 11 med dubbelpilar och ser varför ett steg där båda leden kvadreras kan ge en falsk rot.",
+   "youtube": null,
+   "langd": 372,
+   "omslag": "omslag/ma2c-01-implikation-och-ekvivalens.jpg?v=33ab5fb6",
+   "omslagRen": "omslag/ma2c-01-implikation-och-ekvivalens-ren.jpg?v=71dbd487",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är våren sextonhundratrettiosju, i staden Leiden i Holland. René Descartes är fyrtioett år. Han kommer från Frankrike, men han har bott i Holland i nio år. Nu står han i ett tryckeri, där hans första bok ska tryckas."
+    },
+    {
+     "t": 26,
+     "text": "Boken är skriven på franska och inte på latin, som forskarna brukar skriva på. Descartes vill att vanliga människor ska kunna läsa den. I boken berättar han om ett försök. Han har bestämt sig för att tvivla på allt som går att tvivla på."
+    },
+    {
+     "t": 44,
+     "text": "Kanske lurar ögonen honom. Kanske drömmer han just nu. Allt han inte är helt säker på stryker han. Men en sak kan han inte stryka. Medan han tvivlar, så tänker han. Och om han tänker, så måste han finnas."
+    },
+    {
+     "t": 64,
+     "text": "Han skriver det så här: jag tänker, alltså finns jag. Ordet alltså betyder att det andra följer av det första. Ett sådant steg kan vi skriva med en pil. Men åt vilket håll ska pilen peka? Det tar vi reda på nu."
+    },
+    {
+     "t": 83,
+     "text": "I matten kallar vi \"jag tänker\" för ett påstående. Ett påstående är en mening som är sann eller falsk. \"Jag finns\" är också ett påstående. Mellan dem ritar vi en pil. Pilen betyder: om det första är sant, så är det andra också sant. Den pilen kallas implikation, och vi läser den \"medför\"."
+    },
+    {
+     "t": 109,
+     "text": "Descartes skrev också om geometri, så vi tar ett exempel därifrån. Figuren är en kvadrat. Medför det att figuren har fyra hörn? Ja. Men gäller det baklänges? Om figuren har fyra hörn, är den en kvadrat då? Nej. En rektangel har också fyra hörn, och den är ingen kvadrat. Så pilen pekar bara åt ett håll."
+    },
+    {
+     "t": 136,
+     "text": "Ibland gäller pilen åt båda hållen. En kvadrat har sidan fyra centimeter. Då är arean fyra gånger fyra, alltså sexton kvadratcentimeter. Nu baklänges. Arean är sexton. Vilken sida gånger sig själv blir sexton? Bara fyra, för en sida kan inte vara negativ. Det gäller alltså åt båda hållen."
+    },
+    {
+     "t": 163,
+     "text": "Då ritar vi en pil med spets i båda ändarna. Den kallas ekvivalens. Den betyder att påståendena är sanna samtidigt. Antingen är båda sanna, eller så är båda falska."
+    },
+    {
+     "t": 178,
+     "text": "Så här väljer vi pil. Vi ställer två frågor. Först: om det till vänster är sant, är det till höger sant då? Sen: om det till höger är sant, är det till vänster sant då? Blir svaret ja två gånger, så blir det dubbelpil. Blir det ja bara på den första frågan, så blir det enkel pil."
+    },
+    {
+     "t": 202,
+     "text": "I sin bok om geometri skrev Descartes ekvationer. Det var han som började kalla det okända talet för x. Varje gång du skriver x gör du alltså som Descartes. Vi tar ekvationen två x plus fem är lika med elva."
+    },
+    {
+     "t": 220,
+     "text": "Vi tar minus fem i båda leden. Då står det två x är lika med sex. Går det att gå tillbaka? Ja. Plus fem i båda leden ger samma ekvation som förut. Därför sätter vi en dubbelpil mellan dem."
+    },
+    {
+     "t": 236,
+     "text": "Sen delar vi båda leden med två. Då står det x är lika med tre. Tillbaka går det också, med gånger två. Så hela kedjan har dubbelpilar. Varje steg går att göra baklänges. Därför vet vi att x är lika med tre är den enda lösningen."
+    },
+    {
+     "t": 255,
+     "text": "Men det finns ett steg som inte går baklänges. Det är att ta båda leden i kvadrat. Om x är lika med fem, så är x i kvadrat lika med tjugofem, för fem gånger fem är tjugofem. Den pilen stämmer."
+    },
+    {
+     "t": 273,
+     "text": "Nu baklänges. x i kvadrat är lika med tjugofem. Vilket tal gånger sig självt blir tjugofem? Fem. Men minus fem gånger minus fem blir också tjugofem, för minus gånger minus är plus. Så x kan vara fem eller minus fem. Vi vet inte säkert att x är fem. Därför får pilen bara peka åt ett håll."
+    },
+    {
+     "t": 300,
+     "text": "Descartes kallade minus fem för en falsk rot. Om x är en sträcka kan den ju inte vara minus fem centimeter. Så tänk på det här. Efter ett steg som bara går åt ett håll ska du kolla svaren. Nu går vi tillbaka till Leiden."
+    },
+    {
+     "t": 318,
+     "text": "Den åttonde juni sextonhundratrettiosju är boken färdigtryckt. Meningen jag tänker, alltså finns jag, citeras fortfarande i dag, nästan fyrahundra år senare."
+    },
+    {
+     "t": 330,
+     "text": "Delen om geometri blev också känd. Där satte Descartes ihop ekvationer och figurer. Därför kallas koordinatsystemet ibland för det kartesiska koordinatsystemet. Namnet kommer från Descartes namn på latin, Cartesius."
+    },
+    {
+     "t": 347,
+     "text": "Nu är det din tur. Det första påståendet är x är lika med sju. Det andra är x i kvadrat är lika med fyrtionio. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: vilken pil ska stå mellan påståendena? Sen: vilka är lösningarna till x i kvadrat är lika med fyrtionio?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Leiden 1637: Descartes tvivlar",
+     "typ": "historia"
+    },
+    {
+     "t": 88,
+     "rubrik": "Påstående och implikation",
+     "typ": "matte"
+    },
+    {
+     "t": 109,
+     "rubrik": "Pilen åt ett håll",
+     "typ": "matte"
+    },
+    {
+     "t": 136,
+     "rubrik": "Ekvivalens: pilen åt båda hållen",
+     "typ": "matte"
+    },
+    {
+     "t": 178,
+     "rubrik": "Två frågor väljer pilen",
+     "typ": "matte"
+    },
+    {
+     "t": 202,
+     "rubrik": "2x + 5 = 11 med dubbelpilar",
+     "typ": "matte"
+    },
+    {
+     "t": 255,
+     "rubrik": "Kvadrera båda leden: bara ⇒",
+     "typ": "matte"
+    },
+    {
+     "t": 300,
+     "rubrik": "Falsk rot: kolla svaren",
+     "typ": "matte"
+    },
+    {
+     "t": 318,
+     "rubrik": "Boken blir klar",
+     "typ": "historia"
+    },
+    {
+     "t": 347,
+     "rubrik": "x = 7 och x² = 49",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 347,
+    "fraga": "Det första påståendet är x = 7. Det andra är x² = 49. Du ska svara på två frågor.",
+    "slut": [
+     "Först: vilken pil ska stå mellan påståendena?",
+     "Sen: vilka är lösningarna till x² = 49?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2c-01-implikation-och-ekvivalens.jpg?v=8ff280e4",
+     "tema": "papper",
+     "text": "Ett tomt papper på ett skrivbord med ett ljus, ett bläckhorn och en gåspenna. På papperet står x = 7, ett frågetecken och x² = 49, och under dem x = ?.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: vilken pil ska stå mellan påståendena?",
+      "typ": "ord",
+      "svar": [
+       "⇒",
+       "=>",
+       "medför",
+       "implikation",
+       "enkel pil",
+       "implikationspil"
+      ],
+      "exempel": "t.ex. ⇔",
+      "tangenter": [
+       "⇒",
+       "⇐",
+       "⇔"
+      ],
+      "fel": [
+       {
+        "svar": [
+         "⇔",
+         "<=>",
+         "dubbelpil",
+         "ekvivalens"
+        ],
+        "text": "Prova baklänges. Om x² = 49 kan x också vara −7, för (−7) · (−7) = 49. Då är det inte säkert att x = 7, så pilen gäller bara åt ett håll."
+       },
+       {
+        "svar": [
+         "⇐",
+         "<="
+        ],
+        "text": "Pilen pekar åt fel håll. Om x = 7 så är x² = 7 · 7 = 49. Pilen går alltså från x = 7 till x² = 49."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: vilka är lösningarna till x² = 49?",
+      "typ": "losningar",
+      "svar": [
+       7,
+       -7
+      ],
+      "exempel": "t.ex. 3 och −3",
+      "tangenter": [
+       "−"
+      ],
+      "fel": [
+       {
+        "svar": [
+         7
+        ],
+        "text": "7 är en lösning. Men (−7) · (−7) blir också 49, för minus gånger minus är plus."
+       },
+       {
+        "svar": [
+         -7
+        ],
+        "text": "−7 är en lösning. Men 7 · 7 = 49, så 7 är också en lösning."
+       },
+       {
+        "svar": [
+         49
+        ],
+        "text": "49 är x i kvadrat. Vilket tal gånger sig självt blir 49?"
+       },
+       {
+        "svar": [
+         24.5
+        ],
+        "text": "24,5 är 49 delat med två. Men x² betyder x · x, inte 2 · x."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Gör som med x = 5 och x² = 25. Ställ de två frågorna: om x = 7, är x² = 49 då? Och om x² = 49, är x = 7 då?",
+     "t": 255
+    },
+    "losning": [
+     "Om x = 7 så är x² = 7 · 7 = 49. Pilen gäller åt höger.",
+     "Om x² = 49 kan x vara 7, men också −7, för (−7) · (−7) = 49. Pilen gäller inte baklänges.",
+     "Alltså enkel pil: x = 7 ⇒ x² = 49.",
+     "Lösningarna till x² = 49 är x = 7 och x = −7."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 13.72,
+     "text": "Det är våren sextonhundratrettiosju, i staden Leiden i Holland."
+    },
+    {
+     "s": 14.52,
+     "e": 16.58,
+     "text": "René Descartes är fyrtioett år."
+    },
+    {
+     "s": 17.38,
+     "e": 21.14,
+     "text": "Han kommer från Frankrike, men han har bott i Holland i nio år."
+    },
+    {
+     "s": 21.94,
+     "e": 25.74,
+     "text": "Nu står han i ett tryckeri, där hans första bok ska tryckas."
+    },
+    {
+     "s": 26.84,
+     "e": 31.48,
+     "text": "Boken är skriven på franska och inte på latin, som forskarna brukar skriva på."
+    },
+    {
+     "s": 32.28,
+     "e": 35.34,
+     "text": "Descartes vill att vanliga människor ska kunna läsa den."
+    },
+    {
+     "s": 36.52,
+     "e": 38.82,
+     "text": "I boken berättar han om ett försök."
+    },
+    {
+     "s": 39.62,
+     "e": 43.52,
+     "text": "Han har bestämt sig för att tvivla på allt som går att tvivla på."
+    },
+    {
+     "s": 44.62,
+     "e": 46.38,
+     "text": "Kanske lurar ögonen honom."
+    },
+    {
+     "s": 47.18,
+     "e": 48.58,
+     "text": "Kanske drömmer han just nu."
+    },
+    {
+     "s": 49.38,
+     "e": 52.64,
+     "text": "Allt han inte är helt säker på stryker han."
+    },
+    {
+     "s": 53.48,
+     "e": 55.8,
+     "text": "Men en sak kan han inte stryka."
+    },
+    {
+     "s": 56.66,
+     "e": 58.96,
+     "text": "Medan han tvivlar, så tänker han."
+    },
+    {
+     "s": 59.76,
+     "e": 62.58,
+     "text": "Och om han tänker, så måste han finnas."
+    },
+    {
+     "s": 64.12,
+     "e": 68.84,
+     "text": "Han skriver det så här: jag tänker, alltså finns jag."
+    },
+    {
+     "s": 69.88,
+     "e": 73.66,
+     "text": "Ordet alltså betyder att det andra följer av det första."
+    },
+    {
+     "s": 74.46,
+     "e": 76.62,
+     "text": "Ett sådant steg kan vi skriva med en pil."
+    },
+    {
+     "s": 77.42,
+     "e": 79.82,
+     "text": "Men åt vilket håll ska pilen peka?"
+    },
+    {
+     "s": 80.62,
+     "e": 81.92,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 83.84,
+     "e": 87.56,
+     "text": "I matten kallar vi \"jag tänker\" för ett påstående."
+    },
+    {
+     "s": 88.36,
+     "e": 91.72,
+     "text": "Ett påstående är en mening som är sann eller falsk."
+    },
+    {
+     "s": 92.52,
+     "e": 94.9,
+     "text": "\"Jag finns\" är också ett påstående."
+    },
+    {
+     "s": 95.7,
+     "e": 97.5,
+     "text": "Mellan dem ritar vi en pil."
+    },
+    {
+     "s": 98.3,
+     "e": 102.96,
+     "text": "Pilen betyder: om det första är sant, så är det andra också sant."
+    },
+    {
+     "s": 103.76,
+     "e": 108.06,
+     "text": "Den pilen kallas implikation, och vi läser den \"medför\"."
+    },
+    {
+     "s": 109.16,
+     "e": 113.36,
+     "text": "Descartes skrev också om geometri, så vi tar ett exempel därifrån."
+    },
+    {
+     "s": 114.16,
+     "e": 115.84,
+     "text": "Figuren är en kvadrat."
+    },
+    {
+     "s": 116.64,
+     "e": 120.14,
+     "text": "Medför det att figuren har fyra hörn? Ja."
+    },
+    {
+     "s": 120.94,
+     "e": 122.48,
+     "text": "Men gäller det baklänges?"
+    },
+    {
+     "s": 123.28,
+     "e": 127.82,
+     "text": "Om figuren har fyra hörn, är den en kvadrat då? Nej."
+    },
+    {
+     "s": 128.62,
+     "e": 132.22,
+     "text": "En rektangel har också fyra hörn, och den är ingen kvadrat."
+    },
+    {
+     "s": 133.02,
+     "e": 135.18,
+     "text": "Så pilen pekar bara åt ett håll."
+    },
+    {
+     "s": 136.28,
+     "e": 138.58,
+     "text": "Ibland gäller pilen åt båda hållen."
+    },
+    {
+     "s": 139.52,
+     "e": 142.18,
+     "text": "En kvadrat har sidan fyra centimeter."
+    },
+    {
+     "s": 142.98,
+     "e": 149.66,
+     "text": "Då är arean fyra gånger fyra, alltså sexton kvadratcentimeter. Nu baklänges."
+    },
+    {
+     "s": 150.54,
+     "e": 151.98,
+     "text": "Arean är sexton."
+    },
+    {
+     "s": 152.78,
+     "e": 155.68,
+     "text": "Vilken sida gånger sig själv blir sexton?"
+    },
+    {
+     "s": 156.48,
+     "e": 159.8,
+     "text": "Bara fyra, för en sida kan inte vara negativ."
+    },
+    {
+     "s": 160.6,
+     "e": 162.5,
+     "text": "Det gäller alltså åt båda hållen."
+    },
+    {
+     "s": 163.6,
+     "e": 166.54,
+     "text": "Då ritar vi en pil med spets i båda ändarna."
+    },
+    {
+     "s": 167.34,
+     "e": 169.04,
+     "text": "Den kallas ekvivalens."
+    },
+    {
+     "s": 169.84,
+     "e": 173.2,
+     "text": "Den betyder att påståendena är sanna samtidigt."
+    },
+    {
+     "s": 174,
+     "e": 177.46,
+     "text": "Antingen är båda sanna, eller så är båda falska."
+    },
+    {
+     "s": 178.56,
+     "e": 179.96,
+     "text": "Så här väljer vi pil."
+    },
+    {
+     "s": 180.76,
+     "e": 182.34,
+     "text": "Vi ställer två frågor."
+    },
+    {
+     "s": 183.14,
+     "e": 187.5,
+     "text": "Först: om det till vänster är sant, är det till höger sant då?"
+    },
+    {
+     "s": 188.36,
+     "e": 192.38,
+     "text": "Sen: om det till höger är sant, är det till vänster sant då?"
+    },
+    {
+     "s": 193.18,
+     "e": 196.72,
+     "text": "Blir svaret ja två gånger, så blir det dubbelpil."
+    },
+    {
+     "s": 197.52,
+     "e": 201.2,
+     "text": "Blir det ja bara på den första frågan, så blir det enkel pil."
+    },
+    {
+     "s": 202.3,
+     "e": 205.64,
+     "text": "I sin bok om geometri skrev Descartes ekvationer."
+    },
+    {
+     "s": 206.44,
+     "e": 209.58,
+     "text": "Det var han som började kalla det okända talet för x."
+    },
+    {
+     "s": 210.9,
+     "e": 214.18,
+     "text": "Varje gång du skriver x gör du alltså som Descartes."
+    },
+    {
+     "s": 215.18,
+     "e": 219.26,
+     "text": "Vi tar ekvationen två x plus fem är lika med elva."
+    },
+    {
+     "s": 220.36,
+     "e": 222.7,
+     "text": "Vi tar minus fem i båda leden."
+    },
+    {
+     "s": 223.5,
+     "e": 226.02,
+     "text": "Då står det två x är lika med sex."
+    },
+    {
+     "s": 226.82,
+     "e": 228.78,
+     "text": "Går det att gå tillbaka? Ja."
+    },
+    {
+     "s": 229.58,
+     "e": 233,
+     "text": "Plus fem i båda leden ger samma ekvation som förut."
+    },
+    {
+     "s": 233.8,
+     "e": 235.8,
+     "text": "Därför sätter vi en dubbelpil mellan dem."
+    },
+    {
+     "s": 236.9,
+     "e": 238.88,
+     "text": "Sen delar vi båda leden med två."
+    },
+    {
+     "s": 239.68,
+     "e": 241.7,
+     "text": "Då står det x är lika med tre."
+    },
+    {
+     "s": 242.5,
+     "e": 244.58,
+     "text": "Tillbaka går det också, med gånger två."
+    },
+    {
+     "s": 245.38,
+     "e": 247.48,
+     "text": "Så hela kedjan har dubbelpilar."
+    },
+    {
+     "s": 248.28,
+     "e": 250.42,
+     "text": "Varje steg går att göra baklänges."
+    },
+    {
+     "s": 251.22,
+     "e": 254.86,
+     "text": "Därför vet vi att x är lika med tre är den enda lösningen."
+    },
+    {
+     "s": 255.96,
+     "e": 259.06,
+     "text": "Men det finns ett steg som inte går baklänges."
+    },
+    {
+     "s": 259.86,
+     "e": 262.22,
+     "text": "Det är att ta båda leden i kvadrat."
+    },
+    {
+     "s": 263.02,
+     "e": 269.48,
+     "text": "Om x är lika med fem, så är x i kvadrat lika med tjugofem, för fem gånger fem är tjugofem."
+    },
+    {
+     "s": 270.28,
+     "e": 271.28,
+     "text": "Den pilen stämmer."
+    },
+    {
+     "s": 273.18,
+     "e": 277.14,
+     "text": "Nu baklänges. x i kvadrat är lika med tjugofem."
+    },
+    {
+     "s": 277.94,
+     "e": 282.54,
+     "text": "Vilket tal gånger sig självt blir tjugofem? Fem."
+    },
+    {
+     "s": 283.34,
+     "e": 289.22,
+     "text": "Men minus fem gånger minus fem blir också tjugofem, för minus gånger minus är plus."
+    },
+    {
+     "s": 290.02,
+     "e": 292.86,
+     "text": "Så x kan vara fem eller minus fem."
+    },
+    {
+     "s": 293.66,
+     "e": 295.92,
+     "text": "Vi vet inte säkert att x är fem."
+    },
+    {
+     "s": 296.72,
+     "e": 299,
+     "text": "Därför får pilen bara peka åt ett håll."
+    },
+    {
+     "s": 300.1,
+     "e": 303.38,
+     "text": "Descartes kallade minus fem för en falsk rot."
+    },
+    {
+     "s": 304.38,
+     "e": 308.22,
+     "text": "Om x är en sträcka kan den ju inte vara minus fem centimeter."
+    },
+    {
+     "s": 309.02,
+     "e": 310.02,
+     "text": "Så tänk på det här."
+    },
+    {
+     "s": 310.8,
+     "e": 314.46,
+     "text": "Efter ett steg som bara går åt ett håll ska du kolla svaren."
+    },
+    {
+     "s": 315.34,
+     "e": 316.96,
+     "text": "Nu går vi tillbaka till Leiden."
+    },
+    {
+     "s": 318.06,
+     "e": 322,
+     "text": "Den åttonde juni sextonhundratrettiosju är boken färdigtryckt."
+    },
+    {
+     "s": 322.8,
+     "e": 327.46,
+     "text": "Meningen jag tänker, alltså finns jag, citeras fortfarande i dag,"
+    },
+    {
+     "s": 327.7,
+     "e": 329.58,
+     "text": "nästan fyrahundra år senare."
+    },
+    {
+     "s": 330.68,
+     "e": 332.68,
+     "text": "Delen om geometri blev också känd."
+    },
+    {
+     "s": 333.48,
+     "e": 336.34,
+     "text": "Där satte Descartes ihop ekvationer och figurer."
+    },
+    {
+     "s": 337.14,
+     "e": 341.58,
+     "text": "Därför kallas koordinatsystemet ibland för det kartesiska koordinatsystemet."
+    },
+    {
+     "s": 342.38,
+     "e": 345.88,
+     "text": "Namnet kommer från Descartes namn på latin, Cartesius."
+    },
+    {
+     "s": 347.64,
+     "e": 348.68,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 349.48,
+     "e": 352.34,
+     "text": "Det första påståendet är x är lika med sju."
+    },
+    {
+     "s": 353.14,
+     "e": 356.58,
+     "text": "Det andra är x i kvadrat är lika med fyrtionio."
+    },
+    {
+     "s": 357.38,
+     "e": 361.34,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 362.14,
+     "e": 365.58,
+     "text": "Först: vilken pil ska stå mellan påståendena?"
+    },
+    {
+     "s": 366.38,
+     "e": 370.92,
+     "text": "Sen: vilka är lösningarna till x i kvadrat är lika med fyrtionio?"
     }
    ]
   },
