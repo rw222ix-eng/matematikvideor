@@ -194,10 +194,12 @@ try {
   const guide = async ({ max = 45, paus = 2200, val = "blandat", uppgift = null, efterSteg = null } = {}) => {
     const steg = []; let forra = null;
     for (let i = 0; i < max; i++) {
-      let t, vantat = 0;
-      for (;;) { t = await tillstand(); if (!t.guidar || (t.talar && t.knappar.length)) break; if ((vantat += 100) > 12000) break; await vila(100); }
+      let t, vantat = 0, totalt = 0;
+      // En bubbla med knappar men utan räknare är inget steg: Newton säger till medan texten under Visa allt
+      // skrivs fram, med bara Avsluta (vantaPaTexten). Den väntar verktyget ut, och den räknas inte som fastnat.
+      for (;;) { t = await tillstand(); const vantebubbla = t.talar && t.knappar.length && !t.raknare; if (!t.guidar || (t.talar && t.knappar.length && !vantebubbla)) break; if ((!vantebubbla && (vantat += 100) > 12000) || (totalt += 100) > 30000) break; await vila(100); }
       if (!t.guidar) { logg("  guiden slut"); break; }
-      if (!t.knappar.length) { logg("  FASTNAT: inga knappar på 12 s:", t.text.slice(0, 70)); steg.push({ ...t, fastnat: true }); break; }
+      if (!t.knappar.length || !t.raknare) { logg(`  FASTNAT: ${t.knappar.length ? "bubbla utan räknare i 30 s" : "inga knappar på 12 s"}:`, t.text.slice(0, 70)); steg.push({ ...t, fastnat: true }); break; }
       const [n, N] = t.raknare.split("/").map(Number);
       const hopp = forra && forra.N === N && n !== forra.n + 1 && !(n === 1) ? ` RÄKNAREN HOPPADE ${forra.n}/${forra.N} → ${n}/${N}` : "";
       logg(`  ${t.raknare.padEnd(5)} ${t.hash.slice(0, 32).padEnd(32)} ${t.knappar.join("|").padEnd(24)} ${t.text.slice(0, 80)}${hopp}`);
@@ -207,16 +209,18 @@ try {
       const har = (k) => t.knappar.includes(k);
       let knapp = har("Nästa") ? "Nästa" : har("Klar") ? "Klar" : har("Visa resten") ? "Visa resten" : "Hoppa över";
       if (knapp === "Hoppa över" && val === "blandat" && uppgift && i % 2 === 0) { const gjord = await uppgift(t, s); if (gjord) { await vila(paus); continue; } }
+      if (!har(knapp)) { logg(`  FASTNAT: ingen knapp att trycka på (${t.knappar.join("|")}):`, t.text.slice(0, 70)); steg.push({ ...t, fastnat: true }); break; }
       await pa(pek)(`#newton-knappar button:nth-child(${t.knappar.indexOf(knapp) + 1})`);
       if (knapp === "Klar") { await vila(1200); const e = await tillstand(); if (e.guidar) logg("  guiden kvar efter Klar"); break; }
       await vila(paus);
     }
     return steg;
   };
-  // Väntar tills bubblan har knappar (eller guiden är slut); med text: tills texten passar.
+  // Väntar tills bubblan har knappar (eller guiden är slut); med text: tills texten passar. Bubblan utan
+  // räknare medan texten under Visa allt skrivs fram är inget steg (se guide).
   const vantaPaKnapp = async (text = null, ms = 15000) => {
     const slut = Date.now() + ms; let t;
-    for (;;) { t = await tillstand(); if (!t.guidar || (t.talar && t.knappar.length && (!text || text.test(t.text)))) return t; if (Date.now() > slut) { logg("  väntade förgäves på", text || "knappar", "–", t.text.slice(0, 60), await js(`document.getElementById("newton").className + " / knappar " + document.querySelectorAll("#newton-knappar button").length + " / " + location.hash`)); return t; } await vila(100); }
+    for (;;) { t = await tillstand(); if (!t.guidar || (t.talar && t.knappar.length && t.raknare && (!text || text.test(t.text)))) return t; if (Date.now() > slut) { logg("  väntade förgäves på", text || "knappar", ":", t.text.slice(0, 60), await js(`document.getElementById("newton").className + " / knappar " + document.querySelectorAll("#newton-knappar button").length + " / " + location.hash`)); return t; } await vila(100); }
   };
   const vakt = async (namn) => {
     const v = await js(`(() => { const r = { fel: __fel.splice(0), fynd: __vakt.fynd.splice(0), efterSlut: __vakt.efterSlut.splice(0) }; return r; })()`);

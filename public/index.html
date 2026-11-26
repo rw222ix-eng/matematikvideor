@@ -1341,6 +1341,13 @@
   .newton-bubbla::after { content: ""; position: absolute; right: -7px; bottom: 26px; width: 12px; height: 12px; background: rgb(28, 25, 25); border-top: 1px solid rgba(242, 197, 114, .35); border-right: 1px solid rgba(242, 197, 114, .35); transform: rotate(45deg); }
   .newton.hoger .newton-bubbla { right: auto; left: calc(100% + 4px); transform-origin: 0 100%; }
   .newton.hoger .newton-bubbla::after { right: auto; left: -7px; border: 0; border-bottom: 1px solid rgba(242, 197, 114, .35); border-left: 1px solid rgba(242, 197, 114, .35); }
+  /* Medan han väntar på texten under Visa allt kan bubblan stå nere vid hans ben i stället för vid huvudet
+     (.lag, vantaPaTexten, 2026-11-26). Spetsen pekar då mot handen, inte mot golvet. */
+  .newton.lag .newton-bubbla { bottom: 6px; }
+  .newton.lag .newton-bubbla::after { bottom: auto; top: 18px; }
+  /* Under väntan tonar bubblan fram på sin plats utan att glida upp underifrån. Annars stod den de första
+     rutorna 10 px för lågt, över raden som skrivs strax under den (.vantan, 2026-11-26). */
+  .newton.vantan.talar:not(.gar) .newton-bubbla { animation-name: bubbla-in-stilla; }
   .newton-text { margin: 0; font: 400 16px/1.5 var(--sans); color: var(--ben); }
   .newton-text .rest { visibility: hidden; }
   .newton .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -1350,6 +1357,7 @@
   .newton-knappar .forst:active { transform: scale(.94); transition-duration: .08s; }
   .newton-knappar .sedan { color: var(--dis); transition: color .3s; }
   .newton-knappar .raknare { margin-left: auto; font: 500 11px/1 var(--sans); letter-spacing: .12em; color: var(--dis); font-variant-numeric: tabular-nums; }
+  .newton-knappar .till-hoger { margin-left: auto; }   /* Avsluta i väntebubblan, se vantaPaTexten */
   @media (hover: hover) { .newton-knappar .forst:hover { background: #F7D594; } .newton-knappar .sedan:hover { color: var(--ben); } }
   .newton.gar .newton-figur { animation: newton-ut .45s var(--lugn) forwards; }
   .newton.gar .newton-bubbla { animation: bubbla-ut .3s var(--lugn) forwards; }
@@ -1361,6 +1369,7 @@
   @keyframes newton-gunga-prat { from { transform: rotate(-1.1deg) translateY(0); } to { transform: rotate(.9deg) translateY(-1.5px); } }
   @keyframes newton-steg { from { transform: translateY(0) rotate(-1.2deg); } to { transform: translateY(-3px) rotate(1.2deg); } }
   @keyframes bubbla-in { from { opacity: 0; transform: translateY(10px) scale(.94); } }
+  @keyframes bubbla-in-stilla { from { opacity: 0; transform: scale(.94); } }
   @keyframes bubbla-ut { to { opacity: 0; transform: translateY(6px) scale(.97); } }
   /* Frågetecknet: startar guiden. Nere till vänster på alla sidor; döljs medan guiden pågår. */
   .hjalp { position: fixed; left: 16px; bottom: 16px; z-index: 34; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font: 500 21px/1 Charter, "Iowan Old Style", Georgia, serif; color: var(--accent); background: rgba(23, 20, 20, .82); border: 1px solid rgba(242, 197, 114, .5); box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .3s, color .3s, transform .4s var(--fjader), opacity .4s; }
@@ -6029,10 +6038,11 @@
   // baklänges, som när man håller inne backsteg: det som ligger under fönstret försvinner direkt,
   // eftersom det ändå inte syns, och det som syns raderas bakifrån. När bara den tomma första
   // raden är kvar blinkar blocket tre gånger, tonar bort, och sist tonar tiden och strecket bort.
-  // Klickar man igen mitt i avbryts det som pågår (skrivId).
+  // Klickar man igen mitt i avbryts det som pågår (skrivId). raderId är skrivId för den senaste
+  // raderingen, så att guiden ser om texten skrivs fram eller raderas (Newtons vantaPaTexten).
   const markor = document.createElement("span");
   markor.className = "markor"; markor.setAttribute("aria-hidden", "true");
-  let skrivId = 0;
+  let skrivId = 0, raderId = 0;
   const BLINK = 450;   // ett blink: blocket syns 0,225 s och är borta lika länge (.markor i stilarna)
   const BLINK_SLUT = 300;   // blinken när raderingen är klar (.markor.snabb)
   const vanta = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -6088,7 +6098,7 @@
   }
   // Ger true när allt är raderat, false om något annat tog över under tiden.
   async function raderaBort() {
-    const id = ++skrivId, ol = $("helatext");
+    const id = raderId = ++skrivId, ol = $("helatext");
     ol.classList.add("skriver"); ol.setAttribute("aria-busy", "true");
     const rader = raderna().filter((r) => r.s && !r.li.hidden);
     const synliga = rader.filter(({ li }) => li.getBoundingClientRect().top < innerHeight);
@@ -6317,6 +6327,7 @@
       const skrivet = textEl.querySelector(".skrivet"), rest = textEl.querySelector(".rest"), id = visar;
       let n = 0;
       clearTimeout(skrivTimer); stoppaLiv();
+      el.classList.remove("lag", "vantan");   // vid huvudet och med vanlig intoning igen efter väntan under Visa allt (vantaPaTexten)
       el.classList.add("talar", "pratar");
       if (nuLage === "prata") gestikulera();
       skrivKlar = () => {
@@ -6818,14 +6829,14 @@
         // Visa allt: står texten redan öppen (eleven läser i den) handlar steget om raderna i den i stället.
         // Texten: först öppnar eleven den. Sedan väntar Newton tills hela texten är framskriven (skrivmaskinen tar
         // ~8 s), och står kvar medan eleven läser (Rickard 2026-09-27: han hoppade vidare innan man hann se texten
-        // fällas ut). Nästa eller en rad tar guiden vidare.
+        // fällas ut). Under väntan säger han till (vantaPaTexten). Nästa eller en rad tar guiden vidare.
         { id: "allt", vy: "film", mal: () => visaAllt, ljus: () => [visaAllt], hoppaOm: () => alltRuta.open,
           lage: "prata", nar: "allt", hoppa: async () => { visaAllt.click(); },
           svar: "Titta, här kommer allt som sägs i filmen.",
           text: "Vill du läsa allt i lugn och ro? Tryck på Visa allt som sägs." },
         { id: "rader", vy: "film", mal: () => visaAllt, hoppaOm: () => !alltRuta.open,
           ljus: () => [...$("helatext").querySelectorAll("[data-t]")].filter((r) => synsIFonster(r, 1)).slice(0, 3),
-          vanta: async () => { await vantaPa(() => !$("helatext").classList.contains("skriver"), 12000); await vila(600); },
+          vanta: () => vantaPaTexten(),
           lage: "prata", nar: "rad", pausaEfter: true, svar: "Där sägs det i filmen.",
           knappar: [["Nästa", () => visaSteg(guideNr + 1)], ["Avsluta", () => slutaGuide()]],
           text: "Här står allt som sägs i filmen, rad för rad. Läs i lugn och ro. Tryck på en rad, så hoppar filmen dit." },
@@ -6940,8 +6951,10 @@
       // Guiden lyssnar från första stund: en snabb elev kan göra uppgiften medan Newton går dit.
       const lever = () => visar === "guide" && guideGang === gang && guideNr === n && !bekraftar;
       if (s.fore) s.fore();
-      // vanta: steget börjar först när det eleven ska se är klart (texten framskriven).
-      if (s.vanta) { await s.vanta(); if (!lever()) return; }
+      // vanta: steget börjar först när det eleven ska se är klart (texten framskriven). Behövs steget inte längre
+      // när väntan är slut (eleven fällde ihop texten under tiden) hoppas det över, som om det inte behövts från
+      // början (2026-11-26: förut sa Newton "Här står allt som sägs i filmen" fast texten var stängd).
+      if (s.vanta) { await s.vanta(); if (!lever()) return; if (s.hoppaOm && s.hoppaOm()) return forbi(); }
       if (mal) await tillMal(mal, s.text);
       if (!lever()) return;
       ljusFor = s.ljus || (mal ? () => [mal] : () => []);
@@ -7029,6 +7042,149 @@
       if (visar === "guide" && guideGang === gang && guideNr === n) visaSteg(n + 1);
     }
     const vantaPa = async (villkor, ms) => { const slut = performance.now() + ms; while (!villkor() && performance.now() < slut) await vila(80); return villkor(); };
+    // Steget rader väntar på skrivmaskinen under Visa allt i upp till 12 s. Förut stod Newton tyst under tiden,
+    // utan bubbla och utan knappar, så att eleven kunde tro att guiden hade hängt sig (2026-11-25). Nu säger han
+    // till direkt, med Avsluta i bubblan. Bubblan ska inte ligga över texten: ryms han och bubblan bredvid
+    // textens spalt (bred skärm) går han dit, med bubblan på den yttre sidan. Annars (mobilen) står han kvar.
+    // Han säger till innan han går, och bubblan följer med (2026-11-26: förut kom den först efter gången, 1,2 s
+    // efter Hoppa över och 1,45 s efter reaktionen när eleven själv tryckte på Visa allt). Raderna under markören
+    // är dolda tills de skrivs, så där ligger bubblan först över tom yta. Bubblan har två platser bredvid honom:
+    // vid huvudet som vanligt (hog) och nere vid benen (lag). Den börjar på den plats som stycket som skrivs
+    // (markörens li) har längst kvar till. Når stycket bubblan flyttar den till den andra platsen, om stycket inte
+    // är i vägen där också, och viker annars undan tills markören gått vidare till ett stycke nedanför. Då ligger
+    // den över färdig text, som bubblan i nästa steg (2026-11-26: förut kom bubblan först när markören passerat,
+    // så att Avsluta saknades de första 4 s på mobilen, och den kunde ligga över stycket som skrevs). I låga
+    // fönster finns ingen plats bredvid spalten, och de första styckena skrivs där bubblan vid huvudet står. Där
+    // börjar bubblan nere vid benen och flyttar upp när markören gått förbi huvudet (2026-11-26: förut valde den
+    // huvudet när stycket var några pixlar från det, och Avsluta saknades de första 2,4 till 3,1 s i fönster som
+    // 667×375, 896×414 och 1000×414). Det ses efter när stycket växer (ResizeObserver, före ritningen), när
+    // skrivmaskinen börjar eller slutar (aria-busy, MutationObserver), när sidan rullas eller fönstret byter
+    // storlek, och var 80:e ms. Han tar inga små steg medan han väntar (hem), så att bubblan inte glider in över
+    // texten, och byter fönstret storlek ställer han sig efter samma regel (vantePlats i stallOm). Fäller eleven
+    // ihop texten säger han det, med Avsluta kvar, och när texten är borta hoppas steget över (visaSteg). När
+    // texten är klar går bubblan undan, och steget börjar som förut.
+    let vantePlats = () => false;   // false: han väntar inte på texten
+    async function vantaPaTexten() {
+      const ol = $("helatext"), skriver = () => ol.classList.contains("skriver"), slut = performance.now() + 12000, nr = skrivId;
+      const n = guideNr, gang = guideGang, lever = () => visar === "guide" && guideGang === gang && guideNr === n && !bekraftar;
+      const fram = () => skriver() && skrivId === nr && raderId !== nr;   // skrivs fram, raderas inte
+      const raderas = () => skriver() && raderId === skrivId;   // eleven fällde ihop texten
+      const kvar = () => Math.max(0, slut - performance.now());
+      const tyst = () => { [skrivTimer, gestTimer].forEach(clearTimeout); skrivKlar = null; stoppaLiv(); el.classList.remove("talar", "pratar", "lag", "vantan"); knappar.replaceChildren(); stoppaRorelse(); };
+      // Han säger något med bara Avsluta, längst till höger. Först i raden låg den där Hoppa över nyss stod, och
+      // ett andra tryck där 600 ms efter Hoppa över avslutade hela guiden (mobilen, 2026-11-26).
+      const saga = (text) => {
+        prata(text, [{ text: "Avsluta", gor: slutaGuide }]); el.classList.add("vantan");
+        knappar.querySelector("button").classList.add("till-hoger");
+      };
+      // luft: hur många px stycket som skrivs har kvar till bubblan på platsen p, under 0 när det ligger i vägen,
+      // och Infinity när det aldrig når den (det står bredvid den, markören har gått förbi den eller texten skrivs
+      // inte längre). grad gör det till 2 (når den aldrig), 1 (mer än 140 px kvar), 0 (närmare) och -1 (i vägen).
+      // Bubblans ruta räknas utan intoningens skalning, från Newtons nederkant och bubblans avstånd till den i
+      // stilarna (128 px, 92 px på smal skärm, 6 px vid benen).
+      const bubbla = el.querySelector(".newton-bubbla");
+      const luft = (p) => {
+        const li = fram() && markor.isConnected ? markor.closest("li") : null; if (!li) return Infinity;
+        const r = li.getBoundingClientRect(), e = el.getBoundingClientRect(), x = e.left + bubbla.offsetLeft;
+        const botten = e.bottom - (p === "lag" ? 6 : smal() ? 92 : 128), topp = botten - bubbla.offsetHeight;
+        if (r.left >= x + bubbla.offsetWidth + 4 || r.right <= x - 4 || r.top >= botten) return Infinity;
+        return topp - 4 - r.bottom;
+      };
+      const grad = (l) => (l === Infinity ? 2 : l < 0 ? -1 : l < 140 ? 0 : 1), avstand = (p) => grad(luft(p));
+      // lage: där bubblan står, "hog" eller "lag", och null när den är undan (talar av, med texten och Avsluta
+      // kvar). Bubblan står kvar så länge stycket inte är i vägen, men står den vid benen flyttar den upp till
+      // huvudet så snart stycket aldrig når dit, för där står bubblan i nästa steg. Annars väljer valj: först en
+      // plats som stycket aldrig når, sedan en som det är långt till, vid lika den där bubblan står och sedan
+      // huvudet, och sist en plats som stycket är nära, den det har längst kvar till. En nära plats tas bara när
+      // bubblan kommer första gången, efter ett storleksbyte (forst) och när bubblan måste lämna sin plats. En dold
+      // bubbla som kom fram där skulle vika undan igen efter några tiondels sekunder. Stod fokus på Avsluta (Tab)
+      // får knappen tillbaka det när bubblan kommer, om eleven inte flyttat det under tiden. Skrivs texten fram
+      // på nytt tystnar han, och raderas den säger han det (stang).
+      let pratat = false, lage = null, forst = true, fokus = false, fonster = "", stanger = false;
+      const valj = (nara) => {
+        const a = (lage === "lag" ? ["lag", "hog"] : ["hog", "lag"]).map((p) => [p, luft(p)]);
+        for (const krav of nara ? [2, 1, 0] : [2, 1]) {
+          const t = a.filter(([, l]) => grad(l) >= krav);
+          if (t.length) return (krav ? t[0] : t.reduce((x, y) => (y[1] > x[1] ? y : x)))[0];
+        }
+        return null;
+      };
+      const ratta = () => {
+        if (!pratat || stanger || !lever()) return;
+        if (skriver() && !fram()) { if (raderas()) stang(); else { pratat = false; lage = null; tyst(); } return; }
+        const f = `${innerWidth}x${innerHeight}`;
+        if (f !== fonster) { fonster = f; forst = true; }
+        const ny = lage === "lag" && fram() && avstand("hog") === 2 ? "hog" : forst || !lage || avstand(lage) < 0 ? valj(forst || !!lage) : lage;
+        forst = false;
+        if (ny === lage) return;
+        if (lage) { fokus = el.contains(document.activeElement); el.classList.remove("talar"); }
+        lage = ny;
+        if (!ny) return;
+        // Bubblan kommer fram, eller flyttar, och tonar fram på den nya platsen (.vantan i stilarna).
+        el.classList.toggle("lag", ny === "lag"); void bubbla.offsetWidth; el.classList.add("talar");
+        vantaLiv(true);   // utan talar börjar han inget nytt (kanLeva), så livet startas om här
+        const a = document.activeElement, k = knappar.querySelector("button");
+        if (fokus && k && (!a || a === document.body || el.contains(a))) k.focus({ preventScroll: true });
+        fokus = false;
+      };
+      // Fäller eleven ihop texten säger han det, med Avsluta kvar, tills texten är borta (2026-11-26: förut stod han
+      // tyst utan knappar i 2,5 till 3,3 s). Bubblan står kvar där den stod, och vid huvudet om den var undan.
+      // Stod fokus på Avsluta står det på den nya knappen.
+      const stang = () => {
+        if (stanger || !lever()) return;
+        const fore = lage, hadeFokus = fokus || el.contains(document.activeElement); stanger = pratat = true; lage = null;
+        satLage("prata"); saga("Okej, då stänger vi texten.");
+        if (fore === "lag") el.classList.add("lag");
+        if (hadeFokus) knappar.querySelector("button").focus({ preventScroll: true });
+      };
+      // raderaBort sätter aria-busy också när det redan står där, och det ger en post i MutationObserver.
+      const vakt = new ResizeObserver(() => ratta()), busy = new MutationObserver(() => ratta());
+      // Bredvid spalten: minst 180 px till bubblan och 16 px luft mot texten, helst på den sida han står.
+      // null: det finns ingen sådan plats.
+      const bredvid = () => {
+        const [b, h] = figur(), vw = innerWidth, k = ol.getBoundingClientRect();
+        const fri = { hoger: vw - 10 - (k.right + 16) - b - 4, vanster: k.left - 16 - b - 4 - 10 };
+        const sida = k.width ? (pos && pos.x + b / 2 < vw / 2 ? ["vanster", "hoger"] : ["hoger", "vanster"]).find((s) => fri[s] >= 180) : null;
+        if (!sida) return null;
+        const w = Math.min(290, fri[sida]);
+        return sida === "hoger" ? { x: vw - 10 - w - 4 - b, y: innerHeight - h - 4, hoger: true } : { x: 14 + w, y: innerHeight - h - 4, hoger: false };
+      };
+      const minPlats = vantePlats = () => lever() && fram() && bredvid();
+      try {
+        if (fram()) {
+          hem = null;
+          const p = bredvid();
+          if (lever() && fram()) {
+            // Uttrycket (glad efter reaktionen) tonar bort medan bubblan kommer, och bubblan står direkt på den
+            // sida den har bredvid spalten.
+            satLage("prata");
+            if (p) { el.classList.toggle("hoger", p.hoger); bubbelBredd(p); }
+            saga("Vänta lite, nu kommer texten."); pratat = true; lage = "hog";
+            // Går han bredvid spalten börjar bubblan vid huvudet, där den ska stå när han kommit fram, och flyttar
+            // bara om stycket kommer i vägen under gången.
+            if (p) { forst = false; fonster = `${innerWidth}x${innerHeight}`; }
+            ratta(); vakt.observe(ol); busy.observe(ol, { attributes: true, attributeFilter: ["aria-busy"] });
+            addEventListener("scroll", ratta, { passive: true }); addEventListener("resize", ratta);
+            // Gången väntas inte ut, så att ratta ser efter var 80:e ms också medan han går. Stegremsan och gesten
+            // byter samma bild, så han gestikulerar inte under gången.
+            if (p) { clearTimeout(gestTimer); gaTill(p); }
+          }
+          // Raderas texten säger han det i ratta. Är tiden ute står bubblan kvar tills steget börjar.
+          await vantaPa(() => { ratta(); return !lever() || !fram(); }, kvar());
+        }
+        // Raderas texten väntar han tills den är borta, också efter 12 s och utan pausen efteråt. Sedan hoppar
+        // visaSteg över steget, för texten är stängd.
+        if (lever() && raderas()) stang();
+        await vantaPa(() => !lever() || !skriver(), raderas() ? 15000 : kvar());
+        if (lever() && alltRuta.open && !raderas()) await vila(600);
+        if (lever() && raderas()) { stang(); await vantaPa(() => !lever() || !skriver(), 15000); }
+        if (lever() && pratat) { pratat = false; tyst(); }
+      } finally {
+        vakt.disconnect(); busy.disconnect(); removeEventListener("scroll", ratta, { passive: true }); removeEventListener("resize", ratta);
+        if (vantePlats === minPlats) vantePlats = () => false;
+        el.classList.remove("vantan");
+      }
+    }
     // Eleven öppnade en film (eller guiden gjorde det): filmens steg tar vid när spelaren finns.
     // Från en film till en annan (Nästa del, formelbladets siffror, en sökträff) fortsätter guiden med
     // de steg som var kvar, nu i den nya filmen, och räknaren fortsätter där den var.
@@ -7174,11 +7330,12 @@
     function stallOm() {
       if (visar !== "guide" || guideNr < 0 || !pos) return;
       const s = guideSteg[guideNr]; if (!s) return;
-      const p = stalle(s, s.mal ? s.mal() : null);
+      // Väntar han på texten under Visa allt står han bredvid spalten om det finns plats, och tar inga små steg.
+      const v = vantePlats(), p = v || stalle(s, s.mal ? s.mal() : null);
       stoppaLiv(); gangId++;
       el.classList.remove("gar-steg", "speglad"); el.classList.toggle("hoger", p.hoger); bubbelBredd(p);
       el.style.setProperty("--gang", "0ms"); el.style.transform = `translate3d(${Math.round(p.x)}px, ${Math.round(p.y)}px, 0)`;
-      pos = p; hem = p;
+      pos = p; hem = v === false ? p : null;
       if (ljusFor) lys(ljusFor());
       if (kanLeva()) vantaLiv(true);
     }
