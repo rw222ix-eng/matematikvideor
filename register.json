@@ -7,7 +7,8 @@
     "kurser": ["Matematik 1c", "Matematik 2a", "Matematik 2c"],
     "bokkapitel": { "Matematik 1c": 1, "Matematik 2a": 3, "Matematik 2c": 3 },
     "ocksa": {
-      "ma2a": 12.4
+      "ma2a": 12.4,
+      "ma2c": 12.4
     },
     "moment": "Potenser med bråk i exponenten",
     "begrepp": [
@@ -104,7 +105,8 @@
     "kurser": ["Matematik 1c", "Matematik 2a", "Matematik 2c"],
     "bokkapitel": { "Matematik 1c": 2, "Matematik 2a": 3, "Matematik 2c": 3 },
     "ocksa": {
-      "ma2a": 12.7
+      "ma2a": 12.7,
+      "ma2c": 12.7
     },
     "moment": "Lösa potensekvationer",
     "begrepp": [
@@ -533,7 +535,14 @@
     "serie": "ma2a",
     "del": 1,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 1 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 1, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 1
+    },
     "moment": "Kvadreringsreglerna och konjugatregeln",
     "begrepp": [
       "kvadreringsreglerna",
@@ -563,7 +572,14 @@
     "serie": "ma2a",
     "del": 3,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 1 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 1, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 3
+    },
     "moment": "Lösa x² = a",
     "begrepp": [
       "andragradsekvation",
@@ -589,7 +605,14 @@
     "serie": "ma2a",
     "del": 3.5,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 1 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 1, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 3.5
+    },
     "moment": "Lösa andragradsekvationer med nollproduktmetoden",
     "begrepp": [
       "andragradsekvation",
@@ -616,7 +639,14 @@
     "serie": "ma2a",
     "del": 4,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 1 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 1, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 4
+    },
     "moment": "Lösa andragradsekvationer med pq-formeln",
     "begrepp": [
       "pq-formeln",
@@ -650,7 +680,14 @@
     "serie": "ma2a",
     "del": 2,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 1 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 1, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 2
+    },
     "moment": "Faktorisera med kvadrerings- och konjugatregeln",
     "begrepp": [
       "faktorisera",
@@ -917,7 +954,14 @@
     "titel": "Boyle och luften",
     "ar": 1662,
     "kurs": "Matematik 1c",
-    "bokkapitel": { "Matematik 1c": 4 },
+    "kurser": [
+      "Matematik 1c",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 1c": 4, "Matematik 2c": 3 },
+    "ocksa": {
+      "ma2c": 20
+    },
     "moment": "Potensfunktioner y = C · xᵃ",
     "begrepp": [
       "potensfunktion",
@@ -940,7 +984,14 @@
     "titel": "Franklin och räntan",
     "ar": 1789,
     "kurs": "Matematik 1c",
-    "bokkapitel": { "Matematik 1c": 4 },
+    "kurser": [
+      "Matematik 1c",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 1c": 4, "Matematik 2c": 3 },
+    "ocksa": {
+      "ma2c": 21
+    },
     "moment": "Exponentialfunktioner",
     "begrepp": [
       "exponentialfunktion",
@@ -1073,7 +1124,14 @@
     "serie": "ma2a",
     "del": 7,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 2 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 2, "Matematik 2c": 1 },
+    "ocksa": {
+      "ma2c": 7
+    },
     "moment": "Lösa ekvationssystem grafiskt",
     "begrepp": [
       "ekvationssystem",
@@ -1110,7 +1168,14 @@
     "serie": "ma2a",
     "del": 8,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 2 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 2, "Matematik 2c": 1 },
+    "ocksa": {
+      "ma2c": 8
+    },
     "moment": "Lösa ekvationssystem algebraiskt med substitutionsmetoden och additionsmetoden",
     "begrepp": [
       "ekvationssystem",
@@ -1145,7 +1210,14 @@
     "serie": "ma2a",
     "del": 12,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 3 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 3, "Matematik 2c": 3 },
+    "ocksa": {
+      "ma2c": 12
+    },
     "moment": "Potensreglerna med bokstäver",
     "begrepp": [
       "potens",
@@ -1332,7 +1404,14 @@
     "serie": "ma2a",
     "del": 9,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 3 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 3, "Matematik 2c": 3 },
+    "ocksa": {
+      "ma2c": 9
+    },
     "moment": "Lösa exponentialekvationer grafiskt med GeoGebra",
     "begrepp": [
       "exponentialekvation",
@@ -1368,7 +1447,14 @@
     "serie": "ma2a",
     "del": 13,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 3 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 3, "Matematik 2c": 3 },
+    "ocksa": {
+      "ma2c": 13
+    },
     "moment": "Potensekvationer och potensfunktioner",
     "begrepp": [
       "potensekvation",
@@ -1409,7 +1495,14 @@
     "serie": "ma2a",
     "del": 11,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 3 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 3, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 11
+    },
     "moment": "Största och minsta värde",
     "begrepp": [
       "andragradsfunktion",
@@ -1449,7 +1542,14 @@
     "serie": "ma2a",
     "del": 10,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 3 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 3, "Matematik 2c": 2 },
+    "ocksa": {
+      "ma2c": 10
+    },
     "moment": "Andragradsfunktionens graf: parabel, symmetrilinje, extrempunkt och nollställen",
     "begrepp": [
       "andragradsfunktion",
@@ -1492,6 +1592,9 @@
       "Matematik 2c"
     ],
     "bokkapitel": { "Matematik 2a": 4, "Matematik 2c": 5 },
+    "ocksa": {
+      "ma2c": 14
+    },
     "moment": "Lägesmått och histogram",
     "begrepp": [
       "lägesmått",
@@ -1534,6 +1637,9 @@
       "Matematik 2c"
     ],
     "bokkapitel": { "Matematik 2a": 4, "Matematik 2c": 5 },
+    "ocksa": {
+      "ma2c": 15
+    },
     "moment": "Spridningsmått, kvartiler, lådagram och percentiler",
     "begrepp": [
       "spridning",
@@ -1575,6 +1681,9 @@
       "Matematik 2c"
     ],
     "bokkapitel": { "Matematik 2a": 4, "Matematik 2c": 5 },
+    "ocksa": {
+      "ma2c": 16
+    },
     "moment": "Standardavvikelse",
     "begrepp": [
       "standardavvikelse",
@@ -1618,6 +1727,9 @@
       "Matematik 2c"
     ],
     "bokkapitel": { "Matematik 2a": 4, "Matematik 2c": 5 },
+    "ocksa": {
+      "ma2c": 17
+    },
     "moment": "Normalfördelning",
     "begrepp": [
       "normalfördelning",
@@ -1654,7 +1766,14 @@
     "serie": "ma2a",
     "del": 19,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 5 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 5, "Matematik 2c": 4 },
+    "ocksa": {
+      "ma2c": 19
+    },
     "moment": "Avståndsformeln",
     "begrepp": [
       "avståndsformeln",
@@ -1695,7 +1814,14 @@
     "serie": "ma2a",
     "del": 18,
     "kurs": "Matematik 2a",
-    "bokkapitel": { "Matematik 2a": 5 },
+    "kurser": [
+      "Matematik 2a",
+      "Matematik 2c"
+    ],
+    "bokkapitel": { "Matematik 2a": 5, "Matematik 2c": 4 },
+    "ocksa": {
+      "ma2c": 18
+    },
     "moment": "Pythagoras sats",
     "begrepp": [
       "Pythagoras sats",
