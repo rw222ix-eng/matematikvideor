@@ -4202,20 +4202,27 @@
   };
 
   // Kursknapparna (Rickard 2026-10-03). Formelbladet Ma 1 räknas till Ma 1c och Formelbladet Ma 2
-  // till Ma 2a. Vald från början är kursen eleven kom från: fliken på filmvalet eller filmen man
+  // till Ma 2a och Ma 2c. Vald från början är kursen eleven kom från: fliken på filmvalet eller filmen man
   // tittar på. Väljer eleven själv gäller det tills sidan laddas om. Ma 2c (2026-10-26) är filmerna
-  // med Matematik 2c som kurs eller bland kurserna: Malthus, Kepler och Delos.
+  // med Matematik 2c som kurs eller bland kurserna. Sedan 2026-11-26 är det också Ma 2a-filmerna med
+  // delar i Ma 2c, och Boyle och Franklin, så formelbladet för Ma 2 måste räknas dit också.
   const KURSVAL = [
     { id: "1c", namn: "Ma 1c", re: /^Matematik 1c?$/i },
     { id: "2a", namn: "Ma 2a", re: /^Matematik 2a?$/i },
-    { id: "2c", namn: "Ma 2c", re: /^Matematik 2c$/i },
+    { id: "2c", namn: "Ma 2c", re: /^Matematik 2c?$/i },
   ];
   const kurserAv = (v) => (v.kurser && v.kurser.length ? v.kurser : [v.kurs]);
   const iKurs = (v, id) => id === "alla" || kurserAv(v).some((k) => KURSVAL.find((x) => x.id === id).re.test(k));
   let kursVal = null, sokKurs = "alla";
+  const kursAvHyllan = () => (hylla === "ma2c" ? "2c" : ["ma2a", "formelbladet-ma2"].includes(hylla) ? "2a" : "1c");
   function kursFranLaget() {
-    if (aktivVy === "film" && aktuell) { const k = KURSVAL.filter((x) => iKurs(aktuell, x.id)); return k.length === 1 ? k[0].id : "alla"; }
-    if (aktivVy === "valj") return hylla === "ma2c" ? "2c" : ["ma2a", "formelbladet-ma2"].includes(hylla) ? "2a" : "1c";
+    // En film på flera kurser: kursen på fliken eleven kom från, om filmen står på den kursen (Ma 2a 10 från
+    // fliken Ma 2c ger Ma 2c, 2026-11-26). Annars, och från Inför provet eller Spel, alla kurser.
+    if (aktivVy === "film" && aktuell) {
+      const k = KURSVAL.filter((x) => iKurs(aktuell, x.id)).map((x) => x.id);
+      return k.length === 1 ? k[0] : ["berattelser", "ma2a", "ma2c"].includes(hylla) && k.includes(kursAvHyllan()) ? kursAvHyllan() : "alla";
+    }
+    if (aktivVy === "valj") return kursAvHyllan();
     return "alla";
   }
 

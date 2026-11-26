@@ -144,6 +144,17 @@ prova(PROV, "Frågorna");
 prova(KONTROLL, "Kontrollfrågorna");
 prova(NYA, "De nya filmerna");
 prova(STAVFEL, "Stavfelen");
+// Kursknapparna (2026-11-26): Formelbladet Ma 2 hör till Ma 2a och Ma 2c. När Ma 2a-filmerna fick Ma 2c gömde
+// knappen Ma 2c formelbladet, och «logaritm» på fliken Ma 2c gav Stifels tabell i stället för del 3.
+const { iKurs } = new Function("videor", bit("  const KURSVAL = [", "  let kursVal") + "\nreturn { iKurs };")(data.videor);
+const kursFel = [];
+for (const v of data.videor.filter((v) => v.serie === "formelbladet-ma2")) for (const id of ["2a", "2c"]) if (!iKurs(v, id)) kursFel.push(`  ${v.id} står inte under Ma ${id}`);
+for (const [q, id, svar] of [["logaritm", "2c", "m23"], ["logaritm", "2a", "m23"], ["andragradsfunktion", "2c", "m22"], ["sinus", "1c", "sincos"]]) {
+  const forst = (sok(q).res.find((r) => iKurs(r.v, id)) || { v: { id: "(inget)" } }).v.id;
+  if (!svar.split(" ").map((k) => K[k]).includes(forst)) kursFel.push(`  ${q} med Ma ${id} vald gav ${forst} först`);
+}
+console.log(`Kursknapparna: ${kursFel.length ? `${kursFel.length} fel` : "rätt"}.`);
+if (kursFel.length) { console.log(kursFel.join("\n")); process.exitCode = 1; }
 // Rutan till Inför provet (Rickard 2026-11-26: «En ruta till Inför provet»). "bara": bara rutan, "med": rutan över
 // träffarna. Ingen av frågorna ovan får rutan, och inte "stickprov" heller (den står i Kontrollfrågorna).
 const PROVFRAGOR = [
