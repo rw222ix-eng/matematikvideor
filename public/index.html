@@ -952,6 +952,11 @@
   .dintur-ledtrad, .dintur-losning, #dintur-nasta, #losning-steg, #losning-tallinje { scroll-margin: 110px 0 40px; }
   .dintur-ledtrad[hidden], .dintur-losning[hidden] { display: none; }
   .dintur-ledtrad p { margin: 0 0 14px; max-width: 680px; color: #CFC8BA; }
+  /* Ledtråden vid felet (Rickards val 2026-11-26, «Ledtråden vid felet»): felbeskedet slutar på «Visa ledtråden»,
+     och ledtråden öppnas under den delen, där eleven redan tittar. Knappen Ledtråd längst ner finns kvar.
+     Den osynliga kanten ger fingret ett större mål utan att raden blir högre. */
+  .ledtrad-lank { margin: -6px 0 -6px 4px; padding: 6px 0; border: 0; background: none; font: inherit; color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; cursor: pointer; }
+  .del .dintur-ledtrad { margin-top: 14px; padding-top: 14px; }
   .dintur-losning h4 { margin: 0 0 12px; }
   .losning-steg { margin: 0; padding: 0 0 0 1.4em; display: grid; gap: 8px; }
   .losning-steg li { font: 500 21px/1.45 var(--skrift); color: var(--ben); animation: fram .6s var(--lugn) both; }
@@ -1032,6 +1037,21 @@
     .dintur.med-figur > * { grid-column: 1; }
     .dintur.med-figur > .dintur-figur-ram { grid-column: 2; grid-row: 2 / span 3; position: sticky; top: 120px; }
     .dintur.med-figur .dintur-figur { margin: 6px 0 0; }
+  }
+  /* Bilden bredvid frågan (Rickards val 2026-11-26): plåten stod förut över frågorna och tog en hel skärmhöjd,
+     så att fältet hamnade under kanten. På bred skärm står den till höger, från rubriken och nedåt. GeoGebra
+     behöver hela bredden och står då under både frågan och bilden. Bilden står då bara bredvid frågan, så att
+     luften som bilden kräver hamnar under frågan och inte mellan rubriken och frågan. */
+  @media (min-width: 900px) {
+    .dintur.med-bild:not([hidden]) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 46%); column-gap: 40px; align-items: start; }
+    .dintur.med-bild > * { grid-column: 1; }
+    .dintur.med-bild > .dintur-figur-ram { grid-column: 2; grid-row: 1 / span 4; position: sticky; top: 120px; }
+    .dintur.med-bild .dintur-figur.plat { margin: 0; }
+    .dintur.med-bild .dintur-fraga { font-size: clamp(20px, 1.8vw, 24px); }
+    .dintur.med-bild .del-fraga { font-size: 17px; }
+    .dintur.med-bild .del-svar input { flex: 1 1 150px; max-width: 300px; }
+    .dintur.med-bild.med-ggb > .dintur-figur-ram { grid-row: 2; }
+    .dintur.med-bild.med-ggb > .dintur-ggb { grid-column: 1 / -1; }
   }
 
   /* Om videor.json inte går att hämta, eller JavaScript är avstängt: ett besked i stället för en tom sida. */
@@ -5587,8 +5607,12 @@
     fig.hidden = !d.figur;
     fig.innerHTML = html(d.figur ? figur(d.figur) : "");
     dtEl.classList.toggle("med-figur", !!d.figur && !d.figur.bild);
+    dtEl.classList.toggle("med-bild", !!d.figur && !!d.figur.bild);
+    dtEl.classList.toggle("med-ggb", !!d.geogebra);
     if (d.figur) figurIakttagare.observe(fig.firstElementChild);
     $("dintur-lost").hidden = !tidigare;
+    // Ledtråden kan stå under en del sedan förra filmen. Den flyttas hem innan delarna ritas om, annars försvinner den med dem.
+    ledtradHem();
     const delar = $("dintur-delar");
     delar.classList.toggle("flera", d.delar.length > 1);
     delar.innerHTML = html(d.delar.map((del, i) => `
@@ -5724,9 +5748,12 @@
     li.classList.toggle("oklart", dom === "oklart");
     // Rubriken står redan i den stora raden, så den tas bort ur förklaringen.
     const ord = r.ok ? "Rätt!" : r.forstod ? "Fel" : r.tomt ? "Skriv ett svar först" : "Svaret gick inte att läsa";
-    const forklaring = r.text.replace(/^(Rätt!|Inte riktigt\.|Svaret gick inte att läsa\.|Skriv ett svar först\.)\s*/, "");
+    let forklaring = r.text.replace(/^(Rätt!|Inte riktigt\.|Svaret gick inte att läsa\.|Skriv ett svar först\.)\s*/, "");
+    // Ett fel svar slutar på «Visa ledtråden» så länge ledtråden är stängd. Då står inte «eller ta en ledtråd» i texten också.
+    const lank = dom === "fel" && dt && dt.d.ledtrad && $("dintur-ledtrad").hidden ? `<button type="button" class="ledtrad-lank" data-ledtrad>Visa ledtråden</button>` : "";
+    if (lank) forklaring = forklaring.replace(/,\s*eller ta en ledtråd\.$/, ".");
     try {
-      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : r.forstod ? KRYSS : FRAGETECKEN}</span><span class="dom-ord">${ord}</span>${forklaring ? `<span class="dom-text">${matte(forklaring, true)}</span>` : ""}`);
+      text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : r.forstod ? KRYSS : FRAGETECKEN}</span><span class="dom-ord">${ord}</span>${forklaring || lank ? `<span class="dom-text">${forklaring ? matte(forklaring, true) : ""}${forklaring && lank ? " " : ""}${lank}</span>` : ""}`);
     } catch (x) { text.textContent = r.text; }
     try {
       if (dom === "oklart") inp.animate([{ transform: "none" }, { transform: "translateX(-7px)" }, { transform: "translateX(6px)" }, { transform: "translateX(-3px)" }, { transform: "none" }], { duration: 320, easing: "ease-out" });
@@ -5763,7 +5790,7 @@
         // Newton: två svar sidan inte kan läsa, två fel, eller hela uppgiften löst.
         // Tipsen lyser på det de handlar om: svarsraden med tecknen, ledtrådsknappen, lösningen.
         if (!r.ok && !r.forstod) { dt.oforstatt = (dt.oforstatt || 0) + 1; if (dt.oforstatt >= 2) Newton.visa("format", ...TIPS.format, { direkt: true, markera: () => [li] }); }
-        if (!r.ok && r.forstod && dt.fel >= 2) Newton.visa("ledtrad", ...TIPS.ledtrad, { direkt: true, markera: () => [$("dintur-ledtrad-knapp")] });
+        if (!r.ok && r.forstod && dt.fel >= 2) Newton.visa("ledtrad", ...TIPS.ledtrad, { direkt: true, markera: () => [li.querySelector("[data-ledtrad]") || $("dintur-ledtrad-knapp")] });
         if (allt) Newton.visa(`lost-${dt.v.id}`, ...TIPS.lost, { direkt: true, rorelse: "kasta", markera: () => [$("dintur-losning-knapp")] });
       }
     } catch (x) { console.error(x); }
@@ -5776,6 +5803,19 @@
   // fönstrets nederkant, och då såg det ut som att knappen inte gjorde något (Rickard 2026-09-26).
   // Sidan glider nu så långt att det nya syns helt, och inte längre än så.
   const visaIFonstret = (el) => requestAnimationFrame(() => glidFram(el));
+  // Ledtråden vid felet (Rickards val 2026-11-26): «Visa ledtråden» i felbeskedet öppnar den under den delen,
+  // och knappen Ledtråd längst ner öppnar den under knapparna. Det finns en enda ledtråd, och den flyttas dit
+  // den öppnas. När den är öppen tas länkarna i de andra felbeskeden bort, eftersom de inte längre gör något.
+  function ledtradHem() { dtEl.querySelector(".dintur-knappar").after($("dintur-ledtrad")); }
+  function visaLedtrad(li) {
+    const l = $("dintur-ledtrad");
+    if (li) li.appendChild(l); else ledtradHem();
+    l.hidden = false; $("dintur-ledtrad-knapp").setAttribute("aria-expanded", "true");
+    dtEl.querySelectorAll("[data-ledtrad]").forEach((b) => b.remove());
+    Newton.markera("ledtrad");
+    visaIFonstret(l);
+    return l;
+  }
   dtEl.addEventListener("click", (e) => {
     const tecken = e.target.closest("[data-tecken]");
     if (tecken) {
@@ -5784,11 +5824,19 @@
       inp.setRangeText(tecken.dataset.tecken, a, b, "end"); inp.focus();
       return;
     }
+    // Länken försvinner när ledtråden öppnas. Med mus och tangentbord går fokus tillbaka till fältet, så att eleven
+    // kan skriva ett nytt svar direkt. På en telefon skulle tangentbordet då täcka ledtråden, så där får ledtråden fokus.
+    const lank = e.target.closest("[data-ledtrad]");
+    if (lank) {
+      const li = lank.closest(".del"), l = visaLedtrad(li);
+      if (matchMedia("(pointer: fine)").matches) li.querySelector("input").focus({ preventScroll: true });
+      else { l.tabIndex = -1; l.focus({ preventScroll: true }); }
+      return;
+    }
     if (e.target.closest("#dintur-ledtrad-knapp")) {
-      Newton.markera("ledtrad");
-      const l = $("dintur-ledtrad"), knapp = $("dintur-ledtrad-knapp");
-      l.hidden = !l.hidden; knapp.setAttribute("aria-expanded", String(!l.hidden));
-      if (!l.hidden) visaIFonstret(l);
+      const l = $("dintur-ledtrad");
+      if (l.hidden) visaLedtrad(null);
+      else { l.hidden = true; $("dintur-ledtrad-knapp").setAttribute("aria-expanded", "false"); }
       return;
     }
     if (e.target.closest("#dintur-losning-knapp")) {
