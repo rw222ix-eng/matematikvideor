@@ -1331,8 +1331,25 @@
     .hjalp::after { left: calc(100% + 12px); bottom: 7px; transform: translateX(-5px); }
     .hjalp::before { left: calc(100% + 8px); bottom: 18px; margin-left: 0; transform: translateX(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
   }
-  .hjalp.lockar { animation: hjalp-puls 1.6s ease-in-out infinite; }
-  @keyframes hjalp-puls { 0%, 100% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 0 rgba(242, 197, 114, 0); border-color: rgba(242, 197, 114, .5); } 50% { box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .9), 0 0 0 7px rgba(242, 197, 114, .2), 0 0 26px 4px rgba(242, 197, 114, .45); border-color: rgba(242, 197, 114, 1); } }
+  /* Pulsen görs av två lager i knappen som bara ändrar opacity och transform, och det sköter grafikkortet.
+     Förut animerades box-shadow och border-color på knappen själv, och då räknades och målades knappen om
+     i varje bildruta. Med processorn strypt 6x kostade pulsen huvudtråden 181 ms/s med stjärnhimlen på och
+     289 ms/s utan, och nu 55 och 3 ms/s. Det som är kvar är stilomräkningen i himlens egna bildrutor (2026-11-26).
+     .hjalp-kant är en hel guldkant som tonar in ovanpå knappens kant på 0,5, så att kanten går från 0,5 till 1
+     som förut. Bara kantutjämningen i ringens ytterkanter blir lite ljusare när pulsen är som störst.
+     .hjalp-glod::after har glöden som den ser ut när pulsen är som störst. Den växer från knappens storlek
+     (skalan 22/29, ringen på 7 px ligger då precis under knappen) till full storlek, så att ringen växer
+     utåt som förut. Masken på .hjalp-glod döljer det av glöden som hamnar innanför knappens kant. */
+  .hjalp-kant, .hjalp-glod { position: absolute; pointer-events: none; }
+  .hjalp-kant { inset: -1px; border-radius: 50%; border: 1px solid rgb(242, 197, 114); opacity: 0; }
+  .hjalp-glod { inset: -41px; -webkit-mask: radial-gradient(circle, transparent 22px, #000 22px); mask: radial-gradient(circle, transparent 22px, #000 22px); }
+  .hjalp-glod::after { content: ""; position: absolute; inset: 40px; border-radius: 50%; box-shadow: 0 0 0 7px rgba(242, 197, 114, .2), 0 0 26px 4px rgba(242, 197, 114, .45); opacity: 0; transform: scale(.7586); }
+  .hjalp.lockar .hjalp-kant { animation: hjalp-puls 1.6s ease-in-out infinite; }
+  .hjalp.lockar .hjalp-glod::after { animation: hjalp-glod 1.6s ease-in-out infinite; }
+  @keyframes hjalp-puls { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+  @keyframes hjalp-glod { 0%, 100% { opacity: 0; transform: scale(.7586); } 50% { opacity: 1; transform: none; } }
+  /* Knappen på 40 px (smal skärm): ringen ligger under knappen vid skalan 20/27. */
+  @keyframes hjalp-glod-40 { 0%, 100% { opacity: 0; transform: scale(.7407); } 50% { opacity: 1; transform: none; } }
   @media (hover: hover) { .hjalp:hover { background: var(--accent); color: var(--bg); transform: scale(1.08); } }
   /* Under guiden syns frågetecknet också i sökrutan (z 40), där guiden visar sökningen. Annars göms
      det medan man söker, eftersom det låg över träfflistan (Rickard 2026-10-03). */
@@ -1370,6 +1387,9 @@
     .newton-bubbla { bottom: 92px; max-width: min(var(--bubbla-max, 290px), calc(100vw - 96px)); padding: 12px 14px 10px; }
     .newton-text { font-size: 15px; }
     .hjalp { left: 12px; bottom: 12px; width: 40px; height: 40px; font-size: 19px; }
+    .hjalp-glod { -webkit-mask: radial-gradient(circle, transparent 20px, #000 20px); mask: radial-gradient(circle, transparent 20px, #000 20px); }
+    .hjalp-glod::after { transform: scale(.7407); }
+    .hjalp.lockar .hjalp-glod::after { animation-name: hjalp-glod-40; }
   }
   /* De minsta telefonerna (≤ 380 px): ännu lite mindre, så att "Del 2  Parabler, linjer och avstånd" ryms på en rad. */
   @media (max-width: 380px) {
@@ -1593,7 +1613,7 @@
   <div class="newton-figur" id="newton-figur" aria-hidden="true"><div class="newton-spegel"><div class="newton-gunga"><div class="newton-kropp"><img id="newton-bild" alt=""><img class="newton-blink" id="newton-blink" alt=""><img class="newton-uttryck" id="newton-uttryck" alt=""><div class="newton-rorelse" id="newton-rorelse"></div><div class="newton-apple" id="newton-apple"></div></div></div></div></div>
 </aside>
 <div class="guide-ljus" id="guide-ljus" aria-hidden="true"><div class="guide-dim" id="guide-dim"></div></div>
-<button class="hjalp" id="hjalp" type="button" aria-label="Hjälp, jag fattar ingenting! Newton visar runt på sidan" data-tips="Hjälp, jag fattar ingenting!">?</button>
+<button class="hjalp" id="hjalp" type="button" aria-label="Hjälp, jag fattar ingenting! Newton visar runt på sidan" data-tips="Hjälp, jag fattar ingenting!"><span class="hjalp-glod" aria-hidden="true"></span><span class="hjalp-kant" aria-hidden="true"></span>?</button>
 <script>
 (async () => {
   const $ = (id) => document.getElementById(id);
