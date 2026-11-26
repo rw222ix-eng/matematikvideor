@@ -1525,6 +1525,115 @@
   /* Korta telefoner: under 640 px höjd hamnade rutan under Utforska nedanför fönstrets kant och under frågetecknet
      (320×568), och introt rullar inte. Där finns förstoringsglaset i hörnet och rutan i filmvalet. */
   @media (max-width: 700px) and (max-height: 639px) { .intro .sokpill { display: none; } }
+  /* Låga fönster under 610 px (2026-11-26), som en telefon på tvären (844×390) eller 200 % zoom på en laptop (720×450).
+     Där rymdes korten inte på höjden: omslagen klipptes och titlarna hamnade under fönstrets kant, och filmvalet går
+     inte att rulla (body.last). Här krymper korten, texten under dem och luften ovanför, så att omslaget, titeln och
+     kursen alltid syns. Flikarna står överst, "Välj en film" tätt under dem, och pilen med sin text göms. */
+  @media (min-width: 701px) and (max-height: 609px) {
+    .valj .topp { padding-top: 12px; padding-bottom: 12px; }
+    /* Med ikonerna 12 px ner hamnade tipset ovanför dem utanför fönstret. Här står det under ikonen, som .tips-under.
+       Ikonen med tipset ligger då över raden under flikarna, som annars kunde täcka tipsets början i ett smalt fönster
+       (inloggad utan klass under Spel). Därför har ikonerna z-index själva i stället för toppraden, och bara den
+       hovrade ikonen lyfts, så att "Till början" står kvar under flikarna där de går ihop (701 till 760 px brett). */
+    .valj .topp { z-index: auto; }
+    .valj .topp .ikon { z-index: 5; }
+    @media (hover: hover) {
+      .valj .topp .ikon:hover, .valj .topp .ikon:focus-visible { z-index: 7; }
+      .valj .topp .ikon[data-tips]::after { bottom: auto; top: calc(100% + 9px); transform: translate(-50%, -5px); }
+      .valj .topp .ikon[data-tips]::before { bottom: auto; top: calc(100% + 5px); transform: translateY(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-top: 1px solid rgba(236, 230, 216, .2); }
+      .valj .topp .ikon[data-tips]:hover::before, .valj .topp .ikon[data-tips]:focus-visible::before { transform: translateY(0) rotate(45deg); }
+      .valj .topp .ikon[data-tips]:hover::after, .valj .topp .ikon[data-tips]:focus-visible::after { transform: translate(-50%, 0); }
+      .valj .topp .hoger .ikon[data-tips]:last-child::after { left: auto; right: 0; transform: translate(0, -5px); }
+      .valj .topp .hoger .ikon[data-tips]:last-child:hover::after, .valj .topp .hoger .ikon[data-tips]:last-child:focus-visible::after { transform: translate(0, 0); }
+    }
+    .valj.har-flikar .flikar { top: 14px; }
+    .valj.har-flikar .rubrik { top: 64px; font-size: 13px; }
+    .valj.har-flikar .hint { display: none; }
+    .valj.har-flikar .tidslinje { top: 88px; }
+    /* --linan är linans överkant och --namn höjden på texten under korten. Linjen går genom prickarna, alltså precis
+       ovanför texten (128 px från botten i stället för 168). Inte --linje: det är trådens färg i :root, och som en
+       längd gjorde den trådens gradient ogiltig, så att trådarna under omslagen försvann (2026-11-26). */
+    .valj { --linan: 88px; --namn: 128px; }
+    .tidslinje::before { bottom: var(--namn); }
+    .post { width: 220px; margin-right: 76px; }
+    .post .lyft { min-height: 8px; }
+    .post .lina { min-height: 10px; }
+    /* 128 px rymmer också ett moment på fyra rader ("Lösa ekvationssystem algebraiskt med …"). */
+    .post .namn { height: var(--namn); padding-top: 10px; gap: 4px; }
+    .post .lina:has(.ar) + .namn { padding-top: 20px; }
+    .post .kurs { font-size: 15px; }
+    .post .rad1 .titel { font-size: 17px; }
+    .post .moment { font-size: 11px; }
+    .post .ar { font-size: 11px; padding: 4px 10px 3px; }
+    /* Texten under ett kort får bli högst 288 px bred, så att den inte går in i grannens (korten står 296 px isär).
+       I förhållande till graderna är det ungefär samma bredd som i större fönster, så raderna bryts nästan som där.
+       Raden med kurserna och kapitlet står på en rad också under en kort titel: «Ma 1c / Ma 2a / Ma 2c · Kapitel 2»
+       bröts annars med «· Kapitel 2» först på raden under. Den är lite tätare spärrad, som under Spel, så att raden under
+       kortet som står först inte går in under frågetecknet nere till vänster (2026-11-26). */
+    .post .rad1, .post .moment { max-width: 288px; }
+    .post .moment { width: max-content; letter-spacing: .12em; }
+    /* Skylten först på linan (Inför provet, bron på formelbladet) i den mindre ramen: tätare och lite mindre text. */
+    .bro-inre { gap: 6px; padding: 0 14px; }
+    .bro-liten { font-size: 10px; }
+    .bro-stor { font-size: 20px; }
+    .bro-text { font-size: 12px; line-height: 1.35; }
+    /* Växlaren under Formelbladet, klassväljaren under Inför provet och raderna under Spel står tätt under flikarna,
+       och rubriken och linan flyttas ner lika mycket som raden är hög (36 px och 2 px luft). */
+    .valj.formelval-syns .formelval, .valj.provval-syns .provval, .valj.spelval-syns .spelval, .valj.installval-syns .installval { top: 66px; }
+    .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik, .valj.spelval-syns .rubrik, .valj.installval-syns .rubrik { top: 104px; }
+    .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje, .valj.spelval-syns .tidslinje, .valj.installval-syns .tidslinje { top: 128px; }
+    .valj.formelval-syns .post .lyft, .valj.provval-syns .post .lyft, .valj.spelval-syns .post .lyft, .valj.installval-syns .post .lyft { min-height: 8px; }
+    .valj.formelval-syns, .valj.provval-syns, .valj.spelval-syns, .valj.installval-syns { --linan: 128px; }
+    /* Under Spel med raden om Dela (iPhone) eller Installera står två rader under flikarna. Där göms "Välj ett spel"
+       (fliken Spel säger detsamma, och skärmläsaren läser den ändå), och linan börjar direkt under raden. */
+    .valj.spelval-syns.installval-syns { --linan: 142px; }
+    .valj.spelval-syns.installval-syns .installval { top: 104px; }
+    .valj.spelval-syns.installval-syns .rubrik { top: 104px; opacity: 0; }
+    .valj.spelval-syns.installval-syns .tidslinje { top: 142px; }
+    /* Under Spel är texten under korten kort: momentet står på en rad, så 80 px räcker, och listorna får höjden som
+       blir över. Raden är högst 260 px och lite tätare spärrad, så att "Upp till 8 · logga in för topplistan" ryms
+       och inte går in under frågetecknet nere till vänster i ett 720 px brett fönster. */
+    .valj.spelval-syns { --namn: 80px; }
+    .valj.spelval-syns .post .moment { width: max-content; max-width: 260px; letter-spacing: .12em; }
+    /* Spelens listor och skyltarna (Inför provet, bron på formelbladet) är text och inga bilder. De behöver inte vara
+       16:9: listorna är 264 px breda och skyltarna 288, och de är så höga som innehållet, minst som ett omslag och högst
+       så att pricken och texten under dem står kvar. Mitten står där ett omslags mitt skulle stå, så att texten under
+       dem har lika långt till grannarnas som under omslagen. Listorna har 13 px och tätare rader, så att sex rader
+       ryms i ett fönster som 844×390. */
+    .post.spellista { width: 264px; margin-left: calc(var(--kort, 220px) / 2 - 132px); margin-right: calc(164px - var(--kort, 220px) / 2); }
+    .post.bro { width: 288px; margin-left: calc(var(--kort, 220px) / 2 - 144px); margin-right: calc(152px - var(--kort, 220px) / 2); }
+    /* Står skylten först på linan (Inför provet) börjar den vid linans kant, som korten, och korten efter den står lika
+       mycket längre åt höger. Med marginalen åt vänster tog pilarna skyltens kant för linans kant, och efter varje steg
+       stod korten 34 till 64 px för långt åt vänster, under bakåtpilen och frågetecknet (2026-11-26). */
+    .post.bro:first-child, .post.spellista:first-child { margin-left: 0; }
+    .post.spellista .ram, .post.bro .ram { aspect-ratio: auto; height: auto; min-height: calc(var(--kort, 220px) * 9 / 16); max-height: calc(100% - 18px - var(--namn)); }
+    .post.spellista .ram { padding: 6px 12px; font-size: 13px; line-height: 1.2; }
+    .spellista li { padding: 2px 0; }
+    .spellista th { padding-bottom: 4px; font-size: 10px; }
+    .spellista td { padding: 2px 0; }
+    .spellista th + th, .spellista td + td { padding-left: 8px; }
+    .spellista .not { margin-top: 4px; font-size: 10px; }
+    /* Korten blir smalare med höjden (i Safari på en telefon på tvären tar adressfältet en del av den). Omslaget (16:9)
+       får det som blir kvar när linans topp, upphängningen (8 px), linan (10 px) och texten under korten dragits av,
+       högst 220 px och minst 140 px brett. Avståndet mellan korten står kvar. */
+    @supports (height: 100dvh) {
+      .post { --kort: clamp(140px, (100dvh - var(--linan) - var(--namn) - 18px) * 16 / 9, 220px); width: var(--kort); margin-right: calc(296px - var(--kort)); }
+    }
+  }
+  /* Under 370 px höjd, som en telefon på tvären med webbläsarens fält (844×340), räckte höjden inte för raden under
+     flikarna, rubriken, korten och texten: omslaget fick sin minsta storlek, texten sköts ner och linjen hamnade ovanför
+     prickarna. Där göms rubriken också under Formelbladet, Inför provet och Spel, och linan börjar under raden.
+     Skyltens pil göms, så att texten ryms i skylten. Spelens listor står ännu tätare, så att Veckans snitt med noten
+     under ryms (147 px mot 136 i 844×340, 2026-11-26). */
+  @media (min-width: 701px) and (max-height: 369px) {
+    .bro-pil { display: none; }
+    .post.spellista .ram { padding: 4px 12px; line-height: 1.15; }
+    .spellista li, .spellista td { padding: 1px 0; }
+    .spellista th { padding-bottom: 2px; }
+    .valj.formelval-syns, .valj.provval-syns, .valj.spelval-syns { --linan: 104px; }
+    .valj.formelval-syns .rubrik, .valj.provval-syns .rubrik, .valj.spelval-syns .rubrik { opacity: 0; }
+    .valj.formelval-syns .tidslinje, .valj.provval-syns .tidslinje, .valj.spelval-syns .tidslinje { top: 104px; }
+  }
 </style>
 </head>
 <body class="last">
