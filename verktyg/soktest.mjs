@@ -23,9 +23,9 @@ const kod = [
   bit("const norm = ", "\n") + "\n",
   bit("  const fold = ", "  // Ett kort utdrag"),
   bit("  let ORDLISTA = null;", "  // \"Sök ändå på"),
-  "return { sok, rattaStavning };",
+  "return { sok, rattaStavning, provFraga };",
 ].join("\n");
-const { sok: sokOrdagrant, rattaStavning } = new Function("videor", kod)(data.videor);
+const { sok: sokOrdagrant, rattaStavning, provFraga } = new Function("videor", kod)(data.videor);
 // Som ritaSok() på sidan: ett stavfel rättas, och rättningen används när den ger träffar.
 function sok(fraga) {
   const r = sokOrdagrant(fraga), ratt = rattaStavning(fraga), r2 = ratt && sokOrdagrant(ratt);
@@ -144,3 +144,16 @@ prova(PROV, "Frågorna");
 prova(KONTROLL, "Kontrollfrågorna");
 prova(NYA, "De nya filmerna");
 prova(STAVFEL, "Stavfelen");
+// Rutan till Inför provet (Rickard 2026-11-26: «En ruta till Inför provet»). "bara": bara rutan, "med": rutan över
+// träffarna. Ingen av frågorna ovan får rutan, och inte "stickprov" heller (den står i Kontrollfrågorna).
+const PROVFRAGOR = [
+  ["prov", "bara"], ["provet", "bara"], ["Nationella provet", "bara"], ["prov på fredag", "bara"], ["När är nästa prov?", "bara"],
+  ["np", "bara"], ["matteprovet", "bara"], ["prov 2", "bara"], ["vad kommer på provet", "bara"],
+  ["prov om procent", "med"], ["provet sannolikhet", "med"], ["prova", null], ["stickprovet", null],
+];
+const provFel = [
+  ...PROVFRAGOR.filter(([q, svar]) => provFraga(q) !== svar).map(([q, svar]) => `  ${q.padEnd(52)} gav ${provFraga(q)}, inte ${svar}`),
+  ...[...PROV, ...KONTROLL, ...NYA, ...STAVFEL].filter(([q]) => provFraga(q)).map(([q]) => `  ${q.padEnd(52)} fick rutan till provet`),
+];
+console.log(`Rutan till provet: ${provFel.length ? `${provFel.length} fel` : "rätt"}.`);
+if (provFel.length) { console.log(provFel.join("\n")); process.exitCode = 1; }

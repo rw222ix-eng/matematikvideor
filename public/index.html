@@ -194,7 +194,7 @@
   .intro .topp { padding: 32px clamp(24px, 3.9vw, 56px); }
   .intro .mitt { position: relative; z-index: 2; grid-row: 2; max-width: 640px; display: flex; flex-direction: column; align-items: flex-start; }
   .intro .ingress { font: 300 clamp(16px, 1.6vw, 19px)/1.8 var(--sans); color: #D6CFC1; margin: clamp(18px, 3.8vh, 34px) 0 0; max-width: 500px; }
-  .intro .knapp { position: relative; z-index: 2; margin-top: clamp(24px, 4.9vh, 44px); display: inline-flex; align-items: center; gap: 16px; min-height: 48px; font: 400 15px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .intro .knapp { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 16px; min-height: 48px; font: 400 15px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
   .intro .knapp .ring { width: 48px; height: 48px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-items: center; transition: background .5s, color .5s; }
   .intro .knapp .ring svg { width: 12px; height: 12px; fill: currentColor; margin-left: 2px; }
   .intro .knapp:hover .ring { background: var(--accent); color: var(--bg); }
@@ -204,7 +204,7 @@
   .intro .topp.fram { animation-delay: .2s; }
   .intro h1.fram { animation-delay: .3s; }
   .intro .ingress.fram { animation-delay: .6s; }
-  .intro .knapp.fram { animation-delay: .9s; }
+  .intro .intro-val.fram { animation-delay: .9s; }
   /* Knappen som stoppar rörelsen sitter nere till höger, så toppraden har bara sökningen kvar. */
   @media (hover: hover) {
   }
@@ -496,6 +496,14 @@
   .kursval button:disabled { opacity: .4; cursor: default; }
   .kursval button:not(:disabled):not([aria-pressed="true"]):hover { border-color: var(--accent); color: var(--accent); }
   .kursval-not { margin: 14px 0 0; font: 300 15px/1.5 var(--sans); color: var(--ben2); }
+  /* Rutan till Inför provet (Rickard 2026-11-26: «En ruta till Inför provet»), överst när eleven frågar om provet. */
+  .till-provet { display: flex; align-items: center; gap: 18px; width: 100%; margin: 24px 0 8px; padding: 18px 20px; border: 1px solid rgba(242, 197, 114, .45); border-radius: 14px; background: rgba(242, 197, 114, .06); color: var(--ben); text-align: left; transition: background .3s, border-color .3s; }
+  @media (hover: hover) { .till-provet:hover { background: rgba(242, 197, 114, .12); border-color: var(--accent); } }
+  .till-provet .rader { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .till-provet .forst { font: 500 11px/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  .till-provet .namn { font: 400 23px/1.25 var(--skrift); }
+  .till-provet .under { font: 300 15px/1.4 var(--sans); color: var(--ben2); }
+  .till-provet svg { width: 28px; height: 12px; fill: none; stroke: var(--accent); stroke-width: 1.4; flex: none; }
   /* Kurs och moment på träffarna: en liten bricka och vanlig text, inte spärrade versaler. */
   .sok .meta { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
   .bricka { display: inline-block; padding: 3px 10px; border: 1px solid var(--linje); border-radius: 999px; font: 500 12px/1.4 var(--sans); letter-spacing: .04em; color: var(--ben); white-space: nowrap; }
@@ -1443,6 +1451,31 @@
     .installval p { white-space: normal; }
     .valj .installval:has(p:not([hidden])) { border-radius: 20px; }
   }
+  /* Sökrutan (Rickard 2026-11-26: «Sökruta bredvid Utforska»). Förstoringsglaset i hörnet syntes knappt, och den som
+     bläddrar i Ma 1c går igenom 25 filmer i årtalsordning. Rutan står bredvid Utforska, och på telefonen också under
+     «Välj en film», i himlen ovanför första filmen: linan flyttas upp lika mycket som rutan tar, så att första filmen
+     står kvar på samma höjd. Under Spel står den inte, för den söker i filmerna. Ett tryck öppnar sökningen. */
+  .intro-val { position: relative; z-index: 2; display: flex; align-items: center; gap: 28px; margin-top: clamp(24px, 4.9vh, 44px); }
+  .sokpill { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 14px 0 16px; border: 1px solid rgba(214, 207, 193, .32); border-radius: 999px; background: rgba(23, 20, 20, .5); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); font: 300 16px/1 var(--sans); color: #CFC7B8; white-space: nowrap; cursor: text; transition: border-color .3s, background .3s; }
+  .sokpill svg { width: 18px; height: 18px; fill: none; stroke: var(--accent); stroke-width: 1.7; flex: none; }
+  .sokpill .text { flex: 1; text-align: left; }
+  .sokpill kbd { margin-left: 22px; font: 500 12px/1 var(--sans); color: #A79F92; border: 1px solid rgba(214, 207, 193, .28); border-radius: 6px; padding: 4px 7px; }
+  @media (hover: hover) { .sokpill:hover { border-color: var(--accent); background: rgba(23, 20, 20, .66); } }
+  .valj .valj-sok { display: none; }
+  /* Snedstrecket öppnar sökningen från tangentbordet, så det står bara där det finns ett. */
+  @media (max-width: 700px), (hover: none) { .sokpill kbd { display: none; } }
+  @media (max-width: 700px) {
+    /* Telefonen: rutan ryms inte bredvid Utforska och står under den, utanför flödet, så att rubriken, texten och
+       Utforska står där de stod. 12 px: med mer låg den i 692 till 700 px höjd under frågetecknets lockrad. */
+    .intro .intro-val .sokpill { position: absolute; left: 0; top: calc(100% + 12px); }
+    .valj .valj-sok { display: flex; position: relative; z-index: 3; width: calc(100% - 64px); max-width: 360px; margin: 16px auto 0; }
+    .valj.spelval-syns .valj-sok { display: none; }
+    /* 150 px som förut, minus rutans 48 px och 16 px marginal. */
+    .valj:not(.spelval-syns) .tidslinje { top: 86px; }
+  }
+  /* Korta telefoner: under 640 px höjd hamnade rutan under Utforska nedanför fönstrets kant och under frågetecknet
+     (320×568), och introt rullar inte. Där finns förstoringsglaset i hörnet och rutan i filmvalet. */
+  @media (max-width: 700px) and (max-height: 639px) { .intro .sokpill { display: none; } }
 </style>
 </head>
 <body class="last">
@@ -1463,7 +1496,11 @@
     <!-- Kurserna skrivs ur videor.json: det stod "1c och 2c" när alla filmer var 1c. -->
     <!-- Meningen om formelbladet visas när det finns filmer i serien (Rickard 2026-09-25). -->
     <p class="ingress fram">Korta filmer där matten i <span id="intro-kurser">Matematik nivå 1c</span> kommer ur en verklig historia.<span id="intro-serie" hidden> Här finns också filmer som går igenom formelbladet för <span id="intro-blad">Matematik 1</span>, del för del.</span> Sök på det du tycker är svårt och hoppa till stället i filmen där det förklaras.</p>
-    <a class="knapp fram" href="#filmer"><span>Utforska</span><span class="ring"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></span></a>
+    <!-- Sökrutan bredvid Utforska (Rickard 2026-11-26). Den öppnar samma sökning som förstoringsglaset. -->
+    <div class="intro-val fram">
+      <a class="knapp" href="#filmer"><span>Utforska</span><span class="ring"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 0.5 L11 6 L1 11.5 Z"/></svg></span></a>
+      <button type="button" class="sokpill sok-oppna"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg><span class="text">Sök, t.ex. procent</span><kbd aria-hidden="true">/</kbd></button>
+    </div>
   </div>
 </section>
 
@@ -1514,6 +1551,8 @@
     <p id="installera-ios" hidden>Spelen som app: tryck på <b>Dela</b> <svg viewBox="0 0 24 24" role="img" aria-label="(rutan med pilen uppåt)"><path d="M12 3 V14 M8 7 L12 3 L16 7 M7 10 H5 V21 H19 V10 H17"/></svg> och sedan <b>Lägg till på hemskärmen</b>.</p>
   </div>
   <h1 class="etikett rubrik" id="valj-rubrik" tabindex="-1">Välj en film</h1>
+  <!-- Sökrutan under rubriken, bara på telefonen (se .valj-sok). -->
+  <button type="button" class="sokpill sok-oppna valj-sok"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.8 15.8 L21 21"/></svg><span class="text">Sök, t.ex. procent</span></button>
   <div class="tidslinje" id="tidslinje"><div class="spar" id="spar"></div></div>
   <div class="hint" id="hint" aria-hidden="true"><svg viewBox="0 0 64 12"><path d="M1 6 H63 M6 1 L1 6 L6 11 M58 1 L63 6 L58 11"/></svg><span>Scrolla eller dra i sidled</span></div>
 </section>
@@ -2216,8 +2255,9 @@
   let aktivOvergang = null;
   addEventListener("click", (e) => {
     if (!aktivOvergang || e.target !== document.documentElement) return;
-    // Det andra klicket i ett dubbelklick på guidens knappar ska inte vidare till den nya sidan (Newton.skyddar).
-    if (Newton.skyddar(e)) return;
+    // Det andra klicket i ett dubbelklick på guidens knappar ska inte vidare till den nya sidan (Newton.skyddar), och
+    // inte heller i ett på rutan till Inför provet i sökningen (sokSkyddar).
+    if (Newton.skyddar(e) || sokSkyddar(e)) return;
     e.preventDefault(); e.stopPropagation();
     const { clientX: x, clientY: y } = e, vt = aktivOvergang;
     aktivOvergang = null;
@@ -4128,8 +4168,30 @@
     }
     return byten.size ? fraga.replace(/\p{L}+/gu, (w) => byten.get(w) ?? w) : null;
   }
+  // Frågar eleven om provet (Rickard 2026-11-26: «En ruta till Inför provet»)? Då står en ruta till fliken Inför provet
+  // överst. "stickprov" är statistik och räknas inte. Är resten av frågan bara småord, dagar och tal ("prov på fredag",
+  // "när är nationella provet") står bara rutan där: förut rättades "fredag" till "reda", och första träffen blev
+  // Kepler, som säger "Det tar vi reda på nu". Svaret är null, "bara" (bara rutan) eller "med" (rutan över träffarna).
+  // verktyg/soktest.mjs provar den, och att ingen av de vanliga frågorna får rutan.
+  const PROVORD = /^(?:(?:matte|matematik|slut|del|om|kapitel)?prov(?:et|en|ets|ens|dag|dagen|datum|datumet|veckan?)?|kapiteltest(?:et)?|nationell[at]?|np)$/;
+  const RUNT_PROVET = new Set(("infor nasta kommande imorgon idag morgon dag dagen datum vecka veckan mandag tisdag onsdag torsdag fredag " +
+    "lordag sondag har hade ha kommer handlar handla upp skriva skriver plugga pluggar ova ovar matte matematik kapitel kurs kursen hela " +
+    "mitt min mina vart vara filmer filmerna").split(" "));
+  function provFraga(fraga) {
+    const ord = fold(norm(fraga)).split(" ").filter(Boolean);
+    if (!ord.some((o) => PROVORD.test(o))) return null;
+    return ord.every((o) => PROVORD.test(o) || SMAORD.has(o) || RUNT_PROVET.has(o) || /^(?:ma)?\d[\d/-]*[abc]?$/.test(o)) ? "bara" : "med";
+  }
   // "Sök ändå på …": eleven vill ha det som stod, inte rättningen.
   let ordagrant = null;
+  // Rutan till Inför provet (provFraga): klassens nästa prov, eller att eleven väljer klassen där.
+  function provRuta() {
+    const k = provKlass(), p = k && nastaProv(k), n = p ? provFilmer(p).length : 0;
+    const [forst, namn, under] = !k ? ["Inför provet", "Filmerna till ditt nästa prov", "Välj din klass, så ser du vilka filmer provet tar upp."]
+      : !p ? [`Inför provet · ${esc(k.namn)}`, "Inga fler prov inlagda", "Alla prov som klassen har i planeringen är skrivna."]
+      : [`Inför provet · ${esc(k.namn)}`, `${esc(p.namn)} · ${datumText(p.datum)}`, `${p.kapitel ? `${esc(p.kapitel)}. ` : ""}${n} ${n === 1 ? "film" : "filmer"} att se före provet.`];
+    return `<button type="button" class="till-provet" data-till-provet><span class="rader"><span class="forst">${forst}</span><span class="namn">${namn}</span><span class="under">${under}</span></span><svg viewBox="0 0 32 12" aria-hidden="true"><path d="M1 6 H31 M26 1 L31 6 L26 11"/></svg></button>`;
+  }
 
   function ritaSok() {
     const lista = $("sok-lista"), status = $("sok-status");
@@ -4138,6 +4200,10 @@
       lista.innerHTML = html(`<div class="forslag"><p class="etikett">Prova att söka på</p>${FORSLAG.map((f) => `<button type="button" data-forslag="${attr(f)}">${esc(f)}</button>`).join("")}</div>`);
       return;
     }
+    // Frågar eleven om provet står rutan till Inför provet överst, och bara den när resten är småord. Den behöver inte
+    // indexet. Utan klasser i prov.json finns ingen flik Inför provet, och då ingen ruta.
+    const provet = KLASSER.length ? provFraga(falt.value) : null, provRad = provet ? provRuta() : "";
+    if (provet === "bara") { status.textContent = ""; lista.innerHTML = html(provRad); return; }
     // Sökningen behöver allt som sägs i filmerna (laddaAllText) och indexet (byggIndex). Är de inte klara står det i
     // statusraden, och träffarna ritas när de är det. Går texten inte att hämta försöker nästa tangenttryck igen.
     if (!indexKlart) {
@@ -4157,7 +4223,7 @@
     }
     if (!res.length) {
       status.textContent = "Ingen film tar upp det än.";
-      lista.innerHTML = html(`<section class="andra"><h4 class="etikett">Det här finns</h4><ul>${videor.map((a) => filmRad(a, "", "")).join("")}</ul></section>`);
+      lista.innerHTML = html(`${provRad}<section class="andra"><h4 class="etikett">Det här finns</h4><ul>${videor.map((a) => filmRad(a, "", "")).join("")}</ul></section>`);
       return;
     }
     status.textContent = narmast ? "Inget ställe har alla orden. Här är det som ligger närmast." : "";
@@ -4173,7 +4239,7 @@
     const t0 = s0 ? s0.t : "";
     const bild = v.omslagRen || v.omslag, snart = !v.youtube && !v.fil;
     const knapp = snart ? "Läs vad som sägs" : s0 ? `Spela från ${tid(s0.t)}` : "Spela filmen";
-    lista.innerHTML = html(`${rattning}${kursval}
+    lista.innerHTML = html(`${provRad}${rattning}${kursval}
       <article class="basta">
         <button class="omslag" data-film="${v.id}" data-t="${t0}" aria-label="${attr(`${knapp}: ${v.titel}`)}">${bild ? `<img src="${attr(bild)}" alt="">` : ""}</button>
         <div class="text">
@@ -4231,7 +4297,20 @@
     const k = e.target.closest("[data-kurs]");
     if (k && !k.disabled) { kursVal = sokKurs = k.dataset.kurs; ritaSok(); $("sok-lista").querySelector(`[data-kurs="${k.dataset.kurs}"]`).focus(); }
     if (e.target.closest("[data-ordagrant]")) { ordagrant = falt.value; ritaSok(); falt.focus(); }
+    // Rutan till Inför provet öppnar fliken som en träff öppnar en film, också när adressen redan är #provet.
+    if (e.target.closest("[data-till-provet]")) {
+      if (e.isTrusted && e.detail > 0) provSkydd = { till: e.timeStamp + 500, x: e.clientX, y: e.clientY };
+      oppna(PROV);
+    }
   });
+  // Dubbelklick på rutan till Inför provet (2026-11-26): det andra klicket landade på kortet som står där under fliken
+  // och öppnade en film (Kepler i 1440×900). Som Newtons skydd: den första halvsekunden når inga tryck eller klick på
+  // samma ställe (inom 40 px) sidan. Klicket mitt i övergången frågar också (sokSkyddar).
+  let provSkydd = null;
+  function sokSkyddar(e) { return !!provSkydd && e.isTrusted && e.timeStamp < provSkydd.till && Math.hypot(e.clientX - provSkydd.x, e.clientY - provSkydd.y) < 40; }
+  for (const typ of ["pointerdown", "pointerup", "mousedown", "mouseup", "click", "dblclick"]) {
+    addEventListener(typ, (e) => { if (sokSkyddar(e)) { e.stopImmediatePropagation(); if (e.cancelable && !typ.startsWith("pointer")) e.preventDefault(); } }, true);
+  }
 
   // ── Spelaren: egen styrning ovanpå YouTube (controls=0) eller <video> ──
   let yt = null, video = null, aktuell = null, klocka = null, gomTimer = null;
