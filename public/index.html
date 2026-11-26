@@ -353,9 +353,12 @@
   .bladdra.syns { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .3s, visibility 0s, background .3s, transform .45s var(--fjader); }
   .bladdra.bak { left: 26px; }
   .bladdra.fram { right: 26px; }
-  .bladdra svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .bladdra svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: opacity .3s; }
   .bladdra:active { transform: scale(.92); transition-duration: .08s; }
   .bladdra:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  /* Linan är i slutet åt pilens håll, och pilen står kvar bara för att den har fokus från tangentbordet (ritaKanter). */
+  .bladdra.stopp { cursor: default; }
+  .bladdra.stopp svg { opacity: .35; }
   @media (hover: hover) { .bladdra:hover { background: rgba(23, 20, 20, .86); transform: scale(1.06); } }
   @media (max-width: 700px) { .bladdra { display: none; } }
   /* En textruta på linan (spellistorna under Spel, skyltarna under Inför provet och formelbladet) som står delvis utanför
@@ -1374,8 +1377,11 @@
   .hjalp.lockar::after { opacity: 1; transform: none; }
   /* Låga fönster: tooltipen står till höger om frågetecknet. Ovanför täckte den Utforska i introt när
      ingressen fick en mening om formelbladet (1280×610, 2026-09-25); vid 661 px nuddade den knappen, därför 690
-     sedan tipset blev "Hjälp, jag fattar ingenting!" (2026-09-26). */
-  @media (max-height: 690px) {
+     sedan tipset blev "Hjälp, jag fattar ingenting!" (2026-09-26). På telefoner 320 till 359 px breda står den till
+     höger också i högre fönster: där tar ingressen fler rader, och ovanför frågetecknet låg den över sökrutans
+     nederkant upp till 5 px (320×700, upp till 704 px höjd vid 350 px bredd, 2026-11-26). Till höger står den i knappens
+     höjd, och den ryms där från 320 px. På smalare telefoner står sökrutan inte där lockraden ligger över den (sokrutaFri). */
+  @media (max-height: 690px), (min-width: 320px) and (max-width: 359px) and (max-height: 779px) {
     .hjalp::after { left: calc(100% + 12px); bottom: 7px; transform: translateX(-5px); }
     .hjalp::before { left: calc(100% + 8px); bottom: 18px; margin-left: 0; transform: translateX(-5px) rotate(45deg); border: 0; border-left: 1px solid rgba(236, 230, 216, .2); border-bottom: 1px solid rgba(236, 230, 216, .2); }
   }
@@ -1513,6 +1519,9 @@
     /* 150 px som förut, minus rutans 48 px och 16 px marginal. */
     .valj:not(.spelval-syns) .tidslinje { top: 86px; }
   }
+  /* Smala telefoner, under 320 px bredd (2026-11-26): ligger frågetecknet eller dess lockrad över rutan står den inte
+     där, som på korta telefoner nedan. Det mäts (sokrutaFri). */
+  .intro .sokpill.skymd { visibility: hidden; }
   /* Korta telefoner: under 640 px höjd hamnade rutan under Utforska nedanför fönstrets kant och under frågetecknet
      (320×568), och introt rullar inte. Där finns förstoringsglaset i hörnet och rutan i filmvalet. */
   @media (max-width: 700px) and (max-height: 639px) { .intro .sokpill { display: none; } }
@@ -3348,7 +3357,7 @@
   // Pilarna vid kanterna och linans textrutor (spellistorna och skyltarna), se ritaKanter. Rutorna läses in när
   // fliken ritas, i ritaHylla.
   const pilBak = $("bladdra-bak"), pilFram = $("bladdra-fram");
-  let textrutor = [];
+  let textrutor = [], pilTangent = null;   // pilen som har fokus från tangentbordet (Tab, Enter eller mellanslag)
   // Ett filmkort på linan. Berättelsen har sitt år under kortet; formelbladets del har "Del N" och
   // delens namn ("Funktioner"), eftersom fliken redan säger Formelbladet. Momentet står bara med när
   // det säger något mer än namnet. Under fliken Matematik 2a ser korten ut som under Matematik 1c
@@ -3716,10 +3725,20 @@
     $("hint").classList.toggle("borta", x > 40 || maxX() <= 0);
     for (const r of textrutor) { const v = r.offsetLeft - x; r.classList.toggle("kant", v < -1 || v + r.offsetWidth > w + 1); }
     const fokus = document.activeElement;
-    pilBak.classList.toggle("syns", vanster);
-    pilFram.classList.toggle("syns", hoger);
-    // Når linan slutet medan pilen har fokus, går fokus till den andra pilen och inte ut till sidan.
-    if ((fokus === pilBak && !vanster) || (fokus === pilFram && !hoger)) { const annan = fokus === pilBak ? pilFram : pilBak; if (annan.classList.contains("syns")) annan.focus({ preventScroll: true }); }
+    // En pil som har fokus från tangentbordet står kvar, nedtonad, när linan nått slutet åt det hållet, och Enter och
+    // mellanslag gör då ingenting. Förut gick fokus till den andra pilen, och nästa Enter, eller en nedhållen Enter,
+    // bläddrade tillbaka (2026-11-26). Den försvinner när fokus går därifrån. För musen och fingret är allt som förut.
+    // Medan fönstret saknar fokus (en annan flik eller ett annat program) matchar inte :focus-visible, så en pil som
+    // redan står kvar får stå kvar tills eleven kommer tillbaka.
+    const kvar = (pil) => fokus === pil && (pilTangent === pil || pil.matches(":focus-visible") || (!document.hasFocus() && pil.classList.contains("stopp")));
+    pilBak.classList.toggle("syns", vanster || kvar(pilBak));
+    pilFram.classList.toggle("syns", hoger || kvar(pilFram));
+    for (const [pil, mer] of [[pilBak, vanster], [pilFram, hoger]]) {
+      pil.classList.toggle("stopp", !mer && kvar(pil));
+      if (pil.getAttribute("aria-disabled") !== String(!mer)) pil.setAttribute("aria-disabled", String(!mer));
+    }
+    // Når linan slutet medan pilen har fokus från musen, går fokus till den andra pilen och inte ut till sidan.
+    if ((fokus === pilBak && !vanster && !kvar(pilBak)) || (fokus === pilFram && !hoger && !kvar(pilFram))) { const annan = fokus === pilBak ? pilFram : pilBak; if (annan.classList.contains("syns")) annan.focus({ preventScroll: true }); }
   }
   // Pilarna och piltangenterna bläddrar en skärm (Rickard 2026-11-26: «Pilar vid kanterna», förebilden 1.5 i
   // _utredning-vt/forebilder/RAPPORT.md). Korten som syns helt flyttas ut, och kortet som stod delvis utanför hamnar
@@ -3740,8 +3759,16 @@
     malX = malet;
     if (!rullar) { rullar = true; requestAnimationFrame(loop); }
   }
-  pilBak.addEventListener("click", () => { bladdra(-1); Newton.hande("tidslinje"); });
-  pilFram.addEventListener("click", () => { bladdra(1); Newton.hande("tidslinje"); });
+  // Ett klick utan musen (detail 0) är Enter eller mellanslag, se ritaKanter.
+  pilBak.addEventListener("click", (e) => { pilTangent = e.detail ? null : pilBak; bladdra(-1); Newton.hande("tidslinje"); });
+  pilFram.addEventListener("click", (e) => { pilTangent = e.detail ? null : pilFram; bladdra(1); Newton.hande("tidslinje"); });
+  // Fokus från tangentbordet räknas från början, så att pilen står kvar också när linan når slutet medan fönstret
+  // saknar fokus. Tappar fönstret fokus får pilen blur men behåller fokus, och då ändras ingenting: förut gick fokus
+  // då till den andra pilen, och första Enter efter ett flikbyte bläddrade tillbaka (granskningen 2026-11-26).
+  for (const pil of [pilBak, pilFram]) {
+    pil.addEventListener("focus", () => { if (pil.matches(":focus-visible")) pilTangent = pil; });
+    pil.addEventListener("blur", () => { if (!document.hasFocus()) return; if (pilTangent === pil) pilTangent = null; ritaKanter(); });
+  }
   let malX = null; // sätts när tidslinjen ska glida till en bestämd punkt (t.ex. hela vägen till början)
   function loop() {
     if (lugnt) { x = Math.min(maxX(), Math.max(0, mal)); rita(); rullar = false; return; }
@@ -4302,14 +4329,27 @@
   // "när är nationella provet") står bara rutan där: förut rättades "fredag" till "reda", och första träffen blev
   // Kepler, som säger "Det tar vi reda på nu". Svaret är null, "bara" (bara rutan) eller "med" (rutan över träffarna).
   // verktyg/soktest.mjs provar den, och att ingen av de vanliga frågorna får rutan.
-  const PROVORD = /^(?:(?:matte|matematik|slut|del|om|kapitel)?prov(?:et|en|ets|ens|dag|dagen|datum|datumet|veckan?)?|kapiteltest(?:et)?|nationell[at]?|np)$/;
-  const RUNT_PROVET = new Set(("infor nasta kommande imorgon idag morgon dag dagen datum vecka veckan mandag tisdag onsdag torsdag fredag " +
-    "lordag sondag har hade ha kommer handlar handla upp skriva skriver plugga pluggar ova ovar matte matematik kapitel kurs kursen hela " +
-    "mitt min mina vart vara filmer filmerna").split(" "));
+  // 2026-11-26: också "övningsprov", "provfrågor", "provuppgifter", "prover" och "np-prov" (bindestrecket delar orden),
+  // och "kap", "ma", "v" och "gamla" runt provet, så att "prov kap 4", "prov ma 1c", "prov v 48" och "gamla prov" bara
+  // ger rutan, som "prov kapitel 4" redan gjorde. Ihopskrivet också, som "prov kap4" och "prov v48", och "prov hela
+  // kapitlet".
+  const PROVORD = /^(?:(?:matte|matematik|slut|del|om|kapitel|ovnings)?prov(?:et|en|ets|ens|er|erna|dag|dagen|datum|datumet|veckan?|fragor(?:na)?|fragan?|uppgift(?:en|er|erna)?)?|kapiteltest(?:et)?|nationell[at]?|np)$/;
+  const RUNT_PROVET = new Set(("infor nasta kommande imorgon idag morgon dag dagen datum vecka veckan v mandag tisdag onsdag torsdag fredag " +
+    "lordag sondag har hade ha kommer handlar handla upp skriva skriver plugga pluggar ova ovar matte matematik ma kapitel kapitlet kap kurs kursen hela " +
+    "mitt min mina vart vara filmer filmerna gamla").split(" "));
+  const provOrd = (fraga) => fold(norm(fraga)).split(/[\s-]+/).filter(Boolean);
+  const runtProvet = (o) => PROVORD.test(o) || RUNT_PROVET.has(o) || /^(?:ma)?\d[abc]$/.test(o) || /^(?:kap|kapitel|v|vecka)\d+$/.test(o);
   function provFraga(fraga) {
-    const ord = fold(norm(fraga)).split(" ").filter(Boolean);
+    const ord = provOrd(fraga);
     if (!ord.some((o) => PROVORD.test(o))) return null;
-    return ord.every((o) => PROVORD.test(o) || SMAORD.has(o) || RUNT_PROVET.has(o) || /^(?:ma)?\d[\d/-]*[abc]?$/.test(o)) ? "bara" : "med";
+    return ord.every((o) => runtProvet(o) || SMAORD.has(o) || /^(?:ma)?\d[\d/-]*[abc]?$/.test(o)) ? "bara" : "med";
+  }
+  // Står rutan över träffarna, söks träffarna utan provorden och orden runt provet, som dag, kapitel och kurs
+  // (2026-11-26). "prov om procent" gav förut först Formelbladet Ma 2 del 6, där stickprov sägs, och "procent prov på
+  // fredag" rättade fredag till reda. Resten av frågan står kvar som eleven skrev den.
+  function utanProvord(fraga) {
+    const kvar = (d) => { const o = provOrd(d); return !o.length || !o.every(runtProvet); };
+    return fraga.split(/\s+/).map((w) => w.split("-").filter(kvar).join("-")).filter(Boolean).join(" ");
   }
   // "Sök ändå på …": eleven vill ha det som stod, inte rättningen.
   let ordagrant = null;
@@ -4344,9 +4384,10 @@
     // Stavfel rättas alltid (Rickard 2026-10-05: "det borde finnas automatiska rättningar om eleverna
     // råkar skriva fel"), inte bara när inget hittas: "olikhter" hittade förut en film nästan på måfå.
     // Bara ord som inte finns i filmerna byts, så ett rätt stavat ord rörs aldrig.
-    let { q, res, narmast } = sok(falt.value), rattat = null;
+    const fragan = provet ? utanProvord(falt.value) : falt.value;
+    let { q, res, narmast } = sok(fragan), rattat = null;
     if (ordagrant !== falt.value) {
-      const ratt = rattaStavning(falt.value);
+      const ratt = rattaStavning(fragan);
       const r2 = ratt && sok(ratt);
       if (r2 && r2.res.length && (!res.length || narmast || !r2.narmast)) { ({ q, res, narmast } = r2); rattat = ratt; }
     }
@@ -7045,6 +7086,33 @@
     const k = $("hjalp");
     setTimeout(() => { if (aktivVy === "intro") k.classList.add("lockar"); setTimeout(() => k.classList.remove("lockar"), 7000); }, 1600);
   }
+  // Sökrutan i introt på smala telefoner, under 320 px bredd (2026-11-26). Där tar ingressen åtta rader eller fler, och
+  // frågetecknet låg över rutans nedre hörn (280×653, 300×640) och lockraden ovanför det över rutans nederkant. Hur
+  // många rader det blir beror på typsnittet, så det mäts: ligger frågetecknet, lockraden eller pilen mellan dem över
+  // rutan står den inte där, som på korta telefoner, och förstoringsglaset i hörnet och rutan i filmvalet finns kvar.
+  // Där inget ligger över den står den kvar. Rutans läge räknas ur offsetTop, så att introts intoning och lyft inte
+  // räknas med. Det mäts om när introt visas, när fönstret ändrar storlek och när ingressen får fler rader (typsnittet
+  // laddat, kurserna ur videor.json).
+  const introRuta = document.querySelector(".intro .sokpill"), smalTelefon = matchMedia("(max-width: 319px)");
+  function sokrutaFri() {
+    let skymd = false;
+    if (smalTelefon.matches && introRuta.offsetWidth) {
+      let x = -scrollX, y = -scrollY;
+      for (let e = introRuta; e; e = e.offsetParent) { x += e.offsetLeft; y += e.offsetTop; }
+      const hj = $("hjalp"), k = hj.getBoundingClientRect(), t = getComputedStyle(hj, "::after");
+      const px = (...namn) => namn.reduce((s, n) => s + (parseFloat(t[n]) || 0), 0);
+      const ram = t.boxSizing === "border-box" ? 0 : 1;
+      const tw = px("width") + ram * px("paddingLeft", "paddingRight", "borderLeftWidth", "borderRightWidth");
+      const th = px("height") + ram * px("paddingTop", "paddingBottom", "borderTopWidth", "borderBottomWidth");
+      const tl = k.left + px("left"), tb = k.bottom - px("bottom");
+      const l = Math.min(k.left, tl), r = Math.max(k.right, tl + tw), o = Math.min(k.top, tb - th), u = Math.max(k.bottom, tb);
+      // 2 px luft: offsetTop är avrundat, och vid 260×764 låg lockraden 0,7 px över rutan fast talen sa att de möttes.
+      skymd = x - 2 < r && l < x + introRuta.offsetWidth + 2 && y - 2 < u && o < y + introRuta.offsetHeight + 2;
+    }
+    introRuta.classList.toggle("skymd", skymd);
+  }
+  addEventListener("resize", sokrutaFri);
+  if (window.ResizeObserver) { const ro = new ResizeObserver(() => sokrutaFri()); ro.observe($("vy-intro")); ro.observe(introRuta.closest(".mitt")); }
   const TIPS = {
     sok: ["pekar", "Fastnat på något? Tryck på förstoringsglaset uppe till höger och sök på det, till exempel olikhet. Du hamnar på rätt ställe i filmen."],
     spolaMus: ["pekar", "Visste du att du kan dubbelklicka på bilden för att se den på hela skärmen? Med piltangenterna hoppar du 5 sekunder i taget."],

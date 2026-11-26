@@ -161,6 +161,11 @@ const PROVFRAGOR = [
   ["prov", "bara"], ["provet", "bara"], ["Nationella provet", "bara"], ["prov på fredag", "bara"], ["När är nästa prov?", "bara"],
   ["np", "bara"], ["matteprovet", "bara"], ["prov 2", "bara"], ["vad kommer på provet", "bara"],
   ["prov om procent", "med"], ["provet sannolikhet", "med"], ["prova", null], ["stickprovet", null],
+  // 2026-11-26, granskningen: fler ord för provet, och kapitel, kurs och vecka förkortade.
+  ["övningsprov", "bara"], ["provfrågor", "bara"], ["provuppgifter", "bara"], ["prover", "bara"], ["np-prov", "bara"],
+  ["prov kap 4", "bara"], ["provet kap 4", "bara"], ["prov ma 1c", "bara"], ["prov v 48", "bara"], ["gamla prov", "bara"],
+  ["prov kap4", "bara"], ["prov v48", "bara"], ["prov hela kapitlet", "bara"],
+  ["stickprov", null], ["provtagning", null], ["nationalekonomi", null], ["provar", null], ["provat", null],
 ];
 const provFel = [
   ...PROVFRAGOR.filter(([q, svar]) => provFraga(q) !== svar).map(([q, svar]) => `  ${q.padEnd(52)} gav ${provFraga(q)}, inte ${svar}`),
@@ -168,3 +173,24 @@ const provFel = [
 ];
 console.log(`Rutan till provet: ${provFel.length ? `${provFel.length} fel` : "rätt"}.`);
 if (provFel.length) { console.log(provFel.join("\n")); process.exitCode = 1; }
+// Träffarna under rutan (2026-11-26): står rutan över träffarna ("med"), söker ritaSok() utan provorden och orden runt
+// provet. "prov om procent" gav förut först Formelbladet Ma 2 del 6, där stickprov sägs, och "provet sannolikhet"
+// samma del. [fråga, rätt förstaträff]
+const { utanProvord } = new Function("videor", kod.slice(0, kod.lastIndexOf("return {")) + "return { utanProvord };")(data.videor);
+const PROVSOK = [
+  ["prov om procent", "k301"], ["provet sannolikhet", "k303"], ["procent prov på fredag", "k301"], ["provfrågor procent", "k301"],
+  ["nationella provet vektorer", "vbegr"], ["prov x^2 = 25", "nollp"], ["np-prov förändringsfaktor", "k301"],
+];
+const provSokFel = PROVSOK.flatMap(([q, svar]) => {
+  if (provFraga(q) !== "med") return [`  ${q.padEnd(52)} gav ${provFraga(q)}, inte med`];
+  const forst = sok(utanProvord(q)).res[0]?.v.id ?? "(inget)";
+  return forst === K[svar] ? [] : [`  ${q.padEnd(52)} först: ${forst}, inte ${K[svar]}`];
+});
+// Och ritaSok() på sidan ska göra så: frågan utan provorden går både till sok() och till stavningsrättningen.
+const ritaSokKod = bit("  function ritaSok()", "    if (!res.length)");
+const fragan = ritaSokKod.match(/const (\w+) = provet \? utanProvord\(falt\.value\) : falt\.value;/)?.[1];
+if (!fragan || !ritaSokKod.includes(`sok(${fragan})`) || !ritaSokKod.includes(`rattaStavning(${fragan})`)) {
+  provSokFel.push("  ritaSok() i index.html söker inte på frågan utan provorden (utanProvord)");
+}
+console.log(`Träffarna under rutan: ${provSokFel.length ? `${provSokFel.length} fel` : "rätt"}.`);
+if (provSokFel.length) { console.log(provSokFel.join("\n")); process.exitCode = 1; }
