@@ -3400,6 +3400,8 @@
     </div>`;
   // Vilken flik som visas: "berattelser" (den historiska tidslinjen), "formelbladet", "ma2a" eller "ma2c".
   let hylla = "berattelser";
+  // Har eleven sett filmvalet? Kom eleven direkt till en film via adressen finns ingen flik att utgå från.
+  let hyllaSedd = false;
   $("vy-valj").classList.toggle("har-flikar", harFlikar);
   if (harFlikar) tidslinje.setAttribute("role", "tabpanel");
   // Bara flikarna som har filmer syns. Plattan glider till den valda fliken; på mobilen är flikarna
@@ -3636,6 +3638,7 @@
   let bytTimer = null;
   function valjHylla(namn, direkt = false) {
     if (!HYLLOR.includes(namn)) namn = "berattelser";
+    hyllaSedd = true;
     const flik = flikAv(namn);
     $("flikar").dataset.hylla = flik;
     $("flikar").querySelectorAll("[role=tab]").forEach((b) => { const ar = b.dataset.hylla === flik; b.setAttribute("aria-selected", String(ar)); b.tabIndex = ar ? 0 : -1; });
@@ -4217,10 +4220,10 @@
   const kursAvHyllan = () => (hylla === "ma2c" ? "2c" : ["ma2a", "formelbladet-ma2"].includes(hylla) ? "2a" : "1c");
   function kursFranLaget() {
     // En film på flera kurser: kursen på fliken eleven kom från, om filmen står på den kursen (Ma 2a 10 från
-    // fliken Ma 2c ger Ma 2c, 2026-11-26). Annars, och från Inför provet eller Spel, alla kurser.
+    // fliken Ma 2c ger Ma 2c, 2026-11-26). Annars, från Inför provet eller Spel och direkt via adressen, alla kurser.
     if (aktivVy === "film" && aktuell) {
       const k = KURSVAL.filter((x) => iKurs(aktuell, x.id)).map((x) => x.id);
-      return k.length === 1 ? k[0] : ["berattelser", "ma2a", "ma2c"].includes(hylla) && k.includes(kursAvHyllan()) ? kursAvHyllan() : "alla";
+      return k.length === 1 ? k[0] : hyllaSedd && ["berattelser", "ma2a", "ma2c"].includes(hylla) && k.includes(kursAvHyllan()) ? kursAvHyllan() : "alla";
     }
     if (aktivVy === "valj") return kursAvHyllan();
     return "alla";
