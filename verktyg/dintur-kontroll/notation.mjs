@@ -12,7 +12,8 @@ const matte = new Function(`${sida.slice(a, b)}.replace(/(?<=[A-Za-z0-9)])_([A-Z
 const FINNS = /^[\x20-\x7E -ÿ–—‘’“”…−μπσ√∞≈≤≥□⇔]$/u;
 const dintur = JSON.parse(readFileSync(join(VT, "dintur.json"), "utf8"));
 const visa = process.argv.includes("--visa");
-const texter = (d) => [d.fraga, ...(d.slut || []), d.ledtrad && d.ledtrad.text, ...(d.losning || []), d.geogebra && d.geogebra.text,
+// passFraga och passDelar: frågan som provpasset visar i stället (2026-11-27).
+const texter = (d) => [d.fraga, d.passFraga, ...(d.passDelar || []), ...(d.slut || []), d.ledtrad && d.ledtrad.text, ...(d.losning || []), d.geogebra && d.geogebra.text,
   ...d.delar.flatMap((x) => [x.fraga, x.enhet, ...(x.fel || []).map((f) => f.text)])].filter(Boolean);
 let fel = 0, antal = 0;
 for (const [id, d] of Object.entries(dintur)) for (const t of texter(d)) {

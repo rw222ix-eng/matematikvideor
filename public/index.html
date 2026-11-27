@@ -999,6 +999,70 @@
   .snutt-linje:focus-visible::before { box-shadow: 0 0 0 2px var(--accent); }
   .snuttspelare.slut .snutt-ram video { opacity: .55; transition: opacity .6s; }
   .dintur-losning .kant[hidden] { display: none; }
+  /* Provpasset (Rickards val 2026-11-27): skylten under Inför provet och rutan över sidan, som sökningen.
+     Skisserna: v2-provpasset/efter-dator.png, efter-pass-dator.png och efter-resultat-mobil.png. */
+  .post.bro .pass-start { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .post.bro .pass-knapp { pointer-events: auto; margin-top: 2px; }
+  .pass-dag { font: 500 11px/1.4 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+  .provpass { position: fixed; inset: 0; z-index: 40; background: var(--bg); display: none; overflow-y: auto; overscroll-behavior: contain; }
+  .provpass.oppen { display: block; animation: ton .5s var(--lugn) both; }
+  .provpass .topp { justify-content: flex-end; }
+  .provpass .topp .ikon { border: 1px solid var(--linje); border-radius: 50%; }
+  .provpass .inre { max-width: 1040px; margin: 0 auto; padding: 40px 32px 120px; }
+  .pass-huvud { display: grid; gap: 12px; margin: 0 64px 30px 0; }
+  .pass-huvud .etikett b { color: var(--accent); font-weight: 500; }
+  .pass-prickar { display: flex; gap: 8px; margin: 0; }
+  .pass-prickar span { width: 10px; height: 10px; box-sizing: border-box; border-radius: 50%; border: 1px solid var(--linje); }
+  .pass-prickar .ratt { background: #6FD08C; border-color: #6FD08C; }
+  .pass-prickar .fel { background: #F2766B; border-color: #F2766B; }
+  .pass-prickar .nu { border: 2px solid var(--accent); }
+  .pass-kalla { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; }
+  .pass-kalla img { width: 64px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; flex: none; }
+  .pass-kalla .etikett { font-size: 10px; letter-spacing: .24em; line-height: 1.6; }
+  .pass-fraga { margin: 0 0 24px; font: 500 clamp(21px, 2.2vw, 26px)/1.35 var(--skrift); color: var(--ben); font-variant-numeric: lining-nums; outline: none; }
+  .pass-figur .dintur-figur { margin: 0 0 26px; }
+  .pass-ggb { margin: 0 0 26px; }
+  .pass-ggb .kant[hidden] { display: none; }
+  .pass-ggb .ggb-text { margin: 0 0 12px; color: #CFC8BA; }
+  .pass-hjalp { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0 52px; }
+  .pass-hjalp [hidden] { display: none; }
+  .pass-se svg, .pass-spela svg { width: 11px; height: 11px; }
+  .pass-se .fyll, .pass-spela .fyll { fill: currentColor; }
+  .pass-snutt:empty { display: none; }
+  .pass-ledtrad { margin: 0 0 14px; max-width: 680px; color: #CFC8BA; }
+  .pass-fot { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--linje2); }
+  .pass-rubrik { margin: 0 0 22px; font: 400 clamp(30px, 4.4vw, 46px)/1.15 var(--skrift); color: var(--ben); }
+  .pass-rubrik span { color: var(--accent); }
+  .pass-kan { list-style: none; margin: 0 0 50px; padding: 0; display: grid; gap: 14px; }
+  .pass-kan li { display: flex; align-items: center; gap: 18px; padding: 16px 22px; border: 1px solid rgba(111, 208, 140, .45); border-radius: 12px; background: rgba(111, 208, 140, .04); }
+  .pass-kan svg { width: 40px; height: 40px; flex: none; fill: none; stroke: #6FD08C; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .pass-kan .moment { display: block; font: 400 22px/1.3 var(--skrift); color: var(--ben); }
+  .pass-kan .etikett { color: #6FD08C; font-size: 11px; letter-spacing: .24em; }
+  .pass-om { margin: -6px 0 26px; font: 300 17px/1.6 var(--sans); color: var(--ben2); }
+  .pass-titta { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linje2); }
+  .pass-rad { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 6px 22px; padding: 18px 0; border-bottom: 1px solid var(--linje2); }
+  .pass-rad img { display: block; width: 140px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; }
+  .pass-rad .etikett { display: block; font-size: 11px; letter-spacing: .24em; }
+  .pass-rad-rubrik { display: block; margin: 4px 0 8px; font: 400 22px/1.3 var(--skrift); color: var(--ben); }
+  .pass-spela { display: inline-flex; align-items: center; gap: 10px; min-height: 36px; padding: 0; border: 0; background: none; color: var(--accent); font: 500 16px/1 var(--sans); letter-spacing: .08em; cursor: pointer; }
+  .pass-spela[hidden] { display: none; }
+  .pass-rad-snutt { grid-column: 1 / -1; }
+  .pass-rad-snutt:empty { display: none; }
+  .pass-rad-snutt .snuttspelare { margin: 10px 0 0; max-width: 640px; }
+  @media (min-width: 900px) {
+    .pass-kort.med-figur { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 46%); column-gap: 40px; align-items: start; }
+    .pass-kort.med-figur > * { grid-column: 1; }
+    .pass-kort.med-figur > .pass-figur { grid-column: 2; grid-row: 1 / span 3; position: sticky; top: 30px; }
+    .pass-kort.med-figur .del-svar input { flex: 1 1 150px; max-width: 300px; }
+  }
+  @media (max-width: 600px) {
+    .provpass .inre { padding: 30px 18px 100px; }
+    .pass-huvud { margin-right: 52px; }
+    .pass-hjalp { margin-left: 0; }
+    .pass-rad { grid-template-columns: 96px minmax(0, 1fr); gap: 4px 14px; }
+    .pass-rad img { width: 96px; }
+    .pass-rad-rubrik { font-size: 19px; }
+  }
   .tallinje { display: block; width: 100%; max-width: 460px; height: auto; margin-top: 18px; overflow: visible; }
   .tallinje .axel { stroke: var(--ben2); stroke-width: 1.2; fill: none; }
   .tallinje .streck { stroke: var(--ben2); stroke-width: 1.2; }
@@ -1449,6 +1513,7 @@
      det medan man söker, eftersom det låg över träfflistan (Rickard 2026-10-03). */
   .sok.oppen ~ .hjalp { z-index: 42; }
   body:not(.guidar) .sok.oppen ~ .hjalp { opacity: 0; visibility: hidden; }
+  .provpass.oppen ~ .hjalp, .provpass.oppen ~ .newton { opacity: 0; visibility: hidden; }
   /* Under guiden får filmsidan luft nedtill, så att det som står sist (Din tur, Nästa del, Om filmen)
      kan rullas upp ovanför Newton och hans bubbla. */
   body.guidar .vy.film { padding-bottom: 80vh; }
@@ -1858,6 +1923,15 @@
   </div>
 </div>
 
+<!-- ── Provpasset (Rickards val 2026-11-27) ─────────────── -->
+<!-- Öppnas med «Starta provpasset» under Inför provet. Skriptet skriver frågorna och resultatet i pass-inre. -->
+<div class="provpass" id="provpass" role="dialog" aria-modal="true" aria-label="Provpasset">
+  <header class="topp">
+    <button class="ikon" id="pass-stang" aria-label="Stäng provpasset"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
+  </header>
+  <div class="inre" id="pass-inre"></div>
+</div>
+
 <!-- Newton, tipsfiguren och guiden: direkt i body, utanför vyerna, så att han kan synas och gå mellan vyerna. -->
 <aside class="newton" id="newton" aria-label="Newton" hidden>
   <div class="newton-bubbla">
@@ -2137,6 +2211,7 @@
   // den tonar in syns målningen igenom och rör sig som vanligt.
   const sokTacker = () => {
     const s = document.getElementById("sok");
+    if (passOppen()) return true;
     return !!s && s.classList.contains("oppen") && !(s.getAnimations && s.getAnimations().some((a) => a.playState === "running"));
   };
   // Året berättelsen utspelar sig. Negativa år är före Kristus: −212 → "212 f.Kr."
@@ -2232,6 +2307,46 @@
   const MANAD = ["jan", "feb", "mars", "april", "maj", "juni", "juli", "aug", "sep", "okt", "nov", "dec"];
   const datumText = (s) => { const d = provDag(s); return `${VECKODAG[d.getDay()]} ${d.getDate()} ${MANAD[d.getMonth()]}${d.getFullYear() !== idag().getFullYear() ? ` ${d.getFullYear()}` : ""}`; };
   const kvarText = (s) => { const n = Math.round((provDag(s) - idag()) / 864e5); return n === 0 ? "i dag" : n === 1 ? "i morgon" : `om ${n} dagar`; };
+  // ── Provpasset: urvalet (Rickards val 2026-11-27, «Provpasset») ──────────
+  // Sex frågor ur provets filmer, filmernas Din tur. Först filmer som aldrig varit med i ett pass eller var fel förra
+  // gången, i slumpad ordning, sedan den som var med för längst sedan. Den första frågan är ur det tidigaste kapitlet,
+  // och sedan kommer inte två ur samma kapitel i rad när det går att undvika. «utom» är filmerna i passet nyss
+  // («6 frågor till»): de kommer bara med om det inte finns nog med andra. Här och inte vid vyn längre ner, för att
+  // skylten under Inför provet ritas innan skriptet kommit dit.
+  const PASS_ANTAL = 6;
+  let passet = null;   // { p, fragor: [{ v, d, lost: Set, fel, vetInte, klar }], i, slut }
+  const dagText = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const passKapitel = (v, p) => { const k = v.bokkapitel && v.bokkapitel[p.kurs]; return Number.isInteger(k) && k > 0 ? k : null; };
+  const passFilmer = (p) => provFilmer(p).filter((v) => v.dinTur && Array.isArray(v.dinTur.delar) && v.dinTur.delar.length);
+  const blandat = (xs) => { const a = [...xs]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  function passUrval(p, utom = new Set()) {
+    const alla = passFilmer(p), senast = (v) => (framsteg[v.id] && framsteg[v.id].pass) || null;
+    // Formelbladet har inga kapitel och räknas som ett eget, sist.
+    const kap = (v) => passKapitel(v, p) ?? 99;
+    // Grupperna i tur och ordning. Inom en grupp tas först en film per kapitel, så att passet sprids över provets
+    // kapitel (annars kunde slumpen ge fem frågor ur samma kapitel), och sedan resten i gruppens ordning.
+    const val = [];
+    const ta = (grupp) => {
+      const sedda = new Set(val.map(kap));
+      for (const v of grupp) if (val.length < PASS_ANTAL && !sedda.has(kap(v))) { val.push(v); sedda.add(kap(v)); }
+      for (const v of grupp) if (val.length < PASS_ANTAL && !val.includes(v)) val.push(v);
+    };
+    for (const xs of [alla.filter((v) => !utom.has(v.id)), alla.filter((v) => utom.has(v.id))]) {
+      ta(blandat(xs.filter((v) => !senast(v) || !senast(v).ratt)));
+      ta(blandat(xs.filter((v) => senast(v) && senast(v).ratt)).sort((a, b) => String(senast(a).dag).localeCompare(String(senast(b).dag))));
+    }
+    if (!val.length) return [];
+    const minsta = Math.min(...val.map(kap));
+    const forsta = blandat(val.filter((v) => kap(v) === minsta))[0], resten = val.filter((v) => v !== forsta);
+    let basta = null;
+    for (let n = 0; n < 80; n++) {
+      const ordning = [forsta, ...blandat(resten)];
+      const krockar = ordning.filter((v, i) => i && kap(v) === kap(ordning[i - 1])).length;
+      if (!basta || krockar < basta.krockar) basta = { ordning, krockar };
+      if (!krockar) break;
+    }
+    return basta.ordning;
+  }
   // ── Inloggningen till spelen (Rickard 2026-11-14) ──
   // Klasslänken med klassens nyckel (?klass=TE26A&k=…, 2026-11-09) är borta: eleven loggar in med skolans Google-konto
   // på /inlogg/, och spelservern slår upp klassen ur kontot. Servern sätter en kaka som skriptet inte kan läsa, så
@@ -3590,14 +3705,15 @@
   }
   ritaProvval();
   // Skylten först på linan under Inför provet. Pilen pekar mot filmerna, eller uppåt mot klassknapparna.
-  const provSkylt = (liten, stor, text, namn, moment, upp = false) => `
-    <div class="post bro" role="note" data-stil="--i:0">
+  // Med provpasset står passet i skylten i stället för pilen och provets innehåll (skissen v2-provpasset/efter-dator.png).
+  const provSkylt = (liten, stor, text, namn, moment, upp = false, start = "") => `
+    <div class="post bro${start ? " med-pass" : ""}" role="note" data-stil="--i:0">
       <span class="lyft"></span>
       <span class="ram"><span class="bro-inre">
         <span class="bro-liten">${liten}</span>
         <span class="bro-stor">${stor}</span>
         ${text ? `<span class="bro-text">${text}</span>` : ""}
-        <svg class="bro-pil${upp ? " upp" : ""}" viewBox="0 0 40 12" aria-hidden="true"><path d="M1 6 H38 M32 1 L38 6 L32 11"/></svg>
+        ${start ? `<span class="pass-start" id="pass-start">${start}</span>` : `<svg class="bro-pil${upp ? " upp" : ""}" viewBox="0 0 40 12" aria-hidden="true"><path d="M1 6 H38 M32 1 L38 6 L32 11"/></svg>`}
       </span></span>
       <span class="lina"></span>
       <span class="namn"><span class="rad1"><span class="kurs">${namn}</span></span><span class="moment">${moment}</span></span>
@@ -3607,9 +3723,17 @@
     if (!k) return provSkylt("Inför provet", "Vilken klass går du i?", "Tryck på din klass här ovanför, så ser du filmerna till ditt nästa prov.", "Välj klass", "ovanför", true);
     const p = nastaProv(k);
     if (!p) return provSkylt(esc(k.namn), "Inga fler prov inlagda", "Alla prov som klassen har i planeringen är skrivna.", esc(k.namn), "inga fler prov");
-    const filmer = provFilmer(p);
-    return provSkylt(`${esc(kursNamn(p.kurs))} · ${kvarText(p.datum)}`, esc(p.kapitel), esc(p.innehall || ""), `${esc(p.namn)} · ${datumText(p.datum)}`, `${filmer.length} ${filmer.length === 1 ? "film" : "filmer"} · ${esc(k.namn)}`)
+    const filmer = provFilmer(p), start = passStart(p);
+    return provSkylt(`${esc(kursNamn(p.kurs))} · ${kvarText(p.datum)}`, esc(p.kapitel), start ? "" : esc(p.innehall || ""), `${esc(p.namn)} · ${datumText(p.datum)}`, `${filmer.length} ${filmer.length === 1 ? "film" : "filmer"} · ${esc(k.namn)}`, false, start)
       + filmer.map((v, i) => kortHtml(v, i + 1, PROV)).join("");
+  }
+  // Raden i skylten: hur många frågor, och dagen för nästa pass när eleven valt «Nytt pass om två dagar».
+  function passStart(p) {
+    const n = Math.min(PASS_ANTAL, passFilmer(p).length);
+    if (!n) return "";
+    const plan = framsteg.provpass && framsteg.provpass.nasta, pagar = passet && !passet.slut && passet.p === p;
+    const dag = !plan ? "" : provDag(plan) > idag() ? `<span class="pass-dag">Nästa pass ${datumText(plan)}</span>` : `<span class="pass-dag">Dags för ett nytt pass</span>`;
+    return `${dag}<span class="bro-text">${n} ${n === 1 ? "fråga" : "frågor"} ur filmerna, ca ${n * 2} min</span><button type="button" class="kolla pass-knapp" data-provpass>${pagar ? "Fortsätt provpasset" : "Starta provpasset"}</button>`;
   }
   function placeraPlatta() {
     const f = $("flikar"), b = f.querySelector(`[data-hylla="${f.dataset.hylla}"]`);
@@ -4029,7 +4153,7 @@
   // Piltangenterna bläddrar en skärm som pilarna vid kanterna, eller flyttar mellan korten när ett kort har fokus.
   // En tangent som hålls nere bläddrar igen först när linan stannat.
   document.addEventListener("keydown", (e) => {
-    if (aktivVy !== "valj" || $("sok").classList.contains("oppen")) return;
+    if (aktivVy !== "valj" || $("sok").classList.contains("oppen") || passOppen()) return;
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
     // På flikarna byter pilarna flik, som i en vanlig flikrad (runt, från sista till första).
     if (e.target.closest && e.target.closest("#flikar")) {
@@ -5996,8 +6120,10 @@
     const ord = r.ok ? "Rätt!" : r.forstod ? "Fel" : r.tomt ? "Skriv ett svar först" : "Svaret gick inte att läsa";
     let forklaring = r.text.replace(/^(Rätt!|Inte riktigt\.|Svaret gick inte att läsa\.|Skriv ett svar först\.)\s*/, "");
     // Ett fel svar slutar på «Visa ledtråden» så länge ledtråden är stängd. Då står inte «eller ta en ledtråd» i texten också.
-    const lank = dom === "fel" && dt && dt.d.ledtrad && $("dintur-ledtrad").hidden ? `<button type="button" class="ledtrad-lank" data-ledtrad>Visa ledtråden</button>` : "";
-    if (lank) forklaring = forklaring.replace(/,\s*eller ta en ledtråd\.$/, ".");
+    // I provpasset finns ingen ledtråd: där står knapparna «Se stället i filmen», «Försök igen» och «Jag vet inte» under beskedet.
+    const iDinTur = !!li.closest("#dintur");
+    const lank = iDinTur && dom === "fel" && dt && dt.d.ledtrad && $("dintur-ledtrad").hidden ? `<button type="button" class="ledtrad-lank" data-ledtrad>Visa ledtråden</button>` : "";
+    if (lank || !iDinTur) forklaring = forklaring.replace(/,\s*eller ta en ledtråd\.$/, ".");
     try {
       text.innerHTML = html(`<span class="dom-ikon" aria-hidden="true">${r.ok ? BOCK : r.forstod ? KRYSS : FRAGETECKEN}</span><span class="dom-ord">${ord}</span>${forklaring || lank ? `<span class="dom-text">${forklaring ? matte(forklaring, true) : ""}${forklaring && lank ? " " : ""}${lank}</span>` : ""}`);
     } catch (x) { text.textContent = r.text; }
@@ -6275,6 +6401,272 @@
     visaIFonstret(n.el);
   });
 
+  // ── Provpasset: vyn (Rickards val 2026-11-27, «Provpasset») ──────────
+  // En ruta över sidan, som sökningen. En fråga i taget: rubriken med prickarna, filmen frågan kommer ur, frågan
+  // (passFraga när Din tur-frågan hänvisar bakåt i filmen), filmens bild och delarna med Din turs fält och rättning.
+  // Ett fel svar ger «Se stället i filmen», «Försök igen» och «Jag vet inte». Snutten spelas i den del som var fel,
+  // efter frågan och före fältet, och stannar själv. «Nästa fråga» finns alltid. En fråga är kunnad när alla delar
+  // är rätt utan fel svar och utan «Jag vet inte». Resultatet visar det eleven kan och snuttarna till resten.
+  // Framstegen: framsteg[id].pass = { dag, ratt } när frågan är klar, och framsteg.provpass = { nasta } när eleven
+  // väljer «Nytt pass om två dagar». Urvalet står vid provFilmer.
+  const passEl = $("provpass"), passInre = $("pass-inre");
+  // Som funktion med uppslag: Newton och målningarna frågar innan skriptet kommit hit.
+  function passOppen() { const p = document.getElementById("provpass"); return !!p && p.classList.contains("oppen"); }
+  const kunnad = (q) => q.lost.size === q.d.delar.length && !q.fel && !q.vetInte;
+  const passSynas = (el) => requestAnimationFrame(() => { if (el && el.isConnected) el.scrollIntoView({ block: "nearest", behavior: "smooth" }); });
+  let fokusForePass = null, passOppnad = 0, passSkickat = { j: -1, varde: null, tid: 0 };
+  function passSkylt() {
+    const el = $("pass-start"), k = provKlass(), p = k && nastaProv(k);
+    if (el && p) el.innerHTML = html(passStart(p));
+  }
+  function oppnaPass() {
+    if (Newton.visar !== "guide") Newton.gom();
+    if (sokRuta.classList.contains("oppen")) stangSok();
+    if (!passOppen()) { fokusForePass = document.activeElement; passOppnad = Date.now(); }
+    passEl.classList.add("oppen"); document.body.classList.add("last");
+    document.querySelectorAll(".vy").forEach((el) => { el.inert = true; });
+    if (sp.spelar()) sp.pausa();
+  }
+  function stangPass() {
+    if (!passOppen()) return;
+    stoppaSnutt();
+    passEl.classList.remove("oppen");
+    document.body.classList.toggle("last", aktivVy === "intro" || (aktivVy === "valj" && !smal()));
+    document.querySelectorAll(".vy").forEach((el) => { el.inert = false; });
+    malningar.forEach((starta) => starta());
+    if (passet && passet.slut) passet = null;
+    passSkylt();
+    const tillbaka = fokusForePass && fokusForePass.isConnected && fokusForePass.offsetParent !== null ? fokusForePass : $("pass-start") && $("pass-start").querySelector("button");
+    if (tillbaka) tillbaka.focus({ preventScroll: true });
+    fokusForePass = null;
+  }
+  function startaPass(utom) {
+    const k = provKlass(), p = k && nastaProv(k), val = p ? passUrval(p, utom) : [];
+    if (!val.length) return;
+    passet = { p, fragor: val.map((v) => ({ v, d: v.dinTur, lost: new Set(), fel: 0, vetInte: false, klar: false })), i: 0, slut: false };
+    oppnaPass();
+    ritaPassFraga();
+  }
+  const passHuvud = (klart) => `<div class="pass-huvud"><p class="etikett">Provpasset · <b>${klart ? "Klart" : `${esc(passet.p.namn)} ${esc(datumText(passet.p.datum))}`}</b></p>`
+    + `${klart ? "" : `<p class="pass-prickar" aria-hidden="true">${passet.fragor.map(() => "<span></span>").join("")}</p>`}</div>`;
+  function ritaPrickar() {
+    passInre.querySelectorAll(".pass-prickar span").forEach((s, j) => {
+      const q = passet.fragor[j];
+      s.className = j === passet.i ? "nu" : q.klar ? (kunnad(q) ? "ratt" : "fel") : "";
+    });
+  }
+  function ritaPassFraga() {
+    stoppaSnutt();
+    const P = passet, q = P.fragor[P.i], v = q.v, d = q.d, kap = passKapitel(v, P.p), bild = v.omslagRen || v.omslag;
+    const delFraga = (del, j) => (Array.isArray(d.passDelar) && d.passDelar[j]) || del.fraga;
+    passInre.innerHTML = html(`${passHuvud(false)}
+      <p class="pass-kalla">${bild ? `<img src="${attr(bild)}" alt="">` : ""}<span class="etikett">Fråga ${P.i + 1} av ${P.fragor.length} · Ur filmen «${esc(v.titel)}»${kap ? ` · Kapitel ${kap}` : ""}</span></p>
+      <div class="pass-kort${d.figur ? " med-figur" : ""}">
+        <h2 class="pass-fraga" id="pass-fraga" tabindex="-1">${matte(d.passFraga || d.fraga, true)}</h2>
+        ${d.figur ? `<div class="pass-figur">${figur(d.figur)}</div>` : ""}
+        ${d.geogebra ? `<div class="pass-ggb"><p class="ggb-text">${matte(d.geogebra.text || "Lös uppgiften grafiskt i GeoGebra här, med samma steg som i filmen.", true)}</p><button type="button" class="kant" data-pass-ggb>Öppna GeoGebra</button><div class="ggb-yta"></div></div>` : ""}
+        <ol class="dintur-delar${d.delar.length > 1 ? " flera" : ""}">${d.delar.map((del, j) => `
+          <li class="del">
+            <p class="del-fraga" id="pass-del-fraga-${j}">${matte(delFraga(del, j), true)}</p>
+            <form class="del-svar" data-del="${j}" novalidate>
+              <input id="pass-del-svar-${j}" aria-labelledby="pass-del-fraga-${j}" aria-describedby="pass-del-text-${j}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done" inputmode="${del.typ === "tal" ? "decimal" : "text"}" placeholder="${attr((del.exempel || "").replace(/·/g, "×"))}">
+              ${del.enhet ? `<span class="enhet">${esc(del.enhet)}</span>` : ""}
+              <button type="submit" class="kolla">Kolla</button>
+            </form>
+            ${tangenterFor(del) ? `<div class="tangenter">${tangenterFor(del).map((t) => `<button type="button" data-tecken="${attr(t)}" aria-label="Skriv ${attr(TECKENNAMN[t] || t)}">${esc(t === "-" ? "−" : t)}</button>`).join("")}</div>` : ""}
+            <p class="del-svarstext" id="pass-del-text-${j}" role="status" aria-live="polite"></p>
+          </li>`).join("")}</ol>
+      </div>
+      <div class="pass-fot"><button type="button" class="kolla" data-pass-nasta>${P.i + 1 < P.fragor.length ? "Nästa fråga" : "Se resultatet"}</button></div>`);
+    ritaPrickar();
+    const fig = passInre.querySelector(".dintur-figur");
+    if (fig) figurIakttagare.observe(fig);
+    passEl.scrollTop = 0;
+    // Med mus och tangentbord får fältet fokus. På en telefon skulle tangentbordet täcka frågan, så där får frågan fokus.
+    const inp = passInre.querySelector("input");
+    if (inp && matchMedia("(pointer: fine)").matches) inp.focus({ preventScroll: true }); else $("pass-fraga").focus({ preventScroll: true });
+  }
+  // Knapparna under ett fel svar. «Se stället i filmen» göms medan snutten står i delen.
+  function passHjalp(li, q) {
+    let rad = li.querySelector(".pass-hjalp");
+    if (!rad) {
+      const s = snuttFor(q.v);
+      rad = document.createElement("div");
+      rad.className = "pass-hjalp";
+      rad.innerHTML = html(`${s ? `<button type="button" class="kolla pass-se" data-pass-snutt>${IK.spela}Se stället i filmen · ${snuttTid(s)}</button>` : ""}<button type="button" class="kant" data-pass-igen>Försök igen</button><button type="button" class="kant" data-pass-vet-inte>Jag vet inte</button>`);
+      li.querySelector(".del-svarstext").after(rad);
+    }
+    ritaHjalp();
+  }
+  function ritaHjalp() {
+    passInre.querySelectorAll(".pass-snutt").forEach((x) => { if (!x.firstChild) x.remove(); });
+    passInre.querySelectorAll(".del").forEach((li) => { const b = li.querySelector(".pass-se"); if (b) b.hidden = !!li.querySelector(".snuttspelare"); });
+  }
+  // Snutten i delen, efter frågan och före fältet. Utan snutt (filmen saknar mp4) visas ledtrådens text.
+  function passSnutt(li, q) {
+    const v = q.v, s = snuttFor(v);
+    if (!s) {
+      if (q.d.ledtrad && !li.querySelector(".pass-ledtrad")) { const p = document.createElement("p"); p.className = "pass-ledtrad"; p.innerHTML = html(matte(q.d.ledtrad.text, true)); li.querySelector(".del-fraga").after(p); passSynas(p); }
+      return;
+    }
+    const plats = document.createElement("div");
+    plats.className = "pass-snutt";
+    li.querySelector(".del-fraga").after(plats);
+    const inp = li.querySelector("input"), kolla = li.querySelector(".kolla");
+    const n = snuttSpelare(v, s, {
+      efter: () => {
+        if (!li.isConnected || li.classList.contains("lost")) return;
+        kolla.textContent = "Försök igen";
+        inp.focus({ preventScroll: true }); inp.select(); passSynas(li.querySelector("form.del-svar"));
+      },
+      hela: () => { const t = Math.floor(s.fran); stangPass(); oppna(v.id, t); },
+    });
+    plats.appendChild(n.el);
+    ritaHjalp();
+    n.spela();
+    passSynas(n.el);
+  }
+  // Frågan är klar när eleven går vidare: den sparas i framstegen. Alla delar rätt löser också filmens Din tur.
+  function passKlar(q) {
+    if (q.klar) return;
+    q.klar = true;
+    const f = framstegFor(q.v.id);
+    f.pass = { dag: dagText(idag()), ratt: kunnad(q) };
+    if (q.lost.size === q.d.delar.length) f.lost = true;
+    sparaFramsteg();
+  }
+  function ritaPassResultat() {
+    stoppaSnutt();
+    const P = passet;
+    P.slut = true;
+    const kan = P.fragor.filter(kunnad), titta = P.fragor.filter((q) => !kunnad(q));
+    const sek = titta.reduce((a, q) => { const s = snuttFor(q.v); return a + (s ? s.slut - s.fran : 0); }, 0), min = Math.max(1, Math.round(sek / 60));
+    const alla = provFilmer(P.p), timmar = alla.reduce((a, v) => a + (v.langd || 0), 0) / 3600;
+    const hela = timmar >= 1.5 ? `${Math.round(timmar)} timmar` : `${Math.max(1, Math.round(timmar * 60))} minuter`;
+    const KAN = '<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18"/><path d="M13 20.5 L18 25.5 L27.5 14.5"/></svg>';
+    passInre.innerHTML = html(`${passHuvud(true)}
+      ${kan.length ? `<h2 class="pass-rubrik" id="pass-fraga" tabindex="-1">Det här kan du</h2>
+        <ul class="pass-kan">${kan.map((q) => `<li>${KAN}<span><span class="moment">${esc(q.v.moment)}</span><span class="etikett">${esc(q.v.titel)}</span></span></li>`).join("")}</ul>` : ""}
+      ${titta.length ? `<h2 class="pass-rubrik"${kan.length ? "" : ` id="pass-fraga" tabindex="-1"`}>${titta.length === 1 ? "Titta på det här stället" : `Titta på de här ${titta.length} ställena`} · <span>${min} ${min === 1 ? "minut" : "minuter"}</span></h2>
+        <p class="pass-om">Bara stället i filmen, inte alla ${alla.length} filmerna (${hela}). Varje snutt stannar själv.</p>
+        <ul class="pass-titta">${titta.map((q) => {
+          const v = q.v, s = snuttFor(v), bild = v.omslagRen || v.omslag, j = P.fragor.indexOf(q);
+          return `<li class="pass-rad" data-j="${j}"><span class="pass-bild">${bild ? `<img src="${attr(bild)}" alt="" loading="lazy">` : ""}</span>
+            <span><span class="etikett">${esc(v.titel)}</span><span class="pass-rad-rubrik">${esc((s && s.rubrik) || v.moment)}</span>
+            ${s ? `<button type="button" class="pass-spela" data-pass-titta="${j}" aria-label="${attr(`Spela stället ur ${v.titel}, ${snuttTid(s)}`)}">${IK.spela}${snuttTid(s)}</button>` : `<button type="button" class="pass-spela" data-pass-film="${j}">Öppna filmen</button>`}</span>
+            <div class="pass-rad-snutt"></div></li>`;
+        }).join("")}</ul>` : `<p class="pass-om">Alla frågorna rätt på första försöket.</p>`}
+      <div class="pass-fot"><button type="button" class="kolla" data-pass-nytt>Nytt pass om två dagar</button><button type="button" class="kant" data-pass-fler>${Math.min(PASS_ANTAL, passFilmer(P.p).length)} frågor till</button></div>`);
+    passEl.scrollTop = 0;
+    $("pass-fraga").focus({ preventScroll: true });
+  }
+  passInre.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = e.target.closest && e.target.closest("form.del-svar");
+    if (!passet || passet.slut || !form) return;
+    const q = passet.fragor[passet.i], j = Number(form.dataset.del), del = q.d.delar[j];
+    const inp = form.querySelector("input"), li = form.closest(".del"), text = li.querySelector(".del-svarstext");
+    const varde = inp.value;
+    let r;
+    if (!varde.trim()) r = { ok: false, forstod: false, tomt: true, text: "Skriv ett svar först." };
+    else { try { r = ratta(del, varde); } catch (x) { console.error(x); } }
+    if (!r || typeof r.text !== "string" || !r.text) r = TRASIGT;
+    // Två tryck på Enter med samma svar inom en halv sekund räknas en gång, som i Din tur.
+    const igen = passSkickat.j === j && passSkickat.varde === varde && Date.now() - passSkickat.tid < 500;
+    passSkickat = { j, varde, tid: Date.now() };
+    visaBesked(text, li, inp, r);
+    if (!igen && !r.tomt && !q.klar) { if (r.ok) q.lost.add(j); else { q.lost.delete(j); if (r.forstod) q.fel++; } }
+    if (r.ok) { form.querySelector(".kolla").textContent = "Kolla"; const h = li.querySelector(".pass-hjalp"); if (h) h.remove(); pausaSnutt(); }
+    // Också när svaret inte gick att läsa: annars kommer en elev som inte vet hur svaret ska skrivas aldrig åt «Jag vet inte».
+    else if (!r.tomt) passHjalp(li, q);
+    const allt = q.lost.size === q.d.delar.length;
+    const nasta = r.ok && !allt && [...passInre.querySelectorAll(".del")].find((x) => !x.classList.contains("lost"));
+    if (nasta) nasta.querySelector("input").focus({ preventScroll: true });
+    else if (r.ok && allt) passInre.querySelector("[data-pass-nasta]").focus({ preventScroll: true });
+    else inp.focus({ preventScroll: true });
+    passSynas(r.ok && allt ? passInre.querySelector(".pass-fot") : li.querySelector(".pass-hjalp") || text);
+  });
+  passInre.addEventListener("click", (e) => {
+    if (!passet) return;
+    const tecken = e.target.closest("[data-tecken]");
+    if (tecken) {
+      const inp = tecken.closest(".del").querySelector("input");
+      const a = inp.selectionStart ?? inp.value.length, b = inp.selectionEnd ?? a;
+      inp.setRangeText(tecken.dataset.tecken, a, b, "end"); inp.focus();
+      return;
+    }
+    const q = passet.fragor[passet.i], li = e.target.closest(".del");
+    if (e.target.closest("[data-pass-snutt]")) { passSnutt(li, q); return; }
+    if (e.target.closest("[data-pass-vet-inte]")) {
+      q.vetInte = true;
+      const b = li.querySelector("[data-pass-vet-inte]"); if (b) b.remove();
+      if (!li.querySelector(".snuttspelare")) passSnutt(li, q);
+      return;
+    }
+    if (e.target.closest("[data-pass-igen]")) { const inp = li.querySelector("input"); inp.focus({ preventScroll: true }); inp.select(); return; }
+    if (e.target.closest("[data-pass-ggb]")) { passGgb(e.target.closest("[data-pass-ggb]")); return; }
+    if (e.target.closest("[data-pass-nasta]")) {
+      passKlar(q);
+      if (passet.i + 1 < passet.fragor.length) { passet.i++; ritaPassFraga(); } else ritaPassResultat();
+      return;
+    }
+    const titta = e.target.closest("[data-pass-titta]");
+    if (titta) {
+      const fq = passet.fragor[Number(titta.dataset.passTitta)], v = fq.v, s = snuttFor(v), rad = titta.closest(".pass-rad");
+      if (!s) return;
+      const n = snuttSpelare(v, s, { hela: () => { const t = Math.floor(s.fran); stangPass(); oppna(v.id, t); } });
+      rad.querySelector(".pass-rad-snutt").appendChild(n.el);
+      passInre.querySelectorAll("[data-pass-titta]").forEach((b) => { b.hidden = b === titta; });
+      n.spela();
+      passSynas(n.el);
+      return;
+    }
+    const film = e.target.closest("[data-pass-film]");
+    if (film) { const v = passet.fragor[Number(film.dataset.passFilm)].v, t = v.dinTur.ledtrad && v.dinTur.ledtrad.t; stangPass(); oppna(v.id, Number.isFinite(t) ? Math.floor(t) : undefined); return; }
+    if (e.target.closest("[data-pass-nytt]")) {
+      const d = idag(); d.setDate(d.getDate() + 2);
+      framsteg.provpass = { nasta: dagText(d) };
+      sparaFramsteg();
+      stangPass();
+      return;
+    }
+    if (e.target.closest("[data-pass-fler]")) { startaPass(new Set(passet.fragor.map((x) => x.v.id))); return; }
+  });
+  // Skyltens knapp: ett påbörjat pass till samma prov fortsätter där eleven var.
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest || !e.target.closest("[data-provpass]")) return;
+    const k = provKlass(), p = k && nastaProv(k);
+    if (passet && !passet.slut && passet.p === p) { oppnaPass(); ritaPassFraga(); } else startaPass();
+  });
+  // Krysset tar inte emot klick den första halvsekunden (dubbelklick på knappen, som i sökningen). Esc stänger.
+  $("pass-stang").addEventListener("click", () => { if (Date.now() - passOppnad > 500) stangPass(); });
+  passEl.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); stangPass(); return; }
+    // Tangenterna hör till passet: inget når filmvalets pilar, sökningens snedstreck eller spelaren.
+    if (!e.target.closest(".snutt-ram, .snutt-linje")) e.stopPropagation();
+  });
+  // GeoGebra i frågor som löses grafiskt (Ma 2a 07 och 09), byggd först när eleven trycker. Samma ram som i Din tur.
+  let passGgbRam = null;
+  function passGgb(knapp) {
+    const ruta = knapp.closest(".pass-ggb"), yta = ruta.querySelector(".ggb-yta"), g = passet.fragor[passet.i].d.geogebra;
+    knapp.hidden = true;
+    const b = Math.max(300, ruta.clientWidth), h = b < 520 ? 600 : Math.round(Math.min(560, Math.max(380, b * 0.62)));
+    const ram = document.createElement("iframe");
+    ram.title = "GeoGebra"; ram.allow = "fullscreen; clipboard-write"; ram.referrerPolicy = "strict-origin-when-cross-origin";
+    ram.width = String(b); ram.height = String(h);
+    ram.src = `${INBADDAT}/ggb#${new URLSearchParams({ o: location.origin, app: g.app || "graphing", b: String(b), h: String(h) })}`;
+    yta.replaceChildren(ram);
+    passGgbRam = ram;
+    const fel = () => { if (passGgbRam !== ram) return; passGgbRam = null; ram.remove(); knapp.textContent = "Försök igen"; knapp.hidden = false; };
+    ram.vakt = setTimeout(fel, 20000);
+    ram.fel = fel;
+  }
+  window.addEventListener("message", (e) => {
+    if (!passGgbRam || !franRam(e, passGgbRam)) return;
+    if (e.data.hand === "start") clearTimeout(passGgbRam.vakt);
+    else if (e.data.hand === "fel") passGgbRam.fel();
+  });
+
   // "Visa allt som sägs" fäller ut hela texten direkt under knappen. Öppnas den glider sidan så att
   // knappen hamnar högt upp och texten syns under den.
   const visaAllt = $("visa-allt"), alltRuta = $("allt");
@@ -6432,11 +6824,12 @@
     if (e.key !== "Escape" || skriver(e)) return;
     if (document.fullscreenElement || document.webkitFullscreenElement) return; // webbläsaren stänger helskärmen själv
     if (dukEl.classList.contains("helskarm")) { cssHelskarm(false); return; }
-    if (sokRuta.classList.contains("oppen")) stangSok();
+    if (passOppen()) stangPass();
+    else if (sokRuta.classList.contains("oppen")) stangSok();
     else if (aktivVy === "film") location.hash = "filmer";
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "/" && !sokRuta.classList.contains("oppen") && !skriver(e)) { e.preventDefault(); oppnaSok(); }
+    if (e.key === "/" && !sokRuta.classList.contains("oppen") && !passOppen() && !skriver(e)) { e.preventDefault(); oppnaSok(); }
   });
 
   // ── Newton, tipsfiguren och guiden (Rickard 2026-09-25) ──────────
@@ -6645,7 +7038,7 @@
     async function visa(id, lage, text, { direkt = false, rorelse: hur = "vinka", markera: vad = null, ocksa = [] } = {}) {
       if (av || sett.has(id) || visar) return false;
       if (!direkt && performance.now() - senast < 30000) return false;
-      if (sokRuta.classList.contains("oppen") || (aktuell && (iHelskarm() || (!direkt && sp.spelar())))) return false;
+      if (sokRuta.classList.contains("oppen") || passOppen() || (aktuell && (iHelskarm() || (!direkt && sp.spelar())))) return false;
       visar = id;
       if (!(await forbered(lage))) { if (visar === id) visar = null; return false; }
       if (visar !== id) return false;

@@ -1380,6 +1380,7 @@
    ],
    "dinTur": {
     "fraga": "Tänk dig att prästinnan i stället hade sagt att altaret skulle bli tre gånger så stort. Det gamla altaret var ett block, så det nya ska rymma 3 block. Vi kallar sidan x. Då ska x³ vara lika med 3. Du får två frågor.",
+    "passFraga": "Ett altare har formen av en kub och rymmer ett block. Ett nytt altare ska ha samma form men rymma 3 block. Vi kallar det nya altarets sida x. Då ska x³ vara lika med 3. Du får två frågor.",
     "slut": [
      "Först skriver du den ekvationen.",
      "Sen löser du ekvationen med räknaren och svarar med två decimaler."
@@ -2874,6 +2875,7 @@
    ],
    "dinTur": {
     "fraga": "Ett annat romerskt skepp ligger 400 meter från muren. Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare. Kastmaskinen når 200 meter. Nu får du två frågor att svara på. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
+    "passFraga": "Ett romerskt skepp ligger 400 meter från stadsmuren. Det ror rakt mot muren, och varje sekund kommer det 5 meter närmare. Kastmaskinen på muren når 200 meter. Du får två frågor. Efter hur många sekunder kan kastmaskinen träffa skeppet?",
     "figur": {
      "vy": [
       1920,
@@ -9566,6 +9568,7 @@
    ],
    "dinTur": {
     "fraga": "Du ska svara på två frågor. Tänk dig en annan ränna, där märkena står vid 5, 8, 13 och 20 steg. Var står märke nummer n?",
+    "passFraga": "En kula rullar nerför en ränna. Märkena längs rännan står vid 5, 8, 13 och 20 steg. Du ska svara på två frågor. Var står märke nummer n?",
     "slut": [
      "Först: Hur många steg längre bort står varje märke än kvadrattalet? Det behöver du för att ta reda på det.",
      "Sen: Skriv formeln för märke nummer n."
@@ -12226,6 +12229,7 @@
    "dinTur": {
     "notisFran": 759,
     "fraga": "Luften i ett annat rör fyller 30 streck vid tryck 2. Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet. Du ska svara på två frågor. Hur många streck fyller luften vid tryck 3, alltså tre gånger så hårt?",
+    "passFraga": "Luften i ett rör fyller 30 streck vid tryck 2. Tryck 2 betyder att luften trycks dubbelt så hårt som luften i rummet. Du ska svara på två frågor. Hur många streck fyller luften vid tryck 3, alltså tre gånger så hårt?",
     "slut": [
      "Först: Skriv funktionen på formen y = C · x^(−1). x är trycket, och y är antalet streck. Se upp, 30 är inte C. Börja med att räkna ut C, alltså trycket gånger strecken.",
      "Sen: Använd funktionen och räkna ut antalet streck."
@@ -14998,6 +15002,7 @@
    "dinTur": {
     "notisFran": 799,
     "fraga": "Tänk dig att parlamentet hade lagt till ett fjärde pris, 5 000 pund, för ett fel som är större än 110 kilometer, men högst 150. Du ska svara på två frågor.",
+    "passFraga": "Parlamentet i London lovar ett pris på 5 000 pund till den som kan mäta longituden med ett fel som är större än 110 kilometer, men högst 150. Du ska svara på två frågor.",
     "slut": [
      "Först: Skriv intervallet med hakparenteser.",
      "Sen: Skriv samma intervall som en olikhet."
@@ -17977,6 +17982,7 @@
    "dinTur": {
     "notisFran": 787,
     "fraga": "Tänk dig att Franklins 1000 pund i stället hade fått 4 % ränta varje år. Du ska svara på två frågor. Hur många pund blir det efter tio år?",
+    "passFraga": "1000 pund ligger på ett konto som ger 4 % ränta varje år. Du ska svara på två frågor. Hur många pund blir det efter tio år?",
     "slut": [
      "Först: Skriv exponentialfunktionen, med x för antalet år och y för pengarna i pund. Börja med förändringsfaktorn.",
      "Sen: Räkna ut pengarna efter tio år. Avrunda till hela pund."
@@ -21834,6 +21840,7 @@
    "dinTur": {
     "notisFran": 776,
     "fraga": "En annan ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40. Du ska svara på två frågor.",
+    "passFraga": "En ballong stiger 150 meter varje minut, så höjden är f(t) = 150t. Funktionen gäller de första 40 minuterna, alltså 0 ≤ t ≤ 40. Du ska svara på två frågor.",
     "slut": [
      "Först: Vad är f(20)?",
      "Sen: Vilken är funktionens värdemängd? Skriv den som en olikhet."
@@ -24283,6 +24290,7 @@
    "dinTur": {
     "notisFran": 808,
     "fraga": "Tänk dig att meddelandet i stället hade sagt att Titanic låg 40 kilometer västerut och 30 kilometer norrut om Carpathia. Du ska svara på två frågor.",
+    "passFraga": "Fartyget Carpathia får ett meddelande: Titanic ligger 40 kilometer västerut och 30 kilometer norrut om Carpathia. Du ska svara på två frågor.",
     "slut": [
      "Först: Hur långt är det till Titanic? Svara i kilometer.",
      "Sen: Hur många grader från norr ska Carpathia styra? Avrunda till hela grader."
@@ -26954,6 +26962,7 @@
    "dinTur": {
     "notisFran": 827,
     "fraga": "På samma karta flyger ett annat plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Du ska svara på två frågor. Vilken ekvation har linjen som planet flyger på?",
+    "passFraga": "På en karta flyger ett plan rakt från punkten där x är 2 och y är 1, till punkten där x är 5 och y är 7. Du ska svara på två frågor. Vilken ekvation har linjen som planet flyger på?",
     "slut": [
      "Först: Vad är k? Det behöver du för att ta reda på det.",
      "Sen: Skriv linjens ekvation."
@@ -28258,6 +28267,7 @@
    "dinTur": {
     "notisFran": 644,
     "fraga": "På ett annat sjukhus i London frågar en läkare 50 patienter med lungcancer och 200 patienter med andra sjukdomar. 20 av lungcancerpatienterna röker mycket. Bland de andra patienterna röker 40 mycket. Du ska svara på två frågor.",
+    "passFraga": "På ett sjukhus i London frågar en läkare 50 patienter med lungcancer och 200 patienter med andra sjukdomar. 20 av lungcancerpatienterna röker mycket. Bland de andra patienterna röker 40 mycket. Du ska svara på två frågor.",
     "slut": [
      "Först: Hur stor andel av lungcancerpatienterna röker mycket?",
      "Sen: Är korrelationen mellan att röka mycket och att ha lungcancer positiv eller negativ?"
@@ -31433,6 +31443,7 @@
    "dinTur": {
     "notisFran": 802,
     "fraga": "Tänk dig ett annat torn som också lutar. Det är lägre än tornet i Pisa. Från foten och upp längs tornet till kanten är det 10 meter. Ett snöre med en tyngd hänger rakt ner från kanten. Det når marken 1 meter från tornets fot. Du ska svara på två frågor.",
+    "passFraga": "Ett torn lutar. Från foten och upp längs tornet till kanten är det 10 meter. Ett snöre med en tyngd hänger rakt ner från kanten. Det når marken 1 meter från tornets fot. Du ska svara på två frågor.",
     "slut": [
      "Först: Hur många grader lutar tornet?",
      "Sen: Hur stor är vinkeln nere vid tornets fot?"
@@ -48380,6 +48391,7 @@
    "dinTur": {
     "notisFran": 839,
     "fraga": "När Bethe förklarade sitt knep för Feynman, tog han 47 som exempel. Du ska svara på två frågor. Hur mycket är 47 i kvadrat, om du räknar i huvudet som Bethe?",
+    "passFraga": "Räkna ut 47 i kvadrat i huvudet. Knepet är att skriva 47 som 50 minus ett tal och använda kvadreringsregeln (a − b)² = a² − 2ab + b². Du ska svara på två frågor.",
     "slut": [
      "Först: 47 är 50 minus vad? Det behöver du för knepet.",
      "Sen: Använd knepet och räkna ut 47 i kvadrat."
@@ -51196,6 +51208,7 @@
    "dinTur": {
     "notisFran": 562,
     "fraga": "Tänk dig att tjänaren släpper en kula från ett torn som är 80 meter högt. På t sekunder faller kulan 5t² meter. Du ska svara på två frågor. Hur många sekunder tar det innan kulan slår i marken?",
+    "passFraga": "Du släpper en kula från ett torn som är 80 meter högt. På t sekunder faller kulan 5t² meter. Du ska svara på två frågor. Hur många sekunder tar det innan kulan slår i marken?",
     "slut": [
      "Först: Vad är t² när kulan har fallit 80 meter? Det behöver du för att ta reda på det.",
      "Sen: Räkna ut hur många sekunder det tar."
@@ -53287,6 +53300,7 @@
    "dinTur": {
     "notisFran": 845,
     "fraga": "I samma arv får mannens dotter en åker. Åkern är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Du ska svara på två frågor. Hur bred är åkern?",
+    "passFraga": "En åker är 6 meter längre än den är bred, och arean är 72 kvadratmeter. Du ska svara på två frågor. Hur bred är åkern?",
     "slut": [
      "Först: Ställ upp en ekvation för att ta reda på det, med x för bredden.",
      "Sen: Lös ekvationen med pq-formeln."
@@ -54869,6 +54883,7 @@
     },
     "notisFran": 707,
     "fraga": "På en annan järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Du ska svara på två frågor. Hur mycket varor måste järnvägen frakta innan repen blir billigare?",
+    "passFraga": "På en järnväg är x antalet tusen ton, och y är kostnaden i tusen pund. Repen kostar 40 att bygga och sedan 2 för varje tusen ton. Loken kostar 10 att köpa och sedan 3 för varje tusen ton. Du ska svara på två frågor. Hur mycket varor måste järnvägen frakta innan repen blir billigare?",
     "slut": [
      "Först: Skriv repens ekvation.",
      "Sen: Rita båda linjerna i samma koordinatsystem och läs av svaret."
@@ -56200,6 +56215,7 @@
     },
     "notisFran": 547,
     "fraga": "I ett annat nät kommer 6 ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen 1 ohm, och den andra har 2 ohm. Strömmen i tråden med 1 ohm kallar vi x, och strömmen i tråden med 2 ohm kallar vi y. Du ska svara på två frågor.",
+    "passFraga": "I ett elektriskt nät kommer 6 ampere in till en punkt, och där delar sig strömmen i två trådar. Den ena tråden har resistansen 1 ohm, och den andra har 2 ohm. Strömmen i tråden med 1 ohm kallar vi x, och strömmen i tråden med 2 ohm kallar vi y. Du ska svara på två frågor.",
     "slut": [
      "Först: Hur många ampere går i tråden med 1 ohm?",
      "Sen: Hur många ampere går i tråden med 2 ohm?"
@@ -57156,6 +57172,7 @@
     },
     "notisFran": 569,
     "fraga": "Libby mätte också träet från golvet i palatset i Syrien. Där klickade räknaren 9,2 gånger i minuten för varje gram. När trädet levde klickade det 12,5 gånger, och varje tusen år finns 89 procent kvar. Du ska svara på två frågor.",
+    "passFraga": "Träet i golvet i ett gammalt palats i Syrien mäts. Räknaren klickar 9,2 gånger i minuten för varje gram. När trädet levde klickade den 12,5 gånger, och efter varje tusen år finns 89 procent kvar. Du ska svara på två frågor.",
     "slut": [
      "Först: Vilken exponentialekvation ska du lösa?",
      "Sen: Hur gammalt är träet? Lös ekvationen med GeoGebra och svara i år, avrundat till hundratal."
@@ -59284,6 +59301,7 @@
    "dinTur": {
     "notisFran": 623,
     "fraga": "Fermat ritar en ny sträcka som är 16 centimeter lång. Den delas i två delar, x och 16 − x, och delarna blir sidorna i en rektangel. Arean är A(x) = x(16 − x). Du ska svara på två frågor.",
+    "passFraga": "En sträcka är 16 centimeter lång. Den delas i två delar, x och 16 − x, och delarna blir sidorna i en rektangel. Arean är A(x) = x(16 − x). Du ska svara på två frågor.",
     "slut": [
      "Först: Var går symmetrilinjen?",
      "Sen: Vilket är funktionens största värde?"
@@ -60365,6 +60383,7 @@
    "dinTur": {
     "notisFran": 563,
     "fraga": "Nu är det din tur. Du ska svara på två frågor.",
+    "passFraga": "Du ska svara på två frågor.",
     "slut": [
      "Först: Skriv a⁵ · a³ som en enda potens.",
      "Sen: Skriv a³/a⁵ som en enda potens."
@@ -62333,6 +62352,7 @@
    "dinTur": {
     "notisFran": 513,
     "fraga": "Sju andra soldater har bröstmåtten 94, 98, 100, 100, 102, 105 och 115 centimeter. Du ska svara på två frågor.",
+    "passFraga": "Sju soldater har bröstmåtten 94, 98, 100, 100, 102, 105 och 115 centimeter. Du ska svara på två frågor.",
     "slut": [
      "Först: Vilken är medianen?",
      "Sen: Vilket är medelvärdet?"
@@ -63168,6 +63188,7 @@
    "dinTur": {
     "notisFran": 457,
     "fraga": "Sju besökare gissar vad en annan oxe väger. De gissar 520, 530, 540, 545, 550, 560 och 600 kilo. Du ska svara på två frågor.",
+    "passFraga": "Sju besökare på en marknad gissar vad en oxe väger. De gissar 520, 530, 540, 545, 550, 560 och 600 kilo. Du ska svara på två frågor.",
     "slut": [
      "Först: Vilken är medianen?",
      "Sen: Hur stort är kvartilavståndet?"
@@ -64977,6 +64998,7 @@
    "dinTur": {
     "notisFran": 484,
     "fraga": "I ett annat regemente finns 1 000 soldater. Deras bröstmått är normalfördelade med medelvärdet 100 centimeter och standardavvikelsen 4 centimeter. Du ska svara på två frågor.",
+    "passFraga": "I ett regemente finns 1 000 soldater. Deras bröstmått är normalfördelade med medelvärdet 100 centimeter och standardavvikelsen 4 centimeter. Du ska svara på två frågor.",
     "slut": [
      "Först: Hur många procent av soldaterna har ett bröstmått mellan 100 och 108 centimeter?",
      "Sen: Hur många soldater är det?"
@@ -66841,6 +66863,11 @@
    "dinTur": {
     "notisFran": 470,
     "fraga": "Pennan pekar på punkten (−2, 0). En punkt ligger i (1, 4). Du ska svara på två frågor. Hur långt är det från pennan till punkten?",
+    "passFraga": "Punkten A ligger i (−2, 0), och punkten B ligger i (1, 4). Du ska svara på två frågor. Hur långt är det från A till B?",
+    "passDelar": [
+     "Först: vad blir x två minus x ett?",
+     "Sen: hur långt är det från A till B?"
+    ],
     "slut": [
      "Först: vad blir x två minus x ett?",
      "Sen: hur långt är det från pennan till punkten?"

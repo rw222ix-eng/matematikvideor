@@ -46,6 +46,11 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Cl
   sekund till nästa kapitelgräns och högst två minuter, och stannar själv med fokus i fältet. Början och
   slutet läggs vid meningsgränser i textningen. Är kapitlet för långt eller för kort, sätter `till` slutet
   (frasen är de första orden i den första meningen som inte ska spelas). `snuttFor()` i `index.html`.
+  Provpasset (Rickards val 2026-11-27): «Starta provpasset» under Inför provet ger sex Din tur-frågor ur
+  provets filmer, en i taget, och sedan «Det här kan du» och snuttarna till resten. Hänvisar frågan bakåt
+  i filmen («ett annat skepp», «I samma arv»), står frågan som den ska läsas utan filmen i `passFraga`, och
+  delfrågorna vid behov i `passDelar`. Urvalet är `passUrval()` i `index.html`, och framstegen står i
+  `framsteg[id].pass` och `framsteg.provpass`.
   Notisen om Din tur (när eleven pausar) visas från slutet av kapitlet där ledtråden ligger;
   `notisFran` (fras eller sekund) sätter gränsen för hand. Bygget skriver ut gränsen för varje film
   och varnar om den faller tillbaka på Din tur-kapitlet eller 70 %.
