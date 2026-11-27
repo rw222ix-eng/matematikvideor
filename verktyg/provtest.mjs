@@ -19,11 +19,17 @@ const a = html.indexOf("  const autoTraff = "), b = html.indexOf('  // "tors 19 
 if (a < 0 || b < 0) throw new Error("hittar inte autoTraff … provFilmer i index.html");
 const medVideor = (lista) => new Function("videor", `${html.slice(a, b)}\nreturn { provFilmer, autoTraff };`)(lista);
 const { provFilmer } = medVideor(videor);
-// Påhittade nya filmer ska hamna rätt: en ny k4-film efter k4-06, en ny Ma 2a 09 efter Ma 2a 08 i IndA:s
-// nationella prov, och Franklin (k4-05) aldrig i TE:s prov 4, som inte tar upp exponentialfunktioner.
+// Påhittade nya filmer ska hamna rätt: en ny k4-film efter k4-06, en ny Ma 2a 13b efter Ma 2a 13 och före
+// formelbladet i IndA:s prov 3, och Franklin (k4-05) aldrig i TE:s prov 4, som inte tar upp exponentialfunktioner.
+// Den påhittade filmen var Ma 2a 09 tills den riktiga kom 2026-11-27. Då stod den påhittade efter den
+// riktiga, och provet föll fast sidan sorterade rätt. Därför stoppar provet nu om en påhittad plats blir verklig.
 {
   // ma2a-08b: en tilläggsfilm med bokstav efter numret (som ma2a-03b-nollproduktmetoden, som regeln missade 18/10).
-  const nya = [...videor, { id: "ma1c-k4-07-prov" }, { id: "ma2a-09-prov" }, { id: "ma2c-k1-01-prov" }, { id: "ma2a-08b-prov" }];
+  const nya = [...videor, { id: "ma1c-k4-07-prov" }, { id: "ma2a-13b-prov" }, { id: "ma2c-k1-01-prov" }, { id: "ma2a-08b-prov" }];
+  for (const { id } of nya.slice(videor.length)) {
+    const plats = id.replace(/-prov$/, "-");
+    if (videor.some((v) => v.id.startsWith(plats))) fel.push(`provtest: platsen ${plats.slice(0, -1)} finns nu på riktigt, så den påhittade ${id} provar inget. Välj en plats som inte finns.`);
+  }
   const { provFilmer: pf } = medVideor(nya);
   const hitta = (k, datum) => pf(prov.klasser.find((x) => x.namn === k).prov.find((p) => p.datum === datum)).map((v) => v.id);
   const na = hitta("NA26F", "2026-11-19"), te = hitta("TE26A", "2026-12-09"), np = hitta("IndA", "2027-05-19"), ind3 = hitta("IndA", "2027-02-16"), m2c = hitta("NA26F", "2027-03-08");
@@ -37,9 +43,11 @@ const { provFilmer } = medVideor(videor);
   }
   if (!te.includes("ma1c-k4-07-prov") || te.includes("ma1c-k4-05-exponentialfunktioner")) fel.push("prov: TE26A prov 4 tar inte ny k4-film, eller tar med k4-05");
   if (np.indexOf("ma2a-08b-prov") !== np.indexOf("ma2a-08-substitution-och-addition") + 1) fel.push("prov: Ma 2a 08b hamnar inte direkt efter 08 i IndA:s nationella prov");
-  if (np.indexOf("ma2a-09-prov") !== np.indexOf("ma2a-08b-prov") + 1) fel.push("prov: Ma 2a 09 hamnar inte efter 08b i IndA:s nationella prov");
+  if (np.indexOf("ma2a-09-exponentialekvationer") !== np.indexOf("ma2a-08b-prov") + 1) fel.push("prov: Ma 2a 09 hamnar inte efter 08b i IndA:s nationella prov");
   if (!hitta("IndA", "2026-12-14").includes("ma2a-08b-prov")) fel.push("prov: Ma 2a 08b saknas i IndA prov 2 (regeln ma2a-05..08)");
-  if (ind3[0] !== "ma2a-09-prov" && ind3.indexOf("ma2a-09-prov") !== ind3.findIndex((x) => x.startsWith("formelbladet-")) - 1) fel.push(`prov: Ma 2a 09 hamnar fel i IndA prov 3: ${ind3.join(", ")}`);
+  const ma2a3 = ind3.filter((x) => x.startsWith("ma2a-")), i13b = ind3.indexOf("ma2a-13b-prov");
+  if (i13b !== ind3.indexOf("ma2a-13-potensekvationer") + 1 || i13b !== ind3.findIndex((x) => x.startsWith("formelbladet-")) - 1 || ma2a3.join() !== ma2a3.slice().sort().join())
+    fel.push(`prov: Ma 2a 13b hamnar fel i IndA prov 3: ${ind3.join(", ")}`);
   if (!m2c.includes("ma2c-k1-01-prov") || m2c.indexOf("ma2c-k1-01-prov") > m2c.findIndex((x) => x.startsWith("formelbladet-"))) fel.push("prov: ny Ma 2c-film saknas eller står efter formelbladet i NA26F prov 4");
 }
 const dag = process.argv[2] || new Date().toISOString().slice(0, 10);
