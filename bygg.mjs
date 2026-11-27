@@ -243,9 +243,16 @@ const videor = [...register].sort(ordning).map((v) => {
   for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
   let dinTur = null;
   if (dinturFil[v.id]) {
-    const { fras, ...ledtrad } = dinturFil[v.id].ledtrad || {};
+    const { fras, till, ...ledtrad } = dinturFil[v.id].ledtrad || {};
     dinTur = { ...dinturFil[v.id] };
     if (dinturFil[v.id].ledtrad) dinTur.ledtrad = { ...ledtrad, t: fras != null ? tidFor(fras, ord, v.id, "ledtråden") : ledtrad.t };
+    // Snutten (2026-11-27): «Se det i filmen» spelar från ledtråden till nästa kapitelgräns, högst två minuter.
+    // ledtrad.till är en fras där snutten slutar i stället, när kapitlet är för långt eller för kort.
+    if (dinTur.ledtrad && till != null) {
+      const t = tidFor(till, ord, v.id, "ledtrådens slut (till)");
+      if (t != null && Number.isFinite(dinTur.ledtrad.t) && t <= dinTur.ledtrad.t) byggfel.push(`${v.id}: ledtrad.till "${till}" (${tidText(t)}) kommer inte efter ledtråden (${tidText(dinTur.ledtrad.t)}).`);
+      if (t != null) dinTur.ledtrad.till = t;
+    }
     // Figurens plåt (Rickard 2026-09-29, bildstöd i Din tur): `bild` i dintur.json är ett plåtnamn.
     // Den hämtas ur filmens egen assets/platar/ eller, för plåtar målade bara till Din tur, ur
     // videotek/assets/dintur/ (bildprompter.md här), och bakas till public/dintur/<id>.jpg.

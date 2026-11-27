@@ -30,7 +30,8 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Cl
   jämförs exakt så att M och m är olika; `faktorer` vill ha ett tal som produkt av primtal,
   t.ex. 899 = 31 · 29, där `svar` är talet; `losningar` vill ha alla lösningar i valfri ordning,
   t.ex. "5 och 7" eller "x₁ = 7, x₂ = 5", där `svar` är en lista),
-  `ledtrad` (`fras` = var i filmen metoden visas, slås upp som kapitlen) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
+  `ledtrad` (`fras` = var i filmen metoden visas, slås upp som kapitlen; valfritt `till` = frasen där snutten
+  slutar, se nedan) och `losning` (stegen). Sidan rättar i webbläsaren: uttryck
   jämförs genom att räknas ut i några punkter, så 5ab(3b + 2a) räknas som rätt. `utanfor` kräver
   att så mycket som möjligt är utbrutet, `prova` visar elevens formel för n = 1, 2, 3 …
   `figur` (Rickard 2026-09-29: bildstöd, framför allt i geometrin) är en plåt som i videorna med
@@ -41,6 +42,10 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Cl
   vinkel, ratvinkel, sida, text …, se `figur()` i `index.html`). Bara det som står i uppgiften ritas,
   och det som efterfrågas i accentfärgen. Bygget bakar plåten till `public/dintur/<id>.jpg`.
   Prova en figur på sin plåt: `node verktyg/figurprov.mjs <id>` (skärmbild med Chrome utan fönster).
+  Snutten (Rickards val 2026-11-27): «Se det i filmen» spelar en liten spelare i rutan, från ledtrådens
+  sekund till nästa kapitelgräns och högst två minuter, och stannar själv med fokus i fältet. Början och
+  slutet läggs vid meningsgränser i textningen. Är kapitlet för långt eller för kort, sätter `till` slutet
+  (frasen är de första orden i den första meningen som inte ska spelas). `snuttFor()` i `index.html`.
   Notisen om Din tur (när eleven pausar) visas från slutet av kapitlet där ledtråden ligger;
   `notisFran` (fras eller sekund) sätter gränsen för hand. Bygget skriver ut gränsen för varje film
   och varnar om den faller tillbaka på Din tur-kapitlet eller 70 %.
