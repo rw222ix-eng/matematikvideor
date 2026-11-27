@@ -240,6 +240,10 @@ const videor = [...register].sort(ordning).map((v) => {
   const publicerad = !!(v.fil || v.youtube);
   if (!kapitelFil[v.id] && repliker.length) (publicerad ? (f) => byggfel.push(f) : (f) => console.warn(`  varning: ${f}`))(`${v.id} har inga kapitel i kapitel.json. Skriv kapitel (historia eller inledning, matte, uppgift) som för de andra filmerna.`);
   if (!dinturFil[v.id]) (publicerad ? (f) => byggfel.push(f) : (f) => console.warn(`  varning: ${f}`))(`${v.id} har ingen Din tur i dintur.json. Skriv den ur videons slutuppgift som för de andra filmerna.`);
+  // Före och sen på filmsidan (Rickard 2026-11-27): bygger pekar på filmer i registret, och en film
+  // som står i en kedja behöver ett kortnamn till knappen.
+  for (const b of v.bygger || []) if (b === v.id || !register.some((x) => x.id === b)) byggfel.push(`${v.id}: bygger på "${b}", som inte finns i register.json.`);
+  if (!v.kortnamn && ((v.bygger || []).length || register.some((x) => (x.bygger || []).includes(v.id)))) byggfel.push(`${v.id} står i före och sen men saknar kortnamn i register.json.`);
   for (let i = 1; i < kapitel.length; i++) if (kapitel[i].t <= kapitel[i - 1].t) byggfel.push(`${v.id}: kapitlet "${kapitel[i].rubrik}" (${tidText(kapitel[i].t)}) kommer inte efter "${kapitel[i - 1].rubrik}" (${tidText(kapitel[i - 1].t)}).`);
   let dinTur = null;
   if (dinturFil[v.id]) {
@@ -269,7 +273,7 @@ const videor = [...register].sort(ordning).map((v) => {
     notisRader.push(`  ${g.varning ? "varning: " : ""}${v.id.padEnd(24)} ${tidText(g.t)}${langd ? ` (${Math.round(g.t / langd * 100)} %)` : ""}  ${g.kalla}`);
   }
   const serie = serieAv(v);
-  return { id: v.id, titel: v.titel, ar: v.ar ?? null, serie, del: serie ? delAv(v) : null, ocksa: v.ocksa || null, kurs: v.kurs, kurser: v.kurser || null, bokkapitel: bokkapitelAv(v), fil: v.fil || null, moment: v.moment, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
+  return { id: v.id, titel: v.titel, ar: v.ar ?? null, serie, del: serie ? delAv(v) : null, ocksa: v.ocksa || null, kurs: v.kurs, kurser: v.kurser || null, bokkapitel: bokkapitelAv(v), fil: v.fil || null, moment: v.moment, kortnamn: v.kortnamn || null, bygger: v.bygger || null, begrepp: v.begrepp, beskrivning: v.beskrivning, youtube: v.youtube || null, langd, omslag, omslagRen, omslagStor, repliker, kapitel, dinTur, undertext };
 });
 
 // Introbilden (startsidans levande scen, 2026-09-26) skrivs av verktyg/hitta-scen.py tillsammans med

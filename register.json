@@ -11,6 +11,8 @@
       "ma2c": 12.4
     },
     "moment": "Potenser med bråk i exponenten",
+    "kortnamn": "Bråk i exponenten",
+    "bygger": [],
     "begrepp": [
       "potens",
       "exponent",
@@ -34,6 +36,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 1 },
     "moment": "Utveckla och faktorisera uttryck",
+    "kortnamn": "Utveckla och faktorisera",
+    "bygger": [],
     "begrepp": [
       "faktorisera",
       "bryta ut",
@@ -57,6 +61,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 2 },
     "moment": "Olikheter",
+    "kortnamn": "Olikheter",
+    "bygger": ["ma1c-k2-01-linjara-ekvationer"],
     "begrepp": [
       "olikhet",
       "olikhetstecken",
@@ -79,6 +85,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 2 },
     "moment": "Intervall",
+    "kortnamn": "Intervall",
+    "bygger": ["arkimedes-och-cirkeln"],
     "begrepp": [
       "intervall",
       "slutet intervall",
@@ -109,6 +117,8 @@
       "ma2c": 12.7
     },
     "moment": "Lösa potensekvationer",
+    "kortnamn": "Potensekvationer",
+    "bygger": ["kepler-och-planeterna"],
     "begrepp": [
       "potensekvation",
       "upphöjt till",
@@ -135,6 +145,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 2 },
     "moment": "Hitta formeln till ett mönster",
+    "kortnamn": "Formeln till ett mönster",
+    "bygger": ["ma1c-k2-02-formler-och-modeller"],
     "begrepp": [
       "talföljd",
       "tal nummer n",
@@ -544,6 +556,8 @@
       "ma2c": 1
     },
     "moment": "Kvadreringsreglerna och konjugatregeln",
+    "kortnamn": "Kvadreringsreglerna",
+    "bygger": ["viete-och-chiffret"],
     "begrepp": [
       "kvadreringsreglerna",
       "första kvadreringsregeln",
@@ -581,6 +595,8 @@
       "ma2c": 3
     },
     "moment": "Lösa x² = a",
+    "kortnamn": "x² = a",
+    "bygger": ["ma1c-k2-01-linjara-ekvationer"],
     "begrepp": [
       "andragradsekvation",
       "roten ur",
@@ -614,6 +630,8 @@
       "ma2c": 3.5
     },
     "moment": "Lösa andragradsekvationer med nollproduktmetoden",
+    "kortnamn": "Nollproduktmetoden",
+    "bygger": ["ma2a-02-faktorisera", "ma2a-03-x2-och-nollprodukt"],
     "begrepp": [
       "andragradsekvation",
       "nollproduktmetoden",
@@ -648,6 +666,8 @@
       "ma2c": 4
     },
     "moment": "Lösa andragradsekvationer med pq-formeln",
+    "kortnamn": "pq-formeln",
+    "bygger": ["ma2a-03b-nollproduktmetoden"],
     "begrepp": [
       "pq-formeln",
       "andragradsekvation",
@@ -689,6 +709,8 @@
       "ma2c": 2
     },
     "moment": "Faktorisera med kvadrerings- och konjugatregeln",
+    "kortnamn": "Faktorisera",
+    "bygger": ["ma2a-01-kvadreringsreglerna"],
     "begrepp": [
       "faktorisera",
       "produkt",
@@ -717,6 +739,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 6 },
     "moment": "Vektorbegreppet",
+    "kortnamn": "Vektorer",
+    "bygger": [],
     "begrepp": [
       "vektor",
       "skalär",
@@ -742,6 +766,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 6 },
     "moment": "Addera vektorer i koordinatform",
+    "kortnamn": "Addera vektorer",
+    "bygger": ["ma1c-k6-04-vektorbegreppet"],
     "begrepp": [
       "vektor",
       "koordinatform",
@@ -771,6 +797,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 6 },
     "moment": "Beräkna vinklar i en triangel då sidorna är kända",
+    "kortnamn": "Beräkna vinklar",
+    "bygger": ["ma1c-k6-02-berakna-sidor"],
     "begrepp": [
       "arcussinus",
       "arcuscosinus",
@@ -795,6 +823,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 6 },
     "moment": "Beräkna sidor i en triangel då vinkeln är känd",
+    "kortnamn": "Beräkna sidor",
+    "bygger": ["ma1c-k6-01-sinus-cosinus-tangens"],
     "begrepp": [
       "sinus",
       "cosinus",
@@ -818,6 +848,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 6 },
     "moment": "Sinus, cosinus och tangens",
+    "kortnamn": "Sinus, cosinus och tangens",
+    "bygger": [],
     "begrepp": [
       "sinus",
       "cosinus",
@@ -844,6 +876,8 @@
       "kurs": "Matematik 1c",
       "bokkapitel": { "Matematik 1c": 6 },
       "moment": "Rita trianglar i koordinatsystemet",
+      "kortnamn": "Vektorns längd och riktning",
+      "bygger": ["ma1c-k6-05-addera-vektorer", "ma1c-k6-03-berakna-vinklar"],
       "begrepp": [
         "vektor",
         "koordinatform",
@@ -868,6 +902,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 4 },
     "moment": "Funktioner, definitions- och värdemängd",
+    "kortnamn": "Funktioner",
+    "bygger": ["harrison-och-longituden"],
     "begrepp": [
       "koordinatsystem",
       "x-axel",
@@ -901,6 +937,8 @@
       "ma2c": 5
     },
     "moment": "Linjära samband, k-värdet och m-värdet",
+    "kortnamn": "k-värdet och m-värdet",
+    "bygger": ["ma1c-k4-01-funktioner"],
     "begrepp": [
       "linjärt samband",
       "direkt proportionalitet",
@@ -932,6 +970,8 @@
       "ma2c": 6
     },
     "moment": "Bestämma räta linjens ekvation ur två punkter",
+    "kortnamn": "Räta linjens ekvation",
+    "bygger": ["ma1c-k4-02-linjara-samband"],
     "begrepp": [
       "räta linjen",
       "y = kx + m",
@@ -965,6 +1005,8 @@
       "ma2c": 20
     },
     "moment": "Potensfunktioner y = C · xᵃ",
+    "kortnamn": "Potensfunktioner",
+    "bygger": ["ma1c-k4-01-funktioner", "delos-och-altaret"],
     "begrepp": [
       "potensfunktion",
       "exponent",
@@ -995,6 +1037,8 @@
       "ma2c": 21
     },
     "moment": "Exponentialfunktioner",
+    "kortnamn": "Exponentialfunktioner",
+    "bygger": ["ma1c-k3-01-forandringsfaktor", "ma1c-k4-01-funktioner"],
     "begrepp": [
       "exponentialfunktion",
       "förändringsfaktor",
@@ -1022,6 +1066,8 @@
     "kurs": "Matematik 2c",
     "bokkapitel": { "Matematik 2c": 3 },
     "moment": "Lösa ekvationer grafiskt",
+    "kortnamn": "Lösa ekvationer grafiskt",
+    "bygger": ["ma1c-k4-02-linjara-samband", "ma1c-k4-05-exponentialfunktioner"],
     "begrepp": [
       "grafisk ekvationslösning",
       "skärningspunkt",
@@ -1049,6 +1095,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 2 },
     "moment": "Lösa linjära ekvationer med balansmetoden",
+    "kortnamn": "Balansmetoden",
+    "bygger": [],
     "begrepp": [
       "ekvation",
       "linjär ekvation",
@@ -1077,6 +1125,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 2 },
     "moment": "Sätta in i formler och lösa ut en variabel",
+    "kortnamn": "Lösa ut en variabel",
+    "bygger": ["ma1c-k2-01-linjara-ekvationer"],
     "begrepp": [
       "formel",
       "variabel",
@@ -1102,6 +1152,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 3 },
     "moment": "Förändringsfaktor",
+    "kortnamn": "Förändringsfaktor",
+    "bygger": [],
     "begrepp": [
       "förändringsfaktor",
       "procent",
@@ -1135,6 +1187,8 @@
       "ma2c": 7
     },
     "moment": "Lösa ekvationssystem grafiskt",
+    "kortnamn": "Ekvationssystem grafiskt",
+    "bygger": ["ma1c-k4-03-rata-linjens-ekvation"],
     "begrepp": [
       "ekvationssystem",
       "skärningspunkt",
@@ -1179,6 +1233,8 @@
       "ma2c": 8
     },
     "moment": "Lösa ekvationssystem algebraiskt med substitutionsmetoden och additionsmetoden",
+    "kortnamn": "Ekvationssystem algebraiskt",
+    "bygger": ["ma2a-07-ekvationssystem-grafiskt"],
     "begrepp": [
       "ekvationssystem",
       "klammer",
@@ -1221,6 +1277,8 @@
       "ma2c": 12
     },
     "moment": "Potensreglerna med bokstäver",
+    "kortnamn": "Potensreglerna",
+    "bygger": ["kepler-och-planeterna"],
     "begrepp": [
       "potens",
       "bas",
@@ -1254,6 +1312,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 3 },
     "moment": "Sannolikhet i flera steg",
+    "kortnamn": "Sannolikhet i flera steg",
+    "bygger": [],
     "begrepp": [
       "slumpförsök",
       "utfall",
@@ -1284,6 +1344,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 3 },
     "moment": "Beroende händelser och komplementhändelse",
+    "kortnamn": "Beroende händelser",
+    "bygger": ["ma1c-k3-03-sannolikhet-i-flera-steg"],
     "begrepp": [
       "sannolikhet",
       "utan återläggning",
@@ -1311,6 +1373,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 5 },
     "moment": "Korrelation och kausalitet",
+    "kortnamn": "Korrelation",
+    "bygger": ["ma1c-k5-01-diagram"],
     "begrepp": [
       "population",
       "totalundersökning",
@@ -1348,6 +1412,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 5 },
     "moment": "Diagram och vilseledande statistik",
+    "kortnamn": "Diagram",
+    "bygger": [],
     "begrepp": [
       "tabell",
       "antal",
@@ -1378,6 +1444,8 @@
     "kurs": "Matematik 1c",
     "bokkapitel": { "Matematik 1c": 3 },
     "moment": "Lån, ränta och amortering",
+    "kortnamn": "Lån och ränta",
+    "bygger": ["ma1c-k3-01-forandringsfaktor"],
     "begrepp": [
       "lån",
       "ränta",
@@ -1415,6 +1483,8 @@
       "ma2c": 9
     },
     "moment": "Lösa exponentialekvationer grafiskt med GeoGebra",
+    "kortnamn": "Exponentialekvationer",
+    "bygger": ["ma1c-k4-05-exponentialfunktioner", "ma1c-k4-06-grafisk-ekvationslosning"],
     "begrepp": [
       "exponentialekvation",
       "exponentialfunktion",
@@ -1458,6 +1528,8 @@
       "ma2c": 13
     },
     "moment": "Potensekvationer och potensfunktioner",
+    "kortnamn": "Potensekvationer med procent",
+    "bygger": ["delos-och-altaret", "ma2a-12-potensreglerna"],
     "begrepp": [
       "potensekvation",
       "potens",
@@ -1506,6 +1578,8 @@
       "ma2c": 11
     },
     "moment": "Största och minsta värde",
+    "kortnamn": "Största och minsta värde",
+    "bygger": ["ma2a-10-andragradsfunktionen"],
     "begrepp": [
       "andragradsfunktion",
       "största värde",
@@ -1553,6 +1627,8 @@
       "ma2c": 10
     },
     "moment": "Andragradsfunktionens graf: parabel, symmetrilinje, extrempunkt och nollställen",
+    "kortnamn": "Andragradsfunktionens graf",
+    "bygger": ["ma2a-04-pq-formeln"],
     "begrepp": [
       "andragradsfunktion",
       "parabel",
@@ -1598,6 +1674,8 @@
       "ma2c": 14
     },
     "moment": "Lägesmått och histogram",
+    "kortnamn": "Lägesmått",
+    "bygger": ["ma1c-k5-01-diagram"],
     "begrepp": [
       "lägesmått",
       "medelvärde",
@@ -1643,6 +1721,8 @@
       "ma2c": 15
     },
     "moment": "Spridningsmått, kvartiler, lådagram och percentiler",
+    "kortnamn": "Kvartiler och lådagram",
+    "bygger": ["ma2a-14-lagesmatt"],
     "begrepp": [
       "spridning",
       "spridningsmått",
@@ -1687,6 +1767,8 @@
       "ma2c": 16
     },
     "moment": "Standardavvikelse",
+    "kortnamn": "Standardavvikelse",
+    "bygger": ["ma2a-14-lagesmatt"],
     "begrepp": [
       "standardavvikelse",
       "σ",
@@ -1733,6 +1815,8 @@
       "ma2c": 17
     },
     "moment": "Normalfördelning",
+    "kortnamn": "Normalfördelning",
+    "bygger": ["ma2a-16-standardavvikelse"],
     "begrepp": [
       "normalfördelning",
       "klockkurva",
@@ -1777,6 +1861,8 @@
       "ma2c": 19
     },
     "moment": "Avståndsformeln",
+    "kortnamn": "Avståndsformeln",
+    "bygger": ["ma2a-18-pythagoras"],
     "begrepp": [
       "avståndsformeln",
       "avstånd",
@@ -1825,6 +1911,8 @@
       "ma2c": 18
     },
     "moment": "Pythagoras sats",
+    "kortnamn": "Pythagoras sats",
+    "bygger": ["ma2a-01-kvadreringsreglerna"],
     "begrepp": [
       "Pythagoras sats",
       "rätvinklig triangel",
@@ -1860,6 +1948,8 @@
     "del": 0.1,
     "kurs": "Matematik 2c",
     "moment": "Implikation och ekvivalens",
+    "kortnamn": "Implikation och ekvivalens",
+    "bygger": [],
     "begrepp": [
       "implikation",
       "ekvivalens",
@@ -1899,6 +1989,8 @@
     "del": 0.2,
     "kurs": "Matematik 2c",
     "moment": "Polynom",
+    "kortnamn": "Polynom",
+    "bygger": ["ma2a-01-kvadreringsreglerna"],
     "begrepp": [
       "polynom",
       "term",
@@ -1937,6 +2029,8 @@
     "del": 0.3,
     "kurs": "Matematik 2c",
     "moment": "Lösa andragradsekvationer med kvadratkomplettering",
+    "kortnamn": "Kvadratkomplettering",
+    "bygger": ["ma2a-01-kvadreringsreglerna", "ma2a-03-x2-och-nollprodukt"],
     "begrepp": [
       "kvadratkomplettering",
       "andragradsekvation",
@@ -1972,6 +2066,8 @@
     "del": 0.4,
     "kurs": "Matematik 2c",
     "moment": "Lösa rotekvationer",
+    "kortnamn": "Rotekvationer",
+    "bygger": ["ma2a-04-pq-formeln", "ma2c-01-implikation-och-ekvivalens"],
     "begrepp": [
       "rotekvation",
       "kvadratrot",

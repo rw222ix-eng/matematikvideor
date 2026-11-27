@@ -19,6 +19,12 @@ direkt till sekunden i filmen. Ingen server, ingen inloggning. Publiceras på Cl
   Formelbladsdelarnas kort visar den del av formelbladet som filmen går igenom (utklipp tejpade på
   papper, som i videorna): `node verktyg/formelblad-kort.mjs` skriver `assets/kort/<id>.png`, och
   bygg.mjs använder den före omslaget till kortet, sökträffarna, Nästa del och affischen.
+  Före och sen (Rickards val 2026-11-27): berättelsefilmerna har `kortnamn` (knappens namn, som
+  «pq-formeln») och `bygger` (0–2 id för filmerna den bygger på). Filmsidan visar en rad mellan rubriken
+  och spelaren: «Före» är `bygger`, och «Sen» är filmerna vars `bygger` pekar på den här. Formelbladets
+  delar har ingen rad, eftersom de har Nästa del. Bygget stoppar för ett `bygger` som inte finns och för
+  en film i en kedja utan `kortnamn`. Rickard har läst listan, så en ny film får sin rad i samma steg
+  som Din tur-posten. `ritaKedja()` i `index.html`.
 - `kapitel.json` — kapitlen per film, `[fras, rubrik]`, skrivna för hand. Frasen är de första orden
   där kapitlet börjar (minst fem, så att den bara finns på ett ställe); `node bygg.mjs` slår upp
   sekunden i rösten, så kapitlen flyttar med när rösten görs om.

@@ -611,6 +611,20 @@
   .delrad .nr.saknas { border-style: dashed; border-color: rgba(236, 230, 216, .2); background: none; color: var(--dis); }
   a.nr:active { transform: scale(.88); transition-duration: .08s; }
   @media (hover: hover) { .delrad a.nr:hover { border-color: var(--accent); color: var(--accent); background: rgba(242, 197, 114, .1); transform: translateY(-2px); box-shadow: 0 0 20px rgba(242, 197, 114, .3); } }
+  /* Före och sen (Rickard 2026-11-27): en rad mellan rubriken och spelaren. Varje film är en knapp med
+     kortnamnet och berättelsen, den här filmen i guld. Grupperna skiljs med luft och inte med en punkt,
+     som annars hamnar först på raden när den bryts. På telefonen står etiketterna i en egen spalt. */
+  .kedja[hidden] { display: none; }
+  .kedja { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 30px; margin: -20px 0 20px; }
+  .kedja .grupp { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+  .kedja .led { font: 500 11px/1 var(--sans); letter-spacing: .24em; text-transform: uppercase; color: var(--ben2); }
+  .kedja .steg { display: inline-flex; align-items: baseline; gap: 8px; min-height: 32px; padding: 7px 13px 6px; border: 1px solid var(--linje); border-radius: 999px; background: rgba(23, 20, 20, .55); color: var(--ben); text-decoration: none; font: 400 13px/1.25 var(--sans); max-width: 100%; transition: border-color .3s, color .3s, background .3s, transform .4s var(--fjader); }
+  .kedja .steg b { font-weight: 600; letter-spacing: .03em; }
+  .kedja .steg .ber { color: var(--ben2); }
+  .kedja .steg[aria-current] { border-color: var(--accent); color: var(--accent); }
+  .kedja a.steg:active { transform: scale(.94); transition-duration: .08s; }
+  @media (hover: hover) { .kedja a.steg:hover { border-color: var(--accent); background: rgba(242, 197, 114, .1); transform: translateY(-1px); } .kedja a.steg:hover .ber { color: var(--ben); } }
+  .kedja a.steg:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   /* Nästa del, efter Din tur: omslaget, delens namn och en spelknapp. */
   .nasta-del { margin: 56px 0 0; }
   .nasta-del[hidden] { display: none; }
@@ -1259,6 +1273,11 @@
     .film .huvud { flex-direction: column; align-items: flex-start; gap: 10px; margin-bottom: 28px; }
     .film .huvud .langd { margin: 0; }
     .film .huvud-hoger { align-items: flex-start; gap: 12px; }
+    .kedja { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 14px; margin: -12px 0 18px; }
+    .kedja .grupp { display: contents; }
+    .kedja .led { grid-column: 1; align-self: center; letter-spacing: .18em; }
+    .kedja .steg { grid-column: 2; justify-self: start; flex-direction: column; align-items: flex-start; gap: 1px; min-height: 44px; justify-content: center; padding: 6px 14px; border-radius: 14px; }
+    .kedja .steg .ber { font-size: 12px; }
     .nasta-del { margin-top: 40px; }
     .nasta-kort { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 14px; }
     .nasta-kort .titel { font-size: 28px; }
@@ -1860,6 +1879,8 @@
         <p class="etikett langd" id="f-langd"></p>
       </div>
     </div>
+    <!-- Före och sen (Rickard 2026-11-27): filmen som den här bygger på och filmerna som bygger på den. -->
+    <nav class="kedja" id="f-kedja" aria-label="Filmerna före och efter" hidden></nav>
     <!-- Spelaren tar fokus när man klickar i den; snabbtangenterna gäller där (se tangentlyssnaren). -->
     <div class="duk" id="duk" tabindex="0" role="region" aria-label="Filmspelare"></div>
     <div class="kap-rubrik">
@@ -5395,6 +5416,26 @@
         : `<li><a class="nr" href="#${p.id}" data-tips="${namn}" aria-label="Del ${p.del}: ${attr(delNamn(p))}">${p.del}</a></li>`;
     }).join("")}</ol>`);
   }
+  // Före och sen (Rickard 2026-11-27): «Före» är filmerna i bygger, «Sen» de filmer vars bygger pekar
+  // på den här, i bokens ordning. Utan någon av dem syns ingen rad (formelbladet, och filmer utan kedja).
+  const KEDJA_SEN = Infinity;   // högst så många filmer under «Sen»
+  const bokOrdning = (x) => { const [k, n] = Object.entries(x.bokkapitel || {})[0] || ["Ö", 99]; return `${k}${String(n).padStart(2, "0")}`; };
+  function ritaKedja(v) {
+    const nav = $("f-kedja");
+    const fore = (v.bygger || []).map((id) => videor.find((x) => x.id === id)).filter((x) => x && x.kortnamn);
+    const sen = videor.filter((x) => x.kortnamn && (x.bygger || []).includes(v.id))
+      .sort((a, b) => bokOrdning(a).localeCompare(bokOrdning(b))).slice(0, KEDJA_SEN);
+    const visas = !!v.kortnamn && (fore.length > 0 || sen.length > 0);
+    nav.hidden = !visas;
+    if (!visas) { nav.replaceChildren(); return; }
+    const knapp = (x) => `<a class="steg" href="#${attr(x.id)}" aria-label="${attr(`${x.kortnamn}, ${titelDelar(x)[0]}`)}"><b>${esc(x.kortnamn)}</b><span class="ber">${esc(titelDelar(x)[0])}</span></a>`;
+    const grupp = (led, inne) => `<div class="grupp"><span class="led">${led}</span>${inne}</div>`;
+    nav.innerHTML = html([
+      fore.length ? grupp("Före", fore.map(knapp).join("")) : "",
+      grupp("Den här", `<span class="steg" aria-current="page"><b>${esc(v.kortnamn)}</b></span>`),
+      sen.length ? grupp("Sen", sen.map(knapp).join("")) : "",
+    ].join(""));
+  }
   // Nästa del efter Din tur: omslaget och namnet, eller streckad om den inte är klar. Efter sista
   // delen finns ingen (siffrorna överst leder ändå till alla delar).
   function ritaNastaDel(v) {
@@ -5427,7 +5468,7 @@
     $("f-titel").textContent = kursserie(v) ? titelDelar(v)[0] : serie ? delNamn(v) : v.titel;
     $("f-tillbaka").setAttribute("href", hem === "berattelser" ? "#filmer" : `#${hem}`);
     $("f-tillbaka-text").textContent = hem === "berattelser" ? "Alla filmer" : hem === PROV ? "Inför provet" : serieNamn(hem);
-    ritaDelrad(v); ritaNastaDel(v);
+    ritaDelrad(v); ritaKedja(v); ritaNastaDel(v);
     if (serie && serie.platser) Newton.efter(8000, () => aktivVy === "film" && aktuell === v && !sp.spelar() && synsIFonster($("f-delar"), 0.9), "delar", ...TIPS.delar, { markera: () => [$("f-delar")] });
     $("f-besk").textContent = v.beskrivning;
     // Begreppen är knappar: ett klick söker på ordet i alla filmer.
