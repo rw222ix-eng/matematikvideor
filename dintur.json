@@ -5010,5 +5010,117 @@
       "−2x + 4x = 2x, så svaret är x² + 2x − 8.",
       "Konstanttermen är −8, termen utan x."
     ]
+  },
+  "ma2c-03-kvadratkomplettering": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Ekvationen är x² + 6x = 16. Du ska svara på två frågor.",
+    "slut": [
+      "Först: vilket tal lägger du till på båda sidor?",
+      "Sen: lös ekvationen. Vilka är de två rötterna?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "En slät lertavla på en vassmatta i solen, med en vasspinne och en skål dadlar bredvid. På tavlan står x² + 6x = 16.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: vilket tal lägger du till på båda sidor?",
+        "typ": "tal",
+        "svar": 9,
+        "exempel": "t.ex. 4",
+        "tangenter": [],
+        "fel": [
+          {
+            "svar": "3",
+            "text": "Hälften av 6 är 3. Det är sidan på hörnet. Hörnet är 3 · 3."
+          },
+          {
+            "svar": "6",
+            "text": "6 är talet framför x. Ta hälften av det, och sen gånger sig självt."
+          },
+          {
+            "svar": "36",
+            "text": "Du tog 6 · 6. Ta först hälften av 6, alltså 3, och sen 3 · 3."
+          },
+          {
+            "svar": "16",
+            "text": "16 står redan till höger. Du ska lägga till hörnet, hälften av 6 gånger sig självt."
+          },
+          {
+            "svar": "12",
+            "text": "Du tog 6 · 2. Ta hälften av 6, alltså 3, och sen 3 · 3."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: lös ekvationen. Vilka är de två rötterna?",
+        "typ": "losningar",
+        "svar": [
+          2,
+          -8
+        ],
+        "exempel": "t.ex. 1 och −5",
+        "fel": [
+          {
+            "svar": [
+              2
+            ],
+            "text": "x = 2 är rätt. Men det finns en rot till. (−5) · (−5) är också 25, så x + 3 kan vara −5."
+          },
+          {
+            "svar": [
+              -8
+            ],
+            "text": "x = −8 är rätt. Men det finns en rot till. 5 · 5 är också 25, så x + 3 kan vara 5."
+          },
+          {
+            "svar": [
+              -2,
+              8
+            ],
+            "text": "Kolla tecknen. x + 3 = 5 ger x = 2, och x + 3 = −5 ger x = −8."
+          },
+          {
+            "svar": [
+              5,
+              -5
+            ],
+            "text": "5 och −5 är x + 3. Dra bort 3 för att få x."
+          },
+          {
+            "svar": [
+              1,
+              -7
+            ],
+            "text": "Till höger står 16 + 9 = 25, inte 16. Roten ur 25 är 5."
+          },
+          {
+            "svar": [
+              4,
+              -4
+            ],
+            "text": "Du tog roten ur 16. Lägg först till 9 på båda sidor, så att det står 25 till höger."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Tänk dig nu att läraren ger en ny tavla",
+      "text": "Gör som med x² + 4x = 5 i filmen. Ta hälften av talet framför x och kvadrera det. Lägg till det på båda sidor. Då står (x + 3)² till vänster."
+    },
+    "losning": [
+      "Hälften av 6 är 3, och 3 · 3 = 9. Hörnet är 9.",
+      "x² + 6x + 9 = 16 + 9, för vi lägger till 9 på båda sidor.",
+      "(x + 3)² = 25, enligt första kvadreringsregeln med a = x och b = 3.",
+      "5 · 5 = 25 och (−5) · (−5) = 25, så x + 3 = 5 eller x + 3 = −5.",
+      "x = 5 − 3 = 2 eller x = −5 − 3 = −8.",
+      "Kontroll: 2² + 6 · 2 = 4 + 12 = 16 och (−8)² + 6 · (−8) = 64 − 48 = 16."
+    ]
   }
 }
