@@ -69815,6 +69815,818 @@
    ]
   },
   {
+   "id": "ma2c-04-rotekvationer",
+   "titel": "Huygens och pendeln – Rotekvationer",
+   "ar": 1659,
+   "serie": "ma2c",
+   "del": 0.4,
+   "ocksa": null,
+   "kurs": "Matematik 2c",
+   "kurser": [
+    "Matematik 2c"
+   ],
+   "bokkapitel": {
+    "Matematik 2c": 2
+   },
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2c-04-rotekvationer-v1/ma2c-04-rotekvationer-1080p.mp4",
+   "moment": "Lösa rotekvationer",
+   "begrepp": [
+    "rotekvation",
+    "kvadratrot",
+    "roten ur",
+    "kvadrera",
+    "båda sidor",
+    "pröva",
+    "falsk rot",
+    "äkta rot",
+    "pq-formeln",
+    "andragradsekvation",
+    "minus gånger minus",
+    "Christiaan Huygens",
+    "pendel",
+    "sekundpendel",
+    "Haag",
+    "Boerhaave"
+   ],
+   "beskrivning": "Haag 1659. Christiaan Huygens har byggt pendeluret och vill att pendeln ska slå sekunder. Svängtiden är ungefär två gånger roten ur längden, så hur lång ska pendeln vara? Vi löser rotekvationen 2√L = 2 genom att få roten ensam och kvadrera båda sidor, och prövar svaret. Sedan löser vi √(2x + 3) = x med pq-formeln och ser varför en av rötterna är falsk.",
+   "youtube": null,
+   "langd": 443,
+   "omslag": "omslag/ma2c-04-rotekvationer.jpg?v=198b197f",
+   "omslagRen": "omslag/ma2c-04-rotekvationer-ren.jpg?v=0d4da31a",
+   "omslagStor": null,
+   "repliker": [
+    {
+     "t": 9,
+     "text": "Det är år sextonhundrafemtionio, i staden Haag i Nederländerna. Christiaan Huygens är trettio år och bor i sin fars hus. Han är matematiker och tittar på stjärnorna. Han vill mäta tiden exakt, och därför behöver han en klocka som går rätt."
+    },
+    {
+     "t": 28,
+     "text": "Klockorna på den tiden går fel med ungefär en kvart varje dag. Därför har Huygens byggt en ny sorts klocka. Inne i den hänger en pendel, en tung kula i ett snöre. Kulan svänger fram och tillbaka, och varje sväng tar lika lång tid. Hans klocka går bara fel med några sekunder om dagen."
+    },
+    {
+     "t": 50,
+     "text": "Nu vill han att pendeln ska slå sekunder. Ett slag åt höger ska ta precis en sekund. Och ett slag tillbaka ska ta en sekund till. Men hur lång ska pendeln vara då?"
+    },
+    {
+     "t": 65,
+     "text": "En längre pendel svänger långsammare, det vet han. Men hur mycket längre? Huygens har en regel för pendeln. Kan han räkna baklänges från tiden till längden? Det tar vi reda på nu."
+    },
+    {
+     "t": 80,
+     "text": "Vi skriver regeln som man skriver den i dag. Svängtiden är tiden för ett helt varv, fram och tillbaka. Vi kallar den T och mäter den i sekunder. Pendelns längd kallar vi L och mäter den i meter. Då är T ungefär två gånger roten ur L."
+    },
+    {
+     "t": 101,
+     "text": "Vad betyder roten ur L? Det är det tal som gånger sig självt blir L. Roten ur nio är tre, för tre gånger tre är nio. Roten ur ett är ett, för ett gånger ett är ett."
+    },
+    {
+     "t": 117,
+     "text": "Huygens vill ha ett slag på en sekund. Ett helt varv, fram och tillbaka, tar då två sekunder. Så T är två. Ekvationen blir två gånger roten ur L lika med två. L står under rottecknet, och därför kallas det en rotekvation."
+    },
+    {
+     "t": 138,
+     "text": "Hur får vi L ensam? Först ska roten stå ensam. Vi delar båda sidor av likhetstecknet med två. Till vänster blir det roten ur L. Till höger blir det två delat med två, alltså ett. Så roten ur L är ett."
+    },
+    {
+     "t": 158,
+     "text": "Hur får vi bort roten? Vi tar båda sidor i kvadrat, alltså gånger sig självt. Roten ur L gånger roten ur L är L, för det är just det roten betyder. Och ett gånger ett är ett. Så L är ett."
+    },
+    {
+     "t": 176,
+     "text": "Stämmer det? Vi prövar. Vi sätter in ett i stället för L. Roten ur ett är ett, och två gånger ett är två. Det blir två sekunder, precis som Huygens ville. Pendeln ska alltså vara ungefär en meter lång."
+    },
+    {
+     "t": 194,
+     "text": "Men varför prövar vi, när det redan ser rätt ut? Jo, för att kvadrera kan lura oss. Tre gånger tre är nio. Men minus tre gånger minus tre är också nio, för minus gånger minus blir plus. När vi kvadrerar försvinner minustecknet. Då kan vi få en lösning som inte stämmer, och den kallas en falsk rot."
+    },
+    {
+     "t": 220,
+     "text": "Här är en svårare rotekvation. Roten ur två x plus tre är lika med x. Roten gäller både två x och trean. Nu står roten redan ensam, så vi tar båda sidor i kvadrat direkt. Till vänster försvinner roten, och kvar blir två x plus tre. Till höger blir det x i kvadrat."
+    },
+    {
+     "t": 244,
+     "text": "Nu har vi två x plus tre lika med x i kvadrat. Det är en andragradsekvation. Vi vill ha noll på ena sidan. Så vi drar bort två x och tre från båda sidor. Då blir det x i kvadrat minus två x minus tre lika med noll."
+    },
+    {
+     "t": 263,
+     "text": "En sådan ekvation löser vi med pq-formeln. Den står på formelbladet. x är lika med minus p genom två, plus eller minus roten ur p genom två i kvadrat minus q. p är talet framför x, och q är talet som står ensamt."
+    },
+    {
+     "t": 283,
+     "text": "I vår ekvation är p minus två, och q är minus tre. p genom två är då minus ett. Minus p genom två blir plus ett, för två minus blir plus. p genom två, i kvadrat, är minus ett gånger minus ett, alltså ett. Och minus q är minus minus tre, alltså plus tre. Så x är ett plus eller minus roten ur fyra."
+    },
+    {
+     "t": 312,
+     "text": "Roten ur fyra är två. Så x är ett plus två, alltså tre. Eller ett minus två, alltså minus ett. Nu har vi två lösningar. Men är båda äkta rötter? Vi prövar dem."
+    },
+    {
+     "t": 329,
+     "text": "Först x lika med tre. Vi börjar till vänster. Två gånger tre är sex, och sex plus tre är nio. Roten ur nio är tre. Till höger står x, alltså tre. Tre är lika med tre, så tre är en äkta rot."
+    },
+    {
+     "t": 348,
+     "text": "Sen x lika med minus ett. Till vänster är två gånger minus ett lika med minus två, och minus två plus tre är ett. Roten ur ett är ett. Till höger står minus ett. Men ett är inte lika med minus ett. Så minus ett är en falsk rot, för roten ur ett tal är aldrig negativ. Ekvationen har bara en rot, x lika med tre. Nu går vi tillbaka till Haag."
+    },
+    {
+     "t": 380,
+     "text": "Huygens gör pendeln ungefär en meter lång, och nu slår klockan sekunder. År sextonhundrasjuttiotre ger han ut en bok om pendelur. Där föreslår han ett mått för längd som hela världen kan dela, byggt på sekundpendeln."
+    },
+    {
+     "t": 397,
+     "text": "Drygt hundra år senare bestämmer Frankrike hur lång en meter ska vara. De väljer ett annat sätt. Men metern blir nästan exakt lika lång som Huygens sekundpendel. Och en av de allra första pendelklockorna står i dag på museet Boerhaave i Leiden."
+    },
+    {
+     "t": 416,
+     "text": "Nu är det din tur. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: en pendel har svängtiden fyra sekunder, så två gånger roten ur L är fyra. Hur lång är pendeln, i meter? Sen: lös rotekvationen roten ur två x plus femton lika med x. Pröva rötterna. Vilken rot är äkta?"
+    }
+   ],
+   "kapitel": [
+    {
+     "t": 9,
+     "rubrik": "Haag 1659: pendeluret",
+     "typ": "historia"
+    },
+    {
+     "t": 80,
+     "rubrik": "Regeln T ≈ 2√L",
+     "typ": "matte"
+    },
+    {
+     "t": 117,
+     "rubrik": "Rotekvationen 2√L = 2",
+     "typ": "matte"
+    },
+    {
+     "t": 138,
+     "rubrik": "Dela och kvadrera: L = 1",
+     "typ": "matte"
+    },
+    {
+     "t": 194,
+     "rubrik": "Falsk rot",
+     "typ": "matte"
+    },
+    {
+     "t": 220,
+     "rubrik": "√(2x + 3) = x i kvadrat",
+     "typ": "matte"
+    },
+    {
+     "t": 263,
+     "rubrik": "pq-formeln: x = 1 ± 2",
+     "typ": "matte"
+    },
+    {
+     "t": 329,
+     "rubrik": "Pröva rötterna",
+     "typ": "matte"
+    },
+    {
+     "t": 380,
+     "rubrik": "Metern och museet Boerhaave",
+     "typ": "historia"
+    },
+    {
+     "t": 416,
+     "rubrik": "2√L = 4 och √(2x + 15) = x",
+     "typ": "uppgift"
+    }
+   ],
+   "dinTur": {
+    "notisFran": 416,
+    "fraga": "Du ska svara på två frågor.",
+    "slut": [
+     "Först: en pendel har svängtiden fyra sekunder, så 2√L = 4. Hur lång är pendeln, i meter?",
+     "Sen: lös rotekvationen √(2x + 15) = x. Pröva rötterna. Vilken rot är äkta?"
+    ],
+    "figur": {
+     "vy": [
+      1920,
+      1080
+     ],
+     "bild": "dintur/ma2c-04-rotekvationer.jpg?v=a96c2d30",
+     "tema": "papper",
+     "text": "Ett tomt papper på ett mörkt skrivbord i Huygens arbetsrum, med en gåspenna, ett bläckhorn och en pendel av mässing. På pappret står 2√L = 4 och √(2x + 15) = x.",
+     "delar": []
+    },
+    "delar": [
+     {
+      "fraga": "Först: en pendel har svängtiden fyra sekunder, så 2√L = 4. Hur lång är pendeln, i meter?",
+      "typ": "tal",
+      "svar": 4,
+      "exempel": "t.ex. 1",
+      "tangenter": [],
+      "fel": [
+       {
+        "svar": "2",
+        "text": "2 är √L. Ta båda sidor i kvadrat: 2 · 2."
+       },
+       {
+        "svar": "16",
+        "text": "Du kvadrerade 4 direkt. Dela först båda sidor med 2, så att √L står ensam."
+       },
+       {
+        "svar": "8",
+        "text": "Dela båda sidor med 2, så att √L = 2. Ta sedan båda sidor i kvadrat."
+       },
+       {
+        "svar": "1",
+        "text": "1 meter ger svängtiden 2 sekunder. Här är svängtiden 4 sekunder."
+       }
+      ]
+     },
+     {
+      "fraga": "Sen: lös rotekvationen √(2x + 15) = x. Pröva rötterna. Vilken rot är äkta?",
+      "typ": "tal",
+      "svar": 5,
+      "exempel": "t.ex. 3",
+      "tangenter": [
+       "-"
+      ],
+      "fel": [
+       {
+        "svar": "-3",
+        "text": "Pröva x = −3. Till vänster: √(2 · (−3) + 15) = √9 = 3. Till höger: −3. 3 är inte −3, så −3 är en falsk rot."
+       },
+       {
+        "svar": "3",
+        "text": "3 är roten ur 9. Pröva x = 3: √(6 + 15) = √21, och det är inte 3."
+       },
+       {
+        "svar": "4",
+        "text": "4 är roten ur 16 i pq-formeln. x = 1 ± 4."
+       },
+       {
+        "svar": "-5",
+        "text": "Kolla tecknen. p = −2, så −p/2 = +1. x = 1 + 4 eller x = 1 − 4."
+       }
+      ]
+     }
+    ],
+    "ledtrad": {
+     "text": "Först: gör som med 2√L = 2 i filmen. Dela med 2 och ta båda sidor i kvadrat. Sen: gör som med √(2x + 3) = x. Ta båda sidor i kvadrat, använd pq-formeln och pröva varje rot.",
+     "t": 220
+    },
+    "losning": [
+     "2√L = 4. Dela båda sidor med 2: √L = 2.",
+     "Ta båda sidor i kvadrat: L = 2 · 2 = 4. Pendeln är 4 meter.",
+     "√(2x + 15) = x. Ta båda sidor i kvadrat: 2x + 15 = x².",
+     "Dra bort 2x och 15 från båda sidor: x² − 2x − 15 = 0, så p = −2 och q = −15.",
+     "pq-formeln: x = 1 ± √(1 + 15) = 1 ± √16 = 1 ± 4, alltså x = 5 eller x = −3.",
+     "Pröva x = 5: √(10 + 15) = √25 = 5, och till höger står 5. Äkta rot.",
+     "Pröva x = −3: √(−6 + 15) = √9 = 3, men till höger står −3. Falsk rot.",
+     "Den äkta roten är x = 5."
+    ]
+   },
+   "undertext": [
+    {
+     "s": 9.5,
+     "e": 13.84,
+     "text": "Det är år sextonhundrafemtionio, i staden Haag i Nederländerna."
+    },
+    {
+     "s": 14.64,
+     "e": 18.22,
+     "text": "Christiaan Huygens är trettio år och bor i sin fars hus."
+    },
+    {
+     "s": 19.02,
+     "e": 21.46,
+     "text": "Han är matematiker och tittar på stjärnorna."
+    },
+    {
+     "s": 22.26,
+     "e": 27.08,
+     "text": "Han vill mäta tiden exakt, och därför behöver han en klocka som går rätt."
+    },
+    {
+     "s": 28.18,
+     "e": 31.84,
+     "text": "Klockorna på den tiden går fel med ungefär en kvart varje dag."
+    },
+    {
+     "s": 32.64,
+     "e": 35.36,
+     "text": "Därför har Huygens byggt en ny sorts klocka."
+    },
+    {
+     "s": 36.16,
+     "e": 40.02,
+     "text": "Inne i den hänger en pendel, en tung kula i ett snöre."
+    },
+    {
+     "s": 40.82,
+     "e": 45.68,
+     "text": "Kulan svänger fram och tillbaka, och varje sväng tar lika lång tid."
+    },
+    {
+     "s": 46.48,
+     "e": 49.82,
+     "text": "Hans klocka går bara fel med några sekunder om dagen."
+    },
+    {
+     "s": 50.92,
+     "e": 53.48,
+     "text": "Nu vill han att pendeln ska slå sekunder."
+    },
+    {
+     "s": 54.28,
+     "e": 57.5,
+     "text": "Ett slag åt höger ska ta precis en sekund."
+    },
+    {
+     "s": 58.3,
+     "e": 60.96,
+     "text": "Och ett slag tillbaka ska ta en sekund till."
+    },
+    {
+     "s": 61.76,
+     "e": 63.9,
+     "text": "Men hur lång ska pendeln vara då?"
+    },
+    {
+     "s": 65.62,
+     "e": 68.76,
+     "text": "En längre pendel svänger långsammare, det vet han."
+    },
+    {
+     "s": 69.56,
+     "e": 70.92,
+     "text": "Men hur mycket längre?"
+    },
+    {
+     "s": 71.8,
+     "e": 73.7,
+     "text": "Huygens har en regel för pendeln."
+    },
+    {
+     "s": 74.5,
+     "e": 77.86,
+     "text": "Kan han räkna baklänges från tiden till längden?"
+    },
+    {
+     "s": 78.66,
+     "e": 79.88,
+     "text": "Det tar vi reda på nu."
+    },
+    {
+     "s": 80.98,
+     "e": 83.2,
+     "text": "Vi skriver regeln som man skriver den i dag."
+    },
+    {
+     "s": 84,
+     "e": 87.9,
+     "text": "Svängtiden är tiden för ett helt varv, fram och tillbaka."
+    },
+    {
+     "s": 88.7,
+     "e": 91.42,
+     "text": "Vi kallar den T och mäter den i sekunder."
+    },
+    {
+     "s": 92.22,
+     "e": 95.74,
+     "text": "Pendelns längd kallar vi L och mäter den i meter."
+    },
+    {
+     "s": 96.54,
+     "e": 100.44,
+     "text": "Då är T ungefär två gånger roten ur L."
+    },
+    {
+     "s": 101.54,
+     "e": 103.5,
+     "text": "Vad betyder roten ur L?"
+    },
+    {
+     "s": 104.3,
+     "e": 107.26,
+     "text": "Det är det tal som gånger sig självt blir L."
+    },
+    {
+     "s": 108.06,
+     "e": 111.9,
+     "text": "Roten ur nio är tre, för tre gånger tre är nio."
+    },
+    {
+     "s": 112.7,
+     "e": 116.6,
+     "text": "Roten ur ett är ett, för ett gånger ett är ett."
+    },
+    {
+     "s": 117.7,
+     "e": 120.24,
+     "text": "Huygens vill ha ett slag på en sekund."
+    },
+    {
+     "s": 121.04,
+     "e": 124.82,
+     "text": "Ett helt varv, fram och tillbaka, tar då två sekunder."
+    },
+    {
+     "s": 125.62,
+     "e": 127.02,
+     "text": "Så T är två."
+    },
+    {
+     "s": 127.82,
+     "e": 132.3,
+     "text": "Ekvationen blir två gånger roten ur L lika med två."
+    },
+    {
+     "s": 133.26,
+     "e": 137.74,
+     "text": "L står under rottecknet, och därför kallas det en rotekvation."
+    },
+    {
+     "s": 138.84,
+     "e": 140.34,
+     "text": "Hur får vi L ensam?"
+    },
+    {
+     "s": 141.14,
+     "e": 142.92,
+     "text": "Först ska roten stå ensam."
+    },
+    {
+     "s": 143.72,
+     "e": 146.66,
+     "text": "Vi delar båda sidor av likhetstecknet med två."
+    },
+    {
+     "s": 147.46,
+     "e": 149.82,
+     "text": "Till vänster blir det roten ur L."
+    },
+    {
+     "s": 150.62,
+     "e": 154.24,
+     "text": "Till höger blir det två delat med två, alltså ett."
+    },
+    {
+     "s": 155.04,
+     "e": 156.94,
+     "text": "Så roten ur L är ett."
+    },
+    {
+     "s": 158.04,
+     "e": 159.36,
+     "text": "Hur får vi bort roten?"
+    },
+    {
+     "s": 160.16,
+     "e": 163.82,
+     "text": "Vi tar båda sidor i kvadrat, alltså gånger sig självt."
+    },
+    {
+     "s": 164.62,
+     "e": 170.06,
+     "text": "Roten ur L gånger roten ur L är L, för det är just det roten betyder."
+    },
+    {
+     "s": 170.86,
+     "e": 172.78,
+     "text": "Och ett gånger ett är ett."
+    },
+    {
+     "s": 173.58,
+     "e": 175.12,
+     "text": "Så L är ett."
+    },
+    {
+     "s": 176.22,
+     "e": 178.02,
+     "text": "Stämmer det? Vi prövar."
+    },
+    {
+     "s": 178.82,
+     "e": 180.84,
+     "text": "Vi sätter in ett i stället för L."
+    },
+    {
+     "s": 181.64,
+     "e": 185.2,
+     "text": "Roten ur ett är ett, och två gånger ett är två."
+    },
+    {
+     "s": 186,
+     "e": 189.3,
+     "text": "Det blir två sekunder, precis som Huygens ville."
+    },
+    {
+     "s": 190.1,
+     "e": 193.24,
+     "text": "Pendeln ska alltså vara ungefär en meter lång."
+    },
+    {
+     "s": 194.34,
+     "e": 197.42,
+     "text": "Men varför prövar vi, när det redan ser rätt ut?"
+    },
+    {
+     "s": 198.22,
+     "e": 200.6,
+     "text": "Jo, för att kvadrera kan lura oss."
+    },
+    {
+     "s": 201.4,
+     "e": 203.26,
+     "text": "Tre gånger tre är nio."
+    },
+    {
+     "s": 204.06,
+     "e": 210.24,
+     "text": "Men minus tre gånger minus tre är också nio, för minus gånger minus blir plus."
+    },
+    {
+     "s": 211.04,
+     "e": 213.64,
+     "text": "När vi kvadrerar försvinner minustecknet."
+    },
+    {
+     "s": 214.44,
+     "e": 219.44,
+     "text": "Då kan vi få en lösning som inte stämmer, och den kallas en falsk rot."
+    },
+    {
+     "s": 220.54,
+     "e": 222.42,
+     "text": "Här är en svårare rotekvation."
+    },
+    {
+     "s": 223.22,
+     "e": 226.78,
+     "text": "Roten ur två x plus tre är lika med x."
+    },
+    {
+     "s": 227.58,
+     "e": 230.64,
+     "text": "Roten gäller både två x och trean."
+    },
+    {
+     "s": 231.44,
+     "e": 235.76,
+     "text": "Nu står roten redan ensam, så vi tar båda sidor i kvadrat direkt."
+    },
+    {
+     "s": 236.56,
+     "e": 240.7,
+     "text": "Till vänster försvinner roten, och kvar blir två x plus tre."
+    },
+    {
+     "s": 241.5,
+     "e": 243.44,
+     "text": "Till höger blir det x i kvadrat."
+    },
+    {
+     "s": 244.54,
+     "e": 248.26,
+     "text": "Nu har vi två x plus tre lika med x i kvadrat."
+    },
+    {
+     "s": 249.06,
+     "e": 251.04,
+     "text": "Det är en andragradsekvation."
+    },
+    {
+     "s": 251.84,
+     "e": 253.46,
+     "text": "Vi vill ha noll på ena sidan."
+    },
+    {
+     "s": 254.26,
+     "e": 257.24,
+     "text": "Så vi drar bort två x och tre från båda sidor."
+    },
+    {
+     "s": 258.04,
+     "e": 262.82,
+     "text": "Då blir det x i kvadrat minus två x minus tre lika med noll."
+    },
+    {
+     "s": 263.92,
+     "e": 266.72,
+     "text": "En sådan ekvation löser vi med pq-formeln."
+    },
+    {
+     "s": 267.52,
+     "e": 268.82,
+     "text": "Den står på formelbladet."
+    },
+    {
+     "s": 269.62,
+     "e": 277.36,
+     "text": "x är lika med minus p genom två, plus eller minus roten ur p genom två i kvadrat minus q."
+    },
+    {
+     "s": 278.16,
+     "e": 282.52,
+     "text": "p är talet framför x, och q är talet som står ensamt."
+    },
+    {
+     "s": 283.62,
+     "e": 287.66,
+     "text": "I vår ekvation är p minus två, och q är minus tre."
+    },
+    {
+     "s": 288.46,
+     "e": 290.86,
+     "text": "p genom två är då minus ett."
+    },
+    {
+     "s": 291.66,
+     "e": 296.18,
+     "text": "Minus p genom två blir plus ett, för två minus blir plus."
+    },
+    {
+     "s": 296.98,
+     "e": 302.28,
+     "text": "p genom två, i kvadrat, är minus ett gånger minus ett, alltså ett."
+    },
+    {
+     "s": 303.08,
+     "e": 307.36,
+     "text": "Och minus q är minus minus tre, alltså plus tre."
+    },
+    {
+     "s": 308.16,
+     "e": 311.76,
+     "text": "Så x är ett plus eller minus roten ur fyra."
+    },
+    {
+     "s": 312.86,
+     "e": 314.4,
+     "text": "Roten ur fyra är två."
+    },
+    {
+     "s": 315.2,
+     "e": 318.5,
+     "text": "Så x är ett plus två, alltså tre."
+    },
+    {
+     "s": 319.3,
+     "e": 322.68,
+     "text": "Eller ett minus två, alltså minus ett."
+    },
+    {
+     "s": 323.48,
+     "e": 324.84,
+     "text": "Nu har vi två lösningar."
+    },
+    {
+     "s": 325.64,
+     "e": 327.34,
+     "text": "Men är båda äkta rötter?"
+    },
+    {
+     "s": 328.14,
+     "e": 329.14,
+     "text": "Vi prövar dem."
+    },
+    {
+     "s": 329.88,
+     "e": 331.52,
+     "text": "Först x lika med tre."
+    },
+    {
+     "s": 332.32,
+     "e": 333.32,
+     "text": "Vi börjar till vänster."
+    },
+    {
+     "s": 334.12,
+     "e": 337.98,
+     "text": "Två gånger tre är sex, och sex plus tre är nio."
+    },
+    {
+     "s": 338.78,
+     "e": 340.32,
+     "text": "Roten ur nio är tre."
+    },
+    {
+     "s": 341.12,
+     "e": 343.66,
+     "text": "Till höger står x, alltså tre."
+    },
+    {
+     "s": 344.46,
+     "e": 347.88,
+     "text": "Tre är lika med tre, så tre är en äkta rot."
+    },
+    {
+     "s": 348.98,
+     "e": 350.98,
+     "text": "Sen x lika med minus ett."
+    },
+    {
+     "s": 351.78,
+     "e": 358.54,
+     "text": "Till vänster är två gånger minus ett lika med minus två, och minus två plus tre är ett."
+    },
+    {
+     "s": 359.34,
+     "e": 360.84,
+     "text": "Roten ur ett är ett."
+    },
+    {
+     "s": 361.64,
+     "e": 363.46,
+     "text": "Till höger står minus ett."
+    },
+    {
+     "s": 364.26,
+     "e": 367,
+     "text": "Men ett är inte lika med minus ett."
+    },
+    {
+     "s": 367.82,
+     "e": 372.72,
+     "text": "Så minus ett är en falsk rot, för roten ur ett tal är aldrig negativ."
+    },
+    {
+     "s": 373.52,
+     "e": 377.12,
+     "text": "Ekvationen har bara en rot, x lika med tre."
+    },
+    {
+     "s": 377.92,
+     "e": 379.18,
+     "text": "Nu går vi tillbaka till Haag."
+    },
+    {
+     "s": 380.28,
+     "e": 385.12,
+     "text": "Huygens gör pendeln ungefär en meter lång, och nu slår klockan sekunder."
+    },
+    {
+     "s": 385.92,
+     "e": 389.62,
+     "text": "År sextonhundrasjuttiotre ger han ut en bok om pendelur."
+    },
+    {
+     "s": 390.42,
+     "e": 394.26,
+     "text": "Där föreslår han ett mått för längd som hela världen kan dela,"
+    },
+    {
+     "s": 394.62,
+     "e": 396.06,
+     "text": "byggt på sekundpendeln."
+    },
+    {
+     "s": 397.16,
+     "e": 401.46,
+     "text": "Drygt hundra år senare bestämmer Frankrike hur lång en meter ska vara."
+    },
+    {
+     "s": 402.26,
+     "e": 403.66,
+     "text": "De väljer ett annat sätt."
+    },
+    {
+     "s": 404.46,
+     "e": 408.9,
+     "text": "Men metern blir nästan exakt lika lång som Huygens sekundpendel."
+    },
+    {
+     "s": 409.7,
+     "e": 415,
+     "text": "Och en av de allra första pendelklockorna står i dag på museet Boerhaave i Leiden."
+    },
+    {
+     "s": 416.1,
+     "e": 417.12,
+     "text": "Nu är det din tur."
+    },
+    {
+     "s": 417.92,
+     "e": 421.86,
+     "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
+    },
+    {
+     "s": 422.66,
+     "e": 429.02,
+     "text": "Först: en pendel har svängtiden fyra sekunder, så två gånger roten ur L är fyra."
+    },
+    {
+     "s": 429.82,
+     "e": 432.02,
+     "text": "Hur lång är pendeln, i meter?"
+    },
+    {
+     "s": 432.82,
+     "e": 439.94,
+     "text": "Sen: lös rotekvationen roten ur två x plus femton lika med x. Pröva rötterna."
+    },
+    {
+     "s": 440.74,
+     "e": 442.08,
+     "text": "Vilken rot är äkta?"
+    }
+   ]
+  },
+  {
    "id": "ma1c-k4-06-grafisk-ekvationslosning",
    "titel": "Malthus och maten",
    "ar": 1798,

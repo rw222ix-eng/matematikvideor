@@ -5122,5 +5122,91 @@
       "x = 5 − 3 = 2 eller x = −5 − 3 = −8.",
       "Kontroll: 2² + 6 · 2 = 4 + 12 = 16 och (−8)² + 6 · (−8) = 64 − 48 = 16."
     ]
+  },
+  "ma2c-04-rotekvationer": {
+    "notisFran": "Nu är det din tur",
+    "fraga": "Du ska svara på två frågor.",
+    "slut": [
+      "Först: en pendel har svängtiden fyra sekunder, så 2√L = 4. Hur lång är pendeln, i meter?",
+      "Sen: lös rotekvationen √(2x + 15) = x. Pröva rötterna. Vilken rot är äkta?"
+    ],
+    "figur": {
+      "vy": [
+        1920,
+        1080
+      ],
+      "bild": "filmens-slutbild",
+      "tema": "papper",
+      "text": "Ett tomt papper på ett mörkt skrivbord i Huygens arbetsrum, med en gåspenna, ett bläckhorn och en pendel av mässing. På pappret står 2√L = 4 och √(2x + 15) = x.",
+      "delar": []
+    },
+    "delar": [
+      {
+        "fraga": "Först: en pendel har svängtiden fyra sekunder, så 2√L = 4. Hur lång är pendeln, i meter?",
+        "typ": "tal",
+        "svar": 4,
+        "exempel": "t.ex. 1",
+        "tangenter": [],
+        "fel": [
+          {
+            "svar": "2",
+            "text": "2 är √L. Ta båda sidor i kvadrat: 2 · 2."
+          },
+          {
+            "svar": "16",
+            "text": "Du kvadrerade 4 direkt. Dela först båda sidor med 2, så att √L står ensam."
+          },
+          {
+            "svar": "8",
+            "text": "Dela båda sidor med 2, så att √L = 2. Ta sedan båda sidor i kvadrat."
+          },
+          {
+            "svar": "1",
+            "text": "1 meter ger svängtiden 2 sekunder. Här är svängtiden 4 sekunder."
+          }
+        ]
+      },
+      {
+        "fraga": "Sen: lös rotekvationen √(2x + 15) = x. Pröva rötterna. Vilken rot är äkta?",
+        "typ": "tal",
+        "svar": 5,
+        "exempel": "t.ex. 3",
+        "tangenter": [
+          "-"
+        ],
+        "fel": [
+          {
+            "svar": "-3",
+            "text": "Pröva x = −3. Till vänster: √(2 · (−3) + 15) = √9 = 3. Till höger: −3. 3 är inte −3, så −3 är en falsk rot."
+          },
+          {
+            "svar": "3",
+            "text": "3 är roten ur 9. Pröva x = 3: √(6 + 15) = √21, och det är inte 3."
+          },
+          {
+            "svar": "4",
+            "text": "4 är roten ur 16 i pq-formeln. x = 1 ± 4."
+          },
+          {
+            "svar": "-5",
+            "text": "Kolla tecknen. p = −2, så −p/2 = +1. x = 1 + 4 eller x = 1 − 4."
+          }
+        ]
+      }
+    ],
+    "ledtrad": {
+      "fras": "Här är en svårare rotekvation",
+      "text": "Först: gör som med 2√L = 2 i filmen. Dela med 2 och ta båda sidor i kvadrat. Sen: gör som med √(2x + 3) = x. Ta båda sidor i kvadrat, använd pq-formeln och pröva varje rot."
+    },
+    "losning": [
+      "2√L = 4. Dela båda sidor med 2: √L = 2.",
+      "Ta båda sidor i kvadrat: L = 2 · 2 = 4. Pendeln är 4 meter.",
+      "√(2x + 15) = x. Ta båda sidor i kvadrat: 2x + 15 = x².",
+      "Dra bort 2x och 15 från båda sidor: x² − 2x − 15 = 0, så p = −2 och q = −15.",
+      "pq-formeln: x = 1 ± √(1 + 15) = 1 ± √16 = 1 ± 4, alltså x = 5 eller x = −3.",
+      "Pröva x = 5: √(10 + 15) = √25 = 5, och till höger står 5. Äkta rot.",
+      "Pröva x = −3: √(−6 + 15) = √9 = 3, men till höger står −3. Falsk rot.",
+      "Den äkta roten är x = 5."
+    ]
   }
 }
