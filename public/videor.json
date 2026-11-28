@@ -1,5 +1,5 @@
 {
- "byggd": "2026-11-28T09:44:09.630Z",
+ "byggd": "2026-11-28T09:54:00.230Z",
  "videor": [
   {
    "id": "ma1c-k6-01-sinus-cosinus-tangens",
@@ -66831,7 +66831,7 @@
     "Matematik 2a": 5,
     "Matematik 2c": 4
    },
-   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-19-avstandsformeln-v1/ma2a-19-avstandsformeln-1080p.mp4",
+   "fil": "https://github.com/rw222ix-eng/matematikvideor/releases/download/ma2a-19-avstandsformeln-v2/ma2a-19-avstandsformeln-1080p.mp4",
    "moment": "Avståndsformeln",
    "kortnamn": "Avståndsformeln",
    "bygger": [
@@ -66865,7 +66865,7 @@
    ],
    "beskrivning": "Våren 1962 skriver Ivan Sutherland ritprogrammet Sketchpad för datorn TX-2. När han pekar med ljuspennan ska datorn ta den punkt som ligger närmast. Men datorn vet bara punkternas koordinater. Vi räknar rutor till en punkt med Pythagoras sats, skriver om det som avståndsformeln på formelbladet och använder den för punkter bland minustalen och för punkter på samma höjd.",
    "youtube": null,
-   "langd": 493,
+   "langd": 524,
    "omslag": "omslag/ma2a-19-avstandsformeln.jpg?v=ecfb4439",
    "omslagRen": "omslag/ma2a-19-avstandsformeln-ren.jpg?v=c994672a",
    "omslagStor": null,
@@ -66875,87 +66875,91 @@
      "text": "Det är våren nittonhundrasextiotvå, i staden Lexington nära Boston i USA. Ivan Sutherland är tjugotre år och studerar på universitetet M I T. Han får arbeta vid en jättelik dator som heter T X två. Den står på ett laboratorium som hör till M I T, Lincoln Laboratory."
     },
     {
-     "t": 31,
+     "t": 33,
      "text": "Datorn fyller ett helt rum. Till den hör en rund skärm och en ljuspenna, alltså en penna som känner av ljuset från skärmen. Sutherland skriver ett program som han kallar Sketchpad. Med det kan man rita direkt på skärmen med pennan. Det är ett av de första ritprogrammen i världen."
     },
     {
-     "t": 53,
+     "t": 54,
      "text": "Sutherland ritar några punkter på skärmen. Sen vill han flytta en av dem, så han pekar med pennan nära punkten. Men pennan ser en fläck av skärmen som är drygt en centimeter bred. Flera punkter kan finnas i fläcken på en gång. Vilken punkt menar han?"
     },
     {
-     "t": 72,
+     "t": 75,
      "text": "Sutherland bestämmer att datorn ska ta den punkt som ligger närmast pennan. Och punkten måste ligga närmare än ungefär tre millimeter. Men datorn ser inga avstånd. Den vet bara var varje punkt ligger, med två tal. Hur ska den räkna ut hur långt det är mellan två punkter? Det tar vi reda på nu."
     },
     {
-     "t": 96,
+     "t": 100,
      "text": "Vi lägger ett rutnät över skärmen, ett koordinatsystem. Origo, punkten noll noll, lägger vi mitt på skärmen. x-axeln går åt höger och y-axeln går uppåt. Varje punkt får två tal. Först x, hur långt åt höger. Sen y, hur långt uppåt."
     },
     {
-     "t": 117,
+     "t": 122,
      "text": "Pennan pekar på punkten ett, två. Två punkter ligger nära pennan. Punkten A är sex, fyra. Punkten B är minus tre, minus ett. Vilken av dem ligger närmast pennan?"
     },
     {
-     "t": 133,
+     "t": 139,
      "text": "Vi börjar med A, för där kan vi räkna rutor. Från pennan går vi rakt åt höger tills vi står under A. Det är fem rutor, från ett till sex. Sen går vi rakt uppåt till A. Det är två rutor, från två till fyra. De två hjälplinjerna möts i ett rätt hörn."
     },
     {
-     "t": 155,
+     "t": 161,
      "text": "Så nu har vi en rätvinklig triangel. Kateterna är fem och två. Den raka vägen från pennan till A är hypotenusan. Hypotenusan räknar vi ut med Pythagoras sats, som står på formelbladet. a i kvadrat plus b i kvadrat är lika med c i kvadrat."
     },
     {
-     "t": 176,
+     "t": 182,
      "text": "Fem i kvadrat är tjugofem. Två i kvadrat är fyra. Tjugofem plus fyra är tjugonio. Så c i kvadrat är tjugonio. Vilket tal gånger sig självt blir tjugonio? Det är inget heltal, så vi tar räknaren. Räknaren visar först roten ur tjugonio. Tryck på knappen med pilarna och ungefär-tecknet, så blir det ungefär fem komma fyra. A ligger alltså ungefär fem komma fyra rutor från pennan."
     },
     {
-     "t": 211,
-     "text": "Men B ligger åt vänster och nedåt, bland minustalen. Där är det lätt att räkna fel med rutorna. Då är det enklare att räkna med formeln från formelbladet. Den heter avståndsformeln. d är avståndet. d är lika med roten ur, x två minus x ett, i kvadrat, plus y två minus y ett, i kvadrat."
+     "t": 218,
+     "text": "Men B ligger åt vänster och nedåt, bland minustalen. Där är det lätt att räkna fel med rutorna. Då är det enklare att räkna med formeln från formelbladet."
     },
     {
-     "t": 236,
+     "t": 231,
+     "text": "Den heter avståndsformeln. d är avståndet. d är lika med roten ur, x två minus x ett, i kvadrat, plus y två minus y ett, i kvadrat."
+    },
+    {
+     "t": 246,
      "text": "Vad betyder delarna? x två minus x ett är hur långt det är åt sidan, alltså den ena kateten. y två minus y ett är hur långt det är uppåt eller nedåt, alltså den andra kateten. Båda tas i kvadrat och läggs ihop, precis som i Pythagoras sats. Roten ur ger hypotenusan, och det är avståndet. Avståndsformeln är alltså Pythagoras sats, skriven med koordinater."
     },
     {
-     "t": 264,
+     "t": 276,
      "text": "Pennan kallar vi punkt ett, så x ett är ett och y ett är två. B är punkt två, så x två är minus tre och y två är minus ett. Vi skriver formeln igen, med talen på samma ställen. Minustalen sätter vi i parenteser, så att minuset följer med."
     },
     {
-     "t": 284,
+     "t": 298,
      "text": "Först x-delen. Minus tre minus ett är minus fyra. Det är fyra rutor åt vänster, ser du? Sen y-delen. Minus ett minus två är minus tre. Det är tre rutor nedåt."
     },
     {
-     "t": 300,
+     "t": 316,
      "text": "Men kan en sida vara minus fyra rutor lång? Nej, men det gör inget, för vi tar talet i kvadrat. Minus fyra gånger minus fyra är plus sexton, för minus gånger minus är plus. Minus tre i kvadrat är plus nio. Sexton plus nio är tjugofem. Roten ur tjugofem är fem, för fem gånger fem är tjugofem. B ligger alltså fem rutor från pennan."
     },
     {
-     "t": 329,
-     "text": "Spelar det någon roll vilken punkt vi kallar ett och vilken vi kallar två? Om vi byter, blir x-delen ett minus minus tre. Det är plus fyra. Och fyra i kvadrat är också sexton. Svaret blir detsamma, fem. Vad nice, ordningen spelar ingen roll. I boken står x A minus x B i stället för x två minus x ett. Det är samma sak."
+     "t": 347,
+     "text": "Spelar det någon roll vilken punkt vi kallar ett och vilken vi kallar två? Om vi byter, blir x-delen ett minus minus tre. Det är plus fyra. Och fyra i kvadrat är också sexton. Svaret blir detsamma, fem. Skönt, ordningen spelar ingen roll. I boken står x A minus x B i stället för x två minus x ett. Det är samma sak."
     },
     {
-     "t": 357,
+     "t": 377,
      "text": "B ligger fem rutor från pennan, och A ungefär fem komma fyra. B ligger alltså närmast, fast den ligger bland minustalen."
     },
     {
-     "t": 367,
+     "t": 388,
      "text": "Här är det lätt att göra fel. En elev lägger ihop fyra och tre och får sju rutor till B. Men sju rutor är vägen längs hjälplinjerna, runt hörnet. Den raka vägen är kortare, fem rutor."
     },
     {
-     "t": 382,
+     "t": 404,
      "text": "Säg att det finns en tredje punkt, C, i minus tre, två. C har samma y som pennan, två. Då blir y-delen två minus två, alltså noll. Noll i kvadrat är noll. Kvar står roten ur minus fyra i kvadrat, alltså roten ur sexton. Det är fyra. Formeln fungerar alltså också när punkterna ligger på samma höjd. Då är avståndet bara skillnaden i x. Och C ligger närmast av alla tre."
     },
     {
-     "t": 415,
-     "text": "Är C tillräckligt nära? Säg att en ruta på skärmen är en halv millimeter. Fyra rutor blir då två millimeter. Det är mindre än tre millimeter. Så pennan fastnar vid C, och Sutherland kan flytta punkten. Nu går vi tillbaka till Sutherland."
+     "t": 439,
+     "text": "Är C tillräckligt nära? Säg att en ruta på skärmen är en halv millimeter. Fyra rutor blir då två millimeter. Det är mindre än tre millimeter. Bra, då vet vi det. Så pennan fastnar vid C, och Sutherland kan flytta punkten. Nu går vi tillbaka till Sutherland."
     },
     {
-     "t": 435,
+     "t": 462,
      "text": "Sketchpad räknar ut sådana avstånd hela tiden, medan pennan rör sig över skärmen. Programmet mäter också avståndet till linjer och cirklar. En ljusprick visar var pennan är, och den hoppar till det som ligger närmast och fastnar där."
     },
     {
-     "t": 451,
+     "t": 481,
      "text": "I januari nittonhundrasextiotre lämnar Sutherland in sin doktorsavhandling om Sketchpad. Programmet blev början på datorgrafiken. När du i dag drar en punkt i ett ritprogram och den hoppar fast vid en linje, räknar datorn ut avstånd på samma sätt."
     },
     {
-     "t": 470,
+     "t": 501,
      "text": "Nu är det din tur. Pennan pekar på punkten minus två, noll. En punkt ligger i ett, fyra. Du ska svara på två frågor i Din tur-rutan längre ner på sidan. Först: vad blir x två minus x ett? Sen: hur långt är det från pennan till punkten?"
     }
    ],
@@ -66966,68 +66970,68 @@
      "typ": "historia"
     },
     {
-     "t": 96,
+     "t": 100,
      "rubrik": "Koordinatsystemet",
      "typ": "matte"
     },
     {
-     "t": 133,
+     "t": 139,
      "rubrik": "Räkna rutor till A",
      "typ": "matte"
     },
     {
-     "t": 155,
+     "t": 161,
      "rubrik": "Pythagoras sats ger avståndet",
      "typ": "matte"
     },
     {
-     "t": 211,
+     "t": 218,
      "rubrik": "Avståndsformeln på formelbladet",
      "typ": "matte"
     },
     {
-     "t": 264,
+     "t": 276,
      "rubrik": "Sätt in talen i formeln",
      "typ": "matte"
     },
     {
-     "t": 284,
+     "t": 298,
      "rubrik": "x-delen och y-delen",
      "typ": "matte"
     },
     {
-     "t": 300,
+     "t": 316,
      "rubrik": "Minus i kvadrat blir plus",
      "typ": "matte"
     },
     {
-     "t": 329,
+     "t": 347,
      "rubrik": "Ordningen spelar ingen roll",
      "typ": "matte"
     },
     {
-     "t": 367,
+     "t": 388,
      "rubrik": "Vanligt fel: vägen runt hörnet",
      "typ": "matte"
     },
     {
-     "t": 382,
+     "t": 404,
      "rubrik": "Punkter på samma höjd",
      "typ": "matte"
     },
     {
-     "t": 435,
+     "t": 462,
      "rubrik": "Sketchpad och datorgrafiken",
      "typ": "historia"
     },
     {
-     "t": 470,
+     "t": 501,
      "rubrik": "Pennan i (−2, 0), punkten i (1, 4)",
      "typ": "uppgift"
     }
    ],
    "dinTur": {
-    "notisFran": 470,
+    "notisFran": 501,
     "fraga": "Pennan pekar på punkten (−2, 0). En punkt ligger i (1, 4). Du ska svara på två frågor. Hur långt är det från pennan till punkten?",
     "passFraga": "Punkten A ligger i (−2, 0), och punkten B ligger i (1, 4). Du ska svara på två frågor. Hur långt är det från A till B?",
     "passDelar": [
@@ -67043,7 +67047,7 @@
       1920,
       1080
      ],
-     "bild": "dintur/ma2a-19-avstandsformeln.jpg?v=b1c80a25",
+     "bild": "dintur/ma2a-19-avstandsformeln.jpg?v=9c58a8dd",
      "tema": "scen",
      "text": "En rund grön skärm i en grå konsol från 1962. På skärmen ett rutnät med en ljuspenna i punkten (−2, 0) och en punkt i (1, 4), med en streckad linje mellan dem. Bredvid står (1, 4), (−2, 0), x₂ − x₁ = ? och d = ?.",
      "delar": []
@@ -67109,8 +67113,8 @@
     ],
     "ledtrad": {
      "text": "Gör som med pennan och B. Kalla pennan punkt ett: x₁ = −2 och y₁ = 0. Punkten är punkt två: x₂ = 1 och y₂ = 4. Sätt in talen i avståndsformeln.",
-     "t": 276,
-     "till": 367
+     "t": 289,
+     "till": 388
     },
     "losning": [
      "Pennan är punkt ett: (x₁, y₁) = (−2, 0). Punkten är punkt två: (x₂, y₂) = (1, 4).",
@@ -67122,602 +67126,607 @@
    "undertext": [
     {
      "s": 9.5,
-     "e": 14.72,
+     "e": 15.26,
      "text": "Det är våren nittonhundrasextiotvå, i staden Lexington nära Boston i USA."
     },
     {
-     "s": 15.76,
-     "e": 20.4,
+     "s": 16.18,
+     "e": 21.28,
      "text": "Ivan Sutherland är tjugotre år och studerar på universitetet M I T."
     },
     {
-     "s": 21.22,
-     "e": 25.22,
+     "s": 22.16,
+     "e": 26.6,
      "text": "Han får arbeta vid en jättelik dator som heter T X två."
     },
     {
-     "s": 26.08,
-     "e": 30.28,
+     "s": 27.4,
+     "e": 32.02,
      "text": "Den står på ett laboratorium som hör till M I T, Lincoln Laboratory."
     },
     {
-     "s": 31.38,
-     "e": 33.28,
+     "s": 33.12,
+     "e": 34.94,
      "text": "Datorn fyller ett helt rum."
     },
     {
-     "s": 34.28,
-     "e": 40.48,
+     "s": 35.74,
+     "e": 42.1,
      "text": "Till den hör en rund skärm och en ljuspenna, alltså en penna som känner av ljuset från skärmen."
     },
     {
-     "s": 41.56,
-     "e": 44.74,
+     "s": 42.92,
+     "e": 46.38,
      "text": "Sutherland skriver ett program som han kallar Sketchpad."
     },
     {
-     "s": 45.54,
-     "e": 48.42,
+     "s": 47.18,
+     "e": 50.22,
      "text": "Med det kan man rita direkt på skärmen med pennan."
     },
     {
-     "s": 49.22,
-     "e": 51.94,
+     "s": 51.02,
+     "e": 53.76,
      "text": "Det är ett av de första ritprogrammen i världen."
     },
     {
-     "s": 53.06,
-     "e": 55.34,
+     "s": 54.86,
+     "e": 57.4,
      "text": "Sutherland ritar några punkter på skärmen."
     },
     {
-     "s": 56.14,
-     "e": 60.44,
+     "s": 58.2,
+     "e": 62.64,
      "text": "Sen vill han flytta en av dem, så han pekar med pennan nära punkten."
     },
     {
-     "s": 61.24,
-     "e": 65.5,
+     "s": 63.44,
+     "e": 68.24,
      "text": "Men pennan ser en fläck av skärmen som är drygt en centimeter bred."
     },
     {
-     "s": 66.34,
-     "e": 68.8,
+     "s": 69.04,
+     "e": 71.8,
      "text": "Flera punkter kan finnas i fläcken på en gång."
     },
     {
-     "s": 69.6,
-     "e": 71.1,
+     "s": 72.6,
+     "e": 74.28,
      "text": "Vilken punkt menar han?"
     },
     {
-     "s": 72.2,
-     "e": 76.54,
+     "s": 75.38,
+     "e": 80.22,
      "text": "Sutherland bestämmer att datorn ska ta den punkt som ligger närmast pennan."
     },
     {
-     "s": 77.34,
-     "e": 80.8,
+     "s": 81.02,
+     "e": 84.68,
      "text": "Och punkten måste ligga närmare än ungefär tre millimeter."
     },
     {
-     "s": 81.62,
-     "e": 83.88,
+     "s": 85.48,
+     "e": 87.7,
      "text": "Men datorn ser inga avstånd."
     },
     {
-     "s": 84.68,
-     "e": 88.02,
+     "s": 88.5,
+     "e": 91.92,
      "text": "Den vet bara var varje punkt ligger, med två tal."
     },
     {
-     "s": 88.84,
-     "e": 92.16,
+     "s": 92.72,
+     "e": 95.96,
      "text": "Hur ska den räkna ut hur långt det är mellan två punkter?"
     },
     {
-     "s": 92.96,
-     "e": 94.28,
+     "s": 96.76,
+     "e": 97.96,
      "text": "Det tar vi reda på nu."
     },
     {
-     "s": 96.78,
-     "e": 100.28,
+     "s": 100.46,
+     "e": 104.32,
      "text": "Vi lägger ett rutnät över skärmen, ett koordinatsystem."
     },
     {
-     "s": 101.08,
-     "e": 104.52,
+     "s": 105.12,
+     "e": 108.94,
      "text": "Origo, punkten noll noll, lägger vi mitt på skärmen."
     },
     {
-     "s": 105.44,
-     "e": 108.52,
+     "s": 109.74,
+     "e": 113.16,
      "text": "x-axeln går åt höger och y-axeln går uppåt."
     },
     {
-     "s": 109.32,
-     "e": 111.1,
+     "s": 113.96,
+     "e": 115.9,
      "text": "Varje punkt får två tal."
     },
     {
-     "s": 111.9,
-     "e": 113.94,
+     "s": 116.7,
+     "e": 118.74,
      "text": "Först x, hur långt åt höger."
     },
     {
-     "s": 114.74,
-     "e": 116.7,
+     "s": 119.54,
+     "e": 121.54,
      "text": "Sen y, hur långt uppåt."
     },
     {
-     "s": 117.8,
-     "e": 120.32,
+     "s": 122.64,
+     "e": 125.1,
      "text": "Pennan pekar på punkten ett, två."
     },
     {
-     "s": 121.12,
-     "e": 123.14,
+     "s": 125.9,
+     "e": 127.9,
      "text": "Två punkter ligger nära pennan."
     },
     {
-     "s": 123.98,
-     "e": 126.2,
+     "s": 128.7,
+     "e": 130.98,
      "text": "Punkten A är sex, fyra."
     },
     {
-     "s": 127,
-     "e": 129.88,
+     "s": 131.78,
+     "e": 135.06,
      "text": "Punkten B är minus tre, minus ett."
     },
     {
-     "s": 130.7,
-     "e": 132.86,
+     "s": 135.86,
+     "e": 138.02,
      "text": "Vilken av dem ligger närmast pennan?"
     },
     {
-     "s": 133.96,
-     "e": 136.46,
+     "s": 139.12,
+     "e": 141.88,
      "text": "Vi börjar med A, för där kan vi räkna rutor."
     },
     {
-     "s": 137.28,
-     "e": 141.12,
+     "s": 142.68,
+     "e": 146.64,
      "text": "Från pennan går vi rakt åt höger tills vi står under A."
     },
     {
-     "s": 141.92,
-     "e": 144.58,
+     "s": 147.44,
+     "e": 150.06,
      "text": "Det är fem rutor, från ett till sex."
     },
     {
-     "s": 145.52,
-     "e": 147.8,
+     "s": 150.86,
+     "e": 152.94,
      "text": "Sen går vi rakt uppåt till A."
     },
     {
-     "s": 148.6,
-     "e": 151.1,
+     "s": 153.74,
+     "e": 156.28,
      "text": "Det är två rutor, från två till fyra."
     },
     {
-     "s": 151.9,
-     "e": 154.68,
+     "s": 157.08,
+     "e": 160,
      "text": "De två hjälplinjerna möts i ett rätt hörn."
     },
     {
-     "s": 155.78,
-     "e": 158.12,
+     "s": 161.1,
+     "e": 163.36,
      "text": "Så nu har vi en rätvinklig triangel."
     },
     {
-     "s": 158.92,
-     "e": 160.88,
+     "s": 164.16,
+     "e": 166.12,
      "text": "Kateterna är fem och två."
     },
     {
-     "s": 161.68,
-     "e": 165.18,
+     "s": 166.92,
+     "e": 170.72,
      "text": "Den raka vägen från pennan till A är hypotenusan."
     },
     {
-     "s": 165.98,
-     "e": 170.42,
+     "s": 171.52,
+     "e": 176.06,
      "text": "Hypotenusan räknar vi ut med Pythagoras sats, som står på formelbladet."
     },
     {
-     "s": 171.22,
-     "e": 175.34,
+     "s": 176.86,
+     "e": 181.1,
      "text": "a i kvadrat plus b i kvadrat är lika med c i kvadrat."
     },
     {
-     "s": 176.44,
-     "e": 178.14,
+     "s": 182.2,
+     "e": 184.12,
      "text": "Fem i kvadrat är tjugofem."
     },
     {
-     "s": 178.94,
-     "e": 180.6,
+     "s": 184.92,
+     "e": 186.6,
      "text": "Två i kvadrat är fyra."
     },
     {
-     "s": 181.4,
-     "e": 183.86,
+     "s": 187.4,
+     "e": 189.9,
      "text": "Tjugofem plus fyra är tjugonio."
     },
     {
-     "s": 184.66,
-     "e": 187.04,
+     "s": 190.7,
+     "e": 193,
      "text": "Så c i kvadrat är tjugonio."
     },
     {
-     "s": 187.98,
-     "e": 190.8,
+     "s": 193.8,
+     "e": 196.94,
      "text": "Vilket tal gånger sig självt blir tjugonio?"
     },
     {
-     "s": 192.42,
-     "e": 195.02,
+     "s": 198.7,
+     "e": 201.2,
      "text": "Det är inget heltal, så vi tar räknaren."
     },
     {
-     "s": 195.82,
-     "e": 198.58,
+     "s": 202,
+     "e": 204.88,
      "text": "Räknaren visar först roten ur tjugonio."
     },
     {
-     "s": 199.38,
-     "e": 204.78,
+     "s": 205.68,
+     "e": 211.52,
      "text": "Tryck på knappen med pilarna och ungefär-tecknet, så blir det ungefär fem komma fyra."
     },
     {
-     "s": 205.78,
-     "e": 209.7,
+     "s": 212.32,
+     "e": 216.6,
      "text": "A ligger alltså ungefär fem komma fyra rutor från pennan."
     },
     {
-     "s": 211.68,
-     "e": 215.66,
+     "s": 218.98,
+     "e": 223.1,
      "text": "Men B ligger åt vänster och nedåt, bland minustalen."
     },
     {
-     "s": 216.46,
-     "e": 218.74,
+     "s": 223.9,
+     "e": 226.36,
      "text": "Där är det lätt att räkna fel med rutorna."
     },
     {
-     "s": 219.54,
-     "e": 222.64,
+     "s": 227.16,
+     "e": 230.72,
      "text": "Då är det enklare att räkna med formeln från formelbladet."
     },
     {
-     "s": 223.44,
-     "e": 225.26,
+     "s": 231.82,
+     "e": 233.98,
      "text": "Den heter avståndsformeln."
     },
     {
-     "s": 226.06,
-     "e": 227.28,
+     "s": 234.78,
+     "e": 236.28,
      "text": "d är avståndet."
     },
     {
-     "s": 228.08,
-     "e": 235.66,
+     "s": 237.08,
+     "e": 245.3,
      "text": "d är lika med roten ur, x två minus x ett, i kvadrat, plus y två minus y ett, i kvadrat."
     },
     {
-     "s": 236.76,
-     "e": 237.78,
+     "s": 246.4,
+     "e": 247.6,
      "text": "Vad betyder delarna?"
     },
     {
-     "s": 238.58,
-     "e": 243.44,
+     "s": 248.4,
+     "e": 253.74,
      "text": "x två minus x ett är hur långt det är åt sidan, alltså den ena kateten."
     },
     {
-     "s": 244.24,
-     "e": 249.8,
+     "s": 254.54,
+     "e": 260.68,
      "text": "y två minus y ett är hur långt det är uppåt eller nedåt, alltså den andra kateten."
     },
     {
-     "s": 250.6,
-     "e": 254.38,
+     "s": 261.48,
+     "e": 265.68,
      "text": "Båda tas i kvadrat och läggs ihop, precis som i Pythagoras sats."
     },
     {
-     "s": 255.18,
-     "e": 258.76,
+     "s": 266.48,
+     "e": 270.3,
      "text": "Roten ur ger hypotenusan, och det är avståndet."
     },
     {
-     "s": 259.56,
-     "e": 263.62,
+     "s": 271.1,
+     "e": 275.66,
      "text": "Avståndsformeln är alltså Pythagoras sats, skriven med koordinater."
     },
     {
-     "s": 264.72,
-     "e": 269.28,
+     "s": 276.76,
+     "e": 281.92,
      "text": "Pennan kallar vi punkt ett, så x ett är ett och y ett är två."
     },
     {
-     "s": 270.08,
-     "e": 275.22,
+     "s": 282.72,
+     "e": 288.46,
      "text": "B är punkt två, så x två är minus tre och y två är minus ett."
     },
     {
-     "s": 276.02,
-     "e": 279.02,
+     "s": 289.26,
+     "e": 292.62,
      "text": "Vi skriver formeln igen, med talen på samma ställen."
     },
     {
-     "s": 279.82,
-     "e": 283.34,
+     "s": 293.42,
+     "e": 297.4,
      "text": "Minustalen sätter vi i parenteser, så att minuset följer med."
     },
     {
-     "s": 284.44,
-     "e": 289.04,
+     "s": 298.5,
+     "e": 303.74,
      "text": "Först x-delen. Minus tre minus ett är minus fyra."
     },
     {
-     "s": 289.84,
-     "e": 293.6,
+     "s": 304.54,
+     "e": 308.66,
      "text": "Det är fyra rutor åt vänster, ser du? Sen y-delen."
     },
     {
-     "s": 294.4,
-     "e": 297.02,
+     "s": 309.46,
+     "e": 312.44,
      "text": "Minus ett minus två är minus tre."
     },
     {
-     "s": 297.82,
-     "e": 299.26,
+     "s": 313.24,
+     "e": 314.9,
      "text": "Det är tre rutor nedåt."
     },
     {
-     "s": 300.78,
-     "e": 303.96,
+     "s": 316.34,
+     "e": 320.02,
      "text": "Men kan en sida vara minus fyra rutor lång?"
     },
     {
-     "s": 304.76,
-     "e": 307.94,
+     "s": 320.82,
+     "e": 324.32,
      "text": "Nej, men det gör inget, för vi tar talet i kvadrat."
     },
     {
-     "s": 308.74,
-     "e": 314.46,
+     "s": 325.12,
+     "e": 331.56,
      "text": "Minus fyra gånger minus fyra är plus sexton, för minus gånger minus är plus."
     },
     {
-     "s": 315.26,
-     "e": 317.62,
+     "s": 332.36,
+     "e": 335.06,
      "text": "Minus tre i kvadrat är plus nio."
     },
     {
-     "s": 318.42,
-     "e": 320.46,
+     "s": 335.86,
+     "e": 338.26,
      "text": "Sexton plus nio är tjugofem."
     },
     {
-     "s": 321.26,
-     "e": 325.42,
+     "s": 339.06,
+     "e": 343.4,
      "text": "Roten ur tjugofem är fem, för fem gånger fem är tjugofem."
     },
     {
-     "s": 326.22,
-     "e": 328.68,
+     "s": 344.2,
+     "e": 346.8,
      "text": "B ligger alltså fem rutor från pennan."
     },
     {
-     "s": 329.78,
-     "e": 333.36,
+     "s": 347.9,
+     "e": 351.94,
      "text": "Spelar det någon roll vilken punkt vi kallar ett och vilken vi kallar två?"
     },
     {
-     "s": 334.16,
-     "e": 337.78,
+     "s": 352.74,
+     "e": 357.02,
      "text": "Om vi byter, blir x-delen ett minus minus tre."
     },
     {
-     "s": 338.58,
-     "e": 339.58,
+     "s": 357.82,
+     "e": 358.96,
      "text": "Det är plus fyra."
     },
     {
-     "s": 340.38,
-     "e": 342.56,
+     "s": 359.76,
+     "e": 362.06,
      "text": "Och fyra i kvadrat är också sexton."
     },
     {
-     "s": 343.36,
-     "e": 345.22,
+     "s": 362.86,
+     "e": 364.88,
      "text": "Svaret blir detsamma, fem."
     },
     {
-     "s": 346.32,
-     "e": 348.58,
-     "text": "Vad nice, ordningen spelar ingen roll."
+     "s": 365.7,
+     "e": 368.22,
+     "text": "Skönt, ordningen spelar ingen roll."
     },
     {
-     "s": 349.38,
-     "e": 354.64,
+     "s": 369.02,
+     "e": 374.72,
      "text": "I boken står x A minus x B i stället för x två minus x ett."
     },
     {
-     "s": 355.44,
-     "e": 356.44,
+     "s": 375.52,
+     "e": 376.52,
      "text": "Det är samma sak."
     },
     {
-     "s": 357.44,
-     "e": 361.82,
+     "s": 377.62,
+     "e": 382.46,
      "text": "B ligger fem rutor från pennan, och A ungefär fem komma fyra."
     },
     {
-     "s": 362.62,
-     "e": 366.04,
+     "s": 383.26,
+     "e": 386.9,
      "text": "B ligger alltså närmast, fast den ligger bland minustalen."
     },
     {
-     "s": 367.18,
-     "e": 368.56,
+     "s": 388,
+     "e": 389.46,
      "text": "Här är det lätt att göra fel."
     },
     {
-     "s": 369.36,
-     "e": 373.34,
+     "s": 390.26,
+     "e": 394.4,
      "text": "En elev lägger ihop fyra och tre och får sju rutor till B."
     },
     {
-     "s": 374.14,
-     "e": 377.88,
+     "s": 395.2,
+     "e": 399.22,
      "text": "Men sju rutor är vägen längs hjälplinjerna, runt hörnet."
     },
     {
-     "s": 378.68,
-     "e": 381.38,
+     "s": 400.02,
+     "e": 402.92,
      "text": "Den raka vägen är kortare, fem rutor."
     },
     {
-     "s": 382.48,
-     "e": 386.42,
+     "s": 404.02,
+     "e": 408.1,
      "text": "Säg att det finns en tredje punkt, C, i minus tre, två."
     },
     {
-     "s": 387.22,
-     "e": 389.56,
+     "s": 408.9,
+     "e": 411.44,
      "text": "C har samma y som pennan, två."
     },
     {
-     "s": 390.36,
-     "e": 394,
+     "s": 412.24,
+     "e": 416.02,
      "text": "Då blir y-delen två minus två, alltså noll."
     },
     {
-     "s": 394.8,
-     "e": 396.44,
+     "s": 416.82,
+     "e": 418.5,
      "text": "Noll i kvadrat är noll."
     },
     {
-     "s": 397.24,
-     "e": 402.3,
+     "s": 419.3,
+     "e": 424.62,
      "text": "Kvar står roten ur minus fyra i kvadrat, alltså roten ur sexton."
     },
     {
-     "s": 403.1,
-     "e": 404.1,
+     "s": 425.42,
+     "e": 426.42,
      "text": "Det är fyra."
     },
     {
-     "s": 404.78,
-     "e": 408.3,
+     "s": 427.08,
+     "e": 430.7,
      "text": "Formeln fungerar alltså också när punkterna ligger på samma höjd."
     },
     {
-     "s": 409.1,
-     "e": 411.4,
+     "s": 431.5,
+     "e": 433.92,
      "text": "Då är avståndet bara skillnaden i x."
     },
     {
-     "s": 412.2,
-     "e": 414.28,
+     "s": 434.72,
+     "e": 436.88,
      "text": "Och C ligger närmast av alla tre."
     },
     {
-     "s": 415.38,
-     "e": 416.82,
+     "s": 439.38,
+     "e": 440.92,
      "text": "Är C tillräckligt nära?"
     },
     {
-     "s": 417.62,
-     "e": 420.52,
+     "s": 441.72,
+     "e": 444.98,
      "text": "Säg att en ruta på skärmen är en halv millimeter."
     },
     {
-     "s": 421.32,
-     "e": 423.48,
+     "s": 445.78,
+     "e": 448.24,
      "text": "Fyra rutor blir då två millimeter."
     },
     {
-     "s": 424.28,
-     "e": 425.96,
+     "s": 449.04,
+     "e": 450.94,
      "text": "Det är mindre än tre millimeter."
     },
     {
-     "s": 426.76,
-     "e": 430.66,
+     "s": 452.22,
+     "e": 453.54,
+     "text": "Bra, då vet vi det."
+    },
+    {
+     "s": 454.34,
+     "e": 458.96,
      "text": "Så pennan fastnar vid C, och Sutherland kan flytta punkten."
     },
     {
-     "s": 431.56,
-     "e": 433,
+     "s": 459.76,
+     "e": 461.56,
      "text": "Nu går vi tillbaka till Sutherland."
     },
     {
-     "s": 435.5,
-     "e": 440.4,
+     "s": 462.66,
+     "e": 468.14,
      "text": "Sketchpad räknar ut sådana avstånd hela tiden, medan pennan rör sig över skärmen."
     },
     {
-     "s": 441.2,
-     "e": 444.52,
+     "s": 468.94,
+     "e": 472.54,
      "text": "Programmet mäter också avståndet till linjer och cirklar."
     },
     {
-     "s": 445.32,
-     "e": 450.62,
+     "s": 473.34,
+     "e": 479.14,
      "text": "En ljusprick visar var pennan är, och den hoppar till det som ligger närmast och fastnar där."
     },
     {
-     "s": 451.72,
-     "e": 457,
+     "s": 481.64,
+     "e": 487.7,
      "text": "I januari nittonhundrasextiotre lämnar Sutherland in sin doktorsavhandling om Sketchpad."
     },
     {
-     "s": 457.8,
-     "e": 460.54,
+     "s": 488.5,
+     "e": 491.42,
      "text": "Programmet blev början på datorgrafiken."
     },
     {
-     "s": 461.34,
-     "e": 465.26,
+     "s": 492.22,
+     "e": 496.74,
      "text": "När du i dag drar en punkt i ett ritprogram och den hoppar fast vid en linje,"
     },
     {
-     "s": 465.68,
-     "e": 468.14,
+     "s": 497.18,
+     "e": 499.82,
      "text": "räknar datorn ut avstånd på samma sätt."
     },
     {
-     "s": 470.64,
-     "e": 471.64,
+     "s": 501,
+     "e": 502.1,
      "text": "Nu är det din tur."
     },
     {
-     "s": 472.44,
-     "e": 475.42,
+     "s": 502.9,
+     "e": 506.14,
      "text": "Pennan pekar på punkten minus två, noll."
     },
     {
-     "s": 476.22,
-     "e": 478.42,
+     "s": 506.94,
+     "e": 509.22,
      "text": "En punkt ligger i ett, fyra."
     },
     {
-     "s": 479.22,
-     "e": 483.2,
+     "s": 510.02,
+     "e": 514.32,
      "text": "Du ska svara på två frågor i Din tur-rutan längre ner på sidan."
     },
     {
-     "s": 484,
-     "e": 487.6,
+     "s": 515.12,
+     "e": 518.52,
      "text": "Först: vad blir x två minus x ett?"
     },
     {
-     "s": 488.4,
-     "e": 491.52,
+     "s": 519.32,
+     "e": 522.66,
      "text": "Sen: hur långt är det från pennan till punkten?"
     }
    ]
